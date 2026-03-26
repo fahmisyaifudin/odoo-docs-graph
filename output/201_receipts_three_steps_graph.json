@@ -1,0 +1,620 @@
+[
+  {
+    "section_id": "three-step-receipt",
+    "heading": "Three-step receipt",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "three-step receipt",
+          "type": "Workflow",
+          "mention": "three-step receipt process",
+          "confidence": "high"
+        },
+        {
+          "name": "three-step receipt process",
+          "type": "Workflow",
+          "mention": "three-step process",
+          "confidence": "high"
+        },
+        {
+          "name": "input area",
+          "type": "DataObject",
+          "mention": "input area",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality area",
+          "type": "DataObject",
+          "mention": "quality area",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock",
+          "type": "DataObject",
+          "mention": "stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality control",
+          "type": "Concept",
+          "mention": "quality control process",
+          "confidence": "medium"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "companies",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "three-step receipt",
+          "relation": "CONTAINS",
+          "target": "three-step receipt process",
+          "evidence": "In the three-step receipt process..."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "three-step receipt",
+          "evidence": "Odoo has a three-step process..."
+        },
+        {
+          "source": "company",
+          "relation": "REQUIRES",
+          "target": "quality control",
+          "evidence": "Some companies require a quality control process..."
+        },
+        {
+          "source": "three-step receipt process",
+          "relation": "TRIGGERED_BY",
+          "target": "receiving goods",
+          "evidence": "To accomplish this..."
+        },
+        {
+          "source": "three-step receipt process",
+          "relation": "CONTAINS",
+          "target": "transfer to input area",
+          "evidence": "products are received in an input area"
+        },
+        {
+          "source": "three-step receipt process",
+          "relation": "CONTAINS",
+          "target": "transfer to quality area",
+          "evidence": "then transferred to a quality area for inspection"
+        },
+        {
+          "source": "three-step receipt process",
+          "relation": "CONTAINS",
+          "target": "transfer to stock",
+          "evidence": "Products that pass the quality inspection are then transferred into stock"
+        },
+        {
+          "source": "transfer to quality area",
+          "relation": "CONTAINS",
+          "target": "inspection",
+          "evidence": "for inspection"
+        },
+        {
+          "source": "transfer to stock",
+          "relation": "REQUIRES",
+          "target": "inspection",
+          "evidence": "Products that pass the quality inspection..."
+        },
+        {
+          "source": "products",
+          "relation": "APPLIES_TO",
+          "target": "quality area",
+          "evidence": "The products are not available for further processing until they are transferred out of the quality area"
+        },
+        {
+          "source": "products",
+          "relation": "APPLIES_TO",
+          "target": "stock",
+          "evidence": "and into stock"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "DataObject",
+          "mention": "Warehouse",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouses",
+          "type": "Setting",
+          "mention": "Warehouses",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse detail form",
+          "type": "DataObject",
+          "mention": "Warehouse detail form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receive goods in input",
+          "type": "Setting",
+          "mention": "Receive goods in input",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality",
+          "type": "Field",
+          "mention": "quality",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock (3 steps)",
+          "type": "Setting",
+          "mention": "stock (3 steps)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Incoming Shipments",
+          "type": "DataObject",
+          "mention": "Incoming Shipments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Input",
+          "type": "DataObject",
+          "mention": "Input",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Input",
+          "type": "DataObject",
+          "mention": "WH/Input",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control",
+          "type": "DataObject",
+          "mention": "Quality Control",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Quality Control",
+          "type": "DataObject",
+          "mention": "WH/Quality Control",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations",
+          "type": "Setting",
+          "mention": "Locations",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Multi-Step Routes",
+          "relation": "ENABLES",
+          "target": "Storage Locations",
+          "evidence": "Note that activating Multi-Step Routes will also activate *Storage Locations*."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory --> Configuration"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "Warehouse. Note that activating Multi-Step Routes will also activate *Storage Locations*."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Warehouses",
+          "evidence": "Inventory app --> Configuration --> Warehouses"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONFIGURED_BY",
+          "target": "Warehouses",
+          "evidence": "Configuration --> Warehouses"
+        },
+        {
+          "source": "Warehouse detail form",
+          "relation": "CONTAINS",
+          "target": "Receive goods in input",
+          "evidence": "On that Warehouse detail form page, select Receive goods in input"
+        },
+        {
+          "source": "Warehouse detail form",
+          "relation": "CONTAINS",
+          "target": "stock (3 steps)",
+          "evidence": "then stock (3 steps) for Incoming Shipments."
+        },
+        {
+          "source": "stock (3 steps)",
+          "relation": "APPLIES_TO",
+          "target": "Incoming Shipments",
+          "evidence": "stock (3 steps) for Incoming Shipments."
+        },
+        {
+          "source": "Input",
+          "relation": "EQUIVALENT_TO",
+          "target": "WH/Input",
+          "evidence": "*Input* (WH/Input)"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "EQUIVALENT_TO",
+          "target": "WH/Quality Control",
+          "evidence": "*Quality Control* (WH/Quality Control)"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Locations",
+          "evidence": "Inventory app --> Configuration --> Locations"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-purchase-order",
+    "heading": "Create a purchase order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Request for Quotation",
+          "type": "DataObject",
+          "mention": "RfQ",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "storable Product",
+          "type": "Product",
+          "mention": "storable Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipt",
+          "type": "DataObject",
+          "mention": "Receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt order",
+          "type": "DataObject",
+          "mention": "receipt order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "To create a new RfQ, navigate to Purchase app"
+        },
+        {
+          "source": "Purchase app",
+          "relation": "CONTAINS",
+          "target": "New",
+          "evidence": "navigate to Purchase app --> New"
+        },
+        {
+          "source": "New",
+          "relation": "PRODUCES",
+          "target": "Request for Quotation",
+          "evidence": "New, which reveals a blank RfQ form"
+        },
+        {
+          "source": "Request for Quotation",
+          "relation": "IS_PART_OF",
+          "target": "purchase order",
+          "evidence": "The receipt will be associated with the purchase order"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "TRIGGERED_BY",
+          "target": "click Confirm Order",
+          "evidence": "click Confirm Order"
+        },
+        {
+          "source": "Request for Quotation",
+          "relation": "CONTAINS",
+          "target": "Vendor",
+          "evidence": "select a Vendor"
+        },
+        {
+          "source": "Request for Quotation",
+          "relation": "CONTAINS",
+          "target": "storable Product",
+          "evidence": "add a storable Product"
+        },
+        {
+          "source": "Receipt",
+          "relation": "BELONGS_TO",
+          "target": "purchase order",
+          "evidence": "the receipt will be associated with the purchase order"
+        },
+        {
+          "source": "Receipt",
+          "relation": "HAS_REPORT",
+          "target": "receipt order",
+          "evidence": "Clicking on the Receipt smart button will show the receipt order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-a-receipt",
+    "heading": "Process a receipt",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/IN",
+          "type": "DataObject",
+          "mention": "receipt (`WH/IN`)",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Input",
+          "type": "Field",
+          "mention": "WH/Input",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase Order",
+          "relation": "GENERATES",
+          "target": "WH/IN",
+          "evidence": "Once the purchase order (PO) is confirmed, a receipt (`WH/IN`) operation is generated"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "WH/Input",
+          "evidence": "Click Validate to validate the receipt, and move the product to the destination location, WH/Input"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-a-transfer-to-quality-control",
+    "heading": "Process a transfer to Quality Control",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Overview",
+          "type": "Module",
+          "mention": "Inventory Overview",
+          "confidence": "medium"
+        },
+        {
+          "name": "Internal Transfers",
+          "type": "Module",
+          "mention": "Internal Transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/Input",
+          "type": "Actor",
+          "mention": "WH/Input",
+          "confidence": "low"
+        },
+        {
+          "name": "WH/Quality Control",
+          "type": "Actor",
+          "mention": "WH/Quality Control",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory Overview",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Click Inventory Overview in the breadcrumbs to navigate back to the dashboard"
+        },
+        {
+          "source": "Internal Transfers",
+          "relation": "IS_PART_OF",
+          "target": "Inventory Overview",
+          "evidence": "locate the Internal Transfers task card"
+        },
+        {
+          "source": "WH/Quality Control",
+          "relation": "RELATED_TO",
+          "target": "WH/Input",
+          "evidence": "move the product from WH/Input to WH/Quality Control"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-a-transfer-to-stock",
+    "heading": "Process a transfer to stock",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "YourCompany",
+          "type": "Actor",
+          "mention": "YourCompany",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal Transfers",
+          "type": "Report",
+          "mention": "list of all internal transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/Quality Control",
+          "type": "DataObject",
+          "mention": "WH/Quality Control",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/Stock",
+          "type": "DataObject",
+          "mention": "WH/Stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Internal Transfers",
+          "evidence": "Click YourCompany: Internal Transfers in the breadcrumbs to reveal the list"
+        },
+        {
+          "source": "Internal Transfers",
+          "relation": "CONTAINS",
+          "target": "WH/Quality Control",
+          "evidence": "...move the product from `WH/Quality Control`"
+        },
+        {
+          "source": "Internal Transfers",
+          "relation": "CONTAINS",
+          "target": "WH/Stock",
+          "evidence": "...to `WH/Stock`"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "YourCompany",
+          "evidence": "Once ready, click Validate"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "WH/Stock",
+          "evidence": "click Validate to complete the transfer, and move the product...to WH/Stock"
+        }
+      ]
+    }
+  }
+]

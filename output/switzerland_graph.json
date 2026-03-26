@@ -1,0 +1,759 @@
+[
+  {
+    "section_id": "isr-(in-payment-slip-with-reference-number)",
+    "heading": "ISR (In-payment Slip with Reference number)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "ISR",
+          "type": "Concept",
+          "mention": "ISR (In-payment Slip with Reference number)",
+          "confidence": "high"
+        },
+        {
+          "name": "Print ISR",
+          "type": "Action",
+          "mention": "new button called *Print ISR*",
+          "confidence": "high"
+        },
+        {
+          "name": "customer invoice",
+          "type": "DataObject",
+          "mention": "customer invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "bank account",
+          "type": "DataObject",
+          "mention": "bank account",
+          "confidence": "high"
+        },
+        {
+          "name": "pdf with the ISR",
+          "type": "Report",
+          "mention": "open a pdf with the ISR",
+          "confidence": "high"
+        },
+        {
+          "name": "ISR layout",
+          "type": "Feature",
+          "mention": "two layouts for ISR",
+          "confidence": "high"
+        },
+        {
+          "name": "Print bank on ISR",
+          "type": "Setting",
+          "mention": "Print bank on ISR",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Invoices",
+          "type": "Feature",
+          "mention": "Customer Invoices",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Customer Invoices",
+          "evidence": "Settings --> Customer Invoices"
+        },
+        {
+          "source": "Customer Invoices",
+          "relation": "CONTAINS",
+          "target": "Print bank on ISR",
+          "evidence": "enable **Print bank on ISR**"
+        },
+        {
+          "source": "Print ISR",
+          "relation": "GENERATES",
+          "target": "pdf with the ISR",
+          "evidence": "Then you open a pdf with the ISR"
+        },
+        {
+          "source": "Print ISR",
+          "relation": "PERFORMED_BY",
+          "target": "customer invoice",
+          "evidence": "On the customer invoices, there is a new button called *Print ISR*"
+        },
+        {
+          "source": "Print ISR",
+          "relation": "REQUIRES",
+          "target": "bank account",
+          "evidence": "The button *Print ISR* only appears there is well a bank account defined on the invoice"
+        },
+        {
+          "source": "Print bank on ISR",
+          "relation": "CONFIGURED_BY",
+          "target": "Print bank on ISR",
+          "evidence": "To activate it, go in Accounting --> Configuration --> Settings --> Customer Invoices and enable **Print bank on ISR**"
+        },
+        {
+          "source": "Print bank on ISR",
+          "relation": "CONTAINS",
+          "target": "ISR layout",
+          "evidence": "To choose which one to use, there is an option to print the bank information on the ISR"
+        },
+        {
+          "source": "ISR layout",
+          "relation": "RELATED_TO",
+          "target": "ISR",
+          "evidence": "There exists two layouts for ISR"
+        },
+        {
+          "source": "ISR",
+          "relation": "BELONGS_TO",
+          "target": "Concept",
+          "evidence": "ISR (In-payment Slip with Reference number)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "isr-reference-on-invoices",
+    "heading": "ISR reference on invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "ISR reference",
+          "type": "Concept",
+          "mention": "ISR reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Reference",
+          "type": "Field",
+          "mention": "Payment Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "Module",
+          "mention": "Journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Journals",
+          "type": "Module",
+          "mention": "Journals",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Invoices",
+          "type": "Module",
+          "mention": "Customer Invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "Advanced Settings",
+          "type": "Module",
+          "mention": "Advanced Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Communication Standard",
+          "type": "Field",
+          "mention": "Communication Standard",
+          "confidence": "high"
+        },
+        {
+          "name": "Switzerland",
+          "type": "Setting",
+          "mention": "Switzerland",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "ISR reference",
+          "evidence": "To ease the reconciliation process, you can add your ISR reference as Payment Reference on your invoices."
+        },
+        {
+          "source": "ISR reference",
+          "relation": "APPLIES_TO",
+          "target": "invoice",
+          "evidence": "add your ISR reference as Payment Reference on your invoices"
+        },
+        {
+          "source": "invoice",
+          "relation": "BELONGS_TO",
+          "target": "Journal",
+          "evidence": "you need to configure the Journal you usually use to issue invoices"
+        },
+        {
+          "source": "Journal",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Go to Accounting --> Configuration --> Journals"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Journals",
+          "evidence": "Configuration --> Journals"
+        },
+        {
+          "source": "Journal",
+          "relation": "EQUIVALENT_TO",
+          "target": "Customer Invoices",
+          "evidence": "By default, the Journal is named *Customer Invoices*"
+        },
+        {
+          "source": "Journal",
+          "relation": "CONFIGURED_BY",
+          "target": "Communication Standard",
+          "evidence": "open the *Advanced Settings* tab. In the **Communication Standard** field"
+        },
+        {
+          "source": "Communication Standard",
+          "relation": "BELONGS_TO",
+          "target": "Advanced Settings",
+          "evidence": "open the *Advanced Settings* tab. In the **Communication Standard** field"
+        },
+        {
+          "source": "Communication Standard",
+          "relation": "GOVERNED_BY",
+          "target": "Switzerland",
+          "evidence": "In the **Communication Standard** field, select *Switzerland*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "currency-rate-live-update",
+    "heading": "Currency Rate Live Update",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency Rate Live Update",
+          "type": "Feature",
+          "mention": "Currency Rate Live Update",
+          "confidence": "high"
+        },
+        {
+          "name": "Federal Tax Administration from Switzerland",
+          "type": "Actor",
+          "mention": "Federal Tax Administration from Switzerland",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "multi-currencies setting",
+          "type": "Setting",
+          "mention": "multi-currencies setting",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Currency Rate Live Update",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "For this, go in Accounting --> Settings"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "For this, go in Accounting --> Settings"
+        },
+        {
+          "source": "Currency Rate Live Update",
+          "relation": "CONFIGURED_BY",
+          "target": "multi-currencies setting",
+          "evidence": "activate the multi-currencies setting"
+        },
+        {
+          "source": "Currency Rate Live Update",
+          "relation": "SUPPORTS",
+          "target": "Federal Tax Administration from Switzerland",
+          "evidence": "update automatically your currencies rates based on the Federal Tax Administration from Switzerland"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "updated-vat-for-january-2018",
+    "heading": "Updated VAT for January 2018",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Switzerland",
+          "type": "Actor",
+          "mention": "Switzerland",
+          "confidence": "high"
+        },
+        {
+          "name": "8.0% VAT rate",
+          "type": "Regulation",
+          "mention": "normal 8.0% rate",
+          "confidence": "high"
+        },
+        {
+          "name": "7.7% VAT rate",
+          "type": "Regulation",
+          "mention": "7.7%",
+          "confidence": "high"
+        },
+        {
+          "name": "3.8% VAT rate",
+          "type": "Regulation",
+          "mention": "specific rate for the hotel sector will switch from 3.8%",
+          "confidence": "high"
+        },
+        {
+          "name": "3.7% VAT rate",
+          "type": "Regulation",
+          "mention": "3.7%",
+          "confidence": "high"
+        },
+        {
+          "name": "Hotel sector",
+          "type": "Actor",
+          "mention": "hotel sector",
+          "confidence": "high"
+        },
+        {
+          "name": "January 2018",
+          "type": "Concept",
+          "mention": "January 2018",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "7.7% VAT rate",
+          "relation": "APPLIES_TO",
+          "target": "Switzerland",
+          "evidence": "new reduced VAT rates will be applied in Switzerland"
+        },
+        {
+          "source": "3.7% VAT rate",
+          "relation": "APPLIES_TO",
+          "target": "Hotel sector",
+          "evidence": "specific rate for the hotel sector will switch from 3.8% to 3.7%."
+        },
+        {
+          "source": "7.7% VAT rate",
+          "relation": "EQUIVALENT_TO",
+          "target": "8.0% VAT rate",
+          "evidence": "The normal 8.0% rate will switch to 7.7%"
+        },
+        {
+          "source": "3.7% VAT rate",
+          "relation": "EQUIVALENT_TO",
+          "target": "3.8% VAT rate",
+          "evidence": "specific rate for the hotel sector will switch from 3.8% to 3.7%"
+        },
+        {
+          "source": "January 2018",
+          "relation": "RELATED_TO",
+          "target": "7.7% VAT rate",
+          "evidence": "Starting from the 1st January 2018, new reduced VAT rates..."
+        },
+        {
+          "source": "January 2018",
+          "relation": "RELATED_TO",
+          "target": "3.7% VAT rate",
+          "evidence": "Starting from the 1st January 2018, new reduced VAT rates..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "how-to-update-your-taxes-in-odoo-enterprise-(odoo-online-or-on-premise)?",
+    "heading": "How to update your taxes in Odoo Enterprise (Odoo Online or On-premise)?",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Switzerland - Accounting Reports",
+          "type": "Module",
+          "mention": "Switzerland - Accounting Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps",
+          "type": "Module",
+          "mention": "Apps",
+          "confidence": "medium"
+        },
+        {
+          "name": "V11.1",
+          "type": "Unknown",
+          "mention": "V11.1",
+          "confidence": "low"
+        },
+        {
+          "name": "Purchase taxes",
+          "type": "Feature",
+          "mention": "Purchase taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sale taxes",
+          "type": "Feature",
+          "mention": "Sale taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "vat report",
+          "type": "Report",
+          "mention": "vat report",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA 7.7% sur achat B&S (TN)",
+          "type": "DataObject",
+          "mention": "TVA 7.7% sur achat B&S (TN)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA 7.7% sur achat B&S (Incl. TN)",
+          "type": "DataObject",
+          "mention": "TVA 7.7% sur achat B&S (Incl. TN)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA 7.7% sur invest. et autres ch. (TN)",
+          "type": "DataObject",
+          "mention": "TVA 7.7% sur invest. et autres ch. (TN)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA 7.7% sur invest. et autres ch. (Incl. TN)",
+          "type": "DataObject",
+          "mention": "TVA 7.7% sur invest. et autres ch. (Incl. TN)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA 3.7% sur achat B&S (TS)",
+          "type": "DataObject",
+          "mention": "TVA 3.7% sur achat B&S (TS)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA 3.7% sur achat B&S (Incl. TS)",
+          "type": "DataObject",
+          "mention": "TVA 3.7% sur achat B&S (Incl. TS)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA 3.7% sur invest. et autres ch. (TS)",
+          "type": "DataObject",
+          "mention": "TVA 3.7% sur invest. et autres ch. (TS)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA 3.7% sur invest. et autres ch. (Incl. TS)",
+          "type": "DataObject",
+          "mention": "TVA 3.7% sur invest. et autres ch. (Incl. TS)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA due a 7.7% (TN)",
+          "type": "DataObject",
+          "mention": "TVA due a 7.7% (TN)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA due à 7.7% (Incl. TN)",
+          "type": "DataObject",
+          "mention": "TVA due à 7.7% (Incl. TN)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA due à 3.7% (TS)",
+          "type": "DataObject",
+          "mention": "TVA due à 3.7% (TS)",
+          "confidence": "high"
+        },
+        {
+          "name": "TVA due a 3.7% (Incl. TS)",
+          "type": "DataObject",
+          "mention": "TVA due a 3.7% (Incl. TS)",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Name",
+          "type": "Field",
+          "mention": "Tax Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Rate",
+          "type": "Field",
+          "mention": "Rate",
+          "confidence": "high"
+        },
+        {
+          "name": "Label on Invoice",
+          "type": "Field",
+          "mention": "Label on Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Group",
+          "type": "DataObject",
+          "mention": "Tax Group",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax Scope",
+          "type": "Field",
+          "mention": "Tax Scope",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tag",
+          "type": "Field",
+          "mention": "Tag",
+          "confidence": "medium"
+        },
+        {
+          "name": "Switzerland VAT Form",
+          "type": "Unknown",
+          "mention": "Switzerland VAT Form",
+          "confidence": "low"
+        },
+        {
+          "name": "grid 302",
+          "type": "Unknown",
+          "mention": "grid 302",
+          "confidence": "low"
+        },
+        {
+          "name": "grid 342",
+          "type": "Unknown",
+          "mention": "grid 342",
+          "confidence": "low"
+        },
+        {
+          "name": "grid 400",
+          "type": "Unknown",
+          "mention": "grid 400",
+          "confidence": "low"
+        },
+        {
+          "name": "grid 405",
+          "type": "Unknown",
+          "mention": "grid 405",
+          "confidence": "low"
+        },
+        {
+          "name": "support",
+          "type": "Actor",
+          "mention": "support",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Switzerland - Accounting Reports",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "\"Switzerland - Accounting Reports\" module"
+        },
+        {
+          "source": "Apps",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Apps menu"
+        },
+        {
+          "source": "Purchase taxes",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Purchase taxes creation"
+        },
+        {
+          "source": "Sale taxes",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Sale taxes creation"
+        },
+        {
+          "source": "vat report",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "vat report"
+        },
+        {
+          "source": "TVA 7.7% sur achat B&S (TN)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA 7.7% sur achat B&S (Incl. TN)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA 7.7% sur invest. et autres ch. (TN)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA 7.7% sur invest. et autres ch. (Incl. TN)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA 3.7% sur achat B&S (TS)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA 3.7% sur achat B&S (Incl. TS)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA 3.7% sur invest. et autres ch. (TS)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA 3.7% sur invest. et autres ch. (Incl. TS)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA due a 7.7% (TN)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA due à 7.7% (Incl. TN)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA due à 3.7% (TS)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        },
+        {
+          "source": "TVA due a 3.7% (Incl. TS)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax configuration example"
+        }
+      ]
+    }
+  }
+]

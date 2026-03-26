@@ -1,0 +1,141 @@
+[
+  {
+    "section_id": "cash-rounding",
+    "heading": "Cash rounding",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Cash rounding",
+          "type": "Concept",
+          "mention": "Cash rounding",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Cash rounding",
+          "relation": "APPLIES_TO",
+          "target": "invoice",
+          "evidence": "round up or down the total amount of an invoice"
+        },
+        {
+          "source": "Cash rounding",
+          "relation": "COMPLIES_WITH",
+          "target": "Regulation",
+          "evidence": "some countries require their companies to round"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Cash rounding",
+          "evidence": "Title: Cash rounding"
+        },
+        {
+          "source": "Cash rounding",
+          "relation": "USES_METHOD",
+          "target": "Rounding Method",
+          "evidence": "round up or down the total amount of an invoice to the nearest five cents"
+        },
+        {
+          "source": "Cash rounding",
+          "relation": "SUPPORTS",
+          "target": "Cash Payment",
+          "evidence": "when the payment is made in cash"
+        },
+        {
+          "source": "Cash rounding",
+          "relation": "GOVERNED_BY",
+          "target": "Regulation",
+          "evidence": "some countries require their companies to round"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ':' delimiter: line 5 column 85 (char 279)",
+      "raw_response": "{\n  \"entities\": [\n    {\"name\": \"Odoo\", \"type\": \"Product\", \"mention\": \"Odoo\", \"confidence\": \"high\"},\n    {\"name\": \"Accounting\", \"type\": \"Module\", \"mention\": \"Accounting\", \"confidence\": \"medium\"},\n    {\"name\": \"Configuration\", \"type\": \"Module\", \"mention\": \"Configuration\", \"medium\"},\n    {\"name\": \"Settings\", \"type\": \"Sub-module\", \"mention\": \"Settings\", \"confidence\": \"medium\"},\n    {\"name\": \"Cash Rounding\", \"type\": \"Feature\", \"mention\": \"Cash Rounding\", \"confidence\": \"high\"},\n    {\"name\": \"Cash Roundings\", \"type\": \"DataObject\", \"mention\": \"Cash Roundings\", \"confidence\": \"high\"},\n    {\"name\": \"Rounding Precision\", \"type\": \"Field\", \"mention\": \"Rounding Precision\", \"confidence\": \"high\"},\n    {\"name\": \"Rounding Strategy\", \"type\": \"Concept\", \"mention\": \"Rounding Strategy\", \"confidence\": \"high\"},\n    {\"name\": \"Rounding Method\", \"type\": \"Concept\", \"mention\": \"Rounding Method\", \"confidence\": \"high\"},\n    {\"name\": \"Add a rounding line\", \"type\": \"Rounding Strategy\", \"mention\": \"Add a rounding line\", \"confidence\": \"high\"},\n    {\"name\": \"Modify tax amount\", \"type\": \"Rounding Strategy\", \"mention\": \"Modify tax amount\", \"confidence\": \"high\"}\n  ],\n  \"relations\": [\n    {\"source\": \"Accounting\", \"relation\": \"CONTAINS\", \"target\": \"Configuration\", \"evidence\": \"Go to Accounting --> Configuration\"},\n    {\"source\": \"Configuration\", \"relation\": \"CONTAINS\", \"target\": \"Settings\", \"evidence\": \"Configuration --> Settings\"},\n    {\"source\": \"Settings\", \"relation\": \"HAS_FEATURE\", \"target\": \"Cash Rounding\", \"evidence\": \"enable *Cash Rounding*\"},\n    {\"source\": \"Configuration\", \"relation\": \"CONTAINS\", \"target\": \"Cash Roundings\", \"evidence\": \"Configuration --> Cash Roundings\"},\n    {\"source\": \"Cash Roundings\", \"relation\": \"CONTAINS\", \"target\": \"Rounding Precision\", \"evidence\": \"Define your *Rounding Precision*\"},\n    {\"source\": \"Cash Roundings\", \"relation\": \"CONTAINS\", \"target\": \"Rounding Strategy\", \"evidence\": \"Define your *Rounding Strategy*\"},\n    {\"source\": \"Cash Roundings\", \"relation\": \"CONTAINS\", \"target\": \"Rounding Method\", \"evidence\": \"Define your *Rounding Method*\"},\n    {\"source\": \"Odoo\", \"relation\": \"SUPPORTS\", \"target\": \"Rounding Strategy\", \"evidence\": \"Odoo supports two rounding strategies\"},\n    {\"source\": \"Rounding Strategy\", \"relation\": \"IS_PART_OF\", \"target\": \"Add a rounding line\", \"evidence\": \"1. **Add a rounding line**\"},\n    {\"source\": \"Rounding Strategy\", \"relation\": \"IS_PART_OF\", \"target\": \"Modify tax amount\", \"evidence\": \"2. **Modify tax amount**\"}\n  ]\n}"
+    }
+  },
+  {
+    "section_id": "apply-roundings",
+    "heading": "Apply roundings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "draft invoice",
+          "type": "DataObject",
+          "mention": "draft invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Other Info",
+          "type": "DataObject",
+          "mention": "*Other Info*",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Information",
+          "type": "Module",
+          "mention": "*Accounting Information*",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash Rounding Method",
+          "type": "Standard",
+          "mention": "Cash Rounding Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash Rounding Method",
+          "type": "Field",
+          "mention": "*Cash Rounding Method*",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting Information",
+          "evidence": "Accounting Information section"
+        },
+        {
+          "source": "Accounting Information",
+          "relation": "CONTAINS",
+          "target": "Cash Rounding Method",
+          "evidence": "go to the *Accounting Information* section, and select the appropriate *Cash Rounding Method*"
+        },
+        {
+          "source": "Cash Rounding Method",
+          "relation": "APPLIES_TO",
+          "target": "draft invoice",
+          "evidence": "Apply roundings When editing a draft invoice, open the *Other Info* tab"
+        },
+        {
+          "source": "Cash Rounding Method",
+          "relation": "IS_PART_OF",
+          "target": "Other Info",
+          "evidence": "When editing a draft invoice, open the *Other Info* tab, go to the *Accounting Information* section"
+        }
+      ]
+    }
+  }
+]

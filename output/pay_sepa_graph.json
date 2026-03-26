@@ -1,0 +1,484 @@
+[
+  {
+    "section_id": "pay-with-sepa",
+    "heading": "Pay with SEPA",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA",
+          "type": "Concept",
+          "mention": "SEPA",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA Credit Transfer",
+          "type": "Standard",
+          "mention": "SEPA Credit Transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "pain.001.001.03",
+          "type": "Standard",
+          "mention": "'pain.001.001.03'",
+          "confidence": "high"
+        },
+        {
+          "name": "pain.001.001.03.ch.02",
+          "type": "Standard",
+          "mention": "'pain.001.001.03.ch.02'",
+          "confidence": "high"
+        },
+        {
+          "name": "pain.001.003.03",
+          "type": "Standard",
+          "mention": "'pain.001.003.03'",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA file",
+          "type": "DataObject",
+          "mention": "SEPA file",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment",
+          "type": "Workflow",
+          "mention": "paying a bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank reconciliation",
+          "type": "Workflow",
+          "mention": "bank reconciliation process",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA mandates",
+          "type": "DataObject",
+          "mention": "SEPA mandates",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Payment",
+          "evidence": "When paying a bill in Odoo..."
+        },
+        {
+          "source": "Payment",
+          "relation": "USES_METHOD",
+          "target": "SEPA mandates",
+          "evidence": "you can select SEPA mandates as a payment option."
+        },
+        {
+          "source": "Odoo",
+          "relation": "PRODUCES",
+          "target": "SEPA file",
+          "evidence": "you can generate the SEPA file..."
+        },
+        {
+          "source": "SEPA file",
+          "relation": "COMPLIES_WITH",
+          "target": "SEPA Credit Transfer",
+          "evidence": "the file follows the SEPA Credit Transfer..."
+        },
+        {
+          "source": "SEPA Credit Transfer",
+          "relation": "EQUIVALENT_TO",
+          "target": "pain.001.001.03",
+          "evidence": "the file follows the SEPA Credit Transfer **'pain.001.001.03'**..."
+        },
+        {
+          "source": "SEPA",
+          "relation": "COMPLIES_WITH",
+          "target": "pain.001.001.03",
+          "evidence": "By default, the file follows the SEPA Credit Transfer **'pain.001.001.03'** specifications."
+        },
+        {
+          "source": "SEPA",
+          "relation": "RELATED_TO",
+          "target": "Odoo",
+          "evidence": "SEPA allows you to send payment orders to your bank to automate bank wire transfers."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "activate-sepa-credit-transfer-(sct)",
+    "heading": "Activate SEPA Credit Transfer (SCT)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA Credit Transfer",
+          "type": "Module",
+          "mention": "SEPA Credit Transfer",
+          "confidence": "medium"
+        },
+        {
+          "name": "SEPA Direct Debit",
+          "type": "Module",
+          "mention": "SEPA Direct Debit",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor Payments: SEPA Credit Transfer (SCT)",
+          "type": "Setting",
+          "mention": "Vendor Payments: SEPA Credit Transfer (SCT)",
+          "confidence": "high"
+        },
+        {
+          "name": "company data",
+          "type": "DataObject",
+          "mention": "company data",
+          "confidence": "medium"
+        },
+        {
+          "name": "suppliers",
+          "type": "Actor",
+          "mention": "suppliers",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Vendor Payments: SEPA Credit Transfer (SCT)",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "Accounting --> Configuration --> Settings --> Vendor Payments: SEPA Credit Transfer (SCT)"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration --> Settings --> Vendor Payments: SEPA Credit Transfer (SCT)"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration --> Settings --> Vendor Payments: SEPA Credit Transfer (SCT)"
+        },
+        {
+          "source": "SEPA Credit Transfer",
+          "relation": "CONFIGURED_BY",
+          "target": "Vendor Payments: SEPA Credit Transfer (SCT)",
+          "evidence": "To pay suppliers with SEPA, you must activate the SEPA Credit Transfer setting."
+        },
+        {
+          "source": "SEPA Credit Transfer",
+          "relation": "CONTAINS",
+          "target": "SEPA Direct Debit",
+          "evidence": "SEPA Direct Debit and SEPA Credit Transfer modules"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "activate-sepa-payment-methods-on-banks",
+    "heading": "Activate SEPA payment methods on banks",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA payment methods",
+          "type": "Feature",
+          "mention": "SEPA payment methods",
+          "confidence": "high"
+        },
+        {
+          "name": "bank journal",
+          "type": "DataObject",
+          "mention": "bank journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Setting",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Outgoing Payments tab",
+          "type": "Feature",
+          "mention": "Outgoing Payments tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "SEPA Credit Transfer",
+          "type": "Payment Method",
+          "mention": "SEPA Credit Transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "IBAN account number",
+          "type": "Field",
+          "mention": "IBAN account number",
+          "confidence": "high"
+        },
+        {
+          "name": "BIC",
+          "type": "Field",
+          "mention": "BIC",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Entries tab",
+          "type": "Feature",
+          "mention": "Journal Entries tab",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "bank journal",
+          "evidence": "From the accounting dashboard, click on the drop-down menu (⋮) on your bank journal"
+        },
+        {
+          "source": "bank journal",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "click on the drop-down menu (⋮) on your bank journal and select Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Outgoing Payments tab",
+          "evidence": "Click the Outgoing Payments tab"
+        },
+        {
+          "source": "Outgoing Payments tab",
+          "relation": "CONTAINS",
+          "target": "SEPA Credit Transfer",
+          "evidence": "add SEPA Credit Transfer under Payment Method"
+        },
+        {
+          "source": "SEPA Credit Transfer",
+          "relation": "CONFIGURED_BY",
+          "target": "IBAN account number",
+          "evidence": "Make sure to specify the IBAN account number"
+        },
+        {
+          "source": "SEPA Credit Transfer",
+          "relation": "CONFIGURED_BY",
+          "target": "BIC",
+          "evidence": "and the BIC (bank identifier code)"
+        },
+        {
+          "source": "SEPA Credit Transfer",
+          "relation": "ENABLES",
+          "target": "SEPA payment methods",
+          "evidence": "Activate SEPA payment methods on banks"
+        },
+        {
+          "source": "SEPA payment methods",
+          "relation": "REQUIRES",
+          "target": "IBAN account number",
+          "evidence": "Make sure to specify the IBAN account number (domestic account numbers do not work with SEPA)"
+        },
+        {
+          "source": "SEPA payment methods",
+          "relation": "REQUIRES",
+          "target": "BIC",
+          "evidence": "and the BIC (bank identifier code)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "registering-payments",
+    "heading": "Registering payments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Sub-module",
+          "mention": "Vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "Payments",
+          "type": "Feature",
+          "mention": "Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Register Payment",
+          "type": "Action",
+          "mention": "Register Payment button",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA Credit Transfer",
+          "type": "Feature",
+          "mention": "SEPA Credit Transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA",
+          "type": "Concept",
+          "mention": "SEPA",
+          "confidence": "high"
+        },
+        {
+          "name": "IBAN",
+          "type": "Field",
+          "mention": "IBAN",
+          "confidence": "high"
+        },
+        {
+          "name": "BIC",
+          "type": "Field",
+          "mention": "BIC",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipient Bank Account",
+          "type": "Field",
+          "mention": "Recipient Bank Account field",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor Bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconciliation",
+          "type": "Workflow",
+          "mention": "reconciled",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payments",
+          "relation": "IS_PART_OF",
+          "target": "Vendors",
+          "evidence": "go to Accounting --> Vendors --> Payments"
+        },
+        {
+          "source": "Vendors",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Vendors"
+        },
+        {
+          "source": "Payments",
+          "relation": "SUPPORTS",
+          "target": "SEPA Credit Transfer",
+          "evidence": "select SEPA Credit Transfer as the Payment Method"
+        },
+        {
+          "source": "SEPA Credit Transfer",
+          "relation": "RELATED_TO",
+          "target": "SEPA",
+          "evidence": "register any vendor payments made with SEPA"
+        },
+        {
+          "source": "Recipient Bank Account",
+          "relation": "CONTAINS",
+          "target": "IBAN",
+          "evidence": "fill in the Recipient Bank Account field with the bank name, IBAN, and BIC"
+        },
+        {
+          "source": "Recipient Bank Account",
+          "relation": "CONTAINS",
+          "target": "BIC",
+          "evidence": "fill in the Recipient Bank Account field with the bank name, IBAN, and BIC"
+        },
+        {
+          "source": "Odoo",
+          "relation": "ENABLES",
+          "target": "Reconciliation",
+          "evidence": "payment is directly linked to the bill and will be automatically reconciled with it"
+        },
+        {
+          "source": "Register Payment",
+          "relation": "TRIGGERED_BY",
+          "target": "Vendor Bill",
+          "evidence": "pay vendor bills from the bill directly using the Register Payment button at the top of a vendor bill"
+        },
+        {
+          "source": "Register Payment",
+          "relation": "PRODUCES",
+          "target": "Payments",
+          "evidence": "pay vendor bills... the form is the same"
+        },
+        {
+          "source": "Odoo",
+          "relation": "PERFORMED_BY",
+          "target": "Reconciliation",
+          "evidence": "will be automatically reconciled"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GENERATES",
+          "target": "Payments",
+          "evidence": "automatically suggest you the bank account"
+        }
+      ]
+    }
+  }
+]

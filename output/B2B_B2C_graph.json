@@ -1,0 +1,788 @@
+[
+  {
+    "section_id": "b2b-(tax-excluded)-and-b2c-(tax-included)-pricing",
+    "heading": "B2B (tax excluded) and B2C (tax included) pricing",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "Module",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "eCommerce",
+          "type": "Module",
+          "mention": "eCommerce",
+          "confidence": "medium"
+        },
+        {
+          "name": "prices",
+          "type": "Field",
+          "mention": "prices",
+          "confidence": "medium"
+        },
+        {
+          "name": "taxes included",
+          "type": "Concept",
+          "mention": "taxes included",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes excluded",
+          "type": "Concept",
+          "mention": "taxes excluded",
+          "confidence": "high"
+        },
+        {
+          "name": "B2B",
+          "type": "Concept",
+          "mention": "B2B",
+          "confidence": "medium"
+        },
+        {
+          "name": "B2C",
+          "type": "Concept",
+          "mention": "B2C",
+          "confidence": "medium"
+        },
+        {
+          "name": "consumers",
+          "type": "Actor",
+          "mention": "consumers",
+          "confidence": "medium"
+        },
+        {
+          "name": "companies",
+          "type": "Actor",
+          "mention": "companies",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "tax",
+          "confidence": "high"
+        },
+        {
+          "name": "revenue",
+          "type": "Concept",
+          "mention": "revenue",
+          "confidence": "low"
+        },
+        {
+          "name": "finance",
+          "type": "Module",
+          "mention": "finance",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "product",
+          "evidence": "register your prices on the product"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "sales order",
+          "evidence": "sales order"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "eCommerce",
+          "evidence": "Your eCommerce"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "product form",
+          "evidence": "on the product form"
+        },
+        {
+          "source": "taxes included",
+          "relation": "RELATED_TO",
+          "target": "B2C",
+          "evidence": "When working with consumers, prices are usually expressed with taxes included"
+        },
+        {
+          "source": "taxes excluded",
+          "relation": "RELATED_TO",
+          "target": "B2B",
+          "evidence": "when you work in a B2B environment, companies usually negotiate prices with taxes excluded"
+        },
+        {
+          "source": "product",
+          "relation": "HAS_FEATURE",
+          "target": "prices",
+          "evidence": "register your prices on the product"
+        },
+        {
+          "source": "prices",
+          "relation": "APPLIES_TO",
+          "target": "product",
+          "evidence": "register your prices on the product"
+        },
+        {
+          "source": "consumers",
+          "relation": "PERFORMED_BY",
+          "target": "taxes included",
+          "evidence": "When working with consumers, prices are usually expressed with taxes included"
+        },
+        {
+          "source": "companies",
+          "relation": "PERFORMED_BY",
+          "target": "taxes excluded",
+          "evidence": "when you work in a B2B environment, companies usually negotiate prices with taxes excluded"
+        },
+        {
+          "source": "tax",
+          "relation": "RELATED_TO",
+          "target": "taxes included",
+          "evidence": "taxes included"
+        },
+        {
+          "source": "tax",
+          "relation": "RELATED_TO",
+          "target": "taxes excluded",
+          "evidence": "taxes excluded"
+        },
+        {
+          "source": "revenue",
+          "relation": "RELATED_TO",
+          "target": "finance",
+          "evidence": "In terms of finance, you have no more revenues"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "prices",
+          "evidence": "register your prices on the product form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "introduction",
+    "heading": "Introduction",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "high"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "tax",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        },
+        {
+          "name": "pricelist",
+          "type": "DataObject",
+          "mention": "pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "fiscal position",
+          "type": "DataObject",
+          "mention": "fiscal position",
+          "confidence": "high"
+        },
+        {
+          "name": "price",
+          "type": "Field",
+          "mention": "default price",
+          "confidence": "medium"
+        },
+        {
+          "name": "product default sale price",
+          "type": "Field",
+          "mention": "product default sale price",
+          "confidence": "medium"
+        },
+        {
+          "name": "shops",
+          "type": "Actor",
+          "mention": "shops",
+          "confidence": "low"
+        },
+        {
+          "name": "eCommerce website",
+          "type": "Actor",
+          "mention": "eCommerce website",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "tax",
+          "evidence": "on the default tax related to the product"
+        },
+        {
+          "source": "pricelist",
+          "relation": "RELATED_TO",
+          "target": "fiscal position",
+          "evidence": "assign both the pricelist and the fiscal position to customers"
+        },
+        {
+          "source": "customer",
+          "relation": "RELATED_TO",
+          "target": "pricelist",
+          "evidence": "create a pricelist... for specific customers"
+        },
+        {
+          "source": "customer",
+          "relation": "RELATED_TO",
+          "target": "fiscal position",
+          "evidence": "assign both the pricelist and the fiscal position to customers"
+        },
+        {
+          "source": "fiscal position",
+          "relation": "CONTAINS",
+          "target": "tax",
+          "evidence": "create a fiscal position that switches the tax excluded to a tax included"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "price",
+          "evidence": "store the default price **tax excluded** on the product form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "setting-your-products",
+    "heading": "Setting your products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting application",
+          "type": "Module",
+          "mention": "Accounting application",
+          "confidence": "high"
+        },
+        {
+          "name": "Sale application",
+          "type": "Module",
+          "mention": "Sale application",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "menu Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Default Sale Tax",
+          "type": "Setting",
+          "mention": "Default Sale Tax",
+          "confidence": "high"
+        },
+        {
+          "name": "B2C pricelist",
+          "type": "DataObject",
+          "mention": "B2C pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "pricelist feature",
+          "type": "Feature",
+          "mention": "pricelist feature",
+          "confidence": "high"
+        },
+        {
+          "name": "different prices per customer segment",
+          "type": "Setting",
+          "mention": "different prices per customer segment",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricelists",
+          "type": "Module",
+          "mention": "Pricelists",
+          "confidence": "high"
+        },
+        {
+          "name": "default pricelist",
+          "type": "DataObject",
+          "mention": "default pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "B2B",
+          "type": "Concept",
+          "mention": "B2B",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax excluded",
+          "type": "Setting",
+          "mention": "tax excluded",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax not included in price",
+          "type": "Concept",
+          "mention": "tax not included in price",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting application",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings of the Accounting application"
+        },
+        {
+          "source": "Accounting application",
+          "relation": "HAS_REPORT",
+          "target": "Default Sale Tax",
+          "evidence": "check your Default Sale Tax from the menu Configuration --> Settings of the Accounting application"
+        },
+        {
+          "source": "Sale application",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings of the Sale application"
+        },
+        {
+          "source": "pricelist feature",
+          "relation": "ENABLES",
+          "target": "B2C pricelist",
+          "evidence": "Once done, you can create a B2C pricelist. You can activate the pricelist feature"
+        },
+        {
+          "source": "Sale application",
+          "relation": "CONTAINS",
+          "target": "different prices per customer segment",
+          "evidence": "Configuration --> Settings of the Sale application. Choose the option different prices per customer segment"
+        },
+        {
+          "source": "Pricelists",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "create a B2C pricelist from the menu Configuration --> Pricelists"
+        },
+        {
+          "source": "default pricelist",
+          "relation": "RELATED_TO",
+          "target": "B2B",
+          "evidence": "rename the default pricelist into B2B"
+        },
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Sales --> Products menu of the Sales application"
+        },
+        {
+          "source": "product",
+          "relation": "GENERATES",
+          "target": "tax",
+          "evidence": "create a product at 8.26€, with a tax of 21%"
+        },
+        {
+          "source": "tax",
+          "relation": "EQUIVALENT_TO",
+          "target": "tax not included in price",
+          "evidence": "tax of 21% (defined as tax not included in price)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "setting-the-b2c-fiscal-position",
+    "heading": "Setting the B2C fiscal position",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting application",
+          "type": "Module",
+          "mention": "From the accounting application",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal Positions",
+          "type": "Feature",
+          "mention": "Fiscal Positions",
+          "confidence": "high"
+        },
+        {
+          "name": "B2C fiscal position",
+          "type": "DataObject",
+          "mention": "B2C fiscal position",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT 21% (tax excluded of price)",
+          "type": "Standard",
+          "mention": "VAT 21% (tax excluded of price)",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT 21% (tax included in price)",
+          "type": "Standard",
+          "mention": "VAT 21% (tax included in price)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "accounting application",
+          "evidence": "From the accounting application"
+        },
+        {
+          "source": "accounting application",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Configuration --> Fiscal Positions"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Fiscal Positions",
+          "evidence": "Configuration --> Fiscal Positions"
+        },
+        {
+          "source": "Fiscal Positions",
+          "relation": "HAS_FEATURE",
+          "target": "B2C fiscal position",
+          "evidence": "create a B2C fiscal position"
+        },
+        {
+          "source": "B2C fiscal position",
+          "relation": "USES_METHOD",
+          "target": "VAT 21% (tax excluded of price)",
+          "evidence": "map the VAT 21% (tax excluded of price) with a VAT 21% (tax included in price)"
+        },
+        {
+          "source": "B2C fiscal position",
+          "relation": "USES_METHOD",
+          "target": "VAT 21% (tax included in price)",
+          "evidence": "map the VAT 21% (tax excluded of price) with a VAT 21% (tax included in price)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "test-by-creating-a-quotation",
+    "heading": "Test by creating a quotation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sale",
+          "type": "Product",
+          "mention": "Sale application",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quotations",
+          "type": "Module",
+          "mention": "Sales --> Quotations menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "create a quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "pricelist",
+          "type": "Setting",
+          "mention": "change the pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "B2C",
+          "type": "Concept",
+          "mention": "pricelist to B2C",
+          "confidence": "high"
+        },
+        {
+          "name": "fiscal position",
+          "type": "Setting",
+          "mention": "fiscal position to B2C",
+          "confidence": "high"
+        },
+        {
+          "name": "create quotation",
+          "type": "Action",
+          "mention": "create a quotation",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sale",
+          "relation": "HAS_REPORT",
+          "target": "Quotations",
+          "evidence": "Sales --> Quotations menu"
+        },
+        {
+          "source": "create quotation",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "create a quotation from the Sale application"
+        },
+        {
+          "source": "quotation",
+          "relation": "CONFIGURED_BY",
+          "target": "pricelist",
+          "evidence": "change the pricelist to B2C"
+        },
+        {
+          "source": "quotation",
+          "relation": "CONFIGURED_BY",
+          "target": "fiscal position",
+          "evidence": "change the fiscal position to B2C"
+        },
+        {
+          "source": "create quotation",
+          "relation": "PRODUCES",
+          "target": "quotation",
+          "evidence": "create a quotation"
+        },
+        {
+          "source": "Sale",
+          "relation": "CONTAINS",
+          "target": "create quotation",
+          "evidence": "create a quotation from the Sale application"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "avoid-changing-every-sale-order",
+    "heading": "Avoid changing every sale order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "contract",
+          "type": "Concept",
+          "mention": "contract",
+          "confidence": "low"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "pricelist",
+          "type": "Module",
+          "mention": "pricelist",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiscal position",
+          "type": "Module",
+          "mention": "fiscal position",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer form",
+          "type": "DataObject",
+          "mention": "customer form",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales & Purchases",
+          "type": "Module",
+          "mention": "Sales & Purchases",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting",
+          "type": "Module",
+          "mention": "accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "price",
+          "type": "Concept",
+          "mention": "price",
+          "confidence": "medium"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "pricelist",
+          "relation": "BELONGS_TO",
+          "target": "customer form",
+          "evidence": "The pricelist is in the Sales & Purchases tab of the customer form"
+        },
+        {
+          "source": "fiscal position",
+          "relation": "BELONGS_TO",
+          "target": "customer form",
+          "evidence": "the fiscal position is in the accounting tab"
+        },
+        {
+          "source": "customer form",
+          "relation": "CONTAINS",
+          "target": "Sales & Purchases",
+          "evidence": "The pricelist is in the Sales & Purchases tab of the customer form"
+        },
+        {
+          "source": "customer form",
+          "relation": "CONTAINS",
+          "target": "accounting",
+          "evidence": "the fiscal position is in the accounting tab"
+        },
+        {
+          "source": "pricelist",
+          "relation": "CONFIGURED_BY",
+          "target": "customer",
+          "evidence": "set the pricelist...on the customer form"
+        },
+        {
+          "source": "fiscal position",
+          "relation": "CONFIGURED_BY",
+          "target": "customer",
+          "evidence": "set the fiscal position...on the customer form"
+        },
+        {
+          "source": "Odoo",
+          "relation": "COMPLIES_WITH",
+          "target": "tax",
+          "evidence": "whether you negotiate tax included or tax excluded"
+        },
+        {
+          "source": "pricelist",
+          "relation": "RELATED_TO",
+          "target": "price",
+          "evidence": "a pricelist that is not included"
+        },
+        {
+          "source": "fiscal position",
+          "relation": "RELATED_TO",
+          "target": "price",
+          "evidence": "set a fiscal position with tax included in prices"
+        },
+        {
+          "source": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,567 @@
+[
+  {
+    "section_id": "badges",
+    "heading": "Badges",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "medium"
+        },
+        {
+          "name": "eLearning",
+          "type": "Module",
+          "mention": "eLearning",
+          "confidence": "high"
+        },
+        {
+          "name": "Users",
+          "type": "Actor",
+          "mention": "users of the database",
+          "confidence": "medium"
+        },
+        {
+          "name": "Database",
+          "type": "Concept",
+          "mention": "database",
+          "confidence": "low"
+        },
+        {
+          "name": "Badges",
+          "type": "Feature",
+          "mention": "Badges",
+          "confidence": "high"
+        },
+        {
+          "name": "Challenges",
+          "type": "Feature",
+          "mention": "challenges",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Managers",
+          "type": "Actor",
+          "mention": "managers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "CRM",
+          "relation": "CONTAINS",
+          "target": "Challenges",
+          "evidence": "challenges created in the CRM app"
+        },
+        {
+          "source": "Employees",
+          "relation": "PERFORMED_BY",
+          "target": "Badges",
+          "evidence": "employees can earn badges"
+        },
+        {
+          "source": "Managers",
+          "relation": "PERFORMED_BY",
+          "target": "Badges",
+          "evidence": "managers decide to award them"
+        },
+        {
+          "source": "Badges",
+          "relation": "REQUIRES",
+          "target": "Users",
+          "evidence": "Badges can only be awarded to users of the database"
+        },
+        {
+          "source": "Badges",
+          "relation": "REQUIRES",
+          "target": "eLearning",
+          "evidence": "Badges can only be awarded... if the eLearning app is installed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-available-badges",
+    "heading": "View available badges",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Badges",
+          "type": "Sub-module",
+          "mention": "Badges",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "default Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "Grant button",
+          "type": "Action",
+          "mention": "Grant button",
+          "confidence": "high"
+        },
+        {
+          "name": "Grant badge",
+          "type": "Action",
+          "mention": "grant_badge",
+          "confidence": "medium"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "badge's Name",
+          "confidence": "medium"
+        },
+        {
+          "name": "image",
+          "type": "Field",
+          "mention": "image",
+          "confidence": "medium"
+        },
+        {
+          "name": "description",
+          "type": "Field",
+          "mention": "badge description",
+          "confidence": "medium"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Badges",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "navigate to Employees app --> Configuration --> Badges"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Employees",
+          "evidence": "Employees app --> Configuration"
+        },
+        {
+          "source": "Employees",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo and reference to the Employees app"
+        },
+        {
+          "source": "Badges",
+          "relation": "HAS_REPORT",
+          "target": "Kanban view",
+          "evidence": "All badges appear in a default Kanban view"
+        },
+        {
+          "source": "Badges",
+          "relation": "CONTAINS",
+          "target": "Grant button",
+          "evidence": "Each badge has a Grant button"
+        },
+        {
+          "source": "Grant button",
+          "relation": "ENABLES",
+          "target": "Grant badge",
+          "evidence": "Grant button to award the badge <employees/grant_badge>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-badges",
+    "heading": "Create badges",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Badges",
+          "type": "DataObject",
+          "mention": "Badges",
+          "confidence": "medium"
+        },
+        {
+          "name": "Badges dashboard",
+          "type": "Feature",
+          "mention": "Badges dashboard",
+          "confidence": "low"
+        },
+        {
+          "name": "Configuration",
+          "type": "Feature",
+          "mention": "Configuration",
+          "confidence": "low"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "low"
+        },
+        {
+          "name": "CRM Gamification",
+          "type": "Concept",
+          "mention": "CRM Gamification",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Employees",
+          "evidence": "Badges can be created...from the Employees app"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "CRM",
+          "evidence": "Badges can be created...from the CRM app"
+        },
+        {
+          "source": "Employees",
+          "relation": "HAS_FEATURE",
+          "target": "Configuration",
+          "evidence": "Navigate to Employees app --> Configuration"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "Badges",
+          "evidence": "Configuration --> Badges"
+        },
+        {
+          "source": "Employees",
+          "relation": "HAS_FEATURE",
+          "target": "Badges dashboard",
+          "evidence": "Badges dashboard in the Employees app"
+        },
+        {
+          "source": "CRM",
+          "relation": "HAS_FEATURE",
+          "target": "Badges dashboard",
+          "evidence": "Badges dashboard in the CRM app"
+        },
+        {
+          "source": "Badges",
+          "relation": "IS_PART_OF",
+          "target": "Employees",
+          "evidence": "Badges...from the Employees app"
+        },
+        {
+          "source": "Badges",
+          "relation": "IS_PART_OF",
+          "target": "CRM",
+          "evidence": "Badges...from the CRM app"
+        },
+        {
+          "source": "CRM Gamification",
+          "relation": "SEE_ALSO",
+          "target": "CRM",
+          "evidence": "CRM Gamification <crm/create-rewards>"
+        },
+        {
+          "source": "Badges",
+          "relation": "SEE_ALSO",
+          "target": "CRM",
+          "evidence": "CRM Gamification <crm/create-rewards>"
+        },
+        {
+          "source": "Badges",
+          "relation": "PRODUCED_BY",
+          "target": "New button",
+          "evidence": "Fill out the badge form...click the New button"
+        },
+        {
+          "source": "New button",
+          "relation": "BELONGS_TO",
+          "target": "Employees",
+          "evidence": "New button in the Employees app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-employee-badges",
+    "heading": "View employee badges",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "employee record",
+          "type": "DataObject",
+          "mention": "employee record",
+          "confidence": "high"
+        },
+        {
+          "name": "Received Badges tab",
+          "type": "Feature",
+          "mention": "Received Badges tab",
+          "confidence": "high"
+        },
+        {
+          "name": "badge",
+          "type": "DataObject",
+          "mention": "badges",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings tab",
+          "type": "Module",
+          "mention": "Settings tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Related User field",
+          "type": "Field",
+          "mention": "Related User field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Badges tab",
+          "type": "Feature",
+          "mention": "Badges tab",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Received Badges tab",
+          "relation": "IS_PART_OF",
+          "target": "employee record",
+          "evidence": "Click on the Received Badges tab to view any awarded badges."
+        },
+        {
+          "source": "Badges tab",
+          "relation": "CONTAINS",
+          "target": "badge",
+          "evidence": "Once a user is populated in the Related User field, the Badges tab appears."
+        },
+        {
+          "source": "Badges tab",
+          "relation": "REQUIRES",
+          "target": "Related User field",
+          "evidence": "If this tab is not visible, it means there is no Related User in the Settings tab."
+        },
+        {
+          "source": "Badges tab",
+          "relation": "RELATED_TO",
+          "target": "Received Badges tab",
+          "evidence": "Once a user is populated in the Related User field, the Badges tab appears."
+        },
+        {
+          "source": "employee record",
+          "relation": "CONTAINS",
+          "target": "Settings tab",
+          "evidence": "If this tab is not visible, it means there is no Related User in the Settings tab."
+        },
+        {
+          "source": "employee record",
+          "type": "DataObject",
+          "target": "Employees",
+          "evidence": "open the Employees app, and click on an employee record."
+        },
+        {
+          "source": "Employees",
+          "type": "Module",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "grant-badges",
+    "heading": "Grant badges",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee record",
+          "type": "DataObject",
+          "mention": "employee record",
+          "confidence": "high"
+        },
+        {
+          "name": "Received Badges tab",
+          "type": "Module",
+          "mention": "Received Badges tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Grant a Badge",
+          "type": "Action",
+          "mention": "Grant a Badge button",
+          "confidence": "high"
+        },
+        {
+          "name": "Reward Employee",
+          "type": "Workflow",
+          "mention": "Reward Employee pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Good Job",
+          "type": "Feature",
+          "mention": "Good Job",
+          "confidence": "high"
+        },
+        {
+          "name": "Problem Solver",
+          "type": "Feature",
+          "mention": "Problem Solver",
+          "confidence": "high"
+        },
+        {
+          "name": "Brilliant",
+          "type": "Feature",
+          "mention": "Brilliant",
+          "confidence": "high"
+        },
+        {
+          "name": "Get Started",
+          "type": "Feature",
+          "mention": "Get Started",
+          "confidence": "high"
+        },
+        {
+          "name": "Power user",
+          "type": "Feature",
+          "mention": "Power user",
+          "confidence": "high"
+        },
+        {
+          "name": "Community Hero",
+          "type": "Feature",
+          "mention": "community Hero",
+          "confidence": "high"
+        },
+        {
+          "name": "Badges",
+          "type": "DataObject",
+          "mention": "badges",
+          "confidence": "high"
+        },
+        {
+          "name": "Badges tab",
+          "type": "Module",
+          "mention": "Badges tab",
+          "confidence": "high"
+        },
+        {
+          "name": "User",
+          "type": "Actor",
+          "mention": "Users",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Received Badges tab",
+          "relation": "IS_PART_OF",
+          "target": "Employee record",
+          "evidence": "open the employee record, and click into the Received Badges tab"
+        },
+        {
+          "source": "Grant a Badge",
+          "relation": "TRIGGERED_BY",
+          "target": "Reward Employee",
+          "evidence": "Click the Grant a Badge button to load a Reward Employee pop-up window"
+        },
+        {
+          "source": "Reward Employee",
+          "relation": "PRODUCES",
+          "target": "Badges",
+          "evidence": "Last, click the Reward Employee button, and the badge is awarded"
+        },
+        {
+          "source": "Badges tab",
+          "relation": "CONTAINS",
+          "target": "Badges",
+          "evidence": "the badge is awarded, and is visible in the Badges tab"
+        },
+        {
+          "source": "Reward Employee",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "Users cannot grant themselves badges."
+        }
+      ]
+    }
+  }
+]

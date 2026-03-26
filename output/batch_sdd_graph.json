@@ -1,0 +1,800 @@
+[
+  {
+    "section_id": "sepa-direct-debit-(sdd)-customer-payments",
+    "heading": "SEPA Direct Debit (SDD) customer payments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "SEPA Direct Debit",
+          "type": "Feature",
+          "mention": "SEPA Direct Debit",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA",
+          "type": "Concept",
+          "mention": "SEPA",
+          "confidence": "high"
+        },
+        {
+          "name": "Single Euro Payments Area",
+          "type": "Concept",
+          "mention": "SEPA (Single Euro Payments Area)",
+          "confidence": "high"
+        },
+        {
+          "name": "mandate",
+          "type": "DataObject",
+          "mention": "mandate",
+          "confidence": "high"
+        },
+        {
+          "name": "XML file",
+          "type": "DataObject",
+          "mention": "XML file",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank",
+          "type": "Actor",
+          "mention": "bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "European Union",
+          "type": "Actor",
+          "mention": "European Union",
+          "confidence": "medium"
+        },
+        {
+          "name": "SEPA countries",
+          "type": "Concept",
+          "mention": "SEPA countries",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SEPA Direct Debit",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "With SEPA Direct Debit (SDD), customers sign a mandate that authorizes you to collect future payments from their bank accounts. You can record customer mandates in Odoo"
+        },
+        {
+          "source": "SEPA Direct Debit",
+          "relation": "SUPPORTS",
+          "target": "SEPA",
+          "evidence": "SEPA (Single Euro Payments Area) is a payment-integration initiative of the European Union... With SEPA Direct Debit (SDD)"
+        },
+        {
+          "source": "SEPA Direct Debit",
+          "relation": "PRODUCES",
+          "target": "XML file",
+          "evidence": "You can record customer mandates in Odoo and generate XML files listing payments to be collected with the mandates"
+        },
+        {
+          "source": "SEPA Direct Debit",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "With SEPA Direct Debit (SDD), customers sign a mandate that authorizes you to collect future payments"
+        },
+        {
+          "source": "SEPA",
+          "relation": "GOVERNED_BY",
+          "target": "European Union",
+          "evidence": "SEPA (Single Euro Payments Area) is a payment-integration initiative of the European Union"
+        },
+        {
+          "source": "SEPA",
+          "relation": "CONTAINS",
+          "target": "SEPA countries",
+          "evidence": "SEPA is supported by all SEPA countries"
+        },
+        {
+          "source": "XML file",
+          "relation": "PERFORMED_BY",
+          "target": "bank",
+          "evidence": "Uploading these files to your bank instructs them to collect these payments from your customers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "creditor-identifier",
+    "heading": "Creditor identifier",
+    "product": "Odoo",
+    "graph": {
+      "error": "Extra data: line 1 column 2134 (char 2133)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product\",\"confidence\":\"high\"},{\"name\":\"Accounting\",\"type\":\"Module\",\"mention\":\"Accounting\",\"confidence\":\"high\"},{\"name\":\"Configuration\",\"type\":\"Module\",\"mention\":\"Configuration\",\"confidence\":\"high\"},{\"name\":\"Settings\",\"type\":\"Sub-module\",\"mention\":\"Settings\",\"confidence\":\"high\"},{\"name\":\"Customer Payments\",\"type\":\"Feature\",\"mention\":\"Customer Payments section\",\"confidence\":\"high\"},{\"name\":\"SEPA Direct Debit (SDD)\",\"type\":\"Feature\",\"mention\":\"SEPA Direct Debit (SDD)\",\"confidence\":\"high\"},{\"name\":\"Creditor Identifier\",\"type\":\"Field\",\"mention\":\"Creditor Identifier\",\"confidence\":\"high\"},{\"name\":\"company\",\"type\":\"Actor\",\"mention\":\"company\",\"confidence\":\"high\"},{\"name\":\"bank\",\"type\":\"Actor\",\"mention\":\"your bank\",\"confidence\":\"medium\"},{\"name\":\"authority\",\"type\":\"Actor\",\"mention\":\"the authority\",\"confidence\":\"medium\"},{\"name\":\"DE98ZZZ09999999999\",\"type\":\"Concept\",\"mention\":\"test creditor identifier\",\"confidence\":\"high\"}],\"relations\":[{\"source\":\"Accounting\",\"relation\":\"CONTAINS\",\"target\":\"Configuration\",\"evidence\":\"go to Accounting --> Configuration --> Settings\"},{\"source\":\"Configuration\",\"relation\":\"CONTAINS\",\"target\":\"Settings\",\"evidence\":\"Configuration --> Settings\"},{\"source\":\"Settings\",\"relation\":\"CONTAINS\",\"target\":\"Customer Payments\",\"evidence\":\"scroll to the Customer Payments section\"},{\"source\":\"Customer Payments\",\"relation\":\"HAS_FEATURE\",\"target\":\"SEPA Direct Debit (SDD)\",\"evidence\":\"enable SEPA Direct Debit (SDD)\"},{\"source\":\"SEPA Direct Debit (SDD)\",\"relation\":\"REQUIRES\",\"target\":\"Creditor Identifier\",\"evidence\":\"set the company's Creditor Identifier\"},{\"source\":\"company\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Creditor Identifier\",\"evidence\":\"set the company's Creditor Identifier\"},{\"source\":\"Creditor Identifier\",\"relation\":\"GOVERNED_BY\",\"target\":\"bank\",\"evidence\":\"The creditor identifier is provided by your bank\"},{\"source\":\"Creditor Identifier\",\"relation\":\"GOVERNED_BY\",\"target\":\"authority\",\"evidence\":\"or the authority responsible for delivering them\"},{\"source\":\"DE98ZZZ09999999999\",\"type\":\"test creditor identifier\",\"confidence\":\"high\"}]},{\"source\":\"Creditor Identifier\",\"relation\":\"RELATED_TO\",\"target\":\"DE98ZZZ09999999999\",\"evidence\":\"For testing purposes, you can use the test creditor identifier `DE98ZZZ09999999999`\"}]}"
+    }
+  },
+  {
+    "section_id": "pain-file-version",
+    "heading": "PAIN file version",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "PAIN.008.001.02",
+          "type": "Standard",
+          "mention": "PAIN.008.001.02",
+          "confidence": "high"
+        },
+        {
+          "name": "Updated 2023 (Pain 008.001.08)",
+          "type": "Standard",
+          "mention": "Updated 2023 (Pain 008.001.08)",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA Direct Debit Core Customer-to-PSP Implementation Guidelines",
+          "type": "Regulation",
+          "mention": "SEPA Direct Debit Core Customer-to-PSP Implementation Guidelines",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA-compliant XML files",
+          "type": "DataObject",
+          "mention": "SEPA-compliant XML files",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Journals",
+          "type": "Feature",
+          "mention": "Journals",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank journal",
+          "type": "Feature",
+          "mention": "Bank journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Incoming Payments tab",
+          "type": "Feature",
+          "mention": "Incoming Payments tab",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA Pain version field",
+          "type": "Setting",
+          "mention": "SEPA Pain version field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SEPA-compliant XML files",
+          "relation": "USES_METHOD",
+          "target": "PAIN.008.001.02",
+          "evidence": "By default, the SEPA-compliant XML files ... generated by Odoo use the PAIN.008.001.02 format."
+        },
+        {
+          "source": "SEPA-compliant XML files",
+          "relation": "GENERATES",
+          "target": "Odoo",
+          "evidence": "... the SEPA-compliant XML files ... generated by Odoo"
+        },
+        {
+          "source": "Bank journal",
+          "relation": "CONTAINS",
+          "target": "Incoming Payments tab",
+          "evidence": "... select the Bank journal. Then, in the Incoming Payments tab"
+        },
+        {
+          "source": "Incoming Payments tab",
+          "relation": "CONTAINS",
+          "target": "SEPA Pain version field",
+          "evidence": "... in the Incoming Payments tab, set the SEPA Pain version field"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration --> Journals"
+        },
+        {
+          "source": "Journals",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration --> Journals"
+        },
+        {
+          "source": "SEPA Pain version field",
+          "relation": "CONFIGURED_BY",
+          "target": "Updated 2023 (Pain 008.001.08)",
+          "evidence": "... set the SEPA Pain version field to Updated 2023 (Pain 008.001.08)"
+        },
+        {
+          "source": "SEPA Direct Debit Core Customer-to-PSP Implementation Guidelines",
+          "relation": "SEE_ALSO",
+          "target": "SEPA-compliant XML files",
+          "evidence": ".. seealso:: `SEPA Direct Debit Core Customer-to-PSP Implementation Guidelines`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sepa-direct-debit-mandates",
+    "heading": "SEPA Direct Debit Mandates",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA Direct Debit Mandate",
+          "type": "DataObject",
+          "mention": "SEPA Direct Debit Mandates",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SEPA Direct Debit Mandate",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: SEPA Direct Debit Mandates"
+        },
+        {
+          "source": "SEPA Direct Debit Mandate",
+          "relation": "CONTAINS",
+          "target": "Customer Name",
+          "evidence": "key information, such as the customer's name"
+        },
+        {
+          "source": "SEPA Direct Debit Mandate",
+          "relation": "CONTAINS",
+          "target": "IBAN",
+          "evidence": "key information, such as the customer's IBAN"
+        },
+        {
+          "source": "SEPA Direct Debit Mandate",
+          "relation": "CONTAINS",
+          "target": "Start Date",
+          "evidence": "the mandate's start date"
+        },
+        {
+          "source": "SEPA Direct Debit Mandate",
+          "relation": "CONTAINS",
+          "target": "End Date",
+          "evidence": "the mandate's end date"
+        },
+        {
+          "source": "SEPA Direct Debit Mandate",
+          "relation": "CONTAINS",
+          "target": "Unique Identifier",
+          "evidence": "the mandate's unique identifier"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "creating-mandates",
+    "heading": "Creating mandates",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Go to Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "--> Customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Direct Debit Mandates",
+          "type": "Sub-module",
+          "mention": "--> Direct Debit Mandates",
+          "confidence": "high"
+        },
+        {
+          "name": "mandate",
+          "type": "DataObject",
+          "mention": "Creating mandates",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "Click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Send & Print",
+          "type": "Action",
+          "mention": "Click Send & Print",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Click Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Mandate form",
+          "type": "Report",
+          "mention": "To print the mandate form",
+          "confidence": "high"
+        },
+        {
+          "name": "SDD Scheme",
+          "type": "Setting",
+          "mention": "The SDD Scheme depends",
+          "confidence": "high"
+        },
+        {
+          "name": "CORE",
+          "type": "Standard",
+          "mention": "Select CORE for B2C customers",
+          "confidence": "high"
+        },
+        {
+          "name": "B2B",
+          "type": "Standard",
+          "mention": "and B2B for B2B customers",
+          "confidence": "high"
+        },
+        {
+          "name": "IBAN",
+          "type": "Field",
+          "mention": "A valid IBAN must be defined",
+          "confidence": "high"
+        },
+        {
+          "name": "Account Number",
+          "type": "Field",
+          "mention": "in the Account Number field",
+          "confidence": "high"
+        },
+        {
+          "name": "bank journal",
+          "type": "DataObject",
+          "mention": "of the bank journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Active mandate",
+          "type": "DataObject",
+          "mention": "Once an  mandate is active",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "to email the mandate form to the customer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Direct Debit Mandates",
+          "relation": "IS_PART_OF",
+          "target": "Customers",
+          "evidence": "--> Customers --> Direct Debit Mandates"
+        },
+        {
+          "source": "Customers",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Go to Accounting --> Customers"
+        },
+        {
+          "source": "mandate",
+          "relation": "CONTAINED_BY",
+          "target": "Direct Debit Mandates",
+          "evidence": "Creating mandates"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click Validate"
+        },
+        {
+          "source": "Mandate form",
+          "relation": "GENERATED_BY",
+          "target": "mandate",
+          "evidence": "To print the mandate form"
+        },
+        {
+          "source": "SDD Scheme",
+          "relation": "CONTAINED_BY",
+          "target": "mandate",
+          "evidence": "The SDD Scheme depends"
+        },
+        {
+          "source": "mandate",
+          "relation": "USES_METHOD",
+          "target": "CORE",
+          "evidence": "Select CORE for B2C customers"
+        },
+        {
+          "source": "mandate",
+          "relation": "USES_METHOD",
+          "target": "B2B",
+          "evidence": "and B2B for B2B customers"
+        },
+        {
+          "source": "IBAN",
+          "relation": "BELONGS_TO",
+          "target": "Account Number",
+          "evidence": "A valid IBAN must be defined in the Account Number field"
+        },
+        {
+          "source": "Account Number",
+          "relation": "BELONGS_TO",
+          "target": "bank journal",
+          "evidence": "in the Account Number field of the bank journal"
+        },
+        {
+          "source": "mandate",
+          "relation": "REQUIRES",
+          "target": "IBAN",
+          "evidence": "A valid IBAN must be defined"
+        },
+        {
+          "source": "mandate",
+          "relation": "REQUIRES",
+          "target": "bank journal",
+          "evidence": "of the bank journal used to receive  payments"
+        },
+        {
+          "source": "mandate",
+          "relation": "ENABLES",
+          "target": "Active mandate",
+          "evidence": "Once an  mandate is active"
+        },
+        {
+          "source": "Customer",
+          "relation": "PERFORMED_BY",
+          "target": "mandate",
+          "evidence": "to email the mandate form to the customer for signature"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "closing-or-revoking-a-mandate",
+    "heading": "Closing or revoking a mandate",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "Customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Direct Debit Mandates",
+          "type": "Feature",
+          "mention": "Direct Debit Mandates",
+          "confidence": "high"
+        },
+        {
+          "name": "mandate",
+          "type": "DataObject",
+          "mention": "mandate",
+          "confidence": "high"
+        },
+        {
+          "name": "End Date",
+          "type": "Field",
+          "mention": "End Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Close",
+          "type": "Action",
+          "mention": "Close",
+          "confidence": "high"
+        },
+        {
+          "name": "Revoke",
+          "type": "Action",
+          "mention": "Revoke",
+          "confidence": "high"
+        },
+        {
+          "name": "SDD XML file",
+          "type": "Report",
+          "mention": "SDD XML file",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Customers",
+          "evidence": "Accounting --> Customers"
+        },
+        {
+          "source": "Customers",
+          "relation": "CONTAINS",
+          "target": "Direct Debit Mandates",
+          "evidence": "Customers --> Direct Debit Mandates"
+        },
+        {
+          "source": "Direct Debit Mandates",
+          "relation": "CONTAINS",
+          "target": "mandate",
+          "evidence": "Direct Debit Mandates list"
+        },
+        {
+          "source": "mandate",
+          "relation": "IS_PART_OF",
+          "target": "Direct Debit Mandates",
+          "evidence": "To close or revoke a mandate, go to...Direct Debit Mandates, select the relevant mandate"
+        },
+        {
+          "source": "mandate",
+          "relation": "HAS_FEATURE",
+          "target": "End Date",
+          "evidence": "mandates are closed automatically after their End Date"
+        },
+        {
+          "source": "mandate",
+          "relation": "HAS_FEATURE",
+          "target": "Close",
+          "evidence": "click Close"
+        },
+        {
+          "source": "mandate",
+          "relation": "HAS_FEATURE",
+          "target": "Revoke",
+          "evidence": "click Revoke"
+        },
+        {
+          "source": "SDD XML file",
+          "relation": "GENERATES",
+          "target": "payments",
+          "evidence": "payments that have already been registered are still included in the next SDD XML file"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "processing-|sdd|-payments",
+    "heading": "Processing |sdd| payments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "XML file",
+          "type": "DataObject",
+          "mention": "XML file",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch Payment",
+          "type": "DataObject",
+          "mention": "batch payment",
+          "confidence": "high"
+        },
+        {
+          "name": "SDD CORE",
+          "type": "Standard",
+          "mention": "SDD CORE",
+          "confidence": "medium"
+        },
+        {
+          "name": "SDD B2B",
+          "type": "Standard",
+          "mention": "SDD B2B",
+          "confidence": "medium"
+        },
+        {
+          "name": "SEPA Direct Debit",
+          "type": "Integration",
+          "mention": "SEPA Direct Debit for online payments",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA guidelines",
+          "type": "Regulation",
+          "mention": "SEPA guidelines",
+          "confidence": "high"
+        },
+        {
+          "name": "Direct Debit Mandate",
+          "type": "DataObject",
+          "mention": "Direct Debit Mandate",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank Reconciliation",
+          "type": "Workflow",
+          "mention": "reconcile the transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "Collections and Invoices Paid smart button",
+          "type": "Feature",
+          "mention": "Collections and Invoices Paid smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Re-generate Export file",
+          "type": "Action",
+          "mention": "Re-generate Export file",
+          "confidence": "high"
+        },
+        {
+          "name": "Online banking interface",
+          "type": "Actor",
+          "mention": "online banking interface",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank",
+          "type": "Actor",
+          "mention": "bank",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Batch Payment",
+          "relation": "CONTAINS",
+          "target": "XML file",
+          "evidence": "The XML file is generated automatically"
+        },
+        {
+          "source": "SDD CORE",
+          "relation": "IS_PART_OF",
+          "target": "SEPA Direct Debit",
+          "evidence": "SDD scheme"
+        },
+        {
+          "source": "SDD B2B",
+          "relation": "IS_PART_OF",
+          "target": "SEPA Direct Debit",
+          "evidence": "SDD scheme"
+        },
+        {
+          "source": "SEPA Direct Debit",
+          "relation": "COMPLIES_WITH",
+          "target": "SEPA guidelines",
+          "evidence": "SEPA Direct Debit for online payments"
+        },
+        {
+          "source": "Direct Debit Mandate",
+          "relation": "HAS_FEATURE",
+          "target": "Collections and Invoices Paid smart button",
+          "evidence": "Click the Collections and Invoices Paid smart button on the Direct Debit Mandate form"
+        },
+        {
+          "source": "Re-generate Export file",
+          "relation": "PRODUCES",
+          "target": "XML file",
+          "evidence": "Click Re-generate Export file to regenerate the XML file"
+        },
+        {
+          "source": "Batch Payment",
+          "relation": "RELATED_TO",
+          "target": "Bank Reconciliation",
+          "evidence": "reconcile the transaction with the batch payment"
+        },
+        {
+          "source": "XML file",
+          "relation": "PRODUCED_BY",
+          "target": "Batch Payment",
+          "evidence": "XML file is generated automatically"
+        },
+        {
+          "source": "Batch Payment",
+          "relation": "ENABLES",
+          "target": "Bank Reconciliation",
+          "evidence": "reconcile the transaction with the batch payment"
+        },
+        {
+          "source": "Online banking interface",
+          "relation": "PERFORMED_BY",
+          "target": "Upload XML file",
+          "evidence": "upload it to your online banking interface"
+        },
+        {
+          "source": "Batch Payment",
+          "relation": "USES_METHOD",
+          "target": "SDD CORE",
+          "evidence": "filter payments by SDD scheme using the SDD CORE"
+        },
+        {
+          "source": "Batch Payment",
+          "relation": "USES_METHOD",
+          "target": "SDD B2B",
+          "evidence": "filter payments by SDD scheme using the SDD B2B"
+        },
+        {
+          "source": "Batch Payment",
+          "relation": "RELATED_TO",
+          "target": "SEPA Direct Debit",
+          "evidence": "SEPA Direct Debit for online payments"
+        },
+        {
+          "source": "Batch Payment",
+          "relation": "SEE_ALSO",
+          "target": "SEPA guidelines",
+          "evidence": "SEPA guidelines"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "|sdd|-rejections",
+    "heading": "|sdd| rejections",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ',' delimiter: line 1 column 2040 (char 2039)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"SDD rejections\",\"type\":\"Feature\",\"mention\":\"|sdd| rejections\",\"confidence\":\"high\"},{\"name\":\"Customer\",\"type\":\"Actor\",\"mention\":\"customer\",\"confidence\":\"medium\"},{\"name\":\"Recipient\",\"type\":\"Actor\",\"mention\":\"recipient\",\"confidence\":\"medium\"},{\"name\":\"Bank\",\"type\":\"Actor\",\"mention\":\"bank\",\"confidence\":\"medium\"},{\"name\":\"Outstanding accounts\",\"type\":\"Setting\",\"mention\":\"outstanding accounts\",\"confidence\":\"high\"},{\"name\":\"Payment\",\"type\":\"DataObject\",\"mention\":\"payment\",\"confidence\":\"high\"},{\"name\":\"Invoice\",\"type\":\"DataObject\",\"mention\":\"invoice\",\"confidence\":\"high\"},{\"name\":\"Bank transaction\",\"type\":\"DataObject\",\"mention\":\"bank transaction\",\"confidence\":\"high\"},{\"name\":\"Journal entry\",\"type\":\"DataObject\",\"mention\":\"journal entry\",\"confidence\":\"high\"},{\"name\":\"SDD payment method\",\"type\":\"Module\",\"mention\":\"payment method\",\"confidence\":\"medium\"},{\"name\":\"Reconcile\",\"type\":\"Workflow\",\"mention\":\"reconcile\",\"confidence\":\"high\"},{\"name\":\"Reconciliation view\",\"type\":\"Feature\",\"mention\":\"reconciliation view\",\"confidence\":\"medium\"},{\"name\":\"Reset to draft\",\"type\":\"Action\",\"mention\":\"Reset to draft\",\"confidence\":\"high\"},{\"name\":\"Cancel\",\"type\":\"Action\",\"mention\":\"Cancel\",\"confidence\":\"high\"},{\"name\":\"Unreconcile\",\"type\":\"Action\",\"mention\":\"Unreconcile\",\"confidence\":\"high\"},{\"name\":\"View\",\"type\":\"Action\",\"mention\":\"View\",\"confidence\":\"high\"},{\"name\":\"Reverse entry\",\"type\":\"Action\",\"mention\":\"Reverse entry\",\"confidence\":\"high\"},{\"name\":\"Reverse\",\"type\":\"Action\",\"mention\":\"Reverse\",\"confidence\":\"high\"},{\"name\":\"Payments smart button\",\"type\":\"Feature\",\"mention\":\"Payments smart button\",\"confidence\":\"high\"},{\"name\":\"Journal entry smart button\",\"type\":\"Feature\",\"mention\":\"Journal entry smart button\",\"confidence\":\"high\"},{\"name\":\"Information icon\",\"type\":\"Feature\",\"mention\":\"fa-info-circle (information) icon\",\"confidence\":\"high\"},{\"name\":\"Invoice Lines tab\",\"type\":\"Feature\",\"mention\":\"Invoice Lines tab\",\"confidence\":\"high\"}]],\"relations\":[{\"source\":\"SDD rejections\",\"relation\":\"SUPPORTS\",\"target\":\"SDD payment method\",\"evidence\":\"rejections are handled differently depending on whether outstanding accounts are configured or not for the payment method.\"},{\"source\":\"SDD payment method\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Outstanding accounts\",\"evidence\":\"If no outstanding accounts are configured for the payment method\"},{\"source\":\"Invoice\",\"relation\":\"HAS_FEATURE\",\"target\":\"Payments smart button\",\"evidence\":\"Click the Payments smart button to access the payment associated with the invoice.\"},{\"source\":\"Invoice\",\"relation\":\"HAS_FEATURE\",\"target\":\"Invoice Lines tab\",\"evidence\":\"click the fa-info-circle (information) icon in the footer of the Invoice Lines tab\"},{\"source\":\"Invoice Lines tab\",\"relation\":\"HAS_FEATURE\",\"target\":\"Information icon\",\"evidence\":\"click the fa-info-circle (information) icon in the footer of the Invoice Lines tab\"},{\"source\":\"Payment\",\"relation\":\"BELONGS_TO\",\"target\":\"Invoice\",\"evidence\":\"Access the invoice linked to the rejected payment.\"},{\"source\":\"Payment\",\"relation\":\"HAS_FEATURE\",\"target\":\"Journal entry smart button\",\"evidence\":\"Click the Journal entry smart button to access the related journal entry.\"},{\"source\":\"Journal entry\",\"relation\":\"IS_PART_OF\",\"target\":\"Payment\",\"evidence\":\"click View to access the payment associated with the invoice. Click the Journal entry smart button to access the related journal entry.\"},{\"source\":\"Reverse entry\",\"relation\":\"GENERATES\",\"target\":\"Journal entry\",\"evidence\":\"A reversal entry is created\"},{\"source\":\"Reset to draft\",\"relation\":\"TRIGGERED_BY\",\"target\":\"Cancel\",\"evidence\":\"Click Reset to draft, then Cancel.\"},{\"source\":\"Information icon\",\"relation\":\"ENABLES\",\"target\":\"Unreconcile\",\"evidence\":\"click the fa-info-circle (information) icon... then click Unreconcile.\"},{\"source\":\"Information icon\",\"relation\":\"ENABLES\",\"target\":\"View\",\"evidence\":\"click the fa-info-circle (information) icon... then click View\"},{\"source\":\"Reconcile\",\"relation\":\"PERFORMED_BY\",\"target\":\"Actor\",\"evidence\":\"you must cancel and unreconcile the payment... and reconcile the transaction\"},{\"source\":\"Bank transaction\",\"relation\":\"IS_PART_OF\",\"target\":\"Bank\",\"evidence\":\"the bank automatically withdraws the amount\"},{\"source\":\"SDD rejections\",\"relation\":\"TRIGGERED_BY\",\"target\":\"Bank\",\"evidence\":\"if an payment is later rejected, the bank automatically withdraws the amount\"},{\"source\":\"SDD rejections\",\"relation\":\"PRODUCES\",\"target\":\"Bank transaction\",\"evidence\":\"a new transaction for a negative amount is created to reflect the rejection.\"}]}"
+    }
+  }
+]

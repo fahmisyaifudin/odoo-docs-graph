@@ -1,0 +1,1709 @@
+[
+  {
+    "section_id": "adding-vehicles",
+    "heading": "Adding vehicles",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicles dashboard",
+          "type": "Sub-module",
+          "mention": "Vehicles dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban stage",
+          "type": "Concept",
+          "mention": "Kanban stage",
+          "confidence": "high"
+        },
+        {
+          "name": "New Request",
+          "type": "Concept",
+          "mention": "New Request",
+          "confidence": "high"
+        },
+        {
+          "name": "To Order",
+          "type": "Concept",
+          "mention": "To Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Registered",
+          "type": "Concept",
+          "mention": "Registered",
+          "confidence": "high"
+        },
+        {
+          "name": "Downgraded",
+          "type": "Concept",
+          "mention": "Downgraded",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Fleet",
+          "evidence": "Odoo's **Fleet** app"
+        },
+        {
+          "source": "Fleet",
+          "relation": "CONTAINS",
+          "target": "Vehicles dashboard",
+          "evidence": "all vehicles are organized within the Vehicles dashboard"
+        },
+        {
+          "source": "Vehicles dashboard",
+          "relation": "SUPPORTS",
+          "target": "Kanban stage",
+          "evidence": "Each vehicle is displayed in its corresponding Kanban stage"
+        },
+        {
+          "source": "Kanban stage",
+          "relation": "CONTAINS",
+          "target": "New Request",
+          "evidence": "The default stages are New Request..."
+        },
+        {
+          "source": "Kanban stage",
+          "relation": "CONTAINS",
+          "target": "To Order",
+          "evidence": "The default stages are ... To Order..."
+        },
+        {
+          "source": "Kanban stage",
+          "relation": "CONTAINS",
+          "target": "Registered",
+          "evidence": "The default stages are ... Registered..."
+        },
+        {
+          "source": "Kanban stage",
+          "relation": "CONTAINS",
+          "target": "Downgraded",
+          "evidence": "The default stages are ... and Downgraded."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "settings",
+    "heading": "Settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "End Date Contract Alert",
+          "type": "Feature",
+          "mention": "End Date Contract Alert",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "medium"
+        },
+        {
+          "name": "Responsible",
+          "type": "Actor",
+          "mention": "Responsible",
+          "confidence": "medium"
+        },
+        {
+          "name": "New Vehicle Request",
+          "type": "Feature",
+          "mention": "New Vehicle Request",
+          "confidence": "high"
+        },
+        {
+          "name": "Belgian payroll localization",
+          "type": "Concept",
+          "mention": "Belgian payroll localization",
+          "confidence": "medium"
+        },
+        {
+          "name": "Salary configurator",
+          "type": "Feature",
+          "mention": "salary configurator",
+          "confidence": "low"
+        },
+        {
+          "name": "Company car",
+          "type": "Concept",
+          "mention": "company car",
+          "confidence": "low"
+        },
+        {
+          "name": "Configuration",
+          "type": "Setting",
+          "mention": "Configuration",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "End Date Contract Alert",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "review two **Fleet** settings that directly affect"
+        },
+        {
+          "source": "End Date Contract Alert",
+          "relation": "BELONGS_TO",
+          "target": "Fleet",
+          "evidence": "<fleet/end-contract>"
+        },
+        {
+          "source": "End Date Contract Alert",
+          "relation": "TRIGGERED_BY",
+          "target": "Contract",
+          "evidence": "Emails the contract's *Responsible* person"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "review two **Fleet** settings that directly affect"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "BELONGS_TO",
+          "target": "Fleet",
+          "evidence": "<fleet/request>"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "APPLIES_TO",
+          "target": "Belgian payroll localization",
+          "evidence": "Only for the Belgian payroll localization"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "GOVERNED_BY",
+          "target": "Settings",
+          "evidence": "Blocks employees...once the available vehicles already exceed the defined limit"
+        },
+        {
+          "source": "Fleet",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "To access the settings menu, go to Fleet app --> Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Fleet",
+          "evidence": "Fleet app --> Configuration --> Settings"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "end-date-contract-alert",
+    "heading": "End Date Contract Alert",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "End Date Contract Alert",
+          "type": "Field",
+          "mention": "End Date Contract Alert field",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle contract",
+          "type": "DataObject",
+          "mention": "vehicle contract",
+          "confidence": "medium"
+        },
+        {
+          "name": "responsible parties",
+          "type": "Actor",
+          "mention": "responsible parties",
+          "confidence": "medium"
+        },
+        {
+          "name": "email",
+          "type": "Action",
+          "mention": "email",
+          "confidence": "low"
+        },
+        {
+          "name": "fleet/responsible",
+          "type": "Concept",
+          "mention": "responsible",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "End Date Contract Alert",
+          "relation": "CONFIGURED_BY",
+          "target": "responsible parties",
+          "evidence": "The responsible parties receive an email informed by this field"
+        },
+        {
+          "source": "End Date Contract Alert",
+          "relation": "APPLIES_TO",
+          "target": "vehicle contract",
+          "evidence": "alert should be sent regarding a vehicle contract"
+        },
+        {
+          "source": "responsible parties",
+          "relation": "PERFORMED_BY",
+          "target": "email",
+          "evidence": "responsible parties receive an email"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "responsible-parties",
+    "heading": "Responsible parties",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet app",
+          "confidence": "high"
+        },
+        {
+          "name": "Contracts",
+          "type": "Module",
+          "mention": "Contracts",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Information",
+          "type": "Feature",
+          "mention": "Contract Information section",
+          "confidence": "high"
+        },
+        {
+          "name": "Information",
+          "type": "Feature",
+          "mention": "Information section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Responsible",
+          "type": "Field",
+          "mention": "Responsible",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet --> Fleet",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle",
+          "type": "DataObject",
+          "mention": "vehicle",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle form",
+          "type": "Feature",
+          "mention": "vehicle form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contracts smart button",
+          "type": "Feature",
+          "mention": "fa-book Contracts smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "expiration alerts",
+          "type": "Feature",
+          "mention": "expiration alerts",
+          "confidence": "medium"
+        },
+        {
+          "name": "responsible person",
+          "type": "Actor",
+          "mention": "Responsible person",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fleet",
+          "relation": "CONTAINS",
+          "target": "Contracts",
+          "evidence": "navigate to Fleet app --> Fleet --> Contracts"
+        },
+        {
+          "source": "Fleet",
+          "relation": "CONTAINS",
+          "target": "Fleet",
+          "evidence": "navigate to Fleet app --> Fleet --> Fleet"
+        },
+        {
+          "source": "Contracts",
+          "relation": "BELONGS_TO",
+          "target": "Fleet",
+          "evidence": "Contracts appear in the Fleet app"
+        },
+        {
+          "source": "Contract",
+          "relation": "IS_PART_OF",
+          "target": "Contracts",
+          "evidence": "contract from a list of all contracts"
+        },
+        {
+          "source": "Contract",
+          "relation": "HAS_FEATURE",
+          "target": "Contract Information",
+          "evidence": "under the Contract Information section of the contract"
+        },
+        {
+          "source": "Contract",
+          "relation": "HAS_FEATURE",
+          "target": "Information",
+          "evidence": "In the Information section of the contract"
+        },
+        {
+          "source": "Contract Information",
+          "relation": "CONTAINS",
+          "target": "Responsible",
+          "evidence": "listed as Responsible under the Contract Information section"
+        },
+        {
+          "source": "Information",
+          "relation": "CONTAINS",
+          "target": "Responsible",
+          "evidence": "look under Responsible to see"
+        },
+        {
+          "source": "vehicle",
+          "relation": "IS_PART_OF",
+          "target": "Fleet",
+          "evidence": "On the vehicle form in Fleet"
+        },
+        {
+          "source": "vehicle",
+          "relation": "HAS_FEATURE",
+          "target": "Contracts smart button",
+          "evidence": "click the fa-book Contracts smart button at the top"
+        },
+        {
+          "source": "Contracts smart button",
+          "relation": "ENABLES",
+          "target": "Contract",
+          "evidence": "Only contracts associated with the vehicle appear"
+        },
+        {
+          "source": "Contract",
+          "relation": "CONTAINS",
+          "target": "Responsible",
+          "evidence": "The Responsible person is listed on the contract"
+        },
+        {
+          "source": "Responsible",
+          "relation": "PERFORMED_BY",
+          "target": "responsible person",
+          "evidence": "receives the alert"
+        },
+        {
+          "source": "expiration alerts",
+          "relation": "PERFORMED_BY",
+          "target": "responsible person",
+          "evidence": "receives expiration alerts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "new-vehicle-request",
+    "heading": "New vehicle request",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "New Vehicle Request",
+          "type": "Module",
+          "mention": "Title: New vehicle request",
+          "confidence": "medium"
+        },
+        {
+          "name": "Belgian-Payroll-Fleet",
+          "type": "Module",
+          "mention": "Belgian-Payroll-Fleet module",
+          "confidence": "medium"
+        },
+        {
+          "name": "salary-configurator",
+          "type": "Workflow",
+          "mention": "salary-configurator flow",
+          "confidence": "medium"
+        },
+        {
+          "name": "maximum fleet size",
+          "type": "Setting",
+          "mention": "maximum fleet size",
+          "confidence": "medium"
+        },
+        {
+          "name": "vehicle",
+          "type": "DataObject",
+          "mention": "vehicle",
+          "confidence": "medium"
+        },
+        {
+          "name": "available vehicles",
+          "type": "Concept",
+          "mention": "available vehicles",
+          "confidence": "medium"
+        },
+        {
+          "name": "request a new company car",
+          "type": "Action",
+          "mention": "request a new company car",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Belgian localization",
+          "type": "Concept",
+          "mention": "Belgian localization",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Belgian-Payroll-Fleet",
+          "relation": "IS_PART_OF",
+          "target": "Belgian localization",
+          "evidence": "Belgian localization"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "CONTAINS",
+          "target": "salary-configurator",
+          "evidence": "salary-configurator flow"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "CONTAINS",
+          "target": "maximum fleet size",
+          "evidence": "maximum fleet size"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "SUPPORTS",
+          "target": "vehicle",
+          "evidence": "vehicle"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "SUPPORTS",
+          "target": "available vehicles",
+          "evidence": "available vehicles"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "SUPPORTS",
+          "target": "request a new company car",
+          "evidence": "request a new company car"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "SUPPORTS",
+          "target": "employee",
+          "evidence": "employees"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "REQUIRES",
+          "target": "Belgian-Payroll-Fleet",
+          "evidence": "only appears if the Belgian-Payroll-Fleet module is installed"
+        },
+        {
+          "source": "maximum fleet size",
+          "relation": "ENABLES",
+          "target": "request a new company car",
+          "evidence": "When the total number... equal to or below this limit, employees can request a new company car."
+        },
+        {
+          "source": "employee",
+          "relation": "PERFORMED_BY",
+          "target": "request a new company car",
+          "evidence": "employees can request a new company car"
+        },
+        {
+          "source": "New Vehicle Request",
+          "relation": "CONFIGURED_BY",
+          "target": "maximum fleet size",
+          "evidence": "Enter the maximum fleet size"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-vehicle",
+    "heading": "Add a vehicle",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicles dashboard",
+          "type": "Module",
+          "mention": "Vehicles dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a vehicle",
+          "type": "Action",
+          "mention": "Add a new vehicle",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "click the New button",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle form",
+          "type": "DataObject",
+          "mention": "vehicle form",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add a vehicle",
+          "relation": "PERFORMED_BY",
+          "target": "Vehicles dashboard",
+          "evidence": "To add a new vehicle to the fleet from the Vehicles dashboard"
+        },
+        {
+          "source": "Add a vehicle",
+          "relation": "TRIGGERED_BY",
+          "target": "New button",
+          "evidence": "click the New button... and a blank vehicle form loads"
+        },
+        {
+          "source": "Add a vehicle",
+          "relation": "PRODUCES",
+          "target": "vehicle form",
+          "evidence": "click the New button... and a blank vehicle form loads"
+        },
+        {
+          "source": "Vehicles dashboard",
+          "relation": "CONTAINS",
+          "target": "New button",
+          "evidence": "the New button in the top-left corner"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Add a vehicle",
+          "evidence": "Product: Odoo, Title: Add a vehicle"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Vehicles dashboard",
+          "evidence": "Product: Odoo, ... from the Vehicles dashboard"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vehicle-form-fields",
+    "heading": "Vehicle form fields",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicle",
+          "type": "DataObject",
+          "mention": "Vehicle form fields",
+          "confidence": "high"
+        },
+        {
+          "name": "Model",
+          "type": "Field",
+          "mention": "Model",
+          "confidence": "high"
+        },
+        {
+          "name": "License Plate",
+          "type": "Field",
+          "mention": "License Plate",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags",
+          "type": "Field",
+          "mention": "Tags",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Model",
+          "evidence": "The Model is the *only* required field on the new vehicle form."
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "License Plate",
+          "evidence": "License Plate: Enter the vehicle's license plate number."
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Tags",
+          "evidence": "Tags: Select any tags from the drop-down menu..."
+        },
+        {
+          "source": "Model",
+          "relation": "GENERATES",
+          "target": "License Plate",
+          "evidence": "When a model is selected, other fields appear on the vehicle form, and relevant information auto-populates the fields that apply to the model."
+        },
+        {
+          "source": "Model",
+          "relation": "GENERATES",
+          "target": "Tags",
+          "evidence": "When a model is selected, other fields appear on the vehicle form..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "driver",
+    "heading": "Driver",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle form",
+          "type": "DataObject",
+          "mention": "vehicle form",
+          "confidence": "high"
+        },
+        {
+          "name": "driver",
+          "type": "Actor",
+          "mention": "Driver",
+          "confidence": "high"
+        },
+        {
+          "name": "new driver",
+          "type": "Actor",
+          "mention": "new driver",
+          "confidence": "high"
+        },
+        {
+          "name": "driver details",
+          "type": "DataObject",
+          "mention": "driver details",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fleet app",
+          "type": "Module",
+          "mention": "Fleet app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contacts app",
+          "type": "Module",
+          "mention": "Contacts app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mobility Card",
+          "type": "Feature",
+          "mention": "Mobility Card",
+          "confidence": "high"
+        },
+        {
+          "name": "employee record",
+          "type": "DataObject",
+          "mention": "employee record",
+          "confidence": "medium"
+        },
+        {
+          "name": "Future Driver",
+          "type": "Actor",
+          "mention": "Future Driver",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply New Driver button",
+          "type": "Action",
+          "mention": "Apply New Driver button",
+          "confidence": "high"
+        },
+        {
+          "name": "Assignment Date",
+          "type": "Field",
+          "mention": "Assignment Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "multi-company database",
+          "type": "Setting",
+          "mention": "multi-company database",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "vehicle form",
+          "evidence": "This section of the vehicle form"
+        },
+        {
+          "source": "vehicle form",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "This section of the vehicle form relates to"
+        },
+        {
+          "source": "driver",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "select the driver for the vehicle"
+        },
+        {
+          "source": "new driver",
+          "relation": "BELONGS_TO",
+          "target": "Fleet app",
+          "evidence": "the driver is added to the Fleet app"
+        },
+        {
+          "source": "new driver",
+          "relation": "BELONGS_TO",
+          "target": "Contacts app",
+          "evidence": "the driver is added to the Contacts app"
+        },
+        {
+          "source": "Mobility Card",
+          "relation": "IS_PART_OF",
+          "target": "employee record",
+          "evidence": "mobility card listed on their employee record"
+        },
+        {
+          "source": "employee record",
+          "relation": "CONTAINS",
+          "target": "Mobility Card",
+          "evidence": "mobility card listed on their employee record"
+        },
+        {
+          "source": "Future Driver",
+          "relation": "RELATED_TO",
+          "target": "Apply New Driver button",
+          "evidence": "If this field is populated, an Apply New Driver button appears"
+        },
+        {
+          "source": "Apply New Driver button",
+          "relation": "TRIGGERED_BY",
+          "target": "Future Driver",
+          "evidence": "If this field is populated, an Apply New Driver button appears"
+        },
+        {
+          "source": "Assignment Date",
+          "relation": "CONFIGURED_BY",
+          "target": "calendar selector",
+          "evidence": "Using the calendar selector, select"
+        },
+        {
+          "source": "Company",
+          "relation": "CONFIGURED_BY",
+          "target": "multi-company database",
+          "evidence": "This field only appears in a multi-company database"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-driver",
+    "heading": "Create a new driver",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicle",
+          "type": "DataObject",
+          "mention": "vehicle",
+          "confidence": "medium"
+        },
+        {
+          "name": "Driver",
+          "type": "Actor",
+          "mention": "Driver",
+          "confidence": "medium"
+        },
+        {
+          "name": "Future Driver",
+          "type": "Actor",
+          "mention": "Future Driver",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contacts",
+          "type": "Module",
+          "mention": "Contacts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Driver field",
+          "type": "Field",
+          "mention": "Driver field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Future Driver field",
+          "type": "Field",
+          "mention": "Future Driver field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Driver form",
+          "type": "DataObject",
+          "mention": "Create Driver form",
+          "confidence": "low"
+        },
+        {
+          "name": "Create Future Driver form",
+          "type": "DataObject",
+          "mention": "Create Future Driver form",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Driver field",
+          "evidence": "A new driver can be added either from the Driver or Future Driver fields on the vehicle form"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Future Driver field",
+          "evidence": "A new driver can be added either from the Driver or Future Driver fields on the vehicle form"
+        },
+        {
+          "source": "Driver field",
+          "relation": "TRIGGERED_BY",
+          "target": "Create Driver form",
+          "evidence": "then click Create and edit.... A Create Driver or Create Future Driver form appears, depending on which field initiated the form"
+        },
+        {
+          "source": "Future Driver field",
+          "relation": "TRIGGERED_BY",
+          "target": "Create Future Driver form",
+          "evidence": "then click Create and edit.... A Create Driver or Create Future Driver form appears, depending on which field initiated the form"
+        },
+        {
+          "source": "Create Driver form",
+          "relation": "IS_PART_OF",
+          "target": "Contacts",
+          "evidence": "Both the Create Driver and Create Future Driver forms are identical, and are stored in the Contacts app"
+        },
+        {
+          "source": "Create Future Driver form",
+          "relation": "IS_PART_OF",
+          "target": "Contacts",
+          "evidence": "Both the Create Driver and Create Future Driver forms are identical, and are stored in the Contacts app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vehicle",
+    "heading": "Vehicle",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Vehicle",
+          "type": "DataObject",
+          "mention": "Vehicle",
+          "confidence": "high"
+        },
+        {
+          "name": "Category",
+          "type": "Field",
+          "mention": "Category",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Product",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Date",
+          "type": "Field",
+          "mention": "Order Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Registration Date",
+          "type": "Field",
+          "mention": "Registration Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Cancellation Date",
+          "type": "Field",
+          "mention": "Cancellation Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Chassis Number",
+          "type": "Field",
+          "mention": "Chassis Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Last Odometer",
+          "type": "Field",
+          "mention": "Last Odometer",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet Manager",
+          "type": "Field",
+          "mention": "Fleet Manager",
+          "confidence": "high"
+        },
+        {
+          "name": "Location",
+          "type": "Field",
+          "mention": "Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Make Vehicle Available",
+          "type": "Field",
+          "mention": "Make Vehicle Available",
+          "confidence": "high"
+        },
+        {
+          "name": "dispatch management system",
+          "type": "Module",
+          "mention": "dispatch",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Category",
+          "evidence": "Fill in the following fields on the form: - Category:"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Order Date",
+          "evidence": "Fill in the following fields on the form: - Order Date:"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Registration Date",
+          "evidence": "Fill in the following fields on the form: - Registration Date:"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Cancellation Date",
+          "evidence": "Fill in the following fields on the form: - Cancellation Date:"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Chassis Number",
+          "evidence": "Fill in the following fields on the form: - Chassis Number:"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Last Odometer",
+          "evidence": "Fill in the following fields on the form: - Last Odometer:"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Fleet Manager",
+          "evidence": "Fill in the following fields on the form: - Fleet Manager:"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Location",
+          "evidence": "Fill in the following fields on the form: - Location:"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONTAINS",
+          "target": "Make Vehicle Available",
+          "evidence": "Fill in the following fields on the form: - Make Vehicle Available:"
+        },
+        {
+          "source": "Category",
+          "relation": "RELATED_TO",
+          "target": "Inventory",
+          "evidence": "If the Inventory app is installed, the category affects any configured dispatch management system"
+        },
+        {
+          "source": "Category",
+          "relation": "RELATED_TO",
+          "target": "dispatch management system",
+          "evidence": "If the Inventory app is installed, the category affects any configured dispatch management system"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "dispatch management system",
+          "evidence": "If the Inventory app is installed, the category affects any configured dispatch management system"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-info-tab",
+    "heading": "Tax Info tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Tax Info tab",
+          "type": "Module",
+          "mention": "Tax Info tab",
+          "confidence": "high"
+        },
+        {
+          "name": "localization setting",
+          "type": "Setting",
+          "mention": "localization setting",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "high"
+        },
+        {
+          "name": "additional applications",
+          "type": "Module",
+          "mention": "additional applications",
+          "confidence": "medium"
+        },
+        {
+          "name": "vehicles",
+          "type": "DataObject",
+          "mention": "vehicles",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax Info tab",
+          "relation": "CONTAINS",
+          "target": "fields",
+          "evidence": "other fields may be present on the form"
+        },
+        {
+          "source": "Tax Info tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Tax Info tab",
+          "relation": "APPLIES_TO",
+          "target": "vehicles",
+          "evidence": "appear for all vehicles"
+        },
+        {
+          "source": "Tax Info tab",
+          "relation": "CONFIGURED_BY",
+          "target": "localization setting",
+          "evidence": "Depending on the localization setting for the database"
+        },
+        {
+          "source": "Tax Info tab",
+          "relation": "CONFIGURED_BY",
+          "target": "additional applications",
+          "evidence": "and what additional applications are installed"
+        },
+        {
+          "source": "Tax Info tab",
+          "relation": "RELATED_TO",
+          "target": "database",
+          "evidence": "localization setting for the database"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "fiscality",
+    "heading": "Fiscality",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscality",
+          "type": "Module",
+          "mention": "Title: Fiscality",
+          "confidence": "high"
+        },
+        {
+          "name": "Horsepower Taxation",
+          "type": "Feature",
+          "mention": "Horsepower Taxation",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle's engine",
+          "type": "Concept",
+          "mention": "vehicle's engine",
+          "confidence": "medium"
+        },
+        {
+          "name": "local taxes and regulations",
+          "type": "Regulation",
+          "mention": "local taxes and regulations",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting department",
+          "type": "Actor",
+          "mention": "accounting department",
+          "confidence": "high"
+        },
+        {
+          "name": "Deductibility Rates",
+          "type": "Feature",
+          "mention": "Deductibility Rates",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle-related costs",
+          "type": "Concept",
+          "mention": "vehicle-related costs",
+          "confidence": "high"
+        },
+        {
+          "name": "fuel",
+          "type": "Concept",
+          "mention": "fuel",
+          "confidence": "medium"
+        },
+        {
+          "name": "maintenance",
+          "type": "Concept",
+          "mention": "maintenance",
+          "confidence": "medium"
+        },
+        {
+          "name": "depreciation",
+          "type": "Concept",
+          "mention": "depreciation",
+          "confidence": "medium"
+        },
+        {
+          "name": "company's taxable income",
+          "type": "Concept",
+          "mention": "company's taxable income",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Date",
+          "type": "Field",
+          "mention": "Start Date field",
+          "confidence": "high"
+        },
+        {
+          "name": "Deductibility (%)",
+          "type": "Field",
+          "mention": "Deductibility (%) field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fiscality",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Fiscality"
+        },
+        {
+          "source": "Fiscality",
+          "relation": "CONTAINS",
+          "target": "Horsepower Taxation",
+          "evidence": "- Horsepower Taxation:"
+        },
+        {
+          "source": "Horsepower Taxation",
+          "relation": "ENABLES",
+          "target": "vehicle's engine",
+          "evidence": "Enter the amount that is taxed based on the size of the vehicle's engine."
+        },
+        {
+          "source": "Horsepower Taxation",
+          "relation": "APPLIES_TO",
+          "target": "local taxes and regulations",
+          "evidence": "This is determined by local taxes and regulations"
+        },
+        {
+          "source": "Horsepower Taxation",
+          "relation": "PERFORMED_BY",
+          "target": "accounting department",
+          "evidence": "It is recommended to check with the accounting department"
+        },
+        {
+          "source": "Fiscality",
+          "relation": "CONTAINS",
+          "target": "Deductibility Rates",
+          "evidence": "- Deductibility Rates:"
+        },
+        {
+          "source": "Deductibility Rates",
+          "relation": "ENABLES",
+          "target": "vehicle-related costs",
+          "evidence": "Configure the dates and percentages of the vehicle-related costs"
+        },
+        {
+          "source": "vehicle-related costs",
+          "relation": "RELATED_TO",
+          "target": "fuel",
+          "evidence": "fuel"
+        },
+        {
+          "source": "vehicle-related costs",
+          "relation": "RELATED_TO",
+          "target": "maintenance",
+          "evidence": "maintenance"
+        },
+        {
+          "source": "vehicle-related costs",
+          "relation": "RELATED_TO",
+          "target": "depreciation",
+          "evidence": "depreciation"
+        },
+        {
+          "source": "Deductibility Rates",
+          "relation": "ENABLES",
+          "target": "company's taxable income",
+          "evidence": "that can be deducted from the company's taxable income."
+        },
+        {
+          "source": "Deductibility Rates",
+          "relation": "CONFIGURED_BY",
+          "target": "Start Date",
+          "evidence": "The Start Date field indicates *when* the deduction begins"
+        },
+        {
+          "source": "Deductibility Rates",
+          "relation": "CONFIGURED_BY",
+          "target": "Deductibility (%)",
+          "evidence": "and the Deductibility (%) field indicates the percentage to be deducted."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "contract",
+    "heading": "Contract",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract",
+          "type": "Module",
+          "mention": "Title: Contract",
+          "confidence": "high"
+        },
+        {
+          "name": "First Contract Date",
+          "type": "Field",
+          "mention": "First Contract Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Catalog Value (VAT Incl.)",
+          "type": "Field",
+          "mention": "Catalog Value (VAT Incl.)",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Value",
+          "type": "Field",
+          "mention": "Purchase Value",
+          "confidence": "high"
+        },
+        {
+          "name": "Residual Value",
+          "type": "Field",
+          "mention": "Residual Value",
+          "confidence": "high"
+        },
+        {
+          "name": "calendar selector",
+          "type": "Feature",
+          "mention": "calendar selector",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting department",
+          "type": "Actor",
+          "mention": "accounting department",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Contract",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Contract is part of Product: Odoo"
+        },
+        {
+          "source": "Contract",
+          "relation": "CONTAINS",
+          "target": "First Contract Date",
+          "evidence": "Field is listed under Contract title"
+        },
+        {
+          "source": "Contract",
+          "relation": "CONTAINS",
+          "target": "Catalog Value (VAT Incl.)",
+          "evidence": "Field is listed under Contract title"
+        },
+        {
+          "source": "Contract",
+          "relation": "CONTAINS",
+          "target": "Purchase Value",
+          "evidence": "Field is listed under Contract title"
+        },
+        {
+          "source": "Contract",
+          "relation": "CONTAINS",
+          "target": "Residual Value",
+          "evidence": "Field is listed under Contract title"
+        },
+        {
+          "source": "First Contract Date",
+          "relation": "CONFIGURED_BY",
+          "target": "calendar selector",
+          "evidence": "Select the start date... using the calendar selector"
+        },
+        {
+          "source": "First Contract Date",
+          "relation": "RELATED_TO",
+          "target": "accounting department",
+          "evidence": "The values... affect the accounting department."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "model-tab",
+    "heading": "Model tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Model tab",
+          "type": "Feature",
+          "mention": "Model tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Model",
+          "type": "Module",
+          "mention": "Model",
+          "confidence": "low"
+        },
+        {
+          "name": "Engine",
+          "type": "Sub-module",
+          "mention": "Engine",
+          "confidence": "low"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "low"
+        },
+        {
+          "name": "vehicle",
+          "type": "Concept",
+          "mention": "vehicle",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle model",
+          "type": "DataObject",
+          "mention": "vehicle model",
+          "confidence": "high"
+        },
+        {
+          "name": "fleet/add-model",
+          "type": "Workflow",
+          "mention": "fleet/add-model",
+          "confidence": "medium"
+        },
+        {
+          "name": "color",
+          "type": "Field",
+          "mention": "color",
+          "confidence": "high"
+        },
+        {
+          "name": "trailer hitch",
+          "type": "Field",
+          "mention": "trailer hitch",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Model tab",
+          "relation": "CONTAINS",
+          "target": "Model",
+          "evidence": "the Model tab"
+        },
+        {
+          "source": "Model tab",
+          "relation": "CONTAINS",
+          "target": "Engine",
+          "evidence": "the Model and Engine sections"
+        },
+        {
+          "source": "vehicle model",
+          "relation": "BELONGS_TO",
+          "target": "database",
+          "evidence": "configured in the database"
+        },
+        {
+          "source": "vehicle",
+          "relation": "RELATED_TO",
+          "target": "vehicle model",
+          "evidence": "new vehicle model"
+        },
+        {
+          "source": "vehicle model",
+          "relation": "CONFIGURED_BY",
+          "target": "fleet/add-model",
+          "evidence": "configure the new vehicle model"
+        },
+        {
+          "source": "Model tab",
+          "relation": "HAS_FEATURE",
+          "target": "color",
+          "evidence": "the color of the vehicle"
+        },
+        {
+          "source": "Model tab",
+          "relation": "HAS_FEATURE",
+          "target": "trailer hitch",
+          "evidence": "whether a trailer hitch is installed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "note-tab",
+    "heading": "Note tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Note tab",
+          "type": "Feature",
+          "mention": "Note tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "../fleet/models",
+          "type": "Concept",
+          "mention": "../fleet/models",
+          "confidence": "low"
+        },
+        {
+          "name": "../fleet/service",
+          "type": "Concept",
+          "mention": "../fleet/service",
+          "confidence": "low"
+        },
+        {
+          "name": "../fleet/accidents",
+          "type": "Concept",
+          "mention": "../fleet/accidents",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Note tab",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Note tab"
+        },
+        {
+          "source": "Note tab",
+          "relation": "SEE_ALSO",
+          "target": "../fleet/models",
+          "evidence": ".. seealso:: ../fleet/models"
+        },
+        {
+          "source": "Note tab",
+          "relation": "SEE_ALSO",
+          "target": "../fleet/service",
+          "evidence": ".. seealso:: ../fleet/service"
+        },
+        {
+          "source": "Note tab",
+          "relation": "SEE_ALSO",
+          "target": "../fleet/accidents",
+          "evidence": ".. seealso:: ../fleet/accidents"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,549 @@
+[
+  {
+    "section_id": "scrap-during-manufacturing",
+    "heading": "Scrap during manufacturing",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Scrap during manufacturing",
+          "type": "Feature",
+          "mention": "Title: Scrap during manufacturing",
+          "confidence": "medium"
+        },
+        {
+          "name": "Virtual Locations/Scrap",
+          "type": "DataObject",
+          "mention": "*Virtual Locations/Scrap*",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory --> Operations --> Scrap",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Inventory --> Operations --> Scrap",
+          "confidence": "high"
+        },
+        {
+          "name": "Scrap",
+          "type": "Sub-module",
+          "mention": "Inventory --> Operations --> Scrap",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Inventory --> Configuration --> Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations",
+          "type": "Feature",
+          "mention": "Inventory --> Configuration --> Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Location types",
+          "type": "Concept",
+          "mention": "Location types",
+          "confidence": "high"
+        },
+        {
+          "name": "Scrap order",
+          "type": "DataObject",
+          "mention": "Each scrap order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Scrap during manufacturing",
+          "evidence": "Title: Scrap during manufacturing"
+        },
+        {
+          "source": "Scrap during manufacturing",
+          "relation": "IS_PART_OF",
+          "target": "manufacturing",
+          "evidence": "During the manufacturing process"
+        },
+        {
+          "source": "Scrap",
+          "relation": "BELONGS_TO",
+          "target": "Operations",
+          "evidence": "Inventory --> Operations --> Scrap"
+        },
+        {
+          "source": "Operations",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "Inventory --> Operations --> Scrap"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "Inventory --> Configuration --> Locations"
+        },
+        {
+          "source": "Locations",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Inventory --> Configuration --> Locations"
+        },
+        {
+          "source": "Scrap",
+          "relation": "GENERATES",
+          "target": "Scrap order",
+          "evidence": "Each scrap order"
+        },
+        {
+          "source": "Scrap",
+          "relation": "SEE_ALSO",
+          "target": "Location types",
+          "evidence": "Location types <../../inventory/warehouses_storage/inventory_management>"
+        },
+        {
+          "source": "Scrap order",
+          "relation": "CONTAINS",
+          "target": "Virtual Locations/Scrap",
+          "evidence": "*Virtual Locations/Scrap*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "navigate-to-the-scrap-window",
+    "heading": "Navigate to the scrap window",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Navigate to the scrap window",
+          "type": "Action",
+          "mention": "Navigate to the scrap window",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Shop Floor",
+          "type": "Module",
+          "mention": "Shop Floor module",
+          "confidence": "high"
+        },
+        {
+          "name": "Scrapping",
+          "type": "Action",
+          "mention": "Scrapping",
+          "confidence": "high"
+        },
+        {
+          "name": "finished products",
+          "type": "DataObject",
+          "mention": "finished products",
+          "confidence": "medium"
+        },
+        {
+          "name": "components",
+          "type": "DataObject",
+          "mention": "components",
+          "confidence": "medium"
+        },
+        {
+          "name": "Done",
+          "type": "Setting",
+          "mention": "Done stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Draft",
+          "type": "Setting",
+          "mention": "Draft stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Confirmed",
+          "type": "Setting",
+          "mention": "Confirmed stage",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Scrapping",
+          "evidence": "Scrapping can be done in either the Manufacturing app or the Shop Floor module"
+        },
+        {
+          "source": "Scrapping",
+          "relation": "PERFORMED_BY",
+          "target": "Manufacturing",
+          "evidence": "Scrapping can be done in the Manufacturing app"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "ENABLES",
+          "target": "Scrapping finished products",
+          "evidence": "Manufacturing app allows: Scrapping finished products"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "CONFIGURED_BY",
+          "target": "Done",
+          "evidence": "Scrapping finished products (only if the is in the Done stage)"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "ENABLES",
+          "target": "Scrapping components",
+          "evidence": "Manufacturing app allows: Scrapping components"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "CONFIGURED_BY",
+          "target": "Draft",
+          "evidence": "Scrapping components (while the is in the Draft stage)"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "CONFIGURED_BY",
+          "target": "Confirmed",
+          "evidence": "Scrapping components (while the is in the Confirmed stage)"
+        },
+        {
+          "source": "Scrapping",
+          "relation": "PERFORMED_BY",
+          "target": "Shop Floor",
+          "evidence": "Scrapping can be done in the Shop Floor module"
+        },
+        {
+          "source": "Shop Floor",
+          "relation": "ENABLES",
+          "target": "Scrapping components",
+          "evidence": "Shop Floor allows: Scrapping only components"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manufacturing-app",
+    "heading": "Manufacturing app",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Actions",
+          "type": "Action",
+          "mention": "fa-cog (Actions) icon",
+          "confidence": "low"
+        },
+        {
+          "name": "Scrap",
+          "type": "Action",
+          "mention": "Scrap",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing Orders",
+          "relation": "BELONGS_TO",
+          "target": "Operations",
+          "evidence": "go to Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Operations",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing --> Operations"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Scrap",
+          "relation": "PERFORMED_BY",
+          "target": "Actions",
+          "evidence": "choose Scrap from the drop-down menu"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "shop-floor",
+    "heading": "Shop Floor",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Shop Floor",
+          "type": "Module",
+          "mention": "Shop Floor",
+          "confidence": "high"
+        },
+        {
+          "name": "Scrap",
+          "type": "Action",
+          "mention": "Scrap",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Shop Floor",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Shop Floor"
+        },
+        {
+          "source": "Shop Floor",
+          "relation": "CONTAINS",
+          "target": "Scrap",
+          "evidence": "In Shop Floor, only components can be scrapped."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "scrap-pop-up-window",
+    "heading": "Scrap pop-up window",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Scrap Products pop-up window",
+          "type": "Module",
+          "mention": "Scrap Products pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Product drop-down menu",
+          "type": "Field",
+          "mention": "Product drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Source Location field",
+          "type": "Field",
+          "mention": "Source Location field",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse's pre-production location",
+          "type": "Field",
+          "mention": "warehouse's pre-production location",
+          "confidence": "low"
+        },
+        {
+          "name": "Scrap Location field",
+          "type": "Field",
+          "mention": "Scrap Location field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Virtual Locations/Scrap location",
+          "type": "Field",
+          "mention": "Virtual Locations/Scrap location",
+          "confidence": "low"
+        },
+        {
+          "name": "Replenish Scrapped Quantities checkbox",
+          "type": "Field",
+          "mention": "Replenish Scrapped Quantities checkbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "picking order",
+          "type": "DataObject",
+          "mention": "picking order",
+          "confidence": "medium"
+        },
+        {
+          "name": "scrap order",
+          "type": "DataObject",
+          "mention": "scrap order",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouses",
+          "type": "Actor",
+          "mention": "warehouses",
+          "confidence": "low"
+        },
+        {
+          "name": "two-step manufacturing",
+          "type": "Workflow",
+          "mention": "two-step manufacturing",
+          "confidence": "low"
+        },
+        {
+          "name": "three-step manufacturing",
+          "type": "Workflow",
+          "mention": "three-step manufacturing",
+          "confidence": "low"
+        },
+        {
+          "name": "one-step manufacturing",
+          "type": "Workflow",
+          "mention": "one-step manufacturing",
+          "confidence": "low"
+        },
+        {
+          "name": "Scrap Products button",
+          "type": "Action",
+          "mention": "Scrap Products button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Scraps smart button",
+          "type": "Action",
+          "mention": "Scraps smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "list of all scrap orders",
+          "type": "Report",
+          "mention": "list of all scrap orders",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Scrap Products pop-up window",
+          "relation": "CONTAINS",
+          "target": "Product drop-down menu",
+          "evidence": "select the component or finished product being scrapped, from the Product drop-down menu"
+        },
+        {
+          "source": "Scrap Products pop-up window",
+          "relation": "CONTAINS",
+          "target": "Quantity field",
+          "evidence": "In the Quantity field, enter the quantity being scrapped"
+        },
+        {
+          "source": "Scrap Products pop-up window",
+          "relation": "CONTAINS",
+          "target": "Source Location field",
+          "evidence": "By default, the Source Location field is set to"
+        },
+        {
+          "source": "Scrap Products pop-up window",
+          "relation": "CONTAINS",
+          "target": "Scrap Location field",
+          "evidence": "the Scrap Location field is set to"
+        },
+        {
+          "source": "Scrap Products pop-up window",
+          "relation": "CONTAINS",
+          "target": "Replenish Scrapped Quantities checkbox",
+          "evidence": "Enable the Replenish Scrapped Quantities checkbox"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Scrap Products pop-up window",
+          "evidence": "Product: Odoo and description of Scrap Products pop-up window"
+        },
+        {
+          "source": "Scrap Products button",
+          "relation": "GENERATES",
+          "target": "scrap order",
+          "evidence": "click the Scrap Products button. After one or more scrap orders have been created"
+        },
+        {
+          "source": "Replenish Scrapped Quantities checkbox",
+          "relation": "ENABLES",
+          "target": "picking order",
+          "evidence": "if a picking order should be created to replace the scrapped component"
+        },
+        {
+          "source": "Replenish Scrapped Quantities checkbox",
+          "relation": "REQUIRES",
+          "target": "two-step manufacturing",
+          "evidence": "This option should only be enabled for warehouses with two-step ... manufacturing enabled"
+        },
+        {
+          "source": "Replenish Scrapped Quantities checkbox",
+          "relation": "REQUIRES",
+          "target": "three-step manufacturing",
+          "evidence": "This option should only be enabled for warehouses with three-step ... manufacturing enabled"
+        },
+        {
+          "source": "Scraps smart button",
+          "relation": "PRODUCES",
+          "target": "list of all scrap orders",
+          "evidence": "Click it to view a list of all scrap orders"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,466 @@
+[
+  {
+    "section_id": "alerts",
+    "heading": "Alerts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Referrals",
+          "type": "Module",
+          "mention": "Referrals",
+          "confidence": "high"
+        },
+        {
+          "name": "Alert",
+          "type": "Feature",
+          "mention": "alert",
+          "confidence": "high"
+        },
+        {
+          "name": "Message",
+          "type": "Feature",
+          "mention": "message",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dashboard",
+          "type": "Feature",
+          "mention": "dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Referrals Dashboard",
+          "type": "Feature",
+          "mention": "Referrals dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time",
+          "type": "Setting",
+          "mention": "specified amount of time",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Referrals",
+          "relation": "HAS_FEATURE",
+          "target": "Alert",
+          "evidence": "In the Referrals application, it is possible to post a message, also referred to as an alert"
+        },
+        {
+          "source": "Alert",
+          "relation": "CONFIGURED_BY",
+          "target": "Time",
+          "evidence": "configured on the individual alert"
+        },
+        {
+          "source": "Alert",
+          "relation": "BELONGS_TO",
+          "target": "Referrals Dashboard",
+          "evidence": "Alerts remain on the main Referrals dashboard"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Referrals",
+          "evidence": "Referrals dashboard"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-an-alert",
+    "heading": "Create an alert",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "**Recruitment** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Referrals",
+          "type": "Module",
+          "mention": "**Referrals** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Alerts",
+          "type": "Feature",
+          "mention": "Alerts",
+          "confidence": "high"
+        },
+        {
+          "name": "Create an alert",
+          "type": "Action",
+          "mention": "Create an alert",
+          "confidence": "high"
+        },
+        {
+          "name": "Administrator",
+          "type": "Permission",
+          "mention": "*Administrator* access rights",
+          "confidence": "high"
+        },
+        {
+          "name": "Alert form",
+          "type": "DataObject",
+          "mention": "blank alert form",
+          "confidence": "high"
+        },
+        {
+          "name": "Date From",
+          "type": "Field",
+          "mention": "Date From",
+          "confidence": "high"
+        },
+        {
+          "name": "Date To",
+          "type": "Field",
+          "mention": "Date To",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Alert",
+          "type": "Field",
+          "mention": "Alert",
+          "confidence": "high"
+        },
+        {
+          "name": "On Click",
+          "type": "Field",
+          "mention": "On Click",
+          "confidence": "high"
+        },
+        {
+          "name": "Not Clickable",
+          "type": "Field",
+          "mention": "Not Clickable",
+          "confidence": "high"
+        },
+        {
+          "name": "Go to All Jobs",
+          "type": "Feature",
+          "mention": "Go to All Jobs",
+          "confidence": "high"
+        },
+        {
+          "name": "Specify URL",
+          "type": "Feature",
+          "mention": "Specify URL",
+          "confidence": "high"
+        },
+        {
+          "name": "URL field",
+          "type": "Field",
+          "mention": "URL field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create an alert",
+          "relation": "PERFORMED_BY",
+          "target": "Administrator",
+          "evidence": "Only users with *Administrator* access rights for the **Recruitment** app can create alerts."
+        },
+        {
+          "source": "Referrals",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to the Referrals app --> Configuration --> Alerts."
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Alerts",
+          "evidence": "navigate to the Referrals app --> Configuration --> Alerts."
+        },
+        {
+          "source": "Create an alert",
+          "relation": "ENABLES",
+          "target": "New",
+          "evidence": "Click New to open a blank alert form."
+        },
+        {
+          "source": "Alert form",
+          "relation": "CONTAINS",
+          "target": "Date From",
+          "evidence": "Enter the following information on the form: - Date From"
+        },
+        {
+          "source": "Alert form",
+          "relation": "CONTAINS",
+          "target": "Date To",
+          "evidence": "Enter the following information on the form: - Date To"
+        },
+        {
+          "source": "Alert form",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "Enter the following information on the form: - Company"
+        },
+        {
+          "source": "Alert form",
+          "relation": "CONTAINS",
+          "target": "Alert",
+          "evidence": "Enter the following information on the form: - Alert"
+        },
+        {
+          "source": "Alert form",
+          "relation": "CONTAINS",
+          "target": "On Click",
+          "evidence": "Enter the following information on the form: - On Click"
+        },
+        {
+          "source": "On Click",
+          "relation": "CONTAINS",
+          "target": "Not Clickable",
+          "evidence": "The options are: - Not Clickable"
+        },
+        {
+          "source": "On Click",
+          "relation": "CONTAINS",
+          "target": "Go to All Jobs",
+          "evidence": "The options are: - Go to All Jobs"
+        },
+        {
+          "source": "On Click",
+          "relation": "CONTAINS",
+          "target": "Specify URL",
+          "evidence": "The options are: - Specify URL"
+        },
+        {
+          "source": "Specify URL",
+          "relation": "HAS_FEATURE",
+          "target": "URL field",
+          "evidence": "When selected, a URL field appears below the On Click section."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "notify-users",
+    "heading": "Notify users",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Referrals",
+          "type": "Module",
+          "mention": "Referrals",
+          "confidence": "high"
+        },
+        {
+          "name": "Referrals app dashboard",
+          "type": "Sub-module",
+          "mention": "dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "create an alert",
+          "type": "Action",
+          "mention": "creating an alert",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Mail",
+          "type": "Action",
+          "mention": "Send Mail",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Mail button",
+          "type": "Feature",
+          "mention": "Send Mail button",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Mail pop-up window",
+          "type": "Feature",
+          "mention": "Send Mail pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "alert form",
+          "type": "DataObject",
+          "mention": "alert form",
+          "confidence": "medium"
+        },
+        {
+          "name": "User field",
+          "type": "Field",
+          "mention": "User field",
+          "confidence": "high"
+        },
+        {
+          "name": "Subject",
+          "type": "Field",
+          "mention": "Subject",
+          "confidence": "high"
+        },
+        {
+          "name": "Body",
+          "type": "Field",
+          "mention": "Body",
+          "confidence": "high"
+        },
+        {
+          "name": "currently configured users",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Referrals",
+          "relation": "CONTAINS",
+          "target": "Referrals app dashboard",
+          "evidence": "linked to the **Referrals** app dashboard"
+        },
+        {
+          "source": "Referrals",
+          "relation": "HAS_FEATURE",
+          "target": "create an alert",
+          "evidence": "After creating an alert"
+        },
+        {
+          "source": "Referrals",
+          "relation": "HAS_FEATURE",
+          "target": "Send Mail",
+          "evidence": "click the Send Mail button"
+        },
+        {
+          "source": "alert form",
+          "relation": "IS_PART_OF",
+          "target": "Referrals",
+          "evidence": "above the alert form"
+        },
+        {
+          "source": "Send Mail",
+          "relation": "ENABLES",
+          "target": "notify users via email",
+          "evidence": "users can be contacted directly via email"
+        },
+        {
+          "source": "Send Mail button",
+          "relation": "TRIGGERED_BY",
+          "target": "Send Mail",
+          "evidence": "click the Send Mail button"
+        },
+        {
+          "source": "Send Mail pop-up window",
+          "relation": "GENERATES",
+          "target": "Send Mail",
+          "evidence": "This causes a Send Mail pop-up window to load"
+        },
+        {
+          "source": "User field",
+          "relation": "CONTAINS",
+          "target": "currently configured users",
+          "evidence": "The currently configured users populate the User field"
+        },
+        {
+          "source": "Subject",
+          "relation": "CONTAINS",
+          "target": "New Alert In Referrals App",
+          "evidence": "populated with `New Alert In Referrals App`"
+        },
+        {
+          "source": "Body",
+          "relation": "CONTAINS",
+          "target": "A new alert has been added to the Referrals app!",
+          "evidence": "populated with `A new alert has been added to the Referrals app!`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "dismiss-an-alert",
+    "heading": "Dismiss an alert",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Dismiss an alert",
+          "type": "Feature",
+          "mention": "Dismiss an alert",
+          "confidence": "high"
+        },
+        {
+          "name": "click the fa-times (remove) icon",
+          "type": "Action",
+          "mention": "click the fa-times (remove) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Referrals app dashboard",
+          "type": "DataObject",
+          "mention": "Referrals app dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "alert",
+          "type": "DataObject",
+          "mention": "alert",
+          "confidence": "high"
+        },
+        {
+          "name": "Referrals",
+          "type": "Module",
+          "mention": "Referrals",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Dismiss an alert",
+          "relation": "ENABLES",
+          "target": "prevent the alert from appearing again",
+          "evidence": "This prevents the alert from appearing again"
+        },
+        {
+          "source": "click the fa-times (remove) icon",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "To dismiss an alert, click the fa-times (remove) icon"
+        },
+        {
+          "source": "click the fa-times (remove) icon",
+          "relation": "BELONGS_TO",
+          "target": "Referrals app dashboard",
+          "evidence": "on the far-right side of the alert on the Referrals app dashboard"
+        }
+      ]
+    }
+  }
+]

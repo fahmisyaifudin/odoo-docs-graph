@@ -1,0 +1,3437 @@
+[
+  {
+    "section_id": "request-a-signature",
+    "heading": "Request a signature",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Sign",
+          "type": "Module",
+          "mention": "Odoo Sign app",
+          "confidence": "high"
+        },
+        {
+          "name": "request a signature",
+          "type": "Action",
+          "mention": "request a signature",
+          "confidence": "high"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signers",
+          "confidence": "medium"
+        },
+        {
+          "name": "one-off document",
+          "type": "DataObject",
+          "mention": "one-off document",
+          "confidence": "medium"
+        },
+        {
+          "name": "document envelope",
+          "type": "DataObject",
+          "mention": "envelope of multiple one-off documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "templates",
+          "type": "Feature",
+          "mention": "templates",
+          "confidence": "high"
+        },
+        {
+          "name": "requestor",
+          "type": "Actor",
+          "mention": "requestor",
+          "confidence": "medium"
+        },
+        {
+          "name": "email",
+          "type": "Feature",
+          "mention": "sent via email",
+          "confidence": "low"
+        },
+        {
+          "name": "signed document",
+          "type": "DataObject",
+          "mention": "signed document(s)",
+          "confidence": "medium"
+        },
+        {
+          "name": "certificate of completion",
+          "type": "DataObject",
+          "mention": "certificate of completion",
+          "confidence": "medium"
+        },
+        {
+          "name": "CC",
+          "type": "Actor",
+          "mention": "contacts added in CC",
+          "confidence": "low"
+        },
+        {
+          "name": "signature request",
+          "type": "DataObject",
+          "mention": "signature request",
+          "confidence": "medium"
+        },
+        {
+          "name": "configure signature request",
+          "type": "Action",
+          "mention": "configure",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Odoo Sign",
+          "evidence": "Via the Odoo Sign app or directly from an Odoo record"
+        },
+        {
+          "source": "request a signature",
+          "relation": "PERFORMED_BY",
+          "target": "signer",
+          "evidence": "request the signature of one or more signers"
+        },
+        {
+          "source": "signature request",
+          "relation": "CONFIGURED_BY",
+          "target": "configure signature request",
+          "evidence": "when the signature request was configured"
+        },
+        {
+          "source": "signature request",
+          "relation": "GENERATES",
+          "target": "signed document",
+          "evidence": "Once a document... has been fully signed, the signed document(s)... are sent"
+        },
+        {
+          "source": "signature request",
+          "relation": "GENERATES",
+          "target": "certificate of completion",
+          "evidence": "...and the certificate of completion... are sent via email"
+        },
+        {
+          "source": "configure signature request",
+          "relation": "PERFORMED_BY",
+          "target": "requestor",
+          "evidence": "the signed document(s) and the certificate of completion... are sent via email to the requestor"
+        },
+        {
+          "source": "configure signature request",
+          "relation": "PRODUCES",
+          "target": "CC",
+          "evidence": "and to any contacts added in CC when the signature request was configured"
+        },
+        {
+          "source": "signature request",
+          "relation": "IS_PART_OF",
+          "target": "document envelope",
+          "evidence": "envelope of multiple one-off documents"
+        },
+        {
+          "source": "signature request",
+          "relation": "IS_PART_OF",
+          "target": "one-off document",
+          "evidence": "on a one-off document"
+        },
+        {
+          "source": "configure signature request",
+          "relation": "REQUIRES",
+          "target": "templates",
+          "evidence": "use templates to request the signature"
+        },
+        {
+          "source": "Odoo Sign",
+          "relation": "HAS_FEATURE",
+          "target": "templates",
+          "evidence": "use templates"
+        },
+        {
+          "source": "request a signature",
+          "relation": "ENABLES",
+          "target": "configure signature request",
+          "evidence": "request the signature of one or more signers on a one-off document... or envelope..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-the-sign-app",
+    "heading": "From the Sign app",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign app",
+          "type": "Module",
+          "mention": "Sign app",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "high"
+        },
+        {
+          "name": "My Documents",
+          "type": "Report",
+          "mention": "My Documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "All Documents",
+          "type": "Report",
+          "mention": "All Documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "Upload PDF",
+          "type": "Action",
+          "mention": "click Upload PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "Import from Documents",
+          "type": "Action",
+          "mention": "Import from Documents",
+          "confidence": "high"
+        },
+        {
+          "name": "document envelope",
+          "type": "DataObject",
+          "mention": "document envelope",
+          "confidence": "medium"
+        },
+        {
+          "name": "Prepare the document(s) for signing",
+          "type": "Workflow",
+          "mention": "Prepare the document(s) for signing",
+          "confidence": "high"
+        },
+        {
+          "name": "adding fields",
+          "type": "Action",
+          "mention": "adding the relevant fields",
+          "confidence": "medium"
+        },
+        {
+          "name": "add additional signers",
+          "type": "Action",
+          "mention": "add additional signers",
+          "confidence": "medium"
+        },
+        {
+          "name": "add additional documents",
+          "type": "Action",
+          "mention": "add additional documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "Click Send",
+          "type": "Action",
+          "mention": "Click Send",
+          "confidence": "high"
+        },
+        {
+          "name": "New Signature Request window",
+          "type": "DataObject",
+          "mention": "New Signature Request window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sign Now",
+          "type": "Action",
+          "mention": "click Sign Now",
+          "confidence": "high"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sign app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: From the Sign app"
+        },
+        {
+          "source": "Documents app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "import from the Documents <../documents> app"
+        },
+        {
+          "source": "Import from Documents",
+          "relation": "TRIGGERED_BY",
+          "target": "click the fa-cog (Actions) icon",
+          "evidence": "click the fa-cog (Actions) icon ... then Import from Documents."
+        },
+        {
+          "source": "Sign app",
+          "relation": "HAS_REPORT",
+          "target": "My Documents",
+          "evidence": "Go to Sign --> Documents --> My Documents"
+        },
+        {
+          "source": "Sign app",
+          "relation": "HAS_REPORT",
+          "target": "All Documents",
+          "evidence": "Go to Sign --> Documents --> ... --> All Documents"
+        },
+        {
+          "source": "Prepare the document(s) for signing",
+          "relation": "ENABLES",
+          "target": "Click Send",
+          "evidence": "Prepare the document(s) for signing ... #. Click Send."
+        },
+        {
+          "source": "Click Send",
+          "relation": "TRIGGERED_BY",
+          "target": "Prepare the document(s) for signing",
+          "evidence": "Prepare the document(s) for signing ... #. Click Send."
+        },
+        {
+          "source": "Click Send",
+          "relation": "PRODUCES",
+          "target": "New Signature Request window",
+          "evidence": "Click Send. #. Complete the relevant fields of the New Signature Request window."
+        },
+        {
+          "source": "Sign Now",
+          "relation": "PERFORMED_BY",
+          "target": "signer",
+          "evidence": "one of the signers and you are ready to sign the document directly, click Sign Now"
+        },
+        {
+          "source": "Sign app",
+          "relation": "ENABLES",
+          "target": "creating a document envelope",
+          "evidence": "From the Sign app. To request the signature of a ... document envelope"
+        },
+        {
+          "source": "Upload PDF",
+          "relation": "BELONGS_TO",
+          "target": "Sign app",
+          "evidence": "from the Sign app: #. Go to Sign ... click Upload PDF"
+        },
+        {
+          "source": "Prepare the document(s) for signing",
+          "relation": "CONTAINS",
+          "target": "adding fields",
+          "evidence": "Prepare the document(s) for signing ... by adding the relevant fields"
+        },
+        {
+          "source": "Prepare the document(s) for signing",
+          "relation": "CONTAINS",
+          "target": "add additional signers",
+          "evidence": "Prepare the document(s) for signing ... add additional signers"
+        },
+        {
+          "source": "Prepare the document(s) for signing",
+          "relation": "CONTAINS",
+          "target": "add additional documents",
+          "evidence": "Prepare the document(s) for signing ... add additional documents"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-an-odoo-record",
+    "heading": "From an Odoo record",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "record",
+          "type": "DataObject",
+          "mention": "record",
+          "confidence": "high"
+        },
+        {
+          "name": "document",
+          "type": "DataObject",
+          "mention": "document",
+          "confidence": "high"
+        },
+        {
+          "name": "document envelope",
+          "type": "DataObject",
+          "mention": "document envelope",
+          "confidence": "high"
+        },
+        {
+          "name": "New Signature Request window",
+          "type": "Feature",
+          "mention": "New Signature Request window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Request Signature",
+          "type": "Action",
+          "mention": "Request Signature",
+          "confidence": "high"
+        },
+        {
+          "name": "Upload PDF",
+          "type": "Action",
+          "mention": "Upload PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "Open",
+          "type": "Action",
+          "mention": "Open",
+          "confidence": "medium"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Send",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign Now",
+          "type": "Action",
+          "mention": "Sign Now",
+          "confidence": "high"
+        },
+        {
+          "name": "signed document(s)",
+          "type": "DataObject",
+          "mention": "signed document(s)",
+          "confidence": "high"
+        },
+        {
+          "name": "certificate of completion",
+          "type": "DataObject",
+          "mention": "certificate of completion",
+          "confidence": "high"
+        },
+        {
+          "name": "record's chatter",
+          "type": "Feature",
+          "mention": "record's chatter",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Request Signature",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "With the relevant record open, click the fa-cog (Actions) icon in the upper-left corner, then fa-file-text Request Signature."
+        },
+        {
+          "source": "Open",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "click Open"
+        },
+        {
+          "source": "Send",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "Click Send"
+        },
+        {
+          "source": "Sign Now",
+          "relation": "PERFORMED_BY",
+          "target": "signer",
+          "evidence": "one of the signers and you are ready to sign the document directly, click Sign Now"
+        },
+        {
+          "source": "signed document(s)",
+          "relation": "BELONGS_TO",
+          "target": "record",
+          "evidence": "the signed document(s) ... are also added to the record's chatter"
+        },
+        {
+          "source": "certificate of completion",
+          "relation": "BELONGS_TO",
+          "target": "record",
+          "evidence": "the ... certificate of completion are also added to the record's chatter"
+        },
+        {
+          "source": "document envelope",
+          "relation": "CONTAINS",
+          "target": "document",
+          "evidence": "document envelope has been fully signed, the signed document(s)"
+        },
+        {
+          "source": "New Signature Request window",
+          "relation": "CONTAINS",
+          "target": "customer",
+          "evidence": "the related customer (or the relevant party) is automatically added as a signer"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "signer",
+          "evidence": "one of the signers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "templates",
+    "heading": "Templates",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Templates",
+          "type": "DataObject",
+          "mention": "Templates",
+          "confidence": "medium"
+        },
+        {
+          "name": "document",
+          "type": "DataObject",
+          "mention": "document",
+          "confidence": "medium"
+        },
+        {
+          "name": "envelope",
+          "type": "DataObject",
+          "mention": "envelope",
+          "confidence": "medium"
+        },
+        {
+          "name": "sign",
+          "type": "Action",
+          "mention": "sign",
+          "confidence": "medium"
+        },
+        {
+          "name": "request-signatures",
+          "type": "Action",
+          "mention": "request-signatures",
+          "confidence": "medium"
+        },
+        {
+          "name": "create-envelope",
+          "type": "Action",
+          "mention": "create-envelope",
+          "confidence": "medium"
+        },
+        {
+          "name": "create-template",
+          "type": "Action",
+          "mention": "create-template",
+          "confidence": "medium"
+        },
+        {
+          "name": "fields",
+          "type": "Field",
+          "mention": "fields",
+          "confidence": "low"
+        },
+        {
+          "name": "signers",
+          "type": "Actor",
+          "mention": "signers",
+          "confidence": "low"
+        },
+        {
+          "name": "tags",
+          "type": "Concept",
+          "mention": "tags",
+          "confidence": "low"
+        },
+        {
+          "name": "workflow",
+          "type": "Workflow",
+          "mention": "workflow",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Templates",
+          "relation": "ENABLES",
+          "target": "sign",
+          "evidence": "Templates are prepared for signing"
+        },
+        {
+          "source": "Templates",
+          "relation": "ENABLES",
+          "target": "request-signatures",
+          "evidence": "Templates are prepared for signing"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Templates",
+          "evidence": "Product: Odoo, Title: Templates"
+        },
+        {
+          "source": "create-template",
+          "relation": "PRODUCES",
+          "target": "Templates",
+          "evidence": "creating and using a template"
+        },
+        {
+          "source": "create-template",
+          "relation": "SEE_ALSO",
+          "target": "sign/request-signatures/create-envelope",
+          "evidence": ".. _sign/request-signatures/create-template:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-template",
+    "heading": "Create a template",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign",
+          "type": "Module",
+          "mention": "Sign",
+          "confidence": "high"
+        },
+        {
+          "name": "Templates",
+          "type": "Sub-module",
+          "mention": "Go to Sign --> Templates",
+          "confidence": "high"
+        },
+        {
+          "name": "Upload PDF",
+          "type": "Action",
+          "mention": "Click Upload PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "PDF document",
+          "type": "DataObject",
+          "mention": "relevant `.pdf` document(s)",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "high"
+        },
+        {
+          "name": "Import from Documents",
+          "type": "Action",
+          "mention": "Import from Documents",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a template",
+          "type": "Action",
+          "mention": "To create a template",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a document envelope",
+          "type": "Action",
+          "mention": "create a document envelope",
+          "confidence": "medium"
+        },
+        {
+          "name": "Edit template",
+          "type": "Action",
+          "mention": "start editing it",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "edit-a-template",
+    "heading": "Edit a template",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "template",
+          "type": "DataObject",
+          "mention": "a template",
+          "confidence": "high"
+        },
+        {
+          "name": "signature request",
+          "type": "DataObject",
+          "mention": "signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign",
+          "type": "Module",
+          "mention": "Sign",
+          "confidence": "high"
+        },
+        {
+          "name": "Templates",
+          "type": "Sub-module",
+          "mention": "Templates",
+          "confidence": "high"
+        },
+        {
+          "name": "visualization mode",
+          "type": "Feature",
+          "mention": "visualization mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Edit Template",
+          "type": "Action",
+          "mention": "Edit Template",
+          "confidence": "high"
+        },
+        {
+          "name": "Prepare the document(s) for signing",
+          "type": "Workflow",
+          "mention": "Prepare the document(s) for signing",
+          "confidence": "high"
+        },
+        {
+          "name": "adding or editing fields",
+          "type": "Action",
+          "mention": "adding or editing fields",
+          "confidence": "high"
+        },
+        {
+          "name": "adding or removing signers",
+          "type": "Action",
+          "mention": "adding or removing signers",
+          "confidence": "high"
+        },
+        {
+          "name": "adding or removing documents",
+          "type": "Action",
+          "mention": "adding or removing documents",
+          "confidence": "high"
+        },
+        {
+          "name": "define or edit settings for specific signers",
+          "type": "Action",
+          "mention": "define or edit settings for specific signers",
+          "confidence": "high"
+        },
+        {
+          "name": "requiring additional authentication",
+          "type": "Setting",
+          "mention": "requiring additional authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "allowing a signer to be replaced",
+          "type": "Setting",
+          "mention": "allowing a signer to be replaced",
+          "confidence": "high"
+        },
+        {
+          "name": "assigning a fixed signer",
+          "type": "Setting",
+          "mention": "assigning a fixed signer",
+          "confidence": "high"
+        },
+        {
+          "name": "define or edit general settings for the template",
+          "type": "Action",
+          "mention": "define or edit general settings for the template",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "name of the template",
+          "type": "Field",
+          "mention": "name of the template",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags",
+          "type": "Field",
+          "mention": "Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Model",
+          "type": "Field",
+          "mention": "Model",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo model",
+          "type": "Concept",
+          "mention": "Odoo model",
+          "confidence": "high"
+        },
+        {
+          "name": "Redirect Link",
+          "type": "Field",
+          "mention": "Redirect Link",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents folder",
+          "type": "Field",
+          "mention": "Documents folder",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents tags",
+          "type": "Field",
+          "mention": "Documents tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Authorized Users",
+          "type": "Field",
+          "mention": "Authorized Users",
+          "confidence": "high"
+        },
+        {
+          "name": "Valid for",
+          "type": "Field",
+          "mention": "Valid for",
+          "confidence": "high"
+        },
+        {
+          "name": "Communication tab",
+          "type": "Sub-module",
+          "mention": "Communication tab",
+          "confidence": "high"
+        },
+        {
+          "name": "powerbox",
+          "type": "Feature",
+          "mention": "powerbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manage template access",
+          "type": "Setting",
+          "mention": "Manage template access",
+          "confidence": "high"
+        },
+        {
+          "name": "main Sign settings",
+          "type": "Module",
+          "mention": "main Sign settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Authorized Groups",
+          "type": "Field",
+          "mention": "Authorized Groups",
+          "confidence": "high"
+        },
+        {
+          "name": "Responsible user",
+          "type": "Field",
+          "mention": "Responsible user",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "template",
+          "relation": "IS_PART_OF",
+          "target": "Sign",
+          "evidence": "To edit a template, go to Sign --> Templates"
+        },
+        {
+          "source": "Templates",
+          "relation": "IS_PART_OF",
+          "target": "Sign",
+          "evidence": "To edit a template, go to Sign --> Templates"
+        },
+        {
+          "source": "template",
+          "relation": "PRODUCES",
+          "target": "signature request",
+          "evidence": "template can be edited at any time, provided it has not yet been used to send a signature request"
+        },
+        {
+          "source": "Prepare the document(s) for signing",
+          "relation": "CONTAINS",
+          "target": "adding or editing fields",
+          "evidence": "Prepare the document(s) for signing by adding or editing fields"
+        },
+        {
+          "source": "Prepare the document(s) for signing",
+          "relation": "CONTAINS",
+          "target": "adding or removing signers",
+          "evidence": "Prepare the document(s) for signing by adding or removing signers"
+        },
+        {
+          "source": "Prepare the document(s) for signing",
+          "relation": "CONTAINS",
+          "target": "adding or removing documents",
+          "evidence": "Prepare the document(s) for signing by adding or removing documents"
+        },
+        {
+          "source": "template",
+          "relation": "HAS_FEATURE",
+          "target": "visualization mode",
+          "evidence": "When you open a template that has already been used to send a signature request, the template is in visualization mode"
+        },
+        {
+          "source": "template",
+          "relation": "CONFIGURED_BY",
+          "target": "name of the template",
+          "evidence": "If desired, edit the name of the template"
+        },
+        {
+          "source": "template",
+          "relation": "CONFIGURED_BY",
+          "target": "Tags",
+          "evidence": "Tags: Add tags to categorize the template"
+        },
+        {
+          "source": "template",
+          "relation": "CONFIGURED_BY",
+          "target": "Model",
+          "evidence": "Model: Select the Odoo model to which the template is linked"
+        },
+        {
+          "source": "template",
+          "relation": "CONFIGURED_BY",
+          "target": "Redirect Link",
+          "evidence": "Redirect Link: Add a url to which the user is redirected after signing the document"
+        },
+        {
+          "source": "template",
+          "relation": "CONFIGURED_BY",
+          "target": "Documents folder",
+          "evidence": "Documents folder: Define in which folder in the Documents app the documents using this template should be saved"
+        },
+        {
+          "source": "template",
+          "relation": "CONFIGURED_BY",
+          "target": "Documents tags",
+          "evidence": "Documents tags: Determine which Documents-app tags should be assigned to documents using this template"
+        },
+        {
+          "source": "template",
+          "relation": "CONFIGURED_BY",
+          "target": "Authorized Users",
+          "evidence": "Authorized Users: Determine which specific users are authorized to view and use this template"
+        },
+        {
+          "source": "template",
+          "relation": "CONFIGURED_BY",
+          "target": "Valid for",
+          "evidence": "Valid for: Set a default number of days after which signature requests using this template expire"
+        },
+        {
+          "source": "Communication tab",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "In the Communication tab, type a default text"
+        },
+        {
+          "source": "Authorized Groups",
+          "relation": "CONFIGURED_BY",
+          "target": "Manage template access",
+          "evidence": "If Manage template access is enabled in the main Sign settings, it is also possible to configure the following fields: Authorized Groups"
+        },
+        {
+          "source": "Responsible user",
+          "relation": "CONFIGURED_BY",
+          "target": "Manage template access",
+          "evidence": "If Manage template access is enabled in the main Sign settings, it is also possible to configure the following fields: Responsible user"
+        },
+        {
+          "source": "signature request",
+          "relation": "PERFORMED_BY",
+          "target": "signer",
+          "evidence": "type a default text that will be added when a signature request using this template is sent via email"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-templates",
+    "heading": "Use templates",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign app",
+          "type": "Module",
+          "mention": "Sign app",
+          "confidence": "high"
+        },
+        {
+          "name": "request signatures",
+          "type": "Sub-module",
+          "mention": "request-signatures",
+          "confidence": "medium"
+        },
+        {
+          "name": "templates",
+          "type": "Feature",
+          "mention": "templates",
+          "confidence": "high"
+        },
+        {
+          "name": "initiating a signature request",
+          "type": "Action",
+          "mention": "initiating a signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "template-sign-app",
+          "type": "Concept",
+          "mention": "template-sign-app",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo record",
+          "type": "DataObject",
+          "mention": "Odoo record",
+          "confidence": "high"
+        },
+        {
+          "name": "template-odoo-record",
+          "type": "Concept",
+          "mention": "template-odoo-record",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sign app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Sign app"
+        },
+        {
+          "source": "request signatures",
+          "relation": "IS_PART_OF",
+          "target": "Sign app",
+          "evidence": "sign/request-signatures"
+        },
+        {
+          "source": "templates",
+          "relation": "HAS_FEATURE",
+          "target": "Sign app",
+          "evidence": "Templates can be used when initiating a signature request from the Sign app"
+        },
+        {
+          "source": "initiating a signature request",
+          "relation": "USES_METHOD",
+          "target": "templates",
+          "evidence": "Templates can be used when initiating a signature request"
+        },
+        {
+          "source": "initiating a signature request",
+          "relation": "USES_METHOD",
+          "target": "Odoo record",
+          "evidence": "directly from an Odoo record"
+        },
+        {
+          "source": "template-sign-app",
+          "relation": "SEE_ALSO",
+          "target": "template-odoo-record",
+          "evidence": "template-sign-app or directly from an Odoo record template-odoo-record."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-the-sign-app",
+    "heading": "From the Sign app",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign app",
+          "type": "Module",
+          "mention": "Sign app",
+          "confidence": "high"
+        },
+        {
+          "name": "Templates",
+          "type": "Sub-module",
+          "mention": "Templates",
+          "confidence": "high"
+        },
+        {
+          "name": "New Signature Request",
+          "type": "Workflow",
+          "mention": "New Signature Request",
+          "confidence": "high"
+        },
+        {
+          "name": "direct email",
+          "type": "Feature",
+          "mention": "direct email",
+          "confidence": "high"
+        },
+        {
+          "name": "shareable link",
+          "type": "Feature",
+          "mention": "shareable link",
+          "confidence": "high"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Send",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign Now",
+          "type": "Action",
+          "mention": "Sign Now",
+          "confidence": "high"
+        },
+        {
+          "name": "Share",
+          "type": "Action",
+          "mention": "Share",
+          "confidence": "high"
+        },
+        {
+          "name": "Stop sharing",
+          "type": "Action",
+          "mention": "Stop sharing",
+          "confidence": "high"
+        },
+        {
+          "name": "All Documents",
+          "type": "Report",
+          "mention": "All Documents",
+          "confidence": "high"
+        },
+        {
+          "name": "document",
+          "type": "DataObject",
+          "mention": "document",
+          "confidence": "high"
+        },
+        {
+          "name": "document envelope",
+          "type": "DataObject",
+          "mention": "document envelope",
+          "confidence": "high"
+        },
+        {
+          "name": "Valid Until date",
+          "type": "Field",
+          "mention": "Valid Until date",
+          "confidence": "high"
+        },
+        {
+          "name": "Shared tag",
+          "type": "Field",
+          "mention": "Shared tag",
+          "confidence": "high"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sign app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "When using a template, there are two ways a signature request can be sent from the Sign app"
+        },
+        {
+          "source": "Templates",
+          "relation": "IS_PART_OF",
+          "target": "Sign app",
+          "evidence": "Go to Sign --> Templates to see all existing templates"
+        },
+        {
+          "source": "New Signature Request",
+          "relation": "IS_PART_OF",
+          "target": "Sign app",
+          "evidence": "Complete the relevant fields of the New Signature Request window"
+        },
+        {
+          "source": "direct email",
+          "relation": "IS_PART_OF",
+          "target": "Sign app",
+          "evidence": "via direct email to one or more specific signers"
+        },
+        {
+          "source": "shareable link",
+          "relation": "IS_PART_OF",
+          "target": "Sign app",
+          "evidence": "via a shareable link, provided the document or document envelope has only one signer"
+        },
+        {
+          "source": "All Documents",
+          "relation": "IS_PART_OF",
+          "target": "Sign app",
+          "evidence": "a new document is created within Odoo Sign and appears in Sign --> All Documents"
+        },
+        {
+          "source": "document",
+          "relation": "IS_PART_OF",
+          "target": "Sign app",
+          "evidence": "a new document is created within Odoo Sign"
+        },
+        {
+          "source": "document envelope",
+          "relation": "IS_PART_OF",
+          "target": "Sign app",
+          "evidence": "provided the document or document envelope has only one signer"
+        },
+        {
+          "source": "Shared tag",
+          "relation": "IS_PART_OF",
+          "target": "Templates",
+          "evidence": "a Shared tag appears on the card of the relevant template in the Templates Kanban view"
+        },
+        {
+          "source": "Sign app",
+          "relation": "HAS_FEATURE",
+          "target": "direct email",
+          "evidence": "two ways a signature request can be sent from the Sign app: via direct email"
+        },
+        {
+          "source": "Sign app",
+          "relation": "HAS_FEATURE",
+          "target": "shareable link",
+          "evidence": "two ways a signature request can be sent from the Sign app: via a shareable link"
+        },
+        {
+          "source": "Share",
+          "relation": "PRODUCES",
+          "target": "shareable link",
+          "evidence": "Click Share on the line of the relevant template... copy the link to your clipboard"
+        },
+        {
+          "source": "Send",
+          "relation": "TRIGGERED_BY",
+          "target": "Sign app",
+          "evidence": "click Send on the line of the relevant template"
+        },
+        {
+          "source": "Sign Now",
+          "relation": "TRIGGERED_BY",
+          "target": "New Signature Request",
+          "evidence": "click Sign Now, then complete and sign the document(s)"
+        },
+        {
+          "source": "Sign app",
+          "relation": "HAS_REPORT",
+          "target": "All Documents",
+          "evidence": "appears in Sign --> All Documents"
+        },
+        {
+          "source": "signer",
+          "relation": "PERFORMED_BY",
+          "target": "Sign Now",
+          "evidence": "one of the signers and you are ready to sign the document directly, click Sign Now"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-an-odoo-record",
+    "heading": "From an Odoo record",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Request Signature",
+          "type": "Action",
+          "mention": "Request Signature",
+          "confidence": "high"
+        },
+        {
+          "name": "New Signature Request window",
+          "type": "Workflow",
+          "mention": "New Signature Request window",
+          "confidence": "high"
+        },
+        {
+          "name": "Template",
+          "type": "DataObject",
+          "mention": "Template",
+          "confidence": "high"
+        },
+        {
+          "name": "New Signature Request window",
+          "type": "DataObject",
+          "mention": "New Signature Request window",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign Now",
+          "type": "Action",
+          "mention": "Sign Now",
+          "confidence": "high"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Send",
+          "confidence": "high"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "document envelope",
+          "type": "DataObject",
+          "mention": "document envelope",
+          "confidence": "high"
+        },
+        {
+          "name": "signed document(s)",
+          "type": "DataObject",
+          "mention": "signed document(s)",
+          "confidence": "high"
+        },
+        {
+          "name": "certificate of completion",
+          "type": "DataObject",
+          "mention": "certificate of completion",
+          "confidence": "high"
+        },
+        {
+          "name": "record's chatter",
+          "type": "Feature",
+          "mention": "record's chatter",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Request Signature",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "To send a signature request using a template from an Odoo record"
+        },
+        {
+          "source": "Template",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Templates linked to the current Odoo model"
+        },
+        {
+          "source": "New Signature Request window",
+          "relation": "CONTAINS",
+          "target": "Template",
+          "evidence": "In the New Signature Request window, select the relevant Template"
+        },
+        {
+          "source": "Sign Now",
+          "relation": "PERFORMED_BY",
+          "target": "signer",
+          "evidence": "one of the signers and you are ready to sign the document directly, click Sign Now"
+        },
+        {
+          "source": "Send",
+          "relation": "PERFORMED_BY",
+          "target": "signer",
+          "evidence": "not one of the signers or a signing order has been defined and you need to sign the document after other signers, click Send"
+        },
+        {
+          "source": "customer",
+          "relation": "IS_PART_OF",
+          "target": "signer",
+          "evidence": "the related customer (or the relevant party) is automatically added as a signer"
+        },
+        {
+          "source": "signed document(s)",
+          "relation": "BELONGS_TO",
+          "target": "record's chatter",
+          "evidence": "the signed document(s) and the certificate of completion are also added to the record's chatter"
+        },
+        {
+          "source": "certificate of completion",
+          "relation": "BELONGS_TO",
+          "target": "record's chatter",
+          "evidence": "the signed document(s) and the certificate of completion are also added to the record's chatter"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manage-templates",
+    "heading": "Manage templates",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign",
+          "type": "Module",
+          "mention": "Sign",
+          "confidence": "high"
+        },
+        {
+          "name": "Templates",
+          "type": "Feature",
+          "mention": "Templates",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "My Favorites filter",
+          "type": "Feature",
+          "mention": "My Favorites filter",
+          "confidence": "high"
+        },
+        {
+          "name": "panel",
+          "type": "Feature",
+          "mention": "panel on the left side",
+          "confidence": "medium"
+        },
+        {
+          "name": "template name",
+          "type": "Field",
+          "mention": "the name of the template",
+          "confidence": "high"
+        },
+        {
+          "name": "creation month and year",
+          "type": "Field",
+          "mention": "the month and year in which the template was created",
+          "confidence": "high"
+        },
+        {
+          "name": "Responsible user",
+          "type": "Field",
+          "mention": "Responsible user for the template",
+          "confidence": "high"
+        },
+        {
+          "name": "tags",
+          "type": "Field",
+          "mention": "any tags assigned to the template",
+          "confidence": "high"
+        },
+        {
+          "name": "In Progress count",
+          "type": "Field",
+          "mention": "number of documents ... signature request is In Progress",
+          "confidence": "high"
+        },
+        {
+          "name": "Signed count",
+          "type": "Field",
+          "mention": "number of documents ... that have been fully Signed",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage template access",
+          "type": "Setting",
+          "mention": "Manage template access is enabled in the main Sign settings",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "template",
+          "type": "DataObject",
+          "mention": "template",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-star (star)",
+          "type": "Action",
+          "mention": "click the fa-star (star)",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-ellipsis-v (vertical ellipsis) icon",
+          "type": "Action",
+          "mention": "fa-ellipsis-v (vertical ellipsis) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Edit a template",
+          "type": "Action",
+          "mention": "Edit a template",
+          "confidence": "high"
+        },
+        {
+          "name": "Duplicate a template",
+          "type": "Action",
+          "mention": "Duplicate a template",
+          "confidence": "high"
+        },
+        {
+          "name": "Archive a template",
+          "type": "Action",
+          "mention": "Archive a template",
+          "confidence": "high"
+        },
+        {
+          "name": "Select a Color",
+          "type": "Action",
+          "mention": "Select a Color",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Templates",
+          "relation": "BELONGS_TO",
+          "target": "Sign",
+          "evidence": "Manage templates by going to Sign --> Templates."
+        },
+        {
+          "source": "Sign",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Templates",
+          "relation": "HAS_FEATURE",
+          "target": "Kanban view",
+          "evidence": "templates are shown in a Kanban view"
+        },
+        {
+          "source": "Templates",
+          "relation": "CONTAINS",
+          "target": "My Favorites filter",
+          "evidence": "Remove the My Favorites filter ... to view all document templates"
+        },
+        {
+          "source": "Templates",
+          "relation": "CONTAINS",
+          "target": "panel",
+          "evidence": "A panel on the left side allows the view to be filtered by tag"
+        },
+        {
+          "source": "template",
+          "relation": "CONTAINS",
+          "target": "template name",
+          "evidence": "the following information is shown: - the name of the template"
+        },
+        {
+          "source": "template",
+          "relation": "CONTAINS",
+          "target": "creation month and year",
+          "evidence": "the following information is shown: - the month and year in which the template was created"
+        },
+        {
+          "source": "template",
+          "relation": "CONTAINS",
+          "target": "Responsible user",
+          "evidence": "the following information is shown: - the avatar of the Responsible user for the template"
+        },
+        {
+          "source": "template",
+          "relation": "CONTAINS",
+          "target": "tags",
+          "evidence": "the following information is shown: - any tags assigned to the template"
+        },
+        {
+          "source": "template",
+          "relation": "CONTAINS",
+          "target": "In Progress count",
+          "evidence": "the following information is shown: - the number of documents ... signature request is In Progress"
+        },
+        {
+          "source": "template",
+          "relation": "CONTAINS",
+          "target": "Signed count",
+          "evidence": "the following information is shown: - the number of documents ... that have been fully Signed"
+        },
+        {
+          "source": "Responsible user",
+          "relation": "CONFIGURED_BY",
+          "target": "Manage template access",
+          "evidence": "this can be changed in the configuration settings of the template if Manage template access is enabled in the main Sign settings"
+        },
+        {
+          "source": "template",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "by default the user who created the template"
+        },
+        {
+          "source": "fa-ellipsis-v (vertical ellipsis) icon",
+          "relation": "ENABLES",
+          "target": "Edit a template",
+          "evidence": "Click the icon to: - Edit a template"
+        },
+        {
+          "source": "fa-ellipsis-v (vertical ellipsis) icon",
+          "relation": "ENABLES",
+          "target": "Duplicate a template",
+          "evidence": "Click the icon to: - Duplicate a template"
+        },
+        {
+          "source": "fa-ellipsis-v (vertical ellipsis) icon",
+          "relation": "ENABLES",
+          "target": "Archive a template",
+          "evidence": "Click the icon to: - Archive a template"
+        },
+        {
+          "source": "fa-ellipsis-v (vertical ellipsis) icon",
+          "relation": "ENABLES",
+          "target": "Select a Color",
+          "evidence": "Click the icon to: - Select a Color"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "prepare-a-document-for-signing",
+    "heading": "Prepare a document for signing",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Prepare a document for signing",
+          "type": "Workflow",
+          "mention": "Prepare a document for signing",
+          "confidence": "high"
+        },
+        {
+          "name": "add the relevant fields",
+          "type": "Action",
+          "mention": "add the relevant fields",
+          "confidence": "high"
+        },
+        {
+          "name": "sign/request-signatures/add-fields",
+          "type": "Feature",
+          "mention": "<sign/request-signatures/add-fields>",
+          "confidence": "high"
+        },
+        {
+          "name": "sign/request-signatures/create-envelope",
+          "type": "Feature",
+          "mention": "<sign/request-signatures/create-envelope>",
+          "confidence": "high"
+        },
+        {
+          "name": "sign/request-signatures/signers",
+          "type": "Feature",
+          "mention": "<sign/request-signatures/signers>",
+          "confidence": "high"
+        },
+        {
+          "name": "sign/request-signatures/add-tags",
+          "type": "Feature",
+          "mention": "<sign/request-signatures/add-tags>",
+          "confidence": "high"
+        },
+        {
+          "name": "signers",
+          "type": "Actor",
+          "mention": "signers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Prepare a document for signing",
+          "relation": "HAS_FEATURE",
+          "target": "add the relevant fields",
+          "evidence": "To prepare any document for signing, add the relevant fields"
+        },
+        {
+          "source": "add the relevant fields",
+          "relation": "IS_PART_OF",
+          "target": "sign/request-signatures/add-fields",
+          "evidence": "add the relevant fields <sign/request-signatures/add-fields>"
+        },
+        {
+          "source": "sign/request-signatures/add-fields",
+          "relation": "SEE_ALSO",
+          "target": "sign/request-signatures/create-envelope",
+          "evidence": "add additional documents <sign/request-signatures/create-envelope>"
+        },
+        {
+          "source": "sign/request-signatures/add-fields",
+          "relation": "SEE_ALSO",
+          "target": "sign/request-signatures/signers",
+          "evidence": "configure and add signers <sign/request-signatures/signers>"
+        },
+        {
+          "source": "sign/request-signatures/add-fields",
+          "relation": "SEE_ALSO",
+          "target": "sign/request-signatures/add-tags",
+          "evidence": "add tags <sign/request-signatures/add-tags>"
+        },
+        {
+          "source": "sign/request-signatures/signers",
+          "relation": "RELATED_TO",
+          "target": "signers",
+          "evidence": "configure and add signers <sign/request-signatures/signers>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-fields-to-a-document",
+    "heading": "Add fields to a document",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "document",
+          "type": "DataObject",
+          "mention": "document",
+          "confidence": "high"
+        },
+        {
+          "name": "field",
+          "type": "Field",
+          "mention": "field",
+          "confidence": "high"
+        },
+        {
+          "name": "Initial field type",
+          "type": "Field",
+          "mention": "Initial",
+          "confidence": "high"
+        },
+        {
+          "name": "Radio field type",
+          "type": "Field",
+          "mention": "Radio",
+          "confidence": "high"
+        },
+        {
+          "name": "Selection field type",
+          "type": "Field",
+          "mention": "Selection",
+          "confidence": "high"
+        },
+        {
+          "name": "Strikethrough field type",
+          "type": "Field",
+          "mention": "Strikethrough",
+          "confidence": "high"
+        },
+        {
+          "name": "Placeholder text",
+          "type": "Field",
+          "mention": "Placeholder text",
+          "confidence": "high"
+        },
+        {
+          "name": "Mandatory field",
+          "type": "Setting",
+          "mention": "Mandatory field",
+          "confidence": "high"
+        },
+        {
+          "name": "Read-only field",
+          "type": "Setting",
+          "mention": "Read-only",
+          "confidence": "high"
+        },
+        {
+          "name": "horizontal alignment",
+          "type": "Setting",
+          "mention": "horizontal alignment",
+          "confidence": "high"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "field",
+          "relation": "IS_PART_OF",
+          "target": "document",
+          "evidence": "add a field to a document"
+        },
+        {
+          "source": "Initial field type",
+          "relation": "BELONGS_TO",
+          "target": "field",
+          "evidence": "Fields of the following field types"
+        },
+        {
+          "source": "Radio field type",
+          "relation": "BELONGS_TO",
+          "target": "field",
+          "evidence": "Fields of the following field types"
+        },
+        {
+          "source": "Selection field type",
+          "relation": "BELONGS_TO",
+          "target": "field",
+          "evidence": "Fields of the following field types"
+        },
+        {
+          "source": "Strikethrough field type",
+          "relation": "BELONGS_TO",
+          "target": "field",
+          "evidence": "Fields of the following field types"
+        },
+        {
+          "source": "Mandatory field",
+          "relation": "CONFIGURED_BY",
+          "target": "field",
+          "evidence": "whether or not a field is a Mandatory field"
+        },
+        {
+          "source": "Read-only field",
+          "relation": "CONFIGURED_BY",
+          "target": "field",
+          "evidence": "whether or not a field...is Read-only"
+        },
+        {
+          "source": "horizontal alignment",
+          "relation": "CONFIGURED_BY",
+          "target": "field",
+          "evidence": "the horizontal alignment of the text within the field"
+        },
+        {
+          "source": "Placeholder text",
+          "relation": "CONFIGURED_BY",
+          "target": "field",
+          "evidence": "the Placeholder text"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "field",
+          "evidence": "drag it from the left panel"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "document-envelopes",
+    "heading": "Document envelopes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign app",
+          "type": "Module",
+          "mention": "Sign app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Documents app",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "medium"
+        },
+        {
+          "name": "document envelope",
+          "type": "DataObject",
+          "mention": "document envelope",
+          "confidence": "high"
+        },
+        {
+          "name": "Upload PDF",
+          "type": "Action",
+          "mention": "Upload PDF",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add",
+          "type": "Action",
+          "mention": "Add",
+          "confidence": "medium"
+        },
+        {
+          "name": "Move Up",
+          "type": "Action",
+          "mention": "Move Up",
+          "confidence": "medium"
+        },
+        {
+          "name": "Move Down",
+          "type": "Action",
+          "mention": "Move Down",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delete",
+          "type": "Action",
+          "mention": "Delete",
+          "confidence": "medium"
+        },
+        {
+          "name": "Open",
+          "type": "Action",
+          "mention": "Open",
+          "confidence": "medium"
+        },
+        {
+          "name": "Import from Documents",
+          "type": "Action",
+          "mention": "Import from Documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "Documents section",
+          "type": "Feature",
+          "mention": "Documents section",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "document envelope",
+          "relation": "CONTAINS",
+          "target": "Documents section",
+          "evidence": "Open the initial document or document envelope, then click Add in the Documents section."
+        },
+        {
+          "source": "Documents section",
+          "relation": "RELATED_TO",
+          "target": "document envelope",
+          "evidence": "Open the initial document or document envelope, then click Add in the Documents section."
+        },
+        {
+          "source": "Upload PDF",
+          "relation": "ENABLES",
+          "target": "document envelope",
+          "evidence": "To create a document envelope *during* the initial file upload, after clicking Upload PDF, select the relevant `.pdf` documents and click Open."
+        },
+        {
+          "source": "Add",
+          "relation": "ENABLES",
+          "target": "document envelope",
+          "evidence": "To add one or more documents *after* the initial file upload: #. Open the initial document or document envelope, then click Add in the Documents section."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-and-configure-signers",
+    "heading": "Add and configure signers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Add and configure signers",
+          "type": "Feature",
+          "mention": "Title: Add and configure signers",
+          "confidence": "high"
+        },
+        {
+          "name": "document",
+          "type": "DataObject",
+          "mention": "a document",
+          "confidence": "medium"
+        },
+        {
+          "name": "document envelope",
+          "type": "DataObject",
+          "mention": "document envelope",
+          "confidence": "medium"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add and configure signers",
+          "relation": "CONTAINS",
+          "target": "Add signers",
+          "evidence": "Additional signers can be added <sign/request-signatures/add-signers>",
+          "confidence": "medium"
+        },
+        {
+          "source": "Add and configure signers",
+          "relation": "CONTAINS",
+          "target": "Configure signer settings",
+          "evidence": "advanced configuration can be defined <sign/request-signatures/signer-settings>",
+          "confidence": "medium"
+        },
+        {
+          "source": "document",
+          "relation": "HAS_FEATURE",
+          "target": "Add and configure signers",
+          "evidence": "By default, a document or document envelope has one signer.",
+          "confidence": "low"
+        },
+        {
+          "source": "document envelope",
+          "relation": "HAS_FEATURE",
+          "target": "Add and configure signers",
+          "evidence": "By default, a document or document envelope has one signer.",
+          "confidence": "low"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-signers",
+    "heading": "Add signers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "signers",
+          "type": "Concept",
+          "mention": "add additional signers",
+          "confidence": "medium"
+        },
+        {
+          "name": "document",
+          "type": "DataObject",
+          "mention": "document",
+          "confidence": "high"
+        },
+        {
+          "name": "document envelope",
+          "type": "DataObject",
+          "mention": "document envelope",
+          "confidence": "high"
+        },
+        {
+          "name": "Signers section",
+          "type": "Field",
+          "mention": "Signers section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Signer",
+          "type": "Actor",
+          "mention": "Signer 2",
+          "confidence": "high"
+        },
+        {
+          "name": "Add",
+          "type": "Action",
+          "mention": "Add",
+          "confidence": "high"
+        },
+        {
+          "name": "edit the name",
+          "type": "Action",
+          "mention": "edit the name",
+          "confidence": "high"
+        },
+        {
+          "name": "unique color",
+          "type": "Concept",
+          "mention": "unique color",
+          "confidence": "medium"
+        },
+        {
+          "name": "fields",
+          "type": "Field",
+          "mention": "fields",
+          "confidence": "high"
+        },
+        {
+          "name": "background color",
+          "type": "Concept",
+          "mention": "background color",
+          "confidence": "medium"
+        },
+        {
+          "name": "order",
+          "type": "Concept",
+          "mention": "order",
+          "confidence": "medium"
+        },
+        {
+          "name": "signature request",
+          "type": "DataObject",
+          "mention": "signature request",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "document",
+          "evidence": "Open the document"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "document envelope",
+          "evidence": "document envelope"
+        },
+        {
+          "source": "document",
+          "relation": "CONTAINS",
+          "target": "Signers section",
+          "evidence": "Signers section"
+        },
+        {
+          "source": "document envelope",
+          "relation": "CONTAINS",
+          "target": "Signers section",
+          "evidence": "Signers section"
+        },
+        {
+          "source": "Add",
+          "relation": "APPLIES_TO",
+          "target": "signers",
+          "evidence": "Add in the Signers section"
+        },
+        {
+          "source": "edit the name",
+          "relation": "APPLIES_TO",
+          "target": "Signer",
+          "evidence": "edit the name of the signer"
+        },
+        {
+          "source": "signers",
+          "relation": "GENERATES",
+          "target": "unique color",
+          "evidence": "Each signer is assigned a unique color"
+        },
+        {
+          "source": "Signer",
+          "relation": "RELATED_TO",
+          "target": "fields",
+          "evidence": "all fields associated with a specific signer"
+        },
+        {
+          "source": "signature request",
+          "relation": "RELATED_TO",
+          "target": "order",
+          "evidence": "define the order in which signers receive and sign"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "signer-settings",
+    "heading": "Signer settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Signer settings",
+          "type": "Setting",
+          "mention": "Title: Signer settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Authentication",
+          "type": "Setting",
+          "mention": "Authentication: Require the signer to authenticate using a specific authentication method",
+          "confidence": "high"
+        },
+        {
+          "name": "Can delegate",
+          "type": "Permission",
+          "mention": "Can delegate: Allow the signer to be replaced",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign to",
+          "type": "Action",
+          "mention": "Assign to: Assign a specific contact as signer by selecting them from the dropdown.",
+          "confidence": "high"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-ellipsis-v (vertical ellipsis) icon",
+          "type": "Action",
+          "mention": "click the fa-ellipsis-v (vertical ellipsis) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "sign/security/authentication",
+          "type": "Unknown",
+          "mention": "<sign/security/authentication>",
+          "confidence": "high"
+        },
+        {
+          "name": "sign/request-signatures/change-signers",
+          "type": "Unknown",
+          "mention": "<sign/request-signatures/change-signers>",
+          "confidence": "high"
+        },
+        {
+          "name": "sign/request-signatures/add-tags",
+          "type": "Unknown",
+          "mention": "sign/request-signatures/add-tags",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Signer settings",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Signer settings"
+        },
+        {
+          "source": "Authentication",
+          "relation": "IS_PART_OF",
+          "target": "Signer settings",
+          "evidence": "To define additional configuration for signers... For each signer, the following options are available:\n- Authentication"
+        },
+        {
+          "source": "Can delegate",
+          "relation": "IS_PART_OF",
+          "target": "Signer settings",
+          "evidence": "To define additional configuration for signers... For each signer, the following options are available:\n- Can delegate"
+        },
+        {
+          "source": "Assign to",
+          "relation": "IS_PART_OF",
+          "target": "Signer settings",
+          "evidence": "To define additional configuration for signers... For each signer, the following options are available:\n- Assign to"
+        },
+        {
+          "source": "Authentication",
+          "relation": "RELATED_TO",
+          "target": "sign/security/authentication",
+          "evidence": "Authentication: Require the signer to authenticate using a specific authentication method <sign/security/authentication>."
+        },
+        {
+          "source": "Can delegate",
+          "relation": "RELATED_TO",
+          "target": "sign/request-signatures/change-signers",
+          "evidence": "Can delegate: Allow the signer to be replaced <sign/request-signatures/change-signers> after the signature request has been sent."
+        },
+        {
+          "source": "fa-ellipsis-v (vertical ellipsis) icon",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the fa-ellipsis-v (vertical ellipsis) icon on the row of the signer."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-tags",
+    "heading": "Add tags",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "document",
+          "type": "DataObject",
+          "mention": "document",
+          "confidence": "high"
+        },
+        {
+          "name": "document envelope",
+          "type": "DataObject",
+          "mention": "document envelope",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags",
+          "type": "Feature",
+          "mention": "Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags dropdown",
+          "type": "Field",
+          "mention": "Tags dropdown",
+          "confidence": "high"
+        },
+        {
+          "name": "signature request",
+          "type": "Action",
+          "mention": "signature request",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tags dropdown",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "select the relevant tags from the Tags dropdown in the upper-right corner above the document."
+        },
+        {
+          "source": "Tags",
+          "relation": "APPLIES_TO",
+          "target": "document",
+          "evidence": "To add tags to a document"
+        },
+        {
+          "source": "Tags",
+          "relation": "APPLIES_TO",
+          "target": "document envelope",
+          "evidence": "To add tags to a document or document envelope"
+        },
+        {
+          "source": "Tags dropdown",
+          "relation": "CONTAINS",
+          "target": "Tags",
+          "evidence": "select the relevant tags from the Tags dropdown"
+        },
+        {
+          "source": "signature request",
+          "relation": "TRIGGERED_BY",
+          "target": "Add tags",
+          "evidence": "before sending a signature request"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-the-signature-request",
+    "heading": "Configure the signature request",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "New Signature Request window",
+          "type": "Module",
+          "mention": "New Signature Request window",
+          "confidence": "medium"
+        },
+        {
+          "name": "one-off document",
+          "type": "DataObject",
+          "mention": "one-off document",
+          "confidence": "high"
+        },
+        {
+          "name": "document envelope",
+          "type": "DataObject",
+          "mention": "document envelope",
+          "confidence": "high"
+        },
+        {
+          "name": "signature request",
+          "type": "DataObject",
+          "mention": "signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "high"
+        },
+        {
+          "name": "contact",
+          "type": "Actor",
+          "mention": "contact",
+          "confidence": "high"
+        },
+        {
+          "name": "email address",
+          "type": "Field",
+          "mention": "email address",
+          "confidence": "medium"
+        },
+        {
+          "name": "Signing Order",
+          "type": "Feature",
+          "mention": "Signing Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Valid Until date",
+          "type": "Setting",
+          "mention": "Valid Until date",
+          "confidence": "high"
+        },
+        {
+          "name": "Reminders",
+          "type": "Feature",
+          "mention": "Reminders",
+          "confidence": "high"
+        },
+        {
+          "name": "Add certificate on each page",
+          "type": "Feature",
+          "mention": "Add certificate on each page",
+          "confidence": "high"
+        },
+        {
+          "name": "certificate of completion",
+          "type": "DataObject",
+          "mention": "certificate of completion",
+          "confidence": "high"
+        },
+        {
+          "name": "CC field",
+          "type": "Field",
+          "mention": "CC field",
+          "confidence": "medium"
+        },
+        {
+          "name": "message",
+          "type": "Field",
+          "mention": "message",
+          "confidence": "medium"
+        },
+        {
+          "name": "template",
+          "type": "DataObject",
+          "mention": "template",
+          "confidence": "high"
+        },
+        {
+          "name": "attachments",
+          "type": "DataObject",
+          "mention": "attachments",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents app",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Send",
+          "confidence": "high"
+        },
+        {
+          "name": "configure",
+          "type": "Action",
+          "mention": "configure",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Signing Order",
+          "relation": "ENABLES",
+          "target": "control the order in which the document or document envelope is signed",
+          "evidence": "Optionally, enable Signing Order to control the order in which the document or document envelope is signed."
+        },
+        {
+          "source": "Add certificate on each page",
+          "relation": "ENABLES",
+          "target": "add the reference of the certificate of completion to each page of the document(s)",
+          "evidence": "enable Add certificate on each page to add the reference of the certificate of completion to each page of the document(s)"
+        },
+        {
+          "source": "signature request",
+          "relation": "IS_PART_OF",
+          "target": "New Signature Request window",
+          "evidence": "configure the signature request in the New Signature Request window."
+        },
+        {
+          "source": "send",
+          "relation": "TRIGGERED_BY",
+          "target": "click Send",
+          "evidence": "click Send, then configure the signature request"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "signing-order",
+    "heading": "Signing order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Signing order",
+          "type": "Feature",
+          "mention": "Signing order",
+          "confidence": "high"
+        },
+        {
+          "name": "New Signature Request window",
+          "type": "Module",
+          "mention": "New Signature Request window",
+          "confidence": "medium"
+        },
+        {
+          "name": "AB & Co Legal contact",
+          "type": "Actor",
+          "mention": "AB & Co Legal contact",
+          "confidence": "medium"
+        },
+        {
+          "name": "AB & Co CEO",
+          "type": "Actor",
+          "mention": "AB & Co CEO",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mitchell Admin",
+          "type": "Actor",
+          "mention": "Mitchell Admin",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Signing order",
+          "relation": "IS_PART_OF",
+          "target": "New Signature Request window",
+          "evidence": "configure the signature request in the New Signature Request window"
+        },
+        {
+          "source": "Signing order",
+          "relation": "CONFIGURED_BY",
+          "target": "New Signature Request window",
+          "evidence": "enable Signing Order in the New Signature Request window"
+        },
+        {
+          "source": "Signing order",
+          "relation": "RELATED_TO",
+          "target": "AB & Co Legal contact",
+          "evidence": "AB & Co Legal contact will receive the signature request first"
+        },
+        {
+          "source": "Signing order",
+          "relation": "RELATED_TO",
+          "target": "AB & Co CEO",
+          "evidence": "AB & Co CEO second"
+        },
+        {
+          "source": "Signing order",
+          "relation": "RELATED_TO",
+          "target": "Mitchell Admin",
+          "evidence": "Mitchell Admin last"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "validity-dates-and-reminders",
+    "heading": "Validity dates and reminders",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Valid Until",
+          "type": "Field",
+          "mention": "Valid Until field",
+          "confidence": "high"
+        },
+        {
+          "name": "signature request",
+          "type": "DataObject",
+          "mention": "signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "document",
+          "type": "DataObject",
+          "mention": "document",
+          "confidence": "high"
+        },
+        {
+          "name": "Reminders",
+          "type": "Feature",
+          "mention": "Reminders",
+          "confidence": "high"
+        },
+        {
+          "name": "template",
+          "type": "DataObject",
+          "mention": "template",
+          "confidence": "high"
+        },
+        {
+          "name": "signature request email",
+          "type": "DataObject",
+          "mention": "signature request email",
+          "confidence": "medium"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Valid Until",
+          "relation": "IS_PART_OF",
+          "target": "signature request",
+          "evidence": "using the Valid Until field when configuring the signature request"
+        },
+        {
+          "source": "signature request",
+          "relation": "CONTAINS",
+          "target": "document",
+          "evidence": "document that need to be signed... via the link in the signature request email"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Reminders",
+          "evidence": "To set automatic reminders, enable Reminders"
+        },
+        {
+          "source": "template",
+          "relation": "CONTAINS",
+          "target": "signature request email",
+          "evidence": "the Valid Until date is updated automatically in the signature request email"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manage-signature-requests-and-signed-documents",
+    "heading": "Manage signature requests and signed documents",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign",
+          "type": "Module",
+          "mention": "Sign",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Sub-module",
+          "mention": "Documents",
+          "confidence": "high"
+        },
+        {
+          "name": "All Documents",
+          "type": "DataObject",
+          "mention": "All Documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "overall Status",
+          "type": "Field",
+          "mention": "overall Status",
+          "confidence": "high"
+        },
+        {
+          "name": "signature request",
+          "type": "DataObject",
+          "mention": "signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "Resend a signature request manually",
+          "type": "Action",
+          "mention": "Resend a signature request manually",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign a document or document envelope",
+          "type": "Action",
+          "mention": "Sign a document or document envelope",
+          "confidence": "high"
+        },
+        {
+          "name": "Download the fully signed document(s)",
+          "type": "Action",
+          "mention": "Download the fully signed document(s)",
+          "confidence": "high"
+        },
+        {
+          "name": "cancelled signature request",
+          "type": "DataObject",
+          "mention": "cancelled signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "Details",
+          "type": "Action",
+          "mention": "Details",
+          "confidence": "medium"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "high"
+        },
+        {
+          "name": "tags",
+          "type": "Field",
+          "mention": "tags",
+          "confidence": "high"
+        },
+        {
+          "name": "linked record",
+          "type": "DataObject",
+          "mention": "linked record",
+          "confidence": "high"
+        },
+        {
+          "name": "schedule an activity related to the signature request",
+          "type": "Action",
+          "mention": "schedule an activity related to the signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "Cancel a signature request that has not been fully signed",
+          "type": "Action",
+          "mention": "Cancel a signature request that has not been fully signed",
+          "confidence": "high"
+        },
+        {
+          "name": "Archive a signature request",
+          "type": "Action",
+          "mention": "Archive a signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "Select a color dot to add a colored bar to the left side of a card to visually differentiate it",
+          "type": "Action",
+          "mention": "Select a color dot to add a colored bar to the left side of a card to visually differentiate it",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sign",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Documents",
+          "relation": "IS_PART_OF",
+          "target": "Sign",
+          "evidence": "Sign --> Documents"
+        },
+        {
+          "source": "All Documents",
+          "relation": "CONTAINS",
+          "target": "signature request",
+          "evidence": "All signature requests that have been sent are visible in Sign --> Documents --> All Documents."
+        },
+        {
+          "source": "Sign",
+          "relation": "HAS_FEATURE",
+          "target": "list view",
+          "evidence": "All signature requests that have been sent are visible in Sign --> Documents --> All Documents. The list view and Kanban view offer different possibilities:"
+        },
+        {
+          "source": "Sign",
+          "relation": "HAS_FEATURE",
+          "target": "Kanban view",
+          "evidence": "All signature requests that have been sent are visible in Sign --> Documents --> All Documents. The list view and Kanban view offer different possibilities:"
+        },
+        {
+          "source": "list view",
+          "relation": "ENABLES",
+          "target": "See the overall Status of the signature request",
+          "evidence": "In the list view: - See the overall Status of the signature request"
+        },
+        {
+          "source": "list view",
+          "relation": "ENABLES",
+          "target": "Resend a signature request manually",
+          "evidence": "In the list view: - fa-refresh Resend a signature request manually."
+        },
+        {
+          "source": "list view",
+          "relation": "ENABLES",
+          "target": "Sign a document or document envelope",
+          "evidence": "In the list view: - fa-pencil-square-o Sign a document or document envelope."
+        },
+        {
+          "source": "list view",
+          "relation": "ENABLES",
+          "target": "Download the fully signed document(s)",
+          "evidence": "In the list view: - fa-download Download the fully signed document(s)."
+        },
+        {
+          "source": "cancelled signature request",
+          "relation": "ENABLES",
+          "target": "Details",
+          "evidence": "For a cancelled signature request, click fa-info Details to see the details"
+        },
+        {
+          "source": "Kanban view",
+          "relation": "ENABLES",
+          "target": "See the status of individual signers",
+          "evidence": "In the Kanban view: - See the status of individual signers, per signature request:"
+        },
+        {
+          "source": "Kanban view",
+          "relation": "ENABLES",
+          "target": "schedule an activity related to the signature request",
+          "evidence": "Click the fa-clock-o (clock) icon to schedule an activity related to the signature request."
+        },
+        {
+          "source": "Kanban view",
+          "relation": "ENABLES",
+          "target": "Cancel a signature request that has not been fully signed",
+          "evidence": "Click the fa-ellipsis-v (vertical ellipsis) icon in the top-right of the card to reveal more options: - Cancel a signature request that *has not been* fully signed."
+        },
+        {
+          "source": "Kanban view",
+          "relation": "ENABLES",
+          "target": "Archive a signature request",
+          "evidence": "Click the fa-ellipsis-v (vertical ellipsis) icon in the top-right of the card to reveal more options: - Archive a signature request."
+        },
+        {
+          "source": "Kanban view",
+          "relation": "ENABLES",
+          "target": "Select a color dot to add a colored bar to the left side of a card to visually differentiate it",
+          "evidence": "Click the fa-ellipsis-v (vertical ellipsis) icon in the top-right of the card to reveal more options: - Select a color dot to add a colored bar to the left side of a card to visually differentiate it."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "signature-request-details",
+    "heading": "Signature request details",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign",
+          "type": "Module",
+          "mention": "Sign",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "All Documents",
+          "type": "Sub-module",
+          "mention": "All Documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "Details",
+          "type": "Action",
+          "mention": "Details",
+          "confidence": "high"
+        },
+        {
+          "name": "Preview",
+          "type": "Action",
+          "mention": "Preview the document",
+          "confidence": "high"
+        },
+        {
+          "name": "Download",
+          "type": "Action",
+          "mention": "Download the document",
+          "confidence": "high"
+        },
+        {
+          "name": "Cancel",
+          "type": "Action",
+          "mention": "Cancel the signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "certificate of completion",
+          "type": "DataObject",
+          "mention": "certificate of completion",
+          "confidence": "high"
+        },
+        {
+          "name": "signature request",
+          "type": "DataObject",
+          "mention": "signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "Status",
+          "type": "Field",
+          "mention": "Status",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags",
+          "type": "Field",
+          "mention": "Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Valid until",
+          "type": "Field",
+          "mention": "Valid until",
+          "confidence": "high"
+        },
+        {
+          "name": "Reminder",
+          "type": "Field",
+          "mention": "Reminder",
+          "confidence": "high"
+        },
+        {
+          "name": "Linked to",
+          "type": "Field",
+          "mention": "Linked to",
+          "confidence": "high"
+        },
+        {
+          "name": "Signers",
+          "type": "Field",
+          "mention": "Signers",
+          "confidence": "high"
+        },
+        {
+          "name": "Role",
+          "type": "Field",
+          "mention": "Role",
+          "confidence": "medium"
+        },
+        {
+          "name": "email address",
+          "type": "Field",
+          "mention": "email address",
+          "confidence": "medium"
+        },
+        {
+          "name": "signature status",
+          "type": "Field",
+          "mention": "signature status",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resend",
+          "type": "Action",
+          "mention": "Resend",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts in copy",
+          "type": "Field",
+          "mention": "Contacts in copy",
+          "confidence": "high"
+        },
+        {
+          "name": "Activity Logs",
+          "type": "Feature",
+          "mention": "Activity Logs",
+          "confidence": "high"
+        },
+        {
+          "name": "To Sign",
+          "type": "Concept",
+          "mention": "To Sign",
+          "confidence": "medium"
+        },
+        {
+          "name": "Signed",
+          "type": "Concept",
+          "mention": "Signed",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cancelled",
+          "type": "Concept",
+          "mention": "Cancelled",
+          "confidence": "medium"
+        },
+        {
+          "name": "signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "medium"
+        },
+        {
+          "name": "contacts",
+          "type": "Actor",
+          "mention": "contacts",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Details",
+          "relation": "IS_PART_OF",
+          "target": "All Documents",
+          "evidence": "click the fa-ellipsis-v (vertical ellipsis) icon on the relevant signature request's card, and select Details."
+        },
+        {
+          "source": "All Documents",
+          "relation": "IS_PART_OF",
+          "target": "Documents",
+          "evidence": "go to Sign --> Documents --> All Documents"
+        },
+        {
+          "source": "Documents",
+          "relation": "IS_PART_OF",
+          "target": "Sign",
+          "evidence": "go to Sign --> Documents --> All Documents"
+        },
+        {
+          "source": "Sign",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Signature request details"
+        },
+        {
+          "source": "Preview",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Using the buttons at the top of the form, you can: Preview the document."
+        },
+        {
+          "source": "Download",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Using the buttons at the top of the form, you can: Download the document"
+        },
+        {
+          "source": "Cancel",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Using the buttons at the top of the form, you can: Cancel the signature request"
+        },
+        {
+          "source": "certificate of completion",
+          "relation": "RELATED_TO",
+          "target": "signature request",
+          "evidence": "Download the document and, if available, its certificate of completion"
+        },
+        {
+          "source": "signature request",
+          "relation": "HAS_FEATURE",
+          "target": "Status",
+          "evidence": "The overall Status of the signature request"
+        },
+        {
+          "source": "signature request",
+          "relation": "HAS_FEATURE",
+          "target": "Tags",
+          "evidence": "Tags: any tags added to the signature request"
+        },
+        {
+          "source": "signature request",
+          "relation": "HAS_FEATURE",
+          "target": "Valid until",
+          "evidence": "Valid until: the expiration date of the signature request"
+        },
+        {
+          "source": "signature request",
+          "relation": "HAS_FEATURE",
+          "target": "Reminder",
+          "evidence": "Reminder: the reminder settings of the signature request"
+        },
+        {
+          "source": "signature request",
+          "relation": "HAS_FEATURE",
+          "target": "Linked to",
+          "evidence": "Linked to: the Odoo model and record linked to the signature request"
+        },
+        {
+          "source": "signature request",
+          "relation": "HAS_FEATURE",
+          "target": "Signers",
+          "evidence": "Signers: the list of signers"
+        },
+        {
+          "source": "signature request",
+          "relation": "HAS_FEATURE",
+          "target": "Contacts in copy",
+          "evidence": "Contacts in copy: contacts added in the CC field when the signature request was created"
+        },
+        {
+          "source": "signature request",
+          "relation": "HAS_FEATURE",
+          "target": "Activity Logs",
+          "evidence": "Activity Logs: a complete log of actions performed on the signature request"
+        },
+        {
+          "source": "Resend",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click Resend to manually resend the request to a signer."
+        },
+        {
+          "source": "Resend",
+          "relation": "TRIGGERED_BY",
+          "target": "signature request",
+          "evidence": "Click Resend to manually resend the request to a signer."
+        },
+        {
+          "source": "Role",
+          "relation": "IS_PART_OF",
+          "target": "Signers",
+          "evidence": "Signers: the list of signers, including their Role"
+        },
+        {
+          "source": "email address",
+          "relation": "IS_PART_OF",
+          "target": "Signers",
+          "evidence": "Signers: the list of signers, including their Role, email address"
+        },
+        {
+          "source": "signature status",
+          "relation": "IS_PART_OF",
+          "target": "Signers",
+          "evidence": "Signers: the list of signers, including their Role, email address, and signature status"
+        },
+        {
+          "source": "To Sign",
+          "relation": "RELATED_TO",
+          "target": "Status",
+          "evidence": "Status of the signature request, i.e., To Sign, Signed, or Cancelled"
+        },
+        {
+          "source": "Signed",
+          "relation": "RELATED_TO",
+          "target": "Status",
+          "evidence": "Status of the signature request, i.e., To Sign, Signed, or Cancelled"
+        },
+        {
+          "source": "Cancelled",
+          "relation": "RELATED_TO",
+          "target": "Status",
+          "evidence": "Status of the signature request, i.e., To Sign, Signed, or Cancelled"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "replace-a-signer-or-update-a-signer's-email-address",
+    "heading": "Replace a signer or update a signer's email address",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Signers",
+          "type": "Module",
+          "mention": "Signers tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replace a signer",
+          "type": "Action",
+          "mention": "replace a signer",
+          "confidence": "high"
+        },
+        {
+          "name": "Update a signer's email address",
+          "type": "Action",
+          "mention": "update a signer's email address",
+          "confidence": "high"
+        },
+        {
+          "name": "Can delegate",
+          "type": "Setting",
+          "mention": "Can delegate option",
+          "confidence": "high"
+        },
+        {
+          "name": "Signatures",
+          "type": "DataObject",
+          "mention": "document was being prepared for signing",
+          "confidence": "medium"
+        },
+        {
+          "name": "Signature request",
+          "type": "DataObject",
+          "mention": "signature request",
+          "confidence": "high"
+        },
+        {
+          "name": "Signers tab",
+          "type": "Field",
+          "mention": "Signers tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Contact form",
+          "type": "Feature",
+          "mention": "contact form",
+          "confidence": "high"
+        },
+        {
+          "name": "Signer",
+          "type": "Actor",
+          "mention": "signer",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-arrow-right",
+          "type": "Feature",
+          "mention": "fa-arrow-right (Internal Link) icon",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replace a signer",
+          "relation": "REQUIRES",
+          "target": "Can delegate",
+          "evidence": "A signer can be replaced if the Can delegate option was enabled"
+        },
+        {
+          "source": "Update a signer's email address",
+          "relation": "PERFORMED_BY",
+          "target": "Signer",
+          "evidence": "To update a signer's email address, click the signer's name"
+        },
+        {
+          "source": "Replace a signer",
+          "relation": "PERFORMED_BY",
+          "target": "Signer",
+          "evidence": "To replace a signer, click their name in the Signers tab"
+        },
+        {
+          "source": "Update a signer's email address",
+          "relation": "REQUIRES",
+          "target": "Can delegate",
+          "evidence": "if the Can delegate option was enabled for the signer, click the name"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Signatures",
+          "evidence": "document was being prepared for signing"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Contact form",
+          "evidence": "update the email address in the contact form"
+        },
+        {
+          "source": "Replace a signer",
+          "relation": "GENERATES",
+          "target": "Signature request",
+          "evidence": "The signature request is automatically sent to the new signer"
+        },
+        {
+          "source": "Update a signer's email address",
+          "relation": "GENERATES",
+          "target": "Signature request",
+          "evidence": "The signature request is automatically sent to the new ... email address"
+        }
+      ]
+    }
+  }
+]

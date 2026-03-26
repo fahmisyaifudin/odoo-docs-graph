@@ -1,0 +1,629 @@
+[
+  {
+    "section_id": "fiscal-positions-(tax-and-account-mapping)",
+    "heading": "Fiscal positions (tax and account mapping)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal positions",
+          "type": "Module",
+          "mention": "Fiscal positions",
+          "confidence": "high"
+        },
+        {
+          "name": "Default taxes",
+          "type": "Concept",
+          "mention": "Default taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounts",
+          "type": "Concept",
+          "mention": "accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Transaction",
+          "type": "DataObject",
+          "mention": "transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customers' location",
+          "type": "Field",
+          "mention": "customers' location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Business type",
+          "type": "Field",
+          "mention": "business type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendors' location",
+          "type": "Field",
+          "mention": "vendors' location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Income accounts",
+          "type": "Concept",
+          "mention": "income and expense accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expense accounts",
+          "type": "Concept",
+          "mention": "income and expense accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Partner",
+          "type": "Actor",
+          "mention": "partner",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal localization package",
+          "type": "Module",
+          "mention": "fiscal localization package",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fiscal positions",
+          "relation": "CONTAINS",
+          "target": "Default taxes",
+          "evidence": "Default taxes and accounts are set on products and customers"
+        },
+        {
+          "source": "Fiscal positions",
+          "relation": "CONTAINS",
+          "target": "Accounts",
+          "evidence": "Default taxes and accounts are set on products and customers"
+        },
+        {
+          "source": "Fiscal positions",
+          "relation": "APPLIES_TO",
+          "target": "Products",
+          "evidence": "Default taxes and accounts are set on products and customers"
+        },
+        {
+          "source": "Fiscal positions",
+          "relation": "APPLIES_TO",
+          "target": "Customers",
+          "evidence": "Default taxes and accounts are set on products and customers"
+        },
+        {
+          "source": "Fiscal positions",
+          "relation": "PRODUCES",
+          "target": "Transaction",
+          "evidence": "to create new transactions on the fly"
+        },
+        {
+          "source": "Transaction",
+          "relation": "REQUIRES",
+          "target": "Customers' location",
+          "evidence": "depending on the customers' and vendors' location and business type"
+        },
+        {
+          "source": "Transaction",
+          "relation": "REQUIRES",
+          "target": "Business type",
+          "evidence": "depending on the customers' and vendors' location and business type"
+        },
+        {
+          "source": "Transaction",
+          "relation": "REQUIRES",
+          "target": "Vendors' location",
+          "evidence": "depending on the customers' and vendors' location and business type"
+        },
+        {
+          "source": "Fiscal positions",
+          "relation": "CONTAINS",
+          "target": "Taxes",
+          "evidence": "allow the creation of rules to adapt the taxes"
+        },
+        {
+          "source": "Fiscal positions",
+          "relation": "CONTAINS",
+          "target": "Income accounts",
+          "evidence": "allow the creation of rules to adapt the income and expense accounts"
+        },
+        {
+          "source": "Fiscal positions",
+          "relation": "CONTAINS",
+          "target": "Expense accounts",
+          "evidence": "allow the creation of rules to adapt the income and expense accounts"
+        },
+        {
+          "source": "Fiscal positions",
+          "relation": "PRODUCES",
+          "target": "Transaction",
+          "evidence": "used for a transaction automatically"
+        },
+        {
+          "source": "Fiscal positions",
+          "relation": "APPLIES_TO",
+          "target": "Partner",
+          "evidence": "assigned to a partner"
+        },
+        {
+          "source": "Fiscal localization package",
+          "relation": "CONTAINS",
+          "target": "Fiscal positions",
+          "evidence": "Several default fiscal positions are available as part of your fiscal localization package"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal Positions",
+          "type": "DataObject",
+          "mention": "Fiscal Positions",
+          "confidence": "high"
+        },
+        {
+          "name": "Legal Notes",
+          "type": "Field",
+          "mention": "Legal Notes... field",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Mapping",
+          "type": "Sub-module",
+          "mention": "tax mapping",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Fiscal Positions",
+          "evidence": "Configuration --> Fiscal Positions"
+        },
+        {
+          "source": "Fiscal Positions",
+          "relation": "CONTAINS",
+          "target": "Tax Mapping",
+          "evidence": "... below the tax mapping section"
+        },
+        {
+          "source": "Legal Notes",
+          "relation": "IS_PART_OF",
+          "target": "Fiscal Positions",
+          "evidence": "... field below the tax mapping section"
+        },
+        {
+          "source": "Legal Notes",
+          "relation": "GENERATES",
+          "target": "quotations",
+          "evidence": "display them on quotations"
+        },
+        {
+          "source": "Legal Notes",
+          "relation": "GENERATES",
+          "target": "sales orders",
+          "evidence": "display them on sales orders"
+        },
+        {
+          "source": "Legal Notes",
+          "relation": "GENERATES",
+          "target": "invoices",
+          "evidence": "display them on invoices"
+        },
+        {
+          "source": "Legal Notes",
+          "relation": "GENERATES",
+          "target": "bills",
+          "evidence": "display them on bills"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-mapping",
+    "heading": "Tax mapping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "tax mapping",
+          "type": "Concept",
+          "mention": "Tax mapping",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes themselves",
+          "type": "Concept",
+          "mention": "taxes themselves",
+          "confidence": "high"
+        },
+        {
+          "name": "account-mapping",
+          "type": "Concept",
+          "mention": "account-mapping",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "tax mapping",
+          "relation": "APPLIES_TO",
+          "target": "taxes",
+          "evidence": "Tax mapping is configured on taxes themselves."
+        },
+        {
+          "source": "account-mapping",
+          "relation": "SEE_ALSO",
+          "target": "tax mapping",
+          "evidence": "tax mapping <taxes/tax-mapping>"
+        },
+        {
+          "source": "tax mapping",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "account-mapping",
+          "relation": "SEE_ALSO",
+          "target": "taxes",
+          "evidence": "tax mapping <taxes/tax-mapping>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "account-mapping",
+    "heading": "Account mapping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Account mapping",
+          "type": "Feature",
+          "mention": "Title: Account mapping",
+          "confidence": "high"
+        },
+        {
+          "name": "income account",
+          "type": "Concept",
+          "mention": "income and expense accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "expense account",
+          "type": "Concept",
+          "mention": "income and expense accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "defined on the product",
+          "confidence": "medium"
+        },
+        {
+          "enumeration": "product category",
+          "type": "DataObject",
+          "mention": "or product category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account on Product",
+          "type": "Field",
+          "mention": "select the account to be replaced in the left column (Account on Product)",
+          "confidence": "high"
+        },
+        {
+          "name": "Account to Use Instead",
+          "type": "Field",
+          "mention": "select the account to use instead in the right column (Account to Use Instead)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Account mapping",
+          "relation": "HAS_FEATURE",
+          "target": "Odoo",
+          "evidence": "Title: Account mapping ... Product: Odoo"
+        },
+        {
+          "source": "Account mapping",
+          "relation": "CONFIGURED_BY",
+          "target": "income account",
+          "evidence": "Account mapping is based on the income and expense accounts"
+        },
+        {
+          "source": "Account mapping",
+          "relation": "CONFIGURED_BY",
+          "target": "expense account",
+          "evidence": "Account mapping is based on the income and expense accounts"
+        },
+        {
+          "source": "Account mapping",
+          "relation": "CONFIGURED_BY",
+          "target": "product",
+          "evidence": "defined on the product"
+        },
+        {
+          "source": "Account mapping",
+          "relation": "CONFIGURED_BY",
+          "target": "product category",
+          "evidence": "or product category"
+        },
+        {
+          "source": "Account mapping",
+          "relation": "CONTAINS",
+          "target": "Account on Product",
+          "evidence": "select the account to be replaced in the left column (Account on Product)"
+        },
+        {
+          "source": "Account mapping",
+          "relation": "CONTAINS",
+          "target": "Account to Use Instead",
+          "evidence": "select the account to use instead in the right column (Account to Use Instead)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "automatic-application",
+    "heading": "Automatic application",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ',' delimiter: line 1 column 1390 (char 1389)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"Accounting\",\"type\":\"Module\",\"mention\":\"Accounting\",\"confidence\":\"high\"},{\"name\":\"Configuration\",\"type\":\"Sub-module\",\"mention\":\"Configuration\",\"confidence\":\"high\"},{\"name\":\"Fiscal Positions\",\"type\":\"Module\",\"mention\":\"Fiscal Positions\",\"confidence\":\"high\"},{\"name\":\"Detect Automatically\",\"type\":\"Feature\",\"mention\":\"Detect Automatically\",\"confidence\":\"high\"},{\"name\":\"VAT Required\",\"type\":\"Setting\",\"mention\":\"VAT Required\",\"confidence\":\"high\"},{\"name\":\"customer's VAT number\",\"type\":\"Field\",\"mention\":\"customer's VAT number\",\"confidence\":\"high\"},{\"name\":\"contact form\",\"type\":\"DataObject\",\"mention\":\"contact form\",\"confidence\":\"high\"},{\"name\":\"Country Group\",\"type\":\"Field\",\"mention\":\"Country Group\",\"confidence\":\"high\"},{\"name\":\"Country\",\"type\":\"Field\",\"mention\":\"Country\",\"confidence\":\"high\"},{\"name\":\"Verify VAT Numbers\",\"type\":\"Feature\",\"mention\":\"Verify VAT Numbers\",\"confidence\":\"high\"},{\"name\":\"Intra-Community valid VAT numbers\",\"type\":\"Concept\",\"mention\":\"Intra-Community valid VAT numbers\",\"confidence\":\"high\"},{\"name\":\"eCommerce orders\",\"type\":\"DataObject\",\"mention\":\"eCommerce orders\",\"confidence\":\"high\"},{\"name\":\"sequence\",\"type\":\"Field\",\"mention\":\"sequence\",\"confidence\":\"high\"},{\"name\":\"fiscal position\",\"type\":\"Concept\",\"mention\":\"fiscal position\",\"confidence\":\"medium\"}]],\"relations\":[{\"source\":\"Accounting\",\"relation\":\"CONTAINS\",\"target\":\"Configuration\",\"evidence\":\"Accounting --> Configuration\"},{\"source\":\"Configuration\",\"relation\":\"CONTAINS\",\"target\":\"Fiscal Positions\",\"evidence\":\"Configuration --> Fiscal Positions\"},{\"source\":\"Fiscal Positions\",\"relation\":\"HAS_FEATURE\",\"target\":\"Detect Automatically\",\"evidence\":\"open the fiscal position to modify, and tick Detect Automatically\"},{\"source\":\"Detect Automatically\",\"relation\":\"CONFIGURED_BY\",\"target\":\"VAT Required\",\"evidence\":\"VAT Required: the customer's VAT number must be present\"},{\"source\":\"Detect Automatically\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Country Group\",\"evidence\":\"Country Group and Country: the fiscal position is only applied\"},{\"source\":\"Detect Automatically\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Country\",\"evidence\":\"Country Group and Country: the fiscal position is only applied\"},{\"source\":\"VAT Required\",\"relation\":\"REQUIRES\",\"target\":\"customer's VAT number\",\"evidence\":\"the customer's VAT number must be present\"},{\"source\":\"customer's VAT number\",\"relation\":\"IS_PART_OF\",\"target\":\"contact form\",\"evidence\":\"on their contact form\"},{\"source\":\"Verify VAT Numbers\",\"relation\":\"ENABLES\",\"target\":\"VAT Required\",\"evidence\":\"If the Verify VAT Numbers feature is enabled, any fiscal positions with VAT required\"},{\"source\":\"Verify VAT Numbers\",\"relation\":\"REQUIRES\",\"target\":\"Intra-Community valid VAT numbers\",\"evidence\":\"will require Intra-Community valid VAT numbers to apply automatically\"},{\"source\":\"sequence\",\"relation\":\"GOVERNED_BY\",\"target\":\"fiscal position\",\"evidence\":\"The fiscal positions' sequence defines which fiscal position is applied\"}]}"
+    }
+  },
+  {
+    "section_id": "manual-application",
+    "heading": "Manual application",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "Other Info tab",
+          "type": "Sub-module",
+          "mention": "Other Info tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal Position",
+          "type": "Concept",
+          "mention": "Fiscal Position",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales Order",
+          "relation": "CONTAINS",
+          "target": "Other Info tab",
+          "evidence": "open a sales order, go to the Other Info tab"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "CONTAINS",
+          "target": "Other Info tab",
+          "evidence": "open a purchase order, go to the Other Info tab"
+        },
+        {
+          "source": "Invoice",
+          "relation": "CONTAINS",
+          "target": "Other Info tab",
+          "evidence": "open a invoice, go to the Other Info tab"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Other Info tab",
+          "evidence": "open a bill, go to the Other Info tab"
+        },
+        {
+          "source": "Other Info tab",
+          "relation": "HAS_FEATURE",
+          "target": "Fiscal Position selection",
+          "evidence": "select the desired Fiscal Position before adding product lines"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assign-to-a-partner",
+    "heading": "Assign to a partner",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "Customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customers",
+          "type": "DataObject",
+          "mention": "Customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "partner",
+          "type": "Actor",
+          "mention": "partner",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales & Purchase tab",
+          "type": "Feature",
+          "mention": "Sales & Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal Position",
+          "type": "DataObject",
+          "mention": "Fiscal Position",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts",
+          "type": "Module",
+          "mention": "Contacts",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Customers",
+          "evidence": "Accounting --> Customers"
+        },
+        {
+          "source": "Customers",
+          "relation": "CONTAINS",
+          "target": "Customers",
+          "evidence": "Customers --> Customers"
+        },
+        {
+          "source": "partner",
+          "relation": "CONFIGURED_BY",
+          "target": "Fiscal Position",
+          "evidence": "assign Fiscal Position to a partner"
+        },
+        {
+          "source": "Customers",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Customers"
+        },
+        {
+          "source": "Contacts",
+          "relation": "SEE_ALSO",
+          "target": "Customers",
+          "evidence": "see also Contacts application"
+        }
+      ]
+    }
+  }
+]

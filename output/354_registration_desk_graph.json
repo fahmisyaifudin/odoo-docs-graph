@@ -1,0 +1,454 @@
+[
+  {
+    "section_id": "registration-desk",
+    "heading": "Registration Desk",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Registration Desk",
+          "type": "Feature",
+          "mention": "Registration Desk",
+          "confidence": "high"
+        },
+        {
+          "name": "Events",
+          "type": "Module",
+          "mention": "Events",
+          "confidence": "medium"
+        },
+        {
+          "name": "attendee",
+          "type": "Actor",
+          "mention": "registered event attendees",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Registration Desk",
+          "relation": "CONTAINS",
+          "target": "Events",
+          "evidence": "Use the *Registration Desk* feature in Odoo **Events**"
+        },
+        {
+          "source": "Registration Desk",
+          "relation": "HAS_FEATURE",
+          "target": "grant access to registered event attendees",
+          "evidence": "to grant access to registered event attendees"
+        },
+        {
+          "source": "Registration Desk",
+          "relation": "HAS_FEATURE",
+          "target": "store attendee-related data",
+          "evidence": "and store attendee-related data"
+        },
+        {
+          "source": "attendee",
+          "relation": "BELONGS_TO",
+          "target": "Events",
+          "evidence": "registered event attendees"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "registration-desk-page",
+    "heading": "Registration Desk page",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events app",
+          "type": "Module",
+          "mention": "Events app",
+          "confidence": "high"
+        },
+        {
+          "name": "Registration Desk",
+          "type": "Feature",
+          "mention": "Registration Desk",
+          "confidence": "high"
+        },
+        {
+          "name": "Registration Desk page",
+          "type": "Feature",
+          "mention": "Registration Desk page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Scan a badge",
+          "type": "Action",
+          "mention": "Scan a badge",
+          "confidence": "high"
+        },
+        {
+          "name": "Select Attendee",
+          "type": "Action",
+          "mention": "Select Attendee",
+          "confidence": "high"
+        },
+        {
+          "name": "mobile device",
+          "type": "Actor",
+          "mention": "mobile device",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Events app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "On a mobile device (on the Odoo app or in a browser), open the Events app"
+        },
+        {
+          "source": "Registration Desk page",
+          "relation": "CONTAINS",
+          "target": "Registration Desk",
+          "evidence": "open the Events app, and click the Registration Desk to view the Registration Desk page"
+        },
+        {
+          "source": "Registration Desk",
+          "relation": "CONTAINS",
+          "target": "Scan a badge",
+          "evidence": "At the bottom of the Registration Desk box, there are options to either Scan a badge or Select Attendee"
+        },
+        {
+          "source": "Registration Desk",
+          "relation": "CONTAINS",
+          "target": "Select Attendee",
+          "evidence": "At the bottom of the Registration Desk box, there are options to either Scan a badge or Select Attendee"
+        },
+        {
+          "source": "Scan a badge",
+          "relation": "EQUIVALENT_TO",
+          "target": "Select Attendee",
+          "evidence": "At the bottom of the Registration Desk box, there are options to either Scan a badge or Select Attendee"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "scan-a-badge",
+    "heading": "Scan a badge",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events app",
+          "type": "Module",
+          "mention": "Events app",
+          "confidence": "high"
+        },
+        {
+          "name": "Registration Desk",
+          "type": "Sub-module",
+          "mention": "Registration Desk",
+          "confidence": "high"
+        },
+        {
+          "name": "Scan a badge",
+          "type": "Action",
+          "mention": "Scan a badge option",
+          "confidence": "high"
+        },
+        {
+          "name": "Scan a badge",
+          "type": "Feature",
+          "mention": "Scan a badge option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode Scanner",
+          "type": "Feature",
+          "mention": "Barcode Scanner pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "camera",
+          "type": "Integration",
+          "mention": "camera",
+          "confidence": "medium"
+        },
+        {
+          "name": "error pop-up message",
+          "type": "Feature",
+          "mention": "error pop-up message",
+          "confidence": "medium"
+        },
+        {
+          "name": "badge code",
+          "type": "DataObject",
+          "mention": "badge code",
+          "confidence": "medium"
+        },
+        {
+          "name": "event attendee badges",
+          "type": "DataObject",
+          "mention": "event attendee badges",
+          "confidence": "medium"
+        },
+        {
+          "name": "attendance",
+          "type": "DataObject",
+          "mention": "attendance",
+          "confidence": "medium"
+        },
+        {
+          "name": "attendee",
+          "type": "Actor",
+          "mention": "attendee",
+          "confidence": "high"
+        },
+        {
+          "name": "access to the camera",
+          "type": "Permission",
+          "mention": "access to the camera",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Scan a badge",
+          "relation": "BELONGS_TO",
+          "target": "Registration Desk",
+          "evidence": "Scan the codes... by navigating to Events app --> Registration Desk, and selecting the Scan a badge option."
+        },
+        {
+          "source": "Registration Desk",
+          "relation": "BELONGS_TO",
+          "target": "Events app",
+          "evidence": "by navigating to Events app --> Registration Desk"
+        },
+        {
+          "source": "Events app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "attendance is logged in the Odoo Events app."
+        },
+        {
+          "source": "Scan a badge",
+          "relation": "ENABLES",
+          "target": "Barcode Scanner",
+          "evidence": "Once Odoo has access to the camera, a Barcode Scanner pop-up window appears"
+        },
+        {
+          "source": "Scan a badge",
+          "relation": "REQUIRES",
+          "target": "access to the camera",
+          "evidence": "Odoo must be granted access to the camera being used for the Scan a badge option to work."
+        },
+        {
+          "source": "Scan a badge",
+          "relation": "PRODUCES",
+          "target": "attendance",
+          "evidence": "Once the code is scanned, their attendance is logged in the Odoo Events app."
+        },
+        {
+          "source": "Scan a badge",
+          "relation": "PERFORMED_BY",
+          "target": "attendee",
+          "evidence": "the attendee is granted access to the event."
+        },
+        {
+          "source": "Barcode Scanner",
+          "relation": "CONFIGURED_BY",
+          "target": "Scan a badge",
+          "evidence": "Scan a badge option"
+        },
+        {
+          "source": "Scan a badge",
+          "relation": "HAS_FEATURE",
+          "target": "error pop-up message",
+          "evidence": "If the barcode being scanned is invalid, an error pop-up message appears"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "select-attendee",
+    "heading": "Select attendee",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events app",
+          "type": "Module",
+          "mention": "Events app",
+          "confidence": "high"
+        },
+        {
+          "name": "Registration Desk",
+          "type": "Sub-module",
+          "mention": "Registration Desk",
+          "confidence": "high"
+        },
+        {
+          "name": "Select Attendee",
+          "type": "Feature",
+          "mention": "Select Attendee",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendees page",
+          "type": "Feature",
+          "mention": "Attendees page",
+          "confidence": "high"
+        },
+        {
+          "name": "oi-view-kanban Kanban view",
+          "type": "Feature",
+          "mention": "oi-view-kanban Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-check",
+          "type": "Action",
+          "mention": "fa-check (checkmark)",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-undo",
+          "type": "Action",
+          "mention": "fa-undo (counter-clockwise arrow)",
+          "confidence": "high"
+        },
+        {
+          "name": "search bar drop-down menu",
+          "type": "Feature",
+          "mention": "search bar drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters",
+          "confidence": "high"
+        },
+        {
+          "name": "Group By",
+          "type": "Feature",
+          "mention": "Group By",
+          "confidence": "high"
+        },
+        {
+          "name": "Favorites",
+          "type": "Feature",
+          "mention": "Favorites",
+          "confidence": "high"
+        },
+        {
+          "name": "Event option",
+          "type": "Setting",
+          "mention": "Event option",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Events app",
+          "relation": "CONTAINS",
+          "target": "Registration Desk",
+          "evidence": "by navigating to Events app --> Registration Desk"
+        },
+        {
+          "source": "Registration Desk",
+          "relation": "CONTAINS",
+          "target": "Select Attendee",
+          "evidence": "and selecting the Select Attendee option"
+        },
+        {
+          "source": "Select Attendee",
+          "relation": "ENABLES",
+          "target": "Attendees page",
+          "evidence": "Odoo reveals an Attendees page"
+        },
+        {
+          "source": "Attendees page",
+          "relation": "CONTAINS",
+          "target": "oi-view-kanban Kanban view",
+          "evidence": "in a default oi-view-kanban Kanban view"
+        },
+        {
+          "source": "Attendees page",
+          "relation": "CONTAINS",
+          "target": "fa-check",
+          "evidence": "along with two buttons: a fa-check (checkmark)"
+        },
+        {
+          "source": "Attendees page",
+          "relation": "CONTAINS",
+          "target": "fa-undo",
+          "evidence": "and fa-undo (counter-clockwise arrow)"
+        },
+        {
+          "source": "fa-check",
+          "relation": "TRIGGERED_BY",
+          "target": "grant access",
+          "evidence": "To grant access to a person... click the fa-check (checkmark) button"
+        },
+        {
+          "source": "fa-undo",
+          "relation": "TRIGGERED_BY",
+          "target": "undo",
+          "evidence": "Click the fa-undo (counter-clockwise arrow) button... to undo the previous action"
+        },
+        {
+          "source": "search bar drop-down menu",
+          "relation": "CONTAINS",
+          "target": "Filters",
+          "evidence": "reveal a drop-down menu with Filters, Group By, and Favorites options"
+        },
+        {
+          "source": "search bar drop-down menu",
+          "relation": "CONTAINS",
+          "target": "Group By",
+          "evidence": "reveal a drop-down menu with Filters, Group By, and Favorites options"
+        },
+        {
+          "source": "search bar drop-down menu",
+          "relation": "CONTAINS",
+          "target": "Favorites",
+          "evidence": "reveal a drop-down menu with Filters, Group By, and Favorites options"
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Event option",
+          "evidence": "click the Event option, in the Group By column"
+        },
+        {
+          "source": "Attendees page",
+          "relation": "SEE_ALSO",
+          "target": "../../essentials/search",
+          "evidence": ".. seealso::../../essentials/search"
+        }
+      ]
+    }
+  }
+]

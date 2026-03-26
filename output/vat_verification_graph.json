@@ -1,0 +1,228 @@
+[
+  {
+    "section_id": "vat-numbers-verification-(vies)",
+    "heading": "VAT numbers verification (VIES)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "VIES",
+          "type": "Integration",
+          "mention": "VIES",
+          "confidence": "high"
+        },
+        {
+          "name": "European Commission",
+          "type": "Actor",
+          "mention": "European Commission",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT Validation",
+          "type": "Feature",
+          "mention": "VAT Validation feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Verify VAT Numbers",
+          "type": "Feature",
+          "mention": "Verify VAT Numbers feature",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT number",
+          "type": "DataObject",
+          "mention": "VAT numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "contact",
+          "type": "DataObject",
+          "mention": "contact",
+          "confidence": "medium"
+        },
+        {
+          "name": "country",
+          "type": "DataObject",
+          "mention": "country",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "VAT Validation",
+          "relation": "USES_METHOD",
+          "target": "VIES",
+          "evidence": "Odoo's VAT Validation feature uses the VIES"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "VAT Validation",
+          "evidence": "Odoo's VAT Validation feature"
+        },
+        {
+          "source": "VIES",
+          "relation": "PERFORMED_BY",
+          "target": "European Commission",
+          "evidence": "tool provided by the European Commission"
+        },
+        {
+          "source": "VAT Validation",
+          "relation": "RELATED_TO",
+          "target": "Verify VAT Numbers",
+          "evidence": "feature is mentioned alongside"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Verify VAT Numbers",
+          "evidence": "feature"
+        },
+        {
+          "source": "Verify VAT Numbers",
+          "relation": "APPLIES_TO",
+          "target": "VAT number",
+          "evidence": "verify VAT numbers"
+        },
+        {
+          "source": "VAT Validation",
+          "relation": "APPLIES_TO",
+          "target": "contact",
+          "evidence": "verify your contacts' VAT numbers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vies-vat-number-verification",
+    "heading": "VIES VAT number verification",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting --> Configuration --> Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration --> Settings",
+          "confidence": "low"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Configuration --> Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Verify VAT Numbers",
+          "type": "Feature",
+          "mention": "Verify VAT Numbers feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax ID",
+          "type": "Field",
+          "mention": "Tax ID field",
+          "confidence": "high"
+        },
+        {
+          "name": "Intra-Community Valid",
+          "type": "Field",
+          "mention": "Intra-Community Valid checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "VIES",
+          "type": "Integration",
+          "mention": "VIES",
+          "confidence": "high"
+        },
+        {
+          "name": "chatter",
+          "type": "DataObject",
+          "mention": "chatter",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiscal positions",
+          "type": "Feature",
+          "mention": "fiscal positions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Intra-Community valid VAT numbers",
+          "type": "Concept",
+          "mention": "Intra-Community valid VAT numbers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Verify VAT Numbers",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "To activate this feature, go to Accounting --> Configuration --> Settings. In the Taxes section, enable the Verify VAT Numbers feature"
+        },
+        {
+          "source": "Verify VAT Numbers",
+          "relation": "HAS_FEATURE",
+          "target": "Tax ID",
+          "evidence": "if the contact's Tax ID field is populated"
+        },
+        {
+          "source": "Verify VAT Numbers",
+          "relation": "TRIGGERED_BY",
+          "target": "Tax ID",
+          "evidence": "if the contact's Tax ID field is populated"
+        },
+        {
+          "source": "Verify VAT Numbers",
+          "relation": "ENABLES",
+          "target": "Intra-Community Valid",
+          "evidence": "Odoo displays an Intra-Community Valid checkbox"
+        },
+        {
+          "source": "VIES",
+          "relation": "GENERATES",
+          "target": "Intra-Community Valid",
+          "evidence": "Odoo tests the VAT number through the VIES and automatically checks or unchecks the Intra-Community Valid checkbox"
+        },
+        {
+          "source": "Intra-Community Valid",
+          "relation": "PRODUCES",
+          "target": "chatter",
+          "evidence": "This change is logged in the chatter for transparency"
+        },
+        {
+          "source": "Verify VAT Numbers",
+          "relation": "REQUIRES",
+          "target": "Intra-Community valid VAT numbers",
+          "evidence": "any fiscal positions with VAT required enabled will require Intra-Community valid VAT numbers"
+        },
+        {
+          "source": "fiscal positions",
+          "relation": "APPLIES_TO",
+          "target": "Verify VAT Numbers",
+          "evidence": "any fiscal positions with VAT required enabled will require Intra-Community valid VAT numbers"
+        }
+      ]
+    }
+  }
+]

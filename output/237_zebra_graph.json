@@ -1,0 +1,495 @@
+[
+  {
+    "section_id": "zebra-label-configuration",
+    "heading": "Zebra label configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Zebra label",
+          "type": "Feature",
+          "mention": "labels printed in the Zebra Programming Language (ZPL) file format",
+          "confidence": "high"
+        },
+        {
+          "name": "ZPL label view",
+          "type": "Feature",
+          "mention": "ZPL label view",
+          "confidence": "high"
+        },
+        {
+          "name": "Adjust margins",
+          "type": "Feature",
+          "mention": "Adjust margins",
+          "confidence": "high"
+        },
+        {
+          "name": "Enlarge/minimize barcodes",
+          "type": "Feature",
+          "mention": "Enlarge/minimize barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "Rotate elements",
+          "type": "Feature",
+          "mention": "Rotate elements",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Zebra label",
+          "evidence": "In Odoo, labels printed in the Zebra Programming Language (ZPL) file format"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "ZPL label view",
+          "evidence": "navigate to the ZPL label view"
+        },
+        {
+          "source": "Zebra label",
+          "relation": "RELATED_TO",
+          "target": "Adjust margins",
+          "evidence": "Refer to the following sections... Adjust margins"
+        },
+        {
+          "source": "Zebra label",
+          "relation": "RELATED_TO",
+          "target": "Enlarge/minimize barcodes",
+          "evidence": "Refer to the following sections... Enlarge/minimize barcodes"
+        },
+        {
+          "source": "Zebra label",
+          "relation": "RELATED_TO",
+          "target": "Rotate elements",
+          "evidence": "Refer to the following sections... Rotate elements"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "navigate-to-zpl-label-view",
+    "heading": "Navigate to ZPL label view",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Developer Mode",
+          "type": "Feature",
+          "mention": "developer mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reports",
+          "type": "Module",
+          "mention": "Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Technical",
+          "type": "Sub-module",
+          "mention": "Technical",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reports Page",
+          "type": "Feature",
+          "mention": "Reports page",
+          "confidence": "medium"
+        },
+        {
+          "name": "ZPL",
+          "type": "Feature",
+          "mention": "ZPL",
+          "confidence": "medium"
+        },
+        {
+          "name": "Zebra Label",
+          "type": "Feature",
+          "mention": "Zebra label",
+          "confidence": "high"
+        },
+        {
+          "name": "Qweb Views Smart Button",
+          "type": "Action",
+          "mention": "Qweb Views smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "View Metadata",
+          "type": "Feature",
+          "mention": "View Metadata",
+          "confidence": "medium"
+        },
+        {
+          "name": "No Update Field",
+          "type": "Field",
+          "mention": "No Update field",
+          "confidence": "medium"
+        },
+        {
+          "name": "View Metadata Pop-up Window",
+          "type": "Feature",
+          "mention": "View Metadata pop-up window",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Reports",
+          "evidence": "To begin customizing a Zebra label in Odoo, turn on developer mode <developer-mode>, and on the main Odoo dashboard, type `Reports`."
+        },
+        {
+          "source": "Reports",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "choose Settings / Technical / Reporting / Reports to open the Reports page."
+        },
+        {
+          "source": "Technical",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "Settings app --> Technical --> Reporting: Reports."
+        },
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Technical",
+          "evidence": "Settings app --> Technical --> Reporting: Reports."
+        },
+        {
+          "source": "Reports Page",
+          "relation": "SUPPORTS",
+          "target": "Zebra Label",
+          "evidence": "On the Reports page, in the Search... bar, type `ZPL`, and hit Enter."
+        },
+        {
+          "source": "ZPL",
+          "relation": "RELATED_TO",
+          "target": "Zebra Label",
+          "evidence": "Upon doing so, Odoo presents a list of available Zebra labels in Odoo."
+        },
+        {
+          "source": "Qweb Views Smart Button",
+          "relation": "ENABLES",
+          "target": "View Metadata",
+          "evidence": "click the fa-bug (bug) icon on the view page. Then, select the View Metadata option."
+        },
+        {
+          "source": "No Update Field",
+          "relation": "CONFIGURED_BY",
+          "target": "View Metadata",
+          "evidence": "Then, ensure the No Update field is set to true (change)."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "adjust-margin",
+    "heading": "Adjust margin",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "margin",
+          "type": "Setting",
+          "mention": "margin",
+          "confidence": "high"
+        },
+        {
+          "name": "label",
+          "type": "DataObject",
+          "mention": "label",
+          "confidence": "high"
+        },
+        {
+          "name": "ZPL code",
+          "type": "Feature",
+          "mention": "ZPL code",
+          "confidence": "medium"
+        },
+        {
+          "name": "^FT command",
+          "type": "Feature",
+          "mention": "^FT command",
+          "confidence": "medium"
+        },
+        {
+          "name": "^FO command",
+          "type": "Feature",
+          "mention": "^FO command",
+          "confidence": "medium"
+        },
+        {
+          "name": "x-coordinate",
+          "type": "Field",
+          "mention": "x-coordinate",
+          "confidence": "medium"
+        },
+        {
+          "name": "y-coordinate",
+          "type": "Field",
+          "mention": "y-coordinate",
+          "confidence": "medium"
+        },
+        {
+          "name": "dots",
+          "type": "Concept",
+          "mention": "dots",
+          "confidence": "low"
+        },
+        {
+          "name": "lot/serial number labels",
+          "type": "DataObject",
+          "mention": "lot/serial number labels",
+          "confidence": "medium"
+        },
+        {
+          "name": "product's name",
+          "type": "Field",
+          "mention": "product's name",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "margin",
+          "relation": "CONFIGURED_BY",
+          "target": "ZPL code",
+          "evidence": "adjust the margin. To begin, navigate to the ZPL code of the label"
+        },
+        {
+          "source": "label",
+          "relation": "CONTAINS",
+          "target": "ZPL code",
+          "evidence": "ZPL code of the label"
+        },
+        {
+          "source": "^FT command",
+          "relation": "CONTAINS",
+          "target": "x-coordinate",
+          "evidence": "The two numbers immediately following `^FT` define the x-coordinate"
+        },
+        {
+          "source": "^FT command",
+          "relation": "CONTAINS",
+          "target": "y-coordinate",
+          "evidence": "The two numbers immediately following `^FT` define the y-coordinate"
+        },
+        {
+          "source": "lot/serial number labels",
+          "relation": "CONFIGURED_BY",
+          "target": "^FO command",
+          "evidence": "When customizing lot/serial number labels, look for the `^FO` command"
+        },
+        {
+          "source": "product's name",
+          "relation": "IS_PART_OF",
+          "target": "label",
+          "evidence": "product labels"
+        },
+        {
+          "source": "^FT100,80",
+          "relation": "EQUIVALENT_TO",
+          "target": "^FT0,80",
+          "evidence": "the x-coordinate of the starting position of the label is changed from `^FT100,80` to `^FT0,80`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "resize-barcode",
+    "heading": "Resize barcode",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "ZPL code",
+          "type": "Feature",
+          "mention": "ZPL code",
+          "confidence": "high"
+        },
+        {
+          "name": "^FO command",
+          "type": "Feature",
+          "mention": "^FO",
+          "confidence": "high"
+        },
+        {
+          "name": "^BY command",
+          "type": "Feature",
+          "mention": "^BY",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode",
+          "type": "Feature",
+          "mention": "barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "rotate",
+          "type": "Action",
+          "mention": "rotate",
+          "confidence": "low"
+        },
+        {
+          "name": "inventory/shipping_receiving/zpl-view",
+          "type": "Unknown",
+          "mention": "inventory/shipping_receiving/zpl-view",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "barcode",
+          "relation": "CONFIGURED_BY",
+          "target": "^BY command",
+          "evidence": "The `^BY` command configures barcode size"
+        },
+        {
+          "source": "^BY command",
+          "relation": "CONTAINS",
+          "target": "bar width",
+          "evidence": "^BY command takes three numbers: bar width"
+        },
+        {
+          "source": "^BY command",
+          "relation": "CONTAINS",
+          "target": "width of wide bars",
+          "evidence": "^BY command takes three numbers: width of wide bars"
+        },
+        {
+          "source": "^BY command",
+          "relation": "CONTAINS",
+          "target": "bar height",
+          "evidence": "^BY command takes three numbers: bar height"
+        },
+        {
+          "source": "ZPL code",
+          "relation": "CONTAINS",
+          "target": "^FO command",
+          "evidence": "Look for the `^FO` command in the ZPL code"
+        },
+        {
+          "source": "inventory/shipping_receiving/zpl-view",
+          "relation": "SEE_ALSO",
+          "target": "rotate",
+          "evidence": ".. _inventory/shipping_receiving/rotate:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "rotate-elements",
+    "heading": "Rotate elements",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "rotate elements",
+          "type": "Action",
+          "mention": "rotate elements",
+          "confidence": "medium"
+        },
+        {
+          "name": "ZPL code",
+          "type": "DataObject",
+          "mention": "ZPL code",
+          "confidence": "high"
+        },
+        {
+          "name": "Architecture tab",
+          "type": "Module",
+          "mention": "Architecture tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "^BC command",
+          "type": "Feature",
+          "mention": "^BC command",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode",
+          "type": "Feature",
+          "mention": "barcode",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "rotate elements",
+          "relation": "PERFORMED_BY",
+          "target": "^BC command",
+          "evidence": "To rotate elements in, begin by navigating to the ZPL code"
+        },
+        {
+          "source": "^BC command",
+          "relation": "CONTAINS",
+          "target": "barcode",
+          "evidence": "To rotate the barcode, ^BCN is changed to ^BCB."
+        },
+        {
+          "source": "rotate elements",
+          "relation": "REQUIRES",
+          "target": "Architecture tab",
+          "evidence": "begin by navigating to the ZPL code of the label in the Architecture tab."
+        },
+        {
+          "source": "Architecture tab",
+          "relation": "CONTAINS",
+          "target": "ZPL code",
+          "evidence": "ZPL code of the label in the Architecture tab"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "rotate elements",
+          "evidence": "Product: Odoo; Title: Rotate elements"
+        }
+      ]
+    }
+  }
+]

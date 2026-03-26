@@ -1,0 +1,411 @@
+[
+  {
+    "section_id": "basic-subcontracting-lead-times",
+    "heading": "Basic subcontracting lead times",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "lead times",
+          "type": "Concept",
+          "mention": "lead times",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery lead time",
+          "type": "Feature",
+          "mention": "delivery lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "purchased product",
+          "type": "DataObject",
+          "mention": "purchased product",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "purchasing company",
+          "type": "Actor",
+          "mention": "purchasing company",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontracted products",
+          "type": "DataObject",
+          "mention": "subcontracted products",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "delivery lead time",
+          "relation": "CONFIGURED_BY",
+          "target": "purchased product",
+          "evidence": "delivery lead time can be set for a purchased product"
+        },
+        {
+          "source": "delivery lead time",
+          "relation": "GOVERNED_BY",
+          "target": "lead times",
+          "evidence": "Like all lead times in Odoo, lead times for subcontracted products..."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "lead times",
+          "evidence": "In Odoo, lead times are used..."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "delivery lead time",
+          "evidence": "a delivery lead time can be set..."
+        },
+        {
+          "source": "vendor",
+          "relation": "PERFORMED_BY",
+          "target": "delivery lead time",
+          "evidence": "specifies the number of days it usually takes for the product's vendor to delivery"
+        },
+        {
+          "source": "subcontracted products",
+          "relation": "CONFIGURED_BY",
+          "target": "delivery lead time",
+          "evidence": "For subcontracted products specifically, delivery lead times can be configured..."
+        },
+        {
+          "source": "subcontractor",
+          "relation": "PERFORMED_BY",
+          "target": "delivery lead time",
+          "evidence": "the amount of time required for the subcontractor to manufacture a product"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "basic subcontracting workflow",
+          "type": "Workflow",
+          "mention": "basic subcontracting workflow",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "Product",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery lead time",
+          "type": "Concept",
+          "mention": "delivery lead time",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expected Arrival date",
+          "type": "Field",
+          "mention": "Expected Arrival date",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase orders (POs)",
+          "type": "DataObject",
+          "mention": "purchase orders (POs)",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing",
+          "type": "Workflow",
+          "mention": "manufacturing",
+          "confidence": "low"
+        },
+        {
+          "name": "delivery",
+          "type": "Action",
+          "mention": "delivery",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "basic subcontracting workflow",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "When using the basic subcontracting workflow"
+        },
+        {
+          "source": "product",
+          "relation": "RELATED_TO",
+          "target": "subcontractor",
+          "evidence": "assigning a product's subcontractor"
+        },
+        {
+          "source": "product",
+          "relation": "RELATED_TO",
+          "target": "delivery lead time",
+          "evidence": "assigning a product's subcontractor a delivery lead time"
+        },
+        {
+          "source": "Expected Arrival date",
+          "relation": "IS_PART_OF",
+          "target": "purchase orders (POs)",
+          "evidence": "displayed on purchase orders (POs)"
+        },
+        {
+          "source": "delivery lead time",
+          "relation": "GENERATES",
+          "target": "Expected Arrival date",
+          "evidence": "more accurately reflects the amount of time"
+        },
+        {
+          "source": "Expected Arrival date",
+          "relation": "RELATED_TO",
+          "target": "manufacturing",
+          "evidence": "reflects the amount of time required for both manufacturing"
+        },
+        {
+          "source": "Expected Arrival date",
+          "relation": "RELATED_TO",
+          "target": "delivery",
+          "evidence": "reflects the amount of time required for both manufacturing and delivery"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "product-delivery-lead-time",
+    "heading": "Product delivery lead time",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracted product",
+          "type": "DataObject",
+          "mention": "subcontracted product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Module",
+          "mention": "Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Lead Time",
+          "type": "Field",
+          "mention": "Delivery Lead Time",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Products",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "navigate to Inventory app --> Products"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "IS_PART_OF",
+          "target": "Products",
+          "evidence": "select the Purchase tab on the product's page"
+        },
+        {
+          "source": "subcontractor",
+          "relation": "RELATED_TO",
+          "target": "vendor",
+          "evidence": "select the subcontractor in the Vendor column"
+        },
+        {
+          "source": "Delivery Lead Time",
+          "relation": "IS_PART_OF",
+          "target": "Purchase tab",
+          "evidence": "Delivery Lead Time column on the Purchase tab"
+        },
+        {
+          "source": "Delivery Lead Time",
+          "relation": "CONFIGURED_BY",
+          "target": "subcontractor",
+          "evidence": "enter the number of days it takes them..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "lead-time-workflow",
+    "heading": "Lead time workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "DataObject",
+          "mention": "Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor field",
+          "type": "Field",
+          "mention": "Vendor field",
+          "confidence": "high"
+        },
+        {
+          "name": "Products tab",
+          "type": "Feature",
+          "mention": "Products tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product column",
+          "type": "Field",
+          "mention": "Product column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity column",
+          "type": "Field",
+          "mention": "Quantity column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expected Arrival field",
+          "type": "Field",
+          "mention": "Expected Arrival field",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Order",
+          "type": "Action",
+          "mention": "Confirm Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Mike's Bikes",
+          "type": "Actor",
+          "mention": "Mike's Bikes",
+          "confidence": "high"
+        },
+        {
+          "name": "Bike Friends",
+          "type": "Actor",
+          "mention": "Bike Friends",
+          "confidence": "high"
+        },
+        {
+          "name": "Tricycle",
+          "type": "Product",
+          "mention": "Tricycle",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery lead time",
+          "type": "Concept",
+          "mention": "delivery lead time",
+          "confidence": "high"
+        }
+      ],
+      "relations": []
+    }
+  }
+]

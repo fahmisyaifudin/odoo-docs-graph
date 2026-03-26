@@ -1,0 +1,97 @@
+[
+  {
+    "section_id": "reporting",
+    "heading": "Reporting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "forecast",
+          "type": "Report",
+          "mention": "forecast",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock",
+          "type": "Report",
+          "mention": "stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "locations",
+          "type": "Report",
+          "mention": "locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "moves_history",
+          "type": "Report",
+          "mention": "moves_history",
+          "confidence": "medium"
+        },
+        {
+          "name": "dashboards",
+          "type": "Module",
+          "mention": "dashboards",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "forecast",
+          "evidence": "reporting/forecast"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "stock",
+          "evidence": "reporting/stock"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "locations",
+          "evidence": "reporting/locations"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "moves_history",
+          "evidence": "reporting/moves_history"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "dashboards",
+          "evidence": "reporting/dashboards"
+        },
+        {
+          "source": "Reporting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "dashboards",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "reporting/dashboards"
+        }
+      ]
+    }
+  }
+]

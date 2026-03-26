@@ -1,0 +1,263 @@
+[
+  {
+    "section_id": "trusted-accounts-(send-money)",
+    "heading": "Trusted accounts (send money)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "send money",
+          "type": "Workflow",
+          "mention": "send money",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bank account",
+          "type": "DataObject",
+          "mention": "vendor bank account",
+          "confidence": "high"
+        },
+        {
+          "name": "outgoing payment",
+          "type": "Workflow",
+          "mention": "outgoing payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Money toggle switch",
+          "type": "Feature",
+          "mention": "Send Money toggle switch",
+          "confidence": "high"
+        },
+        {
+          "name": "trusted",
+          "type": "Concept",
+          "mention": "trusted",
+          "confidence": "high"
+        },
+        {
+          "name": "untrusted",
+          "type": "Concept",
+          "mention": "untrusted",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "send money",
+          "relation": "ENABLES",
+          "target": "outgoing payment",
+          "evidence": "To protect users from sending money to scammers, vendor bank account numbers must be marked as trusted before you can use them to make an outgoing payment."
+        },
+        {
+          "source": "vendor bank account",
+          "relation": "CONFIGURED_BY",
+          "target": "Send Money toggle switch",
+          "evidence": "To do so, open the vendor bank account and click on the Send Money toggle switch button."
+        },
+        {
+          "source": "Send Money toggle switch",
+          "relation": "ENABLES",
+          "target": "trusted",
+          "evidence": "To do so, open the vendor bank account and click on the Send Money toggle switch button."
+        },
+        {
+          "source": "vendor bank account",
+          "relation": "IS_PART_OF",
+          "target": "untrusted",
+          "evidence": "All accounts are initially marked as untrusted."
+        },
+        {
+          "source": "send money",
+          "relation": "GOVERNED_BY",
+          "target": "trusted",
+          "evidence": "To protect users from sending money to scammers, vendor bank account numbers must be marked as trusted before you can use them to make an outgoing payment."
+        },
+        {
+          "source": "vendor bank account",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "phishing-attacks",
+    "heading": "Phishing attacks",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Phishing attack",
+          "type": "Concept",
+          "mention": "phishing attack",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice fraud",
+          "type": "Concept",
+          "mention": "invoice fraud",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice fraud",
+          "relation": "IS_PART_OF",
+          "target": "Phishing attack",
+          "evidence": "In this case, the fraudster pretends to be a genuine supplier..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "elements-to-check",
+    "heading": "Elements to check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Communication style",
+          "type": "Concept",
+          "mention": "Communication style",
+          "confidence": "medium"
+        },
+        {
+          "name": "Urgency",
+          "type": "Concept",
+          "mention": "Urgency",
+          "confidence": "medium"
+        },
+        {
+          "name": "Type of account",
+          "type": "Concept",
+          "mention": "Type of account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email and links domain names",
+          "type": "Concept",
+          "mention": "Email and links domain names",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fraudulent emails",
+          "type": "Concept",
+          "mention": "fraudulent emails",
+          "confidence": "low"
+        },
+        {
+          "name": "Invoices",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "low"
+        },
+        {
+          "name": "Payment request",
+          "type": "Action",
+          "mention": "outgoing payment request",
+          "confidence": "low"
+        },
+        {
+          "name": "Bank account",
+          "type": "DataObject",
+          "mention": "bank account",
+          "confidence": "low"
+        },
+        {
+          "name": "Money transfer service",
+          "type": "Integration",
+          "mention": "money transfer service",
+          "confidence": "low"
+        },
+        {
+          "name": "Email address",
+          "type": "DataObject",
+          "mention": "email address",
+          "confidence": "low"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "low"
+        },
+        {
+          "name": "Organization",
+          "type": "Actor",
+          "mention": "organization",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payment request",
+          "relation": "APPLIES_TO",
+          "target": "New account",
+          "evidence": "when you receive an outgoing payment request to a new account"
+        },
+        {
+          "source": "Communication style",
+          "relation": "RELATED_TO",
+          "target": "Fraudulent emails",
+          "evidence": "Fraudulent emails and invoices often use a different communication style"
+        },
+        {
+          "source": "Communication style",
+          "relation": "RELATED_TO",
+          "target": "Invoices",
+          "evidence": "Fraudulent emails and invoices often use a different communication style"
+        },
+        {
+          "source": "Urgency",
+          "relation": "RELATED_TO",
+          "target": "Invoices",
+          "evidence": "Invoice frauds often use urgent or threatening language"
+        },
+        {
+          "source": "Type of account",
+          "relation": "RELATED_TO",
+          "target": "Bank account",
+          "evidence": "A company is unlikely to replace a bank account"
+        },
+        {
+          "source": "Type of account",
+          "relation": "RELATED_TO",
+          "target": "Money transfer service",
+          "evidence": "replace a bank account with a money transfer service"
+        },
+        {
+          "source": "Email and links domain names",
+          "relation": "RELATED_TO",
+          "target": "Email address",
+          "evidence": "Double-check the email address domain"
+        },
+        {
+          "source": "Email and links domain names",
+          "relation": "RELATED_TO",
+          "target": "Vendor",
+          "evidence": "hack email addresses from your vendor's employees"
+        },
+        {
+          "source": "Email and links domain names",
+          "relation": "RELATED_TO",
+          "target": "Organization",
+          "evidence": "hack email addresses from... someone within your own organization"
+        }
+      ]
+    }
+  }
+]

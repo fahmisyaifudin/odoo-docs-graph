@@ -1,0 +1,1806 @@
+[
+  {
+    "section_id": "average-price-on-returned-goods",
+    "heading": "Average price on returned goods",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Average cost valuation (AVCO)",
+          "type": "Standard",
+          "mention": "*Average cost valuation* (AVCO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory valuation",
+          "type": "Concept",
+          "mention": "inventory valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "Weighted average",
+          "type": "Concept",
+          "mention": "weighted average",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shipments",
+          "type": "DataObject",
+          "mention": "shipments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Supplier",
+          "type": "Actor",
+          "mention": "supplier",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting entries",
+          "type": "DataObject",
+          "mention": "accounting entries",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Average cost valuation (AVCO)",
+          "relation": "USES_METHOD",
+          "target": "Weighted average",
+          "evidence": "Because uses the weighted average to evaluate the cost"
+        },
+        {
+          "source": "Average cost valuation (AVCO)",
+          "relation": "RELATED_TO",
+          "target": "Inventory valuation",
+          "evidence": "*Average cost valuation* (AVCO) is an inventory valuation method"
+        },
+        {
+          "source": "Inventory valuation",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "In Odoo, this costing analysis is automatically updated"
+        },
+        {
+          "source": "Odoo",
+          "relation": "PRODUCES",
+          "target": "Accounting entries",
+          "evidence": "Odoo automatically generates accounting entries to reflect the change in inventory valuation"
+        },
+        {
+          "source": "Shipments",
+          "relation": "RELATED_TO",
+          "target": "Supplier",
+          "evidence": "when shipments are returned to their supplier"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Categories",
+          "type": "Module",
+          "mention": "Product Categories",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "product category",
+          "type": "DataObject",
+          "mention": "product category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Costing Method",
+          "type": "Field",
+          "mention": "Costing Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Valuation",
+          "type": "Field",
+          "mention": "Inventory Valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "Average Cost (AVCO)",
+          "type": "Standard",
+          "mention": "Average Cost (AVCO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Automated",
+          "type": "Feature",
+          "mention": "Automated",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory valuation cheat sheet",
+          "type": "Report",
+          "mention": "Inventory valuation cheat sheet",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "To use average cost inventory valuation on a product, navigate to Inventory --> Configuration"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "To use average cost inventory valuation on a product, navigate to Inventory"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "navigate to Inventory --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Product Categories",
+          "evidence": "Configuration --> Product Categories"
+        },
+        {
+          "source": "product category",
+          "relation": "BELONGS_TO",
+          "target": "Product Categories",
+          "evidence": "select the category that will be using"
+        },
+        {
+          "source": "product category",
+          "relation": "CONTAINS",
+          "target": "Costing Method",
+          "evidence": "On the product category page, set Costing Method"
+        },
+        {
+          "source": "product category",
+          "relation": "CONTAINS",
+          "target": "Inventory Valuation",
+          "evidence": "On the product category page, set Inventory Valuation"
+        },
+        {
+          "source": "Costing Method",
+          "relation": "CONFIGURED_BY",
+          "target": "Average Cost (AVCO)",
+          "evidence": "set Costing Method to `Average Cost (AVCO)`"
+        },
+        {
+          "source": "Inventory Valuation",
+          "relation": "CONFIGURED_BY",
+          "target": "Automated",
+          "evidence": "Inventory Valuation to `Automated`"
+        },
+        {
+          "source": "product category",
+          "relation": "USES_METHOD",
+          "target": "Average Cost (AVCO)",
+          "evidence": "set Costing Method to `Average Cost (AVCO)`"
+        },
+        {
+          "source": "Inventory valuation cheat sheet",
+          "relation": "SEE_ALSO",
+          "target": "product category",
+          "evidence": ".. seealso:: Inventory valuation cheat sheet"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "using-average-cost-valuation",
+    "heading": "Using average cost valuation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "average cost method",
+          "type": "Standard",
+          "mention": "The average cost method",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory valuation",
+          "type": "Concept",
+          "mention": "inventory valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "return to supplier use case",
+          "type": "Workflow",
+          "mention": "return to supplier use case",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse",
+          "type": "Module",
+          "mention": "warehouse",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "average cost method",
+          "relation": "USES_METHOD",
+          "target": "inventory valuation",
+          "evidence": "The average cost method adjusts the inventory valuation"
+        },
+        {
+          "source": "inventory valuation",
+          "relation": "RELATED_TO",
+          "target": "warehouse",
+          "evidence": "when products are received in the warehouse"
+        },
+        {
+          "source": "return to supplier use case",
+          "relation": "RELATED_TO",
+          "target": "average cost method",
+          "evidence": "skip to the return to supplier use case section"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "average cost method",
+          "evidence": "Product: Odoo, Title: Using average cost valuation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "formula",
+    "heading": "Formula",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Formula",
+          "type": "Feature",
+          "mention": "Title: Formula",
+          "confidence": "medium"
+        },
+        {
+          "name": "Average Cost",
+          "type": "Concept",
+          "mention": "new average cost",
+          "confidence": "high"
+        },
+        {
+          "name": "Average Cost Valuation",
+          "type": "Standard",
+          "mention": "average cost valuation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory Valuation",
+          "type": "Concept",
+          "mention": "inventory valuation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "new products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Stock",
+          "type": "DataObject",
+          "mention": "stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shipment",
+          "type": "DataObject",
+          "mention": "shipment",
+          "confidence": "low"
+        },
+        {
+          "name": "Vendor Bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "low"
+        },
+        {
+          "name": "Landed Costs",
+          "type": "Concept",
+          "mention": "landed costs",
+          "confidence": "low"
+        },
+        {
+          "name": "Stock Move",
+          "type": "DataObject",
+          "mention": "stock move",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Formula",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Title: Formula"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Average Cost Valuation",
+          "evidence": "average cost valuation"
+        },
+        {
+          "source": "Average Cost",
+          "relation": "USES_METHOD",
+          "target": "Average Cost Valuation",
+          "evidence": "new average cost"
+        },
+        {
+          "source": "Average Cost",
+          "relation": "RELATED_TO",
+          "target": "Inventory Valuation",
+          "evidence": "inventory valuation"
+        },
+        {
+          "source": "Formula",
+          "relation": "ENABLES",
+          "target": "Average Cost",
+          "evidence": "Formula for Average Cost"
+        },
+        {
+          "source": "Average Cost",
+          "relation": "APPLIES_TO",
+          "target": "Product",
+          "evidence": "each product"
+        },
+        {
+          "source": "Average Cost",
+          "relation": "APPLIES_TO",
+          "target": "Stock",
+          "evidence": "product count in stock"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "RELATED_TO",
+          "target": "Purchase Price",
+          "evidence": "vendor bill adjustment"
+        },
+        {
+          "source": "Shipment",
+          "relation": "RELATED_TO",
+          "target": "Product",
+          "evidence": "products arriving"
+        },
+        {
+          "source": "Landed Costs",
+          "relation": "RELATED_TO",
+          "target": "Purchase Price",
+          "evidence": "landed costs"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "compute-average-cost",
+    "heading": "Compute average cost",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Inventory --> Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Valuation",
+          "type": "Report",
+          "mention": "Inventory Valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "Table",
+          "type": "DataObject",
+          "mention": "product, Table",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Category",
+          "type": "DataObject",
+          "mention": "Product Category field",
+          "confidence": "high"
+        },
+        {
+          "name": "Costing Method",
+          "type": "Field",
+          "mention": "Costing Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Average Cost (AVCO)",
+          "type": "Standard",
+          "mention": "Average Cost (AVCO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Valuation",
+          "type": "Field",
+          "mention": "Inventory Valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "Automated",
+          "type": "Setting",
+          "mention": "Automated",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information tab",
+          "type": "Sub-module",
+          "mention": "General Information tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Cost field",
+          "type": "Field",
+          "mention": "Cost field",
+          "confidence": "high"
+        },
+        {
+          "name": "average cost",
+          "type": "Concept",
+          "mention": "average cost",
+          "confidence": "high"
+        },
+        {
+          "name": "valuation layer",
+          "type": "Concept",
+          "mention": "valuation layer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receive Products",
+          "type": "Action",
+          "mention": "Receive Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Order",
+          "type": "Action",
+          "mention": "Confirm Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Total Value column",
+          "type": "Field",
+          "mention": "Total Value column",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Purchase",
+          "evidence": "Product: Odoo, Purchase app"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Product: Odoo, Inventory"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Inventory --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Inventory Valuation",
+          "evidence": "Reporting --> Inventory Valuation"
+        },
+        {
+          "source": "Inventory Valuation",
+          "relation": "SUPPORTS",
+          "target": "Average Cost (AVCO)",
+          "evidence": "When the product category's Costing Method is set to AVCO"
+        },
+        {
+          "source": "Product Category",
+          "relation": "HAS_FEATURE",
+          "target": "Costing Method",
+          "evidence": "Product Category field ... Costing Method"
+        },
+        {
+          "source": "Product Category",
+          "relation": "HAS_FEATURE",
+          "target": "Inventory Valuation",
+          "evidence": "Product Category field ... Inventory Valuation"
+        },
+        {
+          "source": "Costing Method",
+          "relation": "GOVERNED_BY",
+          "target": "Average Cost (AVCO)",
+          "evidence": "Set the Costing Method to Average Cost (AVCO)"
+        },
+        {
+          "source": "Inventory Valuation",
+          "relation": "CONFIGURED_BY",
+          "target": "Automated",
+          "evidence": "Inventory Valuation to Automated"
+        },
+        {
+          "source": "Table",
+          "relation": "IS_PART_OF",
+          "target": "General Information tab",
+          "evidence": "under the General Information tab, on the product page"
+        },
+        {
+          "source": "General Information tab",
+          "relation": "CONTAINS",
+          "target": "Cost field",
+          "evidence": "Cost field under the General Information tab"
+        },
+        {
+          "source": "Cost field",
+          "relation": "SUPPORTS",
+          "target": "average cost",
+          "evidence": "average cost of a product is also displayed on the Cost field"
+        },
+        {
+          "source": "Receive Products",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "click Receive Products"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "Click Confirm Order"
+        },
+        {
+          "source": "Inventory Valuation",
+          "relation": "CONTAINS",
+          "target": "Total Value column",
+          "evidence": "view the Total Value column"
+        },
+        {
+          "source": "Total Value column",
+          "relation": "USES_METHOD",
+          "target": "Average Cost (AVCO)",
+          "evidence": "The 8 tables in-stock are worth $80"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "product-delivery-(use-case)",
+    "heading": "Product delivery (use case)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "average cost valuation",
+          "type": "Concept",
+          "mention": "average cost valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Valuation",
+          "type": "Report",
+          "mention": "Inventory Valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "outgoing shipments",
+          "type": "Workflow",
+          "mention": "outgoing shipments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Deliver 10 tables",
+          "type": "Workflow",
+          "mention": "Deliver 10 tables",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery",
+          "type": "Workflow",
+          "mention": "delivery",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory valuation record",
+          "type": "DataObject",
+          "mention": "inventory valuation record",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock valuation record",
+          "type": "DataObject",
+          "mention": "stock valuation record",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Sales",
+          "evidence": "sell `10` tables in the *Sales* app"
+        },
+        {
+          "source": "Sales",
+          "relation": "HAS_FEATURE",
+          "target": "delivery",
+          "evidence": "sell `10` tables in the *Sales* app, validate the delivery"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Inventory Valuation",
+          "evidence": "review the inventory valuation record by going to in Inventory --> Reporting --> Inventory Valuation"
+        },
+        {
+          "source": "delivery",
+          "relation": "PRODUCES",
+          "target": "inventory valuation record",
+          "evidence": "validate the delivery, and then review the inventory valuation record"
+        },
+        {
+          "source": "average cost valuation",
+          "type": "CONCEPT",
+          "target": "stock valuation record",
+          "evidence": "What is not represented in this stock valuation record"
+        },
+        {
+          "source": "outgoing shipments",
+          "type": "WORKFLOW",
+          "target": "average cost valuation",
+          "evidence": "For outgoing shipments, outbound products have no effect on the average cost valuation"
+        },
+        {
+          "source": "Deliver 10 tables",
+          "type": "WORKFLOW",
+          "target": "average cost valuation",
+          "evidence": "To demonstrate that the average cost valuation is not recalculated, examine the 'Deliver 10 tables' example"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "return-items-to-supplier-(use-case)",
+    "heading": "Return items to supplier (use case)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Return items to supplier",
+          "type": "Concept",
+          "mention": "Return items to supplier (use case)",
+          "confidence": "high"
+        },
+        {
+          "name": "average cost method",
+          "type": "Standard",
+          "mention": "method",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipts",
+          "type": "Sub-module",
+          "mention": "Receipts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory Overview",
+          "type": "Feature",
+          "mention": "Inventory Overview",
+          "confidence": "medium"
+        },
+        {
+          "name": "Return",
+          "type": "Action",
+          "mention": "Return",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "outgoing shipment",
+          "type": "DataObject",
+          "mention": "outgoing shipment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory Valuation",
+          "type": "Report",
+          "mention": "Inventory Valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Return items to supplier",
+          "relation": "GOVERNED_BY",
+          "target": "average cost method",
+          "evidence": "Because the price paid to suppliers can differ from the price the product is valued at with the method, Odoo handles returned items in a specific way."
+        },
+        {
+          "source": "Inventory Overview",
+          "relation": "CONTAINS",
+          "target": "Receipts",
+          "evidence": "navigate to the receipt in the Inventory app by going to the Inventory Overview, clicking on Receipts"
+        },
+        {
+          "source": "Receipts",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "navigate to the receipt in the Inventory app"
+        },
+        {
+          "source": "Receipts",
+          "relation": "CONTAINS",
+          "target": "delivery order",
+          "evidence": "selecting the desired receipt. Then, click Return on the validated delivery order"
+        },
+        {
+          "source": "Return",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Return"
+        },
+        {
+          "source": "Return",
+          "relation": "TRIGGERED_BY",
+          "target": "delivery order",
+          "evidence": "click Return on the validated delivery order"
+        },
+        {
+          "source": "Return",
+          "relation": "PRODUCES",
+          "target": "outgoing shipment",
+          "evidence": "This creates an outgoing shipment for the table"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Select Validate"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Return to Inventory --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Inventory Valuation",
+          "evidence": "Reporting --> Inventory Valuation"
+        },
+        {
+          "source": "Return",
+          "relation": "HAS_REPORT",
+          "target": "Inventory Valuation",
+          "evidence": "Return to Inventory --> Reporting --> Inventory Valuation to see how the outgoing shipment decreases the inventory value"
+        },
+        {
+          "source": "Inventory Valuation",
+          "relation": "IS_PART_OF",
+          "target": "Reporting",
+          "evidence": "Reporting --> Inventory Valuation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "eliminate-stock-valuation-errors-in-outgoing-products",
+    "heading": "Eliminate stock valuation errors in outgoing products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "average cost valuation",
+          "type": "Standard",
+          "mention": "average cost valuation is recalculated",
+          "confidence": "high"
+        },
+        {
+          "name": "shipment",
+          "type": "Workflow",
+          "mention": "outgoing shipments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory Value",
+          "type": "Field",
+          "mention": "Inventory Value",
+          "confidence": "high"
+        },
+        {
+          "name": "Qty On Hand",
+          "type": "Field",
+          "mention": "Qty On Hand",
+          "confidence": "high"
+        },
+        {
+          "name": "Avg Cost",
+          "type": "Field",
+          "mention": "Avg Cost",
+          "confidence": "high"
+        },
+        {
+          "name": "stock valuation error",
+          "type": "Concept",
+          "mention": "Eliminate stock valuation errors",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "average cost valuation",
+          "evidence": "average cost valuation is recalculated"
+        },
+        {
+          "source": "average cost valuation",
+          "relation": "GOVERNED_BY",
+          "target": "stock valuation error",
+          "evidence": "Inconsistencies can occur"
+        },
+        {
+          "source": "shipment",
+          "relation": "PRODUCES",
+          "target": "Inventory Value",
+          "evidence": "table displays a scenario"
+        },
+        {
+          "source": "shipment",
+          "relation": "TRIGGERED_BY",
+          "target": "average cost valuation",
+          "evidence": "recalculated on outgoing shipments"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "anglo-saxon-accounting",
+    "heading": "Anglo-Saxon accounting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Anglo-Saxon accounting",
+          "type": "Standard",
+          "mention": "Anglo-Saxon accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "holding account",
+          "type": "Concept",
+          "mention": "holding account",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock input",
+          "type": "DataObject",
+          "mention": "stock input",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory value",
+          "type": "Concept",
+          "mention": "inventory value",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor price",
+          "type": "Concept",
+          "mention": "vendor price",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "price difference",
+          "type": "Concept",
+          "mention": "price difference",
+          "confidence": "high"
+        },
+        {
+          "name": "price difference account",
+          "type": "DataObject",
+          "mention": "price difference account",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Anglo-Saxon accounting",
+          "evidence": "companies that use"
+        },
+        {
+          "source": "Anglo-Saxon accounting",
+          "relation": "CONTAINS",
+          "target": "holding account",
+          "evidence": "also keep a holding account"
+        },
+        {
+          "source": "holding account",
+          "relation": "RELATED_TO",
+          "target": "stock input",
+          "evidence": "holding account (called stock input)"
+        },
+        {
+          "source": "holding account",
+          "relation": "RELATED_TO",
+          "target": "vendor",
+          "evidence": "that tracks the amount to be paid to vendors"
+        },
+        {
+          "source": "vendor",
+          "relation": "PERFORMED_BY",
+          "target": "vendor bill",
+          "evidence": "vendor bill is received"
+        },
+        {
+          "source": "inventory value",
+          "relation": "RELATED_TO",
+          "target": "vendor price",
+          "evidence": "increases based on the vendor price"
+        },
+        {
+          "source": "stock input",
+          "relation": "RELATED_TO",
+          "target": "vendor bill",
+          "evidence": "only reconciled once the vendor bill is received"
+        },
+        {
+          "source": "Anglo-Saxon accounting",
+          "relation": "CONTAINS",
+          "target": "price difference account",
+          "evidence": "a price difference account is created"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "summary",
+    "heading": "Summary",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock Input",
+          "type": "DataObject",
+          "mention": "**Stock Input**",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounts Payable",
+          "type": "DataObject",
+          "mention": "*Accounts Payable*",
+          "confidence": "high"
+        },
+        {
+          "name": "liability account",
+          "type": "DataObject",
+          "mention": "liability account",
+          "confidence": "medium"
+        },
+        {
+          "name": "holding account",
+          "type": "DataObject",
+          "mention": "holding account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory Valuation",
+          "type": "DataObject",
+          "mention": "**Inventory Valuation** account",
+          "confidence": "high"
+        },
+        {
+          "name": "product reception",
+          "type": "Workflow",
+          "mention": "product reception",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory valuation",
+          "type": "Concept",
+          "mention": "Inventory valuation",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "product reception",
+          "relation": "GENERATES",
+          "target": "Stock Input",
+          "evidence": "At product reception, Odoo ensures companies can pay for goods that were purchased by preemptively moving an amount matching the price of received goods into the liability account , **Stock Input**."
+        },
+        {
+          "source": "Stock Input",
+          "relation": "CONTAINS",
+          "target": "holding account",
+          "evidence": "Then, once the bill has been received, the amount in the holding account is transferred to *Accounts Payable*."
+        },
+        {
+          "source": "Stock Input",
+          "relation": "IS_PART_OF",
+          "target": "Accounts Payable",
+          "evidence": "Transfers into this account means the bill has been paid."
+        },
+        {
+          "source": "Stock Input",
+          "relation": "RELATED_TO",
+          "target": "vendor bill",
+          "evidence": "**Stock Input** is reconciled once the vendor bill is received."
+        },
+        {
+          "source": "Inventory Valuation",
+          "relation": "RELATED_TO",
+          "target": "Stock Input",
+          "evidence": "the **Inventory Valuation** account is unrelated to the crediting and debiting operations of the **Stock Input** account."
+        },
+        {
+          "source": "Inventory valuation",
+          "relation": "SUPPORTS",
+          "target": "Inventory Valuation",
+          "evidence": "Inventory valuation is a method of calculating how much each in-stock product is worth internally."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accounts-balanced-at-received-products",
+    "heading": "Accounts balanced at received products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "table",
+          "type": "Product",
+          "mention": "product, `table`",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "*Purchase* app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "*Inventory* app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting app",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Entries",
+          "type": "Report",
+          "mention": "Accounting --> Journal Entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock Valuation account",
+          "type": "DataObject",
+          "mention": "`Stock Valuation` account",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock Input account",
+          "type": "DataObject",
+          "mention": "Stock Input account",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Value account",
+          "type": "DataObject",
+          "mention": "*Inventory Value* account",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock Interim (Received) account",
+          "type": "DataObject",
+          "mention": "Stock Interim (Received) account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Price Difference Account",
+          "type": "DataObject",
+          "mention": "Price Difference Account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Category field",
+          "type": "Field",
+          "mention": "Product Category field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account Properties",
+          "type": "Feature",
+          "mention": "Under Account Properties",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting journal entry",
+          "type": "DataObject",
+          "mention": "accounting journal entry",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse reception operation",
+          "type": "Workflow",
+          "mention": "warehouse reception operation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Purchase app",
+          "evidence": "receive the shipment in the *Purchase* app"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "or *Inventory* app"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting app",
+          "evidence": "navigate to the Accounting app"
+        },
+        {
+          "source": "Accounting app",
+          "relation": "HAS_REPORT",
+          "target": "Journal Entries",
+          "evidence": "Accounting --> Journal Entries"
+        },
+        {
+          "source": "accounting journal entry",
+          "relation": "GENERATES",
+          "target": "Journal Entries",
+          "evidence": "Odoo generates an accounting journal entry"
+        },
+        {
+          "source": "warehouse reception operation",
+          "relation": "TRIGGERED_BY",
+          "target": "accounting journal entry",
+          "evidence": "Reference that matches the warehouse reception operation"
+        },
+        {
+          "source": "Product Category field",
+          "relation": "IS_PART_OF",
+          "target": "product page",
+          "evidence": "on the product page"
+        },
+        {
+          "source": "Account Properties",
+          "relation": "CONTAINS",
+          "target": "Price Difference Account",
+          "evidence": "Under Account Properties, create a new Price Difference Account"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accounts-balanced-at-received-vendor-bill",
+    "heading": "Accounts balanced at received vendor bill",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase",
+          "type": "Sub-module",
+          "mention": "Purchase",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Bill",
+          "type": "Action",
+          "mention": "Create Bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Items",
+          "type": "Sub-module",
+          "mention": "Journal Items tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm the bill",
+          "type": "Action",
+          "mention": "Confirm the bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock Input",
+          "type": "DataObject",
+          "mention": "Stock Input",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounts payable",
+          "type": "DataObject",
+          "mention": "Accounts payable",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock Interim (Received)",
+          "type": "DataObject",
+          "mention": "Stock Interim (Received)",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "Purchase Order (PO)",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "accountants",
+          "type": "Actor",
+          "mention": "accountants",
+          "confidence": "medium"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "navigate to the Purchase app"
+        },
+        {
+          "source": "Orders",
+          "relation": "IS_PART_OF",
+          "target✓": "Purchase app",
+          "evidence": "Purchase app --> Orders"
+        },
+        {
+          "source": "Purchase",
+          "relation": "IS_PART_OF",
+          "target": "Orders",
+          "evidence": "Orders --> Purchase"
+        },
+        {
+          "source": "Journal Items",
+          "relation": "BELONGS_TO",
+          "target": "Purchase Order",
+          "evidence": "Inside the PO, select Create Bill. Switch to the Journal Items tab"
+        },
+        {
+          "source": "Create Bill",
+          "relation": "PERFORMED_BY",
+          "target": "vendor",
+          "evidence": "Once the vendor requests payment, navigate to the Purchase app... select Create Bill"
+        },
+        {
+          "source": "Confirm the bill",
+          "relation": "PERFORMED_BY",
+          "target": "accountants",
+          "evidence": "Confirm the bill to record the payment to the vendor"
+        },
+        {
+          "source": "Accounts payable",
+          "relation": "RELATED_TO",
+          "target": "vendor",
+          "evidence": "This account stores the amount the company owes others, so accountants use the amount to write checks to vendors"
+        },
+        {
+          "source": "vendor",
+          "relation": "RELATED_TO",
+          "target": "Purchase Order",
+          "evidence": "select the PO (Purchase Order) for 8 tables"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "on-product-delivery",
+    "heading": "On product delivery",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory valuation",
+          "type": "Module",
+          "mention": "Inventory valuation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounts Receivable",
+          "type": "DataObject",
+          "mention": "Accounts Receivable",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock Input account",
+          "type": "DataObject",
+          "mention": "Stock Input account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Sales",
+          "type": "DataObject",
+          "mention": "Product Sales",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax Received",
+          "type": "DataObject",
+          "mention": "Tax Received",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expense account",
+          "type": "DataObject",
+          "mention": "Expense account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Anglo-Saxon accounting",
+          "type": "Standard",
+          "mention": "Anglo-Saxon expensing",
+          "confidence": "medium"
+        },
+        {
+          "name": "COGS",
+          "type": "Concept",
+          "mention": "cost of goods sold (COGS)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounts Receivable",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "In the accounting journal entry invoicing a customer for 10 tables, the accounts ... all pertain to the sale of the product."
+        },
+        {
+          "source": "Product Sales",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "In the accounting journal entry invoicing a customer for 10 tables, the accounts ... all pertain to the sale of the product."
+        },
+        {
+          "source": "Tax Received",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "In the accounting journal entry invoicing a customer for 10 tables, the accounts ... all pertain to the sale of the product."
+        },
+        {
+          "source": "Stock Input account",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Stock Input account is untouched because there are no new products coming in."
+        },
+        {
+          "source": "Expense account",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The Expense account is debited $120 to log the costs of storing 10 tables..."
+        },
+        {
+          "source": "Anglo-Saxon accounting",
+          "relation": "COMPLIES_WITH",
+          "target": "COGS",
+          "evidence": "Anglo-Saxon accounting recognizes the cost of goods sold (COGS) once the sale is made."
+        },
+        {
+          "source": "Odoo",
+          "relation": "USES_METHOD",
+          "target": "Anglo-Saxon accounting",
+          "evidence": "Understand Anglo-Saxon expensing"
+        },
+        {
+          "source": "Expense account",
+          "relation": "GENERATES",
+          "target": "COGS",
+          "evidence": "The Expense account is debited $120 to log the costs of storing 10 tables..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "on-product-return",
+    "heading": "On product return",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "product return",
+          "type": "Workflow",
+          "mention": "On product return",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "return 1 product",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounts Payable",
+          "type": "DataObject",
+          "mention": "Accounts Payable",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock Input",
+          "type": "DataObject",
+          "mention": "Stock Input",
+          "confidence": "high"
+        },
+        {
+          "name": "average cost",
+          "type": "Concept",
+          "mention": "average cost is $12",
+          "confidence": "medium"
+        },
+        {
+          "name": "Stock Valuation",
+          "type": "DataObject",
+          "mention": "Stock Valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "Price Difference Account",
+          "type": "Setting",
+          "mention": "Price Difference Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Category",
+          "type": "Module",
+          "mention": "Product Category",
+          "confidence": "medium"
+        },
+        {
+          "name": "price difference accounts",
+          "type": "Concept",
+          "mention": "price difference accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor price",
+          "type": "Concept",
+          "mention": "vendor price",
+          "confidence": "medium"
+        },
+        {
+          "name": "automated inventory valuation methods",
+          "type": "Concept",
+          "mention": "automated inventory valuation methods",
+          "confidence": "low"
+        },
+        {
+          "name": "accountants",
+          "type": "Actor",
+          "mention": "accountants",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal",
+          "type": "DataObject",
+          "mention": "journal",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "product return",
+          "relation": "CONTAINS",
+          "target": "product",
+          "evidence": "On product return...return 1 product"
+        },
+        {
+          "source": "product",
+          "relation": "BELONGS_TO",
+          "target": "vendor",
+          "evidence": "return 1 product to a vendor"
+        },
+        {
+          "source": "product",
+          "relation": "CONFIGURED_BY",
+          "target": "Price Difference Account",
+          "evidence": "Price Difference Account, which is set up in the product's Product Category"
+        },
+        {
+          "source": "Price Difference Account",
+          "relation": "IS_PART_OF",
+          "target": "Product Category",
+          "evidence": "Price Difference Account, which is set up in the product's Product Category"
+        },
+        {
+          "source": "product return",
+          "relation": "TRIGGERED_BY",
+          "target": "vendor",
+          "evidence": "when returning 1 product to a vendor"
+        },
+        {
+          "source": "product return",
+          "relation": "PRODUCES",
+          "target": "Accounts Payable",
+          "evidence": "company expects $10 in the Accounts Payable account"
+        },
+        {
+          "source": "product return",
+          "relation": "PRODUCES",
+          "target": "Stock Input",
+          "evidence": "Stock Input account must be debited $12"
+        },
+        {
+          "source": "Stock Input",
+          "relation": "RELATED_TO",
+          "target": "Stock Valuation",
+          "evidence": "Credit Stock Valuation $12 because the item is leaving the stock"
+        },
+        {
+          "source": "product return",
+          "relation": "USES_METHOD",
+          "target": "average cost",
+          "evidence": "average cost is $12 at the time of the return"
+        },
+        {
+          "source": "Price Difference Account",
+          "relation": "RELATED_TO",
+          "target": "price difference accounts",
+          "evidence": "Behavior of price difference accounts varies from localization"
+        },
+        {
+          "source": "price difference accounts",
+          "relation": "RELATED_TO",
+          "target": "vendor price",
+          "evidence": "differences between vendor price"
+        },
+        {
+          "source": "price difference accounts",
+          "relation": "RELATED_TO",
+          "target": "automated inventory valuation methods",
+          "evidence": "automated inventory valuation methods"
+        },
+        {
+          "source": "Accounts Payable",
+          "relation": "PERFORMED_BY",
+          "target": "accountants",
+          "evidence": "Debit Accounts Payable $10 to have the accountants collect"
+        },
+        {
+          "source": "accountants",
+          "relation": "RELATED_TO",
+          "target": "journal",
+          "evidence": "register the payment in their journal"
+        }
+      ]
+    }
+  }
+]

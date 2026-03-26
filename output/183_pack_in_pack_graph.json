@@ -1,0 +1,1014 @@
+[
+  {
+    "section_id": "pack-in-pack",
+    "heading": "Pack-in-pack",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pack-in-pack",
+          "type": "Module",
+          "mention": "Title: Pack-in-pack",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse operations",
+          "type": "Concept",
+          "mention": "warehouse operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "containers",
+          "type": "DataObject",
+          "mention": "containers",
+          "confidence": "medium"
+        },
+        {
+          "name": "pallets",
+          "type": "DataObject",
+          "mention": "pallets",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock movements",
+          "type": "Workflow",
+          "mention": "stock movements",
+          "confidence": "medium"
+        },
+        {
+          "name": "single scan",
+          "type": "Action",
+          "mention": "single scan",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pack-in-pack",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Pack-in-pack"
+        },
+        {
+          "source": "Pack-in-pack",
+          "relation": "SUPPORTS",
+          "target": "warehouse operations",
+          "evidence": "In more complex warehouse operations, it is sometimes necessary to handle groups of containers..."
+        },
+        {
+          "source": "Pack-in-pack",
+          "relation": "HAS_FEATURE",
+          "target": "handle groups of containers",
+          "evidence": "...it is sometimes necessary to handle groups of containers..."
+        },
+        {
+          "source": "handle groups of containers",
+          "relation": "CONTAINS",
+          "target": "containers",
+          "evidence": "...handle groups of containers..."
+        },
+        {
+          "source": "containers",
+          "relation": "RELATED_TO",
+          "target": "pallets",
+          "evidence": "...for example, grouping pallets together."
+        },
+        {
+          "source": "handle groups of containers",
+          "relation": "ENABLES",
+          "target": "stock movements",
+          "evidence": "...allowing them to be treated as a single unit for certain stock movements..."
+        },
+        {
+          "source": "stock movements",
+          "relation": "PERFORMED_BY",
+          "target": "single scan",
+          "evidence": "...possible to move the entire group with a single scan..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-settings",
+    "heading": "Enable settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages setting",
+          "type": "Setting",
+          "mention": "Packages setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "-": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Packages setting",
+          "evidence": "Enable the Packages setting"
+        },
+        {
+          "source": "Packages setting",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "open Inventory app --> Configuration --> Settings. Enable the Packages setting."
+        },
+        {
+          "source": "Packages setting",
+          "relation": "ENABLES",
+          "target": "pack-in-pack settings",
+          "evidence": "Before working with the pack-in-pack settings, ... Enable the Packages setting."
+        },
+        {
+          "source": "Save",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Be sure to click Save"
+        },
+        {
+          "source": "Save",
+          "relation": "TRIGGERED_BY",
+          "target": "Before exiting this page",
+          "evidence": "click Save before exiting this page"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Inventory",
+          "evidence": "Product: Odoo ... open Inventory app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-package-type",
+    "heading": "Set package type",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Open Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operation Types",
+          "type": "Module",
+          "mention": "Operation Types",
+          "confidence": "high"
+        },
+        {
+          "name": "Operation Types page",
+          "type": "DataObject",
+          "mention": "The Operation Types page opens",
+          "confidence": "medium"
+        },
+        {
+          "name": "operation type",
+          "type": "DataObject",
+          "mention": "Open an operation type",
+          "confidence": "medium"
+        },
+        {
+          "name": "operation type form",
+          "type": "DataObject",
+          "mention": "On the operation type form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packages section",
+          "type": "Sub-module",
+          "mention": "in the Packages section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Set Package Type",
+          "type": "Setting",
+          "mention": "select Set Package Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipts operation type",
+          "type": "DataObject",
+          "mention": "Receipts operation type",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Set Package Type",
+          "relation": "CONFIGURED_BY",
+          "target": "operation type form",
+          "evidence": "On the operation type form, in the Packages section, select Set Package Type."
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Open Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Operation Types",
+          "evidence": "Configuration --> Operation Types."
+        },
+        {
+          "source": "Set Package Type",
+          "relation": "ENABLES",
+          "target": "pack-in-pack functionality",
+          "evidence": "The *Set Package Type* setting must be enabled for all operations that require pack-in-pack functionality."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-package-types",
+    "heading": "Create package types",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Package Types",
+          "type": "Sub-module",
+          "mention": "Package Types",
+          "confidence": "high"
+        },
+        {
+          "name": "Create package types",
+          "type": "Feature",
+          "mention": "Create package types",
+          "confidence": "high"
+        },
+        {
+          "name": "Package Types list",
+          "type": "DataObject",
+          "mention": "Package Types list",
+          "confidence": "medium"
+        },
+        {
+          "name": "package type form",
+          "type": "DataObject",
+          "mention": "package type form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Package Type",
+          "type": "Field",
+          "mention": "Package Type (required)",
+          "confidence": "high"
+        },
+        {
+          "name": "Size",
+          "type": "Field",
+          "mention": "Size",
+          "confidence": "high"
+        },
+        {
+          "name": "Length",
+          "type": "Field",
+          "mention": "Length",
+          "confidence": "medium"
+        },
+        {
+          "name": "Width",
+          "type": "Field",
+          "mention": "Width",
+          "confidence": "medium"
+        },
+        {
+          "name": "Height",
+          "type": "Field",
+          "mention": "Height",
+          "confidence": "medium"
+        },
+        {
+          "name": "Weight",
+          "type": "Field",
+          "mention": "Weight",
+          "confidence": "high"
+        },
+        {
+          "name": "Max Weight",
+          "type": "Field",
+          "mention": "Max Weight",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Field",
+          "mention": "Barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "Sequence Prefix",
+          "type": "Field",
+          "mention": "Sequence Prefix",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Carrier",
+          "type": "Field",
+          "mention": "Carrier",
+          "confidence": "high"
+        },
+        {
+          "name": "Carrier Code",
+          "type": "Field",
+          "mention": "Carrier Code",
+          "confidence": "high"
+        },
+        {
+          "name": "package",
+          "type": "Concept",
+          "mention": "package",
+          "confidence": "medium"
+        },
+        {
+          "name": "pallet",
+          "type": "Concept",
+          "mention": "Pallet",
+          "confidence": "low"
+        },
+        {
+          "name": "shipping",
+          "type": "Concept",
+          "mention": "shipping",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Package Types",
+          "evidence": "Configuration --> Package Types"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Create package types",
+          "evidence": "Create package types by navigating to ..."
+        },
+        {
+          "source": "Create package types",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "by navigating to"
+        },
+        {
+          "source": "Package Types list",
+          "relation": "TRIGGERED_BY",
+          "target": "clicking New",
+          "evidence": "On the Package Types list, clicking New opens a blank package type form."
+        },
+        {
+          "source": "package type form",
+          "relation": "CONTAINS",
+          "target": "Package Type",
+          "evidence": "The fields of the form are as follows: - Package Type"
+        },
+        {
+          "source": "package type form",
+          "relation": "CONTAINS",
+          "target": "Size",
+          "evidence": "The fields of the form are as follows: - Size"
+        },
+        {
+          "source": "Size",
+          "relation": "CONTAINS",
+          "target": "Length",
+          "evidence": "define the Length"
+        },
+        {
+          "source": "Size",
+          "relation": "CONTAINS",
+          "target": "Width",
+          "evidence": "define the Width"
+        },
+        {
+          "source": "Size",
+          "relation": "CONTAINS",
+          "target": "Height",
+          "evidence": "define the Height"
+        },
+        {
+          "source": "package type form",
+          "relation": "CONTAINS",
+          "target": "Weight",
+          "evidence": "The fields of the form are as follows: - Weight"
+        },
+        {
+          "source": "package type form",
+          "relation": "CONTAINS",
+          "target": "Max Weight",
+          "evidence": "The fields of the form are as follows: - Max Weight"
+        },
+        {
+          "source": "package type form",
+          "relation": "CONTAINS",
+          "target": "Barcode",
+          "evidence": "The fields of the form are as follows: - Barcode"
+        },
+        {
+          "source": "package type form",
+          "relation": "CONTAINS",
+          "target": "Sequence Prefix",
+          "evidence": "The fields of the form are as follows: - Sequence Prefix"
+        },
+        {
+          "source": "package type form",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "The fields of the form are as follows: - Company"
+        },
+        {
+          "source": "package type form",
+          "relation": "CONTAINS",
+          "target": "Carrier",
+          "evidence": "The fields of the form are as follows: - Carrier"
+        },
+        {
+          "source": "package type form",
+          "relation": "CONTAINS",
+          "target": "Carrier Code",
+          "evidence": "The fields of the form are as follows: - Carrier Code"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "pack-in-pack-process",
+    "heading": "Pack-in-pack process",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Set Package Type",
+          "type": "Feature",
+          "mention": "Set Package Type",
+          "confidence": "high"
+        },
+        {
+          "name": "operation type",
+          "type": "DataObject",
+          "mention": "operation type",
+          "confidence": "high"
+        },
+        {
+          "name": "operation type form",
+          "type": "DataObject",
+          "mention": "operation type form",
+          "confidence": "medium"
+        },
+        {
+          "name": "pack-in-pack",
+          "type": "Feature",
+          "mention": "pack-in-pack",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations menu",
+          "type": "Module",
+          "mention": "Operations menu",
+          "confidence": "high"
+        },
+        {
+          "name": "operation",
+          "type": "DataObject",
+          "mention": "operation",
+          "confidence": "high"
+        },
+        {
+          "name": "product line",
+          "type": "DataObject",
+          "mention": "product line",
+          "confidence": "high"
+        },
+        {
+          "name": "Details",
+          "type": "Action",
+          "mention": "Details link",
+          "confidence": "high"
+        },
+        {
+          "name": "Detailed Operations window",
+          "type": "Feature",
+          "mention": "Detailed Operations window",
+          "confidence": "high"
+        },
+        {
+          "name": "Store to location",
+          "type": "Field",
+          "mention": "Store to location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Destination Package",
+          "type": "Field",
+          "mention": "Destination Package",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line link",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand",
+          "type": "Field",
+          "mention": "Demand",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Put in Pack",
+          "type": "Action",
+          "mention": "Put in Pack button",
+          "confidence": "high"
+        },
+        {
+          "name": "Put in Pack window",
+          "type": "Feature",
+          "mention": "Put in Pack window",
+          "confidence": "high"
+        },
+        {
+          "name": "Package Type",
+          "type": "Field",
+          "mention": "Package Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Package",
+          "type": "Field",
+          "mention": "Package",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages field",
+          "type": "Field",
+          "mention": "Packages field",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Set Package Type",
+          "relation": "ENABLES",
+          "target": "pack-in-pack",
+          "evidence": "After Set Package Type is enabled in the operation type form, pack-in-pack can be used"
+        },
+        {
+          "source": "pack-in-pack",
+          "relation": "ENABLES",
+          "target": "Put in Pack",
+          "evidence": "Alternatively, click the Put in Pack button on the operation form"
+        },
+        {
+          "source": "operation type",
+          "relation": "CONTAINS",
+          "target": "operation",
+          "evidence": "Open the operation type from the Operations menu. The list of operations for that operation type displays"
+        },
+        {
+          "source": "operation",
+          "relation": "CONTAINS",
+          "target": "product line",
+          "evidence": "Repeat this process for all product lines on the operation form"
+        },
+        {
+          "source": "product line",
+          "relation": "HAS_FEATURE",
+          "target": "Details",
+          "evidence": "click the Details link on the far right of the product line"
+        },
+        {
+          "source": "Details",
+          "relation": "TRIGGERED_BY",
+          "target": "Detailed Operations window",
+          "evidence": "The Detailed Operations window opens"
+        },
+        {
+          "source": "Detailed Operations window",
+          "relation": "CONTAINS",
+          "target": "Store to location",
+          "evidence": "In this window, specify a Store to location"
+        },
+        {
+          "source": "Detailed Operations window",
+          "relation": "CONTAINS",
+          "target": "Destination Package",
+          "evidence": "the name of the Destination Package"
+        },
+        {
+          "source": "Detailed Operations window",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "the Quantity of items to be put in that package"
+        },
+        {
+          "source": "Detailed Operations window",
+          "relation": "HAS_FEATURE",
+          "target": "Add a line",
+          "evidence": "To break the inventory into multiple packages, click the Add a line link"
+        },
+        {
+          "source": "Add a line",
+          "relation": "ENABLES",
+          "target": "Quantity",
+          "evidence": "be sure that the Quantity of each line adds up to the total Demand"
+        },
+        {
+          "source": "Add a line",
+          "relation": "REQUIRES",
+          "target": "Demand",
+          "evidence": "be sure that the Quantity of each line adds up to the total Demand"
+        },
+        {
+          "source": "Detailed Operations window",
+          "relation": "CONTAINS",
+          "target": "Save",
+          "evidence": "Click Save to create the package in Odoo"
+        },
+        {
+          "source": "operation",
+          "relation": "HAS_FEATURE",
+          "target": "Put in Pack",
+          "evidence": "Alternatively, click the Put in Pack button on the operation form"
+        },
+        {
+          "source": "Put in Pack",
+          "relation": "TRIGGERED_BY",
+          "target": "Put in Pack window",
+          "evidence": "The Put in Pack pop-up window opens"
+        },
+        {
+          "source": "Put in Pack window",
+          "relation": "CONTAINS",
+          "target": "Package Type",
+          "evidence": "specify a Package Type"
+        },
+        {
+          "source": "Put in Pack window",
+          "relation": "CONTAINS",
+          "target": "Package",
+          "evidence": "Package, or leave the Package field blank"
+        },
+        {
+          "source": "product line",
+          "relation": "CONTAINS",
+          "target": "Packages field",
+          "evidence": "The package name appears in the product line's Packages field"
+        },
+        {
+          "source": "operation",
+          "relation": "REQUIRES",
+          "target": "Validate",
+          "evidence": "Be sure to Validate the operation to process its move in inventory"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "viewing-the-packages-in-an-operation",
+    "heading": "Viewing the packages in an operation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages",
+          "type": "DataObject",
+          "mention": "the packages",
+          "confidence": "medium"
+        },
+        {
+          "name": "Main Packages",
+          "type": "DataObject",
+          "mention": "Main Packages",
+          "confidence": "medium"
+        },
+        {
+          "name": "operation",
+          "type": "Module",
+          "mention": "an operation",
+          "confidence": "low"
+        },
+        {
+          "name": "fa-cubes Packages smart button",
+          "type": "Action",
+          "mention": "click the fa-cubes Packages smart button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Packages",
+          "relation": "BELONGS_TO",
+          "target": "operation",
+          "evidence": "packages created from an operation"
+        },
+        {
+          "source": "Main Packages",
+          "relation": "EQUIVALENT_TO",
+          "target": "Packages",
+          "evidence": "Main Packages, or the largest package assigned to the operation"
+        },
+        {
+          "source": "fa-cubes Packages smart button",
+          "relation": "ENABLES",
+          "target": "Packages",
+          "evidence": "To view the packages... click the fa-cubes Packages smart button"
+        },
+        {
+          "source": "fa-cubes Packages smart button",
+          "relation": "IS_PART_OF",
+          "target": "operation",
+          "evidence": "at the top of the operation form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "removing-packages-from-parent-packages",
+    "heading": "Removing packages from parent packages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Remove button",
+          "type": "Action",
+          "mention": "click the Remove button",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages smart button",
+          "type": "Action",
+          "mention": "click the fa-cubes Packages smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "operation form",
+          "type": "DataObject",
+          "mention": "the operation form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Main Packages",
+          "type": "DataObject",
+          "mention": "Main Packages",
+          "confidence": "medium"
+        },
+        {
+          "name": "packages",
+          "type": "Concept",
+          "mention": "packages",
+          "confidence": "low"
+        },
+        {
+          "name": "parent packages",
+          "type": "Concept",
+          "mention": "parent packages",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Remove button",
+          "relation": "PERFORMED_BY",
+          "target": "Actor (User)",
+          "evidence": "Select the check boxes... then click the Remove button."
+        },
+        {
+          "source": "Packages smart button",
+          "relation": "IS_PART_OF",
+          "target": "operation form",
+          "evidence": "click the fa-cubes Packages smart button at the top of the operation form"
+        },
+        {
+          "source": "Main Packages",
+          "relation": "CONTAINS",
+          "target": "packages",
+          "evidence": "this list is filtered by the Main Packages, or the largest package assigned to the operation"
+        },
+        {
+          "source": "Main Packages filter",
+          "relation": "RELATED_TO",
+          "target": "packages",
+          "evidence": "To view all packages, remove the Main Packages filter."
+        },
+        {
+          "source": "Remove button",
+          "relation": "TRIGGERED_BY",
+          "target": "Actor (User)",
+          "evidence": "Select the check boxes... then click the Remove button."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "viewing-packages-in-inventory",
+    "heading": "Viewing packages in inventory",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packages",
+          "type": "Feature",
+          "mention": "Packages",
+          "confidence": "high"
+        },
+        {
+          "name": "list of packages",
+          "type": "Feature",
+          "mention": "list of packages",
+          "confidence": "medium"
+        },
+        {
+          "name": "package form",
+          "type": "Feature",
+          "mention": "package form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Packages",
+          "evidence": "Open Inventory app --> Products --> Packages"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Open Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Packages",
+          "evidence": "Products --> Packages"
+        },
+        {
+          "source": "Packages",
+          "relation": "HAS_FEATURE",
+          "target": "list of packages",
+          "evidence": "All packages in inventory are listed here"
+        },
+        {
+          "source": "Packages",
+          "relation": "HAS_FEATURE",
+          "target": "package form",
+          "evidence": "The products in the package ... are listed on the package form"
+        }
+      ]
+    }
+  }
+]

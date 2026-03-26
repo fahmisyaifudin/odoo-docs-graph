@@ -1,0 +1,906 @@
+[
+  {
+    "section_id": "analyze-metrics",
+    "heading": "Analyze metrics",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Marketing",
+          "type": "Module",
+          "mention": "Email Marketing",
+          "confidence": "high"
+        },
+        {
+          "name": "metrics",
+          "type": "Concept",
+          "mention": "metrics",
+          "confidence": "high"
+        },
+        {
+          "name": "email marketing campaign",
+          "type": "Concept",
+          "mention": "email marketing campaign",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Email Marketing",
+          "evidence": "Odoo's **Email Marketing** application"
+        },
+        {
+          "source": "Email Marketing",
+          "relation": "HAS_REPORT",
+          "target": "metrics",
+          "evidence": "tracks several key metrics that can be interpreted through reports"
+        },
+        {
+          "source": "metrics",
+          "relation": "APPLIES_TO",
+          "target": "email marketing campaign",
+          "evidence": "understand the success or failure of an email marketing campaign"
+        },
+        {
+          "source": "Email Marketing",
+          "relation": "ENABLES",
+          "target": "email marketing campaign",
+          "evidence": "used to optimize future campaigns"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-metrics",
+    "heading": "View metrics",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Marketing",
+          "type": "Module",
+          "mention": "Email Marketing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mailings",
+          "type": "Sub-module",
+          "mention": "Mailings",
+          "confidence": "medium"
+        },
+        {
+          "name": "View metrics",
+          "type": "Feature",
+          "mention": "View metrics",
+          "confidence": "high"
+        },
+        {
+          "name": "mass mail",
+          "type": "Feature",
+          "mention": "mass mail",
+          "confidence": "medium"
+        },
+        {
+          "name": "detailed metrics",
+          "type": "Feature",
+          "mention": "detailed metrics",
+          "confidence": "medium"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "record",
+          "type": "DataObject",
+          "mention": "record",
+          "confidence": "medium"
+        },
+        {
+          "name": "smart buttons",
+          "type": "Feature",
+          "mention": "smart buttons",
+          "confidence": "medium"
+        },
+        {
+          "name": "column headings",
+          "type": "Feature",
+          "mention": "column headings",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Email Marketing",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Email Marketing app"
+        },
+        {
+          "source": "Mailings",
+          "relation": "BELONGS_TO",
+          "target": "Email Marketing",
+          "evidence": "Mailings"
+        },
+        {
+          "source": "View metrics",
+          "relation": "IS_PART_OF",
+          "target": "Email Marketing",
+          "evidence": "To access the metrics for an individual mailing, navigate to Email Marketing app"
+        },
+        {
+          "source": "detailed metrics",
+          "relation": "IS_PART_OF",
+          "target": "record",
+          "evidence": "At the top of the record, detailed metrics are displayed"
+        },
+        {
+          "source": "smart buttons",
+          "relation": "CONTAINS",
+          "target": "detailed metrics",
+          "evidence": "detailed metrics are displayed as smart buttons"
+        },
+        {
+          "source": "mass mail",
+          "relation": "RELATED_TO",
+          "target": "detailed metrics",
+          "evidence": "After a mass mail has been sent, the results... are displayed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "opened-rate",
+    "heading": "Opened rate",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Opened rate",
+          "type": "Concept",
+          "mention": "Opened rate",
+          "confidence": "high"
+        },
+        {
+          "name": "Email",
+          "type": "DataObject",
+          "mention": "emails",
+          "confidence": "high"
+        },
+        {
+          "name": "Subject line",
+          "type": "Field",
+          "mention": "subject line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cold outreach emails",
+          "type": "Workflow",
+          "mention": "cold outreach emails",
+          "confidence": "medium"
+        },
+        {
+          "name": "Promotional emails",
+          "type": "Workflow",
+          "mention": "promotional emails",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sender reputation",
+          "type": "Concept",
+          "mention": "sender reputation",
+          "confidence": "medium"
+        },
+        {
+          "name": "DNS records",
+          "type": "Integration",
+          "mention": "DNS records",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Opened rate",
+          "relation": "APPLIES_TO",
+          "target": "Email",
+          "evidence": "The percentage of emails opened by recipients"
+        },
+        {
+          "source": "Cold outreach emails",
+          "relation": "TRIGGERED_BY",
+          "target": "Opened rate",
+          "evidence": "In cases where a reply is expected, such as cold outreach emails, high open rate"
+        },
+        {
+          "source": "Promotional emails",
+          "relation": "TRIGGERED_BY",
+          "target": "Opened rate",
+          "evidence": "In cases where a reply is not expected, such as promotional emails"
+        },
+        {
+          "source": "Opened rate",
+          "relation": "RELATED_TO",
+          "target": "Subject line",
+          "evidence": "high open rate may indicate the subject line was timely"
+        },
+        {
+          "source": "Sender reputation",
+          "relation": "RELATED_TO",
+          "target": "Opened rate",
+          "evidence": "Emails that consistently land in recipient spam folders could be due to having a poor sender reputation"
+        },
+        {
+          "source": "DNS records",
+          "relation": "ENABLES",
+          "target": "Email",
+          "evidence": "or failing to configure the proper DNS records"
+        },
+        {
+          "source": "Email",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "replied-rate",
+    "heading": "Replied rate",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Replied rate",
+          "type": "Concept",
+          "mention": "Replied rate",
+          "confidence": "high"
+        },
+        {
+          "name": "recipients",
+          "type": "Actor",
+          "mention": "recipients",
+          "confidence": "medium"
+        },
+        {
+          "name": "email",
+          "type": "DataObject",
+          "mention": "email",
+          "confidence": "medium"
+        },
+        {
+          "name": "sent emails",
+          "type": "DataObject",
+          "mention": "sent emails",
+          "confidence": "medium"
+        },
+        {
+          "name": "response",
+          "type": "Action",
+          "mention": "responded",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replied rate",
+          "relation": "COMPLIES_WITH",
+          "target": "recipients",
+          "evidence": "The percentage of recipients who responded to the email"
+        },
+        {
+          "source": "Replied rate",
+          "relation": "COMPLIES_WITH",
+          "target": "email",
+          "evidence": "The percentage of recipients who responded to the email"
+        },
+        {
+          "source": "Replied rate",
+          "relation": "COMPLIES_WITH",
+          "target": "sent emails",
+          "evidence": "against the total number of sent emails"
+        },
+        {
+          "source": "recipients",
+          "relation": "PERFORMED_BY",
+          "target": "response",
+          "evidence": "recipients who responded to the email"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "clicked-rate",
+    "heading": "Clicked rate",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Clicked through rate (CTR)",
+          "type": "Concept",
+          "mention": "Clicked through rate (CTR)",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Clicked through rate (CTR)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nThis represents the *Clicked through rate (CTR)*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "received-rate",
+    "heading": "Received rate",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Received rate",
+          "type": "Concept",
+          "mention": "received rate",
+          "confidence": "high"
+        },
+        {
+          "name": "Mailing list",
+          "type": "DataObject",
+          "mention": "mailing list",
+          "confidence": "high"
+        },
+        {
+          "name": "Sender authentication",
+          "type": "Feature",
+          "mention": "sender authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "Email providers",
+          "type": "Actor",
+          "mention": "email providers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email-marketing/deliverability-issues section",
+          "type": "Feature",
+          "mention": "email-marketing/deliverability-issues section",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Received rate",
+          "relation": "RELATED_TO",
+          "target": "Mailing list",
+          "evidence": "measures the percentage... against the total number of sent emails. A high received rate can indicate the mailing list used is up-to-date"
+        },
+        {
+          "source": "Received rate",
+          "relation": "RELATED_TO",
+          "target": "Sender authentication",
+          "evidence": "A high received rate can indicate... the sender authentication is trusted by email providers"
+        },
+        {
+          "source": "Received rate",
+          "relation": "SEE_ALSO",
+          "target": "Email-marketing/deliverability-issues section",
+          "evidence": "View the email-marketing/deliverability-issues section for more information"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bounced-rate",
+    "heading": "Bounced rate",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "email-marketing",
+          "type": "Module",
+          "mention": "email-marketing/deliverability-issues",
+          "confidence": "medium"
+        },
+        {
+          "name": "deliverability-issues",
+          "type": "Sub-module",
+          "mention": "email-marketing/deliverability-issues",
+          "confidence": "low"
+        },
+        {
+          "name": "recipient records",
+          "type": "DataObject",
+          "mention": "recipient records",
+          "confidence": "medium"
+        },
+        {
+          "name": "report",
+          "type": "Report",
+          "mention": "multiple types of reports can be run",
+          "confidence": "low"
+        },
+        {
+          "name": "Bounced rate",
+          "type": "Concept",
+          "mention": "Bounced rate",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "email-marketing",
+          "relation": "CONTAINS",
+          "target": "deliverability-issues",
+          "evidence": "email-marketing/deliverability-issues"
+        },
+        {
+          "source": "Bounced rate",
+          "relation": "RELATED_TO",
+          "target": "recipient records",
+          "evidence": "Click on the respective smart buttons to see all the corresponding recipient records"
+        },
+        {
+          "source": "recipient records",
+          "relation": "HAS_REPORT",
+          "target": "report",
+          "evidence": "multiple types of reports can be run for further analysis"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-metrics-reports",
+    "heading": "Create metrics reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Create metrics reports",
+          "type": "Action",
+          "mention": "Create metrics reports",
+          "confidence": "high"
+        },
+        {
+          "name": "individual metric",
+          "type": "Concept",
+          "mention": "Individual metrics",
+          "confidence": "medium"
+        },
+        {
+          "name": "smart button",
+          "type": "Feature",
+          "mention": "smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-caret-down",
+          "type": "Feature",
+          "mention": "fa-caret-down",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "drop-down menu",
+          "type": "Feature",
+          "mention": "drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "filtering parameters",
+          "type": "Feature",
+          "mention": "filtering",
+          "confidence": "medium"
+        },
+        {
+          "name": "grouping parameters",
+          "type": "Feature",
+          "mention": "grouping",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters",
+          "confidence": "high"
+        },
+        {
+          "name": "search options",
+          "type": "Concept",
+          "mention": "search options",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bounced",
+          "type": "Field",
+          "mention": "Bounced",
+          "confidence": "medium"
+        },
+        {
+          "name": "Group By",
+          "type": "Feature",
+          "mention": "Group By",
+          "confidence": "high"
+        },
+        {
+          "name": "Sent Period",
+          "type": "Field",
+          "mention": "Sent Period",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Custom Group",
+          "type": "Action",
+          "mention": "Add Custom Group",
+          "confidence": "medium"
+        },
+        {
+          "name": "Responsible",
+          "type": "Field",
+          "mention": "Responsible",
+          "confidence": "medium"
+        },
+        {
+          "name": "group tile",
+          "type": "Feature",
+          "mention": "group tile",
+          "confidence": "medium"
+        },
+        {
+          "name": "monthly newsletter",
+          "type": "Concept",
+          "mention": "monthly newsletter",
+          "confidence": "low"
+        },
+        {
+          "name": "View ../../essentials/search",
+          "type": "Feature",
+          "mention": "seealso:: View ../../essentials/search",
+          "confidence": "medium"
+        },
+        {
+          "name": "deliverability-issues",
+          "type": "Concept",
+          "mention": "email-marketing/deliverability-issues",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create metrics reports",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "To begin, click on the smart button",
+          "confidence": "medium"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Create metrics reports",
+          "evidence": "Product: Odoo Title: Create metrics reports",
+          "confidence": "medium"
+        },
+        {
+          "source": "Filters",
+          "relation": "BELONGS_TO",
+          "target": "search options",
+          "evidence": "Filters, located in the left column of the search options",
+          "confidence": "medium"
+        },
+        {
+          "source": "Group By",
+          "relation": "BELONGS_TO",
+          "target": "search options",
+          "evidence": "Group By, found in the middle column",
+          "confidence": "medium"
+        },
+        {
+          "source": "Create metrics reports",
+          "relation": "SEE_ALSO",
+          "target": "View ../../essentials/search",
+          "evidence": "seealso:: View ../../essentials/search",
+          "confidence": "high"
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Add Custom Group",
+          "evidence": "Add Custom Group --> Responsible, in the Group By column",
+          "confidence": "medium"
+        },
+        {
+          "source": "Create metrics reports",
+          "relation": "SEE_ALSO",
+          "target": "deliverability-issues",
+          "evidence": "_email-marketing/deliverability-issues",
+          "confidence": "medium"
+        },
+        {
+          "source": "individual metric",
+          "relation": "RELATED_TO",
+          "target": "monthly newsletter",
+          "evidence": "A monthly newsletter has been sent out",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "mass-mailing-analysis",
+    "heading": "Mass mailing analysis",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Marketing app",
+          "type": "Module",
+          "mention": "Email Marketing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mass Mailing Analysis",
+          "type": "Report",
+          "mention": "Mass Mailing Analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "mailing campaign",
+          "type": "DataObject",
+          "mention": "mailing campaign",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sent",
+          "type": "Concept",
+          "mention": "Sent",
+          "confidence": "low"
+        },
+        {
+          "name": "Measures button",
+          "type": "Feature",
+          "mention": "Measures button",
+          "confidence": "medium"
+        },
+        {
+          "name": "opened emails",
+          "type": "Concept",
+          "mention": "opened emails",
+          "confidence": "low"
+        },
+        {
+          "name": "mass mailings",
+          "type": "DataObject",
+          "mention": "mass mailings",
+          "confidence": "medium"
+        },
+        {
+          "name": "subject line",
+          "type": "Field",
+          "mention": "subject line",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Mass Mailing Analysis",
+          "relation": "IS_PART_OF",
+          "target": "Reporting",
+          "evidence": "To begin, navigate to Email Marketing app --> Reporting --> Mass Mailing Analysis."
+        },
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Email Marketing app",
+          "evidence": "To begin, navigate to Email Marketing app --> Reporting --> Mass Mailing Analysis."
+        },
+        {
+          "source": "Email Marketing app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Mass Mailing Analysis",
+          "relation": "HAS_REPORT",
+          "target": "mailing campaign",
+          "evidence": "A dashboard appears displaying a bar chart containing each mailing campaign."
+        },
+        {
+          "source": "Mass Mailing Analysis",
+          "relation": "ENABLES",
+          "target": "Measures button",
+          "evidence": "To change the measure, click the Measures button"
+        },
+        {
+          "source": "mass mailings",
+          "relation": "RELATED_TO",
+          "target": "subject line",
+          "evidence": "the subject line of each mass mailing can be a good place to begin looking."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "deliverability-issues",
+    "heading": "Deliverability issues",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Deliverability issues",
+          "type": "Concept",
+          "mention": "Title: Deliverability issues",
+          "confidence": "high"
+        },
+        {
+          "name": "mailing list",
+          "type": "DataObject",
+          "mention": "Using a mailing list",
+          "confidence": "medium"
+        },
+        {
+          "name": "From email address",
+          "type": "Field",
+          "mention": "*From* email address",
+          "confidence": "high"
+        },
+        {
+          "name": "DMARC authentication",
+          "type": "Feature",
+          "mention": "DMARC authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "DNS records",
+          "type": "Setting",
+          "mention": "DNS records",
+          "confidence": "high"
+        },
+        {
+          "name": "email domain",
+          "type": "Integration",
+          "mention": "email_communication/email_domain",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mailing campaigns",
+          "type": "Module",
+          "mention": "Mailing campaigns",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage unsubscriptions",
+          "type": "Sub-module",
+          "mention": "Manage unsubscriptions",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Deliverability issues",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Title: Deliverability issues"
+        },
+        {
+          "source": "mailing list",
+          "relation": "CONTAINS",
+          "target": "contact information",
+          "evidence": "Using a mailing list that contains outdated contact information"
+        },
+        {
+          "source": "mailing list",
+          "relation": "CONTAINS",
+          "target": "email addresses",
+          "evidence": "Using a mailing list that contains outdated contact information, or malformed email addresses"
+        },
+        {
+          "source": "mailing list",
+          "relation": "RELATED_TO",
+          "target": "Deliverability issues",
+          "evidence": "Using a mailing list that contains outdated contact information, or malformed email addresses are likely to result in a high bounce rate"
+        },
+        {
+          "source": "From email address",
+          "relation": "GOVERNED_BY",
+          "target": "DMARC authentication",
+          "evidence": "Mailings sent using a *From* email address that differs from the sender's domain are likely to bounce with certain email providers due to failing DMARC authentication"
+        },
+        {
+          "source": "From email address",
+          "relation": "RELATED_TO",
+          "target": "Deliverability issues",
+          "evidence": "Mailings sent using a *From* email address that differs from the sender's domain are likely to bounce"
+        },
+        {
+          "source": "DNS records",
+          "relation": "CONFIGURED_BY",
+          "target": "email domain",
+          "evidence": "Failing to configure the proper DNS records <../../general/email_communication/email_domain>"
+        },
+        {
+          "source": "DNS records",
+          "relation": "RELATED_TO",
+          "target": "Deliverability issues",
+          "evidence": "Failing to configure the proper DNS records can also result in a high bounce rate"
+        },
+        {
+          "source": "Deliverability issues",
+          "relation": "SEE_ALSO",
+          "target": "Mailing campaigns",
+          "evidence": ".. seealso:: - Mailing campaigns"
+        },
+        {
+          "source": "Deliverability issues",
+          "relation": "SEE_ALSO",
+          "target": "Manage unsubscriptions",
+          "evidence": ".. seealso:: - Manage unsubscriptions"
+        }
+      ]
+    }
+  }
+]

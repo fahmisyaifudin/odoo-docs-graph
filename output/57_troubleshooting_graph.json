@@ -1,0 +1,1092 @@
+[
+  {
+    "section_id": "the-pairing-code-does-not-appear-or-does-not-work",
+    "heading": "The pairing code does not appear or does not work",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "IoT",
+          "type": "Product",
+          "mention": "IoT system",
+          "confidence": "high"
+        },
+        {
+          "name": "pairing code",
+          "type": "Feature",
+          "mention": "pairing code",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo database",
+          "type": "Product",
+          "mention": "Odoo database",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box",
+          "type": "Module",
+          "mention": "IoT box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Windows virtual IoT service",
+          "type": "Module",
+          "mention": "Windows virtual IoT service",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT system",
+          "type": "Module",
+          "mention": "IoT system",
+          "confidence": "medium"
+        },
+        {
+          "name": "network",
+          "type": "Concept",
+          "mention": "network",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "pairing code",
+          "relation": "TRIGGERED_BY",
+          "target": "IoT system",
+          "evidence": "The pairing code does not appear or does not work"
+        },
+        {
+          "source": "IoT",
+          "relation": "CONTAINS",
+          "target": "IoT system",
+          "evidence": "The IoT system is not connected to the network"
+        },
+        {
+          "source": "IoT system",
+          "relation": "REQUIRES",
+          "target": "network",
+          "evidence": "The IoT system is not connected to the network"
+        },
+        {
+          "source": "IoT system",
+          "relation": "REQUIRES",
+          "target": "Odoo database",
+          "evidence": "The IoT system is already connected to an Odoo database"
+        },
+        {
+          "source": "pairing code",
+          "relation": "TRIGGERED_BY",
+          "target": "IoT box",
+          "evidence": "Restart the IoT box to generate and display the pairing code"
+        },
+        {
+          "source": "pairing code",
+          "relation": "TRIGGERED_BY",
+          "target": "Windows virtual IoT service",
+          "evidence": "Restart the Windows virtual IoT service to generate and display the pairing code"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "the-iot-system-does-not-connect-to-the-database",
+    "heading": "The IoT system does not connect to the database",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT system",
+          "type": "Module",
+          "mention": "IoT system",
+          "confidence": "medium"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "high"
+        },
+        {
+          "name": "server",
+          "type": "Module",
+          "mention": "server",
+          "confidence": "medium"
+        },
+        {
+          "name": "multi-database environment",
+          "type": "Setting",
+          "mention": "multi-database environment",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT box",
+          "type": "Module",
+          "mention": "IoT box",
+          "confidence": "high"
+        },
+        {
+          "name": "Windows virtual IoT service",
+          "type": "Module",
+          "mention": "Windows virtual IoT service",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT system",
+          "relation": "CONTAINS",
+          "target": "IoT box",
+          "evidence": "IoT system does not connect to the database"
+        },
+        {
+          "source": "IoT system",
+          "relation": "CONTAINS",
+          "target": "Windows virtual IoT service",
+          "evidence": "IoT system does not connect to the database"
+        },
+        {
+          "source": "server",
+          "relation": "CONTAINS",
+          "target": "database",
+          "evidence": "IoT system can reach the database and the server"
+        },
+        {
+          "source": "server",
+          "relation": "CONFIGURED_BY",
+          "target": "multi-database environment",
+          "evidence": "server does not use a multi-database environment"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "the-iot-system-is-connected-to-the-odoo-database-but-cannot-be-reached",
+    "heading": "The IoT system is connected to the Odoo database but cannot be reached",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "IoT system",
+          "type": "Product",
+          "mention": "IoT system",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo database",
+          "type": "Product",
+          "mention": "Odoo database",
+          "confidence": "high"
+        },
+        {
+          "name": "computer",
+          "type": "Actor",
+          "mention": "computer",
+          "confidence": "medium"
+        },
+        {
+          "name": "network",
+          "type": "Concept",
+          "mention": "same network",
+          "confidence": "medium"
+        },
+        {
+          "name": "DNS settings",
+          "type": "Setting",
+          "mention": "DNS settings",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT system",
+          "relation": "SUPPORTS",
+          "target": "Odoo database",
+          "evidence": "connected to"
+        },
+        {
+          "source": "IoT system",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "IoT system is connected to the Odoo database"
+        },
+        {
+          "source": "Odoo database",
+          "relation": "CONTAINED_BY",
+          "target": "computer",
+          "evidence": "computer running the Odoo database"
+        },
+        {
+          "source": "IoT system",
+          "relation": "CONTAINED_BY",
+          "target": "computer",
+          "evidence": "IoT system and the computer running the Odoo database are connected to the same network"
+        },
+        {
+          "source": "DNS settings",
+          "relation": "CONFIGURES",
+          "target": "IoT system",
+          "evidence": "update the DNS settings"
+        },
+        {
+          "source": "DNS settings",
+          "relation": "CONFIGURES",
+          "target": "Odoo database",
+          "evidence": "update the DNS settings"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "the-windows-virtual-iot's-homepage-cannot-be-accessed-from-another-device",
+    "heading": "The Windows virtual IoT's homepage cannot be accessed from another device",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Windows virtual IoT",
+          "type": "DataObject",
+          "mention": "Windows virtual IoT",
+          "confidence": "medium"
+        },
+        {
+          "name": "device",
+          "type": "Actor",
+          "mention": "another device",
+          "confidence": "high"
+        },
+        {
+          "name": "network",
+          "type": "Concept",
+          "mention": "same network",
+          "confidence": "high"
+        },
+        {
+          "name": "iot/windows-iot/firewall",
+          "type": "Setting",
+          "mention": "iot/windows-iot/firewall",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Windows virtual IoT",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Windows virtual IoT",
+          "relation": "CONFIGURED_BY",
+          "target": "iot/windows-iot/firewall",
+          "evidence": "Check the iot/windows-iot/firewall."
+        },
+        {
+          "source": "device",
+          "relation": "PERFORMED_BY",
+          "target": "Windows virtual IoT",
+          "evidence": "another device"
+        },
+        {
+          "source": "device",
+          "relation": "BELONGS_TO",
+          "target": "network",
+          "evidence": "connected to the same network"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "the-iot-system-does-not-work-after-an-odoo-upgrade",
+    "heading": "The IoT system does not work after an Odoo upgrade",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "IoT system",
+          "type": "Concept",
+          "mention": "The IoT system",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box",
+          "type": "Module",
+          "mention": "IoT box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Windows virtual IoT service",
+          "type": "Module",
+          "mention": "Windows virtual IoT service",
+          "confidence": "medium"
+        },
+        {
+          "name": "image",
+          "type": "DataObject",
+          "mention": "its image",
+          "confidence": "low"
+        },
+        {
+          "name": "IoT box's card",
+          "type": "Module",
+          "mention": "IoT box's card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Windows virtual IoT program",
+          "type": "Module",
+          "mention": "Windows virtual IoT program",
+          "confidence": "medium"
+        },
+        {
+          "name": "virtual IoT package",
+          "type": "Module",
+          "mention": "virtual IoT package",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT box",
+          "relation": "IS_PART_OF",
+          "target": "IoT system",
+          "evidence": "The IoT system does not work after an Odoo upgrade"
+        },
+        {
+          "source": "Windows virtual IoT service",
+          "relation": "IS_PART_OF",
+          "target": "IoT system",
+          "evidence": "Restart the IoT box...or the Windows virtual IoT service"
+        },
+        {
+          "source": "IoT box",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The IoT system does not work after an Odoo upgrade"
+        },
+        {
+          "source": "Windows virtual IoT service",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The IoT system does not work after an Odoo upgrade"
+        },
+        {
+          "source": "Windows virtual IoT program",
+          "relation": "EQUIVALENT_TO",
+          "target": "Windows virtual IoT service",
+          "evidence": "...or the Windows virtual IoT service...and reinstalling the virtual IoT package"
+        },
+        {
+          "source": "image",
+          "relation": "BELONGS_TO",
+          "target": "IoT box",
+          "evidence": "update its image by flashing the IoT box's card"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "the-iot-system's-homepage-can-be-accessed-using-its-ip-address-but-not-the-`xxx.odoo-iot.com`-url",
+    "heading": "The IoT system's homepage can be accessed using its IP address but not the `xxx.odoo-iot.com` URL",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT system",
+          "type": "Product",
+          "mention": "the IoT system",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT system's homepage",
+          "type": "Feature",
+          "mention": "The IoT system's homepage",
+          "confidence": "high"
+        },
+        {
+          "name": "xxx.odoo-iot.com",
+          "type": "Integration",
+          "mention": "`xxx.odoo-iot.com` URL",
+          "confidence": "medium"
+        },
+        {
+          "name": "Google DNS",
+          "type": "Integration",
+          "mention": "Google DNS",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT devices",
+          "type": "Actor",
+          "mention": "IoT devices",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment terminals",
+          "type": "Actor",
+          "mention": "payment terminals",
+          "confidence": "medium"
+        },
+        {
+          "name": "DNS_PROBE_FINISHED_NXDOMAIN",
+          "type": "Concept",
+          "mention": "DNS_PROBE_FINISHED_NXDOMAIN",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT system",
+          "relation": "HAS_FEATURE",
+          "target": "IoT system's homepage",
+          "evidence": "The IoT system's homepage"
+        },
+        {
+          "source": "IoT system's homepage",
+          "relation": "ENABLES",
+          "target": "xxx.odoo-iot.com",
+          "evidence": "accessed using ... but not the `xxx.odoo-iot.com` URL"
+        },
+        {
+          "source": "IoT devices",
+          "relation": "RELATED_TO",
+          "target": "IoT system",
+          "evidence": "IoT devices, such as payment terminals, likely do not require DNS changes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "the-https-certificate-does-not-generate",
+    "heading": "The HTTPS certificate does not generate",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "HTTPS certificate",
+          "type": "Feature",
+          "mention": "HTTPS certificate",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "high"
+        },
+        {
+          "name": "firewall",
+          "type": "Actor",
+          "mention": "firewall",
+          "confidence": "medium"
+        },
+        {
+          "name": "HTTPS certificate generation",
+          "type": "Action",
+          "mention": "generating",
+          "confidence": "high"
+        },
+        {
+          "name": "HTTPS certificate eligibility requirements",
+          "type": "Concept",
+          "mention": "eligibility requirements",
+          "confidence": "high"
+        },
+        {
+          "name": "router",
+          "type": "Actor",
+          "mention": "router",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "HTTPS certificate generation",
+          "relation": "REQUIRES",
+          "target": "HTTPS certificate eligibility requirements",
+          "evidence": "The database doesn't meet the eligibility requirements for generating an HTTPS certificate"
+        },
+        {
+          "source": "HTTPS certificate generation",
+          "relation": "PERFORMED_BY",
+          "target": "database",
+          "evidence": "The database doesn't meet the eligibility requirements for generating an HTTPS certificate"
+        },
+        {
+          "source": "HTTPS certificate generation",
+          "relation": "TRIGGERED_BY",
+          "target": "firewall",
+          "evidence": "The firewall is preventing the HTTPS certificate from generating correctly"
+        },
+        {
+          "source": "HTTPS certificate",
+          "relation": "GENERATED_BY",
+          "target": "HTTPS certificate generation",
+          "evidence": "HTTPS certificate does not generate"
+        },
+        {
+          "source": "router",
+          "relation": "CONTAINS",
+          "target": "firewall",
+          "evidence": "Some devices, such as routers with a built-in firewall"
+        },
+        {
+          "source": "HTTPS certificate",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "errors",
+    "heading": "Errors",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "IoT system",
+          "type": "Module",
+          "mention": "IoT system",
+          "confidence": "high"
+        },
+        {
+          "name": "HTTPS certificate",
+          "type": "Feature",
+          "mention": "HTTPS certificate",
+          "confidence": "high"
+        },
+        {
+          "name": "Homepage",
+          "type": "Module",
+          "mention": "IoT system's homepage",
+          "confidence": "high"
+        },
+        {
+          "name": "Error code",
+          "type": "Feature",
+          "mention": "error code",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Homepage",
+          "relation": "HAS_FEATURE",
+          "target": "Error code",
+          "evidence": "A specific error code is displayed on the IoT system's homepage"
+        },
+        {
+          "source": "IoT system",
+          "relation": "GENERATES",
+          "target": "HTTPS certificate",
+          "evidence": "attempts to generate one"
+        },
+        {
+          "source": "Homepage",
+          "relation": "TRIGGERED_BY",
+          "target": "HTTPS certificate",
+          "evidence": "When you access the IoT system's homepage, it automatically checks for an HTTPS certificate"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "`err_iot_https_check_no_server`",
+    "heading": "`ERR_IOT_HTTPS_CHECK_NO_SERVER`",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "ERR_IOT_HTTPS_CHECK_NO_SERVER",
+          "type": "Concept",
+          "mention": "ERR_IOT_HTTPS_CHECK_NO_SERVER",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT system",
+          "type": "Integration",
+          "mention": "IoT system",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "ERR_IOT_HTTPS_CHECK_NO_SERVER",
+          "relation": "RELATED_TO",
+          "target": "IoT system",
+          "evidence": "The server configuration is missing, i.e., the database is not connected to the IoT system."
+        },
+        {
+          "source": "ERR_IOT_HTTPS_CHECK_NO_SERVER",
+          "relation": "RELATED_TO",
+          "target": "database",
+          "evidence": "The server configuration is missing, i.e., the database is not connected to the IoT system."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "`err_iot_https_check_cert_read_exception`",
+    "heading": "`ERR_IOT_HTTPS_CHECK_CERT_READ_EXCEPTION`",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "HTTPS certificate",
+          "type": "DataObject",
+          "mention": "HTTPS certificate",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "HTTPS certificate",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "ref:`HTTPS certificate <iot/connect/https_certificate>`"
+        },
+        {
+          "source": "HTTPS certificate",
+          "relation": "REQUIRES",
+          "target": "HTTPS certificate",
+          "evidence": "Verify that the HTTPS certificate file is readable."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "`err_iot_https_load_no_credential`",
+    "heading": "`ERR_IOT_HTTPS_LOAD_NO_CREDENTIAL`",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "ERR_IOT_HTTPS_LOAD_NO_CREDENTIAL",
+          "type": "Concept",
+          "mention": "ERR_IOT_HTTPS_LOAD_NO_CREDENTIAL",
+          "confidence": "high"
+        },
+        {
+          "name": "contract",
+          "type": "Concept",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "database UUID",
+          "type": "Concept",
+          "mention": "database UUID (Universal Unique Identifier)",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT",
+          "type": "Integration",
+          "mention": "IoT",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box's homepage",
+          "type": "Feature",
+          "mention": "IoT box's homepage",
+          "confidence": "high"
+        },
+        {
+          "name": "Windows virtual IoT's homepage",
+          "type": "Feature",
+          "mention": "Windows virtual IoT's homepage",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-cogs button",
+          "type": "Feature",
+          "mention": "fa-cogs (cogs) button",
+          "confidence": "high"
+        },
+        {
+          "name": "Credentials",
+          "type": "Feature",
+          "mention": "Credentials",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "ERR_IOT_HTTPS_LOAD_NO_CREDENTIAL",
+          "relation": "REQUIRES",
+          "target": "contract",
+          "evidence": "The contract and/or database UUID...is missing from the IoT."
+        },
+        {
+          "source": "ERR_IOT_HTTPS_LOAD_NO_CREDENTIAL",
+          "relation": "REQUIRES",
+          "target": "database UUID",
+          "evidence": "The contract and/or database UUID...is missing from the IoT."
+        },
+        {
+          "source": "IoT",
+          "relation": "HAS_FEATURE",
+          "target": "IoT box's homepage",
+          "evidence": "To update them, access the IoT box's homepage"
+        },
+        {
+          "source": "IoT",
+          "relation": "HAS_FEATURE",
+          "target": "Windows virtual IoT's homepage",
+          "evidence": "To update them, access the IoT box's homepage...or Windows virtual IoT's homepage"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "`err_iot_https_load_request_exception`",
+    "heading": "`ERR_IOT_HTTPS_LOAD_REQUEST_EXCEPTION`",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT system",
+          "type": "Module",
+          "mention": "IoT system",
+          "confidence": "high"
+        },
+        {
+          "name": "www.odoo.com",
+          "type": "Integration",
+          "mention": "https://www.odoo.com",
+          "confidence": "high"
+        },
+        {
+          "name": "Download logs",
+          "type": "Action",
+          "mention": "click Download logs",
+          "confidence": "high"
+        },
+        {
+          "name": "Log level",
+          "type": "Setting",
+          "mention": "Log level",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT app",
+          "type": "Module",
+          "mention": "IoT app",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT box's homepage",
+          "type": "Feature",
+          "mention": "IoT box's homepage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Windows virtual IoT's homepage",
+          "type": "Feature",
+          "mention": "Windows virtual IoT's homepage",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "system or network administrator",
+          "type": "Actor",
+          "mention": "system or network administrator",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT system",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "IoT system in Odoo"
+        },
+        {
+          "source": "IoT system",
+          "relation": "HAS_FEATURE",
+          "target": "IoT app",
+          "evidence": "IoT app"
+        },
+        {
+          "source": "IoT system",
+          "relation": "HAS_FEATURE",
+          "target": "IoT box's homepage",
+          "evidence": "IoT box's homepage"
+        },
+        {
+          "source": "IoT system",
+          "relation": "HAS_FEATURE",
+          "target": "Windows virtual IoT's homepage",
+          "evidence": "Windows virtual IoT's homepage"
+        },
+        {
+          "source": "IoT system",
+          "relation": "CONTAINS",
+          "target": "Log level",
+          "evidence": "Log level"
+        },
+        {
+          "source": "IoT system",
+          "relation": "REQUIRES",
+          "target": "www.odoo.com",
+          "evidence": "IoT system tried to reach https://www.odoo.com"
+        },
+        {
+          "source": "Download logs",
+          "relation": "PERFORMED_BY",
+          "target": "system or network administrator",
+          "evidence": "To address network-related issues, contact your system or network administrator"
+        },
+        {
+          "source": "developer mode",
+          "relation": "ENABLES",
+          "target": "Download logs",
+          "evidence": "enable the developer mode, click Download logs"
+        },
+        {
+          "source": "Log level",
+          "relation": "CONFIGURED_BY",
+          "target": "system or network administrator",
+          "evidence": "Log level set by administrator"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "`err_iot_https_load_request_status`",
+    "heading": "`ERR_IOT_HTTPS_LOAD_REQUEST_STATUS`",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "ERR_IOT_HTTPS_LOAD_REQUEST_STATUS",
+          "type": "Feature",
+          "mention": "ERR_IOT_HTTPS_LOAD_REQUEST_STATUS",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT system",
+          "type": "Module",
+          "mention": "IoT system",
+          "confidence": "high"
+        },
+        {
+          "name": "HTTP response",
+          "type": "Concept",
+          "mention": "HTTP response",
+          "confidence": "high"
+        },
+        {
+          "name": "HTTP status",
+          "type": "Concept",
+          "mention": "HTTP status",
+          "confidence": "medium"
+        },
+        {
+          "name": "Page Not Found",
+          "type": "Concept",
+          "mention": "Page Not Found",
+          "confidence": "medium"
+        },
+        {
+          "name": "web browser",
+          "type": "Actor",
+          "mention": "web browser",
+          "confidence": "medium"
+        },
+        {
+          "name": "support ticket",
+          "type": "DataObject",
+          "mention": "support ticket",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "ERR_IOT_HTTPS_LOAD_REQUEST_STATUS",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "ERR_IOT_HTTPS_LOAD_REQUEST_STATUS",
+          "relation": "IS_PART_OF",
+          "target": "IoT system",
+          "evidence": "The IoT system successfully reached..."
+        },
+        {
+          "source": "ERR_IOT_HTTPS_LOAD_REQUEST_STATUS",
+          "relation": "PRODUCES",
+          "target": "HTTP status",
+          "evidence": "This error code includes the HTTP status."
+        },
+        {
+          "source": "ERR_IOT_HTTPS_LOAD_REQUEST_STATUS",
+          "relation": "RELATED_TO",
+          "target": "HTTP response",
+          "evidence": "received an unexpected HTTP response"
+        },
+        {
+          "source": "ERR_IOT_HTTPS_LOAD_REQUEST_STATUS",
+          "relation": "RELATED_TO",
+          "target": "Page Not Found",
+          "evidence": "means the server returned a 'Page Not Found' response."
+        },
+        {
+          "source": "ERR_IOT_HTTPS_LOAD_REQUEST_STATUS",
+          "relation": "PERFORMED_BY",
+          "target": "web browser",
+          "evidence": "Open... in a web browser"
+        },
+        {
+          "source": "ERR_IOT_HTTPS_LOAD_REQUEST_STATUS",
+          "relation": "PRODUCES",
+          "target": "support ticket",
+          "evidence": "open a support ticket"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "`err_iot_https_load_request_no_result`",
+    "heading": "`ERR_IOT_HTTPS_LOAD_REQUEST_NO_RESULT`",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT",
+          "type": "Module",
+          "mention": "IoT",
+          "confidence": "medium"
+        },
+        {
+          "name": "HTTPS certificate",
+          "type": "Feature",
+          "mention": "HTTPS certificate",
+          "confidence": "high"
+        },
+        {
+          "name": "HTTPS certificate",
+          "type": "DataObject",
+          "mention": "HTTPS certificate",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT system",
+          "type": "Actor",
+          "mention": "IoT system",
+          "confidence": "medium"
+        },
+        {
+          "name": "database",
+          "type": "Actor",
+          "mention": "database",
+          "confidence": "medium"
+        },
+        {
+          "name": "eligibility requirements",
+          "type": "Setting",
+          "mention": "eligibility requirements",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "IoT system successfully connected"
+        },
+        {
+          "source": "IoT system",
+          "relation": "CONTAINS",
+          "target": "HTTPS certificate",
+          "evidence": "server refused to provide the HTTPS certificate"
+        },
+        {
+          "source": "HTTPS certificate",
+          "relation": "REQUIRES",
+          "target": "eligibility requirements",
+          "evidence": "Check that the IoT system and database meet the eligibility requirements"
+        },
+        {
+          "source": "IoT system",
+          "relation": "PERFORMED_BY",
+          "target": "IoT",
+          "evidence": "IoT system successfully connected"
+        },
+        {
+          "source": "HTTPS certificate",
+          "relation": "GENERATED_BY",
+          "target": "IoT system",
+          "evidence": "server refused to provide the HTTPS certificate"
+        }
+      ]
+    }
+  }
+]

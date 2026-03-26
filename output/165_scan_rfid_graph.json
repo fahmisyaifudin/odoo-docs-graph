@@ -1,0 +1,404 @@
+[
+  {
+    "section_id": "manage-inventory-with-rfid",
+    "heading": "Manage inventory with RFID",
+    "product": "Odoo",
+    "graph": {
+      "error": "Unterminated string starting at: line 28 column 52 (char 3190)",
+      "raw_response": "{\n  \"entities\": [\n    {\"name\": \"Odoo\", \"type\": \"Product\", \"mention\": \"Product: Odoo\", \"confidence\": \"high\"},\n    {\"name\": \"Barcodes\", \"type\": \"Module\", \"mention\": \"**Barcodes** app\", \"confidence\": \"high\"},\n    {\"name\": \"RFID barcode scanner\", \"type\": \"Integration\", \"mention\": \"RFID barcode scanner\", \"confidence\": \"high\"},\n    {\"name\": \"RFD40 scanner\", \"type\": \"Integration\", \"mention\": \"RFD40 scanner\", \"confidence\": \"high\"},\n    {\"name\": \"mobile computer\", \"type\": \"Actor\", \"mention\": \"mobile computer\", \"confidence\": \"medium\"},\n    {\"name\": \"smartphone\", \"type\": \"Actor\", \"mention\": \"smartphone\", \"confidence\": \"medium\"},\n    {\"name\": \"receipt\", \"type\": \"Workflow\", \"mention\": \"receipt\", \"confidence\": \"low\"},\n    {\"name\": \"transfer\", \"type\": \"Workflow\", \"mention\": \"transfer\", \"confidence\": \"low\"},\n    {\"name\": \"delivery order\", \"type\": \"Workflow\", \"mention\": \"delivery order\", \"confidence\": \"low\"},\n    {\"name\": \"manufacturing order\", \"type\": \"Workflow\", \"mention\": \"manufacturing order\", \"confidence\": \"low\"},\n    {\"name\": \"inventory documents\", \"type\": \"DataObject\", \"mention\": \"inventory or manufacturing documents\", \"confidence\": \"medium\"},\n    {\"name\": \"manufacturing documents\", \"type\": \"DataObject\", \"mention\": \"inventory or manufacturing documents\", \"confidence\": \"medium\"},\n    {\"name\": \"mobile device\", \"type\": \"Actor\", \"mention\": \"mobile device\", \"confidence\": \"medium\"}\n  ],\n  \"relations\": [\n    {\"source\": \"Barcodes\", \"relation\": \"BELONGS_TO\", \"target\": \"Odoo\", \"evidence\": \"Managing inventory with an RFID barcode scanner is possible with the **Barcodes** app\"},\n    {\"source\": \"Odoo\", \"relation\": \"HAS_FEATURE\", \"target\": \"RFID barcode scanner\", \"evidence\": \"Managing inventory with an RFID barcode scanner is possible\"},\n    {\"source\": \"RFID barcode scanner\", \"relation\": \"CONTAINS\", \"target\": \"RFD40 scanner\", \"evidence\": \"Make sure the RFD40 scanner is paired and connected\"},\n    {\"source\": \"RFD40 scanner\", \"relation\": \"PERFORMED_BY\", \"target\": \"mobile computer\", \"evidence\": \"Make sure the RFD40 scanner is paired and connected to the mobile computer\"},\n    {\"source\": \"RFD40 scanner\", \"relation\": \"PERFORMED_BY\", \"target\": \"smartphone\", \"evidence\": \"Make sure the RFD40 scanner is paired and connected to the mobile computer or smartphone\"},\n    {\"source\": \"RFID barcode scanner\", \"relation\": \"ENABLES\", \"target\": \"receipt\", \"evidence\": \"Open an operation (like a receipt...\"},\n    {\"source\": \"RFID barcode scanner\", \"relation\": \"ENABLES\", \"target\": \"transfer\", \"evidence\": \"Open an operation (like a receipt, transfer...\"},\n    {\"source\": \"RFID barcode scanner\", \"relation\": \"ENABLES\", \"target\": \"delivery order\", \"evidence\": \"Open an operation (like a receipt, transfer, delivery order...\"},\n    {\"source\": \"RFID barcode scanner\", \"relation\": \"ENABLES\", \"target\": \"manufacturing order\", \"evidence\": \"Open an operation (like a receipt, transfer, delivery order, or manufacturing order...\"},\n    {\"source\": \"RFID barcode scanner\", \"relation\": \"PRODUCES\", \"target\": \"inventory documents\", \"evidence\": \"Scanning an existing operation barcode pulls up the relevant inventory or manufacturing documents in Odoo\"},\n    {\"source\": \"RFID barcode scanner\", \"relation\": \"PRODU"
+    }
+  },
+  {
+    "section_id": "overview-of-the-workflow",
+    "heading": "Overview of the workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "RFD40 scanner",
+          "type": "Feature",
+          "mention": "RFD40 scanner",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode app",
+          "type": "Module",
+          "mention": "Barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory count operation",
+          "type": "Action",
+          "mention": "Inventory count operation",
+          "confidence": "medium"
+        },
+        {
+          "name": "operation record",
+          "type": "DataObject",
+          "mention": "operation record",
+          "confidence": "medium"
+        },
+        {
+          "name": "RFID barcodes",
+          "type": "DataObject",
+          "mention": "RFID barcodes",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Barcode app",
+          "evidence": "With the RFD40 scanner in hand, open the **Barcode** app on the computer or phone."
+        },
+        {
+          "source": "Barcode app",
+          "relation": "CONTAINS",
+          "target": "Inventory count operation",
+          "evidence": "Open the operation record (via the **Barcode** interface or scanning the operation barcode), or open the Inventory count operation."
+        },
+        {
+          "source": "RFID barcodes",
+          "relation": "BELONGS_TO",
+          "target": "Product",
+          "evidence": "Scan the RFID barcodes for the product."
+        },
+        {
+          "source": "RFD40 scanner",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "With the RFD40 scanner in hand"
+        },
+        {
+          "source": "RFD40 scanner",
+          "relation": "RELATED_TO",
+          "target": "RFID barcodes",
+          "evidence": "Scan the RFID barcodes for the product."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manage-inventory",
+    "heading": "Manage inventory",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "**Barcode** app",
+          "confidence": "high"
+        },
+        {
+          "name": "operations",
+          "type": "Workflow",
+          "mention": "operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "receipts",
+          "type": "Workflow",
+          "mention": "receipts",
+          "confidence": "low"
+        },
+        {
+          "name": "internal transfers",
+          "type": "Workflow",
+          "mention": "internal transfers",
+          "confidence": "low"
+        },
+        {
+          "name": "delivery orders",
+          "type": "Workflow",
+          "mention": "delivery orders",
+          "confidence": "low"
+        },
+        {
+          "name": "manufacturing orders",
+          "type": "Workflow",
+          "mention": "manufacturing orders",
+          "confidence": "low"
+        },
+        {
+          "name": "scan",
+          "type": "Action",
+          "mention": "scan",
+          "confidence": "medium"
+        },
+        {
+          "name": "scan the operation barcode",
+          "type": "Action",
+          "mention": "scan the operation barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "tap the Operations button",
+          "type": "Action",
+          "mention": "tap the Operations button",
+          "confidence": "medium"
+        },
+        {
+          "name": "open operations",
+          "type": "Action",
+          "mention": "open operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "validate the scan",
+          "type": "Action",
+          "mention": "validate the scan",
+          "confidence": "medium"
+        },
+        {
+          "name": "mobile computer",
+          "type": "Actor",
+          "mention": "mobile computer",
+          "confidence": "medium"
+        },
+        {
+          "name": "smartphone",
+          "type": "Actor",
+          "mention": "smartphone",
+          "confidence": "medium"
+        },
+        {
+          "name": "reading device",
+          "type": "Actor",
+          "mention": "reading device",
+          "confidence": "medium"
+        },
+        {
+          "name": "toast notification",
+          "type": "Feature",
+          "mention": "toast notification",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "scan the operation barcode",
+          "relation": "IS_PART_OF",
+          "target": "operations",
+          "evidence": "scan the operation barcode or tap the Operations button to open operations"
+        },
+        {
+          "source": "tap the Operations button",
+          "relation": "IS_PART_OF",
+          "target": "operations",
+          "evidence": "scan the operation barcode or tap the Operations button to open operations"
+        },
+        {
+          "source": "Barcode",
+          "relation": "HAS_FEATURE",
+          "target": "scan",
+          "evidence": "From the **Barcode** app, scan"
+        },
+        {
+          "source": "Barcode",
+          "relation": "CONTAINS",
+          "target": "operations",
+          "evidence": "open operations for receipts, internal transfers, delivery orders, or manufacturing orders"
+        },
+        {
+          "source": "operations",
+          "relation": "CONTAINS",
+          "target": "receipts",
+          "evidence": "open operations for receipts"
+        },
+        {
+          "source": "operations",
+          "relation": "CONTAINS",
+          "target": "internal transfers",
+          "evidence": "open operations for internal transfers"
+        },
+        {
+          "source": "operations",
+          "relation": "CONTAINS",
+          "target": "delivery orders",
+          "evidence": "open operations for delivery orders"
+        },
+        {
+          "source": "operations",
+          "relation": "CONTAINS",
+          "target": "manufacturing orders",
+          "evidence": "open operations for manufacturing orders"
+        },
+        {
+          "source": "scan",
+          "relation": "PERFORMED_BY",
+          "target": "mobile computer",
+          "evidence": "validate the scan on the mobile computer"
+        },
+        {
+          "source": "scan",
+          "relation": "PERFORMED_BY",
+          "target": "smartphone",
+          "evidence": "validate the scan on the smartphone"
+        },
+        {
+          "source": "scan",
+          "relation": "TRIGGERED_BY",
+          "target": "scan the operation barcode",
+          "evidence": "Scan the products, then validate the scan"
+        },
+        {
+          "source": "scan",
+          "relation": "TRIGGERED_BY",
+          "target": "tap the Operations button",
+          "evidence": "Scan the products, then validate the scan"
+        },
+        {
+          "source": "toast notification",
+          "relation": "GENERATES",
+          "target": "reading device",
+          "evidence": "When the device is connected, a toast notification appears"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "counting-inventory",
+    "heading": "Counting inventory",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Counting inventory",
+          "type": "Module",
+          "mention": "Title: Counting inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory count operation",
+          "type": "Workflow",
+          "mention": "open the Inventory count operation",
+          "confidence": "high"
+        },
+        {
+          "name": "Scan the products to count",
+          "type": "Action",
+          "mention": "Scan the products to count",
+          "confidence": "high"
+        },
+        {
+          "name": "verify the count manually",
+          "type": "Action",
+          "mention": "verify the count manually",
+          "confidence": "high"
+        },
+        {
+          "name": "update the count",
+          "type": "Action",
+          "mention": "update the count",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-pencil (edit) icon",
+          "type": "Feature",
+          "mention": "fa-pencil (edit) icon",
+          "confidence": "low"
+        },
+        {
+          "name": "Apply",
+          "type": "Action",
+          "mention": "Click Apply",
+          "confidence": "high"
+        },
+        {
+          "name": "apply the count",
+          "type": "Action",
+          "mention": "apply the count",
+          "confidence": "high"
+        },
+        {
+          "name": "smart device",
+          "type": "Actor",
+          "mention": "smart device",
+          "confidence": "medium"
+        },
+        {
+          "name": "retrieve_epcs",
+          "type": "Feature",
+          "mention": "retrieve_epcs",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory count operation",
+          "relation": "IS_PART_OF",
+          "target": "Counting inventory",
+          "evidence": "open the Inventory count operation"
+        },
+        {
+          "source": "Inventory count operation",
+          "relation": "ENABLES",
+          "target": "Scan the products to count",
+          "evidence": "To change the amount of a product in stock, or adjust inventory, open the Inventory count operation. Scan the products to count."
+        },
+        {
+          "source": "Scan the products to count",
+          "relation": "TRIGGERED_BY",
+          "target": "Inventory count operation",
+          "evidence": "open the Inventory count operation. Scan the products to count."
+        },
+        {
+          "source": "Inventory count operation",
+          "relation": "ENABLES",
+          "target": "verify the count manually",
+          "evidence": "If necessary, verify the count manually."
+        },
+        {
+          "source": "Inventory count operation",
+          "relation": "ENABLES",
+          "target": "update the count",
+          "evidence": "You can update the count by clicking the fa-pencil (edit) icon."
+        },
+        {
+          "source": "fa-pencil (edit) icon",
+          "relation": "CONTAINS",
+          "target": "update the count",
+          "evidence": "update the count by clicking the fa-pencil (edit) icon"
+        },
+        {
+          "source": "Apply",
+          "relation": "PRODUCES",
+          "target": "apply the count",
+          "evidence": "Click Apply to apply the count"
+        },
+        {
+          "source": "apply the count",
+          "relation": "PERFORMED_BY",
+          "target": "smart device",
+          "evidence": "apply the count on the smart device"
+        },
+        {
+          "source": "Counting inventory",
+          "relation": "SEE_ALSO",
+          "target": "retrieve_epcs",
+          "evidence": ".. seealso:: retrieve_epcs"
+        }
+      ]
+    }
+  }
+]

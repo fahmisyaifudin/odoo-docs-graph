@@ -1,0 +1,948 @@
+[
+  {
+    "section_id": "pass---fail-quality-check",
+    "heading": "Pass - Fail quality check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality",
+          "type": "Module",
+          "mention": "Odoo Quality",
+          "confidence": "high"
+        },
+        {
+          "name": "Pass - Fail",
+          "type": "Feature",
+          "mention": "Pass - Fail",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "Workflow",
+          "mention": "quality check",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality control point",
+          "type": "Workflow",
+          "mention": "quality control point",
+          "confidence": "medium"
+        },
+        {
+          "name": "text field",
+          "type": "Field",
+          "mention": "text field",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pass - Fail",
+          "relation": "BELONGS_TO",
+          "target": "Quality",
+          "evidence": "a Pass - Fail check is one of the quality check types"
+        },
+        {
+          "source": "quality check",
+          "relation": "IS_PART_OF",
+          "target": "Quality",
+          "evidence": "when creating a new quality check"
+        },
+        {
+          "source": "quality control point",
+          "relation": "IS_PART_OF",
+          "target": "Quality",
+          "evidence": "when creating a new quality control point (QCP)"
+        },
+        {
+          "source": "Pass - Fail",
+          "relation": "HAS_FEATURE",
+          "target": "text field",
+          "evidence": "consist of a text field"
+        },
+        {
+          "source": "text field",
+          "relation": "PRODUCES",
+          "target": "criteria",
+          "evidence": "that allows the creator to specify a certain criteria"
+        },
+        {
+          "source": "criteria",
+          "relation": "APPLIES_TO",
+          "target": "product",
+          "evidence": "a product must meet to pass the check"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-pass---fail-quality-check",
+    "heading": "Create a Pass - Fail quality check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pass - Fail quality check",
+          "type": "Feature",
+          "mention": "Pass - Fail quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "single check",
+          "type": "Feature",
+          "mention": "single check",
+          "confidence": "high"
+        },
+        {
+          "name": "quality control point",
+          "type": "Feature",
+          "mention": "quality control point",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality checks",
+          "type": "Concept",
+          "mention": "quality checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality management",
+          "type": "Concept",
+          "mention": "quality management",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pass - Fail quality check",
+          "relation": "IS_PART_OF",
+          "target": "quality checks",
+          "evidence": "For a full overview... see the documentation on quality checks"
+        },
+        {
+          "source": "single check",
+          "relation": "IS_PART_OF",
+          "target": "quality checks",
+          "evidence": "For a full overview... see the documentation on quality checks"
+        },
+        {
+          "source": "quality control point",
+          "relation": "IS_PART_OF",
+          "target": "quality management",
+          "evidence": "... quality control points <quality/quality_management/quality-control-points>"
+        },
+        {
+          "source": "quality checks",
+          "relation": "IS_PART_OF",
+          "target": "quality management",
+          "evidence": "... quality checks <quality/quality_management/quality-checks>"
+        },
+        {
+          "source": "Pass - Fail quality check",
+          "relation": "SEE_ALSO",
+          "target": "quality checks",
+          "evidence": "For a full overview... see the documentation on quality checks"
+        },
+        {
+          "source": "Pass - Fail quality check",
+          "relation": "SEE_ALSO",
+          "target": "quality control point",
+          "evidence": "For a full overview... see the documentation on quality checks and quality control points"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "quality-check",
+    "heading": "Quality check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Module",
+          "mention": "Quality --> Quality Control",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Checks",
+          "type": "Sub-module",
+          "mention": "Quality Checks",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a single Pass - Fail quality check",
+          "type": "Action",
+          "mention": "To create a single *Pass - Fail* quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality check form",
+          "type": "DataObject",
+          "mention": "new quality check form",
+          "confidence": "high"
+        },
+        {
+          "name": "Pass - Fail quality check type",
+          "type": "Feature",
+          "mention": "Pass - Fail quality check type",
+          "confidence": "high"
+        },
+        {
+          "name": "Type",
+          "type": "Field",
+          "mention": "Type drop-down field",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality team",
+          "type": "Actor",
+          "mention": "quality team",
+          "confidence": "medium"
+        },
+        {
+          "name": "Team",
+          "type": "Field",
+          "mention": "Team drop-down field",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions",
+          "type": "Field",
+          "mention": "Instructions text field",
+          "confidence": "high"
+        },
+        {
+          "name": "Notes tab",
+          "type": "Feature",
+          "mention": "Notes tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions",
+          "type": "Field",
+          "mention": "Instructions text field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Quality Control",
+          "relation": "CONTAINS",
+          "target": "Quality Checks",
+          "evidence": "navigate to Quality --> Quality Control --> Quality Checks"
+        },
+        {
+          "source": "Create a single Pass - Fail quality check",
+          "relation": "PERFORMED_BY",
+          "target": "Actor (Unknown: user)",
+          "evidence": "To create a single...quality check"
+        },
+        {
+          "source": "Quality Checks",
+          "relation": "IS_PART_OF",
+          "target": "Quality Control",
+          "evidence": "Quality --> Quality Control --> Quality Checks"
+        },
+        {
+          "source": "Pass - Fail quality check type",
+          "relation": "BELONGS_TO",
+          "target": "Quality check form",
+          "evidence": "In the Type drop-down field, select the Pass - Fail quality check type"
+        },
+        {
+          "source": "Quality team",
+          "relation": "BELONGS_TO",
+          "target": "Quality check form",
+          "evidence": "In the Team drop-down field, select the quality team"
+        },
+        {
+          "source": "Instructions",
+          "relation": "IS_PART_OF",
+          "target": "Notes tab",
+          "evidence": "In the Instructions text field of the Notes tab"
+        },
+        {
+          "source": "Notes tab",
+          "relation": "IS_PART_OF",
+          "target": "Quality check form",
+          "evidence": "...of the Notes tab"
+        },
+        {
+          "source": "Quality team",
+          "relation": "PERFORMED_BY",
+          "target": "Actor (Unknown: user)",
+          "evidence": "the quality team responsible for managing the check"
+        },
+        {
+          "source": "Quality Checks",
+          "relation": "HAS_FEATURE",
+          "target": "New",
+          "evidence": "click New"
+        },
+        {
+          "source": "Quality check form",
+          "relation": "CONTAINS",
+          "target": "Instructions",
+          "evidence": "enter instructions for how to complete the quality check"
+        },
+        {
+          "source": "Quality check form",
+          "relation": "CONTAINS",
+          "target": "Team",
+          "evidence": "In the Team drop-down field"
+        },
+        {
+          "source": "Quality check form",
+          "relation": "CONTAINS",
+          "target": "Type",
+          "evidence": "In the Type drop-down field"
+        },
+        {
+          "source": "Quality check form",
+          "relation": "CONTAINS",
+          "target": "Notes tab",
+          "evidence": "In the Instructions text field of the Notes tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "quality-control-point-(qcp)",
+    "heading": "Quality Control Point (QCP)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Module",
+          "mention": "Quality --> Quality Control",
+          "confidence": "high"
+        },
+        {
+          "name": "Control Points",
+          "type": "Sub-module",
+          "mention": "Control Points",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control Point",
+          "type": "Feature",
+          "mention": "Quality Control Point",
+          "confidence": "medium"
+        },
+        {
+          "name": "QCP",
+          "type": "Feature",
+          "mention": "(QCP)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pass - Fail quality check",
+          "type": "Feature",
+          "mention": "Pass - Fail quality checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "Type drop-down field",
+          "type": "Field",
+          "mention": "Type drop-down field",
+          "confidence": "high"
+        },
+        {
+          "name": "Team drop-down field",
+          "type": "Field",
+          "mention": "Team drop-down field",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions text field",
+          "type": "Field",
+          "mention": "Instructions text field",
+          "confidence": "high"
+        },
+        {
+          "name": "quality team",
+          "type": "Actor",
+          "mention": "quality team",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Quality Control",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "CONTAINS",
+          "target": "Control Points",
+          "evidence": "Quality --> Quality Control --> Control Points"
+        },
+        {
+          "source": "Quality Control Point",
+          "relation": "BELONGS_TO",
+          "target": "Quality Control",
+          "evidence": "Quality --> Quality Control --> Control Points"
+        },
+        {
+          "source": "Quality Control Point",
+          "relation": "HAS_FEATURE",
+          "target": "Pass - Fail quality check",
+          "evidence": "creates a that generates Pass - Fail quality checks"
+        },
+        {
+          "source": "Type drop-down field",
+          "relation": "CONFIGURED_BY",
+          "target": "Pass - Fail quality check",
+          "evidence": "In the Type drop-down field, select the Pass - Fail quality check type."
+        },
+        {
+          "source": "Team drop-down field",
+          "relation": "CONFIGURED_BY",
+          "target": "quality team",
+          "evidence": "In the Team drop-down field, select the quality team responsible"
+        },
+        {
+          "source": "Instructions text field",
+          "relation": "CONFIGURED_BY",
+          "target": "Pass - Fail quality check",
+          "evidence": "In the Instructions text field, enter instructions for how to complete the quality check and the criteria that must be met for the check to pass."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-a-pass---fail-quality-check",
+    "heading": "Process a Pass - Fail quality check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure",
+          "type": "Feature",
+          "mention": "*Measure* quality checks",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "Feature",
+          "mention": "quality checks",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory",
+          "type": "Concept",
+          "mention": "inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing",
+          "type": "Concept",
+          "mention": "manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "work order",
+          "type": "Concept",
+          "mention": "work order",
+          "confidence": "high"
+        },
+        {
+          "name": "check's page",
+          "type": "Module",
+          "mention": "the check's page",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Measure",
+          "relation": "HAS_FEATURE",
+          "target": "quality check",
+          "evidence": "*Measure* quality checks"
+        },
+        {
+          "source": "quality check",
+          "relation": "PERFORMED_BY",
+          "target": "inventory",
+          "evidence": "assigned to a specific inventory"
+        },
+        {
+          "source": "quality check",
+          "relation": "PERFORMED_BY",
+          "target": "manufacturing",
+          "evidence": "assigned to a specific manufacturing"
+        },
+        {
+          "source": "quality check",
+          "relation": "PERFORMED_BY",
+          "target": "work order",
+          "evidence": "assigned to a specific work order"
+        },
+        {
+          "source": "quality check",
+          "relation": "IS_PART_OF",
+          "target": "check's page",
+          "evidence": "processed from the check's page"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-the-check's-page",
+    "heading": "From the check's page",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure",
+          "type": "Feature",
+          "mention": "*Measure* quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality",
+          "type": "Module",
+          "mention": "Quality",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Sub-module",
+          "mention": "Quality Control",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Checks",
+          "type": "Feature",
+          "mention": "Quality Checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "Instructions",
+          "type": "Feature",
+          "mention": "Instructions",
+          "confidence": "low"
+        },
+        {
+          "name": "Pass button",
+          "type": "Action",
+          "mention": "Pass button",
+          "confidence": "high"
+        },
+        {
+          "name": "Fail button",
+          "type": "Action",
+          "mention": "Fail button",
+          "confidence": "high"
+        },
+        {
+          "name": "check's page",
+          "type": "Feature",
+          "mention": "check's page",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Quality Checks",
+          "relation": "IS_PART_OF",
+          "target": "Quality Control",
+          "evidence": "Quality --> Quality Control --> Quality Checks"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "IS_PART_OF",
+          "target": "Quality",
+          "evidence": "Quality --> Quality Control"
+        },
+        {
+          "source": "Quality",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Measure",
+          "relation": "ENABLES",
+          "target": "Quality Checks",
+          "evidence": "*Measure* quality check"
+        },
+        {
+          "source": "Pass button",
+          "relation": "PERFORMED_BY",
+          "target": "check's page",
+          "evidence": "click the Pass button at the top-left corner of the page"
+        },
+        {
+          "source": "Fail button",
+          "relation": "PERFORMED_BY",
+          "target": "check's page",
+          "evidence": "click the Fail button"
+        },
+        {
+          "source": "Instructions",
+          "relation": "RELATED_TO",
+          "target": "Quality Checks",
+          "evidence": "Follow the Instructions for how to complete the check"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "on-an-order",
+    "heading": "On an order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing --> Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Checks",
+          "type": "Feature",
+          "mention": "Quality Checks button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pass - Fail quality check",
+          "type": "Action",
+          "mention": "process a *Pass - Fail* quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Check pop-up window",
+          "type": "Feature",
+          "mention": "Quality Check pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pass button",
+          "type": "Action",
+          "mention": "click the Pass button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fail button",
+          "type": "Action",
+          "mention": "click the Fail button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Alert button",
+          "type": "Action",
+          "mention": "Quality Alert button",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality alert",
+          "type": "Feature",
+          "mention": "quality alert",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality alert form",
+          "type": "DataObject",
+          "mention": "quality alert form",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pass - Fail quality check",
+          "relation": "PERFORMED_BY",
+          "target": "Manufacturing Orders",
+          "evidence": "on a manufacturing order or inventory order"
+        },
+        {
+          "source": "Pass button",
+          "relation": "ENABLES",
+          "target": "Pass - Fail quality check",
+          "evidence": "click the Pass button"
+        },
+        {
+          "source": "Fail button",
+          "relation": "ENABLES",
+          "target": "Pass - Fail quality check",
+          "evidence": "click the Fail button"
+        },
+        {
+          "source": "Quality Alert button",
+          "relation": "TRIGGERED_BY",
+          "target": "Fail button",
+          "evidence": "after the check fails"
+        },
+        {
+          "source": "Quality Alert button",
+          "relation": "GENERATES",
+          "target": "quality alert form",
+          "evidence": "opens a quality alert form on a new page"
+        },
+        {
+          "source": "quality alert form",
+          "relation": "SEE_ALSO",
+          "target": "quality alerts",
+          "evidence": "For a complete guide on how to fill out quality alert forms, view the documentation on quality alerts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "on-a-work-order",
+    "heading": "On a work order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pass - Fail",
+          "type": "Feature",
+          "mention": "*Pass - Fail*",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Check",
+          "type": "Feature",
+          "mention": "quality check",
+          "confidence": "medium"
+        },
+        {
+          "name": "work order",
+          "type": "DataObject",
+          "mention": "work order",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "high"
+        },
+        {
+          "name": "Shop Floor",
+          "type": "Module",
+          "mention": "*Shop Floor*",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "Report",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders tab",
+          "type": "Feature",
+          "mention": "Work Orders tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Open Work Order button",
+          "type": "Action",
+          "mention": "Open Work Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Open Shop Floor button",
+          "type": "Action",
+          "mention": "Open Shop Floor",
+          "confidence": "high"
+        },
+        {
+          "name": "Shop Floor module",
+          "type": "Module",
+          "mention": "*Shop Floor*",
+          "confidence": "high"
+        },
+        {
+          "name": "work center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Order Operation field",
+          "type": "Field",
+          "mention": "Work Order Operation field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pass - Fail",
+          "relation": "IS_PART_OF",
+          "target": "Quality Check",
+          "evidence": "a *Pass - Fail* quality check"
+        },
+        {
+          "source": "Shop Floor",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "the *Shop Floor* module"
+        },
+        {
+          "source": "work order",
+          "relation": "CONFIGURED_BY",
+          "target": "Work Order Operation field",
+          "evidence": "specified in the Work Order Operation field"
+        },
+        {
+          "source": "Shop Floor",
+          "relation": "PERFORMED_BY",
+          "target": "Quality Check",
+          "evidence": "*Pass - Fail* quality checks configured for work orders **must** be completed from the *Shop Floor* module"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONTAINS",
+          "target": "work order",
+          "evidence": "Select an that includes a work order"
+        },
+        {
+          "source": "work order",
+          "relation": "HAS_REPORT",
+          "target": "Manufacturing Orders",
+          "evidence": "Select an that includes a work order for which a *Pass - Fail* quality check is required"
+        },
+        {
+          "source": "Open Work Order button",
+          "relation": "TRIGGERED_BY",
+          "target": "work order",
+          "evidence": "click the Open Work Order button on the line of the work order"
+        },
+        {
+          "source": "Open Shop Floor button",
+          "relation": "TRIGGERED_BY",
+          "target": "Open Work Order button",
+          "evidence": "On the resulting Work Orders pop-up window, click the Open Shop Floor button"
+        },
+        {
+          "source": "Shop Floor module",
+          "relation": "ENABLES",
+          "target": "work center",
+          "evidence": "the *Shop Floor* module opens to the page for the work center"
+        },
+        {
+          "source": "Pass button",
+          "relation": "PRODUCES",
+          "target": "Quality Check",
+          "evidence": "Click the Pass button at the bottom of the pop-up window if the check passes"
+        },
+        {
+          "source": "Fail button",
+          "relation": "PRODUCES",
+          "target": "Quality Check",
+          "evidence": "or the Fail button if it fails"
+        },
+        {
+          "source": "Quality Check",
+          "relation": "APPLIES_TO",
+          "target": "work order",
+          "evidence": "a *Pass - Fail* quality check is created for that specific work order"
+        },
+        {
+          "source": "Quality Check",
+          "relation": "APPLIES_TO",
+          "target": "manufacturing order",
+          "evidence": "rather than the manufacturing order as a whole"
+        },
+        {
+          "source": "Quality Check",
+          "relation": "IS_PART_OF",
+          "target": "work order",
+          "evidence": "the work order's steps until the *Pass - Fail* quality check step is reached"
+        },
+        {
+          "source": "Quality Check",
+          "relation": "HAS_FEATURE",
+          "target": "Pass - Fail",
+          "evidence": "*Pass - Fail* quality check"
+        },
+        {
+          "source": "work order",
+          "relation": "BELONGS_TO",
+          "target": "manufacturing order",
+          "evidence": "rather than the manufacturing order as a whole"
+        }
+      ]
+    }
+  }
+]

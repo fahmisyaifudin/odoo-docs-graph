@@ -1,0 +1,953 @@
+[
+  {
+    "section_id": "removal-strategies",
+    "heading": "Removal strategies",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "removal strategies",
+          "type": "Concept",
+          "mention": "removal strategies",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse",
+          "type": "Unknown",
+          "mention": "warehouses",
+          "confidence": "low"
+        },
+        {
+          "name": "FIFO",
+          "type": "Standard",
+          "mention": "FIFO",
+          "confidence": "high"
+        },
+        {
+          "name": "LIFO",
+          "type": "Standard",
+          "mention": "LIFO",
+          "confidence": "high"
+        },
+        {
+          "name": "FEFO",
+          "type": "Standard",
+          "mention": "FEFO",
+          "confidence": "high"
+        },
+        {
+          "name": "Closest Location",
+          "type": "Feature",
+          "mention": "Closest Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Least Packages",
+          "type": "Feature",
+          "mention": "Least Packages",
+          "confidence": "high"
+        },
+        {
+          "name": "incoming date",
+          "type": "Field",
+          "mention": "Incoming date",
+          "confidence": "medium"
+        },
+        {
+          "name": "removal date",
+          "type": "Field",
+          "mention": "Removal date",
+          "confidence": "medium"
+        },
+        {
+          "name": "location sequence",
+          "type": "Field",
+          "mention": "Location sequence",
+          "confidence": "medium"
+        },
+        {
+          "name": "package quantity",
+          "type": "Field",
+          "mention": "Package quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "expiration date",
+          "type": "Unknown",
+          "mention": "expiration date",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "removal strategies",
+          "relation": "APPLIES_TO",
+          "target": "warehouse",
+          "evidence": "For companies with warehouses, *removal strategies* determine"
+        },
+        {
+          "source": "FIFO",
+          "relation": "COMPLIES_WITH",
+          "target": "Odoo",
+          "evidence": "FIFO is the default removal strategy."
+        },
+        {
+          "source": "FIFO",
+          "relation": "IS_PART_OF",
+          "target": "removal strategies",
+          "evidence": "list-table includes FIFO"
+        },
+        {
+          "source": "LIFO",
+          "relation": "IS_PART_OF",
+          "target": "removal strategies",
+          "evidence": "list-table includes LIFO"
+        },
+        {
+          "source": "FEFO",
+          "relation": "IS_PART_OF",
+          "target": "removal strategies",
+          "evidence": "list-table includes FEFO"
+        },
+        {
+          "source": "Closest Location",
+          "relation": "IS_PART_OF",
+          "target": "removal strategies",
+          "evidence": "list-table includes Closest Location"
+        },
+        {
+          "source": "Least Packages",
+          "relation": "IS_PART_OF",
+          "target": "removal strategies",
+          "evidence": "list-table includes Least Packages"
+        },
+        {
+          "source": "FIFO",
+          "relation": "USES_METHOD",
+          "target": "incoming date",
+          "evidence": "Based on: Incoming date"
+        },
+        {
+          "source": "LIFO",
+          "relation": "USES_METHOD",
+          "target": "incoming date",
+          "evidence": "Based on: Incoming date"
+        },
+        {
+          "source": "FEFO",
+          "relation": "USES_METHOD",
+          "target": "removal date",
+          "evidence": "Based on: Removal date"
+        },
+        {
+          "source": "Closest Location",
+          "relation": "USES_METHOD",
+          "target": "location sequence",
+          "evidence": "Based on: Location sequence"
+        },
+        {
+          "source": "Least Packages",
+          "relation": "USES_METHOD",
+          "target": "package quantity",
+          "evidence": "Based on: Package quantity"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Locations",
+          "type": "Feature",
+          "mention": "Locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Categories",
+          "type": "Feature",
+          "mention": "Categories",
+          "confidence": "medium"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Setting",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Setting",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "location",
+          "type": "DataObject",
+          "mention": "location",
+          "confidence": "medium"
+        },
+        {
+          "name": "product category",
+          "type": "DataObject",
+          "mention": "product category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Removal Strategy",
+          "type": "Field",
+          "mention": "Removal Strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "Force Removal Strategy",
+          "type": "Field",
+          "mention": "Force Removal Strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "removal strategy",
+          "type": "Concept",
+          "mention": "removal strategies",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Removal Strategy",
+          "relation": "CONFIGURED_BY",
+          "target": "location",
+          "evidence": "Configure removal strategies on the location by going to Inventory --> Configuration --> Locations, and selecting the desired location. On the location form, choose a removal strategy from the Removal Strategy field's drop-down menu options."
+        },
+        {
+          "source": "Force Removal Strategy",
+          "relation": "CONFIGURED_BY",
+          "target": "product category",
+          "evidence": "Configure removal strategies on product categories by going to Inventory --> Configuration --> Categories, then selecting the intended product category. Next, choose a removal strategy from the Force Removal Strategy drop-down menu options."
+        },
+        {
+          "source": "Storage Locations",
+          "relation": "REQUIRES",
+          "target": "Removal Strategy",
+          "evidence": "To set a removal strategy on a location, the Storage Locations and Multi-Step Routes settings **must** be enabled"
+        },
+        {
+          "source": "Multi-Step Routes",
+          "relation": "REQUIRES",
+          "target": "Removal Strategy",
+          "evidence": "To set a removal strategy on a location, the Storage Locations and Multi-Step Routes settings **must** be enabled"
+        },
+        {
+          "source": "Force Removal Strategy",
+          "relation": "APPLIES_TO",
+          "target": "removal strategy",
+          "evidence": "the value set in the Force Removal Strategy field on the category form takes priority."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "required-features",
+    "heading": "Required features",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "removal strategy",
+          "type": "Feature",
+          "mention": "removal strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "Force Removal Strategy",
+          "type": "Field",
+          "mention": "Force Removal Strategy field",
+          "confidence": "high"
+        },
+        {
+          "name": "Removal Strategy",
+          "type": "Field",
+          "mention": "Removal Strategy field",
+          "confidence": "high"
+        },
+        {
+          "name": "FIFO",
+          "type": "Standard",
+          "mention": "FIFO",
+          "confidence": "high"
+        },
+        {
+          "name": "LIFO",
+          "type": "Standard",
+          "mention": "LIFO",
+          "confidence": "high"
+        },
+        {
+          "name": "FEFO",
+          "type": "Standard",
+          "mention": "FEFO",
+          "confidence": "high"
+        },
+        {
+          "name": "Closest Location",
+          "type": "Standard",
+          "mention": "Closest Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Least Packages",
+          "type": "Standard",
+          "mention": "Least Packages",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots & Serial Numbers",
+          "type": "Feature",
+          "mention": "Lots & Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration Date",
+          "type": "Feature",
+          "mention": "Expiration Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages",
+          "type": "Feature",
+          "mention": "Packages",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "removal strategy",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "must be enabled in Inventory --> Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Inventory --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "Inventory --> Configuration"
+        },
+        {
+          "source": "Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "FIFO",
+          "relation": "REQUIRES",
+          "target": "Lots & Serial Numbers",
+          "evidence": "Required features: Lots & Serial Numbers"
+        },
+        {
+          "source": "LIFO",
+          "relation": "REQUIRES",
+          "target": "Lots & Serial Numbers",
+          "evidence": "Required features: Lots & Serial Numbers"
+        },
+        {
+          "source": "FEFO",
+          "relation": "REQUIRES",
+          "target": "Lots & Serial Numbers",
+          "evidence": "Required features: Lots & Serial Numbers"
+        },
+        {
+          "source": "FEFO",
+          "relation": "REQUIRES",
+          "target": "Expiration Date",
+          "evidence": "Required features: Lots & Serial Numbers, Expiration Date"
+        },
+        {
+          "source": "Closest Location",
+          "relation": "REQUIRES",
+          "target": "Storage Locations",
+          "evidence": "Required features: Storage Locations"
+        },
+        {
+          "source": "Closest Location",
+          "relation": "REQUIRES",
+          "target": "Multi-Step Routes",
+          "evidence": "Required features: Multi-Step Routes"
+        },
+        {
+          "source": "Least Packages",
+          "relation": "REQUIRES",
+          "target": "Packages",
+          "evidence": "Required features: Packages"
+        },
+        {
+          "source": "Force Removal Strategy",
+          "relation": "CONTAINS",
+          "target": "removal strategy",
+          "evidence": "removal strategy option... in the drop-down menu of the Force Removal Strategy"
+        },
+        {
+          "source": "Removal Strategy",
+          "relation": "CONTAINS",
+          "target": "removal strategy",
+          "evidence": "removal strategy option... in the drop-down menu of the Removal Strategy field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "lots-and-serial-numbers",
+    "heading": "Lots and serial numbers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Traceability",
+          "type": "Feature",
+          "mention": "Traceability",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots & Serial Numbers",
+          "type": "Feature",
+          "mention": "Lots & Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Feature",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tracking field",
+          "type": "Field",
+          "mention": "Tracking field",
+          "confidence": "high"
+        },
+        {
+          "name": "By Unique Serial Number",
+          "type": "Option",
+          "mention": "By Unique Serial Number",
+          "confidence": "high"
+        },
+        {
+          "name": "By Lots",
+          "type": "Option",
+          "mention": "By Lots",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory adjustment",
+          "type": "Action",
+          "mention": "inventory adjustment",
+          "confidence": "high"
+        },
+        {
+          "name": "product reception",
+          "type": "Action",
+          "mention": "product reception",
+          "confidence": "high"
+        },
+        {
+          "name": "assign lot or serial numbers",
+          "type": "Action",
+          "mention": "assign lot or serial numbers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Product: Odoo, Title: Inventory"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Traceability",
+          "evidence": "Under the *Traceability* heading"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Lots & Serial Numbers",
+          "evidence": "check the box beside Lots & Serial Numbers to enable the feature"
+        },
+        {
+          "source": "Traceability",
+          "relation": "CONTAINS",
+          "target": "Lots & Serial Numbers",
+          "evidence": "Under the *Traceability* heading"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory --> Products --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Product form",
+          "evidence": "through Inventory --> Products --> Products"
+        },
+        {
+          "source": "Product form",
+          "relation": "HAS_FEATURE",
+          "target": "Inventory tab",
+          "evidence": "On the product form, switch to the Inventory tab"
+        },
+        {
+          "source": "Inventory tab",
+          "relation": "CONTAINS",
+          "target": "Tracking field",
+          "evidence": "under the Tracking field"
+        },
+        {
+          "source": "Tracking field",
+          "relation": "HAS_FEATURE",
+          "target": "By Unique Serial Number",
+          "evidence": "select either the By Unique Serial Number or By Lots options"
+        },
+        {
+          "source": "Tracking field",
+          "relation": "HAS_FEATURE",
+          "target": "By Lots",
+          "evidence": "select either the By Unique Serial Number or By Lots options"
+        },
+        {
+          "source": "assign lot or serial numbers",
+          "relation": "PERFORMED_BY",
+          "target": "inventory adjustment",
+          "evidence": "assign lot or serial numbers to products using an inventory adjustment"
+        },
+        {
+          "source": "assign lot or serial numbers",
+          "relation": "PERFORMED_BY",
+          "target": "product reception",
+          "evidence": "assign lot or serial numbers to products using... during product reception"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "locations-and-routes",
+    "heading": "Locations and routes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Location",
+          "type": "Feature",
+          "mention": "Storage Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Concept",
+          "mention": "Warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "closest location removal strategy",
+          "type": "Standard",
+          "mention": "closest location removal strategy",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Storage Location",
+          "relation": "BELONGS_TO",
+          "target": "Warehouse",
+          "evidence": "Under the *Warehouse* heading"
+        },
+        {
+          "source": "Multi-Step Routes",
+          "relation": "BELONGS_TO",
+          "target": "Warehouse",
+          "evidence": "Under the *Warehouse* heading"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Storage Location",
+          "evidence": "enable the Storage Location"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Multi-Step Routes",
+          "evidence": "enable the Multi-Step Routes features"
+        },
+        {
+          "source": "closest location removal strategy",
+          "relation": "REQUIRES",
+          "target": "Storage Location",
+          "evidence": "required for the closest location removal strategy"
+        },
+        {
+          "source": "closest location removal strategy",
+          "relation": "REQUIRES",
+          "target": "Multi-Step Routes",
+          "evidence": "required for the closest location removal strategy"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "expiration-date",
+    "heading": "Expiration date",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Traceability",
+          "type": "Feature",
+          "mention": "Traceability",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lots & Serial Numbers",
+          "type": "Feature",
+          "mention": "Lots & Serial Numbers feature",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expiration Dates",
+          "type": "Feature",
+          "mention": "Expiration Dates",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration date",
+          "type": "Concept",
+          "mention": "expiration date feature",
+          "confidence": "high"
+        },
+        {
+          "name": "lot",
+          "type": "DataObject",
+          "mention": "lot",
+          "confidence": "medium"
+        },
+        {
+          "name": "serial number",
+          "type": "DataObject",
+          "mention": "serial number",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "packages",
+    "heading": "Packages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Packages",
+          "type": "Feature",
+          "mention": "Packages",
+          "confidence": "high"
+        },
+        {
+          "name": "Least packages removal strategy",
+          "type": "Standard",
+          "mention": "least packages removal strategy",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "FIFO",
+          "type": "Standard",
+          "mention": "removal_strategies/fifo",
+          "confidence": "medium"
+        },
+        {
+          "name": "LIFO",
+          "type": "Standard",
+          "mention": "removal_strategies/lifo",
+          "confidence": "medium"
+        },
+        {
+          "name": "FEFO",
+          "type": "Standard",
+          "mention": "removal_strategies/fefo",
+          "confidence": "medium"
+        },
+        {
+          "name": "Closest location",
+          "type": "Standard",
+          "mention": "removal_strategies/closest_location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Least packages",
+          "type": "Standard",
+          "mention": "removal_strategies/least_packages",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Packages",
+          "relation": "REQUIRES",
+          "target": "Least packages removal strategy",
+          "evidence": "required for the least packages removal strategy"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Navigate to Inventory --> Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Packages",
+          "evidence": "select the check box for the Packages feature"
+        },
+        {
+          "source": "Packages",
+          "relation": "SEE_ALSO",
+          "target": "2-step delivery",
+          "evidence": "seealso: 2-step delivery"
+        },
+        {
+          "source": "Packages",
+          "relation": "SEE_ALSO",
+          "target": "3-step delivery",
+          "evidence": "seealso: 3-step delivery"
+        },
+        {
+          "source": "Least packages removal strategy",
+          "relation": "SEE_ALSO",
+          "target": "FIFO",
+          "evidence": "toctree: removal_strategies/fifo"
+        },
+        {
+          "source": "Least packages removal strategy",
+          "relation": "SEE_ALSO",
+          "target": "LIFO",
+          "evidence": "toctree: removal_strategies/lifo"
+        },
+        {
+          "source": "Least packages removal strategy",
+          "relation": "SEE_ALSO",
+          "target": "FEFO",
+          "evidence": "toctree: removal_strategies/fefo"
+        },
+        {
+          "source": "Least packages removal strategy",
+          "relation": "SEE_ALSO",
+          "target": "Closest location",
+          "evidence": "toctree: removal_strategies/closest_location"
+        },
+        {
+          "source": "Least packages removal strategy",
+          "relation": "SEE_ALSO",
+          "target": "Least packages",
+          "evidence": "toctree: removal_strategies/least_packages"
+        }
+      ]
+    }
+  }
+]

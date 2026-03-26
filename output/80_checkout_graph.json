@@ -1,0 +1,2066 @@
+[
+  {
+    "section_id": "ordering-and-checkout",
+    "heading": "Ordering and checkout",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo eCommerce",
+          "type": "Module",
+          "mention": "Odoo eCommerce",
+          "confidence": "high"
+        },
+        {
+          "name": "Ordering and checkout",
+          "type": "Module",
+          "mention": "Ordering and checkout",
+          "confidence": "high"
+        },
+        {
+          "name": "order button options",
+          "type": "Feature",
+          "mention": "order button options",
+          "confidence": "high"
+        },
+        {
+          "name": "sequential checkout steps",
+          "type": "Feature",
+          "mention": "sequential checkout steps",
+          "confidence": "high"
+        },
+        {
+          "name": "website editor",
+          "type": "Feature",
+          "mention": "website editor",
+          "confidence": "high"
+        },
+        {
+          "name": "buttons",
+          "type": "Action",
+          "mention": "buttons",
+          "confidence": "medium"
+        },
+        {
+          "name": "checkout pages",
+          "type": "DataObject",
+          "mention": "checkout pages",
+          "confidence": "medium"
+        },
+        {
+          "name": "ecommerce/checkout/order-buttons",
+          "type": "Concept",
+          "mention": "ecommerce/checkout/order-buttons",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Ordering and checkout",
+          "relation": "IS_PART_OF",
+          "target": "Odoo eCommerce",
+          "evidence": "Ordering and checkout is described as a process within Odoo eCommerce"
+        },
+        {
+          "source": "Odoo eCommerce",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The text refers to 'Odoo eCommerce' as part of the Odoo product"
+        },
+        {
+          "source": "Odoo eCommerce",
+          "relation": "HAS_FEATURE",
+          "target": "order button options",
+          "evidence": "Odoo eCommerce 'offers different order button options'"
+        },
+        {
+          "source": "Odoo eCommerce",
+          "relation": "HAS_FEATURE",
+          "target": "sequential checkout steps",
+          "evidence": "Odoo eCommerce offers 'sequential checkout steps'"
+        },
+        {
+          "source": "website editor",
+          "relation": "ENABLES",
+          "target": "buttons",
+          "evidence": "The website editor can be used to customize 'related buttons'"
+        },
+        {
+          "source": "website editor",
+          "relation": "ENABLES",
+          "target": "checkout pages",
+          "evidence": "The website editor can be used to customize 'checkout pages'"
+        },
+        {
+          "source": "sequential checkout steps",
+          "relation": "SUPPORTS",
+          "target": "additional features",
+          "evidence": "'sequential checkout steps...support additional features'"
+        },
+        {
+          "source": "ecommerce/checkout/order-buttons",
+          "relation": "RELATED_TO",
+          "target": "order button options",
+          "evidence": "The reference link 'ecommerce/checkout/order-buttons' points to documentation about order button options"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "order-buttons",
+    "heading": "Order buttons",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to Cart",
+          "type": "Feature",
+          "mention": "Add to Cart <ecommerce/checkout/add-to-cart> button",
+          "confidence": "high"
+        },
+        {
+          "name": "ecommerce/checkout/add-to-cart",
+          "type": "Feature",
+          "mention": "<ecommerce/checkout/add-to-cart>",
+          "confidence": "medium"
+        },
+        {
+          "name": "customized button",
+          "type": "Feature",
+          "mention": "customized <ecommerce/checkout/prevent-sale> button",
+          "confidence": "medium"
+        },
+        {
+          "name": "ecommerce/checkout/prevent-sale",
+          "type": "Feature",
+          "mention": "<ecommerce/checkout/prevent-sale>",
+          "confidence": "medium"
+        },
+        {
+          "name": "Buy now",
+          "type": "Feature",
+          "mention": "Buy now <ecommerce/checkout/buy-now> button",
+          "confidence": "high"
+        },
+        {
+          "name": "ecommerce/checkout/buy-now",
+          "type": "Feature",
+          "mention": "<ecommerce/checkout/buy-now>",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add to Cart",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "change the Add to Cart <ecommerce/checkout/add-to-cart> button's behavior in Odoo eCommerce"
+        },
+        {
+          "source": "customized button",
+          "relation": "RELATED_TO",
+          "target": "Add to Cart",
+          "evidence": "replace it with a customized <ecommerce/checkout/prevent-sale> button"
+        },
+        {
+          "source": "Buy now",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "add a Buy now <ecommerce/checkout/buy-now> button in Odoo eCommerce"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "default-add-to-cart-behavior",
+    "heading": "Default add to cart behavior",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Website",
+          "type": "Module",
+          "mention": "Website",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "eCommerce",
+          "type": "Module",
+          "mention": "eCommerce section",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to cart button",
+          "type": "Action",
+          "mention": "Add to cart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Stay on Product Page",
+          "type": "Setting",
+          "mention": "Stay on Product Page",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to cart and continue shopping",
+          "type": "Action",
+          "mention": "Add to cart and continue shopping",
+          "confidence": "high"
+        },
+        {
+          "name": "Go to the Checkout",
+          "type": "Action",
+          "mention": "Go to the Checkout",
+          "confidence": "high"
+        },
+        {
+          "name": "Go to cart",
+          "type": "Setting",
+          "mention": "Go to cart",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to cart feature",
+          "type": "Feature",
+          "mention": "Add to cart feature",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "eCommerce",
+          "relation": "IS_PART_OF",
+          "target": "Website",
+          "evidence": "go to Website --> Configuration --> Settings, scroll down to the eCommerce section"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Website",
+          "evidence": "go to Website --> Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "go to Website --> Configuration --> Settings"
+        },
+        {
+          "source": "Add to cart button",
+          "relation": "TRIGGERED_BY",
+          "target": "customer",
+          "evidence": "When clicking the Add to cart button"
+        },
+        {
+          "source": "Add to cart button",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "To configure them, go to Website --> Configuration --> Settings"
+        },
+        {
+          "source": "Add to cart feature",
+          "relation": "CONTAINS",
+          "target": "Stay on Product Page",
+          "evidence": "select one of the following options for the Add to cart feature: - Stay on Product Page"
+        },
+        {
+          "source": "Add to cart feature",
+          "relation": "CONTAINS",
+          "target": "Go to cart",
+          "evidence": "select one of the following options for the Add to cart feature: - Stay on Product Page... - Go to cart"
+        },
+        {
+          "source": "Stay on Product Page",
+          "relation": "ENABLES",
+          "target": "Add to cart and continue shopping",
+          "evidence": "Stay on Product Page: The customer can choose if they want to Add to cart and continue shopping"
+        },
+        {
+          "source": "Stay on Product Page",
+          "relation": "ENABLES",
+          "target": "Go to the Checkout",
+          "evidence": "Stay on Product Page: The customer can choose if they want to... or Go to the Checkout."
+        },
+        {
+          "source": "Go to cart",
+          "relation": "ENABLES",
+          "target": "customer",
+          "evidence": "Go to cart: The customer is immediately redirected to the cart."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "button-customization",
+    "heading": "Button customization",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to Cart button",
+          "type": "Action",
+          "mention": "Add to Cart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Contact Us button",
+          "type": "Action",
+          "mention": "Contact Us button",
+          "confidence": "high"
+        },
+        {
+          "name": "default contact form",
+          "type": "DataObject",
+          "mention": "default contact form",
+          "confidence": "high"
+        },
+        {
+          "name": "Not Available For Sale",
+          "type": "Feature",
+          "mention": "Not Available For Sale",
+          "confidence": "medium"
+        },
+        {
+          "name": "product page",
+          "type": "DataObject",
+          "mention": "product page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Subject field",
+          "type": "Field",
+          "mention": "Subject field",
+          "confidence": "high"
+        },
+        {
+          "name": "product's name",
+          "type": "Field",
+          "mention": "product's name",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Contact Us button",
+          "relation": "EQUIVALENT_TO",
+          "target": "Add to Cart button",
+          "evidence": "You can replace the Add to Cart button with a Contact Us button"
+        },
+        {
+          "source": "Contact Us button",
+          "relation": "ENABLES",
+          "target": "default contact form",
+          "evidence": "redirects users to the default contact form"
+        },
+        {
+          "source": "Not Available For Sale",
+          "relation": "CONFIGURED_BY",
+          "target": "product page",
+          "evidence": "can be modified on the product's page while in Edit mode"
+        },
+        {
+          "source": "Contact Us button",
+          "relation": "CONFIGURED_BY",
+          "target": "product page",
+          "evidence": "can be modified on the product's page while in Edit mode"
+        },
+        {
+          "source": "customer",
+          "relation": "PERFORMED_BY",
+          "target": "Contact Us button",
+          "evidence": "When the customer clicks the Contact Us button"
+        },
+        {
+          "source": "Subject field",
+          "relation": "GENERATES",
+          "target": "product's name",
+          "evidence": "Subject field is already auto-filled with the requested product's name"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "additional-add-to-cart-buttons",
+    "heading": "Additional add to cart buttons",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to Cart Button inner content building block",
+          "type": "Module",
+          "mention": "Add to Cart Button inner content building block",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to Cart Button",
+          "type": "Feature",
+          "mention": "Add to Cart buttons",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy Now button",
+          "type": "Feature",
+          "mention": "Buy Now button",
+          "confidence": "high"
+        },
+        {
+          "name": "website editor",
+          "type": "Module",
+          "mention": "website editor",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Action",
+          "type": "Field",
+          "mention": "Action",
+          "confidence": "medium"
+        },
+        {
+          "name": "Visitor's Choice",
+          "type": "Setting",
+          "mention": "Visitor's Choice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add to Cart and continue shopping",
+          "type": "Action",
+          "mention": "Add to Cart and continue shopping",
+          "confidence": "medium"
+        },
+        {
+          "name": "Go to Checkout",
+          "type": "Action",
+          "mention": "Go to Checkout",
+          "confidence": "medium"
+        },
+        {
+          "name": "header",
+          "type": "Module",
+          "mention": "header",
+          "confidence": "low"
+        },
+        {
+          "name": "fa-shopping-cart (cart) icon",
+          "type": "Feature",
+          "mention": "fa-shopping-cart (cart) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Show Empty option",
+          "type": "Setting",
+          "mention": "Show Empty option",
+          "confidence": "low"
+        },
+        {
+          "name": "Style tab",
+          "type": "Module",
+          "mention": "Style tab",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add to Cart Button inner content building block",
+          "relation": "IS_PART_OF",
+          "target": "website editor",
+          "evidence": "open the website editor and place the Add to Cart Button inner content building block"
+        },
+        {
+          "source": "Add to Cart Button",
+          "relation": "CONFIGURED_BY",
+          "target": "Product",
+          "evidence": "Product: Select the product to link the button with"
+        },
+        {
+          "source": "Add to Cart Button",
+          "relation": "CONFIGURED_BY",
+          "target": "Action",
+          "evidence": "Action: Choose if it should be an Add to Cart or Buy Now button"
+        },
+        {
+          "source": "Buy Now button",
+          "relation": "SEE_ALSO",
+          "target": "ecommerce/checkout/buy-now",
+          "evidence": "Buy Now <ecommerce/checkout/buy-now> button"
+        },
+        {
+          "source": "Visitor's Choice",
+          "relation": "RELATED_TO",
+          "target": "Add to Cart and continue shopping",
+          "evidence": "Visitor's Choice, which prompts the customer to select a variant and then Add to Cart and continue shopping"
+        },
+        {
+          "source": "Visitor's Choice",
+          "relation": "RELATED_TO",
+          "target": "Go to Checkout",
+          "evidence": "Visitor's Choice, which prompts the customer to select a variant and then Add to Cart ... or Go to Checkout"
+        },
+        {
+          "source": "fa-shopping-cart (cart) icon",
+          "relation": "RELATED_TO",
+          "target": "Show Empty option",
+          "evidence": "fa-shopping-cart (cart) button next to the Show Empty option"
+        },
+        {
+          "source": "Show Empty option",
+          "relation": "IS_PART_OF",
+          "target": "Style tab",
+          "evidence": "Show Empty option under the Style tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "buy-now",
+    "heading": "Buy now",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy now button",
+          "type": "Feature",
+          "mention": "Buy now button",
+          "confidence": "high"
+        },
+        {
+          "name": "website editor",
+          "type": "Module",
+          "mention": "website editor",
+          "confidence": "high"
+        },
+        {
+          "name": "Style tab",
+          "type": "Sub-module",
+          "mention": "Style tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order summary step",
+          "type": "Workflow",
+          "mention": "Order summary step",
+          "confidence": "high"
+        },
+        {
+          "name": "ecommerce/checkout/review_order",
+          "type": "Workflow",
+          "mention": "<ecommerce/checkout/review_order>",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Options",
+          "type": "Feature",
+          "mention": "Purchase Options",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-bolt Buy Now button",
+          "type": "Feature",
+          "mention": "fa-bolt Buy Now button",
+          "confidence": "high"
+        },
+        {
+          "name": "ecommerce/checkout/reorder",
+          "type": "Workflow",
+          "mention": "ecommerce/checkout/reorder",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Buy now button",
+          "relation": "ENABLES",
+          "target": "Order summary step",
+          "evidence": "To let customers choose to go to the Order summary step directly, you can add an additional Buy now button."
+        },
+        {
+          "source": "Buy now button",
+          "relation": "IS_PART_OF",
+          "target": "Purchase Options",
+          "evidence": "Buy Now button next to the Purchase Options."
+        },
+        {
+          "source": "fa-bolt Buy Now button",
+          "relation": "EQUIVALENT_TO",
+          "target": "Buy now button",
+          "evidence": "click the fa-bolt Buy Now button next to the Purchase Options."
+        },
+        {
+          "source": "Buy now button",
+          "relation": "CONFIGURED_BY",
+          "target": "Style tab",
+          "evidence": "open the website editor, go to the Style tab, and click the fa-bolt Buy Now button"
+        },
+        {
+          "source": "Style tab",
+          "relation": "BELONGS_TO",
+          "target": "website editor",
+          "evidence": "open the website editor, go to the Style tab"
+        },
+        {
+          "source": "website editor",
+          "relation": "BELONGS_TO",
+          "type": "Product",
+          "target": "Odoo",
+          "evidence": "Product: Odoo (context implies website editor is part of Odoo)"
+        },
+        {
+          "source": "ecommerce/checkout/reorder",
+          "relation": "RELATED_TO",
+          "target": "ecommerce/checkout/review_order",
+          "evidence": "Section ends with reference to 'ecommerce/checkout/reorder' after discussing 'ecommerce/checkout/review_order'"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reorder-products",
+    "heading": "Reorder products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reorder products",
+          "type": "Workflow",
+          "mention": "Reorder products",
+          "confidence": "high"
+        },
+        {
+          "name": "customer portal",
+          "type": "Module",
+          "mention": "customer portal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order Again button",
+          "type": "Action",
+          "mention": "Order Again button",
+          "confidence": "high"
+        },
+        {
+          "name": "Remove",
+          "type": "Action",
+          "mention": "Remove",
+          "confidence": "high"
+        },
+        {
+          "name": "cart",
+          "type": "DataObject",
+          "mention": "cart",
+          "confidence": "high"
+        },
+        {
+          "name": "Quick reorder",
+          "type": "Action",
+          "mention": "Quick reorder",
+          "confidence": "high"
+        },
+        {
+          "name": "Order summary",
+          "type": "Module",
+          "mention": "Order summary step",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-cart-plus (cart) button",
+          "type": "Action",
+          "mention": "fa-cart-plus (cart) button",
+          "confidence": "high"
+        },
+        {
+          "name": "ecommerce/checkout/review_order",
+          "type": "Module",
+          "mention": "ecommerce/checkout/review_order",
+          "confidence": "high"
+        },
+        {
+          "name": "ecommerce/checkout/steps",
+          "type": "Module",
+          "mention": "ecommerce/checkout/steps",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "Customers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "customer portal",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Customers can reorder items... from their customer portal"
+        },
+        {
+          "source": "Order Again button",
+          "relation": "IS_PART_OF",
+          "target": "customer portal",
+          "evidence": "from their customer portal, using the Order Again button"
+        },
+        {
+          "source": "Reorder products",
+          "relation": "HAS_FEATURE",
+          "target": "Order Again button",
+          "evidence": "Customers can reorder items... using the Order Again button"
+        },
+        {
+          "source": "Reorder products",
+          "relation": "HAS_FEATURE",
+          "target": "Quick reorder",
+          "evidence": "from the cart, by clicking Quick reorder"
+        },
+        {
+          "source": "Reorder products",
+          "relation": "HAS_FEATURE",
+          "target": "Remove",
+          "evidence": "customers can then Remove any items they don't want to reorder"
+        },
+        {
+          "source": "Reorder products",
+          "relation": "HAS_FEATURE",
+          "target": "fa-cart-plus (cart) button",
+          "evidence": "click the fa-cart-plus (cart) button next to the product(s) they want to reorder"
+        },
+        {
+          "source": "Quick reorder",
+          "relation": "TRIGGERED_BY",
+          "target": "Order summary",
+          "evidence": "from the cart, by clicking Quick reorder at the Order summary step"
+        },
+        {
+          "source": "Order summary",
+          "relation": "SEE_ALSO",
+          "target": "ecommerce/checkout/review_order",
+          "evidence": "Order summary step <ecommerce/checkout/review_order>"
+        },
+        {
+          "source": "Customer",
+          "relation": "PERFORMED_BY",
+          "target": "Reorder products",
+          "evidence": "Customers can reorder items from a previous sales order"
+        },
+        {
+          "source": "Remove",
+          "relation": "PERFORMED_BY",
+          "target": "Customer",
+          "evidence": "customers can then Remove any items they don't want to reorder"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "checkout-steps",
+    "heading": "Checkout steps",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "checkout process",
+          "type": "Workflow",
+          "mention": "checkout process",
+          "confidence": "high"
+        },
+        {
+          "name": "Order summary",
+          "type": "Step",
+          "mention": "Order summary",
+          "confidence": "medium"
+        },
+        {
+          "name": "Address and delivery",
+          "type": "Step",
+          "mention": "Address and delivery",
+          "confidence": "medium"
+        },
+        {
+          "name": "Extra info (if enabled)",
+          "type": "Step",
+          "mention": "Extra info (if enabled)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment",
+          "type": "Step",
+          "mention": "Payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order confirmation",
+          "type": "Step",
+          "mention": "Order confirmation",
+          "confidence": "medium"
+        },
+        {
+          "name": "website editor",
+          "type": "Feature",
+          "mention": "website editor",
+          "confidence": "high"
+        },
+        {
+          "name": "building blocks",
+          "type": "Feature",
+          "mention": "building blocks",
+          "confidence": "high"
+        },
+        {
+          "name": "Style tab",
+          "type": "Feature",
+          "mention": "Style tab",
+          "confidence": "high"
+        },
+        {
+          "name": "shop access",
+          "type": "Permission",
+          "mention": "shop access",
+          "confidence": "high"
+        },
+        {
+          "name": "checkout access",
+          "type": "Permission",
+          "mention": "checkout access",
+          "confidence": "high"
+        },
+        {
+          "name": "customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        },
+        {
+          "name": "B2B business setup",
+          "type": "Concept",
+          "mention": "B2B business setup",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Order summary",
+          "relation": "IS_PART_OF",
+          "target": "checkout process",
+          "evidence": "During the checkout process, customers are taken through the following steps: - Order summary"
+        },
+        {
+          "source": "Address and delivery",
+          "relation": "IS_PART_OF",
+          "target": "checkout process",
+          "evidence": "During the checkout process, customers are taken through the following steps: - Address and delivery"
+        },
+        {
+          "source": "Extra info (if enabled)",
+          "relation": "IS_PART_OF",
+          "target": "checkout process",
+          "evidence": "During the checkout process, customers are taken through the following steps: - Extra info (if enabled)"
+        },
+        {
+          "source": "Payment",
+          "relation": "IS_PART_OF",
+          "target": "checkout process",
+          "evidence": "During the checkout process, customers are taken through the following steps: - Payment"
+        },
+        {
+          "source": "Order confirmation",
+          "relation": "IS_PART_OF",
+          "target": "checkout process",
+          "evidence": "During the checkout process, customers are taken through the following steps: - Order confirmation"
+        },
+        {
+          "source": "website editor",
+          "relation": "ENABLES",
+          "target": "building blocks",
+          "evidence": "Each step can be customized using the website editor by adding building blocks"
+        },
+        {
+          "source": "website editor",
+          "relation": "ENABLES",
+          "target": "Style tab",
+          "evidence": "Each step can be customized using the website editor by [...] opening the Style tab"
+        },
+        {
+          "source": "shop access",
+          "relation": "CONFIGURED_BY",
+          "target": "Permission",
+          "evidence": "Restrict access to the shop [...] for specific customers"
+        },
+        {
+          "source": "checkout access",
+          "relation": "CONFIGURED_BY",
+          "target": "Permission",
+          "evidence": "Restrict access to the [...] checkout for specific customers"
+        },
+        {
+          "source": "customers",
+          "relation": "PERFORMED_BY",
+          "target": "checkout process",
+          "evidence": "During the checkout process, customers are taken through the following steps"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "order-summary",
+    "heading": "Order summary",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Order summary",
+          "type": "Module",
+          "mention": "Order summary",
+          "confidence": "high"
+        },
+        {
+          "name": "cart",
+          "type": "DataObject",
+          "mention": "cart",
+          "confidence": "medium"
+        },
+        {
+          "name": "Checkout button",
+          "type": "Action",
+          "mention": "Checkout button",
+          "confidence": "high"
+        },
+        {
+          "name": "Address and delivery",
+          "type": "Module",
+          "mention": "Address and delivery",
+          "confidence": "high"
+        },
+        {
+          "name": "website editor",
+          "type": "Feature",
+          "mention": "website editor",
+          "confidence": "high"
+        },
+        {
+          "name": "Suggested Accessories",
+          "type": "Feature",
+          "mention": "Suggested Accessories",
+          "confidence": "high"
+        },
+        {
+          "name": "Promo Code",
+          "type": "Feature",
+          "mention": "Promo Code",
+          "confidence": "high"
+        },
+        {
+          "name": "gift cards",
+          "type": "DataObject",
+          "mention": "gift cards",
+          "confidence": "medium"
+        },
+        {
+          "name": "discount codes",
+          "type": "DataObject",
+          "mention": "discount codes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add to Wishlist",
+          "type": "Feature",
+          "mention": "Add to Wishlist",
+          "confidence": "high"
+        },
+        {
+          "name": "wishlists",
+          "type": "DataObject",
+          "mention": "wishlists",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save for later option",
+          "type": "Action",
+          "mention": "Save for later option",
+          "confidence": "high"
+        },
+        {
+          "name": "fiscal position",
+          "type": "Concept",
+          "mention": "fiscal position",
+          "confidence": "high"
+        },
+        {
+          "name": "product tax",
+          "type": "Concept",
+          "mention": "product tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment provider",
+          "type": "Integration",
+          "mention": "payment provider",
+          "confidence": "high"
+        },
+        {
+          "name": "express checkout",
+          "type": "Feature",
+          "mention": "express checkout",
+          "confidence": "high"
+        },
+        {
+          "name": "confirmation page",
+          "type": "Module",
+          "mention": "confirmation page",
+          "confidence": "medium"
+        },
+        {
+          "name": "contact form",
+          "type": "DataObject",
+          "mention": "contact form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Order summary",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The Order summary step allows customers",
+          "confidence": "high"
+        },
+        {
+          "source": "Order summary",
+          "relation": "CONTAINS",
+          "target": "cart",
+          "evidence": "allows customers to see the items they added to their cart",
+          "confidence": "high"
+        },
+        {
+          "source": "Checkout button",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "Customers can then click the Checkout button",
+          "confidence": "high"
+        },
+        {
+          "source": "Checkout button",
+          "relation": "ENABLES",
+          "target": "Address and delivery",
+          "evidence": "click the Checkout button to continue to the Address and delivery step",
+          "confidence": "high"
+        },
+        {
+          "source": "website editor",
+          "relation": "ENABLES",
+          "target": "Suggested Accessories",
+          "evidence": "Open the website editor to enable checkout options such as: - Suggested Accessories",
+          "confidence": "high"
+        },
+        {
+          "source": "website editor",
+          "relation": "ENABLES",
+          "target": "Promo Code",
+          "evidence": "Open the website editor to enable checkout options such as: - Promo Code",
+          "confidence": "high"
+        },
+        {
+          "source": "website editor",
+          "relation": "ENABLES",
+          "target": "Add to Wishlist",
+          "evidence": "Open the website editor to enable checkout options such as: - Add to Wishlist",
+          "confidence": "high"
+        },
+        {
+          "source": "Promo Code",
+          "relation": "ENABLES",
+          "target": "gift cards",
+          "evidence": "Promo Code: to allow customers to redeem gift cards",
+          "confidence": "high"
+        },
+        {
+          "source": "Promo Code",
+          "relation": "ENABLES",
+          "target": "discount codes",
+          "evidence": "or apply discount codes",
+          "confidence": "high"
+        },
+        {
+          "source": "Add to Wishlist",
+          "relation": "ENABLES",
+          "target": "wishlists",
+          "evidence": "Enable wishlists to allow signed-in users",
+          "confidence": "high"
+        },
+        {
+          "source": "Add to Wishlist",
+          "relation": "ENABLES",
+          "target": "Save for later option",
+          "evidence": "add it to their wishlist using the Save for later option",
+          "confidence": "high"
+        },
+        {
+          "source": "fiscal position",
+          "relation": "GOVERNED_BY",
+          "target": "product tax",
+          "evidence": "If a fiscal position is detected automatically, the product tax is determined",
+          "confidence": "high"
+        },
+        {
+          "source": "payment provider",
+          "relation": "SUPPORTS",
+          "target": "express checkout",
+          "evidence": "If the installed payment provider supports express checkout",
+          "confidence": "high"
+        },
+        {
+          "source": "express checkout",
+          "relation": "ENABLES",
+          "target": "confirmation page",
+          "evidence": "allowing customers to go straight from the cart to the confirmation page",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "address-and-delivery",
+    "heading": "Address and delivery",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "eCommerce",
+          "type": "Module",
+          "mention": "eCommerce",
+          "confidence": "high"
+        },
+        {
+          "name": "Website",
+          "type": "Module",
+          "mention": "Website",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sign in",
+          "type": "Action",
+          "mention": "Sign in",
+          "confidence": "high"
+        },
+        {
+          "name": "Enter Email address",
+          "type": "Action",
+          "mention": "enter their Email address",
+          "confidence": "high"
+        },
+        {
+          "name": "Enter delivery address",
+          "type": "Action",
+          "mention": "enter their delivery address",
+          "confidence": "high"
+        },
+        {
+          "name": "Enter phone details",
+          "type": "Action",
+          "mention": "phone details",
+          "confidence": "high"
+        },
+        {
+          "name": "Select Delivery address",
+          "type": "Action",
+          "mention": "select the appropriate Delivery address",
+          "confidence": "high"
+        },
+        {
+          "name": "Choose delivery method",
+          "type": "Action",
+          "mention": "choose a delivery method",
+          "confidence": "high"
+        },
+        {
+          "name": "Select Billing Address",
+          "type": "Action",
+          "mention": "select or enter their Billing Address",
+          "confidence": "high"
+        },
+        {
+          "name": "Enter Billing Address",
+          "type": "Action",
+          "mention": "select or enter their Billing Address",
+          "confidence": "high"
+        },
+        {
+          "name": "Toggle Same as delivery address switch",
+          "type": "Action",
+          "mention": "toggle the Same as delivery address switch",
+          "confidence": "high"
+        },
+        {
+          "name": "Click Confirm",
+          "type": "Action",
+          "mention": "click Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Enable B2B fields",
+          "type": "Action",
+          "mention": "enable optional B2B fields",
+          "confidence": "high"
+        },
+        {
+          "name": "Add checkbox for newsletter signup",
+          "type": "Action",
+          "mention": "add a checkbox for users without an account to sign up for a newsletter",
+          "confidence": "high"
+        },
+        {
+          "name": "Go to Website --> Configuration --> Settings",
+          "type": "Action",
+          "mention": "go to Website --> Configuration --> Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Scroll down to eCommerce section",
+          "type": "Action",
+          "mention": "scroll down to the eCommerce section",
+          "confidence": "high"
+        },
+        {
+          "name": "Enable Newsletter feature",
+          "type": "Action",
+          "mention": "enable the Newsletter feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Select Newsletter List",
+          "type": "Action",
+          "mention": "select a Newsletter List",
+          "confidence": "high"
+        },
+        {
+          "name": "Checkout workflow",
+          "type": "Workflow",
+          "mention": "Once they have reviewed their order",
+          "confidence": "high"
+        },
+        {
+          "name": "Newsletter feature",
+          "type": "Feature",
+          "mention": "Newsletter feature",
+          "confidence": "high"
+        },
+        {
+          "name": "B2B fields",
+          "type": "Feature",
+          "mention": "B2B fields",
+          "confidence": "high"
+        },
+        {
+          "name": "B2B customers",
+          "type": "Actor",
+          "mention": "B2B customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Unsigned-in customers",
+          "type": "Actor",
+          "mention": "Unsigned-in customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Signed-in customers",
+          "type": "Actor",
+          "mention": "Signed-in customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Users without an account",
+          "type": "Actor",
+          "mention": "users without an account",
+          "confidence": "high"
+        },
+        {
+          "name": "Website editor",
+          "type": "Concept",
+          "mention": "website editor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "eCommerce",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "eCommerce section"
+        },
+        {
+          "source": "Website",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Website --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Website",
+          "evidence": "Website --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Checkout workflow",
+          "relation": "CONTAINS",
+          "target": "Sign in",
+          "evidence": "Once they have reviewed their order...Unsigned-in customers are prompted to Sign in"
+        },
+        {
+          "source": "eCommerce",
+          "relation": "HAS_FEATURE",
+          "target": "Newsletter feature",
+          "evidence": "scroll down to the eCommerce section, enable the Newsletter feature"
+        },
+        {
+          "source": "Enable Newsletter feature",
+          "relation": "REQUIRES",
+          "target": "Go to Website --> Configuration --> Settings",
+          "evidence": "To do so, go to Website --> Configuration --> Settings...enable the Newsletter feature"
+        },
+        {
+          "source": "Enable B2B fields",
+          "relation": "PERFORMED_BY",
+          "target": "B2B customers",
+          "evidence": "For B2B customers, you can also enable optional B2B fields"
+        },
+        {
+          "source": "Newsletter feature",
+          "relation": "CONFIGURED_BY",
+          "target": "Select Newsletter List",
+          "evidence": "enable the Newsletter feature, and select a Newsletter List"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "extra-info",
+    "heading": "Extra info",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Extra Info step",
+          "type": "Feature",
+          "mention": "Extra Info step",
+          "confidence": "high"
+        },
+        {
+          "name": "checkout process",
+          "type": "Workflow",
+          "mention": "checkout process",
+          "confidence": "high"
+        },
+        {
+          "name": "online form",
+          "type": "Feature",
+          "mention": "online form",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer information",
+          "type": "Concept",
+          "mention": "customer information",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Extra Step option",
+          "type": "Setting",
+          "mention": "Extra Step option",
+          "confidence": "high"
+        },
+        {
+          "name": "website editor",
+          "type": "Module",
+          "mention": "website editor",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Extra Info step",
+          "relation": "BELONGS_TO",
+          "target": "checkout process",
+          "evidence": "Extra Info step in the checkout process"
+        },
+        {
+          "source": "Extra Info step",
+          "relation": "CONTAINS",
+          "target": "online form",
+          "evidence": "collect additional customer information through an online form"
+        },
+        {
+          "source": "Extra Info step",
+          "relation": "GENERATES",
+          "target": "sales order",
+          "evidence": "which is then included in the sales order"
+        },
+        {
+          "source": "Extra Step option",
+          "relation": "BELONGS_TO",
+          "target": "website editor",
+          "evidence": "Extra Step option in the website editor"
+        },
+        {
+          "source": "Extra Info step",
+          "relation": "CONFIGURED_BY",
+          "target": "Extra Step option",
+          "evidence": "enable the Extra Step option in the website editor"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Extra Info step",
+          "evidence": "Product: Odoo ... You can add an Extra Info step"
+        },
+        {
+          "source": "online form",
+          "relation": "PRODUCES",
+          "target": "customer information",
+          "evidence": "collect additional customer information through an online form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "payment",
+    "heading": "Payment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment",
+          "type": "Module",
+          "mention": "Title: Payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Choose a payment method",
+          "type": "Action",
+          "mention": "Choose a payment method",
+          "confidence": "high"
+        },
+        {
+          "name": "enter their payment details",
+          "type": "Action",
+          "mention": "enter their payment details",
+          "confidence": "high"
+        },
+        {
+          "name": "click Pay now",
+          "type": "Action",
+          "mention": "click Pay now",
+          "confidence": "high"
+        },
+        {
+          "name": "payment method",
+          "type": "Feature",
+          "mention": "payment method",
+          "confidence": "high"
+        },
+        {
+          "name": "payment provider",
+          "type": "Integration",
+          "mention": "payment provider",
+          "confidence": "high"
+        },
+        {
+          "name": "Website",
+          "type": "Module",
+          "mention": "Website",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Providers",
+          "type": "Module",
+          "mention": "Payment Providers",
+          "confidence": "high"
+        },
+        {
+          "name": "Activate the relevant payment provider",
+          "type": "Action",
+          "mention": "Activate the relevant payment provider",
+          "confidence": "high"
+        },
+        {
+          "name": "configure it",
+          "type": "Action",
+          "mention": "configure it",
+          "confidence": "high"
+        },
+        {
+          "name": "checkout",
+          "type": "Workflow",
+          "mention": "checkout",
+          "confidence": "high"
+        },
+        {
+          "name": "customer’s country",
+          "type": "Field",
+          "mention": "customer’s country",
+          "confidence": "high"
+        },
+        {
+          "name": "currency",
+          "type": "Field",
+          "mention": "currency",
+          "confidence": "high"
+        },
+        {
+          "name": "maximum amount",
+          "type": "Setting",
+          "mention": "maximum amount",
+          "confidence": "high"
+        },
+        {
+          "name": "availability report",
+          "type": "Report",
+          "mention": "availability report",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "bug icon",
+          "type": "Feature",
+          "mention": "bug icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payment",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Payment"
+        },
+        {
+          "source": "customers",
+          "relation": "PERFORMED_BY",
+          "target": "Choose a payment method",
+          "evidence": "customers can Choose a payment method"
+        },
+        {
+          "source": "customers",
+          "relation": "PERFORMED_BY",
+          "target": "enter their payment details",
+          "evidence": "customers can ... enter their payment details"
+        },
+        {
+          "source": "customers",
+          "relation": "PERFORMED_BY",
+          "target": "click Pay now",
+          "evidence": "customers can ... click Pay now"
+        },
+        {
+          "source": "Payment",
+          "relation": "HAS_FEATURE",
+          "target": "payment method",
+          "evidence": "customers can Choose a payment method"
+        },
+        {
+          "source": "Payment",
+          "relation": "HAS_FEATURE",
+          "target": "payment provider",
+          "evidence": "To make payment methods available to customers, configure and enable one or more payment provider(s)"
+        },
+        {
+          "source": "Payment Providers",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "go to Website --> Configuration --> Payment Providers"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Website",
+          "evidence": "go to Website --> Configuration"
+        },
+        {
+          "source": "Website",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "go to Website --> Configuration --> Payment Providers"
+        },
+        {
+          "source": "checkout",
+          "relation": "CONTAINS",
+          "target": "payment method",
+          "evidence": "The options displayed at checkout depend on ... the enabled payment methods"
+        },
+        {
+          "source": "payment provider",
+          "relation": "HAS_REPORT",
+          "target": "availability report",
+          "evidence": "display an availability report for payment providers and payment methods"
+        },
+        {
+          "source": "payment method",
+          "relation": "HAS_REPORT",
+          "target": "availability report",
+          "evidence": "display an availability report for payment providers and payment methods"
+        },
+        {
+          "source": "availability report",
+          "relation": "CONFIGURED_BY",
+          "target": "developer mode",
+          "evidence": "enable the developer mode and click the fa-bug (bug) icon"
+        },
+        {
+          "source": "checkout",
+          "relation": "CONFIGURED_BY",
+          "target": "maximum amount",
+          "evidence": "the options displayed at checkout depend on ... the maximum amount set for the provider"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "terms-and-conditions",
+    "heading": "Terms and conditions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accept Terms switch",
+          "type": "Setting",
+          "mention": "toggle the Accept Terms switch",
+          "confidence": "high"
+        },
+        {
+          "name": "terms and conditions",
+          "type": "Concept",
+          "mention": "terms and conditions",
+          "confidence": "medium"
+        },
+        {
+          "name": "website editor",
+          "type": "Module",
+          "mention": "open the website editor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Style tab",
+          "type": "Module",
+          "mention": "Style tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        },
+        {
+          "name": "payment",
+          "type": "Action",
+          "mention": "payment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accept Terms switch",
+          "relation": "CONTAINS",
+          "target": "Style tab",
+          "evidence": "toggle the Accept Terms switch in the Style tab"
+        },
+        {
+          "source": "Style tab",
+          "relation": "IS_PART_OF",
+          "target": "website editor",
+          "evidence": "open the website editor and toggle the Accept Terms switch in the Style tab"
+        },
+        {
+          "source": "Accept Terms switch",
+          "relation": "ENABLES",
+          "target": "terms and conditions",
+          "evidence": "To require customers to agree to the terms and conditions before payment, open the website editor and toggle the Accept Terms switch"
+        },
+        {
+          "source": "customers",
+          "relation": "RELATED_TO",
+          "target": "terms and conditions",
+          "evidence": "require customers to agree to the terms and conditions"
+        },
+        {
+          "source": "terms and conditions",
+          "relation": "RELATED_TO",
+          "target": "payment",
+          "evidence": "require customers to agree to the terms and conditions before payment"
+        },
+        {
+          "source": "Accept Terms switch",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo. To require customers to agree to the terms and conditions before payment, open the website editor and toggle the Accept Terms switch in the Style tab."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "ewallets-and-gift-cards",
+    "heading": "eWallets and gift cards",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Website",
+          "type": "Module",
+          "mention": "Website",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "eCommerce",
+          "type": "Module",
+          "mention": "eCommerce",
+          "confidence": "high"
+        },
+        {
+          "name": "Gift cards & eWallet",
+          "type": "Module",
+          "mention": "Gift cards & eWallet",
+          "confidence": "high"
+        },
+        {
+          "name": "eWallet",
+          "type": "Feature",
+          "mention": "eWallet",
+          "confidence": "high"
+        },
+        {
+          "name": "Gift card",
+          "type": "Feature",
+          "mention": "gift card",
+          "confidence": "high"
+        },
+        {
+          "name": "Discounts, Loyalty & Gift Card",
+          "type": "Feature",
+          "mention": "Discounts, Loyalty & Gift Card",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Actor",
+          "mention": "Customers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "eWallet",
+          "relation": "BELONGS_TO",
+          "target": "eCommerce",
+          "evidence": "pay with an eWallet... in the eCommerce section"
+        },
+        {
+          "source": "Gift card",
+          "relation": "BELONGS_TO",
+          "target": "eCommerce",
+          "evidence": "gift card... in the eCommerce section"
+        },
+        {
+          "source": "Discounts, Loyalty & Gift Card",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "enable Discounts, Loyalty & Gift Card in the eCommerce section"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Website",
+          "evidence": "Website --> Configuration"
+        },
+        {
+          "source": "Gift cards & eWallet",
+          "relation": "IS_PART_OF",
+          "target": "Website",
+          "evidence": "Website --> eCommerce --> Gift cards & eWallet"
+        },
+        {
+          "source": "eCommerce",
+          "relation": "IS_PART_OF",
+          "target": "Website",
+          "evidence": "Website --> eCommerce"
+        },
+        {
+          "source": "Gift cards & eWallet",
+          "relation": "CONTAINS",
+          "target": "eWallet",
+          "evidence": "Gift cards & eWallet and create a gift card and/or eWallet program"
+        },
+        {
+          "source": "Gift cards & eWallet",
+          "relation": "CONTAINS",
+          "target": "Gift card",
+          "evidence": "Gift cards & eWallet and create a gift card and/or eWallet program"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "order-confirmation",
+    "heading": "Order confirmation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Order confirmation",
+          "type": "Feature",
+          "mention": "Order confirmation",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic Invoice",
+          "type": "Setting",
+          "mention": "Automatic Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "Order handling",
+          "type": "Concept",
+          "mention": "Order handling",
+          "confidence": "high"
+        },
+        {
+          "name": "checkout process",
+          "type": "Workflow",
+          "mention": "checkout process",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Order confirmation",
+          "relation": "IS_PART_OF",
+          "target": "checkout process",
+          "evidence": "The final step of the checkout process is the Order confirmation"
+        },
+        {
+          "source": "Order confirmation",
+          "relation": "GENERATES",
+          "target": "sales order",
+          "evidence": "A sales order is automatically created in the backend"
+        },
+        {
+          "source": "Automatic Invoice",
+          "relation": "GENERATES",
+          "target": "invoice",
+          "evidence": "automatically send an invoice to the customer"
+        },
+        {
+          "source": "Automatic Invoice",
+          "relation": "PRODUCES",
+          "target": "invoice",
+          "evidence": "automatically send an invoice to the customer"
+        },
+        {
+          "source": "invoice",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "send an invoice to the customer"
+        },
+        {
+          "source": "Order confirmation",
+          "relation": "SEE_ALSO",
+          "target": "Order handling",
+          "evidence": ".. seealso:: Order handling <order_handling>"
+        }
+      ]
+    }
+  }
+]

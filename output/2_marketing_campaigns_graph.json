@@ -1,0 +1,1141 @@
+[
+  {
+    "section_id": "sms-campaign-settings",
+    "heading": "SMS campaign settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Marketing",
+          "type": "Module",
+          "mention": "Odoo *SMS Marketing*",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Campaign",
+          "type": "Feature",
+          "mention": "SMS (Short Message Service) campaigns",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Campaign Settings",
+          "type": "Setting",
+          "mention": "a few specific settings and features must be enabled first",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS",
+          "type": "Concept",
+          "mention": "SMS (Short Message Service)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SMS Marketing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Utilizing SMS campaigns with Odoo *SMS Marketing*"
+        },
+        {
+          "source": "SMS Campaign",
+          "relation": "IS_PART_OF",
+          "target": "SMS Marketing",
+          "evidence": "Utilizing SMS (Short Message Service) campaigns with Odoo *SMS Marketing*"
+        },
+        {
+          "source": "SMS Campaign Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "SMS Campaign",
+          "evidence": "before SMS campaigns can be created (and sent), a few specific settings and features must be enabled first"
+        },
+        {
+          "source": "SMS Campaign Settings",
+          "relation": "REQUIRES",
+          "target": "SMS Campaign",
+          "evidence": "a few specific settings and features must be enabled first"
+        },
+        {
+          "source": "SMS Campaign",
+          "relation": "RELATED_TO",
+          "target": "SMS",
+          "evidence": "SMS (Short Message Service) campaigns"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sms-campaign-setting",
+    "heading": "SMS campaign setting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Marketing",
+          "type": "Module",
+          "mention": "Email Marketing --> Configuration --> Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Marketing",
+          "type": "Module",
+          "mention": "navigate back to the SMS Marketing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Mailing Campaigns",
+          "type": "Feature",
+          "mention": "make sure the Mailing Campaigns feature is activated",
+          "confidence": "high"
+        },
+        {
+          "name": "A/B Test",
+          "type": "Feature",
+          "mention": "Activating the Mailing Campaigns feature in the General Settings also enables the A/B Test feature",
+          "confidence": "high"
+        },
+        {
+          "name": "General Settings",
+          "type": "Setting",
+          "mention": "Activating the Mailing Campaigns feature in the General Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Marketing Configuration Settings",
+          "type": "Setting",
+          "mention": "Email Marketing --> Configuration --> Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Campaigns Header Menu",
+          "type": "Feature",
+          "mention": "the Campaigns header menu is now available for use",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Template Form",
+          "type": "DataObject",
+          "mention": "every SMS (Short Message Service) template form",
+          "confidence": "high"
+        },
+        {
+          "name": "A/B Test Tab",
+          "type": "Feature",
+          "mention": "the A/B Test tab is now also available on every SMS template form",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Campaign",
+          "type": "Concept",
+          "mention": "SMS (Short Message Service) campaigns in Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Email Marketing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Email Marketing --> Configuration --> Settings within Odoo"
+        },
+        {
+          "source": "SMS Marketing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "navigate back to the SMS Marketing app"
+        },
+        {
+          "source": "Email Marketing Configuration Settings",
+          "relation": "IS_PART_OF",
+          "target": "Email Marketing",
+          "evidence": "Email Marketing --> Configuration --> Settings"
+        },
+        {
+          "source": "Mailing Campaigns",
+          "relation": "CONFIGURED_BY",
+          "target": "Email Marketing Configuration Settings",
+          "evidence": "going to Email Marketing --> Configuration --> Settings, and then enable Mailing Campaigns"
+        },
+        {
+          "source": "Mailing Campaigns",
+          "relation": "CONFIGURED_BY",
+          "target": "General Settings",
+          "evidence": "Activating the Mailing Campaigns feature in the General Settings"
+        },
+        {
+          "source": "Mailing Campaigns",
+          "relation": "ENABLES",
+          "target": "A/B Test",
+          "evidence": "Activating the Mailing Campaigns feature in the General Settings also enables the A/B Test feature"
+        },
+        {
+          "source": "Mailing Campaigns",
+          "relation": "ENABLES",
+          "target": "Campaigns Header Menu",
+          "evidence": "Once the setting is enabled, the Campaigns header menu is now available for use"
+        },
+        {
+          "source": "Mailing Campaigns",
+          "relation": "ENABLES",
+          "target": "SMS Campaign",
+          "evidence": "To enable SMS campaigns in Odoo, make sure the Mailing Campaigns feature is activated"
+        },
+        {
+          "source": "A/B Test",
+          "relation": "HAS_FEATURE",
+          "target": "A/B Test Tab",
+          "evidence": "the A/B Test tab is now also available on every SMS template form"
+        },
+        {
+          "source": "A/B Test Tab",
+          "relation": "IS_PART_OF",
+          "target": "SMS Template Form",
+          "evidence": "the A/B Test tab is now also available on every SMS (Short Message Service) template form"
+        },
+        {
+          "source": "Campaigns Header Menu",
+          "relation": "IS_PART_OF",
+          "target": "SMS Marketing",
+          "evidence": "navigate back to the SMS Marketing app, and notice the Campaigns header menu is now available"
+        },
+        {
+          "source": "SMS Campaign",
+          "relation": "REQUIRES",
+          "target": "Mailing Campaigns",
+          "evidence": "To enable SMS campaigns in Odoo, make sure the Mailing Campaigns feature is activated"
+        },
+        {
+          "source": "SMS Template Form",
+          "relation": "IS_PART_OF",
+          "target": "SMS Marketing",
+          "evidence": "the A/B Test tab is now also available on every SMS template form within the SMS Marketing app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "a-b-tests",
+    "heading": "A/B tests",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "A/B Tests",
+          "type": "Feature",
+          "mention": "A/B Tests allows any SMS mailings to be tested against other versions",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS",
+          "type": "Module",
+          "mention": "SMS (Short Message Service) mailings",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Template Form",
+          "type": "DataObject",
+          "mention": "On an SMS (Short Message Service) template form",
+          "confidence": "high"
+        },
+        {
+          "name": "A/B Tests Tab",
+          "type": "Sub-module",
+          "mention": "under the A/B Tests tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Allow A/B Testing",
+          "type": "Setting",
+          "mention": "a single checkbox labeled: Allow A/B Testing",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage of Recipients Field",
+          "type": "Field",
+          "mention": "enter a desired percentage of recipients to conduct the A/B Test on",
+          "confidence": "high"
+        },
+        {
+          "name": "Winner Selection Field",
+          "type": "Field",
+          "mention": "Beneath the percentage field is the Winner Selection field",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual",
+          "type": "Setting",
+          "mention": "The following sections are available: Manual",
+          "confidence": "high"
+        },
+        {
+          "name": "Highest Click Rate",
+          "type": "Setting",
+          "mention": "Highest Click Rate",
+          "confidence": "high"
+        },
+        {
+          "name": "Leads",
+          "type": "Setting",
+          "mention": "Leads",
+          "confidence": "high"
+        },
+        {
+          "name": "Quotations",
+          "type": "Setting",
+          "mention": "Quotations",
+          "confidence": "high"
+        },
+        {
+          "name": "Revenues",
+          "type": "Setting",
+          "mention": "Revenues",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Final On Field",
+          "type": "Field",
+          "mention": "the Send Final On field is listed",
+          "confidence": "high"
+        },
+        {
+          "name": "Create an Alternate Version",
+          "type": "Action",
+          "mention": "clicking the Create an Alternate Version button",
+          "confidence": "high"
+        },
+        {
+          "name": "Winning Mailing Variation",
+          "type": "Concept",
+          "mention": "Odoo sends that winning mailing variation to the remaining recipients",
+          "confidence": "high"
+        },
+        {
+          "name": "Campaign",
+          "type": "DataObject",
+          "mention": "other versions within the same campaign",
+          "confidence": "high"
+        },
+        {
+          "name": "Mailing Variation",
+          "type": "DataObject",
+          "mention": "the winning mailing variation is based on the criteria selected",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "A/B Tests",
+          "relation": "BELONGS_TO",
+          "target": "SMS",
+          "evidence": "A/B Tests allows any SMS mailings to be tested against other versions"
+        },
+        {
+          "source": "A/B Tests",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo — A/B Tests"
+        },
+        {
+          "source": "SMS Template Form",
+          "relation": "CONTAINS",
+          "target": "A/B Tests Tab",
+          "evidence": "On an SMS template form, under the A/B Tests tab"
+        },
+        {
+          "source": "A/B Tests Tab",
+          "relation": "CONTAINS",
+          "target": "Allow A/B Testing",
+          "evidence": "there's only a single checkbox labeled: Allow A/B Testing"
+        },
+        {
+          "source": "A/B Tests Tab",
+          "relation": "CONTAINS",
+          "target": "Percentage of Recipients Field",
+          "evidence": "enter a desired percentage of recipients to conduct the A/B Test on"
+        },
+        {
+          "source": "A/B Tests Tab",
+          "relation": "CONTAINS",
+          "target": "Winner Selection Field",
+          "evidence": "Beneath the percentage field is the Winner Selection field"
+        },
+        {
+          "source": "A/B Tests Tab",
+          "relation": "CONTAINS",
+          "target": "Send Final On Field",
+          "evidence": "the Send Final On field is listed"
+        },
+        {
+          "source": "Allow A/B Testing",
+          "relation": "ENABLES",
+          "target": "Percentage of Recipients Field",
+          "evidence": "When clicked, a series of other options appear"
+        },
+        {
+          "source": "Allow A/B Testing",
+          "relation": "ENABLES",
+          "target": "Winner Selection Field",
+          "evidence": "When clicked, a series of other options appear"
+        },
+        {
+          "source": "Allow A/B Testing",
+          "relation": "ENABLES",
+          "target": "Send Final On Field",
+          "evidence": "When clicked, a series of other options appear"
+        },
+        {
+          "source": "Winner Selection Field",
+          "relation": "CONTAINS",
+          "target": "Manual",
+          "evidence": "The following sections are available: Manual"
+        },
+        {
+          "source": "Winner Selection Field",
+          "relation": "CONTAINS",
+          "target": "Highest Click Rate",
+          "evidence": "The following sections are available: Highest Click Rate"
+        },
+        {
+          "source": "Winner Selection Field",
+          "relation": "CONTAINS",
+          "target": "Leads",
+          "evidence": "The following sections are available: Leads"
+        },
+        {
+          "source": "Winner Selection Field",
+          "relation": "CONTAINS",
+          "target": "Quotations",
+          "evidence": "The following sections are available: Quotations"
+        },
+        {
+          "source": "Winner Selection Field",
+          "relation": "CONTAINS",
+          "target": "Revenues",
+          "evidence": "The following sections are available: Revenues"
+        },
+        {
+          "source": "Send Final On Field",
+          "relation": "ENABLES",
+          "target": "Winning Mailing Variation",
+          "evidence": "Odoo uses as a deadline to determine the winning mailing variation"
+        },
+        {
+          "source": "Winner Selection Field",
+          "relation": "GOVERNED_BY",
+          "target": "Winning Mailing Variation",
+          "evidence": "the winning mailing variation is based on the criteria selected in the Winner Selection field"
+        },
+        {
+          "source": "Create an Alternate Version",
+          "relation": "PRODUCES",
+          "target": "Mailing Variation",
+          "evidence": "Quickly create different versions of the mailing to add to the A/B Test by clicking the Create an Alternate Version button"
+        },
+        {
+          "source": "A/B Tests",
+          "relation": "RELATED_TO",
+          "target": "Campaign",
+          "evidence": "other versions within the same campaign"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GENERATES",
+          "target": "Winning Mailing Variation",
+          "evidence": "Odoo sends that winning mailing variation to the remaining recipients"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "campaigns-page",
+    "heading": "Campaigns page",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Marketing",
+          "type": "Module",
+          "mention": "SMS Marketing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Campaigns page",
+          "type": "Sub-module",
+          "mention": "Campaigns page",
+          "confidence": "high"
+        },
+        {
+          "name": "Campaign",
+          "type": "DataObject",
+          "mention": "each campaign displays various information",
+          "confidence": "high"
+        },
+        {
+          "name": "Mailing",
+          "type": "DataObject",
+          "mention": "mailings associated with that campaign",
+          "confidence": "high"
+        },
+        {
+          "name": "Number of Emails",
+          "type": "Field",
+          "mention": "number of emails",
+          "confidence": "high"
+        },
+        {
+          "name": "Number of Social Posts",
+          "type": "Field",
+          "mention": "social posts",
+          "confidence": "high"
+        },
+        {
+          "name": "Number of SMSs",
+          "type": "Field",
+          "mention": "SMSs",
+          "confidence": "high"
+        },
+        {
+          "name": "Number of Push Notifications",
+          "type": "Field",
+          "mention": "push notifications",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SMS Marketing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo ... SMS Marketing app"
+        },
+        {
+          "source": "Campaigns page",
+          "relation": "IS_PART_OF",
+          "target": "SMS Marketing",
+          "evidence": "click Campaigns in the header menu of the SMS Marketing app"
+        },
+        {
+          "source": "Campaigns page",
+          "relation": "CONTAINS",
+          "target": "Campaign",
+          "evidence": "On the Campaigns page, each campaign displays various information"
+        },
+        {
+          "source": "Campaign",
+          "relation": "CONTAINS",
+          "target": "Mailing",
+          "evidence": "mailings associated with that campaign"
+        },
+        {
+          "source": "Campaign",
+          "relation": "CONTAINS",
+          "target": "Number of Emails",
+          "evidence": "number of emails"
+        },
+        {
+          "source": "Campaign",
+          "relation": "CONTAINS",
+          "target": "Number of Social Posts",
+          "evidence": "social posts"
+        },
+        {
+          "source": "Campaign",
+          "relation": "CONTAINS",
+          "target": "Number of SMSs",
+          "evidence": "SMSs"
+        },
+        {
+          "source": "Campaign",
+          "relation": "CONTAINS",
+          "target": "Number of Push Notifications",
+          "evidence": "push notifications"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "campaign-templates",
+    "heading": "Campaign templates",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Campaign Templates",
+          "type": "Module",
+          "mention": "Title: Campaign templates",
+          "confidence": "high"
+        },
+        {
+          "name": "Campaign Template Form",
+          "type": "DataObject",
+          "mention": "Odoo reveals a blank campaign template form to fill out",
+          "confidence": "high"
+        },
+        {
+          "name": "Send New Mailing",
+          "type": "Action",
+          "mention": "the options to Send New Mailing",
+          "confidence": "high"
+        },
+        {
+          "name": "Send SMS",
+          "type": "Action",
+          "mention": "Send SMS",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Social Post",
+          "type": "Action",
+          "mention": "Send Social Post",
+          "confidence": "high"
+        },
+        {
+          "name": "Push Notifications",
+          "type": "Action",
+          "mention": "Push Notifications are available above the template form",
+          "confidence": "high"
+        },
+        {
+          "name": "Analytical Smart Buttons",
+          "type": "Feature",
+          "mention": "there are various analytical smart buttons",
+          "confidence": "high"
+        },
+        {
+          "name": "Engagement",
+          "type": "Report",
+          "mention": "in-depth metrics related to that specific topic (e.g. Engagement)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Opportunities",
+          "type": "Report",
+          "mention": "in-depth metrics related to that specific topic (e.g. Opportunities)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Campaign Name",
+          "type": "Field",
+          "mention": "there are fields for Campaign Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Responsible",
+          "type": "Field",
+          "mention": "fields for Campaign Name and Responsible",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags",
+          "type": "Field",
+          "mention": "Odoo also allows for various Tags to be added",
+          "confidence": "high"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Click Create to create a new campaign",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Campaign Templates",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Campaign templates"
+        },
+        {
+          "source": "Campaign Template Form",
+          "relation": "BELONGS_TO",
+          "target": "Campaign Templates",
+          "evidence": "Odoo reveals a blank campaign template form to fill out"
+        },
+        {
+          "source": "Create",
+          "relation": "PRODUCES",
+          "target": "Campaign Template Form",
+          "evidence": "Click Create to create a new campaign, and Odoo reveals a blank campaign template form"
+        },
+        {
+          "source": "Campaign Template Form",
+          "relation": "CONTAINS",
+          "target": "Campaign Name",
+          "evidence": "Beneath the smart buttons, are fields for Campaign Name and Responsible"
+        },
+        {
+          "source": "Campaign Template Form",
+          "relation": "CONTAINS",
+          "target": "Responsible",
+          "evidence": "Beneath the smart buttons, are fields for Campaign Name and Responsible"
+        },
+        {
+          "source": "Campaign Template Form",
+          "relation": "CONTAINS",
+          "target": "Tags",
+          "evidence": "Odoo also allows for various Tags to be added"
+        },
+        {
+          "source": "Campaign Template Form",
+          "relation": "CONTAINS",
+          "target": "Analytical Smart Buttons",
+          "evidence": "At the top of the template, there are various analytical smart buttons"
+        },
+        {
+          "source": "Analytical Smart Buttons",
+          "relation": "GENERATES",
+          "target": "Engagement",
+          "evidence": "When clicked, Odoo reveals in-depth metrics related to that specific topic (e.g. Engagement)"
+        },
+        {
+          "source": "Analytical Smart Buttons",
+          "relation": "GENERATES",
+          "target": "Opportunities",
+          "evidence": "When clicked, Odoo reveals in-depth metrics related to that specific topic (e.g. Opportunities)"
+        },
+        {
+          "source": "Send New Mailing",
+          "relation": "IS_PART_OF",
+          "target": "Campaign Templates",
+          "evidence": "the options to Send New Mailing are available above the template form"
+        },
+        {
+          "source": "Send SMS",
+          "relation": "IS_PART_OF",
+          "target": "Campaign Templates",
+          "evidence": "Send SMS are available above the template form"
+        },
+        {
+          "source": "Send Social Post",
+          "relation": "IS_PART_OF",
+          "target": "Campaign Templates",
+          "evidence": "Send Social Post are available above the template form"
+        },
+        {
+          "source": "Push Notifications",
+          "relation": "IS_PART_OF",
+          "target": "Campaign Templates",
+          "evidence": "Push Notifications are available above the template form"
+        },
+        {
+          "source": "Send New Mailing",
+          "relation": "PRODUCES",
+          "target": "Campaign Template Form",
+          "evidence": "Whenever one of those communication options is added to the campaign, Odoo will create a new corresponding tab on the template form"
+        },
+        {
+          "source": "Send SMS",
+          "relation": "PRODUCES",
+          "target": "Campaign Template Form",
+          "evidence": "Whenever one of those communication options is added to the campaign, Odoo will create a new corresponding tab on the template form"
+        },
+        {
+          "source": "Send Social Post",
+          "relation": "PRODUCES",
+          "target": "Campaign Template Form",
+          "evidence": "Whenever one of those communication options is added to the campaign, Odoo will create a new corresponding tab on the template form"
+        },
+        {
+          "source": "Push Notifications",
+          "relation": "PRODUCES",
+          "target": "Campaign Template Form",
+          "evidence": "Whenever one of those communication options is added to the campaign, Odoo will create a new corresponding tab on the template form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sending-smss-through-the-contacts-app",
+    "heading": "Sending SMSs through the Contacts app",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts",
+          "type": "Module",
+          "mention": "Contacts app",
+          "confidence": "high"
+        },
+        {
+          "name": "Send SMS",
+          "type": "Action",
+          "mention": "select Send SMS",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Icon",
+          "type": "Feature",
+          "mention": "click on the SMS icon on the contact form",
+          "confidence": "high"
+        },
+        {
+          "name": "Contact Form",
+          "type": "DataObject",
+          "mention": "contact's form",
+          "confidence": "high"
+        },
+        {
+          "name": "Phone Number",
+          "type": "Field",
+          "mention": "next to the Phone Number field",
+          "confidence": "high"
+        },
+        {
+          "name": "List View",
+          "type": "Feature",
+          "mention": "choose the List View",
+          "confidence": "high"
+        },
+        {
+          "name": "Action Menu",
+          "type": "Feature",
+          "mention": "under Action, select Send SMS",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contact",
+          "type": "Actor",
+          "mention": "select the desired contact in the database",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Mailing",
+          "type": "DataObject",
+          "mention": "SMS (Short Message Service) mailings",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Contacts",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo ... Contacts app"
+        },
+        {
+          "source": "Contacts",
+          "relation": "CONTAINS",
+          "target": "Contact Form",
+          "evidence": "navigate to the Contacts app, select the desired contact in the database"
+        },
+        {
+          "source": "Contacts",
+          "relation": "CONTAINS",
+          "target": "List View",
+          "evidence": "navigate to the main Contacts app main dashboard, choose the List View"
+        },
+        {
+          "source": "Contacts",
+          "relation": "CONTAINS",
+          "target": "Action Menu",
+          "evidence": "under Action, select Send SMS"
+        },
+        {
+          "source": "Contact Form",
+          "relation": "CONTAINS",
+          "target": "SMS Icon",
+          "evidence": "click on the SMS icon on the contact form"
+        },
+        {
+          "source": "Contact Form",
+          "relation": "CONTAINS",
+          "target": "Phone Number",
+          "evidence": "SMS icon on the contact form (next to the Phone Number field)"
+        },
+        {
+          "source": "SMS Icon",
+          "relation": "ENABLES",
+          "target": "Send SMS",
+          "evidence": "click on the SMS icon on the contact form ... to send an SMS in this fashion"
+        },
+        {
+          "source": "Action Menu",
+          "relation": "CONTAINS",
+          "target": "Send SMS",
+          "evidence": "under Action, select Send SMS"
+        },
+        {
+          "source": "Send SMS",
+          "relation": "PRODUCES",
+          "target": "SMS Mailing",
+          "evidence": "Sending SMS (Short Message Service) mailings directly through a contact's form"
+        },
+        {
+          "source": "List View",
+          "relation": "ENABLES",
+          "target": "Send SMS",
+          "evidence": "choose the List View, and select all the desired contacts ... select Send SMS"
+        },
+        {
+          "source": "SMS Icon",
+          "relation": "IS_PART_OF",
+          "target": "Contact Form",
+          "evidence": "SMS icon on the contact form (next to the Phone Number field)"
+        },
+        {
+          "source": "Send SMS",
+          "relation": "APPLIES_TO",
+          "target": "Contact",
+          "evidence": "send a message to multiple contacts at once"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-up-sms-templates-for-future-use",
+    "heading": "Set up SMS templates for future use",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Templates",
+          "type": "Feature",
+          "mention": "SMS Templates",
+          "confidence": "high"
+        },
+        {
+          "name": "Developer Mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "high"
+        },
+        {
+          "name": "Developer Tools",
+          "type": "Sub-module",
+          "mention": "Developer Tools section",
+          "confidence": "high"
+        },
+        {
+          "name": "Technical",
+          "type": "Sub-module",
+          "mention": "Technical",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Templates Dashboard",
+          "type": "DataObject",
+          "mention": "SMS Templates dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Template",
+          "type": "DataObject",
+          "mention": "SMS (Short Message Service) templates",
+          "confidence": "high"
+        },
+        {
+          "name": "List View",
+          "type": "Feature",
+          "mention": "default List view",
+          "confidence": "high"
+        },
+        {
+          "name": "Template Name",
+          "type": "Field",
+          "mention": "each template's name",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipients",
+          "type": "Field",
+          "mention": "to which recipients it applies",
+          "confidence": "high"
+        },
+        {
+          "name": "Bug Icon",
+          "type": "Feature",
+          "mention": "bug icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Marketing Campaign",
+          "type": "Concept",
+          "mention": "future marketing campaigns",
+          "confidence": "medium"
+        },
+        {
+          "name": "Short Message Service",
+          "type": "Concept",
+          "mention": "SMS (Short Message Service)",
+          "confidence": "high"
+        },
+        {
+          "name": "Activate the Developer Mode",
+          "type": "Action",
+          "mention": "click Activate the Developer Mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Create SMS Template",
+          "type": "Action",
+          "mention": "created from scratch",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit SMS Template",
+          "type": "Action",
+          "mention": "SMS templates can be edited",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "navigating to the main Odoo dashboard... and select the Settings app"
+        },
+        {
+          "source": "Developer Tools",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "scroll down to the Developer Tools section"
+        },
+        {
+          "source": "Developer Mode",
+          "relation": "IS_PART_OF",
+          "target": "Developer Tools",
+          "evidence": "Developer Tools section, and click Activate the Developer Mode"
+        },
+        {
+          "source": "Technical",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "return to the Settings app and, in the now-visible header menus at the top, choose Technical"
+        },
+        {
+          "source": "SMS Templates",
+          "relation": "IS_PART_OF",
+          "target": "Technical",
+          "evidence": "choose Technical --> SMS Templates"
+        },
+        {
+          "source": "Activate the Developer Mode",
+          "relation": "ENABLES",
+          "target": "SMS Templates",
+          "evidence": "activate developer mode... to begin setting up SMS templates"
+        },
+        {
+          "source": "Developer Mode",
+          "relation": "ENABLES",
+          "target": "Technical",
+          "evidence": "in the now-visible header menus at the top, choose Technical"
+        },
+        {
+          "source": "SMS Templates Dashboard",
+          "relation": "CONTAINS",
+          "target": "SMS Template",
+          "evidence": "Odoo reveals an entire page of SMS templates"
+        },
+        {
+          "source": "SMS Templates Dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "List View",
+          "evidence": "The default List view showcases each template's name"
+        },
+        {
+          "source": "SMS Template",
+          "relation": "CONTAINS",
+          "target": "Template Name",
+          "evidence": "showcases each template's name"
+        },
+        {
+          "source": "SMS Template",
+          "relation": "CONTAINS",
+          "target": "Recipients",
+          "evidence": "to which recipients it applies"
+        },
+        {
+          "source": "Bug Icon",
+          "relation": "RELATED_TO",
+          "target": "Developer Mode",
+          "evidence": "bug icon indicates that developer mode is currently active"
+        },
+        {
+          "source": "SMS Template",
+          "relation": "RELATED_TO",
+          "target": "Marketing Campaign",
+          "evidence": "setting up SMS templates for future marketing campaigns"
+        },
+        {
+          "source": "SMS Template",
+          "relation": "EQUIVALENT_TO",
+          "target": "Short Message Service",
+          "evidence": "SMS (Short Message Service) templates"
+        },
+        {
+          "source": "Edit SMS Template",
+          "relation": "PERFORMED_BY",
+          "target": "SMS Templates Dashboard",
+          "evidence": "SMS templates can be edited or created from scratch"
+        },
+        {
+          "source": "Create SMS Template",
+          "relation": "PERFORMED_BY",
+          "target": "SMS Templates Dashboard",
+          "evidence": "SMS templates can be edited or created from scratch"
+        },
+        {
+          "source": "Create SMS Template",
+          "relation": "PRODUCES",
+          "target": "SMS Template",
+          "evidence": "created from scratch"
+        },
+        {
+          "source": "SMS Templates",
+          "relation": "REQUIRES",
+          "target": "Developer Mode",
+          "evidence": "In order to set up SMS Templates for future use, activate developer mode"
+        }
+      ]
+    }
+  }
+]

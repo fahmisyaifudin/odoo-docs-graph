@@ -1,0 +1,430 @@
+[
+  {
+    "section_id": "batch-payments",
+    "heading": "Batch payments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch payments",
+          "type": "Feature",
+          "mention": "Batch payments",
+          "confidence": "high"
+        },
+        {
+          "name": "deposit slip",
+          "type": "Report",
+          "mention": "deposit slip",
+          "confidence": "high"
+        },
+        {
+          "name": "payment file",
+          "type": "Report",
+          "mention": "payment file",
+          "confidence": "high"
+        },
+        {
+          "name": "batch reference",
+          "type": "DataObject",
+          "mention": "batch reference",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciliation",
+          "type": "Workflow",
+          "mention": "reconciliation",
+          "confidence": "medium"
+        },
+        {
+          "name": "SEPA Direct Debit payments",
+          "type": "Feature",
+          "mention": "SEPA Direct Debit payments",
+          "confidence": "high"
+        },
+        {
+          "name": "cash payments",
+          "type": "Feature",
+          "mention": "cash payments",
+          "confidence": "high"
+        },
+        {
+          "name": "checks",
+          "type": "Feature",
+          "mention": "checks",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA",
+          "type": "Standard",
+          "mention": "SEPA",
+          "confidence": "high"
+        },
+        {
+          "name": "NACHA",
+          "type": "Standard",
+          "mention": "NACHA",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Batch payments",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Batch payments"
+        },
+        {
+          "source": "Batch payments",
+          "relation": "GENERATES",
+          "target": "deposit slip",
+          "evidence": "...generating a detailed deposit slip..."
+        },
+        {
+          "source": "Batch payments",
+          "relation": "GENERATES",
+          "target": "payment file",
+          "evidence": "...or payment file..."
+        },
+        {
+          "source": "deposit slip",
+          "relation": "CONTAINS",
+          "target": "batch reference",
+          "evidence": "...with a batch reference."
+        },
+        {
+          "source": "payment file",
+          "relation": "CONTAINS",
+          "target": "batch reference",
+          "evidence": "...with a batch reference."
+        },
+        {
+          "source": "batch reference",
+          "relation": "SUPPORTS",
+          "target": "reconciliation",
+          "evidence": "This reference can be used during reconciliation..."
+        },
+        {
+          "source": "Batch payments",
+          "relation": "ENABLES",
+          "target": "SEPA Direct Debit payments",
+          "evidence": "This feature is particularly useful for submitting SEPA Direct Debit payments"
+        },
+        {
+          "source": "Batch payments",
+          "relation": "ENABLES",
+          "target": "cash payments",
+          "evidence": "...depositing cash payments or checks"
+        },
+        {
+          "source": "Batch payments",
+          "relation": "ENABLES",
+          "target": "checks",
+          "evidence": "...depositing cash payments or checks"
+        },
+        {
+          "source": "SEPA",
+          "relation": "COMPLIES_WITH",
+          "target": "SEPA Direct Debit payments",
+          "evidence": "...SEPA Direct Debit payments"
+        },
+        {
+          "source": "NACHA",
+          "relation": "COMPLIES_WITH",
+          "target": "payment file",
+          "evidence": "...generating outgoing payment files, such as SEPA or NACHA"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Payments",
+          "type": "Feature",
+          "mention": "Customer Payments section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batch Payments",
+          "type": "Feature",
+          "mention": "Batch Payments",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Customer Payments",
+          "evidence": "Settings, scroll down to the Customer Payments section"
+        },
+        {
+          "source": "Customer Payments",
+          "relation": "HAS_FEATURE",
+          "target": "Batch Payments",
+          "evidence": "Customer Payments section, and enable Batch Payments"
+        },
+        {
+          "source": "Batch Payments",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "enable Batch Payments"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "batch-creation",
+    "heading": "Batch creation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "Customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payments",
+          "type": "DataObject",
+          "mention": "Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Create batch",
+          "type": "Action",
+          "mention": "Create batch",
+          "confidence": "high"
+        },
+        {
+          "name": "Create batch payment",
+          "type": "Action",
+          "mention": "Create batch payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batch payment",
+          "type": "DataObject",
+          "mention": "batch payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Print",
+          "type": "Action",
+          "mention": "Print",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch Payments",
+          "type": "DataObject",
+          "mention": "Batch Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "payment",
+          "type": "DataObject",
+          "mention": "payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Method",
+          "type": "Feature",
+          "mention": "Payment Method",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Method Line",
+          "type": "Feature",
+          "mention": "Payment Method Line",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Customers",
+          "evidence": "Go to Accounting --> Customers"
+        },
+        {
+          "source": "Customers",
+          "relation": "CONTAINS",
+          "target": "Payments",
+          "evidence": "Customers --> Payments."
+        },
+        {
+          "source": "Payments",
+          "relation": "CONTAINS",
+          "target": "Batch Payments",
+          "evidence": "To view existing batch payments, go to Accounting --> Customers --> Batch Payments."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Batch payment",
+          "evidence": "Product: Odoo, Title: Batch creation"
+        },
+        {
+          "source": "Payments",
+          "relation": "TRIGGERED_BY",
+          "target": "Create batch",
+          "evidence": "Click Create batch or... and select Create batch payment."
+        },
+        {
+          "source": "Batch payment",
+          "relation": "CONFIGURED_BY",
+          "target": "Validate",
+          "evidence": "click Validate to finalize the batch."
+        },
+        {
+          "source": "Batch payment",
+          "relation": "CONFIGURED_BY",
+          "target": "Add a line",
+          "evidence": "click Add a line and select the missing payments"
+        },
+        {
+          "source": "Batch payment",
+          "relation": "HAS_REPORT",
+          "target": "Print",
+          "evidence": "Click Print to download a list of the included payments."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bank-reconciliation",
+    "heading": "Bank reconciliation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank reconciliation",
+          "type": "Module",
+          "mention": "Bank reconciliation",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank transactions",
+          "type": "DataObject",
+          "mention": "bank transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batch payment",
+          "type": "DataObject",
+          "mention": "batch payment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank reconciliation",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Bank reconciliation"
+        },
+        {
+          "source": "Bank reconciliation",
+          "relation": "CONTAINS",
+          "target": "Bank transactions",
+          "evidence": "Once the bank transactions have been created"
+        },
+        {
+          "source": "Bank reconciliation",
+          "relation": "BELONGS_TO",
+          "target": "Batch payment",
+          "evidence": "reconcile them with the batch payment"
+        },
+        {
+          "source": "Bank reconciliation",
+          "relation": "SEE_ALSO",
+          "target": "../payments",
+          "evidence": ".. seealso::\n   - ../payments"
+        },
+        {
+          "source": "Bank reconciliation",
+          "relation": "SEE_ALSO",
+          "target": "batch_sdd",
+          "evidence": ".. seealso::\n   - batch_sdd"
+        }
+      ]
+    }
+  }
+]

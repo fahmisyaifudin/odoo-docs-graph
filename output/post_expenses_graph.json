@@ -1,0 +1,329 @@
+[
+  {
+    "section_id": "post-expenses",
+    "heading": "Post expenses",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses app",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Reports",
+          "type": "Sub-module",
+          "mention": "Expense Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Post expenses",
+          "type": "Workflow",
+          "mention": "Post expenses",
+          "confidence": "high"
+        },
+        {
+          "name": "post expense reports to accounting journal",
+          "type": "Action",
+          "mention": "post expense reports to accounting journal",
+          "confidence": "high"
+        },
+        {
+          "name": "All Reports dashboard",
+          "type": "Report",
+          "mention": "All Reports dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Approved",
+          "type": "Setting",
+          "mention": "Approved checkbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accountant",
+          "type": "Permission",
+          "mention": "Accounting: *Accountant* or *Adviser*",
+          "confidence": "high"
+        },
+        {
+          "name": "Adviser",
+          "type": "Permission",
+          "mention": "Accounting: *Accountant* or *Adviser*",
+          "confidence": "high"
+        },
+        {
+          "name": "Manager",
+          "type": "Permission",
+          "mention": "Expenses: *Manager*",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Expenses app"
+        },
+        {
+          "source": "Expense Reports",
+          "relation": "IS_PART_OF",
+          "target": "Expenses app",
+          "evidence": "Expenses app --> Expense Reports"
+        },
+        {
+          "source": "Post expenses",
+          "relation": "CONTAINS",
+          "target": "post expense reports to accounting journal",
+          "evidence": "Post expenses, post expense reports to accounting journal"
+        },
+        {
+          "source": "post expense reports to accounting journal",
+          "relation": "REQUIRES",
+          "target": "Accountant",
+          "evidence": "post expense reports to accounting journal, Accounting: *Accountant* or *Adviser*"
+        },
+        {
+          "source": "post expense reports to accounting journal",
+          "relation": "REQUIRES",
+          "target": "Adviser",
+          "evidence": "post expense reports to accounting journal, Accounting: *Accountant* or *Adviser*"
+        },
+        {
+          "source": "post expense reports to accounting journal",
+          "relation": "REQUIRES",
+          "target": "Manager",
+          "evidence": "post expense reports to accounting journal, Expenses: *Manager*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "post-individual-reports",
+    "heading": "Post individual reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses app",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Reports",
+          "type": "Module",
+          "mention": "Expense Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Post Journal Entries",
+          "type": "Action",
+          "mention": "Post Journal Entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Report In Next Payslip",
+          "type": "Action",
+          "mention": "Report In Next Payslip",
+          "confidence": "high"
+        },
+        {
+          "name": "Refuse",
+          "type": "Action",
+          "mention": "Refuse",
+          "confidence": "high"
+        },
+        {
+          "name": "Reset to Draft",
+          "type": "Action",
+          "mention": "Reset to Draft",
+          "confidence": "high"
+        },
+        {
+          "name": "expense report",
+          "type": "DataObject",
+          "mention": "the expense report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journal field",
+          "type": "Field",
+          "mention": "Journal field",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Entry",
+          "type": "DataObject",
+          "mention": "Journal Entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journal Entry smart button",
+          "type": "Feature",
+          "mention": "Journal Entry smart button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Post Journal Entries",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click Post Journal Entries to post the report."
+        },
+        {
+          "source": "Post Journal Entries",
+          "relation": "PRODUCES",
+          "target": "Journal Entry",
+          "evidence": "After posting the expenses to an accounting journal, a Journal Entry smart button appears..."
+        },
+        {
+          "source": "Expense Reports",
+          "relation": "CONTAINS",
+          "target": "expense report",
+          "evidence": "navigate to Expenses app --> Expense Reports, and click on an individual report"
+        },
+        {
+          "source": "Expense Reports",
+          "relation": "HAS_FEATURE",
+          "target": "Journal Entry smart button",
+          "evidence": "a Journal Entry smart button appears at the top of the screen."
+        },
+        {
+          "source": "expense report",
+          "relation": "CONTAINS",
+          "target": "Journal field",
+          "evidence": "The accounting journal the expenses are posted to is listed in the Journal field of the expense report."
+        },
+        {
+          "source": "Journal Entry smart button",
+          "relation": "ENABLES",
+          "target": "Action",
+          "evidence": "Click the Journal Entry smart button, and the details for the journal entry appear..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "post-multiple-reports",
+    "heading": "Post multiple reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses app",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Reports",
+          "type": "DataObject",
+          "mention": "Expense Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Post Entries",
+          "type": "Action",
+          "mention": "Post Entries button",
+          "confidence": "high"
+        },
+        {
+          "name": "checkbox",
+          "type": "Action",
+          "mention": "checkbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee column",
+          "type": "Field",
+          "mention": "Employee column",
+          "confidence": "medium"
+        },
+        {
+          "name": "list",
+          "type": "DataObject",
+          "mention": "list",
+          "confidence": "medium"
+        },
+        {
+          "name": "Approved",
+          "type": "Setting",
+          "mention": "status of Approved",
+          "confidence": "medium"
+        },
+        {
+          "name": "filters",
+          "type": "Setting",
+          "mention": "filters",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses app",
+          "relation": "CONTAINS",
+          "target": "Expense Reports",
+          "evidence": "navigate to Expenses app --> Expense Reports"
+        },
+        {
+          "source": "Expense Reports",
+          "relation": "HAS_FEATURE",
+          "target": "Post Entries",
+          "evidence": "the Post Entries button"
+        },
+        {
+          "source": "Approved",
+          "relation": "APPLIES_TO",
+          "target": "Expense Reports",
+          "evidence": "expense reports with a status of Approved"
+        },
+        {
+          "source": "Post Entries",
+          "relation": "REQUIRES",
+          "target": "Approved",
+          "evidence": "Only expense reports with a status of Approved are able to post the expenses"
+        },
+        {
+          "source": "Employee column",
+          "relation": "IS_PART_OF",
+          "target": "list",
+          "evidence": "tick the checkbox next to the Employee column title to select all the Approved reports in the list"
+        },
+        {
+          "source": "checkbox",
+          "relation": "ENABLES",
+          "target": "Post Entries",
+          "evidence": "select the reports to approve by ticking the checkbox"
+        },
+        {
+          "source": "filters",
+          "relation": "ENABLES",
+          "target": "checkbox",
+          "evidence": "adjust the filters on the left side, so that only the Approved checkbox is ticked. Next, tick the checkbox"
+        }
+      ]
+    }
+  }
+]

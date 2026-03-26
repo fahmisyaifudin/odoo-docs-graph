@@ -1,0 +1,800 @@
+[
+  {
+    "section_id": "reinvoice-expenses",
+    "heading": "Reinvoice expenses",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reinvoice expenses",
+          "type": "Feature",
+          "mention": "Title: Reinvoice expenses",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense",
+          "type": "DataObject",
+          "mention": "log an expense",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "sales order, SO (Sales Order)",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Report",
+          "type": "DataObject",
+          "mention": "expense report",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Entry",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Project",
+          "type": "DataObject",
+          "mention": "customer projects",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoiced",
+          "confidence": "medium"
+        },
+        {
+          "name": "User",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manager",
+          "type": "Actor",
+          "mention": "managers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting Department",
+          "type": "Actor",
+          "mention": "accounting department",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Access Rights",
+          "type": "Permission",
+          "mention": "access rights",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reinvoice expenses",
+          "relation": "ENABLES",
+          "target": "Expense Report",
+          "evidence": "This is done by logging an expense ... and then creating an expense report"
+        },
+        {
+          "source": "Expense Report",
+          "relation": "TRIGGERED_BY",
+          "target": "Expense",
+          "evidence": "This is done by logging an expense ... and then creating an expense report"
+        },
+        {
+          "source": "Expense Report",
+          "relation": "RELATED_TO",
+          "target": "Sales Order",
+          "evidence": "expense report, referencing the corresponding sales order"
+        },
+        {
+          "source": "Expense Report",
+          "relation": "CONFIGURED_BY",
+          "target": "Access Rights",
+          "evidence": "only possible for users with the appropriate access rights"
+        },
+        {
+          "source": "Expense Report",
+          "relation": "GENERATES",
+          "target": "Journal Entry",
+          "evidence": "post the journal entries"
+        },
+        {
+          "source": "Sales Order",
+          "relation": "GENERATES",
+          "target": "Invoice",
+          "evidence": "When the SO (Sales Order) is invoiced"
+        },
+        {
+          "source": "Expense",
+          "relation": "RELATED_TO",
+          "target": "Customer Project",
+          "evidence": "If expenses are tracked on customer projects"
+        },
+        {
+          "source": "Customer",
+          "relation": "PERFORMED_BY",
+          "target": "Invoice",
+          "evidence": "the customer is charged for the expenses"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "setup",
+    "heading": "Setup",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses",
+          "type": "Module",
+          "mention": "Expenses",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expense Categories",
+          "type": "DataObject",
+          "mention": "Expense Categories",
+          "confidence": "high"
+        },
+        {
+          "name": "expense category",
+          "type": "DataObject",
+          "mention": "expense category",
+          "confidence": "high"
+        },
+        {
+          "name": "expense category form",
+          "type": "DataObject",
+          "mention": "expense category form",
+          "confidence": "medium"
+        },
+        {
+          "name": "INVOICING",
+          "type": "Feature",
+          "mention": "INVOICING",
+          "confidence": "medium"
+        },
+        {
+          "name": "Re-Invoice costs",
+          "type": "Feature",
+          "mention": "Re-Invoice costs",
+          "confidence": "high"
+        },
+        {
+          "name": "No",
+          "type": "Setting",
+          "mention": "No",
+          "confidence": "high"
+        },
+        {
+          "name": "At cost",
+          "type": "Setting",
+          "mention": "At cost",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales price",
+          "type": "Setting",
+          "mention": "Sales price",
+          "confidence": "high"
+        },
+        {
+          "name": "Cost",
+          "type": "Field",
+          "mention": "Cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales Price",
+          "type": "Field",
+          "mention": "Sales Price",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to Expenses app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Expense Categories",
+          "evidence": "Configuration --> Expense Categories"
+        },
+        {
+          "source": "Expense Categories",
+          "relation": "CONTAINS",
+          "target": "expense category",
+          "evidence": "Expense Categories. Click on an expense category"
+        },
+        {
+          "source": "expense category",
+          "relation": "IS_PART_OF",
+          "target": "expense category form",
+          "evidence": "Click on an expense category to view the expense category form"
+        },
+        {
+          "source": "expense category form",
+          "relation": "CONTAINS",
+          "target": "INVOICING",
+          "evidence": "Under the INVOICING section"
+        },
+        {
+          "source": "INVOICING",
+          "relation": "CONTAINS",
+          "target": "Re-Invoice costs",
+          "evidence": "Under the INVOICING section...Re-Invoice costs"
+        },
+        {
+          "source": "expense category",
+          "relation": "CONFIGURED_BY",
+          "target": "Re-Invoice costs",
+          "evidence": "specify the invoicing policy for each expense category"
+        },
+        {
+          "source": "Re-Invoice costs",
+          "relation": "CONTAINS",
+          "target": "No",
+          "evidence": "click the radio button next to the desired selection...No"
+        },
+        {
+          "source": "Re-Invoice costs",
+          "relation": "CONTAINS",
+          "target": "At cost",
+          "evidence": "click the radio button next to the desired selection...At cost"
+        },
+        {
+          "source": "Re-Invoice costs",
+          "relation": "CONTAINS",
+          "target": "Sales price",
+          "evidence": "click the radio button next to the desired selection...Sales price"
+        },
+        {
+          "source": "At cost",
+          "relation": "RELATED_TO",
+          "target": "Cost",
+          "evidence": "At cost: The expense category invoices expenses at the Cost"
+        },
+        {
+          "source": "Sales price",
+          "relation": "RELATED_TO",
+          "target": "Sales Price",
+          "evidence": "Sales price: The expense category invoices at the Sales Price"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "log-an-expense",
+    "heading": "Log an expense",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Log an expense",
+          "type": "Workflow",
+          "mention": "Title: Log an expense",
+          "confidence": "high"
+        },
+        {
+          "name": "expense",
+          "type": "DataObject",
+          "mention": "creating a new expense",
+          "confidence": "high"
+        },
+        {
+          "name": "SO",
+          "type": "DataObject",
+          "mention": "select the SO",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "Sales Order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer to Reinvoice",
+          "type": "Field",
+          "mention": "Customer to Reinvoice field",
+          "confidence": "high"
+        },
+        {
+          "name": "Analytic Distribution",
+          "type": "Field",
+          "mention": "Analytic Distribution",
+          "confidence": "high"
+        },
+        {
+          "name": "Projects",
+          "type": "Module",
+          "mention": "Projects app",
+          "confidence": "high"
+        },
+        {
+          "name": "Analytic pop-over window",
+          "type": "Module",
+          "mention": "Analytic pop-over window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Click Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage fields",
+          "type": "Field",
+          "mention": "Percentage fields",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Log an expense",
+          "relation": "CONTAINS",
+          "target": "expense",
+          "evidence": "Title: Log an expense, creating a new expense"
+        },
+        {
+          "source": "expense",
+          "relation": "HAS_FEATURE",
+          "target": "Customer to Reinvoice",
+          "evidence": "Customer to Reinvoice field"
+        },
+        {
+          "source": "expense",
+          "relation": "HAS_FEATURE",
+          "target": "Analytic Distribution",
+          "evidence": "Analytic Distribution"
+        },
+        {
+          "source": "Analytic Distribution",
+          "relation": "CONFIGURED_BY",
+          "target": "Projects",
+          "evidence": "options available are pulled from the Projects app"
+        },
+        {
+          "source": "Analytic pop-over window",
+          "relation": "CONTAINS",
+          "target": "Add a line",
+          "evidence": "Analytic pop-over window. Click Add a line"
+        },
+        {
+          "source": "Analytic Distribution",
+          "relation": "HAS_FEATURE",
+          "target": "Percentage fields",
+          "evidence": "Percentage fields"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-an-expense-report",
+    "heading": "Create an expense report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "expense report",
+          "type": "DataObject",
+          "mention": "expense report",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer to Reinvoice field",
+          "type": "Field",
+          "mention": "Customer to Reinvoice field",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "Sales Order",
+          "confidence": "high"
+        },
+        {
+          "name": "SO",
+          "type": "Concept",
+          "mention": "SO",
+          "confidence": "medium"
+        },
+        {
+          "name": "expenses",
+          "type": "Concept",
+          "mention": "expenses",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Customer to Reinvoice field",
+          "relation": "RELATED_TO",
+          "target": "Sales Order",
+          "evidence": "Selecting the proper SO (Sales Order) in the Customer to Reinvoice field..."
+        },
+        {
+          "source": "expense report",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo... Create an expense report"
+        },
+        {
+          "source": "expenses",
+          "relation": "BELONGS_TO",
+          "target": "expense report",
+          "evidence": "...each individual expense record being reinvoiced."
+        },
+        {
+          "source": "expense report",
+          "relation": "CONTAINS",
+          "target": "expenses",
+          "evidence": "...each individual expense record being reinvoiced."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "approve-and-post-expenses",
+    "heading": "Approve and post expenses",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Analytic Distribution section",
+          "type": "Sub-module",
+          "mention": "Analytic Distribution section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Analytic Distribution entry",
+          "type": "DataObject",
+          "mention": "Analytic Distribution entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "account",
+          "type": "Concept",
+          "mention": "accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "drop-down menu",
+          "type": "Field",
+          "mention": "drop-down menu",
+          "confidence": "low"
+        },
+        {
+          "name": "Approve",
+          "type": "Action",
+          "mention": "click Approve",
+          "confidence": "high"
+        },
+        {
+          "name": "expense report",
+          "type": "DataObject",
+          "mention": "expense report",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting department",
+          "type": "Actor",
+          "mention": "accounting department",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entry",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Post Journal Entries",
+          "type": "Action",
+          "mention": "click Post Journal Entries",
+          "confidence": "high"
+        },
+        {
+          "name": "SO (Sales Order)",
+          "type": "DataObject",
+          "mention": "SO (Sales Order)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "expense report",
+          "relation": "CONTAINS",
+          "target": "Analytic Distribution entry",
+          "evidence": "Before approving an expense report, ensure the Analytic Distribution section is populated for every relevant expense line."
+        },
+        {
+          "source": "Analytic Distribution section",
+          "relation": "CONTAINS",
+          "target": "Analytic Distribution entry",
+          "evidence": "Before approving an expense report, ensure the Analytic Distribution section is populated for every relevant expense line."
+        },
+        {
+          "source": "Analytic Distribution entry",
+          "relation": "IS_PART_OF",
+          "target": "Analytic Distribution section",
+          "evidence": "Before approving an expense report, ensure the Analytic Distribution section is populated for every relevant expense line."
+        },
+        {
+          "source": "Analytic Distribution entry",
+          "relation": "CONFIGURED_BY",
+          "target": "account",
+          "evidence": "If an Analytic Distribution entry is missing, assign the correct accounts from the drop-down menu"
+        },
+        {
+          "source": "Approve",
+          "relation": "PERFORMED_BY",
+          "target": "accounting department",
+          "evidence": "The accounting department is typically responsible for posting journal entries."
+        },
+        {
+          "source": "Post Journal Entries",
+          "relation": "PERFORMED_BY",
+          "target": "accounting department",
+          "evidence": "The accounting department is typically responsible for posting journal entries."
+        },
+        {
+          "source": "expense report",
+          "relation": "TRIGGERED_BY",
+          "target": "Approve",
+          "evidence": "The Approve button only appears after an expense report has been submitted."
+        },
+        {
+          "source": "expense report",
+          "relation": "GENERATES",
+          "target": "journal entry",
+          "evidence": "Once an expense report is approved, it can then be posted."
+        },
+        {
+          "source": "Post Journal Entries",
+          "relation": "PRODUCES",
+          "target": "journal entry",
+          "evidence": "To post expenses to an accounting journal, click Post Journal Entries."
+        },
+        {
+          "source": "journal entry",
+          "relation": "RELATED_TO",
+          "target": "SO (Sales Order)",
+          "evidence": "The SO (Sales Order) is only updated after the journal entries are posted."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoice-expenses",
+    "heading": "Invoice expenses",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice expenses",
+          "type": "Feature",
+          "mention": "Title: Invoice expenses",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense report",
+          "type": "DataObject",
+          "mention": "expense report",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "SO (Sales Order)",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Orders smart button",
+          "type": "Action",
+          "mention": "Sales Orders smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Invoice",
+          "type": "Action",
+          "mention": "Create Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Create invoices pop-up window",
+          "type": "Workflow",
+          "mention": "Create invoices pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Regular invoice",
+          "type": "Concept",
+          "mention": "Regular invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Down payment (percentage)",
+          "type": "Concept",
+          "mention": "Down payment (percentage)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Down payment (fixed amount)",
+          "type": "Concept",
+          "mention": "Down payment (fixed amount)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Draft",
+          "type": "Action",
+          "mention": "Create Draft",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice expenses",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Invoice expenses"
+        },
+        {
+          "source": "Invoice expenses",
+          "relation": "HAS_FEATURE",
+          "target": "Expense report",
+          "evidence": "After the expense report has been approved"
+        },
+        {
+          "source": "Expense report",
+          "relation": "GENERATES",
+          "target": "Sales Order",
+          "evidence": "the SO (Sales Order) is updated"
+        },
+        {
+          "source": "Expense report",
+          "relation": "CONTAINS",
+          "target": "Sales Order",
+          "evidence": "More than one SO (Sales Order) can be referenced on an expense report."
+        },
+        {
+          "source": "Sales Orders smart button",
+          "relation": "ENABLES",
+          "target": "Sales Order",
+          "evidence": "click the fa-money Sales Orders smart button to open the SO (Sales Order)"
+        },
+        {
+          "source": "Sales Order",
+          "relation": "CONTAINS",
+          "target": "Order Lines tab",
+          "evidence": "The expenses are listed in the SO (Sales Order) Order Lines tab."
+        },
+        {
+          "source": "Create Invoice",
+          "relation": "TRIGGERED_BY",
+          "target": "Sales Order",
+          "evidence": "Next, click Create Invoice"
+        },
+        {
+          "source": "Create Invoice",
+          "relation": "GENERATES",
+          "target": "Create invoices pop-up window",
+          "evidence": "and a Create invoices pop-up window appears."
+        },
+        {
+          "source": "Create invoices pop-up window",
+          "relation": "PRODUCES",
+          "target": "Regular invoice",
+          "evidence": "Select if the invoice is a Regular invoice"
+        },
+        {
+          "source": "Create invoices pop-up window",
+          "relation": "PRODUCES",
+          "target": "Down payment (percentage)",
+          "evidence": "or a Down payment (percentage)"
+        },
+        {
+          "source": "Create invoices pop-up window",
+          "relation": "PRODUCES",
+          "target": "Down payment (fixed amount)",
+          "evidence": "or a Down payment (fixed amount)"
+        },
+        {
+          "source": "Create Draft",
+          "relation": "PRODUCES",
+          "target": "draft invoice",
+          "evidence": "Doing so creates a draft invoice for the customer."
+        },
+        {
+          "source": "Confirm",
+          "relation": "PRODUCES",
+          "target": "invoice",
+          "evidence": "Click Confirm to confirm the invoice"
+        },
+        {
+          "source": "invoice",
+          "relation": "PERFORMED_BY",
+          "target": "Customer",
+          "evidence": "and the customer is invoiced for the expenses."
+        },
+        {
+          "source": "Invoice expenses",
+          "relation": "SEE_ALSO",
+          "target": "../../sales/sales/invoicing",
+          "evidence": ".. seealso:: ../../sales/sales/invoicing"
+        }
+      ]
+    }
+  }
+]

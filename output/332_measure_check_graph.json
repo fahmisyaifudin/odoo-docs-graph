@@ -1,0 +1,1188 @@
+[
+  {
+    "section_id": "measure-quality-check",
+    "heading": "Measure quality check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality",
+          "type": "Module",
+          "mention": "Quality",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure check",
+          "type": "Feature",
+          "mention": "Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "DataObject",
+          "mention": "quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "quality control point",
+          "type": "DataObject",
+          "mention": "quality control point",
+          "confidence": "medium"
+        },
+        {
+          "name": "QCP",
+          "type": "DataObject",
+          "mention": "QCP",
+          "confidence": "medium"
+        },
+        {
+          "name": "measurement",
+          "type": "DataObject",
+          "mention": "measurement",
+          "confidence": "medium"
+        },
+        {
+          "name": "tolerance",
+          "type": "Setting",
+          "mention": "tolerance",
+          "confidence": "high"
+        },
+        {
+          "name": "norm value",
+          "type": "Setting",
+          "mention": "norm",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Quality",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "In Odoo Quality"
+        },
+        {
+          "source": "Measure check",
+          "relation": "IS_PART_OF",
+          "target": "Quality",
+          "evidence": "In Odoo Quality, a Measure check is one of the quality check types"
+        },
+        {
+          "source": "Measure check",
+          "relation": "HAS_FEATURE",
+          "target": "quality check",
+          "evidence": "...can be selected when creating a new quality check"
+        },
+        {
+          "source": "quality check",
+          "relation": "BELONGS_TO",
+          "target": "quality control point",
+          "evidence": "...or quality control point (QCP)"
+        },
+        {
+          "source": "quality control point",
+          "relation": "EQUIVALENT_TO",
+          "target": "QCP",
+          "evidence": "...or quality control point (QCP)"
+        },
+        {
+          "source": "Measure check",
+          "relation": "PRODUCES",
+          "target": "measurement",
+          "evidence": "prompt users to measure...and record the measurement"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "tolerance",
+          "evidence": "For the quality check to pass, the recorded measurement must be within a certain tolerance"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "norm value",
+          "evidence": "...within a certain tolerance of a norm value"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-measure-quality-check",
+    "heading": "Create a Measure quality check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure quality check",
+          "type": "Workflow",
+          "mention": "Create a Measure quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "quality checks",
+          "type": "Concept",
+          "mention": "quality checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality control points",
+          "type": "Concept",
+          "mention": "quality control points",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Measure quality check",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Create a Measure quality check"
+        },
+        {
+          "source": "Measure quality check",
+          "relation": "SEE_ALSO",
+          "target": "quality checks",
+          "evidence": "see the documentation on quality checks"
+        },
+        {
+          "source": "Measure quality check",
+          "relation": "SEE_ALSO",
+          "target": "quality control points",
+          "evidence": "and quality control points"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "quality-check",
+    "heading": "Quality check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Module",
+          "mention": "Quality --> Quality Control",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Checks",
+          "type": "Module",
+          "mention": "Quality Checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "Measure quality check",
+          "type": "Feature",
+          "mention": "Measure quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "DataObject",
+          "mention": "quality check",
+          "confidence": "medium"
+        },
+        {
+          "name": "Type",
+          "type": "Field",
+          "mention": "Type drop-down field",
+          "confidence": "high"
+        },
+        {
+          "name": "Team",
+          "type": "Field",
+          "mention": "Team drop-down field",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions",
+          "type": "Field",
+          "mention": "Instructions text field",
+          "confidence": "high"
+        },
+        {
+          "name": "Notes tab",
+          "type": "Sub-module",
+          "mention": "Notes tab",
+          "confidence": "high"
+        },
+        {
+          "name": "quality team",
+          "type": "Actor",
+          "mention": "quality team",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Quality Control",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Quality --> Quality Control"
+        },
+        {
+          "source": "Quality Checks",
+          "relation": "IS_PART_OF",
+          "target": "Quality Control",
+          "evidence": "Quality --> Quality Control --> Quality Checks"
+        },
+        {
+          "source": "quality check",
+          "relation": "BELONGS_TO",
+          "target": "Quality Checks",
+          "evidence": "create a single...quality check...navigate to...Quality Checks"
+        },
+        {
+          "source": "Measure quality check",
+          "relation": "IS_PART_OF",
+          "target": "quality check",
+          "evidence": "select the Measure quality check type"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONTAINS",
+          "target": "Type",
+          "evidence": "Fill out the new quality check form...Type drop-down field"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONTAINS",
+          "target": "Team",
+          "evidence": "Fill out the new quality check form...Team drop-down field"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONTAINS",
+          "target": "Instructions",
+          "evidence": "Fill out the new quality check form...Instructions text field"
+        },
+        {
+          "source": "Instructions",
+          "relation": "IS_PART_OF",
+          "target": "Notes tab",
+          "evidence": "Instructions text field of the Notes tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "quality-control-point-(qcp)",
+    "heading": "Quality control point (QCP)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Module",
+          "mention": "Quality",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Control Point",
+          "type": "Feature",
+          "mention": "Quality control point",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure",
+          "type": "Feature",
+          "mention": "Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Norm",
+          "type": "Field",
+          "mention": "Norm",
+          "confidence": "high"
+        },
+        {
+          "name": "Tolerance",
+          "type": "Field",
+          "mention": "Tolerance",
+          "confidence": "high"
+        },
+        {
+          "name": "from",
+          "type": "Field",
+          "mention": "from",
+          "confidence": "high"
+        },
+        {
+          "name": "to",
+          "type": "Field",
+          "mention": "to",
+          "confidence": "high"
+        },
+        {
+          "name": "Team",
+          "type": "Field",
+          "mention": "Team",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions",
+          "type": "Field",
+          "mention": "Instructions",
+          "confidence": "high"
+        },
+        {
+          "name": "Control Points",
+          "type": "Feature",
+          "mention": "Control Points",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Quality Control",
+          "evidence": "Quality --> Quality Control"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "HAS_FEATURE",
+          "target": "Control Points",
+          "evidence": "Quality Control --> Control Points"
+        },
+        {
+          "source": "Control Points",
+          "relation": "ENABLES",
+          "target": "Quality Control Point",
+          "evidence": "creates a Quality control point"
+        },
+        {
+          "source": "Quality Control Point",
+          "relation": "HAS_FEATURE",
+          "target": "Measure",
+          "evidence": "generates Measure quality checks automatically"
+        },
+        {
+          "source": "Measure",
+          "relation": "REQUIRES",
+          "target": "Norm",
+          "evidence": "Doing so causes two new fields to appear: Norm and Tolerance"
+        },
+        {
+          "source": "Measure",
+          "relation": "REQUIRES",
+          "target": "Tolerance",
+          "evidence": "Doing so causes two new fields to appear: Norm and Tolerance"
+        },
+        {
+          "source": "Tolerance",
+          "relation": "CONTAINS",
+          "target": "from",
+          "evidence": "The Tolerance field features two sub-fields: from and to"
+        },
+        {
+          "source": "Tolerance",
+          "relation": "CONTAINS",
+          "target": "to",
+          "evidence": "The Tolerance field features two sub-fields: from and to"
+        },
+        {
+          "source": "Quality Control Point",
+          "relation": "CONFIGURED_BY",
+          "target": "Team",
+          "evidence": "In the Team drop-down field"
+        },
+        {
+          "source": "Quality Control Point",
+          "relation": "CONFIGURED_BY",
+          "target": "Instructions",
+          "evidence": "In the Instructions text field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-a-measure-quality-check",
+    "heading": "Process a Measure quality check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure quality check",
+          "type": "Feature",
+          "mention": "Measure quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory order",
+          "type": "DataObject",
+          "mention": "inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing",
+          "confidence": "medium"
+        },
+        {
+          "name": "work order",
+          "type": "DataObject",
+          "mention": "work order",
+          "confidence": "medium"
+        },
+        {
+          "name": "check's page",
+          "type": "DataObject",
+          "mention": "check's page",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Measure quality check",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "processed"
+        },
+        {
+          "source": "Measure quality check",
+          "relation": "ENABLES",
+          "target": "inventory order",
+          "evidence": "processed on the order itself"
+        },
+        {
+          "source": "Measure quality check",
+          "relation": "ENABLES",
+          "target": "manufacturing order",
+          "evidence": "processed on the order itself"
+        },
+        {
+          "source": "Measure quality check",
+          "relation": "ENABLES",
+          "target": "work order",
+          "evidence": "processed on the order itself"
+        },
+        {
+          "source": "Measure quality check",
+          "relation": "ENABLES",
+          "target": "check's page",
+          "evidence": "processed from the check's page"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-the-check's-page",
+    "heading": "From the check's page",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality",
+          "type": "Module",
+          "mention": "Quality --> Quality Control",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Module",
+          "mention": "Quality --> Quality Control",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Checks",
+          "type": "DataObject",
+          "mention": "Quality --> Quality Control --> Quality Checks",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "DataObject",
+          "mention": "select a quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure",
+          "type": "Feature",
+          "mention": "To process a *Measure* quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions",
+          "type": "Feature",
+          "mention": "Follow the Instructions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Measure field",
+          "type": "Field",
+          "mention": "record the value in the Measure field",
+          "confidence": "high"
+        },
+        {
+          "name": "Pass",
+          "type": "Action",
+          "mention": "click Pass",
+          "confidence": "high"
+        },
+        {
+          "name": "Fail",
+          "type": "Action",
+          "mention": "click Fail",
+          "confidence": "high"
+        },
+        {
+          "name": "norm",
+          "type": "Setting",
+          "mention": "*norm* and *tolerance* values",
+          "confidence": "medium"
+        },
+        {
+          "name": "tolerance",
+          "type": "Setting",
+          "mention": "*norm* and *tolerance* values",
+          "confidence": "medium"
+        },
+        {
+          "name": "Measure",
+          "type": "Action",
+          "mention": "click Measure",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Measure",
+          "relation": "ENABLES",
+          "target": "quality check",
+          "evidence": "To process a *Measure* quality check"
+        },
+        {
+          "source": "Quality Checks",
+          "relation": "CONTAINS",
+          "target": "quality check",
+          "evidence": "Quality --> Quality Control --> Quality Checks, and select a quality check"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "CONTAINS",
+          "target": "Quality Checks",
+          "evidence": "Quality --> Quality Control --> Quality Checks"
+        },
+        {
+          "source": "Quality",
+          "relation": "CONTAINS",
+          "target": "Quality Control",
+          "evidence": "Quality --> Quality Control"
+        },
+        {
+          "source": "quality check",
+          "relation": "HAS_FEATURE",
+          "target": "Instructions",
+          "evidence": "Follow the Instructions for how to take the measurement"
+        },
+        {
+          "source": "quality check",
+          "relation": "HAS_FEATURE",
+          "target": "Measure field",
+          "evidence": "record the value in the Measure field on the quality check form"
+        },
+        {
+          "source": "Pass",
+          "relation": "APPLIES_TO",
+          "target": "quality check",
+          "evidence": "click Pass or Fail at the top-left corner of the check"
+        },
+        {
+          "source": "Fail",
+          "relation": "APPLIES_TO",
+          "target": "quality check",
+          "evidence": "click Pass or Fail at the top-left corner of the check"
+        },
+        {
+          "source": "norm",
+          "relation": "CONFIGURED_BY",
+          "target": "quality check",
+          "evidence": "if the quality check is assigned to a for which *norm* and *tolerance* values have been specified"
+        },
+        {
+          "source": "tolerance",
+          "relation": "CONFIGURED_BY",
+          "target": "quality check",
+          "evidence": "if the quality check is assigned to a for which *norm* and *tolerance* values have been specified"
+        },
+        {
+          "source": "Measure",
+          "relation": "PRODUCES",
+          "target": "quality check",
+          "evidence": "click Measure ... automatically marks the check as *Passed* ... or *Failed*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "on-an-order",
+    "heading": "On an order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "To Process button",
+          "type": "Action",
+          "mention": "To Process button",
+          "confidence": "high"
+        },
+        {
+          "name": "operation card",
+          "type": "DataObject",
+          "mention": "operation card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Checks button",
+          "type": "Action",
+          "mention": "Quality Checks button",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Check pop-up window",
+          "type": "Feature",
+          "mention": "Quality Check pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure",
+          "type": "Feature",
+          "mention": "Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure field",
+          "type": "Field",
+          "mention": "Measure field",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Tolerance section",
+          "type": "Sub-module",
+          "mention": "Tolerance section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Check Failed pop-up",
+          "type": "Feature",
+          "mention": "Quality Check Failed",
+          "confidence": "high"
+        },
+        {
+          "name": "Correct Measure",
+          "type": "Action",
+          "mention": "Correct Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Measure",
+          "type": "Action",
+          "mention": "Confirm Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Message If Failure tab",
+          "type": "Sub-module",
+          "mention": "Message If Failure tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Alert button",
+          "type": "Action",
+          "mention": "Quality Alert button",
+          "confidence": "high"
+        },
+        {
+          "name": "quality alert form",
+          "type": "Feature",
+          "mention": "quality alert form",
+          "confidence": "high"
+        },
+        {
+          "name": "quality alerts",
+          "type": "Module",
+          "mention": "quality alerts",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing",
+          "evidence": "Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Inventory, clicking the # To Process button on an operation card"
+        },
+        {
+          "source": "To Process button",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Inventory, clicking the # To Process button"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONTAINS",
+          "target": "Quality Checks button",
+          "evidence": "On the selected manufacturing or inventory order, a purple Quality Checks button appears"
+        },
+        {
+          "source": "Quality Check pop-up window",
+          "relation": "CONTAINS",
+          "target": "Measure field",
+          "evidence": "enter the value in the Measure field on the pop-up window"
+        },
+        {
+          "source": "Measure",
+          "relation": "ENABLES",
+          "target": "Validate",
+          "evidence": "then enter the value in the Measure field... Finally, click Validate"
+        },
+        {
+          "source": "Tolerance section",
+          "relation": "CONFIGURED_BY",
+          "target": "Measure",
+          "evidence": "If the value entered is within the range specified in the Tolerance section"
+        },
+        {
+          "source": "Quality Check Failed pop-up",
+          "relation": "TRIGGERED_BY",
+          "target": "Measure",
+          "evidence": "if the value entered is outside of the specified range, a new pop-up window appears, titled Quality Check Failed"
+        },
+        {
+          "source": "Correct Measure",
+          "relation": "PERFORMED_BY",
+          "target": "Quality Check Failed pop-up",
+          "evidence": "two buttons appear: Correct Measure and Confirm Measure"
+        },
+        {
+          "source": "Confirm Measure",
+          "relation": "PERFORMED_BY",
+          "target": "Quality Check Failed pop-up",
+          "evidence": "two buttons appear: Correct Measure and Confirm Measure"
+        },
+        {
+          "source": "Quality Alert button",
+          "relation": "CONTAINS",
+          "target": "Manufacturing Orders",
+          "evidence": "Quality Alert button that appears at the top of the manufacturing or inventory order"
+        },
+        {
+          "source": "Quality Alert button",
+          "relation": "TRIGGERED_BY",
+          "target": "Quality Check Failed pop-up",
+          "evidence": "after the check fails. Clicking Quality Alert opens a quality alert form"
+        },
+        {
+          "source": "quality alert form",
+          "relation": "SEE_ALSO",
+          "target": "quality alerts",
+          "evidence": ".. seealso:: For a complete guide... view the documentation on quality alerts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "on-a-work-order",
+    "heading": "On a work order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Shop Floor",
+          "type": "Module",
+          "mention": "Shop Floor",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure",
+          "type": "Feature",
+          "mention": "Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Open Work Order",
+          "type": "Action",
+          "mention": "Open Work Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Open Shop Floor",
+          "type": "Action",
+          "mention": "Open Shop Floor",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Correct Measure",
+          "type": "Action",
+          "mention": "Correct Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Measure",
+          "type": "Action",
+          "mention": "Confirm Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a Quality Alert",
+          "type": "Action",
+          "mention": "Create a Quality Alert",
+          "confidence": "high"
+        },
+        {
+          "name": "work order",
+          "type": "DataObject",
+          "mention": "work order",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "DataObject",
+          "mention": "quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "Tolerance",
+          "type": "Field",
+          "mention": "Tolerance",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure",
+          "type": "Field",
+          "mention": "Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Message If Failure",
+          "type": "Field",
+          "mention": "Message If Failure",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Order Operation",
+          "type": "Field",
+          "mention": "Work Order Operation",
+          "confidence": "high"
+        },
+        {
+          "name": "quality alert",
+          "type": "DataObject",
+          "mention": "quality alert",
+          "confidence": "high"
+        },
+        {
+          "name": "quality alert form",
+          "type": "DataObject",
+          "mention": "quality alert form",
+          "confidence": "high"
+        },
+        {
+          "name": "What do you want to do? pop-up window",
+          "type": "Workflow",
+          "mention": "What do you want to do? pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Check Failed pop-up window",
+          "type": "Workflow",
+          "mention": "Quality Check Failed pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "quality alerts",
+          "type": "Concept",
+          "mention": "quality alerts",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Manufacturing",
+          "evidence": "Product: Odoo. When configuring... navigation to Manufacturing"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "navigation to Manufacturing --> Operations"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Shop Floor",
+          "evidence": "the Shop Floor module"
+        },
+        {
+          "source": "work order",
+          "relation": "IS_PART_OF",
+          "target": "manufacturing order",
+          "confidence": "low"
+        },
+        {
+          "source": "quality check",
+          "relation": "TRIGGERED_BY",
+          "target": "work order",
+          "evidence": "a Measure quality check is created for that specific work order"
+        },
+        {
+          "source": "Shop Floor",
+          "relation": "ENABLES",
+          "target": "Measure",
+          "evidence": "Measure quality checks configured for work orders must be completed from the Shop Floor module"
+        },
+        {
+          "source": "Open Work Order",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the Open Work Order button"
+        },
+        {
+          "source": "Open Shop Floor",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the Open Shop Floor button"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Validate"
+        },
+        {
+          "source": "Correct Measure",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "select Correct Measure"
+        },
+        {
+          "source": "Confirm Measure",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Confirm Measure"
+        },
+        {
+          "source": "Create a Quality Alert",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "select the Create a Quality Alert button"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "Work Order Operation",
+          "evidence": "specified in the Work Order Operation field"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "Tolerance",
+          "evidence": "range specified in the Tolerance section"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "Message If Failure",
+          "evidence": "instructions entered in the Message If Failure tab"
+        },
+        {
+          "source": "Work Order Operation",
+          "relation": "BELONGS_TO",
+          "target": "quality check",
+          "confidence": "low"
+        },
+        {
+          "source": "Tolerance",
+          "relation": "BELONGS_TO",
+          "target": "quality check",
+          "confidence": "low"
+        },
+        {
+          "source": "Message If Failure",
+          "relation": "BELONGS_TO",
+          "target": "quality check",
+          "confidence": "low"
+        },
+        {
+          "source": "Measure",
+          "relation": "BELONGS_TO",
+          "target": "quality check",
+          "confidence": "low"
+        },
+        {
+          "source": "quality alert",
+          "relation": "GENERATED_BY",
+          "target": "quality check",
+          "evidence": "If a quality alert must be created"
+        },
+        {
+          "source": "quality alert",
+          "relation": "PRODUCED_BY",
+          "target": "Create a Quality Alert",
+          "evidence": "Create a Quality Alert button opens a blank quality alert form"
+        },
+        {
+          "source": "Measure",
+          "relation": "PRODUCES",
+          "target": "measurement result",
+          "confidence": "low"
+        },
+        {
+          "source": "measurement result",
+          "relation": "USES_METHOD",
+          "target": "Tolerance",
+          "evidence": "compared against range specified in Tolerance"
+        },
+        {
+          "source": "Correct Measure",
+          "relation": "ENABLES",
+          "target": "Validate",
+          "evidence": "opens a new pop-up window to enter corrected measure, then click Validate"
+        },
+        {
+          "source": "What do you want to do? pop-up window",
+          "relation": "CONTAINS",
+          "target": "Create a Quality Alert",
+          "evidence": "select the Create a Quality Alert button"
+        },
+        {
+          "source": "Quality Check Failed pop-up window",
+          "relation": "CONTAINS",
+          "target": "Correct Measure",
+          "evidence": "buttons appear: Correct Measure and Confirm Measure"
+        },
+        {
+          "source": "Quality Check Failed pop-up window",
+          "relation": "CONTAINS",
+          "target": "Confirm Measure",
+          "evidence": "buttons appear: Correct Measure and Confirm Measure"
+        },
+        {
+          "source": "quality alerts",
+          "relation": "SEE_ALSO",
+          "target": "quality alert form",
+          "evidence": "view the documentation on quality alerts"
+        }
+      ]
+    }
+  }
+]

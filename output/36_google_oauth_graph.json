@@ -1,0 +1,1377 @@
+[
+  {
+    "section_id": "connect-gmail-to-odoo-using-google-oauth",
+    "heading": "Connect Gmail to Odoo using Google OAuth",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail",
+          "type": "Integration",
+          "mention": "Gmail",
+          "confidence": "high"
+        },
+        {
+          "name": "Google OAuth",
+          "type": "Integration",
+          "mention": "Google's OAuth",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Workspace",
+          "type": "Integration",
+          "mention": "Google's *Workspace* platform",
+          "confidence": "medium"
+        },
+        {
+          "name": "custom domain",
+          "type": "Concept",
+          "mention": "custom domain",
+          "confidence": "low"
+        },
+        {
+          "name": "personal email address",
+          "type": "Concept",
+          "mention": "personal email address",
+          "confidence": "low"
+        },
+        {
+          "name": "Odoo database",
+          "type": "Product",
+          "mention": "Odoo database",
+          "confidence": "low"
+        },
+        {
+          "name": "send secure emails",
+          "type": "Feature",
+          "mention": "send secure emails from a custom domain",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "COMPLIES_WITH",
+          "target": "Google OAuth",
+          "evidence": "Odoo is compatible with Google's OAuth for Gmail"
+        },
+        {
+          "source": "Odoo",
+          "relation": "ENABLES",
+          "target": "send secure emails",
+          "evidence": "In order to send secure emails... all that is required is to configure... on the back end of the Odoo database"
+        },
+        {
+          "source": "send secure emails",
+          "relation": "CONFIGURED_BY",
+          "target": "Google Workspace",
+          "evidence": "configure a few settings on Google's *Workspace* platform"
+        },
+        {
+          "source": "send secure emails",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo database",
+          "evidence": "configure a few settings... on the back end of the Odoo database"
+        },
+        {
+          "source": "send secure emails",
+          "relation": "USES_METHOD",
+          "target": "personal email address",
+          "evidence": "This configuration works by using either a personal email address"
+        },
+        {
+          "source": "send secure emails",
+          "relation": "USES_METHOD",
+          "target": "custom domain",
+          "evidence": "This configuration works by using... an address created by a custom domain"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "Google's documentation",
+          "evidence": "For more information, visit `Google's documentation..."
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "applications/general/users/google",
+          "evidence": "- /applications/general/users/google"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "applications/productivity/calendar/google",
+          "evidence": "- /applications/productivity/calendar/google"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-project",
+    "heading": "Create a new project",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Google API Console",
+          "type": "Integration",
+          "mention": "Google API Console",
+          "confidence": "medium"
+        },
+        {
+          "name": "Google Workspace",
+          "type": "Integration",
+          "mention": "Google Workspace",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail",
+          "type": "Integration",
+          "mention": "Gmail",
+          "confidence": "medium"
+        },
+        {
+          "name": "OAuth consent screen",
+          "type": "Module",
+          "mention": "OAuth consent screen",
+          "confidence": "low"
+        },
+        {
+          "name": "Create Project",
+          "type": "Action",
+          "mention": "Create Project",
+          "confidence": "high"
+        },
+        {
+          "name": "New Project",
+          "type": "Module",
+          "mention": "New Project",
+          "confidence": "low"
+        },
+        {
+          "name": "Project name",
+          "type": "Field",
+          "mention": "Project name",
+          "confidence": "high"
+        },
+        {
+          "name": "Location",
+          "type": "Field",
+          "mention": "Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Workspace organization",
+          "type": "Actor",
+          "mention": "Google Workspace organization",
+          "confidence": "medium"
+        },
+        {
+          "name": "No Organization",
+          "type": "Setting",
+          "mention": "No Organization",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Google API Console",
+          "relation": "ENABLES",
+          "target": "Create Project",
+          "evidence": "To get started, go to the Google API Console. Log in... After that, click on Create Project"
+        },
+        {
+          "source": "Create Project",
+          "relation": "PERFORMED_BY",
+          "target": "Google Workspace",
+          "evidence": "Log in with your Google Workspace account if you have one"
+        },
+        {
+          "source": "Create Project",
+          "relation": "PERFORMED_BY",
+          "target": "Gmail",
+          "evidence": "otherwise log in with your personal Gmail account"
+        },
+        {
+          "source": "New Project",
+          "relation": "IS_PART_OF",
+          "target": "OAuth consent screen",
+          "evidence": "then the New Project option will be located on the top right under the Select a project drop-down menu."
+        },
+        {
+          "source": "New Project",
+          "relation": "CONTAINS",
+          "target": "Project name",
+          "evidence": "On the New Project screen, rename the Project name"
+        },
+        {
+          "source": "New Project",
+          "relation": "CONTAINS",
+          "target": "Location",
+          "evidence": "On the New Project screen, browse for the Location."
+        },
+        {
+          "source": "Location",
+          "relation": "CONFIGURED_BY",
+          "target": "Google Workspace organization",
+          "evidence": "Set the Location as the Google Workspace organization."
+        },
+        {
+          "source": "Location",
+          "relation": "CONFIGURED_BY",
+          "target": "No Organization",
+          "evidence": "If you are using a personal Gmail account, then leave the Location as No Organization."
+        },
+        {
+          "source": "Create",
+          "relation": "GENERATES",
+          "target": "New Project",
+          "evidence": "Click on Create to finish this step."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "oauth-consent-screen",
+    "heading": "OAuth consent screen",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth consent screen",
+          "type": "Feature",
+          "mention": "Title: OAuth consent screen",
+          "confidence": "high"
+        },
+        {
+          "name": "User Type options",
+          "type": "Feature",
+          "mention": "Under User Type options",
+          "confidence": "medium"
+        },
+        {
+          "name": "External",
+          "type": "Concept",
+          "mention": "**External** User Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal",
+          "type": "Concept",
+          "mention": "**Internal** User Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Personal Gmail Accounts",
+          "type": "Actor",
+          "mention": "Personal Gmail Accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Google WorkSpace account",
+          "type": "Actor",
+          "mention": "Google WorkSpace account",
+          "confidence": "high"
+        },
+        {
+          "name": "Google",
+          "type": "Actor",
+          "mention": "Google",
+          "confidence": "high"
+        },
+        {
+          "name": "Scopes",
+          "type": "Concept",
+          "mention": "Scopes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Edit app registration page",
+          "type": "Feature",
+          "mention": "Edit app registration page",
+          "confidence": "medium"
+        },
+        {
+          "name": "External testing mode",
+          "type": "Setting",
+          "mention": "External testing mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "100 users",
+          "type": "Setting",
+          "mention": "User limits in this testing mode is set to 100 users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "OAuth consent screen",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: OAuth consent screen"
+        },
+        {
+          "source": "User Type options",
+          "relation": "BELONGS_TO",
+          "target": "OAuth consent screen",
+          "evidence": "If the page doesn't redirect to the User Type options, click on OAuth consent screen in the left menu. Under User Type options"
+        },
+        {
+          "source": "Edit app registration page",
+          "relation": "TRIGGERED_BY",
+          "target": "Create",
+          "evidence": "click on Create again, which will finally navigate to the Edit app registration page"
+        },
+        {
+          "source": "Personal Gmail Accounts",
+          "relation": "CONFIGURED_BY",
+          "target": "External",
+          "evidence": "Personal Gmail Accounts are only allowed to be **External** User Type"
+        },
+        {
+          "source": "Google WorkSpace account",
+          "relation": "CONFIGURED_BY",
+          "target": "Internal",
+          "evidence": "using a *Google WorkSpace* account allows for **Internal** User Type to be used"
+        },
+        {
+          "source": "External",
+          "relation": "REQUIRES",
+          "target": "Google",
+          "evidence": "Personal Gmail Accounts are only allowed to be **External** User Type, which means Google may require an approval"
+        },
+        {
+          "source": "External",
+          "relation": "REQUIRES",
+          "target": "Scopes",
+          "evidence": "which means Google may require an approval, or for *Scopes* to be added on"
+        },
+        {
+          "source": "External testing mode",
+          "relation": "APPLIES_TO",
+          "target": "Google",
+          "evidence": "while the API connection is in the *External* testing mode, then no approval is necessary from Google"
+        },
+        {
+          "source": "External testing mode",
+          "relation": "CONFIGURED_BY",
+          "target": "100 users",
+          "evidence": "User limits in this testing mode is set to 100 users"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "edit-app-registration",
+    "heading": "Edit app registration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth consent screen",
+          "type": "Feature",
+          "mention": "OAuth consent screen",
+          "confidence": "medium"
+        },
+        {
+          "name": "App information section",
+          "type": "Module",
+          "mention": "App information section",
+          "confidence": "medium"
+        },
+        {
+          "name": "App name field",
+          "type": "Field",
+          "mention": "App name field",
+          "confidence": "high"
+        },
+        {
+          "name": "User support email field",
+          "type": "Field",
+          "mention": "User support email field",
+          "confidence": "high"
+        },
+        {
+          "name": "App Domain",
+          "type": "Module",
+          "mention": "App Domain",
+          "confidence": "medium"
+        },
+        {
+          "name": "Authorized domains",
+          "type": "Feature",
+          "mention": "Authorized domains",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Domain",
+          "type": "Action",
+          "mention": "Add Domain",
+          "confidence": "high"
+        },
+        {
+          "name": "Developer contact information section",
+          "type": "Module",
+          "mention": "Developer contact information section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save and Continue button",
+          "type": "Action",
+          "mention": "Save and Continue button",
+          "confidence": "high"
+        },
+        {
+          "name": "Scopes page",
+          "type": "Module",
+          "mention": "Scopes page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Test users",
+          "type": "Module",
+          "mention": "Test users",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Users",
+          "type": "Action",
+          "mention": "Add Users",
+          "confidence": "high"
+        },
+        {
+          "name": "Back to Dashboard",
+          "type": "Action",
+          "mention": "Back to Dashboard",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "OAuth consent screen",
+          "relation": "CONTAINS",
+          "target": "App information section",
+          "evidence": "On the OAuth consent screen step, under the App information section"
+        },
+        {
+          "source": "App information section",
+          "relation": "CONTAINS",
+          "target": "App name field",
+          "evidence": "under the App information section, enter `Odoo` in the App name field"
+        },
+        {
+          "source": "App information section",
+          "relation": "CONTAINS",
+          "target": "User support email field",
+          "evidence": "under the App information section, enter `Odoo` in the App name field. Select the organization's email address under the User support email field"
+        },
+        {
+          "source": "App Domain",
+          "relation": "CONTAINS",
+          "target": "Authorized domains",
+          "evidence": "under App Domain --> Authorized domains"
+        },
+        {
+          "source": "Authorized domains",
+          "relation": "ENABLES",
+          "target": "Add Domain",
+          "evidence": "click on Add Domain"
+        },
+        {
+          "source": "Save and Continue button",
+          "relation": "TRIGGERED_BY",
+          "target": "App information section",
+          "evidence": "Next, click on the Save and Continue button"
+        },
+        {
+          "source": "Save and Continue button",
+          "relation": "TRIGGERED_BY",
+          "target": "Scopes page",
+          "evidence": "Then, skip the Scopes page by scrolling to the bottom and clicking on Save and Continue"
+        },
+        {
+          "source": "Test users",
+          "relation": "CONTAINS",
+          "target": "Add Users",
+          "evidence": "add the email addresses being configured under the Test users step, by clicking on Add Users"
+        },
+        {
+          "source": "Add Users",
+          "relation": "TRIGGERED_BY",
+          "target": "Save and Continue button",
+          "evidence": "by clicking on Add Users, and then the Save and Continue button"
+        },
+        {
+          "source": "Back to Dashboard",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "scroll to the bottom and click on Back to Dashboard to finish setting up the project"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-credentials",
+    "heading": "Create Credentials",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Credentials",
+          "type": "Action",
+          "mention": "Create Credentials",
+          "confidence": "high"
+        },
+        {
+          "name": "Credentials",
+          "type": "DataObject",
+          "mention": "Credentials",
+          "confidence": "high"
+        },
+        {
+          "name": "Client ID",
+          "type": "Field",
+          "mention": "Client ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Client Secret",
+          "type": "Field",
+          "mention": "Client Secret",
+          "confidence": "high"
+        },
+        {
+          "name": "left sidebar menu",
+          "type": "Feature",
+          "mention": "left sidebar menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "top menu",
+          "type": "Feature",
+          "mention": "top menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "OAuth client ID",
+          "type": "DataObject",
+          "mention": "OAuth client ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Application Type",
+          "type": "Setting",
+          "mention": "Application Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Web Application",
+          "type": "Concept",
+          "mention": "Web Application",
+          "confidence": "high"
+        },
+        {
+          "name": "Name field",
+          "type": "Field",
+          "mention": "Name field",
+          "confidence": "high"
+        },
+        {
+          "name": "Authorized redirect URIs",
+          "type": "Setting",
+          "mention": "Authorized redirect URIs",
+          "confidence": "medium"
+        },
+        {
+          "name": "ADD URI",
+          "type": "Action",
+          "mention": "ADD URI",
+          "confidence": "medium"
+        },
+        {
+          "name": "URIs 1 field",
+          "type": "Field",
+          "mention": "URIs 1 field",
+          "confidence": "medium"
+        },
+        {
+          "name": "https://yourdbname.odoo.com/google_gmail/confirm",
+          "type": "Integration",
+          "mention": "https://yourdbname.odoo.com/google_gmail/confirm",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth Client ID",
+          "type": "DataObject",
+          "mention": "OAuth Client ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo database",
+          "type": "DataObject",
+          "mention": "Odoo database",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create Credentials",
+          "relation": "PRODUCES",
+          "target": "Credentials",
+          "evidence": "Now that the project is set up, credentials should be created, which includes the *Client ID* and *Client Secret*."
+        },
+        {
+          "source": "Credentials",
+          "relation": "CONTAINS",
+          "target": "Client ID",
+          "evidence": "credentials should be created, which includes the *Client ID*"
+        },
+        {
+          "source": "Credentials",
+          "relation": "CONTAINS",
+          "target": "Client Secret",
+          "evidence": "credentials should be created, which includes the *Client ID* and *Client Secret*."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "left sidebar menu",
+          "evidence": "click on Credentials in the left sidebar menu."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "top menu",
+          "evidence": "click on Create Credentials in the top menu"
+        },
+        {
+          "source": "Create Credentials",
+          "relation": "IS_PART_OF",
+          "target": "top menu",
+          "evidence": "click on Create Credentials in the top menu"
+        },
+        {
+          "source": "Create Credentials",
+          "relation": "ENABLES",
+          "target": "OAuth client ID",
+          "evidence": "select OAuth client ID from the dropdown menu."
+        },
+        {
+          "source": "OAuth client ID",
+          "relation": "CONFIGURED_BY",
+          "target": "Application Type",
+          "evidence": "Under Application Type, select Web Application"
+        },
+        {
+          "source": "Application Type",
+          "relation": "CONTAINS",
+          "target": "Web Application",
+          "evidence": "select Web Application from the dropdown menu."
+        },
+        {
+          "source": "OAuth client ID",
+          "relation": "CONFIGURED_BY",
+          "target": "Name field",
+          "evidence": "In the Name field, enter `Odoo`."
+        },
+        {
+          "source": "OAuth client ID",
+          "relation": "CONFIGURED_BY",
+          "target": "Authorized redirect URIs",
+          "evidence": "Under the Authorized redirect URIs label"
+        },
+        {
+          "source": "Authorized redirect URIs",
+          "relation": "ENABLES",
+          "target": "ADD URI",
+          "evidence": "click the button ADD URI"
+        },
+        {
+          "source": "ADD URI",
+          "relation": "CONFIGURED_BY",
+          "target": "URIs 1 field",
+          "evidence": "input ... in the URIs 1 field."
+        },
+        {
+          "source": "URIs 1 field",
+          "relation": "CONTAINS",
+          "target": "https://yourdbname.odoo.com/google_gmail/confirm",
+          "evidence": "input `https://yourdbname.odoo.com/google_gmail/confirm` in the URIs 1 field"
+        },
+        {
+          "source": "Create",
+          "relation": "PRODUCES",
+          "target": "OAuth Client ID",
+          "evidence": "click on Create to generate an OAuth Client ID"
+        },
+        {
+          "source": "Create",
+          "relation": "PRODUCES",
+          "target": "Client Secret",
+          "evidence": "click on Create to generate an OAuth Client ID and Client Secret."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enter-google-credentials",
+    "heading": "Enter Google Credentials",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps",
+          "type": "Module",
+          "mention": "Apps",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Gmail",
+          "type": "Module",
+          "mention": "Google Gmail",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "General Settings",
+          "type": "Sub-module",
+          "mention": "General Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Discuss",
+          "type": "Sub-module",
+          "mention": "Discuss",
+          "confidence": "medium"
+        },
+        {
+          "name": "Custom Email Servers",
+          "type": "Feature",
+          "mention": "Custom Email Servers",
+          "confidence": "medium"
+        },
+        {
+          "name": "External Email Servers",
+          "type": "Feature",
+          "mention": "External Email Servers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Gmail Credentials",
+          "type": "Feature",
+          "mention": "Gmail Credentials",
+          "confidence": "medium"
+        },
+        {
+          "name": "Use a Gmail Server",
+          "type": "Feature",
+          "mention": "Use a Gmail Sever",
+          "confidence": "low"
+        },
+        {
+          "name": "Client ID",
+          "type": "Field",
+          "mention": "Client ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Client Secret",
+          "type": "Field",
+          "mention": "Client Secret",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Apps",
+          "evidence": "... navigate to the Apps module."
+        },
+        {
+          "source": "Apps",
+          "relation": "CONTAINS",
+          "target": "Google Gmail",
+          "evidence": "Install the module called Google Gmail."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "... navigate to Settings."
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "General Settings",
+          "evidence": "Settings --> General Settings"
+        },
+        {
+          "source": "General Settings",
+          "relation": "CONTAINS",
+          "target": "Discuss",
+          "evidence": "under the Discuss section"
+        },
+        {
+          "source": "Discuss",
+          "relation": "CONTAINS",
+          "target": "Custom Email Servers",
+          "evidence": "checkbox for Custom Email Servers"
+        },
+        {
+          "source": "Discuss",
+          "relation": "CONTAINS",
+          "target": "External Email Servers",
+          "evidence": "checkbox for External Email Servers"
+        },
+        {
+          "source": "Discuss",
+          "relation": "CONTAINS",
+          "target": "Gmail Credentials",
+          "evidence": "populates a new option for Gmail Credentials"
+        },
+        {
+          "source": "Gmail Credentials",
+          "relation": "CONTAINS",
+          "target": "Client ID",
+          "evidence": "Client ID fields"
+        },
+        {
+          "source": "Gmail Credentials",
+          "relation": "CONTAINS",
+          "target": "Client Secret",
+          "evidence": "Client Secret fields"
+        },
+        {
+          "source": "Custom Email Servers",
+          "relation": "ENABLES",
+          "target": "Gmail Credentials",
+          "evidence": "ensure that the checkbox for Custom Email Servers... is checked. This populates a new option for Gmail Credentials"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-outgoing-email-server",
+    "heading": "Configure outgoing email server",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure outgoing email server",
+          "type": "Action",
+          "mention": "configure the external Gmail account",
+          "confidence": "high"
+        },
+        {
+          "name": "Custom Email Servers",
+          "type": "Setting",
+          "mention": "Custom Email Servers",
+          "confidence": "high"
+        },
+        {
+          "name": "Outgoing Email Servers",
+          "type": "Setting",
+          "mention": "Outgoing Email Servers",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "email Username",
+          "type": "Field",
+          "mention": "email Username",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail OAuth Authentication",
+          "type": "Action",
+          "mention": "click on Gmail OAuth Authentication",
+          "confidence": "medium"
+        },
+        {
+          "name": "Gmail",
+          "type": "Integration",
+          "mention": "Gmail",
+          "confidence": "high"
+        },
+        {
+          "name": "Authenticate with",
+          "type": "Concept",
+          "mention": "Authenticate with",
+          "confidence": "medium"
+        },
+        {
+          "name": "Connection",
+          "type": "Concept",
+          "mention": "Connection",
+          "confidence": "medium"
+        },
+        {
+          "name": "Connect your Gmail Account",
+          "type": "Action",
+          "mention": "Connect your Gmail Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Google",
+          "type": "Integration",
+          "mention": "Google",
+          "confidence": "high"
+        },
+        {
+          "name": "email address",
+          "type": "DataObject",
+          "mention": "email address",
+          "confidence": "high"
+        },
+        {
+          "name": "Test the Connection",
+          "type": "Action",
+          "mention": "Test the Connection",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configure outgoing email server",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "To configure the external Gmail account"
+        },
+        {
+          "source": "Outgoing Email Servers",
+          "relation": "IS_PART_OF",
+          "target": "Custom Email Servers",
+          "evidence": "return to the top of the Custom Email Servers setting and then click the Outgoing Email Servers link"
+        },
+        {
+          "source": "Configure outgoing email server",
+          "relation": "ENABLES",
+          "target": "Gmail OAuth Authentication",
+          "evidence": "click on Gmail OAuth Authentication"
+        },
+        {
+          "source": "Configure outgoing email server",
+          "relation": "TRIGGERED_BY",
+          "target": "Connect your Gmail Account",
+          "evidence": "Connect your Gmail Account"
+        },
+        {
+          "source": "Configure outgoing email server",
+          "relation": "USES_METHOD",
+          "target": "OAuth authentication",
+          "evidence": "using OAuth authentication"
+        },
+        {
+          "source": "Configure outgoing email server",
+          "relation": "RELATED_TO",
+          "target": "email address",
+          "evidence": "Select the appropriate email address"
+        },
+        {
+          "source": "Configure outgoing email server",
+          "relation": "ENABLES",
+          "target": "Test the Connection",
+          "evidence": "Test the Connection"
+        },
+        {
+          "source": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "production-vs-testing-publishing-status",
+    "heading": "Production VS Testing Publishing Status",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Production",
+          "type": "Concept",
+          "mention": "Production",
+          "confidence": "medium"
+        },
+        {
+          "name": "Testing",
+          "type": "Concept",
+          "mention": "Testing",
+          "confidence": "medium"
+        },
+        {
+          "name": "Google API Platform",
+          "type": "Integration",
+          "mention": "Google API Platform",
+          "confidence": "high"
+        },
+        {
+          "name": "Publishing status",
+          "type": "Concept",
+          "mention": "Publishing status",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Google API Platform",
+          "relation": "INTEGRATION",
+          "target": "Odoo",
+          "evidence": "Integration mentioned in relation to Odoo"
+        },
+        {
+          "source": "Production",
+          "relation": "RELATED_TO",
+          "target": "Testing",
+          "evidence": "Compared in documentation"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Production",
+          "evidence": "Odoo supports Production status"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Testing",
+          "evidence": "Odoo supports Testing status"
+        },
+        {
+          "source": "Google API Platform",
+          "relation": "CONFIGURED_BY",
+          "target": "Production",
+          "evidence": "Publishing status set to Production"
+        },
+        {
+          "source": "Google API Platform",
+          "relation": "CONFIGURED_BY",
+          "target": "Testing",
+          "evidence": "Publishing status set to Testing"
+        },
+        {
+          "source": "Production",
+          "relation": "TRIGGERED_BY",
+          "target": "Google API Platform",
+          "evidence": "Setting Publishing status to Production triggers warning"
+        },
+        {
+          "source": "Testing",
+          "relation": "TRIGGERED_BY",
+          "target": "Google API Platform",
+          "evidence": "Setting Publishing status to Testing triggers warning"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "no-test-users-added",
+    "heading": "No Test Users Added",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "OAuth consent screen",
+          "type": "Module",
+          "mention": "OAuth consent screen",
+          "confidence": "medium"
+        },
+        {
+          "name": "add test user(s)",
+          "type": "Action",
+          "mention": "add test user(s)",
+          "confidence": "high"
+        },
+        {
+          "name": "app",
+          "type": "Product",
+          "mention": "app",
+          "confidence": "low"
+        },
+        {
+          "name": "403 access denied error",
+          "type": "Feature",
+          "mention": "403 access denied error",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "OAuth consent screen",
+          "relation": "CONTAINS",
+          "target": "add test user(s)",
+          "evidence": "return to the OAuth consent screen and add test user(s)"
+        },
+        {
+          "source": "app",
+          "relation": "CONTAINS",
+          "target": "OAuth consent screen",
+          "evidence": "OAuth consent screen under APIs & Services and add test user(s) to the app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "gmail-module-not-updated",
+    "heading": "Gmail Module not updated",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps module",
+          "type": "Module",
+          "mention": "Apps module",
+          "confidence": "medium"
+        },
+        {
+          "name": "Google Gmail module",
+          "type": "Module",
+          "mention": "Google Gmail module",
+          "confidence": "high"
+        },
+        {
+          "name": "search terms",
+          "type": "Field",
+          "mention": "search terms",
+          "confidence": "medium"
+        },
+        {
+          "name": "three dots",
+          "type": "Action",
+          "mention": "three dots",
+          "confidence": "medium"
+        },
+        {
+          "name": "Upgrade",
+          "type": "Action",
+          "mention": "Upgrade",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Google Gmail module",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "If the *Google Gmail* module in Odoo"
+        },
+        {
+          "source": "Google Gmail module",
+          "relation": "CONFIGURED_BY",
+          "target": "search terms",
+          "evidence": "clear out the search terms"
+        },
+        {
+          "source": "Upgrade",
+          "relation": "PERFORMED_BY",
+          "target": "three dots",
+          "evidence": "click on the three dots ... and select Upgrade"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "application-type",
+    "heading": "Application Type",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Credentials",
+          "type": "DataObject",
+          "mention": "credentials",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth Client ID",
+          "type": "Field",
+          "mention": "OAuth *Client ID*",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth Client Secret",
+          "type": "Field",
+          "mention": "*Client Secret*",
+          "confidence": "high"
+        },
+        {
+          "name": "Desktop App",
+          "type": "Application Type",
+          "mention": "Desktop App",
+          "confidence": "medium"
+        },
+        {
+          "name": "Authorization Error",
+          "type": "Feature",
+          "mention": "Authorization Error",
+          "confidence": "medium"
+        },
+        {
+          "name": "Web Application",
+          "type": "Application Type",
+          "mention": "Web Application",
+          "confidence": "medium"
+        },
+        {
+          "name": "Authorized redirect URIs",
+          "type": "Field",
+          "mention": "Authorized redirect URIs",
+          "confidence": "high"
+        },
+        {
+          "name": "ADD URI",
+          "type": "Action",
+          "mention": "ADD URI",
+          "confidence": "high"
+        },
+        {
+          "name": "yourdbname.odoo.com/google_gmail/confirm",
+          "type": "Field Value",
+          "mention": "https://yourdbname.odoo.com/google_gmail/confirm",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo database name",
+          "type": "Field",
+          "mention": "Odoo database name",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Credentials",
+          "relation": "CONTAINS",
+          "target": "OAuth Client ID",
+          "evidence": "When creating the credentials (OAuth *Client ID* and *Client Secret*)"
+        },
+        {
+          "source": "Credentials",
+          "relation": "CONTAINS",
+          "target": "OAuth Client Secret",
+          "evidence": "When creating the credentials (OAuth *Client ID* and *Client Secret*)"
+        },
+        {
+          "source": "Desktop App",
+          "relation": "RELATED_TO",
+          "target": "Authorization Error",
+          "evidence": "if Desktop App is selected for the Application Type, an Authorization Error appears"
+        },
+        {
+          "source": "Web Application",
+          "relation": "RELATED_TO",
+          "target": "Credentials",
+          "evidence": "create new credentials, selecting Web Application for the Application Type"
+        },
+        {
+          "source": "Authorized redirect URIs",
+          "relation": "CONTAINS",
+          "target": "ADD URI",
+          "evidence": "under Authorized redirect URIs, click ADD URI"
+        },
+        {
+          "source": "ADD URI",
+          "relation": "PRODUCES",
+          "target": "yourdbname.odoo.com/google_gmail/confirm",
+          "evidence": "click ADD URI and type: `https://yourdbname.odoo.com/google_gmail/confirm` in the field"
+        },
+        {
+          "source": "yourdbname.odoo.com/google_gmail/confirm",
+          "relation": "RELATED_TO",
+          "target": "Odoo database name",
+          "evidence": "being sure to replace *yourdbname* in the URL with the Odoo database name"
+        }
+      ]
+    }
+  }
+]

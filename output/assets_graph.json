@@ -1,0 +1,1409 @@
+[
+  {
+    "section_id": "non-current-assets-and-fixed-assets",
+    "heading": "Non-current assets and fixed assets",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Non-current Assets",
+          "type": "Concept",
+          "mention": "Non-current Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "long-term assets",
+          "type": "Concept",
+          "mention": "long-term assets",
+          "confidence": "high"
+        },
+        {
+          "name": "depreciation",
+          "type": "Concept",
+          "mention": "depreciation",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed Assets",
+          "type": "Concept",
+          "mention": "Fixed Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "balance sheet",
+          "type": "Report",
+          "mention": "balance sheet",
+          "confidence": "high"
+        },
+        {
+          "name": "depreciation expenses",
+          "type": "Concept",
+          "mention": "depreciation expenses",
+          "confidence": "high"
+        },
+        {
+          "name": "Accumulated Depreciation",
+          "type": "Concept",
+          "mention": "Accumulated Depreciation",
+          "confidence": "high"
+        },
+        {
+          "name": "Not Depreciable Value",
+          "type": "Concept",
+          "mention": "Not Depreciable Value",
+          "confidence": "high"
+        },
+        {
+          "name": "Salvage value",
+          "type": "Concept",
+          "mention": "Salvage value",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Accounting",
+          "type": "Product",
+          "mention": "Odoo Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "draft mode",
+          "type": "Concept",
+          "mention": "draft mode",
+          "confidence": "high"
+        },
+        {
+          "name": "posted",
+          "type": "Concept",
+          "mention": "posted",
+          "confidence": "high"
+        },
+        {
+          "name": "Depreciation Methods",
+          "type": "Concept",
+          "mention": "Depreciation Methods",
+          "confidence": "high"
+        },
+        {
+          "name": "Straight Line",
+          "type": "Standard",
+          "mention": "Straight Line",
+          "confidence": "high"
+        },
+        {
+          "name": "Declining",
+          "type": "Standard",
+          "mention": "Declining",
+          "confidence": "high"
+        },
+        {
+          "name": "Declining Then Straight Line",
+          "type": "Standard",
+          "mention": "Declining Then Straight Line",
+          "confidence": "high"
+        },
+        {
+          "name": "car",
+          "type": "Unknown",
+          "mention": "car",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fixed Assets",
+          "relation": "IS_PART_OF",
+          "target": "Non-current Assets",
+          "evidence": "Fixed Assets are a type of Non-current Assets"
+        },
+        {
+          "source": "Non-current Assets",
+          "relation": "CONFIGURED_BY",
+          "target": "depreciation",
+          "evidence": "Depending on their nature, they may undergo depreciation"
+        },
+        {
+          "source": "Non-current Assets",
+          "relation": "GENERATES",
+          "target": "balance sheet",
+          "evidence": "They are capitalized rather than being expensed and appear on the company's balance sheet"
+        },
+        {
+          "source": "Straight Line",
+          "relation": "SUPPORTS",
+          "target": "Depreciation Methods",
+          "evidence": "Odoo supports the following Depreciation Methods: Straight Line"
+        },
+        {
+          "source": "Declining",
+          "relation": "SUPPORTS",
+          "target": "Depreciation Methods",
+          "evidence": "Odoo supports the following Depreciation Methods: Declining"
+        },
+        {
+          "source": "Declining Then Straight Line",
+          "relation": "SUPPORTS",
+          "target": "Depreciation Methods",
+          "evidence": "Odoo supports the following Depreciation Methods: Declining Then Straight Line"
+        },
+        {
+          "source": "Accumulated Depreciation",
+          "relation": "GENERATES",
+          "target": "balance sheet",
+          "evidence": "The Accumulated Depreciation amount reported on the balance sheet"
+        },
+        {
+          "source": "Odoo Accounting",
+          "relation": "PRODUCES",
+          "target": "depreciation entries",
+          "evidence": "Odoo Accounting handles depreciation by creating all depreciation entries automatically"
+        },
+        {
+          "source": "depreciation entries",
+          "relation": "CONFIGURED_BY",
+          "target": "draft mode",
+          "evidence": "Odoo Accounting handles depreciation by creating all depreciation entries automatically in draft mode"
+        },
+        {
+          "source": "depreciation entries",
+          "relation": "TRIGGERED_BY",
+          "target": "posted",
+          "evidence": "They are then posted periodically"
+        },
+        {
+          "source": "Straight Line",
+          "relation": "USES_METHOD",
+          "target": "linear",
+          "evidence": "Using the linear, or straight-line, depreciation method"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "prerequisites",
+    "heading": "Prerequisites",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Assets Account",
+          "type": "DataObject",
+          "mention": "Assets Account",
+          "confidence": "high"
+        },
+        {
+          "name": "default expense account",
+          "type": "DataObject",
+          "mention": "default expense account",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Assets Account",
+          "relation": "REQUIRES",
+          "target": "default expense account",
+          "evidence": "Such transactions must be posted on an Assets Account rather than on the default expense account."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-an-assets-account",
+    "heading": "Configure an Assets Account",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Chart of Accounts",
+          "type": "DataObject",
+          "mention": "Chart of Accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed Assets",
+          "type": "Concept",
+          "mention": "Fixed Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "Non-current Assets",
+          "type": "Concept",
+          "mention": "Non-current Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure your account",
+          "type": "Action",
+          "mention": "Configure your account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configure your account",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "go to Accounting --> Configuration --> Chart of Accounts, click on *Create*, and fill out the form."
+        },
+        {
+          "source": "Chart of Accounts",
+          "relation": "CONTAINS",
+          "target": "Configure your account",
+          "evidence": "To configure your account in the **Chart of Accounts**"
+        },
+        {
+          "source": "Configure your account",
+          "relation": "CONFIGURED_BY",
+          "target": "Fixed Assets",
+          "evidence": "This account's type must be either *Fixed Assets*"
+        },
+        {
+          "source": "Configure your account",
+          "relation": "CONFIGURED_BY",
+          "target": "Non-current Assets",
+          "evidence": "This account's type must be either *Fixed Assets* or *Non-current Assets*."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "select-the-account-on-a-draft-bill",
+    "heading": "Select the account on a draft bill",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "draft bill",
+          "confidence": "high"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "right account",
+          "confidence": "high"
+        },
+        {
+          "name": "assets",
+          "type": "DataObject",
+          "mention": "assets",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "assets",
+          "relation": "IS_PART_OF",
+          "target": "bill",
+          "evidence": "all the assets you are buying on a draft bill"
+        },
+        {
+          "source": "bill",
+          "relation": "ENABLES",
+          "target": "account",
+          "evidence": "select the right account for all the assets you are buying"
+        },
+        {
+          "source": "account",
+          "relation": "APPLIES_TO",
+          "target": "assets",
+          "evidence": "select the right account for all the assets you are buying"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "choose-a-different-expense-account-for-specific-products",
+    "heading": "Choose a different Expense Account for specific products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Account",
+          "type": "Concept",
+          "mention": "Expense Account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting tab",
+          "type": "Module",
+          "mention": "Accounting tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "assets entries",
+          "type": "DataObject",
+          "mention": "assets entries",
+          "confidence": "low"
+        },
+        {
+          "name": "assets-automation",
+          "type": "Feature",
+          "mention": "assets-automation",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Start editing the product, go to the *Accounting* tab"
+        },
+        {
+          "source": "Expense Account",
+          "relation": "RELATED_TO",
+          "target": "Accounting tab",
+          "evidence": "select the right **Expense Account**"
+        },
+        {
+          "source": "assets-automation",
+          "relation": "ENABLES",
+          "target": "assets entries",
+          "evidence": "It is possible to automate the creation of assets entries <assets-automation>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-the-account-of-a-posted-journal-item",
+    "heading": "Change the account of a posted journal item",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchases",
+          "type": "Module",
+          "mention": "Purchases",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchases Journal",
+          "type": "Report",
+          "mention": "Purchases Journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal item",
+          "type": "DataObject",
+          "mention": "journal item",
+          "confidence": "high"
+        },
+        {
+          "name": "account",
+          "type": "Field",
+          "mention": "account",
+          "confidence": "medium"
+        },
+        {
+          "name": "change account",
+          "type": "Action",
+          "mention": "Change the account",
+          "confidence": "high"
+        },
+        {
+          "name": "open journal",
+          "type": "Action",
+          "mention": "open your Purchases Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "select journal item",
+          "type": "Action",
+          "mention": "select the journal item",
+          "confidence": "high"
+        },
+        {
+          "name": "click account",
+          "type": "Action",
+          "mention": "click on the account",
+          "confidence": "high"
+        },
+        {
+          "name": "select account",
+          "type": "Action",
+          "mention": "select the right one",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchases",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Accounting --> Purchases"
+        },
+        {
+          "source": "change account",
+          "relation": "TRIGGERED_BY",
+          "target": "open journal",
+          "evidence": "To do so, open your Purchases Journal..."
+        },
+        {
+          "source": "open journal",
+          "relation": "HAS_REPORT",
+          "target": "Purchases Journal",
+          "evidence": "open your Purchases Journal"
+        },
+        {
+          "source": "select journal item",
+          "relation": "TRIGGERED_BY",
+          "target": "open journal",
+          "evidence": "...open your Purchases Journal, select the journal item..."
+        },
+        {
+          "source": "click account",
+          "relation": "TRIGGERED_BY",
+          "target": "select journal item",
+          "evidence": "...select the journal item... click on the account"
+        },
+        {
+          "source": "select account",
+          "relation": "TRIGGERED_BY",
+          "target": "click account",
+          "evidence": "...click on the account, and select the right one"
+        },
+        {
+          "source": "journal item",
+          "relation": "CONTAINS",
+          "target": "account",
+          "evidence": "journal item you want to modify, click on the account"
+        },
+        {
+          "source": "journal item",
+          "relation": "IS_PART_OF",
+          "target": "Purchases Journal",
+          "evidence": "journal item... in your Purchases Journal"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-entry",
+    "heading": "Create a new entry",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Assets",
+          "type": "Sub-module",
+          "mention": "Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "Asset entry",
+          "type": "DataObject",
+          "mention": "Asset entry",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entries",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create",
+          "confidence": "high"
+        },
+        {
+          "name": "select related purchases",
+          "type": "Action",
+          "mention": "select related purchases",
+          "confidence": "high"
+        },
+        {
+          "name": "Related Purchase",
+          "type": "Concept",
+          "mention": "Related Purchase",
+          "confidence": "medium"
+        },
+        {
+          "name": "Compute Depreciation",
+          "type": "Action",
+          "mention": "Compute Depreciation",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "medium"
+        },
+        {
+          "name": "Depreciation Board",
+          "type": "Report",
+          "mention": "Depreciation Board",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Assets",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Accounting --> Assets"
+        },
+        {
+          "source": "Create",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click on *Create*"
+        },
+        {
+          "source": "Asset entry",
+          "relation": "GENERATES",
+          "target": "journal entries",
+          "evidence": "Asset entry automatically generates all journal entries"
+        },
+        {
+          "source": "Asset entry",
+          "relation": "HAS_REPORT",
+          "target": "Depreciation Board",
+          "evidence": "generate all the values of the Depreciation Board"
+        },
+        {
+          "source": "Compute Depreciation",
+          "relation": "PRODUCES",
+          "target": "Depreciation Board",
+          "evidence": "Compute Depreciation to generate all the values of the Depreciation Board"
+        },
+        {
+          "source": "Compute Depreciation",
+          "relation": "TRIGGERED_BY",
+          "target": "Action",
+          "evidence": "click on Compute Depreciation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "what-does-\"prorata-temporis\"-mean?",
+    "heading": "What does \"Prorata Temporis\" mean?",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Prorata Temporis",
+          "type": "Feature",
+          "mention": "Prorata Temporis",
+          "confidence": "high"
+        },
+        {
+          "name": "Prorata Date",
+          "type": "Field",
+          "mention": "Prorata Date",
+          "confidence": "high"
+        },
+        {
+          "name": "First Depreciation Date",
+          "type": "Field",
+          "mention": "First Depreciation Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Depreciation Board",
+          "type": "DataObject",
+          "mention": "Depreciation Board",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Prorata Temporis",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: What does 'Prorata Temporis' mean?"
+        },
+        {
+          "source": "Prorata Temporis",
+          "relation": "CONFIGURED_BY",
+          "target": "Prorata Date",
+          "evidence": "the first entry... is computed based on the time left between the *Prorata Date*"
+        },
+        {
+          "source": "Prorata Temporis",
+          "relation": "CONFIGURED_BY",
+          "target": "First Depreciation Date",
+          "evidence": "the first entry... is computed based on the time left between the ... *First Depreciation Date*"
+        },
+        {
+          "source": "Prorata Temporis",
+          "relation": "PRODUCES",
+          "target": "Depreciation Board",
+          "evidence": "With this feature, the first entry on the Depreciation Board is computed..."
+        },
+        {
+          "source": "Depreciation Board",
+          "relation": "CONTAINS",
+          "target": "First Depreciation Date",
+          "evidence": "first entry... between the ... *First Depreciation Date*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "what-are-the-different-depreciation-methods",
+    "heading": "What are the different Depreciation Methods",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Straight Line Depreciation Method",
+          "type": "Standard",
+          "mention": "Straight Line Depreciation Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Declining Depreciation Method",
+          "type": "Standard",
+          "mention": "Declining Depreciation Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Declining Factor",
+          "type": "Concept",
+          "mention": "Declining Factor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Declining Then Straight Line Depreciation Method",
+          "type": "Standard",
+          "mention": "Declining Then Straight Line Depreciation Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Depreciable Value",
+          "type": "Concept",
+          "mention": "Depreciable Value",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Straight Line Depreciation Method",
+          "relation": "USES_METHOD",
+          "target": "Straight Line Depreciation Method",
+          "evidence": "The **Straight Line Depreciation Method** divides the initial Depreciable Value by the number of depreciations planned."
+        },
+        {
+          "source": "Declining Depreciation Method",
+          "relation": "USES_METHOD",
+          "target": "Declining Depreciation Method",
+          "evidence": "The **Declining Depreciation Method** multiplies the Depreciable Value by the **Declining Factor** for each entry."
+        },
+        {
+          "source": "Declining Then Straight Line Depreciation Method",
+          "relation": "USES_METHOD",
+          "target": "Declining Then Straight Line Depreciation Method",
+          "evidence": "The **Declining Then Straight Line Depreciation Method** uses the Declining Method, but with a minimum Depreciation equal to the Straight Line Method."
+        },
+        {
+          "source": "Declining Then Straight Line Depreciation Method",
+          "relation": "RELATED_TO",
+          "target": "Declining Depreciation Method",
+          "evidence": "The **Declining Then Straight Line Depreciation Method** uses the Declining Method"
+        },
+        {
+          "source": "Declining Then Straight Line Depreciation Method",
+          "relation": "RELATED_TO",
+          "target": "Straight Line Depreciation Method",
+          "evidence": "with a minimum Depreciation equal to the Straight Line Method."
+        },
+        {
+          "source": "Straight Line Depreciation Method",
+          "relation": "RELATED_TO",
+          "target": "Depreciable Value",
+          "evidence": "divides the initial Depreciable Value"
+        },
+        {
+          "source": "Declining Depreciation Method",
+          "relation": "RELATED_TO",
+          "target": "Depreciable Value",
+          "evidence": "multiplies the Depreciable Value"
+        },
+        {
+          "source": "Declining Depreciation Method",
+          "relation": "RELATED_TO",
+          "target": "Declining Factor",
+          "evidence": "multiplies the Depreciable Value by the **Declining Factor**"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assets-from-the-purchases-journal",
+    "heading": "Assets from the Purchases Journal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchases Journal",
+          "type": "Module",
+          "mention": "Purchases Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "journal item",
+          "type": "DataObject",
+          "mention": "journal item",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Asset",
+          "type": "Action",
+          "mention": "Create Asset",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "create a new entry",
+          "type": "Action",
+          "mention": "create a new entry",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchases Journal",
+          "relation": "CONTAINS",
+          "target": "journal item",
+          "evidence": "journal item in your Purchases Journal"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Purchases Journal",
+          "evidence": "Accounting --> Accounting --> Purchases"
+        },
+        {
+          "source": "Create Asset",
+          "relation": "ENABLES",
+          "target": "create a new entry",
+          "evidence": "fill out the form the same way you would do to create a new entry"
+        },
+        {
+          "source": "Purchases Journal",
+          "relation": "HAS_FEATURE",
+          "target": "Create Asset",
+          "evidence": "click on *Action*, select **Create Asset**"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo, going to Accounting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "modification-of-an-asset",
+    "heading": "Modification of an Asset",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Asset",
+          "type": "DataObject",
+          "mention": "Asset",
+          "confidence": "high"
+        },
+        {
+          "name": "Modify Depreciation",
+          "type": "Action",
+          "mention": "click on *Modify Depreciation*",
+          "confidence": "high"
+        },
+        {
+          "name": "Modify",
+          "type": "Action",
+          "mention": "click on *Modify*",
+          "confidence": "high"
+        },
+        {
+          "name": "Value Decrease",
+          "type": "Feature",
+          "mention": "decrease in value posts a new Journal Entry for the **Value Decrease**",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Entry",
+          "type": "DataObject",
+          "mention": "Journal Entry",
+          "confidence": "high"
+        },
+        {
+          "name": "Depreciation Board",
+          "type": "Report",
+          "mention": "Depreciation Board",
+          "confidence": "high"
+        },
+        {
+          "name": "Value Increase",
+          "type": "Feature",
+          "mention": "increase in value creates a new Asset entry with the **Value Increase**",
+          "confidence": "high"
+        },
+        {
+          "name": "Gross Increase Asset Entry",
+          "type": "DataObject",
+          "mention": "Gross Increase Asset Entry",
+          "confidence": "high"
+        },
+        {
+          "name": "Smart Button",
+          "type": "Feature",
+          "mention": "accessed with a Smart Button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Asset",
+          "relation": "CONTAINS",
+          "target": "Modify Depreciation",
+          "evidence": "open the asset you want to modify, and click on *Modify Depreciation*"
+        },
+        {
+          "source": "Modify Depreciation",
+          "relation": "PRODUCES",
+          "target": "Asset",
+          "evidence": "fill out the form with the new depreciation values and click on *Modify*"
+        },
+        {
+          "source": "Value Decrease",
+          "relation": "GENERATES",
+          "target": "Journal Entry",
+          "evidence": "decrease in value posts a new Journal Entry for the **Value Decrease**"
+        },
+        {
+          "source": "Value Decrease",
+          "relation": "TRIGGERED_BY",
+          "target": "Modify",
+          "evidence": "click on *Modify*"
+        },
+        {
+          "source": "Value Increase",
+          "relation": "GENERATES",
+          "target": "Gross Increase Asset Entry",
+          "evidence": "increase in value creates a new Asset entry with the **Value Increase**"
+        },
+        {
+          "source": "Gross Increase Asset Entry",
+          "relation": "IS_PART_OF",
+          "target": "Asset",
+          "evidence": "creates a new Asset entry"
+        },
+        {
+          "source": "Gross Increase Asset Entry",
+          "relation": "HAS_FEATURE",
+          "target": "Smart Button",
+          "evidence": "can be accessed with a Smart Button"
+        },
+        {
+          "source": "Depreciation Board",
+          "relation": "CONTAINS",
+          "target": "Journal Entry",
+          "evidence": "future *unposted* Journal Entries listed in the Depreciation Board"
+        },
+        {
+          "source": "Value Decrease",
+          "relation": "TRIGGERED_BY",
+          "target": "Modify Depreciation",
+          "evidence": "click on *Modify Depreciation*"
+        },
+        {
+          "source": "Asset",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "disposal-of-fixed-assets",
+    "heading": "Disposal of Fixed Assets",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Disposal of Fixed Assets",
+          "type": "Workflow",
+          "mention": "Disposal of Fixed Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "sell",
+          "type": "Action",
+          "mention": "sell",
+          "confidence": "high"
+        },
+        {
+          "name": "dispose",
+          "type": "Action",
+          "mention": "dispose",
+          "confidence": "high"
+        },
+        {
+          "name": "Balance Sheet",
+          "type": "DataObject",
+          "mention": "Balance Sheet",
+          "confidence": "high"
+        },
+        {
+          "name": "asset",
+          "type": "DataObject",
+          "mention": "asset",
+          "confidence": "high"
+        },
+        {
+          "name": "Sell or Dispose",
+          "type": "Action",
+          "mention": "Sell or Dispose",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo Accounting",
+          "type": "Product",
+          "mention": "Odoo Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entries",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "high"
+        },
+        {
+          "name": "gain or loss on sale",
+          "type": "DataObject",
+          "mention": "gain or loss on sale",
+          "confidence": "high"
+        },
+        {
+          "name": "book value",
+          "type": "Concept",
+          "mention": "book value",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Invoice",
+          "type": "DataObject",
+          "mention": "Customer Invoice",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "asset",
+          "relation": "BELONGS_TO",
+          "target": "Balance Sheet",
+          "evidence": "To sell an asset or dispose of it implies that it must be removed from the Balance Sheet."
+        },
+        {
+          "source": "Disposal of Fixed Assets",
+          "relation": "CONTAINS",
+          "target": "sell",
+          "evidence": "To sell an asset or dispose of it implies that it must be removed from the Balance Sheet."
+        },
+        {
+          "source": "Disposal of Fixed Assets",
+          "relation": "CONTAINS",
+          "target": "dispose",
+          "evidence": "To sell an asset or dispose of it implies that it must be removed from the Balance Sheet."
+        },
+        {
+          "source": "Disposal of Fixed Assets",
+          "relation": "TRIGGERED_BY",
+          "target": "Sell or Dispose",
+          "evidence": "To do so, open the asset you want to dispose of, click on *Sell or Dispose*, and fill out the form."
+        },
+        {
+          "source": "Disposal of Fixed Assets",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo Accounting",
+          "evidence": "Odoo Accounting then generates all the journal entries necessary to dispose of the asset"
+        },
+        {
+          "source": "Odoo Accounting",
+          "relation": "GENERATES",
+          "target": "journal entries",
+          "evidence": "Odoo Accounting then generates all the journal entries necessary to dispose of the asset"
+        },
+        {
+          "source": "Odoo Accounting",
+          "relation": "GENERATES",
+          "target": "gain or loss on sale",
+          "evidence": "including the gain or loss on sale"
+        },
+        {
+          "source": "gain or loss on sale",
+          "relation": "IS_PART_OF",
+          "target": "journal entries",
+          "evidence": "including the gain or loss on sale"
+        },
+        {
+          "source": "gain or loss on sale",
+          "relation": "USES_METHOD",
+          "target": "book value",
+          "evidence": "which is based on the difference between the asset's book value"
+        },
+        {
+          "source": "sell",
+          "relation": "REQUIRES",
+          "target": "Customer Invoice",
+          "evidence": "you must first post the related Customer Invoice so you can link the sale of the asset with it."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assets-models",
+    "heading": "Assets Models",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Assets Models",
+          "type": "Module",
+          "mention": "Assets Models",
+          "confidence": "high"
+        },
+        {
+          "name": "Asset entry",
+          "type": "DataObject",
+          "mention": "Asset entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "confirmed Asset entry",
+          "type": "DataObject",
+          "mention": "confirmed Asset entry",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Assets Models",
+          "relation": "HAS_REPORT",
+          "target": "Accounting",
+          "evidence": "go to Accounting"
+        },
+        {
+          "source": "Assets Models",
+          "relation": "SUPPORTS",
+          "target": "Asset entry",
+          "evidence": "create your Asset entries faster"
+        },
+        {
+          "source": "confirmed Asset entry",
+          "relation": "SUPPORTS",
+          "target": "Assets Models",
+          "evidence": "convert a *confirmed Asset entry* into a model"
+        },
+        {
+          "source": "Assets Models",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Configuration --> Assets Models"
+        },
+        {
+          "source": "Assets Models",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "You can create"
+        },
+        {
+          "source": "confirmed Asset entry",
+          "relation": "SUPPORTS",
+          "target": "Accounting",
+          "evidence": "Accounting --> Accounting --> Assets"
+        },
+        {
+          "source": "Assets Models",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration --> Assets Models"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "apply-an-asset-model-to-a-new-entry",
+    "heading": "Apply an Asset Model to a new entry",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Asset entry",
+          "type": "DataObject",
+          "mention": "create a new Asset entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fixed Asset Account",
+          "type": "Field",
+          "mention": "Fixed Asset Account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Asset account",
+          "type": "Concept",
+          "mention": "asset account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Asset Model",
+          "type": "Concept",
+          "mention": "Asset Model",
+          "confidence": "low"
+        },
+        {
+          "name": "model",
+          "type": "Concept",
+          "mention": "model",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Asset entry",
+          "relation": "CONTAINS",
+          "target": "Fixed Asset Account",
+          "evidence": "fill out the **Fixed Asset Account** with the right asset account"
+        },
+        {
+          "source": "Fixed Asset Account",
+          "relation": "RELATED_TO",
+          "target": "Asset account",
+          "evidence": "fill out the **Fixed Asset Account** with the right asset account"
+        },
+        {
+          "source": "Asset Model",
+          "relation": "BELONGS_TO",
+          "target": "Fixed Asset Account",
+          "evidence": "all the models linked to that account"
+        },
+        {
+          "source": "model",
+          "relation": "ENABLES",
+          "target": "Asset entry",
+          "evidence": "Clicking on a model button fills out the form according to that model"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "automate-the-assets",
+    "heading": "Automate the Assets",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Non-current Assets",
+          "type": "Module",
+          "mention": "Non-current Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed Assets",
+          "type": "Module",
+          "mention": "Fixed Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "Automate Assets",
+          "type": "Feature",
+          "mention": "Automate Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "Assets entry",
+          "type": "DataObject",
+          "mention": "Assets entry",
+          "confidence": "high"
+        },
+        {
+          "name": "Assets Models",
+          "type": "Module",
+          "mention": "Assets Models",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Account",
+          "type": "DataObject",
+          "mention": "Expense Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Chart of Accounts",
+          "type": "Module",
+          "mention": "../get_started/chart_of_accounts",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Automate Assets",
+          "relation": "CONFIGURED_BY",
+          "target": "Automate Assets field",
+          "evidence": "You have three choices for the **Automate Assets** field:"
+        },
+        {
+          "source": "Non-current Assets",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo. When you create or edit an account of which the type is either *Non-current Assets*..."
+        },
+        {
+          "source": "Fixed Assets",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo. When you create or edit an account of which the type is either *Non-current Assets* or *Fixed Assets*..."
+        },
+        {
+          "source": "Automate Assets",
+          "relation": "BELONGS_TO",
+          "target": "Non-current Assets",
+          "evidence": "When you create or edit an account of which the type is either *Non-current Assets* or *Fixed Assets*, you can configure it to create assets..."
+        },
+        {
+          "source": "Automate Assets",
+          "relation": "BELONGS_TO",
+          "target": "Fixed Assets",
+          "evidence": "When you create or edit an account of which the type is either *Non-current Assets* or *Fixed Assets*, you can configure it to create assets..."
+        },
+        {
+          "source": "Automate Assets",
+          "relation": "ENABLES",
+          "target": "Assets entry",
+          "evidence": "configure it to create assets for the expenses that are credited on it automatically."
+        },
+        {
+          "source": "Assets entry",
+          "relation": "GENERATED_BY",
+          "target": "Automate Assets",
+          "evidence": "Whenever a transaction is posted on the account, a draft *Assets entry* is created"
+        },
+        {
+          "source": "Assets Models",
+          "relation": "SEE_ALSO",
+          "target": "Assets entry",
+          "evidence": "Create and validate: you must also select an Asset Model (see: `Assets Models`_)."
+        },
+        {
+          "source": "Expense Account",
+          "relation": "RELATED_TO",
+          "target": "Automate Assets",
+          "evidence": "You can, for example, select this account as the default **Expense Account** of a product to fully automate its purchase."
+        },
+        {
+          "source": "Chart of Accounts",
+          "relation": "SEE_ALSO",
+          "target": "Odoo",
+          "evidence": "seealso: ../get_started/chart_of_accounts"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,955 @@
+[
+  {
+    "section_id": "inter-warehouse-replenishment",
+    "heading": "Inter-warehouse replenishment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Odoo Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Route",
+          "type": "Setting",
+          "mention": "Route",
+          "confidence": "high"
+        },
+        {
+          "name": "Inter-warehouse replenishment",
+          "type": "Concept",
+          "mention": "Inter-warehouse replenishment",
+          "confidence": "high"
+        },
+        {
+          "name": "Make to order (MTO)",
+          "type": "Workflow",
+          "mention": "Make to order (MTO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering rule",
+          "type": "Workflow",
+          "mention": "Reordering rule",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo Inventory manages these transfers"
+        },
+        {
+          "source": "Route",
+          "relation": "CONFIGURED_BY",
+          "target": "Inventory",
+          "evidence": "Odoo uses a *Route* configuration"
+        },
+        {
+          "source": "Inventory",
+          "relation": "HAS_FEATURE",
+          "target": "Inter-warehouse replenishment",
+          "evidence": "Odoo Inventory manages these transfers to keep stores in stock"
+        },
+        {
+          "source": "Inter-warehouse replenishment",
+          "relation": "SUPPORTS",
+          "target": "Make to order (MTO)",
+          "evidence": "using two replenishment strategies: #. Make to order (MTO)"
+        },
+        {
+          "source": "Inter-warehouse replenishment",
+          "relation": "SUPPORTS",
+          "target": "Reordering rule",
+          "evidence": "using two replenishment strategies: #. Reordering rule"
+        },
+        {
+          "source": "Route",
+          "relation": "ENABLES",
+          "target": "Inter-warehouse replenishment",
+          "evidence": "Odoo uses a *Route* configuration that enables locations to replenish"
+        },
+        {
+          "source": "Inter-warehouse replenishment",
+          "relation": "GENERATES",
+          "target": "inter-warehouse transfers",
+          "evidence": "automatically generating *inter-warehouse transfers*"
+        },
+        {
+          "source": "Make to order (MTO)",
+          "relation": "SEE_ALSO",
+          "target": "Reordering rule",
+          "evidence": "Difference between MTO and reordering rules"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warehouse section",
+          "type": "Sub-module",
+          "mention": "Warehouse section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Warehouse section",
+          "evidence": "In the Warehouse section"
+        },
+        {
+          "source": "Warehouse section",
+          "relation": "CONTAINS",
+          "target": "Storage Locations",
+          "evidence": "activate Storage Locations"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Action: Save",
+          "relation": "CONFIGURED_BY",
+          "target": "Setting: Storage Locations",
+          "evidence": "click Save to apply the setting"
+        },
+        {
+          "source": "Storage Locations",
+          "relation": "GOVERNED_BY",
+          "target": "Settings",
+          "evidence": "activate Storage Locations in Settings"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "warehouses",
+    "heading": "Warehouses",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouses",
+          "type": "Feature",
+          "mention": "Warehouses",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warehouse",
+          "type": "DataObject",
+          "mention": "warehouse",
+          "confidence": "high"
+        },
+        {
+          "name": "Central warehouse",
+          "type": "Concept",
+          "mention": "central warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shop",
+          "type": "Actor",
+          "mention": "shop",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warehouse Configuration",
+          "type": "Feature",
+          "mention": "Warehouse Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resupply From",
+          "type": "Field",
+          "mention": "Resupply From",
+          "confidence": "high"
+        },
+        {
+          "name": "transfer",
+          "type": "DataObject",
+          "mention": "transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Short Name",
+          "type": "Field",
+          "mention": "Short Name",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Warehouses",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Configure the settings for the central warehouse and connecting storage locations by going to Inventory app --> Configuration --> Warehouses."
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Warehouses",
+          "evidence": "Configure the settings for the central warehouse and connecting storage locations by going to Inventory app --> Configuration --> Warehouses."
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONFIGURED_BY",
+          "target": "Warehouse Configuration",
+          "evidence": "In the Warehouse Configuration tab..."
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONTAINS",
+          "target": "Resupply From",
+          "evidence": "locate the Resupply From field."
+        },
+        {
+          "source": "Shop",
+          "relation": "RELATED_TO",
+          "target": "Warehouse",
+          "evidence": "For example, each shop is considered a local warehouse."
+        },
+        {
+          "source": "Warehouse",
+          "relation": "RELATED_TO",
+          "target": "transfer",
+          "evidence": "Short Name, which will appear on that warehouse's transfers."
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONTAINS",
+          "target": "Short Name",
+          "evidence": "Then, give the warehouse a name and a Short Name..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-route-on-a-product",
+    "heading": "Set route on a product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products --> Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Set route on a product",
+          "type": "Feature",
+          "mention": "Set route on a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Routes section",
+          "type": "Sub-module",
+          "mention": "Routes section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Feature",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Supply Product from Y",
+          "type": "Feature",
+          "mention": "Supply Product from Y",
+          "confidence": "medium"
+        },
+        {
+          "name": "reordering rule",
+          "type": "Feature",
+          "mention": "reordering rule",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse",
+          "type": "Concept",
+          "mention": "warehouse",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Set route on a product",
+          "relation": "HAS_FEATURE",
+          "target": "Inventory tab",
+          "evidence": "In the Inventory tab..."
+        },
+        {
+          "source": "Inventory tab",
+          "relation": "CONTAINS",
+          "target": "Routes section",
+          "evidence": "In the Inventory tab, the new route appears... in the Routes section"
+        },
+        {
+          "source": "Routes section",
+          "relation": "CONTAINS",
+          "target": "Supply Product from Y",
+          "evidence": "...appears as X: Supply Product from Y in the Routes section"
+        },
+        {
+          "source": "Set route on a product",
+          "relation": "REQUIRES",
+          "target": "Products",
+          "evidence": "Go to Inventory app --> Products --> Products and select..."
+        },
+        {
+          "source": "Products",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "Go to Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Go to Inventory app"
+        },
+        {
+          "source": "Supply Product from Y",
+          "relation": "ENABLES",
+          "target": "reordering rule",
+          "evidence": "...which is intended to be used with... a reordering rule"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "mto",
+    "heading": "MTO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "MTO route",
+          "type": "Workflow",
+          "mention": "the MTO route is unarchived",
+          "confidence": "high"
+        },
+        {
+          "name": "Routes section",
+          "type": "Feature",
+          "mention": "Routes section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Feature",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form",
+          "type": "Feature",
+          "mention": "product form",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish from another warehouse",
+          "type": "Concept",
+          "mention": "Replenish from another warehouse",
+          "confidence": "high"
+        },
+        {
+          "name": "Store",
+          "type": "Actor",
+          "mention": "Store",
+          "confidence": "high"
+        },
+        {
+          "name": "YourCompany",
+          "type": "Actor",
+          "mention": "YourCompany",
+          "confidence": "high"
+        },
+        {
+          "name": "Supply Product from YourCompany",
+          "type": "Workflow",
+          "mention": "Supply Product from YourCompany",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish on Order (MTO)",
+          "type": "Workflow",
+          "mention": "Replenish on Order (MTO)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Routes section",
+          "evidence": "go to the product form and ensure... so it appears in the Routes section"
+        },
+        {
+          "source": "Routes section",
+          "relation": "IS_PART_OF",
+          "target": "Inventory tab",
+          "evidence": "Routes section of the Inventory tab"
+        },
+        {
+          "source": "Supply Product from YourCompany",
+          "relation": "BELONGS_TO",
+          "target": "Store",
+          "evidence": "Store: Supply Product from YourCompany"
+        },
+        {
+          "source": "Replenish on Order (MTO)",
+          "relation": "RELATED_TO",
+          "target": "Supply Product from YourCompany",
+          "evidence": "the following routes are selected..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reordering-rule",
+    "heading": "Reordering rule",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering rule",
+          "type": "Module",
+          "mention": "Reordering rule",
+          "confidence": "high"
+        },
+        {
+          "name": "Supply Product from Y route",
+          "type": "Feature",
+          "mention": "X: Supply Product from Y route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Sub-module",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reordering Rules smart button",
+          "type": "Feature",
+          "mention": "Reordering Rules smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Location",
+          "type": "Field",
+          "mention": "Location",
+          "confidence": "high"
+        },
+        {
+          "name": "SHOP/Stock",
+          "type": "DataObject",
+          "mention": "`SHOP/Stock`",
+          "confidence": "medium"
+        },
+        {
+          "name": "Route",
+          "type": "Field",
+          "mention": "Route",
+          "confidence": "high"
+        },
+        {
+          "name": "Min Quantity",
+          "type": "Field",
+          "mention": "Min Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Max Quantity",
+          "type": "Field",
+          "mention": "Max Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "automatic stock transfers",
+          "type": "Action",
+          "mention": "automatic stock transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "reordering_rules",
+          "type": "Concept",
+          "mention": "reordering_rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "0/0 reordering rule",
+          "type": "Workflow",
+          "mention": "0/0 reordering rule",
+          "confidence": "medium"
+        },
+        {
+          "name": "shop's warehouse",
+          "type": "DataObject",
+          "mention": "shop's warehouse",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reordering rule",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Supply Product from Y route",
+          "relation": "BELONGS_TO",
+          "target": "Inventory tab",
+          "evidence": "Inventory tab"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Inventory tab",
+          "evidence": "in the Inventory tab of the product form"
+        },
+        {
+          "source": "Reordering rule",
+          "relation": "IS_PART_OF",
+          "target": "Inventory tab",
+          "evidence": "first ensure the Supply Product from Y route is selected in the Inventory tab"
+        },
+        {
+          "source": "Reordering rule",
+          "relation": "ENABLES",
+          "target": "automatic stock transfers",
+          "evidence": "trigger automatic stock transfers"
+        },
+        {
+          "source": "Reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Location",
+          "evidence": "set: Location"
+        },
+        {
+          "source": "Reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Route",
+          "evidence": "set: Route"
+        },
+        {
+          "source": "Reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Min Quantity",
+          "evidence": "set: Min Quantity"
+        },
+        {
+          "source": "Reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Max Quantity",
+          "evidence": "set: Max Quantity"
+        },
+        {
+          "source": "Location",
+          "relation": "RELATED_TO",
+          "target": "SHOP/Stock",
+          "evidence": "Location: the stock location of the retail store. For example, `SHOP/Stock`"
+        },
+        {
+          "source": "Route",
+          "relation": "RELATED_TO",
+          "target": "Supply Product from Y route",
+          "evidence": "Route: Supply Product from Y"
+        },
+        {
+          "source": "0/0 reordering rule",
+          "relation": "SEE_ALSO",
+          "target": "reordering_rules",
+          "evidence": "seealso: reordering_rules"
+        },
+        {
+          "source": "0/0 reordering rule",
+          "relation": "IS_PART_OF",
+          "target": "Reordering rule",
+          "evidence": "A 0/0 reordering rule"
+        },
+        {
+          "source": "0/0 reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "SHOP/Stock",
+          "evidence": "Location set to `SHOP/Stock`"
+        },
+        {
+          "source": "0/0 reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Store: Resupply from YourCompany",
+          "evidence": "Route set to Store: Resupply from YourCompany"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "replenish-one-warehouse-from-another",
+    "heading": "Replenish one warehouse from another",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish",
+          "type": "Action",
+          "mention": "Replenish",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish button",
+          "type": "Action",
+          "mention": "Replenish button",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse",
+          "type": "Field",
+          "mention": "warehouse",
+          "confidence": "high"
+        },
+        {
+          "name": "retail shop",
+          "type": "Actor",
+          "mention": "retail shop",
+          "confidence": "medium"
+        },
+        {
+          "name": "Store",
+          "type": "Actor",
+          "mention": "Store",
+          "confidence": "low"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "Other Info tab",
+          "type": "Module",
+          "mention": "Other Info tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Field",
+          "mention": "Warehouse",
+          "confidence": "high"
+        },
+        {
+          "name": "on-hand quantity",
+          "type": "Field",
+          "mention": "on-hand quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "minimum",
+          "type": "Field",
+          "mention": "minimum",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rule",
+          "type": "Setting",
+          "mention": "reordering rule",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "central, supplying warehouse",
+          "type": "Actor",
+          "mention": "central, supplying warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "receipt",
+          "type": "DataObject",
+          "mention": "receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "shop",
+          "type": "Actor",
+          "mention": "shop",
+          "confidence": "medium"
+        },
+        {
+          "name": "main warehouse",
+          "type": "Actor",
+          "mention": "main warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "Physical Locations/Inter-warehouse transit",
+          "type": "DataObject",
+          "mention": "Physical Locations/Inter-warehouse transit",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Stock",
+          "type": "DataObject",
+          "mention": "WH/Stock",
+          "confidence": "high"
+        },
+        {
+          "name": "SHOP/Stock",
+          "type": "DataObject",
+          "mention": "SHOP/Stock",
+          "confidence": "high"
+        },
+        {
+          "name": "final delivery order",
+          "type": "DataObject",
+          "mention": "final delivery order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replenish",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Once triggered, Odoo creates two transfers"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Replenish button",
+          "evidence": "Click the Replenish button on the top-left of the product page"
+        },
+        {
+          "source": "Replenish button",
+          "relation": "TRIGGERED_BY",
+          "target": "warehouse",
+          "evidence": "set the warehouse to the retail shop, and click Confirm"
+        },
+        {
+          "source": "quotation",
+          "relation": "CONTAINS",
+          "target": "Other Info tab",
+          "evidence": "in the Other Info tab"
+        },
+        {
+          "source": "Other Info tab",
+          "relation": "CONTAINS",
+          "target": "Warehouse",
+          "evidence": "set the Warehouse to the retail shop"
+        },
+        {
+          "source": "warehouse",
+          "relation": "APPLIES_TO",
+          "target": "reordering rule",
+          "evidence": "when selling the product makes the on-hand quantity of the product go below the minimum set on the reordering rule"
+        },
+        {
+          "source": "Odoo",
+          "relation": "PRODUCES",
+          "target": "delivery order",
+          "evidence": "Odoo creates two transfers: One is a delivery order"
+        },
+        {
+          "source": "Odoo",
+          "relation": "PRODUCES",
+          "target": "receipt",
+          "evidence": "and the second is a receipt at the shop"
+        },
+        {
+          "source": "delivery order",
+          "relation": "BELONGS_TO",
+          "target": "central, supplying warehouse",
+          "evidence": "from the central, supplying warehouse"
+        },
+        {
+          "source": "receipt",
+          "relation": "BELONGS_TO",
+          "target": "shop",
+          "evidence": "at the shop"
+        },
+        {
+          "source": "delivery order",
+          "relation": "GENERATES",
+          "target": "Physical Locations/Inter-warehouse transit",
+          "evidence": "While in transit, the product is located at Physical Locations/Inter-warehouse transit"
+        },
+        {
+          "source": "receipt",
+          "relation": "GENERATES",
+          "target": "Physical Locations/Inter-warehouse transit",
+          "evidence": "While in transit, the product is located at Physical Locations/Inter-warehouse transit"
+        },
+        {
+          "source": "sales order",
+          "relation": "TRIGGERED_BY",
+          "target": "shop",
+          "evidence": "A sales order for the product at the shop is created"
+        },
+        {
+          "source": "delivery order",
+          "relation": "GENERATES",
+          "target": "WH/Stock",
+          "evidence": "WH/Stock to the shop's warehouse SHOP/Stock"
+        },
+        {
+          "source": "receipt",
+          "relation": "GENERATES",
+          "target": "SHOP/Stock",
+          "evidence": "WH/Stock to the shop's warehouse SHOP/Stock"
+        },
+        {
+          "source": "final delivery order",
+          "relation": "GENERATES",
+          "target": "customer's delivery address",
+          "evidence": "The final delivery order is from the shop to the customer's delivery address"
+        }
+      ]
+    }
+  }
+]

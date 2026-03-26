@@ -1,0 +1,43 @@
+[
+  {
+    "section_id": "repairs",
+    "heading": "Repairs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Repairs",
+          "type": "Module",
+          "mention": "Repairs",
+          "confidence": "high"
+        },
+        {
+          "name": "repair_orders",
+          "type": "Sub-module",
+          "mention": "repair_orders",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Repairs",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Repairs"
+        },
+        {
+          "source": "repair_orders",
+          "relation": "IS_PART_OF",
+          "target": "Repairs",
+          "evidence": "toctree: repairs/repair_orders"
+        }
+      ]
+    }
+  }
+]

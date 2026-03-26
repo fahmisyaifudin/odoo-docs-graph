@@ -1,0 +1,407 @@
+[
+  {
+    "section_id": "iot-system-updates",
+    "heading": "IoT system updates",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "IoT system",
+          "type": "Product",
+          "mention": "IoT system",
+          "confidence": "high"
+        },
+        {
+          "name": "Updating",
+          "type": "Feature",
+          "mention": "updating",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT system's image",
+          "type": "Feature",
+          "mention": "IoT system's image",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT system's core code",
+          "type": "Feature",
+          "mention": "core code",
+          "confidence": "high"
+        },
+        {
+          "name": "Handlers",
+          "type": "Module",
+          "mention": "handlers",
+          "confidence": "high"
+        },
+        {
+          "name": "Interfaces",
+          "type": "Sub-module",
+          "mention": "interfaces",
+          "confidence": "high"
+        },
+        {
+          "name": "Drivers",
+          "type": "Sub-module",
+          "mention": "drivers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT system",
+          "relation": "HAS_FEATURE",
+          "target": "Updating",
+          "evidence": "Due to the complexity of IoT systems, the term *updating* can refer to several processes"
+        },
+        {
+          "source": "Updating",
+          "relation": "CONTAINS",
+          "target": "IoT system's image",
+          "evidence": "Updating the IoT system's image and/or core code"
+        },
+        {
+          "source": "Updating",
+          "relation": "CONTAINS",
+          "target": "IoT system's core code",
+          "evidence": "Updating the IoT system's image and/or core code"
+        },
+        {
+          "source": "Updating",
+          "relation": "CONTAINS",
+          "target": "Handlers",
+          "evidence": "Updating the handlers"
+        },
+        {
+          "source": "Handlers",
+          "relation": "CONTAINS",
+          "target": "Interfaces",
+          "evidence": "which include the interfaces and drivers"
+        },
+        {
+          "source": "Handlers",
+          "relation": "CONTAINS",
+          "target": "Drivers",
+          "evidence": "which include the interfaces and drivers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "image-and-core-code-update",
+    "heading": "Image and core code update",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box",
+          "type": "Module",
+          "mention": "IoT box",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT box's homepage",
+          "type": "Feature",
+          "mention": "IoT box's homepage",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-cogs (cogs) button",
+          "type": "Feature",
+          "mention": "fa-cogs (cogs) button",
+          "confidence": "low"
+        },
+        {
+          "name": "Version section",
+          "type": "Sub-module",
+          "mention": "Version section",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Image update",
+          "type": "Workflow",
+          "mention": "Image update",
+          "confidence": "high"
+        },
+        {
+          "name": "SD card",
+          "type": "DataObject",
+          "mention": "SD card",
+          "confidence": "medium"
+        },
+        {
+          "name": "balenaEtcher",
+          "type": "Integration",
+          "mention": "balenaEtcher",
+          "confidence": "medium"
+        },
+        {
+          "name": "Flash from URL",
+          "type": "Action",
+          "mention": "Flash from URL",
+          "confidence": "high"
+        },
+        {
+          "name": "http://nightly.odoo.com/master/iotbox/iotbox-latest.zip",
+          "type": "DataObject",
+          "mention": "http://nightly.odoo.com/master/iotbox/iotbox-latest.zip",
+          "confidence": "low"
+        },
+        {
+          "name": "Select target",
+          "type": "Action",
+          "mention": "Select target",
+          "confidence": "medium"
+        },
+        {
+          "name": "Flash",
+          "type": "Action",
+          "mention": "Flash",
+          "confidence": "medium"
+        },
+        {
+          "name": "Raspberry Pi Imager",
+          "type": "Integration",
+          "mention": "Raspberry Pi Imager",
+          "confidence": "medium"
+        },
+        {
+          "name": "micro SD card",
+          "type": "DataObject",
+          "mention": "micro SD card",
+          "confidence": "medium"
+        },
+        {
+          "name": "computer",
+          "type": "Actor",
+          "mention": "computer",
+          "confidence": "medium"
+        },
+        {
+          "name": "micro SD card reader/adapter",
+          "type": "Integration",
+          "mention": "micro SD card reader/adapter",
+          "confidence": "low"
+        },
+        {
+          "name": "Odoo database",
+          "type": "DataObject",
+          "mention": "Odoo database",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT box",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo; IoT box"
+        },
+        {
+          "source": "IoT box",
+          "relation": "CONTAINS",
+          "target": "IoT box's homepage",
+          "evidence": "access the IoT box's homepage"
+        },
+        {
+          "source": "IoT box's homepage",
+          "relation": "CONTAINS",
+          "target": "fa-cogs (cogs) button",
+          "evidence": "click the fa-cogs (cogs) button"
+        },
+        {
+          "source": "IoT box's homepage",
+          "relation": "CONTAINS",
+          "target": "Version section",
+          "evidence": "Update in the Version section"
+        },
+        {
+          "source": "developer mode",
+          "relation": "ENABLES",
+          "target": "IoT box",
+          "evidence": "Enable the developer mode to view the current versions"
+        },
+        {
+          "source": "Image update",
+          "relation": "REQUIRES",
+          "target": "SD card",
+          "evidence": "flash its SD card"
+        },
+        {
+          "source": "Image update",
+          "relation": "USES_METHOD",
+          "target": "balenaEtcher",
+          "evidence": "Flashing can be performed using balenaEtcher"
+        },
+        {
+          "source": "Image update",
+          "relation": "PERFORMED_BY",
+          "target": "computer",
+          "evidence": "A computer with a micro SD card reader/adapter is required"
+        },
+        {
+          "source": "Image update",
+          "relation": "TRIGGERED_BY",
+          "target": "Odoo database",
+          "evidence": "required after upgrading the Odoo database"
+        },
+        {
+          "source": "balenaEtcher",
+          "relation": "HAS_FEATURE",
+          "target": "Flash from URL",
+          "evidence": "click Flash from URL"
+        },
+        {
+          "source": "Flash from URL",
+          "relation": "PRODUCES",
+          "target": "http://nightly.odoo.com/master/iotbox/iotbox-latest.zip",
+          "evidence": "enter the following URL"
+        },
+        {
+          "source": "Flash",
+          "relation": "REQUIRES",
+          "target": "Select target",
+          "evidence": "Click Select target and select the SD card. Click Flash"
+        },
+        {
+          "source": "Image update",
+          "relation": "USES_METHOD",
+          "target": "Raspberry Pi Imager",
+          "evidence": "An alternative software for flashing"
+        },
+        {
+          "source": "Image update",
+          "relation": "REQUIRES",
+          "target": "micro SD card",
+          "evidence": "Insert the IoT box's micro SD card"
+        },
+        {
+          "source": "computer",
+          "relation": "HAS_FEATURE",
+          "target": "micro SD card reader/adapter",
+          "evidence": "A computer with a micro SD card reader/adapter is required"
+        },
+        {
+          "source": "Flash",
+          "relation": "PERFORMED_BY",
+          "target": "balenaEtcher",
+          "evidence": "Open balenaEtcher, click Flash"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "handler-(driver)-update",
+    "heading": "Handler (driver) update",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box",
+          "type": "Module",
+          "mention": "IoT box's",
+          "confidence": "high"
+        },
+        {
+          "name": "Windows virtual IoT",
+          "type": "Module",
+          "mention": "Windows virtual IoT's",
+          "confidence": "high"
+        },
+        {
+          "name": "Update",
+          "type": "Action",
+          "mention": "Click Update",
+          "confidence": "high"
+        },
+        {
+          "name": "Force Drivers Update",
+          "type": "Action",
+          "mention": "Force Drivers Update",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic drivers update",
+          "type": "Setting",
+          "mention": "Automatic drivers update option",
+          "confidence": "high"
+        },
+        {
+          "name": "Technical information tab",
+          "type": "Setting",
+          "mention": "Technical information tab",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT system's form",
+          "type": "DataObject",
+          "mention": "IoT system's form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT box",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "IoT box's homepage"
+        },
+        {
+          "source": "Windows virtual IoT",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Windows virtual IoT's homepage"
+        },
+        {
+          "source": "Update",
+          "relation": "ENABLES",
+          "target": "Force Drivers Update",
+          "evidence": "Click Update in the Version section."
+        },
+        {
+          "source": "Automatic drivers update",
+          "relation": "CONFIGURED_BY",
+          "target": "Technical information tab",
+          "evidence": "in the Technical information tab"
+        },
+        {
+          "source": "Automatic drivers update",
+          "relation": "GOVERNED_BY",
+          "target": "Technical information tab",
+          "evidence": "disabled in the Technical information tab"
+        },
+        {
+          "source": "IoT system's form",
+          "relation": "CONTAINS",
+          "target": "Technical information tab",
+          "evidence": "in the IoT system's form"
+        },
+        {
+          "source": "IoT system",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "IoT system"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,938 @@
+[
+  {
+    "section_id": "manage-a-bank-account-in-a-foreign-currency",
+    "heading": "Manage a bank account in a foreign currency",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "bank account",
+          "type": "DataObject",
+          "mention": "bank account",
+          "confidence": "high"
+        },
+        {
+          "name": "foreign currency",
+          "type": "Concept",
+          "mention": "currency of the *bank account*",
+          "confidence": "high"
+        },
+        {
+          "name": "default currency of the company",
+          "type": "Concept",
+          "mention": "default currency of the company",
+          "confidence": "high"
+        },
+        {
+          "name": "transaction",
+          "type": "DataObject",
+          "mention": "transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "debit/credit",
+          "type": "Field",
+          "mention": "debit/credit",
+          "confidence": "high"
+        },
+        {
+          "name": "currency rates",
+          "type": "Concept",
+          "mention": "Currency rates",
+          "confidence": "medium"
+        },
+        {
+          "name": "European Central Bank's web services",
+          "type": "Integration",
+          "mention": "European Central Bank's web services",
+          "confidence": "high"
+        },
+        {
+          "name": "banking institution",
+          "type": "Integration",
+          "mention": "web services of a banking institution",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "transaction",
+          "relation": "BELONGS_TO",
+          "target": "company",
+          "evidence": "recorded in the default currency of the company"
+        },
+        {
+          "source": "transaction",
+          "relation": "CONTAINS",
+          "target": "debit/credit",
+          "evidence": "Odoo stores two values: The debit/credit in the currency of the *company*; The debit/credit in the currency of the *bank account*"
+        },
+        {
+          "source": "Odoo",
+          "relation": "USES_METHOD",
+          "target": "default currency of the company",
+          "evidence": "every transaction is recorded in the default currency of the company, and reports are all based on that default currency"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "report",
+          "evidence": "reports are all based on that default currency"
+        },
+        {
+          "source": "bank account",
+          "relation": "IS_PART_OF",
+          "target": "company",
+          "evidence": "When you have a bank account in a foreign currency"
+        },
+        {
+          "source": "bank account",
+          "relation": "CONTAINS",
+          "target": "foreign currency",
+          "evidence": "bank account in a foreign currency"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "European Central Bank's web services",
+          "evidence": "By default, Odoo uses the European Central Bank's web services"
+        },
+        {
+          "source": "currency rates",
+          "relation": "ENABLES",
+          "target": "transaction",
+          "evidence": "Currency rates are updated automatically"
+        },
+        {
+          "source": "currency rates",
+          "relation": "PERFORMED_BY",
+          "target": "banking institution",
+          "evidence": "using the web services of a banking institution"
+        },
+        {
+          "source": "Odoo",
+          "relation": "USES_METHOD",
+          "target": "currency rates",
+          "evidence": "Currency rates are updated automatically"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "activate-multi-currencies",
+    "heading": "Activate multi-currencies",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "low"
+        },
+        {
+          "name": "Currencies",
+          "type": "Feature",
+          "mention": "Currencies",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Currencies",
+          "type": "Feature",
+          "mention": "Multi-Currencies",
+          "confidence": "high"
+        },
+        {
+          "name": "Post Exchange difference entries in",
+          "type": "Feature",
+          "mention": "Post Exchange difference entries in",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journal",
+          "type": "DataObject",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Gain Account",
+          "type": "DataObject",
+          "mention": "Gain Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Loss Account",
+          "type": "DataObject",
+          "mention": "Loss Account",
+          "confidence": "high"
+        },
+        {
+          "name": "click on Save",
+          "type": "Action",
+          "mention": "click on Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Currencies",
+          "evidence": "Settings --> Currencies"
+        },
+        {
+          "source": "Currencies",
+          "relation": "ENABLES",
+          "target": "Multi-Currencies",
+          "evidence": "tick Multi-Currencies"
+        },
+        {
+          "source": "Multi-Currencies",
+          "relation": "ENABLES",
+          "target": "Post Exchange difference entries in",
+          "evidence": "Under Post Exchange difference entries in"
+        },
+        {
+          "source": "Post Exchange difference entries in",
+          "relation": "CONTAINS",
+          "target": "Journal",
+          "evidence": "provide a Journal"
+        },
+        {
+          "source": "Post Exchange difference entries in",
+          "relation": "CONTAINS",
+          "target": "Gain Account",
+          "evidence": "provide a Gain Account"
+        },
+        {
+          "source": "Post Exchange difference entries in",
+          "relation": "CONTAINS",
+          "target": "Loss Account",
+          "evidence": "provide a Loss Account"
+        },
+        {
+          "source": "Post Exchange difference entries in",
+          "relation": "TRIGGERED_BY",
+          "target": "click on Save",
+          "evidence": "click on Save"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-currencies",
+    "heading": "Configure currencies",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Currencies",
+          "type": "Feature",
+          "mention": "Currencies",
+          "confidence": "high"
+        },
+        {
+          "name": "Activate Other Currencies",
+          "type": "Action",
+          "mention": "Activate Other Currencies",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Currencies setting",
+          "type": "Setting",
+          "mention": "Multi-Currencies setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Activate",
+          "type": "Action",
+          "mention": "activate",
+          "confidence": "medium"
+        },
+        {
+          "name": "currency rate update",
+          "type": "Feature",
+          "mention": "currency rate update",
+          "confidence": "high"
+        },
+        {
+          "name": "automatic",
+          "type": "Feature",
+          "mention": "automate",
+          "confidence": "medium"
+        },
+        {
+          "name": "manual",
+          "type": "Feature",
+          "mention": "manual",
+          "confidence": "medium"
+        },
+        {
+          "name": "Automatic Currency Rates",
+          "type": "Setting",
+          "mention": "Automatic Currency Rates",
+          "confidence": "high"
+        },
+        {
+          "name": "Interval",
+          "type": "Setting",
+          "mention": "Interval",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Service",
+          "type": "Setting",
+          "mention": "Service",
+          "confidence": "high"
+        },
+        {
+          "name": "Update now",
+          "type": "Action",
+          "mention": "Update now",
+          "confidence": "high"
+        },
+        {
+          "name": "Next Run",
+          "type": "Field",
+          "mention": "Next Run field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "go to Accounting --> Configuration --> Accounting: Currencies."
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Configuration --> Accounting: Currencies."
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration --> Settings --> Currencies"
+        },
+        {
+          "source": "Currencies",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration --> Accounting: Currencies."
+        },
+        {
+          "source": "Activate Other Currencies",
+          "relation": "BELONGS_TO",
+          "target": "Multi-Currencies setting",
+          "evidence": "click on Activate Other Currencies under the Multi-Currencies setting"
+        },
+        {
+          "source": "Multi-Currencies setting",
+          "relation": "ENABLES",
+          "target": "Activate Other Currencies",
+          "evidence": "click on Activate Other Currencies under the Multi-Currencies setting"
+        },
+        {
+          "source": "Automatic Currency Rates",
+          "relation": "CONFIGURED_BY",
+          "target": "currency rate update",
+          "evidence": "To configure the rate update... check Automatic Currency Rates"
+        },
+        {
+          "source": "Interval",
+          "relation": "CONFIGURED_BY",
+          "target": "currency rate update",
+          "evidence": "set Interval to your desired frequency"
+        },
+        {
+          "source": "Service",
+          "relation": "CONFIGURED_BY",
+          "target": "currency rate update",
+          "evidence": "choose the Service you wish to obtain currency rates from"
+        },
+        {
+          "source": "Update now",
+          "relation": "BELONGS_TO",
+          "target": "Next Run",
+          "evidence": "Click on the Update now button (🗘) besides the Next Run field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-bank-account",
+    "heading": "Create a new bank account",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journals",
+          "type": "Feature",
+          "mention": "Journals",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "DataObject",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Name",
+          "type": "Field",
+          "mention": "Journal Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Type",
+          "type": "Field",
+          "mention": "Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank",
+          "type": "Concept",
+          "mention": "Bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journal Entries",
+          "type": "Feature",
+          "mention": "Journal Entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "short code",
+          "type": "Field",
+          "mention": "short code",
+          "confidence": "high"
+        },
+        {
+          "name": "currency",
+          "type": "Field",
+          "mention": "currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Account",
+          "type": "Field",
+          "mention": "Bank Account",
+          "confidence": "high"
+        },
+        {
+          "name": "bank account",
+          "type": "DataObject",
+          "mention": "bank account",
+          "confidence": "high"
+        },
+        {
+          "name": "name",
+          "type": "Field",
+          "mention": "name",
+          "confidence": "high"
+        },
+        {
+          "name": "code",
+          "type": "Field",
+          "mention": "code",
+          "confidence": "high"
+        },
+        {
+          "name": "type",
+          "type": "Field",
+          "mention": "type",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank and Cash",
+          "type": "Concept",
+          "mention": "Bank and Cash",
+          "confidence": "medium"
+        },
+        {
+          "name": "currency type",
+          "type": "Field",
+          "mention": "currency type",
+          "confidence": "high"
+        },
+        {
+          "name": "Account Number",
+          "type": "Field",
+          "mention": "Account Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank of your account",
+          "type": "Field",
+          "mention": "Bank of your account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting: Chart of Accounts",
+          "type": "Feature",
+          "mention": "Accounting: Chart of Accounts",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Journals",
+          "evidence": "Configuration --> Journals"
+        },
+        {
+          "source": "Journals",
+          "relation": "IS_PART_OF",
+          "target": "Journal",
+          "evidence": "Journals and create a new one"
+        },
+        {
+          "source": "Journal",
+          "relation": "HAS_FEATURE",
+          "target": "Journal Entries",
+          "evidence": "In the Journal Entries tab"
+        },
+        {
+          "source": "Journal",
+          "relation": "HAS_FEATURE",
+          "target": "Bank Account",
+          "evidence": "click on the Bank Account field"
+        },
+        {
+          "source": "Odoo",
+          "relation": "ENABLES",
+          "target": "bank account",
+          "evidence": "Odoo automatically links the bank account to the journal"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Accounting: Chart of Accounts",
+          "evidence": "Accounting --> Configuration --> Accounting: Chart of Accounts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vendor-bill-in-a-foreign-currency",
+    "heading": "Vendor bill in a foreign currency",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "Vendor bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "foreign currency",
+          "type": "Concept",
+          "mention": "foreign currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal field",
+          "type": "Field",
+          "mention": "Journal field",
+          "confidence": "medium"
+        },
+        {
+          "name": "register the payment",
+          "type": "Action",
+          "mention": "register the payment",
+          "confidence": "high"
+        },
+        {
+          "name": "foreign exchange gain or loss",
+          "type": "Concept",
+          "mention": "foreign exchange gain or loss",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entry",
+          "type": "DataObject",
+          "mention": "journal entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "pay a foreign bill",
+          "type": "Action",
+          "mention": "pay a foreign bill",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "vendor bill",
+          "relation": "BELONGS_TO",
+          "target": "foreign currency",
+          "evidence": "To pay a bill in a foreign currency"
+        },
+        {
+          "source": "Journal field",
+          "relation": "CONTAINS",
+          "target": "foreign currency",
+          "evidence": "select the currency next to the Journal field"
+        },
+        {
+          "source": "register the payment",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "register the payment. Odoo automatically creates"
+        },
+        {
+          "source": "Odoo",
+          "relation": "PRODUCES",
+          "target": "foreign exchange gain or loss",
+          "evidence": "Odoo automatically creates and posts the foreign exchange gain or loss"
+        },
+        {
+          "source": "Odoo",
+          "relation": "PRODUCES",
+          "target": "journal entry",
+          "evidence": "creates and posts the foreign exchange gain or loss as a new journal entry"
+        },
+        {
+          "source": "pay a foreign bill",
+          "relation": "SUPPORTS",
+          "target": "another currency",
+          "evidence": "pay a foreign bill with another currency"
+        },
+        {
+          "source": "Odoo",
+          "relation": "PERFORMED_BY",
+          "target": "currency conversion",
+          "evidence": "Odoo automatically converts between the two currencies"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "unrealized-currency-gains-losses-report",
+    "heading": "Unrealized Currency Gains/Losses Report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Unrealized Currency Gains/Losses Report",
+          "type": "Report",
+          "mention": "Unrealized Currency Gains/Losses Report",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Management",
+          "type": "Sub-module",
+          "mention": "Management",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Currencies",
+          "type": "Feature",
+          "mention": "Currencies",
+          "confidence": "medium"
+        },
+        {
+          "name": "Exchange Rates",
+          "type": "Feature",
+          "mention": "Exchange Rates",
+          "confidence": "high"
+        },
+        {
+          "name": "Exchange Rates button",
+          "type": "Action",
+          "mention": "Exchange Rates button",
+          "confidence": "medium"
+        },
+        {
+          "name": "balance sheet",
+          "type": "DataObject",
+          "mention": "balance sheet",
+          "confidence": "high"
+        },
+        {
+          "name": "unrealized amounts",
+          "type": "DataObject",
+          "mention": "unrealized amounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "adjustment entry",
+          "type": "Action",
+          "mention": "Adjustment Entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journal",
+          "type": "Feature",
+          "mention": "Journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expense Account",
+          "type": "Feature",
+          "mention": "Expense Account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Income Account",
+          "type": "Feature",
+          "mention": "Income Account",
+          "confidence": "medium"
+        },
+        {
+          "name": "unrealized gains and losses",
+          "type": "DataObject",
+          "mention": "unrealized gains and losses",
+          "confidence": "high"
+        },
+        {
+          "name": "Date field",
+          "type": "Field",
+          "mention": "Date field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reversal Date",
+          "type": "Field",
+          "mention": "Reversal Date",
+          "confidence": "medium"
+        },
+        {
+          "name": "adjustment column",
+          "type": "Field",
+          "mention": "adjustment column",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Unrealized Currency Gains/Losses Report",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "To access this report, go to Reporting --> Management: Unrealized Currency Gains/Losses."
+        },
+        {
+          "source": "Unrealized Currency Gains/Losses Report",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "To access this report, go to Reporting --> Management: Unrealized Currency Gains/Losses."
+        },
+        {
+          "source": "Currencies",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "... than the one set in Accounting --> Configuration --> Settings --> Currencies"
+        },
+        {
+          "source": "Currencies",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "... than the one set in Accounting --> Configuration --> Settings --> Currencies"
+        },
+        {
+          "source": "Currencies",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "... than the one set in Accounting --> Configuration --> Settings --> Currencies"
+        },
+        {
+          "source": "Exchange Rates",
+          "relation": "IS_PART_OF",
+          "target": "Currencies",
+          "evidence": "... the one set in Accounting --> Configuration --> Settings --> Currencies"
+        },
+        {
+          "source": "Exchange Rates button",
+          "relation": "ENABLES",
+          "target": "Exchange Rates",
+          "evidence": "click the Exchange Rates button and change the rate"
+        },
+        {
+          "source": "Unrealized Currency Gains/Losses Report",
+          "relation": "CONTAINS",
+          "target": "balance sheet",
+          "evidence": "access to all open entries in your balance sheet."
+        },
+        {
+          "source": "Unrealized Currency Gains/Losses Report",
+          "relation": "CONTAINS",
+          "target": "adjustment column",
+          "evidence": "the adjustment column should indicate 0.00"
+        },
+        {
+          "source": "adjustment entry",
+          "relation": "ENABLES",
+          "target": "unrealized gains and losses",
+          "evidence": "... to calculate and process the unrealized gains and losses."
+        },
+        {
+          "source": "adjustment entry",
+          "relation": "PRODUCES",
+          "target": "balance sheet",
+          "evidence": "In order to update your balance sheet with the amount of the adjustment column"
+        },
+        {
+          "source": "adjustment entry",
+          "relation": "REQUIRES",
+          "target": "Journal",
+          "evidence": "select a Journal, Expense Account and Income Account"
+        },
+        {
+          "source": "adjustment entry",
+          "relation": "REQUIRES",
+          "target": "Expense Account",
+          "evidence": "select a Journal, Expense Account and Income Account"
+        },
+        {
+          "source": "adjustment entry",
+          "relation": "REQUIRES",
+          "target": "Income Account",
+          "evidence": "select a Journal, Expense Account and Income Account"
+        },
+        {
+          "source": "Unrealized Currency Gains/Losses Report",
+          "relation": "HAS_REPORT",
+          "target": "Date field",
+          "evidence": "You can set the date of the report in the Date field."
+        },
+        {
+          "source": "Unrealized Currency Gains/Losses Report",
+          "relation": "HAS_REPORT",
+          "target": "Reversal Date",
+          "evidence": "Odoo automatically reverses the booking entry to the date set in Reversal Date."
+        }
+      ]
+    }
+  }
+]

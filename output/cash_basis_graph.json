@@ -1,0 +1,461 @@
+[
+  {
+    "section_id": "cash-basis-taxes",
+    "heading": "Cash basis taxes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash basis taxes",
+          "type": "Concept",
+          "mention": "Cash basis taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Concept",
+          "mention": "standard taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cash basis method",
+          "type": "Standard",
+          "mention": "cash basis method",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment",
+          "type": "Action",
+          "mention": "payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Government",
+          "type": "Actor",
+          "mention": "government",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Cash basis method",
+          "relation": "COMPLIES_WITH",
+          "target": "Cash basis taxes",
+          "evidence": "Reporting your income and expenses to the government based on the cash basis method"
+        },
+        {
+          "source": "Cash basis taxes",
+          "relation": "REQUIRES",
+          "target": "Payment",
+          "evidence": "Cash basis taxes are due when the payment is made"
+        },
+        {
+          "source": "Cash basis taxes",
+          "relation": "RELATED_TO",
+          "target": "Taxes",
+          "evidence": "Cash basis taxes are due when the payment is made, as opposed to standard taxes"
+        },
+        {
+          "source": "Invoice",
+          "relation": "REQUIRES",
+          "target": "Taxes",
+          "evidence": "standard taxes that are due when the invoice is confirmed"
+        },
+        {
+          "source": "Cash basis method",
+          "relation": "GOVERNED_BY",
+          "target": "Government",
+          "evidence": "Reporting your income and expenses to the government based on the cash basis method is mandatory"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes",
+          "type": "Sub-module",
+          "mention": "Taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cash Basis",
+          "type": "Feature",
+          "mention": "enable Cash Basis",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Cash Basis Journal",
+          "type": "Setting",
+          "mention": "define the Tax Cash Basis Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Name",
+          "type": "Field",
+          "mention": "Journal Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Type",
+          "type": "Field",
+          "mention": "Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Short Code",
+          "type": "Field",
+          "mention": "Short Code",
+          "confidence": "high"
+        },
+        {
+          "name": "CABA",
+          "type": "Standard",
+          "mention": "CABA short code",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting --> Configuration --> Accounting: Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Sub-module",
+          "mention": "Accounting: Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create a new tax",
+          "confidence": "high"
+        },
+        {
+          "name": "update",
+          "type": "Action",
+          "mention": "update an existing one",
+          "confidence": "high"
+        },
+        {
+          "name": "Account",
+          "type": "Field",
+          "mention": "Account column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Advanced Options",
+          "type": "Sub-module",
+          "mention": "Advanced Options tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax Exigibility",
+          "type": "Feature",
+          "mention": "Tax Exigibility",
+          "confidence": "medium"
+        },
+        {
+          "name": "Based on Payment",
+          "type": "Standard",
+          "mention": "Based on Payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash Basis Transition Account",
+          "type": "Field",
+          "mention": "Cash Basis Transition Account",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo ... Go to Accounting"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Taxes",
+          "evidence": "Settings and under the Taxes section"
+        },
+        {
+          "source": "Taxes",
+          "relation": "CONTAINS",
+          "target": "Cash Basis",
+          "evidence": "under the Taxes section, enable Cash Basis"
+        },
+        {
+          "source": "Cash Basis",
+          "relation": "CONFIGURED_BY",
+          "target": "Tax Cash Basis Journal",
+          "evidence": "enable Cash Basis. Then, define the Tax Cash Basis Journal"
+        },
+        {
+          "source": "Tax Cash Basis Journal",
+          "relation": "CONTAINS",
+          "target": "Journal Name",
+          "evidence": "default properties such as the Journal Name"
+        },
+        {
+          "source": "Tax Cash Basis Journal",
+          "relation": "CONTAINS",
+          "target": "Type",
+          "evidence": "default properties such as the Journal Name, Type"
+        },
+        {
+          "source": "Tax Cash Basis Journal",
+          "relation": "CONTAINS",
+          "target": "Short Code",
+          "evidence": "default properties such as the Journal Name, Type or Short Code"
+        },
+        {
+          "source": "Cash Basis",
+          "relation": "USES_METHOD",
+          "target": "CABA",
+          "evidence": "journal entries of the Cash Basis Taxes journal are named using the CABA short code"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Taxes",
+          "evidence": "Accounting --> Configuration --> Accounting: Taxes"
+        },
+        {
+          "source": "Taxes",
+          "relation": "CONTAINS",
+          "target": "Create",
+          "evidence": "configure your taxes. You can either Create a new tax"
+        },
+        {
+          "source": "Taxes",
+          "relation": "CONTAINS",
+          "target": "update",
+          "evidence": "configure your taxes. You can ... update an existing one"
+        },
+        {
+          "source": "Taxes",
+          "relation": "CONTAINS",
+          "target": "Account",
+          "evidence": "The Account column reflects the proper transitional accounts"
+        },
+        {
+          "source": "Taxes",
+          "relation": "CONTAINS",
+          "target": "Advanced Options",
+          "evidence": "In the Advanced Options tab"
+        },
+        {
+          "source": "Advanced Options",
+          "relation": "CONTAINS",
+          "target": "Tax Exigibility",
+          "evidence": "In the Advanced Options tab, decide of the Tax Exigibility"
+        },
+        {
+          "source": "Tax Exigibility",
+          "relation": "SUPPORTS",
+          "target": "Based on Payment",
+          "evidence": "Tax Exigibility. Select Based on Payment"
+        },
+        {
+          "source": "Tax Exigibility",
+          "relation": "CONTAINS",
+          "target": "Cash Basis Transition Account",
+          "evidence": "define the Cash Basis Transition Account where the tax amount is recorded"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "impact-of-cash-basis-taxes-on-accounting",
+    "heading": "Impact of cash basis taxes on accounting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash Basis Entries",
+          "type": "Feature",
+          "mention": "Cash Basis Entries smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Cash Basis Journal",
+          "type": "Module",
+          "mention": "Tax Cash Basis Journal (Caba)",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer journal",
+          "type": "Module",
+          "mention": "Customer journal (INV)",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank journal",
+          "type": "Module",
+          "mention": "Bank journal (BANK)",
+          "confidence": "high"
+        },
+        {
+          "name": "cash basis tax",
+          "type": "Standard",
+          "mention": "cash basis taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "payment",
+          "type": "DataObject",
+          "mention": "payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconciliation",
+          "type": "Action",
+          "mention": "reconciliation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Configuration --> Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Module",
+          "mention": "Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Base Tax Received Account",
+          "type": "Setting",
+          "mention": "Base Tax Received Account",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "invoice",
+          "relation": "TRIGGERED_BY",
+          "target": "payment",
+          "evidence": "upon reconciliation of the invoice with the payment"
+        },
+        {
+          "source": "Cash Basis Entries",
+          "relation": "HAS_FEATURE",
+          "target": "Tax Cash Basis Journal",
+          "evidence": "use the Cash Basis Entries smart button"
+        },
+        {
+          "source": "Base Tax Received Account",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "go to Configuration --> Settings --> Taxes, and select a Base Tax Received Account"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Taxes",
+          "evidence": "Configuration --> Settings --> Taxes"
+        },
+        {
+          "source": "invoice",
+          "relation": "COMPLIES_WITH",
+          "target": "cash basis tax",
+          "evidence": "Impact of cash basis taxes on accounting transactions"
+        },
+        {
+          "source": "payment",
+          "relation": "PERFORMED_BY",
+          "target": "Bank journal",
+          "evidence": "payment is registered in Bank journal"
+        },
+        {
+          "source": "invoice",
+          "relation": "PERFORMED_BY",
+          "target": "Customer journal",
+          "evidence": "entries are created in your accounting for sales"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Reconciliation",
+          "relation": "GENERATES",
+          "target": "Tax Cash Basis Journal",
+          "evidence": "upon reconciliation... the below entry is automatically created"
+        }
+      ]
+    }
+  }
+]

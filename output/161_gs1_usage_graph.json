@@ -1,0 +1,877 @@
+[
+  {
+    "section_id": "gs1-barcode-usage",
+    "heading": "GS1 barcode usage",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "GS1 barcodes",
+          "type": "Standard",
+          "mention": "GS1 barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode scanners",
+          "type": "Integration",
+          "mention": "barcode scanners",
+          "confidence": "medium"
+        },
+        {
+          "name": "Global Trade Item Number (GTIN)",
+          "type": "DataObject",
+          "mention": "Global Trade Item Number (GTIN)",
+          "confidence": "medium"
+        },
+        {
+          "name": "GS1",
+          "type": "Actor",
+          "mention": "GS1",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse operations",
+          "type": "Workflow",
+          "mention": "warehouse operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "receiving",
+          "type": "Action",
+          "mention": "receiving",
+          "confidence": "medium"
+        },
+        {
+          "name": "picking",
+          "type": "Action",
+          "mention": "picking",
+          "confidence": "medium"
+        },
+        {
+          "name": "shipping",
+          "type": "Action",
+          "mention": "shipping",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "GS1 barcodes",
+          "relation": "COMPLIES_WITH",
+          "target": "GS1",
+          "evidence": "GS1 barcodes provide a standardized format... They encode information in a specific structure recognized globally"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Barcode",
+          "evidence": "Odoo Barcode interprets and prints GS1 barcodes"
+        },
+        {
+          "source": "Barcode",
+          "relation": "SUPPORTS",
+          "target": "GS1 barcodes",
+          "evidence": "Odoo Barcode interprets and prints GS1 barcodes"
+        },
+        {
+          "source": "warehouse operations",
+          "relation": "CONTAINS",
+          "target": "receiving",
+          "evidence": "warehouse operations such as receiving, picking, and shipping"
+        },
+        {
+          "source": "warehouse operations",
+          "relation": "CONTAINS",
+          "target": "picking",
+          "evidence": "warehouse operations such as receiving, picking, and shipping"
+        },
+        {
+          "source": "warehouse operations",
+          "relation": "CONTAINS",
+          "target": "shipping",
+          "evidence": "warehouse operations such as receiving, picking, and shipping"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-barcodes-for-product,-quantity,-and-lots",
+    "heading": "Configure barcodes for product, quantity, and lots",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure barcodes for product, quantity, and lots",
+          "type": "Workflow",
+          "mention": "Title: Configure barcodes for product, quantity, and lots",
+          "confidence": "high"
+        },
+        {
+          "name": "Global Trade Item Number (GTIN)",
+          "type": "Standard",
+          "mention": "Rule Name: Global Trade Item Number (GTIN)",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Concept",
+          "mention": "Name: Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity",
+          "type": "Concept",
+          "mention": "Name: Quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lot Number",
+          "type": "Concept",
+          "mention": "Name: Lot Number",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode field on product form",
+          "type": "Field",
+          "mention": "Field in Odoo: Barcode field on product form",
+          "confidence": "high"
+        },
+        {
+          "name": "Units field on transfer form",
+          "type": "Field",
+          "mention": "Field in Odoo: Units field on transfer form",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot on Detailed Operations pop-up",
+          "type": "Field",
+          "mention": "Field in Odoo: Lot on Detailed Operations pop-up",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configure barcodes for product, quantity, and lots",
+          "relation": "USES_METHOD",
+          "target": "Global Trade Item Number (GTIN)",
+          "evidence": "To build a GS1 barcode... the following barcode patterns and Application Identifiers (A.I.) are used"
+        },
+        {
+          "source": "Global Trade Item Number (GTIN)",
+          "relation": "APPLIES_TO",
+          "target": "Product",
+          "evidence": "Name: Product, Rule Name: Global Trade Item Number (GTIN)"
+        },
+        {
+          "source": "Global Trade Item Number (GTIN)",
+          "relation": "APPLIES_TO",
+          "target": "Quantity",
+          "evidence": "Name: Quantity"
+        },
+        {
+          "source": "Global Trade Item Number (GTIN)",
+          "relation": "APPLIES_TO",
+          "target": "Lot Number",
+          "evidence": "Name: Lot Number"
+        },
+        {
+          "source": "Product",
+          "relation": "HAS_FEATURE",
+          "target": "Barcode field on product form",
+          "evidence": "Barcode field on product form"
+        },
+        {
+          "source": "Quantity",
+          "relation": "HAS_FEATURE",
+          "target": "Units field on transfer form",
+          "evidence": "Units field on transfer form"
+        },
+        {
+          "source": "Lot Number",
+          "relation": "HAS_FEATURE",
+          "target": "Lot on Detailed Operations pop-up",
+          "evidence": "Lot on Detailed Operations pop-up"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots & Serial Numbers",
+          "type": "Feature",
+          "mention": "Lots & Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Traceability",
+          "type": "Concept",
+          "mention": "Traceability heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information tab",
+          "type": "DataObject",
+          "mention": "General Information tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode field",
+          "type": "Field",
+          "mention": "Barcode field",
+          "confidence": "high"
+        },
+        {
+          "name": "Global Trade Item Number",
+          "type": "Standard",
+          "mention": "Global Trade Item Number",
+          "confidence": "medium"
+        },
+        {
+          "name": "GTIN",
+          "type": "Standard",
+          "mention": "GTIN",
+          "confidence": "high"
+        },
+        {
+          "name": "GS1",
+          "type": "Actor",
+          "mention": "GS1",
+          "confidence": "high"
+        },
+        {
+          "name": "Fuji Apple",
+          "type": "DataObject",
+          "mention": "Fuji Apple",
+          "confidence": "high"
+        },
+        {
+          "name": "20611628936004",
+          "type": "Field",
+          "mention": "20611628936004",
+          "confidence": "low"
+        },
+        {
+          "name": "Configure Product Barcodes",
+          "type": "Action",
+          "mention": "Configure Product Barcodes button",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Scanner",
+          "type": "Feature",
+          "mention": "Barcode Scanner section",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "DataObject",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tracking",
+          "type": "Feature",
+          "mention": "Tracking",
+          "confidence": "high"
+        },
+        {
+          "name": "By Lots",
+          "type": "Feature",
+          "mention": "By Lots radio button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Lots & Serial Numbers",
+          "evidence": "checking the box for Lots & Serial Numbers under the Traceability heading"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "product form",
+          "evidence": "selecting the product. On the product form"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "General Information tab",
+          "evidence": "Then, in the General Information tab"
+        },
+        {
+          "source": "General Information tab",
+          "relation": "CONTAINS",
+          "target": "Barcode field",
+          "evidence": "fill in the Barcode field"
+        },
+        {
+          "source": "GTIN",
+          "relation": "SUPPORTS",
+          "target": "Global Trade Item Number",
+          "evidence": "Global Trade Item Number (GTIN)"
+        },
+        {
+          "source": "GTIN",
+          "relation": "PRODUCED_BY",
+          "target": "GS1",
+          "evidence": "provided by GS1"
+        },
+        {
+          "source": "Fuji Apple",
+          "relation": "GENERATES",
+          "target": "20611628936004",
+          "evidence": "GS1 barcode for the product, Fuji Apple, enter the 14-digit 20611628936004"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Configure Product Barcodes",
+          "evidence": "Under the Barcode heading, click on the Configure Product Barcodes button"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Barcode Scanner",
+          "evidence": "under the Barcode Scanner section"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Inventory tab",
+          "evidence": "Inventory tab on the product form"
+        },
+        {
+          "source": "Inventory tab",
+          "relation": "CONTAINS",
+          "target": "Tracking",
+          "evidence": "Under Tracking"
+        },
+        {
+          "source": "Tracking",
+          "relation": "CONTAINS",
+          "target": "By Lots",
+          "evidence": "choose the By Lots radio button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "scan-barcode-on-receipt",
+    "heading": "Scan barcode on receipt",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Scan barcode on receipt",
+          "type": "Feature",
+          "mention": "Scan barcode on receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt picking process",
+          "type": "Workflow",
+          "mention": "receipt picking process",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Action",
+          "mention": "Operations button",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipts",
+          "type": "Action",
+          "mention": "Receipts button",
+          "confidence": "high"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create button",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse operation",
+          "type": "Workflow",
+          "mention": "warehouse operation (`WH/IN`)",
+          "confidence": "medium"
+        },
+        {
+          "name": "scan product barcodes",
+          "type": "Action",
+          "mention": "scan product barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "scan lot numbers",
+          "type": "Action",
+          "mention": "scan lot numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "✏️ (pencil) button",
+          "type": "Action",
+          "mention": "✏️ (pencil) button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "Purchase Order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Scan barcode on receipt",
+          "relation": "IS_PART_OF",
+          "target": "receipt picking process",
+          "evidence": "To ensure accurate lot interpretation in Odoo on product barcodes scanned during a receipt operation"
+        },
+        {
+          "source": "receipt picking process",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "navigate to the Barcode app to manage the receipt picking process"
+        },
+        {
+          "source": "Operations",
+          "relation": "BELONGS_TO",
+          "target": "receipt picking process",
+          "evidence": "From the Barcode Scanning dashboard, click the Operations button"
+        },
+        {
+          "source": "Receipts",
+          "relation": "BELONGS_TO",
+          "target": "receipt picking process",
+          "evidence": "From the Barcode Scanning dashboard, click the Operations button, then the Receipts button"
+        },
+        {
+          "source": "warehouse operation",
+          "relation": "CONTAINS",
+          "target": "scan product barcodes",
+          "evidence": "On the list of receipts, click on the warehouse operation (`WH/IN`) and scan product barcodes"
+        },
+        {
+          "source": "warehouse operation",
+          "relation": "CONTAINS",
+          "target": "scan lot numbers",
+          "evidence": "On the list of receipts, click on the warehouse operation (`WH/IN`) and scan product barcodes and lot numbers"
+        },
+        {
+          "source": "✏️ (pencil) button",
+          "relation": "ENABLES",
+          "target": "scan lot numbers",
+          "evidence": "Use the ✏️ (pencil) button to open a window and manually enter quantities for specific lot numbers"
+        },
+        {
+          "source": "receipt picking process",
+          "relation": "RELATED_TO",
+          "target": "Purchase Order",
+          "evidence": "Receipts generated from POs (Purchase Orders) are listed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-barcode-for-product-and-non-unit-quantity",
+    "heading": "Configure barcode for product and non-unit quantity",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Global Trade Item Number",
+          "type": "Concept",
+          "mention": "Global Trade Item Number",
+          "confidence": "high"
+        },
+        {
+          "name": "GTIN",
+          "type": "Concept",
+          "mention": "GTIN",
+          "confidence": "high"
+        },
+        {
+          "name": "Variable count of items",
+          "type": "Concept",
+          "mention": "Variable count of items",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "transfer",
+          "type": "DataObject",
+          "mention": "transfer form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode field",
+          "type": "Field",
+          "mention": "Barcode field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Units field",
+          "type": "Field",
+          "mention": "Units field",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "GTIN",
+          "relation": "EQUIVALENT_TO",
+          "target": "Global Trade Item Number",
+          "evidence": "(GTIN)"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "Barcode field",
+          "evidence": "on product form"
+        },
+        {
+          "source": "transfer",
+          "relation": "CONTAINS",
+          "target": "Units field",
+          "evidence": "on transfer form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "scan-barcode-on-receipt",
+    "heading": "Scan barcode on receipt",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "Scan barcode on receipt",
+          "type": "Feature",
+          "mention": "Scan barcode on receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Place an order",
+          "type": "Action",
+          "mention": "place an order",
+          "confidence": "high"
+        },
+        {
+          "name": "Navigate to the Barcode app",
+          "type": "Action",
+          "mention": "navigate to the Barcode app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receive the vendor shipment",
+          "type": "Action",
+          "mention": "receive the vendor shipment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Scan barcode",
+          "type": "Action",
+          "mention": "scan the barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit of measure",
+          "type": "Concept",
+          "mention": "unit of measure (UoM)",
+          "confidence": "high"
+        },
+        {
+          "name": "Simplify vendor unit conversions with UoMs",
+          "type": "Feature",
+          "mention": "Simplify vendor unit conversions with UoMs",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Scan barcode on receipt",
+          "relation": "SEE_ALSO",
+          "target": "Simplify vendor unit conversions with UoMs",
+          "evidence": ".. seealso::"
+        },
+        {
+          "source": "Place an order",
+          "relation": "BELONGS_TO",
+          "target": "Purchase",
+          "evidence": "place an order in the *Purchase* app"
+        },
+        {
+          "source": "Scan barcode",
+          "relation": "BELONGS_TO",
+          "target": "Barcode",
+          "evidence": "On the receipt in the *Barcode* app"
+        },
+        {
+          "source": "Scan barcode",
+          "relation": "PRODUCES",
+          "target": "52.1 kg of Peaches",
+          "evidence": "receive an order for `52.1 kg` of peaches by scanning the barcode"
+        },
+        {
+          "source": "Scan barcode",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "scan the barcode"
+        },
+        {
+          "source": "Scan barcode",
+          "relation": "REQUIRES",
+          "target": "Unit of measure",
+          "evidence": "using the appropriate unit of measure (UoM)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "verify-product-moves",
+    "heading": "Verify product moves",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "low"
+        },
+        {
+          "name": "Product Moves report",
+          "type": "Report",
+          "mention": "Product Moves report",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Moves",
+          "type": "Report",
+          "mention": "Product Moves",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock move lines",
+          "type": "DataObject",
+          "mention": "stock move lines",
+          "confidence": "high"
+        },
+        {
+          "name": "stock move",
+          "type": "DataObject",
+          "mention": "stock move",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse reception reference number",
+          "type": "Field",
+          "mention": "warehouse reception reference number",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/IN/00013",
+          "type": "Unknown",
+          "mention": "WH/IN/00013",
+          "confidence": "low"
+        },
+        {
+          "name": "Barcode app",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Inventory app -->"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Inventory app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Product Moves report",
+          "evidence": "Reporting --> Product Moves."
+        },
+        {
+          "source": "Product Moves report",
+          "relation": "GENERATES",
+          "target": "Product Moves",
+          "evidence": "accessible by navigating to Inventory app --> Reporting --> Product Moves."
+        },
+        {
+          "source": "Product Moves",
+          "relation": "CONTAINS",
+          "target": "stock move lines",
+          "evidence": "displays a list of *stock move lines* for the product."
+        },
+        {
+          "source": "stock move lines",
+          "relation": "IS_PART_OF",
+          "target": "Product Moves",
+          "evidence": "open its collapsible drop-down menu, which displays a list of *stock move lines* for the product."
+        },
+        {
+          "source": "stock move",
+          "relation": "IS_PART_OF",
+          "target": "stock move lines",
+          "evidence": "The latest stock move matches"
+        },
+        {
+          "source": "stock move",
+          "relation": "PRODUCES",
+          "target": "warehouse reception reference number",
+          "evidence": "matches the warehouse reception reference number"
+        },
+        {
+          "source": "warehouse reception reference number",
+          "relation": "RELATED_TO",
+          "target": "WH/IN/00013",
+          "evidence": "matches the warehouse reception reference number (e.g. `WH/IN/00013`)"
+        },
+        {
+          "source": "Barcode app",
+          "relation": "RELATED_TO",
+          "target": "Inventory",
+          "evidence": "the records processed in the *Barcode* app were properly stored in *Inventory*."
+        }
+      ]
+    }
+  }
+]

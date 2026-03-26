@@ -1,0 +1,234 @@
+[
+  {
+    "section_id": "commissions",
+    "heading": "Commissions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Commissions",
+          "type": "Concept",
+          "mention": "Commissions",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "warrant payslip",
+          "type": "DataObject",
+          "mention": "*warrant payslip*",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Commissions",
+          "relation": "RELATED_TO",
+          "target": "Employee",
+          "evidence": "Commissions are payments made to employees that are earned as part of their salary."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "warrant payslip",
+          "evidence": "In Odoo, a commission payslip is referred to as a *warrant payslip*."
+        },
+        {
+          "source": "warrant payslip",
+          "relation": "EQUIVALENT_TO",
+          "target": "commission payslip",
+          "evidence": "In Odoo, a commission payslip is referred to as a *warrant payslip*."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-warrant-payslips",
+    "heading": "Create warrant payslips",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payslips",
+          "type": "Sub-module",
+          "mention": "Payslips",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batches",
+          "type": "Sub-module",
+          "mention": "Batches",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payslips Batches dashboard",
+          "type": "Feature",
+          "mention": "Payslips Batches dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Generate Warrant Payslips",
+          "type": "Action",
+          "mention": "Generate Warrant Payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate Warrant Payslips pop-up window",
+          "type": "Feature",
+          "mention": "Generate Warrant Payslips pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Period",
+          "type": "Field",
+          "mention": "Period",
+          "confidence": "high"
+        },
+        {
+          "name": "Department",
+          "type": "Field",
+          "mention": "Department",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Field",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Import File",
+          "type": "Field",
+          "mention": "Import File",
+          "confidence": "high"
+        },
+        {
+          "name": "Commission Amount",
+          "type": "Field",
+          "mention": "Commission Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a Line",
+          "type": "Action",
+          "mention": "Add a Line",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate Payslips",
+          "type": "Action",
+          "mention": "Generate Payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "Export",
+          "type": "Action",
+          "mention": "Export",
+          "confidence": "high"
+        },
+        {
+          "name": "pay run",
+          "type": "Workflow",
+          "mention": "pay run",
+          "confidence": "high"
+        },
+        {
+          "name": "Commissions",
+          "type": "Concept",
+          "mention": "Commissions",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payslips",
+          "relation": "IS_PART_OF",
+          "target": "Payroll app",
+          "evidence": "navigating to Payroll app --> Payslips"
+        },
+        {
+          "source": "Batches",
+          "relation": "IS_PART_OF",
+          "target": "Payslips",
+          "evidence": "Payslips --> Batches"
+        },
+        {
+          "source": "Payslips Batches dashboard",
+          "relation": "BELONGS_TO",
+          "target": "Batches",
+          "evidence": "Payslips Batches dashboard, which is accessed by navigating to ... Batches"
+        },
+        {
+          "source": "Generate Warrant Payslips",
+          "relation": "TRIGGERED_BY",
+          "target": "Payslips Batches dashboard",
+          "evidence": "generated directly from the Payslips Batches dashboard"
+        },
+        {
+          "source": "Generate Warrant Payslips pop-up window",
+          "relation": "PRODUCES",
+          "target": "Generate Warrant Payslips",
+          "evidence": "click the Generate Warrant Payslips button ... Doing so reveals a Generate Warrant Payslips pop-up window"
+        },
+        {
+          "source": "Generate Payslips",
+          "relation": "PRODUCES",
+          "target": "pay run",
+          "evidence": "click the Generate Payslips button to create the warrant payslips in a group, which is referred to as a *pay run*"
+        },
+        {
+          "source": "pay run",
+          "relation": "SEE_ALSO",
+          "target": "Commissions",
+          "evidence": ".. seealso:: Commissions"
+        },
+        {
+          "source": "Commission Amount",
+          "relation": "APPLIES_TO",
+          "target": "Employee",
+          "evidence": "enter the individual Commission Amount for each employee"
+        },
+        {
+          "source": "Generate Warrant Payslips",
+          "relation": "CONFIGURED_BY",
+          "target": "Period",
+          "evidence": "Set the time frame ... in the two fields next to Period"
+        },
+        {
+          "source": "Generate Warrant Payslips",
+          "relation": "CONFIGURED_BY",
+          "target": "Department",
+          "evidence": "select the Department in the corresponding field"
+        },
+        {
+          "source": "Generate Warrant Payslips",
+          "relation": "CONFIGURED_BY",
+          "target": "Import File",
+          "evidence": "upload a file to the Import File field"
+        }
+      ]
+    }
+  }
+]

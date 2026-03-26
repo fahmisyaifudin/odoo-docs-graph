@@ -1,0 +1,1451 @@
+[
+  {
+    "section_id": "document-digitization",
+    "heading": "Document digitization",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Document digitization",
+          "type": "Feature",
+          "mention": "Document digitization refers to the process of converting paper or digital documents into records in a database.",
+          "confidence": "high"
+        },
+        {
+          "name": "OCR (optical character recognition)",
+          "type": "Feature",
+          "mention": "Using OCR (optical character recognition) and artificial intelligence technologies",
+          "confidence": "high"
+        },
+        {
+          "name": "Artificial intelligence",
+          "type": "Feature",
+          "mention": "Using OCR (optical character recognition) and artificial intelligence technologies",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bills",
+          "type": "DataObject",
+          "mention": "This process is mainly used for vendor bills (or refunds).",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer invoices",
+          "type": "DataObject",
+          "mention": "Although less common, this digitization process can also be applied to customer invoices and credit notes.",
+          "confidence": "high"
+        },
+        {
+          "name": "Credit notes",
+          "type": "DataObject",
+          "mention": "Although less common, this digitization process can also be applied to customer invoices and credit notes.",
+          "confidence": "high"
+        },
+        {
+          "name": "Record",
+          "type": "DataObject",
+          "mention": "automatically creates and fills in the record's details.",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/bill-digitization/configuration",
+          "type": "Setting",
+          "mention": "The settings <accounting/bill-digitization/configuration> need to be adjusted accordingly.",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Document digitization",
+          "relation": "HAS_FEATURE",
+          "target": "OCR (optical character recognition)",
+          "evidence": "Using OCR (optical character recognition)..."
+        },
+        {
+          "source": "Document digitization",
+          "relation": "HAS_FEATURE",
+          "target": "Artificial intelligence",
+          "evidence": "Using OCR (optical character recognition) and artificial intelligence technologies..."
+        },
+        {
+          "source": "Document digitization",
+          "relation": "ENABLES",
+          "target": "Record",
+          "evidence": "automatically creates and fills in the record's details."
+        },
+        {
+          "source": "Document digitization",
+          "relation": "APPLIES_TO",
+          "target": "Vendor bills",
+          "evidence": "This process is mainly used for vendor bills (or refunds)."
+        },
+        {
+          "source": "Document digitization",
+          "relation": "APPLIES_TO",
+          "target": "Customer invoices",
+          "evidence": "Although less common, this digitization process can also be applied to customer invoices and credit notes."
+        },
+        {
+          "source": "Document digitization",
+          "relation": "APPLIES_TO",
+          "target": "Credit notes",
+          "evidence": "Although less common, this digitization process can also be applied to customer invoices and credit notes."
+        },
+        {
+          "source": "Document digitization",
+          "relation": "CONFIGURED_BY",
+          "target": "accounting/bill-digitization/configuration",
+          "evidence": "The settings <accounting/bill-digitization/configuration> need to be adjusted accordingly."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Document digitization",
+          "evidence": "Product: Odoo ... Document digitization"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Digitization section",
+          "type": "Sub-module",
+          "mention": "Digitization section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Document Digitization",
+          "type": "Feature",
+          "mention": "Document Digitization option",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor Bills",
+          "type": "DataObject",
+          "mention": "Vendor Bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Single Invoice Line Per Tax",
+          "type": "Feature",
+          "mention": "Single Invoice Line Per Tax option",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Digitization section",
+          "evidence": "navigate to the Digitization section"
+        },
+        {
+          "source": "Digitization section",
+          "relation": "HAS_FEATURE",
+          "target": "Document Digitization",
+          "evidence": "Enable the Document Digitization option"
+        },
+        {
+          "source": "Document Digitization",
+          "relation": "ENABLES",
+          "target": "Vendor Bills",
+          "evidence": "choose whether Vendor Bills should be processed"
+        },
+        {
+          "source": "Single Invoice Line Per Tax",
+          "relation": "APPLIES_TO",
+          "target": "Vendor Bills",
+          "evidence": "only one line is created per tax in the new vendor bill"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vendor-bills-upload",
+    "heading": "Vendor bills upload",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bills",
+          "type": "DataObject",
+          "mention": "Vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/bill-digitization/manual-upload",
+          "type": "Feature",
+          "mention": "<accounting/bill-digitization/manual-upload>",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/bill-digitization/email-alias",
+          "type": "Feature",
+          "mention": "<accounting/bill-digitization/email-alias>",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/bill-digitization/auto-post-bills",
+          "type": "Feature",
+          "mention": "<accounting/bill-digitization/auto-post-bills>",
+          "confidence": "medium"
+        },
+        {
+          "name": "document preview",
+          "type": "Feature",
+          "mention": "document preview",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "accounting/bill-digitization/manual-upload",
+          "evidence": "Vendor bills are uploaded manually <accounting/bill-digitization/manual-upload>"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "accounting/bill-digitization/email-alias",
+          "evidence": "or sent to a designated email alias <accounting/bill-digitization/email-alias>"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "accounting/bill-digitization/auto-post-bills",
+          "evidence": "They can also be automatically posted <accounting/bill-digitization/auto-post-bills> for selected vendors."
+        },
+        {
+          "source": "accounting/bill-digitization/manual-upload",
+          "relation": "ENABLES",
+          "target": "document preview",
+          "evidence": "Once the bill is uploaded, the document preview appears on the right side of the screen."
+        },
+        {
+          "source": "accounting/bill-digitization/manual-upload",
+          "relation": "PRODUCES",
+          "target": "Vendor bills",
+          "evidence": "Vendor bills are uploaded manually <accounting/bill-digitization/manual-upload>"
+        },
+        {
+          "source": "accounting/bill-digitization/manual-upload",
+          "relation": "SEE_ALSO",
+          "target": "Vendor bills",
+          "evidence": ".. seealso:: Vendor bills <../vendor_bills>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manual-upload",
+    "heading": "Manual upload",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bills",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase journal",
+          "type": "DataObject",
+          "mention": "purchase journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Upload",
+          "type": "Action",
+          "mention": "Upload",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo\nIn the Accounting dashboard"
+        },
+        {
+          "source": "Accounting",
+          "relation": "HAS_FEATURE",
+          "target": "Manual upload",
+          "evidence": "Title: Manual upload"
+        },
+        {
+          "source": "Upload",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Upload on the purchase journal"
+        },
+        {
+          "source": "Upload",
+          "relation": "TRIGGERED_BY",
+          "target": "Actor",
+          "evidence": "click Upload"
+        },
+        {
+          "source": "Upload",
+          "relation": "PRODUCES",
+          "target": "Vendor bills",
+          "evidence": "drag and drop vendor bills into the desired purchase journal"
+        },
+        {
+          "source": "Vendor bills",
+          "relation": "BELONGS_TO",
+          "target": "Purchase journal",
+          "evidence": "drag and drop vendor bills into the desired purchase journal"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "upload-via-email-alias",
+    "heading": "Upload via email alias",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor Bills",
+          "type": "Module",
+          "mention": "Vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Alias",
+          "type": "Feature",
+          "mention": "email alias",
+          "confidence": "high"
+        },
+        {
+          "name": "PDF",
+          "type": "DataObject",
+          "mention": "PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "XML",
+          "type": "DataObject",
+          "mention": "XML",
+          "confidence": "medium"
+        },
+        {
+          "name": "JPEG",
+          "type": "DataObject",
+          "mention": "JPEG",
+          "confidence": "medium"
+        },
+        {
+          "name": "Scanned Documents",
+          "type": "DataObject",
+          "mention": "scanned documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "Documents app",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "high"
+        },
+        {
+          "name": "Finance folder",
+          "type": "Feature",
+          "mention": "Finance folder",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "DataObject",
+          "mention": "journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Advanced Settings tab",
+          "type": "Feature",
+          "mention": "Advanced Settings tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Alias Domain",
+          "type": "Setting",
+          "mention": "alias domain",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Email Alias",
+          "relation": "BELONGS_TO",
+          "target": "Journal",
+          "evidence": "email alias associated with the relevant journal"
+        },
+        {
+          "source": "Email Alias",
+          "relation": "ENABLES",
+          "target": "Upload via email alias",
+          "evidence": "Vendor bills can be uploaded via an email alias"
+        },
+        {
+          "source": "PDF",
+          "relation": "CONVERTED_TO",
+          "target": "Invoice",
+          "evidence": "PDF attached to the email is automatically converted into a new draft vendor bill"
+        },
+        {
+          "source": "XML",
+          "relation": "CONVERTED_TO",
+          "target": "Invoice",
+          "evidence": "Only PDF and XML formats are processed via an email alias associated with a journal"
+        },
+        {
+          "source": "JPEG",
+          "relation": "PROCESSED_BY",
+          "target": "Documents app",
+          "evidence": "JPEG files must be processed via email alias in the Documents app"
+        },
+        {
+          "source": "Invoice",
+          "relation": "PROCESSED_BY",
+          "target": "Documents app",
+          "evidence": "email alias in the Documents app can be used to automatically send vendor bills to the Finance folder"
+        },
+        {
+          "source": "Email Alias",
+          "relation": "CONFIGURED_BY",
+          "target": "Alias Domain",
+          "evidence": "Make sure an alias domain has been configured"
+        },
+        {
+          "source": "Email Alias",
+          "relation": "IS_PART_OF",
+          "target": "Journal",
+          "evidence": "Email Alias in the Advanced Settings tab of the Vendor Bills journal"
+        },
+        {
+          "source": "Advanced Settings tab",
+          "relation": "BELONGS_TO",
+          "target": "Journal",
+          "evidence": "available in the Advanced Settings tab of the Vendor Bills journal"
+        },
+        {
+          "source": "Invoice",
+          "relation": "BELONGS_TO",
+          "target": "Finance folder",
+          "evidence": "automatically send vendor bills to the Finance folder"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "automatic-vendor-bill-posting",
+    "heading": "Automatic vendor bill posting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "DataObject",
+          "mention": "specific vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Digitize automatically",
+          "type": "Setting",
+          "mention": "Digitize automatically setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Auto-post bills",
+          "type": "Feature",
+          "mention": "Auto-post bills option",
+          "confidence": "high"
+        },
+        {
+          "name": "Document Digitization",
+          "type": "Module",
+          "mention": "Document Digitization",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Sub-module",
+          "mention": "Vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting tab",
+          "type": "Sub-module",
+          "mention": "Accounting tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "contact form",
+          "type": "Feature",
+          "mention": "contact form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Automation",
+          "type": "Feature",
+          "mention": "Automation section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Activate auto-validation",
+          "type": "Action",
+          "mention": "Activate auto-validation",
+          "confidence": "low"
+        },
+        {
+          "name": "Ask me later",
+          "type": "Action",
+          "mention": "Ask me later",
+          "confidence": "low"
+        },
+        {
+          "name": "Never for this vendor",
+          "type": "Action",
+          "mention": "Never for this vendor",
+          "confidence": "low"
+        },
+        {
+          "name": "Always",
+          "type": "Action",
+          "mention": "Always",
+          "confidence": "low"
+        },
+        {
+          "name": "Ask after 3 validations without edits",
+          "type": "Action",
+          "mention": "Ask after 3 validations without edits",
+          "confidence": "low"
+        },
+        {
+          "name": "Never",
+          "type": "Action",
+          "mention": "Never",
+          "confidence": "low"
+        },
+        {
+          "name": "Autopost Bills window",
+          "type": "Feature",
+          "mention": "Autopost Bills window",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Auto-post bills",
+          "relation": "REQUIRES",
+          "target": "Digitize automatically",
+          "evidence": "To use the Auto-post bills option, the Digitize automatically setting must be enabled"
+        },
+        {
+          "source": "Auto-post bills",
+          "relation": "CONFIGURED_BY",
+          "target": "Vendor",
+          "evidence": "automatically post digitized vendor bills for specific vendors"
+        },
+        {
+          "source": "Digitize automatically",
+          "relation": "IS_PART_OF",
+          "target": "Document Digitization",
+          "evidence": "Digitize automatically setting in the Document Digitization section"
+        },
+        {
+          "source": "Document Digitization",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Document Digitization <accounting/bill-digitization/configuration>"
+        },
+        {
+          "source": "Vendors",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Vendors --> Vendors"
+        },
+        {
+          "source": "Accounting tab",
+          "relation": "CONTAINS",
+          "target": "Auto-post bills",
+          "evidence": "In the Accounting tab of the contact form, select an Auto-post bills option"
+        },
+        {
+          "source": "Auto-post bills",
+          "relation": "CONTAINS",
+          "target": "Always",
+          "evidence": "select an Auto-post bills option: - Always"
+        },
+        {
+          "source": "Auto-post bills",
+          "relation": "CONTAINS",
+          "target": "Ask after 3 validations without edits",
+          "evidence": "select an Auto-post bills option: - Ask after 3 validations without edits"
+        },
+        {
+          "source": "Auto-post bills",
+          "relation": "CONTAINS",
+          "target": "Never",
+          "evidence": "select an Auto-post bills option: - Never"
+        },
+        {
+          "source": "Ask after 3 validations without edits",
+          "relation": "ENABLES",
+          "target": "Autopost Bills window",
+          "evidence": "When the third uploaded bill is confirmed without any edits, an Autopost Bills window appears"
+        },
+        {
+          "source": "Autopost Bills window",
+          "relation": "CONTAINS",
+          "target": "Activate auto-validation",
+          "evidence": "The following options can be chosen: Activate auto-validation"
+        },
+        {
+          "source": "Autopost Bills window",
+          "relation": "CONTAINS",
+          "target": "Ask me later",
+          "evidence": "The following options can be chosen: Ask me later"
+        },
+        {
+          "source": "Autopost Bills window",
+          "relation": "CONTAINS",
+          "target": "Never for this vendor",
+          "evidence": "The following options can be chosen: Never for this vendor"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "digitization-and-data-recognition-with-ai",
+    "heading": "Digitization and data recognition with AI",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Digitization",
+          "type": "Feature",
+          "mention": "digitized",
+          "confidence": "high"
+        },
+        {
+          "name": "OCR",
+          "type": "Feature",
+          "mention": "OCR",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor Bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor field",
+          "type": "Field",
+          "mention": "Vendor field",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill Reference field",
+          "type": "Field",
+          "mention": "Bill Reference",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bill Date field",
+          "type": "Field",
+          "mention": "Bill Date",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Reference field",
+          "type": "Field",
+          "mention": "Payment Reference",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recipient Bank field",
+          "type": "Field",
+          "mention": "Recipient Bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "Due Date field",
+          "type": "Field",
+          "mention": "Due Date",
+          "confidence": "medium"
+        },
+        {
+          "name": "Currency field",
+          "type": "Field",
+          "mention": "currency",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product description/label field",
+          "type": "Field",
+          "mention": "Product description/label",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "Unit Price field",
+          "type": "Field",
+          "mention": "unit Price",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes field",
+          "type": "Field",
+          "mention": "Taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Untaxed Amount field",
+          "type": "Field",
+          "mention": "Untaxed Amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "Total field",
+          "type": "Field",
+          "mention": "Total",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Digitize document action",
+          "type": "Action",
+          "mention": "Digitize document",
+          "confidence": "high"
+        },
+        {
+          "name": "Refresh action",
+          "type": "Action",
+          "mention": "Refresh",
+          "confidence": "medium"
+        },
+        {
+          "name": "Confirm action",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reload AI data action",
+          "type": "Action",
+          "mention": "Reload AI data",
+          "confidence": "medium"
+        },
+        {
+          "name": "Multi-currency environment",
+          "type": "Concept",
+          "mention": "multi-currency environment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Indian localization",
+          "type": "Concept",
+          "mention": "Indian localization",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manual processing",
+          "type": "Workflow",
+          "mention": "require manual processing",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bill-digitization configuration",
+          "type": "Setting",
+          "mention": "accounting/bill-digitization/configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "On-demand digitization setting",
+          "type": "Setting",
+          "mention": "digitization is set to on-demand only",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Vendor Bill",
+          "relation": "CONFIGURED_BY",
+          "target": "Bill-digitization configuration",
+          "evidence": "Depending on the settings accounting/bill-digitization/configuration"
+        },
+        {
+          "source": "Digitization",
+          "relation": "ENABLES",
+          "target": "OCR",
+          "evidence": "Once the document has been digitized, a blue banner appears..."
+        },
+        {
+          "source": "OCR",
+          "relation": "HAS_FEATURE",
+          "target": "Digitization",
+          "evidence": "Once the document has been digitized..."
+        },
+        {
+          "source": "OCR",
+          "relation": "SUPPORTS",
+          "target": "Multi-currency environment",
+          "evidence": "currency (in a multi-currency environment)"
+        },
+        {
+          "source": "OCR",
+          "relation": "SUPPORTS",
+          "target": "Indian localization",
+          "evidence": "this field is not recognized by OCR for the Indian localization"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Vendor field",
+          "evidence": "The following vendor bill fields are recognized by OCR: Vendor"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Bill Reference field",
+          "evidence": "The following vendor bill fields are recognized by OCR: Bill Reference"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Bill Date field",
+          "evidence": "The following vendor bill fields are recognized by OCR: Bill Date"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Payment Reference field",
+          "evidence": "The following vendor bill fields are recognized by OCR: Payment Reference"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Recipient Bank field",
+          "evidence": "The following vendor bill fields are recognized by OCR: Recipient Bank"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Due Date field",
+          "evidence": "The following vendor bill fields are recognized by OCR: Due Date"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Currency field",
+          "evidence": "The following vendor bill fields are recognized by OCR: currency"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Product description/label field",
+          "evidence": "From the Invoices Lines tab: Product description/label"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Quantity field",
+          "evidence": "From the Invoices Lines tab: Quantity"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Unit Price field",
+          "evidence": "From the Invoices Lines tab: unit Price"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Taxes field",
+          "evidence": "From the Invoices Lines tab: Taxes"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Untaxed Amount field",
+          "evidence": "From the Invoices Lines tab: Untaxed Amount"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Total field",
+          "evidence": "From the Invoices Lines tab: Total"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Digitization",
+          "evidence": "Digitization and data recognition with AI"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "OCR",
+          "evidence": "Digitization and data recognition with AI"
+        },
+        {
+          "source": "Digitize document action",
+          "relation": "PERFORMED_BY",
+          "target": "Vendor",
+          "evidence": "To manually digitize an uploaded document"
+        },
+        {
+          "source": "Digitize document action",
+          "relation": "PRODUCES",
+          "target": "Vendor Bill",
+          "evidence": "click Digitize document"
+        },
+        {
+          "source": "Refresh action",
+          "relation": "PERFORMED_BY",
+          "target": "Vendor",
+          "evidence": "click Refresh"
+        },
+        {
+          "source": "Confirm action",
+          "relation": "PERFORMED_BY",
+          "target": "Vendor",
+          "evidence": "click Confirm"
+        },
+        {
+          "source": "Reload AI data action",
+          "relation": "PERFORMED_BY",
+          "target": "Vendor",
+          "evidence": "click Reload AI data"
+        },
+        {
+          "source": "Manual processing",
+          "relation": "TRIGGERED_BY",
+          "target": "On-demand digitization setting",
+          "evidence": "require manual processing if digitization is set to on-demand only"
+        },
+        {
+          "source": "Digitization",
+          "relation": "REQUIRES",
+          "target": "OCR",
+          "evidence": "Once the document has been digitized..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "purchase-order-matching",
+    "heading": "Purchase order matching",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase order matching",
+          "type": "Feature",
+          "mention": "Purchase order matching",
+          "confidence": "high"
+        },
+        {
+          "name": "OCR (optical character recognition)",
+          "type": "Feature",
+          "mention": "OCR (optical character recognition)",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase matching smart button",
+          "type": "Action",
+          "mention": "Purchase matching smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase matching list view",
+          "type": "Report",
+          "mention": "Purchase matching list view",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase order lines",
+          "type": "DataObject",
+          "mention": "purchase order lines",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to PO",
+          "type": "Action",
+          "mention": "Add to PO",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to Purchase Order window",
+          "type": "Feature",
+          "mention": "Add to Purchase Order window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "Field",
+          "mention": "Purchase Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Create and edit",
+          "type": "Action",
+          "mention": "Create and edit",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Purchase Order window",
+          "type": "Feature",
+          "mention": "Create Purchase Order window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Save and Close",
+          "type": "Action",
+          "mention": "Save and Close",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Electronic vendor bills",
+          "type": "DataObject",
+          "mention": "Electronic vendor bills",
+          "confidence": "medium"
+        },
+        {
+          "name": "embedded XML",
+          "type": "Feature",
+          "mention": "embedded XML",
+          "confidence": "medium"
+        },
+        {
+          "name": "Auto-complete",
+          "type": "Feature",
+          "mention": "Auto-complete",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "OCR (optical character recognition)",
+          "relation": "RECOGNIZES",
+          "target": "vendor bill",
+          "evidence": "When a digitized vendor bill is recognized by OCR"
+        },
+        {
+          "source": "Purchase order matching",
+          "relation": "PERFORMED_BY",
+          "target": "Purchase matching smart button",
+          "evidence": "click the Purchase matching smart button to access the Purchase matching list view"
+        },
+        {
+          "source": "Purchase matching smart button",
+          "relation": "GENERATES",
+          "target": "Purchase matching list view",
+          "evidence": "click the Purchase matching smart button to access the Purchase matching list view"
+        },
+        {
+          "source": "Purchase matching list view",
+          "relation": "CONTAINS",
+          "target": "purchase order lines",
+          "evidence": "Purchase matching list view, displaying all purchase order lines"
+        },
+        {
+          "source": "Purchase matching list view",
+          "relation": "CONTAINS",
+          "target": "vendor bill",
+          "evidence": "Purchase matching list view, displaying all purchase order lines linked to the vendor assigned to the vendor bill"
+        },
+        {
+          "source": "purchase order lines",
+          "relation": "BELONGS_TO",
+          "target": "vendor",
+          "evidence": "purchase order lines linked to the vendor assigned to the vendor bill"
+        },
+        {
+          "source": "vendor bill",
+          "relation": "BELONGS_TO",
+          "target": "vendor",
+          "evidence": "vendor assigned to the vendor bill"
+        },
+        {
+          "source": "Purchase matching list view",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "update the Quantity and Price in the purchase order lines"
+        },
+        {
+          "source": "Purchase matching list view",
+          "relation": "CONTAINS",
+          "target": "Price",
+          "evidence": "update the Quantity and Price in the purchase order lines"
+        },
+        {
+          "source": "Add to PO",
+          "relation": "TRIGGERED_BY",
+          "target": "Purchase matching smart button",
+          "evidence": "Click the Purchase matching smart button, select the draft vendor bill in the list (shown in grey), and click Add to PO"
+        },
+        {
+          "source": "Add to PO",
+          "relation": "PERFORMED_BY",
+          "target": "vendor bill",
+          "evidence": "select the draft vendor bill in the list (shown in grey), and click Add to PO"
+        },
+        {
+          "source": "Add to Purchase Order window",
+          "relation": "CONTAINS",
+          "target": "Purchase Order",
+          "evidence": "In the Add to Purchase Order window, start typing in the Purchase Order field"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "PRODUCES",
+          "target": "Create and edit",
+          "evidence": "select Create and edit"
+        },
+        {
+          "source": "Create Purchase Order window",
+          "relation": "CONTAINS",
+          "target": "vendor",
+          "evidence": "select the vendor assigned to the vendor bill"
+        },
+        {
+          "source": "Create Purchase Order window",
+          "relation": "CONTAINS",
+          "target": "Confirm",
+          "evidence": "click Confirm"
+        },
+        {
+          "source": "Save and Close",
+          "relation": "PERFORMED_BY",
+          "target": "Create Purchase Order window",
+          "evidence": "click Save and Close in the Create Purchase Order window"
+        },
+        {
+          "source": "Purchase app",
+          "relation": "SUPPORTS",
+          "target": "purchase order",
+          "evidence": "open the Purchase app to fill in the fields and confirm the purchase order"
+        },
+        {
+          "source": "Electronic vendor bills",
+          "relation": "HAS_FEATURE",
+          "target": "embedded XML",
+          "evidence": "Electronic vendor bills with embedded XML"
+        },
+        {
+          "source": "Auto-complete",
+          "relation": "PRODUCES",
+          "target": "purchase order",
+          "evidence": "Auto-complete feature can transfer information from the purchase order to the vendor bill"
+        },
+        {
+          "source": "Auto-complete",
+          "relation": "ENABLES",
+          "target": "vendor bill",
+          "evidence": "Auto-complete feature can transfer information from the purchase order to the vendor bill"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "pricing",
+    "heading": "Pricing",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Document digitization",
+          "type": "Feature",
+          "mention": "The document digitization feature",
+          "confidence": "high"
+        },
+        {
+          "name": "In-App Purchase (IAP)",
+          "type": "Concept",
+          "mention": "In-App Purchase (IAP) service",
+          "confidence": "high"
+        },
+        {
+          "name": "Credits",
+          "type": "Concept",
+          "mention": "prepaid credits",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Digitization section",
+          "type": "Feature",
+          "mention": "Digitization section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Buy credits",
+          "type": "Action",
+          "mention": "Buy credits",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Enterprise",
+          "type": "Concept",
+          "mention": "Odoo Enterprise",
+          "confidence": "high"
+        },
+        {
+          "name": "XML files",
+          "type": "DataObject",
+          "mention": "XML files",
+          "confidence": "high"
+        },
+        {
+          "name": "OCR credits",
+          "type": "Concept",
+          "mention": "OCR credits",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Document digitization",
+          "relation": "IS_PART_OF",
+          "target": "In-App Purchase (IAP)",
+          "evidence": "The document digitization feature is an In-App Purchase (IAP) service..."
+        },
+        {
+          "source": "Document digitization",
+          "relation": "REQUIRES",
+          "target": "Credits",
+          "evidence": "...requiring prepaid credits. Digitizing one document uses one credit."
+        },
+        {
+          "source": "Buy credits",
+          "relation": "PERFORMED_BY",
+          "target": "Settings",
+          "evidence": "To buy credits, go to the Settings app..."
+        },
+        {
+          "source": "Buy credits",
+          "relation": "PERFORMED_BY",
+          "target": "Accounting",
+          "evidence": "...or Accounting --> Configuration --> Settings..."
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration..."
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Digitization section",
+          "evidence": "...navigate to the Digitization section..."
+        },
+        {
+          "source": "Digitization section",
+          "relation": "ENABLES",
+          "target": "Buy credits",
+          "evidence": "...and click Buy credits."
+        },
+        {
+          "source": "Odoo Enterprise",
+          "relation": "RELATED_TO",
+          "target": "Credits",
+          "evidence": "...get free credits to test IAP features..."
+        },
+        {
+          "source": "XML files",
+          "relation": "REQUIRES",
+          "target": "OCR credits",
+          "evidence": "...don't require OCR credits..."
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1007 @@
+[
+  {
+    "section_id": "search,-filter,-and-group-records",
+    "heading": "Search, filter, and group records",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "high"
+        },
+        {
+          "name": "view",
+          "type": "Concept",
+          "mention": "view",
+          "confidence": "low"
+        },
+        {
+          "name": "records",
+          "type": "DataObject",
+          "mention": "records",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filter",
+          "type": "Feature",
+          "mention": "Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Group By",
+          "type": "Feature",
+          "mention": "Group By",
+          "confidence": "high"
+        },
+        {
+          "name": "Favorites",
+          "type": "Feature",
+          "mention": "Favorites",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Search bar",
+          "evidence": "search bar is located at the top of the view"
+        },
+        {
+          "source": "Search bar",
+          "relation": "ENABLES",
+          "target": "Filter",
+          "evidence": "click the fa-caret-down (dropdown) icon to access the Filter"
+        },
+        {
+          "source": "Search bar",
+          "relation": "ENABLES",
+          "target": "Group By",
+          "evidence": "click the fa-caret-down (dropdown) icon to access ... Group By"
+        },
+        {
+          "source": "Search bar",
+          "relation": "ENABLES",
+          "target": "Favorites",
+          "evidence": "click the fa-caret-down (dropdown) icon to access ... Favorites"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "search-for-values",
+    "heading": "Search for values",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Search field",
+          "type": "Feature",
+          "mention": "the search field",
+          "confidence": "high"
+        },
+        {
+          "name": "salesperson's name",
+          "type": "Field",
+          "mention": "salesperson's name",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales Analysis report",
+          "type": "Report",
+          "mention": "*Sales Analysis* report",
+          "confidence": "high"
+        },
+        {
+          "name": "Mitchell Admin",
+          "type": "Actor",
+          "mention": "Mitchell Admin",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales",
+          "type": "Sub-module",
+          "mention": "Sales",
+          "confidence": "medium"
+        },
+        {
+          "name": "Search Salesperson for: Mitch",
+          "type": "Action",
+          "mention": "Search Salesperson for: Mitch",
+          "confidence": "high"
+        },
+        {
+          "name": "contains operator",
+          "type": "Feature",
+          "mention": "*contains* operator",
+          "confidence": "high"
+        },
+        {
+          "name": "custom filter",
+          "type": "Feature",
+          "mention": "custom filter",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Search field",
+          "evidence": "Use the search field to look for specific values"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Sales Analysis report",
+          "evidence": "...on the *Sales Analysis* report"
+        },
+        {
+          "source": "Sales app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Sales app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Sales",
+          "evidence": "Reporting --> Sales"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Sales Analysis report",
+          "evidence": "...the *Sales Analysis* report (Sales app --> Reporting --> Sales)"
+        },
+        {
+          "source": "Search field",
+          "relation": "ENABLES",
+          "target": "Search Salesperson for: Mitch",
+          "evidence": "search for `Mitch`, and click...Search Salesperson for: Mitch"
+        },
+        {
+          "source": "Search field",
+          "relation": "EQUIVALENT_TO",
+          "target": "contains operator",
+          "evidence": "Using the search field is equivalent to using the *contains* operator"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "filters",
+    "heading": "Filters",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters",
+          "confidence": "high"
+        },
+        {
+          "name": "preconfigured filters",
+          "type": "Feature",
+          "mention": "preconfigured filters",
+          "confidence": "high"
+        },
+        {
+          "name": "custom filter",
+          "type": "Feature",
+          "mention": "custom filter",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Filters",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo. Filters are used..."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "preconfigured filters",
+          "evidence": "...can be modified by selecting one (or several) preconfigured filters"
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "custom filter",
+          "evidence": "...or by adding a custom filter"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "preconfigured-filters",
+    "heading": "Preconfigured filters",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Filters drop-down menu",
+          "type": "Feature",
+          "mention": "Filters drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales Analysis report",
+          "type": "Report",
+          "mention": "Sales Analysis report",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales",
+          "type": "Sub-module",
+          "mention": "Sales",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "order date",
+          "type": "Field",
+          "mention": "order date",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Date: Last 365 Days",
+          "type": "Filter",
+          "mention": "Order Date: Last 365 Days",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Date --> 2024",
+          "type": "Filter",
+          "mention": "Order Date --> 2024",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales Analysis report",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "On the *Sales Analysis* report (Sales app --> Reporting --> Sales)"
+        },
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Sales app",
+          "evidence": "On the *Sales Analysis* report (Sales app --> Reporting --> Sales)"
+        },
+        {
+          "source": "Sales Analysis report",
+          "relation": "HAS_FEATURE",
+          "target": "Filters drop-down menu",
+          "evidence": "On the *Sales Analysis* report...selecting one (or several) *preconfigured filters* from the Filters drop-down menu."
+        },
+        {
+          "source": "Sales Analysis report",
+          "relation": "CONTAINS",
+          "target": "sales order",
+          "evidence": "On the *Sales Analysis* report...only records that are at the *sales order* stage...are selected by default."
+        },
+        {
+          "source": "Sales Analysis report",
+          "relation": "CONTAINS",
+          "target": "quotation",
+          "evidence": "To also include records at the *quotation* stage, select Quotations from the Filters."
+        },
+        {
+          "source": "Sales Analysis report",
+          "relation": "CONTAINS",
+          "target": "order date",
+          "evidence": "On the *Sales Analysis* report...with an *order date* within the last 365 days, are selected by default."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "custom-filters",
+    "heading": "Custom filters",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Filter",
+          "type": "Action",
+          "mention": "click the fa-caret-down (dropdown) icon in the search bar, then select Filters --> Add Custom Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "custom filter",
+          "type": "Feature",
+          "mention": "add a custom filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Match any of the following rules",
+          "type": "Standard",
+          "mention": "Match any of the following rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "Match all of the following rules",
+          "type": "Standard",
+          "mention": "Match all of the following rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "field name",
+          "type": "Field",
+          "mention": "field name",
+          "confidence": "high"
+        },
+        {
+          "name": "operator",
+          "type": "Concept",
+          "mention": "conditional operator",
+          "confidence": "high"
+        },
+        {
+          "name": "value",
+          "type": "Field",
+          "mention": "value",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer-mode",
+          "type": "Feature",
+          "mention": "Activate developer-mode",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM app",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "custom filter",
+          "evidence": "add a custom filter"
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "CONFIGURED_BY",
+          "target": "custom filter",
+          "evidence": "Once the filter criteria are defined, click Add to add the custom filter to the view."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "CRM app",
+          "evidence": "leads and opportunities from the CRM app"
+        },
+        {
+          "source": "custom filter",
+          "relation": "SUPPORTS",
+          "target": "Match any of the following rules",
+          "evidence": "The default matching configuration is to Match any of the following rules"
+        },
+        {
+          "source": "custom filter",
+          "relation": "SUPPORTS",
+          "target": "Match all of the following rules",
+          "evidence": "To change the matching configuration to Match all of the following rules"
+        },
+        {
+          "source": "custom filter",
+          "relation": "USES_METHOD",
+          "target": "operator",
+          "evidence": "The second inline field is the conditional operator"
+        },
+        {
+          "source": "developer-mode",
+          "relation": "ENABLES",
+          "target": "field name",
+          "evidence": "Activate developer-mode to reveal each field's technical name and data type"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "group-records",
+    "heading": "Group records",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Analysis report",
+          "type": "Report",
+          "mention": "Sales Analysis report",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "salesperson",
+          "type": "Field",
+          "mention": "Salesperson",
+          "confidence": "medium"
+        },
+        {
+          "name": "Group By",
+          "type": "Feature",
+          "mention": "Group By",
+          "confidence": "high"
+        },
+        {
+          "name": "customize groups",
+          "type": "Feature",
+          "mention": "customize groups",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Group",
+          "type": "Action",
+          "mention": "Add Custom Group",
+          "confidence": "high"
+        },
+        {
+          "name": "field",
+          "type": "Field",
+          "mention": "field",
+          "confidence": "high"
+        },
+        {
+          "name": "model",
+          "type": "Concept",
+          "mention": "model",
+          "confidence": "medium"
+        },
+        {
+          "name": "records",
+          "type": "DataObject",
+          "mention": "records",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales Analysis report",
+          "relation": "BELONGS_TO",
+          "target": "Sales app",
+          "evidence": "on the Sales Analysis report (Sales app --> Reporting --> Sales)"
+        },
+        {
+          "source": "Group By",
+          "relation": "IS_PART_OF",
+          "target": "search bar",
+          "evidence": "select one of the Group By options from the drop-down menu in the search bar"
+        },
+        {
+          "source": "Group By",
+          "relation": "HAS_FEATURE",
+          "target": "salesperson",
+          "evidence": "select the Salesperson option from the Group By drop-down menu"
+        },
+        {
+          "source": "customize groups",
+          "relation": "CONFIGURED_BY",
+          "target": "Add Custom Group",
+          "evidence": "customize groups by using... click Add Custom Group"
+        },
+        {
+          "source": "customize groups",
+          "relation": "USES_METHOD",
+          "target": "field",
+          "evidence": "customize groups by using a field present on the model"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "comparison",
+    "heading": "Comparison",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "**Manufacturing** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "**Purchase** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Comparison",
+          "type": "Feature",
+          "mention": "Comparison",
+          "confidence": "high"
+        },
+        {
+          "name": "Overall Equipment Effectiveness report",
+          "type": "Report",
+          "mention": "Overall Equipment Effectiveness report",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase report",
+          "type": "Report",
+          "mention": "Purchase report",
+          "confidence": "high"
+        },
+        {
+          "name": "Production Analysis report",
+          "type": "Report",
+          "mention": "Production Analysis report",
+          "confidence": "high"
+        },
+        {
+          "name": "Filters",
+          "type": "Module",
+          "mention": "Filters column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Previous Period",
+          "type": "Action",
+          "mention": "(Time Filter): Previous Period",
+          "confidence": "high"
+        },
+        {
+          "name": "Previous Year",
+          "type": "Action",
+          "mention": "(Time Filter): Previous Year",
+          "confidence": "high"
+        },
+        {
+          "name": "search bar drop-down menu",
+          "type": "Feature",
+          "mention": "search bar drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Bar Chart",
+          "type": "Feature",
+          "mention": "fa-bar-chart (Bar Chart)",
+          "confidence": "high"
+        },
+        {
+          "name": "Line Chart",
+          "type": "Feature",
+          "mention": "fa-line-chart (Line Chart)",
+          "confidence": "high"
+        },
+        {
+          "name": "Pie Chart",
+          "type": "Feature",
+          "mention": "fa-pie-chart (Pie Chart)",
+          "confidence": "high"
+        },
+        {
+          "name": "Pivot",
+          "type": "Feature",
+          "mention": "oi-view-pivot (Pivot)",
+          "confidence": "high"
+        },
+        {
+          "name": "End Date filter",
+          "type": "Field",
+          "mention": "End Date filter section",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing",
+          "relation": "HAS_REPORT",
+          "target": "Overall Equipment Effectiveness report",
+          "evidence": "Certain reporting dashboards include a Comparison section... for the **Manufacturing** app"
+        },
+        {
+          "source": "Purchase",
+          "relation": "HAS_REPORT",
+          "target": "Purchase report",
+          "evidence": "Certain reporting dashboards include a Comparison section... for the **Purchase** app"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "HAS_REPORT",
+          "target": "Production Analysis report",
+          "evidence": "In the Production Analysis report of the Manufacturing app"
+        },
+        {
+          "source": "Comparison",
+          "relation": "ENABLES",
+          "target": "Previous Period",
+          "evidence": "The options in the Comparison section are used to compare data... Pick between... Previous Period"
+        },
+        {
+          "source": "Comparison",
+          "relation": "ENABLES",
+          "target": "Previous Year",
+          "evidence": "The options in the Comparison section are used to compare data... Pick between... Previous Year"
+        },
+        {
+          "source": "Overall Equipment Effectiveness report",
+          "relation": "HAS_FEATURE",
+          "target": "Comparison",
+          "evidence": "Certain reporting dashboards include a Comparison section... for the Overall Equipment Effectiveness report"
+        },
+        {
+          "source": "Purchase report",
+          "relation": "HAS_FEATURE",
+          "target": "Comparison",
+          "evidence": "Certain reporting dashboards include a Comparison section... for the Purchase report"
+        },
+        {
+          "source": "Comparison",
+          "relation": "REQUIRES",
+          "target": "Filters",
+          "evidence": "For some reports, the Comparison section only appears... if one (or more) time periods have been selected in the Filters column."
+        },
+        {
+          "source": "Pie Chart",
+          "relation": "REQUIRES",
+          "target": "Comparison",
+          "evidence": "some reports only allow use of the Comparison feature when the fa-pie-chart (Pie Chart) graph type... is selected"
+        },
+        {
+          "source": "Pivot",
+          "relation": "REQUIRES",
+          "target": "Comparison",
+          "evidence": "some reports only allow use of the Comparison feature when the... oi-view-pivot (Pivot) view, is selected"
+        },
+        {
+          "source": "Comparison",
+          "relation": "TRIGGERED_BY",
+          "target": "End Date filter",
+          "evidence": "In the Production Analysis report... Q2 is selected in the End Date filter section... In the Comparison section, End Date: Previous Year is selected."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "favorites",
+    "heading": "Favorites",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Favorites",
+          "type": "Feature",
+          "mention": "Favorites",
+          "confidence": "high"
+        },
+        {
+          "name": "search",
+          "type": "DataObject",
+          "mention": "search",
+          "confidence": "high"
+        },
+        {
+          "name": "User-defined Filters",
+          "type": "Feature",
+          "mention": "User-defined Filters",
+          "confidence": "high"
+        },
+        {
+          "name": "Default filter",
+          "type": "Setting",
+          "mention": "Default filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Filter name",
+          "type": "Field",
+          "mention": "Filter name",
+          "confidence": "high"
+        },
+        {
+          "name": "Shared with",
+          "type": "Field",
+          "mention": "Shared with",
+          "confidence": "high"
+        },
+        {
+          "name": "Domain",
+          "type": "Field",
+          "mention": "Domain",
+          "confidence": "high"
+        },
+        {
+          "name": "Context",
+          "type": "Field",
+          "mention": "Context",
+          "confidence": "high"
+        },
+        {
+          "name": "Sort",
+          "type": "Field",
+          "mention": "Sort",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings app",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Technical",
+          "type": "Sub-module",
+          "mention": "Technical",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Favorites",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Favorites"
+        },
+        {
+          "source": "User-defined Filters",
+          "relation": "BELONGS_TO",
+          "target": "Technical",
+          "evidence": "Settings app --> Technical --> User-defined Filters."
+        },
+        {
+          "source": "Technical",
+          "relation": "IS_PART_OF",
+          "target": "Settings app",
+          "evidence": "Settings app --> Technical --> User-defined Filters."
+        },
+        {
+          "source": "Favorites",
+          "relation": "HAS_FEATURE",
+          "target": "search",
+          "evidence": "Favorites are a way to save a specific search for future use"
+        },
+        {
+          "source": "Favorites",
+          "relation": "CONFIGURED_BY",
+          "target": "Default filter",
+          "evidence": "Default filter: Sets the favorited search as the default filter for the view."
+        },
+        {
+          "source": "Favorites",
+          "relation": "CONFIGURED_BY",
+          "target": "Filter name",
+          "evidence": "- Filter name: Name of the favorited search."
+        },
+        {
+          "source": "Favorites",
+          "relation": "RELATED_TO",
+          "target": "User-defined Filters",
+          "evidence": "To view *all* favorited searches, ... navigate to Settings app --> Technical --> User-defined Filters."
+        },
+        {
+          "source": "User-defined Filters",
+          "relation": "CONTAINS",
+          "target": "Favorites",
+          "evidence": "To view *all* favorited searches, ... navigate to ... User-defined Filters."
+        },
+        {
+          "source": "developer mode",
+          "relation": "REQUIRES",
+          "target": "Context",
+          "evidence": "... activate developer mode when editing the search, then modify the Context"
+        },
+        {
+          "source": "developer mode",
+          "relation": "REQUIRES",
+          "target": "Sort",
+          "evidence": "... activate developer mode when editing the search, then modify the ... Sort fields"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "share-a-favorited-search",
+    "heading": "Share a favorited search",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "favorited search",
+          "type": "Feature",
+          "mention": "favorited search",
+          "confidence": "high"
+        },
+        {
+          "name": "list of favorites",
+          "type": "Feature",
+          "mention": "list of favorites",
+          "confidence": "medium"
+        },
+        {
+          "name": "Edit",
+          "type": "Action",
+          "mention": "Edit",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-pencil",
+          "type": "Action",
+          "mention": "fa-pencil",
+          "confidence": "high"
+        },
+        {
+          "name": "Shared with field",
+          "type": "Field",
+          "mention": "Shared with field",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-cloud-upload",
+          "type": "Action",
+          "mention": "fa-cloud-upload",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-star Favorites",
+          "type": "Feature",
+          "mention": "fa-star Favorites",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "favorited search",
+          "relation": "CONFIGURED_BY",
+          "target": "Edit",
+          "evidence": "click Edit when creating the favorite"
+        },
+        {
+          "source": "favorited search",
+          "relation": "CONFIGURED_BY",
+          "target": "fa-pencil",
+          "evidence": "click fa-pencil (Edit favorite) after hovering over the search name in the list of favorites"
+        },
+        {
+          "source": "favorited search",
+          "relation": "CONFIGURED_BY",
+          "target": "Shared with field",
+          "evidence": "In the Shared with field, select the relevant users"
+        },
+        {
+          "source": "favorited search",
+          "relation": "CONFIGURED_BY",
+          "target": "fa-cloud-upload",
+          "evidence": "then click fa-cloud-upload (Save manually)"
+        },
+        {
+          "source": "favorited search",
+          "relation": "RELATED_TO",
+          "target": "fa-star Favorites",
+          "evidence": "The favorite is now visible for all selected users under fa-star Favorites"
+        },
+        {
+          "source": "fa-pencil",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "click fa-pencil"
+        },
+        {
+          "source": "fa-cloud-upload",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "click fa-cloud-upload"
+        }
+      ]
+    }
+  }
+]

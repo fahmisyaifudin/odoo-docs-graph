@@ -1,0 +1,79 @@
+[
+  {
+    "section_id": "change-management",
+    "heading": "Change management",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Change management",
+          "type": "Module",
+          "mention": "Title: Change management",
+          "confidence": "high"
+        },
+        {
+          "name": "engineering_change_orders",
+          "type": "Sub-module",
+          "mention": "manage_changes/engineering_change_orders",
+          "confidence": "high"
+        },
+        {
+          "name": "eco_type",
+          "type": "Sub-module",
+          "mention": "manage_changes/eco_type",
+          "confidence": "high"
+        },
+        {
+          "name": "version_control",
+          "type": "Sub-module",
+          "mention": "manage_changes/version_control",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "engineering_change_orders",
+          "relation": "BELONGS_TO",
+          "target": "Change management",
+          "evidence": "manage_changes/engineering_change_orders"
+        },
+        {
+          "source": "eco_type",
+          "relation": "BELONGS_TO",
+          "target": "Change management",
+          "evidence": "manage_changes/eco_type"
+        },
+        {
+          "source": "version_control",
+          "relation": "BELONGS_TO",
+          "target": "Change management",
+          "evidence": "manage_changes/version_control"
+        },
+        {
+          "source": "Change management",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Change management"
+        },
+        {
+          "source": "engineering_change_orders",
+          "relation": "SEE_ALSO",
+          "target": "eco_type",
+          "evidence": ".. toctree::"
+        },
+        {
+          "source": "engineering_change_orders",
+          "relation": "SEE_ALSO",
+          "target": "version_control",
+          "evidence": ".. toctree::"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1273 @@
+[
+  {
+    "section_id": "event-booths",
+    "heading": "Event booths",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events",
+          "type": "Module",
+          "mention": "Events",
+          "confidence": "high"
+        },
+        {
+          "name": "Event booths",
+          "type": "Sub-module",
+          "mention": "Event booths",
+          "confidence": "medium"
+        },
+        {
+          "name": "create event booths",
+          "type": "Feature",
+          "mention": "create event booths",
+          "confidence": "medium"
+        },
+        {
+          "name": "sell availability",
+          "type": "Feature",
+          "mention": "sell their availability",
+          "confidence": "medium"
+        },
+        {
+          "name": "manage reservations",
+          "type": "Feature",
+          "mention": "manage their reservations",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Events",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The Odoo *Events* application..."
+        },
+        {
+          "source": "Events",
+          "relation": "HAS_FEATURE",
+          "target": "create event booths",
+          "evidence": "The Odoo *Events* application provides users with the ability to create event booths..."
+        },
+        {
+          "source": "Events",
+          "relation": "HAS_FEATURE",
+          "target": "sell availability",
+          "evidence": "The Odoo *Events* application provides users with the ability to... sell their availability..."
+        },
+        {
+          "source": "Events",
+          "relation": "HAS_FEATURE",
+          "target": "manage reservations",
+          "evidence": "The Odoo *Events* application provides users with the ability to... manage their reservations."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events app",
+          "type": "Module",
+          "mention": "Events app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth Management",
+          "type": "Feature",
+          "mention": "Booth Management",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth Management checkbox",
+          "type": "Setting",
+          "mention": "Booth Management checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Event Booth",
+          "type": "Product Type",
+          "mention": "Event Booth",
+          "confidence": "medium"
+        },
+        {
+          "name": "booth form",
+          "type": "DataObject",
+          "mention": "booth form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Booth Category",
+          "type": "DataObject",
+          "mention": "Booth Category",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Events app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Events app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Booth Management checkbox",
+          "evidence": "Settings, and tick the Booth Management checkbox"
+        },
+        {
+          "source": "Events app",
+          "relation": "HAS_FEATURE",
+          "target": "Booth Management",
+          "evidence": "the *Booth Management* feature"
+        },
+        {
+          "source": "booth form",
+          "relation": "BELONGS_TO",
+          "target": "Event Booth",
+          "evidence": "every created booth **must** be assigned a *Booth Category*"
+        },
+        {
+          "source": "Booth Category",
+          "relation": "BELONGS_TO",
+          "target": "Event Booth",
+          "evidence": "every booth category **must** have an *Event Booth* product assigned to it"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "booth-categories",
+    "heading": "Booth categories",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events",
+          "type": "Module",
+          "mention": "Events app",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth Management",
+          "type": "Feature",
+          "mention": "*Booth Management* setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth Categories",
+          "type": "Feature",
+          "mention": "*Booth Categories* option",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth Category",
+          "type": "DataObject",
+          "mention": "Booth Category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Booth Category dashboard",
+          "type": "Feature",
+          "mention": "Booth Category dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Booth Category page",
+          "type": "Report",
+          "mention": "Booth Category page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Sponsor",
+          "type": "Feature",
+          "mention": "Create Sponsor",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Event Booth",
+          "type": "Product",
+          "mention": "*Event Booth* product",
+          "confidence": "high"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Sponsor Level",
+          "type": "Field",
+          "mention": "Sponsor Level",
+          "confidence": "high"
+        },
+        {
+          "name": "Sponsor Type",
+          "type": "Field",
+          "mention": "Sponsor Type",
+          "confidence": "high"
+        },
+        {
+          "name": "event category form",
+          "type": "DataObject",
+          "mention": "event category form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Events",
+          "relation": "HAS_FEATURE",
+          "target": "Booth Management",
+          "evidence": "With the *Booth Management* setting activated in the *Events* app"
+        },
+        {
+          "source": "Booth Management",
+          "relation": "ENABLES",
+          "target": "Booth Categories",
+          "evidence": "With the *Booth Management* setting activated in the *Events* app, the *Booth Categories* option appears"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Booth Categories",
+          "evidence": "the *Booth Categories* option appears in the Configuration menu"
+        },
+        {
+          "source": "Events",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Events app --> Configuration"
+        },
+        {
+          "source": "Booth Categories",
+          "relation": "HAS_REPORT",
+          "target": "Booth Category dashboard",
+          "evidence": "To access the Booth Category dashboard, go to Events app --> Configuration --> Booth Categories"
+        },
+        {
+          "source": "Booth Categories",
+          "relation": "GENERATES",
+          "target": "Booth Category page",
+          "evidence": "Configuration --> Booth Categories, which reveals a list of all created booth categories"
+        },
+        {
+          "source": "Booth Category",
+          "relation": "HAS_FEATURE",
+          "target": "Create Sponsor",
+          "evidence": "Create Sponsor: if checked, booking this booth category creates a sponsor for the user"
+        },
+        {
+          "source": "Booth Category",
+          "relation": "RELATED_TO",
+          "target": "Event Booth",
+          "evidence": "Product: the *Event Booth* product associated with that specific booth category"
+        },
+        {
+          "source": "Event Booth",
+          "type": "Product",
+          "mention": "Event Booth",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-booth-category",
+    "heading": "Create booth category",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth Category",
+          "type": "Module",
+          "mention": "Booth Category page",
+          "confidence": "medium"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "click the New button",
+          "confidence": "high"
+        },
+        {
+          "name": "booth category form",
+          "type": "DataObject",
+          "mention": "blank booth category form",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth Category field",
+          "type": "Field",
+          "mention": "Booth Category field",
+          "confidence": "high"
+        },
+        {
+          "name": "image",
+          "type": "Field",
+          "mention": "add a corresponding image",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-pencil (pencil) icon",
+          "type": "Action",
+          "mention": "click the fa-pencil (pencil) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "camera placeholder",
+          "type": "Field",
+          "mention": "camera placeholder",
+          "confidence": "medium"
+        },
+        {
+          "name": "Booth Details section",
+          "type": "Module",
+          "mention": "Booth Details section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "assign a Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Event Booth",
+          "type": "Product",
+          "mention": "Event Booth product chosen",
+          "confidence": "low"
+        },
+        {
+          "name": "Product Type",
+          "type": "Field",
+          "mention": "Product Type on the product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price to be applied",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sponsorship section",
+          "type": "Module",
+          "mention": "Sponsorship section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Sponsor checkbox",
+          "type": "Field",
+          "mention": "Create Sponsor checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Sponsor",
+          "type": "Actor",
+          "mention": "Sponsor of the event",
+          "confidence": "high"
+        },
+        {
+          "name": "Sponsor Level",
+          "type": "Field",
+          "mention": "Sponsor Level",
+          "confidence": "high"
+        },
+        {
+          "name": "Sponsor Type",
+          "type": "Field",
+          "mention": "Sponsor Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Sponsor Level drop-down field",
+          "type": "Field",
+          "mention": "Sponsor Level drop-down field",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-arrow-right (right arrow)",
+          "type": "Action",
+          "mention": "click the fa-arrow-right (right arrow)",
+          "confidence": "high"
+        },
+        {
+          "name": "Ribbon Style",
+          "type": "Field",
+          "mention": "Ribbon Style",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Sponsor Level pop-up window",
+          "type": "Module",
+          "mention": "Create Sponsor Level pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "No Ribbon",
+          "type": "Concept",
+          "mention": "No Ribbon",
+          "confidence": "low"
+        },
+        {
+          "name": "Gold",
+          "type": "Concept",
+          "mention": "Gold",
+          "confidence": "low"
+        },
+        {
+          "name": "Silver",
+          "type": "Concept",
+          "mention": "Silver",
+          "confidence": "low"
+        },
+        {
+          "name": "Bronze",
+          "type": "Concept",
+          "mention": "Bronze",
+          "confidence": "low"
+        },
+        {
+          "name": "Description tab",
+          "type": "Module",
+          "mention": "Description tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "booth-buyer",
+          "type": "Actor",
+          "mention": "booth-buyer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Booth Category",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Booth Category page"
+        },
+        {
+          "source": "Booth Details section",
+          "relation": "IS_PART_OF",
+          "target": "booth category form",
+          "evidence": "Booth Details section on the booth category form"
+        },
+        {
+          "source": "Sponsorship section",
+          "relation": "IS_PART_OF",
+          "target": "booth category form",
+          "evidence": "Sponsorship section on the booth category form"
+        },
+        {
+          "source": "Description tab",
+          "relation": "IS_PART_OF",
+          "target": "booth category form",
+          "evidence": "Description tab on the booth category form"
+        },
+        {
+          "source": "New button",
+          "relation": "ENABLES",
+          "target": "booth category form",
+          "evidence": "click the New button to reveal a blank booth category form"
+        },
+        {
+          "source": "Booth Category field",
+          "relation": "CONTAINS",
+          "target": "booth category form",
+          "evidence": "enter a name in the Booth Category field on the form"
+        },
+        {
+          "source": "fa-pencil (pencil) icon",
+          "relation": "ENABLES",
+          "target": "image",
+          "evidence": "click the fa-pencil icon to upload an image"
+        },
+        {
+          "source": "Product",
+          "relation": "REQUIRES",
+          "target": "Product Type",
+          "evidence": "Product must have Event Booth set as the Product Type"
+        },
+        {
+          "source": "Create Sponsor checkbox",
+          "relation": "ENABLES",
+          "target": "Sponsor",
+          "evidence": "checkbox ticked creates the user as an official Sponsor"
+        },
+        {
+          "source": "Create Sponsor checkbox",
+          "relation": "CONTAINS",
+          "target": "Sponsor Level",
+          "evidence": "checkbox ticked reveals Sponsor Level field"
+        },
+        {
+          "source": "Create Sponsor checkbox",
+          "relation": "CONTAINS",
+          "target": "Sponsor Type",
+          "evidence": "checkbox ticked reveals Sponsor Type field"
+        },
+        {
+          "source": "Sponsor Level drop-down field",
+          "relation": "CONTAINS",
+          "target": "Sponsor Level",
+          "evidence": "select from Sponsor Level drop-down field"
+        },
+        {
+          "source": "fa-arrow-right (right arrow)",
+          "relation": "ENABLES",
+          "target": "Sponsor Level",
+          "evidence": "click the fa-arrow-right to modify Sponsor Level"
+        },
+        {
+          "source": "Create Sponsor Level pop-up window",
+          "relation": "CONTAINS",
+          "target": "Ribbon Style",
+          "evidence": "pop-up window includes Ribbon Style drop-down"
+        },
+        {
+          "source": "Description tab",
+          "relation": "CONTAINS",
+          "target": "booth-buyer",
+          "evidence": "information for booth-buyer in Description tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-booth-to-an-event",
+    "heading": "Add booth to an event",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events",
+          "type": "Module",
+          "mention": "Events app",
+          "confidence": "high"
+        },
+        {
+          "name": "Events dashboard",
+          "type": "Feature",
+          "mention": "Events dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Event form",
+          "type": "DataObject",
+          "mention": "event form",
+          "confidence": "high"
+        },
+        {
+          "name": "Booths",
+          "type": "Module",
+          "mention": "Booths",
+          "confidence": "high"
+        },
+        {
+          "name": "Booths page",
+          "type": "Feature",
+          "mention": "Booths page",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth",
+          "type": "DataObject",
+          "mention": "booth",
+          "confidence": "high"
+        },
+        {
+          "name": "Available stage",
+          "type": "Feature",
+          "mention": "Available stage",
+          "confidence": "high"
+        },
+        {
+          "name": "Unavailable stage",
+          "type": "Feature",
+          "mention": "Unavailable stage",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "List view",
+          "type": "Feature",
+          "mention": "List view",
+          "confidence": "high"
+        },
+        {
+          "name": "Graph view",
+          "type": "Feature",
+          "mention": "Graph view",
+          "confidence": "high"
+        },
+        {
+          "name": "Pivot view",
+          "type": "Feature",
+          "mention": "Pivot view",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Events",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "via Events app"
+        },
+        {
+          "source": "Events",
+          "relation": "HAS_FEATURE",
+          "target": "Events dashboard",
+          "evidence": "select the desired event from the Events dashboard"
+        },
+        {
+          "source": "Event form",
+          "relation": "IS_PART_OF",
+          "target": "Events",
+          "evidence": "navigate to an existing event form, via Events app"
+        },
+        {
+          "source": "Event form",
+          "relation": "HAS_FEATURE",
+          "target": "Booths",
+          "evidence": "to access the *Booths* for that specific event, click the Booths smart button"
+        },
+        {
+          "source": "Booths",
+          "relation": "IS_PART_OF",
+          "target": "Events",
+          "evidence": "The Booths page of an event"
+        },
+        {
+          "source": "Booths page",
+          "relation": "CONTAINS",
+          "target": "Available stage",
+          "evidence": "The Booths page... with two different stages: Available"
+        },
+        {
+          "source": "Booths page",
+          "relation": "CONTAINS",
+          "target": "Unavailable stage",
+          "evidence": "The Booths page... with two different stages:... Unavailable"
+        },
+        {
+          "source": "Booths page",
+          "relation": "HAS_FEATURE",
+          "target": "Kanban view",
+          "evidence": "The Booths page is displayed in a Kanban view, by default"
+        },
+        {
+          "source": "Booths page",
+          "relation": "HAS_FEATURE",
+          "target": "List view",
+          "evidence": "The Booths page of an event is also viewable in a List view"
+        },
+        {
+          "source": "Booths page",
+          "relation": "HAS_FEATURE",
+          "target": "Graph view",
+          "evidence": "The Booths page... viewable in a Graph view"
+        },
+        {
+          "source": "Booths page",
+          "relation": "HAS_FEATURE",
+          "target": "Pivot view",
+          "evidence": "The Booths page... viewable in a Pivot view"
+        },
+        {
+          "source": "Available stage",
+          "relation": "CONTAINS",
+          "target": "Booth",
+          "evidence": "The booths present in the Available stage"
+        },
+        {
+          "source": "Unavailable stage",
+          "relation": "CONTAINS",
+          "target": "Booth",
+          "evidence": "The booths present in the Unavailable stage"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "booth-form",
+    "heading": "Booth form",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events",
+          "type": "Module",
+          "mention": "Events",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth form",
+          "type": "Feature",
+          "mention": "Booth form",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth Category",
+          "type": "Field",
+          "mention": "Booth Category",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Booth Category",
+          "type": "Feature",
+          "mention": "Create Booth Category pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Booth Categories",
+          "type": "Feature",
+          "mention": "Booth Categories",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price",
+          "confidence": "high"
+        },
+        {
+          "name": "event website",
+          "type": "Feature",
+          "mention": "event website",
+          "confidence": "low"
+        },
+        {
+          "name": "Renter",
+          "type": "Field",
+          "mention": "Renter",
+          "confidence": "high"
+        },
+        {
+          "name": "Renter Name",
+          "type": "Field",
+          "mention": "Renter Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Renter Email",
+          "type": "Field",
+          "mention": "Renter Email",
+          "confidence": "high"
+        },
+        {
+          "name": "Renter Phone",
+          "type": "Field",
+          "mention": "Renter Phone",
+          "confidence": "high"
+        },
+        {
+          "name": "Available",
+          "type": "Field",
+          "mention": "Available",
+          "confidence": "high"
+        },
+        {
+          "name": "Unavailable",
+          "type": "Field",
+          "mention": "Unavailable",
+          "confidence": "high"
+        },
+        {
+          "name": "Booths",
+          "type": "Feature",
+          "mention": "Booths",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Events",
+          "relation": "CONTAINS",
+          "target": "Booth form",
+          "evidence": "The booth form in Odoo *Events* lets users..."
+        },
+        {
+          "source": "Booth form",
+          "relation": "HAS_FEATURE",
+          "target": "Booth Category",
+          "evidence": "Then, apply a Booth Category to the booth."
+        },
+        {
+          "source": "Booth form",
+          "relation": "HAS_FEATURE",
+          "target": "Name",
+          "evidence": "Start by typing in a Name for the booth."
+        },
+        {
+          "source": "Booth Category",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "Upon selecting a pre-existing Booth Category, two additional, non-modifiable fields appear: Product and Price."
+        },
+        {
+          "source": "Booth Category",
+          "relation": "CONTAINS",
+          "target": "Price",
+          "evidence": "Upon selecting a pre-existing Booth Category, two additional, non-modifiable fields appear: Product and Price."
+        },
+        {
+          "source": "Booth form",
+          "relation": "CONTAINS",
+          "target": "Renter",
+          "evidence": "the Renter, Renter Name, Renter Email, and Renter Phone fields can be entered in manually."
+        },
+        {
+          "source": "Booth form",
+          "relation": "CONTAINS",
+          "target": "Renter Name",
+          "evidence": "the Renter, Renter Name, Renter Email, and Renter Phone fields can be entered in manually."
+        },
+        {
+          "source": "Booth form",
+          "relation": "CONTAINS",
+          "target": "Renter Email",
+          "evidence": "the Renter, Renter Name, Renter Email, and Renter Phone fields can be entered in manually."
+        },
+        {
+          "source": "Booth form",
+          "relation": "CONTAINS",
+          "target": "Renter Phone",
+          "evidence": "the Renter, Renter Name, Renter Email, and Renter Phone fields can be entered in manually."
+        },
+        {
+          "source": "Booth form",
+          "relation": "CONTAINS",
+          "target": "Available",
+          "evidence": "The status of the booth (Available or Unavailable)..."
+        },
+        {
+          "source": "Booth form",
+          "relation": "CONTAINS",
+          "target": "Unavailable",
+          "evidence": "The status of the booth (Available or Unavailable)..."
+        },
+        {
+          "source": "Events",
+          "relation": "CONTAINS",
+          "target": "Booths",
+          "evidence": "via the *Booths* page Kanban view."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sell-event-booths",
+    "heading": "Sell event booths",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events app",
+          "type": "Module",
+          "mention": "Events app",
+          "confidence": "high"
+        },
+        {
+          "name": "Events dashboard",
+          "type": "Feature",
+          "mention": "Events dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "event form",
+          "type": "DataObject",
+          "mention": "event form",
+          "confidence": "high"
+        },
+        {
+          "name": "Go to Website smart button",
+          "type": "Action",
+          "mention": "Go to Website smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "event website",
+          "type": "Feature",
+          "mention": "event website",
+          "confidence": "high"
+        },
+        {
+          "name": "Get A Booth",
+          "type": "Feature",
+          "mention": "Get A Booth",
+          "confidence": "high"
+        },
+        {
+          "name": "event subheader menu",
+          "type": "Feature",
+          "mention": "event subheader menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit button",
+          "type": "Action",
+          "mention": "Edit button",
+          "confidence": "high"
+        },
+        {
+          "name": "edit mode",
+          "type": "Action",
+          "mention": "edit mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customize tab",
+          "type": "Feature",
+          "mention": "Customize tab",
+          "confidence": "high"
+        },
+        {
+          "name": "subheader menu options",
+          "type": "Feature",
+          "mention": "subheader menu options",
+          "confidence": "medium"
+        },
+        {
+          "name": "Debug mode",
+          "type": "Feature",
+          "mention": "Debug mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Website Submenu checkbox",
+          "type": "Setting",
+          "mention": "Website Submenu",
+          "confidence": "high"
+        },
+        {
+          "name": "Booth Register checkbox",
+          "type": "Setting",
+          "mention": "Booth Register checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Get A Booth page",
+          "type": "Feature",
+          "mention": "Get A Booth page",
+          "confidence": "high"
+        },
+        {
+          "name": "configured event booths",
+          "type": "Module",
+          "mention": "configured event booths",
+          "confidence": "medium"
+        },
+        {
+          "name": "Book my Booth(s) button",
+          "type": "Action",
+          "mention": "Book my Booth(s) button",
+          "confidence": "high"
+        },
+        {
+          "name": "Contact Details page",
+          "type": "Feature",
+          "mention": "Contact Details page",
+          "confidence": "high"
+        },
+        {
+          "name": "Contact Details",
+          "type": "DataObject",
+          "mention": "Contact Details",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sponsor Details",
+          "type": "DataObject",
+          "mention": "Sponsor Details",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Sponsor checkbox",
+          "type": "Setting",
+          "mention": "Create Sponsor checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Go to Payment",
+          "type": "Action",
+          "mention": "Go to Payment",
+          "confidence": "high"
+        },
+        {
+          "name": "checkout process",
+          "type": "Workflow",
+          "mention": "checkout process",
+          "confidence": "medium"
+        },
+        {
+          "name": "Unavailable stage",
+          "type": "Setting",
+          "mention": "Unavailable",
+          "confidence": "medium"
+        },
+        {
+          "name": "Booths page",
+          "type": "Feature",
+          "mention": "Booths page",
+          "confidence": "high"
+        },
+        {
+          "name": "Sponsors smart button",
+          "type": "Action",
+          "mention": "Sponsors smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "Sales Order",
+          "confidence": "medium"
+        },
+        {
+          "name": "create_events",
+          "type": "Concept",
+          "mention": "create_events",
+          "confidence": "medium"
+        },
+        {
+          "name": "sell_tickets",
+          "type": "Concept",
+          "mention": "sell_tickets",
+          "confidence": "medium"
+        },
+        {
+          "name": "visitor",
+          "type": "Actor",
+          "mention": "visitor",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Events app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Sell event booths"
+        },
+        {
+          "source": "event form",
+          "relation": "CONTAINS",
+          "target": "Go to Website smart button",
+          "evidence": "From the event form, click the Go to Website smart button"
+        },
+        {
+          "source": "Go to Website smart button",
+          "relation": "ENABLES",
+          "target": "event website",
+          "evidence": "Go to Website smart button to be taken to the Odoo-built event website"
+        },
+        {
+          "source": "event website",
+          "relation": "HAS_FEATURE",
+          "target": "event subheader menu",
+          "evidence": "If the event subheader menu (with the Get A Booth option) is *not* showing up on the event website"
+        },
+        {
+          "source": "event subheader menu",
+          "relation": "CONTAINS",
+          "target": "Get A Booth",
+          "evidence": "the Get A Booth event subheader menu option"
+        },
+        {
+          "source": "Customize tab",
+          "relation": "CONTAINS",
+          "target": "Website Submenu checkbox",
+          "evidence": "click the toggle switch for Sub-Menu (Specific)"
+        },
+        {
+          "source": "Website Submenu checkbox",
+          "relation": "ENABLES",
+          "target": "event subheader menu",
+          "evidence": "Tick the checkbox for Website Submenu, in order for the submenu to appear on the event website"
+        },
+        {
+          "source": "Debug mode",
+          "relation": "ENABLES",
+          "target": "Website Submenu checkbox",
+          "evidence": "On the event form, with *Debug mode* on, an array of subheader menu options appears"
+        },
+        {
+          "source": "event form",
+          "relation": "CONTAINS",
+          "target": "Booth Register checkbox",
+          "evidence": "make sure the Booth Register checkbox is ticked"
+        },
+        {
+          "source": "Booth Register checkbox",
+          "relation": "ENABLES",
+          "target": "Get A Booth",
+          "evidence": "In this case, make sure the Booth Register checkbox is ticked"
+        },
+        {
+          "source": "Get A Booth",
+          "relation": "ENABLES",
+          "target": "Get A Booth page",
+          "evidence": "click the Get A Booth event subheader menu option. Doing so reveals the Get A Booth page"
+        },
+        {
+          "source": "Get A Booth page",
+          "relation": "CONTAINS",
+          "target": "Book my Booth(s) button",
+          "evidence": "click the Book my Booth(s) button, located at the bottom of the Get A Booth page"
+        },
+        {
+          "source": "Book my Booth(s) button",
+          "relation": "TRIGGERED_BY",
+          "target": "visitor",
+          "evidence": "the visitor can select their desired booth option... they would click the Book my Booth(s) button"
+        },
+        {
+          "source": "Book my Booth(s) button",
+          "relation": "PRODUCES",
+          "target": "Contact Details page",
+          "evidence": "Doing so reveals a Contact Details page"
+        },
+        {
+          "source": "Contact Details page",
+          "relation": "CONTAINS",
+          "target": "Go to Payment",
+          "evidence": "the visitor then clicks the Go to Payment at the bottom of the page"
+        },
+        {
+          "source": "Go to Payment",
+          "relation": "ENABLES",
+          "target": "checkout process",
+          "evidence": "proceeds to complete the typical checkout process"
+        },
+        {
+          "source": "Create Sponsor checkbox",
+          "relation": "CONFIGURED_BY",
+          "target": "Sponsor Details",
+          "evidence": "If the selected booth has the *Create Sponsor* checkbox ticked, this page reads as *Sponsor Details*"
+        },
+        {
+          "source": "Sponsors smart button",
+          "relation": "PERFORMED_BY",
+          "target": "visitor",
+          "evidence": "Click the *Sponsors* smart button to modify any information about the sponsor"
+        },
+        {
+          "source": "create_events",
+          "relation": "SEE_ALSO",
+          "target": "sell_tickets",
+          "evidence": "seealso: - create_events - sell_tickets"
+        },
+        {
+          "source": "sell_tickets",
+          "relation": "SEE_ALSO",
+          "target": "create_events",
+          "evidence": "seealso: - create_events - sell_tickets"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1070 @@
+[
+  {
+    "section_id": "storage-categories",
+    "heading": "Storage categories",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "storage category",
+          "type": "Concept",
+          "mention": "storage category",
+          "confidence": "high"
+        },
+        {
+          "name": "putaway rules",
+          "type": "Feature",
+          "mention": "putaway rules",
+          "confidence": "high"
+        },
+        {
+          "name": "storage location",
+          "type": "DataObject",
+          "mention": "storage location",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse transfer form",
+          "type": "Report",
+          "mention": "warehouse transfer form",
+          "confidence": "medium"
+        },
+        {
+          "name": "settings",
+          "type": "Setting",
+          "mention": "settings",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "storage category",
+          "relation": "IS_PART_OF",
+          "target": "putaway rules",
+          "evidence": "used with putaway rules"
+        },
+        {
+          "source": "storage category",
+          "relation": "SUPPORTS",
+          "target": "storage location",
+          "evidence": "assign a storage location to incoming products"
+        },
+        {
+          "source": "putaway rules",
+          "relation": "HAS_FEATURE",
+          "target": "storage category",
+          "evidence": "storage category is used with putaway rules"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "storage category",
+          "evidence": "Odoo evaluates these locations"
+        },
+        {
+          "source": "warehouse transfer form",
+          "relation": "SUPPORTS",
+          "target": "Odoo",
+          "evidence": "recommends the best one on the warehouse transfer form"
+        },
+        {
+          "source": "storage category",
+          "relation": "RELATED_TO",
+          "target": "settings",
+          "evidence": "Enable features in the settings"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-storage-categories",
+    "heading": "Enable storage categories",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Module",
+          "mention": "Warehouse",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages",
+          "type": "Feature",
+          "mention": "Packages",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "set capacities by package type",
+          "type": "Action",
+          "mention": "set capacities by package type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Warehouse",
+          "evidence": "in the *Warehouse* section"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "in the *Operations* section"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "HAS_FEATURE",
+          "target": "Storage Locations",
+          "evidence": "ensure the Storage Locations ... feature is enabled"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "HAS_FEATURE",
+          "target": "Multi-Step Routes",
+          "evidence": "ensure the ... Multi-Step Routes features are enabled"
+        },
+        {
+          "source": "Operations",
+          "relation": "HAS_FEATURE",
+          "target": "Packages",
+          "evidence": "also make sure Packages is enabled"
+        },
+        {
+          "source": "set capacities by package type",
+          "relation": "REQUIRES",
+          "target": "Packages",
+          "evidence": "To set capacities by package type ... also make sure Packages is enabled"
+        },
+        {
+          "source": "set capacities by package type",
+          "relation": "ENABLES",
+          "target": "Save",
+          "evidence": "Click Save"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Product: Odoo ... go to Inventory app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "storage-location-setup",
+    "heading": "Storage location setup",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations",
+          "type": "Feature",
+          "mention": "Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Stock",
+          "type": "DataObject",
+          "mention": "WH/Stock",
+          "confidence": "high"
+        },
+        {
+          "name": "Pallets",
+          "type": "DataObject",
+          "mention": "Pallets",
+          "confidence": "medium"
+        },
+        {
+          "name": "PAL1",
+          "type": "DataObject",
+          "mention": "PAL1",
+          "confidence": "medium"
+        },
+        {
+          "name": "PAL2",
+          "type": "DataObject",
+          "mention": "PAL2",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Product: Odoo\nGo to Inventory app"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Go to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Locations",
+          "evidence": "Configuration --> Locations"
+        },
+        {
+          "source": "WH/Stock",
+          "relation": "RELATED_TO",
+          "target": "Pallets",
+          "evidence": "named `Pallets` in the `WH/Stock` location"
+        },
+        {
+          "source": "Pallets",
+          "relation": "BELONGS_TO",
+          "target": "WH/Stock",
+          "evidence": "named `Pallets` in the `WH/Stock` location"
+        },
+        {
+          "source": "PAL1",
+          "relation": "BELONGS_TO",
+          "target": "Pallets",
+          "evidence": "sublocations, named `PAL1` and `PAL2`. Both have `WH/Stock/Pallets`"
+        },
+        {
+          "source": "PAL2",
+          "relation": "BELONGS_TO",
+          "target": "Pallets",
+          "evidence": "sublocations, named `PAL1` and `PAL2`. Both have `WH/Stock/Pallets`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "define-storage-category-limitations",
+    "heading": "Define storage category limitations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Define storage category limitations",
+          "type": "Workflow",
+          "mention": "Define storage category limitations",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Categories",
+          "type": "Module",
+          "mention": "Storage Categories",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Product",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Storage Category field",
+          "type": "Field",
+          "mention": "Storage Category field",
+          "confidence": "high"
+        },
+        {
+          "name": "Allow New Product field",
+          "type": "Field",
+          "mention": "Allow New Product field",
+          "confidence": "high"
+        },
+        {
+          "name": "Weight",
+          "type": "Concept",
+          "mention": "weight",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "Concept",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Package type",
+          "type": "Concept",
+          "mention": "package type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Define storage category limitations",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "Before a storage category is applied to locations, it must be configured..."
+        },
+        {
+          "source": "Define storage category limitations",
+          "relation": "TRIGGERED_BY",
+          "target": "Configuration",
+          "evidence": "To create a storage category, go to Inventory app --> Configuration --> Storage Categories, and click New."
+        },
+        {
+          "source": "Define storage category limitations",
+          "relation": "CONFIGURED_BY",
+          "target": "Storage Category field",
+          "evidence": "On the storage category form, type a name for the category in the Storage Category field."
+        },
+        {
+          "source": "Define storage category limitations",
+          "relation": "CONFIGURED_BY",
+          "target": "Allow New Product field",
+          "evidence": "The Allow New Product field defines when the location is considered available to store a product..."
+        },
+        {
+          "source": "Define storage category limitations",
+          "relation": "HAS_FEATURE",
+          "target": "Weight",
+          "evidence": "Capacity can be limited by weight, product, and package type."
+        },
+        {
+          "source": "Define storage category limitations",
+          "relation": "HAS_FEATURE",
+          "target": "Product",
+          "evidence": "Capacity can be limited by weight, product, and package type."
+        },
+        {
+          "source": "Define storage category limitations",
+          "relation": "HAS_FEATURE",
+          "target": "Package type",
+          "evidence": "Capacity can be limited by weight, product, and package type."
+        },
+        {
+          "source": "Inventory app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "To create a storage category, go to Inventory app..."
+        },
+        {
+          "source": "Storage Categories",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "To create a storage category, go to Inventory app --> Configuration --> Storage Categories..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "limit-capacity-by-weight",
+    "heading": "Limit capacity by weight",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Max Weight",
+          "type": "Setting",
+          "mention": "Max Weight field",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Product",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Location",
+          "type": "Concept",
+          "mention": "location",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Product",
+          "relation": "CONFIGURED_BY",
+          "target": "Max Weight",
+          "evidence": "A maximum product weight can be set in the Max Weight field."
+        },
+        {
+          "source": "Max Weight",
+          "relation": "APPLIES_TO",
+          "target": "Location",
+          "evidence": "This limit applies to each location assigned this storage category."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "limit-capacity-by-product",
+    "heading": "Limit capacity by product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Capacity by Product tab",
+          "type": "Module",
+          "mention": "Capacity by Product tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a Line",
+          "type": "Action",
+          "mention": "Add a Line",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Large Cabinets",
+          "type": "Product",
+          "mention": "Large Cabinets",
+          "confidence": "medium"
+        },
+        {
+          "name": "Corner Desk Right Sit",
+          "type": "Product",
+          "mention": "Corner Desk Right Sit",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Capacity by Product tab",
+          "relation": "CONTAINS",
+          "target": "Add a Line",
+          "evidence": "In the Capacity by Product tab, click Add a Line"
+        },
+        {
+          "source": "Add a Line",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Add a Line"
+        },
+        {
+          "source": "Add a Line",
+          "relation": "PRODUCES",
+          "target": "Line",
+          "evidence": "enter a product, and set the maximum capacity"
+        },
+        {
+          "source": "Line",
+          "relation": "CONTAINS",
+          "target": "Quantity field",
+          "evidence": "set the maximum capacity... in the Quantity field"
+        },
+        {
+          "source": "Large Cabinets",
+          "relation": "RELATED_TO",
+          "target": "Capacity by Product tab",
+          "evidence": "To ensure only a maximum of five Large Cabinets... are stored..."
+        },
+        {
+          "source": "Corner Desk Right Sit",
+          "relation": "RELATED_TO",
+          "target": "Capacity by Product tab",
+          "evidence": "To ensure only a maximum of two Corner Desk Right Sit... are stored..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "limit-capacity-by-package-type",
+    "heading": "Limit capacity by package type",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Limit capacity by package type",
+          "type": "Feature",
+          "mention": "Limit capacity by package type",
+          "confidence": "high"
+        },
+        {
+          "name": "package",
+          "type": "DataObject",
+          "mention": "package",
+          "confidence": "high"
+        },
+        {
+          "name": "package type",
+          "type": "DataObject",
+          "mention": "package type",
+          "confidence": "high"
+        },
+        {
+          "name": "crates",
+          "type": "Concept",
+          "mention": "crates",
+          "confidence": "medium"
+        },
+        {
+          "name": "bins",
+          "type": "Concept",
+          "mention": "bins",
+          "confidence": "medium"
+        },
+        {
+          "name": "boxes",
+          "type": "Concept",
+          "mention": "boxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "storage category",
+          "type": "DataObject",
+          "mention": "storage category",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Module",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packaging section",
+          "type": "Sub-module",
+          "mention": "Packaging section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Packagings page",
+          "type": "DataObject",
+          "mention": "Product Packagings page",
+          "confidence": "medium"
+        },
+        {
+          "name": "High frequency pallets",
+          "type": "DataObject",
+          "mention": "High frequency pallets",
+          "confidence": "high"
+        },
+        {
+          "name": "Capacity by Package tab",
+          "type": "Sub-module",
+          "mention": "Capacity by Package tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Pallets",
+          "type": "Concept",
+          "mention": "Pallets",
+          "confidence": "high"
+        },
+        {
+          "name": "location",
+          "type": "DataObject",
+          "mention": "location",
+          "confidence": "high"
+        },
+        {
+          "name": "putaway rules",
+          "type": "Workflow",
+          "mention": "putaway rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "incoming receipt",
+          "type": "DataObject",
+          "mention": "incoming receipt",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Limit capacity by package type",
+          "evidence": "Product: Odoo\nTitle: Limit capacity by package type"
+        },
+        {
+          "source": "Limit capacity by package type",
+          "relation": "ENABLES",
+          "target": "real-time storage capacity checks",
+          "evidence": "makes it possible to enforce real-time storage capacity checks"
+        },
+        {
+          "source": "Limit capacity by package type",
+          "relation": "USES_METHOD",
+          "target": "package type",
+          "evidence": "based on package type"
+        },
+        {
+          "source": "Add a line",
+          "relation": "CONTAINS",
+          "target": "package type",
+          "evidence": "Click Add a line to add a package type"
+        },
+        {
+          "source": "Inventory tab",
+          "relation": "IS_PART_OF",
+          "target": "product form",
+          "evidence": "on the Inventory tab of the product form"
+        },
+        {
+          "source": "Packaging section",
+          "relation": "IS_PART_OF",
+          "target": "product form",
+          "evidence": "(in the Packaging section)"
+        },
+        {
+          "source": "High frequency pallets",
+          "relation": "CONFIGURED_BY",
+          "target": "Capacity by Package tab",
+          "evidence": "In the Capacity by Package tab, specify the number of packages"
+        },
+        {
+          "source": "High frequency pallets",
+          "relation": "CONFIGURED_BY",
+          "target": "Pallets",
+          "evidence": "set a maximum of `2.00` `Pallets`"
+        },
+        {
+          "source": "High frequency pallets",
+          "relation": "CONFIGURED_BY",
+          "target": "location",
+          "evidence": "for a specific location"
+        },
+        {
+          "source": "putaway rules",
+          "relation": "BELONGS_TO",
+          "target": "High frequency pallets",
+          "evidence": "To help create putaway rules for pallet-stored items, create the `High frequency pallets` storage category"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GOVERNED_BY",
+          "target": "incoming receipt",
+          "evidence": "If an incoming receipt contains several units or packages"
+        },
+        {
+          "source": "incoming receipt",
+          "relation": "TRIGGERED_BY",
+          "target": "location",
+          "evidence": "If an incoming receipt contains several units or packages and the first recommended location exceeds its capacity, Odoo still routes all items to that same location"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assign-storage-locations",
+    "heading": "Assign storage locations",
+    "product": "Odoo",
+    "graph": {
+      "error": "Extra data: line 1 column 992 (char 991)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"Inventory\",\"type\":\"Module\",\"mention\":\"Inventory app\",\"confidence\":\"high\"},{\"name\":\"Configuration\",\"type\":\"Sub-module\",\"mention\":\"Configuration\",\"confidence\":\"medium\"},{\"name\":\"Locations\",\"type\":\"Sub-module\",\"mention\":\"Locations\",\"confidence\":\"medium\"},{\"name\":\"sublocation\",\"type\":\"DataObject\",\"mention\":\"sublocation\",\"confidence\":\"high\"},{\"name\":\"Storage Category field\",\"type\":\"Field\",\"mention\":\"Storage Category field\",\"confidence\":\"high\"},{\"name\":\"storage category\",\"type\":\"DataObject\",\"mention\":\"storage category\",\"confidence\":\"high\"},{\"name\":\"High frequency pallets\",\"type\":\"DataObject\",\"mention\":\"`High frequency pallets`\",\"confidence\":\"high\"},{\"name\":\"WH/Stock/Pallets/PAL1\",\"type\":\"DataObject\",\"mention\":\"`WH/Stock/Pallets/PAL1`\",\"confidence\":\"high\"},{\"name\":\"oi-arrows-v Locations smart button\",\"type\":\"Feature\",\"mention\":\"oi-arrows-v Locations smart button\",\"confidence\":\"low\"}]},{\"relations\":[{\"source\":\"Configuration\",\"relation\":\"BELONGS_TO\",\"target\":\"Inventory\",\"evidence\":\"Inventory app --> Configuration\"},{\"source\":\"Locations\",\"relation\":\"BELONGS_TO\",\"target\":\"Configuration\",\"evidence\":\"Configuration --> Locations\"},{\"source\":\"Storage Category field\",\"relation\":\"IS_PART_OF\",\"target\":\"sublocation\",\"evidence\":\"open the desired sublocation. Then, select the created category in the Storage Category field.\"},{\"source\":\"High frequency pallets\",\"relation\":\"EQUIVALENT_TO\",\"target\":\"storage category\",\"evidence\":\"Assign the `High frequency pallets` storage category\"},{\"source\":\"oi-arrows-v Locations smart button\",\"relation\":\"IS_PART_OF\",\"target\":\"storage category form\",\"evidence\":\"On the storage category form, the oi-arrows-v Locations smart button\"},{\"source\":\"oi-arrows-v Locations smart button\",\"relation\":\"HAS_REPORT\",\"target\":\"storage locations\",\"evidence\":\"shows which storage locations the category has been assigned to.\"}]}"
+    }
+  },
+  {
+    "section_id": "create-a-putaway-rule",
+    "heading": "Create a putaway rule",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Putaway Rules",
+          "type": "Feature",
+          "mention": "Putaway Rules",
+          "confidence": "high"
+        },
+        {
+          "name": "create a putaway rule",
+          "type": "Workflow",
+          "mention": "create the putaway rule",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "Click the New button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Store to field",
+          "type": "Field",
+          "mention": "Store to field",
+          "confidence": "high"
+        },
+        {
+          "name": "Sublocation field",
+          "type": "Field",
+          "mention": "Sublocation field",
+          "confidence": "high"
+        },
+        {
+          "name": "Last Used",
+          "type": "Concept",
+          "mention": "Last Used",
+          "confidence": "medium"
+        },
+        {
+          "name": "Closest Location",
+          "type": "Concept",
+          "mention": "Closest Location",
+          "confidence": "medium"
+        },
+        {
+          "name": "storage category",
+          "type": "DataObject",
+          "mention": "storage category",
+          "confidence": "high"
+        },
+        {
+          "name": "Having Category field",
+          "type": "Field",
+          "mention": "Having Category field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Max Weight",
+          "type": "Field",
+          "mention": "Max Weight",
+          "confidence": "medium"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Putaway Rules",
+          "evidence": "Configuration --> Putaway Rules"
+        },
+        {
+          "source": "create a putaway rule",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "create the putaway rule by navigating"
+        },
+        {
+          "source": "create a putaway rule",
+          "relation": "TRIGGERED_BY",
+          "target": "New button",
+          "evidence": "Click the New button to create the putaway rule"
+        },
+        {
+          "source": "create a putaway rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Store to field",
+          "evidence": "Specify a location in the Store to field"
+        },
+        {
+          "source": "create a putaway rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Sublocation field",
+          "evidence": "Use the Sublocation field to specify"
+        },
+        {
+          "source": "storage category",
+          "relation": "BELONGS_TO",
+          "target": "Unknown",
+          "evidence": "A storage category is mandatory in the Having Category field"
+        },
+        {
+          "source": "storage category",
+          "relation": "CONFIGURED_BY",
+          "target": "Max Weight",
+          "evidence": "verify that the storage category's Max Weight value"
+        },
+        {
+          "source": "products",
+          "relation": "GOVERNED_BY",
+          "target": "Max Weight",
+          "evidence": "If products are not routing..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-case:-limit-capacity-by-package",
+    "heading": "Use case: limit capacity by package",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "storage location",
+          "type": "DataObject",
+          "mention": "storage location",
+          "confidence": "medium"
+        },
+        {
+          "name": "storage category",
+          "type": "Module",
+          "mention": "storage category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Capacity By Package",
+          "type": "Setting",
+          "mention": "Capacity By Package",
+          "confidence": "high"
+        },
+        {
+          "name": "High frequency pallets",
+          "type": "DataObject",
+          "mention": "High frequency pallets",
+          "confidence": "medium"
+        },
+        {
+          "name": "PAL1",
+          "type": "DataObject",
+          "mention": "PAL1",
+          "confidence": "medium"
+        },
+        {
+          "name": "PAL2",
+          "type": "DataObject",
+          "mention": "PAL2",
+          "confidence": "medium"
+        },
+        {
+          "name": "putaway rules",
+          "type": "Workflow",
+          "mention": "putaway rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "pallet",
+          "type": "DataObject",
+          "mention": "pallet",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse",
+          "type": "DataObject",
+          "mention": "warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/Stock/Pallets",
+          "type": "DataObject",
+          "mention": "WH/Stock/Pallets",
+          "confidence": "medium"
+        },
+        {
+          "name": "Units field",
+          "type": "Field",
+          "mention": "Units field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Detailed Operations box",
+          "type": "Feature",
+          "mention": "Detailed Operations box",
+          "confidence": "medium"
+        },
+        {
+          "name": "receipt",
+          "type": "DataObject",
+          "mention": "receipt",
+          "confidence": "medium"
+        },
+        {
+          "name": "lemonade cans",
+          "type": "Concept",
+          "mention": "lemonade cans",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Capacity By Package",
+          "relation": "CONFIGURED_BY",
+          "target": "storage category",
+          "evidence": "create a storage category with a Capacity By Package"
+        },
+        {
+          "source": "storage category",
+          "relation": "CONTAINS",
+          "target": "High frequency pallets",
+          "evidence": "the High frequency pallets storage category"
+        },
+        {
+          "source": "High frequency pallets",
+          "relation": "CONTAINS",
+          "target": "PAL1",
+          "evidence": "assigned to the PAL1 and PAL2 locations"
+        },
+        {
+          "source": "High frequency pallets",
+          "relation": "CONTAINS",
+          "target": "PAL2",
+          "evidence": "assigned to the PAL1 and PAL2 locations"
+        },
+        {
+          "source": "putaway rules",
+          "relation": "TRIGGERED_BY",
+          "target": "receipt",
+          "evidence": "any pallets received in the warehouse are directed by putaway rules"
+        },
+        {
+          "source": "putaway rules",
+          "relation": "CONTAINS",
+          "target": "PAL1",
+          "evidence": "directed to be stored in PAL1 and PAL2 locations"
+        },
+        {
+          "source": "putaway rules",
+          "relation": "CONTAINS",
+          "target": "PAL2",
+          "evidence": "directed to be stored in PAL1 and PAL2 locations"
+        }
+      ]
+    }
+  }
+]

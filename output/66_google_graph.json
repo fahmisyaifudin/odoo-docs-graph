@@ -1,0 +1,648 @@
+[
+  {
+    "section_id": "google-sign-in-authentication",
+    "heading": "Google Sign-In Authentication",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Sign-In Authentication",
+          "type": "Feature",
+          "mention": "Google Sign-In Authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Workspace",
+          "type": "Integration",
+          "mention": "Google Workspace",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Accounts",
+          "type": "Integration",
+          "mention": "Google Accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo.com",
+          "type": "Actor",
+          "mention": "Odoo.com",
+          "confidence": "medium"
+        },
+        {
+          "name": "owner",
+          "type": "Actor",
+          "mention": "owner",
+          "confidence": "low"
+        },
+        {
+          "name": "administrator",
+          "type": "Actor",
+          "mention": "administrator",
+          "confidence": "low"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "medium"
+        },
+        {
+          "name": "Oauth login",
+          "type": "Feature",
+          "mention": "Oauth login",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Google Sign-In Authentication",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Google Sign-In Authentication"
+        },
+        {
+          "source": "Google Sign-In Authentication",
+          "relation": "ENABLES",
+          "target": "Google Accounts",
+          "evidence": "... allows Odoo users to sign in ... with their Google account"
+        },
+        {
+          "source": "Google Sign-In Authentication",
+          "relation": "IS_PART_OF",
+          "target": "Oauth login",
+          "evidence": "If Oauth is set up for that user"
+        },
+        {
+          "source": "Odoo.com",
+          "relation": "PERFORMED_BY",
+          "target": "owner",
+          "evidence": "Databases hosted on Odoo.com should not use Oauth login for the owner"
+        },
+        {
+          "source": "Odoo.com",
+          "relation": "PERFORMED_BY",
+          "target": "administrator",
+          "evidence": "Databases hosted on Odoo.com should not use Oauth login for the owner or administrator"
+        },
+        {
+          "source": "Google Workspace",
+          "relation": "CONFIGURED_BY",
+          "target": "Google Sign-In Authentication",
+          "evidence": "This is particularly helpful if the organization uses Google Workspace"
+        },
+        {
+          "source": "Google Accounts",
+          "relation": "RELATED_TO",
+          "target": "Google Workspace",
+          "evidence": "... organization uses Google Workspace ... employees to connect to Odoo using their Google Accounts"
+        },
+        {
+          "source": "database",
+          "relation": "GENERATES",
+          "target": "Google Sign-In Authentication",
+          "evidence": "... allows Odoo users to sign in to their database"
+        },
+        {
+          "source": "database",
+          "relation": "GOVERNED_BY",
+          "target": "Odoo.com",
+          "evidence": "Databases hosted on Odoo.com should not use Oauth login"
+        },
+        {
+          "source": "owner",
+          "relation": "RELATED_TO",
+          "target": "administrator",
+          "evidence": "owner or administrator"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Google sign-in",
+          "type": "Integration",
+          "mention": "Google sign-in",
+          "confidence": "high"
+        },
+        {
+          "name": "Google",
+          "type": "Actor",
+          "mention": "Google",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Google sign-in",
+          "relation": "REQUIRES",
+          "target": "Google",
+          "evidence": "requires configuration both on Google"
+        },
+        {
+          "source": "Google sign-in",
+          "relation": "REQUIRES",
+          "target": "Odoo",
+          "evidence": "requires configuration both on Google and Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "google-api-dashboard",
+    "heading": "Google API Dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Google API Dashboard",
+          "type": "Module",
+          "mention": "Google API Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Project",
+          "type": "Action",
+          "mention": "Create Project",
+          "confidence": "high"
+        },
+        {
+          "name": "console.developers.google.com",
+          "type": "Integration",
+          "mention": "https://console.developers.google.com/",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Google API Dashboard",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Google API Dashboard",
+          "relation": "CONTAINS",
+          "target": "Create Project",
+          "evidence": "If there isn't a project yet, click on Create Project"
+        },
+        {
+          "source": "Create Project",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "fill out the project name and other details of the company"
+        },
+        {
+          "source": "Google API Dashboard",
+          "relation": "RELATED_TO",
+          "target": "console.developers.google.com",
+          "evidence": "Go to the Google API Dashboard"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "oauth-consent-screen",
+    "heading": "OAuth consent screen",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "OAuth consent screen",
+          "type": "Module",
+          "mention": "OAuth consent screen",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal",
+          "type": "Setting",
+          "mention": "Internal",
+          "confidence": "medium"
+        },
+        {
+          "name": "External",
+          "type": "Setting",
+          "mention": "External",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create",
+          "confidence": "high"
+        },
+        {
+          "name": "Save and Continue",
+          "type": "Action",
+          "mention": "Save and Continue",
+          "confidence": "high"
+        },
+        {
+          "name": "Scopes page",
+          "type": "Feature",
+          "mention": "Scopes page",
+          "confidence": "high"
+        },
+        {
+          "name": "Test users",
+          "type": "Feature",
+          "mention": "Test users",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Users",
+          "type": "Action",
+          "mention": "Add Users",
+          "confidence": "high"
+        },
+        {
+          "name": "Back to Dashboard",
+          "type": "Action",
+          "mention": "Back to Dashboard",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "OAuth consent screen",
+          "relation": "CONTAINS",
+          "target": "Scopes page",
+          "evidence": "On the Scopes page"
+        },
+        {
+          "source": "OAuth consent screen",
+          "relation": "CONTAINS",
+          "target": "Test users",
+          "evidence": "under the Test users step"
+        },
+        {
+          "source": "OAuth consent screen",
+          "relation": "CONTAINS",
+          "target": "Create",
+          "evidence": "click on Create"
+        },
+        {
+          "source": "OAuth consent screen",
+          "relation": "CONTAINS",
+          "target": "Save and Continue",
+          "evidence": "click on Save and Continue"
+        },
+        {
+          "source": "OAuth consent screen",
+          "relation": "CONTAINS",
+          "target": "Add Users",
+          "evidence": "click on Add Users"
+        },
+        {
+          "source": "OAuth consent screen",
+          "relation": "CONTAINS",
+          "target": "Back to Dashboard",
+          "evidence": "click on Back to Dashboard"
+        },
+        {
+          "source": "Create",
+          "relation": "CONFIGURED_BY",
+          "target": "Internal",
+          "evidence": "Choose one of the options (Internal / External)"
+        },
+        {
+          "source": "Create",
+          "relation": "CONFIGURED_BY",
+          "target": "External",
+          "evidence": "Choose one of the options (Internal / External)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "credentials",
+    "heading": "Credentials",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Credentials",
+          "type": "Module",
+          "mention": "Credentials",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Credentials",
+          "type": "Action",
+          "mention": "Click on Create Credentials",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth client ID",
+          "type": "Feature",
+          "mention": "select OAuth client ID",
+          "confidence": "medium"
+        },
+        {
+          "name": "Web Application",
+          "type": "Feature",
+          "mention": "Select Web Application as the Application Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Authorized redirect URIs",
+          "type": "Field",
+          "mention": "Authorized redirect URIs field",
+          "confidence": "high"
+        },
+        {
+          "name": "auth_oauth/signin",
+          "type": "Feature",
+          "mention": "/auth_oauth/signin",
+          "confidence": "medium"
+        },
+        {
+          "name": "OAuth client",
+          "type": "DataObject",
+          "mention": "OAuth client",
+          "confidence": "high"
+        },
+        {
+          "name": "Client ID",
+          "type": "Field",
+          "mention": "Client ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Client Secret",
+          "type": "Field",
+          "mention": "Client Secret",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Credentials",
+          "relation": "CONTAINS",
+          "target": "Create Credentials",
+          "evidence": "On the left side menu, click on Credentials. Click on Create Credentials"
+        },
+        {
+          "source": "Create Credentials",
+          "relation": "ENABLES",
+          "target": "OAuth client ID",
+          "evidence": "Click on Create Credentials, and select OAuth client ID."
+        },
+        {
+          "source": "OAuth client",
+          "relation": "GENERATES",
+          "target": "Client ID",
+          "evidence": "Now that the OAuth client has been created, a screen will appear with the Client ID"
+        },
+        {
+          "source": "OAuth client",
+          "relation": "GENERATES",
+          "target": "Client Secret",
+          "evidence": "Now that the OAuth client has been created, a screen will appear with the Client ID and Client Secret."
+        },
+        {
+          "source": "Web Application",
+          "relation": "RELATED_TO",
+          "target": "Authorized redirect URIs",
+          "evidence": "Select Web Application as the Application Type. Now, configure... in the Authorized redirect URIs field"
+        },
+        {
+          "source": "Authorized redirect URIs",
+          "relation": "RELATED_TO",
+          "port": "auth_oauth/signin",
+          "evidence": "enter the database's domain immediately followed by `/auth_oauth/signin`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "retrieve-the-client-id",
+    "heading": "Retrieve the Client ID",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Google API Dashboard",
+          "type": "Integration",
+          "mention": "Google API Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Client ID",
+          "type": "Field",
+          "mention": "Client ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Client Secret",
+          "type": "Field",
+          "mention": "Client Secret",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Google API Dashboard",
+          "relation": "GENERATES",
+          "target": "Client ID",
+          "evidence": "two keys are generated on the Google API Dashboard: Client ID and Client Secret."
+        },
+        {
+          "source": "Google API Dashboard",
+          "relation": "GENERATES",
+          "target": "Client Secret",
+          "evidence": "two keys are generated on the Google API Dashboard: Client ID and Client Secret."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "odoo-activation",
+    "heading": "Odoo activation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "General Settings",
+          "type": "Module",
+          "mention": "General Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Integrations",
+          "type": "Sub-module",
+          "mention": "Integrations",
+          "confidence": "medium"
+        },
+        {
+          "name": "OAuth Authentication",
+          "type": "Feature",
+          "mention": "OAuth Authentication",
+          "confidence": "medium"
+        },
+        {
+          "name": "Google Authentication",
+          "type": "Feature",
+          "mention": "Google Authentication",
+          "confidence": "medium"
+        },
+        {
+          "name": "Google API Dashboard",
+          "type": "Integration",
+          "mention": "Google API Dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Client ID",
+          "type": "Field",
+          "mention": "Client ID",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "General Settings",
+          "relation": "CONTAINS",
+          "target": "Integrations",
+          "evidence": "General Settings --> Integrations"
+        },
+        {
+          "source": "Integrations",
+          "relation": "CONTAINS",
+          "target": "OAuth Authentication",
+          "evidence": "General Settings --> Integrations --> OAuth Authentication"
+        },
+        {
+          "source": "Integrations",
+          "relation": "CONTAINS",
+          "target": "Google Authentication",
+          "evidence": "General Settings --> Integrations --> Google Authentication"
+        },
+        {
+          "source": "Google Authentication",
+          "relation": "CONFIGURED_BY",
+          "target": "Client ID",
+          "evidence": "fill out the Client ID"
+        },
+        {
+          "source": "Google Authentication",
+          "relation": "ENABLES",
+          "target": "Google API Dashboard",
+          "evidence": "key from the Google API Dashboard"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "log-in-to-odoo-with-google",
+    "heading": "Log in to Odoo with Google",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Log in to Odoo with Google",
+          "type": "Feature",
+          "mention": "Title",
+          "confidence": "high"
+        },
+        {
+          "name": "Google",
+          "type": "Actor",
+          "mention": "Google account",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Cloud Platform Console",
+          "type": "Integration",
+          "mention": "Google Cloud Platform Console Help",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth 2.0",
+          "type": "Standard",
+          "mention": "OAuth 2.0",
+          "confidence": "high"
+        },
+        {
+          "name": "Reset Password page",
+          "type": "Module",
+          "mention": "Reset Password page",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Log in to Odoo with Google",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Log in to Odoo with Google",
+          "relation": "COMPLIES_WITH",
+          "target": "OAuth 2.0",
+          "evidence": "...Setting up OAuth 2.0..."
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "Google Cloud Platform Console",
+          "evidence": ".. seealso:: ..."
+        },
+        {
+          "source": "Odoo",
+          "relation": "INTEGRATED_WITH",
+          "target": "Google",
+          "evidence": "link the Google account to the Odoo profile"
+        },
+        {
+          "source": "Reset Password page",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Existing users must reset their password ... to access the Reset Password page"
+        }
+      ]
+    }
+  }
+]

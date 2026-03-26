@@ -1,0 +1,734 @@
+[
+  {
+    "section_id": "approve-expenses",
+    "heading": "Approve expenses",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Team Approver",
+          "type": "Permission",
+          "mention": "Team Approver rights",
+          "confidence": "high"
+        },
+        {
+          "name": "users",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        },
+        {
+          "name": "Refuse Expense communication tool",
+          "type": "Feature",
+          "mention": "integrated Refuse Expense communication tool",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "users",
+          "relation": "PERFORMED_BY",
+          "target": "review expenses",
+          "evidence": "Employees with the necessary rights can review expenses"
+        },
+        {
+          "source": "users",
+          "relation": "PERFORMED_BY",
+          "target": "approve expenses",
+          "evidence": "Employees with the necessary rights can approve them"
+        },
+        {
+          "source": "users",
+          "relation": "PERFORMED_BY",
+          "target": "refuse expenses",
+          "evidence": "Employees with the necessary rights can refuse them"
+        },
+        {
+          "source": "Team Approver",
+          "relation": "CONFIGURED_BY",
+          "target": "users",
+          "evidence": "users must have at least Team Approver rights"
+        },
+        {
+          "source": "Expenses",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Expenses app in Odoo"
+        },
+        {
+          "source": "Expenses",
+          "relation": "HAS_FEATURE",
+          "target": "Refuse Expense communication tool",
+          "evidence": "integrated Refuse Expense communication tool"
+        },
+        {
+          "source": "users",
+          "relation": "REQUIRES",
+          "target": "Team Approver",
+          "evidence": "users must have at least Team Approver rights for the Expenses app"
+        },
+        {
+          "source": "approve expenses",
+          "relation": "TRIGGERED_BY",
+          "target": "users",
+          "evidence": "Employees with the necessary rights can approve expenses"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-expense-reports",
+    "heading": "View expense reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Reports",
+          "type": "Sub-module",
+          "mention": "Expense Reports main navigation button",
+          "confidence": "high"
+        },
+        {
+          "name": "All Reports dashboard",
+          "type": "Feature",
+          "mention": "All Reports dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Manager",
+          "type": "Actor",
+          "mention": "Users who are able to approve expense reports (typically managers)",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense report",
+          "type": "DataObject",
+          "mention": "expense reports",
+          "confidence": "high"
+        },
+        {
+          "name": "To Submit",
+          "type": "Field",
+          "mention": "status of either To Submit",
+          "confidence": "high"
+        },
+        {
+          "name": "Submitted",
+          "type": "Field",
+          "mention": "Submitted",
+          "confidence": "high"
+        },
+        {
+          "name": "Approved",
+          "type": "Field",
+          "mention": "Approved",
+          "confidence": "high"
+        },
+        {
+          "name": "Posted",
+          "type": "Field",
+          "mention": "Posted",
+          "confidence": "high"
+        },
+        {
+          "name": "Done",
+          "type": "Field",
+          "mention": "Done",
+          "confidence": "high"
+        },
+        {
+          "name": "Refused",
+          "type": "Field",
+          "mention": "Refused",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expense Reports",
+          "relation": "IS_PART_OF",
+          "target": "Expenses",
+          "evidence": "Navigate to Expenses app --> Expense Reports"
+        },
+        {
+          "source": "Expenses",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Expenses app"
+        },
+        {
+          "source": "Expense Reports",
+          "relation": "HAS_REPORT",
+          "target": "All Reports dashboard",
+          "evidence": "to view the All Reports dashboard"
+        },
+        {
+          "source": "Manager",
+          "relation": "PERFORMED_BY",
+          "target": "All Reports dashboard",
+          "evidence": "Users who are able to approve expense reports (typically managers) have an Expense Reports main navigation button"
+        },
+        {
+          "source": "All Reports dashboard",
+          "relation": "CONTAINS",
+          "target": "Expense report",
+          "evidence": "A list of all expense reports..."
+        },
+        {
+          "source": "Expense report",
+          "relation": "HAS_FEATURE",
+          "target": "To Submit",
+          "evidence": "status of either To Submit"
+        },
+        {
+          "source": "Expense report",
+          "relation": "HAS_FEATURE",
+          "target": "Submitted",
+          "evidence": "Submitted"
+        },
+        {
+          "source": "Expense report",
+          "relation": "HAS_FEATURE",
+          "target": "Approved",
+          "evidence": "Approved"
+        },
+        {
+          "source": "Expense report",
+          "relation": "HAS_FEATURE",
+          "target": "Posted",
+          "evidence": "Posted"
+        },
+        {
+          "source": "Expense report",
+          "relation": "HAS_FEATURE",
+          "target": "Done",
+          "evidence": "Done"
+        },
+        {
+          "source": "Expense report",
+          "relation": "HAS_FEATURE",
+          "target": "Refused",
+          "evidence": "Refused"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "approve-expense-reports",
+    "heading": "Approve expense reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "expense reports",
+          "type": "DataObject",
+          "mention": "Expense reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Submitted",
+          "type": "Field",
+          "mention": "Submitted",
+          "confidence": "high"
+        },
+        {
+          "name": "Submitted filter",
+          "type": "Setting",
+          "mention": "Submitted filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Status section",
+          "type": "Module",
+          "mention": "Status section",
+          "confidence": "medium"
+        },
+        {
+          "name": "All Reports page",
+          "type": "Module",
+          "mention": "All Reports page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Approve Report button",
+          "type": "Feature",
+          "mention": "Approve Report button",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Submitted",
+          "relation": "BELONGS_TO",
+          "target": "expense reports",
+          "evidence": "reports with a status of Submitted"
+        },
+        {
+          "source": "Submitted filter",
+          "relation": "CONTAINS",
+          "target": "Submitted",
+          "evidence": "filter beside the Submitted filter"
+        },
+        {
+          "source": "Submitted filter",
+          "relation": "IS_PART_OF",
+          "target": "Status section",
+          "evidence": "under the Status section"
+        },
+        {
+          "source": "Status section",
+          "relation": "IS_PART_OF",
+          "target": "All Reports page",
+          "evidence": "in the left column"
+        },
+        {
+          "source": "All Reports page",
+          "relation": "CONTAINS",
+          "target": "Approve Report button",
+          "evidence": "Approve Report button appears on the All Reports page"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "approve-individual-reports",
+    "heading": "Approve individual reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Expenses app",
+          "type": "Product",
+          "mention": "Expenses app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expense Reports",
+          "type": "Report",
+          "mention": "Expense Reports",
+          "confidence": "medium"
+        },
+        {
+          "name": "individual report",
+          "type": "Report",
+          "mention": "individual report",
+          "confidence": "medium"
+        },
+        {
+          "name": "detailed report form",
+          "type": "DataObject",
+          "mention": "detailed report form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Approve",
+          "type": "Action",
+          "mention": "Approve",
+          "confidence": "high"
+        },
+        {
+          "name": "Refuse",
+          "type": "Action",
+          "mention": "Refuse",
+          "confidence": "high"
+        },
+        {
+          "name": "Reset to draft",
+          "type": "Action",
+          "mention": "Reset to draft",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses app",
+          "relation": "HAS_REPORT",
+          "target": "Expense Reports",
+          "evidence": "Expenses app --> Expense Reports"
+        },
+        {
+          "source": "Expense Reports",
+          "relation": "CONTAINS",
+          "target": "individual report",
+          "evidence": "click on an individual report"
+        },
+        {
+          "source": "individual report",
+          "relation": "CONTAINS",
+          "target": "detailed report form",
+          "evidence": "to view the detailed report form"
+        },
+        {
+          "source": "detailed report form",
+          "relation": "CONTAINS",
+          "target": "Approve",
+          "evidence": "From here, several options are presented: Approve"
+        },
+        {
+          "source": "detailed report form",
+          "relation": "CONTAINS",
+          "target": "Refuse",
+          "evidence": "From here, several options are presented: Refuse"
+        },
+        {
+          "source": "detailed report form",
+          "relation": "CONTAINS",
+          "target": "Reset to draft",
+          "evidence": "From here, several options are presented: Reset to draft"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "approve-multiple-reports",
+    "heading": "Approve multiple reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Expenses app",
+          "type": "Product",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Reports",
+          "type": "Module",
+          "mention": "Expense Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "All Reports page",
+          "type": "Sub-module",
+          "mention": "All Reports page",
+          "confidence": "medium"
+        },
+        {
+          "name": "My Team",
+          "type": "Feature",
+          "mention": "My Team",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters",
+          "type": "Module",
+          "mention": "Filters",
+          "confidence": "medium"
+        },
+        {
+          "name": "Team manager",
+          "type": "Actor",
+          "mention": "Team managers",
+          "confidence": "high"
+        },
+        {
+          "name": "expense report",
+          "type": "DataObject",
+          "mention": "expense reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee column title",
+          "type": "Field",
+          "mention": "Employee column title",
+          "confidence": "low"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "low"
+        },
+        {
+          "name": "checkbox",
+          "type": "Feature",
+          "mention": "checkbox",
+          "confidence": "low"
+        },
+        {
+          "name": "Approve Report",
+          "type": "Action",
+          "mention": "Approve Report button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses app",
+          "relation": "CONTAINS",
+          "target": "Expense Reports",
+          "evidence": "first navigate to Expenses app --> Expense Reports"
+        },
+        {
+          "source": "Expenses app",
+          "relation": "CONTAINS",
+          "target": "All Reports page",
+          "evidence": "While on the All Reports page"
+        },
+        {
+          "source": "All Reports page",
+          "relation": "CONTAINS",
+          "target": "Filters",
+          "evidence": "click My Team in the fa-filter Filters section"
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "My Team",
+          "evidence": "click My Team in the fa-filter Filters section"
+        },
+        {
+          "source": "Team manager",
+          "relation": "PERFORMED_BY",
+          "target": "Approve Report",
+          "evidence": "Team managers can view all the expense reports for their team members only."
+        },
+        {
+          "source": "Approve Report",
+          "relation": "PRODUCES",
+          "target": "expense report",
+          "evidence": "To approve multiple expense reports"
+        },
+        {
+          "source": "Expense Reports",
+          "relation": "IS_PART_OF",
+          "target": "Expenses app",
+          "evidence": "first navigate to Expenses app --> Expense Reports"
+        },
+        {
+          "source": "All Reports page",
+          "relation": "IS_PART_OF",
+          "target": "Expenses app",
+          "evidence": "While on the All Reports page"
+        },
+        {
+          "source": "Filters",
+          "relation": "IS_PART_OF",
+          "target": "All Reports page",
+          "evidence": "click My Team in the fa-filter Filters section"
+        },
+        {
+          "source": "My Team",
+          "relation": "IS_PART_OF",
+          "target": "Filters",
+          "evidence": "click My Team in the fa-filter Filters section"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "refuse-expense-reports",
+    "heading": "Refuse expense reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Reports",
+          "type": "Sub-module",
+          "mention": "Expense Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense report",
+          "type": "DataObject",
+          "mention": "expense report",
+          "confidence": "high"
+        },
+        {
+          "name": "All Reports dashboard",
+          "type": "DataObject",
+          "mention": "All Reports dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "detailed expense report form",
+          "type": "DataObject",
+          "mention": "detailed expense report form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Refuse",
+          "type": "Action",
+          "mention": "click Refuse",
+          "confidence": "high"
+        },
+        {
+          "name": "Send message",
+          "type": "Action",
+          "mention": "Send message",
+          "confidence": "high"
+        },
+        {
+          "name": "Log note",
+          "type": "Action",
+          "mention": "Log note",
+          "confidence": "high"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Send",
+          "confidence": "high"
+        },
+        {
+          "name": "Log",
+          "type": "Action",
+          "mention": "Log",
+          "confidence": "high"
+        },
+        {
+          "name": "Reset to Draft",
+          "type": "Action",
+          "mention": "Reset to Draft",
+          "confidence": "high"
+        },
+        {
+          "name": "followers",
+          "type": "Actor",
+          "mention": "followers",
+          "confidence": "medium"
+        },
+        {
+          "name": "chatter",
+          "type": "Feature",
+          "mention": "chatter",
+          "confidence": "high"
+        },
+        {
+          "name": "Reason line",
+          "type": "Field",
+          "mention": "Reason line",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-user-o (Show Followers) icon",
+          "type": "Feature",
+          "mention": "fa-user-o (Show Followers) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Refuse Expense pop-up window",
+          "type": "Feature",
+          "mention": "Refuse Expense pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Refused",
+          "type": "Standard",
+          "mention": "Refused",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expense report",
+          "relation": "BELONGS_TO",
+          "target": "Expenses",
+          "evidence": "Expenses app --> Expense Reports"
+        },
+        {
+          "source": "Expenses",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Expenses app"
+        },
+        {
+          "source": "Expense report",
+          "relation": "CONTAINS",
+          "target": "Reason line",
+          "evidence": "Enter a brief explanation for the refusal on the Reason line"
+        },
+        {
+          "source": "Expense report",
+          "relation": "GENERATES",
+          "target": "Refuse Expense pop-up window",
+          "evidence": "click Refuse, and a Refuse Expense pop-up window loads"
+        },
+        {
+          "source": "Refuse",
+          "relation": "PRODUCES",
+          "target": "Refuse Expense pop-up window",
+          "evidence": "click Refuse, and a Refuse Expense pop-up window loads"
+        },
+        {
+          "source": "Expense report",
+          "relation": "HAS_FEATURE",
+          "target": "chatter",
+          "evidence": "communicate any necessary information requests in the chatter of the report form"
+        },
+        {
+          "source": "Expense report",
+          "relation": "PERFORMED_BY",
+          "target": "followers",
+          "evidence": "The only people that can be tagged in a message are followers"
+        },
+        {
+          "source": "Send message",
+          "relation": "IS_PART_OF",
+          "target": "chatter",
+          "evidence": "Send message or Log note to open a message text box"
+        },
+        {
+          "source": "Log note",
+          "relation": "IS_PART_OF",
+          "target": "chatter",
+          "evidence": "Send message or Log note to open a message text box"
+        },
+        {
+          "source": "Expense report",
+          "relation": "SUPPORTS",
+          "target": "Refused",
+          "evidence": "Once the expense report is refused, the status changes to Refused"
+        },
+        {
+          "source": "Expense report",
+          "relation": "CONTAINS",
+          "target": "detailed expense report form",
+          "evidence": "click on an individual expense report to view the detailed expense report form"
+        }
+      ]
+    }
+  }
+]

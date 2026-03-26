@@ -1,0 +1,890 @@
+[
+  {
+    "section_id": "credit-notes-and-refunds",
+    "heading": "Credit notes and refunds",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Credit note",
+          "type": "DataObject",
+          "mention": "credit note",
+          "confidence": "high"
+        },
+        {
+          "name": "Debit note",
+          "type": "DataObject",
+          "mention": "debit note",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validated invoice",
+          "type": "DataObject",
+          "mention": "validated invoice",
+          "confidence": "low"
+        },
+        {
+          "name": "Payment",
+          "type": "Action",
+          "mention": "register the payment",
+          "confidence": "low"
+        },
+        {
+          "name": "Return",
+          "type": "Action",
+          "mention": "validate the return",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Credit note",
+          "relation": "APPLIES_TO",
+          "target": "Invoice",
+          "evidence": "a mistake in the invoice"
+        },
+        {
+          "source": "Credit note",
+          "relation": "APPLIES_TO",
+          "target": "Vendor bill",
+          "evidence": "a mistake in the invoice or vendor bill"
+        },
+        {
+          "source": "Credit note",
+          "relation": "GENERATES",
+          "target": "Payment",
+          "evidence": "register the payment afterward if money is being refunded"
+        },
+        {
+          "source": "Debit note",
+          "relation": "APPLIES_TO",
+          "target": "Customer",
+          "evidence": "track debts owed by customers"
+        },
+        {
+          "source": "Debit note",
+          "relation": "APPLIES_TO",
+          "target": "Vendor",
+          "evidence": "or to vendors"
+        },
+        {
+          "source": "Credit note",
+          "relation": "EQUIVALENT_TO",
+          "target": "Debit note",
+          "evidence": "credit/debit note"
+        },
+        {
+          "source": "Credit note",
+          "relation": "RELATED_TO",
+          "target": "Return",
+          "evidence": "validate the return if a storable product is being returned"
+        },
+        {
+          "source": "Credit note",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Section title is about Odoo credit notes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "issue-a-customer-credit-note",
+    "heading": "Issue a customer credit note",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "Customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoices",
+          "type": "DataObject",
+          "mention": "Invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Credit Note",
+          "type": "DataObject",
+          "mention": "Credit Note",
+          "confidence": "high"
+        },
+        {
+          "name": "Credit Notes",
+          "type": "DataObject",
+          "mention": "Credit Notes",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Reason",
+          "type": "Field",
+          "mention": "Reason",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Reversal date",
+          "type": "Field",
+          "mention": "Reversal date",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Credit Note sequence",
+          "type": "Concept",
+          "mention": "credit note sequence",
+          "confidence": "high"
+        },
+        {
+          "name": "Issue a customer credit note",
+          "type": "Workflow",
+          "mention": "Issue a customer credit note",
+          "confidence": "high"
+        },
+        {
+          "name": "Reverse",
+          "type": "Action",
+          "mention": "Reverse",
+          "confidence": "high"
+        },
+        {
+          "name": "Reverse and Create invoice",
+          "type": "Action",
+          "mention": "Reverse and Create invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "credit note",
+          "type": "Concept",
+          "mention": "credit note",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "Concept",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "partial refund",
+          "type": "Feature",
+          "mention": "partial refund",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Issue a customer credit note",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Issue a customer credit note"
+        },
+        {
+          "source": "Issue a customer credit note",
+          "relation": "TRIGGERED_BY",
+          "target": "Invoice",
+          "evidence": "credit notes are created directly from the corresponding invoices"
+        },
+        {
+          "source": "Issue a customer credit note",
+          "relation": "CONTAINS",
+          "target": "Reverse",
+          "evidence": "There are two options: - Click Reverse"
+        },
+        {
+          "source": "Issue a customer credit note",
+          "relation": "CONTAINS",
+          "target": "Reverse and Create invoice",
+          "evidence": "There are two options: - Click Reverse and Create invoice"
+        },
+        {
+          "source": "Accounting",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "go to Accounting --> Customers --> Invoices"
+        },
+        {
+          "source": "Customers",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Customers --> Invoices"
+        },
+        {
+          "source": "Invoices",
+          "relation": "BELONGS_TO",
+          "target": "Customers",
+          "evidence": "go to Accounting --> Customers --> Invoices"
+        },
+        {
+          "source": "Credit Notes",
+          "relation": "BELONGS_TO",
+          "target": "Customers",
+          "evidence": "go to Accounting --> Customers --> Credit Notes"
+        },
+        {
+          "source": "Credit Note",
+          "relation": "RELATED_TO",
+          "target": "Invoice",
+          "evidence": "credit notes are created directly from the corresponding invoices"
+        },
+        {
+          "source": "Reverse",
+          "relation": "PRODUCES",
+          "target": "Credit Note",
+          "evidence": "Click Reverse to open a draft credit note"
+        },
+        {
+          "source": "Reverse and Create invoice",
+          "relation": "PRODUCES",
+          "target": "Credit Note",
+          "evidence": "Click Reverse and Create invoice to create a credit note"
+        },
+        {
+          "source": "Reverse and Create invoice",
+          "relation": "PRODUCES",
+          "target": "Invoice",
+          "evidence": "Click Reverse and Create invoice... open a new draft invoice"
+        },
+        {
+          "source": "Credit Note",
+          "relation": "CONTAINS",
+          "target": "Reason",
+          "evidence": "fill in the Reason displayed on Credit Note"
+        },
+        {
+          "source": "Credit Note",
+          "relation": "CONTAINS",
+          "target": "Journal",
+          "evidence": "update the Journal"
+        },
+        {
+          "source": "Credit Note",
+          "relation": "CONTAINS",
+          "target": "Reversal date",
+          "evidence": "update the Reversal date"
+        },
+        {
+          "source": "Credit Note",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "Update the Product"
+        },
+        {
+          "source": "Credit Note",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "Update the Product and Quantity"
+        },
+        {
+          "source": "Reverse",
+          "relation": "HAS_FEATURE",
+          "target": "partial refund",
+          "evidence": "This option allows for a partial refund or modifications"
+        },
+        {
+          "source": "Credit Note sequence",
+          "relation": "RELATED_TO",
+          "target": "Credit Note",
+          "evidence": "A credit note sequence starts with `R`"
+        },
+        {
+          "source": "Credit Note sequence",
+          "relation": "RELATED_TO",
+          "target": "Invoice",
+          "evidence": "RINV/2025/0004 is associated with the invoice INV/2025/0004"
+        },
+        {
+          "source": "New",
+          "relation": "PRODUCES",
+          "target": "Credit Note",
+          "evidence": "click New. Filling out a credit note..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "issue-a-customer-debit-note",
+    "heading": "Issue a customer debit note",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "Customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoices",
+          "type": "DataObject",
+          "mention": "Invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Debit Note",
+          "type": "Action",
+          "mention": "Debit Note",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Debit Note window",
+          "type": "Workflow",
+          "mention": "Create Debit Note window",
+          "confidence": "high"
+        },
+        {
+          "name": "Reason",
+          "type": "Field",
+          "mention": "Reason",
+          "confidence": "high"
+        },
+        {
+          "name": "Use Specific Journal",
+          "type": "Field",
+          "mention": "Use Specific Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Debit Note Date",
+          "type": "Field",
+          "mention": "Debit Note Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Copy Lines",
+          "type": "Feature",
+          "mention": "Copy Lines",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice list view",
+          "type": "Report",
+          "mention": "invoice list view",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Debit Note",
+          "type": "Action",
+          "mention": "Create Debit Note",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/credit_notes/record-vendor-refund",
+          "type": "Concept",
+          "mention": "accounting/credit_notes/record-vendor-refund",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Customers",
+          "evidence": "go to Accounting --> Customers"
+        },
+        {
+          "source": "Customers",
+          "relation": "HAS_REPORT",
+          "target": "Invoices",
+          "evidence": "Customers --> Invoices"
+        },
+        {
+          "source": "Invoices",
+          "relation": "TRIGGERED_BY",
+          "target": "Debit Note",
+          "evidence": "open the relevant invoice, and click Debit Note"
+        },
+        {
+          "source": "Debit Note",
+          "relation": "IS_PART_OF",
+          "target": "Create Debit Note window",
+          "evidence": "In the Create Debit Note window"
+        },
+        {
+          "source": "Create Debit Note window",
+          "relation": "CONTAINS",
+          "target": "Reason",
+          "evidence": "fill in the Reason"
+        },
+        {
+          "source": "Create Debit Note window",
+          "relation": "CONTAINS",
+          "target": "Use Specific Journal",
+          "evidence": "update the Use Specific Journal"
+        },
+        {
+          "source": "Create Debit Note window",
+          "relation": "CONTAINS",
+          "target": "Debit Note Date",
+          "evidence": "Debit Note Date fields"
+        },
+        {
+          "source": "Create Debit Note window",
+          "relation": "HAS_FEATURE",
+          "target": "Copy Lines",
+          "evidence": "Enable the Copy Lines option"
+        },
+        {
+          "source": "Debit Note",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "update the Product"
+        },
+        {
+          "source": "Debit Note",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "update the Product and Quantity"
+        },
+        {
+          "source": "Debit Note",
+          "relation": "TRIGGERED_BY",
+          "target": "Confirm",
+          "evidence": "click Confirm"
+        },
+        {
+          "source": "Customers",
+          "relation": "HAS_REPORT",
+          "target": "invoice list view",
+          "evidence": "To create a debit note from the invoice list view"
+        },
+        {
+          "source": "invoice list view",
+          "relation": "TRIGGERED_BY",
+          "target": "Create Debit Note",
+          "evidence": "select Create Debit Note"
+        },
+        {
+          "source": "Create Debit Note",
+          "relation": "RELATED_TO",
+          "target": "accounting/credit_notes/record-vendor-refund",
+          "evidence": ".. _accounting/credit_notes/record-vendor-refund"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "record-a-vendor-refund",
+    "heading": "Record a vendor refund",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Record a vendor refund",
+          "type": "Workflow",
+          "mention": "Record a vendor refund",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendors",
+          "type": "Sub-module",
+          "mention": "Vendors",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bills",
+          "type": "DataObject",
+          "mention": "Bills",
+          "confidence": "medium"
+        },
+        {
+          "name": "Credit Note",
+          "type": "Action",
+          "mention": "Credit Note",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "Refund",
+          "type": "DataObject",
+          "mention": "Refund",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor refund",
+          "type": "Concept",
+          "mention": "vendor refund",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor credit note",
+          "type": "Concept",
+          "mention": "vendor credit note",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Vendors",
+          "evidence": "go to Accounting --> Vendors"
+        },
+        {
+          "source": "Vendors",
+          "relation": "CONTAINS",
+          "target": "Bills",
+          "evidence": "go to Accounting --> Vendors --> Bills"
+        },
+        {
+          "source": "Vendors",
+          "relation": "CONTAINS",
+          "target": "Refund",
+          "evidence": "go to Accounting --> Vendors --> Refund"
+        },
+        {
+          "source": "Record a vendor refund",
+          "relation": "TRIGGERED_BY",
+          "target": "Credit Note",
+          "evidence": "click Credit Note"
+        },
+        {
+          "source": "Record a vendor refund",
+          "relation": "TRIGGERED_BY",
+          "target": "New",
+          "evidence": "click on New"
+        },
+        {
+          "source": "vendor refund",
+          "relation": "EQUIVALENT_TO",
+          "target": "vendor credit note",
+          "evidence": "vendor refunds or vendor credit notes are recorded the same way"
+        },
+        {
+          "source": "Credit Note",
+          "relation": "APPLIES_TO",
+          "target": "vendor bill",
+          "evidence": "from the corresponding vendor bill"
+        },
+        {
+          "source": "Credit Note",
+          "relation": "IS_PART_OF",
+          "target": "Record a vendor refund",
+          "evidence": "To record a vendor refund... click Credit Note"
+        },
+        {
+          "source": "New",
+          "relation": "IS_PART_OF",
+          "target": "Record a vendor refund",
+          "evidence": "To record it from scratch... click on New"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "record-a-vendor-debit-note",
+    "heading": "Record a vendor debit note",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Record a vendor debit note",
+          "type": "Workflow",
+          "mention": "Title: Record a vendor debit note",
+          "confidence": "high"
+        },
+        {
+          "name": "Debit notes from vendors",
+          "type": "Concept",
+          "mention": "Debit notes from vendors",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting -->",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Sub-module",
+          "mention": "Vendors -->",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills",
+          "type": "Sub-module",
+          "mention": "Bills",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Debit Note",
+          "type": "Action",
+          "mention": "click Debit Note",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill list view",
+          "type": "DataObject",
+          "mention": "vendor bill list view",
+          "confidence": "low"
+        },
+        {
+          "name": "Create Debit Note",
+          "type": "Action",
+          "mention": "select Create Debit Note",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Vendors",
+          "evidence": "Accounting --> Vendors"
+        },
+        {
+          "source": "Vendors",
+          "relation": "CONTAINS",
+          "target": "Bills",
+          "evidence": "Vendors --> Bills"
+        },
+        {
+          "source": "Record a vendor debit note",
+          "relation": "TRIGGERED_BY",
+          "target": "Debit Note",
+          "evidence": "click Debit Note"
+        },
+        {
+          "source": "Record a vendor debit note",
+          "relation": "SEE_ALSO",
+          "target": "accounting/credit_notes/issue-debit-note",
+          "evidence": "<accounting/credit_notes/issue-debit-note>"
+        },
+        {
+          "source": "Debit Note",
+          "relation": "PRODUCES",
+          "target": "debit note",
+          "evidence": "click Debit Note"
+        },
+        {
+          "source": "Create Debit Note",
+          "relation": "PRODUCES",
+          "target": "debit note",
+          "evidence": "select Create Debit Note"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "journal-entries",
+    "heading": "Journal entries",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Journal entries",
+          "type": "Concept",
+          "mention": "Journal entries",
+          "confidence": "high"
+        },
+        {
+          "name": "credit/debit note",
+          "type": "DataObject",
+          "mention": "credit/debit note",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice/bill",
+          "type": "DataObject",
+          "mention": "invoice/bill",
+          "confidence": "high"
+        },
+        {
+          "name": "reverse entry",
+          "type": "Concept",
+          "mention": "reverse entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal items",
+          "type": "Concept",
+          "mention": "journal items",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "credit/debit note",
+          "relation": "PRODUCES",
+          "target": "reverse entry",
+          "evidence": "Creating a credit/debit note from an invoice/bill generates a reverse entry"
+        },
+        {
+          "source": "reverse entry",
+          "relation": "RELATED_TO",
+          "target": "journal items",
+          "evidence": "generates a reverse entry that cancels out the journal items from the original invoice/bill"
+        },
+        {
+          "source": "credit/debit note",
+          "relation": "RELATED_TO",
+          "target": "invoice/bill",
+          "evidence": "Creating a credit/debit note from an invoice/bill"
+        },
+        {
+          "source": "reverse entry",
+          "relation": "RELATED_TO",
+          "target": "invoice/bill",
+          "evidence": "the journal items from the original invoice/bill"
+        }
+      ]
+    }
+  }
+]

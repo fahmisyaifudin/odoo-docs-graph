@@ -1,0 +1,157 @@
+[
+  {
+    "section_id": "iot-box-ssh-connection",
+    "heading": "IoT box SSH connection",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "IoT box",
+          "type": "Product",
+          "mention": "IoT box",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box SSH connection",
+          "type": "Feature",
+          "mention": "SSH connection",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT app",
+          "type": "Module",
+          "mention": "IoT app",
+          "confidence": "high"
+        },
+        {
+          "name": "Windows virtual IoT",
+          "type": "Product",
+          "mention": "Windows virtual IoT",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box's card",
+          "type": "DataObject",
+          "mention": "IoT box's card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Homepage",
+          "type": "Module",
+          "mention": "Homepage",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT system's homepage",
+          "type": "Module",
+          "mention": "IoT system's homepage",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-cogs (cogs) button",
+          "type": "Feature",
+          "mention": "fa-cogs (cogs) button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Remote Debug",
+          "type": "Feature",
+          "mention": "Remote Debug",
+          "confidence": "high"
+        },
+        {
+          "name": "Remote Debugging popup",
+          "type": "Feature",
+          "mention": "Remote Debugging popup",
+          "confidence": "medium"
+        },
+        {
+          "name": "Generate",
+          "type": "Action",
+          "mention": "Generate",
+          "confidence": "high"
+        },
+        {
+          "name": "Authentication Token",
+          "type": "DataObject",
+          "mention": "Authentication Token",
+          "confidence": "high"
+        },
+        {
+          "name": "Enable Remote Debugging",
+          "type": "Action",
+          "mention": "Enable Remote Debugging",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Support",
+          "type": "Actor",
+          "mention": "Odoo Support",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT box SSH connection",
+          "relation": "ENABLES",
+          "target": "IoT box",
+          "evidence": "SSH connections are only available for IoT boxes"
+        },
+        {
+          "source": "IoT box SSH connection",
+          "relation": "REQUIRES",
+          "target": "IoT app",
+          "evidence": "To provide an SSH connection to an IoT box, you must... Open the IoT app"
+        },
+        {
+          "source": "IoT app",
+          "relation": "CONTAINS",
+          "target": "IoT box's card",
+          "evidence": "Open the IoT app, click the relevant IoT box's card"
+        },
+        {
+          "source": "IoT box's card",
+          "relation": "HAS_FEATURE",
+          "target": "Homepage",
+          "evidence": "click the relevant IoT box's card, and click Homepage"
+        },
+        {
+          "source": "IoT system's homepage",
+          "relation": "HAS_FEATURE",
+          "target": "fa-cogs (cogs) button",
+          "evidence": "On the IoT system's homepage, click the fa-cogs (cogs) button"
+        },
+        {
+          "source": "fa-cogs (cogs) button",
+          "relation": "TRIGGERED_BY",
+          "target": "Remote Debug",
+          "evidence": "click the fa-cogs (cogs) button at the top-right, then Remote Debug"
+        },
+        {
+          "source": "Remote Debug",
+          "relation": "TRIGGERED_BY",
+          "target": "Remote Debugging popup",
+          "evidence": "In the Remote Debugging popup that opens"
+        },
+        {
+          "source": "Remote Debugging popup",
+          "relation": "HAS_FEATURE",
+          "target": "Generate",
+          "evidence": "In the Remote Debugging popup that opens, click Generate"
+        },
+        {
+          "source": "Generate",
+          "relation": "PRODUCES",
+          "target": "Authentication Token",
+          "evidence": "Enter the Authentication Token provided by the user"
+        },
+        {
+          "source": "Remote Debugging popup",
+          "relation": "HAS_FEATURE",
+          "target": "Enable Remote Debugging",
+          "evidence": "Click Enable Remote Debugging"
+        }
+      ]
+    }
+  }
+]

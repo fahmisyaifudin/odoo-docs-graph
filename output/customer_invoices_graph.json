@@ -1,0 +1,1430 @@
+[
+  {
+    "section_id": "customer-invoices",
+    "heading": "Customer invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer invoices",
+          "type": "DataObject",
+          "mention": "Title: Customer invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer invoice",
+          "type": "DataObject",
+          "mention": "A customer invoice is a document",
+          "confidence": "high"
+        },
+        {
+          "name": "Receivables",
+          "type": "Concept",
+          "mention": "records receivables",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "sold to a customer",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales taxes",
+          "type": "Concept",
+          "mention": "applicable sales taxes",
+          "confidence": "low"
+        },
+        {
+          "name": "Shipping and handling fees",
+          "type": "Concept",
+          "mention": "shipping and handling fees",
+          "confidence": "low"
+        },
+        {
+          "name": "Draft invoice",
+          "type": "DataObject",
+          "mention": "From draft invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Profit and loss report",
+          "type": "Report",
+          "mention": "profit and loss report",
+          "confidence": "high"
+        },
+        {
+          "name": "Creation",
+          "type": "Action",
+          "mention": "accounting/invoice/creation",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirmation",
+          "type": "Action",
+          "mention": "accounting/invoice/confirmation",
+          "confidence": "high"
+        },
+        {
+          "name": "Sending",
+          "type": "Action",
+          "mention": "accounting/invoice/sending",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment and reconciliation",
+          "type": "Action",
+          "mention": "accounting/invoice/paymentandreconciliation",
+          "confidence": "high"
+        },
+        {
+          "name": "Follow-up",
+          "type": "Action",
+          "mention": "accounting/invoice/followup",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Action",
+          "mention": "accounting/invoice/reporting",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Customer invoices",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Customer invoices"
+        },
+        {
+          "source": "Customer invoices",
+          "relation": "PRODUCES",
+          "target": "Customer invoice",
+          "evidence": "Title: Customer invoices, A customer invoice is a document"
+        },
+        {
+          "source": "Customer invoice",
+          "relation": "CONTAINS",
+          "target": "Receivables",
+          "evidence": "It records receivables"
+        },
+        {
+          "source": "Customer invoice",
+          "relation": "APPLIES_TO",
+          "target": "Customer",
+          "evidence": "issued by a company for products... sold to a customer"
+        },
+        {
+          "source": "Profit and loss report",
+          "relation": "SEE_ALSO",
+          "target": "Draft invoice",
+          "evidence": "From draft invoice to profit and loss report"
+        },
+        {
+          "source": "Customer invoice",
+          "relation": "PRODUCES",
+          "target": "Draft invoice",
+          "evidence": "From draft invoice to profit and loss report"
+        },
+        {
+          "source": "Draft invoice",
+          "relation": "ENABLES",
+          "target": "Creation",
+          "evidence": "accounting/invoice/creation"
+        },
+        {
+          "source": "Creation",
+          "relation": "ENABLES",
+          "target": "Confirmation",
+          "evidence": "accounting/invoice/confirmation"
+        },
+        {
+          "source": "Confirmation",
+          "relation": "ENABLES",
+          "target": "Sending",
+          "evidence": "accounting/invoice/sending"
+        },
+        {
+          "source": "Sending",
+          "relation": "ENABLES",
+          "target": "Payment and reconciliation",
+          "evidence": "accounting/invoice/paymentandreconciliation"
+        },
+        {
+          "source": "Payment and reconciliation",
+          "relation": "ENABLES",
+          "target": "Follow-up",
+          "evidence": "accounting/invoice/followup"
+        },
+        {
+          "source": "Follow-up",
+          "relation": "ENABLES",
+          "target": "Reporting",
+          "evidence": "accounting/invoice/reporting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoice-creation",
+    "heading": "Invoice creation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Draft Invoice",
+          "type": "DataObject",
+          "mention": "Draft invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Invoice journal",
+          "type": "DataObject",
+          "mention": "Customer Invoices journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Feature",
+          "mention": "Accounting Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Record",
+          "type": "DataObject",
+          "mention": "customer record",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Address",
+          "type": "Field",
+          "mention": "invoice address",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Terms",
+          "type": "Concept",
+          "mention": "payment terms",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal Positions",
+          "type": "Setting",
+          "mention": "fiscal positions",
+          "confidence": "high"
+        },
+        {
+          "name": "Receivable Account",
+          "type": "Concept",
+          "mention": "receivable account",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Date",
+          "type": "Field",
+          "mention": "Invoice Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Due Date",
+          "type": "Field",
+          "mention": "Due Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "DataObject",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "Concept",
+          "mention": "Currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency Exchange Rate",
+          "type": "Concept",
+          "mention": "currency exchange rate",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Lines tab",
+          "type": "Feature",
+          "mention": "Invoice Lines tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Concept",
+          "mention": "Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Catalog",
+          "type": "Feature",
+          "mention": "Catalog",
+          "confidence": "high"
+        },
+        {
+          "name": "Total amount of invoice in letters",
+          "type": "Feature",
+          "mention": "Total amount of invoice in letters",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Items tab",
+          "type": "Feature",
+          "mention": "Journal Items tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Reference",
+          "type": "Field",
+          "mention": "Customer Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Reference",
+          "type": "Field",
+          "mention": "Payment Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Incoterms",
+          "type": "Concept",
+          "mention": "Incoterms",
+          "confidence": "high"
+        },
+        {
+          "name": "Other Info tab",
+          "type": "Feature",
+          "mention": "Other Info tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Confirmation",
+          "type": "Action",
+          "mention": "confirmed",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Invoice creation... in Odoo"
+        },
+        {
+          "source": "Draft Invoice",
+          "relation": "BELONGS_TO",
+          "target": "Invoice",
+          "evidence": "Odoo initially creates invoices in Draft status"
+        },
+        {
+          "source": "Invoice",
+          "relation": "REQUIRES",
+          "target": "Customer",
+          "evidence": "An invoice must include... Customer"
+        },
+        {
+          "source": "Invoice",
+          "relation": "CONTAINS",
+          "target": "Invoice Lines tab",
+          "evidence": "In the Invoice Lines tab"
+        },
+        {
+          "source": "Invoice Lines tab",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "In the Invoice Lines tab... Product"
+        },
+        {
+          "source": "Invoice Lines tab",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "In the Invoice Lines tab... Quantity"
+        },
+        {
+          "source": "Invoice Lines tab",
+          "relation": "CONTAINS",
+          "target": "Price",
+          "evidence": "In the Invoice Lines tab... Price"
+        },
+        {
+          "source": "Invoice Lines tab",
+          "relation": "CONTAINS",
+          "target": "Taxes",
+          "evidence": "In the Invoice Lines tab... Taxes"
+        },
+        {
+          "source": "Invoice",
+          "relation": "CONFIGURED_BY",
+          "target": "Customer Record",
+          "evidence": "Odoo automatically pulls information from the customer record"
+        },
+        {
+          "source": "Invoice",
+          "relation": "PRODUCES",
+          "target": "Journal Items tab",
+          "evidence": "The Journal Items tab displays the accounting entries created"
+        },
+        {
+          "source": "Invoice",
+          "relation": "CONTAINS",
+          "target": "Other Info tab",
+          "evidence": "Additional invoice information... can be added or modified in the Other Info tab"
+        },
+        {
+          "source": "Invoice Confirmation",
+          "relation": "TRIGGERED_BY",
+          "target": "Invoice",
+          "evidence": "Draft invoices have no accounting impact until they are confirmed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoice-confirmation",
+    "heading": "Invoice confirmation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice confirmation",
+          "type": "Action",
+          "mention": "Click Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Posted",
+          "type": "DataObject",
+          "mention": "invoice's status changes to Posted",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journal entry",
+          "type": "DataObject",
+          "mention": "a journal entry is generated",
+          "confidence": "high"
+        },
+        {
+          "name": "Sequence",
+          "type": "Setting",
+          "mention": "defined sequence <customer_invoices/sequence>",
+          "confidence": "high"
+        },
+        {
+          "name": "Reset to draft",
+          "type": "Action",
+          "mention": "Click Reset to draft",
+          "confidence": "high"
+        },
+        {
+          "name": "Secure posted entries with hash",
+          "type": "Feature",
+          "mention": "Secure posted entries with hash",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice confirmation",
+          "relation": "PRODUCES",
+          "target": "Journal entry",
+          "evidence": "a journal entry is generated based on the invoice configuration"
+        },
+        {
+          "source": "Invoice confirmation",
+          "relation": "PRODUCES",
+          "target": "Posted",
+          "evidence": "The invoice's status changes to Posted"
+        },
+        {
+          "source": "Invoice confirmation",
+          "relation": "CONFIGURED_BY",
+          "target": "Sequence",
+          "evidence": "assigns each invoice a unique number from a defined sequence"
+        },
+        {
+          "source": "Reset to draft",
+          "relation": "ENABLES",
+          "target": "Invoice",
+          "evidence": "if changes are needed"
+        },
+        {
+          "source": "Secure posted entries with hash",
+          "relation": "SUPPORTS",
+          "target": "Invoices",
+          "evidence": "invoices and other journal entries can be locked once posted"
+        },
+        {
+          "source": "Secure posted entries with hash",
+          "relation": "SUPPORTS",
+          "target": "Journal entry",
+          "evidence": "invoices and other journal entries can be locked once posted"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoice-sending",
+    "heading": "Invoice sending",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Module",
+          "mention": "Customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice sending method",
+          "type": "Feature",
+          "mention": "Invoice sending method",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "DataObject",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "contact form",
+          "type": "DataObject",
+          "mention": "contact form",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Invoices",
+          "type": "Sub-module",
+          "mention": "Customer Invoices section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Click Send",
+          "confidence": "high"
+        },
+        {
+          "name": "Send window",
+          "type": "Feature",
+          "mention": "Send window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configure your document layout",
+          "type": "Feature",
+          "mention": "Configure your document layout pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "default invoice layout",
+          "type": "DataObject",
+          "mention": "default invoice layout",
+          "confidence": "medium"
+        },
+        {
+          "name": "QR Code",
+          "type": "Feature",
+          "mention": "QR Code option",
+          "confidence": "high"
+        },
+        {
+          "name": "QR Codes",
+          "type": "Setting",
+          "mention": "QR Codes option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email",
+          "type": "Feature",
+          "mention": "by Email option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Download",
+          "type": "Action",
+          "mention": "Download",
+          "confidence": "medium"
+        },
+        {
+          "name": "general settings",
+          "type": "Module",
+          "mention": "general settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer Payments",
+          "type": "Sub-module",
+          "mention": "Customer Payments section",
+          "confidence": "medium"
+        },
+        {
+          "name": "In-App Purchase",
+          "type": "Module",
+          "mention": "In-App Purchase",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice",
+          "relation": "HAS_FEATURE",
+          "target": "Invoice sending method",
+          "evidence": "To set a preferred Invoice sending method for a customer"
+        },
+        {
+          "source": "Customer",
+          "relation": "CONTAINS",
+          "target": "contact form",
+          "evidence": "select the customer. In the Accounting tab of the contact form"
+        },
+        {
+          "source": "contact form",
+          "relation": "CONTAINS",
+          "target": "Customer Invoices",
+          "evidence": "Customer Invoices section"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Send",
+          "evidence": "To send the invoice to the customer, navigate back to the invoice record and follow these steps: #. Click Send"
+        },
+        {
+          "source": "Invoice",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "go to Accounting"
+        },
+        {
+          "source": "Invoice",
+          "relation": "IS_PART_OF",
+          "target": "Customers",
+          "evidence": "go to Accounting --> Customers"
+        },
+        {
+          "source": "default invoice layout",
+          "relation": "IS_PART_OF",
+          "target": "Invoice",
+          "evidence": "default invoice layout has not been customized yet"
+        },
+        {
+          "source": "Send",
+          "relation": "TRIGGERED_BY",
+          "target": "Invoice",
+          "evidence": "navigate back to the invoice record and follow these steps: #. Click Send"
+        },
+        {
+          "source": "Send",
+          "relation": "ENABLES",
+          "target": "Send window",
+          "evidence": "In the Send window"
+        },
+        {
+          "source": "Invoice sending method",
+          "relation": "GOVERNED_BY",
+          "target": "contact form",
+          "evidence": "If a preferred Invoice sending method was set in the contact form"
+        },
+        {
+          "source": "Invoice",
+          "relation": "HAS_REPORT",
+          "target": "default invoice layout",
+          "evidence": "default invoice layout has not been customized yet"
+        },
+        {
+          "source": "Invoice",
+          "relation": "SUPPORTS",
+          "target": "QR Code",
+          "evidence": "To add a QR code for banking app payments to the invoice"
+        },
+        {
+          "source": "QR Code",
+          "relation": "CONFIGURED_BY",
+          "target": "QR Codes",
+          "evidence": "enable/disable the QR Codes option"
+        },
+        {
+          "source": "QR Codes",
+          "relation": "BELONGS_TO",
+          "target": "Customer Payments",
+          "evidence": "Customer Payments section"
+        },
+        {
+          "source": "QR Codes",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Customer Payments",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "scroll down to the Customer Payments section"
+        },
+        {
+          "source": "Invoice sending method",
+          "relation": "HAS_FEATURE",
+          "target": "Email",
+          "evidence": "if the by Email option is selected"
+        },
+        {
+          "source": "Invoice sending method",
+          "relation": "HAS_FEATURE",
+          "target": "Download",
+          "evidence": "or click Download"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sending-multiple-invoices",
+    "heading": "Sending multiple invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting --> Customers --> Invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "Accounting --> Customers --> Invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoices",
+          "type": "Sub-module",
+          "mention": "Accounting --> Customers --> Invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoices list view",
+          "type": "DataObject",
+          "mention": "Invoices list view",
+          "confidence": "low"
+        },
+        {
+          "name": "Send window",
+          "type": "Feature",
+          "mention": "Send window",
+          "confidence": "low"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "click Send",
+          "confidence": "high"
+        },
+        {
+          "name": "batch",
+          "type": "Workflow",
+          "mention": "send and print batch",
+          "confidence": "medium"
+        },
+        {
+          "name": "Not Sent",
+          "type": "Field",
+          "mention": "filter on Not Sent",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoices",
+          "relation": "BELONGS_TO",
+          "target": "Customers",
+          "evidence": "Accounting --> Customers --> Invoices"
+        },
+        {
+          "source": "Customers",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Accounting --> Customers --> Invoices"
+        },
+        {
+          "source": "Accounting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Send",
+          "relation": "TRIGGERED_BY",
+          "target": "Invoices",
+          "evidence": "select them in the Invoices list view and click Send"
+        },
+        {
+          "source": "Send window",
+          "relation": "GENERATES",
+          "target": "batch",
+          "evidence": "The Send window displays... part of an ongoing send and print batch"
+        },
+        {
+          "source": "batch",
+          "relation": "GOVERNED_BY",
+          "target": "Not Sent",
+          "evidence": "filter on Not Sent"
+        },
+        {
+          "source": "Invoices list view",
+          "relation": "CONTAINS",
+          "target": "Invoices",
+          "evidence": "select them in the Invoices list view"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "payment-and-reconciliation",
+    "heading": "Payment and reconciliation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Paid",
+          "type": "Feature",
+          "mention": "Paid",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting entry",
+          "type": "DataObject",
+          "mention": "accounting entry",
+          "confidence": "high"
+        },
+        {
+          "name": "bank transaction",
+          "type": "DataObject",
+          "mention": "bank transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciled",
+          "type": "Action",
+          "mention": "reconciled",
+          "confidence": "high"
+        },
+        {
+          "name": "payments",
+          "type": "Concept",
+          "mention": "payments",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank/reconciliation",
+          "type": "Concept",
+          "mention": "bank/reconciliation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "invoice",
+          "relation": "ENABLES",
+          "target": "Paid",
+          "evidence": "invoice is considered Paid"
+        },
+        {
+          "source": "Paid",
+          "relation": "TRIGGERED_BY",
+          "target": "reconciled",
+          "evidence": "when the associated accounting entry has been reconciled"
+        },
+        {
+          "source": "accounting entry",
+          "relation": "RELATED_TO",
+          "target": "invoice",
+          "evidence": "associated accounting entry"
+        },
+        {
+          "source": "accounting entry",
+          "relation": "TRIGGERED_BY",
+          "target": "reconciled",
+          "evidence": "accounting entry has been reconciled"
+        },
+        {
+          "source": "reconciled",
+          "relation": "RELATED_TO",
+          "target": "bank transaction",
+          "evidence": "reconciled with a corresponding bank transaction"
+        },
+        {
+          "source": "Paid",
+          "relation": "SEE_ALSO",
+          "target": "payments",
+          "evidence": ".. seealso:: payments"
+        },
+        {
+          "source": "Paid",
+          "relation": "SEE_ALSO",
+          "target": "bank/reconciliation",
+          "evidence": ".. seealso:: bank/reconciliation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "payment-follow-up",
+    "heading": "Payment follow-up",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment follow-up",
+          "type": "Feature",
+          "mention": "Payment follow-up",
+          "confidence": "high"
+        },
+        {
+          "name": "follow-up actions",
+          "type": "Action",
+          "mention": "follow-up actions",
+          "confidence": "high"
+        },
+        {
+          "name": "follow-up levels",
+          "type": "Workflow",
+          "mention": "follow-up levels",
+          "confidence": "high"
+        },
+        {
+          "name": "customer invoices",
+          "type": "DataObject",
+          "mention": "customer invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "outstanding invoices",
+          "type": "DataObject",
+          "mention": "outstanding invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "most overdue invoice",
+          "type": "DataObject",
+          "mention": "most overdue invoice",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payment follow-up",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Payment follow-up"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Payment follow-up",
+          "evidence": "Odoo's follow-up actions <payments/follow_up> help companies follow up on customer invoices."
+        },
+        {
+          "source": "Payment follow-up",
+          "relation": "CONTAINS",
+          "target": "follow-up actions",
+          "evidence": "Odoo's follow-up actions <payments/follow_up>..."
+        },
+        {
+          "source": "Payment follow-up",
+          "relation": "CONTAINS",
+          "target": "follow-up levels",
+          "evidence": "These actions are bundled into follow-up levels..."
+        },
+        {
+          "source": "follow-up actions",
+          "relation": "TRIGGERED_BY",
+          "target": "customer invoices",
+          "evidence": "...help companies follow up on customer invoices."
+        },
+        {
+          "source": "follow-up levels",
+          "relation": "TRIGGERED_BY",
+          "target": "customer invoices",
+          "evidence": "...trigger when an invoice is overdue by a certain number of days."
+        },
+        {
+          "source": "follow-up actions",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "...to remind customers..."
+        },
+        {
+          "source": "follow-up actions",
+          "relation": "APPLIES_TO",
+          "target": "outstanding invoices",
+          "evidence": "...to remind customers to pay their outstanding invoices..."
+        },
+        {
+          "source": "follow-up levels",
+          "relation": "ENABLES",
+          "target": "follow-up actions",
+          "evidence": "These actions are bundled into follow-up levels..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "partner-ledger",
+    "heading": "Partner Ledger",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Partner Ledger",
+          "type": "Report",
+          "mention": "Partner Ledger",
+          "confidence": "high"
+        },
+        {
+          "name": "Partner Ledger report",
+          "type": "Report",
+          "mention": "Partner Ledger report",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Suppliers",
+          "type": "Actor",
+          "mention": "suppliers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Partner Ledger",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "Accounting --> Reporting --> Partner Ledger"
+        },
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Reporting"
+        },
+        {
+          "source": "Accounting",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Partner Ledger",
+          "relation": "HAS_REPORT",
+          "target": "Partner Ledger report",
+          "evidence": "The Partner Ledger report"
+        },
+        {
+          "source": "Partner Ledger report",
+          "relation": "PRODUCES",
+          "target": "Customers",
+          "evidence": "shows the balance of customers"
+        },
+        {
+          "source": "Partner Ledger report",
+          "relation": "PRODUCES",
+          "target": "Suppliers",
+          "evidence": "shows the balance of suppliers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "aged-receivable",
+    "heading": "Aged Receivable",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Aged Receivable",
+          "type": "Report",
+          "mention": "Aged Receivable",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Aged Receivable",
+          "evidence": "To review outstanding customer invoices and their related due dates, use the Aged Receivable report."
+        },
+        {
+          "source": "Aged Receivable",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "To access it, go to Accounting --> Reporting --> Aged Receivable."
+        },
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Reporting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "aged-payable",
+    "heading": "Aged Payable",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Aged Payable",
+          "type": "Report",
+          "mention": "Aged Payable report",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "go to Accounting --> Reporting"
+        },
+        {
+          "source": "Accounting",
+          "relation": "HAS_REPORT",
+          "target": "Aged Payable",
+          "evidence": "go to Accounting --> Reporting --> Aged Payable"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Aged Payable",
+          "evidence": "go to Accounting --> Reporting --> Aged Payable"
+        },
+        {
+          "source": "Aged Payable",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "profit-and-loss",
+    "heading": "Profit and Loss",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Profit and Loss",
+          "type": "Report",
+          "mention": "Profit and Loss",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Profit and Loss",
+          "evidence": "Product: Odoo; Title: Profit and Loss"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "balance-sheet",
+    "heading": "Balance sheet",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Balance sheet",
+          "type": "Module",
+          "mention": "Title: Balance sheet",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Balance sheet",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/overview",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/customer_addresses",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/payment_terms",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/terms_conditions",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/cash_discounts",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/credit_notes",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/cash_rounding",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/deferred_revenues",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/electronic_invoicing",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/sequence",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/snailmail",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/epc_qr_code",
+          "evidence": "... toctree: ..."
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "CONTAINS",
+          "target": "customer_invoices/incoterms",
+          "evidence": "... toctree: ..."
+        }
+      ]
+    }
+  }
+]

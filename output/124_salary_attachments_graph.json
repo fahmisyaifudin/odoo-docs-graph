@@ -1,0 +1,890 @@
+[
+  {
+    "section_id": "salary-adjustments",
+    "heading": "Salary adjustments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary adjustments",
+          "type": "Concept",
+          "mention": "Salary adjustments",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslip",
+          "type": "DataObject",
+          "mention": "payslip",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Deductions",
+          "type": "Concept",
+          "mention": "deductions",
+          "confidence": "high"
+        },
+        {
+          "name": "Wage garnishment",
+          "type": "Concept",
+          "mention": "wage garnishment",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Salary adjustments",
+          "relation": "APPLIES_TO",
+          "target": "Payslip",
+          "evidence": "are portions of earnings taken directly out of a payslip"
+        },
+        {
+          "source": "Salary adjustments",
+          "relation": "RELATED_TO",
+          "target": "Deductions",
+          "evidence": "When the deduction is voluntary, they are typically considered *deductions*."
+        },
+        {
+          "source": "Salary adjustments",
+          "relation": "RELATED_TO",
+          "target": "Wage garnishment",
+          "evidence": "When the deduction is court-ordered, or involuntary, it is sometimes referred to as a *wage garnishment*."
+        },
+        {
+          "source": "Salary adjustments",
+          "relation": "RELATED_TO",
+          "target": "Employee",
+          "evidence": "used to give recurring amounts of money to employees"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "salary-adjustment-types",
+    "heading": "Salary adjustment types",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Other Input Types",
+          "type": "Feature",
+          "mention": "Other Input Types",
+          "confidence": "high"
+        },
+        {
+          "name": "salary adjustment types",
+          "type": "DataObject",
+          "mention": "salary adjustment types",
+          "confidence": "high"
+        },
+        {
+          "name": "Attachment of Salary",
+          "type": "DataObject",
+          "mention": "Attachment of Salary",
+          "confidence": "high"
+        },
+        {
+          "name": "Assignment of Salary",
+          "type": "DataObject",
+          "mention": "Assignment of Salary",
+          "confidence": "high"
+        },
+        {
+          "name": "Child Support",
+          "type": "DataObject",
+          "mention": "Child Support",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Code",
+          "type": "Field",
+          "mention": "Code",
+          "confidence": "high"
+        },
+        {
+          "name": "payslips",
+          "type": "DataObject",
+          "mention": "payslips",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Payroll app",
+          "evidence": "Payroll app"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Payroll app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Other Input Types",
+          "evidence": "Configuration --> Other Input Types"
+        },
+        {
+          "source": "Other Input Types",
+          "relation": "HAS_REPORT",
+          "target": "salary adjustment types",
+          "evidence": "Other Input Types. This displays *all* other salary inputs"
+        },
+        {
+          "source": "salary adjustment types",
+          "relation": "CONTAINS",
+          "target": "Attachment of Salary",
+          "evidence": "three default salary adjustment types ... are: Attachment of Salary"
+        },
+        {
+          "source": "salary adjustment types",
+          "relation": "CONTAINS",
+          "target": "Assignment of Salary",
+          "evidence": "three default salary adjustment types ... are: Assignment of Salary"
+        },
+        {
+          "source": "salary adjustment types",
+          "relation": "CONTAINS",
+          "target": "Child Support",
+          "evidence": "three default salary adjustment types ... are: Child Support"
+        },
+        {
+          "source": "salary adjustment types",
+          "relation": "HAS_FEATURE",
+          "target": "Name",
+          "evidence": "displays the Name of the adjustment type"
+        },
+        {
+          "source": "salary adjustment types",
+          "relation": "HAS_FEATURE",
+          "target": "Code",
+          "evidence": "the Code used when calculating payslips"
+        },
+        {
+          "source": "Code",
+          "relation": "ENABLES",
+          "target": "payslips",
+          "evidence": "the Code used when calculating payslips"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-new-salary-adjustment-types",
+    "heading": "Create new salary adjustment types",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "salary adjustment type",
+          "type": "DataObject",
+          "mention": "salary adjustment type",
+          "confidence": "high"
+        },
+        {
+          "name": "salary rule",
+          "type": "DataObject",
+          "mention": "salary rule",
+          "confidence": "medium"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslip",
+          "confidence": "medium"
+        },
+        {
+          "name": "salary structure",
+          "type": "DataObject",
+          "mention": "salary structure",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiscal localization package",
+          "type": "DataObject",
+          "mention": "localization package",
+          "confidence": "medium"
+        },
+        {
+          "name": "salary adjustment",
+          "type": "Action",
+          "mention": "salary adjustment",
+          "confidence": "medium"
+        },
+        {
+          "name": "salary computation",
+          "type": "Workflow",
+          "mention": "salary computation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Description field",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "Available in adjustments checkbox",
+          "type": "Field",
+          "mention": "Available in adjustments checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Code field",
+          "type": "Field",
+          "mention": "Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Available in Structure field",
+          "type": "Field",
+          "mention": "Available in Structure field",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payslip Other Input Types form",
+          "type": "DataObject",
+          "mention": "Payslip Other Input Types form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "salary adjustment type",
+          "evidence": "Upon installation of the Payroll application"
+        },
+        {
+          "source": "salary adjustment type",
+          "relation": "IS_PART_OF",
+          "target": "salary structure",
+          "evidence": "linked to various salary structures"
+        },
+        {
+          "source": "salary adjustment type",
+          "relation": "IS_PART_OF",
+          "target": "fiscal localization package",
+          "evidence": "the installed localization package"
+        },
+        {
+          "source": "salary adjustment type",
+          "relation": "REQUIRES",
+          "target": "salary rule",
+          "evidence": "A salary adjustment type must be linked to a salary rule"
+        },
+        {
+          "source": "salary rule",
+          "relation": "SUPPORTS",
+          "target": "salary computation",
+          "evidence": "to compute payslips"
+        },
+        {
+          "source": "salary computation",
+          "relation": "GENERATES",
+          "target": "payslip",
+          "evidence": "the creation of payslips"
+        },
+        {
+          "source": "salary adjustment type",
+          "relation": "REQUIRES",
+          "target": "salary structure",
+          "evidence": "only be used in a specific payroll structure"
+        },
+        {
+          "source": "salary adjustment type",
+          "relation": "CONFIGURED_BY",
+          "target": "Description field",
+          "evidence": "Enter the Description for the new salary adjustment type"
+        },
+        {
+          "source": "salary adjustment type",
+          "relation": "CONFIGURED_BY",
+          "target": "Available in adjustments checkbox",
+          "evidence": "tick the Available in adjustments checkbox"
+        },
+        {
+          "source": "salary adjustment type",
+          "relation": "CONFIGURED_BY",
+          "target": "Code field",
+          "evidence": "Enter the Code used in the salary rules"
+        },
+        {
+          "source": "salary adjustment type",
+          "relation": "CONFIGURED_BY",
+          "target": "Available in Structure field",
+          "evidence": "select the specific structure in Available in Structure field"
+        },
+        {
+          "source": "New button",
+          "relation": "PRODUCES",
+          "target": "Payslip Other Input Types form",
+          "evidence": "click the New button, and a blank Payslip Other Input Types form loads"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-salary-adjustment",
+    "heading": "Create a salary adjustment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Sub-module",
+          "mention": "Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Adjustments",
+          "type": "Feature",
+          "mention": "Salary Adjustments",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a salary adjustment",
+          "type": "Workflow",
+          "mention": "Title: Create a salary adjustment",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "click the New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Adjustment form",
+          "type": "DataObject",
+          "mention": "Salary Adjustment form",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees field",
+          "type": "Field",
+          "mention": "Employees:",
+          "confidence": "high"
+        },
+        {
+          "name": "Type field",
+          "type": "Field",
+          "mention": "Type:",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslip Amount field",
+          "type": "Field",
+          "mention": "Payslip Amount:",
+          "confidence": "high"
+        },
+        {
+          "name": "Negative Amount checkbox",
+          "type": "Field",
+          "mention": "Negative Amount:",
+          "confidence": "high"
+        },
+        {
+          "name": "Duration field",
+          "type": "Field",
+          "mention": "Duration:",
+          "confidence": "high"
+        },
+        {
+          "name": "One Time",
+          "type": "Feature",
+          "mention": "One Time",
+          "confidence": "medium"
+        },
+        {
+          "name": "Limited",
+          "type": "Feature",
+          "mention": "Limited",
+          "confidence": "medium"
+        },
+        {
+          "name": "Unlimited",
+          "type": "Feature",
+          "mention": "Unlimited",
+          "confidence": "medium"
+        },
+        {
+          "name": "from field",
+          "type": "Field",
+          "mention": "from:",
+          "confidence": "high"
+        },
+        {
+          "name": "until (amount) paid field",
+          "type": "Field",
+          "mention": "until (amount) paid field",
+          "confidence": "high"
+        },
+        {
+          "name": "Note field",
+          "type": "Field",
+          "mention": "Note:",
+          "confidence": "high"
+        },
+        {
+          "name": "Note filter",
+          "type": "Setting",
+          "mention": "Note filter",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Individual Attachments",
+          "type": "Action",
+          "mention": "click the Create Individual Attachments button",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Adjustment dashboard",
+          "type": "Feature",
+          "mention": "Salary Adjustment dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Running tag",
+          "type": "Setting",
+          "mention": "Running tag",
+          "confidence": "medium"
+        },
+        {
+          "name": "Closed tag",
+          "type": "Setting",
+          "mention": "Closed",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create a salary adjustment",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "To create a new salary adjustment"
+        },
+        {
+          "source": "Create a salary adjustment",
+          "relation": "BELONGS_TO",
+          "target": "Payroll",
+          "evidence": "navigate to Payroll app --> Employees --> Salary Adjustments"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Employees",
+          "evidence": "Payroll app --> Employees"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "Salary Adjustments",
+          "evidence": "Employees --> Salary Adjustments"
+        },
+        {
+          "source": "Salary Adjustments",
+          "relation": "HAS_FEATURE",
+          "target": "Running tag",
+          "evidence": "a green Running tag for active adjustments"
+        },
+        {
+          "source": "Salary Adjustments",
+          "relation": "HAS_FEATURE",
+          "target": "Closed tag",
+          "evidence": "or Closed for adjustments that have ended"
+        },
+        {
+          "source": "Salary Adjustment form",
+          "relation": "CONTAINS",
+          "target": "Employees field",
+          "evidence": "Enter the following information on the form: - Employees:"
+        },
+        {
+          "source": "Salary Adjustment form",
+          "relation": "CONTAINS",
+          "target": "Type field",
+          "evidence": "- Type:"
+        },
+        {
+          "source": "Salary Adjustment form",
+          "relation": "CONTAINS",
+          "target": "Payslip Amount field",
+          "evidence": "- Payslip Amount:"
+        },
+        {
+          "source": "Salary Adjustment form",
+          "relation": "CONTAINS",
+          "target": "Negative Amount checkbox",
+          "evidence": "- Negative Amount:"
+        },
+        {
+          "source": "Salary Adjustment form",
+          "relation": "CONTAINS",
+          "target": "Duration field",
+          "evidence": "- Duration:"
+        },
+        {
+          "source": "Salary Adjustment form",
+          "relation": "CONTAINS",
+          "target": "Note field",
+          "evidence": "- Note:"
+        },
+        {
+          "source": "Duration field",
+          "relation": "CONTAINS",
+          "target": "One Time",
+          "evidence": "The options are: - One Time:"
+        },
+        {
+          "source": "Duration field",
+          "relation": "CONTAINS",
+          "target": "Limited",
+          "evidence": "- Limited:"
+        },
+        {
+          "source": "Duration field",
+          "relation": "CONTAINS",
+          "target": "Unlimited",
+          "evidence": "- Unlimited:"
+        },
+        {
+          "source": "Create Individual Attachments",
+          "relation": "GENERATES",
+          "target": "Salary Adjustments",
+          "evidence": "This creates separate salary adjustments"
+        },
+        {
+          "source": "Create Individual Attachments",
+          "relation": "TRIGGERED_BY",
+          "target": "Salary Adjustment form",
+          "evidence": "after the form is filled out, click the Create Individual Attachments button"
+        },
+        {
+          "source": "Salary Adjustment dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Note filter",
+          "evidence": "but with a Note filter"
+        },
+        {
+          "source": "Salary Adjustments",
+          "relation": "CONFIGURED_BY",
+          "target": "Note filter",
+          "evidence": "Note filter, populated with the information filled in the Note field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manage-salary-adjustments",
+    "heading": "Manage salary adjustments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employees",
+          "type": "Sub-module",
+          "mention": "Employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Salary Adjustments",
+          "type": "Feature",
+          "mention": "Salary adjustments",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Date",
+          "type": "Field",
+          "mention": "Start Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Status",
+          "type": "Field",
+          "mention": "Status",
+          "confidence": "high"
+        },
+        {
+          "name": "Type",
+          "type": "Field",
+          "mention": "Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Running",
+          "type": "Setting",
+          "mention": "Running",
+          "confidence": "medium"
+        },
+        {
+          "name": "Closed",
+          "type": "Setting",
+          "mention": "Closed",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Payroll app",
+          "evidence": "navigate to Payroll app"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "CONTAINS",
+          "target": "Employees",
+          "evidence": "Payroll app --> Employees"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "Salary Adjustments",
+          "evidence": "Employees --> Salary Adjustments"
+        },
+        {
+          "source": "Salary Adjustments",
+          "relation": "HAS_FEATURE",
+          "target": "Start Date",
+          "evidence": "salary adjustments appear in chronological order, by Start Date"
+        },
+        {
+          "source": "Salary Adjustments",
+          "relation": "HAS_FEATURE",
+          "target": "Status",
+          "evidence": "To view the salary adjustments by a particular metric, such as the Status"
+        },
+        {
+          "source": "Salary Adjustments",
+          "relation": "HAS_FEATURE",
+          "target": "Type",
+          "evidence": "To view the salary adjustments by a particular metric, such as the Status, or Type"
+        },
+        {
+          "source": "Salary Adjustments",
+          "relation": "CONFIGURED_BY",
+          "target": "Running",
+          "evidence": "Salary adjustments can have one of two statuses, *Running* or *Closed*."
+        },
+        {
+          "source": "Salary Adjustments",
+          "relation": "CONFIGURED_BY",
+          "target": "Closed",
+          "evidence": "Salary adjustments can have one of two statuses, *Running* or *Closed*."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "closed-salary-adjustments",
+    "heading": "Closed salary adjustments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Closed",
+          "type": "Concept",
+          "mention": "automatically changes to *Closed*",
+          "confidence": "high"
+        },
+        {
+          "name": "Running",
+          "type": "Concept",
+          "mention": "status of Running",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Adjustment",
+          "type": "DataObject",
+          "mention": "Salary Adjustment",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Adjustment form",
+          "type": "DataObject",
+          "mention": "Salary Adjustment form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Salary Adjustment dashboard",
+          "type": "DataObject",
+          "mention": "Salary Adjustment dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "DataObject",
+          "mention": "Employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mark as Completed button",
+          "type": "Action",
+          "mention": "Mark as Completed button",
+          "confidence": "high"
+        },
+        {
+          "name": "Until amount",
+          "type": "Field",
+          "mention": "*Until* amount",
+          "confidence": "high"
+        },
+        {
+          "name": "payroll manager",
+          "type": "Actor",
+          "mention": "payroll manager",
+          "confidence": "high"
+        },
+        {
+          "name": "Rose Smith",
+          "type": "Actor",
+          "mention": "Rose Smith",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Salary Adjustment",
+          "relation": "HAS_REPORT",
+          "target": "Salary Adjustment dashboard",
+          "evidence": "open the *Salary Adjustment* dashboard"
+        },
+        {
+          "source": "Salary Adjustment dashboard",
+          "relation": "BELONGS_TO",
+          "target": "Payroll app",
+          "evidence": "by navigating to Payroll app --> Employees --> Salary Adjustments"
+        },
+        {
+          "source": "Mark as Completed button",
+          "relation": "PRODUCES",
+          "target": "Closed",
+          "evidence": "click the Mark as Completed button... and the status changes to Closed"
+        },
+        {
+          "source": "Salary Adjustment",
+          "relation": "CONFIGURED_BY",
+          "target": "Until amount",
+          "evidence": "the *Until* amount entered on the salary adjustment form"
+        },
+        {
+          "source": "Salary Adjustment",
+          "relation": "HAS_FEATURE",
+          "target": "Running",
+          "evidence": "When a salary adjustment is created, it has a status of Running"
+        },
+        {
+          "source": "Salary Adjustment",
+          "relation": "HAS_FEATURE",
+          "target": "Closed",
+          "evidence": "the status automatically changes to *Closed*"
+        },
+        {
+          "source": "Mark as Completed button",
+          "relation": "PERFORMED_BY",
+          "target": "payroll manager",
+          "evidence": "the payroll manager manually changes the status"
+        },
+        {
+          "source": "Salary Adjustment",
+          "relation": "IS_PART_OF",
+          "target": "Payroll app",
+          "evidence": "Salary Adjustment dashboard by navigating to Payroll app"
+        }
+      ]
+    }
+  }
+]

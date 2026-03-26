@@ -1,0 +1,500 @@
+[
+  {
+    "section_id": "add-paynow-qr-codes-to-invoices",
+    "heading": "Add PayNow QR codes to invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "PayNow QR codes",
+          "type": "Feature",
+          "mention": "Add PayNow QR codes to invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "PayNow",
+          "type": "Integration",
+          "mention": "PayNow is a payment service platform",
+          "confidence": "high"
+        },
+        {
+          "name": "Singapore dollars",
+          "type": "Concept",
+          "mention": "Singapore dollars",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "PayNow QR codes",
+          "evidence": "Add PayNow QR codes to invoices"
+        },
+        {
+          "source": "PayNow QR codes",
+          "relation": "BELONGS_TO",
+          "target": "PayNow",
+          "evidence": "PayNow is a payment service platform"
+        },
+        {
+          "source": "PayNow",
+          "relation": "APPLIES_TO",
+          "target": "Singapore dollars",
+          "evidence": "Singapore dollars"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "activate-qr-codes",
+    "heading": "Activate QR codes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting -->",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration -->",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings.",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Payments section",
+          "type": "Sub-module",
+          "mention": "Customer Payments section",
+          "confidence": "high"
+        },
+        {
+          "name": "QR Codes feature",
+          "type": "Feature",
+          "mention": "QR Codes feature.",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "QR Codes feature",
+          "relation": "BELONGS_TO",
+          "target": "Customer Payments section",
+          "evidence": "Under the Customer Payments section, activate the QR Codes feature."
+        },
+        {
+          "source": "Customer Payments section",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "Under the Customer Payments section"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings."
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Accounting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "paynow-bank-account-configuration",
+    "heading": "PayNow bank account configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts",
+          "type": "Module",
+          "mention": "Contacts",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Accounts",
+          "type": "Sub-module",
+          "mention": "Bank Accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "PayNow",
+          "type": "Feature",
+          "mention": "PayNow",
+          "confidence": "high"
+        },
+        {
+          "name": "Proxy Type",
+          "type": "Field",
+          "mention": "Proxy Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Proxy Value",
+          "type": "Field",
+          "mention": "Proxy Value",
+          "confidence": "high"
+        },
+        {
+          "name": "account holder",
+          "type": "Actor",
+          "mention": "account holder",
+          "confidence": "medium"
+        },
+        {
+          "name": "Singapore",
+          "type": "Concept",
+          "mention": "Singapore",
+          "confidence": "medium"
+        },
+        {
+          "name": "city",
+          "type": "Field",
+          "mention": "city",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice number",
+          "type": "Field",
+          "mention": "invoice number",
+          "confidence": "medium"
+        },
+        {
+          "name": "QR code",
+          "type": "Feature",
+          "mention": "QR code",
+          "confidence": "low"
+        },
+        {
+          "name": "Include Reference checkbox",
+          "type": "Setting",
+          "mention": "Include Reference checkbox",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "PayNow",
+          "relation": "CONFIGURED_BY",
+          "target": "Proxy Type",
+          "evidence": "Set the Proxy Type"
+        },
+        {
+          "source": "PayNow",
+          "relation": "CONFIGURED_BY",
+          "target": "Proxy Value",
+          "evidence": "fill in the Proxy Value field"
+        },
+        {
+          "source": "PayNow",
+          "relation": "BELONGS_TO",
+          "target": "Bank Accounts",
+          "evidence": "... select the bank account to activate PayNow"
+        },
+        {
+          "source": "Bank Accounts",
+          "relation": "IS_PART_OF",
+          "target": "Contacts",
+          "evidence": "Go to Contacts --> Configuration --> Bank Accounts"
+        },
+        {
+          "source": "PayNow",
+          "relation": "ENABLES",
+          "target": "QR code",
+          "evidence": "You could also include the invoice number in the QR code"
+        },
+        {
+          "source": "QR code",
+          "relation": "CONFIGURED_BY",
+          "target": "Include Reference checkbox",
+          "evidence": "... by checking the Include Reference checkbox"
+        },
+        {
+          "source": "PayNow",
+          "relation": "REQUIRES",
+          "target": "Singapore",
+          "evidence": "The account holder's country must be set to Singapore"
+        },
+        {
+          "source": "PayNow",
+          "relation": "REQUIRES",
+          "target": "city",
+          "evidence": "The account holder's city is mandatory"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bank-journal-configuration",
+    "heading": "Bank journal configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journals",
+          "type": "Module",
+          "mention": "Journals",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank journal",
+          "type": "DataObject",
+          "mention": "bank journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Account Number",
+          "type": "Field",
+          "mention": "Account Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank",
+          "type": "Field",
+          "mention": "Bank",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Journals",
+          "evidence": "Configuration --> Journals"
+        },
+        {
+          "source": "Journals",
+          "relation": "CONTAINS",
+          "target": "bank journal",
+          "evidence": "Journals, open the bank journal"
+        },
+        {
+          "source": "bank journal",
+          "relation": "CONTAINS",
+          "target": "Account Number",
+          "evidence": "fill out the Account Number"
+        },
+        {
+          "source": "bank journal",
+          "relation": "CONTAINS",
+          "target": "Bank",
+          "evidence": "fill out the Bank under the Journal Entries tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "issue-invoices-with-paynow-qr-codes",
+    "heading": "Issue invoices with PayNow QR codes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Other Info tab",
+          "type": "Module",
+          "mention": "Other Info tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment QR-code option",
+          "type": "Setting",
+          "mention": "Payment QR-code option",
+          "confidence": "high"
+        },
+        {
+          "name": "EMV Merchant-Presented QR-code",
+          "type": "Feature",
+          "mention": "EMV Merchant-Presented QR-code",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipient Bank",
+          "type": "Field",
+          "mention": "Recipient Bank",
+          "confidence": "high"
+        },
+        {
+          "name": "PayNow QR code",
+          "type": "Feature",
+          "mention": "PayNow QR code",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice",
+          "relation": "CONFIGURED_BY",
+          "target": "Payment QR-code option",
+          "evidence": "set the Payment QR-code option"
+        },
+        {
+          "source": "Other Info tab",
+          "relation": "CONTAINS",
+          "target": "Payment QR-code option",
+          "evidence": "open the Other Info tab and set the Payment QR-code option"
+        },
+        {
+          "source": "Other Info tab",
+          "relation": "IS_PART_OF",
+          "target": "Invoice",
+          "evidence": "When creating a new invoice, open the Other Info tab"
+        },
+        {
+          "source": "Invoice",
+          "relation": "CONFIGURED_BY",
+          "target": "Recipient Bank",
+          "evidence": "Ensure that the Recipient Bank is the one you configured"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "PayNow QR code",
+          "evidence": "Odoo uses this field to generate the PayNow QR code"
+        },
+        {
+          "source": "PayNow QR code",
+          "relation": "GENERATES",
+          "target": "Invoice",
+          "evidence": "generate the PayNow QR code"
+        },
+        {
+          "source": "Recipient Bank",
+          "relation": "ENABLES",
+          "target": "PayNow QR code",
+          "evidence": "Odoo uses this field to generate the PayNow QR code"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "employment-hero-payroll",
+    "heading": "Employment Hero payroll",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Employment Hero",
+          "type": "Integration",
+          "mention": "Employment Hero",
+          "confidence": "high"
+        },
+        {
+          "name": "Employment Hero payroll",
+          "type": "Feature",
+          "mention": "Employment Hero payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "Singapore",
+          "type": "Actor",
+          "mention": "Singapore",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employment Hero API",
+          "type": "Integration",
+          "mention": "Employment Hero API",
+          "confidence": "high"
+        },
+        {
+          "name": "HTTPS://apisg.yourpayroll.io/",
+          "type": "Setting",
+          "mention": "HTTPS://apisg.yourpayroll.io/",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employment Hero payroll",
+          "relation": "USES_METHOD",
+          "target": "Employment Hero",
+          "evidence": "your business is already up and running with Employment Hero"
+        },
+        {
+          "source": "Employment Hero API",
+          "relation": "CONFIGURED_BY",
+          "target": "HTTPS://apisg.yourpayroll.io/",
+          "evidence": "use the following value as Payroll URL"
+        },
+        {
+          "source": "Employment Hero API",
+          "relation": "APPLIES_TO",
+          "target": "Singapore",
+          "evidence": "configuration for Singapore"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,877 @@
+[
+  {
+    "section_id": "consignment:-buy-and-sell-stock-without-owning-it",
+    "heading": "Consignment: buy and sell stock without owning it",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Consignment",
+          "type": "Module",
+          "mention": "Title: Consignment",
+          "confidence": "high"
+        },
+        {
+          "name": "buy and sell stock without owning it",
+          "type": "Concept",
+          "mention": "buy and sell stock without owning it",
+          "confidence": "medium"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "low"
+        },
+        {
+          "name": "warehouse",
+          "type": "Concept",
+          "mention": "warehouse",
+          "confidence": "low"
+        },
+        {
+          "name": "supplier",
+          "type": "Actor",
+          "mention": "suppliers",
+          "confidence": "low"
+        },
+        {
+          "name": "consignee",
+          "type": "Actor",
+          "mention": "consignee",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Consignment",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Title: Consignment"
+        },
+        {
+          "source": "Consignment",
+          "relation": "CONTAINS",
+          "target": "buy and sell stock without owning it",
+          "evidence": "Title: Consignment"
+        },
+        {
+          "source": "company",
+          "relation": "PERFORMED_BY",
+          "target": "supplier",
+          "evidence": "suppliers will sometimes let companies..."
+        },
+        {
+          "source": "consignee",
+          "relation": "RELATED_TO",
+          "target": "company",
+          "evidence": "company storing the products (the consignee)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-the-consignment-setting",
+    "heading": "Enable the consignment setting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Traceability",
+          "type": "Feature",
+          "mention": "Traceability",
+          "confidence": "medium"
+        },
+        {
+          "name": "Consignment",
+          "type": "Feature",
+          "mention": "Consignment",
+          "confidence": "high"
+        },
+        {
+          "name": "Enable the consignment setting",
+          "type": "Action",
+          "mention": "Enable the consignment setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Inventory --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Traceability",
+          "evidence": "Settings, and under the Traceability section"
+        },
+        {
+          "source": "Traceability",
+          "relation": "CONTAINS",
+          "target": "Consignment",
+          "evidence": "under the Traceability section, check the box next to Consignment"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Consignment",
+          "evidence": "To receive, store, and sell consignment stock"
+        },
+        {
+          "source": "Enable the consignment setting",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "the feature needs to be enabled in the settings. To do this"
+        },
+        {
+          "source": "Consignment",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "check the box next to Consignment, and then click Save"
+        },
+        {
+          "source": "Enable the consignment setting",
+          "relation": "TRIGGERED_BY",
+          "target": "Save",
+          "evidence": "click Save to finish"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "receive-(and-store)-consignment-stock",
+    "heading": "Receive (and store) consignment stock",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Receive (and store) consignment stock",
+          "type": "Feature",
+          "mention": "Receive (and store) consignment stock",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory dashboard",
+          "type": "Module",
+          "mention": "main Inventory dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipts",
+          "type": "Sub-module",
+          "mention": "Receipts section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "click Create",
+          "confidence": "high"
+        },
+        {
+          "name": "consignment stock",
+          "type": "Concept",
+          "mention": "consignment stock",
+          "confidence": "high"
+        },
+        {
+          "name": "Receive From",
+          "type": "Field",
+          "mention": "Receive From field",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign Owner",
+          "type": "Field",
+          "mention": "Assign Owner field",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Product lines",
+          "type": "Field",
+          "mention": "Product lines",
+          "confidence": "high"
+        },
+        {
+          "name": "Done",
+          "type": "Field",
+          "mention": "Done column",
+          "confidence": "high"
+        },
+        {
+          "name": "Units of Measure",
+          "type": "Feature",
+          "mention": "Units of Measure feature",
+          "confidence": "high"
+        },
+        {
+          "name": "UoM",
+          "type": "Field",
+          "mention": "UoM",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate the receipt",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Receive (and store) consignment stock",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "With the feature enabled in Odoo"
+        },
+        {
+          "source": "Inventory dashboard",
+          "relation": "CONTAINS",
+          "target": "Receipts",
+          "evidence": "From the main Inventory dashboard, click into the Receipts section"
+        },
+        {
+          "source": "Create",
+          "relation": "TRIGGERED_BY",
+          "target": "Receipts",
+          "evidence": "From the main Inventory dashboard, click into the Receipts section. Then, click Create"
+        },
+        {
+          "source": "Receive From",
+          "relation": "IS_PART_OF",
+          "target": "receipt (manual receipt)",
+          "evidence": "Choose a vendor to enter in the Receive From field"
+        },
+        {
+          "source": "Assign Owner",
+          "relation": "IS_PART_OF",
+          "target": "receipt (manual receipt)",
+          "evidence": "choose the same vendor to enter in the Assign Owner field"
+        },
+        {
+          "source": "Receive From",
+          "relation": "RELATED_TO",
+          "target": "Assign Owner",
+          "evidence": "Receive From and Assign Owner fields must match"
+        },
+        {
+          "source": "Product lines",
+          "relation": "IS_PART_OF",
+          "target": "receipt (manual receipt)",
+          "evidence": "enter products into the Product lines"
+        },
+        {
+          "source": "Done",
+          "relation": "IS_PART_OF",
+          "target": "Product lines",
+          "evidence": "set the quantities to be received into the warehouse under the Done column"
+        },
+        {
+          "source": "Units of Measure",
+          "relation": "CONFIGURED_BY",
+          "target": "receipt (manual receipt)",
+          "evidence": "If the Units of Measure feature is enabled, the UoM (Units of Measure) can be changed"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "Validate the receipt"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sell-and-deliver-consignment-stock",
+    "heading": "Sell and deliver consignment stock",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Quotations overview",
+          "type": "Sub-module",
+          "mention": "Quotations overview",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "click Create",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Field",
+          "mention": "Customer field",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product column",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "set the Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "click Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery",
+          "type": "Action",
+          "mention": "click on the Delivery smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "selecting Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "consignment stock",
+          "type": "Concept",
+          "mention": "consignment stock",
+          "confidence": "high"
+        },
+        {
+          "name": "Can Be Sold",
+          "type": "Setting",
+          "mention": "Can Be Sold option",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "Quotations overview",
+          "evidence": "navigate to the Sales app, and from the Quotations overview"
+        },
+        {
+          "source": "Quotations overview",
+          "relation": "HAS_FEATURE",
+          "target": "Create",
+          "evidence": "from the Quotations overview, click Create"
+        },
+        {
+          "source": "Sales order",
+          "relation": "IS_PART_OF",
+          "target": "Customer",
+          "evidence": "choose a customer to enter into the Customer field"
+        },
+        {
+          "source": "Sales order",
+          "relation": "IS_PART_OF",
+          "target": "Product",
+          "evidence": "Add the consignment product under the Product column"
+        },
+        {
+          "source": "Sales order",
+          "relation": "IS_PART_OF",
+          "target": "Quantity",
+          "evidence": "set the Quantity"
+        },
+        {
+          "source": "Create",
+          "relation": "PRODUCES",
+          "target": "Sales order",
+          "evidence": "Once the quotation is complete, click Confirm. Once the quotation has been confirmed, it becomes a sales order"
+        },
+        {
+          "source": "Confirm",
+          "relation": "TRIGGERED_BY",
+          "target": "Create",
+          "evidence": "Once the quotation is complete, click Confirm"
+        },
+        {
+          "source": "Delivery",
+          "relation": "ENABLES",
+          "target": "Validate",
+          "evidence": "click on the Delivery smart button, and selecting Validate"
+        },
+        {
+          "source": "consignment stock",
+          "relation": "APPLIES_TO",
+          "target": "Customer",
+          "evidence": "The Customer must be different from the Vendor that supplied the consignment stock"
+        },
+        {
+          "source": "consignment stock",
+          "relation": "COMPLIES_WITH",
+          "target": "Can Be Sold",
+          "evidence": "consignment stock...can be sold...that has the Can Be Sold option enabled"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "traceability-and-reporting-of-consignment-stock",
+    "heading": "Traceability and reporting of consignment stock",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory reports",
+          "type": "Report",
+          "mention": "inventory reports",
+          "confidence": "high"
+        },
+        {
+          "name": "consignment stock",
+          "type": "Concept",
+          "mention": "consignment stock",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock Valuation report",
+          "type": "Report",
+          "mention": "Stock Valuation report",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "consignee",
+          "type": "Actor",
+          "mention": "consignee",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Product: Odoo Title: Traceability and reporting of consignment stock"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "To find inventory reports, go to Inventory --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "inventory reports",
+          "evidence": "To find inventory reports, go to Inventory --> Reporting, and choose a report to view"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Stock Valuation report",
+          "evidence": "Since the consignee does not actually own consignment stock, these products are *not* reflected in the Stock Valuation report"
+        },
+        {
+          "source": "inventory reports",
+          "relation": "RELATED_TO",
+          "target": "consignment stock",
+          "evidence": "Although consignment stock is owned by the vendor who supplied it... consignment products will *still* appear in certain inventory reports."
+        },
+        {
+          "source": "Stock Valuation report",
+          "relation": "APPLIES_TO",
+          "target": "consignment stock",
+          "evidence": "Since the consignee does not actually own consignment stock, these products are *not* reflected in the Stock Valuation report"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "product-moves-report",
+    "heading": "Product moves report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Moves",
+          "type": "Report",
+          "mention": "Product Moves dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Moves report",
+          "type": "Report",
+          "mention": "Product moves report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Consignment product",
+          "type": "DataObject",
+          "mention": "consignment products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity Done",
+          "type": "Field",
+          "mention": "Quantity Done",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reference document",
+          "type": "DataObject",
+          "mention": "Reference document",
+          "confidence": "medium"
+        },
+        {
+          "name": "Locations",
+          "type": "Field",
+          "mention": "Locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Partner Location/Vendors",
+          "type": "Concept",
+          "mention": "Partner Location/Vendors",
+          "confidence": "medium"
+        },
+        {
+          "name": "Group By filter",
+          "type": "Setting",
+          "mention": "Group By filter",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Custom Group parameter",
+          "type": "Setting",
+          "mention": "Add Custom Group parameter",
+          "confidence": "medium"
+        },
+        {
+          "name": "From Owner",
+          "type": "Setting",
+          "mention": "From Owner",
+          "confidence": "medium"
+        },
+        {
+          "name": "Apply",
+          "type": "Action",
+          "mention": "Apply",
+          "confidence": "medium"
+        },
+        {
+          "name": "Forecasted Inventory",
+          "type": "Report",
+          "mention": "Forecasted Inventory",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "go to Inventory --> Reporting --> Product Moves."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Inventory --> Reporting --> Product Moves"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Product Moves",
+          "evidence": "Inventory --> Reporting --> Product Moves"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Forecasted Inventory",
+          "evidence": "go to Inventory --> Reporting --> Forecasted Inventory."
+        },
+        {
+          "source": "Product Moves",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "dashboard by going to Inventory --> Reporting --> Product Moves"
+        },
+        {
+          "source": "Product Moves report",
+          "relation": "EQUIVALENT_TO",
+          "target": "Product Moves",
+          "evidence": "Product moves report...Product Moves dashboard"
+        },
+        {
+          "source": "Product Moves",
+          "relation": "RELATED_TO",
+          "target": "Consignment product",
+          "evidence": "For consignment products, the information in this report is the same"
+        },
+        {
+          "source": "Group By filter",
+          "relation": "CONTAINS",
+          "target": "Add Custom Group parameter",
+          "evidence": "select the Group By filter, choose the Add Custom Group parameter"
+        },
+        {
+          "source": "Add Custom Group parameter",
+          "relation": "CONTAINS",
+          "target": "From Owner",
+          "evidence": "choose the Add Custom Group parameter, and then select From Owner"
+        },
+        {
+          "source": "From Owner",
+          "relation": "CONFIGURED_BY",
+          "target": "Apply",
+          "evidence": "select From Owner, and Apply to finish"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "stock-on-hand-report",
+    "heading": "Stock on hand report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory Report",
+          "type": "Report",
+          "mention": "Inventory Report",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock On Hand dashboard",
+          "type": "Report",
+          "mention": "Stock On Hand dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock on hand report",
+          "type": "Report",
+          "mention": "Stock on hand report",
+          "confidence": "high"
+        },
+        {
+          "name": "Owner column",
+          "type": "Field",
+          "mention": "Owner column",
+          "confidence": "high"
+        },
+        {
+          "name": "consignment products",
+          "type": "Concept",
+          "mention": "consignment products",
+          "confidence": "medium"
+        },
+        {
+          "name": "owner",
+          "type": "Actor",
+          "mention": "owner",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "navigating to Inventory"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "Inventory --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Inventory Report",
+          "evidence": "Reporting --> Inventory Report"
+        },
+        {
+          "source": "Inventory Report",
+          "relation": "RELATED_TO",
+          "target": "Stock on hand report",
+          "evidence": "View the Stock On Hand dashboard by navigating to Inventory --> Reporting --> Inventory Report"
+        },
+        {
+          "source": "Inventory Report",
+          "relation": "EQUIVALENT_TO",
+          "target": "Stock On Hand dashboard",
+          "evidence": "View the Stock On Hand dashboard by navigating to Inventory --> Reporting --> Inventory Report"
+        },
+        {
+          "source": "Inventory Report",
+          "relation": "CONTAINS",
+          "target": "Owner column",
+          "evidence": "Owner column will be populated"
+        },
+        {
+          "source": "Owner column",
+          "relation": "GENERATES",
+          "target": "owner",
+          "evidence": "Owner column will be populated with the owner"
+        },
+        {
+          "source": "Owner column",
+          "relation": "GENERATES",
+          "target": "vendor",
+          "evidence": "or the original vendor who supplied the products"
+        }
+      ]
+    }
+  }
+]

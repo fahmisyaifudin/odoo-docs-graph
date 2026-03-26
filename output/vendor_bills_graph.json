@@ -1,0 +1,949 @@
+[
+  {
+    "section_id": "vendor-bills",
+    "heading": "Vendor bills",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bills",
+          "type": "DataObject",
+          "mention": "Vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Aged Payable report",
+          "type": "Report",
+          "mention": "Aged Payable report",
+          "confidence": "high"
+        },
+        {
+          "name": "Registering a vendor bill",
+          "type": "Workflow",
+          "mention": "Registering a vendor bill",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Aged Payable report",
+          "relation": "BELONGS_TO",
+          "target": "Vendor bills",
+          "evidence": "The Aged Payable report <accounting/vendor_bills/age-payable-report> provides an overview of all outstanding bills"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Aged Payable report",
+          "evidence": "The Aged Payable report <accounting/vendor_bills/age-payable-report> provides an overview of all outstanding bills"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Vendor bills",
+          "evidence": "Vendor bills can be registered... in Odoo."
+        },
+        {
+          "source": "Registering a vendor bill",
+          "relation": "SEE_ALSO",
+          "target": "Vendor bills",
+          "evidence": "- Tutorial `Registering a vendor bill <https://www.odoo.com/slides/slide/register-a-vendor-bill-6582>`_"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manually",
+    "heading": "Manually",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Module",
+          "mention": "Vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills",
+          "type": "Sub-module",
+          "mention": "Bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchases journal",
+          "type": "DataObject",
+          "mention": "Purchases journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Vendors",
+          "evidence": "Accounting --> Vendors"
+        },
+        {
+          "source": "Vendors",
+          "relation": "CONTAINS",
+          "target": "Bills",
+          "evidence": "Vendors --> Bills"
+        },
+        {
+          "source": "Bills",
+          "relation": "HAS_FEATURE",
+          "target": "New",
+          "evidence": "Bills and click New"
+        },
+        {
+          "source": "Accounting dashboard",
+          "relation": "SEE_ALSO",
+          "target": "Accounting",
+          "evidence": "Accounting dashboard:"
+        },
+        {
+          "source": "Purchases journal",
+          "relation": "HAS_FEATURE",
+          "target": "New",
+          "evidence": "click New on the Purchases journal"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "automatically",
+    "heading": "Automatically",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bills",
+          "type": "DataObject",
+          "mention": "Vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase journal",
+          "type": "DataObject",
+          "mention": "purchase journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email alias",
+          "type": "Setting",
+          "mention": "email alias",
+          "confidence": "medium"
+        },
+        {
+          "name": "PDF document upload",
+          "type": "Action",
+          "mention": "uploading a PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "Digitization",
+          "type": "Feature",
+          "mention": "digitized",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic bill completion",
+          "type": "Feature",
+          "mention": "automatic completion",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase order matching",
+          "type": "Workflow",
+          "mention": "matched with purchase orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "OCR detection",
+          "type": "Feature",
+          "mention": "OCR-detected",
+          "confidence": "medium"
+        },
+        {
+          "name": "In-App Purchase credits",
+          "type": "Integration",
+          "mention": "In-App Purchase credits",
+          "confidence": "high"
+        },
+        {
+          "name": "Auto-post bills field",
+          "type": "Setting",
+          "mention": "Auto-post bills field",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "vendors, vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting module",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors sub-module",
+          "type": "Sub-module",
+          "mention": "Vendors",
+          "confidence": "medium"
+        },
+        {
+          "name": "General section",
+          "type": "Sub-module",
+          "mention": "General section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor bills matching with purchase orders",
+          "type": "Feature",
+          "mention": "Vendor bills matching with purchase orders",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Automatic bill completion",
+          "evidence": "automatically created"
+        },
+        {
+          "source": "Email alias",
+          "relation": "CONFIGURED_BY",
+          "target": "Purchase journal",
+          "evidence": "email alias associated with the purchase journal"
+        },
+        {
+          "source": "Vendor bills",
+          "relation": "PERFORMED_BY",
+          "target": "PDF document upload",
+          "evidence": "by uploading a PDF"
+        },
+        {
+          "source": "Vendor bills",
+          "relation": "PERFORMED_BY",
+          "target": "Email alias",
+          "evidence": "by sending an email to an email alias"
+        },
+        {
+          "source": "Digitization",
+          "relation": "ENABLES",
+          "target": "Automatic bill completion",
+          "evidence": "digitized for automatic completion"
+        },
+        {
+          "source": "Vendor bills",
+          "relation": "BELONGS_TO",
+          "target": "Accounting module",
+          "evidence": "Accounting --> Vendors --> Vendors"
+        },
+        {
+          "source": "Digitization",
+          "relation": "REQUIRES",
+          "target": "In-App Purchase credits",
+          "evidence": "require In-App Purchase credits"
+        },
+        {
+          "source": "Auto-post bills field",
+          "relation": "CONFIGURED_BY",
+          "target": "Vendor",
+          "evidence": "select the relevant vendor. In the Accounting tab, update the Auto-post bills field"
+        },
+        {
+          "source": "Auto-post bills field",
+          "relation": "IS_PART_OF",
+          "target": "General section",
+          "evidence": "under the General section, update the Auto-post bills field"
+        },
+        {
+          "source": "General section",
+          "relation": "IS_PART_OF",
+          "target": "Accounting module",
+          "evidence": "Accounting --> Vendors --> Vendors. In the Accounting tab"
+        },
+        {
+          "source": "Vendors sub-module",
+          "relation": "IS_PART_OF",
+          "target": "Accounting module",
+          "evidence": "Accounting --> Vendors"
+        },
+        {
+          "source": "Purchase order matching",
+          "relation": "SEE_ALSO",
+          "target": "Vendor bills matching with purchase orders",
+          "evidence": "seealso: Vendor bills matching with purchase orders"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bill-completion",
+    "heading": "Bill completion",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill",
+          "type": "DataObject",
+          "mention": "Bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill completion",
+          "type": "Workflow",
+          "mention": "Bill completion",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill Reference",
+          "type": "Field",
+          "mention": "Bill Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Auto-Complete",
+          "type": "Feature",
+          "mention": "Auto-Complete",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill Date",
+          "type": "Field",
+          "mention": "Bill Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Date",
+          "type": "Field",
+          "mention": "Accounting Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Reference",
+          "type": "Field",
+          "mention": "Payment Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Memo",
+          "type": "Field",
+          "mention": "Memo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipient Bank",
+          "type": "Field",
+          "mention": "Recipient Bank",
+          "confidence": "high"
+        },
+        {
+          "name": "Due Date",
+          "type": "Field",
+          "mention": "Due Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Terms",
+          "type": "Field",
+          "mention": "Payment Terms",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Lines tab",
+          "type": "Module",
+          "mention": "Invoice Lines tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Catalog",
+          "type": "Feature",
+          "mention": "Catalog",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill line",
+          "type": "Field",
+          "mention": "Bill line",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Field",
+          "mention": "Taxes",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bill",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Bill completion",
+          "relation": "IS_PART_OF",
+          "target": "Bill",
+          "evidence": "Title: Bill completion"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Vendor",
+          "evidence": "Vendor: Odoo automatically fills in some information"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Bill Reference",
+          "evidence": "Bill Reference: Add the sales order reference"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Auto-Complete",
+          "evidence": "Auto-Complete: Select a past bill/purchase order"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Bill Date",
+          "evidence": "Bill Date: Select the document's issuance date"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Accounting Date",
+          "evidence": "Accounting Date: Update the document's accounting registration date"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Payment Reference",
+          "evidence": "Payment Reference: The Memo field automatically includes"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Memo",
+          "evidence": "Payment Reference: The Memo field automatically includes"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Recipient Bank",
+          "evidence": "Recipient Bank: Indicates the account number"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Due Date",
+          "evidence": "Due Date or Payment Terms must be specified"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Payment Terms",
+          "evidence": "Due Date or Payment Terms must be specified"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Journal",
+          "evidence": "Journal: Select which journal should record the bill"
+        },
+        {
+          "source": "Invoice Lines tab",
+          "relation": "IS_PART_OF",
+          "target": "Bill",
+          "evidence": "In the Invoice Lines tab:"
+        },
+        {
+          "source": "Invoice Lines tab",
+          "relation": "HAS_FEATURE",
+          "target": "Catalog",
+          "evidence": "To access the product catalog, click Catalog"
+        },
+        {
+          "source": "Catalog",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "the product catalog"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "Update the Quantity, Price, and Taxes fields"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Price",
+          "evidence": "Update the Quantity, Price, and Taxes fields"
+        },
+        {
+          "source": "Bill",
+          "relation": "CONTAINS",
+          "target": "Taxes",
+          "evidence": "Update the Quantity, Price, and Taxes fields"
+        },
+        {
+          "source": "Auto-Complete",
+          "relation": "REQUIRES",
+          "target": "Vendor",
+          "evidence": "The Vendor field should be completed before completing this field."
+        },
+        {
+          "source": "Bill Reference",
+          "relation": "GENERATES",
+          "target": "Bill",
+          "evidence": "This field is used to match the products when they are received."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bill-confirmation",
+    "heading": "Bill confirmation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill confirmation",
+          "type": "Action",
+          "mention": "Click Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entry",
+          "type": "DataObject",
+          "mention": "journal entry",
+          "confidence": "high"
+        },
+        {
+          "name": "unique number",
+          "type": "Field",
+          "mention": "unique number",
+          "confidence": "medium"
+        },
+        {
+          "name": "sequence vendor_bills/sequence",
+          "type": "DataObject",
+          "mention": "defined sequence <vendor_bills/sequence>",
+          "confidence": "low"
+        },
+        {
+          "name": "Posted",
+          "type": "Field",
+          "mention": "status changes to Posted",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reset to draft",
+          "type": "Action",
+          "mention": "Click Reset to draft",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bill confirmation",
+          "relation": "PERFORMED_BY",
+          "target": "vendor",
+          "evidence": "Click Confirm when the document is completed."
+        },
+        {
+          "source": "Bill confirmation",
+          "relation": "PRODUCES",
+          "target": "journal entry",
+          "evidence": "a journal entry is generated based on the vendor bill information."
+        },
+        {
+          "source": "Bill confirmation",
+          "relation": "PRODUCES",
+          "target": "unique number",
+          "evidence": "Odoo assigns each vendor bill a unique number from a defined sequence <vendor_bills/sequence>."
+        },
+        {
+          "source": "Bill confirmation",
+          "relation": "GENERATES",
+          "target": "journal entry",
+          "evidence": "a journal entry is generated based on the vendor bill information."
+        },
+        {
+          "source": "vendor bill",
+          "relation": "BELONGS_TO",
+          "target": "vendor",
+          "evidence": "vendor bill"
+        },
+        {
+          "source": "Reset to draft",
+          "relation": "RELATED_TO",
+          "target": "vendor bill",
+          "evidence": "Click Reset to draft if changes are required."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "payment-and-reconciliation",
+    "heading": "Payment and reconciliation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay",
+          "type": "Action",
+          "mention": "click on Pay",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pay window",
+          "type": "Module",
+          "mention": "the Pay window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "select the Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Method",
+          "type": "Field",
+          "mention": "the Payment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount",
+          "type": "Field",
+          "mention": "the Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "the Currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount paid",
+          "type": "Field",
+          "mention": "Amount paid",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "remaining amount on the vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "partial payment",
+          "type": "Concept",
+          "mention": "partial",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Difference",
+          "type": "Field",
+          "mention": "Payment Difference field",
+          "confidence": "high"
+        },
+        {
+          "name": "Memo field",
+          "type": "Field",
+          "mention": "Memo field",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Reference",
+          "type": "Field",
+          "mention": "Payment Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Create payment",
+          "type": "Action",
+          "mention": "click Create payment",
+          "confidence": "high"
+        },
+        {
+          "name": "In Payment/Partial banner",
+          "type": "Feature",
+          "mention": "An In Payment/Partial banner appears",
+          "confidence": "medium"
+        },
+        {
+          "name": "Paid",
+          "type": "Concept",
+          "mention": "status updates to Paid",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pay",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "To register a payment, click on Pay. Product: Odoo"
+        },
+        {
+          "source": "Pay window",
+          "relation": "CONTAINS",
+          "target": "Journal",
+          "evidence": "In the Pay window, select the Journal"
+        },
+        {
+          "source": "Pay window",
+          "relation": "CONTAINS",
+          "target": "Payment Method",
+          "evidence": "In the Pay window, select... the Payment Method"
+        },
+        {
+          "source": "Pay window",
+          "relation": "CONTAINS",
+          "target": "Amount",
+          "evidence": "In the Pay window, select... the Amount"
+        },
+        {
+          "source": "Pay window",
+          "relation": "CONTAINS",
+          "target": "Currency",
+          "evidence": "In the Pay window, select... the Currency"
+        },
+        {
+          "source": "Amount paid",
+          "relation": "RELATED_TO",
+          "target": "vendor bill",
+          "evidence": "When the Amount paid is less than the total remaining amount on the vendor bill"
+        },
+        {
+          "source": "partial payment",
+          "relation": "ENABLES",
+          "target": "Payment Difference",
+          "evidence": "the payment is partial... and the Payment Difference field displays the outstanding balance"
+        },
+        {
+          "source": "Memo field",
+          "relation": "RELATED_TO",
+          "target": "Payment Reference",
+          "evidence": "Memo field is filled automatically if the Payment Reference has been set correctly"
+        },
+        {
+          "source": "Create payment",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Then click Create payment"
+        },
+        {
+          "source": "Create payment",
+          "relation": "PRODUCES",
+          "target": "In Payment/Partial banner",
+          "evidence": "click Create payment. An In Payment/Partial banner appears"
+        },
+        {
+          "source": "vendor bill",
+          "relation": "HAS_FEATURE",
+          "target": "In Payment/Partial banner",
+          "evidence": "An In Payment/Partial banner appears on the bill"
+        },
+        {
+          "source": "Paid",
+          "type": "EQUIVALENT_TO",
+          "target": "vendor bill",
+          "evidence": "its status updates to Paid"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "aged-payable-report",
+    "heading": "Aged payable report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Aged payable",
+          "type": "Report",
+          "mention": "Aged payable",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bills",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "medium"
+        },
+        {
+          "name": "PDF",
+          "type": "Action",
+          "mention": "Click PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "XLSX",
+          "type": "Action",
+          "mention": "Click XLSX",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Aged payable",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "go to Accounting --> Reporting --> Aged payable"
+        },
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Reporting"
+        },
+        {
+          "source": "Accounting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Aged payable",
+          "relation": "GENERATES",
+          "target": "PDF",
+          "evidence": "Click PDF to generate a PDF"
+        },
+        {
+          "source": "Aged payable",
+          "relation": "GENERATES",
+          "target": "XLSX",
+          "evidence": "Click XLSX to generate a XLSX file"
+        },
+        {
+          "source": "Aged payable",
+          "relation": "HAS_REPORT",
+          "target": "vendor bills",
+          "evidence": "view the details of all their outstanding bills"
+        }
+      ]
+    }
+  }
+]

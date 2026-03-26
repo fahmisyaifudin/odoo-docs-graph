@@ -1,0 +1,466 @@
+[
+  {
+    "section_id": "putaway-rules",
+    "heading": "Putaway rules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Putaway",
+          "type": "Concept",
+          "mention": "Putaway",
+          "confidence": "medium"
+        },
+        {
+          "name": "Putaway rules",
+          "type": "Module",
+          "mention": "putaway rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse locations",
+          "type": "DataObject",
+          "mention": "warehouse locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shipment arrival",
+          "type": "Action",
+          "mention": "shipment arrival",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Workflow",
+          "mention": "operations",
+          "confidence": "low"
+        },
+        {
+          "name": "Delivery orders",
+          "type": "DataObject",
+          "mention": "delivery orders",
+          "confidence": "low"
+        },
+        {
+          "name": "Warehouse manager",
+          "type": "Actor",
+          "mention": "warehouse manager",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Putaway rules",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Putaway rules"
+        },
+        {
+          "source": "Putaway rules",
+          "relation": "CONTAINS",
+          "target": "Warehouse locations",
+          "evidence": "which dictate how products move through specified warehouse locations"
+        },
+        {
+          "source": "Shipment arrival",
+          "relation": "TRIGGERED_BY",
+          "target": "Putaway rules",
+          "evidence": "Upon shipment arrival, operations are generated based on putaway rules"
+        },
+        {
+          "source": "Shipment arrival",
+          "relation": "PRODUCES",
+          "target": "Operations",
+          "evidence": "Upon shipment arrival, operations are generated"
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Putaway",
+          "evidence": "operations are generated based on putaway rules to efficiently move products"
+        },
+        {
+          "source": "Putaway rules",
+          "relation": "SUPPORTS",
+          "target": "Delivery orders",
+          "evidence": "ensure easy retrieval for future delivery orders"
+        },
+        {
+          "source": "Putaway rules",
+          "relation": "CONFIGURED_BY",
+          "target": "Warehouse manager",
+          "evidence": "by directing them to different locations determined by the warehouse manager"
+        },
+        {
+          "source": "Warehouse manager",
+          "relation": "PERFORMED_BY",
+          "target": "Putaway rules",
+          "evidence": "determined by the warehouse manager"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse section",
+          "type": "Module",
+          "mention": "Warehouse section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "navigate to Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Multi-Step Routes",
+          "evidence": "activate the Multi-Step Routes feature under the Warehouse section"
+        },
+        {
+          "source": "Multi-Step Routes",
+          "relation": "ENABLES",
+          "target": "Storage Locations",
+          "evidence": "the Storage Locations feature is also automatically activated"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Warehouse section",
+          "evidence": "feature under the Warehouse section"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "define-putaway-rule",
+    "heading": "Define putaway rule",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Putaway Rules",
+          "type": "Sub-module",
+          "mention": "Putaway Rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Define putaway rule",
+          "type": "Action",
+          "mention": "Define putaway rule",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Category",
+          "type": "DataObject",
+          "mention": "Product Category",
+          "confidence": "high"
+        },
+        {
+          "name": "When product arrives in location",
+          "type": "Trigger",
+          "mention": "When product arrives in location",
+          "confidence": "high"
+        },
+        {
+          "name": "Store to location",
+          "type": "DataObject",
+          "mention": "Store to location",
+          "confidence": "high"
+        },
+        {
+          "name": "Sublocation",
+          "type": "Field",
+          "mention": "Sublocation field",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Category",
+          "type": "DataObject",
+          "mention": "storage category",
+          "confidence": "high"
+        },
+        {
+          "name": "Having Category",
+          "type": "Field",
+          "mention": "Having Category field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packages",
+          "type": "Setting",
+          "mention": "*Packages* setting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Last Used",
+          "type": "Concept",
+          "mention": "Last Used",
+          "confidence": "medium"
+        },
+        {
+          "name": "Closest Location",
+          "type": "Concept",
+          "mention": "Closest Location",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Putaway Rules",
+          "evidence": "Configuration --> Putaway Rules"
+        },
+        {
+          "source": "Define putaway rule",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Use the New button to configure"
+        },
+        {
+          "source": "Putaway Rules",
+          "relation": "CONFIGURED_BY",
+          "target": "Product",
+          "evidence": "configure a new putaway rule on a Product"
+        },
+        {
+          "source": "Putaway Rules",
+          "relation": "CONFIGURED_BY",
+          "target": "Product Category",
+          "evidence": "configure a new putaway rule on a Product or Product Category"
+        },
+        {
+          "source": "Define putaway rule",
+          "relation": "TRIGGERED_BY",
+          "target": "When product arrives in location",
+          "evidence": "When product arrives in location is where the putaway rule is triggered"
+        },
+        {
+          "source": "Define putaway rule",
+          "relation": "PRODUCES",
+          "target": "Store to location",
+          "evidence": "move the product to the Store to location"
+        },
+        {
+          "source": "Packages",
+          "relation": "ENABLES",
+          "target": "Product Category",
+          "evidence": "*Packages* setting must be enabled for that"
+        },
+        {
+          "source": "Sublocation",
+          "relation": "CONFIGURED_BY",
+          "target": "Last Used",
+          "evidence": "specify Last Used Sublocation"
+        },
+        {
+          "source": "Sublocation",
+          "relation": "CONFIGURED_BY",
+          "target": "Closest Location",
+          "evidence": "specify a storage category: Closest Location"
+        },
+        {
+          "source": "Closest Location",
+          "relation": "REQUIRES",
+          "target": "Storage Category",
+          "evidence": "A storage category is mandatory in the Having Category field"
+        },
+        {
+          "source": "Storage Category",
+          "relation": "LIMITS",
+          "target": "Store to location",
+          "evidence": "limit capacities of a storage location"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "putaway-rule-priority",
+    "heading": "Putaway rule priority",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Putaway rule priority",
+          "type": "Concept",
+          "mention": "Putaway rule priority",
+          "confidence": "high"
+        },
+        {
+          "name": "Package type",
+          "type": "Concept",
+          "mention": "Package type",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Concept",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product category",
+          "type": "Concept",
+          "mention": "Product category",
+          "confidence": "high"
+        },
+        {
+          "name": "Lemonade can",
+          "type": "Product",
+          "mention": "Lemonade can",
+          "confidence": "high"
+        },
+        {
+          "name": "Pallet",
+          "type": "Concept",
+          "mention": "Pallet",
+          "confidence": "high"
+        },
+        {
+          "name": "Box",
+          "type": "Concept",
+          "mention": "Box",
+          "confidence": "high"
+        },
+        {
+          "name": "All/drinks",
+          "type": "Concept",
+          "mention": "All/drinks",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Putaway rule priority",
+          "evidence": "Product: Odoo, Title: Putaway rule priority"
+        },
+        {
+          "source": "Putaway rule priority",
+          "relation": "USES_METHOD",
+          "target": "Package type",
+          "evidence": "Odoo selects a putaway rule based on the following priority list"
+        },
+        {
+          "source": "Putaway rule priority",
+          "relation": "USES_METHOD",
+          "target": "Product",
+          "evidence": "Package type and product"
+        },
+        {
+          "source": "Putaway rule priority",
+          "relation": "USES_METHOD",
+          "target": "Product category",
+          "evidence": "Package type and product category"
+        },
+        {
+          "source": "Lemonade can",
+          "relation": "BELONGS_TO",
+          "target": "All/drinks",
+          "evidence": "Lemonade can's Product Category is All/drinks"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,733 @@
+[
+  {
+    "section_id": "allocation-reports",
+    "heading": "Allocation reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation reports",
+          "type": "Report",
+          "mention": "allocation reports",
+          "confidence": "high"
+        },
+        {
+          "name": "sales orders",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing orders",
+          "type": "DataObject",
+          "mention": "manufacturing orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing orders",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Allocation reports",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing",
+          "evidence": "In Odoo *Manufacturing*, allocation reports are used"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "In Odoo *Manufacturing*, allocation reports are used"
+        },
+        {
+          "source": "Allocation reports",
+          "relation": "APPLIES_TO",
+          "target": "sales orders",
+          "evidence": "allocation reports are used on to assign products to specific sales orders"
+        },
+        {
+          "source": "Allocation reports",
+          "relation": "APPLIES_TO",
+          "target": "manufacturing orders",
+          "evidence": "or components to specific manufacturing orders"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allocation Report for Manufacturing Orders",
+          "type": "Feature",
+          "mention": "Allocation Report for Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation reports",
+          "type": "Report",
+          "mention": "allocation reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Name",
+          "type": "Field",
+          "mention": "Product Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Can Be Sold",
+          "type": "Field",
+          "mention": "Can Be Sold checkbox",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Allocation Report for Manufacturing Orders",
+          "relation": "ENABLES",
+          "target": "Allocation reports",
+          "evidence": "To use allocation reports, the *Allocation Report for Manufacturing Orders* feature **must** be enabled."
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Manufacturing app --> Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Allocation Report for Manufacturing Orders",
+          "evidence": "Settings, and tick the checkbox next to Allocation Report for Manufacturing Orders"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "navigate to Inventory --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "product",
+          "evidence": "Products --> Products, and select a product"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "Product Name",
+          "evidence": "Under the Product Name field on the product form"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "Can Be Sold",
+          "evidence": "make sure that the Can Be Sold checkbox is ticked"
+        },
+        {
+          "source": "Can Be Sold",
+          "relation": "REQUIRES",
+          "target": "Allocation reports",
+          "evidence": "For products that are sold, it is also necessary to configure them so they can be included in."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "allocate-products",
+    "heading": "Allocate products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "Sub-module",
+          "mention": "Manufacturing Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allocate products",
+          "type": "Action",
+          "mention": "allocate products",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allocation smart button",
+          "type": "Feature",
+          "mention": "Allocation smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Produce All",
+          "type": "Action",
+          "mention": "Produce All",
+          "confidence": "medium"
+        },
+        {
+          "name": "MRP Reception Report",
+          "type": "Report",
+          "mention": "MRP Reception Report",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing Orders",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing app --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Allocation smart button",
+          "evidence": "then an fa-list Allocation smart button appears"
+        },
+        {
+          "source": "Allocation smart button",
+          "relation": "HAS_REPORT",
+          "target": "MRP Reception Report",
+          "evidence": "Click the fa-list Allocation smart button to open the MRP Reception Report"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONFIGURED_BY",
+          "target": "Product",
+          "evidence": "select a product in the Product field"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONFIGURED_BY",
+          "target": "Quantity",
+          "evidence": "specify the quantity to be produced in the Quantity field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "allocate-to-delivery-order",
+    "heading": "Allocate to delivery order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "rocking chair",
+          "type": "Product",
+          "mention": "rocking chair",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allocation smart button",
+          "type": "Feature",
+          "mention": "Allocation smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "allocation report",
+          "type": "Report",
+          "mention": "allocation report",
+          "confidence": "high"
+        },
+        {
+          "name": "open delivery orders",
+          "type": "DataObject",
+          "mention": "open delivery orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign All button",
+          "type": "Feature",
+          "mention": "Assign All button",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign button",
+          "type": "Feature",
+          "mention": "Assign",
+          "confidence": "medium"
+        },
+        {
+          "name": "quantity",
+          "type": "Concept",
+          "mention": "quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "Concept",
+          "mention": "product",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "manufacturing order",
+          "relation": "HAS_FEATURE",
+          "target": "Allocation smart button",
+          "evidence": "Clicking the Allocation smart button on the manufacturing order opens an allocation report"
+        },
+        {
+          "source": "Allocation smart button",
+          "relation": "ENABLES",
+          "target": "allocation report",
+          "evidence": "Clicking the Allocation smart button opens an allocation report"
+        },
+        {
+          "source": "allocation report",
+          "relation": "GENERATES",
+          "target": "open delivery orders",
+          "evidence": "allocation report that lists open delivery orders"
+        },
+        {
+          "source": "Assign All button",
+          "relation": "ENABLES",
+          "target": "quantity",
+          "evidence": "Clicking Assign All assigns five units of the product to fulfill both quantities"
+        },
+        {
+          "source": "Assign button",
+          "relation": "ENABLES",
+          "target": "quantity",
+          "evidence": "clicking Assign next to the quantity of one unit assigns a product to that quantity"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "allocate-to-mo",
+    "heading": "Allocate to MO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocate to MO",
+          "type": "Module",
+          "mention": "Title: Allocate to MO",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allocation smart button",
+          "type": "Feature",
+          "mention": "Clicking the Allocation smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Assign All button",
+          "type": "Action",
+          "mention": "Click the Assign All button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Assign button",
+          "type": "Action",
+          "mention": "Click the Assign button",
+          "confidence": "medium"
+        },
+        {
+          "name": "allocation report",
+          "type": "Report",
+          "mention": "allocation report",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "MO",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "MO",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "MO",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "MO",
+          "confidence": "high"
+        },
+        {
+          "name": "component",
+          "type": "DataObject",
+          "mention": "component",
+          "confidence": "medium"
+        },
+        {
+          "name": "wood",
+          "type": "DataObject",
+          "mention": "wood",
+          "confidence": "medium"
+        },
+        {
+          "name": "rocking chair",
+          "type": "DataObject",
+          "mention": "rocking chair",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "MO",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "MO",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "MO",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Allocation smart button",
+          "relation": "HAS_REPORT",
+          "target": "allocation report",
+          "evidence": "Clicking the Allocation smart button on the MO opens an allocation report"
+        },
+        {
+          "source": "Allocate to MO",
+          "relation": "HAS_FEATURE",
+          "target": "Allocation smart button",
+          "evidence": "Title and description context"
+        },
+        {
+          "source": "Assign All button",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click the Assign All... button"
+        },
+        {
+          "source": "Assign button",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click the Assign... button"
+        },
+        {
+          "source": "allocation report",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing Order",
+          "evidence": "on the MO opens an allocation report"
+        },
+        {
+          "source": "allocation report",
+          "relation": "CONTAINS",
+          "target": "Manufacturing Order",
+          "evidence": "lists open rocking chair MOs"
+        },
+        {
+          "source": "component",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing Order",
+          "evidence": "If the MO contains a component"
+        },
+        {
+          "source": "Manufacturing Order",
+          "relation": "PRODUCES",
+          "target": "wood",
+          "evidence": "MO is created to produce three units of wood"
+        },
+        {
+          "source": "wood",
+          "relation": "IS_PART_OF",
+          "target": "rocking chair",
+          "evidence": "used as a component for the rocking chair product"
+        },
+        {
+          "source": "component",
+          "relation": "REQUIRES",
+          "target": "Manufacturing Order",
+          "evidence": "An MO... for which quantities of the component have yet to be reserved"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "unassign-products",
+    "heading": "Unassign products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign button",
+          "type": "Feature",
+          "mention": "the Assign button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Unassign button",
+          "type": "Feature",
+          "mention": "the Unassign button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Click Unassign",
+          "type": "Action",
+          "mention": "Click Unassign",
+          "confidence": "high"
+        },
+        {
+          "name": "Unassign",
+          "type": "Action",
+          "mention": "Unassign",
+          "confidence": "high"
+        },
+        {
+          "name": "Unassign button",
+          "type": "Feature",
+          "mention": "an Unassign button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery order",
+          "type": "DataObject",
+          "mention": "a delivery order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Assign button",
+          "relation": "EQUIVALENT_TO",
+          "target": "Unassign button",
+          "evidence": "After assigning products... the Assign button turns into an Unassign button."
+        },
+        {
+          "source": "Click Unassign",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click Unassign to unreserve..."
+        },
+        {
+          "source": "Unassign",
+          "relation": "ENABLES",
+          "target": "Feature",
+          "evidence": "Unassign to unreserve the assigned products..."
+        },
+        {
+          "source": "Delivery order",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "assigning products to a quantity within a delivery order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "print-labels",
+    "heading": "Print labels",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign All",
+          "type": "Action",
+          "mention": "Assign All",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign",
+          "type": "Action",
+          "mention": "Assign",
+          "confidence": "high"
+        },
+        {
+          "name": "Print Labels",
+          "type": "Action",
+          "mention": "Print Labels",
+          "confidence": "high"
+        },
+        {
+          "name": "Print Label",
+          "type": "Action",
+          "mention": "Print Label",
+          "confidence": "high"
+        },
+        {
+          "name": "PDF document",
+          "type": "DataObject",
+          "mention": "PDF document",
+          "confidence": "medium"
+        },
+        {
+          "name": "label",
+          "type": "DataObject",
+          "mention": "label",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Assign All",
+          "relation": "ENABLES",
+          "target": "Print Labels",
+          "evidence": "After clicking Assign All or Assign, the Print Labels or Print Label button... becomes selectable."
+        },
+        {
+          "source": "Assign",
+          "relation": "ENABLES",
+          "target": "Print Labels",
+          "evidence": "After clicking Assign All or Assign, the Print Labels or Print Label button... becomes selectable."
+        },
+        {
+          "source": "Print Labels",
+          "relation": "PRODUCES",
+          "target": "PDF document",
+          "evidence": "Selecting either button generates and downloads a PDF document..."
+        },
+        {
+          "source": "PDF document",
+          "relation": "CONTAINS",
+          "target": "label",
+          "evidence": "...a PDF document with one label for each product..."
+        }
+      ]
+    }
+  }
+]

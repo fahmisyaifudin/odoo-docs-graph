@@ -1,0 +1,597 @@
+[
+  {
+    "section_id": "cluster-picking",
+    "heading": "Cluster picking",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Cluster picking",
+          "type": "Module",
+          "mention": "Cluster picking",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch picking",
+          "type": "Module",
+          "mention": "batch picking",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Cluster picking",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Cluster picking",
+          "relation": "RELATED_TO",
+          "target": "Batch picking",
+          "evidence": "combines the efficiency of batch picking"
+        },
+        {
+          "source": "Cluster picking",
+          "relation": "ENABLES",
+          "target": "Sales order",
+          "evidence": "items directly into designated bins or containers for each sales order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packages",
+          "type": "Feature",
+          "mention": "Packages",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch, Wave & Cluster Transfers",
+          "type": "Feature",
+          "mention": "Batch, Wave & Cluster Transfers",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Sub-module",
+          "mention": "Warehouse heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "cluster picking",
+          "type": "Workflow",
+          "mention": "cluster picking",
+          "confidence": "high"
+        },
+        {
+          "name": "batch picking",
+          "type": "Workflow",
+          "mention": "batch picking",
+          "confidence": "high"
+        },
+        {
+          "name": "pick operation",
+          "type": "Workflow",
+          "mention": "pick operation",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Under the Operations heading"
+        },
+        {
+          "source": "Operations",
+          "relation": "HAS_FEATURE",
+          "target": "Packages",
+          "evidence": "activate the Packages"
+        },
+        {
+          "source": "Operations",
+          "relation": "HAS_FEATURE",
+          "target": "Batch, Wave & Cluster Transfers",
+          "evidence": "activate the Batch, Wave & Cluster Transfers options"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Warehouse",
+          "evidence": "Warehouse heading"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "HAS_FEATURE",
+          "target": "Storage Locations",
+          "evidence": "Storage Locations and Multi-Step Routes options"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "HAS_FEATURE",
+          "target": "Multi-Step Routes",
+          "evidence": "Storage Locations and Multi-Step Routes options"
+        },
+        {
+          "source": "cluster picking",
+          "relation": "ENABLES",
+          "target": "batch picking",
+          "evidence": "Since batch picking is used to optimize the pick operation"
+        },
+        {
+          "source": "cluster picking",
+          "relation": "ENABLES",
+          "target": "pick operation",
+          "evidence": "Since batch picking is used to optimize the pick operation"
+        },
+        {
+          "source": "Storage Locations",
+          "relation": "ENABLES",
+          "target": "pick operation",
+          "evidence": "allow products to be stored in specific locations they can be picked from"
+        },
+        {
+          "source": "Multi-Step Routes",
+          "relation": "ENABLES",
+          "target": "pick operation",
+          "evidence": "enable the picking operation itself"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Save",
+          "evidence": "When finished, click Save."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "packages-setup",
+    "heading": "Packages setup",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packages",
+          "type": "Sub-module",
+          "mention": "Packages",
+          "confidence": "high"
+        },
+        {
+          "name": "Package Reference",
+          "type": "Field",
+          "mention": "Package Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "PACK number",
+          "type": "DataObject",
+          "mention": "`PACK` number",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pack Date",
+          "type": "Field",
+          "mention": "Pack Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Package Use",
+          "type": "Field",
+          "mention": "Package Use",
+          "confidence": "high"
+        },
+        {
+          "name": "Reusable Box",
+          "type": "Setting",
+          "mention": "Reusable Box",
+          "confidence": "medium"
+        },
+        {
+          "name": "cluster picking",
+          "type": "Workflow",
+          "mention": "cluster picking",
+          "confidence": "medium"
+        },
+        {
+          "name": "CLUSTER-PACK-3",
+          "type": "DataObject",
+          "mention": "`CLUSTER-PACK-3`",
+          "confidence": "high"
+        },
+        {
+          "name": "Package",
+          "type": "DataObject",
+          "mention": "Packages, package",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Packages",
+          "evidence": "Products --> Packages"
+        },
+        {
+          "source": "Package",
+          "relation": "CONTAINS",
+          "target": "Package Reference",
+          "evidence": "the new package form, the Package Reference"
+        },
+        {
+          "source": "Package",
+          "relation": "CONTAINS",
+          "target": "Pack Date",
+          "evidence": "On the new package form, ... Pack Date"
+        },
+        {
+          "source": "Package",
+          "relation": "CONTAINS",
+          "target": "Package Use",
+          "evidence": "On the new package form, ... Set the Package Use field"
+        },
+        {
+          "source": "Package Use",
+          "relation": "CONFIGURED_BY",
+          "target": "Reusable Box",
+          "evidence": "Set the Package Use field to Reusable Box."
+        },
+        {
+          "source": "cluster picking",
+          "relation": "USES_METHOD",
+          "target": "Package",
+          "evidence": "A package intended for cluster picking"
+        },
+        {
+          "source": "CLUSTER-PACK-3",
+          "relation": "BELONGS_TO",
+          "target": "cluster picking",
+          "evidence": "A package intended for cluster picking is named `CLUSTER-PACK-3`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-cluster-batch",
+    "heading": "Create cluster batch",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Create cluster batch",
+          "type": "Feature",
+          "mention": "Title: Create cluster batch",
+          "confidence": "high"
+        },
+        {
+          "name": "cluster batch",
+          "type": "DataObject",
+          "mention": "cluster batch",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Orders",
+          "type": "DataObject",
+          "mention": "Delivery Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pick",
+          "type": "DataObject",
+          "mention": "Pick",
+          "confidence": "medium"
+        },
+        {
+          "name": "outgoing shipments",
+          "type": "Concept",
+          "mention": "outgoing shipments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add to batch",
+          "type": "Action",
+          "mention": "Add to batch",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to batch pop-up window",
+          "type": "Feature",
+          "mention": "Add to batch pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Responsible",
+          "type": "Actor",
+          "mention": "Responsible",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add to field",
+          "type": "Field",
+          "mention": "Add to field",
+          "confidence": "high"
+        },
+        {
+          "title": "Description field",
+          "type": "Field",
+          "mention": "Description field",
+          "confidence": "high"
+        },
+        {
+          "name": "Draft checkbox",
+          "type": "Setting",
+          "mention": "Draft checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Create cluster batch\nTo create a cluster, navigate to Inventory app"
+        },
+        {
+          "source": "Create cluster batch",
+          "relation": "HAS_FEATURE",
+          "target": "Add to batch pop-up window",
+          "evidence": "Doing so opens an Add to batch pop-up window"
+        },
+        {
+          "source": "Add to batch",
+          "relation": "TRIGGERED_BY",
+          "target": "Create cluster batch",
+          "evidence": "To create a cluster, navigate to Inventory app... With the desired pickings selected, click the fa-cog Actions button, and select the Add to batch option"
+        },
+        {
+          "source": "Add to batch pop-up window",
+          "relation": "CONTAINS",
+          "target": "Add to field",
+          "evidence": "Choose from the two options in the Add to field"
+        },
+        {
+          "source": "Add to batch pop-up window",
+          "relation": "CONTAINS",
+          "target": "Description field",
+          "evidence": "Then, add a Description for this batch."
+        },
+        {
+          "source": "Add to batch pop-up window",
+          "relation": "CONTAINS",
+          "target": "Draft checkbox",
+          "evidence": "To create draft batch pickings to be confirmed at a later date, select the Draft checkbox."
+        },
+        {
+          "source": "Create cluster batch",
+          "relation": "GENERATES",
+          "target": "cluster batch",
+          "evidence": "Title: Create cluster batch"
+        },
+        {
+          "source": "Create cluster batch",
+          "relation": "HAS_FEATURE",
+          "target": "Add to batch",
+          "evidence": "With the desired pickings selected, click the fa-cog Actions button, and select the Add to batch option"
+        },
+        {
+          "source": "cluster batch",
+          "relation": "CONFIGURED_BY",
+          "target": "Draft checkbox",
+          "evidence": "To create draft batch pickings to be confirmed at a later date, select the Draft checkbox."
+        },
+        {
+          "source": "Add to batch",
+          "relation": "PRODUCES",
+          "target": "cluster batch",
+          "evidence": "To create a cluster... Choose from the two options in the Add to field to either: add to an existing batch transfer, or create a new batch transfer."
+        },
+        {
+          "source": "Create cluster batch",
+          "relation": "PERFORMED_BY",
+          "target": "Responsible",
+          "evidence": "Doing so opens an Add to batch pop-up window, wherein the employee Responsible for the picking can be assigned."
+        },
+        {
+          "source": "Create cluster batch",
+          "relation": "TRIGGERED_BY",
+          "target": "Confirm",
+          "evidence": "Conclude the process by clicking Confirm."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-batches",
+    "heading": "Process batches",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batch Transfers",
+          "type": "Workflow",
+          "mention": "Batch Transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Detailed Operations tab",
+          "type": "Feature",
+          "mention": "Detailed Operations tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Destination Package field",
+          "type": "Field",
+          "mention": "Destination Package field",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "To process batches, navigate to Inventory app"
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "navigate to Inventory app --> Operations"
+        },
+        {
+          "source": "Batch Transfers",
+          "relation": "BELONGS_TO",
+          "target": "Operations",
+          "evidence": "Operations --> Batch Transfers"
+        },
+        {
+          "source": "Detailed Operations tab",
+          "relation": "CONTAINS",
+          "target": "Destination Package field",
+          "evidence": "Record this in Odoo using the Destination Package field in the Detailed Operations tab"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,739 @@
+[
+  {
+    "section_id": "in-app-purchases-(iap)",
+    "heading": "In-app purchases (IAP)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "In-app purchases (IAP)",
+          "type": "Module",
+          "mention": "In-app purchases (IAP)",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS service",
+          "type": "Feature",
+          "mention": "SMS service",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents Digitization service",
+          "type": "Feature",
+          "mention": "Documents Digitization service",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo users",
+          "type": "Actor",
+          "mention": "Odoo users",
+          "confidence": "medium"
+        },
+        {
+          "name": "Enterprise Odoo users",
+          "type": "Actor",
+          "mention": "Enterprise Odoo users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "In-app purchases (IAP)",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: In-app purchases (IAP)"
+        },
+        {
+          "source": "In-app purchases (IAP)",
+          "relation": "CONTAINS",
+          "target": "SMS service",
+          "evidence": "The SMS service sends text messages to contacts directly from the database"
+        },
+        {
+          "source": "In-app purchases (IAP)",
+          "relation": "CONTAINS",
+          "target": "Documents Digitization service",
+          "evidence": "and the Documents Digitization service digitizes scanned or PDF vendor bills, expenses, and resumes"
+        },
+        {
+          "source": "Odoo users",
+          "relation": "PERFORMED_BY",
+          "target": "SMS service",
+          "evidence": "The SMS service sends text messages to contacts directly from the database"
+        },
+        {
+          "source": "Documents Digitization service",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo users",
+          "evidence": "the Documents Digitization service digitizes scanned or PDF vendor bills, expenses, and resumes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "iap-services",
+    "heading": "IAP services",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents Digitization",
+          "type": "Feature",
+          "mention": "Documents Digitization",
+          "confidence": "high"
+        },
+        {
+          "name": "OCR",
+          "type": "Feature",
+          "mention": "OCR",
+          "confidence": "high"
+        },
+        {
+          "name": "AI",
+          "type": "Feature",
+          "mention": "AI",
+          "confidence": "high"
+        },
+        {
+          "name": "Partner Autocomplete",
+          "type": "Feature",
+          "mention": "Partner Autocomplete",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS",
+          "type": "Feature",
+          "mention": "SMS",
+          "confidence": "high"
+        },
+        {
+          "name": "Lead Generation",
+          "type": "Feature",
+          "mention": "Lead Generation",
+          "confidence": "high"
+        },
+        {
+          "name": "Snailmail",
+          "type": "Feature",
+          "mention": "Snailmail",
+          "confidence": "high"
+        },
+        {
+          "name": "Signer identification with itsme®",
+          "type": "Feature",
+          "mention": "Signer identification with itsme®",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Sign",
+          "type": "Module",
+          "mention": "Odoo Sign",
+          "confidence": "high"
+        },
+        {
+          "name": "itsme",
+          "type": "Integration",
+          "mention": "itsme",
+          "confidence": "high"
+        },
+        {
+          "name": "Belgium",
+          "type": "Actor",
+          "mention": "Belgium",
+          "confidence": "high"
+        },
+        {
+          "name": "Netherlands",
+          "type": "Actor",
+          "mention": "Netherlands",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo IAP Catalog",
+          "type": "Integration",
+          "mention": "Odoo IAP Catalog",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Documents Digitization",
+          "relation": "ENABLES",
+          "target": "OCR",
+          "evidence": "digitizes scanned or PDF vendor bills, expenses, and resumes with OCR and AI."
+        },
+        {
+          "source": "Documents Digitization",
+          "relation": "ENABLES",
+          "target": "AI",
+          "evidence": "digitizes scanned or PDF vendor bills, expenses, and resumes with OCR and AI."
+        },
+        {
+          "source": "Partner Autocomplete",
+          "relation": "GENERATES",
+          "target": "contact records",
+          "evidence": "automatically populates contact records with corporate data."
+        },
+        {
+          "source": "SMS",
+          "relation": "ENABLES",
+          "target": "sends SMS text messages",
+          "evidence": "sends SMS text messages to contacts directly from the database."
+        },
+        {
+          "source": "Lead Generation",
+          "relation": "GENERATES",
+          "target": "leads",
+          "evidence": "generates leads based on a set of criteria, and converts web visitors into quality leads and opportunities."
+        },
+        {
+          "source": "Snailmail",
+          "relation": "ENABLES",
+          "target": "sends customer invoices and follow-up reports by post",
+          "evidence": "sends customer invoices and follow-up reports by post, worldwide."
+        },
+        {
+          "source": "Signer identification with itsme®",
+          "relation": "INTEGRATES_WITH",
+          "target": "itsme",
+          "evidence": "Ask document signatories in Odoo Sign to provide their identity using the itsme fa-registered identity platform."
+        },
+        {
+          "source": "Signer identification with itsme®",
+          "relation": "RELATED_TO",
+          "target": "Odoo Sign",
+          "evidence": "Ask document signatories in Odoo Sign to provide their identity using the itsme fa-registered identity platform."
+        },
+        {
+          "source": "itsme",
+          "relation": "APPLIES_TO",
+          "target": "Belgium",
+          "evidence": "which is available in Belgium and the Netherlands."
+        },
+        {
+          "source": "itsme",
+          "relation": "APPLIES_TO",
+          "target": "Netherlands",
+          "evidence": "which is available in Belgium and the Netherlands."
+        },
+        {
+          "source": "Odoo IAP Catalog",
+          "relation": "CONTAINS",
+          "target": "services offered by developers other than Odoo",
+          "evidence": "For more information on every service currently available (offered from developers other than Odoo), visit the Odoo IAP Catalog."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-iap-services",
+    "heading": "Use IAP services",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS",
+          "type": "Module",
+          "mention": "SMS service",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contact's record",
+          "type": "DataObject",
+          "mention": "contact's record",
+          "confidence": "high"
+        },
+        {
+          "name": "Lead mining",
+          "type": "Feature",
+          "mention": "Lead mining",
+          "confidence": "high"
+        },
+        {
+          "name": "Partner Autocomplete",
+          "type": "Feature",
+          "mention": "Partner Autocomplete",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Marketing",
+          "type": "Module",
+          "mention": "SMS Marketing",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SMS",
+          "relation": "SEE_ALSO",
+          "target": "Lead mining",
+          "evidence": "review the documentation below:"
+        },
+        {
+          "source": "SMS",
+          "relation": "SEE_ALSO",
+          "target": "Partner Autocomplete",
+          "evidence": "review the documentation below:"
+        },
+        {
+          "source": "SMS",
+          "relation": "SEE_ALSO",
+          "target": "SMS Marketing",
+          "evidence": "review the documentation below:"
+        },
+        {
+          "source": "SMS",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "SMS service being used from..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "iap-credits",
+    "heading": "IAP credits",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS service",
+          "type": "Service",
+          "mention": "The SMS service",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo IAP Catalog",
+          "type": "Catalog",
+          "mention": "Odoo IAP Catalog",
+          "confidence": "high"
+        },
+        {
+          "name": "Starter Pack",
+          "type": "Pack",
+          "mention": "Starter Pack: 10 credits",
+          "confidence": "high"
+        },
+        {
+          "name": "Standard Pack",
+          "type": "Pack",
+          "mention": "Standard Pack: 100 credits",
+          "confidence": "high"
+        },
+        {
+          "name": "Advanced Pack",
+          "type": "Pack",
+          "mention": "Advanced Pack: 500 credits",
+          "confidence": "high"
+        },
+        {
+          "name": "Expert Pack",
+          "type": "Pack",
+          "mention": "Expert Pack: 1,000 credits",
+          "confidence": "high"
+        },
+        {
+          "name": "Email alerts",
+          "type": "Notification",
+          "mention": "Email alerts can also be set up for when credits are low",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Starter Pack",
+          "relation": "BELONGS_TO",
+          "target": "SMS service",
+          "evidence": "The SMS service has four packs available"
+        },
+        {
+          "source": "Standard Pack",
+          "relation": "BELONGS_TO",
+          "target": "SMS service",
+          "evidence": "The SMS service has four packs available"
+        },
+        {
+          "source": "Advanced Pack",
+          "relation": "BELONGS_TO",
+          "target": "SMS service",
+          "evidence": "The SMS service has four packs available"
+        },
+        {
+          "source": "Expert Pack",
+          "relation": "BELONGS_TO",
+          "target": "SMS service",
+          "evidence": "The SMS service has four packs available"
+        },
+        {
+          "source": "Odoo IAP Catalog",
+          "relation": "CONTAINS",
+          "target": "SMS service",
+          "evidence": "Credits are purchased in Packs from the Odoo IAP Catalog"
+        },
+        {
+          "source": "Odoo",
+          "relation": "TRIGGERED_BY",
+          "target": "Email alerts",
+          "evidence": "Email alerts can also be set up for when credits are low"
+        },
+        {
+          "source": "Odoo",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo IAP Catalog",
+          "evidence": "Credits are purchased in Packs from the Odoo IAP Catalog"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "buy-credits",
+    "heading": "Buy credits",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings app",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts section",
+          "type": "Sub-module",
+          "mention": "Contacts section",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy credits",
+          "type": "Feature",
+          "mention": "Buy credits",
+          "confidence": "high"
+        },
+        {
+          "name": "View My Services",
+          "type": "Action",
+          "mention": "View My Services",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo IAP",
+          "type": "Feature",
+          "mention": "Odoo IAP setting",
+          "confidence": "medium"
+        },
+        {
+          "name": "IAP Service page",
+          "type": "Report",
+          "mention": "IAP Service page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account Information page",
+          "type": "DataObject",
+          "mention": "Account Information page",
+          "confidence": "medium"
+        },
+        {
+          "name": "check current balance",
+          "type": "Feature",
+          "mention": "check the current balance",
+          "confidence": "high"
+        },
+        {
+          "name": "manually purchase more credits",
+          "type": "Action",
+          "mention": "manually purchase more credits",
+          "confidence": "high"
+        },
+        {
+          "name": "credits",
+          "type": "Concept",
+          "mention": "credits",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Settings app",
+          "relation": "CONTAINS",
+          "target": "Contacts section",
+          "evidence": "navigating to the Settings app --> Contacts section"
+        },
+        {
+          "source": "Contacts section",
+          "relation": "CONTAINS",
+          "target": "View My Services",
+          "evidence": "beneath the Odoo IAP setting, click View My Services"
+        },
+        {
+          "source": "View My Services",
+          "relation": "GENERATES",
+          "target": "IAP Service page",
+          "evidence": "Doing so reveals an IAP Service page"
+        },
+        {
+          "source": "IAP Service page",
+          "relation": "CONTAINS",
+          "target": "Account Information page",
+          "evidence": "From here, click an service to open its Account Information page"
+        },
+        {
+          "source": "Buy credits",
+          "relation": "HAS_FEATURE",
+          "target": "manually purchase more credits",
+          "evidence": "Users can... manually purchase more credits"
+        },
+        {
+          "source": "Buy credits",
+          "relation": "HAS_FEATURE",
+          "target": "check current balance",
+          "evidence": "Users can check the current balance of credits"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manually-buy-credits",
+    "heading": "Manually buy credits",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "the Settings application",
+          "confidence": "high"
+        },
+        {
+          "name": "IAP",
+          "type": "Module",
+          "mention": "IAP",
+          "confidence": "medium"
+        },
+        {
+          "name": "IAP Account",
+          "type": "DataObject",
+          "mention": "an IAP Account page",
+          "confidence": "high"
+        },
+        {
+          "name": "Account Information",
+          "type": "DataObject",
+          "mention": "Account Information page",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy Credit",
+          "type": "Action",
+          "mention": "click the Buy Credit button",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy Credits for (IAP Account)",
+          "type": "Workflow",
+          "mention": "Buy Credits for (IAP Account) page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Buy",
+          "type": "Action",
+          "mention": "click Buy",
+          "confidence": "high"
+        },
+        {
+          "name": "enter payment details",
+          "type": "Action",
+          "mention": "enter payment details",
+          "confidence": "high"
+        },
+        {
+          "name": "confirm the order",
+          "type": "Action",
+          "mention": "confirm the order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IAP",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, type `IAP` in the search bar"
+        },
+        {
+          "source": "IAP Account",
+          "relation": "GENERATES",
+          "target": "Account Information",
+          "evidence": "click an service to open its Account Information page"
+        },
+        {
+          "source": "Account Information",
+          "relation": "CONTAINS",
+          "target": "Buy Credit",
+          "evidence": "On the Account Information page, click the Buy Credit button"
+        },
+        {
+          "source": "Buy Credit",
+          "relation": "TRIGGERED_BY",
+          "target": "Buy Credits for (IAP Account)",
+          "evidence": "click the Buy Credit button. Doing so loads a Buy Credits for (IAP Account) page"
+        },
+        {
+          "source": "Buy Credits for (IAP Account)",
+          "relation": "CONTAINS",
+          "target": "Buy",
+          "evidence": "From here, click Buy on the desired pack of credits"
+        },
+        {
+          "source": "Buy Credits for (IAP Account)",
+          "relation": "CONTAINS",
+          "target": "enter payment details",
+          "evidence": "follow the prompts to enter payment details"
+        },
+        {
+          "source": "Buy Credits for (IAP Account)",
+          "relation": "CONTAINS",
+          "target": "confirm the order",
+          "evidence": "follow the prompts to... confirm the order"
+        },
+        {
+          "source": "Buy",
+          "relation": "ENABLES",
+          "target": "enter payment details",
+          "evidence": "click Buy on the desired pack of credits. Then, follow the prompts to enter payment details"
+        },
+        {
+          "source": "enter payment details",
+          "relation": "ENABLES",
+          "target": "confirm the order",
+          "evidence": "follow the prompts to enter payment details, and confirm the order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "low-credit-notification",
+    "heading": "Low-credit notification",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings application",
+          "confidence": "medium"
+        },
+        {
+          "name": "IAP",
+          "type": "Concept",
+          "mention": "IAP",
+          "confidence": "medium"
+        },
+        {
+          "name": "IAP Account page",
+          "type": "Module",
+          "mention": "IAP Account page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account Information page",
+          "type": "Module",
+          "mention": "Account Information page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email Alert Threshold",
+          "type": "Setting",
+          "mention": "Email Alert Threshold",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Alert Recipients",
+          "type": "Field",
+          "mention": "Email Alert Recipients field",
+          "confidence": "high"
+        },
+        {
+          "name": "low-credit notification",
+          "type": "Feature",
+          "mention": "Low-credit notification",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user(s)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "low-credit notification",
+          "relation": "CONFIGURED_BY",
+          "target": "Email Alert Threshold",
+          "evidence": "Set the Email Alert Threshold to... trigger a low-credit alert"
+        },
+        {
+          "source": "low-credit notification",
+          "relation": "CONFIGURED_BY",
+          "target": "Email Alert Recipients",
+          "evidence": "select which user(s) should receive the email notification using the Email Alert Recipients field"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "IAP",
+          "evidence": "Go to the Settings application, and type `IAP` in the search bar"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Go to the Settings application..."
+        }
+      ]
+    }
+  }
+]

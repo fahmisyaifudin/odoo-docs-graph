@@ -1,0 +1,1055 @@
+[
+  {
+    "section_id": "gmail-plugin",
+    "heading": "Gmail Plugin",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail Plugin",
+          "type": "Module",
+          "mention": "Gmail Plugin",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail",
+          "type": "Integration",
+          "mention": "Gmail",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings app",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "low"
+        },
+        {
+          "name": "General Settings",
+          "type": "Setting",
+          "mention": "General Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "database version",
+          "type": "Setting",
+          "mention": "database version",
+          "confidence": "low"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Gmail Plugin",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Gmail Plugin"
+        },
+        {
+          "source": "Gmail Plugin",
+          "relation": "CONTAINS",
+          "target": "Gmail",
+          "evidence": "integrates an Odoo database with a Gmail inbox"
+        },
+        {
+          "source": "database version",
+          "relation": "GENERATES",
+          "target": "General Settings",
+          "evidence": "check the database version in the Settings app --> General Settings"
+        },
+        {
+          "source": "General Settings",
+          "relation": "BELONGS_TO",
+          "target": "Settings app",
+          "evidence": "check the database version in the Settings app --> General Settings"
+        },
+        {
+          "source": "database",
+          "relation": "CONTAINED_BY",
+          "target": "Odoo",
+          "evidence": "integrates an Odoo database with a Gmail inbox"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "odoo-online-users",
+    "heading": "Odoo Online users",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Online",
+          "type": "Product",
+          "mention": "Odoo Online",
+          "confidence": "medium"
+        },
+        {
+          "name": "Gmail Plugin",
+          "type": "Module",
+          "mention": "Gmail Plugin",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo Online",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "For databases hosted on Odoo Online (or Odoo.sh)"
+        },
+        {
+          "source": "Odoo Online",
+          "relation": "SUPPORTS",
+          "target": "Gmail Plugin",
+          "evidence": "configure the Gmail Plugin"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "install-the-gmail-plugin",
+    "heading": "Install the Gmail Plugin",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Inbox Addin",
+          "type": "Module",
+          "mention": "Odoo Inbox Addin",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Workspace Marketplace",
+          "type": "Integration",
+          "mention": "Google Workspace Marketplace",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail",
+          "type": "Integration",
+          "mention": "Gmail",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail account",
+          "type": "Actor",
+          "mention": "Gmail account",
+          "confidence": "high"
+        },
+        {
+          "name": "Install",
+          "type": "Action",
+          "mention": "Install",
+          "confidence": "high"
+        },
+        {
+          "name": "Allow",
+          "type": "Action",
+          "mention": "Allow",
+          "confidence": "high"
+        },
+        {
+          "name": "side panel",
+          "type": "Feature",
+          "mention": "side panel",
+          "confidence": "medium"
+        },
+        {
+          "name": "arrow icon",
+          "type": "Feature",
+          "mention": "arrow icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "plus sign icon",
+          "type": "Feature",
+          "mention": "plus sign icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "pop-up window",
+          "type": "Feature",
+          "mention": "pop-up window",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Gmail",
+          "evidence": "connect to Odoo"
+        },
+        {
+          "source": "Odoo Inbox Addin",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo Inbox Addin"
+        },
+        {
+          "source": "Odoo Inbox Addin",
+          "relation": "IS_PART_OF",
+          "target": "Google Workspace Marketplace",
+          "evidence": "page on the Google Workspace Marketplace"
+        },
+        {
+          "source": "Gmail",
+          "relation": "HAS_FEATURE",
+          "target": "side panel",
+          "evidence": "side panel"
+        },
+        {
+          "source": "side panel",
+          "relation": "HAS_FEATURE",
+          "target": "plus sign icon",
+          "evidence": "plus sign icon on the right side panel"
+        },
+        {
+          "source": "Gmail",
+          "relation": "HAS_FEATURE",
+          "target": "arrow icon",
+          "evidence": "arrow icon at the bottom right corner"
+        },
+        {
+          "source": "Gmail",
+          "relation": "HAS_FEATURE",
+          "target": "search bar",
+          "evidence": "use the search bar"
+        },
+        {
+          "source": "Gmail",
+          "relation": "HAS_FEATURE",
+          "target": "pop-up window",
+          "evidence": "Google will then show a pop-up window"
+        },
+        {
+          "source": "Gmail account",
+          "relation": "PERFORMED_BY",
+          "target": "Install",
+          "evidence": "click Install"
+        },
+        {
+          "source": "Gmail account",
+          "relation": "PERFORMED_BY",
+          "target": "Allow",
+          "evidence": "click Allow"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-the-odoo-database",
+    "heading": "Configure the Odoo database",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Mail Plugin",
+          "type": "Feature",
+          "mention": "Mail Plugin feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail Plugin",
+          "type": "Feature",
+          "mention": "Gmail Plugin",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "General Settings",
+          "type": "Sub-module",
+          "mention": "General Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Integrations",
+          "type": "Sub-module",
+          "mention": "Integrations section",
+          "confidence": "high"
+        },
+        {
+          "name": "Activate Mail Plugin",
+          "type": "Action",
+          "mention": "activate Mail Plugin",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Mail Plugin",
+          "relation": "ENABLES",
+          "target": "Gmail Plugin",
+          "evidence": "The Mail Plugin feature must be enabled in the Odoo database in order to use the Gmail Plugin."
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "General Settings",
+          "evidence": "go to Settings --> General Settings"
+        },
+        {
+          "source": "General Settings",
+          "relation": "CONTAINS",
+          "target": "Integrations",
+          "evidence": "Under the Integrations section"
+        },
+        {
+          "source": "Integrations",
+          "relation": "CONTAINS",
+          "target": "Mail Plugin",
+          "evidence": "activate Mail Plugin"
+        },
+        {
+          "source": "Mail Plugin",
+          "relation": "CONFIGURED_BY",
+          "target": "Activate Mail Plugin",
+          "evidence": "activate Mail Plugin"
+        },
+        {
+          "source": "Activate Mail Plugin",
+          "relation": "TRIGGERED_BY",
+          "target": "Save",
+          "evidence": "activate Mail Plugin, and then click Save"
+        },
+        {
+          "source": "Mail Plugin",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Mail Plugin feature must be enabled in the Odoo database"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-the-gmail-inbox",
+    "heading": "Configure the Gmail inbox",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail inbox",
+          "type": "Module",
+          "mention": "Gmail inbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "Authorize Access",
+          "type": "Action",
+          "mention": "Authorize Access",
+          "confidence": "high"
+        },
+        {
+          "name": "Login",
+          "type": "Action",
+          "mention": "Login",
+          "confidence": "high"
+        },
+        {
+          "name": "Allow",
+          "type": "Action",
+          "mention": "Allow",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Authorize Access",
+          "relation": "PERFORMED_BY",
+          "target": "Actor: User",
+          "evidence": "Click Authorize Access in the plugin window"
+        },
+        {
+          "source": "Login",
+          "relation": "PERFORMED_BY",
+          "target": "Actor: User",
+          "evidence": "Then, click Login"
+        },
+        {
+          "source": "Allow",
+          "relation": "PERFORMED_BY",
+          "target": "Actor: User",
+          "evidence": "Finally, click Allow"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Feature: Gmail inbox integration",
+          "evidence": "Configure the Gmail inbox"
+        },
+        {
+          "source": "Feature: Gmail inbox integration",
+          "relation": "ENABLES",
+          "target": "Action: Connect Gmail inbox to Odoo database",
+          "evidence": "The Gmail inbox and Odoo database are now connected"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "odoo-on-premise-users",
+    "heading": "Odoo On-Premise users",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail Plugin",
+          "type": "Module",
+          "mention": "Gmail Plugin",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Workspace Marketplace",
+          "type": "Integration",
+          "mention": "Google Workspace Marketplace",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Online",
+          "type": "Product",
+          "mention": "Odoo Online",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo.sh",
+          "type": "Product",
+          "mention": "Odoo.sh",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Apps Script",
+          "type": "Integration",
+          "mention": "Google Apps Script",
+          "confidence": "high"
+        },
+        {
+          "name": "on-premise customer",
+          "type": "Actor",
+          "mention": "on-premise customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Google",
+          "type": "Actor",
+          "mention": "Google",
+          "confidence": "high"
+        },
+        {
+          "name": "odoo.com",
+          "type": "Field",
+          "mention": "odoo.com",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Gmail Plugin",
+          "evidence": "configure the Gmail Plugin."
+        },
+        {
+          "source": "Gmail Plugin",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "the Gmail Plugin"
+        },
+        {
+          "source": "Google",
+          "relation": "GOVERNED_BY",
+          "target": "Google",
+          "evidence": "Google requires add-on creators"
+        },
+        {
+          "source": "Gmail Plugin",
+          "relation": "REQUIRES",
+          "target": "Google Workspace Marketplace",
+          "evidence": "on-premise customers cannot install the Gmail Plugin from the Google Workspace Marketplace."
+        },
+        {
+          "source": "Gmail Plugin",
+          "relation": "RELATED_TO",
+          "target": "Google Apps Script",
+          "evidence": "Read more on Google Apps Script"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "Odoo Online",
+          "evidence": "Odoo Online"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "Odoo.sh",
+          "evidence": "or Odoo.sh"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "on-premise customer",
+          "evidence": "on-premise customers"
+        },
+        {
+          "source": "Google",
+          "relation": "APPLIES_TO",
+          "target": "odoo.com",
+          "evidence": "Odoo can only list the odoo.com domain"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "install-the-gmail-plugin",
+    "heading": "Install the Gmail Plugin",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Mail Plugins",
+          "type": "Module",
+          "mention": "Mail Plugins",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail Plugin",
+          "type": "Module",
+          "mention": "Gmail Plugin",
+          "confidence": "high"
+        },
+        {
+          "name": "mail-client-extensions",
+          "type": "Module",
+          "mention": "mail-client-extensions-master",
+          "confidence": "high"
+        },
+        {
+          "name": "gmail",
+          "type": "Sub-module",
+          "mention": "gmail",
+          "confidence": "high"
+        },
+        {
+          "name": "src",
+          "type": "Sub-module",
+          "mention": "src",
+          "confidence": "high"
+        },
+        {
+          "name": "views",
+          "type": "Sub-module",
+          "mention": "views",
+          "confidence": "high"
+        },
+        {
+          "name": "login.ts",
+          "type": "Feature",
+          "mention": "login.ts",
+          "confidence": "high"
+        },
+        {
+          "name": "appsscript.json",
+          "type": "Feature",
+          "mention": "appsscript.json",
+          "confidence": "high"
+        },
+        {
+          "name": "README.md",
+          "type": "Feature",
+          "mention": "README.md",
+          "confidence": "high"
+        },
+        {
+          "name": "Install the Gmail Plugin",
+          "type": "Workflow",
+          "mention": "Install the Gmail Plugin",
+          "confidence": "high"
+        },
+        {
+          "name": "text editor software",
+          "type": "Actor",
+          "mention": "text editor software",
+          "confidence": "medium"
+        },
+        {
+          "name": "Notepad",
+          "type": "Actor",
+          "mention": "Notepad",
+          "confidence": "medium"
+        },
+        {
+          "name": "TextEdit",
+          "type": "Actor",
+          "mention": "TextEdit",
+          "confidence": "medium"
+        },
+        {
+          "name": "Visual Studio Code",
+          "type": "Actor",
+          "mention": "Visual Studio Code",
+          "confidence": "medium"
+        },
+        {
+          "name": "Linux commands",
+          "type": "Concept",
+          "mention": "Linux commands",
+          "confidence": "medium"
+        },
+        {
+          "name": "GitHub repository",
+          "type": "Integration",
+          "mention": "GitHub repository",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Project",
+          "type": "Integration",
+          "mention": "Google Project",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo customer",
+          "type": "Actor",
+          "mention": "Odoo customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Gmail account",
+          "type": "Actor",
+          "mention": "Gmail account",
+          "confidence": "medium"
+        },
+        {
+          "name": "urlFetchWhitelist",
+          "type": "Field",
+          "mention": "urlFetchWhitelist",
+          "confidence": "high"
+        },
+        {
+          "name": "odoo.com domain constraint",
+          "type": "Concept",
+          "mention": "odoo.com domain constraint",
+          "confidence": "medium"
+        },
+        {
+          "name": "Publish and Deploy from manifest",
+          "type": "Action",
+          "mention": "Publish and Deploy from manifest",
+          "confidence": "medium"
+        },
+        {
+          "name": "Install the add-on",
+          "type": "Action",
+          "mention": "Install the add-on",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Gmail Plugin",
+          "relation": "BELONGS_TO",
+          "target": "Mail Plugins",
+          "evidence": "Gmail Plugin is part of Odoo Mail Plugins"
+        },
+        {
+          "source": "Mail Plugins",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Mail Plugins are for Odoo"
+        },
+        {
+          "source": "mail-client-extensions",
+          "relation": "CONTAINS",
+          "target": "gmail",
+          "evidence": "mail-client-extensions-master contains gmail folder"
+        },
+        {
+          "source": "gmail",
+          "relation": "CONTAINS",
+          "target": "src",
+          "evidence": "gmail folder contains src folder"
+        },
+        {
+          "source": "gmail",
+          "relation": "CONTAINS",
+          "target": "views",
+          "evidence": "views folder is inside src which is inside gmail"
+        },
+        {
+          "source": "views",
+          "relation": "CONTAINS",
+          "target": "login.ts",
+          "evidence": "views folder contains login.ts file"
+        },
+        {
+          "source": "gmail",
+          "relation": "CONTAINS",
+          "target": "appsscript.json",
+          "evidence": "gmail folder contains appsscript.json file"
+        },
+        {
+          "source": "gmail",
+          "relation": "CONTAINS",
+          "target": "README.md",
+          "evidence": "gmail folder contains README.md file"
+        },
+        {
+          "source": "appsscript.json",
+          "relation": "CONTAINS",
+          "target": "urlFetchWhitelist",
+          "evidence": "appsscript.json has a urlFetchWhitelist section"
+        },
+        {
+          "source": "Odoo",
+          "relation": "INTEGRATION",
+          "target": "GitHub repository",
+          "evidence": "Odoo has a GitHub repository for mail plugins"
+        },
+        {
+          "source": "Odoo",
+          "relation": "INTEGRATION",
+          "target": "Google Project",
+          "evidence": "Gmail Plugin files are pushed as a Google Project"
+        },
+        {
+          "source": "Gmail Plugin",
+          "relation": "COMPLIES_WITH",
+          "target": "Gmail account",
+          "evidence": "Gmail Plugin is installed on a Gmail account"
+        },
+        {
+          "source": "Odoo customer",
+          "relation": "PERFORMED_BY",
+          "target": "Install the Gmail Plugin",
+          "evidence": "Customer performs the installation workflow"
+        },
+        {
+          "source": "README.md",
+          "relation": "PROVIDES",
+          "target": "Install the Gmail Plugin",
+          "evidence": "README.md provides instructions for the installation"
+        },
+        {
+          "source": "Publish and Deploy from manifest",
+          "relation": "TRIGGERED_BY",
+          "target": "Install the Gmail Plugin",
+          "evidence": "Publish and Deploy is part of the installation process"
+        },
+        {
+          "source": "Install the add-on",
+          "relation": "TRIGGERED_BY",
+          "target": "Install the Gmail Plugin",
+          "evidence": "Installing the add-on is the final step of the workflow"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-the-odoo-database",
+    "heading": "Configure the Odoo database",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Mail Plugin",
+          "type": "Feature",
+          "mention": "Mail Plugin",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail Plugin",
+          "type": "Feature",
+          "mention": "Gmail Plugin",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "General Settings",
+          "type": "Sub-module",
+          "mention": "General Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Integrations section",
+          "type": "Sub-module",
+          "mention": "Integrations section",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Mail Plugin",
+          "relation": "REQUIRES",
+          "target": "Odoo",
+          "evidence": "The Mail Plugin feature must be enabled in the Odoo database"
+        },
+        {
+          "source": "Gmail Plugin",
+          "relation": "REQUIRES",
+          "target": "Mail Plugin",
+          "evidence": "The Mail Plugin feature must be enabled in the Odoo database in order to use the Gmail Plugin"
+        },
+        {
+          "source": "General Settings",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "go to Settings --> General Settings"
+        },
+        {
+          "source": "Integrations section",
+          "relation": "IS_PART_OF",
+          "target": "General Settings",
+          "evidence": "Under the Integrations section"
+        },
+        {
+          "source": "Mail Plugin",
+          "relation": "BELONGS_TO",
+          "target": "Integrations section",
+          "evidence": "Under the Integrations section, activate Mail Plugin"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-the-gmail-inbox",
+    "heading": "Configure the Gmail inbox",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail",
+          "type": "Product",
+          "mention": "Gmail",
+          "confidence": "high"
+        },
+        {
+          "name": "Gmail inbox",
+          "type": "DataObject",
+          "mention": "Gmail inbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo plugin",
+          "type": "Module",
+          "mention": "Odoo plugin",
+          "confidence": "medium"
+        },
+        {
+          "name": "Authorize Access",
+          "type": "Action",
+          "mention": "Authorize Access",
+          "confidence": "high"
+        },
+        {
+          "name": "Login",
+          "type": "Action",
+          "mention": "Login",
+          "confidence": "high"
+        },
+        {
+          "name": "Allow",
+          "type": "Action",
+          "mention": "Allow",
+          "confidence": "high"
+        },
+        {
+          "name": "Click Odoo icon",
+          "type": "Action",
+          "mention": "Click on the Odoo icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Click email",
+          "type": "Action",
+          "mention": "Click on any email in the inbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Enter database URL",
+          "type": "Action",
+          "mention": "enter the URL of the Odoo database",
+          "confidence": "high"
+        },
+        {
+          "name": "Close window",
+          "type": "Action",
+          "mention": "close the window",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "general URL",
+          "type": "Setting",
+          "mention": "general URL for the database",
+          "confidence": "medium"
+        },
+        {
+          "name": "database",
+          "type": "Product",
+          "mention": "database",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Authorize Access",
+          "relation": "ENABLES",
+          "target": "Odoo access",
+          "evidence": "grant Odoo access to the Gmail inbox"
+        },
+        {
+          "source": "Allow",
+          "relation": "ENABLES",
+          "target": "Gmail access",
+          "evidence": "let Gmail access the Odoo database"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "Login",
+          "evidence": "log in to the database"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "Click email",
+          "evidence": "Click on any email in the inbox"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "Authorize Access",
+          "evidence": "Click Authorize Access"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "Enter database URL",
+          "evidence": "enter the URL"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "Allow",
+          "evidence": "click Allow"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "Close window",
+          "evidence": "close the window"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "Click Odoo icon",
+          "evidence": "Click on the Odoo icon"
+        },
+        {
+          "source": "general URL",
+          "relation": "CONFIGURED_BY",
+          "target": "database",
+          "evidence": "Use the general URL for the database"
+        },
+        {
+          "source": "Odoo plugin",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "open up the Odoo plugin window"
+        }
+      ]
+    }
+  }
+]

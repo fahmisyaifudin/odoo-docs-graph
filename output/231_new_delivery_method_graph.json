@@ -1,0 +1,936 @@
+[
+  {
+    "section_id": "add-a-new-delivery-method",
+    "heading": "Add a new delivery method",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Methods",
+          "type": "Setting",
+          "mention": "Delivery Methods",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Setup configuration",
+          "type": "Feature",
+          "mention": "setup_configuration",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Delivery Methods",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "The Delivery Methods setting adds the option"
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "SEE_ALSO",
+          "target": "Setup configuration",
+          "evidence": "../setup_configuration"
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "ENABLES",
+          "target": "Sales order",
+          "evidence": "adds the option of calculating the cost of shipping on sales orders"
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "ENABLES",
+          "target": "Delivery order",
+          "evidence": "the shipping details can be added to the delivery order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Methods",
+          "type": "Feature",
+          "mention": "Delivery Methods",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "eCommerce",
+          "type": "Module",
+          "mention": "eCommerce",
+          "confidence": "medium"
+        },
+        {
+          "name": "FedEx",
+          "type": "Integration",
+          "mention": "FedEx",
+          "confidence": "low"
+        },
+        {
+          "name": "Cash on Delivery",
+          "type": "Payment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Product",
+          "type": "DataObject",
+          "mention": "Delivery Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Countries",
+          "type": "Field",
+          "mention": "Countries",
+          "confidence": "high"
+        },
+        {
+          "name": "Max Weight",
+          "type": "Field",
+          "mention": "Max Weight",
+          "confidence": "high"
+        },
+        {
+          "name": "Max Volume",
+          "type": "Field",
+          "mention": "Max Volume",
+          "confidence": "high"
+        },
+        {
+          "name": "Must Have Tags",
+          "type": "Field",
+          "mention": "Must Have Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Excluded Tags",
+          "type": "Field",
+          "mention": "Excluded Tags",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Inventory --> ..."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Configuration drop-down menu"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Delivery Methods",
+          "evidence": "Delivery Methods option"
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "ENABLES",
+          "target": "Cash on Delivery",
+          "evidence": "allow customers to choose the Cash on Delivery payment method"
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "HAS_FEATURE",
+          "target": "Countries",
+          "evidence": "Countries: Specify..."
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "HAS_FEATURE",
+          "target": "Max Weight",
+          "evidence": "Max Weight: Set..."
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "HAS_FEATURE",
+          "target": "Max Volume",
+          "evidence": "Max Volume: Set..."
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "HAS_FEATURE",
+          "target": "Must Have Tags",
+          "evidence": "Must Have Tags: The method..."
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "HAS_FEATURE",
+          "target": "Excluded Tags",
+          "evidence": "Excluded Tags: The method..."
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "USES_METHOD",
+          "target": "Fixed Price",
+          "evidence": "Provider: Fixed Price"
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "USES_METHOD",
+          "target": "FedEx",
+          "evidence": "Provider: choose the delivery service, like FedEx"
+        },
+        {
+          "source": "eCommerce",
+          "relation": "ENABLES",
+          "target": "Delivery Methods",
+          "evidence": "This field only appears when the eCommerce app is enabled."
+        },
+        {
+          "source": "Settings",
+          "relation": "ENABLES",
+          "target": "Delivery Methods",
+          "evidence": "enable the Delivery Methods feature by checking the corresponding checkbox."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "fixed-price",
+    "heading": "Fixed price",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Methods",
+          "type": "Feature",
+          "mention": "Delivery Methods",
+          "confidence": "medium"
+        },
+        {
+          "name": "Provider",
+          "type": "Field",
+          "mention": "Provider",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fixed Price",
+          "type": "Feature",
+          "mention": "Fixed Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed Price field",
+          "type": "Field",
+          "mention": "Fixed Price field",
+          "confidence": "high"
+        },
+        {
+          "name": "Free if order amount is above",
+          "type": "Field",
+          "mention": "Free if order amount is above",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Product",
+          "type": "Field",
+          "mention": "Delivery Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Flat-rate shipping",
+          "type": "Feature",
+          "mention": "Delivery Method: Flat-rate shipping",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Inventory --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Delivery Methods",
+          "evidence": "Configuration --> Delivery Methods"
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "HAS_FEATURE",
+          "target": "Fixed Price",
+          "evidence": "set the Provider to the Fixed Price option"
+        },
+        {
+          "source": "Fixed Price",
+          "relation": "ENABLES",
+          "target": "Fixed Price field",
+          "evidence": "makes the Fixed Price field become available"
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "CONTAINS",
+          "target": "Free if order amount is above",
+          "evidence": "check the box Free if order amount is above"
+        },
+        {
+          "source": "Delivery Methods",
+          "relation": "CONTAINS",
+          "target": "Delivery Product",
+          "evidence": "Delivery Product: [SHIP] Flat"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "based-on-rules",
+    "heading": "Based on rules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Based on Rules",
+          "type": "Feature",
+          "mention": "Based on Rules option",
+          "confidence": "high"
+        },
+        {
+          "name": "Provider field",
+          "type": "Field",
+          "mention": "Provider field",
+          "confidence": "high"
+        },
+        {
+          "name": "Margin on Rate",
+          "type": "Field",
+          "mention": "Margin on Rate",
+          "confidence": "high"
+        },
+        {
+          "name": "Additional margin",
+          "type": "Field",
+          "mention": "Additional margin",
+          "confidence": "high"
+        },
+        {
+          "name": "calculate the price of shipping",
+          "type": "Workflow",
+          "mention": "calculate the price of shipping",
+          "confidence": "medium"
+        },
+        {
+          "name": "pricing rules",
+          "type": "Concept",
+          "mention": "pricing rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "shipping costs",
+          "type": "Concept",
+          "mention": "shipping costs",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Provider field",
+          "relation": "CONFIGURED_BY",
+          "target": "Based on Rules",
+          "evidence": "set the Provider field to the Based on Rules option"
+        },
+        {
+          "source": "Margin on Rate",
+          "relation": "CONFIGURED_BY",
+          "target": "shipping costs",
+          "evidence": "adjust Margin on Rate ... to include additional shipping costs"
+        },
+        {
+          "source": "Additional margin",
+          "relation": "CONFIGURED_BY",
+          "target": "shipping costs",
+          "evidence": "adjust ... Additional margin to include additional shipping costs"
+        },
+        {
+          "source": "calculate the price of shipping",
+          "relation": "USES_METHOD",
+          "target": "pricing rules",
+          "evidence": "calculate the price of shipping based on pricing rules"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Based on Rules",
+          "evidence": "Provider field ... Based on Rules option"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Provider field",
+          "evidence": "Provider field"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Margin on Rate",
+          "evidence": "Margin on Rate"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Additional margin",
+          "evidence": "Additional margin"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-pricing-rules",
+    "heading": "Create pricing rules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Pricing Rules window",
+          "type": "Module",
+          "mention": "Create Pricing Rules window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Condition",
+          "type": "Field",
+          "mention": "Condition",
+          "confidence": "medium"
+        },
+        {
+          "name": "product weight",
+          "type": "DataObject",
+          "mention": "product weight",
+          "confidence": "low"
+        },
+        {
+          "name": "volume",
+          "type": "DataObject",
+          "mention": "volume",
+          "confidence": "low"
+        },
+        {
+          "name": "price",
+          "type": "DataObject",
+          "mention": "price",
+          "confidence": "low"
+        },
+        {
+          "name": "quantity",
+          "type": "DataObject",
+          "mention": "quantity",
+          "confidence": "low"
+        },
+        {
+          "name": "defined amount",
+          "type": "Field",
+          "mention": "defined amount",
+          "confidence": "low"
+        },
+        {
+          "name": "Delivery Cost",
+          "type": "Field",
+          "mention": "Delivery Cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pricing tab",
+          "type": "Module",
+          "mention": "Pricing tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save & New",
+          "type": "Action",
+          "mention": "Save & New",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "Save & Close",
+          "confidence": "medium"
+        },
+        {
+          "name": "shipping method form",
+          "type": "Module",
+          "mention": "shipping method form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Destination Availability tab",
+          "type": "Module",
+          "mention": "Destination Availability tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Countries",
+          "type": "Field",
+          "mention": "Countries",
+          "confidence": "medium"
+        },
+        {
+          "name": "States",
+          "type": "Field",
+          "mention": "States",
+          "confidence": "medium"
+        },
+        {
+          "name": "Zip Prefixes",
+          "type": "Field",
+          "mention": "Zip Prefixes",
+          "confidence": "medium"
+        },
+        {
+          "name": "eCommerce website",
+          "type": "Integration",
+          "mention": "eCommerce website",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pricing tab",
+          "relation": "CONTAINS",
+          "target": "Add a line",
+          "evidence": "Navigate to the Pricing tab and click Add a line."
+        },
+        {
+          "source": "Create Pricing Rules window",
+          "relation": "CONTAINS",
+          "target": "Condition",
+          "evidence": "opens the Create Pricing Rules window, where the Condition"
+        },
+        {
+          "source": "Create Pricing Rules window",
+          "relation": "CONTAINS",
+          "target": "Delivery Cost",
+          "evidence": "opens the Create Pricing Rules window, where...to calculate the Delivery Cost."
+        },
+        {
+          "source": "Condition",
+          "relation": "RELATED_TO",
+          "target": "product weight",
+          "evidence": "Condition related to the product weight"
+        },
+        {
+          "source": "Condition",
+          "relation": "RELATED_TO",
+          "target": "volume",
+          "evidence": "Condition related to the product weight, volume"
+        },
+        {
+          "source": "Condition",
+          "relation": "RELATED_TO",
+          "target": "price",
+          "evidence": "Condition related to the product weight, volume, price"
+        },
+        {
+          "source": "Condition",
+          "relation": "RELATED_TO",
+          "target": "quantity",
+          "evidence": "Condition related to the product weight, volume, price, or quantity"
+        },
+        {
+          "source": "Condition",
+          "relation": "COMPLIES_WITH",
+          "target": "defined amount",
+          "evidence": "is compared to a defined amount"
+        },
+        {
+          "source": "shipping method form",
+          "relation": "CONTAINS",
+          "target": "Destination Availability tab",
+          "evidence": "in the shipping method form, navigate to the Destination Availability tab"
+        },
+        {
+          "source": "Destination Availability tab",
+          "relation": "CONTAINS",
+          "target": "Countries",
+          "evidence": "define the Countries"
+        },
+        {
+          "source": "Destination Availability tab",
+          "relation": "CONTAINS",
+          "target": "States",
+          "evidence": "define the Countries, States"
+        },
+        {
+          "source": "Destination Availability tab",
+          "relation": "CONTAINS",
+          "target": "Zip Prefixes",
+          "evidence": "define the Countries, States, and Zip Prefixes"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Create Pricing Rules window",
+          "evidence": "opens the Create Pricing Rules window"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "eCommerce website",
+          "evidence": "To restrict shipping to specific destinations on the eCommerce website"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "calculate-delivery-cost",
+    "heading": "Calculate delivery cost",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Shipping",
+          "type": "Concept",
+          "mention": "Shipping cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery cost",
+          "type": "Concept",
+          "mention": "Delivery cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "Rule",
+          "type": "DataObject",
+          "mention": "rule",
+          "confidence": "medium"
+        },
+        {
+          "name": "Condition",
+          "type": "Concept",
+          "mention": "Condition",
+          "confidence": "medium"
+        },
+        {
+          "name": "Margin on rate",
+          "type": "Concept",
+          "mention": "Margin on rate",
+          "confidence": "medium"
+        },
+        {
+          "name": "Additional margin",
+          "type": "Concept",
+          "mention": "Additional margin",
+          "confidence": "medium"
+        },
+        {
+          "name": "Total",
+          "type": "Concept",
+          "mention": "Total",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "Concept",
+          "mention": "product",
+          "confidence": "low"
+        },
+        {
+          "name": "Order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Rule",
+          "relation": "CONTAINS",
+          "target": "Delivery cost",
+          "evidence": "Delivery cost specified in the rule"
+        },
+        {
+          "source": "Rule",
+          "relation": "CONTAINS",
+          "target": "Condition",
+          "evidence": "rule that satisfies the Condition"
+        },
+        {
+          "source": "Shipping",
+          "relation": "RELATED_TO",
+          "target": "Delivery cost",
+          "evidence": "Shipping cost is the Delivery cost"
+        },
+        {
+          "source": "Shipping",
+          "relation": "RELATED_TO",
+          "target": "Margin on rate",
+          "evidence": "plus any extra charges from the Margin on rate"
+        },
+        {
+          "source": "Shipping",
+          "relation": "RELATED_TO",
+          "target": "Additional margin",
+          "evidence": "plus any extra charges from the Additional margin"
+        },
+        {
+          "source": "Total",
+          "relation": "RELATED_TO",
+          "target": "Shipping",
+          "evidence": "Total = Rule's~Delivery~Cost + ..."
+        },
+        {
+          "source": "Total",
+          "relation": "RELATED_TO",
+          "target": "Delivery cost",
+          "evidence": "Total = Rule's~Delivery~Cost + ..."
+        },
+        {
+          "source": "Total",
+          "relation": "RELATED_TO",
+          "target": "Margin on rate",
+          "evidence": "(Margin~on~rate \times Rule's~Delivery~Cost)"
+        },
+        {
+          "source": "Total",
+          "relation": "RELATED_TO",
+          "target": "Additional margin",
+          "evidence": "+ Additional~margin"
+        },
+        {
+          "source": "Condition",
+          "relation": "APPLIES_TO",
+          "target": "Order",
+          "evidence": "If the order contains..."
+        },
+        {
+          "source": "Condition",
+          "relation": "APPLIES_TO",
+          "target": "Product",
+          "evidence": "If the order contains five or fewer products"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "route-on-shipping-method",
+    "heading": "Route on shipping method",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Route",
+          "type": "Module",
+          "mention": "set different warehouse delivery processes ... by configuring different routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "go to Inventory --> Configuration --> Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Shipping Method",
+          "type": "Module",
+          "mention": "Shipping Methods",
+          "confidence": "high"
+        },
+        {
+          "name": "one-step delivery",
+          "type": "Workflow",
+          "mention": "use one-step delivery for express shipping",
+          "confidence": "high"
+        },
+        {
+          "name": "two-step delivery",
+          "type": "Workflow",
+          "mention": "two-step for standard shipping",
+          "confidence": "high"
+        },
+        {
+          "name": "three-step delivery",
+          "type": "Workflow",
+          "mention": "three-step delivery to prepare documents for customs",
+          "confidence": "high"
+        },
+        {
+          "name": "Route form",
+          "type": "DataObject",
+          "mention": "On the route form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applicable On",
+          "type": "Field",
+          "mention": "Applicable On section",
+          "confidence": "high"
+        },
+        {
+          "name": "Shipping Methods checkbox",
+          "type": "Field",
+          "mention": "Shipping Methods checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Shipping method form",
+          "type": "DataObject",
+          "mention": "On the shipping method form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Routes field",
+          "type": "Field",
+          "mention": "Routes field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Shipping Method",
+          "relation": "CONFIGURED_BY",
+          "target": "Shipping Methods checkbox",
+          "evidence": "On the route form, in the Applicable On section, tick the Shipping Methods checkbox."
+        },
+        {
+          "source": "Shipping Method",
+          "relation": "CONTAINS",
+          "target": "Routes field",
+          "evidence": "On the shipping method form, in the Routes field, select the available fulfillment routes from the drop-down menu."
+        },
+        {
+          "source": "Shipping Method",
+          "relation": "SUPPORTS",
+          "target": "one-step delivery",
+          "evidence": "Configuring multiple routes per shipping method is helpful ... use one-step delivery for express shipping."
+        },
+        {
+          "source": "Shipping Method",
+          "relation": "SUPPORTS",
+          "target": "two-step delivery",
+          "evidence": "Configuring multiple routes per shipping method is helpful ... two-step for standard shipping."
+        },
+        {
+          "source": "Shipping Method",
+          "relation": "SUPPORTS",
+          "target": "three-step delivery",
+          "evidence": "Configuring multiple routes per shipping method is helpful ... use three-step delivery to prepare documents for customs."
+        },
+        {
+          "source": "Shipping Method",
+          "relation": "HAS_FEATURE",
+          "target": "Route",
+          "evidence": "Optionally, set different warehouse delivery processes for a shipping method by configuring different routes for it."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Route",
+          "evidence": "go to Inventory --> Configuration --> Routes"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Shipping Method",
+          "evidence": "go to Inventory --> Configuration --> Delivery Methods"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "go to Inventory --> Configuration --> Routes"
+        }
+      ]
+    }
+  }
+]

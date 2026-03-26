@@ -1,0 +1,1325 @@
+[
+  {
+    "section_id": "schedule-interviews",
+    "heading": "Schedule interviews",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "high"
+        },
+        {
+          "name": "Schedule interviews",
+          "type": "Feature",
+          "mention": "schedule interviews",
+          "confidence": "high"
+        },
+        {
+          "name": "recruitment team",
+          "type": "Actor",
+          "mention": "recruitment team",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "medium"
+        },
+        {
+          "name": "in-person interview",
+          "type": "Concept",
+          "mention": "in-person interview",
+          "confidence": "low"
+        },
+        {
+          "name": "virtual interview",
+          "type": "Concept",
+          "mention": "virtual interview",
+          "confidence": "low"
+        },
+        {
+          "name": "phone interview",
+          "type": "Concept",
+          "mention": "phone interview",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "through the Recruitment app"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "Schedule interviews",
+          "evidence": "can be scheduled in one of two ways through the Recruitment app"
+        },
+        {
+          "source": "Schedule interviews",
+          "relation": "PERFORMED_BY",
+          "target": "recruitment team",
+          "evidence": "by the recruitment team"
+        },
+        {
+          "source": "Schedule interviews",
+          "relation": "PERFORMED_BY",
+          "target": "applicant",
+          "evidence": "by the applicant"
+        },
+        {
+          "source": "Schedule interviews",
+          "relation": "SUPPORTS",
+          "target": "in-person interview",
+          "evidence": "in-person, virtual, or phone interview can be scheduled"
+        },
+        {
+          "source": "Schedule interviews",
+          "relation": "SUPPORTS",
+          "target": "virtual interview",
+          "evidence": "in-person, virtual, or phone interview can be scheduled"
+        },
+        {
+          "source": "Schedule interviews",
+          "relation": "SUPPORTS",
+          "target": "phone interview",
+          "evidence": "in-person, virtual, or phone interview can be scheduled"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "recruitment-team-scheduled-interviews",
+    "heading": "Recruitment team scheduled interviews",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "high"
+        },
+        {
+          "name": "Applications page",
+          "type": "Sub-module",
+          "mention": "Applications page",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant's card",
+          "type": "DataObject",
+          "mention": "applicant's card",
+          "confidence": "medium"
+        },
+        {
+          "name": "job card",
+          "type": "DataObject",
+          "mention": "job card",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant's record",
+          "type": "DataObject",
+          "mention": "applicant's record",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "recruitment team",
+          "type": "Actor",
+          "mention": "recruitment team",
+          "confidence": "high"
+        },
+        {
+          "name": "interviewers",
+          "type": "Actor",
+          "mention": "interviewers",
+          "confidence": "medium"
+        },
+        {
+          "name": "signed-in user",
+          "type": "Actor",
+          "mention": "signed-in user",
+          "confidence": "medium"
+        },
+        {
+          "name": "attendees",
+          "type": "Actor",
+          "mention": "Attendees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Meetings smart button",
+          "type": "Feature",
+          "mention": "Meetings smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "New Event",
+          "type": "Feature",
+          "mention": "New Event",
+          "confidence": "medium"
+        },
+        {
+          "name": "schedule the interview",
+          "type": "Action",
+          "mention": "schedule the interview",
+          "confidence": "high"
+        },
+        {
+          "name": "click",
+          "type": "Action",
+          "mention": "click",
+          "confidence": "low"
+        },
+        {
+          "name": "uncheck",
+          "type": "Action",
+          "mention": "uncheck",
+          "confidence": "low"
+        },
+        {
+          "name": "drag",
+          "type": "Action",
+          "mention": "drag",
+          "confidence": "low"
+        },
+        {
+          "name": "calendar",
+          "type": "Feature",
+          "mention": "calendar",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "job card",
+          "evidence": "by first going to the Recruitment app, and clicking the relevant job card."
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "applicant's card",
+          "evidence": "This opens the Applications page for that job position. Then, click the desired applicant's card"
+        },
+        {
+          "source": "applicant's card",
+          "relation": "HAS_FEATURE",
+          "target": "Meetings smart button",
+          "evidence": "To schedule a phone, virtual, or in-person interview, click the fa-calendar No Meeting smart button at the top of the applicant's record."
+        },
+        {
+          "source": "Meetings smart button",
+          "relation": "ENABLES",
+          "target": "schedule the interview",
+          "evidence": "To schedule a phone, virtual, or in-person interview, click the fa-calendar No Meeting smart button"
+        },
+        {
+          "source": "Meetings smart button",
+          "relation": "GENERATES",
+          "target": "calendar",
+          "evidence": "Clicking the Meetings smart button loads a calendar"
+        },
+        {
+          "source": "recruitment team",
+          "relation": "PERFORMED_BY",
+          "target": "schedule the interview",
+          "evidence": "When an applicant reaches the interview stage, the recruitment team should schedule the interview"
+        },
+        {
+          "source": "calendar",
+          "relation": "CONTAINS",
+          "target": "attendees",
+          "evidence": "as well as the employees who are listed under the Attendees section"
+        },
+        {
+          "source": "calendar",
+          "relation": "ENABLES",
+          "target": "New Event",
+          "evidence": "Both methods cause a New Event pop-up window to appear."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "new-event-pop-up-window",
+    "heading": "New event pop-up window",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "New Event pop-up window",
+          "type": "Module",
+          "mention": "New Event pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "New Event card",
+          "type": "DataObject",
+          "mention": "New Event card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Candidate",
+          "type": "Actor",
+          "mention": "Candidate",
+          "confidence": "low"
+        },
+        {
+          "name": "applicant's card",
+          "type": "DataObject",
+          "mention": "applicant's card",
+          "confidence": "low"
+        },
+        {
+          "name": "Meeting Title",
+          "type": "Field",
+          "mention": "Meeting Title",
+          "confidence": "high"
+        },
+        {
+          "name": "Start",
+          "type": "Field",
+          "mention": "Start",
+          "confidence": "high"
+        },
+        {
+          "name": "All Day",
+          "type": "Field",
+          "mention": "All Day",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendees",
+          "type": "Field",
+          "mention": "Attendees",
+          "confidence": "high"
+        },
+        {
+          "name": "Videocall URL",
+          "type": "Feature",
+          "mention": "Videocall URL",
+          "confidence": "medium"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "Save & Close",
+          "confidence": "high"
+        },
+        {
+          "name": "calendar pop-up window",
+          "type": "Module",
+          "mention": "calendar pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-check Apply",
+          "type": "Action",
+          "mention": "fa-check Apply",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-plus Odoo meeting",
+          "type": "Action",
+          "mention": "fa-plus Odoo meeting",
+          "confidence": "medium"
+        },
+        {
+          "name": "powerbox feature",
+          "type": "Feature",
+          "mention": "powerbox feature",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "New Event pop-up window",
+          "relation": "CONTAINS",
+          "target": "New Event card",
+          "evidence": "opens the New Event pop-up window to schedule a meeting"
+        },
+        {
+          "source": "New Event pop-up window",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "New Event card",
+          "relation": "CONTAINS",
+          "target": "Meeting Title",
+          "evidence": "The fields available to modify on the New Event card are as follows: - Meeting Title"
+        },
+        {
+          "source": "New Event card",
+          "relation": "CONTAINS",
+          "target": "Start",
+          "evidence": "The fields available to modify on the New Event card are as follows: - Start"
+        },
+        {
+          "source": "New Event card",
+          "relation": "CONTAINS",
+          "target": "All Day",
+          "evidence": "The fields available to modify on the New Event card are as follows: - All Day"
+        },
+        {
+          "source": "New Event card",
+          "relation": "CONTAINS",
+          "target": "Attendees",
+          "evidence": "The fields available to modify on the New Event card are as follows: - Attendees"
+        },
+        {
+          "source": "New Event card",
+          "relation": "CONTAINS",
+          "target": "Videocall URL",
+          "evidence": "The fields available to modify on the New Event card are as follows: - Videocall URL"
+        },
+        {
+          "source": "New Event card",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "The fields available to modify on the New Event card are as follows: - Description"
+        },
+        {
+          "source": "Meeting Title",
+          "relation": "ENABLES",
+          "target": "Videocall URL",
+          "evidence": "If the meeting is virtual, or if there is a virtual option available, click fa-plus Odoo meeting, and a URL is automatically created for the meeting, which populates the field."
+        },
+        {
+          "source": "New Event card",
+          "relation": "PRODUCES",
+          "target": "Save & Close",
+          "evidence": "After entering in a required name for the meeting, the fields available to modify on the New Event card are as follows"
+        },
+        {
+          "source": "Start",
+          "relation": "CONFIGURED_BY",
+          "target": "calendar pop-up window",
+          "evidence": "Clicking either of these fields opens a calendar pop-up window."
+        },
+        {
+          "source": "calendar pop-up window",
+          "relation": "TRIGGERED_BY",
+          "target": "Start",
+          "evidence": "Clicking either of these fields opens a calendar pop-up window."
+        },
+        {
+          "source": "calendar pop-up window",
+          "relation": "PRODUCES",
+          "target": "fa-check Apply",
+          "evidence": "Click fa-check Apply to close the window."
+        },
+        {
+          "source": "Videocall URL",
+          "relation": "CONFIGURED_BY",
+          "target": "fa-plus Odoo meeting",
+          "evidence": "click fa-plus Odoo meeting, and a URL is automatically created for the meeting"
+        },
+        {
+          "source": "Description",
+          "relation": "ENABLES",
+          "target": "powerbox feature",
+          "evidence": "There is an option to enter formatted text, such as numbered lists, headings, tables, links, photos, and more. Use the powerbox feature, by typing a `/` to reveal a list of options."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "more-options",
+    "heading": "More options",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "More Options button",
+          "type": "Action",
+          "mention": "More Options button",
+          "confidence": "medium"
+        },
+        {
+          "name": "New Event pop-up window",
+          "type": "Module",
+          "mention": "New Event pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "recruitment/schedule_interviews/event-card",
+          "type": "Sub-module",
+          "mention": "recruitment/schedule_interviews/event-card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Duration field",
+          "type": "Field",
+          "mention": "Duration",
+          "confidence": "high"
+        },
+        {
+          "name": "Start date and time",
+          "type": "Field",
+          "mention": "Start (and end) date and time",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recurrent checkbox",
+          "type": "Field",
+          "mention": "Recurrent",
+          "confidence": "high"
+        },
+        {
+          "name": "Timezone field",
+          "type": "Field",
+          "mention": "Timezone",
+          "confidence": "high"
+        },
+        {
+          "name": "Repeat field",
+          "type": "Field",
+          "mention": "Repeat",
+          "confidence": "high"
+        },
+        {
+          "name": "Repeat Every field",
+          "type": "Field",
+          "mention": "Repeat Every",
+          "confidence": "high"
+        },
+        {
+          "name": "Repeat on field",
+          "type": "Field",
+          "mention": "Repeat on",
+          "confidence": "high"
+        },
+        {
+          "name": "Day of Month field",
+          "type": "Field",
+          "mention": "Day of Month",
+          "confidence": "high"
+        },
+        {
+          "name": "Date of Month option",
+          "type": "Option",
+          "mention": "Date of Month",
+          "confidence": "medium"
+        },
+        {
+          "name": "Until field",
+          "type": "Field",
+          "mention": "Until",
+          "confidence": "high"
+        },
+        {
+          "name": "Location field",
+          "type": "Field",
+          "mention": "Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags field",
+          "type": "Field",
+          "mention": "Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Privacy field",
+          "type": "Field",
+          "mention": "Privacy",
+          "confidence": "high"
+        },
+        {
+          "name": "Organizer field",
+          "type": "Field",
+          "mention": "Organizer",
+          "confidence": "high"
+        },
+        {
+          "name": "Reminders field",
+          "type": "Field",
+          "mention": "Reminders",
+          "confidence": "high"
+        },
+        {
+          "name": "Notification",
+          "type": "Feature",
+          "mention": "Notification",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email",
+          "type": "Feature",
+          "mention": "Email",
+          "confidence": "medium"
+        },
+        {
+          "name": "SMS Text Message",
+          "type": "Feature",
+          "mention": "SMS Text Message",
+          "confidence": "medium"
+        },
+        {
+          "name": "Organizer",
+          "type": "Actor",
+          "mention": "Organizer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "New Event pop-up window",
+          "evidence": "in the New Event pop-up window"
+        },
+        {
+          "source": "New Event pop-up window",
+          "relation": "CONTAINS",
+          "target": "recruitment/schedule_interviews/event-card",
+          "evidence": "<recruitment/schedule_interviews/event-card>"
+        },
+        {
+          "source": "More Options button",
+          "relation": "ENABLES",
+          "target": "Duration field",
+          "evidence": "To add additional information... click the More Options button"
+        },
+        {
+          "source": "Duration field",
+          "relation": "RELATED_TO",
+          "target": "Start date and time",
+          "evidence": "auto populates based on the Start date and time"
+        },
+        {
+          "source": "Recurrent checkbox",
+          "relation": "ENABLES",
+          "target": "Timezone field",
+          "evidence": "Several additional fields appear when this is enabled"
+        },
+        {
+          "source": "Recurrent checkbox",
+          "relation": "ENABLES",
+          "target": "Repeat field",
+          "evidence": "Several additional fields appear when this is enabled"
+        },
+        {
+          "source": "Repeat field",
+          "relation": "RELATED_TO",
+          "target": "Repeat on field",
+          "evidence": "enabled when the Weekly option is selected"
+        },
+        {
+          "source": "Repeat field",
+          "relation": "RELATED_TO",
+          "target": "Repeat Every field",
+          "evidence": "If Custom is selected, a Repeat Every field appears"
+        },
+        {
+          "source": "Day of Month field",
+          "relation": "RELATED_TO",
+          "target": "Date of Month option",
+          "evidence": "To set a specific calendar date, choose Date of Month"
+        },
+        {
+          "source": "Organizer field",
+          "relation": "RELATED_TO",
+          "target": "Employee",
+          "evidence": "the employee who created the meeting is populated"
+        },
+        {
+          "source": "Reminders field",
+          "relation": "CONTAINS",
+          "target": "Notification",
+          "evidence": "Default options include Notification"
+        },
+        {
+          "source": "Reminders field",
+          "relation": "CONTAINS",
+          "target": "Email",
+          "evidence": "Default options include Email"
+        },
+        {
+          "source": "Reminders field",
+          "relation": "CONTAINS",
+          "target": "SMS Text Message",
+          "evidence": "Default options include SMS Text Message"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "send-meeting-to-attendees",
+    "heading": "Send meeting to attendees",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Schedule Interviews",
+          "type": "Module",
+          "mention": "recruitment/schedule_interviews",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Meeting",
+          "type": "Feature",
+          "mention": "Send meeting to attendees",
+          "confidence": "high"
+        },
+        {
+          "name": "New Event",
+          "type": "DataObject",
+          "mention": "New Event",
+          "confidence": "high"
+        },
+        {
+          "name": "Event Card",
+          "type": "Sub-module",
+          "mention": "<recruitment/schedule_interviews/event-card>",
+          "confidence": "high"
+        },
+        {
+          "name": "Expanded Event Form",
+          "type": "Sub-module",
+          "mention": "expanded event form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contact Attendees email configurator",
+          "type": "Sub-module",
+          "mention": "Contact Attendees email configurator pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Calendar: Event Update email template",
+          "type": "DataObject",
+          "mention": "Calendar: Event Update email template",
+          "confidence": "medium"
+        },
+        {
+          "name": "Send SMS",
+          "type": "Sub-module",
+          "mention": "Send SMS pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "Followers",
+          "type": "Actor",
+          "mention": "followers of the job application",
+          "confidence": "medium"
+        },
+        {
+          "name": "User",
+          "type": "Actor",
+          "mention": "user who created the meeting",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendees",
+          "type": "Actor",
+          "mention": "attendees",
+          "confidence": "high"
+        },
+        {
+          "name": "In App Purchase",
+          "type": "Feature",
+          "mention": "../../essentials/in_app_purchase",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Send Meeting",
+          "relation": "BELONGS_TO",
+          "target": "Schedule Interviews",
+          "evidence": "Title mentions 'recruitment/schedule_interviews'"
+        },
+        {
+          "source": "Schedule Interviews",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Module path includes 'recruitment'"
+        },
+        {
+          "source": "Send Meeting",
+          "relation": "ENABLES",
+          "target": "Email",
+          "evidence": "To send the meeting via email..."
+        },
+        {
+          "source": "Send Meeting",
+          "relation": "ENABLES",
+          "target": "Text Message",
+          "evidence": "To send the meeting via text message..."
+        },
+        {
+          "source": "Expanded Event Form",
+          "relation": "CONTAINS",
+          "target": "Attendees field",
+          "evidence": "Attendees field on the expanded meeting form"
+        },
+        {
+          "source": "Event Card",
+          "relation": "IS_PART_OF",
+          "target": "New Event",
+          "evidence": "pop-up window is called New Event"
+        },
+        {
+          "source": "Contact Attendees email configurator",
+          "relation": "GENERATES",
+          "target": "Calendar: Event Update email template",
+          "evidence": "pre-formatted email using the default Calendar: Event Update email template"
+        },
+        {
+          "source": "Email",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "click the EMAIL button"
+        },
+        {
+          "source": "Text Message",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "click the SMS button"
+        },
+        {
+          "source": "Send SMS",
+          "relation": "GENERATES",
+          "target": "Message field",
+          "evidence": "Message field appears"
+        },
+        {
+          "source": "Send Meeting",
+          "relation": "REQUIRES",
+          "target": "In App Purchase",
+          "evidence": "credits are required, which need to be purchased"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "applicant-scheduled-interviews",
+    "heading": "Applicant scheduled interviews",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment",
+          "confidence": "medium"
+        },
+        {
+          "name": "First Interview",
+          "type": "Workflow",
+          "mention": "First Interview",
+          "confidence": "high"
+        },
+        {
+          "name": "Second Interview",
+          "type": "Workflow",
+          "mention": "Second Interview",
+          "confidence": "high"
+        },
+        {
+          "name": "Schedule Interview",
+          "type": "Action",
+          "mention": "Schedule Interview",
+          "confidence": "high"
+        },
+        {
+          "name": "email template",
+          "type": "DataObject",
+          "mention": "email template",
+          "confidence": "medium"
+        },
+        {
+          "name": "self-service scheduling",
+          "type": "Feature",
+          "mention": "self-service scheduling",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Schedule Interview",
+          "relation": "PERFORMED_BY",
+          "target": "Applicant",
+          "evidence": "self-service scheduling"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "First Interview",
+          "evidence": "assign the Recruitment: Schedule Interview email template to either the First Interview or Second Interview stage"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "Second Interview",
+          "evidence": "assign the Recruitment: Schedule Interview email template to either the First Interview or Second Interview stage"
+        },
+        {
+          "source": "Schedule Interview",
+          "relation": "BELONGS_TO",
+          "target": "Recruitment",
+          "evidence": "Schedule Interview email template"
+        },
+        {
+          "source": "self-service scheduling",
+          "relation": "ENABLES",
+          "target": "Schedule Interview",
+          "evidence": "Enabling Odoo's self-service scheduling"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "self-service scheduling",
+          "evidence": "Enabling Odoo's self-service scheduling"
+        },
+        {
+          "source": "First Interview",
+          "relation": "CONFIGURED_BY",
+          "target": "email template",
+          "evidence": "assign the Recruitment: Schedule Interview email template to either the First Interview stage"
+        },
+        {
+          "source": "Second Interview",
+          "relation": "CONFIGURED_BY",
+          "target": "email template",
+          "evidence": "assign the Recruitment: Schedule Interview email template to either the Second Interview stage"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "modify-stage",
+    "heading": "Modify stage",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "recruitment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Modify stage",
+          "type": "Action",
+          "mention": "Modify stage",
+          "confidence": "high"
+        },
+        {
+          "name": "First Interview",
+          "type": "DataObject",
+          "mention": "First Interview stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Second Interview",
+          "type": "DataObject",
+          "mention": "Second Interview stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email Template",
+          "type": "Field",
+          "mention": "Email Template field",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment: Schedule interview",
+          "type": "DataObject",
+          "mention": "Recruitment: Schedule interview",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Modify stage",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "Either the First Interview or Second Interview stage"
+        },
+        {
+          "source": "First Interview",
+          "relation": "IS_PART_OF",
+          "target": "Recruitment",
+          "evidence": "<recruitment/modify-stages>"
+        },
+        {
+          "source": "Second Interview",
+          "relation": "IS_PART_OF",
+          "target": "Recruitment",
+          "evidence": "<recruitment/modify-stages>"
+        },
+        {
+          "source": "Modify stage",
+          "relation": "CONFIGURED_BY",
+          "target": "Email Template",
+          "evidence": "so the stage's Email Template field is set to Recruitment: Schedule interview"
+        },
+        {
+          "source": "Email Template",
+          "relation": "BELONGS_TO",
+          "target": "First Interview",
+          "evidence": "the stage's Email Template field"
+        },
+        {
+          "source": "Email Template",
+          "relation": "BELONGS_TO",
+          "target": "Second Interview",
+          "evidence": "the stage's Email Template field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "send-email",
+    "heading": "Send email",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "email",
+          "type": "DataObject",
+          "mention": "emails",
+          "confidence": "medium"
+        },
+        {
+          "name": "First Interview",
+          "type": "Module",
+          "mention": "First Interview",
+          "confidence": "high"
+        },
+        {
+          "name": "Second Interview",
+          "type": "Module",
+          "mention": "Second Interview",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant card",
+          "type": "DataObject",
+          "mention": "applicant card",
+          "confidence": "high"
+        },
+        {
+          "name": "drag-and-drop",
+          "type": "Action",
+          "mention": "drag-and-drop",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "First Interview",
+          "relation": "CONTAINS",
+          "target": "email",
+          "evidence": "configured to send emails"
+        },
+        {
+          "source": "Second Interview",
+          "relation": "CONTAINS",
+          "target": "email",
+          "evidence": "configured to send emails"
+        },
+        {
+          "source": "drag-and-drop",
+          "relation": "PRODUCES",
+          "target": "email",
+          "evidence": "drag-and-drop the applicant card into one of these stages to send the email"
+        },
+        {
+          "source": "drag-and-drop",
+          "relation": "APPLIES_TO",
+          "target": "applicant card",
+          "evidence": "drag-and-drop the applicant card"
+        },
+        {
+          "source": "First Interview",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Second Interview",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "self-scheduled-interview",
+    "heading": "Self-scheduled interview",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Self-scheduled interview",
+          "type": "Feature",
+          "mention": "Self-scheduled interview",
+          "confidence": "high"
+        },
+        {
+          "name": "Schedule my interview button",
+          "type": "Action",
+          "mention": "Schedule my interview button",
+          "confidence": "high"
+        },
+        {
+          "name": "private online scheduling page",
+          "type": "Module",
+          "mention": "private online scheduling page",
+          "confidence": "high"
+        },
+        {
+          "name": "MEETING DETAILS",
+          "type": "DataObject",
+          "mention": "MEETING DETAILS",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "Full name",
+          "type": "Field",
+          "mention": "Full name",
+          "confidence": "high"
+        },
+        {
+          "name": "Email",
+          "type": "Field",
+          "mention": "Email",
+          "confidence": "high"
+        },
+        {
+          "name": "Phone number",
+          "type": "Field",
+          "mention": "Phone number",
+          "confidence": "high"
+        },
+        {
+          "name": "Add more details about you page",
+          "type": "Module",
+          "mention": "Add more details about you page",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Appointment button",
+          "type": "Action",
+          "mention": "Confirm Appointment button",
+          "confidence": "high"
+        },
+        {
+          "name": "confirmation page",
+          "type": "Module",
+          "mention": "confirmation page",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to iCal/Outlook button",
+          "type": "Action",
+          "mention": "Add to iCal/Outlook",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to Google Agenda button",
+          "type": "Action",
+          "mention": "Add to Google Agenda",
+          "confidence": "high"
+        },
+        {
+          "name": "Cancel your appointment link",
+          "type": "Action",
+          "mention": "Cancel your appointment link",
+          "confidence": "high"
+        },
+        {
+          "name": "Timezone field",
+          "type": "Field",
+          "mention": "Timezone field",
+          "confidence": "high"
+        },
+        {
+          "name": "interview",
+          "type": "Concept",
+          "mention": "interview",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Self-scheduled interview",
+          "relation": "CONTAINS",
+          "target": "Schedule my interview button",
+          "evidence": "click the Schedule my interview button"
+        },
+        {
+          "source": "Schedule my interview button",
+          "relation": "TRIGGERED_BY",
+          "target": "applicant",
+          "evidence": "click the Schedule my interview button"
+        },
+        {
+          "source": "Schedule my interview button",
+          "relation": "PRODUCES",
+          "target": "private online scheduling page",
+          "evidence": "navigates the applicant to a private online scheduling page"
+        },
+        {
+          "source": "private online scheduling page",
+          "relation": "CONTAINS",
+          "target": "MEETING DETAILS",
+          "evidence": "This page displays the MEETING DETAILS"
+        },
+        {
+          "source": "private online scheduling page",
+          "relation": "CONTAINS",
+          "target": "Timezone field",
+          "evidence": "Be sure to check the Timezone field"
+        },
+        {
+          "source": "applicant",
+          "relation": "TRIGGERED_BY",
+          "target": "Confirm Appointment button",
+          "evidence": "the applicant clicks the Confirm Appointment button"
+        },
+        {
+          "source": "Confirm Appointment button",
+          "relation": "PRODUCES",
+          "target": "confirmation page",
+          "evidence": "the applicant is taken to a confirmation page"
+        },
+        {
+          "source": "confirmation page",
+          "relation": "CONTAINS",
+          "target": "Add to iCal/Outlook button",
+          "evidence": "Add to iCal/Outlook and Add to Google Agenda buttons"
+        },
+        {
+          "source": "confirmation page",
+          "relation": "CONTAINS",
+          "target": "Add to Google Agenda button",
+          "evidence": "Add to iCal/Outlook and Add to Google Agenda buttons"
+        },
+        {
+          "source": "confirmation page",
+          "relation": "CONTAINS",
+          "target": "Cancel your appointment link",
+          "evidence": "Cancel your appointment link at the bottom"
+        },
+        {
+          "source": "Add more details about you page",
+          "relation": "CONTAINS",
+          "target": "Full name",
+          "evidence": "asks the applicant to enter their Full name"
+        },
+        {
+          "source": "Add more details about you page",
+          "relation": "CONTAINS",
+          "target": "Email",
+          "evidence": "asks the applicant to enter their Email"
+        },
+        {
+          "source": "Add more details about you page",
+          "relation": "CONTAINS",
+          "target": "Phone number",
+          "evidence": "asks the applicant to enter their Phone number"
+        },
+        {
+          "source": "MEETING DETAILS",
+          "relation": "RELATED_TO",
+          "target": "interview",
+          "evidence": "MEETING DETAILS ... interview"
+        }
+      ]
+    }
+  }
+]

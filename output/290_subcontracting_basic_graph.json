@@ -1,0 +1,1545 @@
+[
+  {
+    "section_id": "basic-subcontracting",
+    "heading": "Basic subcontracting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing",
+          "type": "Module",
+          "mention": "manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontracting",
+          "type": "Concept",
+          "mention": "subcontracting",
+          "confidence": "high"
+        },
+        {
+          "name": "basic subcontracting",
+          "type": "Concept",
+          "mention": "basic subcontracting",
+          "confidence": "high"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "high"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "high"
+        },
+        {
+          "name": "third-party manufacturer",
+          "type": "Actor",
+          "mention": "third-party manufacturer",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "components",
+          "type": "DataObject",
+          "mention": "components",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "basic subcontracting",
+          "relation": "RELATED_TO",
+          "target": "manufacturing",
+          "evidence": "In manufacturing, subcontracting is the process"
+        },
+        {
+          "source": "manufacturing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Basic subcontracting\nIn manufacturing, subcontracting"
+        },
+        {
+          "source": "subcontracting",
+          "relation": "RELATED_TO",
+          "target": "manufacturing",
+          "evidence": "In manufacturing, subcontracting is the process"
+        },
+        {
+          "source": "company",
+          "relation": "RELATED_TO",
+          "target": "contracting company",
+          "evidence": "the contracting company"
+        },
+        {
+          "source": "third-party manufacturer",
+          "relation": "EQUIVALENT_TO",
+          "target": "subcontractor",
+          "evidence": "third-party manufacturer, or subcontractor"
+        },
+        {
+          "source": "subcontractor",
+          "relation": "RELATED_TO",
+          "target": "company",
+          "evidence": "a company engaging a third-party manufacturer, or subcontractor"
+        },
+        {
+          "source": "basic subcontracting",
+          "relation": "RELATED_TO",
+          "target": "subcontractor",
+          "evidence": "In basic subcontracting, the subcontractor is responsible"
+        },
+        {
+          "source": "basic subcontracting",
+          "relation": "RELATED_TO",
+          "target": "components",
+          "evidence": "responsible for acquiring the necessary components."
+        },
+        {
+          "source": "vendor",
+          "relation": "EQUIVALENT_TO",
+          "target": "subcontractor",
+          "evidence": "similar to the one used when purchasing from a vendor. The main differences...manufactured by them."
+        },
+        {
+          "source": "product",
+          "relation": "RELATED_TO",
+          "target": "basic subcontracting",
+          "evidence": "manufactured using basic subcontracting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Subcontracting setting",
+          "type": "Feature",
+          "mention": "Subcontracting setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Module",
+          "mention": "Operations",
+          "confidence": "low"
+        },
+        {
+          "name": "subcontracted product",
+          "type": "DataObject",
+          "mention": "subcontracted product",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Subcontracting setting",
+          "relation": "BELONGS_TO",
+          "target": "Operations",
+          "evidence": "under the Operations heading"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Subcontracting setting",
+          "evidence": "navigate to Manufacturing app --> Configuration --> Settings, and tick the checkbox next to the Subcontracting setting"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "navigate to Manufacturing app --> Configuration --> Settings"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Manufacturing app",
+          "evidence": "Product: Odoo, navigate to Manufacturing app"
+        },
+        {
+          "source": "Subcontracting setting",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "tick the checkbox next to the Subcontracting setting, under the Operations heading. Then, click Save."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-product",
+    "heading": "Configure product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products --> Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "configure a product for basic subcontracting",
+          "type": "Workflow",
+          "mention": "To configure a product for basic subcontracting",
+          "confidence": "high"
+        },
+        {
+          "name": "select a product",
+          "type": "Action",
+          "mention": "select a product",
+          "confidence": "high"
+        },
+        {
+          "name": "create a new product",
+          "type": "Action",
+          "mention": "create a new one by clicking New",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Feature",
+          "mention": "Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "add the product's subcontractor as a vendor",
+          "type": "Action",
+          "mention": "add the product's subcontractor as a vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor drop-down menu",
+          "type": "Field",
+          "mention": "Vendor drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Price field",
+          "type": "Field",
+          "mention": "Price field",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Feature",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Routes field",
+          "type": "Field",
+          "mention": "Routes field",
+          "confidence": "high"
+        },
+        {
+          "name": "configure a route",
+          "type": "Action",
+          "mention": "configure a route",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy route",
+          "type": "Feature",
+          "mention": "Buy route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish on Order (MTO) route",
+          "type": "Feature",
+          "mention": "Replenish on Order (MTO) route",
+          "confidence": "medium"
+        },
+        {
+          "name": "create a  for the product",
+          "type": "Action",
+          "mention": "create a  for the product",
+          "confidence": "low"
+        },
+        {
+          "name": "sales order (SO)",
+          "type": "DataObject",
+          "mention": "sales order (SO)",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock on-hand",
+          "type": "DataObject",
+          "mention": "stock on-hand",
+          "confidence": "medium"
+        },
+        {
+          "name": "fulfill the ",
+          "type": "Action",
+          "mention": "fulfill the ",
+          "confidence": "low"
+        },
+        {
+          "name": "Dropship route",
+          "type": "Feature",
+          "mention": "Dropship route",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo... navigate to Inventory app"
+        },
+        {
+          "source": "Products",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "Inventory app --> Products --> Products"
+        },
+        {
+          "source": "configure a product for basic subcontracting",
+          "relation": "TRIGGERED_BY",
+          "target": "select a product",
+          "evidence": "select a product, or create a new one"
+        },
+        {
+          "source": "configure a product for basic subcontracting",
+          "relation": "TRIGGERED_BY",
+          "target": "create a new product",
+          "evidence": "select a product, or create a new one"
+        },
+        {
+          "source": "configure a product for basic subcontracting",
+          "relation": "CONFIGURED_BY",
+          "target": "Purchase tab",
+          "evidence": "On the product form, select the Purchase tab"
+        },
+        {
+          "source": "configure a product for basic subcontracting",
+          "relation": "CONFIGURED_BY",
+          "target": "Inventory tab",
+          "evidence": "click on the Inventory tab"
+        },
+        {
+          "source": "configure a product for basic subcontracting",
+          "relation": "PERFORMED_BY",
+          "target": "add the product's subcontractor as a vendor",
+          "evidence": "add the product's subcontractor as a vendor"
+        },
+        {
+          "source": "configure a product for basic subcontracting",
+          "relation": "PERFORMED_BY",
+          "target": "configure a route",
+          "evidence": "use the Routes field to configure a route"
+        },
+        {
+          "source": "add the product's subcontractor as a vendor",
+          "relation": "ENABLES",
+          "target": "Add a line",
+          "evidence": "by clicking Add a line"
+        },
+        {
+          "source": "configure a route",
+          "relation": "CONFIGURED_BY",
+          "target": "Routes field",
+          "evidence": "use the Routes field to configure a route"
+        },
+        {
+          "source": "configure a route",
+          "relation": "HAS_FEATURE",
+          "target": "Buy route",
+          "evidence": "If the finished product is shipped back... make sure the Buy route is selected"
+        },
+        {
+          "source": "configure a route",
+          "relation": "HAS_FEATURE",
+          "target": "Replenish on Order (MTO) route",
+          "evidence": "select the Replenish on Order (MTO) route"
+        },
+        {
+          "source": "configure a route",
+          "relation": "HAS_FEATURE",
+          "target": "Dropship route",
+          "evidence": "If the finished product is shipped directly... make sure that only the Dropship route is selected"
+        },
+        {
+          "source": "Replenish on Order (MTO) route",
+          "relation": "ENABLES",
+          "target": "create a  for the product",
+          "evidence": "automatically create a  for the product upon confirmation"
+        },
+        {
+          "source": "create a  for the product",
+          "relation": "TRIGGERED_BY",
+          "target": "sales order (SO)",
+          "evidence": "upon confirmation of a sales order (SO)"
+        },
+        {
+          "source": "create a  for the product",
+          "relation": "REQUIRES",
+          "target": "stock on-hand",
+          "evidence": "unless there is enough stock on-hand"
+        },
+        {
+          "source": "Buy route",
+          "relation": "APPLIES_TO",
+          "target": "subcontractor",
+          "evidence": "finished product is shipped back to the contracting company"
+        },
+        {
+          "source": "Buy route",
+          "relation": "APPLIES_TO",
+          "target": "contracting company",
+          "evidence": "finished product is shipped back to the contracting company"
+        },
+        {
+          "source": "Dropship route",
+          "relation": "APPLIES_TO",
+          "target": "subcontractor",
+          "evidence": "finished product is shipped directly to the customer by the subcontractor"
+        },
+        {
+          "source": "Dropship route",
+          "relation": "APPLIES_TO",
+          "target": "customer",
+          "evidence": "finished product is shipped directly to the customer"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-bom",
+    "heading": "Configure BoM",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bills of Materials",
+          "type": "Sub-module",
+          "mention": "Bills of Materials",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bill of Materials",
+          "type": "DataObject",
+          "mention": "Bill of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials smart button",
+          "type": "Action",
+          "mention": "Bill of Materials smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "BoM Type field",
+          "type": "Field",
+          "mention": "BoM Type field",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracting",
+          "type": "Standard",
+          "mention": "Subcontracting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Subcontractors field",
+          "type": "Field",
+          "mention": "Subcontractors field",
+          "confidence": "high"
+        },
+        {
+          "name": "Miscellaneous tab",
+          "type": "Setting",
+          "mention": "Miscellaneous tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manuf. Lead Time field",
+          "type": "Field",
+          "mention": "Manuf. Lead Time field",
+          "confidence": "high"
+        },
+        {
+          "name": "Components tab",
+          "type": "Setting",
+          "mention": "Components tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Manufacturing app",
+          "evidence": "Product: Odoo Title: Configure BoM"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Manufacturing app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Bills of Materials",
+          "evidence": "Products --> Bills of Materials"
+        },
+        {
+          "source": "product",
+          "relation": "HAS_REPORT",
+          "target": "Bill of Materials",
+          "evidence": "click the Bill of Materials smart button on the product form"
+        },
+        {
+          "source": "Bill of Materials",
+          "relation": "CONFIGURED_BY",
+          "target": "BoM Type field",
+          "evidence": "In the BoM Type field, select the Subcontracting option"
+        },
+        {
+          "source": "BoM Type field",
+          "relation": "SUPPORTS",
+          "target": "Subcontracting",
+          "evidence": "select the Subcontracting option"
+        },
+        {
+          "source": "Bill of Materials",
+          "relation": "CONFIGURED_BY",
+          "target": "Subcontractors field",
+          "evidence": "Then, add one or more subcontractors in the Subcontractors field"
+        },
+        {
+          "source": "Bill of Materials",
+          "relation": "CONFIGURED_BY",
+          "target": "Miscellaneous tab",
+          "evidence": "Finally, click on the Miscellaneous tab"
+        },
+        {
+          "source": "Miscellaneous tab",
+          "relation": "CONTAINS",
+          "target": "Manuf. Lead Time field",
+          "evidence": "In the Manuf. Lead Time field"
+        },
+        {
+          "source": "subcontractor",
+          "relation": "PERFORMED_BY",
+          "target": "product",
+          "evidence": "the subcontractor to manufacture the product"
+        },
+        {
+          "source": "Bill of Materials",
+          "relation": "CONFIGURED_BY",
+          "target": "Components tab",
+          "evidence": "Components tab of the "
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "basic-subcontracting-workflow",
+    "heading": "Basic subcontracting workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracted product",
+          "type": "DataObject",
+          "mention": "subcontracted product",
+          "confidence": "medium"
+        },
+        {
+          "name": "receipt order",
+          "type": "DataObject",
+          "mention": "receipt order",
+          "confidence": "medium"
+        },
+        {
+          "name": "dropship order",
+          "type": "DataObject",
+          "mention": "dropship order",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "medium"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Basic subcontracting workflow",
+          "relation": "CONTAINS",
+          "target": "sales order",
+          "evidence": "Create a sales order (SO) for the subcontracted product"
+        },
+        {
+          "source": "sales order",
+          "relation": "PRODUCES",
+          "target": "Purchase product from subcontractor",
+          "evidence": "doing so creates a purchase order"
+        },
+        {
+          "source": "Basic subcontracting workflow",
+          "relation": "CONTAINS",
+          "target": "receipt order",
+          "evidence": "process the receipt once the subcontractor has finished manufacturing"
+        },
+        {
+          "source": "Basic subcontracting workflow",
+          "relation": "CONTAINS",
+          "target": "dropship order",
+          "evidence": "process the dropship order to ship the product directly to the customer"
+        },
+        {
+          "source": "Basic subcontracting workflow",
+          "relation": "CONTAINS",
+          "target": "delivery order",
+          "evidence": "process the delivery order once the product is shipped to the customer"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-so",
+    "heading": "Create SO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Create SO",
+          "type": "Action",
+          "mention": "create a new , ... click Confirm to confirm the",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer drop-down menu",
+          "type": "Field",
+          "mention": "Customer drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order Lines tab",
+          "type": "Sub-module",
+          "mention": "Order Lines tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "click Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product drop-down menu",
+          "type": "Field",
+          "mention": "Product drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase smart button",
+          "type": "Feature",
+          "mention": "Purchase smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish on Order (MTO)",
+          "type": "Standard",
+          "mention": "*Replenish on Order (MTO)* route",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontracted product",
+          "type": "DataObject",
+          "mention": "subcontracted product",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock on-hand",
+          "type": "Concept",
+          "mention": "stock on-hand",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": " created",
+          "confidence": "low"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": " ",
+          "confidence": "low"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Orders",
+          "relation": "BELONGS_TO",
+          "target": "Sales",
+          "evidence": "navigate to Sales app --> Orders"
+        },
+        {
+          "source": "Create SO",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "Select the customer"
+        },
+        {
+          "source": "Create SO",
+          "relation": "HAS_FEATURE",
+          "target": "Purchase smart button",
+          "evidence": "a Purchase smart button appears"
+        },
+        {
+          "source": "Purchase smart button",
+          "relation": "TRIGGERED_BY",
+          "target": "Create SO",
+          "evidence": "Click Confirm... at which point a Purchase smart button appears"
+        },
+        {
+          "source": "subcontracted product",
+          "relation": "IS_PART_OF",
+          "target": "Order Lines tab",
+          "evidence": "select a subcontracted product in the Product drop-down menu"
+        },
+        {
+          "source": "Create SO",
+          "relation": "CONFIGURED_BY",
+          "target": "Replenish on Order (MTO)",
+          "evidence": "if the *Replenish on Order (MTO)* route is enabled"
+        },
+        {
+          "source": "Create SO",
+          "relation": "REQUIRES",
+          "target": "subcontracted product",
+          "evidence": "select a subcontracted product"
+        },
+        {
+          "source": "Create SO",
+          "relation": "REQUIRES",
+          "target": "Quantity field",
+          "evidence": "enter a quantity in the Quantity field"
+        },
+        {
+          "source": "Create SO",
+          "relation": "GENERATES",
+          "target": "delivery order",
+          "evidence": "confirming an  for the product creates a delivery order"
+        },
+        {
+          "source": "Create SO",
+          "relation": "GENERATES",
+          "target": "purchase order",
+          "evidence": " a Purchase smart button appears... opens the  created"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-po",
+    "heading": "Process PO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "DataObject",
+          "mention": "Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Order",
+          "type": "Action",
+          "mention": "click Confirm Order",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "clicking New",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Field",
+          "mention": "Vendor drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Field",
+          "mention": "Products tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "click Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracted product",
+          "type": "DataObject",
+          "mention": "subcontracted product",
+          "confidence": "low"
+        },
+        {
+          "name": "receipt",
+          "type": "DataObject",
+          "mention": "receipt",
+          "confidence": "medium"
+        },
+        {
+          "name": "dropship order",
+          "type": "DataObject",
+          "mention": "dropship order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipt",
+          "type": "Action",
+          "mention": "Receipt smart button",
+          "confidence": "low"
+        },
+        {
+          "name": "Dropship",
+          "type": "Action",
+          "mention": "Dropship smart button",
+          "confidence": "low"
+        },
+        {
+          "name": "basic subcontracting",
+          "type": "Concept",
+          "mention": "basic subcontracting",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "CONTAINS",
+          "target": "Orders",
+          "evidence": "Purchase app --> Orders"
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Purchase Orders",
+          "evidence": "Orders --> Purchase Orders"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "CONTAINS",
+          "target": "Vendor",
+          "evidence": "filling out the by selecting a subcontractor from the Vendor drop-down menu"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "In the Products tab"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "Select a subcontracted product in the Product field"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "enter the quantity in the Quantity field"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Confirm Order"
+        },
+        {
+          "source": "New",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "clicking New"
+        },
+        {
+          "source": "Add a product",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Add a product"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "PRODUCES",
+          "target": "receipt",
+          "evidence": "a receipt or dropship order is automatically created"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "PRODUCES",
+          "target": "dropship order",
+          "evidence": "a receipt or dropship order is automatically created"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "HAS_REPORT",
+          "target": "Receipt",
+          "evidence": "Receipt smart button"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "HAS_REPORT",
+          "target": "Dropship",
+          "evidence": "Dropship smart button"
+        },
+        {
+          "source": "basic subcontracting",
+          "relation": "RELATED_TO",
+          "target": "Purchase Orders",
+          "evidence": "PO for a basic subcontracting product"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-receipt-or-dropship-order",
+    "heading": "Process receipt or dropship order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Process receipt or dropship order",
+          "type": "Workflow",
+          "mention": "Process receipt or dropship order",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing",
+          "type": "Module",
+          "mention": "manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "end customer",
+          "type": "Actor",
+          "mention": "end customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Process receipt or dropship order",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "subcontractor",
+          "relation": "PERFORMED_BY",
+          "target": "Process receipt or dropship order",
+          "evidence": "subcontractor has finished manufacturing the product"
+        },
+        {
+          "source": "subcontractor",
+          "relation": "PERFORMED_BY",
+          "target": "manufacturing",
+          "evidence": "subcontractor has finished manufacturing the product"
+        },
+        {
+          "source": "Process receipt or dropship order",
+          "relation": "CONFIGURED_BY",
+          "target": "product",
+          "evidence": "depending on how the product was configured"
+        },
+        {
+          "source": "Process receipt or dropship order",
+          "relation": "GENERATES",
+          "target": "manufacturing",
+          "evidence": "finished manufacturing the product"
+        },
+        {
+          "source": "Process receipt or dropship order",
+          "relation": "IS_PART_OF",
+          "target": "manufacturing",
+          "evidence": "Once the subcontractor has finished manufacturing the product"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "end customer",
+          "evidence": "dropship it to the end customer"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "contracting company",
+          "evidence": "ship it to the contracting company"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-receipt",
+    "heading": "Process receipt",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "Feature",
+          "mention": "Purchase Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receive Products button",
+          "type": "Action",
+          "mention": "Receive Products button",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipt smart button",
+          "type": "Action",
+          "mention": "Receipt smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt",
+          "type": "DataObject",
+          "mention": "receipt",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Orders",
+          "relation": "IS_PART_OF",
+          "target": "Purchase app",
+          "evidence": "navigate to Purchase app --> Orders"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "IS_PART_OF",
+          "target": "Orders",
+          "evidence": "Orders --> Purchase Orders"
+        },
+        {
+          "source": "Receive Products button",
+          "relation": "PERFORMED_BY",
+          "target": "subcontractor",
+          "evidence": "If the subcontractor ships..."
+        },
+        {
+          "source": "Receipt smart button",
+          "relation": "PERFORMED_BY",
+          "target": "subcontractor",
+          "evidence": "If the subcontractor ships..."
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "contracting company",
+          "evidence": "received, navigate to..."
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "inventory",
+          "evidence": "enter the product into inventory."
+        },
+        {
+          "source": "receipt",
+          "relation": "CONTAINED_IN",
+          "target": "Purchase Orders",
+          "evidence": "select the . Click the Receive Products button at the top of the ,"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-dropship-order",
+    "heading": "Process dropship order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "DataObject",
+          "mention": "Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "Purchase Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship smart button",
+          "type": "Feature",
+          "mention": "Dropship smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "dropship order",
+          "type": "Workflow",
+          "mention": "dropship order",
+          "confidence": "medium"
+        },
+        {
+          "name": "process dropship order",
+          "type": "Workflow",
+          "mention": "Process dropship order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase app",
+          "relation": "CONTAINS",
+          "target": "Purchase Orders",
+          "evidence": "Navigate to Purchase app --> Orders --> Purchase Orders"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "CONTAINS",
+          "target": "Purchase Order",
+          "evidence": "select the Purchase Order"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "HAS_FEATURE",
+          "target": "Dropship smart button",
+          "evidence": "Select the Dropship smart button at the top of the Purchase Order"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "CONTAINS",
+          "target": "Validate",
+          "evidence": "click Validate at the top of the order"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Validate to confirm"
+        },
+        {
+          "source": "Validate",
+          "relation": "TRIGGERED_BY",
+          "target": "process dropship order",
+          "evidence": "click Validate to confirm the product has been sent"
+        },
+        {
+          "source": "dropship order",
+          "relation": "IS_PART_OF",
+          "target": "process dropship order",
+          "evidence": "to open the dropship order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-delivery-order",
+    "heading": "Process delivery order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Process delivery order",
+          "type": "Action",
+          "mention": "Process the delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Feature",
+          "mention": "Delivery smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery order",
+          "type": "DataObject",
+          "mention": "Delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "finished product",
+          "type": "DataObject",
+          "mention": "finished product",
+          "confidence": "low"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Process delivery order",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Process delivery order workflow is described for Odoo product"
+        },
+        {
+          "source": "Sales app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Navigate to the Sales app in Odoo"
+        },
+        {
+          "source": "Delivery smart button",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery order",
+          "evidence": "Select the Delivery smart button to open the delivery order"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "Click Validate to confirm the product has been shipped"
+        },
+        {
+          "source": "Delivery order",
+          "relation": "TRIGGERED_BY",
+          "target": "Process delivery order",
+          "evidence": "Delivery order is opened and validated as part of processing"
+        },
+        {
+          "source": "finished product",
+          "relation": "GENERATES",
+          "target": "Delivery order",
+          "evidence": "Finished product shipment leads to delivery order creation"
+        },
+        {
+          "source": "customer",
+          "relation": "RELATED_TO",
+          "target": "contracting company",
+          "evidence": "Product delivered to contracting company and shipped to customer"
+        }
+      ]
+    }
+  }
+]

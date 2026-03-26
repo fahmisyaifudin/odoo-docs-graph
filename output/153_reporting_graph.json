@@ -1,0 +1,682 @@
+[
+  {
+    "section_id": "reporting",
+    "heading": "Reporting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "Time Off",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Feature",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "By Employee",
+          "type": "Report",
+          "mention": "time_off/by-employee",
+          "confidence": "high"
+        },
+        {
+          "name": "By Type",
+          "type": "Report",
+          "mention": "time_off/by_type",
+          "confidence": "high"
+        },
+        {
+          "name": "Balance",
+          "type": "Report",
+          "mention": "time_off/balance",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents",
+          "confidence": "high"
+        },
+        {
+          "name": "Spreadsheet",
+          "type": "Feature",
+          "mention": "Spreadsheet",
+          "confidence": "high"
+        },
+        {
+          "name": "Dashboard",
+          "type": "Feature",
+          "mention": "Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Graph",
+          "type": "Feature",
+          "mention": "Graph",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pivot",
+          "type": "Feature",
+          "mention": "Pivot",
+          "confidence": "medium"
+        },
+        {
+          "name": "Insert in Spreadsheet",
+          "type": "Action",
+          "mention": "Insert in Spreadsheet",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Time Off",
+          "relation": "HAS_FEATURE",
+          "target": "Reporting",
+          "evidence": "The Time Off app's reporting feature"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "By Employee",
+          "evidence": "lets managers view team time off by employee"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "By Type",
+          "evidence": "type"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Balance",
+          "evidence": "remaining balances"
+        },
+        {
+          "source": "Reporting",
+          "relation": "ENABLES",
+          "target": "Insert in Spreadsheet",
+          "evidence": "Any report can be added to a spreadsheet"
+        },
+        {
+          "source": "Insert in Spreadsheet",
+          "relation": "SUPPORTS",
+          "target": "Graph",
+          "evidence": "when in either the fa-area-chart (Graph) or oi-view-pivot (Pivot) view"
+        },
+        {
+          "source": "Insert in Spreadsheet",
+          "relation": "SUPPORTS",
+          "target": "Pivot",
+          "evidence": "when in either the fa-area-chart (Graph) or oi-view-pivot (Pivot) view"
+        },
+        {
+          "source": "Documents",
+          "relation": "ENABLES",
+          "target": "Insert in Spreadsheet",
+          "evidence": "If the Documents app is installed, an option to add the report to a spreadsheet appears"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "by-employee",
+    "heading": "By employee",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "Time Off app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "by Employee",
+          "type": "Report",
+          "mention": "Title: By employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee name",
+          "type": "Field",
+          "mention": "Employee name",
+          "confidence": "high"
+        },
+        {
+          "name": "Number of Days off requested",
+          "type": "Field",
+          "mention": "Number of Days off requested",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Date",
+          "type": "Field",
+          "mention": "Start Date",
+          "confidence": "high"
+        },
+        {
+          "name": "End Date",
+          "type": "Field",
+          "mention": "End Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Status",
+          "type": "Field",
+          "mention": "Status",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "List",
+          "type": "Feature",
+          "mention": "oi-view-list (List), or default view",
+          "confidence": "high"
+        },
+        {
+          "name": "Graph",
+          "type": "Feature",
+          "mention": "fa-area-chart (Graph)",
+          "confidence": "high"
+        },
+        {
+          "name": "Pivot",
+          "type": "Feature",
+          "mention": "oi-view-pivot (Pivot)",
+          "confidence": "high"
+        },
+        {
+          "name": "Calendar",
+          "type": "Feature",
+          "mention": "fa-calendar (Calendar) view",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "by Employee",
+          "relation": "HAS_REPORT",
+          "target": "Time Off",
+          "evidence": "viewing time off by employee helps managers track... To view a list of employee time off requests, navigate to Time Off app --> Reporting --> by Employee"
+        },
+        {
+          "source": "by Employee",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "navigate to Time Off app --> Reporting --> by Employee"
+        },
+        {
+          "source": "Reporting",
+          "relation": "BELONGS_TO",
+          "target": "Time Off",
+          "evidence": "navigate to Time Off app --> Reporting"
+        },
+        {
+          "source": "by Employee",
+          "relation": "CONTAINS",
+          "target": "Employee name",
+          "evidence": "The information shown in the list includes: the Employee name"
+        },
+        {
+          "source": "by Employee",
+          "relation": "CONTAINS",
+          "target": "Number of Days off requested",
+          "evidence": "The information shown in the list includes: Number of Days off requested"
+        },
+        {
+          "source": "by Employee",
+          "relation": "CONTAINS",
+          "target": "Start Date",
+          "evidence": "The information shown in the list includes: the Start Date"
+        },
+        {
+          "source": "by Employee",
+          "relation": "CONTAINS",
+          "target": "End Date",
+          "evidence": "The information shown in the list includes: End Date"
+        },
+        {
+          "source": "by Employee",
+          "relation": "CONTAINS",
+          "target": "Status",
+          "evidence": "The information shown in the list includes: Status"
+        },
+        {
+          "source": "by Employee",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "The information shown in the list includes: Description"
+        },
+        {
+          "source": "by Employee",
+          "relation": "HAS_FEATURE",
+          "target": "List",
+          "evidence": "The various options are a oi-view-list (List), or default view"
+        },
+        {
+          "source": "by Employee",
+          "relation": "HAS_FEATURE",
+          "target": "Graph",
+          "evidence": "The various options are a fa-area-chart (Graph)"
+        },
+        {
+          "source": "by Employee",
+          "relation": "HAS_FEATURE",
+          "target": "Pivot",
+          "evidence": "The various options are a oi-view-pivot (Pivot) table"
+        },
+        {
+          "source": "by Employee",
+          "relation": "HAS_FEATURE",
+          "target": "Calendar",
+          "evidence": "The various options are a fa-calendar (Calendar) view"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "by-type",
+    "heading": "By type",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off app",
+          "type": "Module",
+          "mention": "Time Off app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "by Type",
+          "type": "Report",
+          "mention": "Reporting --> by Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Time off type",
+          "type": "Concept",
+          "mention": "organized by time off type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Duration (Days)",
+          "type": "Field",
+          "mention": "Duration (Days)",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Field",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Number of Days",
+          "type": "Field",
+          "mention": "Number of Days",
+          "confidence": "high"
+        },
+        {
+          "name": "Request Type",
+          "type": "Field",
+          "mention": "Request Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Date",
+          "type": "Field",
+          "mention": "Start Date",
+          "confidence": "high"
+        },
+        {
+          "name": "End Date",
+          "type": "Field",
+          "mention": "End Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Status",
+          "type": "Field",
+          "mention": "Status",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "Graph",
+          "type": "Report",
+          "mention": "fa-area-chart (Graph)",
+          "confidence": "high"
+        },
+        {
+          "name": "List",
+          "type": "Report",
+          "mention": "oi-view-list (List)",
+          "confidence": "high"
+        },
+        {
+          "name": "Pivot",
+          "type": "Report",
+          "mention": "oi-view-pivot (Pivot)",
+          "confidence": "high"
+        },
+        {
+          "name": "Time off request",
+          "type": "DataObject",
+          "mention": "time off requests",
+          "confidence": "high"
+        },
+        {
+          "name": "reporting documentation",
+          "type": "Concept",
+          "mention": "refer to the reporting documentation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Time Off app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "navigate to Time Off app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "by Type",
+          "evidence": "Reporting --> by Type"
+        },
+        {
+          "source": "by Type",
+          "relation": "CONTAINS",
+          "target": "Time off type",
+          "evidence": "organized by time off type"
+        },
+        {
+          "source": "by Type",
+          "relation": "GENERATES",
+          "target": "Time off request",
+          "evidence": "list view of all the time off requests for that time off type"
+        },
+        {
+          "source": "Time off request",
+          "relation": "CONTAINS",
+          "target": "Employee",
+          "evidence": "Employee"
+        },
+        {
+          "source": "Time off request",
+          "relation": "CONTAINS",
+          "target": "Number of Days",
+          "evidence": "Number of Days"
+        },
+        {
+          "source": "Time off request",
+          "relation": "CONTAINS",
+          "target": "Request Type",
+          "evidence": "Request Type"
+        },
+        {
+          "source": "Time off request",
+          "relation": "CONTAINS",
+          "target": "Start Date",
+          "evidence": "Start Date"
+        },
+        {
+          "source": "Time off request",
+          "relation": "CONTAINS",
+          "target": "End Date",
+          "evidence": "End Date"
+        },
+        {
+          "source": "Time off request",
+          "relation": "CONTAINS",
+          "target": "Status",
+          "evidence": "Status"
+        },
+        {
+          "source": "Time off request",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "Description"
+        },
+        {
+          "source": "by Type",
+          "relation": "CONTAINS",
+          "target": "Graph",
+          "evidence": "The various options are a fa-area-chart (Graph)"
+        },
+        {
+          "source": "by Type",
+          "relation": "CONTAINS",
+          "target": "List",
+          "evidence": "oi-view-list (List)"
+        },
+        {
+          "source": "by Type",
+          "relation": "CONTAINS",
+          "target": "Pivot",
+          "evidence": "oi-view-pivot (Pivot)"
+        },
+        {
+          "source": "by Type",
+          "relation": "SEE_ALSO",
+          "target": "reporting documentation",
+          "evidence": "refer to the reporting documentation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "balance",
+    "heading": "Balance",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off app",
+          "type": "Module",
+          "mention": "Time Off app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Balance",
+          "type": "Feature",
+          "mention": "Balance",
+          "confidence": "high"
+        },
+        {
+          "name": "time off balances",
+          "type": "Concept",
+          "mention": "time off balances",
+          "confidence": "medium"
+        },
+        {
+          "name": "time off types",
+          "type": "Concept",
+          "mention": "time off types",
+          "confidence": "medium"
+        },
+        {
+          "name": "rollover rules",
+          "type": "Setting",
+          "mention": "rollover rules",
+          "confidence": "low"
+        },
+        {
+          "name": "balance limits",
+          "type": "Setting",
+          "mention": "balance limits",
+          "confidence": "low"
+        },
+        {
+          "name": "manager",
+          "type": "Actor",
+          "mention": "managers",
+          "confidence": "low"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "low"
+        },
+        {
+          "name": "pivot table",
+          "type": "Report",
+          "mention": "pivot table",
+          "confidence": "high"
+        },
+        {
+          "name": "days",
+          "type": "Field",
+          "mention": "days",
+          "confidence": "low"
+        },
+        {
+          "name": "hours",
+          "type": "Field",
+          "mention": "hours",
+          "confidence": "low"
+        },
+        {
+          "name": "Left",
+          "type": "Field",
+          "mention": "Left",
+          "confidence": "low"
+        },
+        {
+          "name": "Planned",
+          "type": "Field",
+          "mention": "Planned",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Time Off app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Time Off app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Balance",
+          "evidence": "Reporting --> Balance"
+        },
+        {
+          "source": "Balance",
+          "relation": "HAS_REPORT",
+          "target": "pivot table",
+          "evidence": "view a pivot table of all time off balances"
+        },
+        {
+          "source": "Balance",
+          "relation": "HAS_FEATURE",
+          "target": "time off balances",
+          "evidence": "viewing time off balances"
+        },
+        {
+          "source": "pivot table",
+          "relation": "IS_PART_OF",
+          "target": "Balance",
+          "evidence": "This shows all time off balances in a default pivot table"
+        },
+        {
+          "source": "pivot table",
+          "relation": "RELATED_TO",
+          "target": "employees",
+          "evidence": "employees populate the rows"
+        },
+        {
+          "source": "pivot table",
+          "relation": "RELATED_TO",
+          "target": "time off types",
+          "evidence": "time off types populate the columns"
+        },
+        {
+          "source": "time off types",
+          "relation": "RELATED_TO",
+          "target": "rollover rules",
+          "evidence": "rollover rules"
+        },
+        {
+          "source": "time off types",
+          "relation": "RELATED_TO",
+          "target": "balance limits",
+          "evidence": "balance limits"
+        },
+        {
+          "source": "manager",
+          "relation": "PERFORMED_BY",
+          "target": "Balance",
+          "evidence": "can help managers see a high-level overview"
+        },
+        {
+          "source": "manager",
+          "relation": "RELATED_TO",
+          "target": "employee",
+          "evidence": "they can inform their employees"
+        }
+      ]
+    }
+  }
+]

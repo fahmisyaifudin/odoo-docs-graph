@@ -1,0 +1,543 @@
+[
+  {
+    "section_id": "connect-a-measurement-tool",
+    "heading": "Connect a measurement tool",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo's IoT (Internet of Things) box",
+          "type": "Integration",
+          "mention": "Odoo's IoT (Internet of Things) box",
+          "confidence": "high"
+        },
+        {
+          "name": "measurement tools",
+          "type": "Integration",
+          "mention": "measurement tools",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality app",
+          "type": "Module",
+          "mention": "Quality app",
+          "confidence": "high"
+        },
+        {
+          "name": "quality control point",
+          "type": "Concept",
+          "mention": "quality control point",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality check",
+          "type": "Concept",
+          "mention": "quality check",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center",
+          "type": "Concept",
+          "mention": "work center",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo's IoT (Internet of Things) box",
+          "relation": "CONTAINS",
+          "target": "measurement tools",
+          "evidence": "With Odoo's IoT (Internet of Things) box, it is possible to connect measurement tools to the Odoo database"
+        },
+        {
+          "source": "Odoo's IoT (Internet of Things) box",
+          "relation": "ENABLES",
+          "target": "Quality app",
+          "evidence": "for use in the *Quality app*"
+        },
+        {
+          "source": "Quality app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Quality app"
+        },
+        {
+          "source": "Odoo's IoT (Internet of Things) box",
+          "relation": "ENABLES",
+          "target": "quality control point",
+          "evidence": "on a quality control point/quality check"
+        },
+        {
+          "source": "Odoo's IoT (Internet of Things) box",
+          "relation": "ENABLES",
+          "target": "quality check",
+          "evidence": "on a quality control point/quality check"
+        },
+        {
+          "source": "Odoo's IoT (Internet of Things) box",
+          "relation": "ENABLES",
+          "target": "work center",
+          "evidence": "or for use in a work center during the manufacturing process"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "connect-with-universal-serial-bus-(usb)",
+    "heading": "Connect with universal serial bus (USB)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "USB",
+          "type": "Integration",
+          "mention": "USB",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT",
+          "type": "Integration",
+          "mention": "IoT",
+          "confidence": "medium"
+        },
+        {
+          "name": "device",
+          "type": "Actor",
+          "mention": "device",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo database",
+          "type": "DataObject",
+          "mention": "Odoo database",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "USB",
+          "relation": "CONTAINS",
+          "target": "device",
+          "evidence": "To add a device connected by USB"
+        },
+        {
+          "source": "IoT",
+          "relation": "CONTAINS",
+          "target": "device",
+          "evidence": "plug the USB cable into the IoT box"
+        },
+        {
+          "source": "device",
+          "relation": "IS_PART_OF",
+          "target": "Odoo database",
+          "evidence": "the device appears in the Odoo database"
+        },
+        {
+          "source": "USB",
+          "relation": "BELONGS_TO",
+          "target": "IoT",
+          "evidence": "plug the USB cable into the IoT box"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "connect-with-bluetooth",
+    "heading": "Connect with bluetooth",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box",
+          "type": "Product",
+          "mention": "IoT (Internet of Things) box",
+          "confidence": "high"
+        },
+        {
+          "name": "Connect with bluetooth",
+          "type": "Feature",
+          "mention": "Connect with bluetooth",
+          "confidence": "medium"
+        },
+        {
+          "name": "Activate the Bluetooth functionality",
+          "type": "Action",
+          "mention": "Activate the Bluetooth functionality",
+          "confidence": "high"
+        },
+        {
+          "name": "device",
+          "type": "Actor",
+          "mention": "device",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT box",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, and the IoT (Internet of Things) box"
+        },
+        {
+          "source": "Activate the Bluetooth functionality",
+          "relation": "PERFORMED_BY",
+          "target": "device",
+          "evidence": "Activate the Bluetooth functionality on the device"
+        },
+        {
+          "source": "IoT box",
+          "relation": "ENABLES",
+          "target": "Connect with bluetooth",
+          "evidence": "and the IoT (Internet of Things) box automatically connects to the device."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "link-a-measurement-tool-to-a-quality-control-point-in-the-manufacturing-process",
+    "heading": "Link a measurement tool to a quality control point in the manufacturing process",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality app",
+          "type": "Module",
+          "mention": "Quality app",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Sub-module",
+          "mention": "Quality Control",
+          "confidence": "medium"
+        },
+        {
+          "name": "Control Points",
+          "type": "Feature",
+          "mention": "Control Points",
+          "confidence": "medium"
+        },
+        {
+          "name": "measurement tool",
+          "type": "Feature",
+          "mention": "measurement tool",
+          "confidence": "high"
+        },
+        {
+          "name": "quality control point",
+          "type": "Feature",
+          "mention": "quality control point",
+          "confidence": "high"
+        },
+        {
+          "name": "Device",
+          "type": "Field",
+          "mention": "Device",
+          "confidence": "high"
+        },
+        {
+          "name": "Type field",
+          "type": "Field",
+          "mention": "Type field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Norm",
+          "type": "Field",
+          "mention": "Norm",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tolerance",
+          "type": "Field",
+          "mention": "Tolerance",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT App",
+          "type": "Module",
+          "mention": "IoT App",
+          "confidence": "medium"
+        },
+        {
+          "name": "Devices",
+          "type": "Sub-module",
+          "mention": "Devices",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Checks",
+          "type": "Sub-module",
+          "mention": "Quality Checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality check detail form",
+          "type": "DataObject",
+          "mention": "quality check detail form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Type of check",
+          "type": "Field",
+          "mention": "Type of check",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Quality app",
+          "relation": "CONTAINS",
+          "target": "Quality Control",
+          "evidence": "navigate to Quality app --> Quality Control"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "CONTAINS",
+          "target": "Control Points",
+          "evidence": "Quality Control --> Control Points"
+        },
+        {
+          "source": "Control Points",
+          "relation": "CONTAINS",
+          "target": "quality control point",
+          "evidence": "open the desired control point"
+        },
+        {
+          "source": "quality control point",
+          "relation": "CONFIGURED_BY",
+          "target": "measurement tool",
+          "evidence": "a device can be set up on a quality control point"
+        },
+        {
+          "source": "quality control point",
+          "relation": "CONFIGURED_BY",
+          "target": "Device",
+          "evidence": "Device field where the attached device can be selected"
+        },
+        {
+          "source": "quality control point",
+          "relation": "CONFIGURED_BY",
+          "target": "Norm",
+          "evidence": "Norm can be configured"
+        },
+        {
+          "source": "quality control point",
+          "relation": "CONFIGURED_BY",
+          "target": "Tolerance",
+          "evidence": "Tolerance can be configured"
+        },
+        {
+          "source": "measurement tool",
+          "relation": "ENABLES",
+          "target": "value automatically updated",
+          "evidence": "The value... is automatically updated while the tool is being used"
+        },
+        {
+          "source": "IoT App",
+          "relation": "CONTAINS",
+          "target": "Devices",
+          "evidence": "IoT App --> Devices"
+        },
+        {
+          "source": "Devices",
+          "relation": "CONTAINS",
+          "target": "Quality Control Points",
+          "evidence": "Quality Control Points tab"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "CONTAINS",
+          "target": "Quality Checks",
+          "evidence": "Quality Control --> Quality Checks"
+        },
+        {
+          "source": "Quality Checks",
+          "relation": "CONTAINS",
+          "target": "quality check detail form",
+          "evidence": "Access a new quality check detail page"
+        },
+        {
+          "source": "quality check detail form",
+          "relation": "CONTAINS",
+          "target": "Type of check",
+          "evidence": "the Type of check can also be specified"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "link-a-measurement-tool-to-a-work-center-in-the-manufacturing-app",
+    "heading": "Link a measurement tool to a work center in the Manufacturing app",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Centers",
+          "type": "Sub-module",
+          "mention": "Work Centers",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center",
+          "type": "DataObject",
+          "mention": "desired work center",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Order screen",
+          "type": "Feature",
+          "mention": "Work Order screen",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT Triggers tab",
+          "type": "Feature",
+          "mention": "IoT Triggers tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Device column",
+          "type": "Field",
+          "mention": "Device column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a Line",
+          "type": "Action",
+          "mention": "Add a Line",
+          "confidence": "high"
+        },
+        {
+          "name": "Action drop-down menu",
+          "type": "Feature",
+          "mention": "Action drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Take Measure",
+          "type": "Action",
+          "mention": "Take Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "measurement tool",
+          "type": "Integration",
+          "mention": "measurement tool",
+          "confidence": "high"
+        },
+        {
+          "name": "workcenter_iot",
+          "type": "Concept",
+          "mention": "workcenter_iot",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Work Centers",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Configuration --> Work Centers"
+        },
+        {
+          "source": "measurement tool",
+          "relation": "CONFIGURED_BY",
+          "target": "work center",
+          "evidence": "To link a measurement tool to an action, it first needs to be configured on a work center."
+        },
+        {
+          "source": "IoT Triggers tab",
+          "relation": "IS_PART_OF",
+          "target": "work center",
+          "evidence": "On the work center page, add the device in the IoT Triggers tab"
+        },
+        {
+          "source": "Device column",
+          "relation": "IS_PART_OF",
+          "target": "IoT Triggers tab",
+          "evidence": "under the Device column"
+        },
+        {
+          "source": "Add a Line",
+          "relation": "ENABLES",
+          "target": "measurement tool",
+          "evidence": "by selecting Add a Line. Then, the measurement tool can be linked"
+        },
+        {
+          "source": "Take Measure",
+          "relation": "BELONGS_TO",
+          "target": "Action drop-down menu",
+          "evidence": "linked to the Action drop-down menu option labeled Take Measure"
+        },
+        {
+          "source": "Take Measure",
+          "relation": "PERFORMED_BY",
+          "target": "measurement tool",
+          "evidence": "the measurement tool can be linked to the Action drop-down menu option labeled Take Measure"
+        },
+        {
+          "source": "Work Order screen",
+          "relation": "HAS_FEATURE",
+          "target": "status graphic",
+          "evidence": "On the Work Order screen, a status graphic indicates"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "SEE_ALSO",
+          "target": "workcenter_iot",
+          "evidence": ".. seealso:: workcenter_iot"
+        }
+      ]
+    }
+  }
+]

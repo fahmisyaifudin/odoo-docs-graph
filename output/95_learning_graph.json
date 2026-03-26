@@ -1,0 +1,949 @@
+[
+  {
+    "section_id": "learning",
+    "heading": "Learning",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Learning",
+          "type": "Feature",
+          "mention": "The **Employees** app tracks two kinds of learning",
+          "confidence": "high"
+        },
+        {
+          "name": "virtual eLearning",
+          "type": "Sub-module",
+          "mention": "virtual eLearning",
+          "confidence": "medium"
+        },
+        {
+          "name": "onsite in-person training",
+          "type": "Sub-module",
+          "mention": "onsite",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resume",
+          "type": "DataObject",
+          "mention": "Resume tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee record",
+          "type": "DataObject",
+          "mention": "employee record",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Learning",
+          "relation": "IS_PART_OF",
+          "target": "Employees",
+          "evidence": "The **Employees** app tracks two kinds of learning"
+        },
+        {
+          "source": "virtual eLearning",
+          "relation": "IS_PART_OF",
+          "target": "Learning",
+          "evidence": "tracks two kinds of learning: virtual eLearning"
+        },
+        {
+          "source": "onsite in-person training",
+          "relation": "IS_PART_OF",
+          "target": "Learning",
+          "evidence": "or onsite in-person training"
+        },
+        {
+          "source": "Resume",
+          "relation": "IS_PART_OF",
+          "target": "employee record",
+          "evidence": "logged in the *Resume* tab of each employee record"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "Resume",
+          "evidence": "all completed courses and certifications are logged in the *Resume* tab"
+        },
+        {
+          "source": "Employees",
+          "relation": "GENERATES",
+          "target": "employee record",
+          "evidence": "logged in the ... tab of each employee record"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "elearning",
+    "heading": "eLearning",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "eLearning",
+          "type": "Module",
+          "mention": "the **eLearning** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "the **Employees** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Courses",
+          "type": "Sub-module",
+          "mention": "eLearning Courses",
+          "confidence": "medium"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name: The name of the course.",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags",
+          "type": "Field",
+          "mention": "Tags: Add relevant tags, such as level, topic, etc.",
+          "confidence": "high"
+        },
+        {
+          "name": "Responsible",
+          "type": "Field",
+          "mention": "Responsible: The user responsible for the course",
+          "confidence": "high"
+        },
+        {
+          "name": "Course Type",
+          "type": "Field",
+          "mention": "Course Type: This field determines the format of the course.",
+          "confidence": "high"
+        },
+        {
+          "name": "Training",
+          "type": "Feature",
+          "mention": "Training: The content must be viewed *in order*.",
+          "confidence": "medium"
+        },
+        {
+          "name": "Documentation",
+          "type": "Feature",
+          "mention": "Documentation: The employee can view the content in the order they choose.",
+          "confidence": "medium"
+        },
+        {
+          "name": "create",
+          "type": "Action",
+          "mention": "Courses can be created",
+          "confidence": "medium"
+        },
+        {
+          "name": "creator",
+          "type": "Actor",
+          "mention": "The creator of the course",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "eLearning",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: eLearning"
+        },
+        {
+          "source": "Employees",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, ... the **Employees** app"
+        },
+        {
+          "source": "Courses",
+          "relation": "IS_PART_OF",
+          "target": "eLearning",
+          "evidence": "eLearning Courses dashboard"
+        },
+        {
+          "source": "Courses",
+          "relation": "CONTAINS",
+          "target": "Name",
+          "evidence": "Each course displays ... Name: The name of the course."
+        },
+        {
+          "source": "Courses",
+          "relation": "CONTAINS",
+          "target": "Tags",
+          "evidence": "Each course displays ... Tags: Add relevant tags"
+        },
+        {
+          "source": "Courses",
+          "relation": "CONTAINS",
+          "target": "Responsible",
+          "evidence": "Each course displays ... Responsible: The user responsible for the course"
+        },
+        {
+          "source": "Courses",
+          "relation": "CONTAINS",
+          "target": "Course Type",
+          "evidence": "Each course displays ... Course Type: This field determines the format of the course."
+        },
+        {
+          "source": "Course Type",
+          "relation": "HAS_FEATURE",
+          "target": "Training",
+          "evidence": "Course Type ... The two available options ... Training"
+        },
+        {
+          "source": "Course Type",
+          "relation": "HAS_FEATURE",
+          "target": "Documentation",
+          "evidence": "Course Type ... The two available options ... Documentation"
+        },
+        {
+          "source": "create",
+          "relation": "PERFORMED_BY",
+          "target": "creator",
+          "evidence": "The creator of the course"
+        },
+        {
+          "source": "Courses",
+          "relation": "CONFIGURED_BY",
+          "target": "creator",
+          "evidence": "The creator of the course"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-an-elearning-course",
+    "heading": "Create an eLearning course",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "medium"
+        },
+        {
+          "name": "eLearning app",
+          "type": "Module",
+          "mention": "eLearning app",
+          "confidence": "medium"
+        },
+        {
+          "name": "eLearning",
+          "type": "Sub-module",
+          "mention": "eLearning",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create an eLearning course",
+          "type": "Workflow",
+          "mention": "To create an eLearning course",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "Click the New button",
+          "confidence": "high"
+        },
+        {
+          "name": "eLearning Course form",
+          "type": "DataObject",
+          "mention": "blank *eLearning Course* form",
+          "confidence": "medium"
+        },
+        {
+          "name": "course",
+          "type": "DataObject",
+          "mention": "course",
+          "confidence": "medium"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        },
+        {
+          "name": "proper access rights",
+          "type": "Permission",
+          "mention": "proper access rights",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "eLearning",
+          "evidence": "navigate to Employees app --> Learning --> eLearning"
+        },
+        {
+          "source": "Employees app",
+          "relation": "SEE_ALSO",
+          "target": "eLearning app",
+          "evidence": "Courses must be created, in either the **Empoyees** app or the **eLearning** app."
+        },
+        {
+          "source": "eLearning",
+          "relation": "BELONGS_TO",
+          "target": "Employees app",
+          "evidence": "navigate to Employees app --> Learning --> eLearning"
+        },
+        {
+          "source": "Create an eLearning course",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "Only users... can view, modify, or create any learning course."
+        },
+        {
+          "source": "Create an eLearning course",
+          "relation": "TRIGGERED_BY",
+          "target": "New button",
+          "evidence": "Click the New button... and a blank eLearning Course form loads."
+        },
+        {
+          "source": "New button",
+          "relation": "PRODUCES",
+          "target": "eLearning Course form",
+          "evidence": "Click the New button... and a blank eLearning Course form loads."
+        },
+        {
+          "source": "user",
+          "relation": "CONFIGURED_BY",
+          "target": "proper access rights",
+          "evidence": "Only users with the proper access rights... can view, modify, or create any learning course."
+        },
+        {
+          "source": "course",
+          "relation": "IS_PART_OF",
+          "target": "eLearning",
+          "evidence": "create an eLearning course"
+        },
+        {
+          "source": "eLearning Course form",
+          "relation": "IS_PART_OF",
+          "target": "course",
+          "evidence": "blank *eLearning Course* form loads"
+        },
+        {
+          "source": "course",
+          "relation": "SEE_ALSO",
+          "target": "Employees app",
+          "evidence": "Once a course is available, it is accessible from both apps."
+        },
+        {
+          "source": "course",
+          "relation": "SEE_ALSO",
+          "target": "eLearning app",
+          "evidence": "Once a course is available, it is accessible from both apps."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invite-employees",
+    "heading": "Invite employees",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Learning",
+          "type": "Sub-module",
+          "mention": "Learning",
+          "confidence": "medium"
+        },
+        {
+          "name": "eLearning",
+          "type": "Module",
+          "mention": "eLearning",
+          "confidence": "medium"
+        },
+        {
+          "name": "course",
+          "type": "DataObject",
+          "mention": "course",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Attendees",
+          "type": "Action",
+          "mention": "Add Attendees button",
+          "confidence": "high"
+        },
+        {
+          "name": "Enroll Attendees to (Course Title) pop-up window",
+          "type": "Feature",
+          "mention": "*Enroll Attendees to (Course Title)* pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recipients field",
+          "type": "Field",
+          "mention": "Recipients field",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Elearning: Add Attendees to Course",
+          "type": "DataObject",
+          "mention": "Elearning: Add Attendees to Course",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mail Template",
+          "type": "Feature",
+          "mention": "Mail Template",
+          "confidence": "medium"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Send",
+          "confidence": "high"
+        },
+        {
+          "name": "attendees list",
+          "type": "Feature",
+          "mention": "attendees list",
+          "confidence": "medium"
+        },
+        {
+          "name": "Attendees smart button",
+          "type": "Feature",
+          "mention": "Attendees smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee record",
+          "type": "DataObject",
+          "mention": "employee record",
+          "confidence": "high"
+        },
+        {
+          "name": "Resume",
+          "type": "Module",
+          "mention": "Resume",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invite",
+          "type": "Action",
+          "mention": "Invite button",
+          "confidence": "high"
+        },
+        {
+          "name": "Invite Attendees to (Course Name) pop-up window",
+          "type": "Feature",
+          "mention": "*Invite Attendees to (Course Name)* pop-up window",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "Learning",
+          "evidence": "Navigate to Employees app --> Learning"
+        },
+        {
+          "source": "Learning",
+          "relation": "CONTAINS",
+          "target": "eLearning",
+          "evidence": "Learning --> eLearning"
+        },
+        {
+          "source": "eLearning",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Add Attendees",
+          "relation": "ENABLES",
+          "target": "Enroll Attendees to (Course Title) pop-up window",
+          "evidence": "click the Add Attendees button and an *Enroll Attendees to (Course Title)* pop-up window loads"
+        },
+        {
+          "source": "Recipients field",
+          "relation": "BELONGS_TO",
+          "target": "Enroll Attendees to (Course Title) pop-up window",
+          "evidence": "pop-up window loads. Add all desired employees to the Recipients field"
+        },
+        {
+          "source": "Recipients field",
+          "relation": "CONFIGURED_BY",
+          "target": "employee",
+          "evidence": "Add all desired employees to the Recipients field"
+        },
+        {
+          "source": "Elearning: Add Attendees to Course",
+          "relation": "GENERATES",
+          "target": "Mail Template",
+          "evidence": "email uses the default `Elearning: Add Attendees to Course` Mail Template"
+        },
+        {
+          "source": "Send",
+          "relation": "PRODUCES",
+          "target": "attendees list",
+          "evidence": "Once the invitation is sent, the recipients appear in the attendees list"
+        },
+        {
+          "source": "Attendees smart button",
+          "relation": "HAS_REPORT",
+          "target": "attendees list",
+          "evidence": "Click the Attendees smart button to view all invited attendees"
+        },
+        {
+          "source": "employee",
+          "relation": "PERFORMED_BY",
+          "target": "course",
+          "evidence": "Once the employee completes the eLearning course"
+        },
+        {
+          "source": "employee record",
+          "relation": "CONTAINS",
+          "target": "Resume",
+          "evidence": "employee record, in the Resume tab"
+        },
+        {
+          "source": "Invite",
+          "relation": "ENABLES",
+          "target": "Invite Attendees to (Course Name) pop-up window",
+          "evidence": "Alternatively, click the Invite button, and an *Invite Attendees to (Course Name)* pop-up window loads"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "onsite",
+    "heading": "Onsite",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Events",
+          "type": "Module",
+          "mention": "Events app",
+          "confidence": "high"
+        },
+        {
+          "name": "Onsite training",
+          "type": "Feature",
+          "mention": "onsite training",
+          "confidence": "high"
+        },
+        {
+          "name": "Onsite Courses dashboard",
+          "type": "Feature",
+          "mention": "Onsite Courses dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employees app --> Learning --> Onsite",
+          "type": "Workflow",
+          "mention": "Employees app --> Learning --> Onsite",
+          "confidence": "high"
+        },
+        {
+          "name": "create onsite training courses",
+          "type": "Action",
+          "mention": "To create onsite training courses",
+          "confidence": "high"
+        },
+        {
+          "name": "click on an onsite training card",
+          "type": "Action",
+          "mention": "Click on an onsite training card",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Employees",
+          "evidence": "Product: Odoo. The Employees app"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Events",
+          "evidence": "Product: Odoo. the Events app"
+        },
+        {
+          "source": "Employees",
+          "relation": "HAS_FEATURE",
+          "target": "Onsite training",
+          "evidence": "The Employees app can also track in-person training."
+        },
+        {
+          "source": "Employees",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo. The Employees app"
+        },
+        {
+          "source": "Events",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo. the Events app"
+        },
+        {
+          "source": "create onsite training courses",
+          "relation": "REQUIRES",
+          "target": "Events",
+          "evidence": "To create onsite training courses, the Events app must be installed"
+        },
+        {
+          "source": "create onsite training courses",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "To create onsite training courses... (implies user)"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "Onsite Courses dashboard",
+          "evidence": "navigate to Employees app --> Learning --> Onsite, and the Onsite Courses dashboard loads"
+        },
+        {
+          "source": "Onsite Courses dashboard",
+          "relation": "CONTAINS",
+          "target": "Kanban view",
+          "evidence": "All onsite courses appear in a default Kanban view"
+        },
+        {
+          "source": "Employees app --> Learning --> Onsite",
+          "relation": "TRIGGERED_BY",
+          "target": "Actor",
+          "evidence": "navigate to Employees app --> Learning --> Onsite... (implies user action)"
+        },
+        {
+          "source": "click on an onsite training card",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click on an onsite training card... (implies user)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-an-onsite-course",
+    "heading": "Create an onsite course",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Learning",
+          "type": "Sub-module",
+          "mention": "Learning",
+          "confidence": "medium"
+        },
+        {
+          "name": "Onsite",
+          "type": "Sub-module",
+          "mention": "Onsite",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Onsite Courses event form",
+          "type": "DataObject",
+          "mention": "Onsite Courses event form",
+          "confidence": "high"
+        },
+        {
+          "name": "Website app",
+          "type": "Module",
+          "mention": "Website app",
+          "confidence": "medium"
+        },
+        {
+          "name": "publish to the website",
+          "type": "Feature",
+          "mention": "publish it to the website",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "Learning",
+          "evidence": "navigate to Employees app --> Learning"
+        },
+        {
+          "source": "Learning",
+          "relation": "CONTAINS",
+          "target": "Onsite",
+          "evidence": "Learning --> Onsite"
+        },
+        {
+          "source": "Onsite",
+          "relation": "ENABLES",
+          "target": "New button",
+          "evidence": "Onsite. Click the New button"
+        },
+        {
+          "source": "New button",
+          "relation": "PRODUCES",
+          "target": "Onsite Courses event form",
+          "evidence": "New button... and a blank *Onsite Courses* event form loads"
+        },
+        {
+          "source": "publish to the website",
+          "relation": "REQUIRES",
+          "target": "Website app",
+          "evidence": "This option is only available if the **Website** app is installed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invite-employees",
+    "heading": "Invite employees",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Learning",
+          "type": "Sub-module",
+          "mention": "Learning",
+          "confidence": "high"
+        },
+        {
+          "name": "Onsite",
+          "type": "Sub-module",
+          "mention": "Onsite",
+          "confidence": "high"
+        },
+        {
+          "name": "course Kanban card",
+          "type": "DataObject",
+          "mention": "course Kanban card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invite button",
+          "type": "Action",
+          "mention": "Invite button",
+          "confidence": "high"
+        },
+        {
+          "name": "Email",
+          "type": "Feature",
+          "mention": "Email",
+          "confidence": "medium"
+        },
+        {
+          "name": "Subject",
+          "type": "Field",
+          "mention": "Subject",
+          "confidence": "high"
+        },
+        {
+          "name": "Event Title",
+          "type": "Field",
+          "mention": "Event Title",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recipients",
+          "type": "Field",
+          "mention": "Recipients",
+          "confidence": "high"
+        },
+        {
+          "name": "body of the email",
+          "type": "Field",
+          "mention": "body of the email",
+          "confidence": "medium"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Send",
+          "confidence": "high"
+        },
+        {
+          "name": "Send to all",
+          "type": "Action",
+          "mention": "Send to all",
+          "confidence": "high"
+        },
+        {
+          "name": "invitations",
+          "type": "DataObject",
+          "mention": "invitations",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Learning",
+          "relation": "BELONGS_TO",
+          "target": "Employees app",
+          "evidence": "Employees app --> Learning"
+        },
+        {
+          "source": "Onsite",
+          "relation": "BELONGS_TO",
+          "target": "Learning",
+          "evidence": "Learning --> Onsite"
+        },
+        {
+          "source": "Onsite",
+          "relation": "HAS_FEATURE",
+          "target": "course Kanban card",
+          "evidence": "Onsite and click on the course Kanban card"
+        },
+        {
+          "source": "course Kanban card",
+          "relation": "HAS_FEATURE",
+          "target": "Invite button",
+          "evidence": "click on the course Kanban card. Click the Invite button"
+        },
+        {
+          "source": "Invite button",
+          "relation": "TRIGGERED_BY",
+          "target": "Email",
+          "evidence": "inviting employees via Email"
+        },
+        {
+          "source": "Email",
+          "relation": "CONFIGURED_BY",
+          "target": "Subject",
+          "evidence": "The Subject is `Event: (Event Title)`"
+        },
+        {
+          "source": "Email",
+          "relation": "CONFIGURED_BY",
+          "target": "Recipients",
+          "evidence": "add the employees to the Recipients"
+        },
+        {
+          "source": "Email",
+          "relation": "CONFIGURED_BY",
+          "target": "body of the email",
+          "evidence": "then create the body of the email"
+        },
+        {
+          "source": "Email",
+          "relation": "TRIGGERED_BY",
+          "target": "Send",
+          "evidence": "Click Send, and a confirmation pop-up window loads"
+        },
+        {
+          "source": "Send",
+          "relation": "TRIGGERED_BY",
+          "target": "Send to all",
+          "evidence": "Click Send to all on the pop-up window"
+        },
+        {
+          "source": "Send to all",
+          "relation": "PRODUCES",
+          "target": "invitations",
+          "evidence": "Click Send to all...and the invitations are sent"
+        }
+      ]
+    }
+  }
+]

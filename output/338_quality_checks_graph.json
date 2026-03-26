@@ -1,0 +1,986 @@
+[
+  {
+    "section_id": "quality-checks",
+    "heading": "Quality checks",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "Feature",
+          "mention": "quality checks",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory operation",
+          "type": "Workflow",
+          "mention": "inventory operation",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "Workflow",
+          "mention": "manufacturing order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Control Point",
+          "type": "Feature",
+          "mention": "Quality Control Point (QCP)",
+          "confidence": "high"
+        },
+        {
+          "name": "quality control points",
+          "type": "Concept",
+          "mention": "quality control points",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "quality check",
+          "evidence": "Quality checks are manual inspections conducted by employees, and are used... in Odoo"
+        },
+        {
+          "source": "quality check",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "manual inspections conducted by employees"
+        },
+        {
+          "source": "quality check",
+          "relation": "APPLIES_TO",
+          "target": "product",
+          "evidence": "conducted for a single product"
+        },
+        {
+          "source": "quality check",
+          "relation": "APPLIES_TO",
+          "target": "inventory operation",
+          "evidence": "multiple products within the same inventory operation"
+        },
+        {
+          "source": "quality check",
+          "relation": "APPLIES_TO",
+          "target": "manufacturing order",
+          "evidence": "multiple products within the same manufacturing order"
+        },
+        {
+          "source": "Quality Control Point",
+          "relation": "ENABLES",
+          "target": "quality check",
+          "evidence": "create quality checks automatically"
+        },
+        {
+          "source": "Quality Control Point",
+          "relation": "GENERATES",
+          "target": "quality check",
+          "evidence": "When quality checks are created by a Quality Control Point"
+        },
+        {
+          "source": "Quality Control Point",
+          "relation": "SEE_ALSO",
+          "target": "quality control points",
+          "evidence": "see the documentation on quality control points"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manual-quality-check",
+    "heading": "Manual quality check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Module",
+          "mention": "Quality Control",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Checks",
+          "type": "Module",
+          "mention": "Quality Checks",
+          "confidence": "high"
+        },
+        {
+          "name": "manual quality check",
+          "type": "Workflow",
+          "mention": "To manually create a single quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "DataObject",
+          "mention": "quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "Control per drop-down menu",
+          "type": "Field",
+          "mention": "Control per drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Operation",
+          "type": "Option",
+          "mention": "Operation",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Option",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Option",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Product in inventory",
+          "type": "DataObject",
+          "mention": "Product in inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial field",
+          "type": "Field",
+          "mention": "Lot/Serial field",
+          "confidence": "high"
+        },
+        {
+          "name": "Picking drop-down menu",
+          "type": "Field",
+          "mention": "Picking drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "high"
+        },
+        {
+          "name": "Production Order drop-down menu",
+          "type": "Field",
+          "mention": "Production Order drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Transfers menu",
+          "type": "Menu",
+          "mention": "Transfers menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Check",
+          "type": "Action",
+          "mention": "Quality Check",
+          "confidence": "high"
+        },
+        {
+          "name": "Control Point drop-down menu",
+          "type": "Field",
+          "mention": "Control Point drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check type",
+          "type": "Field",
+          "mention": "quality check type",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions",
+          "type": "Option",
+          "mention": "Instructions",
+          "confidence": "high"
+        },
+        {
+          "name": "Take a Picture",
+          "type": "Option",
+          "mention": "Take a Picture",
+          "confidence": "high"
+        },
+        {
+          "name": "Print label",
+          "type": "Option",
+          "mention": "Print label",
+          "confidence": "high"
+        },
+        {
+          "name": "Pass - Fail",
+          "type": "Option",
+          "mention": "Pass - Fail",
+          "confidence": "high"
+        },
+        {
+          "name": "Measure",
+          "type": "Option",
+          "mention": "Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Worksheet",
+          "type": "Option",
+          "mention": "Worksheet",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Template drop-down field",
+          "type": "Field",
+          "mention": "Quality Template drop-down field",
+          "confidence": "high"
+        },
+        {
+          "name": "Team field",
+          "type": "Field",
+          "mention": "Team field",
+          "confidence": "high"
+        },
+        {
+          "name": "Company field",
+          "type": "Field",
+          "mention": "Company field",
+          "confidence": "high"
+        },
+        {
+          "name": "Notes tab",
+          "type": "Tab",
+          "mention": "Notes tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Instructions text entry box",
+          "type": "Field",
+          "mention": "Instructions text entry box",
+          "confidence": "high"
+        },
+        {
+          "name": "Notes text entry box",
+          "type": "Field",
+          "mention": "Notes text entry box",
+          "confidence": "high"
+        },
+        {
+          "name": "Pass button",
+          "type": "Action",
+          "mention": "Pass button",
+          "confidence": "high"
+        },
+        {
+          "name": "Fail button",
+          "type": "Action",
+          "mention": "Fail button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "manual quality check",
+          "relation": "CONTAINS",
+          "target": "quality check",
+          "evidence": "To manually create a single quality check"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "Control per drop-down menu",
+          "evidence": "Select an option from the Control per drop-down menu"
+        },
+        {
+          "source": "Operation",
+          "relation": "APPLIES_TO",
+          "target": "delivery order",
+          "evidence": "Operation requests a check for an entire operation (such as a delivery order)"
+        },
+        {
+          "source": "Product",
+          "relation": "APPLIES_TO",
+          "target": "Product in inventory",
+          "evidence": "When Product or Quantity are selected, it is possible to select a Product in inventory"
+        },
+        {
+          "source": "Quantity",
+          "relation": "APPLIES_TO",
+          "target": "Product in inventory",
+          "evidence": "When Product or Quantity are selected, it is possible to select a Product in inventory"
+        },
+        {
+          "source": "Product in inventory",
+          "relation": "CONFIGURED_BY",
+          "target": "Lot/Serial field",
+          "evidence": "If that product is tracked by lot or serial number, the Lot/Serial field appears"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "Picking drop-down menu",
+          "evidence": "Next, select an inventory operation from the Picking drop-down menu"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "Production Order drop-down menu",
+          "evidence": "or a manufacturing order from the Production Order drop-down menu"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "navigate to Inventory app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Quality Check",
+          "evidence": "Open an operation from the list, then click the fa-cog (cog) icon and select Quality Check"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "Control Point drop-down menu",
+          "evidence": "If the quality check should be assigned to a specific , select it from the Control Point drop-down menu"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "quality check type",
+          "evidence": "Select a quality check type from the Type drop-down field"
+        },
+        {
+          "source": "Worksheet",
+          "relation": "CONFIGURED_BY",
+          "target": "Quality Template drop-down field",
+          "evidence": "Selecting Worksheet causes a Quality Template drop-down field to appear"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "Team field",
+          "evidence": "In the Team field, select the quality team that is responsible for the quality check"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "Company field",
+          "evidence": "In the Company field, select the company that owns the product being inspected"
+        },
+        {
+          "source": "Notes tab",
+          "relation": "CONTAINS",
+          "target": "Instructions text entry box",
+          "evidence": "On the Notes tab at the bottom of the form, enter any relevant instructions in the Instructions text entry box"
+        },
+        {
+          "source": "Notes tab",
+          "relation": "CONTAINS",
+          "target": "Notes text entry box",
+          "evidence": "In the Notes text entry box, enter any relevant information about the quality check"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONTAINS",
+          "target": "Pass button",
+          "evidence": "click the Pass button at the top left of the screen if the check passes"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONTAINS",
+          "target": "Fail button",
+          "evidence": "or the Fail button if the check fails"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-quality-check",
+    "heading": "Process quality check",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "Workflow",
+          "mention": "Quality checks can be processed",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing or inventory order",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory order",
+          "type": "DataObject",
+          "mention": "manufacturing or inventory order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shop Floor",
+          "type": "Module",
+          "mention": "the *Shop Floor* module",
+          "confidence": "high"
+        },
+        {
+          "name": "work order operation",
+          "type": "DataObject",
+          "mention": "specific work order operation",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control Points",
+          "type": "Module",
+          "mention": "documentation on Quality Control Points",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality check's page",
+          "type": "Unknown",
+          "mention": "quality check's page",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "quality check",
+          "relation": "IS_PART_OF",
+          "target": "Shop Floor",
+          "evidence": "the check is processed in the *Shop Floor* module"
+        },
+        {
+          "source": "quality check",
+          "relation": "IS_PART_OF",
+          "target": "manufacturing order",
+          "evidence": "processed from a manufacturing or inventory order"
+        },
+        {
+          "source": "quality check",
+          "relation": "IS_PART_OF",
+          "target": "inventory order",
+          "evidence": "processed from a manufacturing or inventory order"
+        },
+        {
+          "source": "quality check",
+          "relation": "TRIGGERED_BY",
+          "target": "work order operation",
+          "evidence": "quality check is created for a specific work order operation"
+        },
+        {
+          "source": "quality check",
+          "relation": "SEE_ALSO",
+          "target": "Quality Control Points",
+          "evidence": "See the documentation on Quality Control Points"
+        },
+        {
+          "source": "quality check",
+          "relation": "PERFORMED_BY",
+          "target": "Shop Floor",
+          "evidence": "the check is processed in the *Shop Floor* module"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "quality-check-page",
+    "heading": "Quality check page",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality",
+          "type": "Module",
+          "mention": "Quality",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Sub-module",
+          "mention": "Quality Control",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Checks",
+          "type": "Feature",
+          "mention": "Quality Checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pass button",
+          "type": "Action",
+          "mention": "click the Pass button",
+          "confidence": "high"
+        },
+        {
+          "name": "Fail button",
+          "type": "Action",
+          "mention": "click the Fail button",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions field",
+          "type": "Field",
+          "mention": "Instructions field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Notes tab",
+          "type": "Feature",
+          "mention": "Notes tab",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Quality",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "navigating to Quality --> Quality Control --> Quality Checks"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "IS_PART_OF",
+          "target": "Quality",
+          "evidence": "Quality --> Quality Control"
+        },
+        {
+          "source": "Quality Checks",
+          "relation": "IS_PART_OF",
+          "target": "Quality Control",
+          "evidence": "Quality Control --> Quality Checks"
+        },
+        {
+          "source": "Instructions field",
+          "relation": "BELONGS_TO",
+          "target": "Notes tab",
+          "evidence": "Instructions field of the Notes tab"
+        },
+        {
+          "source": "Notes tab",
+          "relation": "CONTAINS",
+          "target": "Instructions field",
+          "evidence": "the Notes tab at the bottom of the page"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "quality-check-on-order",
+    "heading": "Quality check on order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Checks",
+          "type": "Feature",
+          "mention": "Quality Checks",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "Feature",
+          "mention": "quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check pop-up window",
+          "type": "Feature",
+          "mention": "quality check pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Pass - Fail check",
+          "type": "Feature",
+          "mention": "Pass - Fail check",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate button",
+          "type": "Feature",
+          "mention": "Validate button",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing Orders",
+          "relation": "IS_PART_OF",
+          "target": "Operations",
+          "evidence": "Manufacturing orders can be selected by navigating to Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing",
+          "evidence": "Manufacturing orders can be selected by navigating to Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "Inventory orders can be selected by navigating to the Inventory app"
+        },
+        {
+          "source": "Quality Checks",
+          "relation": "HAS_FEATURE",
+          "target": "quality check",
+          "evidence": "a purple Quality Checks button appears at the top of the order"
+        },
+        {
+          "source": "Quality Checks",
+          "relation": "HAS_FEATURE",
+          "target": "quality check pop-up window",
+          "evidence": "Click the button to open the quality check pop-up window"
+        },
+        {
+          "source": "quality check pop-up window",
+          "relation": "CONTAINS",
+          "target": "Pass - Fail check",
+          "evidence": "If a Pass - Fail check is being processed"
+        },
+        {
+          "source": "quality check pop-up window",
+          "relation": "CONTAINS",
+          "target": "Validate button",
+          "evidence": "For all other quality check types, a Validate button appears instead"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "quality-check-on-work-order",
+    "heading": "Quality check on work order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders",
+          "type": "DataObject",
+          "mention": "Work Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders tab",
+          "type": "Feature",
+          "mention": "Work Orders tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Open Work Order button",
+          "type": "Action",
+          "mention": "Open Work Order (external link icon) button",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders pop-up window",
+          "type": "Feature",
+          "mention": "Work Orders pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Open Shop Floor button",
+          "type": "Action",
+          "mention": "Open Shop Floor button",
+          "confidence": "high"
+        },
+        {
+          "name": "Shop Floor",
+          "type": "Module",
+          "mention": "Shop Floor",
+          "confidence": "high"
+        },
+        {
+          "name": "work center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "high"
+        },
+        {
+          "name": "work order's card",
+          "type": "Feature",
+          "mention": "work order's card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Pass",
+          "type": "Action",
+          "mention": "Pass",
+          "confidence": "high"
+        },
+        {
+          "name": "Fail",
+          "type": "Action",
+          "mention": "Fail",
+          "confidence": "high"
+        },
+        {
+          "name": "checkbox",
+          "type": "Feature",
+          "mention": "checkbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "Instructions Check",
+          "type": "Feature",
+          "mention": "instructions_check",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pass - Fail Check",
+          "type": "Feature",
+          "mention": "pass_fail_check",
+          "confidence": "medium"
+        },
+        {
+          "name": "Measure Check",
+          "type": "Feature",
+          "mention": "measure_check",
+          "confidence": "medium"
+        },
+        {
+          "name": "Picture Check",
+          "type": "Feature",
+          "mention": "picture_check",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Manufacturing --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Manufacturing Orders",
+          "evidence": "navigating to Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Work Orders tab",
+          "evidence": "On the [Manufacturing Orders], select the Work Orders tab"
+        },
+        {
+          "source": "Work Orders tab",
+          "relation": "CONTAINS",
+          "target": "Open Work Order button",
+          "evidence": "click the Open Work Order button on the line"
+        },
+        {
+          "source": "Open Work Order button",
+          "relation": "PRODUCES",
+          "target": "Work Orders pop-up window",
+          "evidence": "On the resulting Work Orders pop-up window"
+        },
+        {
+          "source": "Work Orders pop-up window",
+          "relation": "CONTAINS",
+          "target": "Open Shop Floor button",
+          "evidence": "click the Open Shop Floor button"
+        },
+        {
+          "source": "Open Shop Floor button",
+          "relation": "ENABLES",
+          "target": "Shop Floor",
+          "evidence": "to open the Shop Floor module"
+        },
+        {
+          "source": "Shop Floor",
+          "relation": "SEE_ALSO",
+          "target": "Shop Floor overview",
+          "evidence": "see the Shop Floor overview documentation"
+        },
+        {
+          "source": "work center",
+          "relation": "RELATED_TO",
+          "target": "Manufacturing Orders",
+          "evidence": "where the order is configured to be processed"
+        },
+        {
+          "source": "Shop Floor",
+          "relation": "CONTAINS",
+          "target": "work order's card",
+          "evidence": "isolates the work order's card"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "click Validate to complete the check"
+        },
+        {
+          "source": "Pass",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "click either the Pass or Fail button"
+        },
+        {
+          "source": "Fail",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "click either the Pass or Fail button"
+        },
+        {
+          "source": "checkbox",
+          "relation": "ENABLES",
+          "target": "Pass",
+          "evidence": "automatically marks the check as Passed"
+        },
+        {
+          "source": "Quality Check",
+          "relation": "RELATED_TO",
+          "target": "Instructions Check",
+          "evidence": "../quality_check_types/instructions_check"
+        },
+        {
+          "source": "Quality Check",
+          "relation": "RELATED_TO",
+          "target": "Pass - Fail Check",
+          "evidence": "../quality_check_types/pass_fail_check"
+        },
+        {
+          "source": "Quality Check",
+          "relation": "RELATED_TO",
+          "target": "Measure Check",
+          "evidence": "../quality_check_types/measure_check"
+        },
+        {
+          "source": "Quality Check",
+          "relation": "RELATED_TO",
+          "target": "Picture Check",
+          "evidence": "../quality_check_types/picture_check"
+        }
+      ]
+    }
+  }
+]

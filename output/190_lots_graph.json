@@ -1,0 +1,1880 @@
+[
+  {
+    "section_id": "lot-numbers",
+    "heading": "Lot numbers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots",
+          "type": "Concept",
+          "mention": "*Lots*",
+          "confidence": "high"
+        },
+        {
+          "name": "lot numbers",
+          "type": "Concept",
+          "mention": "lot numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "serial_numbers",
+          "type": "Concept",
+          "mention": "serial_numbers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lots",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "*Lots* are one of the two ways to identify and track products in Odoo."
+        },
+        {
+          "source": "lot numbers",
+          "relation": "EQUIVALENT_TO",
+          "target": "Lots",
+          "evidence": "Lots are one of the two ways to identify and track products in Odoo."
+        },
+        {
+          "source": "Lots",
+          "relation": "SEE_ALSO",
+          "target": "serial_numbers",
+          "evidence": ".. seealso:: serial_numbers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-lots-&-serial-numbers",
+    "heading": "Enable lots & serial numbers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Traceability section",
+          "type": "Sub-module",
+          "mention": "Traceability section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lots & Serial Numbers",
+          "type": "Feature",
+          "mention": "*Lots & Serial Numbers* feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Tracking expiration dates",
+          "type": "Feature",
+          "mention": "Tracking expiration dates",
+          "confidence": "high"
+        },
+        {
+          "name": "Print GS1 barcodes for lots and serial numbers",
+          "type": "Feature",
+          "mention": "Print GS1 barcodes for lots and serial numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "tick the checkbox",
+          "type": "Action",
+          "mention": "tick the checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "click Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "expiration_dates",
+          "type": "Concept",
+          "mention": "<expiration_dates>",
+          "confidence": "medium"
+        },
+        {
+          "name": "barcode/operations/gs1-lots",
+          "type": "Concept",
+          "mention": "<barcode/operations/gs1-lots>",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Traceability section",
+          "evidence": "Settings, scroll down to the Traceability section"
+        },
+        {
+          "source": "Traceability section",
+          "relation": "CONTAINS",
+          "target": "Lots & Serial Numbers",
+          "evidence": "Traceability section, and tick the checkbox next to Lots & Serial Numbers"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Lots & Serial Numbers",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Lots & Serial Numbers",
+          "relation": "SEE_ALSO",
+          "target": "Tracking expiration dates",
+          "evidence": "- Tracking expiration dates"
+        },
+        {
+          "source": "Lots & Serial Numbers",
+          "relation": "SEE_ALSO",
+          "target": "Print GS1 barcodes for lots and serial numbers",
+          "evidence": "- Print GS1 barcodes for lots and serial numbers"
+        },
+        {
+          "source": "Lots & Serial Numbers",
+          "relation": "CONFIGURED_BY",
+          "target": "tick the checkbox",
+          "evidence": "tick the checkbox next to Lots & Serial Numbers"
+        },
+        {
+          "source": "tick the checkbox",
+          "relation": "TRIGGERED_BY",
+          "target": "click Save",
+          "evidence": "Then, click Save."
+        },
+        {
+          "source": "Tracking expiration dates",
+          "relation": "RELATED_TO",
+          "target": "expiration_dates",
+          "evidence": "<expiration_dates>"
+        },
+        {
+          "source": "Print GS1 barcodes for lots and serial numbers",
+          "relation": "RELATED_TO",
+          "target": "barcode/operations/gs1-lots",
+          "evidence": "<barcode/operations/gs1-lots>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "track-by-lots",
+    "heading": "Track by lots",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ',' delimiter: line 1 column 1193 (char 1192)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product\",\"confidence\":\"high\"},{\"name\":\"Inventory app\",\"type\":\"Module\",\"mention\":\"Inventory app\",\"confidence\":\"high\"},{\"name\":\"Products\",\"type\":\"Sub-module\",\"mention\":\"Products\",\"confidence\":\"high\"},{\"name\":\"Lots & Serial Numbers\",\"type\":\"Feature\",\"mention\":\"Lots & Serial Numbers feature\",\"confidence\":\"high\"},{\"name\":\"Track by lots\",\"type\":\"Feature\",\"mention\":\"Track by lots\",\"confidence\":\"high\"},{\"name\":\"product\",\"type\":\"DataObject\",\"mention\":\"product\",\"confidence\":\"high\"},{\"name\":\"product form\",\"type\":\"DataObject\",\"mention\":\"product form\",\"confidence\":\"high\"},{\"name\":\"General Information tab\",\"type\":\"Field\",\"mention\":\"General Information tab\",\"confidence\":\"medium\"},{\"name\":\"Track Inventory field\",\"type\":\"Field\",\"mention\":\"Track Inventory field\",\"confidence\":\"medium\"},{\"name\":\"By Lots\",\"type\":\"Setting\",\"mention\":\"By Lots\",\"confidence\":\"high\"},{\"name\":\"lot numbers\",\"type\":\"DataObject\",\"mention\":\"lot numbers\",\"confidence\":\"high\"},{\"name\":\"inventory adjustment\",\"type\":\"Action\",\"mention\":\"inventory adjustment\",\"confidence\":\"high\"},{\"name\":\"expiration_dates\",\"type\":\"Concept\",\"mention\":\"expiration_dates\",\"confidence\":\"high\"}]],\"relations\":[{\"source\":\"Inventory app\",\"relation\":\"CONTAINS\",\"target\":\"Products\",\"evidence\":\"go to Inventory app --> Products\"},{\"source\":\"Products\",\"relation\":\"CONTAINS\",\"target\":\"product\",\"evidence\":\"Products --> Products, and choose a product\"},{\"source\":\"product form\",\"relation\":\"CONTAINS\",\"target\":\"General Information tab\",\"evidence\":\"On the product form, click into the General Information tab\"},{\"source\":\"product\",\"relation\":\"CONFIGURED_BY\",\"target\":\"By Lots\",\"evidence\":\"select By Lots from the drop-down menu\"},{\"source\":\"lot numbers\",\"relation\":\"ASSIGNED_TO\",\"target\":\"product\",\"evidence\":\"new or existing lot numbers can be assigned\"},{\"source\":\"Lots & Serial Numbers\",\"relation\":\"ENABLES\",\"target\":\"Track by lots\",\"evidence\":\"feature is activated\"},{\"source\":\"inventory adjustment\",\"relation\":\"PRODUCES\",\"target\":\"lot numbers\",\"evidence\":\"assign lot numbers to existing products in stock\"},{\"source\":\"expiration_dates\",\"relation\":\"SEE_ALSO\",\"target\":\"Track by lots\",\"evidence\":\".. seealso:: expiration_dates\"},{\"source\":\"Track by lots\",\"relation\":\"RELATED_TO\",\"target\":\"expiration_dates\",\"evidence\":\".. seealso:: expiration_dates\"}]}"
+    }
+  },
+  {
+    "section_id": "assigning-lots-for-shipping-and-receiving",
+    "heading": "Assigning lots for shipping and receiving",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt form",
+          "type": "Workflow",
+          "mention": "receipt form",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery order form",
+          "type": "Workflow",
+          "mention": "delivery order form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Assign new lot numbers",
+          "type": "Action",
+          "mention": "Assign new lot numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "incoming goods",
+          "type": "DataObject",
+          "mention": "incoming goods",
+          "confidence": "low"
+        },
+        {
+          "name": "select products with specific lot numbers",
+          "type": "Action",
+          "mention": "select products with specific lot numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "outgoing goods",
+          "type": "DataObject",
+          "mention": "outgoing goods",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "receipt form",
+          "relation": "HAS_FEATURE",
+          "target": "Assign new lot numbers",
+          "evidence": "Assign new lot numbers to incoming goods on the receipt form"
+        },
+        {
+          "source": "delivery order form",
+          "relation": "HAS_FEATURE",
+          "target": "select products with specific lot numbers",
+          "evidence": "select products with specific lot numbers on the delivery order form"
+        },
+        {
+          "source": "Assign new lot numbers",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "Assign new lot numbers to incoming goods on the receipt form"
+        },
+        {
+          "source": "select products with specific lot numbers",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "select products with specific lot numbers on the delivery order form"
+        },
+        {
+          "source": "Assign new lot numbers",
+          "relation": "APPLIES_TO",
+          "target": "incoming goods",
+          "evidence": "Assign new lot numbers to incoming goods"
+        },
+        {
+          "source": "select products with specific lot numbers",
+          "relation": "APPLIES_TO",
+          "target": "outgoing goods",
+          "evidence": "select products with specific lot numbers on the delivery order form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assigning-on-receipts",
+    "heading": "Assigning on receipts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "go to the Purchase app",
+          "confidence": "medium"
+        },
+        {
+          "name": "create and confirm",
+          "type": "Action",
+          "mention": "`create and confirm",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipt smart button",
+          "type": "Action",
+          "mention": "click the Receipt smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse receipt form",
+          "type": "DataObject",
+          "mention": "navigate to the warehouse receipt form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "the Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipts Kanban card",
+          "type": "Action",
+          "mention": "clicking the Receipts Kanban card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Clicking Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "assigning a lot number",
+          "type": "Action",
+          "mention": "assigning a lot number",
+          "confidence": "medium"
+        },
+        {
+          "name": "lot number",
+          "type": "DataObject",
+          "mention": "lot number",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt",
+          "type": "DataObject",
+          "mention": "the receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Sub-module",
+          "mention": "Operations tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Details link",
+          "type": "Action",
+          "mention": "select the Details link",
+          "confidence": "medium"
+        },
+        {
+          "name": "Detailed Operations pop-up window",
+          "type": "Feature",
+          "mention": "Detailed Operations pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "Field",
+          "mention": "Lot/Serial Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "assigning lot numbers manually",
+          "type": "Feature",
+          "mention": "assign lot numbers: **manually**",
+          "confidence": "medium"
+        },
+        {
+          "name": "importing lot numbers",
+          "type": "Feature",
+          "mention": "importing",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "assigning a lot number",
+          "relation": "REQUIRES",
+          "target": "lot number",
+          "evidence": "lot number **must** be assigned"
+        },
+        {
+          "source": "Validate",
+          "relation": "TRIGGERED_BY",
+          "target": "assigning a lot number",
+          "evidence": "must be assigned before validating"
+        },
+        {
+          "source": "Purchase app",
+          "relation": "CONTAINS",
+          "target": "create and confirm",
+          "evidence": "go to the Purchase app to `create and confirm"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Receipts Kanban card",
+          "evidence": "go to the Inventory app, clicking the Receipts Kanban card"
+        },
+        {
+          "source": "receipt",
+          "relation": "CONTAINS",
+          "target": "Operations tab",
+          "evidence": "On the product line in the Operations tab"
+        },
+        {
+          "source": "Operations tab",
+          "relation": "CONTAINS",
+          "target": "Details link",
+          "evidence": "select the Details link to the right"
+        },
+        {
+          "source": "Details link",
+          "relation": "ENABLES",
+          "target": "Detailed Operations pop-up window",
+          "evidence": "opens the Detailed Operations pop-up window"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Lot/Serial Number",
+          "evidence": "where the Lot/Serial Number and Quantity are assigned"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "where the Lot/Serial Number and Quantity are assigned"
+        },
+        {
+          "source": "assigning lot numbers",
+          "relation": "HAS_FEATURE",
+          "target": "assigning lot numbers manually",
+          "evidence": "There are two ways to assign lot numbers: **manually**"
+        },
+        {
+          "source": "assigning lot numbers",
+          "relation": "HAS_FEATURE",
+          "target": "importing lot numbers",
+          "evidence": "importing"
+        },
+        {
+          "source": "Purchase app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manual-assignment",
+    "heading": "Manual assignment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "click Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "Field",
+          "mention": "Lot/Serial Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual assignment",
+          "type": "Concept",
+          "mention": "Manual assignment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manual assignment",
+          "relation": "REQUIRES",
+          "target": "Add a line",
+          "evidence": "To manually assign lot numbers, click Add a line."
+        },
+        {
+          "source": "Add a line",
+          "relation": "PRODUCES",
+          "target": "Lot/Serial Number",
+          "evidence": "Input the Lot/Serial Number..."
+        },
+        {
+          "source": "Add a line",
+          "relation": "PRODUCES",
+          "target": "Quantity",
+          "evidence": "Input the Lot/Serial Number and Quantity."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assignment-by-import",
+    "heading": "Assignment by import",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Detailed Operations pop-up window",
+          "type": "Module",
+          "mention": "Detailed Operations pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Import Serials/Lots",
+          "type": "Action",
+          "mention": "Import Serials/Lots",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots/Serial numbers field",
+          "type": "Field",
+          "mention": "Lots/Serial numbers field",
+          "confidence": "high"
+        },
+        {
+          "name": "Import Lots",
+          "type": "Action",
+          "mention": "Import Lots",
+          "confidence": "medium"
+        },
+        {
+          "name": "Generate",
+          "type": "Action",
+          "mention": "Generate",
+          "confidence": "high"
+        },
+        {
+          "name": "Keep current lines",
+          "type": "Field",
+          "mention": "Keep current lines checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand",
+          "type": "Concept",
+          "mention": "Demand",
+          "confidence": "low"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt form",
+          "type": "Module",
+          "mention": "receipt form",
+          "confidence": "low"
+        },
+        {
+          "name": "Traceability report for lot numbers",
+          "type": "Report",
+          "mention": "Traceability report for lot numbers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Detailed Operations pop-up window",
+          "evidence": "In the Detailed Operations pop-up window, click Import Serials/Lots"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Import Serials/Lots",
+          "evidence": "In the Detailed Operations pop-up window, click Import Serials/Lots"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Lots/Serial numbers field",
+          "evidence": "paste the bulk lot numbers in the Lots/Serial numbers field"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Quantity field",
+          "evidence": "be sure to update the Quantity field in the Detailed Operations window"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Keep current lines",
+          "evidence": "Tick the Keep current lines checkbox"
+        },
+        {
+          "source": "Import Serials/Lots",
+          "relation": "PRODUCES",
+          "target": "Import Lots",
+          "evidence": "then paste the bulk lot numbers... in the Import Lots pop-up window"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Generate",
+          "evidence": "Finally, click Generate"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Save",
+          "evidence": "click Save to close the pop-up window"
+        },
+        {
+          "source": "receipt form",
+          "relation": "CONTAINS",
+          "target": "Validate",
+          "evidence": "Then, click Validate on the receipt form"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "Traceability report for lot numbers",
+          "evidence": ".. seealso:: Traceability report for lot numbers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assigning-on-delivery-orders",
+    "heading": "Assigning on delivery orders",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Orders",
+          "type": "Module",
+          "mention": "Delivery Orders kanban card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Feature",
+          "mention": "Delivery smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "lot numbers",
+          "type": "Concept",
+          "mention": "lot numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Sub-module",
+          "mention": "Operations tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Detailed Operations pop-up window",
+          "type": "Feature",
+          "mention": "Detailed Operations pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pick From column",
+          "type": "Field",
+          "mention": "Pick From column",
+          "confidence": "low"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "removal strategy",
+          "type": "Standard",
+          "mention": "removal strategy",
+          "confidence": "medium"
+        },
+        {
+          "name": "FIFO",
+          "type": "Standard",
+          "mention": "FIFO",
+          "confidence": "high"
+        },
+        {
+          "name": "LIFO",
+          "type": "Standard",
+          "mention": "LIFO",
+          "confidence": "high"
+        },
+        {
+          "name": "FEFO",
+          "type": "Standard",
+          "mention": "FEFO",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate button",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand",
+          "type": "Concept",
+          "mention": "Demand",
+          "confidence": "medium"
+        },
+        {
+          "name": "Traceability report for lot numbers",
+          "type": "Report",
+          "mention": "Traceability report for lot numbers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery smart button",
+          "evidence": "Odoo makes it possible..."
+        },
+        {
+          "source": "delivery order",
+          "relation": "CONTAINS",
+          "target": "Operations tab",
+          "evidence": "opens the delivery order form... Operations tab"
+        },
+        {
+          "source": "delivery order",
+          "relation": "CONFIGURED_BY",
+          "target": "removal strategy",
+          "evidence": "depending on the selected removal strategy"
+        },
+        {
+          "source": "removal strategy",
+          "relation": "SEE_ALSO",
+          "target": "../../shipping_receiving/removal_strategies",
+          "evidence": "seealso section"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Traceability report for lot numbers",
+          "evidence": "seealso section"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "click the Validate button"
+        },
+        {
+          "source": "FIFO",
+          "relation": "IS_PART_OF",
+          "target": "removal strategy",
+          "evidence": "removal strategy (FIFO, LIFO, FEFO)"
+        },
+        {
+          "source": "LIFO",
+          "relation": "IS_PART_OF",
+          "target": "removal strategy",
+          "evidence": "removal strategy (FIFO, LIFO, FEFO)"
+        },
+        {
+          "source": "FEFO",
+          "relation": "IS_PART_OF",
+          "target": "removal strategy",
+          "evidence": "removal strategy (FIFO, LIFO, FEFO)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "lot-management",
+    "heading": "Lot management",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Numbers dashboard",
+          "type": "Sub-module",
+          "mention": "Lot/Serial Numbers dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots/Serial Numbers",
+          "type": "DataObject",
+          "mention": "Lots/Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot number",
+          "type": "DataObject",
+          "mention": "lot number",
+          "confidence": "high"
+        },
+        {
+          "name": "Search field",
+          "type": "Field",
+          "mention": "Search field",
+          "confidence": "high"
+        },
+        {
+          "name": "Group By",
+          "type": "Setting",
+          "mention": "Group By",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lot/Serial Numbers dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "going to Inventory app --> Products --> Lots/Serial Numbers."
+        },
+        {
+          "source": "Lot/Serial Numbers",
+          "relation": "IS_PART_OF",
+          "target": "Products",
+          "evidence": "Products --> Lots/Serial Numbers."
+        },
+        {
+          "source": "Lot/Serial Numbers dashboard",
+          "relation": "HAS_REPORT",
+          "target": "Lot number",
+          "evidence": "existing lot numbers."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Lot/Serial Numbers",
+          "evidence": "Inventory app --> Products --> Lots/Serial Numbers."
+        },
+        {
+          "source": "Lot/Serial Numbers dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Group By",
+          "evidence": "Group By --> Product."
+        },
+        {
+          "source": "Lot/Serial Numbers dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Search field",
+          "evidence": "clicking in the Search field"
+        },
+        {
+          "source": "Product",
+          "relation": "CONTAINS",
+          "target": "Lot number",
+          "evidence": "Selecting the drop-down menu for each product displays the existing lot numbers."
+        },
+        {
+          "source": "Lot/Serial Numbers dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "New button",
+          "evidence": "Lot numbers can also be created from this page, by clicking the New button."
+        },
+        {
+          "source": "New button",
+          "relation": "ENABLES",
+          "target": "Lot number",
+          "evidence": "Lot numbers can also be created from this page, by clicking the New button."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "modify-lot",
+    "heading": "Modify lot",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Number dashboard",
+          "type": "Module",
+          "mention": "Lot/Serial Number dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Modify lot",
+          "type": "Feature",
+          "mention": "Modify lot",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "Field",
+          "mention": "Lot/Serial Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot number form",
+          "type": "DataObject",
+          "mention": "lot number form",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal Reference",
+          "type": "Field",
+          "mention": "Internal Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "On Hand Quantity",
+          "type": "Field",
+          "mention": "On Hand Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "stock moves",
+          "type": "DataObject",
+          "mention": "stock moves",
+          "confidence": "medium"
+        },
+        {
+          "name": "Set expiration dates for lots",
+          "type": "Feature",
+          "mention": "Set expiration dates for lots",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lot/Serial Number dashboard",
+          "relation": "CONTAINS",
+          "target": "Lot/Serial Number",
+          "evidence": "Clicking a lot from the Lot/Serial Number dashboard reveals a separate page"
+        },
+        {
+          "source": "Modify lot",
+          "relation": "BELONGS_TO",
+          "target": "Lot/Serial Number dashboard",
+          "evidence": "From Lot/Serial Number dashboard"
+        },
+        {
+          "source": "Lot number form",
+          "relation": "CONTAINS",
+          "target": "Lot/Serial Number",
+          "evidence": "On the lot number form, the following fields can be modified: Lot/Serial Number"
+        },
+        {
+          "source": "Lot number form",
+          "relation": "CONTAINS",
+          "target": "Internal Reference",
+          "evidence": "On the lot number form, the following fields can be modified: Internal Reference"
+        },
+        {
+          "source": "Lot number form",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "On the lot number form, the following fields can be modified: Company"
+        },
+        {
+          "source": "Lot number form",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "On the lot number form, the following fields can be modified: Description"
+        },
+        {
+          "source": "Lot number form",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "On existing lots, the Product field cannot be modified"
+        },
+        {
+          "source": "Lot number form",
+          "relation": "CONTAINS",
+          "target": "On Hand Quantity",
+          "evidence": "On existing lots, the On Hand Quantity field cannot be modified"
+        },
+        {
+          "source": "Lot number form",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Lot/Serial Number",
+          "relation": "GOVERNED_BY",
+          "target": "stock moves",
+          "evidence": "lot numbers are linked with existing stock moves"
+        },
+        {
+          "source": "Set expiration dates for lots",
+          "relation": "SEE_ALSO",
+          "target": "expiration_dates",
+          "evidence": "Set expiration dates for lots <expiration_dates>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-property",
+    "heading": "Add property",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Add property",
+          "type": "Action",
+          "mention": "Click the fa-plus Add a Property button",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Properties",
+          "type": "Action",
+          "mention": "Add Properties from the drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "lot number form",
+          "type": "DataObject",
+          "mention": "lot number form",
+          "confidence": "medium"
+        },
+        {
+          "name": "property_fields",
+          "type": "Module",
+          "mention": "property_fields",
+          "confidence": "medium"
+        },
+        {
+          "name": "Wood type",
+          "type": "Field",
+          "mention": "property, `Wood type`",
+          "confidence": "high"
+        },
+        {
+          "name": "Cherry wood",
+          "type": "Concept",
+          "mention": "value is recorded as `Cherry wood`",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "lot number form",
+          "relation": "CONTAINS",
+          "target": "Wood type",
+          "evidence": "adding properties on a lot number form"
+        },
+        {
+          "source": "Add property",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "Click the fa-plus Add a Property button"
+        },
+        {
+          "source": "Add Properties",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "select Add Properties from the drop-down menu"
+        },
+        {
+          "source": "Add property",
+          "relation": "SEE_ALSO",
+          "target": "property_fields",
+          "evidence": "seealso: Configuring custom properties"
+        },
+        {
+          "source": "Add Properties",
+          "relation": "SEE_ALSO",
+          "target": "property_fields",
+          "evidence": "seealso: Configuring custom properties"
+        },
+        {
+          "source": "Wood type",
+          "relation": "RELATED_TO",
+          "target": "Cherry wood",
+          "evidence": "The value is recorded as `Cherry wood`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reserve-lot-number-for-a-product",
+    "heading": "Reserve lot number for a product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Numbers",
+          "type": "Sub-module",
+          "mention": "Lot/Serial Numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a lot number",
+          "type": "Action",
+          "mention": "create a lot number",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign lot numbers on receipts",
+          "type": "Workflow",
+          "mention": "assigning lot numbers on receipts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Drawer Black",
+          "type": "Product",
+          "mention": "Drawer Black",
+          "confidence": "high"
+        },
+        {
+          "name": "000001",
+          "type": "DataObject",
+          "mention": "lot number, `000001`",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "Field",
+          "mention": "Lot/Serial Number field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "blank field next to Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "DataObject",
+          "mention": "Lot/Serial Number",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Lot/Serial Numbers",
+          "evidence": "Inventory app --> Products --> Lot/Serial Numbers"
+        },
+        {
+          "source": "Lot/Serial Numbers",
+          "relation": "HAS_FEATURE",
+          "target": "Create a lot number",
+          "evidence": "Lot/Serial Numbers, and click New."
+        },
+        {
+          "source": "Create a lot number",
+          "relation": "SEE_ALSO",
+          "target": "Assign lot numbers on receipts",
+          "evidence": "refer to the section on assigning lot numbers on receipts"
+        },
+        {
+          "source": "Create a lot number",
+          "relation": "PRODUCES",
+          "target": "Lot/Serial Number",
+          "evidence": "Creating a lot number reserves it for a product"
+        },
+        {
+          "source": "Lot/Serial Number",
+          "relation": "APPLIES_TO",
+          "target": "Product",
+          "evidence": "select the product to which this new number will be assigned"
+        },
+        {
+          "source": "000001",
+          "type": "EQUIVALENT_TO",
+          "target": "Lot/Serial Number",
+          "evidence": "lot number, `000001`"
+        },
+        {
+          "source": "000001",
+          "relation": "APPLIES_TO",
+          "target": "Drawer Black",
+          "evidence": "lot number, `000001`, is created for the product, `Drawer Black`"
+        },
+        {
+          "source": "Lot/Serial Number",
+          "relation": "IS_PART_OF",
+          "target": "Drawer Black",
+          "evidence": "lot number is saved as an existing lot number linked to the product"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manage-lots-for-different-operations-types",
+    "heading": "Manage lots for different operations types",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations Types",
+          "type": "Sub-module",
+          "mention": "Operations Types",
+          "confidence": "medium"
+        },
+        {
+          "name": "lot",
+          "type": "Concept",
+          "mention": "lots",
+          "confidence": "medium"
+        },
+        {
+          "name": "lot number",
+          "type": "Concept",
+          "mention": "lot numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "serial number",
+          "type": "Concept",
+          "mention": "serial numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "operation type",
+          "type": "DataObject",
+          "mention": "operation type",
+          "confidence": "medium"
+        },
+        {
+          "name": "operation type form",
+          "type": "Feature",
+          "mention": "operation type form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create New",
+          "type": "Setting",
+          "mention": "Create New checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Use Existing",
+          "type": "Setting",
+          "mention": "Use Existing ones",
+          "confidence": "high"
+        },
+        {
+          "name": "receiving products",
+          "type": "Action",
+          "mention": "receiving products",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales orders",
+          "type": "Action",
+          "mention": "sales orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "inter-warehouse transfers",
+          "type": "Workflow",
+          "mention": "inter-warehouse transfers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Operations Types",
+          "evidence": "Configuration --> Operations Types"
+        },
+        {
+          "source": "receiving products",
+          "relation": "TRIGGERED_BY",
+          "target": "lot",
+          "evidence": "new lots can only be created when receiving products"
+        },
+        {
+          "source": "sales orders",
+          "relation": "TRIGGERED_BY",
+          "target": "lot",
+          "evidence": "only existing lot numbers can be utilized"
+        },
+        {
+          "source": "operation type form",
+          "relation": "CONTAINS",
+          "target": "Create New",
+          "evidence": "On the operation type form, under the Lots/Serial Numbers section, tick the Create New checkbox"
+        },
+        {
+          "source": "operation type form",
+          "relation": "CONTAINS",
+          "target": "Use Existing",
+          "evidence": "Choose Use Existing ones"
+        },
+        {
+          "source": "Create New",
+          "relation": "ENABLES",
+          "target": "lot number",
+          "evidence": "enable new lot numbers to be created during this operation type"
+        },
+        {
+          "source": "Use Existing",
+          "relation": "ENABLES",
+          "target": "lot number",
+          "evidence": "only existing lot numbers can be selected"
+        },
+        {
+          "source": "inter-warehouse transfers",
+          "relation": "TRIGGERED_BY",
+          "target": "lot",
+          "evidence": "For inter-warehouse transfers involving products tracked by lots"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "display-lots-on-delivery-slips",
+    "heading": "Display lots on delivery slips",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Traceability",
+          "type": "Feature",
+          "mention": "Traceability section",
+          "confidence": "high"
+        },
+        {
+          "name": "Display Lots & Serial Numbers on Delivery Slips",
+          "type": "Setting",
+          "mention": "Display Lots & Serial Numbers on Delivery Slips checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Orders",
+          "type": "Feature",
+          "mention": "Delivery Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Feature",
+          "mention": "Operations tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Serial Numbers",
+          "type": "Field",
+          "mention": "Serial Numbers checkbox, Serial Numbers column",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Slip",
+          "type": "Report",
+          "mention": "Delivery slip, Print --> Delivery Slip",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "Field",
+          "mention": "Lot/Serial Number column",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "open the Inventory app, and navigate to Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Traceability",
+          "evidence": "Scroll down to the Traceability section"
+        },
+        {
+          "source": "Traceability",
+          "relation": "CONTAINS",
+          "target": "Display Lots & Serial Numbers on Delivery Slips",
+          "evidence": "Traceability section, tick the Display Lots & Serial Numbers on Delivery Slips checkbox"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Delivery Orders",
+          "evidence": "click on Delivery Orders"
+        },
+        {
+          "source": "Delivery Orders",
+          "relation": "CONTAINS",
+          "target": "Operations tab",
+          "evidence": "make sure the Operations tab is selected"
+        },
+        {
+          "source": "Operations tab",
+          "relation": "CONTAINS",
+          "target": "Serial Numbers",
+          "evidence": "Serial Numbers checkbox"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "Delivery Slip",
+          "evidence": "click Validate to confirm the delivery and add product information to the delivery slip"
+        },
+        {
+          "source": "Delivery Orders",
+          "relation": "HAS_REPORT",
+          "target": "Delivery Slip",
+          "evidence": "select Print --> Delivery Slip"
+        },
+        {
+          "source": "Display Lots & Serial Numbers on Delivery Slips",
+          "relation": "ENABLES",
+          "target": "Delivery Slip",
+          "evidence": "After enabling... lot numbers are listed on delivery slips"
+        },
+        {
+          "source": "Delivery Slip",
+          "relation": "CONTAINS",
+          "target": "Lot/Serial Number",
+          "evidence": "Lot numbers are listed next to their respective products in the Lot/Serial Number column"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "traceability",
+    "heading": "Traceability",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots/Serial Numbers",
+          "type": "Sub-module",
+          "mention": "Lots/Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots/Serial Numbers dashboard",
+          "type": "Feature",
+          "mention": "Lots/Serial Numbers dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "group by lots",
+          "type": "Workflow",
+          "mention": "To group by lots",
+          "confidence": "medium"
+        },
+        {
+          "name": "Search... bar",
+          "type": "Feature",
+          "mention": "Search... bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters",
+          "confidence": "medium"
+        },
+        {
+          "name": "Group By",
+          "type": "Feature",
+          "mention": "Group By",
+          "confidence": "medium"
+        },
+        {
+          "name": "Favorites",
+          "type": "Feature",
+          "mention": "Favorites",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Custom Group",
+          "type": "Action",
+          "mention": "Add Custom Group",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "Setting",
+          "mention": "Lot/Serial Number",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lots/Serial Numbers",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "go to the Inventory app --> Products --> Lots/Serial Numbers"
+        },
+        {
+          "source": "Products",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "go to the Inventory app --> Products --> Lots/Serial Numbers"
+        },
+        {
+          "source": "Lots/Serial Numbers dashboard",
+          "relation": "CONTAINS",
+          "target": "Lots/Serial Numbers",
+          "evidence": "reveals the Lots/Serial Numbers dashboard"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Lots/Serial Numbers dashboard",
+          "evidence": "Product: Odoo, reveals the Lots/Serial Numbers dashboard"
+        },
+        {
+          "source": "group by lots",
+          "relation": "PERFORMED_BY",
+          "target": "Add Custom Group",
+          "evidence": "To group by lots, ... click the Add Custom Group option"
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "CONFIGURED_BY",
+          "target": "Lot/Serial Number",
+          "evidence": "Add Custom Group option, and select Lot/Serial Number"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "traceability-report",
+    "heading": "Traceability report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Traceability",
+          "type": "Report",
+          "mention": "Traceability report",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots/Serial Number dashboard",
+          "type": "Module",
+          "mention": "Lots/Serial Number dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "lot number form",
+          "type": "DataObject",
+          "mention": "lot number form",
+          "confidence": "medium"
+        },
+        {
+          "name": "lot number",
+          "type": "Field",
+          "mention": "lot number",
+          "confidence": "medium"
+        },
+        {
+          "name": "Traceability smart button",
+          "type": "Action",
+          "mention": "Traceability smart button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lots/Serial Number dashboard",
+          "relation": "CONTAINS",
+          "target": "lot number line",
+          "evidence": "select the lot number line from the Lots/Serial Number dashboard"
+        },
+        {
+          "source": "lot number form",
+          "relation": "CONTAINS",
+          "target": "Traceability smart button",
+          "evidence": "On the lot number form, click the Traceability smart button"
+        },
+        {
+          "source": "Traceability smart button",
+          "relation": "TRIGGERED_BY",
+          "target": "user click",
+          "evidence": "click the Traceability smart button"
+        },
+        {
+          "source": "Traceability smart button",
+          "relation": "ENABLES",
+          "target": "Traceability",
+          "evidence": "click the Traceability smart button"
+        },
+        {
+          "source": "Traceability",
+          "relation": "HAS_REPORT",
+          "target": "stock moves report",
+          "evidence": "view a full stock moves report for a lot number"
+        },
+        {
+          "source": "Traceability",
+          "relation": "APPLIES_TO",
+          "target": "lot number",
+          "evidence": "full stock moves report for a lot number"
+        }
+      ]
+    }
+  }
+]

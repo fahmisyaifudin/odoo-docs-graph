@@ -1,0 +1,1096 @@
+[
+  {
+    "section_id": "fefo-removal",
+    "heading": "FEFO removal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "First Expired, First Out",
+          "type": "Standard",
+          "mention": "The *First Expired, First Out* (FEFO) removal strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "FEFO",
+          "type": "Standard",
+          "mention": "(FEFO)",
+          "confidence": "high"
+        },
+        {
+          "name": "removal strategy",
+          "type": "Concept",
+          "mention": "removal strategy",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "FEFO",
+          "evidence": "Product: Odoo ... The *First Expired, First Out* (FEFO) removal strategy..."
+        },
+        {
+          "source": "First Expired, First Out",
+          "relation": "EQUIVALENT_TO",
+          "target": "FEFO",
+          "evidence": "The *First Expired, First Out* (FEFO) removal strategy..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enabling-the-fefo-removal-strategy",
+    "heading": "Enabling the FEFO removal strategy",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots & Serial Numbers",
+          "type": "Feature",
+          "mention": "Lots & Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration Date",
+          "type": "Feature",
+          "mention": "Expiration Date",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lots & Serial Numbers",
+          "relation": "ENABLES",
+          "target": "Expiration Date",
+          "evidence": "After Lots & Serial Numbers is enabled, the Expiration Date feature appears."
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "navigate to Inventory --> Configuration --> Settings."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory --> Configuration"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-tracking-by-lots-or-serial-numbers",
+    "heading": "Enable tracking by lots or serial numbers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "General Information tab",
+          "type": "Feature",
+          "mention": "General Information tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Track Inventory field",
+          "type": "Field",
+          "mention": "Track Inventory field",
+          "confidence": "high"
+        },
+        {
+          "name": "By Unique Serial Number",
+          "type": "Feature",
+          "mention": "By Unique Serial Number",
+          "confidence": "high"
+        },
+        {
+          "name": "By Lots",
+          "type": "Feature",
+          "mention": "By Lots",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Inventory --> Products --> Products"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory --> Products --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory --> Products --> Products"
+        },
+        {
+          "source": "product form",
+          "relation": "IS_PART_OF",
+          "target": "Products",
+          "evidence": "the product form"
+        },
+        {
+          "source": "General Information tab",
+          "relation": "IS_PART_OF",
+          "target": "product form",
+          "evidence": "On the product form, open the General Information tab"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Track Inventory field",
+          "evidence": "the check box next to the Track Inventory field"
+        },
+        {
+          "source": "Track Inventory field",
+          "relation": "CONTAINS",
+          "target": "By Unique Serial Number",
+          "evidence": "select either By Unique Serial Number"
+        },
+        {
+          "source": "Track Inventory field",
+          "relation": "CONTAINS",
+          "target": "By Lots",
+          "evidence": "or By Lots"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "setting-dates",
+    "heading": "Setting dates",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Expiration Date",
+          "type": "Field",
+          "mention": "Expiration Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Best Before Date",
+          "type": "Field",
+          "mention": "Best Before Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Removal Date",
+          "type": "Field",
+          "mention": "Removal Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Alert Date",
+          "type": "Field",
+          "mention": "Alert Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Module",
+          "mention": "Inventory tab",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "high"
+        },
+        {
+          "name": "Traceability heading",
+          "type": "Sub-module",
+          "mention": "Traceability heading",
+          "confidence": "high"
+        },
+        {
+          "name": "Dates heading",
+          "type": "Sub-module",
+          "mention": "Dates heading",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory tab",
+          "relation": "IS_PART_OF",
+          "target": "product form",
+          "evidence": "In the Inventory tab of the product form"
+        },
+        {
+          "source": "Traceability heading",
+          "relation": "IS_PART_OF",
+          "target": "Inventory tab",
+          "evidence": "under the Traceability heading"
+        },
+        {
+          "source": "Dates heading",
+          "relation": "IS_PART_OF",
+          "target": "Inventory tab",
+          "evidence": "The Dates heading appears"
+        },
+        {
+          "source": "Expiration Date",
+          "relation": "BELONGS_TO",
+          "target": "Dates heading",
+          "evidence": "... set the Expiration Date... The Dates heading appears"
+        },
+        {
+          "source": "Best Before Date",
+          "relation": "BELONGS_TO",
+          "target": "Dates heading",
+          "evidence": "... set the Best Before Date... The Dates heading appears"
+        },
+        {
+          "source": "Removal Date",
+          "relation": "BELONGS_TO",
+          "target": "Dates heading",
+          "evidence": "... set the Removal Date... The Dates heading appears"
+        },
+        {
+          "source": "Alert Date",
+          "relation": "BELONGS_TO",
+          "target": "Dates heading",
+          "evidence": "... set the Alert Date... The Dates heading appears"
+        },
+        {
+          "source": "Expiration Date",
+          "relation": "CONFIGURED_BY",
+          "target": "Expiration Date check box",
+          "evidence": "select the Expiration Date check box"
+        },
+        {
+          "source": "Expiration Date check box",
+          "type": "Setting",
+          "mention": "Expiration Date check box",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assigning-lots-and-serial-numbers",
+    "heading": "Assigning lots and serial numbers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "assigning lots and serial numbers",
+          "type": "Feature",
+          "mention": "assigning lots and serial numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "assign lot or serial numbers",
+          "type": "Action",
+          "mention": "assign lot or serial numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory adjustment",
+          "type": "Workflow",
+          "mention": "inventory adjustment",
+          "confidence": "medium"
+        },
+        {
+          "name": "product reception",
+          "type": "Workflow",
+          "mention": "product reception",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "assigning lots and serial numbers",
+          "relation": "ENABLES",
+          "target": "assign lot or serial numbers",
+          "evidence": "After enabling the features, assign lot or serial numbers..."
+        },
+        {
+          "source": "inventory adjustment",
+          "relation": "TRIGGERED_BY",
+          "target": "assign lot or serial numbers",
+          "evidence": "assign lot or serial numbers to products using an inventory adjustment"
+        },
+        {
+          "source": "product reception",
+          "relation": "TRIGGERED_BY",
+          "target": "assign lot or serial numbers",
+          "evidence": "assign lot or serial numbers to products ... during product reception"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "assigning lots and serial numbers",
+          "evidence": "Product: Odoo ... Assigning lots and serial numbers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "setting-removal-strategies",
+    "heading": "Setting removal strategies",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "removal strategy",
+          "type": "Setting",
+          "mention": "removal strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "storage location",
+          "type": "DataObject",
+          "mention": "storage location",
+          "confidence": "high"
+        },
+        {
+          "name": "product category",
+          "type": "DataObject",
+          "mention": "product category",
+          "confidence": "high"
+        },
+        {
+          "name": "lot",
+          "type": "DataObject",
+          "mention": "lot",
+          "confidence": "high"
+        },
+        {
+          "name": "serial number",
+          "type": "DataObject",
+          "mention": "serial numbers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "removal strategy",
+          "relation": "CONFIGURED_BY",
+          "target": "storage location",
+          "evidence": "After lot or serial numbers have been assigned, set the removal strategy on the storage location"
+        },
+        {
+          "source": "removal strategy",
+          "relation": "CONFIGURED_BY",
+          "target": "product category",
+          "evidence": "After lot or serial numbers have been assigned, set the removal strategy on the ... product category"
+        },
+        {
+          "source": "lot",
+          "relation": "BELONGS_TO",
+          "target": "storage location",
+          "evidence": "After lot or serial numbers have been assigned"
+        },
+        {
+          "source": "serial number",
+          "relation": "BELONGS_TO",
+          "target": "storage location",
+          "evidence": "After lot or serial numbers have been assigned"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "on-the-location",
+    "heading": "On the location",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Open Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Locations",
+          "type": "Feature",
+          "mention": "Locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "location form",
+          "type": "Feature",
+          "mention": "On the location form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Logistics",
+          "type": "Sub-module",
+          "mention": "under the Logistics heading",
+          "confidence": "high"
+        },
+        {
+          "name": "First Expiry First Out (FEFO)",
+          "type": "Standard",
+          "mention": "First Expiry First Out (FEFO)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Open Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "HAS_FEATURE",
+          "target": "Locations",
+          "evidence": "Configuration --> Locations"
+        },
+        {
+          "source": "Locations",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "... Select the desired location"
+        },
+        {
+          "source": "location form",
+          "relation": "CONTAINS",
+          "target": "Logistics",
+          "evidence": "On the location form, under the Logistics heading"
+        },
+        {
+          "source": "Logistics",
+          "relation": "CONTAINS",
+          "target": "First Expiry First Out (FEFO)",
+          "evidence": "under the Logistics heading, select First Expiry First Out (FEFO)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "on-the-product-category",
+    "heading": "On the product category",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Categories",
+          "type": "Feature",
+          "mention": "Categories",
+          "confidence": "medium"
+        },
+        {
+          "name": "product category",
+          "type": "DataObject",
+          "mention": "product category",
+          "confidence": "high"
+        },
+        {
+          "name": "Force Removal Strategy",
+          "type": "Field",
+          "mention": "Force Removal Strategy field",
+          "confidence": "high"
+        },
+        {
+          "name": "First Expiry First Out (FEFO)",
+          "type": "Standard",
+          "mention": "First Expiry First Out (FEFO)",
+          "confidence": "high"
+        },
+        {
+          "name": "removal strategies",
+          "type": "Concept",
+          "mention": "removal strategies",
+          "confidence": "high"
+        },
+        {
+          "name": "location",
+          "type": "DataObject",
+          "mention": "location",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Categories",
+          "evidence": "Configuration --> Categories"
+        },
+        {
+          "source": "Categories",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "going to Inventory app --> Configuration --> Categories"
+        },
+        {
+          "source": "product category",
+          "relation": "CONFIGURED_BY",
+          "target": "Force Removal Strategy",
+          "evidence": "Configure removal strategies on product categories by ... in the Force Removal Strategy field"
+        },
+        {
+          "source": "Force Removal Strategy",
+          "relation": "USES_METHOD",
+          "target": "First Expiry First Out (FEFO)",
+          "evidence": "specify First Expiry First Out (FEFO)"
+        },
+        {
+          "source": "product category",
+          "relation": "CONTAINS",
+          "target": "Force Removal Strategy",
+          "evidence": "Force Removal Strategy field set on a product category form"
+        },
+        {
+          "source": "Force Removal Strategy",
+          "relation": "GOVERNED_BY",
+          "target": "removal strategies",
+          "evidence": "When there are different removal strategies applied"
+        },
+        {
+          "source": "Force Removal Strategy",
+          "relation": "APPLIES_TO",
+          "target": "product category",
+          "evidence": "the value set on the Force Removal Strategy field set on a product category form is applied"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "removal-date",
+    "heading": "Removal date",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Sub-module",
+          "mention": "product form's Inventory tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Traceability section",
+          "type": "Sub-module",
+          "mention": "Traceability section",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots",
+          "type": "Feature",
+          "mention": "Lots",
+          "confidence": "high"
+        },
+        {
+          "name": "Serial Numbers",
+          "type": "Feature",
+          "mention": "Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration Dates",
+          "type": "Feature",
+          "mention": "Expiration Dates",
+          "confidence": "high"
+        },
+        {
+          "name": "Tracking field",
+          "type": "Field",
+          "mention": "Tracking field",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration Date option",
+          "type": "Feature",
+          "mention": "Expiration Date option",
+          "confidence": "high"
+        },
+        {
+          "name": "Removal Date field",
+          "type": "Field",
+          "mention": "Removal Date field",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration Date field",
+          "type": "Field",
+          "mention": "Expiration Date field",
+          "confidence": "high"
+        },
+        {
+          "name": "Removal date",
+          "type": "Concept",
+          "mention": "removal date",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration date",
+          "type": "Concept",
+          "mention": "expiration date",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots / Serial Numbers report",
+          "type": "Report",
+          "mention": "Lots / Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Numbers smart button",
+          "type": "Feature",
+          "mention": "Lot/Serial Numbers smart button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Lots / Serial Numbers report",
+          "evidence": "Inventory app --> Products --> Lots / Serial Numbers"
+        },
+        {
+          "source": "Traceability section",
+          "relation": "IS_PART_OF",
+          "target": "Inventory tab",
+          "evidence": "Under the Traceability section"
+        },
+        {
+          "source": "Tracking field",
+          "relation": "IS_PART_OF",
+          "target": "Traceability section",
+          "evidence": "ensure the Tracking field"
+        },
+        {
+          "source": "Lots",
+          "relation": "ENABLES",
+          "target": "Expiration Date option",
+          "evidence": "Tracking field is set to either By Lots"
+        },
+        {
+          "source": "Serial Numbers",
+          "relation": "ENABLES",
+          "target": "Expiration Date option",
+          "evidence": "Tracking field is set to either By Unique Serial Number"
+        },
+        {
+          "source": "Expiration Date option",
+          "relation": "ENABLES",
+          "target": "Removal Date field",
+          "evidence": "select the Expiration Date option, which makes the Removal Date field appear"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "Inventory app --> Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Lots",
+          "evidence": "Lots and Serial Numbers and Expiration Dates features must be enabled in Inventory app --> Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Serial Numbers",
+          "evidence": "Lots and Serial Numbers and Expiration Dates features must be enabled"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Expiration Dates",
+          "evidence": "Expiration Dates features must be enabled"
+        },
+        {
+          "source": "Removal date",
+          "relation": "RELATED_TO",
+          "target": "Expiration date",
+          "evidence": "Removal date...is set as a certain number of days before the product's expiration date"
+        },
+        {
+          "source": "Expiration date",
+          "relation": "PRODUCED_BY",
+          "target": "user",
+          "evidence": "The expiration date of a product is determined by adding the date the product was received to the number of days specified...by the user"
+        },
+        {
+          "source": "Expiration date",
+          "relation": "USES_METHOD",
+          "target": "Expiration Date field",
+          "evidence": "adding the date...to the number of days specified in the Expiration Date field"
+        },
+        {
+          "source": "Removal date",
+          "relation": "USES_METHOD",
+          "target": "Removal Date field",
+          "evidence": "subtract the number of days specified in the Removal Date field"
+        },
+        {
+          "source": "Lots / Serial Numbers report",
+          "relation": "CONFIGURED_BY",
+          "target": "user",
+          "evidence": "By default, this report is grouped by location. If necessary, remove that grouping...and group by product"
+        },
+        {
+          "source": "product form",
+          "relation": "HAS_FEATURE",
+          "target": "Lot/Serial Numbers smart button",
+          "evidence": "Lot/Serial Numbers smart button on the product form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "workflow",
+    "heading": "Workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "FEFO",
+          "type": "Standard",
+          "mention": "FEFO (First Expired, First Out)",
+          "confidence": "high"
+        },
+        {
+          "name": "Carton of Eggs",
+          "type": "Product",
+          "mention": "Carton of Eggs",
+          "confidence": "high"
+        },
+        {
+          "name": "By Lots",
+          "type": "Standard",
+          "mention": "By Lots",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Category",
+          "type": "DataObject",
+          "mention": "product category",
+          "confidence": "high"
+        },
+        {
+          "name": "Force Removal Strategy",
+          "type": "Setting",
+          "mention": "Force Removal Strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Create quotation",
+          "type": "Action",
+          "mention": "create a new quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Clicking Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Feature",
+          "mention": "Operations tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Details link",
+          "type": "Action",
+          "mention": "click the Details link",
+          "confidence": "medium"
+        },
+        {
+          "name": "Detailed Operations pop-up window",
+          "type": "Feature",
+          "mention": "Detailed Operations pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pick From field",
+          "type": "Field",
+          "mention": "Pick From field",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Sales app",
+          "evidence": "go to the Sales app"
+        },
+        {
+          "source": "Product Category",
+          "relation": "GOVERNED_BY",
+          "target": "Force Removal Strategy",
+          "evidence": "product category's Force Removal Strategy"
+        },
+        {
+          "source": "Force Removal Strategy",
+          "relation": "SUPPORTS",
+          "target": "FEFO",
+          "evidence": "set to First Expiry First Out (FEFO)"
+        },
+        {
+          "source": "Product Category",
+          "relation": "USES_METHOD",
+          "target": "By Lots",
+          "evidence": "The product is tracked By Lots"
+        },
+        {
+          "source": "Product",
+          "relation": "USES_METHOD",
+          "target": "FEFO",
+          "evidence": "using the FEFO removal strategy"
+        },
+        {
+          "source": "Confirm",
+          "relation": "GENERATES",
+          "target": "Delivery order",
+          "evidence": "creates a delivery order"
+        },
+        {
+          "source": "Delivery order",
+          "relation": "CONTAINS",
+          "target": "Operations tab",
+          "evidence": "in the Operations tab of the delivery order"
+        },
+        {
+          "source": "Sales app",
+          "relation": "ENABLES",
+          "target": "Create quotation",
+          "evidence": "create a new quotation"
+        },
+        {
+          "source": "Create quotation",
+          "relation": "TRIGGERED_BY",
+          "target": "Confirm",
+          "evidence": "Clicking Confirm creates a delivery order"
+        },
+        {
+          "source": "Operations tab",
+          "relation": "HAS_FEATURE",
+          "target": "Details link",
+          "evidence": "click the Details link, located...in the Operations tab"
+        },
+        {
+          "source": "Details link",
+          "relation": "ENABLES",
+          "target": "Detailed Operations pop-up window",
+          "evidence": "opens the Detailed Operations pop-up window"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Pick From field",
+          "evidence": "Pick From field displays"
+        },
+        {
+          "source": "Pick From field",
+          "relation": "RELATED_TO",
+          "target": "FEFO",
+          "evidence": "Since the order demanded six Cartons...using the FEFO removal strategy"
+        },
+        {
+          "source": "FEFO",
+          "relation": "SEE_ALSO",
+          "target": "Removal strategies",
+          "evidence": "Removal strategies <../removal_strategies>"
+        },
+        {
+          "source": "FEFO",
+          "relation": "SEE_ALSO",
+          "target": "Set up force removal strategy",
+          "evidence": "Set up force removal strategy <inventory/warehouses_storage/removal-config>"
+        },
+        {
+          "source": "FEFO",
+          "relation": "SEE_ALSO",
+          "target": "Expiration dates",
+          "evidence": "Expiration dates <../../product_management/product_tracking/expiration_dates>"
+        },
+        {
+          "source": "By Lots",
+          "relation": "SEE_ALSO",
+          "target": "Enable lots tracking",
+          "evidence": "Enable lots tracking <inventory/warehouses_storage/lots-setup>"
+        },
+        {
+          "source": "Carton of Eggs",
+          "relation": "SEE_ALSO",
+          "target": "Odoo Tutorials: Perishable Products",
+          "evidence": "Odoo Tutorials: Perishable Products <https://www.odoo.com/slides/slide/5324/share>"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1074 @@
+[
+  {
+    "section_id": "updating-portal-info",
+    "heading": "Updating portal info",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "portal",
+          "type": "Module",
+          "mention": "portal",
+          "confidence": "medium"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "portal account",
+          "type": "DataObject",
+          "mention": "portal account",
+          "confidence": "medium"
+        },
+        {
+          "name": "contact information",
+          "type": "DataObject",
+          "mention": "contact",
+          "confidence": "low"
+        },
+        {
+          "name": "security information",
+          "type": "DataObject",
+          "mention": "security",
+          "confidence": "low"
+        },
+        {
+          "name": "payment information",
+          "type": "DataObject",
+          "mention": "payment",
+          "confidence": "low"
+        },
+        {
+          "name": "portal dashboard",
+          "type": "Module",
+          "mention": "portal dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo.com",
+          "type": "Product",
+          "mention": "Odoo.com",
+          "confidence": "medium"
+        },
+        {
+          "name": "email address",
+          "type": "Field",
+          "mention": "email address",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "portal",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "portal dashboard",
+          "relation": "IS_PART_OF",
+          "target": "portal",
+          "evidence": "Once a user has logged in and is on the portal dashboard"
+        },
+        {
+          "source": "portal account",
+          "relation": "CONTAINS",
+          "target": "contact information",
+          "evidence": "changes to their contact, security, or payment information connected to their portal account"
+        },
+        {
+          "source": "portal account",
+          "relation": "CONTAINS",
+          "target": "security information",
+          "evidence": "changes to their contact, security, or payment information connected to their portal account"
+        },
+        {
+          "source": "portal account",
+          "relation": "CONTAINS",
+          "target": "payment information",
+          "evidence": "changes to their contact, security, or payment information connected to their portal account"
+        },
+        {
+          "source": "user",
+          "relation": "RELATED_TO",
+          "target": "portal account",
+          "evidence": "Portal users can update most information"
+        },
+        {
+          "source": "email address",
+          "relation": "RELATED_TO",
+          "target": "portal account",
+          "evidence": "Passwords for portal users and Odoo.com users remain separate, even if the same email address is used"
+        },
+        {
+          "source": "portal",
+          "relation": "RELATED_TO",
+          "target": "Odoo.com",
+          "evidence": "Passwords for portal users and Odoo.com users remain separate"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "update-contact-info",
+    "heading": "Update contact info",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "portal dashboard",
+          "type": "Module",
+          "mention": "portal dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Update contact info",
+          "type": "Workflow",
+          "mention": "Update contact info",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit information button",
+          "type": "Action",
+          "mention": "fa-pencil Edit information button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Your name",
+          "type": "Field",
+          "mention": "Your name",
+          "confidence": "high"
+        },
+        {
+          "name": "Email",
+          "type": "Field",
+          "mention": "Email",
+          "confidence": "high"
+        },
+        {
+          "name": "Phone",
+          "type": "Field",
+          "mention": "Phone",
+          "confidence": "high"
+        },
+        {
+          "name": "Company name",
+          "type": "Field",
+          "mention": "Company name",
+          "confidence": "high"
+        },
+        {
+          "name": "Mailing address",
+          "type": "Field",
+          "mention": "Mailing address",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice delivery preference",
+          "type": "Field",
+          "mention": "Invoice delivery preference",
+          "confidence": "high"
+        },
+        {
+          "name": "Save Address",
+          "type": "Action",
+          "mention": "Save Address",
+          "confidence": "high"
+        },
+        {
+          "name": "Discard",
+          "type": "Action",
+          "mention": "Discard",
+          "confidence": "high"
+        },
+        {
+          "name": "country",
+          "type": "Field",
+          "mention": "country",
+          "confidence": "medium"
+        },
+        {
+          "name": "administrator",
+          "type": "Actor",
+          "mention": "user with administrator access rights",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Update contact info",
+          "relation": "TRIGGERED_BY",
+          "target": "Edit information button",
+          "evidence": "From the portal dashboard, click the fa-pencil Edit information button under the user contact information. This brings up a new page where contact information can be updated."
+        },
+        {
+          "source": "Update contact info",
+          "relation": "CONTAINS",
+          "target": "Your name",
+          "evidence": "On this screen, users can update their: - Your name"
+        },
+        {
+          "source": "Update contact info",
+          "relation": "CONTAINS",
+          "target": "Email",
+          "evidence": "On this screen, users can update their: - Email"
+        },
+        {
+          "source": "Update contact info",
+          "relation": "CONTAINS",
+          "target": "Phone",
+          "evidence": "On this screen, users can update their: - Phone"
+        },
+        {
+          "source": "Update contact info",
+          "relation": "CONTAINS",
+          "target": "Company name",
+          "evidence": "On this screen, users can update their: - Company name"
+        },
+        {
+          "source": "Update contact info",
+          "relation": "CONTAINS",
+          "target": "Mailing address",
+          "evidence": "On this screen, users can update their: - Mailing address"
+        },
+        {
+          "source": "Update contact info",
+          "relation": "CONTAINS",
+          "target": "Invoice delivery preference",
+          "evidence": "On this screen, users can update their: - Invoice delivery preference"
+        },
+        {
+          "source": "Update contact info",
+          "relation": "TRIGGERED_BY",
+          "target": "Save Address",
+          "evidence": "Once users have updated their information, they can click Save Address to save any changes"
+        },
+        {
+          "source": "Update contact info",
+          "relation": "TRIGGERED_BY",
+          "target": "Discard",
+          "evidence": "Once users have updated their information, they can click Save Address... or Discard to return to the portal dashboard"
+        },
+        {
+          "source": "portal dashboard",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product context"
+        },
+        {
+          "source": "Update contact info",
+          "relation": "IS_PART_OF",
+          "target": "portal dashboard",
+          "evidence": "From the portal dashboard, click... This brings up a new page where contact information can be updated."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "update-payment-info",
+    "heading": "Update payment info",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "portal dashboard",
+          "type": "Module",
+          "mention": "portal dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment methods button",
+          "type": "Action",
+          "mention": "Payment methods button",
+          "confidence": "high"
+        },
+        {
+          "name": "add a new payment option",
+          "type": "Action",
+          "mention": "add a new payment option",
+          "confidence": "high"
+        },
+        {
+          "name": "choose from the available payment methods",
+          "type": "Action",
+          "mention": "choose from the available payment methods",
+          "confidence": "high"
+        },
+        {
+          "name": "enter the new payment information",
+          "type": "Action",
+          "mention": "enter the new payment information",
+          "confidence": "high"
+        },
+        {
+          "name": "click Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "remove a payment option",
+          "type": "Action",
+          "mention": "remove a payment option",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-trash icon",
+          "type": "Action",
+          "mention": "fa-trash icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delete payment method",
+          "type": "Action",
+          "mention": "Delete payment method",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Deletion button",
+          "type": "Action",
+          "mention": "Confirm Deletion button",
+          "confidence": "high"
+        },
+        {
+          "name": "saved payment methods",
+          "type": "DataObject",
+          "mention": "saved payment methods",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment information",
+          "type": "DataObject",
+          "mention": "payment information",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "portal dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "From the portal dashboard"
+        },
+        {
+          "source": "Payment methods button",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the Payment methods button"
+        },
+        {
+          "source": "add a new payment option",
+          "relation": "TRIGGERED_BY",
+          "target": "Payment methods button",
+          "evidence": "To add a new payment option"
+        },
+        {
+          "source": "click Save",
+          "relation": "PRODUCES",
+          "target": "saved payment methods",
+          "evidence": "click Save to save the details"
+        },
+        {
+          "source": "remove a payment option",
+          "relation": "TRIGGERED_BY",
+          "target": "Payment methods button",
+          "evidence": "To remove a payment option"
+        },
+        {
+          "source": "Confirm Deletion button",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the Confirm Deletion button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "update-passwords-and-manage-security",
+    "heading": "Update passwords and manage security",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Portal Dashboard",
+          "type": "Module",
+          "mention": "portal dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Connection & Security",
+          "type": "Module",
+          "mention": "Connection & Security",
+          "confidence": "high"
+        },
+        {
+          "name": "Connection & Security page",
+          "type": "Module",
+          "mention": "new page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Update passwords",
+          "type": "Action",
+          "mention": "Update passwords",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage security",
+          "type": "Action",
+          "mention": "manage security",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Portal Dashboard",
+          "relation": "CONTAINS",
+          "target": "Connection & Security",
+          "evidence": "From the portal dashboard, click the Connection & Security button."
+        },
+        {
+          "source": "Connection & Security",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Update passwords",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "From the portal dashboard, click the Connection & Security button."
+        },
+        {
+          "source": "Manage security",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "From the portal dashboard, click the Connection & Security button."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-password",
+    "heading": "Change Password",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Change Password",
+          "type": "Feature",
+          "mention": "Change Password",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "medium"
+        },
+        {
+          "name": "current password",
+          "type": "Field",
+          "mention": "current password",
+          "confidence": "medium"
+        },
+        {
+          "name": "new password",
+          "type": "Field",
+          "mention": "new password",
+          "confidence": "medium"
+        },
+        {
+          "name": "Change Password",
+          "type": "Action",
+          "mention": "clicking Change Password",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Change Password",
+          "relation": "ENABLES",
+          "target": "Action: Change Password",
+          "evidence": "The new password can be saved by clicking Change Password."
+        },
+        {
+          "source": "Action: Change Password",
+          "relation": "PRODUCES",
+          "target": "new password",
+          "evidence": "clicking Change Password... a new password they wish to change to."
+        },
+        {
+          "source": "Action: Change Password",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "Here the user can enter... by clicking Change Password."
+        },
+        {
+          "source": "Feature: Change Password",
+          "relation": "CONTAINS",
+          "target": "current password",
+          "evidence": "Here the user can enter their current password"
+        },
+        {
+          "source": "Feature: Change Password",
+          "relation": "CONTAINS",
+          "target": "new password",
+          "evidence": "... and a new password they wish to change to."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "two-factor-authentication",
+    "heading": "Two-factor authentication",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "two-factor authentication",
+          "type": "Feature",
+          "mention": "two-factor authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "2FA",
+          "type": "Feature",
+          "mention": "2FA",
+          "confidence": "high"
+        },
+        {
+          "name": "Enable two-factor authentication",
+          "type": "Action",
+          "mention": "Enable two-factor authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "Disable two-factor authentication",
+          "type": "Action",
+          "mention": "Disable two-factor authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-info-circle (Documentation) icon",
+          "type": "Action",
+          "mention": "fa-info-circle (Documentation) icon",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "two-factor authentication",
+          "evidence": "Product: Odoo, Title: Two-factor authentication"
+        },
+        {
+          "source": "two-factor authentication",
+          "relation": "EQUIVALENT_TO",
+          "target": "2FA",
+          "evidence": "Title: Two-factor authentication, mentions 'two-factor authentication (2FA)'"
+        },
+        {
+          "source": "Enable two-factor authentication",
+          "relation": "RELATED_TO",
+          "target": "two-factor authentication",
+          "evidence": "If 2FA is not enabled, an Enable two-factor authentication link appears."
+        },
+        {
+          "source": "Disable two-factor authentication",
+          "relation": "RELATED_TO",
+          "target": "two-factor authentication",
+          "evidence": "If it is enabled, a link reading Disable two-factor authentication appears instead."
+        },
+        {
+          "source": "fa-info-circle (Documentation) icon",
+          "relation": "ENABLES",
+          "target": "two-factor authentication",
+          "evidence": "Clicking the fa-info-circle (Documentation) icon opens a page that explains how two-factor authentication (2FA) works."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "passkeys",
+    "heading": "Passkeys",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Passkey",
+          "type": "Action",
+          "mention": "Click Add Passkey",
+          "confidence": "high"
+        },
+        {
+          "name": "passkey",
+          "type": "DataObject",
+          "mention": "passkey",
+          "confidence": "high"
+        },
+        {
+          "name": "passkey creation process",
+          "type": "Workflow",
+          "mention": "Complete the passkey creation process",
+          "confidence": "high"
+        },
+        {
+          "name": "browser prompt",
+          "type": "Integration",
+          "mention": "brings up a browser prompt",
+          "confidence": "medium"
+        },
+        {
+          "name": "password",
+          "type": "DataObject",
+          "mention": "password",
+          "confidence": "medium"
+        },
+        {
+          "name": "renamed",
+          "type": "Action",
+          "mention": "They can be renamed",
+          "confidence": "medium"
+        },
+        {
+          "name": "deleted",
+          "type": "Action",
+          "mention": "deleted",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-pencil (pencil) button",
+          "type": "Action",
+          "mention": "clicking the fa-pencil (pencil) button",
+          "confidence": "low"
+        },
+        {
+          "name": "fa-trash (trash can) button",
+          "type": "Action",
+          "mention": "clicking their fa-trash (trash can) button",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add Passkey",
+          "relation": "PRODUCES",
+          "target": "passkey",
+          "evidence": "Click Add Passkey to create a passkey"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Add Passkey",
+          "evidence": "Product: Odoo ... Click Add Passkey"
+        },
+        {
+          "source": "Add Passkey",
+          "relation": "REQUIRES",
+          "target": "password",
+          "evidence": "Odoo asks for a password to confirm account ownership"
+        },
+        {
+          "source": "Add Passkey",
+          "relation": "TRIGGERED_BY",
+          "target": "browser prompt",
+          "evidence": "Clicking Create brings up a browser prompt"
+        },
+        {
+          "source": "passkey",
+          "relation": "PRODUCED_BY",
+          "target": "passkey creation process",
+          "evidence": "Complete the passkey creation process in the browser"
+        },
+        {
+          "source": "renamed",
+          "relation": "PERFORMED_BY",
+          "target": "fa-pencil (pencil) button",
+          "evidence": "They can be renamed by clicking the fa-pencil (pencil) button"
+        },
+        {
+          "source": "deleted",
+          "relation": "PERFORMED_BY",
+          "target": "fa-trash (trash can) button",
+          "evidence": "deleted by clicking their fa-trash (trash can) button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "revoke-all-sessions",
+    "heading": "Revoke All Sessions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Log out from all devices button",
+          "type": "Action",
+          "mention": "Clicking the Log out from all devices button",
+          "confidence": "high"
+        },
+        {
+          "name": "pop-up",
+          "type": "Feature",
+          "mention": "brings up a pop-up",
+          "confidence": "medium"
+        },
+        {
+          "name": "enter their password",
+          "type": "Action",
+          "mention": "prompting the user to enter their password",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Password",
+          "type": "Action",
+          "mention": "click Confirm Password",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "the user",
+          "confidence": "high"
+        },
+        {
+          "name": "system",
+          "type": "Actor",
+          "mention": "the system",
+          "confidence": "medium"
+        },
+        {
+          "name": "current session",
+          "type": "Concept",
+          "mention": "the current one",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Log out from all devices button",
+          "relation": "TRIGGERED_BY",
+          "target": "Clicking",
+          "evidence": "Clicking the Log out from all devices button brings up a pop-up"
+        },
+        {
+          "source": "pop-up",
+          "relation": "ENABLES",
+          "target": "enter their password",
+          "evidence": "brings up a pop-up prompting the user to enter their password"
+        },
+        {
+          "source": "enter their password",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "Once they do so"
+        },
+        {
+          "source": "Confirm Password",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "click Confirm Password"
+        },
+        {
+          "source": "Confirm Password",
+          "relation": "PRODUCES",
+          "target": "system",
+          "evidence": "click Confirm Password, the system logs them out"
+        },
+        {
+          "source": "system",
+          "relation": "PERFORMED_BY",
+          "target": "Log out from all devices button",
+          "evidence": "the system logs them out of all sessions except for the current one"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "delete-account",
+    "heading": "Delete Account",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Delete Account",
+          "type": "Action",
+          "mention": "Delete Account button",
+          "confidence": "high"
+        },
+        {
+          "name": "password",
+          "type": "Field",
+          "mention": "password",
+          "confidence": "medium"
+        },
+        {
+          "name": "login name",
+          "type": "Field",
+          "mention": "login name",
+          "confidence": "medium"
+        },
+        {
+          "name": "email address",
+          "type": "Field",
+          "mention": "email address",
+          "confidence": "medium"
+        },
+        {
+          "name": "phone number",
+          "type": "Field",
+          "mention": "phone number",
+          "confidence": "medium"
+        },
+        {
+          "name": "internal block list",
+          "type": "DataObject",
+          "mention": "internal block list",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Delete Account",
+          "relation": "REQUIRES",
+          "target": "password",
+          "evidence": "Users must enter their password"
+        },
+        {
+          "source": "Delete Account",
+          "relation": "REQUIRES",
+          "target": "login name",
+          "evidence": "Users must enter their login name"
+        },
+        {
+          "source": "Delete Account",
+          "relation": "PRODUCES",
+          "target": "internal block list",
+          "evidence": "can also choose to have their email address and phone number added to an internal block list"
+        },
+        {
+          "source": "internal block list",
+          "relation": "CONTAINS",
+          "target": "email address",
+          "evidence": "have their email address and phone number added"
+        },
+        {
+          "source": "internal block list",
+          "relation": "CONTAINS",
+          "target": "phone number",
+          "evidence": "have their email address and phone number added"
+        },
+        {
+          "source": "Delete Account",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accessing-user-information-as-an-administrator",
+    "heading": "Accessing user information as an administrator",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Settings app",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "high"
+        },
+        {
+          "name": "Users",
+          "type": "Sub-module",
+          "mention": "Users",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal Users",
+          "type": "DataObject",
+          "mention": "Internal Users",
+          "confidence": "medium"
+        },
+        {
+          "name": "Portal Users",
+          "type": "DataObject",
+          "mention": "Portal Users",
+          "confidence": "medium"
+        },
+        {
+          "name": "administrator",
+          "type": "Actor",
+          "mention": "administrator",
+          "confidence": "high"
+        },
+        {
+          "name": "portal user",
+          "type": "Actor",
+          "mention": "portal user",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Settings app",
+          "relation": "CONTAINS",
+          "target": "Users",
+          "evidence": "navigate to Settings app --> Users"
+        },
+        {
+          "source": "Users",
+          "relation": "IS_PART_OF",
+          "target": "Settings app",
+          "evidence": "navigate to Settings app --> Users"
+        },
+        {
+          "source": "administrator",
+          "relation": "PERFORMED_BY",
+          "target": "Internal Users",
+          "evidence": "click oi-arrow-right Manage Users"
+        },
+        {
+          "source": "administrator",
+          "relation": "PERFORMED_BY",
+          "target": "Portal Users",
+          "evidence": "use the fa-sort-desc (Toggle Search Panel) button to add Portal Users as a filter"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "update-email-address",
+    "heading": "Update email address",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-envelope (Email) field",
+          "type": "Field",
+          "mention": "fa-envelope (Email) field",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage Users module",
+          "type": "Module",
+          "mention": "Manage Users module",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contacts app",
+          "type": "Module",
+          "mention": "Contacts app",
+          "confidence": "medium"
+        },
+        {
+          "name": "portal",
+          "type": "Module",
+          "mention": "portal",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "fa-envelope (Email) field",
+          "relation": "CONTAINS",
+          "target": "email address",
+          "evidence": "The fa-envelope (Email) field shows the email address"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "administrator",
+          "evidence": "A user with administrator access rights can make any necessary changes"
+        },
+        {
+          "source": "Manage Users module",
+          "relation": "CONTAINS",
+          "target": "Users' email addresses",
+          "evidence": "Users' email addresses can be changed in the Manage Users module"
+        },
+        {
+          "source": "Contacts app",
+          "relation": "CONTAINS",
+          "target": "Users' email addresses",
+          "evidence": "Users' email addresses can be changed in the Contacts app"
+        },
+        {
+          "source": "portal",
+          "relation": "CONTAINS",
+          "target": "Users' email addresses",
+          "evidence": "Users' email addresses can be changed in the portal"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "update-passwords",
+    "heading": "Update passwords",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ',' delimiter: line 1 column 1355 (char 1354)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"Contact form\",\"type\":\"DataObject\",\"mention\":\"Contact form\",\"confidence\":\"medium\"},{\"name\":\"Security tab\",\"type\":\"Feature\",\"mention\":\"Security tab\",\"confidence\":\"high\"},{\"name\":\"Change password\",\"type\":\"Action\",\"mention\":\"Change password\",\"confidence\":\"high\"},{\"name\":\"Change password button\",\"type\":\"Feature\",\"mention\":\"Change password button\",\"confidence\":\"medium\"},{\"name\":\"form\",\"type\":\"DataObject\",\"mention\":\"form\",\"confidence\":\"medium\"},{\"name\":\"Change Password\",\"type\":\"Action\",\"mention\":\"Click Change Password\",\"confidence\":\"medium\"},{\"name\":\"Cancel\",\"type\":\"Action\",\"mention\":\"click Cancel\",\"confidence\":\"medium\"},{\"name\":\"Invite to use 2FA\",\"type\":\"Action\",\"mention\":\"Invite to use 2FA\",\"confidence\":\"high\"},{\"name\":\"Invite to use 2FA button\",\"type\":\"Feature\",\"mention\":\"Invite to use 2FA button\",\"confidence\":\"medium\"},{\"name\":\"pop-up notification\",\"type\":\"Feature\",\"mention\":\"pop-up notification\",\"confidence\":\"medium\"},{\"name\":\"two-factor authentication\",\"type\":\"Feature\",\"mention\":\"two-factor authentication\",\"confidence\":\"medium\"},{\"name\":\"Access rights\",\"type\":\"Permission\",\"mention\":\"Access rights\",\"confidence\":\"medium\"},{\"name\":\"Portal access documentation\",\"type\":\"Feature\",\"mention\":\"Portal access documentation\",\"confidence\":\"low\"}]],\"relations\":[{\"source\":\"Contact form\",\"relation\":\"CONTAINS\",\"target\":\"Security tab\",\"evidence\":\"Users' security settings can be adjusted under the Security tab on their Contact form.\"},{\"source\":\"Security tab\",\"relation\":\"CONTAINS\",\"target\":\"Change password button\",\"evidence\":\"Under the Security tab, there are options to: - Change password Click the Change password button\"},{\"source\":\"Change password button\",\"relation\":\"TRIGGERED_BY\",\"target\":\"Change password\",\"evidence\":\"Click the Change password button\"},{\"source\":\"Change password button\",\"relation\":\"GENERATES\",\"target\":\"form\",\"evidence\":\"Click the Change password button to bring up a form\"},{\"source\":\"Change password\",\"relation\":\"PRODUCES\",\"target\":\"Change Password\",\"evidence\":\"Click Change Password to save the password\"},{\"source\":\"form\",\"relation\":\"CONTAINS\",\"target\":\"Cancel\",\"evidence\":\"... form ... click Cancel to return\"},{\"source\":\"Security tab\",\"relation\":\"CONTAINS\",\"target\":\"Invite to use 2FA button\",\"evidence\":\"Under the Security tab, there are options to: ... Invite to use 2FA.\"},{\"source\":\"Invite to use 2FA button\",\"relation\":\"TRIGGERED_BY\",\"target\":\"Invite to use 2FA\",\"evidence\":\"Click the Invite to use 2FA button\"},{\"source\":\"Invite to use 2FA button\",\"relation\":\"GENERATES\",\"target\":\"pop-up notification\",\"evidence\":\"Click the Invite to use 2FA button to bring up a pop-up notification\"},{\"source\":\"pop-up notification\",\"relation\":\"RELATED_TO\",\"target\":\"two-factor authentication\",\"evidence\":\"pop-up notification that an invitation to use two-factor authentication was sent\"},{\"source\":\"Security tab\",\"relation\":\"SEE_ALSO\",\"target\":\"Access rights\",\"evidence\":\".. seealso:: - Access rights\"},{\"source\":\"Security tab\",\"relation\":\"SEE_ALSO\",\"target\":\"Portal access documentation\",\"evidence\":\".. seealso:: - Portal access documentation\"}]}"
+    }
+  }
+]

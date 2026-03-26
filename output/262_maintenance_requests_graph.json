@@ -1,0 +1,628 @@
+[
+  {
+    "section_id": "maintenance-requests",
+    "heading": "Maintenance requests",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Maintenance",
+          "type": "Module",
+          "mention": "Odoo **Maintenance**",
+          "confidence": "high"
+        },
+        {
+          "name": "maintenance requests",
+          "type": "DataObject",
+          "mention": "*maintenance requests*",
+          "confidence": "high"
+        },
+        {
+          "name": "equipment",
+          "type": "Concept",
+          "mention": "equipment",
+          "confidence": "medium"
+        },
+        {
+          "name": "work centers",
+          "type": "Concept",
+          "mention": "work centers",
+          "confidence": "medium"
+        },
+        {
+          "name": "preventive maintenance",
+          "type": "Workflow",
+          "mention": "preventive maintenance",
+          "confidence": "high"
+        },
+        {
+          "name": "corrective maintenance",
+          "type": "Workflow",
+          "mention": "corrective maintenance",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Maintenance",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "In Odoo **Maintenance**"
+        },
+        {
+          "source": "Maintenance",
+          "relation": "CONTAINS",
+          "target": "maintenance requests",
+          "evidence": "In Odoo **Maintenance**, users can create *maintenance requests*"
+        },
+        {
+          "source": "maintenance requests",
+          "relation": "RELATED_TO",
+          "target": "equipment",
+          "evidence": "maintenance requests to schedule and track the progress of equipment and work center maintenance"
+        },
+        {
+          "source": "maintenance requests",
+          "relation": "RELATED_TO",
+          "target": "work centers",
+          "evidence": "maintenance requests to schedule and track the progress of equipment and work center maintenance"
+        },
+        {
+          "source": "preventive maintenance",
+          "relation": "RELATED_TO",
+          "target": "equipment",
+          "evidence": "preventive maintenance, intended to prevent equipment from breaking down"
+        },
+        {
+          "source": "corrective maintenance",
+          "relation": "RELATED_TO",
+          "target": "equipment",
+          "evidence": "corrective maintenance, which is used to fix equipment"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "maintenance-access-rights",
+    "heading": "Maintenance access rights",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Maintenance",
+          "type": "Module",
+          "mention": "Maintenance app",
+          "confidence": "high"
+        },
+        {
+          "name": "Maintenance request",
+          "type": "Feature",
+          "mention": "maintenance request",
+          "confidence": "high"
+        },
+        {
+          "name": "Equipment",
+          "type": "DataObject",
+          "mention": "equipment",
+          "confidence": "high"
+        },
+        {
+          "name": "Equipment Manager",
+          "type": "Permission",
+          "mention": "Equipment Manager",
+          "confidence": "high"
+        },
+        {
+          "name": "User",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Supply Chain",
+          "type": "Module",
+          "mention": "Supply Chain section",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Maintenance request",
+          "relation": "REQUIRES",
+          "target": "Equipment",
+          "evidence": "To create a maintenance request for equipment, a user has to have access to the equipment"
+        },
+        {
+          "source": "Equipment Manager",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "To view or edit the access rights... navigate to Settings"
+        },
+        {
+          "source": "Equipment Manager",
+          "relation": "BELONGS_TO",
+          "target": "Supply Chain",
+          "evidence": "On the Access Rights tab, scroll to the Supply Chain section"
+        },
+        {
+          "source": "Equipment Manager",
+          "relation": "APPLIES_TO",
+          "target": "User",
+          "evidence": "click a user's profile... select Equipment Manager"
+        },
+        {
+          "source": "Equipment Manager",
+          "relation": "HAS_FEATURE",
+          "target": "Maintenance",
+          "evidence": "If a user is granted Equipment Manager level access rights for the Maintenance app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-maintenance-request",
+    "heading": "Create maintenance request",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Maintenance",
+          "type": "Module",
+          "mention": "Maintenance app",
+          "confidence": "high"
+        },
+        {
+          "name": "Maintenance Requests",
+          "type": "Sub-module",
+          "mention": "Maintenance Requests",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Request field",
+          "type": "Field",
+          "mention": "Request field",
+          "confidence": "high"
+        },
+        {
+          "name": "Created By field",
+          "type": "Field",
+          "mention": "Created By field",
+          "confidence": "high"
+        },
+        {
+          "name": "For field",
+          "type": "Field",
+          "mention": "For drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Equipment",
+          "type": "DataObject",
+          "mention": "Equipment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Center",
+          "type": "DataObject",
+          "mention": "Work Center",
+          "confidence": "medium"
+        },
+        {
+          "name": "Equipment field",
+          "type": "Field",
+          "mention": "Equipment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Center field",
+          "type": "Field",
+          "mention": "Work Center",
+          "confidence": "medium"
+        },
+        {
+          "name": "Worksheet Template field",
+          "type": "Field",
+          "mention": "Worksheet Template field",
+          "confidence": "high"
+        },
+        {
+          "name": "Custom Maintenance Worksheets",
+          "type": "Setting",
+          "mention": "Custom Maintenance Worksheets setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Request Date field",
+          "type": "Field",
+          "mention": "Request Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Maintenance Type field",
+          "type": "Field",
+          "mention": "Maintenance Type field",
+          "confidence": "high"
+        },
+        {
+          "name": "Corrective",
+          "type": "Concept",
+          "mention": "Corrective option",
+          "confidence": "high"
+        },
+        {
+          "name": "Preventive",
+          "type": "Concept",
+          "mention": "Preventive option",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order field",
+          "type": "Field",
+          "mention": "Manufacturing Order field",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Order field",
+          "type": "Field",
+          "mention": "Work Order field",
+          "confidence": "high"
+        },
+        {
+          "name": "Team field",
+          "type": "Field",
+          "mention": "Team field",
+          "confidence": "high"
+        },
+        {
+          "name": "Responsible field",
+          "type": "Field",
+          "mention": "Responsible field",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduled Date field",
+          "type": "Field",
+          "mention": "Scheduled Date field",
+          "confidence": "high"
+        },
+        {
+          "name": "Duration field",
+          "type": "Field",
+          "mention": "Duration field",
+          "confidence": "high"
+        },
+        {
+          "name": "Block Workcenter",
+          "type": "Feature",
+          "mention": "Block Workcenter checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Priority field",
+          "type": "Field",
+          "mention": "Priority field",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban board",
+          "type": "Feature",
+          "mention": "Kanban board",
+          "confidence": "medium"
+        },
+        {
+          "name": "Notes tab",
+          "type": "Feature",
+          "mention": "Notes tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions tab",
+          "type": "Feature",
+          "mention": "Instructions tab",
+          "confidence": "high"
+        },
+        {
+          "name": "PDF",
+          "type": "Concept",
+          "mention": "PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "Google Slide",
+          "type": "Concept",
+          "mention": "Google Slide",
+          "confidence": "high"
+        },
+        {
+          "name": "Text",
+          "type": "Concept",
+          "mention": "Text",
+          "confidence": "high"
+        },
+        {
+          "name": "User",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "maintenance team",
+          "type": "Actor",
+          "mention": "maintenance team",
+          "confidence": "medium"
+        },
+        {
+          "name": "maintenance request",
+          "type": "DataObject",
+          "mention": "maintenance request",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Maintenance",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "navigate to Maintenance app"
+        },
+        {
+          "source": "Maintenance Requests",
+          "relation": "IS_PART_OF",
+          "target": "Maintenance",
+          "evidence": "Maintenance app --> Maintenance --> Maintenance Requests"
+        },
+        {
+          "source": "Create maintenance request",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "user creating the request"
+        },
+        {
+          "source": "Request field",
+          "relation": "CONTAINS",
+          "target": "maintenance request",
+          "evidence": "entering a descriptive title"
+        },
+        {
+          "source": "Created By field",
+          "relation": "CONTAINS",
+          "target": "User",
+          "evidence": "populates with the user"
+        },
+        {
+          "source": "Worksheet Template field",
+          "relation": "TRIGGERED_BY",
+          "target": "Custom Maintenance Worksheets",
+          "evidence": "setting is enabled"
+        },
+        {
+          "source": "maintenance request",
+          "relation": "CONFIGURED_BY",
+          "target": "Maintenance Type field",
+          "evidence": "select Corrective or Preventive"
+        },
+        {
+          "source": "Work Order field",
+          "relation": "TRIGGERED_BY",
+          "target": "Manufacturing Order field",
+          "evidence": "appears below it"
+        },
+        {
+          "source": "Team field",
+          "relation": "CONTAINS",
+          "target": "maintenance team",
+          "evidence": "select the maintenance team"
+        },
+        {
+          "source": "Duration field",
+          "relation": "CONTAINS",
+          "target": "maintenance request",
+          "evidence": "time it takes to complete"
+        },
+        {
+          "source": "Block Workcenter",
+          "relation": "TRIGGERED_BY",
+          "target": "Work Center field",
+          "evidence": "If Work Center was selected"
+        },
+        {
+          "source": "Priority field",
+          "relation": "CONTAINS",
+          "target": "maintenance request",
+          "evidence": "assign the request a priority"
+        },
+        {
+          "source": "maintenance request",
+          "relation": "CONTAINS",
+          "target": "Notes tab",
+          "evidence": "enter any relevant details"
+        },
+        {
+          "source": "maintenance request",
+          "relation": "CONTAINS",
+          "target": "Instructions tab",
+          "evidence": "include instructions"
+        },
+        {
+          "source": "Instructions tab",
+          "relation": "CONTAINS",
+          "target": "PDF",
+          "evidence": "PDF: click"
+        },
+        {
+          "source": "Instructions tab",
+          "relation": "CONTAINS",
+          "target": "Google Slide",
+          "evidence": "Google Slide: enter"
+        },
+        {
+          "source": "Instructions tab",
+          "relation": "CONTAINS",
+          "target": "Text",
+          "evidence": "Text: enter"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-maintenance-request",
+    "heading": "Process maintenance request",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Maintenance app",
+          "type": "Module",
+          "mention": "Maintenance app",
+          "confidence": "high"
+        },
+        {
+          "name": "Maintenance Requests",
+          "type": "Sub-module",
+          "mention": "Maintenance Requests",
+          "confidence": "high"
+        },
+        {
+          "name": "Process maintenance request",
+          "type": "Workflow",
+          "mention": "Title: Process maintenance request",
+          "confidence": "high"
+        },
+        {
+          "name": "New Request",
+          "type": "Action",
+          "mention": "*New Request* stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "maintenance request",
+          "type": "DataObject",
+          "mention": "maintenance request",
+          "confidence": "high"
+        },
+        {
+          "name": "Repaired stage",
+          "type": "Action",
+          "mention": "Repaired stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Scrap stage",
+          "type": "Action",
+          "mention": "Scrap stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "equipment or work center",
+          "type": "DataObject",
+          "mention": "equipment or work center",
+          "confidence": "medium"
+        },
+        {
+          "name": "scrapped",
+          "type": "Action",
+          "mention": "scrapped",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Maintenance app",
+          "relation": "CONTAINS",
+          "target": "Maintenance Requests",
+          "evidence": "can be accessed by navigating to Maintenance app --> Maintenance --> Maintenance Requests"
+        },
+        {
+          "source": "Process maintenance request",
+          "relation": "CONTAINS",
+          "target": "maintenance request",
+          "evidence": "Once a maintenance request has been created"
+        },
+        {
+          "source": "Maintenance Requests",
+          "relation": "CONTAINS",
+          "target": "New Request",
+          "evidence": "appears in the *New Request* stage of the *Maintenance Requests* page"
+        },
+        {
+          "source": "Process maintenance request",
+          "relation": "ENABLES",
+          "target": "Repaired stage",
+          "evidence": "Successful maintenance requests should be moved to the Repaired stage"
+        },
+        {
+          "source": "Process maintenance request",
+          "relation": "ENABLES",
+          "target": "Scrap stage",
+          "evidence": "Failed maintenance requests should be moved to the Scrap stage"
+        },
+        {
+          "source": "Repaired stage",
+          "relation": "APPLIES_TO",
+          "target": "equipment or work center",
+          "evidence": "indicating that the specified piece of equipment or work center is repaired"
+        },
+        {
+          "source": "Scrap stage",
+          "relation": "APPLIES_TO",
+          "target": "equipment or work center",
+          "evidence": "indicating the specified piece of equipment, or work center, could not be repaired"
+        },
+        {
+          "source": "Scrap stage",
+          "relation": "PRODUCES",
+          "target": "scrapped",
+          "evidence": "and must instead be scrapped"
+        }
+      ]
+    }
+  }
+]

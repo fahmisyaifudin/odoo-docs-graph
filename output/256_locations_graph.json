@@ -1,0 +1,775 @@
+[
+  {
+    "section_id": "locations-report",
+    "heading": "Locations report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory application",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations report",
+          "type": "Report",
+          "mention": "main Locations report",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Feature",
+          "mention": "Warehouse section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "admin access",
+          "type": "Permission",
+          "mention": "admin access",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Locations report",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "The Locations report in the Inventory application"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "To do that, go to Inventory app --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "go to Inventory app --> Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Warehouse",
+          "evidence": "In the Warehouse section"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "access the main Locations report by navigating to Inventory app --> Reporting --> Locations"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Locations report",
+          "evidence": "navigating to Inventory app --> Reporting --> Locations"
+        },
+        {
+          "source": "Locations report",
+          "relation": "ENABLES",
+          "target": "Storage Locations",
+          "evidence": "the Locations report, the Storage Locations feature must be enabled"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONFIGURED_BY",
+          "target": "Storage Locations",
+          "evidence": "In the Warehouse section, tick the checkbox for Storage Locations"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONFIGURED_BY",
+          "target": "admin access",
+          "evidence": "The Reporting menu in Inventory is only accessible to users with admin access"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "navigate-the-report",
+    "heading": "Navigate the report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations report",
+          "type": "Report",
+          "mention": "Locations report",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Location",
+          "type": "DataObject",
+          "mention": "Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Package",
+          "type": "DataObject",
+          "mention": "Package",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "Field",
+          "mention": "Lot/Serial Number",
+          "confidence": "high"
+        },
+        {
+          "name": "On Hand Quantity",
+          "type": "Field",
+          "mention": "On Hand Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Reserved Quantity",
+          "type": "Field",
+          "mention": "Reserved Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit",
+          "type": "Field",
+          "mention": "Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "stock move history",
+          "type": "Report",
+          "mention": "stock move history",
+          "confidence": "high"
+        },
+        {
+          "name": "Moves History",
+          "type": "Report",
+          "mention": "Moves History",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rules",
+          "type": "Module",
+          "mention": "reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory adjustment",
+          "type": "Action",
+          "mention": "inventory adjustment",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory At Date",
+          "type": "Action",
+          "mention": "Inventory At Date button",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory at Date",
+          "type": "Field",
+          "mention": "Inventory at Date field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Locations report",
+          "relation": "GENERATES",
+          "target": "stock move history",
+          "evidence": "Click the fa-history History button to access the stock move history of the product"
+        },
+        {
+          "source": "Locations report",
+          "relation": "HAS_REPORT",
+          "target": "Moves History",
+          "evidence": "On the Moves History page"
+        },
+        {
+          "source": "Locations report",
+          "relation": "ENABLES",
+          "target": "reordering rules",
+          "evidence": "Click the fa-refresh Replenishment button to access the reordering rules page"
+        },
+        {
+          "source": "Locations report",
+          "relation": "ENABLES",
+          "target": "New",
+          "evidence": "In the upper-left corner of the page, click the New button"
+        },
+        {
+          "source": "New",
+          "relation": "PRODUCES",
+          "target": "inventory adjustment",
+          "evidence": "click the New button to make an inventory adjustment"
+        },
+        {
+          "source": "Locations report",
+          "relation": "ENABLES",
+          "target": "Inventory At Date",
+          "evidence": "To view products, quantities, and their locations for a specified date, click the Inventory At Date button"
+        },
+        {
+          "source": "Inventory At Date",
+          "relation": "TRIGGERED_BY",
+          "target": "Inventory at Date",
+          "evidence": "Select a date and time in the Inventory at Date field, then click Confirm."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-empty-locations",
+    "heading": "View empty locations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations",
+          "type": "DataObject",
+          "mention": "Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "View empty locations",
+          "type": "Action",
+          "mention": "View empty locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Is Empty column",
+          "type": "Field",
+          "mention": "Is Empty column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Empty Locations filter",
+          "type": "Feature",
+          "mention": "Empty Locations filter",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Locations",
+          "evidence": "--> Configuration --> Locations"
+        },
+        {
+          "source": "View empty locations",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "To view which locations are currently empty, navigate to Inventory --> Configuration --> Locations."
+        },
+        {
+          "source": "Locations",
+          "relation": "HAS_FEATURE",
+          "target": "Empty Locations filter",
+          "evidence": "To show only empty locations, click into the search bar and select the Empty Locations filter."
+        },
+        {
+          "source": "Locations",
+          "relation": "CONTAINS",
+          "target": "Is Empty column",
+          "evidence": "Empty locations are designated by the checkbox in the Is Empty column."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "generate-reports",
+    "heading": "Generate reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations report",
+          "type": "Report",
+          "mention": "locations report",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Locations report",
+          "evidence": "\"Odoo\" and \"the locations report\" are mentioned together."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "dead-stock-report",
+    "heading": "Dead stock report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations",
+          "type": "Report",
+          "mention": "Locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dead stock report",
+          "type": "Report",
+          "mention": "Dead stock report",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal Locations and Expiration Alerts",
+          "type": "Filter",
+          "mention": "Internal Locations and Expiration Alerts",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration Alerts",
+          "type": "Feature",
+          "mention": "Expiration Alerts",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots/Serial Numbers",
+          "type": "Sub-module",
+          "mention": "Lots/Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot and Serials Numbers",
+          "type": "Page",
+          "mention": "Lot and Serials Numbers page",
+          "confidence": "medium"
+        },
+        {
+          "name": "expired products",
+          "type": "DataObject",
+          "mention": "expired products",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Dead stock report",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "To get list... Go to Inventory app --> Reporting --> Locations."
+        },
+        {
+          "source": "Dead stock report",
+          "relation": "IS_PART_OF",
+          "target": "Reporting",
+          "evidence": "Go to Inventory app --> Reporting --> Locations."
+        },
+        {
+          "source": "Dead stock report",
+          "relation": "HAS_REPORT",
+          "target": "Locations",
+          "evidence": "Go to Inventory app --> Reporting --> Locations."
+        },
+        {
+          "source": "Locations",
+          "relation": "CONFIGURED_BY",
+          "target": "Internal Locations and Expiration Alerts",
+          "evidence": "Enable the Internal Locations and Expiration Alerts option under the Filters section."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "accessed by going to Inventory app --> Products --> Lots/Serial Numbers."
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Lots/Serial Numbers",
+          "evidence": "Inventory app --> Products --> Lots/Serial Numbers."
+        },
+        {
+          "source": "Dead stock report",
+          "relation": "SEE_ALSO",
+          "target": "Lot and Serials Numbers",
+          "evidence": "This report can also be generated from the Lot and Serials Numbers page."
+        },
+        {
+          "source": "Dead stock report",
+          "relation": "GENERATES",
+          "target": "expired products",
+          "evidence": "The report now displays a list of expired products."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "stranded-inventory-report",
+    "heading": "Stranded inventory report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing apps",
+          "confidence": "high"
+        },
+        {
+          "name": "Stranded inventory report",
+          "type": "Report",
+          "mention": "stranded inventory report",
+          "confidence": "high"
+        },
+        {
+          "name": "stranded items",
+          "type": "Concept",
+          "mention": "stranded items",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Input",
+          "type": "Feature",
+          "mention": "WH/Input",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Pre-Processing",
+          "type": "Feature",
+          "mention": "WH/Pre-Processing",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Packing",
+          "type": "Feature",
+          "mention": "WH/Packing",
+          "confidence": "high"
+        },
+        {
+          "name": "Location",
+          "type": "DataObject",
+          "mention": "location",
+          "confidence": "high"
+        },
+        {
+          "name": "Chicken",
+          "type": "DataObject",
+          "mention": "Chicken",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Stranded inventory report",
+          "relation": "HAS_REPORT",
+          "target": "Inventory",
+          "evidence": "Inventory app --> Reporting --> Locations."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Stranded inventory report",
+          "evidence": "Inventory app --> Reporting --> Locations."
+        },
+        {
+          "source": "Stranded inventory report",
+          "relation": "PRODUCES",
+          "target": "Location",
+          "evidence": "The report now displays a list of products at the transit location."
+        },
+        {
+          "source": "Stranded inventory report",
+          "relation": "SUPPORTS",
+          "target": "stranded items",
+          "evidence": "Use this report to periodically check transfer locations ... to ensure items are moved to their intended storage locations, and accurately recorded in the database."
+        },
+        {
+          "source": "WH/Input",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "transfer locations (e.g. *WH/Input*, *WH/Pre-Processing*)"
+        },
+        {
+          "source": "WH/Pre-Processing",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "transfer locations (e.g. *WH/Input*, *WH/Pre-Processing*)"
+        },
+        {
+          "source": "WH/Packing",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "location where products are intended to be moved to, such as `WH/Input`, or `WH/Packing`."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "inventory-discrepancy-report",
+    "heading": "Inventory discrepancy report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Inventory app",
+          "type": "Product",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Locations",
+          "type": "Sub-module",
+          "mention": "Locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters",
+          "confidence": "medium"
+        },
+        {
+          "name": "Group By",
+          "type": "Feature",
+          "mention": "Group By",
+          "confidence": "medium"
+        },
+        {
+          "name": "Favorite",
+          "type": "Feature",
+          "mention": "Favorite",
+          "confidence": "medium"
+        },
+        {
+          "name": "Internal Locations and Conflicts",
+          "type": "Filter",
+          "mention": "Internal Locations and Conflicts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory discrepancy report",
+          "type": "Report",
+          "mention": "Inventory discrepancy report",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory transfers",
+          "type": "Report",
+          "mention": "inventory transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "receipts",
+          "type": "DataObject",
+          "mention": "receipts",
+          "confidence": "low"
+        },
+        {
+          "name": "deliveries",
+          "type": "DataObject",
+          "mention": "deliveries",
+          "confidence": "low"
+        },
+        {
+          "name": "inventory adjustment",
+          "type": "Action",
+          "mention": "inventory adjustment",
+          "confidence": "low"
+        },
+        {
+          "name": "cycle count",
+          "type": "Workflow",
+          "mention": "cycle count",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Go to Inventory app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Locations",
+          "evidence": "Reporting --> Locations"
+        },
+        {
+          "source": "Inventory discrepancy report",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "To generate a report... in Reporting"
+        },
+        {
+          "source": "Filters",
+          "relation": "IS_PART_OF",
+          "target": "search bar drop-down",
+          "evidence": "click into the search bar... Filters"
+        },
+        {
+          "source": "Internal Locations and Conflicts",
+          "relation": "BELONGS_TO",
+          "target": "Filters",
+          "evidence": "Enable... from the Filters section"
+        },
+        {
+          "source": "Inventory discrepancy report",
+          "relation": "CONFIGURED_BY",
+          "target": "Internal Locations and Conflicts",
+          "evidence": "Enable the Internal Locations and Conflicts option... The report now displays..."
+        },
+        {
+          "source": "History button",
+          "relation": "HAS_REPORT",
+          "target": "inventory transfers",
+          "evidence": "Click the fa-history History button to view inventory transfers"
+        },
+        {
+          "source": "inventory transfers",
+          "relation": "CONTAINS",
+          "target": "receipts",
+          "evidence": "inventory transfers, including receipts and deliveries"
+        },
+        {
+          "source": "inventory transfers",
+          "relation": "CONTAINS",
+          "target": "deliveries",
+          "evidence": "inventory transfers, including receipts and deliveries"
+        },
+        {
+          "source": "inventory adjustment",
+          "relation": "RELATED_TO",
+          "target": "cycle count",
+          "evidence": "items whose quantities have changed since the last cycle count"
+        },
+        {
+          "source": "inventory discrepancy report",
+          "relation": "TRIGGERED_BY",
+          "target": "inventory adjustment",
+          "evidence": "items whose quantities have changed since the last inventory adjustment"
+        }
+      ]
+    }
+  }
+]

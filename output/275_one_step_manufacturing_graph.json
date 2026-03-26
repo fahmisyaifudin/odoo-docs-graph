@@ -1,0 +1,615 @@
+[
+  {
+    "section_id": "one-step-manufacturing",
+    "heading": "One-step manufacturing",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Odoo *Manufacturing*",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "manufacturing order (MO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Module",
+          "mention": "warehouse",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouses screen",
+          "type": "DataObject",
+          "mention": "Warehouses screen",
+          "confidence": "low"
+        },
+        {
+          "name": "Warehouse Configuration tab",
+          "type": "DataObject",
+          "mention": "Warehouse Configuration tab",
+          "confidence": "low"
+        },
+        {
+          "name": "Manufacture radio input field",
+          "type": "Field",
+          "mention": "Manufacture radio input field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacture (1 step)",
+          "type": "Feature",
+          "mention": "Manufacture (1 step)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pick components and then manufacture (2 steps)",
+          "type": "Feature",
+          "mention": "Pick components and then manufacture (2 steps)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pick components, manufacture and then store products (3 steps)",
+          "type": "Feature",
+          "mention": "Pick components, manufacture and then store products (3 steps)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory --> Configuration --> Warehouses",
+          "type": "Workflow",
+          "mention": "Inventory --> Configuration --> Warehouses",
+          "confidence": "low"
+        },
+        {
+          "name": "Inventory counts",
+          "type": "Concept",
+          "mention": "Inventory counts",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Manufacturing",
+          "evidence": "Odoo *Manufacturing* allows users..."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Warehouse",
+          "evidence": "The number of steps used in manufacturing is set at the warehouse level..."
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "HAS_FEATURE",
+          "target": "Manufacture (1 step)",
+          "evidence": "Odoo creates a manufacturing order (MO)... The number of steps used in manufacturing is set at the warehouse level... Manufacture (1 step)"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "HAS_FEATURE",
+          "target": "Pick components and then manufacture (2 steps)",
+          "evidence": "Manufacture radio input field, and select one of the three options:... Pick components and then manufacture (2 steps)"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "HAS_FEATURE",
+          "target": "Pick components, manufacture and then store products (3 steps)",
+          "evidence": "Manufacture radio input field, and select one of the three options:... Pick components, manufacture and then store products (3 steps)"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONFIGURED_BY",
+          "target": "Manufacture radio input field",
+          "evidence": "On the Warehouse Configuration tab, find the Manufacture radio input field..."
+        },
+        {
+          "source": "Warehouse Configuration tab",
+          "relation": "CONTAINS",
+          "target": "Manufacture radio input field",
+          "evidence": "On the Warehouse Configuration tab, find the Manufacture radio input field..."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Warehouse",
+          "evidence": "begin by navigating to Inventory --> Configuration --> Warehouses"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "GENERATES",
+          "target": "Manufacturing Order",
+          "evidence": "Odoo creates a manufacturing order (MO), but does not generate transfers..."
+        },
+        {
+          "source": "Manufacturing Order",
+          "relation": "PRODUCES",
+          "target": "Inventory counts",
+          "evidence": "Inventory counts still update based on the number of components used and products manufactured..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-manufacturing-order",
+    "heading": "Create manufacturing order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "Sub-module",
+          "mention": "Manufacturing Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Material",
+          "type": "DataObject",
+          "mention": "Bill of Material field",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM",
+          "type": "DataObject",
+          "mention": "bill of materials (BoM)",
+          "confidence": "high"
+        },
+        {
+          "name": "Components",
+          "type": "Sub-module",
+          "mention": "Components tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Orders",
+          "type": "Sub-module",
+          "mention": "Work Orders tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "click Confirm",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create manufacturing order",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "To manufacture a product... click New to create"
+        },
+        {
+          "source": "Product",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing Orders",
+          "evidence": "select the product to be produced from the Product drop-down menu"
+        },
+        {
+          "source": "Bill of Material",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing Orders",
+          "evidence": "Bill of Material field auto-populates"
+        },
+        {
+          "source": "BoM",
+          "relation": "EQUIVALENT_TO",
+          "target": "Bill of Material",
+          "evidence": "associated bill of materials (BoM)"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONTAINS",
+          "target": "Components",
+          "evidence": "Components tab auto-populates"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONTAINS",
+          "target": "Work Orders",
+          "evidence": "Work Orders tab auto-populates"
+        },
+        {
+          "source": "New",
+          "relation": "TRIGGERED_BY",
+          "target": "Manufacturing Orders",
+          "evidence": "click New to create a new"
+        },
+        {
+          "source": "Add a line",
+          "relation": "TRIGGERED_BY",
+          "target": "Components",
+          "evidence": "add them to the Components tab by clicking Add a line"
+        },
+        {
+          "source": "Add a line",
+          "relation": "TRIGGERED_BY",
+          "target": "Work Orders",
+          "evidence": "add them to the Work Orders tab by clicking Add a line"
+        },
+        {
+          "source": "Confirm",
+          "relation": "TRIGGERED_BY",
+          "target": "Manufacturing Orders",
+          "evidence": "click Confirm to confirm the"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-manufacturing-order",
+    "heading": "Process manufacturing order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Process manufacturing order",
+          "type": "Workflow",
+          "mention": "Process manufacturing order",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders tab",
+          "type": "Feature",
+          "mention": "Work Orders tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "work order tablet view",
+          "type": "Feature",
+          "mention": "work order tablet view",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Process manufacturing order",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Process manufacturing order"
+        },
+        {
+          "source": "Process manufacturing order",
+          "relation": "CONTAINS",
+          "target": "Work Orders tab",
+          "evidence": "processed by completing all of the work orders listed under its Work Orders tab"
+        },
+        {
+          "source": "Process manufacturing order",
+          "relation": "ENABLES",
+          "target": "work order tablet view",
+          "evidence": "This can be done on the  itself, or from the work order tablet view."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "basic-workflow",
+    "heading": "Basic workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders tab",
+          "type": "Feature",
+          "mention": "Work Orders tab",
+          "confidence": "high"
+        },
+        {
+          "name": "work order",
+          "type": "DataObject",
+          "mention": "work order",
+          "confidence": "high"
+        },
+        {
+          "name": "timer",
+          "type": "Feature",
+          "mention": "timer",
+          "confidence": "high"
+        },
+        {
+          "name": "manufactured product(s)",
+          "type": "Concept",
+          "mention": "manufactured product(s)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Manufacturing",
+          "evidence": "To complete work orders from the itself, begin by navigating to Manufacturing"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Manufacturing Orders",
+          "evidence": "begin by navigating to Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Work Orders tab",
+          "evidence": "On the page, select the Work Orders tab"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONTAINS",
+          "target": "work order",
+          "evidence": "Repeat the same process for each work order listed on the Work Orders tab"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "timer",
+          "evidence": "Odoo *Manufacturing* then starts a timer"
+        },
+        {
+          "source": "timer",
+          "relation": "ENABLES",
+          "target": "work order",
+          "evidence": "a timer that keeps track of how long the work order takes to complete"
+        },
+        {
+          "source": "manufactured product(s)",
+          "relation": "RELATED_TO",
+          "target": "Manufacturing Orders",
+          "evidence": "register the manufactured product(s) into inventory"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "shop-floor-workflow",
+    "heading": "Shop Floor workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Shop Floor",
+          "type": "Module",
+          "mention": "Shop Floor module",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders",
+          "type": "DataObject",
+          "mention": "Work Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders pop-up window",
+          "type": "Feature",
+          "mention": "Work Orders pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Open Shop Floor button",
+          "type": "Action",
+          "mention": "Open Shop Floor button",
+          "confidence": "high"
+        },
+        {
+          "name": "work center",
+          "type": "Concept",
+          "mention": "work center",
+          "confidence": "medium"
+        },
+        {
+          "name": "work order card",
+          "type": "Feature",
+          "mention": "work order card",
+          "confidence": "high"
+        },
+        {
+          "name": "Register Production",
+          "type": "Action",
+          "mention": "Register Production",
+          "confidence": "high"
+        },
+        {
+          "name": "Units field",
+          "type": "Field",
+          "mention": "Units field",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Mark as Done",
+          "type": "Action",
+          "mention": "Mark as Done",
+          "confidence": "high"
+        },
+        {
+          "name": "Close Production",
+          "type": "Action",
+          "mention": "Close Production",
+          "confidence": "high"
+        },
+        {
+          "name": "Undo button",
+          "type": "Action",
+          "mention": "Undo button",
+          "confidence": "high"
+        },
+        {
+          "name": "Shop Floor overview",
+          "type": "Concept",
+          "mention": "Shop Floor overview",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Shop Floor",
+          "evidence": "Shop Floor module"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONTAINS",
+          "target": "Work Orders",
+          "evidence": "Work Orders tab"
+        },
+        {
+          "source": "Work Orders pop-up window",
+          "relation": "HAS_FEATURE",
+          "target": "Open Shop Floor button",
+          "evidence": "Open Shop Floor button at the top-left"
+        },
+        {
+          "source": "Shop Floor",
+          "relation": "ENABLES",
+          "target": "work order card",
+          "evidence": "The page shows a card for the work order"
+        },
+        {
+          "source": "work order card",
+          "relation": "HAS_FEATURE",
+          "target": "Register Production",
+          "evidence": "final step on a work order card is titled Register Production"
+        },
+        {
+          "source": "Register Production",
+          "relation": "TRIGGERED_BY",
+          "target": "Validate",
+          "evidence": "click Validate to register that number"
+        },
+        {
+          "source": "work order card",
+          "relation": "HAS_FEATURE",
+          "target": "Mark as Done",
+          "evidence": "button is titled Mark as Done"
+        },
+        {
+          "source": "work order card",
+          "relation": "HAS_FEATURE",
+          "target": "Close Production",
+          "evidence": "button is titled Close Production"
+        },
+        {
+          "source": "Mark as Done",
+          "relation": "PRODUCES",
+          "target": "Finished",
+          "evidence": "work order's status is marked as Finished"
+        },
+        {
+          "source": "Close Production",
+          "relation": "PRODUCES",
+          "target": "Done",
+          "evidence": "the  is marked as Done"
+        },
+        {
+          "source": "Mark as Done",
+          "relation": "SEE_ALSO",
+          "target": "Undo button",
+          "evidence": "replaced by an Undo button"
+        },
+        {
+          "source": "Close Production",
+          "relation": "SEE_ALSO",
+          "target": "Undo button",
+          "evidence": "replaced by an Undo button"
+        },
+        {
+          "source": "Shop Floor overview",
+          "relation": "RELATED_TO",
+          "target": "Shop Floor",
+          "evidence": "Shop Floor overview documentation"
+        }
+      ]
+    }
+  }
+]

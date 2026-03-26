@@ -1,0 +1,1079 @@
+[
+  {
+    "section_id": "invoicing-processes",
+    "heading": "Invoicing processes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoicing processes",
+          "type": "Module",
+          "mention": "Invoicing processes",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer invoice",
+          "type": "DataObject",
+          "mention": "customer invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Draft invoice",
+          "type": "DataObject",
+          "mention": "draft invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accountant",
+          "type": "Actor",
+          "mention": "accountant",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "send",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoicing processes",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Invoicing processes"
+        },
+        {
+          "source": "Draft invoice",
+          "relation": "GENERATES",
+          "target": "Customer invoice",
+          "evidence": "draft invoices are created by the system ... accountant just have to validate draft invoices and send the invoices"
+        },
+        {
+          "source": "Customer invoice",
+          "relation": "IS_PART_OF",
+          "target": "Invoicing processes",
+          "evidence": "Title: Invoicing processes"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "Accountant",
+          "evidence": "accountant just have to validate draft invoices"
+        },
+        {
+          "source": "Send",
+          "relation": "PERFORMED_BY",
+          "target": "Accountant",
+          "evidence": "accountant ... send the invoices"
+        },
+        {
+          "source": "Draft invoice",
+          "relation": "PRODUCES",
+          "target": "Customer invoice",
+          "evidence": "draft invoices ... and send the invoices"
+        },
+        {
+          "source": "Sales order",
+          "relation": "RELATED_TO",
+          "target": "Draft invoice",
+          "evidence": "information coming from other documents like sales order"
+        },
+        {
+          "source": "Contract",
+          "relation": "RELATED_TO",
+          "target": "Draft invoice",
+          "evidence": "information coming from other documents like contracts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sales-order-‣-invoice",
+    "heading": "Sales Order ‣ Invoice",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "Sales Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Title: Sales Order ‣ Invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "draft invoice",
+          "type": "DataObject",
+          "mention": "draft invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "salesperson",
+          "type": "Actor",
+          "mention": "salespeople",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoice manually",
+          "type": "Action",
+          "mention": "Invoice manually",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice before delivery",
+          "type": "Workflow",
+          "mention": "Invoice before delivery",
+          "confidence": "medium"
+        },
+        {
+          "name": "eCommerce",
+          "type": "Module",
+          "mention": "eCommerce application",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Repairs app",
+          "type": "Module",
+          "mention": "Repairs app",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice the whole order",
+          "type": "Action",
+          "mention": "invoice the whole order",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice a percentage (advance)",
+          "type": "Action",
+          "mention": "invoice a percentage (advance)",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice some lines",
+          "type": "Action",
+          "mention": "invoice some lines",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice a fixed advance",
+          "type": "Action",
+          "mention": "invoice a fixed advance",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales Order",
+          "relation": "TRIGGERED_BY",
+          "target": "quotation",
+          "evidence": "salespeople create quotations that become sales order once they are validated"
+        },
+        {
+          "source": "draft invoice",
+          "relation": "GENERATES",
+          "target": "Invoice",
+          "evidence": "draft invoices are created based on the sales order"
+        },
+        {
+          "source": "Sales Order",
+          "relation": "PRODUCES",
+          "target": "draft invoice",
+          "evidence": "draft invoices are created based on the sales order"
+        },
+        {
+          "source": "Invoice manually",
+          "relation": "PERFORMED_BY",
+          "target": "salesperson",
+          "evidence": "Invoice manually: use a button on the sale order to trigger the draft invoice"
+        },
+        {
+          "source": "Invoice before delivery",
+          "relation": "REQUIRES",
+          "target": "eCommerce",
+          "evidence": "Invoice before delivery is usually used by the eCommerce application"
+        },
+        {
+          "source": "Invoice before delivery",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "Invoice before delivery is usually used by the eCommerce application when the customer pays at the order"
+        },
+        {
+          "source": "Repairs app",
+          "relation": "GENERATES",
+          "target": "Sales Order",
+          "evidence": "Invoices can also be generated from sales orders created in the Repairs app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sales-order-‣-delivery-order-‣-invoice",
+    "heading": "Sales Order ‣ Delivery Order ‣ Invoice",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "Sales Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Order",
+          "type": "DataObject",
+          "mention": "Delivery Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Retailers",
+          "type": "Actor",
+          "mention": "Retailers",
+          "confidence": "medium"
+        },
+        {
+          "name": "eCommerce",
+          "type": "Actor",
+          "mention": "eCommerce",
+          "confidence": "medium"
+        },
+        {
+          "name": "foods",
+          "type": "Concept",
+          "mention": "foods",
+          "confidence": "low"
+        },
+        {
+          "name": "back orders",
+          "type": "Concept",
+          "mention": "back orders",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Retailers",
+          "relation": "USES_METHOD",
+          "target": "Delivery Order",
+          "evidence": "Retailers and eCommerce usually invoice based on delivery orders"
+        },
+        {
+          "source": "eCommerce",
+          "relation": "USES_METHOD",
+          "target": "Delivery Order",
+          "evidence": "Retailers and eCommerce usually invoice based on delivery orders"
+        },
+        {
+          "source": "Delivery Order",
+          "relation": "GENERATES",
+          "target": "Invoice",
+          "evidence": "invoice based on delivery orders"
+        },
+        {
+          "source": "foods",
+          "relation": "RELATED_TO",
+          "target": "Delivery Order",
+          "evidence": "invoice based on actual Kg"
+        },
+        {
+          "source": "back orders",
+          "relation": "RELATED_TO",
+          "target": "Delivery Order",
+          "evidence": "If you do back orders (deliver partially and the rest later)"
+        },
+        {
+          "source": "Delivery Order",
+          "relation": "SEE_ALSO",
+          "target": "invoicing_policy",
+          "evidence": "/applications/sales/sales/invoicing/invoicing_policy"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "ecommerce-order-‣-invoice",
+    "heading": "eCommerce Order ‣ Invoice",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "eCommerce Order",
+          "type": "Workflow",
+          "mention": "eCommerce Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "Invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "medium"
+        },
+        {
+          "name": "fully paid",
+          "type": "Action",
+          "mention": "fully paid",
+          "confidence": "low"
+        },
+        {
+          "name": "check payment",
+          "type": "Feature",
+          "mention": "paying orders by check",
+          "confidence": "low"
+        },
+        {
+          "name": "wire transfer payment",
+          "type": "Feature",
+          "mention": "paying orders by wire transfer",
+          "confidence": "low"
+        },
+        {
+          "name": "payment received",
+          "type": "Action",
+          "mention": "payment is received",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "eCommerce Order",
+          "relation": "GENERATES",
+          "target": "Invoice",
+          "evidence": "An eCommerce order will also trigger the creation of the order when it is fully paid."
+        },
+        {
+          "source": "eCommerce Order",
+          "relation": "TRIGGERED_BY",
+          "target": "fully paid",
+          "evidence": "An eCommerce order will also trigger the creation of the order when it is fully paid."
+        },
+        {
+          "source": "check payment",
+          "relation": "ENABLES",
+          "target": "eCommerce Order",
+          "evidence": "If you allow paying orders by check... Odoo only creates an order."
+        },
+        {
+          "source": "wire transfer payment",
+          "relation": "ENABLES",
+          "target": "eCommerce Order",
+          "evidence": "If you allow paying orders by wire transfer... Odoo only creates an order."
+        },
+        {
+          "source": "payment received",
+          "relation": "TRIGGERED_BY",
+          "target": "Invoice",
+          "evidence": "the invoice will be triggered once the payment is received."
+        },
+        {
+          "source": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "eCommerce Order",
+          "type": "Workflow",
+          "mention": "eCommerce Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "Invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "medium"
+        },
+        {
+          "name": "fully paid",
+          "type": "Action",
+          "mention": "fully paid",
+          "confidence": "low"
+        },
+        {
+          "name": "check payment",
+          "type": "Feature",
+          "mention": "paying orders by check",
+          "confidence": "low"
+        },
+        {
+          "name": "wire transfer payment",
+          "type": "Feature",
+          "mention": "paying orders by wire transfer",
+          "confidence": "low"
+        },
+        {
+          "name": "payment received",
+          "type": "Action",
+          "mention": "payment is received",
+          "confidence": "low"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "regular-contracts-‣-invoices",
+    "heading": "Regular Contracts ‣ Invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Regular Contracts",
+          "type": "Module",
+          "mention": "Regular Contracts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoices",
+          "type": "Sub-module",
+          "mention": "Invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "contracts",
+          "type": "Feature",
+          "mention": "contracts",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "Action",
+          "mention": "trigger invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "salesperson",
+          "type": "Actor",
+          "mention": "salesperson",
+          "confidence": "high"
+        },
+        {
+          "name": "activities",
+          "type": "DataObject",
+          "mention": "activities",
+          "confidence": "high"
+        },
+        {
+          "name": "fixed products/services",
+          "type": "DataObject",
+          "mention": "fixed products/services",
+          "confidence": "medium"
+        },
+        {
+          "name": "sale order",
+          "type": "DataObject",
+          "mention": "sale order",
+          "confidence": "high"
+        },
+        {
+          "name": "materials purchased",
+          "type": "DataObject",
+          "mention": "materials purchased",
+          "confidence": "medium"
+        },
+        {
+          "name": "time and material",
+          "type": "Concept",
+          "mention": "time and material",
+          "confidence": "high"
+        },
+        {
+          "name": "timesheets",
+          "type": "DataObject",
+          "mention": "timesheets",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchases",
+          "type": "DataObject",
+          "mention": "purchases",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracting",
+          "type": "Concept",
+          "mention": "subcontracting",
+          "confidence": "medium"
+        },
+        {
+          "name": "expenses",
+          "type": "DataObject",
+          "mention": "expenses",
+          "confidence": "high"
+        },
+        {
+          "name": "travel and accommodation",
+          "type": "DataObject",
+          "mention": "travel and accommodation",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "services companies",
+          "type": "Actor",
+          "mention": "services companies",
+          "confidence": "medium"
+        },
+        {
+          "name": "fix price",
+          "type": "Concept",
+          "mention": "fix price",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Regular Contracts",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Regular Contracts ‣ Invoices"
+        },
+        {
+          "source": "Invoices",
+          "relation": "IS_PART_OF",
+          "target": "Regular Contracts",
+          "evidence": "Regular Contracts ‣ Invoices"
+        },
+        {
+          "source": "contracts",
+          "relation": "SUPPORTS",
+          "target": "invoice",
+          "evidence": "If you use contracts, you can trigger invoice"
+        },
+        {
+          "source": "contracts",
+          "relation": "CONTAINS",
+          "target": "activities",
+          "evidence": "activities on the contract"
+        },
+        {
+          "source": "activities",
+          "relation": "INCLUDES",
+          "target": "fixed products/services",
+          "evidence": "Activities can be: - fixed products/services"
+        },
+        {
+          "source": "activities",
+          "relation": "INCLUDES",
+          "target": "materials purchased",
+          "evidence": "Activities can be: - materials purchased"
+        },
+        {
+          "source": "activities",
+          "relation": "INCLUDES",
+          "target": "time and material",
+          "evidence": "Activities can be: - time and material"
+        },
+        {
+          "source": "activities",
+          "relation": "INCLUDES",
+          "target": "expenses",
+          "evidence": "Activities can be: - expenses"
+        },
+        {
+          "source": "invoice",
+          "relation": "PERFORMED_BY",
+          "target": "salesperson",
+          "evidence": "salesperson will trigger invoice"
+        },
+        {
+          "source": "invoice",
+          "relation": "PRODUCES",
+          "target": "Invoices",
+          "evidence": "trigger invoice"
+        },
+        {
+          "source": "fixed products/services",
+          "relation": "RELATED_TO",
+          "target": "sale order",
+          "evidence": "coming from a sale order linked to this contract"
+        },
+        {
+          "source": "time and material",
+          "relation": "RELATED_TO",
+          "target": "timesheets",
+          "evidence": "based on timesheets"
+        },
+        {
+          "source": "time and material",
+          "relation": "RELATED_TO",
+          "target": "purchases",
+          "evidence": "based on purchases"
+        },
+        {
+          "source": "purchases",
+          "relation": "RELATED_TO",
+          "target": "subcontracting",
+          "evidence": "or purchases (subcontracting)"
+        },
+        {
+          "source": "expenses",
+          "relation": "RELATED_TO",
+          "target": "travel and accommodation",
+          "evidence": "expenses like travel and accommodation"
+        },
+        {
+          "source": "invoice",
+          "relation": "RELATED_TO",
+          "target": "customer",
+          "evidence": "re-invoice to the customer"
+        },
+        {
+          "source": "services companies",
+          "relation": "USES_METHOD",
+          "target": "invoice",
+          "evidence": "services companies that invoice mostly based on time and material"
+        },
+        {
+          "source": "services companies",
+          "relation": "USES_METHOD",
+          "target": "sale order",
+          "evidence": "For services companies that invoice on fix price, they use a regular sales order"
+        },
+        {
+          "source": "sale order",
+          "relation": "RELATED_TO",
+          "target": "fix price",
+          "evidence": "invoice on fix price"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "recurring-contracts-‣-invoices",
+    "heading": "Recurring Contracts ‣ Invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Recurring Contracts",
+          "type": "Module",
+          "mention": "Recurring Contracts",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoices",
+          "type": "Sub-module",
+          "mention": "Invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "medium"
+        },
+        {
+          "name": "subscriptions",
+          "type": "Module",
+          "mention": "subscriptions",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recurring Contracts",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Invoices",
+          "relation": "IS_PART_OF",
+          "target": "Recurring Contracts",
+          "evidence": "Title: Recurring Contracts ‣ Invoices"
+        },
+        {
+          "source": "subscriptions",
+          "relation": "SEE_ALSO",
+          "target": "Recurring Contracts",
+          "evidence": ".. seealso::   - /applications/sales/subscriptions"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "invoice",
+          "evidence": "an invoice is triggered...defined on the contract."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "creating-an-invoice-manually",
+    "heading": "Creating an invoice manually",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract",
+          "type": "DataObject",
+          "mention": "contracts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Refund",
+          "type": "DataObject",
+          "mention": "refund",
+          "confidence": "high"
+        },
+        {
+          "name": "Discount",
+          "type": "DataObject",
+          "mention": "discount",
+          "confidence": "high"
+        },
+        {
+          "name": "User",
+          "type": "Actor",
+          "mention": "Users",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice",
+          "relation": "ENABLES",
+          "target": "Refund",
+          "evidence": "if you need to create a refund"
+        },
+        {
+          "source": "Invoice",
+          "relation": "ENABLES",
+          "target": "Discount",
+          "evidence": "If you need to give a discount"
+        },
+        {
+          "source": "Invoice",
+          "relation": "PRODUCES",
+          "target": "Sales Order",
+          "evidence": "Even if you generate the invoice from a sales order"
+        },
+        {
+          "source": "Invoice",
+          "relation": "CONTAINS",
+          "target": "Sales Order",
+          "evidence": "if you need to change an invoice created from a sales order"
+        },
+        {
+          "source": "Invoice",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "Users can also create invoices manually"
+        },
+        {
+          "source": "Invoice",
+          "relation": "RELATED_TO",
+          "target": "Contract",
+          "evidence": "Users can also create invoices manually without using contracts"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Invoice",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "resequencing-of-the-invoices",
+    "heading": "Resequencing of the invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "resequencing of the invoices",
+          "type": "Feature",
+          "mention": "Resequencing of the invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "entries",
+          "type": "DataObject",
+          "mention": "entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "lock date",
+          "type": "Setting",
+          "mention": "lock date",
+          "confidence": "high"
+        },
+        {
+          "name": "sequence",
+          "type": "Field",
+          "mention": "sequence",
+          "confidence": "high"
+        },
+        {
+          "name": "month",
+          "type": "Field",
+          "mention": "month",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "numbering",
+          "type": "Concept",
+          "mention": "numbering",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "resequencing of the invoices",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "resequencing of the invoices",
+          "relation": "CONFIGURED_BY",
+          "target": "lock date",
+          "evidence": "The feature does not work when entries are previous to a lock date."
+        },
+        {
+          "source": "resequencing of the invoices",
+          "relation": "REQUIRES",
+          "target": "sequence",
+          "evidence": "The feature does not work if the sequence is inconsistent..."
+        },
+        {
+          "source": "invoice",
+          "relation": "BELONGS_TO",
+          "target": "entries",
+          "evidence": "...entries are previous to a lock date."
+        },
+        {
+          "source": "sequence",
+          "relation": "RELATED_TO",
+          "target": "month",
+          "evidence": "inconsistent with the month of the entry"
+        },
+        {
+          "source": "resequencing of the invoices",
+          "relation": "RELATED_TO",
+          "target": "numbering",
+          "mention": "useful for people who use a numbering..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoice-digitization-with-optical-character-recognition-(ocr)",
+    "heading": "Invoice digitization with optical character recognition (OCR)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice digitization",
+          "type": "Feature",
+          "mention": "Invoice digitization",
+          "confidence": "high"
+        },
+        {
+          "name": "optical character recognition (OCR)",
+          "type": "Feature",
+          "mention": "optical character recognition (OCR)",
+          "confidence": "high"
+        },
+        {
+          "name": "artificial intelligence",
+          "type": "Feature",
+          "mention": "artificial intelligence",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor bills",
+          "type": "DataObject",
+          "mention": "Vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "customer invoices forms",
+          "type": "DataObject",
+          "mention": "customer invoices forms",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice digitization",
+          "relation": "ENABLES",
+          "target": "Vendor bills",
+          "evidence": "Vendor bills and customer invoices forms are automatically created and populated"
+        },
+        {
+          "source": "Invoice digitization",
+          "relation": "ENABLES",
+          "target": "customer invoices forms",
+          "evidence": "Vendor bills and customer invoices forms are automatically created and populated"
+        },
+        {
+          "source": "Invoice digitization",
+          "relation": "USES_METHOD",
+          "target": "optical character recognition (OCR)",
+          "evidence": "Odoo uses OCR and artificial intelligence technologies"
+        },
+        {
+          "source": "Invoice digitization",
+          "relation": "USES_METHOD",
+          "target": "artificial intelligence",
+          "evidence": "Odoo uses OCR and artificial intelligence technologies"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Invoice digitization",
+          "evidence": "Invoice digitization with optical character recognition (OCR)"
+        },
+        {
+          "source": "Invoice digitization",
+          "relation": "SEE_ALSO",
+          "target": "/applications/finance/accounting/vendor_bills/invoice_digitization",
+          "evidence": ".. seealso:: /applications/finance/accounting/vendor_bills/invoice_digitization"
+        }
+      ]
+    }
+  }
+]

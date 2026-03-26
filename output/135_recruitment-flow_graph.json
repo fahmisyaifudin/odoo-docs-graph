@@ -1,0 +1,1144 @@
+[
+  {
+    "section_id": "recruitment-flow",
+    "heading": "Recruitment flow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment",
+          "confidence": "high"
+        },
+        {
+          "name": "recruitment/new",
+          "type": "Workflow",
+          "mention": "initial inquiry",
+          "confidence": "medium"
+        },
+        {
+          "name": "recruitment/new-employee",
+          "type": "Workflow",
+          "mention": "creating of a new employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "recruitment/customize-stages",
+          "type": "Action",
+          "mention": "modifications are made",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo's Recruitment application"
+        },
+        {
+          "source": "recruitment/new",
+          "relation": "IS_PART_OF",
+          "target": "Recruitment",
+          "evidence": "initial inquiry <recruitment/new>"
+        },
+        {
+          "source": "recruitment/new-employee",
+          "relation": "IS_PART_OF",
+          "target": "Recruitment",
+          "evidence": "creating of a new employee <recruitment/new-employee>"
+        },
+        {
+          "source": "recruitment/customize-stages",
+          "relation": "IS_PART_OF",
+          "target": "Recruitment",
+          "evidence": "modifications are made <recruitment/customize-stages>"
+        },
+        {
+          "source": "recruitment/new",
+          "relation": "TRIGGERED_BY",
+          "target": "prospective employee applies for a job",
+          "evidence": "When a prospective employee applies for a job"
+        },
+        {
+          "source": "recruitment/new-employee",
+          "relation": "TRIGGERED_BY",
+          "target": "once hired",
+          "evidence": "once hired"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "new",
+    "heading": "New",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Applications page",
+          "type": "Module",
+          "mention": "Applications page",
+          "confidence": "high"
+        },
+        {
+          "name": "New stage",
+          "type": "Feature",
+          "mention": "New stage",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant",
+          "type": "DataObject",
+          "mention": "applicants",
+          "confidence": "high"
+        },
+        {
+          "name": "Candidate",
+          "type": "Field",
+          "mention": "Candidate",
+          "confidence": "high"
+        },
+        {
+          "name": "Email",
+          "type": "Field",
+          "mention": "Email",
+          "confidence": "high"
+        },
+        {
+          "name": "Phone number",
+          "type": "Field",
+          "mention": "Phone number",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant's card",
+          "type": "Feature",
+          "mention": "applicant's card",
+          "confidence": "medium"
+        },
+        {
+          "name": "job position",
+          "type": "DataObject",
+          "mention": "job position",
+          "confidence": "medium"
+        },
+        {
+          "name": "website application form",
+          "type": "Feature",
+          "mention": "website application form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Short Introduction",
+          "type": "Feature",
+          "mention": "Short Introduction",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant's chatter",
+          "type": "Feature",
+          "mention": "applicant's chatter",
+          "confidence": "medium"
+        },
+        {
+          "name": "Other Information note",
+          "type": "Feature",
+          "mention": "Other Information note",
+          "confidence": "medium"
+        },
+        {
+          "name": "OdooBot",
+          "type": "Actor",
+          "mention": "OdooBot",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "applicant",
+          "relation": "BELONGS_TO",
+          "target": "New stage",
+          "evidence": "At the start of the process, all applicants appear in the New stage"
+        },
+        {
+          "source": "applicant's card",
+          "relation": "CONTAINS",
+          "target": "Candidate",
+          "evidence": "The Candidate, Email, and Phone number on the applicant's card are filled"
+        },
+        {
+          "source": "applicant's card",
+          "relation": "CONTAINS",
+          "target": "Email",
+          "evidence": "The Candidate, Email, and Phone number on the applicant's card are filled"
+        },
+        {
+          "source": "applicant's card",
+          "relation": "CONTAINS",
+          "target": "Phone number",
+          "evidence": "The Candidate, Email, and Phone number on the applicant's card are filled"
+        },
+        {
+          "source": "Candidate",
+          "relation": "REQUIRES",
+          "target": "job position",
+          "evidence": "these details are required for every job position"
+        },
+        {
+          "source": "Email",
+          "relation": "REQUIRES",
+          "target": "job position",
+          "evidence": "these details are required for every job position"
+        },
+        {
+          "source": "Phone number",
+          "relation": "REQUIRES",
+          "target": "job position",
+          "evidence": "these details are required for every job position"
+        },
+        {
+          "source": "Short Introduction",
+          "relation": "PRODUCES",
+          "target": "Other Information note",
+          "evidence": "Anything typed in the Short Introduction section appears in the applicant's chatter as an Other Information note"
+        },
+        {
+          "source": "Other Information note",
+          "relation": "PERFORMED_BY",
+          "target": "OdooBot",
+          "evidence": "Other Information note from OdooBot"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "resumé",
+    "heading": "Resumé",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "high"
+        },
+        {
+          "name": "CV Display",
+          "type": "Setting",
+          "mention": "CV Display option",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents application",
+          "confidence": "medium"
+        },
+        {
+          "name": "Files",
+          "type": "Feature",
+          "mention": "Files section",
+          "confidence": "medium"
+        },
+        {
+          "name": "chatter",
+          "type": "Feature",
+          "mention": "chatter",
+          "confidence": "low"
+        },
+        {
+          "name": "Resumé",
+          "type": "DataObject",
+          "mention": "resumé",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant's card",
+          "type": "DataObject",
+          "mention": "applicant's card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruitment folder",
+          "type": "DataObject",
+          "mention": "Recruitment folder",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "CV Display",
+          "evidence": "CV Display option was enabled in the Settings of the Recruitment app"
+        },
+        {
+          "source": "CV Display",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "CV Display option was enabled in the Settings"
+        },
+        {
+          "source": "Documents",
+          "relation": "CONTAINS",
+          "target": "Recruitment folder",
+          "evidence": "click the Recruitment folder on the left-hand side"
+        },
+        {
+          "source": "Recruitment folder",
+          "relation": "CONTAINS",
+          "target": "Resumé",
+          "evidence": "All recruitment documents are stored within that folder"
+        },
+        {
+          "source": "Files",
+          "relation": "IS_PART_OF",
+          "target": "chatter",
+          "evidence": "Files section of the chatter"
+        },
+        {
+          "source": "CV Display",
+          "relation": "ENABLES",
+          "target": "applicant's card",
+          "evidence": "the resumé appears on the applicant's card"
+        },
+        {
+          "source": "Resumé",
+          "relation": "GENERATES",
+          "target": "PDF link",
+          "evidence": "the resumé may appear... as a PDF link"
+        },
+        {
+          "source": "PDF link",
+          "type": "Unknown",
+          "mention": "PDF link",
+          "confidence": "low"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "send-interview",
+    "heading": "Send interview",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Surveys application",
+          "type": "Module",
+          "mention": "Surveys application",
+          "confidence": "medium"
+        },
+        {
+          "name": "interview",
+          "type": "Feature",
+          "mention": "interview",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Interview",
+          "type": "Action",
+          "mention": "Send Interview button",
+          "confidence": "high"
+        },
+        {
+          "name": "Send an interview pop-up window",
+          "type": "Workflow",
+          "mention": "Send an interview pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Edit: (Applicant's Name) pop-up window",
+          "type": "Workflow",
+          "mention": "Edit: (Applicant's Name) pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email address",
+          "type": "Field",
+          "mention": "Email address",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipients",
+          "type": "Field",
+          "mention": "Recipients",
+          "confidence": "medium"
+        },
+        {
+          "name": "Subject",
+          "type": "Field",
+          "mention": "Subject",
+          "confidence": "medium"
+        },
+        {
+          "name": "Additional emails",
+          "type": "Field",
+          "mention": "Additional emails field",
+          "confidence": "medium"
+        },
+        {
+          "name": "email templates",
+          "type": "DataObject",
+          "mention": "email templates",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mail Template",
+          "type": "Field",
+          "mention": "Mail Template field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Answer deadline",
+          "type": "Field",
+          "mention": "Answer deadline field",
+          "confidence": "medium"
+        },
+        {
+          "name": "calendar selector",
+          "type": "Feature",
+          "mention": "calendar selector",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applications page",
+          "type": "Workflow",
+          "mention": "Applications page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Attachments",
+          "type": "Action",
+          "mention": "Attachments button",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant's card",
+          "type": "DataObject",
+          "mention": "applicant's card",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "interview",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo uses the term *interview*"
+        },
+        {
+          "source": "Surveys application",
+          "relation": "REQUIRES",
+          "target": "interview",
+          "evidence": "Surveys application is required to send interviews"
+        },
+        {
+          "source": "Send Interview",
+          "relation": "PERFORMED_BY",
+          "target": "applicant",
+          "evidence": "To send an interview to an applicant, click the Send Interview button"
+        },
+        {
+          "source": "Send Interview",
+          "relation": "TRIGGERED_BY",
+          "target": "applicant's card",
+          "evidence": "click the applicant's card from the Applications page, then click Send Interview"
+        },
+        {
+          "source": "Send Interview",
+          "relation": "GENERATES",
+          "target": "Send an interview pop-up window",
+          "evidence": "Send Interview button clicked, a Send an interview pop-up window appears"
+        },
+        {
+          "source": "Email address",
+          "relation": "CONFIGURED_BY",
+          "target": "applicant's card",
+          "evidence": "Email address on file on the applicant's card"
+        },
+        {
+          "source": "Send an interview pop-up window",
+          "relation": "CONTAINS",
+          "target": "Recipients",
+          "evidence": "pop-up window appears, with the Recipients populated"
+        },
+        {
+          "source": "Send an interview pop-up window",
+          "relation": "CONTAINS",
+          "target": "Subject",
+          "evidence": "pop-up window appears, with the Subject populated"
+        },
+        {
+          "source": "Send an interview pop-up window",
+          "relation": "CONTAINS",
+          "target": "Additional emails",
+          "evidence": "Add the email addresses in the Additional emails field"
+        },
+        {
+          "source": "Send an interview pop-up window",
+          "relation": "CONTAINS",
+          "target": "Mail Template",
+          "evidence": "Mail Template field is pre-populated"
+        },
+        {
+          "source": "Send an interview pop-up window",
+          "relation": "CONTAINS",
+          "target": "Answer deadline",
+          "evidence": "Answer deadline field located in the lower-right area of the pop-up window"
+        },
+        {
+          "source": "Answer deadline",
+          "relation": "ENABLES",
+          "target": "calendar selector",
+          "evidence": "click the empty field next to Answer deadline, and a calendar selector appears"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "initial-qualification",
+    "heading": "Initial qualification",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Initial Qualification stage",
+          "type": "Stage",
+          "mention": "Initial Qualification stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant's card",
+          "type": "DataObject",
+          "mention": "applicant's card",
+          "confidence": "high"
+        },
+        {
+          "name": "Applications page",
+          "type": "Module",
+          "mention": "Applications page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "chatter",
+          "type": "Module",
+          "mention": "chatter",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "applicant's card",
+          "relation": "IS_PART_OF",
+          "target": "Applications page",
+          "evidence": "applicant's card from the Applications page"
+        },
+        {
+          "source": "Kanban view",
+          "relation": "BELONGS_TO",
+          "target": "Applications page",
+          "evidence": "Kanban view of the Applications page"
+        },
+        {
+          "source": "applicant's card",
+          "relation": "TRIGGERED_BY",
+          "target": "stage change",
+          "evidence": "A log note indicating the stage change appears in the chatter"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "first-interview",
+    "heading": "First interview",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Initial Qualification stage",
+          "type": "Stage",
+          "mention": "Initial Qualification stage",
+          "confidence": "high"
+        },
+        {
+          "name": "First Interview stage",
+          "type": "Stage",
+          "mention": "First Interview stage",
+          "confidence": "high"
+        },
+        {
+          "name": "Applications page",
+          "type": "Page",
+          "mention": "Applications page",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "View",
+          "mention": "Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant's card",
+          "type": "DataObject",
+          "mention": "applicant's card",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "status bar",
+          "type": "UIElement",
+          "mention": "status bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "email",
+          "type": "DataObject",
+          "mention": "email",
+          "confidence": "high"
+        },
+        {
+          "name": "email template",
+          "type": "DataObject",
+          "mention": "email template",
+          "confidence": "high"
+        },
+        {
+          "name": "recruiting team's calendar",
+          "type": "Service",
+          "mention": "recruiting team's calendar",
+          "confidence": "high"
+        },
+        {
+          "name": "interview",
+          "type": "Event",
+          "mention": "interview",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment: Schedule Interview",
+          "type": "Action",
+          "mention": "Recruitment: Schedule Interview",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Template field",
+          "type": "Field",
+          "mention": "Email Template field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "First Interview stage",
+          "relation": "IS_PART_OF",
+          "target": "Applications page",
+          "evidence": "...they can be manually moved to the First Interview stage on the Applications page"
+        },
+        {
+          "source": "Applications page",
+          "relation": "CONTAINS",
+          "target": "Kanban view",
+          "evidence": "...on the Applications page, while in Kanban view"
+        },
+        {
+          "source": "applicant's card",
+          "relation": "BELONGS_TO",
+          "target": "applicant",
+          "evidence": "...applicant's card"
+        },
+        {
+          "source": "applicant",
+          "relation": "PERFORMED_BY",
+          "target": "applicant",
+          "evidence": "...applicant"
+        },
+        {
+          "source": "applicant's card",
+          "relation": "HAS_FEATURE",
+          "target": "First Interview stage",
+          "evidence": "...click the First Interview stage on the status bar at the top of the individual applicant's card"
+        },
+        {
+          "source": "First Interview stage",
+          "relation": "CONFIGURED_BY",
+          "target": "Email Template field",
+          "evidence": "Edit the First Interview stage, and select the Recruitment: Schedule Interview option in the Email Template field"
+        },
+        {
+          "source": "Recruitment: Schedule Interview",
+          "relation": "TRIGGERED_BY",
+          "target": "applicant's card",
+          "evidence": "...when the applicant's card moves to the First Interview stage, an email can be automatically sent to the applicant"
+        },
+        {
+          "source": "Recruitment: Schedule Interview",
+          "relation": "PRODUCES",
+          "target": "email",
+          "evidence": "...automatically sent to the applicant"
+        },
+        {
+          "source": "email",
+          "relation": "CONTAINS",
+          "target": "recruiting team's calendar",
+          "evidence": "...a link to the recruiting team's calendar appears"
+        },
+        {
+          "source": "recruiting team's calendar",
+          "relation": "ENABLES",
+          "target": "interview",
+          "evidence": "...allowing the applicant to schedule their interview"
+        },
+        {
+          "source": "interview",
+          "relation": "PERFORMED_BY",
+          "target": "applicant",
+          "evidence": "...their interview"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "second-interview",
+    "heading": "Second interview",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Second Interview",
+          "type": "Module",
+          "mention": "Second Interview stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applicant",
+          "type": "DataObject",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applications page",
+          "type": "Feature",
+          "mention": "Applications page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruiter",
+          "type": "Actor",
+          "mention": "The recruiter",
+          "confidence": "high"
+        },
+        {
+          "name": "First Interview",
+          "type": "Module",
+          "mention": "First Interview stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Interview",
+          "type": "Workflow",
+          "mention": "interview",
+          "confidence": "medium"
+        },
+        {
+          "name": "Drag-and-drop",
+          "type": "Action",
+          "mention": "drag-and-drop",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Applications page",
+          "relation": "CONTAINS",
+          "target": "Kanban view",
+          "evidence": "Kanban view of the Applications page"
+        },
+        {
+          "source": "Kanban view",
+          "relation": "CONTAINS",
+          "target": "Applicant",
+          "evidence": "applicant's card"
+        },
+        {
+          "source": "Recruiter",
+          "relation": "PERFORMED_BY",
+          "target": "Drag-and-drop",
+          "evidence": "drag-and-drop the applicant's card"
+        },
+        {
+          "source": "Recruiter",
+          "relation": "PERFORMED_BY",
+          "target": "Interview",
+          "evidence": "schedule a second interview"
+        },
+        {
+          "source": "Second Interview",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "First Interview",
+          "relation": "RELATED_TO",
+          "target": "Second Interview",
+          "evidence": "After an applicant has passed the First Interview stage, they can be moved to the Second Interview stage"
+        },
+        {
+          "source": "Applicant",
+          "relation": "IS_PART_OF",
+          "target": "Applications page",
+          "evidence": "applicant's card"
+        },
+        {
+          "source": "Drag-and-drop",
+          "relation": "PRODUCES",
+          "target": "Applicant",
+          "evidence": "move the applicant to the next stage"
+        },
+        {
+          "source": "Interview",
+          "relation": "TRIGGERED_BY",
+          "target": "Recruiter",
+          "evidence": "The recruiter can now schedule a second interview"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "contract-proposal",
+    "heading": "Contract Proposal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Proposal",
+          "type": "Module",
+          "mention": "Contract Proposal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applications page",
+          "type": "Module",
+          "mention": "Applications page",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant's card",
+          "type": "DataObject",
+          "mention": "applicant's card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "medium"
+        },
+        {
+          "name": "drag-and-drop",
+          "type": "Action",
+          "mention": "drag-and-drop",
+          "confidence": "medium"
+        },
+        {
+          "name": "click",
+          "type": "Action",
+          "mention": "click",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "medium"
+        },
+        {
+          "name": "job offer",
+          "type": "DataObject",
+          "mention": "job offer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contract Proposal stage",
+          "type": "Workflow",
+          "mention": "Contract Proposal stage",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Contract Proposal",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Contract Proposal"
+        },
+        {
+          "source": "Contract Proposal stage",
+          "relation": "IS_PART_OF",
+          "target": "Contract Proposal",
+          "evidence": "Title: Contract Proposal, Contract Proposal stage"
+        },
+        {
+          "source": "applicant's card",
+          "relation": "BELONGS_TO",
+          "target": "applicant",
+          "evidence": "applicant's card"
+        },
+        {
+          "source": "Kanban view",
+          "relation": "HAS_FEATURE",
+          "target": "Applications page",
+          "evidence": "Kanban view of the Applications page"
+        },
+        {
+          "source": "drag-and-drop",
+          "relation": "PERFORMED_BY",
+          "target": "applicant",
+          "evidence": "drag-and-drop the applicant's card"
+        },
+        {
+          "source": "click",
+          "relation": "PERFORMED_BY",
+          "target": "applicant",
+          "evidence": "click on the Contract Proposal stage"
+        },
+        {
+          "source": "job offer",
+          "relation": "RELATED_TO",
+          "target": "applicant",
+          "evidence": "job offer, applicant"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "contract-signed",
+    "heading": "Contract Signed",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contract Signed stage",
+          "type": "Workflow",
+          "mention": "Contract Signed stage",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant's card",
+          "type": "DataObject",
+          "mention": "applicant's card",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "Applications page",
+          "type": "Module",
+          "mention": "Applications page",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-ellipsis-h (ellipsis) icon",
+          "type": "Feature",
+          "mention": "fa-ellipsis-h (ellipsis) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Signed",
+          "type": "Action",
+          "mention": "Contract Signed",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "applicant",
+          "relation": "PERFORMED_BY",
+          "target": "contract",
+          "evidence": "Once the contract has been signed, and the applicant has been hired"
+        },
+        {
+          "source": "applicant's card",
+          "relation": "BELONGS_TO",
+          "target": "Applications page",
+          "evidence": "from the Kanban view of the Applications page"
+        },
+        {
+          "source": "applicant's card",
+          "relation": "TRIGGERED_BY",
+          "target": "Contract Signed",
+          "evidence": "click Contract Signed on the status bar"
+        },
+        {
+          "source": "Kanban view",
+          "relation": "IS_PART_OF",
+          "target": "Applications page",
+          "evidence": "from the Kanban view of the Applications page"
+        },
+        {
+          "source": "fa-ellipsis-h (ellipsis) icon",
+          "relation": "ENABLES",
+          "target": "Contract Signed",
+          "evidence": "click the fa-ellipsis-h (ellipsis) icon... then click Contract Signed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "refuse-applicant",
+    "heading": "Refuse applicant",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Refuse applicant",
+          "type": "Action",
+          "mention": "Refuse applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "candidate",
+          "type": "Actor",
+          "mention": "candidate",
+          "confidence": "high"
+        },
+        {
+          "name": "recruitment process",
+          "type": "Workflow",
+          "mention": "recruitment process",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Refuse applicant",
+          "relation": "PERFORMED_BY",
+          "target": "candidate",
+          "evidence": "At any point in the recruitment process, a candidate can be refused"
+        },
+        {
+          "source": "Refuse applicant",
+          "relation": "TRIGGERED_BY",
+          "target": "recruitment process",
+          "evidence": "At any point in the recruitment process, a candidate can be refused"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1438 @@
+[
+  {
+    "section_id": "connect-microsoft-outlook-365-to-odoo-using-azure-oauth",
+    "heading": "Connect Microsoft Outlook 365 to Odoo using Azure OAuth",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Outlook 365",
+          "type": "Integration",
+          "mention": "Microsoft Outlook 365",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft's Azure OAuth",
+          "type": "Integration",
+          "mention": "Microsoft's Azure OAuth",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft 365",
+          "type": "Integration",
+          "mention": "Microsoft 365",
+          "confidence": "high"
+        },
+        {
+          "name": "custom domain",
+          "type": "Concept",
+          "mention": "custom domain",
+          "confidence": "medium"
+        },
+        {
+          "name": "personal email address",
+          "type": "Concept",
+          "mention": "personal email address",
+          "confidence": "medium"
+        },
+        {
+          "name": "Azure platform",
+          "type": "Integration",
+          "mention": "Azure platform",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo database",
+          "type": "DataObject",
+          "mention": "Odoo database",
+          "confidence": "medium"
+        },
+        {
+          "name": "settings",
+          "type": "Setting",
+          "mention": "settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Learn: Register an application with the Microsoft identity platform",
+          "type": "Concept",
+          "mention": "Microsoft Learn: Register an application with the Microsoft identity platform",
+          "confidence": "medium"
+        },
+        {
+          "name": "/applications/general/users/azure",
+          "type": "Concept",
+          "mention": "/applications/general/users/azure",
+          "confidence": "medium"
+        },
+        {
+          "name": "/applications/productivity/calendar/outlook",
+          "type": "Concept",
+          "mention": "/applications/productivity/calendar/outlook",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Microsoft's Azure OAuth",
+          "evidence": "Odoo is compatible with Microsoft's Azure OAuth for Microsoft 365."
+        },
+        {
+          "source": "Microsoft Outlook 365",
+          "relation": "IS_PART_OF",
+          "target": "Microsoft 365",
+          "evidence": "Connect Microsoft Outlook 365 to Odoo using Azure OAuth"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "Microsoft Learn: Register an application with the Microsoft identity platform",
+          "evidence": ".. seealso:: `Microsoft Learn: Register an application with the Microsoft identity platform`"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "/applications/general/users/azure",
+          "evidence": ".. seealso:: - /applications/general/users/azure"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "/applications/productivity/calendar/outlook",
+          "evidence": ".. seealso:: - /applications/productivity/calendar/outlook"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-application",
+    "heading": "Create a new application",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft's Azure Portal",
+          "type": "Integration",
+          "mention": "Microsoft's Azure Portal",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Outlook Office 365 account",
+          "type": "Actor",
+          "mention": "Microsoft Outlook Office 365 account",
+          "confidence": "high"
+        },
+        {
+          "name": "personal Microsoft account",
+          "type": "Actor",
+          "mention": "personal Microsoft account",
+          "confidence": "high"
+        },
+        {
+          "name": "user with administrative access",
+          "type": "Actor",
+          "mention": "user with administrative access",
+          "confidence": "high"
+        },
+        {
+          "name": "Azure Settings",
+          "type": "Module",
+          "mention": "Azure Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manage Microsoft Entra ID",
+          "type": "Module",
+          "mention": "Manage Microsoft Entra ID",
+          "confidence": "medium"
+        },
+        {
+          "name": "App registration",
+          "type": "Feature",
+          "mention": "App registration",
+          "confidence": "high"
+        },
+        {
+          "name": "Supported account types",
+          "type": "Setting",
+          "mention": "Supported account types",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounts in any organizational directory",
+          "type": "Permission",
+          "mention": "Accounts in any organizational directory",
+          "confidence": "medium"
+        },
+        {
+          "name": "personal Microsoft accounts",
+          "type": "Permission",
+          "mention": "personal Microsoft accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Redirect URL",
+          "type": "Setting",
+          "mention": "Redirect URL",
+          "confidence": "medium"
+        },
+        {
+          "name": "Web",
+          "type": "Setting",
+          "mention": "Web",
+          "confidence": "low"
+        },
+        {
+          "name": "https://<web base url>/microsoft_outlook/confirm",
+          "type": "Field",
+          "mention": "URL field",
+          "confidence": "medium"
+        },
+        {
+          "name": "web.base.url",
+          "type": "Setting",
+          "mention": "web.base.url",
+          "confidence": "high"
+        },
+        {
+          "name": "microsoft_outlook",
+          "type": "Integration",
+          "mention": "microsoft_outlook",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft app",
+          "type": "Integration",
+          "mention": "Microsoft app",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "BELONGS_TO",
+          "target": "Microsoft app",
+          "evidence": "rename the Name to `Odoo`"
+        },
+        {
+          "source": "Microsoft app",
+          "relation": "CONFIGURED_BY",
+          "target": "Supported account types",
+          "evidence": "Under the Supported account types section select"
+        },
+        {
+          "source": "Microsoft app",
+          "relation": "CONFIGURED_BY",
+          "target": "Redirect URL",
+          "evidence": "Under the Redirect URL section"
+        },
+        {
+          "source": "Redirect URL",
+          "relation": "GOVERNED_BY",
+          "target": "https://<web base url>/microsoft_outlook/confirm",
+          "evidence": "input `https://<web base url>/microsoft_outlook/confirm` in the URL field"
+        },
+        {
+          "source": "App registration",
+          "relation": "ENABLES",
+          "target": "Microsoft app",
+          "evidence": "Register the application, so it is created"
+        },
+        {
+          "source": "microsoft_outlook",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "part of the redirect URL path"
+        },
+        {
+          "source": "Microsoft app",
+          "relation": "CONFIGURED_BY",
+          "target": "Accounts in any organizational directory",
+          "evidence": "select Accounts in any organizational directory"
+        },
+        {
+          "source": "Microsoft app",
+          "relation": "CONFIGURED_BY",
+          "target": "personal Microsoft accounts",
+          "evidence": "select personal Microsoft accounts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "api-permissions",
+    "heading": "API permissions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "API permissions",
+          "type": "Permission",
+          "mention": "API permissions",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft 365",
+          "type": "Product",
+          "mention": "Microsoft 365",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Graph",
+          "type": "Product",
+          "mention": "Microsoft Graph",
+          "confidence": "high"
+        },
+        {
+          "name": "Delegated permissions",
+          "type": "Permission",
+          "mention": "Delegated permissions",
+          "confidence": "medium"
+        },
+        {
+          "name": "SMTP.Send",
+          "type": "Permission",
+          "mention": "SMTP.Send",
+          "confidence": "high"
+        },
+        {
+          "name": "IMAP.AccessAsUser.All",
+          "type": "Permission",
+          "mention": "IMAP.AccessAsUser.All",
+          "confidence": "high"
+        },
+        {
+          "name": "User.Read",
+          "type": "Permission",
+          "mention": "User.Read",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "REQUIRES",
+          "target": "API permissions",
+          "evidence": "Odoo will need specific API permissions"
+        },
+        {
+          "source": "API permissions",
+          "relation": "CONTAINS",
+          "target": "Delegated permissions",
+          "evidence": "select the Delegated Permissions option"
+        },
+        {
+          "source": "API permissions",
+          "relation": "IS_PART_OF",
+          "target": "Microsoft 365",
+          "evidence": "API permissions to be able to read (IMAP) and send (SMTP) emails in the Microsoft 365 setup"
+        },
+        {
+          "source": "Delegated permissions",
+          "relation": "CONTAINS",
+          "target": "SMTP.Send",
+          "evidence": "search for the following Delegated permissions and click Add permissions for each one: - SMTP.Send"
+        },
+        {
+          "source": "Delegated permissions",
+          "relation": "CONTAINS",
+          "target": "IMAP.AccessAsUser.All",
+          "evidence": "search for the following Delegated permissions and click Add permissions for each one: - IMAP.AccessAsUser.All"
+        },
+        {
+          "source": "User.Read",
+          "relation": "IS_PART_OF",
+          "target": "API permissions",
+          "evidence": "The User.Read permission will be added by default"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assign-users-and-groups",
+    "heading": "Assign users and groups",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "API permissions",
+          "type": "Permission",
+          "mention": "API permissions",
+          "confidence": "high"
+        },
+        {
+          "name": "Overview",
+          "type": "Module",
+          "mention": "Overview",
+          "confidence": "medium"
+        },
+        {
+          "name": "Essentials overview table",
+          "type": "Report",
+          "mention": "Essentials overview table",
+          "confidence": "medium"
+        },
+        {
+          "name": "Managed Application in Local Directory",
+          "type": "Setting",
+          "mention": "Managed Application in Local Directory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Users and Groups",
+          "type": "Module",
+          "mention": "Users and Groups",
+          "confidence": "high"
+        },
+        {
+          "name": "Add User/Group",
+          "type": "Action",
+          "mention": "(+) Add User/Group",
+          "confidence": "high"
+        },
+        {
+          "name": "Select",
+          "type": "Action",
+          "mention": "Select",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign",
+          "type": "Action",
+          "mention": "Assign",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Overview",
+          "evidence": "navigate back to the Overview of the Application"
+        },
+        {
+          "source": "Overview",
+          "relation": "HAS_REPORT",
+          "target": "Essentials overview table",
+          "evidence": "Under the Essentials overview table"
+        },
+        {
+          "source": "Essentials overview table",
+          "relation": "SEE_ALSO",
+          "target": "Managed Application in Local Directory",
+          "evidence": "click on the link labeled Managed Application in Local Directory"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Users and Groups",
+          "evidence": "In the left sidebar menu, select Users and Groups."
+        },
+        {
+          "source": "Users and Groups",
+          "relation": "HAS_FEATURE",
+          "target": "Add User/Group",
+          "evidence": "click on (+) Add User/Group"
+        },
+        {
+          "source": "Users and Groups",
+          "relation": "HAS_FEATURE",
+          "target": "Select",
+          "evidence": "click Select"
+        },
+        {
+          "source": "Users and Groups",
+          "relation": "HAS_FEATURE",
+          "target": "Assign",
+          "evidence": "Assign them to the application"
+        },
+        {
+          "source": "Add User/Group",
+          "relation": "TRIGGERED_BY",
+          "target": "Users and Groups",
+          "evidence": "In the left sidebar menu, select Users and Groups. Next, click on (+) Add User/Group"
+        },
+        {
+          "source": "API permissions",
+          "relation": "RELATED_TO",
+          "target": "Users and Groups",
+          "evidence": "After adding the API permissions, navigate... select Users and Groups"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-credentials",
+    "heading": "Create credentials",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Azure",
+          "type": "Integration",
+          "mention": "Microsoft Azure",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Azure Portal",
+          "type": "Integration",
+          "mention": "Microsoft Azure Portal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create credentials",
+          "type": "Workflow",
+          "mention": "Create credentials",
+          "confidence": "high"
+        },
+        {
+          "name": "Client ID",
+          "type": "Field",
+          "mention": "Client ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Application ID",
+          "type": "Field",
+          "mention": "Application ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Client Secret",
+          "type": "Field",
+          "mention": "Client Secret",
+          "confidence": "high"
+        },
+        {
+          "name": "Client Secret Value",
+          "type": "Field",
+          "mention": "Client Secret Value",
+          "confidence": "high"
+        },
+        {
+          "name": "Value",
+          "type": "Field",
+          "mention": "Value",
+          "confidence": "low"
+        },
+        {
+          "name": "Secret ID",
+          "type": "Field",
+          "mention": "Secret ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Azure app",
+          "type": "Integration",
+          "mention": "Microsoft Azure app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Overview page",
+          "type": "Feature",
+          "mention": "Overview page",
+          "confidence": "low"
+        },
+        {
+          "name": "Essentials overview",
+          "type": "Feature",
+          "mention": "Essentials overview",
+          "confidence": "low"
+        },
+        {
+          "name": "Display Name",
+          "type": "Field",
+          "mention": "Display Name",
+          "confidence": "low"
+        },
+        {
+          "name": "Certificates & Secrets",
+          "type": "Feature",
+          "mention": "Certificates & Secrets",
+          "confidence": "medium"
+        },
+        {
+          "name": "(+) New Client Secret button",
+          "type": "Feature",
+          "mention": "(+) New Client Secret button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a client secret",
+          "type": "Action",
+          "mention": "Add a client secret",
+          "confidence": "medium"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "low"
+        },
+        {
+          "name": "Odoo Fetchmail",
+          "type": "Field",
+          "mention": "Odoo Fetchmail",
+          "confidence": "medium"
+        },
+        {
+          "name": "expiration date",
+          "type": "Field",
+          "mention": "expiration date",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add",
+          "type": "Action",
+          "mention": "Add",
+          "confidence": "low"
+        },
+        {
+          "name": "notepad",
+          "type": "Unknown",
+          "mention": "notepad",
+          "confidence": "low"
+        },
+        {
+          "name": "set up in Odoo",
+          "type": "Workflow",
+          "mention": "set up in Odoo",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "REQUIRES",
+          "target": "Microsoft Azure",
+          "evidence": "credentials need to be created for the Odoo setup"
+        },
+        {
+          "source": "Create credentials",
+          "relation": "ENABLES",
+          "target": "set up in Odoo",
+          "evidence": "this completes the setup"
+        },
+        {
+          "source": "Create credentials",
+          "relation": "BELONGS_TO",
+          "target": "Microsoft Azure Portal",
+          "evidence": "This completes the setup on the Microsoft Azure Portal side"
+        },
+        {
+          "source": "(+) New Client Secret button",
+          "relation": "ENABLES",
+          "target": "Add a client secret",
+          "evidence": "click on the (+) New Client Secret button"
+        },
+        {
+          "source": "Add a client secret",
+          "relation": "PRODUCES",
+          "target": "Client Secret Value",
+          "evidence": "A Client Secret Value and Secret ID will be created"
+        },
+        {
+          "source": "Add a client secret",
+          "relation": "PRODUCES",
+          "target": "Secret ID",
+          "evidence": "A Client Secret Value and Secret ID will be created"
+        },
+        {
+          "source": "Client ID",
+          "relation": "EQUIVALENT_TO",
+          "target": "Application ID",
+          "evidence": "the Client ID or Application ID"
+        },
+        {
+          "source": "Client Secret",
+          "relation": "EQUIVALENT_TO",
+          "target": "Client Secret Value",
+          "evidence": "the Client Secret Value"
+        },
+        {
+          "source": "Client Secret",
+          "relation": "EQUIVALENT_TO",
+          "target": "Value",
+          "evidence": "the Value or Client Secret Value"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enter-microsoft-outlook-credentials",
+    "heading": "Enter Microsoft Outlook credentials",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps module",
+          "type": "Module",
+          "mention": "Apps module",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Outlook",
+          "type": "Integration",
+          "mention": "Microsoft Outlook",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "General Settings",
+          "type": "Sub-module",
+          "mention": "General Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Emails",
+          "type": "Sub-module",
+          "mention": "Emails section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Use Custom Email Servers",
+          "type": "Feature",
+          "mention": "checkbox for Use Custom Email Servers",
+          "confidence": "high"
+        },
+        {
+          "name": "Outlook Credentials",
+          "type": "Setting",
+          "mention": "option for Outlook Credentials",
+          "confidence": "high"
+        },
+        {
+          "name": "ID (Application ID)",
+          "type": "Field",
+          "mention": "ID (Application ID)",
+          "confidence": "high"
+        },
+        {
+          "name": "Secret (Client Secret Value)",
+          "type": "Field",
+          "mention": "Secret (Client Secret Value)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Apps module",
+          "relation": "CONTAINS",
+          "target": "Microsoft Outlook",
+          "evidence": "install the module called Microsoft Outlook"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "General Settings",
+          "evidence": "navigate to Settings --> General Settings"
+        },
+        {
+          "source": "General Settings",
+          "relation": "CONTAINS",
+          "target": "Emails",
+          "evidence": "under the *Emails* section"
+        },
+        {
+          "source": "Emails",
+          "relation": "CONTAINS",
+          "target": "Use Custom Email Servers",
+          "evidence": "ensure that the checkbox for Use Custom Email Servers is checked"
+        },
+        {
+          "source": "Use Custom Email Servers",
+          "relation": "ENABLES",
+          "target": "Outlook Credentials",
+          "evidence": "This populates a new option for Outlook Credentials"
+        },
+        {
+          "source": "Outlook Credentials",
+          "relation": "CONTAINS",
+          "target": "ID (Application ID)",
+          "evidence": "copy and paste the ID (Application ID) and Secret (Client Secret Value) into the respective fields"
+        },
+        {
+          "source": "Outlook Credentials",
+          "relation": "CONTAINS",
+          "target": "Secret (Client Secret Value)",
+          "evidence": "copy and paste the ID (Application ID) and Secret (Client Secret Value) into the respective fields"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-outgoing-email-server",
+    "heading": "Configure outgoing email server",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "General Settings",
+          "type": "Module",
+          "mention": "General Settings page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Custom Email Servers",
+          "type": "Setting",
+          "mention": "Custom Email Servers setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Outgoing Email Servers",
+          "type": "Setting",
+          "mention": "Outgoing Email Servers link",
+          "confidence": "high"
+        },
+        {
+          "name": "Outgoing Mail Server",
+          "type": "Module",
+          "mention": "Outgoing Mail Server",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configure outgoing email server",
+          "type": "Action",
+          "mention": "configure the Microsoft account",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a new email server",
+          "type": "Action",
+          "mention": "create a new email server",
+          "confidence": "high"
+        },
+        {
+          "name": "Check the box for Outlook",
+          "type": "Action",
+          "mention": "check the box for Outlook",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name (it can be anything)",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Outlook email Username",
+          "type": "Field",
+          "mention": "Microsoft Outlook email Username",
+          "confidence": "high"
+        },
+        {
+          "name": "From Filter",
+          "type": "Field",
+          "mention": "From Filter field",
+          "confidence": "high"
+        },
+        {
+          "name": "Connect your Outlook account",
+          "type": "Action",
+          "mention": "click on Connect your Outlook account",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft",
+          "type": "Actor",
+          "mention": "Microsoft",
+          "confidence": "high"
+        },
+        {
+          "name": "Authorization process",
+          "type": "Action",
+          "mention": "complete the authorization process",
+          "confidence": "medium"
+        },
+        {
+          "name": "Select the appropriate email address",
+          "type": "Action",
+          "mention": "Select the appropriate email address",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allow Odoo to access the Microsoft account",
+          "type": "Action",
+          "mention": "allow Odoo to access the Microsoft account by clicking on Yes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Outlook Token Valid",
+          "type": "Setting",
+          "mention": "Outlook Token Valid appears in green",
+          "confidence": "medium"
+        },
+        {
+          "name": "Test Connection",
+          "type": "Action",
+          "mention": "click Test Connection",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Outlook",
+          "type": "Integration",
+          "mention": "Microsoft Outlook",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth authentication",
+          "type": "Concept",
+          "mention": "OAuth authentication",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Custom Email Servers",
+          "relation": "CONTAINS",
+          "target": "Outgoing Email Servers",
+          "evidence": "under the Custom Email Servers setting, click the Outgoing Email Servers link"
+        },
+        {
+          "source": "General Settings",
+          "relation": "CONTAINS",
+          "target": "Custom Email Servers",
+          "evidence": "On the General Settings page, under the Custom Email Servers setting"
+        },
+        {
+          "source": "Configure outgoing email server",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "configure the Microsoft account"
+        },
+        {
+          "source": "Configure outgoing email server",
+          "relation": "CONFIGURED_BY",
+          "target": "Outgoing Email Servers",
+          "evidence": "click the Outgoing Email Servers link to configure"
+        },
+        {
+          "source": "Create a new email server",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "create a new email server"
+        },
+        {
+          "source": "Microsoft Outlook",
+          "relation": "USES_METHOD",
+          "target": "OAuth authentication",
+          "evidence": "through Microsoft Outlook using OAuth authentication"
+        },
+        {
+          "source": "Test Connection",
+          "relation": "ENABLES",
+          "target": "Odoo database can now send safe, secure emails",
+          "evidence": "click Test Connection. A confirmation message should appear. The Odoo database can now send safe, secure emails"
+        },
+        {
+          "source": "Connect your Outlook account",
+          "relation": "TRIGGERED_BY",
+          "target": "Authorization process",
+          "evidence": "A new window from Microsoft opens to complete the authorization process"
+        },
+        {
+          "source": "Allow Odoo to access the Microsoft account",
+          "relation": "PERFORMED_BY",
+          "target": "Microsoft",
+          "evidence": "allow Odoo to access the Microsoft account by clicking on Yes"
+        },
+        {
+          "source": "Outgoing Mail Server",
+          "relation": "CONTAINS",
+          "target": "Outlook Token Valid",
+          "evidence": "the page will navigate back to the newly configured Outgoing Mail Server in Odoo. The configuration automatically loads the token... tag stating Outlook Token Valid"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration-with-a-single-outgoing-mail-server",
+    "heading": "Configuration with a single outgoing mail server",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Azure",
+          "type": "Integration",
+          "mention": "Microsoft Azure",
+          "confidence": "medium"
+        },
+        {
+          "name": "notifications@example.com",
+          "type": "Actor",
+          "mention": "`notifications@example.com`",
+          "confidence": "high"
+        },
+        {
+          "name": "contact@example.com",
+          "type": "Actor",
+          "mention": "`contact@example.com`",
+          "confidence": "medium"
+        },
+        {
+          "name": "From Filtering",
+          "type": "Feature",
+          "mention": "FROM Filtering",
+          "confidence": "high"
+        },
+        {
+          "name": "mail.default.from",
+          "type": "Field",
+          "mention": "`mail.default.from`",
+          "confidence": "high"
+        },
+        {
+          "name": "mail.catchall.domain",
+          "type": "Field",
+          "mention": "`mail.catchall.domain`",
+          "confidence": "high"
+        },
+        {
+          "name": "System Parameters",
+          "type": "Module",
+          "mention": "System Parameters",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Technical",
+          "type": "Sub-module",
+          "mention": "Technical",
+          "confidence": "medium"
+        },
+        {
+          "name": "Parameters",
+          "type": "Sub-module",
+          "mention": "Parameters",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer-mode",
+          "type": "Setting",
+          "mention": "developer-mode",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Settings --> Technical --> Parameters --> System Parameters menu"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Technical",
+          "evidence": "Settings --> Technical --> Parameters --> System Parameters menu"
+        },
+        {
+          "source": "Technical",
+          "relation": "CONTAINS",
+          "target": "Parameters",
+          "evidence": "Settings --> Technical --> Parameters --> System Parameters menu"
+        },
+        {
+          "source": "Parameters",
+          "relation": "CONTAINS",
+          "target": "System Parameters",
+          "evidence": "Settings --> Technical --> Parameters --> System Parameters menu"
+        },
+        {
+          "source": "From Filtering",
+          "relation": "CONFIGURED_BY",
+          "target": "notifications@example.com",
+          "evidence": "FROM Filtering on the server"
+        },
+        {
+          "source": "mail.default.from",
+          "relation": "RELATED_TO",
+          "target": "mail.catchall.domain",
+          "evidence": "`{mail.default.from}@{mail.catchall.domain}` key combination"
+        },
+        {
+          "source": "mail.default.from",
+          "relation": "CONFIGURED_BY",
+          "target": "System Parameters",
+          "evidence": "in the system parameters"
+        },
+        {
+          "source": "mail.catchall.domain",
+          "relation": "CONFIGURED_BY",
+          "target": "System Parameters",
+          "evidence": "in the system parameters"
+        },
+        {
+          "source": "System Parameters",
+          "relation": "REQUIRES",
+          "target": "developer-mode",
+          "evidence": "accessed by activating developer-mode"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "user-specific-(multiple-user)-configuration",
+    "heading": "User-specific (multiple user) configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Marketing",
+          "type": "Module",
+          "mention": "Email Marketing",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Technical",
+          "type": "Sub-module",
+          "mention": "Technical",
+          "confidence": "high"
+        },
+        {
+          "name": "Parameters",
+          "type": "Sub-module",
+          "mention": "Parameters",
+          "confidence": "high"
+        },
+        {
+          "name": "System Parameters",
+          "type": "Setting",
+          "mention": "System Parameters",
+          "confidence": "high"
+        },
+        {
+          "name": "User-specific (multiple user) configuration",
+          "type": "Feature",
+          "mention": "User-specific (multiple user) configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Individual email server",
+          "type": "Feature",
+          "mention": "individual email servers",
+          "confidence": "medium"
+        },
+        {
+          "name": "FROM Filtering",
+          "type": "Setting",
+          "mention": "FROM Filtering",
+          "confidence": "high"
+        },
+        {
+          "name": "Outgoing mail server",
+          "type": "Feature",
+          "mention": "Outgoing mail server",
+          "confidence": "medium"
+        },
+        {
+          "name": "username",
+          "type": "Field",
+          "mention": "username",
+          "confidence": "medium"
+        },
+        {
+          "name": "mail.catchall.domain",
+          "type": "Field",
+          "mention": "mail.catchall.domain",
+          "confidence": "high"
+        },
+        {
+          "name": "mail.default.from",
+          "type": "Field",
+          "mention": "mail.default.from",
+          "confidence": "high"
+        },
+        {
+          "name": "fallback server",
+          "type": "Feature",
+          "mention": "fallback server",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft Azure",
+          "type": "Integration",
+          "mention": "Microsoft Azure",
+          "confidence": "medium"
+        },
+        {
+          "name": "email-outbound-different-servers-personalized-from-filtering",
+          "type": "Concept",
+          "mention": "email-outbound-different-servers-personalized-from-filtering",
+          "confidence": "low"
+        },
+        {
+          "name": "azure_oauth/notifications",
+          "type": "Concept",
+          "mention": "azure_oauth/notifications",
+          "confidence": "low"
+        },
+        {
+          "name": "email-outbound-custom-domain-smtp-server",
+          "type": "Concept",
+          "mention": "email-outbound-custom-domain-smtp-server",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "User-specific (multiple user) configuration",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Email Marketing",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Email Marketing application"
+        },
+        {
+          "source": "Technical",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "Settings --> Technical"
+        },
+        {
+          "source": "Parameters",
+          "relation": "BELONGS_TO",
+          "target": "Technical",
+          "evidence": "Technical --> Parameters"
+        },
+        {
+          "source": "System Parameters",
+          "relation": "BELONGS_TO",
+          "target": "Parameters",
+          "evidence": "Parameters --> System Parameters"
+        },
+        {
+          "source": "FROM Filtering",
+          "relation": "CONFIGURED_BY",
+          "target": "Individual email server",
+          "evidence": "FROM Filtering on each individual server"
+        },
+        {
+          "source": "Individual email server",
+          "relation": "HAS_FEATURE",
+          "target": "User-specific (multiple user) configuration",
+          "evidence": "individual email servers can be set up"
+        },
+        {
+          "source": "System Parameters",
+          "relation": "CONTAINS",
+          "target": "mail.catchall.domain",
+          "evidence": "mail.catchall.domain in system parameters"
+        },
+        {
+          "source": "System Parameters",
+          "relation": "CONTAINS",
+          "target": "mail.default.from",
+          "evidence": "mail.default.from in system parameters"
+        },
+        {
+          "source": "fallback server",
+          "relation": "REQUIRES",
+          "target": "notifications",
+          "evidence": "fallback server must be setup to allow for the sending of notifications"
+        },
+        {
+          "source": "FROM Filtering",
+          "relation": "CONFIGURED_BY",
+          "target": "fallback server",
+          "evidence": "FROM Filtering for this server"
+        },
+        {
+          "source": "email-outbound-different-servers-personalized-from-filtering",
+          "relation": "SEE_ALSO",
+          "target": "FROM Filtering",
+          "evidence": "Visit the From Filtering documentation"
+        },
+        {
+          "source": "azure_oauth/notifications",
+          "relation": "SEE_ALSO",
+          "target": "fallback server",
+          "evidence": "A fallback server must be setup"
+        },
+        {
+          "source": "email-outbound-custom-domain-smtp-server",
+          "relation": "SEE_ALSO",
+          "target": "Email Marketing",
+          "evidence": "For more information on setting the mass-mailing email server"
+        },
+        {
+          "source": "Microsoft Azure",
+          "relation": "SUPPORTS",
+          "target": "User-specific (multiple user) configuration",
+          "evidence": "Microsoft Azure configurations"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-incoming-email-server",
+    "heading": "Configure incoming email server",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure incoming email server",
+          "type": "Feature",
+          "mention": "Configure incoming email server",
+          "confidence": "high"
+        },
+        {
+          "name": "Incoming Mail Servers",
+          "type": "Module",
+          "mention": "Incoming Mail Servers",
+          "confidence": "high"
+        },
+        {
+          "name": "Technical Menu",
+          "type": "Module",
+          "mention": "Technical Menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Outlook Oauth Authentication",
+          "type": "Integration",
+          "mention": "Outlook Oauth Authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Outlook",
+          "type": "Integration",
+          "mention": "Microsoft Outlook",
+          "confidence": "high"
+        },
+        {
+          "name": "Connect your Outlook account",
+          "type": "Action",
+          "mention": "Connect your Outlook account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Test and Confirm",
+          "type": "Action",
+          "mention": "Test and Confirm",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Incoming Mail Servers",
+          "relation": "BELONGS_TO",
+          "target": "Technical Menu",
+          "evidence": "Navigate to the Incoming Mail Servers in the Technical Menu"
+        },
+        {
+          "source": "Outlook Oauth Authentication",
+          "relation": "RELATED_TO",
+          "target": "Microsoft Outlook",
+          "evidence": "Check or Select the button next to Outlook Oauth Authentication"
+        },
+        {
+          "source": "Configure incoming email server",
+          "relation": "REQUIRES",
+          "target": "Outlook Oauth Authentication",
+          "evidence": "Configure incoming email server... Check or Select the button next to Outlook Oauth Authentication"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Technical Menu",
+          "evidence": "Product: Odoo... Navigate to the Incoming Mail Servers in the Technical Menu"
+        },
+        {
+          "source": "Connect your Outlook account",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Click on Connect your Outlook account. Odoo will state: Outlook Token Valid"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Configure incoming email server",
+          "evidence": "Product: Odoo... Configure incoming email server"
+        }
+      ]
+    }
+  }
+]

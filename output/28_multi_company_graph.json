@@ -1,0 +1,990 @@
+[
+  {
+    "section_id": "multi-company",
+    "heading": "Multi-company",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-company",
+          "type": "Feature",
+          "mention": "Title: Multi-company",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "multiple companies can be configured under one database",
+          "confidence": "medium"
+        },
+        {
+          "name": "authorized users",
+          "type": "Actor",
+          "mention": "authorized users",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouses",
+          "type": "DataObject",
+          "mention": "set their specific warehouses",
+          "confidence": "medium"
+        },
+        {
+          "name": "customers",
+          "type": "DataObject",
+          "mention": "customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "equipment",
+          "type": "DataObject",
+          "mention": "equipment",
+          "confidence": "medium"
+        },
+        {
+          "name": "contacts",
+          "type": "DataObject",
+          "mention": "contacts",
+          "confidence": "medium"
+        },
+        {
+          "name": "reports of aggregated figures",
+          "type": "Report",
+          "mention": "generates reports of aggregated figures",
+          "confidence": "high"
+        },
+        {
+          "name": "Standard plan",
+          "type": "Setting",
+          "mention": "*Standard* plan",
+          "confidence": "medium"
+        },
+        {
+          "name": "Custom plan",
+          "type": "Setting",
+          "mention": "*Custom* plan",
+          "confidence": "medium"
+        },
+        {
+          "name": "One-App Free plan",
+          "type": "Setting",
+          "mention": "*One-App Free* plan",
+          "confidence": "medium"
+        },
+        {
+          "name": "upsell order",
+          "type": "DataObject",
+          "mention": "upsell order is created",
+          "confidence": "medium"
+        },
+        {
+          "name": "monthly contracts",
+          "type": "Concept",
+          "mention": "monthly contracts",
+          "confidence": "medium"
+        },
+        {
+          "name": "yearly or multi-year contracts",
+          "type": "Concept",
+          "mention": "yearly or multi-year contracts",
+          "confidence": "medium"
+        },
+        {
+          "name": "bill",
+          "type": "Report",
+          "mention": "when the next bill is generated",
+          "confidence": "medium"
+        },
+        {
+          "name": "account manager",
+          "type": "Actor",
+          "mention": "account manager",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Multi-company",
+          "evidence": "Product: Odoo. Title: Multi-company."
+        },
+        {
+          "source": "Multi-company",
+          "relation": "CONFIGURED_BY",
+          "target": "database",
+          "evidence": "multiple companies can be configured under one database."
+        },
+        {
+          "source": "Multi-company",
+          "relation": "ENABLES",
+          "target": "authorized users",
+          "evidence": "authorized users can select multiple companies simultaneously..."
+        },
+        {
+          "source": "Multi-company",
+          "relation": "GENERATES",
+          "target": "reports of aggregated figures",
+          "evidence": "generates reports of aggregated figures"
+        },
+        {
+          "source": "Multi-company",
+          "relation": "REQUIRES",
+          "target": "Standard plan",
+          "evidence": "Enabling multi-company functionality in an Odoo database on a *Standard* plan..."
+        },
+        {
+          "source": "Multi-company",
+          "relation": "TRIGGERED_BY",
+          "target": "upsell order",
+          "evidence": "automatically triggers an upsell... An upsell order is created"
+        },
+        {
+          "source": "monthly contracts",
+          "relation": "CONFIGURED_BY",
+          "target": "Custom plan",
+          "evidence": "For monthly contracts: The subscription automatically switches to the *Custom* plan"
+        },
+        {
+          "source": "Standard plan",
+          "relation": "SEE_ALSO",
+          "target": "One-App Free plan",
+          "evidence": "This does not apply to databases on the *One-App Free* plan."
+        },
+        {
+          "source": "bill",
+          "relation": "GENERATED_BY",
+          "target": "multi-company functionality",
+          "evidence": "the new rate is applied when the next bill is generated.",
+          "confidence": "medium"
+        },
+        {
+          "source": "authorized users",
+          "relation": "PERFORMED_BY",
+          "target": "account manager",
+          "evidence": "contact your account manager.",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings app",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Companies section",
+          "type": "Sub-module",
+          "mention": "Companies section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manage Companies",
+          "type": "Feature",
+          "mention": "Manage Companies",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "company's information",
+          "type": "DataObject",
+          "mention": "company's information",
+          "confidence": "medium"
+        },
+        {
+          "name": "existing company",
+          "type": "DataObject",
+          "mention": "existing company",
+          "confidence": "medium"
+        },
+        {
+          "name": "edit",
+          "type": "Action",
+          "mention": "edit it",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings --> Users & Companies --> Companies",
+          "type": "Feature",
+          "mention": "Settings --> Users & Companies --> Companies",
+          "confidence": "medium"
+        },
+        {
+          "name": "archive a company",
+          "type": "Feature",
+          "mention": "archive a company",
+          "confidence": "medium"
+        },
+        {
+          "name": "Companies list view",
+          "type": "Feature",
+          "mention": "Companies list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Actions menu",
+          "type": "Feature",
+          "mention": "Actions menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Archive",
+          "type": "Action",
+          "mention": "Archive",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Archive to confirm",
+          "confidence": "medium"
+        },
+        {
+          "name": "general/multi-company/multi-company-environment",
+          "type": "Unknown",
+          "mention": "general/multi-company/multi-company-environment",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Settings app",
+          "relation": "CONTAINS",
+          "target": "Companies section",
+          "evidence": "navigate to the Companies section"
+        },
+        {
+          "source": "Companies section",
+          "relation": "CONTAINS",
+          "target": "Manage Companies",
+          "evidence": "click Manage Companies"
+        },
+        {
+          "source": "Manage Companies",
+          "relation": "HAS_FEATURE",
+          "target": "New",
+          "evidence": "click New"
+        },
+        {
+          "source": "New",
+          "relation": "PRODUCES",
+          "target": "company's information",
+          "evidence": "fill in the form with the company's information"
+        },
+        {
+          "source": "Manage Companies",
+          "relation": "HAS_FEATURE",
+          "target": "edit",
+          "evidence": "select an existing company to edit it"
+        },
+        {
+          "source": "Settings --> Users & Companies --> Companies",
+          "relation": "EQUIVALENT_TO",
+          "target": "Manage Companies",
+          "evidence": "Alternative way to create a company"
+        },
+        {
+          "source": "archive a company",
+          "relation": "PERFORMED_BY",
+          "target": "Settings app",
+          "evidence": "In the Settings app"
+        },
+        {
+          "source": "Companies list view",
+          "relation": "IS_PART_OF",
+          "target": "Settings app",
+          "evidence": "In the Settings app, navigate to... Companies list view"
+        },
+        {
+          "source": "Companies list view",
+          "relation": "CONTAINS",
+          "target": "Archive",
+          "evidence": "select the company... Actions menu and select Archive"
+        },
+        {
+          "source": "Archive",
+          "relation": "PERFORMED_BY",
+          "target": "Confirm",
+          "evidence": "Click Archive to confirm"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "multi-company-environment",
+    "heading": "Multi-company environment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "multi-company environment",
+          "type": "Module",
+          "mention": "Multi-company environment",
+          "confidence": "medium"
+        },
+        {
+          "name": "users",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "high"
+        },
+        {
+          "name": "companies",
+          "type": "Actor",
+          "mention": "companies",
+          "confidence": "medium"
+        },
+        {
+          "name": "data",
+          "type": "DataObject",
+          "mention": "data",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "users",
+          "relation": "IS_PART_OF",
+          "target": "multi-company environment",
+          "evidence": "users are granted access to one or more companies"
+        },
+        {
+          "source": "data",
+          "relation": "IS_PART_OF",
+          "target": "multi-company environment",
+          "evidence": "and data is created or modified based on its intended use within that structure."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "user-access",
+    "heading": "User access",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "multi-company environment",
+          "type": "Concept",
+          "mention": "multi-company environment",
+          "confidence": "medium"
+        },
+        {
+          "name": "user access",
+          "type": "Permission",
+          "mention": "User access",
+          "confidence": "high"
+        },
+        {
+          "name": "company selector",
+          "type": "Feature",
+          "mention": "company-selector",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "multi-company environment",
+          "relation": "ENABLES",
+          "target": "user access",
+          "evidence": "A multi-company environment allows flexible control over user access"
+        },
+        {
+          "source": "company selector",
+          "relation": "BELONGS_TO",
+          "target": "multi-company environment",
+          "evidence": ".. _general/multi-company/company-selector"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "company-selector",
+    "heading": "Company selector",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Company selector",
+          "type": "Feature",
+          "mention": "company selector",
+          "confidence": "high"
+        },
+        {
+          "name": "My Company (San Francisco)",
+          "type": "Actor",
+          "mention": "My Company (San Francisco)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Company selector",
+          "evidence": "Product: Odoo Title: Company selector"
+        },
+        {
+          "source": "Company selector",
+          "relation": "CONTAINS",
+          "target": "My Company (San Francisco)",
+          "evidence": "The current active company is *My Company (San Francisco)*."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "shared-and-company-specific-records",
+    "heading": "Shared and company-specific records",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "contacts",
+          "type": "DataObject",
+          "mention": "contacts",
+          "confidence": "medium"
+        },
+        {
+          "name": "equipment",
+          "type": "DataObject",
+          "mention": "equipment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Company field",
+          "type": "Field",
+          "mention": "Company field",
+          "confidence": "high"
+        },
+        {
+          "name": "quotations",
+          "type": "DataObject",
+          "mention": "quotations",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoices",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor bills",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "medium"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Company field",
+          "relation": "CONFIGURED_BY",
+          "target": "company",
+          "evidence": "select the company to make it visible to users logged in to that specific company."
+        },
+        {
+          "source": "Company field",
+          "relation": "APPLIES_TO",
+          "target": "products",
+          "evidence": "Data, such as products, contacts, and equipment can either be shared across companies or restricted to a specific company by setting the Company field on the relevant records"
+        },
+        {
+          "source": "Company field",
+          "relation": "APPLIES_TO",
+          "target": "contacts",
+          "evidence": "Data, such as products, contacts, and equipment can either be shared across companies or restricted to a specific company by setting the Company field on the relevant records"
+        },
+        {
+          "source": "Company field",
+          "relation": "APPLIES_TO",
+          "target": "equipment",
+          "evidence": "Data, such as products, contacts, and equipment can either be shared across companies or restricted to a specific company by setting the Company field on the relevant records"
+        },
+        {
+          "source": "quotations",
+          "relation": "BELONGS_TO",
+          "target": "company",
+          "evidence": "Records specifically linked to a particular company are accessible only within that entity. For instance, quotations, invoices, and vendor bills associated with a company are visible only when logged into that company"
+        },
+        {
+          "source": "invoices",
+          "relation": "BELONGS_TO",
+          "target": "company",
+          "evidence": "Records specifically linked to a particular company are accessible only within that entity. For instance, quotations, invoices, and vendor bills associated with a company are visible only when logged into that company"
+        },
+        {
+          "source": "vendor bills",
+          "relation": "BELONGS_TO",
+          "target": "company",
+          "evidence": "Records specifically linked to a particular company are accessible only within that entity. For instance, quotations, invoices, and vendor bills associated with a company are visible only when logged into that company"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "inter-company-transactions",
+    "heading": "Inter-company transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inter-Company Transactions",
+          "type": "Feature",
+          "mention": "Inter-Company Transactions feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Company selector",
+          "type": "Setting",
+          "mention": "company selector",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings app",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Companies section",
+          "type": "Sub-module",
+          "mention": "Companies section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Generate Bills and Refunds",
+          "type": "Action",
+          "mention": "Generate Bills and Refunds",
+          "confidence": "high"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "refund",
+          "type": "DataObject",
+          "mention": "refund",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "credit note",
+          "type": "DataObject",
+          "mention": "credit note",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create and validate",
+          "type": "Setting",
+          "mention": "Create and validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate Sales Orders",
+          "type": "Action",
+          "mention": "Generate Sales Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Generate Purchase Orders",
+          "type": "Action",
+          "mention": "Generate Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "medium"
+        },
+        {
+          "name": "request for quotation",
+          "type": "DataObject",
+          "mention": "request for quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Use Warehouse field",
+          "type": "Field",
+          "mention": "Use Warehouse field",
+          "confidence": "medium"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inter-Company Transactions",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Inter-company transactions"
+        },
+        {
+          "source": "Inter-Company Transactions",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings app",
+          "evidence": "open the Settings app, navigate to the Companies section, enable Inter-Company Transactions"
+        },
+        {
+          "source": "Settings app",
+          "relation": "CONTAINS",
+          "target": "Companies section",
+          "evidence": "open the Settings app, navigate to the Companies section"
+        },
+        {
+          "source": "Companies section",
+          "relation": "CONTAINS",
+          "target": "Inter-Company Transactions",
+          "evidence": "Companies section, enable Inter-Company Transactions"
+        },
+        {
+          "source": "Generate Bills and Refunds",
+          "relation": "CONTAINS",
+          "target": "Create and validate",
+          "evidence": "To generate a validated bill/refund, select Create and validate."
+        },
+        {
+          "source": "Generate Bills and Refunds",
+          "relation": "PRODUCES",
+          "target": "bill",
+          "evidence": "Generate a bill/refund when a company confirms an invoice/credit note"
+        },
+        {
+          "source": "Generate Bills and Refunds",
+          "relation": "PRODUCES",
+          "target": "refund",
+          "evidence": "Generate a bill/refund when a company confirms an invoice/credit note"
+        },
+        {
+          "source": "Generate Sales Orders",
+          "relation": "CONTAINS",
+          "target": "Create and validate",
+          "evidence": "To generate a validated sales order instead of a quotation, select Create and validate."
+        },
+        {
+          "source": "Generate Sales Orders",
+          "relation": "PRODUCES",
+          "target": "Sales Order",
+          "evidence": "Generate a quotation (drafted sales order)"
+        },
+        {
+          "source": "Generate Sales Orders",
+          "relation": "PRODUCES",
+          "target": "quotation",
+          "evidence": "Generate a quotation (drafted sales order)"
+        },
+        {
+          "source": "Generate Purchase Orders",
+          "relation": "CONTAINS",
+          "target": "Create and validate",
+          "evidence": "To generate a validated purchase order instead of a request for quotation, select Create and validate."
+        },
+        {
+          "source": "Generate Purchase Orders",
+          "relation": "PRODUCES",
+          "target": "Purchase Order",
+          "evidence": "Generate a request for quotation (drafted purchase order)"
+        },
+        {
+          "source": "Generate Purchase Orders",
+          "relation": "PRODUCES",
+          "target": "request for quotation",
+          "evidence": "Generate a request for quotation (drafted purchase order)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-cases",
+    "heading": "Use cases",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Use cases",
+          "type": "Concept",
+          "mention": "Use cases",
+          "confidence": "medium"
+        },
+        {
+          "name": "general/multi-company/use-cases-multinational-companies",
+          "type": "Module",
+          "mention": "general/multi-company/use-cases-multinational-companies",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "general/multi-company/use-cases-multinational-companies",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo .. _general/multi-company/use-cases-multinational-companies:"
+        },
+        {
+          "source": "general/multi-company/use-cases-multinational-companies",
+          "relation": "RELATED_TO",
+          "target": "Use cases",
+          "evidence": "Title: Use cases .. _general/multi-company/use-cases-multinational-companies:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "multinational-companies",
+    "heading": "Multinational companies",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "United States",
+          "type": "Actor",
+          "mention": "United States",
+          "confidence": "medium"
+        },
+        {
+          "name": "Canada",
+          "type": "Actor",
+          "mention": "Canada",
+          "confidence": "medium"
+        },
+        {
+          "name": "USD",
+          "type": "Concept",
+          "mention": "USD",
+          "confidence": "medium"
+        },
+        {
+          "name": "CAD",
+          "type": "Concept",
+          "mention": "CAD",
+          "confidence": "medium"
+        },
+        {
+          "name": "Multi-company feature",
+          "type": "Feature",
+          "mention": "multi-company feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Inter-company transactions",
+          "type": "Workflow",
+          "mention": "inter-company transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cross-border inventory transfers",
+          "type": "Workflow",
+          "mention": "cross-border inventory transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales process",
+          "type": "Workflow",
+          "mention": "sales process",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Multi-company feature",
+          "relation": "ENABLES",
+          "target": "Inter-company transactions",
+          "evidence": "This setup allows for inter-company transactions"
+        },
+        {
+          "source": "Inter-company transactions",
+          "relation": "ENABLES",
+          "target": "Cross-border inventory transfers",
+          "evidence": "which is essential for managing cross-border inventory transfers"
+        },
+        {
+          "source": "Multi-company feature",
+          "relation": "ENABLES",
+          "target": "Sales process",
+          "evidence": "It also simplifies the sales process by enabling customers transactions in their local currency."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Multi-company feature",
+          "evidence": "using Odoo’s multi-company feature"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "separate-processes",
+    "heading": "Separate processes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "procurement",
+          "type": "Feature",
+          "mention": "separate procurement",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory",
+          "type": "Feature",
+          "mention": "inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing workflows",
+          "type": "Workflow",
+          "mention": "manufacturing workflows",
+          "confidence": "medium"
+        },
+        {
+          "name": "multi-company feature",
+          "type": "Feature",
+          "mention": "multi-company feature",
+          "confidence": "high"
+        },
+        {
+          "name": "analytic accounting",
+          "type": "Feature",
+          "mention": "analytic accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "multiple warehouses",
+          "type": "Feature",
+          "mention": "multiple warehouses",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "multi-company feature",
+          "evidence": "the company is considering using the multi-company feature"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "analytic accounting",
+          "evidence": "can leverage existing features such as analytic accounting"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "multiple warehouses",
+          "evidence": "can leverage existing features such as analytic accounting and multiple warehouses"
+        }
+      ]
+    }
+  }
+]

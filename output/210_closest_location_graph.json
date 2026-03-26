@@ -1,0 +1,519 @@
+[
+  {
+    "section_id": "closest-location-removal",
+    "heading": "Closest location removal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Closest location removal",
+          "type": "Feature",
+          "mention": "Closest Location removal strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "Shelf A/Pallet",
+          "type": "Unknown",
+          "mention": "Shelf A/Pallet",
+          "confidence": "high"
+        },
+        {
+          "name": "Shelf A/Rack 1",
+          "type": "Unknown",
+          "mention": "Shelf A/Rack 1",
+          "confidence": "high"
+        },
+        {
+          "name": "Shelf A/Rack 2",
+          "type": "Unknown",
+          "mention": "Shelf A/Rack 2",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Closest location removal",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Closest location removal"
+        },
+        {
+          "source": "Closest location removal",
+          "relation": "CONTAINS",
+          "target": "Shelf A/Pallet",
+          "evidence": "A product is stored in the following locations: Shelf A/Pallet, Shelf A/Rack 1, and Shelf A/Rack 2."
+        },
+        {
+          "source": "Closest location removal",
+          "relation": "CONTAINS",
+          "target": "Shelf A/Rack 1",
+          "evidence": "A product is stored in the following locations: Shelf A/Pallet, Shelf A/Rack 1, and Shelf A/Rack 2."
+        },
+        {
+          "source": "Closest location removal",
+          "relation": "CONTAINS",
+          "target": "Shelf A/Rack 2",
+          "evidence": "A product is stored in the following locations: Shelf A/Pallet, Shelf A/Rack 1, and Shelf A/Rack 2."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enabling-the-closest-location-removal-strategy",
+    "heading": "Enabling the Closest Location removal strategy",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Sub-module",
+          "mention": "Warehouse heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "closest location removal strategy",
+          "type": "Feature",
+          "mention": "closest location removal strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "closest location removal strategy",
+          "relation": "REQUIRES",
+          "target": "Storage Locations",
+          "evidence": "required for the closest location removal strategy"
+        },
+        {
+          "source": "closest location removal strategy",
+          "relation": "REQUIRES",
+          "target": "Multi-Step Routes",
+          "evidence": "required for the closest location removal strategy"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONTAINS",
+          "target": "Storage Locations",
+          "evidence": "enable the Storage Locations... features"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONTAINS",
+          "target": "Multi-Step Routes",
+          "evidence": "enable the... Multi-Step Routes features"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Warehouse",
+          "evidence": "Under the Warehouse heading"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Save",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Be sure to Save your changes"
+        },
+        {
+          "source": "Storage Locations",
+          "relation": "ENABLED_BY",
+          "target": "Save",
+          "evidence": "To activate these features... enable... Save"
+        },
+        {
+          "source": "Multi-Step Routes",
+          "relation": "ENABLED_BY",
+          "target": "Save",
+          "evidence": "To activate these features... enable... Save"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-location-names",
+    "heading": "Configure location names",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Locations",
+          "type": "Sub-module",
+          "mention": "Locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Location Name",
+          "type": "Field",
+          "mention": "Location Name field",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Locations",
+          "evidence": "Configuration --> Locations"
+        },
+        {
+          "source": "Locations",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "Navigating within Inventory app to Locations"
+        },
+        {
+          "source": "Location Name",
+          "relation": "BELONGS_TO",
+          "target": "Locations",
+          "evidence": "Location Name field is on a location"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Product Odoo contains Inventory app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-the-removal-strategy",
+    "heading": "Set the removal strategy",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Removal Strategy",
+          "type": "Setting",
+          "mention": "removal strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "Closest Location",
+          "type": "Standard",
+          "mention": "Closest Location",
+          "confidence": "high"
+        },
+        {
+          "name": "parent location",
+          "type": "DataObject",
+          "mention": "parent location",
+          "confidence": "high"
+        },
+        {
+          "name": "storage location",
+          "type": "DataObject",
+          "mention": "storage location",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Stock",
+          "type": "DataObject",
+          "mention": "WH/Stock",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Stock/Shelf 1",
+          "type": "DataObject",
+          "mention": "WH/Stock/Shelf 1",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Stock/Shelf 2",
+          "type": "DataObject",
+          "mention": "WH/Stock/Shelf 2",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Stock/Shelf 3",
+          "type": "DataObject",
+          "mention": "WH/Stock/Shelf 3",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations list",
+          "type": "Feature",
+          "mention": "Locations list",
+          "confidence": "high"
+        },
+        {
+          "name": "packing location",
+          "type": "Concept",
+          "mention": "packing location",
+          "confidence": "medium"
+        },
+        {
+          "name": "iPhone charger",
+          "type": "Concept",
+          "mention": "iPhone charger",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "parent location",
+          "relation": "BELONGS_TO",
+          "target": "WH/Stock",
+          "evidence": "set the removal strategy on the parent location, `WH/Stock`"
+        },
+        {
+          "source": "WH/Stock/Shelf 1",
+          "relation": "IS_PART_OF",
+          "target": "WH/Stock",
+          "evidence": "the storage location `WH/Stock/Shelf 1`"
+        },
+        {
+          "source": "WH/Stock/Shelf 2",
+          "relation": "IS_PART_OF",
+          "target": "WH/Stock",
+          "evidence": "WH/Stock/Shelf 2"
+        },
+        {
+          "source": "WH/Stock/Shelf 3",
+          "relation": "IS_PART_OF",
+          "target": "WH/Stock",
+          "evidence": "WH/Stock/Shelf 3"
+        },
+        {
+          "source": "Removal Strategy",
+          "relation": "USES_METHOD",
+          "target": "Closest Location",
+          "evidence": "In the Removal Strategy field, select Closest Location"
+        },
+        {
+          "source": "Removal Strategy",
+          "relation": "CONFIGURED_BY",
+          "target": "parent location",
+          "evidence": "set the removal strategy on the parent location"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "workflow",
+    "heading": "Workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "iPhone Charger",
+          "type": "Product",
+          "mention": "iPhone Charger",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Stock/Shelf A/Pallets",
+          "type": "Location",
+          "mention": "WH/Stock/Shelf A/Pallets",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Stock/Shelf A/Rack 1",
+          "type": "Location",
+          "mention": "WH/Stock/Shelf A/Rack 1",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Stock/Shelf A/Rack2",
+          "type": "Location",
+          "mention": "WH/Stock/Shelf A/Rack2",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Feature",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Locations report",
+          "type": "Report",
+          "mention": "Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery order",
+          "type": "Workflow",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "Workflow",
+          "mention": "quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Detailed Operations",
+          "type": "Feature",
+          "mention": "Detailed Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Pick From",
+          "type": "Field",
+          "mention": "Pick From",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "iPhone Charger",
+          "relation": "IS_PART_OF",
+          "target": "WH/Stock/Shelf A/Pallets",
+          "evidence": "iPhone Charger, which is stored in WH/Stock/Shelf A/Pallets"
+        },
+        {
+          "source": "iPhone Charger",
+          "relation": "IS_PART_OF",
+          "target": "WH/Stock/Shelf A/Rack 1",
+          "evidence": "iPhone Charger, which is stored in WH/Stock/Shelf A/Pallets, WH/Stock/Shelf A/Rack 1"
+        },
+        {
+          "source": "iPhone Charger",
+          "relation": "IS_PART_OF",
+          "target": "WH/Stock/Shelf A/Rack2",
+          "evidence": "iPhone Charger, which is stored in WH/Stock/Shelf A/Pallets, WH/Stock/Shelf A/Rack 1, and WH/Stock/Shelf A/Rack2"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "HAS_REPORT",
+          "target": "Locations report",
+          "evidence": "open the Locations report by clicking Inventory app --> Reporting --> Locations"
+        },
+        {
+          "source": "Sales app",
+          "relation": "PRODUCES",
+          "target": "quotation",
+          "evidence": "navigating to the Sales app and creating a new quotation"
+        },
+        {
+          "source": "quotation",
+          "relation": "TRIGGERED_BY",
+          "target": "delivery order",
+          "evidence": "After adding the products, clicking Confirm creates a delivery order"
+        },
+        {
+          "source": "Detailed Operations",
+          "relation": "CONTAINS",
+          "target": "Pick From",
+          "evidence": "In the Detailed Operations pop-up window, the Pick From field displays"
+        },
+        {
+          "source": "delivery order",
+          "relation": "SEE_ALSO",
+          "target": "removal strategies",
+          "evidence": "About removal strategies"
+        },
+        {
+          "source": "delivery order",
+          "relation": "SEE_ALSO",
+          "target": "Set up removal strategy",
+          "evidence": "Set up removal strategy"
+        }
+      ]
+    }
+  }
+]

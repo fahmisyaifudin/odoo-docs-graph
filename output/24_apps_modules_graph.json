@@ -1,0 +1,376 @@
+[
+  {
+    "section_id": "apps-and-modules",
+    "heading": "Apps and modules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps dashboard",
+          "type": "Module",
+          "mention": "Apps dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps filter",
+          "type": "Setting",
+          "mention": "Apps filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Extra",
+          "type": "Feature",
+          "mention": "Extra",
+          "confidence": "high"
+        },
+        {
+          "name": "administrator",
+          "type": "Actor",
+          "mention": "Administrators",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "high"
+        },
+        {
+          "name": "database users",
+          "type": "Actor",
+          "mention": "database users",
+          "confidence": "medium"
+        },
+        {
+          "name": "staging environment",
+          "type": "Concept",
+          "mention": "staging environment",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Apps dashboard",
+          "relation": "CONTAINS",
+          "target": "Apps filter",
+          "evidence": "By default, an Apps filter is applied."
+        },
+        {
+          "source": "administrator",
+          "relation": "PERFORMED_BY",
+          "target": "Apps dashboard",
+          "evidence": "Administrators manage the database"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Apps dashboard",
+          "evidence": "Install... any needed apps and modules from the Apps dashboard."
+        },
+        {
+          "source": "Apps dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Extra",
+          "evidence": "To search for modules too, select Extra from the fa-filter Filters."
+        },
+        {
+          "source": "administrator",
+          "relation": "GOVERNED_BY",
+          "target": "database",
+          "evidence": "The administrator of the database is responsible for its usage"
+        },
+        {
+          "source": "Apps dashboard",
+          "relation": "ENABLES",
+          "target": "administrator",
+          "evidence": "Administrators manage the database"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "install-apps-and-modules",
+    "heading": "Install apps and modules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps",
+          "type": "Module",
+          "mention": "Apps",
+          "confidence": "high"
+        },
+        {
+          "name": "main Odoo dashboard",
+          "type": "Feature",
+          "mention": "main Odoo dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Activate",
+          "type": "Action",
+          "mention": "Activate",
+          "confidence": "high"
+        },
+        {
+          "name": "app's card",
+          "type": "Feature",
+          "mention": "app's card",
+          "confidence": "medium"
+        },
+        {
+          "name": "app or module",
+          "type": "Unknown",
+          "mention": "app or module",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps",
+          "type": "Module",
+          "mention": "Apps",
+          "confidence": "high"
+        },
+        {
+          "name": "Update Apps List",
+          "type": "Action",
+          "mention": "Update Apps List",
+          "confidence": "high"
+        },
+        {
+          "name": "Update",
+          "type": "Action",
+          "mention": "Update",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Apps",
+          "evidence": "From the main Odoo dashboard, open the Apps app"
+        },
+        {
+          "source": "Apps",
+          "relation": "HAS_FEATURE",
+          "target": "search bar",
+          "evidence": "then click on the search bar to find the app"
+        },
+        {
+          "source": "Apps",
+          "relation": "HAS_FEATURE",
+          "target": "app's card",
+          "evidence": "scroll to find it. From here, click Activate on the app's card."
+        },
+        {
+          "source": "Activate",
+          "relation": "TRIGGERED_BY",
+          "target": "app's card",
+          "evidence": "click Activate on the app's card"
+        },
+        {
+          "source": "Update Apps List",
+          "relation": "TRIGGERED_BY",
+          "target": "developer mode",
+          "evidence": "by activating developer mode <developer-mode>, and then go to Apps --> Update Apps List"
+        },
+        {
+          "source": "Update",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "click Update"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "upgrade-apps-and-modules",
+    "heading": "Upgrade apps and modules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps",
+          "type": "Module",
+          "mention": "Apps",
+          "confidence": "high"
+        },
+        {
+          "name": "app",
+          "type": "Module",
+          "mention": "app",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-ellipsis-v icon",
+          "type": "Feature",
+          "mention": "fa-ellipsis-v (vertical ellipsis) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Upgrade",
+          "type": "Action",
+          "mention": "Upgrade",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Apps",
+          "evidence": "Product: Odoo. Go to Apps"
+        },
+        {
+          "source": "Apps",
+          "relation": "CONTAINS",
+          "target": "app",
+          "evidence": "Go to Apps and then on the app to upgrade"
+        },
+        {
+          "source": "app",
+          "relation": "HAS_FEATURE",
+          "target": "fa-ellipsis-v icon",
+          "evidence": "on the app to upgrade, click the fa-ellipsis-v (vertical ellipsis) icon"
+        },
+        {
+          "source": "fa-ellipsis-v icon",
+          "relation": "ENABLES",
+          "target": "Upgrade",
+          "evidence": "click the fa-ellipsis-v (vertical ellipsis) icon and select Upgrade."
+        },
+        {
+          "source": "Upgrade",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click ... and select Upgrade. (implies user action)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "uninstall-apps-and-modules",
+    "heading": "Uninstall apps and modules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Apps",
+          "type": "Module",
+          "mention": "Apps",
+          "confidence": "high"
+        },
+        {
+          "name": "Uninstall",
+          "type": "Action",
+          "mention": "Uninstall",
+          "confidence": "high"
+        },
+        {
+          "name": "Uninstall module pop-up window",
+          "type": "Feature",
+          "mention": "Uninstall module pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Show All checkbox",
+          "type": "Setting",
+          "mention": "Show All checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents to Delete section",
+          "type": "Feature",
+          "mention": "Documents to Delete section",
+          "confidence": "high"
+        },
+        {
+          "name": "database records",
+          "type": "DataObject",
+          "mention": "database records",
+          "confidence": "high"
+        },
+        {
+          "name": "Restaurant app",
+          "type": "Module",
+          "mention": "Restaurant app",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale app",
+          "type": "Module",
+          "mention": "Point of Sale app",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Apps",
+          "relation": "HAS_FEATURE",
+          "target": "Uninstall module pop-up window",
+          "evidence": "Go to Apps and then on the app to uninstall, click ... icon and select Uninstall to open the Uninstall module pop-up window."
+        },
+        {
+          "source": "Uninstall module pop-up window",
+          "relation": "HAS_FEATURE",
+          "target": "Apps to Uninstall section",
+          "evidence": "The Apps to Uninstall section lists the applications to be uninstalled."
+        },
+        {
+          "source": "Uninstall module pop-up window",
+          "relation": "HAS_FEATURE",
+          "target": "Documents to Delete section",
+          "evidence": "The Documents to Delete section lists the database records to be deleted."
+        },
+        {
+          "source": "Uninstall module pop-up window",
+          "relation": "CONFIGURED_BY",
+          "target": "Show All checkbox",
+          "evidence": "Select the Show All checkbox to display all module dependencies."
+        },
+        {
+          "source": "Restaurant app",
+          "relation": "REQUIRES",
+          "target": "Point of Sale app",
+          "evidence": "The Restaurant app requires the Point of Sale app to function..."
+        },
+        {
+          "source": "Uninstall",
+          "relation": "PRODUCES",
+          "target": "database records",
+          "evidence": "...uninstalling the app, its dependencies, and all related database records..."
+        }
+      ]
+    }
+  }
+]

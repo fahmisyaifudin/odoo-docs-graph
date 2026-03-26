@@ -1,0 +1,973 @@
+[
+  {
+    "section_id": "tax-computation",
+    "heading": "Tax computation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Tax Computation",
+          "type": "Field",
+          "mention": "The Tax Computation field",
+          "confidence": "high"
+        },
+        {
+          "name": "Group of Taxes",
+          "type": "Standard",
+          "mention": "Group of Taxes <taxes/computation/group-of-taxes>: a combination of several other taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed",
+          "type": "Standard",
+          "mention": "Fixed <taxes/computation/fixed>: a fixed amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage of Price",
+          "type": "Standard",
+          "mention": "Percentage of Price <taxes/computation/percentage-of-price>: a percentage of the tax-excluded sales price",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage of Price Tax Included",
+          "type": "Standard",
+          "mention": "Percentage of Price Tax Included <taxes/computation/percentage-of-price-tax-included>: a percentage of the tax-included total",
+          "confidence": "high"
+        },
+        {
+          "name": "Custom Formula",
+          "type": "Standard",
+          "mention": "Custom Formula <taxes/computation/python-code>: a custom, user-defined formula",
+          "confidence": "high"
+        },
+        {
+          "name": "tax-excluded sales price",
+          "type": "Concept",
+          "mention": "tax-excluded sales price",
+          "confidence": "high"
+        },
+        {
+          "name": "tax-included total",
+          "type": "Concept",
+          "mention": "tax-included total",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax Computation",
+          "relation": "CONTAINS",
+          "target": "Group of Taxes",
+          "evidence": "The Tax Computation field determines... The following options are available: - Group of Taxes"
+        },
+        {
+          "source": "Tax Computation",
+          "relation": "CONTAINS",
+          "target": "Fixed",
+          "evidence": "The following options are available: - Fixed"
+        },
+        {
+          "source": "Tax Computation",
+          "relation": "CONTAINS",
+          "target": "Percentage of Price",
+          "evidence": "The following options are available: - Percentage of Price"
+        },
+        {
+          "source": "Tax Computation",
+          "relation": "CONTAINS",
+          "target": "Percentage of Price Tax Included",
+          "evidence": "The following options are available: - Percentage of Price Tax Included"
+        },
+        {
+          "source": "Tax Computation",
+          "relation": "CONTAINS",
+          "target": "Custom Formula",
+          "evidence": "The following options are available: - Custom Formula"
+        },
+        {
+          "source": "Percentage of Price",
+          "relation": "USES_METHOD",
+          "target": "tax-excluded sales price",
+          "evidence": "Percentage of Price... a percentage of the tax-excluded sales price"
+        },
+        {
+          "source": "Percentage of Price Tax Included",
+          "relation": "USES_METHOD",
+          "target": "tax-included total",
+          "evidence": "Percentage of Price Tax Included... a percentage of the tax-included total"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "group-of-taxes",
+    "heading": "Group of taxes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Group of taxes",
+          "type": "Feature",
+          "mention": "Group of taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "sub-tax",
+          "type": "Concept",
+          "mention": "sub-taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax sequence",
+          "type": "Concept",
+          "mention": "tax sequence",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Group of taxes",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Group of taxes"
+        },
+        {
+          "source": "Group of taxes",
+          "relation": "CONTAINS",
+          "target": "sub-tax",
+          "evidence": "The tax is a combination of multiple sub-taxes."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "fixed",
+    "heading": "Fixed",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Fixed tax",
+          "type": "Standard",
+          "mention": "Fixed",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax amount",
+          "type": "Field",
+          "mention": "tax amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fixed tax amount",
+          "type": "Field",
+          "mention": "fixed tax amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "quantity",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fixed tax",
+          "relation": "COMPLIES_WITH",
+          "target": "Tax calculation",
+          "evidence": "The computation is tax amount = fixed tax amount × quantity."
+        },
+        {
+          "source": "Tax amount",
+          "relation": "GENERATES",
+          "target": "Fixed tax amount",
+          "evidence": "The computation is tax amount = fixed tax amount × quantity."
+        },
+        {
+          "source": "Tax amount",
+          "relation": "PRODUCES",
+          "target": "Quantity",
+          "evidence": "The computation is tax amount = fixed tax amount × quantity."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "percentage-of-price",
+    "heading": "Percentage of price",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage of price",
+          "type": "Concept",
+          "mention": "Percentage of price",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax-excluded subtotal",
+          "type": "Concept",
+          "mention": "tax-excluded subtotal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Included in Price",
+          "type": "Field",
+          "mention": "Included in Price field",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Excluded",
+          "type": "Concept",
+          "mention": "Tax Excluded",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Included",
+          "type": "Concept",
+          "mention": "Tax Included",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales price",
+          "type": "Concept",
+          "mention": "sales price",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax rate",
+          "type": "Concept",
+          "mention": "tax rate",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax amount",
+          "type": "Concept",
+          "mention": "tax amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Product sales price",
+          "type": "DataObject",
+          "mention": "Product sales price",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Percentage of price",
+          "relation": "APPLIES_TO",
+          "target": "Sales price",
+          "evidence": "The tax rate is a percentage of the tax-excluded subtotal."
+        },
+        {
+          "source": "Included in Price",
+          "relation": "GOVERNED_BY",
+          "target": "Percentage of price",
+          "evidence": "The exact tax computation depends on the Included in Price field."
+        },
+        {
+          "source": "Tax Excluded",
+          "relation": "RELATED_TO",
+          "target": "Tax-excluded subtotal",
+          "evidence": "If Included in Price is Tax Excluded, the computation uses sales price."
+        },
+        {
+          "source": "Tax Included",
+          "relation": "RELATED_TO",
+          "target": "Tax-excluded subtotal",
+          "evidence": "If Included in Price is Tax Included, the computation uses sales price."
+        },
+        {
+          "source": "Percentage of price",
+          "relation": "ENABLES",
+          "target": "Tax amount",
+          "evidence": "Tax amount = sales price × tax rate (Tax Excluded) or sales price × (tax rate/(1+tax rate)) (Tax Included)."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "percentage-of-price-tax-included",
+    "heading": "Percentage of price tax included",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Percentage of price tax included",
+          "type": "Feature",
+          "mention": "Percentage of price tax included",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage of Price",
+          "type": "Feature",
+          "mention": "Percentage of Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Brazil",
+          "type": "Actor",
+          "mention": "Brazil",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bolivia",
+          "type": "Actor",
+          "mention": "Bolivia",
+          "confidence": "medium"
+        },
+        {
+          "name": "taxes/computation/percentage-of-price",
+          "type": "Concept",
+          "mention": "Percentage of Price",
+          "confidence": "medium"
+        },
+        {
+          "name": "taxes/included-in-price",
+          "type": "Setting",
+          "mention": "Included in Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Included",
+          "type": "Setting",
+          "mention": "Tax Included",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Excluded",
+          "type": "Setting",
+          "mention": "Tax Excluded",
+          "confidence": "high"
+        },
+        {
+          "name": "sales price",
+          "type": "Field",
+          "mention": "sales price",
+          "confidence": "high"
+        },
+        {
+          "name": "tax rate",
+          "type": "Field",
+          "mention": "tax rate",
+          "confidence": "high"
+        },
+        {
+          "name": "tax amount",
+          "type": "DataObject",
+          "mention": "tax amount",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Percentage of price tax included",
+          "relation": "COMPLIES_WITH",
+          "target": "Brazil",
+          "evidence": "This tax computation is rarely used and only useful in countries (e.g., Brazil, Bolivia)"
+        },
+        {
+          "source": "Percentage of price tax included",
+          "relation": "COMPLIES_WITH",
+          "target": "Bolivia",
+          "evidence": "This tax computation is rarely used and only useful in countries (e.g., Brazil, Bolivia)"
+        },
+        {
+          "source": "Percentage of price tax included",
+          "relation": "SEE_ALSO",
+          "target": "Percentage of Price",
+          "evidence": "For the more common need to compute tax amounts from a tax-included price, use the Percentage of Price tax computation"
+        },
+        {
+          "source": "Percentage of price tax included",
+          "relation": "SEE_ALSO",
+          "target": "taxes/computation/percentage-of-price",
+          "evidence": "For the more common need to compute tax amounts from a tax-included price, use the Percentage of Price tax computation"
+        },
+        {
+          "source": "Percentage of price tax included",
+          "relation": "SEE_ALSO",
+          "target": "Tax Included",
+          "evidence": "with Included in Price set to Tax Included."
+        },
+        {
+          "source": "Percentage of price tax included",
+          "relation": "CONFIGURED_BY",
+          "target": "taxes/included-in-price",
+          "evidence": "The exact tax computation depends on the Included in Price field"
+        },
+        {
+          "source": "Percentage of price tax included",
+          "relation": "GENERATES",
+          "target": "tax amount",
+          "evidence": "\\text{tax amount} = \\text{sales price} \\times \\frac{\\text{tax rate}}{1 - \\text{tax rate}}."
+        },
+        {
+          "source": "Percentage of price tax included",
+          "relation": "USES_METHOD",
+          "target": "Tax Excluded",
+          "evidence": "If Included in Price is set to Tax Excluded"
+        },
+        {
+          "source": "Percentage of price tax included",
+          "relation": "USES_METHOD",
+          "target": "Tax Included",
+          "evidence": "If Included in Price is set to Tax Included"
+        },
+        {
+          "source": "tax amount",
+          "relation": "USES_METHOD",
+          "target": "sales price",
+          "evidence": "\\text{tax amount} = \\text{sales price} \\times \\frac{\\text{tax rate}}{1 - \\text{tax rate}}."
+        },
+        {
+          "source": "tax amount",
+          "relation": "USES_METHOD",
+          "target": "tax rate",
+          "evidence": "\\text{tax amount} = \\text{sales price} \\times \\frac{\\text{tax rate}}{1 - \\text{tax rate}}."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "custom-formula",
+    "heading": "Custom formula",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Custom Formula tax",
+          "type": "Feature",
+          "mention": "Custom Formula tax",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed tax",
+          "type": "Feature",
+          "mention": "Fixed tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "account_python_tax",
+          "type": "Module",
+          "mention": "Define Taxes as Python Code (`account_python_tax`) module",
+          "confidence": "high"
+        },
+        {
+          "name": "Formula field",
+          "type": "Field",
+          "mention": "Formula field",
+          "confidence": "high"
+        },
+        {
+          "name": "price_unit",
+          "type": "Field",
+          "mention": "`price_unit`: the unit price of the product",
+          "confidence": "high"
+        },
+        {
+          "name": "base",
+          "type": "Field",
+          "mention": "`base`: the taxable basis on which the tax is applied",
+          "confidence": "high"
+        },
+        {
+          "name": "quantity",
+          "type": "Field",
+          "mention": "`quantity`: the quantity of the product",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "`product`: the product record",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Custom Formula tax",
+          "evidence": "Product: Odoo...For a Custom Formula tax..."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Fixed tax",
+          "evidence": "If a tax can be expressed as a multiple of the quantity...it can be defined as a Fixed tax"
+        },
+        {
+          "source": "Custom Formula tax",
+          "relation": "REQUIRES",
+          "target": "account_python_tax",
+          "evidence": "To use Custom Formula taxes, install the Define Taxes as Python Code (`account_python_tax`) module"
+        },
+        {
+          "source": "Custom Formula tax",
+          "relation": "CONFIGURED_BY",
+          "target": "Formula field",
+          "evidence": "For a Custom Formula tax, the tax amount is computed according to a Python expression defined in the Formula field"
+        },
+        {
+          "source": "Formula field",
+          "relation": "CONTAINS",
+          "target": "price_unit",
+          "evidence": "The Python expression may contain...`price_unit`: the unit price of the product"
+        },
+        {
+          "source": "Formula field",
+          "relation": "CONTAINS",
+          "target": "base",
+          "evidence": "The Python expression may contain...`base`: the taxable basis"
+        },
+        {
+          "source": "Formula field",
+          "relation": "CONTAINS",
+          "target": "quantity",
+          "evidence": "The Python expression may contain...`quantity`: the quantity of the product"
+        },
+        {
+          "source": "Formula field",
+          "relation": "CONTAINS",
+          "target": "product",
+          "evidence": "The Python expression may contain...`product`: the product record"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "included-in-price",
+    "heading": "Included in price",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Tax Included",
+          "type": "Concept",
+          "mention": "Tax Included",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Excluded",
+          "type": "Concept",
+          "mention": "Tax Excluded",
+          "confidence": "high"
+        },
+        {
+          "name": "Prices setting",
+          "type": "Setting",
+          "mention": "Prices setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Module",
+          "mention": "Taxes section",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Product",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "company-wide default",
+          "type": "Setting",
+          "mention": "company-wide default",
+          "confidence": "high"
+        },
+        {
+          "name": "B2C sales",
+          "type": "Concept",
+          "mention": "B2C sales",
+          "confidence": "high"
+        },
+        {
+          "name": "B2B_B2C",
+          "type": "Concept",
+          "mention": "B2B_B2C",
+          "confidence": "low"
+        },
+        {
+          "name": "invoices",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "tax computation",
+          "type": "Feature",
+          "mention": "tax computation",
+          "confidence": "high"
+        },
+        {
+          "name": "sales price",
+          "type": "Field",
+          "mention": "sales price",
+          "confidence": "high"
+        },
+        {
+          "name": "tax amount",
+          "type": "Concept",
+          "mention": "tax amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage of Price tax",
+          "type": "Concept",
+          "mention": "Percentage of Price tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax-excluded base",
+          "type": "Concept",
+          "mention": "tax-excluded base",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Prices setting",
+          "relation": "CONTAINS",
+          "target": "Tax Included",
+          "evidence": "The tax amount is included in the sales price."
+        },
+        {
+          "source": "Prices setting",
+          "relation": "CONTAINS",
+          "target": "Tax Excluded",
+          "evidence": "The tax amount is not included in the sales price."
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Taxes",
+          "evidence": "find the Taxes section"
+        },
+        {
+          "source": "Taxes",
+          "relation": "CONTAINS",
+          "target": "Prices setting",
+          "evidence": "set the Prices setting"
+        },
+        {
+          "source": "Prices setting",
+          "relation": "SUPPORTS",
+          "target": "company-wide default",
+          "evidence": "Default indicates that the tax follows the company-wide default."
+        },
+        {
+          "source": "Prices setting",
+          "relation": "CONFIGURED_BY",
+          "target": "company-wide default",
+          "evidence": "To set a company-wide default for this setting"
+        },
+        {
+          "source": "Prices setting",
+          "relation": "SUPPORTS",
+          "target": "Tax Included",
+          "evidence": "Tax Included indicates that the tax amount is included in the sales price."
+        },
+        {
+          "source": "Prices setting",
+          "relation": "SUPPORTS",
+          "target": "Tax Excluded",
+          "evidence": "Tax Excluded indicates that the tax amount is not included in the sales price."
+        },
+        {
+          "source": "Tax Included",
+          "relation": "RELATED_TO",
+          "target": "B2C sales",
+          "evidence": "This makes it suitable for B2C sales in most countries"
+        },
+        {
+          "source": "Tax Included",
+          "relation": "SEE_ALSO",
+          "target": "B2B_B2C",
+          "evidence": "see B2B_B2C"
+        },
+        {
+          "source": "Prices setting",
+          "relation": "GOVERNED_BY",
+          "target": "invoices",
+          "evidence": "This setting cannot be changed once invoices have been created."
+        },
+        {
+          "source": "Tax Included",
+          "relation": "ENABLES",
+          "target": "tax computation",
+          "evidence": "The tax computation will therefore split the sales price"
+        },
+        {
+          "source": "Tax Excluded",
+          "relation": "ENABLES",
+          "target": "tax computation",
+          "evidence": "The tax computation will therefore compute a tax amount"
+        },
+        {
+          "source": "tax computation",
+          "relation": "PRODUCES",
+          "target": "sales price",
+          "evidence": "We then have: Product sales price"
+        },
+        {
+          "source": "tax computation",
+          "relation": "PRODUCES",
+          "target": "tax amount",
+          "evidence": "We then have: Tax"
+        },
+        {
+          "source": "Percentage of Price tax",
+          "relation": "APPLIES_TO",
+          "target": "sales price",
+          "mention": "Percentage of Price tax",
+          "confidence": "medium"
+        },
+        {
+          "source": "Percentage of Price tax",
+          "relation": "APPLIES_TO",
+          "target": "tax amount",
+          "mention": "Percentage of Price tax",
+          "confidence": "medium"
+        },
+        {
+          "source": "tax computation",
+          "relation": "PRODUCES",
+          "target": "tax-excluded base",
+          "evidence": "split the sales price into a tax-excluded base"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "affect-base-of-subsequent-taxes",
+    "heading": "Affect base of subsequent taxes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Affect base of subsequent taxes",
+          "type": "Setting",
+          "mention": "Affect base of subsequent taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Included in Price",
+          "type": "Setting",
+          "mention": "Included in Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Base affected by preceding taxes",
+          "type": "Setting",
+          "mention": "Base affected by preceding taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage of Price tax",
+          "type": "Concept",
+          "mention": "Percentage of Price tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "Ecotax",
+          "type": "Concept",
+          "mention": "Ecotax",
+          "confidence": "medium"
+        },
+        {
+          "name": "21% VAT tax",
+          "type": "Concept",
+          "mention": "21% VAT tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax-excluded",
+          "type": "Concept",
+          "mention": "Tax-excluded",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax-included",
+          "type": "Concept",
+          "mention": "Tax-included",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes list",
+          "type": "Concept",
+          "mention": "Taxes list",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes",
+          "type": "Sub-module",
+          "mention": "Taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "product line",
+          "type": "DataObject",
+          "mention": "product line",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales price",
+          "type": "Concept",
+          "mention": "sales price",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Affect base of subsequent taxes",
+          "relation": "CONFIGURED_BY",
+          "target": "Included in Price",
+          "evidence": "If Affect base of subsequent taxes is enabled and Included in Price is set to Tax Excluded..."
+        },
+        {
+          "source": "Affect base of subsequent taxes",
+          "relation": "GOVERNED_BY",
+          "target": "Base affected by preceding taxes",
+          "evidence": "Any subsequent tax with its Base affected by preceding taxes will be based on..."
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "To modify the order, go to Accounting --> Configuration --> Taxes..."
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Taxes",
+          "evidence": "To modify the order, go to Accounting --> Configuration --> Taxes..."
+        },
+        {
+          "source": "product line",
+          "relation": "RELATED_TO",
+          "target": "Taxes list",
+          "evidence": "The order in which taxes are applied depends only on the order in which they appear in the Taxes list..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "base-affected-by-preceding-taxes",
+    "heading": "Base affected by preceding taxes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Base affected by preceding taxes",
+          "type": "Setting",
+          "mention": "Base affected by preceding taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax Included",
+          "type": "Standard",
+          "mention": "Tax Included",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fixed tax computation",
+          "type": "Standard",
+          "mention": "Fixed tax computation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Base affected by preceding taxes",
+          "relation": "CONFIGURED_BY",
+          "target": "developer mode",
+          "evidence": "This setting, which is only visible in developer mode"
+        },
+        {
+          "source": "Tax Included",
+          "relation": "RELATED_TO",
+          "target": "Base affected by preceding taxes",
+          "evidence": "Taxes with Included in Price set to Tax Included do not have this setting."
+        },
+        {
+          "source": "Fixed tax computation",
+          "relation": "RELATED_TO",
+          "target": "Tax Included",
+          "evidence": "Such taxes are never affected... except if they have the Fixed tax computation type."
+        }
+      ]
+    }
+  }
+]

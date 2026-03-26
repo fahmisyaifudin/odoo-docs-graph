@@ -1,0 +1,906 @@
+[
+  {
+    "section_id": "configure-dns-records-to-send-emails-in-odoo",
+    "heading": "Configure DNS records to send emails in Odoo",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Online",
+          "type": "Product",
+          "mention": "Odoo Online",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo.sh",
+          "type": "Product",
+          "mention": "Odoo.sh",
+          "confidence": "high"
+        },
+        {
+          "name": "default Odoo subdomain address",
+          "type": "Setting",
+          "mention": "default Odoo subdomain address",
+          "confidence": "medium"
+        },
+        {
+          "name": "SPF",
+          "type": "Concept",
+          "mention": "SPF",
+          "confidence": "high"
+        },
+        {
+          "name": "DKIM",
+          "type": "Concept",
+          "mention": "DKIM",
+          "confidence": "high"
+        },
+        {
+          "name": "DMARC",
+          "type": "Concept",
+          "mention": "DMARC",
+          "confidence": "high"
+        },
+        {
+          "name": "email",
+          "type": "DataObject",
+          "mention": "emails",
+          "confidence": "medium"
+        },
+        {
+          "name": "custom domain",
+          "type": "Setting",
+          "mention": "custom domain",
+          "confidence": "medium"
+        },
+        {
+          "name": "default Odoo email server",
+          "type": "Module",
+          "mention": "default Odoo email server",
+          "confidence": "medium"
+        },
+        {
+          "name": "outgoing email server",
+          "type": "Module",
+          "mention": "outgoing email server",
+          "confidence": "medium"
+        },
+        {
+          "name": "email service provider",
+          "type": "Actor",
+          "mention": "Email service providers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo Online",
+          "relation": "CONTAINS",
+          "target": "default Odoo subdomain address",
+          "evidence": "using the default Odoo subdomain address"
+        },
+        {
+          "source": "Odoo.sh",
+          "relation": "CONTAINS",
+          "target": "default Odoo subdomain address",
+          "evidence": "using the default Odoo subdomain address"
+        },
+        {
+          "source": "default Odoo subdomain address",
+          "relation": "SUPPORTS",
+          "target": "SPF",
+          "evidence": "pre-configured to send authenticated emails compliant with SPF"
+        },
+        {
+          "source": "default Odoo subdomain address",
+          "relation": "SUPPORTS",
+          "target": "DKIM",
+          "evidence": "pre-configured to send authenticated emails compliant with DKIM"
+        },
+        {
+          "source": "default Odoo subdomain address",
+          "relation": "SUPPORTS",
+          "target": "DMARC",
+          "evidence": "pre-configured to send authenticated emails compliant with DMARC"
+        },
+        {
+          "source": "custom domain",
+          "relation": "REQUIRES",
+          "target": "SPF",
+          "evidence": "configuring SPF records correctly is essential"
+        },
+        {
+          "source": "custom domain",
+          "relation": "REQUIRES",
+          "target": "DKIM",
+          "evidence": "configuring DKIM records correctly is essential"
+        },
+        {
+          "source": "default Odoo email server",
+          "relation": "SUPPORTS",
+          "target": "SPF",
+          "evidence": "the SPF records must be configured"
+        },
+        {
+          "source": "default Odoo email server",
+          "relation": "SUPPORTS",
+          "target": "DKIM",
+          "evidence": "the DKIM records must be configured"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "spf-(sender-policy-framework)",
+    "heading": "SPF (Sender Policy Framework)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SPF",
+          "type": "Feature",
+          "mention": "SPF",
+          "confidence": "high"
+        },
+        {
+          "name": "Sender Policy Framework",
+          "type": "Concept",
+          "mention": "Sender Policy Framework",
+          "confidence": "high"
+        },
+        {
+          "name": "Alias Domain",
+          "type": "Field",
+          "mention": "Alias Domain",
+          "confidence": "high"
+        },
+        {
+          "name": "General Settings",
+          "type": "Module",
+          "mention": "General Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "SPF record",
+          "type": "Concept",
+          "mention": "SPF record",
+          "confidence": "high"
+        },
+        {
+          "name": "DNS",
+          "type": "Concept",
+          "mention": "DNS",
+          "confidence": "high"
+        },
+        {
+          "name": "Email",
+          "type": "Concept",
+          "mention": "email",
+          "confidence": "high"
+        },
+        {
+          "name": "MXToolbox SPF Record Check",
+          "type": "Integration",
+          "mention": "MXToolbox SPF Record Check",
+          "confidence": "high"
+        },
+        {
+          "name": "Bounce address",
+          "type": "Field",
+          "mention": "bounce address",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SPF",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "In Odoo, the SPF test is performed..."
+        },
+        {
+          "source": "Alias Domain",
+          "relation": "BELONGS_TO",
+          "target": "General Settings",
+          "evidence": "Alias Domain field found under the database's General Settings."
+        },
+        {
+          "source": "SPF",
+          "relation": "CONFIGURED_BY",
+          "target": "SPF record",
+          "evidence": "The SPF policy of a domain is set using a TXT record."
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Sender Policy Framework",
+          "evidence": "The Sender Policy Framework (SPF) protocol..."
+        },
+        {
+          "source": "SPF",
+          "relation": "RELATED_TO",
+          "target": "Email",
+          "evidence": "...specify which servers are allowed to send emails from that domain."
+        },
+        {
+          "source": "MXToolbox SPF Record Check",
+          "relation": "RELATED_TO",
+          "target": "SPF record",
+          "evidence": "Check the SPF record using a tool like MXToolbox SPF Record Check."
+        },
+        {
+          "source": "SPF test",
+          "relation": "CONFIGURED_BY",
+          "target": "Bounce address",
+          "evidence": "the SPF test is performed on the bounce address"
+        },
+        {
+          "source": "SPF",
+          "relation": "RELATED_TO",
+          "target": "DNS",
+          "evidence": "The process to create or modify an SPF record depends on the provider hosting the DNS zone."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "dkim-(domainkeys-identified-mail)",
+    "heading": "DKIM (DomainKeys Identified Mail)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "DomainKeys Identified Mail",
+          "type": "Concept",
+          "mention": "DKIM (DomainKeys Identified Mail)",
+          "confidence": "high"
+        },
+        {
+          "name": "DKIM signature",
+          "type": "Feature",
+          "mention": "DKIM signature",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo email server",
+          "type": "Module",
+          "mention": "Odoo email server",
+          "confidence": "medium"
+        },
+        {
+          "name": "recipient's server",
+          "type": "Actor",
+          "mention": "recipient's server",
+          "confidence": "medium"
+        },
+        {
+          "name": "DKIM record",
+          "type": "DataObject",
+          "mention": "DKIM record",
+          "confidence": "medium"
+        },
+        {
+          "name": "domain name",
+          "type": "Field",
+          "mention": "domain name",
+          "confidence": "medium"
+        },
+        {
+          "name": "custom domain",
+          "type": "Concept",
+          "mention": "custom domain",
+          "confidence": "medium"
+        },
+        {
+          "name": "Enabling DKIM",
+          "type": "Action",
+          "mention": "Enabling DKIM",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "DomainKeys Identified Mail",
+          "relation": "ENABLES",
+          "target": "DKIM signature",
+          "evidence": "The DomainKeys Identified Mail (DKIM) allows a user to authenticate emails with a digital signature."
+        },
+        {
+          "source": "Odoo email server",
+          "relation": "PRODUCES",
+          "target": "DKIM signature",
+          "evidence": "When sending an email, the Odoo email server includes a unique DKIM signature in the headers."
+        },
+        {
+          "source": "DKIM signature",
+          "relation": "REQUIRES",
+          "target": "DKIM record",
+          "evidence": "The recipient's server decrypts this signature using the DKIM record in the database's domain name."
+        },
+        {
+          "source": "DKIM record",
+          "relation": "BELONGS_TO",
+          "target": "domain name",
+          "evidence": "The recipient's server decrypts this signature using the DKIM record in the database's domain name."
+        },
+        {
+          "source": "DKIM signature",
+          "relation": "COMPLIES_WITH",
+          "target": "DomainKeys Identified Mail",
+          "evidence": "If the signature and the key contained in the record match, it proves the message is authentic..."
+        },
+        {
+          "source": "Enabling DKIM",
+          "relation": "REQUIRES",
+          "target": "custom domain",
+          "evidence": "Enabling DKIM is required when sending emails from a custom domain using the Odoo email server."
+        },
+        {
+          "source": "Enabling DKIM",
+          "relation": "SUPPORTS",
+          "target": "Odoo email server",
+          "evidence": "Enabling DKIM is required when sending emails from a custom domain using the Odoo email server."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-cname-record-for-domain",
+    "heading": "Add a CNAME record for domain",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "DKIM",
+          "type": "Concept",
+          "mention": "DKIM",
+          "confidence": "medium"
+        },
+        {
+          "name": "Domain Name System",
+          "type": "Concept",
+          "mention": "domain name system",
+          "confidence": "medium"
+        },
+        {
+          "name": "DNS",
+          "type": "Concept",
+          "mention": "DNS",
+          "confidence": "medium"
+        },
+        {
+          "name": "CNAME",
+          "type": "Concept",
+          "mention": "CNAME",
+          "confidence": "medium"
+        },
+        {
+          "name": "company-name.com",
+          "type": "Actor",
+          "mention": "company-name.com",
+          "confidence": "low"
+        },
+        {
+          "name": "odoo._domainkey",
+          "type": "Unknown",
+          "mention": "odoo._domainkey",
+          "confidence": "high"
+        },
+        {
+          "name": "odoo._domainkey.odoo.com",
+          "type": "Unknown",
+          "mention": "odoo._domainkey.odoo.com",
+          "confidence": "high"
+        },
+        {
+          "name": "odoo._domainkey.company-name.com",
+          "type": "Unknown",
+          "mention": "odoo._domainkey.company-name.com",
+          "confidence": "high"
+        },
+        {
+          "name": "odoo._domainkey.dbname.odoo.com",
+          "type": "Unknown",
+          "mention": "odoo._domainkey.dbname.odoo.com",
+          "confidence": "high"
+        },
+        {
+          "name": "dbname",
+          "type": "DataObject",
+          "mention": "dbname",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "DKIM",
+          "evidence": "To enable DKIM"
+        },
+        {
+          "source": "DKIM",
+          "relation": "REQUIRES",
+          "target": "CNAME",
+          "evidence": "To enable DKIM, add a canonical name (CNAME) record"
+        },
+        {
+          "source": "CNAME",
+          "relation": "BELONGS_TO",
+          "target": "Domain Name System",
+          "evidence": "...add a canonical name (CNAME) record to the domain name system (DNS) zone..."
+        },
+        {
+          "source": "CNAME",
+          "relation": "RELATED_TO",
+          "target": "DNS",
+          "evidence": "domain name system (DNS)"
+        },
+        {
+          "source": "company-name.com",
+          "relation": "RELATED_TO",
+          "target": "Domain Name System",
+          "evidence": "...DNS zone of the domain name..."
+        },
+        {
+          "source": "odoo._domainkey",
+          "relation": "EQUIVALENT_TO",
+          "target": "odoo._domainkey.company-name.com",
+          "evidence": "...create a CNAME record where the CNAME record (key/name) is `odoo._domainkey.company-name.com`"
+        },
+        {
+          "source": "odoo._domainkey.company-name.com",
+          "relation": "EQUIVALENT_TO",
+          "target": "odoo._domainkey.odoo.com",
+          "evidence": "...and the canonical name (value/content) is `odoo._domainkey.odoo.com`"
+        },
+        {
+          "source": "odoo._domainkey.company-name.com",
+          "relation": "EQUIVALENT_TO",
+          "target": "odoo._domainkey.dbname.odoo.com",
+          "evidence": "OR odoo._domainkey.dbname.odoo.com"
+        },
+        {
+          "source": "dbname",
+          "type": "IS_PART_OF",
+          "target": "odoo._domainkey.dbname.odoo.com",
+          "evidence": "where dbname is the name of the Odoo database"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-cname-record-for-subdomain",
+    "heading": "Add a CNAME record for subdomain",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "CNAME record",
+          "type": "Concept",
+          "mention": "CNAME record",
+          "confidence": "high"
+        },
+        {
+          "name": "subdomain",
+          "type": "Concept",
+          "mention": "subdomain",
+          "confidence": "high"
+        },
+        {
+          "name": "compliance",
+          "type": "Concept",
+          "mention": "compliance",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "subdomain",
+          "relation": "RELATED_TO",
+          "target": "CNAME record",
+          "evidence": "If there's a \\ *subdomain* ... add a CNAME record to include it"
+        },
+        {
+          "source": "CNAME record",
+          "relation": "COMPLIES_WITH",
+          "target": "compliance",
+          "evidence": "add a CNAME record to include it for compliance as well"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "see-dns-provider-documentation",
+    "heading": "See DNS provider documentation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "DNS provider",
+          "type": "Actor",
+          "mention": "the provider hosting the DNS zone",
+          "confidence": "medium"
+        },
+        {
+          "name": "DKIM",
+          "type": "Feature",
+          "mention": "DKIM",
+          "confidence": "medium"
+        },
+        {
+          "name": "MXToolbox DKIM Record Lookup",
+          "type": "Tool",
+          "mention": "MXToolbox DKIM Record Lookup",
+          "confidence": "medium"
+        },
+        {
+          "name": "CNAME record",
+          "type": "DataObject",
+          "mention": "CNAME record",
+          "confidence": "medium"
+        },
+        {
+          "name": "domain name",
+          "type": "DataObject",
+          "mention": "domain name",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "DKIM",
+          "evidence": "Check if the DKIM record is valid"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "CNAME record",
+          "evidence": "The way to create or modify a CNAME record"
+        },
+        {
+          "source": "DKIM",
+          "relation": "RELATED_TO",
+          "target": "MXToolbox DKIM Record Lookup",
+          "evidence": "Check if the DKIM record is valid using a tool like MXToolbox DKIM Record Lookup"
+        },
+        {
+          "source": "DNS provider",
+          "relation": "CONTAINS",
+          "target": "CNAME record",
+          "evidence": "depends on the provider hosting the DNS zone"
+        },
+        {
+          "source": "DNS provider",
+          "relation": "CONTAINS",
+          "target": "domain name",
+          "evidence": "hosting the DNS zone of the domain name"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "dmarc-(domain-based-message-authentication,-reporting-and-conformance)",
+    "heading": "DMARC (Domain-based Message Authentication, Reporting and Conformance)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "DMARC",
+          "type": "Concept",
+          "mention": "DMARC (Domain-based Message Authentication, Reporting and Conformance)",
+          "confidence": "high"
+        },
+        {
+          "name": "SPF",
+          "type": "Concept",
+          "mention": "SPF (Sender Policy Framework)",
+          "confidence": "high"
+        },
+        {
+          "name": "DKIM",
+          "type": "Concept",
+          "mention": "DKIM (DomainKeys Identified Mail)",
+          "confidence": "high"
+        },
+        {
+          "name": "p=none",
+          "type": "Feature",
+          "mention": "p=none",
+          "confidence": "high"
+        },
+        {
+          "name": "p=quarantine",
+          "type": "Feature",
+          "mention": "p=quarantine",
+          "confidence": "high"
+        },
+        {
+          "name": "p=reject",
+          "type": "Feature",
+          "mention": "p=reject",
+          "confidence": "high"
+        },
+        {
+          "name": "email",
+          "type": "DataObject",
+          "mention": "email",
+          "confidence": "medium"
+        },
+        {
+          "name": "domain",
+          "type": "Concept",
+          "mention": "domain",
+          "confidence": "medium"
+        },
+        {
+          "name": "destination server",
+          "type": "Actor",
+          "mention": "destination server",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo Online",
+          "type": "Product",
+          "mention": "Odoo Online",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "DMARC",
+          "relation": "RELATED_TO",
+          "target": "SPF",
+          "evidence": "The DMARC (Domain-based Message Authentication, Reporting, & Conformance) record is a protocol that unifies SPF"
+        },
+        {
+          "source": "DMARC",
+          "relation": "RELATED_TO",
+          "target": "DKIM",
+          "evidence": "The DMARC (Domain-based Message Authentication, Reporting, & Conformance) record is a protocol that unifies DKIM"
+        },
+        {
+          "source": "DMARC",
+          "relation": "HAS_FEATURE",
+          "target": "p=none",
+          "evidence": "There are three DMARC policies: p=none"
+        },
+        {
+          "source": "DMARC",
+          "relation": "HAS_FEATURE",
+          "target": "p=quarantine",
+          "evidence": "There are three DMARC policies: p=quarantine"
+        },
+        {
+          "source": "DMARC",
+          "relation": "HAS_FEATURE",
+          "target": "p=reject",
+          "evidence": "There are three DMARC policies: p=reject"
+        },
+        {
+          "source": "p=quarantine",
+          "relation": "APPLIES_TO",
+          "target": "email",
+          "evidence": "p=quarantine instructs the server that receives an email"
+        },
+        {
+          "source": "p=reject",
+          "relation": "APPLIES_TO",
+          "target": "email",
+          "evidence": "p=reject instructs the server that receives an email"
+        },
+        {
+          "source": "p=none",
+          "relation": "APPLIES_TO",
+          "target": "email",
+          "evidence": "p=none is used for the domain owner to receive reports about entities using their domain"
+        },
+        {
+          "source": "DMARC",
+          "relation": "COMPLIES_WITH",
+          "target": "domain",
+          "evidence": "DMARC record of a domain name"
+        },
+        {
+          "source": "DKIM",
+          "relation": "RELATED_TO",
+          "target": "Odoo Online",
+          "evidence": "If the hosting type is Odoo Online, DKIM configuration on the sending domain is required"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "spf,-dkim-and-dmarc-documentation-of-common-providers",
+    "heading": "SPF, DKIM and DMARC documentation of common providers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "OVH DNS",
+          "type": "Integration",
+          "mention": "OVH DNS",
+          "confidence": "high"
+        },
+        {
+          "name": "GoDaddy TXT record",
+          "type": "Integration",
+          "mention": "GoDaddy TXT record",
+          "confidence": "high"
+        },
+        {
+          "name": "GoDaddy SPF, DKIM, or DMARC records",
+          "type": "Integration",
+          "mention": "GoDaddy SPF, DKIM, or DMARC records",
+          "confidence": "high"
+        },
+        {
+          "name": "NameCheap",
+          "type": "Integration",
+          "mention": "NameCheap",
+          "confidence": "high"
+        },
+        {
+          "name": "CloudFlare DNS",
+          "type": "Integration",
+          "mention": "CloudFlare DNS",
+          "confidence": "high"
+        },
+        {
+          "name": "Squarespace DNS records",
+          "type": "Integration",
+          "mention": "Squarespace DNS records",
+          "confidence": "high"
+        },
+        {
+          "name": "Azure DNS",
+          "type": "Integration",
+          "mention": "Azure DNS",
+          "confidence": "high"
+        },
+        {
+          "name": "Mail-Tester",
+          "type": "Feature",
+          "mention": "Mail-Tester",
+          "confidence": "high"
+        },
+        {
+          "name": "SPF",
+          "type": "Concept",
+          "mention": "SPF",
+          "confidence": "medium"
+        },
+        {
+          "name": "DKIM",
+          "type": "Concept",
+          "mention": "DKIM",
+          "confidence": "medium"
+        },
+        {
+          "name": "DMARC",
+          "type": "Concept",
+          "mention": "DMARC",
+          "confidence": "medium"
+        },
+        {
+          "name": "DNS",
+          "type": "Concept",
+          "mention": "DNS",
+          "confidence": "medium"
+        },
+        {
+          "name": "TXT record",
+          "type": "Concept",
+          "mention": "TXT record",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "OVH DNS",
+          "evidence": "`OVH DNS <https://docs.ovh.com/us/en/domains/web_hosting_how_to_edit_my_dns_zone/>`_"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "GoDaddy TXT record",
+          "evidence": "`GoDaddy TXT record <https://www.godaddy.com/help/add-a-txt-record-19232>`_"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "GoDaddy SPF, DKIM, or DMARC records",
+          "evidence": "`GoDaddy SPF, DKIM, or DMARC records\n  <https://www.godaddy.com/help/set-up-spf-dkim-or-dmarc-records-for-my-hosting-email-40810>`_"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "NameCheap",
+          "evidence": "`NameCheap\n  <https://www.namecheap.com/support/knowledgebase/article.aspx/317/2237/how-do-i-add-txtspfdkimdmarc-records-for-my-domain/>`_"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "CloudFlare DNS",
+          "evidence": "`CloudFlare DNS <https://support.cloudflare.com/hc/en-us/articles/360019093151>`_"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "Squarespace DNS records",
+          "evidence": "`Squarespace DNS records\n  <https://support.squarespace.com/hc/en-us/articles/360002101888-Adding-custom-DNS-records-to-your-Squarespace-managed-domain>`_"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "Azure DNS",
+          "evidence": "`Azure DNS <https://docs.microsoft.com/en-us/azure/dns/dns-getstarted-portal>`_"
+        },
+        {
+          "source": "Mail-Tester",
+          "relation": "SUPPORTS",
+          "target": "SPF",
+          "evidence": "Mail-Tester can also be used to configure records for other, lesser-known providers."
+        },
+        {
+          "source": "Mail-Tester",
+          "relation": "SUPPORTS",
+          "target": "DKIM",
+          "evidence": "Mail-Tester can also be used to configure records for other, lesser-known providers."
+        },
+        {
+          "source": "Mail-Tester",
+          "relation": "SUPPORTS",
+          "target": "DMARC",
+          "evidence": "Mail-Tester can also be used to configure records for other, lesser-known providers."
+        }
+      ]
+    }
+  }
+]

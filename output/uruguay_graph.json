@@ -1,0 +1,221 @@
+[
+  {
+    "section_id": "odoo-electronic-invoicing-in-uruguay",
+    "heading": "Odoo electronic invoicing in Uruguay",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo electronic invoicing in Uruguay",
+          "type": "Concept",
+          "mention": "Odoo electronic invoicing in Uruguay",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dirección General Impositiva (DGI)",
+          "type": "Regulation",
+          "mention": "Dirección General Impositiva (DGI)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "COMPLIES_WITH",
+          "target": "Dirección General Impositiva (DGI)",
+          "evidence": "fully compatible with the guidelines established by the Dirección General Impositiva (DGI)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "legal-framework-for-e-invoicing-in-uruguay",
+    "heading": "Legal framework for e-invoicing in Uruguay",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CFE",
+          "type": "Concept",
+          "mention": "CFE",
+          "confidence": "medium"
+        },
+        {
+          "name": "Comprobante Fiscal Electrónico",
+          "type": "Concept",
+          "mention": "Comprobante Fiscal Electrónico",
+          "confidence": "medium"
+        },
+        {
+          "name": "DGI",
+          "type": "Actor",
+          "mention": "DGI (Dirección General Impositiva)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dirección General Impositiva",
+          "type": "Actor",
+          "mention": "DGI (Dirección General Impositiva)",
+          "confidence": "medium"
+        },
+        {
+          "name": "XML",
+          "type": "Standard",
+          "mention": "XML Format",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "CFE",
+          "relation": "COMPLIES_WITH",
+          "target": "DGI",
+          "evidence": "Comprobante Fiscal Electrónico, fully compliant with DGI (Dirección General Impositiva)'s technical standards."
+        },
+        {
+          "source": "Comprobante Fiscal Electrónico",
+          "relation": "IS_PART_OF",
+          "target": "CFE",
+          "evidence": "CFE (Comprobante Fiscal Electrónico)"
+        },
+        {
+          "source": "Comprobante Fiscal Electrónico",
+          "relation": "SUPPORTS",
+          "target": "XML",
+          "evidence": "Uruguay mandates the use of XML as the standard format for e-invoices."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "compliance-with-uruguayan-e-invoicing-regulations",
+    "heading": "Compliance with Uruguayan e-invoicing regulations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Invoicing",
+          "type": "Module",
+          "mention": "Odoo Invoicing",
+          "confidence": "high"
+        },
+        {
+          "name": "CFE",
+          "type": "DataObject",
+          "mention": "CFE (Comprobante Fiscal Electrónico)",
+          "confidence": "high"
+        },
+        {
+          "name": "IVA",
+          "type": "Concept",
+          "mention": "IVA (Value-Added Tax)",
+          "confidence": "high"
+        },
+        {
+          "name": "Uruguayan e-invoicing regulations",
+          "type": "Regulation",
+          "mention": "Uruguayan e-invoicing regulations",
+          "confidence": "high"
+        },
+        {
+          "name": "DGI",
+          "type": "Actor",
+          "mention": "DGI (Dirección General Impositiva)",
+          "confidence": "high"
+        },
+        {
+          "name": "DGI's e-invoicing platform",
+          "type": "Integration",
+          "mention": "DGI (Dirección General Impositiva)'s e-invoicing platform",
+          "confidence": "medium"
+        },
+        {
+          "name": "five-year storage requirement",
+          "type": "Regulation",
+          "mention": "Uruguay’s mandatory five-year storage requirement",
+          "confidence": "high"
+        },
+        {
+          "name": "DGI's reporting standards",
+          "type": "Standard",
+          "mention": "DGI (Dirección General Impositiva)'s reporting standards",
+          "confidence": "medium"
+        },
+        {
+          "name": "Uruguayan fiscal localization documentation",
+          "type": "Report",
+          "mention": "Uruguayan fiscal localization documentation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo Invoicing",
+          "relation": "CONTAINS",
+          "target": "CFE",
+          "evidence": "Odoo supports the CFE (Comprobante Fiscal Electrónico) format"
+        },
+        {
+          "source": "CFE",
+          "relation": "COMPLIES_WITH",
+          "target": "Uruguayan e-invoicing regulations",
+          "evidence": "Odoo supports the CFE (Comprobante Fiscal Electrónico) format in DGI-compliant XML"
+        },
+        {
+          "source": "CFE",
+          "relation": "PRODUCES",
+          "target": "DGI's e-invoicing platform",
+          "evidence": "automated submission... through the DGI (Dirección General Impositiva)'s e-invoicing platform"
+        },
+        {
+          "source": "Odoo Invoicing",
+          "relation": "COMPLIES_WITH",
+          "target": "five-year storage requirement",
+          "evidence": "In line with Uruguay’s mandatory five-year storage requirement, Odoo provides tamper-proof archiving solutions"
+        },
+        {
+          "source": "Odoo Invoicing",
+          "relation": "USES_METHOD",
+          "target": "IVA",
+          "evidence": "Odoo automates tax calculations for IVA (Value-Added Tax) and other applicable taxes"
+        },
+        {
+          "source": "Odoo Invoicing",
+          "relation": "COMPLIES_WITH",
+          "target": "DGI's reporting standards",
+          "evidence": "ensuring accuracy and compliance with DGI (Dirección General Impositiva)'s reporting standards"
+        },
+        {
+          "source": "Uruguayan e-invoicing regulations",
+          "relation": "SEE_ALSO",
+          "target": "Uruguayan fiscal localization documentation",
+          "evidence": ".. seealso:: Uruguayan fiscal localization documentation"
+        },
+        {
+          "source": "CFE",
+          "relation": "GENERATES",
+          "target": "DGI",
+          "evidence": "automated submission, validation, and issuance through the DGI"
+        }
+      ]
+    }
+  }
+]

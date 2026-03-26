@@ -1,0 +1,830 @@
+[
+  {
+    "section_id": "onboarding",
+    "heading": "Onboarding",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances application",
+          "confidence": "high"
+        },
+        {
+          "name": "Onboarding",
+          "type": "Sub-module",
+          "mention": "Onboarding",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Feature",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Onboarding dashboard",
+          "type": "Feature",
+          "mention": "onboarding dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "manual check-in",
+          "type": "Action",
+          "mention": "check-in manually",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode check-in",
+          "type": "Action",
+          "mention": "with a barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "RFID token check-in",
+          "type": "Action",
+          "mention": "with an RFID token",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "manager",
+          "type": "Actor",
+          "mention": "Managers",
+          "confidence": "high"
+        },
+        {
+          "name": "HR worker",
+          "type": "Actor",
+          "mention": "HR workers",
+          "confidence": "high"
+        },
+        {
+          "name": "attendance log",
+          "type": "DataObject",
+          "mention": "attendance logs",
+          "confidence": "high"
+        },
+        {
+          "name": "attendance record",
+          "type": "DataObject",
+          "mention": "attendance records",
+          "confidence": "high"
+        },
+        {
+          "name": "training",
+          "type": "Concept",
+          "mention": "training",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Attendances",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nThe **Attendances** application"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Attendances",
+          "evidence": "navigate to Attendances app --> Configuration"
+        },
+        {
+          "source": "Onboarding",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Onboarding"
+        },
+        {
+          "source": "Onboarding dashboard",
+          "relation": "CONTAINS",
+          "target": "manual check-in",
+          "evidence": "onboarding dashboard, with three options to check-in: manually"
+        },
+        {
+          "source": "Onboarding dashboard",
+          "relation": "CONTAINS",
+          "target": "barcode check-in",
+          "evidence": "onboarding dashboard, with three options to check-in: ... with a barcode"
+        },
+        {
+          "source": "Onboarding dashboard",
+          "relation": "CONTAINS",
+          "target": "RFID token check-in",
+          "evidence": "onboarding dashboard, with three options to check-in: ... with an RFID token"
+        },
+        {
+          "source": "Onboarding",
+          "relation": "ENABLES",
+          "target": "training",
+          "evidence": "Onboarding feature to aid with employee training"
+        },
+        {
+          "source": "manual check-in",
+          "relation": "PRODUCES",
+          "target": "attendance log",
+          "evidence": "any attendance logs created are reflected in the database"
+        },
+        {
+          "source": "manager",
+          "relation": "PERFORMED_BY",
+          "target": "training",
+          "evidence": "Managers may need to train employees"
+        },
+        {
+          "source": "HR worker",
+          "relation": "PERFORMED_BY",
+          "target": "training",
+          "evidence": "HR workers may need to train employees"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manual-selection",
+    "heading": "Manual selection",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Onboarding",
+          "type": "Feature",
+          "mention": "Onboarding",
+          "confidence": "medium"
+        },
+        {
+          "name": "Select on Tablet",
+          "type": "Action",
+          "mention": "Select on Tablet",
+          "confidence": "medium"
+        },
+        {
+          "name": "default Kanban view",
+          "type": "Feature",
+          "mention": "default Kanban view",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees",
+          "type": "DataObject",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban card",
+          "type": "DataObject",
+          "mention": "Kanban card",
+          "confidence": "high"
+        },
+        {
+          "name": "Absent",
+          "type": "Concept",
+          "mention": "Absent",
+          "confidence": "medium"
+        },
+        {
+          "name": "On Site",
+          "type": "Concept",
+          "mention": "On Site",
+          "confidence": "medium"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances",
+          "confidence": "high"
+        },
+        {
+          "name": "checked-in",
+          "type": "Action",
+          "mention": "checked-in",
+          "confidence": "high"
+        },
+        {
+          "name": "checked-out",
+          "type": "Action",
+          "mention": "checked-out",
+          "confidence": "high"
+        },
+        {
+          "name": "Welcome",
+          "type": "Feature",
+          "mention": "Welcome",
+          "confidence": "medium"
+        },
+        {
+          "name": "Goodbye",
+          "type": "Feature",
+          "mention": "Goodbye",
+          "confidence": "medium"
+        },
+        {
+          "name": "kiosk settings",
+          "type": "Setting",
+          "mention": "kiosk settings",
+          "confidence": "high"
+        },
+        {
+          "name": "OK button",
+          "type": "Action",
+          "mention": "OK button",
+          "confidence": "high"
+        },
+        {
+          "name": "departments",
+          "type": "DataObject",
+          "mention": "departments",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Attendances",
+          "evidence": "Attendances app"
+        },
+        {
+          "source": "Onboarding",
+          "relation": "HAS_FEATURE",
+          "target": "default Kanban view",
+          "evidence": "Onboarding screen loads a dashboard with all employees listed in a default Kanban view"
+        },
+        {
+          "source": "employees",
+          "relation": "CONTAINS",
+          "target": "Kanban card",
+          "evidence": "All Kanban cards indicate the employee's current status"
+        },
+        {
+          "source": "checked-in",
+          "relation": "PERFORMED_BY",
+          "target": "employees",
+          "evidence": "The employee is automatically checked-in"
+        },
+        {
+          "source": "checked-out",
+          "relation": "PERFORMED_BY",
+          "target": "employees",
+          "evidence": "The employee is automatically checked-out"
+        },
+        {
+          "source": "Onboarding",
+          "relation": "TRIGGERED_BY",
+          "target": "OK button",
+          "evidence": "To exit the screen sooner, click the OK button."
+        },
+        {
+          "source": "Onboarding",
+          "relation": "ENABLES",
+          "target": "search bar",
+          "evidence": "The search bar at the top can be used to navigate to the desired employee."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "badge-with-barcode",
+    "heading": "Badge with barcode",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Badge",
+          "type": "Feature",
+          "mention": "Badge",
+          "confidence": "high"
+        },
+        {
+          "name": "Badge with barcode",
+          "type": "Feature",
+          "mention": "Badge with barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode",
+          "type": "Feature",
+          "mention": "barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "ID badge",
+          "type": "Feature",
+          "mention": "ID badge",
+          "confidence": "high"
+        },
+        {
+          "name": "Scan your badge",
+          "type": "Action",
+          "mention": "Scan your badge",
+          "confidence": "high"
+        },
+        {
+          "name": "Scan",
+          "type": "Action",
+          "mention": "scan",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode Scanner",
+          "type": "Feature",
+          "mention": "Barcode Scanner",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode app",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Tablet",
+          "type": "Actor",
+          "mention": "Tablet",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Badge",
+          "relation": "CONTAINS",
+          "target": "barcode",
+          "evidence": "ID badge that has a barcode on it"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Badge with barcode",
+          "evidence": "The second option available to check-in or check-out"
+        },
+        {
+          "source": "Badge with barcode",
+          "relation": "ENABLES",
+          "target": "Scan your badge",
+          "evidence": "click the Scan your badge button to scan the barcode"
+        },
+        {
+          "source": "Scan your badge",
+          "relation": "PERFORMED_BY",
+          "target": "Employee",
+          "evidence": "If the employee has an ID badge"
+        },
+        {
+          "source": "Scan your badge",
+          "relation": "TRIGGERED_BY",
+          "target": "click",
+          "evidence": "click the Scan your badge button"
+        },
+        {
+          "source": "Scan your badge",
+          "relation": "GENERATES",
+          "target": "Barcode Scanner",
+          "evidence": "A Barcode Scanner pop-up window loads"
+        },
+        {
+          "source": "Badge with barcode",
+          "relation": "RELATED_TO",
+          "target": "Tablet",
+          "evidence": "on Tablet"
+        },
+        {
+          "source": "Scan your badge",
+          "relation": "SUPPORTS",
+          "target": "Barcode app",
+          "evidence": "The Barcode app does not need to be installed to use the barcode option"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-barcode",
+    "heading": "Create a new barcode",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "New Set-up (Employee/Badge) button",
+          "type": "Action",
+          "mention": "New Set-up (Employee/Badge) button",
+          "confidence": "high"
+        },
+        {
+          "name": "Set-up pop-up window",
+          "type": "Feature",
+          "mention": "Set-up pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Select Employee Without Badge",
+          "type": "Feature",
+          "mention": "Select Employee Without Badge",
+          "confidence": "medium"
+        },
+        {
+          "name": "Set the Badge button",
+          "type": "Action",
+          "mention": "Set the Badge button",
+          "confidence": "high"
+        },
+        {
+          "name": "Onboarding dashboard",
+          "type": "Feature",
+          "mention": "Onboarding dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "RFID/Badge Number field",
+          "type": "Field",
+          "mention": "RFID/Badge Number field",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings tab",
+          "type": "Feature",
+          "mention": "Settings tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee's form",
+          "type": "DataObject",
+          "mention": "employee's form",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Badge with Barcode on Tablet option",
+          "type": "Feature",
+          "mention": "Badge with Barcode on Tablet option",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "New Set-up (Employee/Badge) button",
+          "relation": "TRIGGERED_BY",
+          "target": "employee (without barcode)",
+          "evidence": "If the employee does *not* have a barcode, click the New Set-up (Employee/Badge) button"
+        },
+        {
+          "source": "New Set-up (Employee/Badge) button",
+          "relation": "ENABLES",
+          "target": "Set-up pop-up window",
+          "evidence": "click the New Set-up (Employee/Badge) button to bring up the *Set-up* pop-up window"
+        },
+        {
+          "source": "Set-up pop-up window",
+          "relation": "HAS_FEATURE",
+          "target": "Select Employee Without Badge",
+          "evidence": "Using the drop-down menu beneath the text Select Employee Without Badge"
+        },
+        {
+          "source": "Set-up pop-up window",
+          "relation": "CONTAINS",
+          "target": "field for new barcode",
+          "evidence": "Next, enter the new barcode in the corresponding field"
+        },
+        {
+          "source": "Set-up pop-up window",
+          "relation": "SUPPORTS",
+          "target": "Set the Badge button",
+          "evidence": "click the Set the Badge button"
+        },
+        {
+          "source": "Set the Badge button",
+          "relation": "PRODUCES",
+          "target": "Badge assigned successfully! notification",
+          "evidence": "a notification stating `Badge assigned successfully!` appears"
+        },
+        {
+          "source": "Set the Badge button",
+          "relation": "ENABLES",
+          "target": "Set-up pop-up window closing",
+          "evidence": "The *Set-up* pop-up window closes"
+        },
+        {
+          "source": "Set the Badge button",
+          "relation": "GENERATES",
+          "target": "new badge number on employee's record",
+          "evidence": "The new badge number appears in the *RFID/Badge Number* field"
+        },
+        {
+          "source": "RFID/Badge Number field",
+          "type": "IS_PART_OF",
+          "target": "Settings tab",
+          "evidence": "in the *Settings* tab"
+        },
+        {
+          "source": "Settings tab",
+          "relation": "IS_PART_OF",
+          "target": "employee's form",
+          "evidence": "on the employee's form"
+        },
+        {
+          "source": "employee's form",
+          "relation": "CONTAINS",
+          "target": "Settings tab",
+          "evidence": "on the employee's form"
+        },
+        {
+          "source": "Set-up pop-up window",
+          "relation": "GENERATES",
+          "target": "new barcode",
+          "evidence": "only creates a new barcode"
+        },
+        {
+          "source": "new barcode",
+          "relation": "BELONGS_TO",
+          "target": "employee's record",
+          "evidence": "stores the number on the employee's record"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-employee",
+    "heading": "Create a new employee",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Set-up pop-up window",
+          "type": "Module",
+          "mention": "*Set-up* pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "**Employees** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Onboarding dashboard",
+          "type": "Module",
+          "mention": "*Onboarding* dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Badge with Barcode on Tablet",
+          "type": "Feature",
+          "mention": "Badge with Barcode on Tablet option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee",
+          "type": "DataObject",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee Name",
+          "type": "Field",
+          "mention": "employee's name",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm button",
+          "type": "Action",
+          "mention": "Confirm button",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee record",
+          "type": "DataObject",
+          "mention": "employee record",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode",
+          "type": "DataObject",
+          "mention": "barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Notification",
+          "type": "Feature",
+          "mention": "notification",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Set-up pop-up window",
+          "relation": "CONTAINS",
+          "target": "Confirm button",
+          "evidence": "... then click the Confirm button."
+        },
+        {
+          "source": "Confirm button",
+          "relation": "TRIGGERED_BY",
+          "target": "Employee Name",
+          "evidence": "Type in the employee's name ... then click the Confirm button."
+        },
+        {
+          "source": "Set-up pop-up window",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "from the *Set-up* pop-up window."
+        },
+        {
+          "source": "Set-up pop-up window",
+          "relation": "GENERATES",
+          "target": "Notification",
+          "evidence": "... a notification stating `Employee created successfully!` appears..."
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "Employee",
+          "evidence": "... creates a new employee record in the **Employees** app."
+        },
+        {
+          "source": "Set-up pop-up window",
+          "relation": "IS_PART_OF",
+          "target": "Onboarding dashboard",
+          "evidence": "... appears in the upper-right corner of the *Onboarding* dashboard."
+        },
+        {
+          "source": "Badge with Barcode on Tablet",
+          "relation": "REQUIRES",
+          "target": "Barcode",
+          "evidence": "A barcode must be created and printed to scan it with the Badge with Barcode on Tablet option."
+        },
+        {
+          "source": "Employee",
+          "relation": "CONTAINS",
+          "target": "Employee Name",
+          "evidence": "Type in the employee's name in the field below..."
+        },
+        {
+          "source": "Set-up pop-up window",
+          "relation": "PRODUCES",
+          "target": "Employee",
+          "evidence": "... creates a new employee record in the **Employees** app."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "rfid-token",
+    "heading": "RFID token",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Onboarding",
+          "type": "Module",
+          "mention": "Onboarding",
+          "confidence": "medium"
+        },
+        {
+          "name": "RFID token",
+          "type": "Feature",
+          "mention": "RFID token",
+          "confidence": "high"
+        },
+        {
+          "name": "RFID token",
+          "type": "DataObject",
+          "mention": "RFID token",
+          "confidence": "low"
+        },
+        {
+          "name": "Scan your badge",
+          "type": "Action",
+          "mention": "Scan your badge",
+          "confidence": "high"
+        },
+        {
+          "name": "RFID reader",
+          "type": "Integration",
+          "mention": "RFID reader",
+          "confidence": "high"
+        },
+        {
+          "name": "RFID key fobs",
+          "type": "Integration",
+          "mention": "RFID key fobs",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "Employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "Badge",
+          "type": "DataObject",
+          "mention": "Badge",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "RFID token",
+          "relation": "ENABLES",
+          "target": "Scan your badge",
+          "evidence": "If the employee has an RFID token, click the Scan your badge button to scan the RFID token"
+        },
+        {
+          "source": "RFID token",
+          "relation": "REQUIRES",
+          "target": "RFID reader",
+          "evidence": "To use this feature, both RFID key fobs *and* an RFID reader **must** be purchased"
+        },
+        {
+          "source": "RFID token",
+          "relation": "REQUIRES",
+          "target": "RFID key fobs",
+          "evidence": "To use this feature, both RFID key fobs *and* an RFID reader **must** be purchased"
+        },
+        {
+          "source": "Onboarding",
+          "type": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: RFID token The third option available to check in on the *Onboarding* dashboard"
+        },
+        {
+          "source": "Scan your badge",
+          "relation": "PERFORMED_BY",
+          "target": "Employee",
+          "evidence": "If the employee has an RFID token, click the Scan your badge button"
+        },
+        {
+          "source": "Badge",
+          "relation": "EQUIVALENT_TO",
+          "target": "RFID token",
+          "evidence": "Scan your badge, or New Set-up (Employee/Badge)"
+        },
+        {
+          "source": "RFID token",
+          "relation": "IS_PART_OF",
+          "target": "Onboarding",
+          "evidence": "The third option available to check in on the *Onboarding* dashboard is to use an RFID token"
+        }
+      ]
+    }
+  }
+]

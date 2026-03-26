@@ -1,0 +1,2526 @@
+[
+  {
+    "section_id": "avatax-integration",
+    "heading": "AvaTax integration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Product",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "tax calculation",
+          "type": "Feature",
+          "mention": "tax calculation",
+          "confidence": "high"
+        },
+        {
+          "name": "United States",
+          "type": "Actor",
+          "mention": "United States",
+          "confidence": "medium"
+        },
+        {
+          "name": "Canada",
+          "type": "Actor",
+          "mention": "Canada",
+          "confidence": "medium"
+        },
+        {
+          "name": "Brazil",
+          "type": "Actor",
+          "mention": "Brazil",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiscal position",
+          "type": "Field",
+          "mention": "fiscal position",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/avatax/fiscal_country",
+          "type": "Concept",
+          "mention": "accounting/avatax/fiscal_country",
+          "confidence": "medium"
+        },
+        {
+          "name": "state",
+          "type": "Concept",
+          "mention": "state",
+          "confidence": "low"
+        },
+        {
+          "name": "county",
+          "type": "Concept",
+          "mention": "county",
+          "confidence": "low"
+        },
+        {
+          "name": "city",
+          "type": "Concept",
+          "mention": "city",
+          "confidence": "low"
+        },
+        {
+          "name": "remittance accuracy",
+          "type": "Feature",
+          "mention": "remittance accuracy",
+          "confidence": "medium"
+        },
+        {
+          "name": "laws",
+          "type": "Regulation",
+          "mention": "laws",
+          "confidence": "low"
+        },
+        {
+          "name": "rules",
+          "type": "Regulation",
+          "mention": "rules",
+          "confidence": "low"
+        },
+        {
+          "name": "jurisdiction boundaries",
+          "type": "Concept",
+          "mention": "jurisdiction boundaries",
+          "confidence": "low"
+        },
+        {
+          "name": "tax holidays",
+          "type": "Concept",
+          "mention": "tax holidays",
+          "confidence": "low"
+        },
+        {
+          "name": "product exemptions",
+          "type": "Concept",
+          "mention": "product exemptions",
+          "confidence": "low"
+        },
+        {
+          "name": "API",
+          "type": "Integration",
+          "mention": "API (application programming interface)",
+          "confidence": "high"
+        },
+        {
+          "name": "company address",
+          "type": "Field",
+          "mention": "company address",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse address",
+          "type": "Field",
+          "mention": "warehouse address",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allow Ship Later",
+          "type": "Setting",
+          "mention": "Allow Ship Later",
+          "confidence": "high"
+        },
+        {
+          "name": "POS",
+          "type": "Module",
+          "mention": "POS",
+          "confidence": "high"
+        },
+        {
+          "name": "excise tax",
+          "type": "Concept",
+          "mention": "Excise tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "tobacco/vape taxes",
+          "type": "Concept",
+          "mention": "tobacco/vape taxes",
+          "confidence": "low"
+        },
+        {
+          "name": "fuel taxes",
+          "type": "Concept",
+          "mention": "fuel taxes",
+          "confidence": "low"
+        },
+        {
+          "name": "specific industries",
+          "type": "Concept",
+          "mention": "specific industries",
+          "confidence": "low"
+        },
+        {
+          "name": "About AvaTax",
+          "type": "Concept",
+          "mention": "About AvaTax",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "AvaTax integration",
+          "evidence": "Title: AvaTax integration"
+        },
+        {
+          "source": "AvaTax integration",
+          "relation": "ENABLES",
+          "target": "tax calculation",
+          "evidence": "provides real-time and region-specific tax calculations"
+        },
+        {
+          "source": "AvaTax integration",
+          "relation": "REQUIRES",
+          "target": "United States",
+          "evidence": "only available for integration with databases/companies that have locations in the United States"
+        },
+        {
+          "source": "AvaTax integration",
+          "relation": "REQUIRES",
+          "target": "Canada",
+          "evidence": "only available for integration with databases/companies that have locations in Canada"
+        },
+        {
+          "source": "AvaTax integration",
+          "relation": "REQUIRES",
+          "target": "Brazil",
+          "evidence": "only available for integration with databases/companies that have locations in Brazil"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "SUPPORTS",
+          "target": "tax calculation",
+          "evidence": "AvaTax tax calculation is supported with every United Nations charted country"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "PRODUCES",
+          "target": "remittance accuracy",
+          "evidence": "improves remittance accuracy"
+        },
+        {
+          "source": "AvaTax integration",
+          "relation": "USES_METHOD",
+          "target": "API",
+          "evidence": "maintain control of tax-calculations in-house with this simple API integration"
+        },
+        {
+          "source": "tax calculation",
+          "relation": "CONFIGURED_BY",
+          "target": "Allow Ship Later",
+          "evidence": "To use the warehouse address, enable Allow Ship Later"
+        },
+        {
+          "source": "Allow Ship Later",
+          "relation": "BELONGS_TO",
+          "target": "POS",
+          "evidence": "in the POS app settings"
+        },
+        {
+          "source": "tax calculation",
+          "relation": "HAS_FEATURE",
+          "target": "excise tax",
+          "evidence": "Excise tax is not supported"
+        },
+        {
+          "source": "AvaTax integration",
+          "relation": "SEE_ALSO",
+          "target": "About AvaTax",
+          "evidence": "Avalara's support documents: About AvaTax"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-up-on-avatax",
+    "heading": "Set up on AvaTax",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "To use *AvaTax*",
+          "confidence": "high"
+        },
+        {
+          "name": "Avalara",
+          "type": "Actor",
+          "mention": "connect with Avalara",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting",
+          "type": "Module",
+          "mention": "Odoo setup <accounting/...>",
+          "confidence": "medium"
+        },
+        {
+          "name": "avatax",
+          "type": "Sub-module",
+          "mention": "Odoo setup <accounting/avatax/...>",
+          "confidence": "medium"
+        },
+        {
+          "name": "credentials",
+          "type": "Setting",
+          "mention": "Odoo setup <accounting/avatax/credentials>",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "accounting",
+          "evidence": "Odoo setup <accounting/..."
+        },
+        {
+          "source": "accounting",
+          "relation": "CONTAINS",
+          "target": "avatax",
+          "evidence": "Odoo setup <accounting/avatax/..."
+        },
+        {
+          "source": "avatax",
+          "relation": "CONTAINS",
+          "target": "credentials",
+          "evidence": "Odoo setup <accounting/avatax/credentials>"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "AvaTax",
+          "evidence": "To use *AvaTax*"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "PERFORMED_BY",
+          "target": "Avalara",
+          "evidence": "connect with Avalara"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-basic-company-profile",
+    "heading": "Create basic company profile",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Create basic company profile",
+          "type": "Workflow",
+          "mention": "Create basic company profile",
+          "confidence": "high"
+        },
+        {
+          "name": "company information",
+          "type": "DataObject",
+          "mention": "Add company information",
+          "confidence": "high"
+        },
+        {
+          "name": "company collects and pays tax",
+          "type": "Concept",
+          "mention": "where the company collects and pays tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "jurisdictions",
+          "type": "Concept",
+          "mention": "Verify jurisdictions",
+          "confidence": "medium"
+        },
+        {
+          "name": "company locations for location-based filing",
+          "type": "DataObject",
+          "mention": "Add other company locations for location-based filing",
+          "confidence": "high"
+        },
+        {
+          "name": "marketplace",
+          "type": "DataObject",
+          "mention": "Add a marketplace to the company profile",
+          "confidence": "high"
+        },
+        {
+          "name": "Avalara",
+          "type": "Actor",
+          "mention": "Avalara documentation",
+          "confidence": "high"
+        },
+        {
+          "name": "customer tax exemptions",
+          "type": "Concept",
+          "mention": "customer tax exemptions",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "where tax is collected",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create basic company profile",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Create basic company profile",
+          "relation": "HAS_FEATURE",
+          "target": "company information",
+          "evidence": "Add company information"
+        },
+        {
+          "source": "Create basic company profile",
+          "relation": "HAS_FEATURE",
+          "target": "company collects and pays tax",
+          "evidence": "Tell us where the company collects and pays tax"
+        },
+        {
+          "source": "Create basic company profile",
+          "relation": "HAS_FEATURE",
+          "target": "jurisdictions",
+          "evidence": "Verify jurisdictions"
+        },
+        {
+          "source": "Create basic company profile",
+          "relation": "HAS_FEATURE",
+          "target": "company locations for location-based filing",
+          "evidence": "Add other company locations for location-based filing"
+        },
+        {
+          "source": "Create basic company profile",
+          "relation": "HAS_FEATURE",
+          "target": "marketplace",
+          "evidence": "Add a marketplace to the company profile"
+        },
+        {
+          "source": "Create basic company profile",
+          "relation": "RELATED_TO",
+          "target": "customer tax exemptions",
+          "evidence": "and customer tax exemptions, if applicable"
+        },
+        {
+          "source": "Create basic company profile",
+          "relation": "RELATED_TO",
+          "target": "tax",
+          "evidence": "locations where tax is collected"
+        },
+        {
+          "source": "Create basic company profile",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Follow the Avalara documentation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "connect-to-avatax",
+    "heading": "Connect to AvaTax",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Product",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "Avalara",
+          "type": "Actor",
+          "mention": "Avalara",
+          "confidence": "high"
+        },
+        {
+          "name": "License Key",
+          "type": "DataObject",
+          "mention": "License Key",
+          "confidence": "high"
+        },
+        {
+          "name": "License and API Keys",
+          "type": "Setting",
+          "mention": "Settings --> License and API Keys",
+          "confidence": "high"
+        },
+        {
+          "name": "sandbox environment",
+          "type": "Integration",
+          "mention": "sandbox environment",
+          "confidence": "high"
+        },
+        {
+          "name": "production environment",
+          "type": "Integration",
+          "mention": "production environment",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate License Key",
+          "type": "Action",
+          "mention": "Generate License Key",
+          "confidence": "high"
+        },
+        {
+          "name": "API integration",
+          "type": "Integration",
+          "mention": "API integration",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "INTEGRATION",
+          "target": "AvaTax",
+          "evidence": "Connect to AvaTax. This step links Odoo and AvaTax bidirectionally."
+        },
+        {
+          "source": "AvaTax",
+          "relation": "CONFIGURED_BY",
+          "target": "License Key",
+          "evidence": "Log in to create the License Key."
+        },
+        {
+          "source": "License Key",
+          "relation": "BELONGS_TO",
+          "target": "Avalara",
+          "evidence": "Go to Settings --> License and API Keys. Click Generate License Key."
+        },
+        {
+          "source": "Odoo",
+          "relation": "RELATED_TO",
+          "target": "sandbox environment",
+          "evidence": "Navigate to either Avalara's sandbox or production environment."
+        },
+        {
+          "source": "Odoo",
+          "relation": "RELATED_TO",
+          "target": "production environment",
+          "evidence": "Navigate to either Avalara's sandbox or production environment."
+        },
+        {
+          "source": "Generate License Key",
+          "relation": "TRIGGERED_BY",
+          "target": "License and API Keys",
+          "evidence": "Go to Settings --> License and API Keys. Click Generate License Key."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "odoo-configuration",
+    "heading": "Odoo configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "country",
+          "type": "Field",
+          "mention": "country",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiscal position",
+          "type": "DataObject",
+          "mention": "fiscal position",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "AvaTax",
+          "relation": "REQUIRES",
+          "target": "country",
+          "evidence": "The country initially set up in the database aids AvaTax in calculating accurate tax rates."
+        },
+        {
+          "source": "AvaTax",
+          "relation": "REQUIRES",
+          "target": "fiscal position",
+          "evidence": "The country initially set up in the database determines the fiscal position, and aids AvaTax in calculating accurate tax rates."
+        },
+        {
+          "source": "country",
+          "relation": "BELONGS_TO",
+          "target": "Odoo database",
+          "evidence": "The country initially set up in the database"
+        },
+        {
+          "source": "fiscal position",
+          "relation": "BELONGS_TO",
+          "target": "Odoo database",
+          "evidence": "The country initially set up in the database determines the fiscal position"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo configuration",
+          "evidence": "Before using AvaTax, there are some additional configurations in Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "fiscal-country",
+    "heading": "Fiscal country",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Accounting app",
+          "type": "Product",
+          "mention": "Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal Country",
+          "type": "Setting",
+          "mention": "Fiscal Country",
+          "confidence": "high"
+        },
+        {
+          "name": "United States",
+          "type": "Actor",
+          "mention": "United States",
+          "confidence": "medium"
+        },
+        {
+          "name": "Canada",
+          "type": "Actor",
+          "mention": "Canada",
+          "confidence": "medium"
+        },
+        {
+          "name": "Brazil",
+          "type": "Actor",
+          "mention": "Brazil",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Module",
+          "mention": "Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal country",
+          "type": "Concept",
+          "mention": "Fiscal country",
+          "confidence": "high"
+        },
+        {
+          "name": "fiscal_localizations",
+          "type": "Module",
+          "mention": "../../fiscal_localizations",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Fiscal Country",
+          "evidence": "set the Fiscal Country feature"
+        },
+        {
+          "source": "Fiscal Country",
+          "relation": "GOVERNED_BY",
+          "target": "United States",
+          "evidence": "set the Fiscal Country feature to United States"
+        },
+        {
+          "source": "Fiscal Country",
+          "relation": "GOVERNED_BY",
+          "target": "Canada",
+          "evidence": "set the Fiscal Country feature to Canada"
+        },
+        {
+          "source": "Fiscal Country",
+          "relation": "GOVERNED_BY",
+          "target": "Brazil",
+          "evidence": "set the Fiscal Country feature to Brazil"
+        },
+        {
+          "source": "Save",
+          "relation": "CONFIGURED_BY",
+          "target": "Fiscal Country",
+          "evidence": "Then, click Save"
+        },
+        {
+          "source": "Taxes",
+          "relation": "CONTAINS",
+          "target": "Fiscal Country",
+          "evidence": "Under the Taxes section, set the Fiscal Country feature"
+        },
+        {
+          "source": "Fiscal country",
+          "relation": "SEE_ALSO",
+          "target": "fiscal_localizations",
+          "evidence": ".. seealso::../../fiscal_localizations"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "company-settings",
+    "heading": "Company settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings app",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "high"
+        },
+        {
+          "name": "Companies section",
+          "type": "Sub-module",
+          "mention": "Companies section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Update Info",
+          "type": "Action",
+          "mention": "Click Update Info",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage Companies",
+          "type": "Action",
+          "mention": "click Manage Companies",
+          "confidence": "high"
+        },
+        {
+          "name": "companies",
+          "type": "Actor",
+          "mention": "companies operating",
+          "confidence": "high"
+        },
+        {
+          "name": "Database administrators",
+          "type": "Actor",
+          "mention": "Database administrators",
+          "confidence": "high"
+        },
+        {
+          "name": "Street...",
+          "type": "Field",
+          "mention": "Street...",
+          "confidence": "medium"
+        },
+        {
+          "name": "Street2...",
+          "type": "Field",
+          "mention": "Street2...",
+          "confidence": "medium"
+        },
+        {
+          "name": "City",
+          "type": "Field",
+          "mention": "City",
+          "confidence": "medium"
+        },
+        {
+          "name": "State",
+          "type": "Field",
+          "mention": "State",
+          "confidence": "medium"
+        },
+        {
+          "name": "ZIP",
+          "type": "Field",
+          "mention": "ZIP",
+          "confidence": "medium"
+        },
+        {
+          "name": "Country",
+          "type": "Field",
+          "mention": "Country",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax calculations",
+          "type": "Concept",
+          "mention": "accurate tax calculations",
+          "confidence": "low"
+        },
+        {
+          "name": "end-of-year accounting operations",
+          "type": "Concept",
+          "mention": "end-of-year accounting operations",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Companies section",
+          "relation": "IS_PART_OF",
+          "target": "Settings app",
+          "evidence": "Navigate to the Settings app, and under the Companies section"
+        },
+        {
+          "source": "Update Info",
+          "relation": "PERFORMED_BY",
+          "target": "Database administrators",
+          "evidence": "Click Update Info to open a separate page to update company details."
+        },
+        {
+          "source": "Database administrators",
+          "relation": "CONFIGURED_BY",
+          "target": "companies",
+          "evidence": "Database administrators should ensure that the Street..., Street2..., City, State, ZIP, and Country are all updated for the companies."
+        },
+        {
+          "source": "companies",
+          "relation": "APPLIES_TO",
+          "target": "tax calculations",
+          "evidence": "This ensures accurate tax calculations"
+        },
+        {
+          "source": "companies",
+          "relation": "APPLIES_TO",
+          "target": "end-of-year accounting operations",
+          "evidence": "and smooth end-of-year accounting operations."
+        },
+        {
+          "source": "Manage Companies",
+          "relation": "SEE_ALSO",
+          "target": "companies",
+          "evidence": "If there are multiple companies operating in the database, click Manage Companies to load a list of companies"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "module-installation",
+    "heading": "Module installation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps",
+          "type": "Module",
+          "mention": "Apps",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Module",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "account_avatax",
+          "type": "Module",
+          "mention": "account_avatax",
+          "confidence": "high"
+        },
+        {
+          "name": "Avatax",
+          "type": "Module",
+          "mention": "Avatax",
+          "confidence": "high"
+        },
+        {
+          "name": "account_avatax_geolocalize",
+          "type": "Module",
+          "mention": "account_avatax_geolocalize",
+          "confidence": "high"
+        },
+        {
+          "name": "Avatax for geo localization",
+          "type": "Module",
+          "mention": "Avatax for geo localization",
+          "confidence": "high"
+        },
+        {
+          "name": "account_avatax_sale",
+          "type": "Module",
+          "mention": "account_avatax_sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Avatax for SO",
+          "type": "Module",
+          "mention": "Avatax for SO",
+          "confidence": "high"
+        },
+        {
+          "name": "account_avatax_stock",
+          "type": "Module",
+          "mention": "account_avatax_stock",
+          "confidence": "high"
+        },
+        {
+          "name": "Avatax for Inventory",
+          "type": "Module",
+          "mention": "Avatax for Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "sale_amazon_avatax",
+          "type": "Module",
+          "mention": "sale_amazon_avatax",
+          "confidence": "high"
+        },
+        {
+          "name": "Amazon/Avatax Bridge",
+          "type": "Module",
+          "mention": "Amazon/Avatax Bridge",
+          "confidence": "high"
+        },
+        {
+          "name": "Amazon Connector",
+          "type": "Module",
+          "mention": "Amazon Connector",
+          "confidence": "high"
+        },
+        {
+          "name": "l10n_br_avatax",
+          "type": "Module",
+          "mention": "l10n_br_avatax",
+          "confidence": "high"
+        },
+        {
+          "name": "Avatax Brazil",
+          "type": "Module",
+          "mention": "Avatax Brazil",
+          "confidence": "high"
+        },
+        {
+          "name": "l10n_br_avatax_services",
+          "type": "Module",
+          "mention": "l10n_br_avatax_services",
+          "confidence": "high"
+        },
+        {
+          "name": "Avatax Brazil for Services",
+          "type": "Module",
+          "mention": "Avatax Brazil for Services",
+          "confidence": "high"
+        },
+        {
+          "name": "l10n_br_edi_sale_services",
+          "type": "Module",
+          "mention": "l10n_br_edi_sale_services",
+          "confidence": "high"
+        },
+        {
+          "name": "Avatax Brazil Sale for Services",
+          "type": "Module",
+          "mention": "Avatax Brazil Sale for Services",
+          "confidence": "high"
+        },
+        {
+          "name": "l10n_br_test_avatax_sale",
+          "type": "Module",
+          "mention": "l10n_br_test_avatax_sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Test SOs for the Brazilian AvaTax",
+          "type": "Module",
+          "mention": "Test SOs for the Brazilian AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "Install",
+          "type": "Action",
+          "mention": "Install",
+          "confidence": "high"
+        },
+        {
+          "name": "Search... bar",
+          "type": "Feature",
+          "mention": "Search... bar",
+          "confidence": "high"
+        },
+        {
+          "name": "tax calculation",
+          "type": "Feature",
+          "mention": "tax calculation",
+          "confidence": "medium"
+        },
+        {
+          "name": "geo-localization",
+          "type": "Feature",
+          "mention": "geo-localization",
+          "confidence": "medium"
+        },
+        {
+          "name": "Brazil localization",
+          "type": "Concept",
+          "mention": "Brazil localization",
+          "confidence": "medium"
+        },
+        {
+          "name": "electronic data interchange (EDI)",
+          "type": "Concept",
+          "mention": "electronic data interchange (EDI)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Avatax",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "the Odoo *AvaTax* module"
+        },
+        {
+          "source": "account_avatax",
+          "relation": "BELONGS_TO",
+          "target": "Avatax",
+          "evidence": "Avatax: `account_avatax`"
+        },
+        {
+          "source": "account_avatax_sale",
+          "relation": "BELONGS_TO",
+          "target": "Avatax",
+          "evidence": "Avatax for SO: `account_avatax_sale`"
+        },
+        {
+          "source": "account_avatax_stock",
+          "relation": "BELONGS_TO",
+          "target": "Avatax",
+          "evidence": "Avatax for Inventory: `account_avatax_stock`"
+        },
+        {
+          "source": "Install",
+          "relation": "TRIGGERED_BY",
+          "target": "Avatax",
+          "evidence": "Click the Install button on the module labeled, Avatax"
+        },
+        {
+          "source": "account_avatax",
+          "relation": "HAS_FEATURE",
+          "target": "tax calculation",
+          "evidence": "This module adds the base *AvaTax* features for tax calculation."
+        },
+        {
+          "source": "account_avatax_geolocalize",
+          "relation": "HAS_FEATURE",
+          "target": "geo-localization",
+          "evidence": "This module includes the features required for integration of *AvaTax* into geo-localization"
+        },
+        {
+          "source": "account_avatax_sale",
+          "relation": "HAS_FEATURE",
+          "target": "tax calculation",
+          "evidence": "Includes the information needed for tax calculation on sales orders"
+        },
+        {
+          "source": "account_avatax_stock",
+          "relation": "HAS_FEATURE",
+          "target": "tax calculation",
+          "evidence": "Includes tax calculation in Odoo Inventory."
+        },
+        {
+          "source": "sale_amazon_avatax",
+          "relation": "HAS_FEATURE",
+          "target": "tax calculation",
+          "evidence": "Includes tax calculation features between the *Amazon Connector* and Odoo."
+        },
+        {
+          "source": "Amazon/Avatax Bridge",
+          "relation": "IS_PART_OF",
+          "target": "Amazon Connector",
+          "evidence": "Includes tax calculation features between the *Amazon Connector* and Odoo."
+        },
+        {
+          "source": "Avatax Brazil",
+          "relation": "RELATED_TO",
+          "target": "Brazil localization",
+          "evidence": "Includes information for tax calculation in the Brazil localization."
+        },
+        {
+          "source": "Avatax Brazil for Services",
+          "relation": "RELATED_TO",
+          "target": "Brazil localization",
+          "evidence": "This module includes the required features for tax calculation for services in the Brazil localization."
+        },
+        {
+          "source": "Avatax Brazil Sale for Services",
+          "relation": "RELATED_TO",
+          "target": "electronic data interchange (EDI)",
+          "evidence": "This includes electronic data interchange (EDI)."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "odoo-avatax-settings",
+    "heading": "Odoo AvaTax settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings section",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Sub-module",
+          "mention": "Taxes section",
+          "confidence": "medium"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax API",
+          "type": "Integration",
+          "mention": "AvaTax API",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax settings",
+          "type": "Setting",
+          "mention": "AvaTax settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Activate AvaTax checkbox",
+          "type": "Setting",
+          "mention": "checkbox",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Accounting app --> Configuration --> Settings section"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting app --> Configuration --> Settings section"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings section"
+        },
+        {
+          "source": "Taxes",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "The AvaTax fields in the Taxes section is where the AvaTax configurations are made"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "AvaTax",
+          "evidence": "To integrate the AvaTax API with Odoo"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "EQUIVALENT_TO",
+          "target": "AvaTax API",
+          "evidence": "To integrate the AvaTax API (application programming interface) with Odoo"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONFIGURED_BY",
+          "target": "AvaTax settings",
+          "evidence": "The AvaTax fields in the Taxes section is where the AvaTax configurations are made"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "CONFIGURED_BY",
+          "target": "AvaTax settings",
+          "evidence": "The AvaTax fields in the Taxes section is where the AvaTax configurations are made"
+        },
+        {
+          "source": "Activate AvaTax checkbox",
+          "relation": "CONFIGURED_BY",
+          "target": "AvaTax settings",
+          "evidence": "First, tick the checkbox to the left of the AvaTax settings"
+        },
+        {
+          "source": "Activate AvaTax checkbox",
+          "relation": "ENABLES",
+          "target": "AvaTax",
+          "evidence": "to activate AvaTax on the database"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "prerequisites",
+    "heading": "Prerequisites",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "Sandbox",
+          "type": "Setting",
+          "mention": "Sandbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Production",
+          "type": "Setting",
+          "mention": "Production",
+          "confidence": "high"
+        },
+        {
+          "name": "Environment",
+          "type": "Concept",
+          "mention": "Environment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "AvaTax",
+          "relation": "CONTAINS",
+          "target": "Sandbox",
+          "evidence": "It can either be Sandbox or Production."
+        },
+        {
+          "source": "AvaTax",
+          "relation": "CONTAINS",
+          "target": "Production",
+          "evidence": "It can either be Sandbox or Production."
+        },
+        {
+          "source": "AvaTax",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "First, select the Environment in which the company wishes to use *AvaTax* in."
+        },
+        {
+          "source": "Sandbox",
+          "relation": "RELATED_TO",
+          "target": "Production",
+          "evidence": "Sandbox vs Production environments"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "RELATED_TO",
+          "target": "Environment",
+          "evidence": "First, select the Environment in which the company wishes to use *AvaTax* in."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "credentials",
+    "heading": "Credentials",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "API ID",
+          "type": "Field",
+          "mention": "API ID field",
+          "confidence": "high"
+        },
+        {
+          "name": "API Key",
+          "type": "Field",
+          "mention": "API Key field",
+          "confidence": "high"
+        },
+        {
+          "name": "Account ID",
+          "type": "Field",
+          "mention": "Account ID",
+          "confidence": "high"
+        },
+        {
+          "name": "License Key",
+          "type": "Field",
+          "mention": "License Key",
+          "confidence": "high"
+        },
+        {
+          "name": "Company Code",
+          "type": "Field",
+          "mention": "Company Code field",
+          "confidence": "high"
+        },
+        {
+          "name": "Sandbox Portal",
+          "type": "Integration",
+          "mention": "sandbox admin.avalara.com",
+          "confidence": "medium"
+        },
+        {
+          "name": "Production Portal",
+          "type": "Integration",
+          "mention": "production admin.avalara.com",
+          "confidence": "medium"
+        },
+        {
+          "name": "User",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account",
+          "type": "DataObject",
+          "mention": "Account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Avalara management portal",
+          "type": "Integration",
+          "mention": "Avalara management portal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manage Companies",
+          "type": "Sub-module",
+          "mention": "Manage Companies",
+          "confidence": "medium"
+        },
+        {
+          "name": "Company",
+          "type": "DataObject",
+          "mention": "Company",
+          "confidence": "medium"
+        },
+        {
+          "name": "DEFAULT",
+          "type": "Standard",
+          "mention": "DEFAULT",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "API ID",
+          "evidence": "The AvaTax Account ID should be entered in the API ID field"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "API Key",
+          "evidence": "License Key should be entered in the API Key field"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Company Code",
+          "evidence": "For the Company Code field, enter the Avalara company code"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Credentials",
+          "evidence": "Now, the credentials can be entered in"
+        },
+        {
+          "source": "API ID",
+          "relation": "IS_PART_OF",
+          "target": "Credentials",
+          "evidence": "AvaTax Account ID should be entered in the API ID field"
+        },
+        {
+          "source": "API Key",
+          "relation": "IS_PART_OF",
+          "target": "Credentials",
+          "evidence": "License Key should be entered in the API Key field"
+        },
+        {
+          "source": "Company Code",
+          "relation": "IS_PART_OF",
+          "target": "Credentials",
+          "evidence": "For the Company Code field, enter the Avalara company code"
+        },
+        {
+          "source": "Account ID",
+          "relation": "EQUIVALENT_TO",
+          "target": "API ID",
+          "evidence": "AvaTax Account ID should be entered in the API ID field"
+        },
+        {
+          "source": "License Key",
+          "relation": "EQUIVALENT_TO",
+          "target": "API Key",
+          "evidence": "License Key should be entered in the API Key field"
+        },
+        {
+          "source": "Company Code",
+          "relation": "APPLIES_TO",
+          "target": "Company",
+          "evidence": "Avalara company code for the company being configured"
+        },
+        {
+          "source": "Company Code",
+          "relation": "USES_METHOD",
+          "target": "DEFAULT",
+          "evidence": "Avalara interprets this as DEFAULT, if it is not set"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "HAS_REPORT",
+          "target": "Account ID",
+          "evidence": "Account ID can be found by logging into the AvaTax portal"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "HAS_REPORT",
+          "target": "Company Code",
+          "evidence": "Company Code can be accessed in the Avalara management portal"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "transaction-options",
+    "heading": "Transaction options",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "Use UPC",
+          "type": "Feature",
+          "mention": "Use UPC",
+          "confidence": "high"
+        },
+        {
+          "name": "Commit Transactions",
+          "type": "Feature",
+          "mention": "Commit Transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "Universal Product Codes",
+          "type": "Concept",
+          "mention": "Universal Product Codes",
+          "confidence": "medium"
+        },
+        {
+          "name": "certified public accountant",
+          "type": "Actor",
+          "mention": "CPA",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "AvaTax",
+          "evidence": "... in the Odoo AvaTax settings"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Use UPC",
+          "evidence": "There are two transactional settings in the Odoo AvaTax settings"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Commit Transactions",
+          "evidence": "There are two transactional settings in the Odoo AvaTax settings"
+        },
+        {
+          "source": "Use UPC",
+          "relation": "SUPPORTS",
+          "target": "Universal Product Codes",
+          "evidence": "the transactions will use Universal Product Codes"
+        },
+        {
+          "source": "Use UPC",
+          "relation": "PERFORMED_BY",
+          "target": "certified public accountant",
+          "evidence": "Consult a certified public accountant"
+        },
+        {
+          "source": "Commit Transactions",
+          "relation": "ENABLES",
+          "target": "AvaTax",
+          "evidence": "the transactions in the Odoo database will be committed for reporting in AvaTax"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "address-validation",
+    "heading": "Address validation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Address validation",
+          "type": "Feature",
+          "mention": "Address Validation",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Module",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts app",
+          "type": "Module",
+          "mention": "Contacts app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate button",
+          "type": "Action",
+          "mention": "Validate button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save Validated",
+          "type": "Action",
+          "mention": "Save Validated",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax calculations",
+          "type": "Concept",
+          "mention": "tax calculations",
+          "confidence": "high"
+        },
+        {
+          "name": "contact",
+          "type": "DataObject",
+          "mention": "contact",
+          "confidence": "high"
+        },
+        {
+          "name": "Country",
+          "type": "Field",
+          "mention": "Country",
+          "confidence": "high"
+        },
+        {
+          "name": "State",
+          "type": "Field",
+          "mention": "State",
+          "confidence": "high"
+        },
+        {
+          "name": "Zip code",
+          "type": "Field",
+          "mention": "Zip code",
+          "confidence": "high"
+        },
+        {
+          "name": "Address validation field",
+          "type": "Setting",
+          "mention": "Address validation field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Address validation",
+          "relation": "CONFIGURED_BY",
+          "target": "Address validation field",
+          "evidence": "Additionally, tick the checkbox next to the Address validation field."
+        },
+        {
+          "source": "Address validation",
+          "relation": "SUPPORTS",
+          "target": "tax calculations",
+          "evidence": "This is important to provide accurate tax calculations for customers."
+        },
+        {
+          "source": "Address validation",
+          "relation": "REQUIRES",
+          "target": "Country",
+          "evidence": "using only the Country, State, and Zip code. These are the three minimum required fields."
+        },
+        {
+          "source": "Address validation",
+          "relation": "REQUIRES",
+          "target": "State",
+          "evidence": "using only the Country, State, and Zip code. These are the three minimum required fields."
+        },
+        {
+          "source": "Address validation",
+          "relation": "REQUIRES",
+          "target": "Zip code",
+          "evidence": "using only the Country, State, and Zip code. These are the three minimum required fields."
+        },
+        {
+          "source": "AvaTax",
+          "relation": "HAS_FEATURE",
+          "target": "Address validation",
+          "evidence": "Manually Validate the address... Now that the AvaTax module has been configured on the database, a Validate button appears directly below the Address."
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "contact",
+          "evidence": "by navigating to the Contacts app, and selecting a contact."
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "Save Validated",
+          "evidence": "If the Validated Address is the correct mailing address for tax purposes, click Save Validated."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "test-connection",
+    "heading": "Test connection",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Test connection",
+          "type": "Action",
+          "mention": "Test connection",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "API ID",
+          "type": "Field",
+          "mention": "API ID",
+          "confidence": "medium"
+        },
+        {
+          "name": "API KEY",
+          "type": "Field",
+          "mention": "API KEY",
+          "confidence": "medium"
+        },
+        {
+          "name": "AvaTax setup on Odoo",
+          "type": "Setting",
+          "mention": "*AvaTax* setup on Odoo",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Test connection",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Test connection"
+        },
+        {
+          "source": "Test connection",
+          "relation": "ENABLES",
+          "target": "Integration",
+          "evidence": "ensures... and a connection is made between Odoo and the *AvaTax* API"
+        },
+        {
+          "source": "AvaTax setup on Odoo",
+          "relation": "CONTAINS",
+          "target": "API ID",
+          "evidence": "after entering all the above information... into the *AvaTax* setup on Odoo"
+        },
+        {
+          "source": "AvaTax setup on Odoo",
+          "relation": "CONTAINS",
+          "target": "API KEY",
+          "evidence": "after entering all the above information... into the *AvaTax* setup on Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sync-parameters",
+    "heading": "Sync parameters",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "Sync Parameters",
+          "type": "Action",
+          "mention": "click the Sync Parameters button",
+          "confidence": "high"
+        },
+        {
+          "name": "exemption codes",
+          "type": "DataObject",
+          "mention": "exemption codes",
+          "confidence": "high"
+        },
+        {
+          "name": "Sync Parameters button",
+          "type": "Feature",
+          "mention": "Sync Parameters button",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sync Parameters",
+          "relation": "PERFORMED_BY",
+          "target": "AvaTax",
+          "evidence": "Upon finishing the configuration and settings of the AvaTax section, click the Sync Parameters button."
+        },
+        {
+          "source": "Sync Parameters",
+          "relation": "PRODUCES",
+          "target": "exemption codes",
+          "evidence": "This action synchronizes the exemption codes from AvaTax."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "fiscal-position",
+    "heading": "Fiscal position",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting: Fiscal Positions",
+          "type": "Feature",
+          "mention": "Accounting: Fiscal Positions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal Position",
+          "type": "DataObject",
+          "mention": "Fiscal Position",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic Tax Mapping (AvaTax)",
+          "type": "DataObject",
+          "mention": "Automatic Tax Mapping (AvaTax)",
+          "confidence": "high"
+        },
+        {
+          "name": "Use AvaTax API",
+          "type": "Setting",
+          "mention": "Use AvaTax API checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Detect Automatically",
+          "type": "Setting",
+          "mention": "Detect Automatically checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT required",
+          "type": "Setting",
+          "mention": "VAT required",
+          "confidence": "low"
+        },
+        {
+          "name": "Foreign Tax ID",
+          "type": "Setting",
+          "mention": "Foreign Tax ID",
+          "confidence": "low"
+        },
+        {
+          "name": "Country Group",
+          "type": "Setting",
+          "mention": "Country Group",
+          "confidence": "low"
+        },
+        {
+          "name": "Country",
+          "type": "Setting",
+          "mention": "Country",
+          "confidence": "low"
+        },
+        {
+          "name": "Federal States",
+          "type": "Setting",
+          "mention": "Federal States",
+          "confidence": "low"
+        },
+        {
+          "name": "Zip Range",
+          "type": "Setting",
+          "mention": "Zip Range",
+          "confidence": "low"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Order",
+          "type": "Sub-module",
+          "mention": "Order",
+          "confidence": "low"
+        },
+        {
+          "name": "Customers",
+          "type": "Feature",
+          "mention": "Customers",
+          "confidence": "low"
+        },
+        {
+          "name": "Contacts",
+          "type": "Module",
+          "mention": "Contacts app",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts",
+          "type": "Feature",
+          "mention": "Contacts",
+          "confidence": "low"
+        },
+        {
+          "name": "Sales and Purchase tab",
+          "type": "Feature",
+          "mention": "Sales and Purchase tab",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "contact",
+          "type": "Actor",
+          "mention": "contact",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiscal_positions",
+          "type": "Concept",
+          "mention": "fiscal_positions",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Accounting: Fiscal Positions",
+          "evidence": "Configuration --> Accounting: Fiscal Positions"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Fiscal Position",
+          "evidence": "A Fiscal Position..."
+        },
+        {
+          "source": "Automatic Tax Mapping (AvaTax)",
+          "relation": "EQUIVALENT_TO",
+          "target": "Fiscal Position",
+          "evidence": "A Fiscal Position is listed named, Automatic Tax Mapping (AvaTax)"
+        },
+        {
+          "source": "Automatic Tax Mapping (AvaTax)",
+          "relation": "CONFIGURED_BY",
+          "target": "Use AvaTax API",
+          "evidence": "ensure that the Use AvaTax API checkbox is ticked"
+        },
+        {
+          "source": "Automatic Tax Mapping (AvaTax)",
+          "relation": "CONFIGURED_BY",
+          "target": "Detect Automatically",
+          "evidence": "Optionally, tick the checkbox next to the field labeled: Detect Automatically"
+        },
+        {
+          "source": "Detect Automatically",
+          "relation": "ENABLES",
+          "target": "VAT required",
+          "evidence": "makes specific parameters, such as VAT required... appear"
+        },
+        {
+          "source": "Detect Automatically",
+          "relation": "ENABLES",
+          "target": "Foreign Tax ID",
+          "evidence": "makes specific parameters, such as Foreign Tax ID... appear"
+        },
+        {
+          "source": "Detect Automatically",
+          "relation": "ENABLES",
+          "target": "Country Group",
+          "evidence": "makes specific parameters, such as Country Group... appear"
+        },
+        {
+          "source": "Detect Automatically",
+          "relation": "ENABLES",
+          "target": "Country",
+          "evidence": "makes specific parameters, such as Country... appear"
+        },
+        {
+          "source": "Detect Automatically",
+          "relation": "ENABLES",
+          "target": "Federal States",
+          "evidence": "makes specific parameters, such as Federal States... appear"
+        },
+        {
+          "source": "Detect Automatically",
+          "relation": "ENABLES",
+          "target": "Zip Range",
+          "evidence": "makes specific parameters, such as Zip Range... appear"
+        },
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "Order",
+          "evidence": "Sales app --> Order"
+        },
+        {
+          "source": "Contacts",
+          "relation": "CONTAINS",
+          "target": "Contacts",
+          "evidence": "Contacts app --> Contacts"
+        },
+        {
+          "source": "customer",
+          "relation": "CONFIGURED_BY",
+          "target": "Fiscal Position",
+          "evidence": "the Fiscal Position set on their Sales and Purchase tab"
+        },
+        {
+          "source": "customer",
+          "relation": "BELONGS_TO",
+          "target": "Sales and Purchase tab",
+          "evidence": "Sales and Purchase tab of the contact record"
+        },
+        {
+          "source": "Automatic Tax Mapping (AvaTax)",
+          "relation": "SEE_ALSO",
+          "target": "fiscal_positions",
+          "evidence": "fiscal_positions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "avatax-accounts",
+    "heading": "AvaTax accounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax API",
+          "type": "Integration",
+          "mention": "AvaTax API",
+          "confidence": "high"
+        },
+        {
+          "name": "Use AvaTax API",
+          "type": "Feature",
+          "mention": "Use AvaTax API",
+          "confidence": "medium"
+        },
+        {
+          "name": "AvaTax tab",
+          "type": "Module",
+          "mention": "AvaTax tab",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax Invoice Account",
+          "type": "Setting",
+          "mention": "AvaTax Invoice Account",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax Refund Account",
+          "type": "Setting",
+          "mention": "AvaTax Refund Account",
+          "confidence": "high"
+        },
+        {
+          "name": "CPA",
+          "type": "Actor",
+          "mention": "CPA",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "checkbox option",
+          "type": "Field",
+          "mention": "checkbox option",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Use AvaTax API",
+          "evidence": "Upon selecting the checkbox option for Use AvaTax API"
+        },
+        {
+          "source": "Use AvaTax API",
+          "relation": "ENABLES",
+          "target": "AvaTax tab",
+          "evidence": "Upon selecting the checkbox option for Use AvaTax API a new AvaTax tab appears."
+        },
+        {
+          "source": "AvaTax tab",
+          "relation": "CONTAINS",
+          "target": "AvaTax Invoice Account",
+          "evidence": "Click into this tab to reveal two different settings. The first setting is the AvaTax Invoice Account"
+        },
+        {
+          "source": "AvaTax tab",
+          "relation": "CONTAINS",
+          "target": "AvaTax Refund Account",
+          "evidence": "Click into this tab to reveal two different settings... AvaTax Refund Account"
+        },
+        {
+          "source": "CPA",
+          "relation": "PERFORMED_BY",
+          "target": "CPA",
+          "evidence": "Consult a certified public accountant (CPA) for specific guidance"
+        },
+        {
+          "source": "Save",
+          "relation": "PRODUCES",
+          "target": "changes",
+          "evidence": "Click Save to implement the changes."
+        },
+        {
+          "source": "Save",
+          "relation": "CONFIGURED_BY",
+          "target": "Use AvaTax API",
+          "evidence": "Click Save to implement the changes."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-mapping",
+    "heading": "Tax mapping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "AvaTax integration",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic Tax Mapping (AvaTax)",
+          "type": "Feature",
+          "mention": "Automatic Tax Mapping (AvaTax) fiscal position",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Mapping tab",
+          "type": "Feature",
+          "mention": "Tax Mapping tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Account Mapping tab",
+          "type": "Feature",
+          "mention": "Account Mapping tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal Positions",
+          "type": "Concept",
+          "mention": "Fiscal Positions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting app",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sale orders",
+          "type": "DataObject",
+          "mention": "Sale orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoices",
+          "type": "DataObject",
+          "mention": "Invoices",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "AvaTax",
+          "evidence": "The AvaTax integration is available on sale orders and invoices"
+        },
+        {
+          "source": "Automatic Tax Mapping (AvaTax)",
+          "relation": "CONTAINS",
+          "target": "Tax Mapping tab",
+          "evidence": "Tax Mapping tab ... in the Automatic Tax Mapping (AvaTax) fiscal position"
+        },
+        {
+          "source": "Automatic Tax Mapping (AvaTax)",
+          "relation": "CONTAINS",
+          "target": "Account Mapping tab",
+          "evidence": "Account Mapping tab ... in the Automatic Tax Mapping (AvaTax) fiscal position"
+        },
+        {
+          "source": "Fiscal Positions",
+          "relation": "CONFIGURED_BY",
+          "target": "Accounting",
+          "evidence": "To access Fiscal Positions navigate to Accounting app --> Configuration --> Accounting: Fiscal Positions"
+        },
+        {
+          "source": "Accounting app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Configuration --> Accounting: Fiscal Positions"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "APPLIES_TO",
+          "target": "Sale orders",
+          "evidence": "The AvaTax integration is available on sale orders"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "APPLIES_TO",
+          "target": "Invoices",
+          "evidence": "The AvaTax integration is available on invoices"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "product-category-mapping",
+    "heading": "Product category mapping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Categories",
+          "type": "DataObject",
+          "mention": "Product Categories",
+          "confidence": "high"
+        },
+        {
+          "name": "product category",
+          "type": "DataObject",
+          "mention": "product category",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax Category",
+          "type": "Field",
+          "mention": "AvaTax Category",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Product Categories",
+          "evidence": "Navigate to Inventory app --> Configuration --> Product Categories"
+        },
+        {
+          "source": "Product Categories",
+          "relation": "CONTAINS",
+          "target": "product category",
+          "evidence": "Select the product category"
+        },
+        {
+          "source": "product category",
+          "relation": "CONTAINS",
+          "target": "AvaTax Category",
+          "evidence": "In the AvaTax Category field"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Navigate to Inventory app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "product-mapping",
+    "heading": "Product mapping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products --> Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Avatax Category",
+          "type": "Field",
+          "mention": "Avatax Category",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information tab",
+          "type": "Feature",
+          "mention": "General Information tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Search More...",
+          "type": "Feature",
+          "mention": "Search More...",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiscal_positions",
+          "type": "Concept",
+          "mention": "fiscal_positions",
+          "confidence": "medium"
+        },
+        {
+          "name": "avatax/avatax_use",
+          "type": "Concept",
+          "mention": "avatax/avatax_use",
+          "confidence": "medium"
+        },
+        {
+          "name": "avatax/avalara_portal",
+          "type": "Concept",
+          "mention": "avatax/avalara_portal",
+          "confidence": "medium"
+        },
+        {
+          "name": "US Tax Compliance: Avatax elearning video",
+          "type": "Concept",
+          "mention": "US Tax Compliance: Avatax elearning video",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Avatax Category",
+          "evidence": "Products --> Products. ... Avatax Category"
+        },
+        {
+          "source": "Avatax Category",
+          "relation": "GOVERNED_BY",
+          "target": "fiscal_positions",
+          "evidence": "seealso: fiscal_positions"
+        },
+        {
+          "source": "Avatax Category",
+          "relation": "SEE_ALSO",
+          "target": "avatax/avatax_use",
+          "evidence": "seealso: avatax/avatax_use"
+        },
+        {
+          "source": "Avatax Category",
+          "relation": "SEE_ALSO",
+          "target": "avatax/avalara_portal",
+          "evidence": "seealso: avatax/avalara_portal"
+        },
+        {
+          "source": "Avatax Category",
+          "relation": "SEE_ALSO",
+          "target": "US Tax Compliance: Avatax elearning video",
+          "evidence": "seealso: US Tax Compliance: Avatax elearning video"
+        }
+      ]
+    }
+  }
+]

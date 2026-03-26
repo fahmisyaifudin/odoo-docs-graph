@@ -1,0 +1,1052 @@
+[
+  {
+    "section_id": "multi-currency-system",
+    "heading": "Multi-currency system",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-currency system",
+          "type": "Feature",
+          "mention": "Multi-currency system",
+          "confidence": "high"
+        },
+        {
+          "name": "Foreign Currency Activities Report",
+          "type": "Report",
+          "mention": "reports on your foreign currency activities",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Multi-currency system",
+          "evidence": "Product: Odoo\nTitle: Multi-currency system"
+        },
+        {
+          "source": "Multi-currency system",
+          "relation": "HAS_REPORT",
+          "target": "Foreign Currency Activities Report",
+          "evidence": "run reports on your foreign currency activities"
+        },
+        {
+          "source": "Multi-currency system",
+          "relation": "SEE_ALSO",
+          "target": "../bank/foreign_currency",
+          "evidence": ".. seealso::\n   - ../bank/foreign_currency"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "main-currency",
+    "heading": "Main currency",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Main currency",
+          "type": "Concept",
+          "mention": "main currency",
+          "confidence": "high"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Currencies",
+          "type": "Module",
+          "mention": "Currencies",
+          "confidence": "high"
+        },
+        {
+          "name": "Main Currency setting",
+          "type": "Setting",
+          "mention": "Main Currency setting",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Main currency",
+          "relation": "APPLIES_TO",
+          "target": "company",
+          "evidence": "\"The main currency is defined by default according to the company's country.\""
+        },
+        {
+          "source": "Main currency",
+          "relation": "CONFIGURED_BY",
+          "target": "Main Currency setting",
+          "evidence": "\"You can change it... changing the currency in the Main Currency setting.\""
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "\"going to Accounting --> Configuration\""
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "\"Configuration --> Settings\""
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Currencies",
+          "evidence": "\"Settings --> Currencies\""
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-foreign-currencies",
+    "heading": "Enable foreign currencies",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Currencies",
+          "type": "Module",
+          "mention": "Currencies",
+          "confidence": "high"
+        },
+        {
+          "name": "Active",
+          "type": "Field",
+          "mention": "Active button",
+          "confidence": "high"
+        },
+        {
+          "name": "foreign currencies",
+          "type": "Concept",
+          "mention": "foreign currencies",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Currencies",
+          "evidence": "Configuration --> Currencies"
+        },
+        {
+          "source": "Currencies",
+          "relation": "CONFIGURED_BY",
+          "target": "Active",
+          "evidence": "toggle the Active button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manual-update",
+    "heading": "Manual update",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Currencies",
+          "type": "Feature",
+          "mention": "Currencies",
+          "confidence": "high"
+        },
+        {
+          "name": "currency",
+          "type": "DataObject",
+          "mention": "currency",
+          "confidence": "medium"
+        },
+        {
+          "name": "currency rate",
+          "type": "Field",
+          "mention": "currency rate",
+          "confidence": "medium"
+        },
+        {
+          "name": "Rates tab",
+          "type": "Feature",
+          "mention": "Rates tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Currencies",
+          "evidence": "Configuration --> Currencies"
+        },
+        {
+          "source": "Currencies",
+          "relation": "CONTAINS",
+          "target": "currency",
+          "evidence": "click on the currency"
+        },
+        {
+          "source": "Currencies",
+          "relation": "CONTAINS",
+          "target": "Rates tab",
+          "evidence": "under the Rates tab"
+        },
+        {
+          "source": "currency",
+          "relation": "HAS_FEATURE",
+          "target": "currency rate",
+          "evidence": "change the rate of"
+        },
+        {
+          "source": "Rates tab",
+          "relation": "ENABLES",
+          "target": "Add a line",
+          "evidence": "click Add a line"
+        },
+        {
+          "source": "Add a line",
+          "relation": "PRODUCES",
+          "target": "currency rate",
+          "evidence": "create a new rate"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "automatic-update",
+    "heading": "Automatic update",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Currencies",
+          "type": "Concept",
+          "mention": "Currencies",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic Currency Rates",
+          "type": "Feature",
+          "mention": "Automatic Currency Rates",
+          "confidence": "high"
+        },
+        {
+          "name": "Update now",
+          "type": "Action",
+          "mention": "Click the os-refresh-data (Update now) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Interval",
+          "type": "Setting",
+          "mention": "Interval",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual",
+          "type": "Setting",
+          "mention": "Manually",
+          "confidence": "medium"
+        },
+        {
+          "name": "Daily",
+          "type": "Setting",
+          "mention": "Daily",
+          "confidence": "medium"
+        },
+        {
+          "name": "Weekly",
+          "type": "Setting",
+          "mention": "Weekly",
+          "confidence": "medium"
+        },
+        {
+          "name": "Monthly",
+          "type": "Setting",
+          "mention": "Monthly",
+          "confidence": "medium"
+        },
+        {
+          "name": "Service field",
+          "type": "Field",
+          "mention": "Service field",
+          "confidence": "medium"
+        },
+        {
+          "name": "web service",
+          "type": "Integration",
+          "mention": "web service",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "under Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Currencies",
+          "evidence": "Settings in the Currencies section"
+        },
+        {
+          "source": "Automatic Currency Rates",
+          "relation": "IS_PART_OF",
+          "target": "Currencies",
+          "evidence": "appears under... in the Currencies section"
+        },
+        {
+          "source": "Update now",
+          "relation": "ENABLES",
+          "target": "Automatic Currency Rates",
+          "evidence": "Click the os-refresh-data (Update now) icon to update the rates"
+        },
+        {
+          "source": "Interval",
+          "relation": "CONFIGURED_BY",
+          "target": "Manual",
+          "evidence": "change the Interval from Manually to..."
+        },
+        {
+          "source": "Interval",
+          "relation": "CONFIGURED_BY",
+          "target": "Daily",
+          "evidence": "change the Interval from Manually to Daily"
+        },
+        {
+          "source": "Interval",
+          "relation": "CONFIGURED_BY",
+          "target": "Weekly",
+          "evidence": "change the Interval from Manually to Weekly"
+        },
+        {
+          "source": "Interval",
+          "relation": "CONFIGURED_BY",
+          "target": "Monthly",
+          "evidence": "change the Interval from Manually to Monthly"
+        },
+        {
+          "source": "Automatic Currency Rates",
+          "relation": "CONFIGURED_BY",
+          "target": "Interval",
+          "evidence": "Rates can be updated at regular intervals automatically"
+        },
+        {
+          "source": "Service field",
+          "relation": "RELATED_TO",
+          "target": "web service",
+          "evidence": "select the web service from which you want to retrieve the latest currency rates by clicking the Service field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "exchange-difference-entries",
+    "heading": "Exchange difference entries",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Exchange Difference Entry",
+          "type": "DataObject",
+          "mention": "exchange differences entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Accounts section",
+          "type": "Sub-module",
+          "mention": "Default Accounts section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "Journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Gain account",
+          "type": "Field",
+          "mention": "Gain and Loss accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Loss account",
+          "type": "Field",
+          "mention": "Gain and Loss accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Exchange Difference journal",
+          "type": "Journal",
+          "mention": "Exchange Difference journal",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Exchange Difference Entry",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo automatically records exchange differences entries"
+        },
+        {
+          "source": "Exchange Difference Entry",
+          "relation": "CONFIGURED_BY",
+          "target": "Journal",
+          "evidence": "edit the Journal, the Gain and Loss accounts"
+        },
+        {
+          "source": "Exchange Difference Entry",
+          "relation": "CONFIGURED_BY",
+          "target": "Gain account",
+          "evidence": "edit the Journal, the Gain and Loss accounts"
+        },
+        {
+          "source": "Exchange Difference Entry",
+          "relation": "CONFIGURED_BY",
+          "target": "Loss account",
+          "evidence": "edit the Journal, the Gain and Loss accounts"
+        },
+        {
+          "source": "Exchange Difference journal",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo automatically records in the default Exchange Difference journal"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "chart-of-accounts",
+    "heading": "Chart of accounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Chart of accounts",
+          "type": "Module",
+          "mention": "Title: Chart of accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Accounting --> Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Charts of Accounts",
+          "type": "Feature",
+          "mention": "Charts of Accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "field Currency",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Chart of accounts",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo; Title: Chart of accounts"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Charts of Accounts",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration --> Charts of Accounts"
+        },
+        {
+          "source": "Chart of accounts",
+          "relation": "CONTAINS",
+          "target": "Currency",
+          "evidence": "select a currency in the field Currency"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "journals",
+    "heading": "Journals",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Accounting",
+          "type": "Product",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Journals",
+          "type": "Module",
+          "mention": "Journals",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "DataObject",
+          "mention": "journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "Currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Journal",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "journal only handles transactions"
+        },
+        {
+          "source": "Journal",
+          "relation": "CONTAINS",
+          "target": "Currency",
+          "evidence": "open the journal you want to edit, and select a currency in the field Currency"
+        },
+        {
+          "source": "Journals",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration --> Journals"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Journal",
+          "relation": "GOVERNED_BY",
+          "target": "Currency",
+          "evidence": "If a currency is set on a journal, that journal only handles transactions in that currency"
+        },
+        {
+          "source": "Journals",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Configuration --> Journals"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoices,-bills,-and-other-documents",
+    "heading": "Invoices, bills, and other documents",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "currency",
+          "type": "Setting",
+          "mention": "currency",
+          "confidence": "high"
+        },
+        {
+          "name": "journal",
+          "type": "Setting",
+          "mention": "journal",
+          "confidence": "high"
+        },
+        {
+          "name": "transaction",
+          "type": "Concept",
+          "mention": "transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "document",
+          "type": "DataObject",
+          "mention": "document",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "document",
+          "relation": "CONFIGURED_BY",
+          "target": "currency",
+          "evidence": "select the currency"
+        },
+        {
+          "source": "document",
+          "relation": "CONFIGURED_BY",
+          "target": "journal",
+          "evidence": "select the currency and journal"
+        },
+        {
+          "source": "currency",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "currency"
+        },
+        {
+          "source": "journal",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "journal"
+        },
+        {
+          "source": "document",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "document"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "payment-registration",
+    "heading": "Payment registration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Payment registration",
+          "type": "Module",
+          "mention": "Payment registration",
+          "confidence": "high"
+        },
+        {
+          "name": "Register Payment",
+          "type": "Action",
+          "mention": "Register Payment payment button",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount field",
+          "type": "Field",
+          "mention": "Amount field",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "currency",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payment registration",
+          "relation": "CONTAINS",
+          "target": "Register Payment",
+          "evidence": "To register a payment... click on the Register Payment payment button"
+        },
+        {
+          "source": "Register Payment",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click on the Register Payment payment button of your document"
+        },
+        {
+          "source": "Register Payment",
+          "relation": "CONFIGURED_BY",
+          "target": "Amount field",
+          "evidence": "in the pop-up window, select a currency in the Amount field"
+        },
+        {
+          "source": "Amount field",
+          "relation": "CONTAINS",
+          "target": "Currency",
+          "evidence": "select a currency in the Amount field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bank-transactions",
+    "heading": "Bank transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank transactions",
+          "type": "Module",
+          "mention": "When creating or importing bank transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Foreign Currency",
+          "type": "Field",
+          "mention": "Foreign Currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount",
+          "type": "Field",
+          "mention": "Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount in Currency",
+          "type": "Field",
+          "mention": "Amount in Currency field",
+          "confidence": "high"
+        },
+        {
+          "name": "main currency",
+          "type": "Concept",
+          "mention": "company's main currency",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank transactions",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Bank transactions"
+        },
+        {
+          "source": "Bank transactions",
+          "relation": "CONTAINS",
+          "target": "Foreign Currency",
+          "evidence": "To input a **foreign currency**, select a currency in the Foreign Currency."
+        },
+        {
+          "source": "Bank transactions",
+          "relation": "CONTAINS",
+          "target": "Amount",
+          "evidence": "enter the Amount in your main currency"
+        },
+        {
+          "source": "Bank transactions",
+          "relation": "CONTAINS",
+          "target": "Amount in Currency",
+          "evidence": "automatically get converted... in the Amount in Currency field"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Bank transactions",
+          "evidence": "Product: Odoo, Title: Bank transactions"
+        },
+        {
+          "source": "Amount in Currency",
+          "relation": "GENERATES",
+          "target": "Amount",
+          "evidence": "enter the Amount in your main currency for it to automatically get converted"
+        },
+        {
+          "source": "Amount",
+          "relation": "RELATED_TO",
+          "target": "main currency",
+          "evidence": "enter the Amount in your main currency"
+        },
+        {
+          "source": "Foreign Currency",
+          "relation": "RELATED_TO",
+          "target": "main currency",
+          "evidence": "the amount is in the company's main currency. To input a **foreign currency**"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "exchange-rate-journal-entries",
+    "heading": "Exchange rate journal entries",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Exchange rate journal entries",
+          "type": "Concept",
+          "mention": "Title: Exchange rate journal entries",
+          "confidence": "high"
+        },
+        {
+          "name": "exchange difference journal entries",
+          "type": "DataObject",
+          "mention": "exchange difference journal entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Review",
+          "type": "Sub-module",
+          "mention": "Review",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Items",
+          "type": "Report",
+          "mention": "Journal Items",
+          "confidence": "high"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-caret-down icon",
+          "type": "Feature",
+          "mention": "fa-caret-down icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Group By column",
+          "type": "Field",
+          "mention": "Group By column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Miscellaneous",
+          "type": "Setting",
+          "mention": "Miscellaneous",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "exchange difference journal entries",
+          "relation": "BELONGS_TO",
+          "target": "Exchange rate journal entries",
+          "evidence": "To see exchange difference journal entries, go to Accounting --> Review --> Journal Items"
+        },
+        {
+          "source": "Journal Items",
+          "relation": "BELONGS_TO",
+          "target": "Review",
+          "evidence": "Accounting --> Review --> Journal Items"
+        },
+        {
+          "source": "Review",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Accounting --> Review"
+        },
+        {
+          "source": "Accounting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, go to Accounting"
+        },
+        {
+          "source": "Journal Items",
+          "relation": "HAS_REPORT",
+          "target": "exchange difference journal entries",
+          "evidence": "To see exchange difference journal entries, go to Accounting --> Review --> Journal Items"
+        },
+        {
+          "source": "Group By column",
+          "relation": "CONFIGURED_BY",
+          "target": "Miscellaneous",
+          "evidence": "In the search bar... in the Group By column, select Miscellaneous"
+        },
+        {
+          "source": "search bar",
+          "relation": "CONTAINS",
+          "target": "Group By column",
+          "evidence": "In the search bar, click the fa-caret-down (down caret) icon and, in the Group By column..."
+        },
+        {
+          "source": "search bar",
+          "relation": "CONTAINS",
+          "target": "fa-caret-down icon",
+          "evidence": "In the search bar, click the fa-caret-down (down caret) icon..."
+        }
+      ]
+    }
+  }
+]

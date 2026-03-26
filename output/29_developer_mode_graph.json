@@ -1,0 +1,341 @@
+[
+  {
+    "section_id": "developer-mode-(debug-mode)",
+    "heading": "Developer mode (debug mode)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Developer mode",
+          "type": "Feature",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Debug mode",
+          "type": "Feature",
+          "mention": "debug mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Advanced tools",
+          "type": "Feature",
+          "mention": "advanced tools",
+          "confidence": "high"
+        },
+        {
+          "name": "Advanced settings",
+          "type": "Setting",
+          "mention": "settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Technical settings",
+          "type": "Setting",
+          "mention": "technical settings",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Developer mode",
+          "relation": "ENABLES",
+          "target": "Advanced tools",
+          "evidence": "developer mode unlocks access to advanced tools"
+        },
+        {
+          "source": "Developer mode",
+          "relation": "ENABLES",
+          "target": "Advanced settings",
+          "evidence": "developer mode unlocks access to advanced settings"
+        },
+        {
+          "source": "Developer mode",
+          "relation": "EQUIVALENT_TO",
+          "target": "Debug mode",
+          "evidence": "developer mode, also known as debug mode"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "activation",
+    "heading": "Activation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Settings app",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "high"
+        },
+        {
+          "name": "Developer Tools",
+          "type": "Sub-module",
+          "mention": "Developer Tools",
+          "confidence": "high"
+        },
+        {
+          "name": "Activate the developer mode",
+          "type": "Action",
+          "mention": "Activate the developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Deactivate the developer mode",
+          "type": "Action",
+          "mention": "Deactivate the developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Feature",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "debug parameter",
+          "type": "Setting",
+          "mention": "debug",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer mode with assets",
+          "type": "Feature",
+          "mention": "developer mode with assets",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer mode with tests assets",
+          "type": "Feature",
+          "mention": "developer mode with tests assets",
+          "confidence": "medium"
+        },
+        {
+          "name": "command palette",
+          "type": "Feature",
+          "mention": "command palette",
+          "confidence": "medium"
+        },
+        {
+          "name": "Ctrl + K",
+          "type": "Action",
+          "mention": "Ctrl + K",
+          "confidence": "low"
+        },
+        {
+          "name": "Cmd ⌘ + K",
+          "type": "Action",
+          "mention": "Cmd ⌘ + K",
+          "confidence": "low"
+        },
+        {
+          "name": "Odoo Debug browser extension",
+          "type": "Integration",
+          "mention": "Odoo Debug browser extension",
+          "confidence": "medium"
+        },
+        {
+          "name": "toggle developer mode",
+          "type": "Action",
+          "mention": "toggle developer mode",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Settings app",
+          "relation": "CONTAINS",
+          "target": "Developer Tools",
+          "evidence": "open the Settings app, scroll down to the Developer Tools section"
+        },
+        {
+          "source": "Developer Tools",
+          "relation": "CONTAINS",
+          "target": "Activate the developer mode",
+          "evidence": "click Activate the developer mode"
+        },
+        {
+          "source": "Activate the developer mode",
+          "relation": "ENABLES",
+          "target": "Deactivate the developer mode",
+          "evidence": "Once activated, the Deactivate the developer mode option becomes available"
+        },
+        {
+          "source": "Activate the developer mode",
+          "relation": "PERFORMED_BY",
+          "target": "debug parameter",
+          "evidence": "add ?debug=1 at the end of the URL"
+        },
+        {
+          "source": "debug parameter",
+          "relation": "ENABLES",
+          "target": "developer mode",
+          "evidence": "To activate the developer mode from anywhere in the database, add ?debug=1"
+        },
+        {
+          "source": "developer mode",
+          "relation": "ENABLES",
+          "target": "developer mode with assets",
+          "evidence": "Use ?debug=assets to activate the developer mode with assets"
+        },
+        {
+          "source": "developer mode",
+          "relation": "ENABLES",
+          "target": "developer mode with tests assets",
+          "evidence": "Use ?debug=tests to activate it with tests assets"
+        },
+        {
+          "source": "command palette",
+          "relation": "ENABLES",
+          "target": "developer mode with assets",
+          "evidence": "Open the command palette..., then type debug to activate the developer mode with assets"
+        },
+        {
+          "source": "command palette",
+          "relation": "ENABLES",
+          "target": "Deactivate the developer mode",
+          "evidence": "Open the command palette..., then type debug to... deactivate it"
+        },
+        {
+          "source": "Ctrl + K",
+          "relation": "ENABLES",
+          "target": "command palette",
+          "evidence": "Open the command palette by pressing Ctrl + K"
+        },
+        {
+          "source": "Cmd ⌘ + K",
+          "relation": "ENABLES",
+          "target": "command palette",
+          "evidence": "Open the command palette by pressing Cmd ⌘ + K"
+        },
+        {
+          "source": "Odoo Debug browser extension",
+          "relation": "ENABLES",
+          "target": "toggle developer mode",
+          "evidence": "adds an icon to toggle developer mode on or off"
+        },
+        {
+          "source": "toggle developer mode",
+          "relation": "ENABLES",
+          "target": "developer mode",
+          "evidence": "toggle developer mode on or off"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "developer-tools-and-technical-menu",
+    "heading": "Developer tools and technical menu",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Developer tools",
+          "type": "Module",
+          "mention": "developer tools",
+          "confidence": "high"
+        },
+        {
+          "name": "Technical menu",
+          "type": "Module",
+          "mention": "technical menu",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-bug (bug) icon",
+          "type": "Action",
+          "mention": "fa-bug (bug) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Database administrator",
+          "type": "Actor",
+          "mention": "Database administrators",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings app",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Database structure",
+          "type": "Concept",
+          "mention": "database structure",
+          "confidence": "low"
+        },
+        {
+          "name": "Security",
+          "type": "Concept",
+          "mention": "security",
+          "confidence": "low"
+        },
+        {
+          "name": "Actions",
+          "type": "Concept",
+          "mention": "actions",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Developer tools",
+          "relation": "IS_PART_OF",
+          "target": "Technical menu",
+          "evidence": "The menu contains tools"
+        },
+        {
+          "source": "Developer mode",
+          "relation": "ENABLES",
+          "target": "Developer tools",
+          "evidence": "Once the developer mode is activated, the developer tools can be accessed"
+        },
+        {
+          "source": "Technical menu",
+          "relation": "CONTAINS",
+          "target": "Database structure",
+          "evidence": "contains advanced database settings, such as ones related to the database structure"
+        },
+        {
+          "source": "Technical menu",
+          "relation": "CONTAINS",
+          "target": "Security",
+          "evidence": "contains advanced database settings, such as ones related to the security"
+        },
+        {
+          "source": "Technical menu",
+          "relation": "CONTAINS",
+          "target": "Actions",
+          "evidence": "contains advanced database settings, such as ones related to the actions"
+        },
+        {
+          "source": "Database administrator",
+          "relation": "PERFORMED_BY",
+          "target": "Settings app",
+          "evidence": "Database administrators can access the technical menu from the Settings app"
+        }
+      ]
+    }
+  }
+]

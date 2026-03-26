@@ -1,0 +1,830 @@
+[
+  {
+    "section_id": "replenishment-report",
+    "heading": "Replenishment report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment report",
+          "type": "Report",
+          "mention": "Replenishment report",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rules",
+          "type": "Feature",
+          "mention": "reordering rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "monitoring menu",
+          "type": "Feature",
+          "mention": "monitoring menu",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replenishment report",
+          "relation": "HAS_REPORT",
+          "target": "Odoo",
+          "evidence": "Replenishment report is an interactive dashboard"
+        },
+        {
+          "source": "Replenishment report",
+          "relation": "ENABLES",
+          "target": "reordering rules",
+          "evidence": "Replenishment report uses manual reordering rules"
+        },
+        {
+          "source": "Replenishment report",
+          "relation": "CONFIGURED_BY",
+          "target": "monitoring menu",
+          "evidence": "Replenishment report has a monitoring menu with extra options to manage suggestions for replenishment"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "navigate-the-replenishment-report",
+    "heading": "Navigate the replenishment report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment",
+          "type": "Module",
+          "mention": "Replenishment",
+          "confidence": "high"
+        },
+        {
+          "name": "replenishment report",
+          "type": "Report",
+          "mention": "replenishment report",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic reordering rules",
+          "type": "Feature",
+          "mention": "Automatic reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "replenishment dashboard",
+          "type": "Report",
+          "mention": "replenishment dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Create reordering rules",
+          "type": "Workflow",
+          "mention": "Create reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "To Order field",
+          "type": "Field",
+          "mention": "To Order field",
+          "confidence": "high"
+        },
+        {
+          "name": "quantity",
+          "type": "DataObject",
+          "mention": "quantity",
+          "confidence": "low"
+        },
+        {
+          "name": "Max Quantity",
+          "type": "Field",
+          "mention": "Max Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Order",
+          "type": "Action",
+          "mention": "Order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Snooze",
+          "type": "Action",
+          "mention": "Snooze",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rule",
+          "type": "Feature",
+          "mention": "reordering rule",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Field",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "adjust settings icon",
+          "type": "Action",
+          "mention": "oi-settings-adjust (adjust settings) icon",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replenishment",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "go to Inventory app --> Operations --> Replenishment."
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "go to Inventory app --> Operations --> Replenishment."
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "go to Inventory app --> Operations --> Replenishment."
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Replenishment",
+          "evidence": "go to Inventory app --> Operations --> Replenishment."
+        },
+        {
+          "source": "Replenishment",
+          "relation": "HAS_REPORT",
+          "target": "replenishment report",
+          "evidence": "Navigate the replenishment report"
+        },
+        {
+          "source": "replenishment dashboard",
+          "relation": "GENERATES",
+          "target": "replenishment report",
+          "evidence": "The fields and features unique to the replenishment dashboard are displayed below."
+        },
+        {
+          "source": "Replenishment",
+          "relation": "CONTAINS",
+          "target": "Automatic reordering rules",
+          "evidence": "Automatic reordering rules are available on this menu as well"
+        },
+        {
+          "source": "Automatic reordering rules",
+          "relation": "BELONGS_TO",
+          "target": "Replenishment",
+          "evidence": "Automatic reordering rules are available on this menu as well"
+        },
+        {
+          "source": "Create reordering rules",
+          "relation": "SEE_ALSO",
+          "target": "replenishment dashboard",
+          "evidence": "For definitions of the other fields, go to the Create reordering rules section"
+        },
+        {
+          "source": "replenishment dashboard",
+          "relation": "CONTAINS",
+          "target": "To Order field",
+          "evidence": "The fields and features unique to the replenishment dashboard are displayed below."
+        },
+        {
+          "source": "To Order field",
+          "relation": "IS_PART_OF",
+          "target": "replenishment dashboard",
+          "evidence": "The fields and features unique to the replenishment dashboard are displayed below."
+        },
+        {
+          "source": "reordering rule",
+          "relation": "CONTAINS",
+          "target": "Max Quantity",
+          "evidence": "By default, the quantity in the To Order field is the quantity required to reach the set Max Quantity."
+        },
+        {
+          "source": "Order",
+          "relation": "PRODUCES",
+          "target": "quantity",
+          "evidence": "To replenish a product manually, click Order."
+        },
+        {
+          "source": "Snooze",
+          "relation": "ENABLES",
+          "target": "reordering rule",
+          "evidence": "Click Snooze to temporarily deactivate the reordering rule"
+        },
+        {
+          "source": "replenishment dashboard",
+          "relation": "CONTAINS",
+          "target": "vendor",
+          "evidence": "Select Vendor from the drop-down list to view the field on the report."
+        },
+        {
+          "source": "vendor",
+          "relation": "RELATED_TO",
+          "target": "Vendor",
+          "evidence": "Defining a Vendor allows filtering or grouping demands by the vendor."
+        },
+        {
+          "source": "adjust settings icon",
+          "relation": "ENABLES",
+          "target": "vendor",
+          "evidence": "Click the adjust settings icon and select Vendor from the drop-down list to view the field."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "order-to-max",
+    "heading": "Order to max",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rule",
+          "type": "Feature",
+          "mention": "reordering rule",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "minimum",
+          "type": "Field",
+          "mention": "minimum",
+          "confidence": "low"
+        },
+        {
+          "name": "replenishment",
+          "type": "Feature",
+          "mention": "replenishment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order to Max",
+          "type": "Feature",
+          "mention": "Order to Max",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish button",
+          "type": "Action",
+          "mention": "Replenish button",
+          "confidence": "high"
+        },
+        {
+          "name": "request for quotation",
+          "type": "DataObject",
+          "mention": "request for quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "RFQ",
+          "type": "DataObject",
+          "mention": "RFQ",
+          "confidence": "medium"
+        },
+        {
+          "name": "replenishment date",
+          "type": "Field",
+          "mention": "replenishment date",
+          "confidence": "low"
+        },
+        {
+          "name": "maximum",
+          "type": "Field",
+          "mention": "maximum",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "reordering rule",
+          "relation": "CONTAINS",
+          "target": "minimum",
+          "evidence": "does not forecast the product to arrive below the minimum"
+        },
+        {
+          "source": "reordering rule",
+          "relation": "CONTAINS",
+          "target": "maximum",
+          "evidence": "maximum specified in the reordering rule"
+        },
+        {
+          "source": "product",
+          "relation": "BELONGS_TO",
+          "target": "reordering rule",
+          "evidence": "if a reordering rule does not forecast the product to arrive below"
+        },
+        {
+          "source": "replenishment",
+          "relation": "TRIGGERED_BY",
+          "target": "reordering rule",
+          "evidence": "the replenishment cannot be triggered"
+        },
+        {
+          "source": "Replenish button",
+          "relation": "ENABLES",
+          "target": "Order to Max",
+          "evidence": "click the Replenish button and select Order to Max"
+        },
+        {
+          "source": "Order to Max",
+          "relation": "PRODUCES",
+          "target": "request for quotation",
+          "evidence": "creates a request for quotation"
+        },
+        {
+          "source": "Order to Max",
+          "relation": "PRODUCES",
+          "target": "RFQ",
+          "evidence": "creates a request for quotation (RFQ)"
+        },
+        {
+          "source": "RFQ",
+          "relation": "CONTAINS",
+          "target": "replenishment date",
+          "evidence": "for the first possible replenishment date"
+        },
+        {
+          "source": "Order to Max",
+          "relation": "APPLIES_TO",
+          "target": "product",
+          "evidence": "select one or more products"
+        },
+        {
+          "source": "reordering rule",
+          "relation": "GENERATES",
+          "target": "RFQ",
+          "evidence": "the maximum specified in the reordering rule"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "horizon-days",
+    "heading": "Horizon days",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Horizon days",
+          "type": "Feature",
+          "mention": "Horizon days",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment",
+          "type": "Feature",
+          "mention": "Replenishment",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual",
+          "type": "Feature",
+          "mention": "Manual",
+          "confidence": "high"
+        },
+        {
+          "name": "replenishment report",
+          "type": "Report",
+          "mention": "replenishment report",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rule",
+          "type": "DataObject",
+          "mention": "reordering rule",
+          "confidence": "high"
+        },
+        {
+          "name": "forecasted quantity",
+          "type": "Field",
+          "mention": "forecasted quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "forecasted date",
+          "type": "Field",
+          "mention": "forecasted date",
+          "confidence": "medium"
+        },
+        {
+          "name": "on hand quantity",
+          "type": "Field",
+          "mention": "on hand quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "Min",
+          "type": "Field",
+          "mention": "Min",
+          "confidence": "medium"
+        },
+        {
+          "name": "Max",
+          "type": "Field",
+          "mention": "Max",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor lead time",
+          "type": "Field",
+          "mention": "vendor lead time",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Horizon days",
+          "relation": "HAS_FEATURE",
+          "target": "replenishment report",
+          "evidence": "Horizon days ... trigger reordering rules ... appear on the replenishment report"
+        },
+        {
+          "source": "Horizon days",
+          "relation": "IS_PART_OF",
+          "target": "Replenishment",
+          "evidence": "To set horizon days, go to Inventory app --> Operations --> Replenishment"
+        },
+        {
+          "source": "Replenishment",
+          "relation": "IS_PART_OF",
+          "target": "Operations",
+          "evidence": "To set horizon days, go to Inventory app --> Operations --> Replenishment"
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "To set horizon days, go to Inventory app --> Operations --> Replenishment"
+        },
+        {
+          "source": "Manual",
+          "relation": "CONTAINS",
+          "target": "Horizon days",
+          "evidence": "click ... Manual in the left sidebar. In the menu that appears, set the number of Horizon days."
+        },
+        {
+          "source": "Horizon days",
+          "relation": "ENABLES",
+          "target": "reordering rule",
+          "evidence": "Horizon days ... trigger reordering rules"
+        },
+        {
+          "source": "reordering rule",
+          "relation": "CONTAINS",
+          "target": "Min",
+          "evidence": "Reordering rule: Min: 5"
+        },
+        {
+          "source": "reordering rule",
+          "relation": "CONTAINS",
+          "target": "Max",
+          "evidence": "Reordering rule: Max 10"
+        },
+        {
+          "source": "reordering rule",
+          "relation": "RELATED_TO",
+          "target": "vendor lead time",
+          "evidence": "Forecasted date: Feb 23 (current date + vendor lead time + horizon days)"
+        },
+        {
+          "source": "reordering rule",
+          "relation": "RELATED_TO",
+          "target": "forecasted quantity",
+          "evidence": "Horizon days ... checks if the forecasted quantity will drop below reordering rule's minimum"
+        },
+        {
+          "source": "Horizon days",
+          "relation": "RELATED_TO",
+          "target": "forecasted date",
+          "evidence": "Horizon days ... increasing the forecasted date"
+        },
+        {
+          "source": "Replenishment",
+          "relation": "HAS_REPORT",
+          "target": "replenishment report",
+          "evidence": "To set horizon days, go to ... Replenishment ... replenishment report"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "replenishment-information",
+    "heading": "Replenishment information",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment Information",
+          "type": "Feature",
+          "mention": "Replenishment Information pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "lead times",
+          "type": "Field",
+          "mention": "lead times",
+          "confidence": "medium"
+        },
+        {
+          "name": "forecasted date",
+          "type": "Field",
+          "mention": "forecasted date",
+          "confidence": "medium"
+        },
+        {
+          "name": "replenishment report",
+          "type": "Report",
+          "mention": "replenishment report",
+          "confidence": "high"
+        },
+        {
+          "name": "just-in-time",
+          "type": "Concept",
+          "mention": "just-in-time",
+          "confidence": "high"
+        },
+        {
+          "name": "just_in_time",
+          "type": "Module",
+          "mention": "just_in_time",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "replenishment report",
+          "relation": "HAS_FEATURE",
+          "target": "Replenishment Information",
+          "evidence": "In each line of the replenishment report, clicking the fa-info-circle (info) icon opens the Replenishment Information pop-up window"
+        },
+        {
+          "source": "Replenishment Information",
+          "relation": "CONTAINS",
+          "target": "lead times",
+          "evidence": "which displays the lead times and forecasted date"
+        },
+        {
+          "source": "Replenishment Information",
+          "relation": "CONTAINS",
+          "target": "forecasted date",
+          "evidence": "which displays the lead times and forecasted date"
+        },
+        {
+          "source": "Replenishment Information",
+          "relation": "RELATED_TO",
+          "target": "just-in-time",
+          "evidence": "For detailed information on how to use this feature for replenishment, go to the just-in-time just_in_time section."
+        },
+        {
+          "source": "just_in_time",
+          "relation": "CONTAINS",
+          "target": "just-in-time",
+          "evidence": "For detailed information on how to use this feature for replenishment, go to the just-in-time just_in_time section."
+        },
+        {
+          "source": "just-in-time",
+          "relation": "RELATED_TO",
+          "target": "Replenishment Information",
+          "evidence": "For detailed information on how to use this feature for replenishment, go to the just-in-time just_in_time section."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "select-a-warehouse",
+    "heading": "Select a warehouse",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "DataObject",
+          "mention": "warehouse's",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment Method",
+          "type": "Feature",
+          "mention": "replenishment method",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resupply from Another Warehouse",
+          "type": "Feature",
+          "mention": "resupply from another warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment Information pop-up window",
+          "type": "Feature",
+          "mention": "Replenishment Information pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouses tab",
+          "type": "Sub-module",
+          "mention": "Warehouses tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Available Quantity",
+          "type": "Field",
+          "mention": "Available Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "On-hand Stock",
+          "type": "Concept",
+          "mention": "on-hand stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "Select Route Order button",
+          "type": "Action",
+          "mention": "Select Route Order button",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering Rule",
+          "type": "Feature",
+          "mention": "reordering rule",
+          "confidence": "high"
+        },
+        {
+          "name": "Preferred Route",
+          "type": "Feature",
+          "mention": "preferred route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Buy",
+          "type": "Standard",
+          "mention": "Buy",
+          "confidence": "low"
+        },
+        {
+          "name": "Manufacture",
+          "type": "Standard",
+          "mention": "Manufacture",
+          "confidence": "low"
+        },
+        {
+          "name": "Temporary Reordering Rules",
+          "type": "Feature",
+          "mention": "Temporary Reordering Rules",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Warehouse",
+          "relation": "HAS_FEATURE",
+          "target": "Replenishment Method",
+          "evidence": "warehouse's replenishment method"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "warehouse's"
+        },
+        {
+          "source": "Replenishment Method",
+          "relation": "IS_PART_OF",
+          "target": "Warehouse",
+          "evidence": "warehouse's replenishment method"
+        },
+        {
+          "source": "Replenishment Information pop-up window",
+          "relation": "ENABLES",
+          "target": "Available Quantity",
+          "evidence": "available product quantities"
+        },
+        {
+          "source": "Warehouses tab",
+          "relation": "CONTAINS",
+          "target": "Warehouse",
+          "evidence": "Warehouses that can replenish the stock are listed under the Warehouses tab"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "HAS_FEATURE",
+          "target": "On-hand Stock",
+          "evidence": "on-hand stock in each warehouse"
+        },
+        {
+          "source": "Available Quantity",
+          "relation": "RELATED_TO",
+          "target": "On-hand Stock",
+          "evidence": "Available Quantity shows the on-hand stock"
+        },
+        {
+          "source": "Select Route Order button",
+          "relation": "TRIGGERED_BY",
+          "target": "Warehouse",
+          "evidence": "After selecting a sourcing warehouse, click Select Route Order button"
+        },
+        {
+          "source": "Reordering Rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Preferred Route",
+          "evidence": "reordering rule will revert to its preferred route"
+        },
+        {
+          "source": "Preferred Route",
+          "relation": "USES_METHOD",
+          "target": "Buy",
+          "evidence": "Buy or Manufacture"
+        },
+        {
+          "source": "Preferred Route",
+          "relation": "USES_METHOD",
+          "target": "Manufacture",
+          "evidence": "Buy or Manufacture"
+        },
+        {
+          "source": "Reordering Rule",
+          "relation": "SEE_ALSO",
+          "target": "Temporary Reordering Rules",
+          "evidence": "Temporary Reordering Rules <purchase/check-replenishment>"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1701 @@
+[
+  {
+    "section_id": "recruitment",
+    "heading": "Recruitment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant flow",
+          "type": "Workflow",
+          "mention": "applicant flow",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant card",
+          "type": "DataObject",
+          "mention": "applicant card",
+          "confidence": "high"
+        },
+        {
+          "name": "job position",
+          "type": "DataObject",
+          "mention": "job position",
+          "confidence": "medium"
+        },
+        {
+          "name": "recruitment team",
+          "type": "Actor",
+          "mention": "recruitment team",
+          "confidence": "medium"
+        },
+        {
+          "name": "stage",
+          "type": "Module",
+          "mention": "stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "email",
+          "type": "Feature",
+          "mention": "email",
+          "confidence": "medium"
+        },
+        {
+          "name": "scheduling a phone call",
+          "type": "Action",
+          "mention": "scheduling a phone call",
+          "confidence": "medium"
+        },
+        {
+          "name": "conducting an interview",
+          "type": "Action",
+          "mention": "conducting an interview",
+          "confidence": "medium"
+        },
+        {
+          "name": "sending a job offer",
+          "type": "Action",
+          "mention": "sending a job offer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruitment app",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo's Recruitment app"
+        },
+        {
+          "source": "applicant flow",
+          "relation": "CONTAINS",
+          "target": "stage",
+          "evidence": "preconfigured series of steps and stages"
+        },
+        {
+          "source": "stage",
+          "relation": "CONTAINS",
+          "target": "scheduling a phone call",
+          "evidence": "specific steps that should be performed"
+        },
+        {
+          "source": "stage",
+          "relation": "CONTAINS",
+          "target": "conducting an interview",
+          "evidence": "specific steps that should be performed"
+        },
+        {
+          "source": "stage",
+          "relation": "CONTAINS",
+          "target": "sending a job offer",
+          "evidence": "specific steps that should be performed"
+        },
+        {
+          "source": "applicant card",
+          "relation": "BELONGS_TO",
+          "target": "job position",
+          "evidence": "created for that specific job position"
+        },
+        {
+          "source": "applicant card",
+          "relation": "TRIGGERED_BY",
+          "target": "applicant applies",
+          "evidence": "When an applicant applies"
+        },
+        {
+          "source": "recruitment team",
+          "relation": "PERFORMED_BY",
+          "target": "move their card",
+          "evidence": "recruitment team moves their card"
+        },
+        {
+          "source": "stage",
+          "relation": "HAS_FEATURE",
+          "target": "email",
+          "evidence": "email is automatically sent out"
+        },
+        {
+          "source": "Recruitment app",
+          "relation": "CONTAINS",
+          "target": "applicant card",
+          "evidence": "created in Odoo's Recruitment app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "settings",
+    "heading": "Settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Recruitment app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Recruitment",
+          "evidence": "configure the necessary settings for the Recruitment app"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Save",
+          "evidence": "After any changes are made, click the Save button to save all the changes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process",
+    "heading": "Process",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Process",
+          "type": "Module",
+          "mention": "Title: Process",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "the database",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Process",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The Process section"
+        },
+        {
+          "source": "Process",
+          "relation": "CONTAINS",
+          "target": "database",
+          "evidence": "...specifies what the database can and cannot do"
+        },
+        {
+          "source": "database",
+          "relation": "PERFORMED_BY",
+          "target": "Process",
+          "evidence": "...specifies what the database can and cannot do during the recruitment process."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "send-interview-survey",
+    "heading": "Send interview survey",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Surveys",
+          "type": "Module",
+          "mention": "Surveys",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Interview Survey",
+          "type": "Feature",
+          "mention": "Send Interview Survey option",
+          "confidence": "high"
+        },
+        {
+          "name": "Interview Survey link",
+          "type": "Action",
+          "mention": "Interview Survey internal link",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "high"
+        },
+        {
+          "name": "create/edit surveys",
+          "type": "Action",
+          "mention": "create/edit surveys",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Send Interview Survey",
+          "relation": "ENABLES",
+          "target": "Interview Survey link",
+          "evidence": "Enable the Send Interview Survey option to send surveys to applicants. Once enabled, an Interview Survey internal link appears."
+        },
+        {
+          "source": "Interview Survey link",
+          "relation": "TRIGGERED_BY",
+          "target": "Send Interview Survey",
+          "evidence": "Enable the Send Interview Survey option to send surveys to applicants. Once enabled, an Interview Survey internal link appears."
+        },
+        {
+          "source": "Send Interview Survey",
+          "relation": "CONFIGURED_BY",
+          "target": "Send Interview Survey",
+          "evidence": "Enable the Send Interview Survey option to send surveys to applicants."
+        },
+        {
+          "source": "Send Interview Survey",
+          "relation": "REQUIRES",
+          "target": "Surveys",
+          "evidence": "Enabling the Send Interview Survey option will install the Surveys application once the settings are saved, if not already installed."
+        },
+        {
+          "source": "create/edit surveys",
+          "relation": "SEE_ALSO",
+          "target": "../marketing/surveys/create",
+          "evidence": ".. seealso:: create/edit surveys <../marketing/surveys/create>"
+        },
+        {
+          "source": "Surveys",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo is capable of having a survey sent to an applicant to gather more information about them."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "salary-package-configurator",
+    "heading": "Salary package configurator",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary package configurator",
+          "type": "Module",
+          "mention": "Title: Salary package configurator",
+          "confidence": "medium"
+        },
+        {
+          "name": "expiration date",
+          "type": "Field",
+          "mention": "expiration date can be set on the offer",
+          "confidence": "high"
+        },
+        {
+          "name": "days field",
+          "type": "Field",
+          "mention": "Enter the number of days an offer is valid for in the days field.",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "an applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "offer",
+          "type": "DataObject",
+          "mention": "an offer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Salary package configurator",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Section under product Odoo, title: 'Salary package configurator'"
+        },
+        {
+          "source": "offer",
+          "relation": "CONTAINS",
+          "target": "expiration date",
+          "evidence": "expiration date can be set on the offer"
+        },
+        {
+          "source": "offer",
+          "relation": "CONTAINS",
+          "target": "days field",
+          "evidence": "Enter the number of days an offer is valid for in the days field."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "résumé-display",
+    "heading": "Résumé display",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "résumé",
+          "type": "DataObject",
+          "mention": "résumé, or CV (curriculum vitae)",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "**Documents** application",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant's card",
+          "type": "DataObject",
+          "mention": "applicant's card",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant's form",
+          "type": "DataObject",
+          "mention": "applicant's form",
+          "confidence": "high"
+        },
+        {
+          "name": "Résumé Display option",
+          "type": "Setting",
+          "mention": "Résumé Display option",
+          "confidence": "high"
+        },
+        {
+          "name": "chatter",
+          "type": "Module",
+          "mention": "chatter",
+          "confidence": "medium"
+        },
+        {
+          "name": "Files section",
+          "type": "Module",
+          "mention": "Files section",
+          "confidence": "medium"
+        },
+        {
+          "name": "browser window",
+          "type": "Actor",
+          "mention": "browser window",
+          "confidence": "medium"
+        },
+        {
+          "name": "full-screen mode",
+          "type": "Setting",
+          "mention": "full-screen mode",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "résumé",
+          "relation": "IS_PART_OF",
+          "target": "applicant's card",
+          "evidence": "résumé appears on the right side of the applicant's card"
+        },
+        {
+          "source": "résumé",
+          "relation": "IS_PART_OF",
+          "target": "chatter",
+          "evidence": "résumé is accessed via a link in the chatter"
+        },
+        {
+          "source": "Documents",
+          "relation": "CONTAINS",
+          "target": "résumé",
+          "evidence": "All résumés are stored in the **Documents** application"
+        },
+        {
+          "source": "Résumé Display option",
+          "relation": "CONFIGURED_BY",
+          "target": "résumé",
+          "evidence": "Enable the Résumé Display option to show the résumé on the applicant's card by default"
+        },
+        {
+          "source": "browser window",
+          "relation": "GOVERNED_BY",
+          "target": "full-screen mode",
+          "evidence": "the browser window must be in full-screen mode"
+        },
+        {
+          "source": "résumé",
+          "relation": "RELATED_TO",
+          "target": "applicant's form",
+          "evidence": "résumé has the option to appear on the applicant's form"
+        },
+        {
+          "source": "résumé",
+          "relation": "IS_PART_OF",
+          "target": "Files section",
+          "evidence": "the résumé appears in the Files section of the chatter"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "in-app-purchases",
+    "heading": "In-App Purchases",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "In-App Purchases",
+          "type": "Module",
+          "mention": "In-App Purchases",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS",
+          "type": "Feature",
+          "mention": "SMS (Short Message Service)",
+          "confidence": "high"
+        },
+        {
+          "name": "digitizing résumés",
+          "type": "Feature",
+          "mention": "digitizing résumés",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS pricing and FAQs",
+          "type": "Report",
+          "mention": "SMS pricing and FAQs",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "In-App Purchases",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "The In-App Purchases section of the Settings menu"
+        },
+        {
+          "source": "In-App Purchases",
+          "relation": "CONTAINS",
+          "target": "SMS",
+          "evidence": "deals with items... such as SMS"
+        },
+        {
+          "source": "In-App Purchases",
+          "relation": "CONTAINS",
+          "target": "digitizing résumés",
+          "evidence": "deals with items... such as... digitizing résumés"
+        },
+        {
+          "source": "SMS pricing and FAQs",
+          "relation": "SEE_ALSO",
+          "target": "SMS",
+          "evidence": ".. seealso:: SMS pricing and FAQs"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "send-sms",
+    "heading": "Send SMS",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "high"
+        },
+        {
+          "name": "Send SMS",
+          "type": "Feature",
+          "mention": "Send SMS",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Recruitment",
+          "evidence": "Product: Odoo ... through the **Recruitment** app"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "HAS_FEATURE",
+          "target": "Send SMS",
+          "evidence": "It is possible to send text messages to applicants directly through the **Recruitment** app"
+        },
+        {
+          "source": "Send SMS",
+          "relation": "REQUIRES",
+          "target": "Credits",
+          "evidence": "This feature requires credits to use"
+        },
+        {
+          "source": "Send SMS",
+          "relation": "TRIGGERED_BY",
+          "target": "Manage Service & Buy Credits",
+          "evidence": "Click the fa-arrow-right Manage Service & Buy Credits internal link, and follow the steps to purchase credits"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "résumé-digitization-(ocr)",
+    "heading": "Résumé digitization (OCR)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Résumé Digitization (OCR)",
+          "type": "Feature",
+          "mention": "Résumé Digitization (OCR)",
+          "confidence": "high"
+        },
+        {
+          "name": "Résumé Digitization (OCR) option",
+          "type": "Setting",
+          "mention": "Résumé Digitization (OCR) option",
+          "confidence": "high"
+        },
+        {
+          "name": "Do not digitize",
+          "type": "Setting",
+          "mention": "Do not digitize",
+          "confidence": "high"
+        },
+        {
+          "name": "Digitize on demand only",
+          "type": "Setting",
+          "mention": "Digitize on demand only",
+          "confidence": "high"
+        },
+        {
+          "name": "Digitize automatically",
+          "type": "Setting",
+          "mention": "Digitize automatically",
+          "confidence": "high"
+        },
+        {
+          "name": "Digitize document button",
+          "type": "Action",
+          "mention": "Digitize document button",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage Service & Buy Credits",
+          "type": "Action",
+          "mention": "Manage Service & Buy Credits",
+          "confidence": "high"
+        },
+        {
+          "name": "View My Services",
+          "type": "Action",
+          "mention": "View My Services",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant",
+          "type": "DataObject",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant's form",
+          "type": "DataObject",
+          "mention": "applicant's form",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant card",
+          "type": "DataObject",
+          "mention": "applicant card",
+          "confidence": "high"
+        },
+        {
+          "name": "résumé",
+          "type": "DataObject",
+          "mention": "résumé",
+          "confidence": "high"
+        },
+        {
+          "name": "In-app purchase (IAP)",
+          "type": "Concept",
+          "mention": "In-app purchase (IAP)",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Résumé Digitization (OCR)",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "When an application is submitted... it is possible to have Odoo extract the applicant's name..."
+        },
+        {
+          "source": "Résumé Digitization (OCR) option",
+          "relation": "ENABLES",
+          "target": "Résumé Digitization (OCR)",
+          "evidence": "To do so, enable the Résumé Digitization (OCR) option."
+        },
+        {
+          "source": "Résumé Digitization (OCR) option",
+          "relation": "CONTAINS",
+          "target": "Do not digitize",
+          "evidence": "When enabled, additional options appear... Do not digitize: this option turns off résumé digitization."
+        },
+        {
+          "source": "Résumé Digitization (OCR) option",
+          "relation": "CONTAINS",
+          "target": "Digitize on demand only",
+          "evidence": "When enabled, additional options appear... Digitize on demand only: this option only digitizes resumes when requested."
+        },
+        {
+          "source": "Résumé Digitization (OCR) option",
+          "relation": "CONTAINS",
+          "target": "Digitize automatically",
+          "evidence": "When enabled, additional options appear... Digitize automatically: this option automatically digitizes all résumés..."
+        },
+        {
+          "source": "Digitize on demand only",
+          "relation": "ENABLES",
+          "target": "Digitize document button",
+          "evidence": "A Digitize document button appears on applicant cards. When clicked, the résumé is scanned..."
+        },
+        {
+          "source": "Digitize document button",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "When clicked, the résumé is scanned..."
+        },
+        {
+          "source": "Digitize document button",
+          "relation": "PRODUCES",
+          "target": "applicant's form",
+          "evidence": "...the applicant's card is updated."
+        },
+        {
+          "source": "Résumé Digitization (OCR)",
+          "relation": "PRODUCES",
+          "target": "applicant's form",
+          "evidence": "...it is possible to have Odoo extract the applicant's name, phone number, and email address from the résumé and populate the applicant's form."
+        },
+        {
+          "source": "Résumé Digitization (OCR)",
+          "relation": "REQUIRES",
+          "target": "In-app purchase (IAP)",
+          "evidence": "For more information on document digitization and IAP's (in-app purchases), refer to the In-app purchase (IAP) documentation."
+        },
+        {
+          "source": "Manage Service & Buy Credits",
+          "relation": "RELATED_TO",
+          "target": "In-app purchase (IAP)",
+          "evidence": "Click the Manage Service & Buy Credits internal link to purchase credits for résumé digitization."
+        },
+        {
+          "source": "View My Services",
+          "relation": "RELATED_TO",
+          "target": "In-app purchase (IAP)",
+          "evidence": "Click the View My Services internal link to view a list of all current services, and their remaining credit balances."
+        },
+        {
+          "source": "Do not digitize",
+          "relation": "GOVERNED_BY",
+          "target": "Résumé Digitization (OCR) option",
+          "evidence": "Disabling the Résumé Digitization (OCR) option uninstalls the module, while Do not digitize keeps the module installed but inactive..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "kanban-view",
+    "heading": "Kanban view",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment app",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "medium"
+        },
+        {
+          "name": "job position",
+          "type": "DataObject",
+          "mention": "job position",
+          "confidence": "medium"
+        },
+        {
+          "name": "job application",
+          "type": "DataObject",
+          "mention": "job application",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant",
+          "type": "DataObject",
+          "mention": "applicant",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kanban stages",
+          "type": "Feature",
+          "mention": "Kanban stages",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Concept",
+          "mention": "New <recruitment/new>",
+          "confidence": "low"
+        },
+        {
+          "name": "Initial Qualification",
+          "type": "Concept",
+          "mention": "Initial Qualification <recruitment/initial-qualification>",
+          "confidence": "low"
+        },
+        {
+          "name": "First Interview",
+          "type": "Concept",
+          "mention": "First Interview <recruitment/first-interview>",
+          "confidence": "low"
+        },
+        {
+          "name": "Second Interview",
+          "type": "Concept",
+          "mention": "Second Interview <recruitment/second-interview>",
+          "confidence": "low"
+        },
+        {
+          "name": "Contract Proposal",
+          "type": "Concept",
+          "mention": "Contract Proposal <recruitment/offer_job_positions>",
+          "confidence": "low"
+        },
+        {
+          "name": "Contract Signed",
+          "type": "Concept",
+          "mention": "Contract Signed <recruitment/offer_job_positions/contract-signed>",
+          "confidence": "low"
+        },
+        {
+          "name": "status colors",
+          "type": "Setting",
+          "mention": "status colors",
+          "confidence": "medium"
+        },
+        {
+          "name": "status pop-up window",
+          "type": "Feature",
+          "mention": "status pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "modify-stages",
+          "type": "Action",
+          "mention": "modify-stages",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment app",
+          "relation": "CONTAINS",
+          "target": "job position",
+          "evidence": "navigate to the main Recruitment app dashboard... All job positions appear on the main dashboard"
+        },
+        {
+          "source": "job position",
+          "relation": "HAS_FEATURE",
+          "target": "Kanban view",
+          "evidence": "To access the Kanban view for a job position"
+        },
+        {
+          "source": "Kanban view",
+          "relation": "CONTAINS",
+          "target": "Kanban stages",
+          "evidence": "the Kanban stages appear"
+        },
+        {
+          "source": "Kanban stages",
+          "relation": "CONTAINS",
+          "target": "applicant",
+          "evidence": "all the applicants populated in their respective columns"
+        },
+        {
+          "source": "Kanban stages",
+          "relation": "SUPPORTS",
+          "target": "status colors",
+          "evidence": "Each stage has a color-coded bar beneath the stage name, providing status information"
+        },
+        {
+          "source": "job position",
+          "relation": "RELATED_TO",
+          "target": "job application",
+          "evidence": "job application, the Kanban stages appear"
+        },
+        {
+          "source": "job position",
+          "relation": "RELATED_TO",
+          "target": "applicant",
+          "evidence": "applicants for that particular job position"
+        },
+        {
+          "source": "status pop-up window",
+          "relation": "CONFIGURED_BY",
+          "target": "modify-stages",
+          "evidence": "The names for the three status colors can be modified"
+        },
+        {
+          "source": "modify-stages",
+          "relation": "RELATED_TO",
+          "target": "status colors",
+          "evidence": "The names for the three status colors can be modified"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "customize-stages",
+    "heading": "Customize stages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": []
+    }
+  },
+  {
+    "section_id": "new-stage",
+    "heading": "New stage",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "New stage",
+          "type": "Feature",
+          "mention": "Title: New stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Stage title field",
+          "type": "Field",
+          "mention": "Stage title field",
+          "confidence": "high"
+        },
+        {
+          "name": "Add",
+          "type": "Action",
+          "mention": "click Add",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "New stage",
+          "relation": "CONTAINS",
+          "target": "Stage title field",
+          "evidence": "Enter the title for the new stage in the Stage title field"
+        },
+        {
+          "source": "New stage",
+          "relation": "HAS_FEATURE",
+          "target": "Add",
+          "evidence": "then click Add"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "modify-stage",
+    "heading": "Modify stage",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit",
+          "type": "Action",
+          "mention": "Edit option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Edit: (Stage) form",
+          "type": "DataObject",
+          "mention": "Edit: (Stage) form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "Save & Close",
+          "confidence": "medium"
+        },
+        {
+          "name": "stage",
+          "type": "DataObject",
+          "mention": "stage",
+          "confidence": "low"
+        },
+        {
+          "name": "Settings icon",
+          "type": "Setting",
+          "mention": "fa-cog (Settings) icon",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "stage",
+          "evidence": "To modify the settings of a stage"
+        },
+        {
+          "source": "stage",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings icon",
+          "evidence": "Click on the fa-cog (Settings) icon and a menu appears."
+        },
+        {
+          "source": "Settings icon",
+          "relation": "TRIGGERED_BY",
+          "target": "Edit",
+          "evidence": "Then click on the Edit option."
+        },
+        {
+          "source": "Edit",
+          "relation": "PRODUCES",
+          "target": "Edit: (Stage) form",
+          "evidence": "An Edit: (Stage) form appears."
+        },
+        {
+          "source": "Edit: (Stage) form",
+          "relation": "CONTAINS",
+          "target": "Save & Close",
+          "evidence": "Make any desired modifications to the form, then click Save & Close when done."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "edit-stage-form",
+    "heading": "Edit stage form",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit Stage form",
+          "type": "Module",
+          "mention": "Edit: (Stage) form",
+          "confidence": "high"
+        },
+        {
+          "name": "Stage Name",
+          "type": "Field",
+          "mention": "Stage Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Template",
+          "type": "Field",
+          "mention": "Email Template",
+          "confidence": "high"
+        },
+        {
+          "name": "Folded in Kanban",
+          "type": "Field",
+          "mention": "Folded in Kanban",
+          "confidence": "high"
+        },
+        {
+          "name": "Hired Stage",
+          "type": "Field",
+          "mention": "Hired Stage",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Specific",
+          "type": "Field",
+          "mention": "Job Specific",
+          "confidence": "high"
+        },
+        {
+          "name": "Show in Referrals",
+          "type": "Field",
+          "mention": "Show in Referrals",
+          "confidence": "high"
+        },
+        {
+          "name": "Points",
+          "type": "Field",
+          "mention": "Points",
+          "confidence": "high"
+        },
+        {
+          "name": "Tooltips section",
+          "type": "Sub-module",
+          "mention": "Tooltips section",
+          "confidence": "medium"
+        },
+        {
+          "name": "In Progress",
+          "type": "Feature",
+          "mention": "In Progress (gray)",
+          "confidence": "high"
+        },
+        {
+          "name": "Blocked",
+          "type": "Feature",
+          "mention": "Blocked (red)",
+          "confidence": "high"
+        },
+        {
+          "name": "Ready for Next Stage",
+          "type": "Feature",
+          "mention": "Ready for Next Stage (green)",
+          "confidence": "high"
+        },
+        {
+          "name": "Requirements",
+          "type": "Field",
+          "mention": "Requirements",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant",
+          "type": "DataObject",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant card",
+          "type": "DataObject",
+          "mention": "applicant card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Referrals application",
+          "type": "Module",
+          "mention": "Referrals application",
+          "confidence": "medium"
+        },
+        {
+          "name": "email template",
+          "type": "DataObject",
+          "mention": "email template",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "referrer",
+          "type": "Actor",
+          "mention": "referrer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Edit Stage form",
+          "relation": "CONTAINS",
+          "target": "Stage Name",
+          "evidence": "The Edit: (Stage) form is where the stage's settings are configured. The fields to be populated... Stage Name"
+        },
+        {
+          "source": "Edit Stage form",
+          "relation": "CONTAINS",
+          "target": "Email Template",
+          "evidence": "The fields to be populated... Email Template"
+        },
+        {
+          "source": "Edit Stage form",
+          "relation": "CONTAINS",
+          "target": "Folded in Kanban",
+          "evidence": "The fields to be populated... Folded in Kanban"
+        },
+        {
+          "source": "Edit Stage form",
+          "relation": "CONTAINS",
+          "target": "Hired Stage",
+          "evidence": "The fields to be populated... Hired Stage"
+        },
+        {
+          "source": "Edit Stage form",
+          "relation": "CONTAINS",
+          "target": "Job Specific",
+          "evidence": "The fields to be populated... Job Specific"
+        },
+        {
+          "source": "Edit Stage form",
+          "relation": "CONTAINS",
+          "target": "Show in Referrals",
+          "evidence": "The fields to be populated... Show in Referrals"
+        },
+        {
+          "source": "Edit Stage form",
+          "relation": "CONTAINS",
+          "target": "Points",
+          "evidence": "The fields to be populated... Points"
+        },
+        {
+          "source": "Edit Stage form",
+          "relation": "CONTAINS",
+          "target": "Tooltips section",
+          "evidence": "The fields to be populated... Tooltips section"
+        },
+        {
+          "source": "Edit Stage form",
+          "relation": "CONTAINS",
+          "target": "Requirements",
+          "evidence": "The fields to be populated... Requirements"
+        },
+        {
+          "source": "Email Template",
+          "relation": "GENERATES",
+          "target": "email",
+          "evidence": "If a template is selected, when the applicant card enters the stage, an email is automatically sent"
+        },
+        {
+          "source": "Show in Referrals",
+          "relation": "ENABLES",
+          "target": "Points",
+          "evidence": "If Show in Referrals is enabled, this field appears."
+        },
+        {
+          "source": "Tooltips section",
+          "relation": "CONTAINS",
+          "target": "In Progress",
+          "evidence": "The Tooltips section... The default names and labels are: In Progress"
+        },
+        {
+          "source": "Tooltips section",
+          "relation": "CONTAINS",
+          "target": "Blocked",
+          "evidence": "The Tooltips section... The default names and labels are: ... Blocked"
+        },
+        {
+          "source": "Tooltips section",
+          "relation": "CONTAINS",
+          "target": "Ready for Next Stage",
+          "evidence": "The Tooltips section... The default names and labels are: ... Ready for Next Stage"
+        },
+        {
+          "source": "Hired Stage",
+          "relation": "TRIGGERED_BY",
+          "target": "applicant card",
+          "evidence": "When an applicant's card enters this stage..."
+        },
+        {
+          "source": "Edit Stage form",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Edit stage form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "delete-stage",
+    "heading": "Delete stage",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Delete stage",
+          "type": "Action",
+          "mention": "delete the stage, Delete stage",
+          "confidence": "high"
+        },
+        {
+          "name": "stage",
+          "type": "DataObject",
+          "mention": "stage, column",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-cog (Settings) icon",
+          "type": "Feature",
+          "mention": "fa-cog (Settings) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirmation pop-up warning",
+          "type": "Feature",
+          "mention": "Confirmation pop-up warning",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicants",
+          "type": "DataObject",
+          "mention": "applicants",
+          "confidence": "high"
+        },
+        {
+          "name": "records",
+          "type": "DataObject",
+          "mention": "records",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Delete stage",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "To delete a stage, hover over the name of the stage, and a fa-cog (Settings) icon appears. First, click on the fa-cog (Settings) icon to reveal a drop-down menu, then click Delete."
+        },
+        {
+          "source": "Delete stage",
+          "relation": "TRIGGERED_BY",
+          "target": "clicking Delete",
+          "evidence": "...then click Delete."
+        },
+        {
+          "source": "Delete stage",
+          "relation": "GENERATES",
+          "target": "Confirmation pop-up warning",
+          "evidence": "A Confirmation pop-up warning appears, asking Are you sure you want to delete this column?"
+        },
+        {
+          "source": "Delete stage",
+          "relation": "REQUIRES",
+          "target": "stage is empty",
+          "evidence": "If there are applicants currently in the stage being deleted, an error pops up when attempting to delete the stage. The records currently in the stage to need to be either deleted, archived, or moved to a different stage before the stage can be deleted."
+        },
+        {
+          "source": "applicants",
+          "type": "IS_PART_OF",
+          "target": "stage",
+          "evidence": "If there are applicants currently in the stage being deleted..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "email-templates",
+    "heading": "Email templates",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Email templates",
+          "type": "Module",
+          "mention": "Email templates",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruitment: Applicant Acknowledgement",
+          "type": "Feature",
+          "mention": "Recruitment: Applicant Acknowledgement",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment: Interest",
+          "type": "Feature",
+          "mention": "Recruitment: Interest",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment: Not interested anymore",
+          "type": "Feature",
+          "mention": "Recruitment: Not interested anymore",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment: Refuse",
+          "type": "Feature",
+          "mention": "Recruitment: Refuse",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment: Schedule Interview",
+          "type": "Feature",
+          "mention": "Recruitment: Schedule Interview",
+          "confidence": "high"
+        },
+        {
+          "name": "Send message",
+          "type": "Action",
+          "mention": "click Send message in the chatter",
+          "confidence": "high"
+        },
+        {
+          "name": "New stage",
+          "type": "Concept",
+          "mention": "New stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Initial Qualification stage",
+          "type": "Concept",
+          "mention": "Initial Qualification stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "the applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "recruiter",
+          "type": "Actor",
+          "mention": "the recruiter",
+          "confidence": "high"
+        },
+        {
+          "name": "business",
+          "type": "Actor",
+          "mention": "a business",
+          "confidence": "medium"
+        },
+        {
+          "name": "chatter",
+          "type": "DataObject",
+          "mention": "the chatter",
+          "confidence": "medium"
+        },
+        {
+          "name": "Send Message tab",
+          "type": "DataObject",
+          "mention": "Send Message tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Compose Email pop-up window",
+          "type": "DataObject",
+          "mention": "Compose Email pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create a Mail Template pop-up window",
+          "type": "DataObject",
+          "mention": "Create a Mail Template pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "dynamic placeholders",
+          "type": "Concept",
+          "mention": "dynamic placeholders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Full composer",
+          "type": "Action",
+          "mention": "fa-expand (Full composer) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "To field",
+          "type": "Field",
+          "mention": "To field",
+          "confidence": "high"
+        },
+        {
+          "name": "Subject",
+          "type": "Field",
+          "mention": "Subject",
+          "confidence": "high"
+        },
+        {
+          "name": "Template Name field",
+          "type": "Field",
+          "mention": "Template Name field",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-paperclip (paperclip) button",
+          "type": "Action",
+          "mention": "fa-paperclip (paperclip) button",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-ellipsis-v (vertical elipsis) button",
+          "type": "Action",
+          "mention": "fa-ellipsis-v (vertical elipsis) button",
+          "confidence": "high"
+        },
+        {
+          "name": "Save as Template",
+          "type": "Action",
+          "mention": "Save as Template",
+          "confidence": "high"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "click Send",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Email templates",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "To communicate with the applicant, Odoo has several preconfigured email templates"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Email templates",
+          "evidence": "Product: Odoo\nTitle: Email templates"
+        },
+        {
+          "source": "Recruitment: Applicant Acknowledgement",
+          "relation": "GENERATES",
+          "target": "Email templates",
+          "evidence": "Recruitment: Applicant Acknowledgement: this template is used..."
+        },
+        {
+          "source": "Recruitment: Applicant Acknowledgement",
+          "relation": "TRIGGERED_BY",
+          "target": "New stage",
+          "evidence": "This email is automatically sent out once the applicant is in the New stage."
+        },
+        {
+          "source": "Recruitment: Schedule Interview",
+          "relation": "TRIGGERED_BY",
+          "target": "Initial Qualification stage",
+          "evidence": "This email is automatically sent out once the applicant is in the Initial Qualification stage."
+        },
+        {
+          "source": "Email templates",
+          "relation": "ENABLES",
+          "target": "Send message",
+          "evidence": "To manually send an email, click Send message in the chatter."
+        },
+        {
+          "source": "Send message",
+          "relation": "PERFORMED_BY",
+          "target": "recruiter",
+          "evidence": "To manually send an email, click Send message..."
+        },
+        {
+          "source": "Full composer",
+          "relation": "ENABLES",
+          "target": "Compose Email pop-up window",
+          "evidence": "Click the fa-expand (Full composer) icon... A Compose Email pop-up window loads"
+        },
+        {
+          "source": "Compose Email pop-up window",
+          "relation": "CONTAINS",
+          "target": "To field",
+          "evidence": "The applicant's email address is entered in the To field"
+        },
+        {
+          "source": "Compose Email pop-up window",
+          "relation": "CONTAINS",
+          "target": "Subject",
+          "evidence": "and the Subject is `(Job Position)`"
+        },
+        {
+          "source": "fa-ellipsis-v (vertical elipsis) button",
+          "relation": "ENABLES",
+          "target": "Save as Template",
+          "evidence": "Click the fa-ellipsis-v (vertical elipsis) button... and select Save as Template"
+        },
+        {
+          "source": "Save as Template",
+          "relation": "ENABLES",
+          "target": "Create a Mail Template pop-up window",
+          "evidence": "A Create a Mail Template pop-up window loads."
+        },
+        {
+          "source": "Create a Mail Template pop-up window",
+          "relation": "CONTAINS",
+          "target": "Template Name field",
+          "evidence": "Enter a name for the template in the Template Name field"
+        },
+        {
+          "source": "Send",
+          "relation": "PERFORMED_BY",
+          "target": "recruiter",
+          "evidence": "To send the email, click Send and the email is sent to the applicant."
+        },
+        {
+          "source": "fa-paperclip (paperclip) button",
+          "relation": "ENABLES",
+          "target": "attachments",
+          "evidence": "If any attachments need to be added, click the fa-paperclip (paperclip) button"
+        },
+        {
+          "source": "Email templates",
+          "relation": "HAS_FEATURE",
+          "target": "dynamic placeholders",
+          "evidence": "Preconfigured email templates may contain dynamic placeholders"
+        },
+        {
+          "source": "Email templates",
+          "relation": "SEE_ALSO",
+          "target": "../general/companies/email_template",
+          "evidence": "refer to the ../general/companies/email_template document"
+        }
+      ]
+    }
+  }
+]

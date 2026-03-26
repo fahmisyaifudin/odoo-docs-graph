@@ -1,0 +1,412 @@
+[
+  {
+    "section_id": "source-analysis-reporting",
+    "heading": "Source analysis reporting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Source Analysis",
+          "type": "Report",
+          "mention": "*Source Analysis* report",
+          "confidence": "high"
+        },
+        {
+          "name": "reporting",
+          "type": "Feature",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "recruiting",
+          "type": "Module",
+          "mention": "recruiting departments",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicants",
+          "type": "DataObject",
+          "mention": "applicants",
+          "confidence": "medium"
+        },
+        {
+          "name": "sources",
+          "type": "Concept",
+          "mention": "sources",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Source Analysis",
+          "evidence": "determined by the *Source Analysis* report"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "reporting",
+          "evidence": "Reporting is a critical tool"
+        },
+        {
+          "source": "reporting",
+          "relation": "ENABLES",
+          "target": "Source Analysis",
+          "evidence": "Reporting... This information is determined by the *Source Analysis* report"
+        },
+        {
+          "source": "Source Analysis",
+          "relation": "CONTAINS",
+          "target": "applicants",
+          "evidence": "determined by the *Source Analysis* report. With this data"
+        },
+        {
+          "source": "recruiting",
+          "relation": "USES_METHOD",
+          "target": "reporting",
+          "evidence": "Reporting is a critical tool used by recruiting departments"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "open-report",
+    "heading": "Open report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Source Analysis",
+          "type": "Report",
+          "mention": "Source Analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Source Analysis report",
+          "type": "Report",
+          "mention": "Source Analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Last 365 Days Applicant",
+          "type": "Feature",
+          "mention": "fa-filter Last 365 Days Applicant",
+          "confidence": "medium"
+        },
+        {
+          "name": "Graph",
+          "type": "Report",
+          "mention": "fa-area-chart (Graph) view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Source",
+          "type": "Concept",
+          "mention": "Source",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applicant",
+          "type": "DataObject",
+          "mention": "applicants",
+          "confidence": "medium"
+        },
+        {
+          "name": "stage",
+          "type": "Concept",
+          "mention": "stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "In Progress",
+          "type": "Concept",
+          "mention": "In Progress",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hired",
+          "type": "Concept",
+          "mention": "Hired",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "navigate to Recruitment app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Source Analysis",
+          "evidence": "Reporting --> Source Analysis"
+        },
+        {
+          "source": "Source Analysis",
+          "relation": "IS_PART_OF",
+          "target": "Source Analysis report",
+          "evidence": "To access the Source Analysis report"
+        },
+        {
+          "source": "Source Analysis report",
+          "relation": "SUPPORTS",
+          "target": "Last 365 Days Applicant",
+          "evidence": "the data for the fa-filter Last 365 Days Applicant"
+        },
+        {
+          "source": "Source Analysis report",
+          "relation": "GENERATES",
+          "target": "Graph",
+          "evidence": "in a default fa-area-chart (Graph) view"
+        },
+        {
+          "source": "Graph",
+          "relation": "RELATED_TO",
+          "target": "Applicant",
+          "evidence": "showing the amount of applicants"
+        },
+        {
+          "source": "Graph",
+          "relation": "RELATED_TO",
+          "target": "Source",
+          "evidence": "by Source"
+        },
+        {
+          "source": "Graph",
+          "relation": "RELATED_TO",
+          "target": "stage",
+          "evidence": "and further separated by stage"
+        },
+        {
+          "source": "stage",
+          "relation": "RELATED_TO",
+          "target": "In Progress",
+          "evidence": "(In Progress and Hired)"
+        },
+        {
+          "source": "stage",
+          "relation": "RELATED_TO",
+          "target": "Hired",
+          "evidence": "(In Progress and Hired)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "source-effectiveness-report",
+    "heading": "Source effectiveness report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Source Analysis report",
+          "type": "Report",
+          "mention": "Source Analysis report",
+          "confidence": "high"
+        },
+        {
+          "name": "Source",
+          "type": "Concept",
+          "mention": "source",
+          "confidence": "medium"
+        },
+        {
+          "name": "job positions",
+          "type": "DataObject",
+          "mention": "job positions",
+          "confidence": "medium"
+        },
+        {
+          "name": "stages",
+          "type": "Concept",
+          "mention": "stages",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applicant",
+          "type": "Concept",
+          "mention": "Applicant",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hired",
+          "type": "Concept",
+          "mention": "Hired",
+          "confidence": "medium"
+        },
+        {
+          "name": "Refused",
+          "type": "Concept",
+          "mention": "Refused",
+          "confidence": "medium"
+        },
+        {
+          "name": "Search engine",
+          "type": "Concept",
+          "mention": "Search engine",
+          "confidence": "low"
+        },
+        {
+          "name": "Facebook",
+          "type": "Concept",
+          "mention": "Facebook",
+          "confidence": "low"
+        },
+        {
+          "name": "LinkedIn",
+          "type": "Concept",
+          "mention": "LinkedIn",
+          "confidence": "low"
+        },
+        {
+          "name": "Pivot table view",
+          "type": "Feature",
+          "mention": "pivot table view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Flip axis",
+          "type": "Feature",
+          "mention": "Flip axis",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Source Analysis report",
+          "relation": "HAS_REPORT",
+          "target": "Pivot table view",
+          "evidence": "To view the Source Analysis report in a pivot table"
+        },
+        {
+          "source": "Pivot table view",
+          "relation": "CONFIGURED_BY",
+          "target": "job positions",
+          "evidence": "with rows populated by job positions"
+        },
+        {
+          "source": "Pivot table view",
+          "relation": "CONFIGURED_BY",
+          "target": "stages",
+          "evidence": "and columns populated by stages"
+        },
+        {
+          "source": "Source",
+          "relation": "CONTAINS",
+          "target": "Search engine",
+          "evidence": "Each column is then grouped by the source, such as: Search engine"
+        },
+        {
+          "source": "Source",
+          "relation": "CONTAINS",
+          "target": "Facebook",
+          "evidence": "Each column is then grouped by the source, such as: Facebook"
+        },
+        {
+          "source": "Source",
+          "relation": "CONTAINS",
+          "target": "LinkedIn",
+          "evidence": "Each column is then grouped by the source, such as: LinkedIn"
+        },
+        {
+          "source": "Source",
+          "relation": "CONTAINS",
+          "target": "Applicant",
+          "evidence": "Each source displays a separate count for Applicant"
+        },
+        {
+          "source": "Source",
+          "relation": "CONTAINS",
+          "target": "Hired",
+          "evidence": "Each source displays a separate count for Hired"
+        },
+        {
+          "source": "Source",
+          "relation": "CONTAINS",
+          "target": "Refused",
+          "evidence": "Each source displays a separate count for Refused"
+        },
+        {
+          "source": "Flip axis",
+          "relation": "CONFIGURED_BY",
+          "target": "Source",
+          "evidence": "After that, the rows represent the source"
+        },
+        {
+          "source": "Flip axis",
+          "relation": "CONFIGURED_BY",
+          "target": "job positions",
+          "evidence": "and the columns represent the job positions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "medium",
+    "heading": "Medium",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Medium",
+          "type": "Concept",
+          "mention": "Medium",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "applicants",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant form",
+          "type": "DataObject",
+          "mention": "applicant's form",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "applicant",
+          "relation": "CONFIGURED_BY",
+          "target": "applicant form",
+          "evidence": "The only mediums that appear for a source, are mediums that have been set on an applicant's form."
+        }
+      ]
+    }
+  }
+]

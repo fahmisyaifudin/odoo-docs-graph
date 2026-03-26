@@ -1,0 +1,1028 @@
+[
+  {
+    "section_id": "master-production-schedule",
+    "heading": "Master production schedule",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "master production schedule",
+          "type": "Feature",
+          "mention": "master production schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing orders",
+          "type": "DataObject",
+          "mention": "manufacturing orders",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase orders",
+          "type": "DataObject",
+          "mention": "purchase orders",
+          "confidence": "high"
+        },
+        {
+          "name": "sales orders",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rules",
+          "type": "Feature",
+          "mention": "reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "procurement manager",
+          "type": "Actor",
+          "mention": "procurement manager",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "master production schedule",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing",
+          "evidence": "In Odoo's *Manufacturing* app, the *master production schedule*"
+        },
+        {
+          "source": "master production schedule",
+          "relation": "ENABLES",
+          "target": "manufacturing orders",
+          "evidence": "used to manually plan manufacturing orders"
+        },
+        {
+          "source": "master production schedule",
+          "relation": "ENABLES",
+          "target": "purchase orders",
+          "evidence": "used to manually plan manufacturing orders (MOs) and purchase orders (POs)"
+        },
+        {
+          "source": "master production schedule",
+          "relation": "CONFLICTS_WITH",
+          "target": "reordering rules",
+          "evidence": "Because reordering rules are an automated workflow, they conflict with the manual replenishment method"
+        },
+        {
+          "source": "procurement manager",
+          "relation": "PERFORMED_BY",
+          "target": "master production schedule",
+          "evidence": "they manually enter a greater demand in the , so they can properly replenish the product"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-and-configure-|mps|",
+    "heading": "Enable and configure |MPS|",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Master Production Schedule",
+          "type": "Feature",
+          "mention": "Master Production Schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "low"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "low"
+        },
+        {
+          "name": "Master Production Schedule checkbox",
+          "type": "Setting",
+          "mention": "Master Production Schedule checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Planning",
+          "type": "Module",
+          "mention": "Planning",
+          "confidence": "low"
+        },
+        {
+          "name": "Time Range",
+          "type": "Field",
+          "mention": "Time Range",
+          "confidence": "high"
+        },
+        {
+          "name": "Number of Columns",
+          "type": "Field",
+          "mention": "Number of Columns",
+          "confidence": "high"
+        },
+        {
+          "name": "Monthly",
+          "type": "Setting",
+          "mention": "Monthly",
+          "confidence": "low"
+        },
+        {
+          "name": "Weekly",
+          "type": "Setting",
+          "mention": "Weekly",
+          "confidence": "low"
+        },
+        {
+          "name": "Daily",
+          "type": "Setting",
+          "mention": "Daily",
+          "confidence": "low"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Master Production Schedule checkbox",
+          "evidence": "tick the Master Production Schedule checkbox in the Planning section"
+        },
+        {
+          "source": "Master Production Schedule",
+          "relation": "ENABLED_BY",
+          "target": "Master Production Schedule checkbox",
+          "evidence": "After enabling the Master Production Schedule feature"
+        },
+        {
+          "source": "Master Production Schedule",
+          "relation": "CONTAINS",
+          "target": "Time Range",
+          "evidence": "two new fields appear under it on the Settings page: Time Range and Number of Columns"
+        },
+        {
+          "source": "Master Production Schedule",
+          "relation": "CONTAINS",
+          "target": "Number of Columns",
+          "evidence": "two new fields appear under it on the Settings page: Time Range and Number of Columns"
+        },
+        {
+          "source": "Time Range",
+          "relation": "CONFIGURED_BY",
+          "target": "Monthly",
+          "evidence": "offers three options: Monthly, Weekly, and Daily"
+        },
+        {
+          "source": "Time Range",
+          "relation": "CONFIGURED_BY",
+          "target": "Weekly",
+          "evidence": "offers three options: Monthly, Weekly, and Daily"
+        },
+        {
+          "source": "Time Range",
+          "relation": "CONFIGURED_BY",
+          "target": "Daily",
+          "evidence": "offers three options: Monthly, Weekly, and Daily"
+        },
+        {
+          "source": "Number of Columns",
+          "relation": "APPLIES_TO",
+          "target": "Time Range",
+          "evidence": "if the Time Range field is set to Monthly"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Save",
+          "evidence": "click Save"
+        },
+        {
+          "source": "Time Range",
+          "relation": "CONFIGURED_BY",
+          "target": "Save",
+          "evidence": "click Save again to save the changes"
+        },
+        {
+          "source": "Number of Columns",
+          "relation": "CONFIGURED_BY",
+          "target": "Save",
+          "evidence": "click Save again to save the changes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "|mps|-dashboard",
+    "heading": "|MPS| dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Planning",
+          "type": "Sub-module",
+          "mention": "Planning",
+          "confidence": "medium"
+        },
+        {
+          "name": "Master Production Schedule dashboard",
+          "type": "Feature",
+          "mention": "|MPS| dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Forecasted Stock",
+          "type": "Field",
+          "mention": "Forecasted Stock",
+          "confidence": "high"
+        },
+        {
+          "name": "Forecasted Demand",
+          "type": "Field",
+          "mention": "Forecasted Demand",
+          "confidence": "high"
+        },
+        {
+          "name": "Indirect Demand Forecast",
+          "type": "Field",
+          "mention": "Indirect Demand Forecast",
+          "confidence": "high"
+        },
+        {
+          "name": "Suggested Replenishment",
+          "type": "Field",
+          "mention": "Suggested Replenishment",
+          "confidence": "high"
+        },
+        {
+          "name": "Actual Demand",
+          "type": "Field",
+          "mention": "Actual Demand",
+          "confidence": "high"
+        },
+        {
+          "name": "Search... bar",
+          "type": "Feature",
+          "mention": "Search... bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish button",
+          "type": "Action",
+          "mention": "Replenish button",
+          "confidence": "high"
+        },
+        {
+          "name": "reset button",
+          "type": "Action",
+          "mention": "reset button",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Range field",
+          "type": "Field",
+          "mention": "Time Range field",
+          "confidence": "high"
+        },
+        {
+          "name": "Number of Columns field",
+          "type": "Field",
+          "mention": "Number of Columns field",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app Settings page",
+          "type": "Feature",
+          "mention": "Manufacturing app Settings page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Safety Stock Target",
+          "type": "Concept",
+          "mention": "Safety Stock Target",
+          "confidence": "high"
+        },
+        {
+          "name": "confirmed Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "confirmed MOs",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Planning",
+          "evidence": "Manufacturing app --> Planning"
+        },
+        {
+          "source": "Planning",
+          "relation": "CONTAINS",
+          "target": "Master Production Schedule dashboard",
+          "evidence": "Planning --> Master Production Schedule"
+        },
+        {
+          "source": "Master Production Schedule dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, To open the , navigate to Manufacturing app --> Planning --> Master Production Schedule"
+        },
+        {
+          "source": "Master Production Schedule dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Search... bar",
+          "evidence": "The information shown... depends on the filters selected in the Search... bar drop-down menu"
+        },
+        {
+          "source": "Master Production Schedule dashboard",
+          "relation": "CONTAINS",
+          "target": "Forecasted Stock",
+          "evidence": "The default categories that appear in the rows are: ... Forecasted Stock"
+        },
+        {
+          "source": "Master Production Schedule dashboard",
+          "relation": "CONTAINS",
+          "target": "Forecasted Demand",
+          "evidence": "The default categories that appear in the rows are: ... Forecasted Demand"
+        },
+        {
+          "source": "Master Production Schedule dashboard",
+          "relation": "CONTAINS",
+          "target": "Indirect Demand Forecast",
+          "evidence": "The default categories that appear in the rows are: ... Indirect Demand Forecast"
+        },
+        {
+          "source": "Master Production Schedule dashboard",
+          "relation": "CONTAINS",
+          "target": "Suggested Replenishment",
+          "evidence": "The default categories that appear in the rows are: ... Suggested Replenishment"
+        },
+        {
+          "source": "Replenish button",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "...which is used to manually replenish the product"
+        },
+        {
+          "source": "reset button",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click the fa-times (reset) button... to reset its value"
+        },
+        {
+          "source": "Master Production Schedule dashboard",
+          "relation": "CONFIGURED_BY",
+          "target": "Time Range field",
+          "evidence": "the time period selected in the *Time Range* field on the *Manufacturing* app *Settings* page"
+        },
+        {
+          "source": "Master Production Schedule dashboard",
+          "relation": "CONFIGURED_BY",
+          "target": "Number of Columns field",
+          "evidence": "The number of time period columns corresponds to the value entered in the *Number of Columns* field"
+        },
+        {
+          "source": "Time Range field",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing app Settings page",
+          "evidence": "*Time Range* field on the *Manufacturing* app *Settings* page"
+        },
+        {
+          "source": "Number of Columns field",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing app Settings page",
+          "evidence": "*Number of Columns* field"
+        },
+        {
+          "source": "Actual Demand",
+          "relation": "IS_PART_OF",
+          "target": "Search... bar",
+          "evidence": "This is done by clicking the fa-caret-down... on the right side of the Search... bar, and enabling the Actual Demand option"
+        },
+        {
+          "source": "Actual Demand",
+          "relation": "RELATED_TO",
+          "target": "confirmed Manufacturing Orders",
+          "evidence": "...based on confirmed MOs"
+        },
+        {
+          "source": "Suggested Replenishment",
+          "relation": "RELATED_TO",
+          "target": "Safety Stock Target",
+          "evidence": "a replenishment order must be generated to keep stock at the Safety Stock Target"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-product",
+    "heading": "Add a product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Planning",
+          "type": "Sub-module",
+          "mention": "Planning",
+          "confidence": "high"
+        },
+        {
+          "name": "Master Production Schedule",
+          "type": "DataObject",
+          "mention": "Master Production Schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a Product",
+          "type": "Action",
+          "mention": "Add a Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a Product pop-up window",
+          "type": "DataObject",
+          "mention": "Add a Product pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Routes",
+          "type": "Field",
+          "mention": "Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacture route",
+          "type": "Feature",
+          "mention": "Manufacture route",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy route",
+          "type": "Feature",
+          "mention": "Buy route",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Field",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Field",
+          "mention": "Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bill of Materials",
+          "type": "DataObject",
+          "mention": "Bill of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "DataObject",
+          "mention": "warehouse",
+          "confidence": "high"
+        },
+        {
+          "name": "Production Warehouse",
+          "type": "Field",
+          "mention": "Production Warehouse field",
+          "confidence": "high"
+        },
+        {
+          "name": "Safety Stock Target",
+          "type": "Field",
+          "mention": "Safety Stock Target field",
+          "confidence": "high"
+        },
+        {
+          "name": "Minimum to Replenish",
+          "type": "Field",
+          "mention": "Minimum to Replenish field",
+          "confidence": "high"
+        },
+        {
+          "name": "Maximum to Replenish",
+          "type": "Field",
+          "mention": "Maximum to Replenish field",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Components",
+          "type": "DataObject",
+          "mention": "components",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add a Product",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "click Add a Product"
+        },
+        {
+          "source": "Add a Product",
+          "relation": "PRODUCES",
+          "target": "Product",
+          "evidence": "add the product to the Master Production Schedule"
+        },
+        {
+          "source": "Product",
+          "relation": "CONFIGURED_BY",
+          "target": "Routes",
+          "evidence": "Routes section of the Inventory tab"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Planning",
+          "evidence": "navigate to Manufacturing app --> Planning"
+        },
+        {
+          "source": "Planning",
+          "relation": "CONTAINS",
+          "target": "Master Production Schedule",
+          "evidence": "Planning --> Master Production Schedule"
+        },
+        {
+          "source": "Add a Product",
+          "relation": "IS_PART_OF",
+          "target": "Master Production Schedule",
+          "evidence": "on the Master Production Schedule page, click Add a Product"
+        },
+        {
+          "source": "Product",
+          "relation": "SUPPORTS",
+          "target": "Manufacture route",
+          "evidence": "Manufacture route must be selected"
+        },
+        {
+          "source": "Product",
+          "relation": "SUPPORTS",
+          "target": "Buy route",
+          "evidence": "Buy route must be selected"
+        },
+        {
+          "source": "Bill of Materials",
+          "relation": "CONTAINS",
+          "target": "Components",
+          "evidence": "components listed on the BoM"
+        },
+        {
+          "source": "Add a Product",
+          "relation": "CONFIGURED_BY",
+          "target": "Production Warehouse",
+          "evidence": "Production Warehouse field appears"
+        },
+        {
+          "source": "Add a Product",
+          "relation": "CONFIGURED_BY",
+          "target": "Safety Stock Target",
+          "evidence": "Safety Stock Target field"
+        },
+        {
+          "source": "Add a Product",
+          "relation": "CONFIGURED_BY",
+          "target": "Minimum to Replenish",
+          "evidence": "Minimum to Replenish field"
+        },
+        {
+          "source": "Add a Product",
+          "relation": "CONFIGURED_BY",
+          "target": "Maximum to Replenish",
+          "evidence": "Maximum to Replenish field"
+        },
+        {
+          "source": "Product",
+          "relation": "HAS_REPORT",
+          "target": "Master Production Schedule",
+          "evidence": "appears on the Master Production Schedule page"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "edit-a-product",
+    "heading": "Edit a product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit Production Schedule pop-up window",
+          "type": "Feature",
+          "mention": "Edit Production Schedule pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Minimum to Replenish field",
+          "type": "Field",
+          "mention": "Minimum to Replenish field",
+          "confidence": "high"
+        },
+        {
+          "name": "Maximum to Replenish field",
+          "type": "Field",
+          "mention": "Maximum to Replenish field",
+          "confidence": "high"
+        },
+        {
+          "name": "Safety Stock Target field",
+          "type": "Field",
+          "mention": "Safety Stock Target field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bill of Materials field",
+          "type": "Field",
+          "mention": "Bill of Materials fields",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish button",
+          "type": "Action",
+          "mention": "Replenish button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit a product",
+          "type": "Workflow",
+          "mention": "Edit a product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Suggested Replenishment row",
+          "type": "Feature",
+          "mention": "Suggested Replenishment row",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Edit a product",
+          "relation": "CONTAINS",
+          "target": "Edit Production Schedule pop-up window",
+          "evidence": "Clicking the # ≤…≤ # button opens the Edit Production Schedule pop-up window."
+        },
+        {
+          "source": "Edit Production Schedule pop-up window",
+          "relation": "CONTAINS",
+          "target": "Minimum to Replenish field",
+          "evidence": "On the Edit Production Schedule pop-up window, enter the desired values in the Minimum to Replenish field."
+        },
+        {
+          "source": "Edit Production Schedule pop-up window",
+          "relation": "CONTAINS",
+          "target": "Maximum to Replenish field",
+          "evidence": "On the Edit Production Schedule pop-up window, enter the desired values in the Maximum to Replenish field."
+        },
+        {
+          "source": "Edit Production Schedule pop-up window",
+          "relation": "CONTAINS",
+          "target": "Safety Stock Target field",
+          "evidence": "On the Edit Production Schedule pop-up window, enter the desired values in the Safety Stock Target field."
+        },
+        {
+          "source": "Edit Production Schedule pop-up window",
+          "relation": "CONTAINS",
+          "target": "Bill of Materials field",
+          "evidence": "This pop-up window is the same as the Add a Product pop-up window, except that the Product and Bill of Materials fields cannot be edited."
+        },
+        {
+          "source": "Edit Production Schedule pop-up window",
+          "relation": "HAS_FEATURE",
+          "target": "Save",
+          "evidence": "Then, click Save to save the changes."
+        },
+        {
+          "source": "Suggested Replenishment row",
+          "relation": "CONTAINS",
+          "target": "Replenish button",
+          "evidence": "on the Suggested Replenishment row, below the product's name."
+        },
+        {
+          "source": "Product",
+          "type": "DataObject",
+          "relation": "RELATED_TO",
+          "target": "Edit a product",
+          "evidence": "Edit a product"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "remove-a-product",
+    "heading": "Remove a product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "checkbox",
+          "type": "Field",
+          "mention": "checkbox",
+          "confidence": "low"
+        },
+        {
+          "name": "Actions button",
+          "type": "Action",
+          "mention": "Actions button",
+          "confidence": "low"
+        },
+        {
+          "name": "Delete",
+          "type": "Action",
+          "mention": "Delete",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirmation pop-up window",
+          "type": "Action",
+          "mention": "Confirmation pop-up window",
+          "confidence": "low"
+        },
+        {
+          "name": "Ok",
+          "type": "Action",
+          "mention": "Ok",
+          "confidence": "low"
+        },
+        {
+          "name": "replenishment values",
+          "type": "DataObject",
+          "mention": "replenishment values",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "product",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "To remove a product from the"
+        },
+        {
+          "source": "Delete",
+          "relation": "PERFORMED_BY",
+          "target": "Actions button",
+          "evidence": "click the fa-cog Actions button at the top of the screen, and select Delete"
+        },
+        {
+          "source": "product",
+          "relation": "CONFIGURED_BY",
+          "target": "replenishment values",
+          "evidence": "If the product is re-added, its replenishment values must be reconfigured."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "|mps|-replenishment",
+    "heading": "|MPS| replenishment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish",
+          "type": "Action",
+          "mention": "Replenish button",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment Order",
+          "type": "DataObject",
+          "mention": "replenishment order",
+          "confidence": "high"
+        },
+        {
+          "name": "Safety Stock Target",
+          "type": "Concept",
+          "mention": "Safety Stock Target",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy",
+          "type": "Workflow",
+          "mention": "Buy route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "Purchase Order",
+          "confidence": "low"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Source Document",
+          "type": "Field",
+          "mention": "Source Document field",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacture",
+          "type": "Workflow",
+          "mention": "Manufacture route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replenish",
+          "relation": "PRODUCES",
+          "target": "Replenishment Order",
+          "evidence": "Click the Replenish button ... to generate replenishment orders"
+        },
+        {
+          "source": "Replenishment Order",
+          "relation": "CONFIGURED_BY",
+          "target": "Safety Stock Target",
+          "evidence": "generate replenishment orders for every product below its Safety Stock Target"
+        },
+        {
+          "source": "Product",
+          "relation": "CONFIGURED_BY",
+          "target": "Inventory",
+          "evidence": "route selected on the Inventory tab of the product's form"
+        },
+        {
+          "source": "Buy",
+          "relation": "PRODUCES",
+          "target": "Purchase Order",
+          "evidence": "If the Buy route is selected, a Purchase Order is generated"
+        },
+        {
+          "source": "Manufacture",
+          "relation": "PRODUCES",
+          "target": "Manufacturing Order",
+          "evidence": "If the Manufacture route is selected, a Manufacturing Order is generated"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "BELONGS_TO",
+          "target": "Purchase",
+          "evidence": "Purchase Orders can be selected by navigating to the Purchase app"
+        },
+        {
+          "source": "Manufacturing Order",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing",
+          "evidence": "Manufacturing Orders can be selected by navigating to Manufacturing app"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "CONFIGURED_BY",
+          "target": "Source Document",
+          "evidence": "lists MPS in its Source Document field"
+        },
+        {
+          "source": "Manufacturing Order",
+          "relation": "CONFIGURED_BY",
+          "target": "Source Document",
+          "evidence": "lists MPS in its Source Document field"
+        }
+      ]
+    }
+  }
+]

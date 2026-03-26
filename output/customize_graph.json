@@ -1,0 +1,1715 @@
+[
+  {
+    "section_id": "custom-reports",
+    "heading": "Custom reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "reporting framework",
+          "type": "Module",
+          "mention": "reporting framework",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax reports",
+          "type": "Report",
+          "mention": "tax reports",
+          "confidence": "high"
+        },
+        {
+          "name": "balance sheets",
+          "type": "Report",
+          "mention": "balance sheets",
+          "confidence": "high"
+        },
+        {
+          "name": "income statements",
+          "type": "Report",
+          "mention": "income statements",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting Reports",
+          "type": "Sub-module",
+          "mention": "Accounting Reports",
+          "confidence": "medium"
+        },
+        {
+          "name": "root report",
+          "type": "Report",
+          "mention": "root report",
+          "confidence": "medium"
+        },
+        {
+          "name": "variant",
+          "type": "Report",
+          "mention": "variant",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "reporting framework",
+          "evidence": "Odoo comes with a powerful and easy-to-use reporting framework."
+        },
+        {
+          "source": "reporting framework",
+          "relation": "ENABLES",
+          "target": "tax reports",
+          "evidence": "The engine allows you to create new reports, such as tax reports, balance sheets, and income statements"
+        },
+        {
+          "source": "reporting framework",
+          "relation": "ENABLES",
+          "target": "balance sheets",
+          "evidence": "The engine allows you to create new reports, such as tax reports, balance sheets, and income statements"
+        },
+        {
+          "source": "reporting framework",
+          "relation": "ENABLES",
+          "target": "income statements",
+          "evidence": "The engine allows you to create new reports, such as tax reports, balance sheets, and income statements"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration --> Accounting Reports."
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Accounting Reports",
+          "evidence": "go to Accounting --> Configuration --> Accounting Reports."
+        },
+        {
+          "source": "Accounting Reports",
+          "relation": "HAS_FEATURE",
+          "target": "root report",
+          "evidence": "create either a root report or a variant"
+        },
+        {
+          "source": "Accounting Reports",
+          "relation": "HAS_FEATURE",
+          "target": "variant",
+          "evidence": "create either a root report or a variant"
+        },
+        {
+          "source": "root report",
+          "relation": "RELATED_TO",
+          "target": "variant",
+          "evidence": "create either a root report or a variant"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "root-reports",
+    "heading": "Root reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Root report",
+          "type": "Report",
+          "mention": "Root reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax report",
+          "type": "Report",
+          "mention": "A tax report",
+          "confidence": "high"
+        },
+        {
+          "name": "Belgium",
+          "type": "Regulation",
+          "mention": "for Belgium",
+          "confidence": "medium"
+        },
+        {
+          "name": "US",
+          "type": "Regulation",
+          "mention": "the US",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Setting",
+          "mention": "report's configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Action",
+          "type": "Action",
+          "mention": "click Action",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Menu Item",
+          "type": "Action",
+          "mention": "Create Menu Item",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax authorities",
+          "type": "Regulation",
+          "mention": "a country's tax authorities",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Root report",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Root reports can be regarded as generic, neutral accounting reports."
+        },
+        {
+          "source": "Tax report",
+          "relation": "COMPLIES_WITH",
+          "target": "Belgium",
+          "evidence": "A tax report for Belgium and the US would both use the same generic version as a base"
+        },
+        {
+          "source": "Tax report",
+          "relation": "COMPLIES_WITH",
+          "target": "US",
+          "evidence": "A tax report for Belgium and the US would both use the same generic version as a base"
+        },
+        {
+          "source": "Tax report",
+          "relation": "IS_PART_OF",
+          "target": "Root report",
+          "evidence": "A tax report for Belgium and the US would both use the same generic version as a base"
+        },
+        {
+          "source": "Root report",
+          "relation": "HAS_REPORT",
+          "target": "Reporting",
+          "evidence": "The report is now available under Accounting --> Reporting."
+        },
+        {
+          "source": "Root report",
+          "relation": "CONFIGURED_BY",
+          "target": "Configuration",
+          "evidence": "To do so, open the report's configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "ENABLES",
+          "target": "Action",
+          "evidence": "open the report's configuration, click Action"
+        },
+        {
+          "source": "Action",
+          "relation": "CONTAINS",
+          "target": "Create Menu Item",
+          "evidence": "click Action, Create Menu Item"
+        },
+        {
+          "source": "Root report",
+          "relation": "APPLIES_TO",
+          "target": "tax authorities",
+          "evidence": "when a country's tax authorities require a new and specific type of report."
+        },
+        {
+          "source": "Root report",
+          "relation": "RELATED_TO",
+          "target": "Accounting",
+          "evidence": "The report is now available under Accounting --> Reporting."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "variants",
+    "heading": "Variants",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting app",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting menu",
+          "type": "Sub-module",
+          "mention": "Reporting menu",
+          "confidence": "low"
+        },
+        {
+          "name": "VAT Report (BE)",
+          "type": "Report",
+          "mention": "VAT Report (BE)",
+          "confidence": "high"
+        },
+        {
+          "name": "Generic Tax report",
+          "type": "Report",
+          "mention": "Generic Tax report",
+          "confidence": "high"
+        },
+        {
+          "name": "Root Report field",
+          "type": "Field",
+          "mention": "Root Report field",
+          "confidence": "high"
+        },
+        {
+          "name": "report variant selector",
+          "type": "Feature",
+          "mention": "report variant selector",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "VAT Report (BE)",
+          "relation": "BELONGS_TO",
+          "target": "Generic Tax report",
+          "evidence": "VAT Report (BE) is a variant of the root Generic Tax report."
+        },
+        {
+          "source": "Generic Tax report",
+          "relation": "CONTAINS",
+          "target": "VAT Report (BE)",
+          "evidence": "VAT Report (BE) is a variant of the root Generic Tax report."
+        },
+        {
+          "source": "Accounting app",
+          "relation": "CONTAINS",
+          "target": "Reporting menu",
+          "evidence": "When a root report is opened from the Accounting app's Reporting menu"
+        },
+        {
+          "source": "Reporting menu",
+          "relation": "IS_PART_OF",
+          "target": "Accounting app",
+          "evidence": "When a root report is opened from the Accounting app's Reporting menu"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "lines",
+    "heading": "Lines",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "click on Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "All lines require a Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Code",
+          "type": "Field",
+          "mention": "can have an optional Code",
+          "confidence": "high"
+        },
+        {
+          "name": "line",
+          "type": "DataObject",
+          "mention": "the line itself",
+          "confidence": "medium"
+        },
+        {
+          "name": "line's value",
+          "type": "Field",
+          "mention": "the line's value",
+          "confidence": "low"
+        },
+        {
+          "name": "formulas",
+          "type": "Concept",
+          "mention": "using the line's value in formulas",
+          "confidence": "low"
+        },
+        {
+          "name": "report",
+          "type": "DataObject",
+          "mention": "After creating a report",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "report",
+          "relation": "CONTAINS",
+          "target": "line",
+          "evidence": "After creating a report... fill it with lines"
+        },
+        {
+          "source": "Add a line",
+          "relation": "PRODUCES",
+          "target": "line",
+          "evidence": "To create a new line, click on Add a line"
+        },
+        {
+          "source": "line",
+          "relation": "CONTAINS",
+          "target": "Name",
+          "evidence": "All lines require a Name"
+        },
+        {
+          "source": "line",
+          "relation": "CONTAINS",
+          "target": "Code",
+          "evidence": "can have an optional Code"
+        },
+        {
+          "source": "Code",
+          "relation": "RELATED_TO",
+          "target": "formulas",
+          "evidence": "allows using the line's value in formulas"
+        },
+        {
+          "source": "line's value",
+          "relation": "RELATED_TO",
+          "target": "formulas",
+          "evidence": "using the line's value in formulas"
+        },
+        {
+          "source": "line",
+          "relation": "CONFIGURED_BY",
+          "target": "Add a line",
+          "evidence": "To create a new line, click on Add a line"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "expressions",
+    "heading": "Expressions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expression",
+          "type": "Feature",
+          "mention": "Expressions",
+          "confidence": "high"
+        },
+        {
+          "name": "Label",
+          "type": "Field",
+          "mention": "Label",
+          "confidence": "high"
+        },
+        {
+          "name": "Computation Engine",
+          "type": "Feature",
+          "mention": "computation engine",
+          "confidence": "high"
+        },
+        {
+          "name": "Formula",
+          "type": "Field",
+          "mention": "Formula",
+          "confidence": "high"
+        },
+        {
+          "name": "Subformula",
+          "type": "Field",
+          "mention": "subformulas",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expression",
+          "relation": "BELONGS_TO",
+          "target": "Report Line",
+          "evidence": "sub-variables needed by a report line"
+        },
+        {
+          "source": "Expression",
+          "relation": "CONFIGURED_BY",
+          "target": "Label",
+          "evidence": "enter a Label used to refer to that expression"
+        },
+        {
+          "source": "Expression",
+          "relation": "CONFIGURED_BY",
+          "target": "Computation Engine",
+          "evidence": "defines how the formula(s) and subformula(s) are interpreted"
+        },
+        {
+          "source": "Expression",
+          "relation": "CONFIGURED_BY",
+          "target": "Formula",
+          "evidence": "Formula fields must also be completed"
+        },
+        {
+          "source": "Expression",
+          "relation": "CONFIGURED_BY",
+          "target": "Subformula",
+          "evidence": "Depending on the engine, subformulas may also be required."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "odoo-domain-computation-engine",
+    "heading": "Odoo Domain computation engine",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Domain computation engine",
+          "type": "Feature",
+          "mention": "Odoo Domain computation engine",
+          "confidence": "high"
+        },
+        {
+          "name": "account.move.line",
+          "type": "DataObject",
+          "mention": "account.move.line",
+          "confidence": "high"
+        },
+        {
+          "name": "sum",
+          "type": "Action",
+          "mention": "sum",
+          "confidence": "high"
+        },
+        {
+          "name": "sum_if_pos",
+          "type": "Action",
+          "mention": "sum_if_pos",
+          "confidence": "high"
+        },
+        {
+          "name": "sum_if_neg",
+          "type": "Action",
+          "mention": "sum_if_neg",
+          "confidence": "high"
+        },
+        {
+          "name": "count_rows",
+          "type": "Action",
+          "mention": "count_rows",
+          "confidence": "high"
+        },
+        {
+          "name": "balance",
+          "type": "Field",
+          "mention": "balances",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Odoo Domain computation engine",
+          "evidence": "When using the Odoo Domain computation engine"
+        },
+        {
+          "source": "Odoo Domain computation engine",
+          "relation": "ENABLES",
+          "target": "sum",
+          "evidence": "The subformula allows you to define how the move lines matching the domain are used to compute the value"
+        },
+        {
+          "source": "Odoo Domain computation engine",
+          "relation": "ENABLES",
+          "target": "sum_if_pos",
+          "evidence": "The subformula allows you to define how the move lines matching the domain are used to compute the value"
+        },
+        {
+          "source": "Odoo Domain computation engine",
+          "relation": "ENABLES",
+          "target": "sum_if_neg",
+          "evidence": "The subformula allows you to define how the move lines matching the domain are used to compute the value"
+        },
+        {
+          "source": "Odoo Domain computation engine",
+          "relation": "ENABLES",
+          "target": "count_rows",
+          "evidence": "The subformula allows you to define how the move lines matching the domain are used to compute the value"
+        },
+        {
+          "source": "sum",
+          "relation": "PRODUCES",
+          "target": "balance",
+          "evidence": "The result is the sum of all the balances"
+        },
+        {
+          "source": "account.move.line",
+          "relation": "CONTAINS",
+          "target": "balance",
+          "evidence": "balances of the matched move lines"
+        },
+        {
+          "source": "Odoo Domain computation engine",
+          "relation": "RELATED_TO",
+          "target": "account.move.line",
+          "evidence": "targeting `account.move.line` objects"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-tags-computation-engine",
+    "heading": "Tax Tags computation engine",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Tags computation engine",
+          "type": "Feature",
+          "mention": "Tax Tags computation engine",
+          "confidence": "high"
+        },
+        {
+          "name": "Formula field",
+          "type": "Field",
+          "mention": "Formula field",
+          "confidence": "high"
+        },
+        {
+          "name": "tax tags",
+          "type": "DataObject",
+          "mention": "tax tags",
+          "confidence": "high"
+        },
+        {
+          "name": "+tag_name",
+          "type": "DataObject",
+          "mention": "+tag_name",
+          "confidence": "medium"
+        },
+        {
+          "name": "-tag_name",
+          "type": "DataObject",
+          "mention": "-tag_name",
+          "confidence": "medium"
+        },
+        {
+          "name": "move lines",
+          "type": "DataObject",
+          "mention": "move lines",
+          "confidence": "high"
+        },
+        {
+          "name": "+A",
+          "type": "DataObject",
+          "mention": "+A",
+          "confidence": "medium"
+        },
+        {
+          "name": "-A",
+          "type": "DataObject",
+          "mention": "-A",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax Tags computation engine",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Tax Tags computation engine"
+        },
+        {
+          "source": "Tax Tags computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "tax tags",
+          "evidence": "When using the Tax Tags computation engine, the contents of the Formula field are matched to tax tags."
+        },
+        {
+          "source": "Tax Tags computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "+tag_name",
+          "evidence": "If the Formula is set to `tag_name`, the engine matches tax tags `+tag_name` and `-tag_name`"
+        },
+        {
+          "source": "Tax Tags computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "-tag_name",
+          "evidence": "If the Formula is set to `tag_name`, the engine matches tax tags `+tag_name` and `-tag_name`"
+        },
+        {
+          "source": "Tax Tags computation engine",
+          "relation": "CONTAINS",
+          "target": "Formula field",
+          "evidence": "When using the Tax Tags computation engine, the contents of the Formula field are matched to tax tags."
+        },
+        {
+          "source": "Tax Tags computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "+A",
+          "evidence": "If the formula is `A`, it will require (and create, if needed) tags `+A` and `-A`."
+        },
+        {
+          "source": "Tax Tags computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "-A",
+          "evidence": "If the formula is `A`, it will require (and create, if needed) tags `+A` and `-A`."
+        },
+        {
+          "source": "Tax Tags computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "move lines",
+          "evidence": "(amount of the move lines with `+` tag) - (amount of the move lines with `-` tag)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "aggregate-other-formulas-computation-engine",
+    "heading": "Aggregate Other Formulas computation engine",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Aggregate Other Formulas computation engine",
+          "type": "Module",
+          "mention": "Aggregate Other Formulas computation engine",
+          "confidence": "high"
+        },
+        {
+          "name": "code",
+          "type": "Field",
+          "mention": "code",
+          "confidence": "high"
+        },
+        {
+          "name": "label",
+          "type": "Field",
+          "mention": "label",
+          "confidence": "high"
+        },
+        {
+          "name": "if_above(CUR(amount))",
+          "type": "Feature",
+          "mention": "if_above(CUR(amount))",
+          "confidence": "high"
+        },
+        {
+          "name": "if_below(CUR(amount))",
+          "type": "Feature",
+          "mention": "if_below(CUR(amount))",
+          "confidence": "high"
+        },
+        {
+          "name": "if_between(CUR1(amount1), CUR2(amount2))",
+          "type": "Feature",
+          "mention": "if_between(CUR1(amount1), CUR2(amount2))",
+          "confidence": "high"
+        },
+        {
+          "name": "if_other_expr_above(LINE_CODE.EXPRESSION_LABEL, CUR(amount))",
+          "type": "Feature",
+          "mention": "if_other_expr_above(LINE_CODE.EXPRESSION_LABEL, CUR(amount))",
+          "confidence": "high"
+        },
+        {
+          "name": "if_other_expr_below(LINE_CODE.EXPRESSION_LABEL, CUR(amount))",
+          "type": "Feature",
+          "mention": "if_other_expr_below(LINE_CODE.EXPRESSION_LABEL, CUR(amount))",
+          "confidence": "high"
+        },
+        {
+          "name": "cross_report(xml_id | report_id)",
+          "type": "Feature",
+          "mention": "cross_report(xml_id | report_id)",
+          "confidence": "high"
+        },
+        {
+          "name": "arithmetic expression",
+          "type": "Concept",
+          "mention": "arithmetic expression",
+          "confidence": "medium"
+        },
+        {
+          "name": "expression",
+          "type": "Concept",
+          "mention": "expression",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Aggregate Other Formulas computation engine",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Aggregate Other Formulas computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "if_above(CUR(amount))",
+          "evidence": "The Aggregate Other Formulas computation engine performs arithmetic operations..."
+        },
+        {
+          "source": "Aggregate Other Formulas computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "if_below(CUR(amount))",
+          "evidence": "The Aggregate Other Formulas computation engine performs arithmetic operations..."
+        },
+        {
+          "source": "Aggregate Other Formulas computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "if_between(CUR1(amount1), CUR2(amount2))",
+          "evidence": "The Aggregate Other Formulas computation engine performs arithmetic operations..."
+        },
+        {
+          "source": "Aggregate Other Formulas computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "if_other_expr_above(LINE_CODE.EXPRESSION_LABEL, CUR(amount))",
+          "evidence": "The Aggregate Other Formulas computation engine performs arithmetic operations..."
+        },
+        {
+          "source": "Aggregate Other Formulas computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "if_other_expr_below(LINE_CODE.EXPRESSION_LABEL, CUR(amount))",
+          "evidence": "The Aggregate Other Formulas computation engine performs arithmetic operations..."
+        },
+        {
+          "source": "Aggregate Other Formulas computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "cross_report(xml_id | report_id)",
+          "evidence": "The Aggregate Other Formulas computation engine performs arithmetic operations..."
+        },
+        {
+          "source": "Aggregate Other Formulas computation engine",
+          "relation": "RELATED_TO",
+          "target": "arithmetic expression",
+          "evidence": "The Aggregate Other Formulas computation engine performs arithmetic operations..."
+        },
+        {
+          "source": "Aggregate Other Formulas computation engine",
+          "relation": "RELATED_TO",
+          "target": "expression",
+          "evidence": "The Aggregate Other Formulas computation engine performs arithmetic operations..."
+        },
+        {
+          "source": "code",
+          "relation": "RELATED_TO",
+          "target": "label",
+          "evidence": "code followed by a period . and the expression's label"
+        },
+        {
+          "source": "if_other_expr_above(LINE_CODE.EXPRESSION_LABEL, CUR(amount))",
+          "relation": "RELATED_TO",
+          "target": "code",
+          "evidence": "LINE_CODE"
+        },
+        {
+          "source": "if_other_expr_above(LINE_CODE.EXPRESSION_LABEL, CUR(amount))",
+          "relation": "RELATED_TO",
+          "target": "label",
+          "evidence": "EXPRESSION_LABEL"
+        },
+        {
+          "source": "if_other_expr_below(LINE_CODE.EXPRESSION_LABEL, CUR(amount))",
+          "relation": "RELATED_TO",
+          "target": "code",
+          "evidence": "LINE_CODE"
+        },
+        {
+          "source": "if_other_expr_below(LINE_CODE.EXPRESSION_LABEL, CUR(amount))",
+          "relation": "RELATED_TO",
+          "target": "label",
+          "evidence": "EXPRESSION_LABEL"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "prefix-of-account-codes-computation-engine",
+    "heading": "Prefix of Account Codes computation engine",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Prefix of Account Codes computation engine",
+          "type": "Feature",
+          "mention": "Prefix of Account Codes computation engine",
+          "confidence": "high"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "account code",
+          "type": "Field",
+          "mention": "codes",
+          "confidence": "high"
+        },
+        {
+          "name": "prefix",
+          "type": "Field",
+          "mention": "prefixes",
+          "confidence": "high"
+        },
+        {
+          "name": "arithmetic expression",
+          "type": "Feature",
+          "mention": "arithmetic expression",
+          "confidence": "high"
+        },
+        {
+          "name": "balance",
+          "type": "Field",
+          "mention": "balance",
+          "confidence": "high"
+        },
+        {
+          "name": "move line",
+          "type": "DataObject",
+          "mention": "move lines",
+          "confidence": "high"
+        },
+        {
+          "name": "debit",
+          "type": "Concept",
+          "mention": "debits",
+          "confidence": "high"
+        },
+        {
+          "name": "credit",
+          "type": "Concept",
+          "mention": "credits",
+          "confidence": "high"
+        },
+        {
+          "name": "C suffix",
+          "type": "Setting",
+          "mention": "C",
+          "confidence": "high"
+        },
+        {
+          "name": "D suffix",
+          "type": "Setting",
+          "mention": "D",
+          "confidence": "high"
+        },
+        {
+          "name": "account tag",
+          "type": "DataObject",
+          "mention": "tags",
+          "confidence": "high"
+        },
+        {
+          "name": "tag ID",
+          "type": "Field",
+          "mention": "ID",
+          "confidence": "high"
+        },
+        {
+          "name": "XMLID",
+          "type": "Field",
+          "mention": "XMLID",
+          "confidence": "high"
+        },
+        {
+          "name": "chart of accounts",
+          "type": "Concept",
+          "mention": "chart of accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Prefix of Account Codes computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "arithmetic expression",
+          "evidence": "The Prefix of Account Codes computation engine is used to match amounts made on accounts using the prefixes of these accounts' codes as variables in an arithmetic expression."
+        },
+        {
+          "source": "Prefix of Account Codes computation engine",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "arithmetic expression",
+          "relation": "USES_METHOD",
+          "target": "prefix",
+          "evidence": "using the prefixes of these accounts' codes as variables in an arithmetic expression."
+        },
+        {
+          "source": "prefix",
+          "relation": "IS_PART_OF",
+          "target": "account code",
+          "evidence": "prefixes of these accounts' codes"
+        },
+        {
+          "source": "account code",
+          "relation": "IS_PART_OF",
+          "target": "account",
+          "evidence": "accounts' codes"
+        },
+        {
+          "source": "arithmetic expression",
+          "relation": "PRODUCES",
+          "target": "balance",
+          "evidence": "This formula adds the balances of the move lines made on accounts"
+        },
+        {
+          "source": "balance",
+          "relation": "IS_PART_OF",
+          "target": "move line",
+          "evidence": "balances of the move lines"
+        },
+        {
+          "source": "arithmetic expression",
+          "relation": "CONFIGURED_BY",
+          "target": "C suffix",
+          "evidence": "You can apply 'sub-filtering' on credits and debits using the C and D suffixes."
+        },
+        {
+          "source": "arithmetic expression",
+          "relation": "CONFIGURED_BY",
+          "target": "D suffix",
+          "evidence": "You can apply 'sub-filtering' on credits and debits using the C and D suffixes."
+        },
+        {
+          "source": "arithmetic expression",
+          "relation": "USES_METHOD",
+          "target": "account tag",
+          "evidence": "In addition to using code prefixes to include accounts, you can also match them with account tags."
+        },
+        {
+          "source": "chart of accounts",
+          "relation": "RELATED_TO",
+          "target": "account tag",
+          "evidence": "where the same prefix might be used for different purposes across companies."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "external-value-computation-engine",
+    "heading": "External Value computation engine",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "External Value computation engine",
+          "type": "Module",
+          "mention": "External Value computation engine",
+          "confidence": "high"
+        },
+        {
+          "name": "account.report.external.value",
+          "type": "DataObject",
+          "mention": "`account.report.external.value`",
+          "confidence": "high"
+        },
+        {
+          "name": "account.move.line",
+          "type": "DataObject",
+          "mention": "`account.move.line`",
+          "confidence": "high"
+        },
+        {
+          "name": "sum",
+          "type": "Feature",
+          "mention": "`sum`",
+          "confidence": "high"
+        },
+        {
+          "name": "most_recent",
+          "type": "Feature",
+          "mention": "`most_recent`",
+          "confidence": "high"
+        },
+        {
+          "name": "rounding",
+          "type": "Feature",
+          "mention": "`rounding=X`",
+          "confidence": "high"
+        },
+        {
+          "name": "editable",
+          "type": "Feature",
+          "mention": "`editable`",
+          "confidence": "high"
+        },
+        {
+          "name": "date_to",
+          "type": "Field",
+          "mention": "`date_to`",
+          "confidence": "high"
+        },
+        {
+          "name": "manual",
+          "type": "Concept",
+          "mention": "**manual**",
+          "confidence": "medium"
+        },
+        {
+          "name": "carryover values",
+          "type": "Concept",
+          "mention": "**carryover\nvalues**",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "External Value computation engine",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "account.report.external.value",
+          "relation": "CONTAINS",
+          "target": "carryover values",
+          "evidence": "Those values are not stored using `account.move.line`, but with\n`account.report.external.value`"
+        },
+        {
+          "source": "account.move.line",
+          "relation": "CONTAINS",
+          "target": "manual",
+          "evidence": "The External Value computation engine is used to refer to **manual** and **carryover\nvalues**. Those values are not stored using `account.move.line`, but with\n`account.report.external.value`"
+        },
+        {
+          "source": "External Value computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "sum",
+          "evidence": "**Formulas** can be one of the following:\n\n`sum`"
+        },
+        {
+          "source": "External Value computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "most_recent",
+          "evidence": "**Formulas** can be one of the following:\n\n`most_recent`"
+        },
+        {
+          "source": "External Value computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "rounding",
+          "evidence": "In addition, **subformulas** can be used in two ways:\n\n`rounding=X`"
+        },
+        {
+          "source": "External Value computation engine",
+          "relation": "HAS_FEATURE",
+          "target": "editable",
+          "evidence": "In addition, **subformulas** can be used in two ways:\n\n`editable`"
+        },
+        {
+          "source": "editable",
+          "relation": "ENABLES",
+          "target": "rounding",
+          "evidence": "Both subformulas can be mixed by separating them with a `;`.\n\n.. example::\n   | `editable;rounding=2`"
+        },
+        {
+          "source": "manual",
+          "relation": "RELATED_TO",
+          "target": "date_to",
+          "evidence": "Manual values are created at the `date_to` currently selected in the report."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "custom-python-function-computation-engine",
+    "heading": "Custom Python Function computation engine",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Custom Python Function computation engine",
+          "type": "Module",
+          "mention": "Custom Python Function computation engine",
+          "confidence": "high"
+        },
+        {
+          "name": "Formula",
+          "type": "Feature",
+          "mention": "Formula",
+          "confidence": "high"
+        },
+        {
+          "name": "python function",
+          "type": "Concept",
+          "mention": "python function",
+          "confidence": "medium"
+        },
+        {
+          "name": "Subformula",
+          "type": "Feature",
+          "mention": "Subformula",
+          "confidence": "high"
+        },
+        {
+          "name": "key",
+          "type": "Concept",
+          "mention": "key",
+          "confidence": "low"
+        },
+        {
+          "name": "dictionary",
+          "type": "Concept",
+          "mention": "dictionary",
+          "confidence": "low"
+        },
+        {
+          "name": "custom module",
+          "type": "Module",
+          "mention": "custom module",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Custom Python Function computation engine",
+          "relation": "CONTAINS",
+          "target": "Formula",
+          "evidence": "The Formula is the name of a python function to call"
+        },
+        {
+          "source": "Custom Python Function computation engine",
+          "relation": "CONTAINS",
+          "target": "Subformula",
+          "evidence": "and the Subformula is a key to fetch in the dictionary"
+        },
+        {
+          "source": "Formula",
+          "relation": "RELATED_TO",
+          "target": "python function",
+          "evidence": "The Formula is the name of a python function to call"
+        },
+        {
+          "source": "Subformula",
+          "relation": "RELATED_TO",
+          "target": "key",
+          "evidence": "and the Subformula is a key"
+        },
+        {
+          "source": "Subformula",
+          "relation": "RELATED_TO",
+          "target": "dictionary",
+          "evidence": "a key to fetch in the dictionary"
+        },
+        {
+          "source": "Custom Python Function computation engine",
+          "relation": "APPLIES_TO",
+          "target": "custom module",
+          "evidence": "Use this computation engine only if making a custom module"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "columns",
+    "heading": "Columns",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "expression",
+          "type": "Field",
+          "mention": "expression",
+          "confidence": "high"
+        },
+        {
+          "name": "expression_label",
+          "type": "Field",
+          "mention": "expression_label",
+          "confidence": "high"
+        },
+        {
+          "name": "line",
+          "type": "DataObject",
+          "mention": "lines",
+          "confidence": "medium"
+        },
+        {
+          "name": "column",
+          "type": "Concept",
+          "mention": "column",
+          "confidence": "medium"
+        },
+        {
+          "name": "period comparison",
+          "type": "Feature",
+          "mention": "period comparison",
+          "confidence": "medium"
+        },
+        {
+          "name": "Options tab",
+          "type": "Module",
+          "mention": "Options tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting report",
+          "type": "Report",
+          "mention": "accounting report",
+          "confidence": "high"
+        },
+        {
+          "name": "customize-reports/lines-group-by",
+          "type": "Concept",
+          "mention": ".. _customize-reports/lines-group-by",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Report",
+          "relation": "CONTAINS",
+          "target": "column",
+          "evidence": "Reports can have an indefinite number of columns"
+        },
+        {
+          "source": "column",
+          "relation": "HAS_FEATURE",
+          "target": "period comparison",
+          "evidence": "When using the period comparison feature ... all columns are repeated"
+        },
+        {
+          "source": "period comparison",
+          "relation": "IS_PART_OF",
+          "target": "Options tab",
+          "evidence": "feature found under the Options tab"
+        },
+        {
+          "source": "column",
+          "relation": "CONFIGURED_BY",
+          "target": "expression",
+          "evidence": "Each column gets its values from the expressions"
+        },
+        {
+          "source": "column",
+          "relation": "CONFIGURED_BY",
+          "target": "expression_label",
+          "evidence": "The field expression_label of the column gives the label"
+        },
+        {
+          "source": "line",
+          "relation": "CONTAINS",
+          "target": "expression",
+          "evidence": "expressions declared on the lines"
+        },
+        {
+          "source": "accounting report",
+          "relation": "HAS_REPORT",
+          "target": "Report",
+          "evidence": "accounting report"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "line-grouping",
+    "heading": "Line grouping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Item",
+          "type": "DataObject",
+          "mention": "Journal Item",
+          "confidence": "high"
+        },
+        {
+          "name": "Line grouping",
+          "type": "Feature",
+          "mention": "Line grouping",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Line grouping",
+          "relation": "CONFIGURED_BY",
+          "target": "Journal Item",
+          "evidence": "Non-standard grouping is possible by adding or using existing fields on the Journal Item model"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Line grouping",
+          "evidence": "Product: Odoo\nTitle: Line grouping"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-field-on-journal-item",
+    "heading": "Create a new field on journal item",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Item",
+          "type": "DataObject",
+          "mention": "Journal Item",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Items",
+          "type": "Sub-module",
+          "mention": "Journal Items",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create a new field",
+          "type": "Action",
+          "mention": "Create a new field",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-bug (bug) icon",
+          "type": "Feature",
+          "mention": "fa-bug (bug) icon",
+          "confidence": "low"
+        },
+        {
+          "name": "Fields",
+          "type": "Feature",
+          "mention": "Fields",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "medium"
+        },
+        {
+          "name": "Field Name",
+          "type": "Field",
+          "mention": "Field Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Field Label",
+          "type": "Field",
+          "mention": "Field Label",
+          "confidence": "high"
+        },
+        {
+          "name": "Field Type",
+          "type": "Field",
+          "mention": "Field Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Stored",
+          "type": "Field",
+          "mention": "Stored",
+          "confidence": "high"
+        },
+        {
+          "name": "Related Model",
+          "type": "Field",
+          "mention": "Related Model",
+          "confidence": "high"
+        },
+        {
+          "name": "Related Field Definition",
+          "type": "Field",
+          "mention": "Related Field Definition",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Journal Items",
+          "evidence": "Accounting --> Journal Items"
+        },
+        {
+          "source": "Journal Items",
+          "relation": "HAS_FEATURE",
+          "target": "Fields",
+          "evidence": "click Fields"
+        },
+        {
+          "source": "Create a new field",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "To create"
+        },
+        {
+          "source": "Journal Item",
+          "relation": "BELONGS_TO",
+          "target": "DataObject",
+          "evidence": "Journal Item model"
+        },
+        {
+          "source": "Field Name",
+          "relation": "BELONGS_TO",
+          "target": "Journal Item",
+          "evidence": "complete the following fields"
+        },
+        {
+          "source": "Field Label",
+          "relation": "BELONGS_TO",
+          "target": "Journal Item",
+          "evidence": "complete the following fields"
+        },
+        {
+          "source": "Field Type",
+          "relation": "BELONGS_TO",
+          "target": "Journal Item",
+          "evidence": "complete the following fields"
+        },
+        {
+          "source": "Stored",
+          "relation": "BELONGS_TO",
+          "target": "Journal Item",
+          "evidence": "complete the following fields"
+        },
+        {
+          "source": "Related Model",
+          "relation": "BELONGS_TO",
+          "target": "Journal Item",
+          "evidence": "complete the following fields"
+        },
+        {
+          "source": "Related Field Definition",
+          "relation": "BELONGS_TO",
+          "target": "Journal Item",
+          "evidence": "complete the following fields"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "group-lines",
+    "heading": "Group lines",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Lines",
+          "type": "Module",
+          "mention": "Lines",
+          "confidence": "high"
+        },
+        {
+          "name": "Group lines",
+          "type": "Feature",
+          "mention": "Group lines",
+          "confidence": "high"
+        },
+        {
+          "name": "Group by field",
+          "type": "Field",
+          "mention": "Group by field",
+          "confidence": "high"
+        },
+        {
+          "name": "technical name (Field Name)",
+          "type": "Concept",
+          "mention": "technical name (Field Name)",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Items",
+          "type": "Sub-module",
+          "mention": "Journal Items",
+          "confidence": "high"
+        },
+        {
+          "name": "Fields",
+          "type": "DataObject",
+          "mention": "Fields",
+          "confidence": "medium"
+        },
+        {
+          "name": "Field Name column",
+          "type": "Field",
+          "mention": "Field Name column",
+          "confidence": "high"
+        },
+        {
+          "name": "Consolidation via grouping by account code",
+          "type": "Workflow",
+          "mention": "Consolidation via grouping by account code",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lines",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Group lines"
+        },
+        {
+          "source": "Group lines",
+          "relation": "HAS_FEATURE",
+          "target": "Odoo",
+          "evidence": "Title: Group lines"
+        },
+        {
+          "source": "Accounting",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Accounting --> Journal Items"
+        },
+        {
+          "source": "Journal Items",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Journal Items"
+        },
+        {
+          "source": "Journal Items",
+          "relation": "CONTAINS",
+          "target": "Fields",
+          "evidence": "click the fa-bug (bug) icon, then click Fields"
+        },
+        {
+          "source": "Group lines",
+          "relation": "CONFIGURED_BY",
+          "target": "Group by field",
+          "evidence": "edit the Group by field"
+        },
+        {
+          "source": "Group lines",
+          "relation": "SEE_ALSO",
+          "target": "Consolidation via grouping by account code",
+          "evidence": "Consolidation via grouping by account code"
+        }
+      ]
+    }
+  }
+]

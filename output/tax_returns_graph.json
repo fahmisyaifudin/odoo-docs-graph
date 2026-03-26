@@ -1,0 +1,1265 @@
+[
+  {
+    "section_id": "tax-return-(vat-report)",
+    "heading": "Tax return (VAT report)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax return",
+          "type": "Report",
+          "mention": "Tax return",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT report",
+          "type": "Report",
+          "mention": "VAT report",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT",
+          "type": "Concept",
+          "mention": "VAT (Value Added Tax)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "Companies",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax authorities",
+          "type": "Actor",
+          "mention": "tax authorities",
+          "confidence": "medium"
+        },
+        {
+          "name": "Output tax",
+          "type": "Concept",
+          "mention": "output tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "Input tax",
+          "type": "Concept",
+          "mention": "input tax",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Tax return",
+          "evidence": "Product: Odoo Title: Tax return"
+        },
+        {
+          "source": "Tax return",
+          "relation": "EQUIVALENT_TO",
+          "target": "VAT report",
+          "evidence": "A tax return - or VAT report"
+        },
+        {
+          "source": "Company",
+          "relation": "PERFORMED_BY",
+          "target": "Tax authorities",
+          "evidence": "submit a tax return to the tax authorities"
+        },
+        {
+          "source": "Tax return",
+          "relation": "APPLIES_TO",
+          "target": "Company",
+          "evidence": "Companies with a registered VAT number are required"
+        },
+        {
+          "source": "Tax return",
+          "relation": "COMPLIES_WITH",
+          "target": "Regulation",
+          "evidence": "required to submit a tax return"
+        },
+        {
+          "source": "Tax return",
+          "relation": "GENERATES",
+          "target": "Report",
+          "evidence": "provides the tax authorities with information"
+        },
+        {
+          "source": "Output tax",
+          "relation": "IS_PART_OF",
+          "target": "Tax return",
+          "evidence": "The output tax is charged"
+        },
+        {
+          "source": "Input tax",
+          "relation": "IS_PART_OF",
+          "target": "Tax return",
+          "evidence": "the input tax refers to"
+        },
+        {
+          "source": "Tax return",
+          "relation": "SEE_ALSO",
+          "target": "../taxes",
+          "evidence": "../taxes"
+        },
+        {
+          "source": "Tax return",
+          "relation": "SEE_ALSO",
+          "target": "../get_started",
+          "evidence": "../get_started"
+        },
+        {
+          "source": "Tax return",
+          "relation": "SEE_ALSO",
+          "target": "../../fiscal_localizations",
+          "evidence": "../../fiscal_localizations"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-return-periodicity",
+    "heading": "Tax return periodicity",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Return Periodicity",
+          "type": "Setting",
+          "mention": "Tax Return Periodicity",
+          "confidence": "high"
+        },
+        {
+          "name": "Periodicity",
+          "type": "Field",
+          "mention": "Periodicity",
+          "confidence": "high"
+        },
+        {
+          "name": "Deadline",
+          "type": "Field",
+          "mention": "Deadline",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "tax return",
+          "type": "DataObject",
+          "mention": "tax return",
+          "confidence": "high"
+        },
+        {
+          "name": "reminders",
+          "type": "Feature",
+          "mention": "reminders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Deadline",
+          "type": "Concept",
+          "mention": "Deadline",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax Return Periodicity",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "... Configuration --> Settings, navigate to the Tax Return Periodicity section..."
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "... Accounting --> Configuration --> Settings..."
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "... go to Accounting --> Configuration..."
+        },
+        {
+          "source": "Accounting",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product is Odoo"
+        },
+        {
+          "source": "Tax Return Periodicity",
+          "relation": "CONTAINS",
+          "target": "Periodicity",
+          "evidence": "... update the following fields... Periodicity: Define the tax return periodicity."
+        },
+        {
+          "source": "Tax Return Periodicity",
+          "relation": "CONTAINS",
+          "target": "Deadline",
+          "evidence": "... update the following fields... Deadline: Define when Odoo should send reminders..."
+        },
+        {
+          "source": "Tax Return Periodicity",
+          "relation": "CONTAINS",
+          "target": "Journal",
+          "evidence": "... update the following fields... Journal: Update the journal where the tax return is recorded..."
+        },
+        {
+          "source": "Tax Return Periodicity",
+          "relation": "ENABLES",
+          "target": "reminders",
+          "evidence": "... allows Odoo to compute tax returns correctly and automatically send reminders..."
+        },
+        {
+          "source": "Tax Return Periodicity",
+          "relation": "GENERATES",
+          "target": "tax return",
+          "evidence": "... allows Odoo to compute tax returns correctly..."
+        },
+        {
+          "source": "Periodicity",
+          "relation": "CONFIGURED_BY",
+          "target": "Tax Return Periodicity",
+          "evidence": "field on Tax Return Periodicity"
+        },
+        {
+          "source": "Deadline",
+          "relation": "CONFIGURED_BY",
+          "target": "Tax Return Periodicity",
+          "evidence": "field on Tax Return Periodicity"
+        },
+        {
+          "source": "Journal",
+          "relation": "CONFIGURED_BY",
+          "target": "Tax Return Periodicity",
+          "evidence": "field on Tax Return Periodicity"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-grids",
+    "heading": "Tax grids",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Grids",
+          "type": "Setting",
+          "mention": "Tax grids",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax reports",
+          "type": "Report",
+          "mention": "tax reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Items tab",
+          "type": "Feature",
+          "mention": "Journal Items tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Feature",
+          "mention": "Taxes",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax Grids",
+          "relation": "CONFIGURED_BY",
+          "target": "Taxes",
+          "evidence": "Tax Grids are displayed in the Journal Items tab of any invoice or bill. To configure tax grids for taxes, go to Accounting --> Configuration --> Taxes"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GENERATES",
+          "target": "Tax reports",
+          "evidence": "Odoo generates tax reports"
+        },
+        {
+          "source": "Tax reports",
+          "relation": "REQUIRES",
+          "target": "Tax Grids",
+          "evidence": "Odoo generates tax reports based on the Tax Grids settings configured for each tax."
+        },
+        {
+          "source": "Tax reports",
+          "relation": "REQUIRES",
+          "target": "invoice",
+          "evidence": "All recorded transactions must apply the correct tax rates to ensure accurate reporting."
+        },
+        {
+          "source": "invoice",
+          "relation": "HAS_FEATURE",
+          "target": "Journal Items tab",
+          "evidence": "Tax Grids are displayed in the Journal Items tab of any invoice"
+        },
+        {
+          "source": "bill",
+          "relation": "HAS_FEATURE",
+          "target": "Journal Items tab",
+          "evidence": "Tax Grids are displayed in the Journal Items tab of any bill"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "To configure tax grids for taxes, go to Accounting --> Configuration --> Taxes"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Taxes",
+          "evidence": "To configure tax grids for taxes, go to Accounting --> Configuration --> Taxes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-returns-journal",
+    "heading": "Tax returns journal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting dashboard",
+          "type": "Module",
+          "mention": "Accounting dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Returns journal",
+          "type": "Report",
+          "mention": "Tax Returns journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Set Company Data",
+          "type": "Action",
+          "mention": "Set Company Data",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configure the company details",
+          "type": "Action",
+          "mention": "Configure the company details",
+          "confidence": "medium"
+        },
+        {
+          "name": "general/companies/company",
+          "type": "DataObject",
+          "mention": "general/companies/company",
+          "confidence": "low"
+        },
+        {
+          "name": "Set Periods",
+          "type": "Action",
+          "mention": "Set Periods",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting Periods window",
+          "type": "Module",
+          "mention": "Accounting Periods window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Opening date",
+          "type": "Field",
+          "mention": "Opening date",
+          "confidence": "low"
+        },
+        {
+          "name": "Fiscal Year End",
+          "type": "Field",
+          "mention": "Fiscal Year End",
+          "confidence": "low"
+        },
+        {
+          "name": "Periodicity",
+          "type": "Field",
+          "mention": "Periodicity",
+          "confidence": "low"
+        },
+        {
+          "name": "Review Chart of Accounts",
+          "type": "Action",
+          "mention": "Review Chart of Accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/tax-returns/close",
+          "type": "Module",
+          "mention": "accounting/tax-returns/close",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax Returns journal",
+          "relation": "IS_PART_OF",
+          "target": "Accounting dashboard",
+          "evidence": "On the Accounting dashboard, complete the following actions displayed in the Tax Returns journal"
+        },
+        {
+          "source": "Set Company Data",
+          "relation": "IS_PART_OF",
+          "target": "Tax Returns journal",
+          "evidence": "complete the following actions displayed in the Tax Returns journal:"
+        },
+        {
+          "source": "Configure the company details",
+          "relation": "EQUIVALENT_TO",
+          "target": "Set Company Data",
+          "evidence": "Configure the company details <general/companies/company>."
+        },
+        {
+          "source": "Set Periods",
+          "relation": "IS_PART_OF",
+          "target": "Tax Returns journal",
+          "evidence": "complete the following actions displayed in the Tax Returns journal:"
+        },
+        {
+          "source": "Set Periods",
+          "relation": "PERFORMED_BY",
+          "target": "Accounting Periods window",
+          "evidence": "In the Accounting Periods window, fill in the Opening date, Fiscal Year End, and update the Periodicity if needed."
+        },
+        {
+          "source": "Review Chart of Accounts",
+          "relation": "IS_PART_OF",
+          "target": "Tax Returns journal",
+          "evidence": "complete the following actions displayed in the Tax Returns journal:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-return-lock-date",
+    "heading": "Tax return lock date",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax return lock date",
+          "type": "Setting",
+          "mention": "Tax return lock date",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT-related journal entries",
+          "type": "DataObject",
+          "mention": "VAT-related journal entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "Closing Journal Entry",
+          "type": "Workflow",
+          "mention": "Closing Journal Entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "final report",
+          "type": "Report",
+          "mention": "final report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lock Dates",
+          "type": "Feature",
+          "mention": "Lock Dates",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax return lock date",
+          "relation": "GOVERNED_BY",
+          "target": "Setting",
+          "evidence": "Setting a tax lock date prevents changes"
+        },
+        {
+          "source": "Tax return lock date",
+          "relation": "CONFIGURED_BY",
+          "target": "Accounting",
+          "evidence": "To view or edit the current Lock Tax Return date, go to Accounting --> Accounting --> Lock Dates."
+        },
+        {
+          "source": "Closing Journal Entry",
+          "relation": "TRIGGERED_BY",
+          "target": "Tax return lock date",
+          "evidence": "Locking the period before processing the Closing Journal Entry"
+        },
+        {
+          "source": "Closing Journal Entry",
+          "relation": "GENERATES",
+          "target": "final report",
+          "evidence": "helps ensure the accuracy of the final report"
+        },
+        {
+          "source": "Tax return lock date",
+          "relation": "RELATED_TO",
+          "target": "VAT-related journal entries",
+          "evidence": "prevents changes that could impact VAT-related journal entries"
+        },
+        {
+          "source": "Accounting",
+          "type": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-return",
+    "heading": "Tax return",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Returns journal",
+          "type": "Module",
+          "mention": "Tax Returns journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Module",
+          "mention": "Accounting Dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax Returns",
+          "type": "Module",
+          "mention": "Tax Returns",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax Return view",
+          "type": "Feature",
+          "mention": "Tax Return view",
+          "confidence": "medium"
+        },
+        {
+          "name": "pending tax returns",
+          "type": "DataObject",
+          "mention": "pending tax returns",
+          "confidence": "medium"
+        },
+        {
+          "name": "VAT report",
+          "type": "Report",
+          "mention": "VAT report",
+          "confidence": "medium"
+        },
+        {
+          "name": "advance payments",
+          "type": "DataObject",
+          "mention": "advance payments",
+          "confidence": "medium"
+        },
+        {
+          "name": "period",
+          "type": "Field",
+          "mention": "period",
+          "confidence": "low"
+        },
+        {
+          "name": "deadline date",
+          "type": "Field",
+          "mention": "deadline date",
+          "confidence": "low"
+        },
+        {
+          "name": "related company",
+          "type": "Field",
+          "mention": "related company",
+          "confidence": "low"
+        },
+        {
+          "name": "branch(es)",
+          "type": "Field",
+          "mention": "branch(es)",
+          "confidence": "low"
+        },
+        {
+          "name": "Review",
+          "type": "Action",
+          "mention": "Review",
+          "confidence": "high"
+        },
+        {
+          "name": "Submit",
+          "type": "Action",
+          "mention": "Submit",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay",
+          "type": "Action",
+          "mention": "Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "tax return",
+          "type": "DataObject",
+          "mention": "tax return",
+          "confidence": "high"
+        },
+        {
+          "name": "Export All",
+          "type": "Action",
+          "mention": "Export All",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax Returns journal",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Tax Returns journal displays automatic reminders"
+        },
+        {
+          "source": "Tax Return view",
+          "relation": "CONTAINS",
+          "target": "pending tax returns",
+          "evidence": "Tax Return view displays a chronological list of all pending tax returns"
+        },
+        {
+          "source": "Tax Return view",
+          "relation": "HAS_REPORT",
+          "target": "VAT report",
+          "evidence": "list of all pending tax returns (VAT report)"
+        },
+        {
+          "source": "Tax Return view",
+          "relation": "CONTAINS",
+          "target": "advance payments",
+          "evidence": "list of all pending tax returns (VAT report) and advance payments"
+        },
+        {
+          "source": "pending tax returns",
+          "relation": "HAS_FEATURE",
+          "target": "Review",
+          "evidence": "Action steps, such as Review"
+        },
+        {
+          "source": "pending tax returns",
+          "relation": "HAS_FEATURE",
+          "target": "Submit",
+          "evidence": "Action steps, such as Review, Submit"
+        },
+        {
+          "source": "pending tax returns",
+          "relation": "HAS_FEATURE",
+          "target": "Pay",
+          "evidence": "Action steps, such as Review, Submit, and Pay"
+        },
+        {
+          "source": "Tax Return view",
+          "relation": "HAS_FEATURE",
+          "target": "Export All",
+          "evidence": "click fa-upload Export All to download the tax returns XLSX"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vat-report",
+    "heading": "VAT report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Return",
+          "type": "DataObject",
+          "mention": "tax return",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT report",
+          "type": "Report",
+          "mention": "VAT report",
+          "confidence": "high"
+        },
+        {
+          "name": "Generic Tax report",
+          "type": "Report",
+          "mention": "Generic Tax report",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT Return (BE)",
+          "type": "Report",
+          "mention": "VAT Return (BE)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax Report (US)",
+          "type": "Report",
+          "mention": "Tax Report (US)",
+          "confidence": "medium"
+        },
+        {
+          "name": "PDF",
+          "type": "Action",
+          "mention": "PDF",
+          "confidence": "low"
+        },
+        {
+          "name": "XLSX",
+          "type": "Action",
+          "mention": "XLSX",
+          "confidence": "low"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "Annual Closing: Corporate Tax",
+          "type": "Report",
+          "mention": "Annual Closing",
+          "confidence": "medium"
+        },
+        {
+          "name": "VAT (return)/Tax",
+          "type": "Report",
+          "mention": "VAT (return)/Tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "VAT Listing",
+          "type": "Report",
+          "mention": "VAT Listing",
+          "confidence": "low"
+        },
+        {
+          "name": "EC Sales List",
+          "type": "Report",
+          "mention": "EC Sales List",
+          "confidence": "low"
+        },
+        {
+          "name": "Advance Payment",
+          "type": "Report",
+          "mention": "Advance Payment",
+          "confidence": "low"
+        },
+        {
+          "name": "Intrastat",
+          "type": "Report",
+          "mention": "Intrastat",
+          "confidence": "low"
+        },
+        {
+          "name": "Tax Checks",
+          "type": "Feature",
+          "mention": "Tax Checks view",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Matching",
+          "type": "Feature",
+          "mention": "Bank Matching",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bill attachments",
+          "type": "Feature",
+          "mention": "Bill attachments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Company data",
+          "type": "DataObject",
+          "mention": "Company data",
+          "confidence": "medium"
+        },
+        {
+          "name": "Draft entries",
+          "type": "Feature",
+          "mention": "Draft entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "No negative amount in VAT report",
+          "type": "Setting",
+          "mention": "No negative amount in VAT report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes and countries matching",
+          "type": "Feature",
+          "mention": "Taxes and countries matching",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lock Tax Return",
+          "type": "Setting",
+          "mention": "Lock Tax Return",
+          "confidence": "high"
+        },
+        {
+          "name": "Lock date",
+          "type": "Action",
+          "mention": "Lock",
+          "confidence": "low"
+        },
+        {
+          "name": "Tax Returns journal",
+          "type": "Report",
+          "mention": "Tax Returns journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "chatter",
+          "type": "Feature",
+          "mention": "chatter",
+          "confidence": "low"
+        },
+        {
+          "name": "Submission Instructions",
+          "type": "Workflow",
+          "mention": "Submission Instructions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment window",
+          "type": "Feature",
+          "mention": "Payment window",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "VAT report",
+          "evidence": "Product: Odoo\nTitle: VAT report"
+        },
+        {
+          "source": "Tax Return",
+          "relation": "IS_PART_OF",
+          "target": "VAT report",
+          "evidence": "Each pending tax return (VAT report) follows these steps"
+        },
+        {
+          "source": "Tax Return",
+          "relation": "TRIGGERED_BY",
+          "target": "review",
+          "evidence": "To start the review of a tax return, click on the relevant tax return line"
+        },
+        {
+          "source": "Tax Return",
+          "relation": "TRIGGERED_BY",
+          "target": "submit",
+          "evidence": "Once a tax return has completed the Review step"
+        },
+        {
+          "source": "Tax Return",
+          "relation": "TRIGGERED_BY",
+          "target": "pay",
+          "evidence": "Once a tax return is submitted, a Payment window appears"
+        },
+        {
+          "source": "VAT report",
+          "relation": "PRODUCES",
+          "target": "PDF",
+          "evidence": "Click PDF or XLSX to generate a PDF or XLSX file"
+        },
+        {
+          "source": "VAT report",
+          "relation": "PRODUCES",
+          "target": "XLSX",
+          "evidence": "Click PDF or XLSX to generate a PDF or XLSX file"
+        },
+        {
+          "source": "Documents",
+          "relation": "SUPPORTS",
+          "target": "PDF",
+          "evidence": "Copy to Documents to save the report to the Documents app"
+        },
+        {
+          "source": "Documents",
+          "relation": "SUPPORTS",
+          "target": "XLSX",
+          "evidence": "Copy to Documents to save the report to the Documents app"
+        },
+        {
+          "source": "VAT report",
+          "relation": "GENERATES",
+          "target": "Annual Closing: Corporate Tax",
+          "evidence": "The following returns can be generated: Annual Closing"
+        },
+        {
+          "source": "VAT report",
+          "relation": "GENERATES",
+          "target": "VAT (return)/Tax",
+          "evidence": "The following returns can be generated: VAT (return)/Tax"
+        },
+        {
+          "source": "VAT report",
+          "relation": "GENERATES",
+          "target": "VAT Listing",
+          "evidence": "The following returns can be generated: VAT Listing"
+        },
+        {
+          "source": "VAT report",
+          "relation": "GENERATES",
+          "target": "EC Sales List",
+          "evidence": "The following returns can be generated: EC Sales List"
+        },
+        {
+          "source": "VAT report",
+          "relation": "GENERATES",
+          "target": "Advance Payment",
+          "evidence": "The following returns can be generated: Advance Payment"
+        },
+        {
+          "source": "VAT report",
+          "relation": "GENERATES",
+          "target": "Intrastat",
+          "evidence": "The following returns can be generated: Intrastat"
+        },
+        {
+          "source": "VAT report",
+          "relation": "HAS_FEATURE",
+          "target": "Tax Checks",
+          "evidence": "If any automatic tax validation checks are pending, the Tax Checks view displays"
+        },
+        {
+          "source": "Tax Checks",
+          "relation": "CONTAINS",
+          "target": "Bank Matching",
+          "evidence": "Tax Checks view displays the following: Bank Matching"
+        },
+        {
+          "source": "Tax Checks",
+          "relation": "CONTAINS",
+          "target": "Bill attachments",
+          "evidence": "Tax Checks view displays the following: Bill attachments"
+        },
+        {
+          "source": "Tax Checks",
+          "relation": "CONTAINS",
+          "target": "Company data",
+          "evidence": "Tax Checks view displays the following: Company data"
+        },
+        {
+          "source": "Tax Checks",
+          "relation": "CONTAINS",
+          "target": "Draft entries",
+          "evidence": "Tax Checks view displays the following: Draft entries"
+        },
+        {
+          "source": "Tax Checks",
+          "relation": "CONTAINS",
+          "target": "No negative amount in VAT report",
+          "evidence": "Tax Checks view displays the following: No negative amount in VAT report"
+        },
+        {
+          "source": "Tax Checks",
+          "relation": "CONTAINS",
+          "target": "Taxes and countries matching",
+          "evidence": "Tax Checks view displays the following: Taxes and countries matching"
+        },
+        {
+          "source": "Tax Return",
+          "relation": "CONFIGURED_BY",
+          "target": "Lock Tax Return",
+          "evidence": "The Lock Tax Return date is automatically updated"
+        },
+        {
+          "source": "Tax Return",
+          "relation": "PRODUCES",
+          "target": "Tax Returns journal",
+          "evidence": "the closing journal entry is posted in the Tax Returns journal"
+        },
+        {
+          "source": "Tax Checks",
+          "relation": "PRODUCES",
+          "target": "chatter",
+          "evidence": "All check status changes are logged in the chatter"
+        },
+        {
+          "source": "Tax Return",
+          "relation": "TRIGGERED_BY",
+          "target": "Submission Instructions",
+          "evidence": "If a Submission Instructions pop-up window appears"
+        },
+        {
+          "source": "Tax Return",
+          "relation": "ENABLES",
+          "target": "Payment window",
+          "evidence": "Once a tax return is submitted, a Payment window appears"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "advance-tax-payments",
+    "heading": "Advance tax payments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Return view",
+          "type": "Report",
+          "mention": "Tax Return view",
+          "confidence": "medium"
+        },
+        {
+          "name": "advance tax payment",
+          "type": "Feature",
+          "mention": "advance tax payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "advance tax payment line",
+          "type": "DataObject",
+          "mention": "advance tax payment line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pay",
+          "type": "Action",
+          "mention": "click Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "Mark Paid",
+          "type": "Action",
+          "mention": "Click Mark Paid",
+          "confidence": "high"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Click Send",
+          "confidence": "high"
+        },
+        {
+          "name": "Discard",
+          "type": "Action",
+          "mention": "Click Discard",
+          "confidence": "high"
+        },
+        {
+          "name": "Advance Payment window",
+          "type": "Feature",
+          "mention": "Advance Payment window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mark as Completed",
+          "type": "Action",
+          "mention": "select Mark as Completed",
+          "confidence": "high"
+        },
+        {
+          "name": "vertical ellipsis icon",
+          "type": "Feature",
+          "mention": "fa-ellipsis-v icon",
+          "confidence": "low"
+        },
+        {
+          "name": "local fiscal localizations",
+          "type": "Concept",
+          "mention": "local fiscal localizations",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pay",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Pay",
+          "confidence": "medium"
+        },
+        {
+          "source": "Mark Paid",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click Mark Paid",
+          "confidence": "medium"
+        },
+        {
+          "source": "Send",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click Send",
+          "confidence": "medium"
+        },
+        {
+          "source": "Discard",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click Discard",
+          "confidence": "medium"
+        },
+        {
+          "source": "Tax Return view",
+          "relation": "CONTAINS",
+          "target": "advance tax payment line",
+          "evidence": "line disappears from the Tax Return view",
+          "confidence": "medium"
+        },
+        {
+          "source": "advance tax payment",
+          "relation": "HAS_FEATURE",
+          "target": "Pay",
+          "evidence": "click Pay on the relevant advance tax payment line",
+          "confidence": "medium"
+        },
+        {
+          "source": "advance tax payment",
+          "relation": "HAS_FEATURE",
+          "target": "Mark Paid",
+          "evidence": "Click Mark Paid once the payment is processed",
+          "confidence": "medium"
+        },
+        {
+          "source": "advance tax payment",
+          "relation": "HAS_FEATURE",
+          "target": "Send",
+          "evidence": "Click Send to email all payment information",
+          "confidence": "medium"
+        },
+        {
+          "source": "advance tax payment",
+          "relation": "HAS_FEATURE",
+          "target": "Discard",
+          "evidence": "Click Discard",
+          "confidence": "medium"
+        },
+        {
+          "source": "Mark Paid",
+          "relation": "TRIGGERED_BY",
+          "target": "payment processed",
+          "evidence": "once the payment is processed",
+          "confidence": "medium"
+        },
+        {
+          "source": "Send",
+          "relation": "PRODUCES",
+          "target": "email",
+          "evidence": "to email all payment information",
+          "confidence": "medium"
+        }
+      ]
+    }
+  }
+]

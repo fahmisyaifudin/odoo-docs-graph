@@ -1,0 +1,2028 @@
+[
+  {
+    "section_id": "pipeline-analysis",
+    "heading": "Pipeline Analysis",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline Analysis",
+          "type": "Report",
+          "mention": "Pipeline Analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline",
+          "type": "Concept",
+          "mention": "sales pipeline",
+          "confidence": "medium"
+        },
+        {
+          "name": "leads/opportunities",
+          "type": "DataObject",
+          "mention": "leads/opportunities",
+          "confidence": "high"
+        },
+        {
+          "name": "Won",
+          "type": "Concept",
+          "mention": "Won",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lost",
+          "type": "Concept",
+          "mention": "Lost",
+          "confidence": "medium"
+        },
+        {
+          "name": "stage",
+          "type": "Concept",
+          "mention": "stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "users",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "CRM",
+          "relation": "HAS_REPORT",
+          "target": "Pipeline Analysis",
+          "evidence": "use the search options and reports available on the *Pipeline Analysis* page"
+        },
+        {
+          "source": "leads/opportunities",
+          "relation": "RELATED_TO",
+          "target": "stage",
+          "evidence": "move from stage to stage"
+        },
+        {
+          "source": "CRM",
+          "relation": "RELATED_TO",
+          "target": "Pipeline",
+          "evidence": "The *CRM* app manages the sales pipeline"
+        },
+        {
+          "source": "Won",
+          "relation": "RELATED_TO",
+          "target": "leads/opportunities",
+          "evidence": "move from stage to stage, origination to sale (**Won**)"
+        },
+        {
+          "source": "Lost",
+          "relation": "RELATED_TO",
+          "target": "leads/opportunities",
+          "evidence": "move from stage to stage, origination to sale ... or archival (**Lost**)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "navigate-the-pipeline-analysis-page",
+    "heading": "Navigate the pipeline analysis page",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline Analysis page",
+          "type": "Module",
+          "mention": "Pipeline Analysis page",
+          "confidence": "high"
+        },
+        {
+          "name": "Actions menu",
+          "type": "Sub-module",
+          "mention": "Actions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Knowledge",
+          "type": "Feature",
+          "mention": "Knowledge option",
+          "confidence": "high"
+        },
+        {
+          "name": "Dashboard",
+          "type": "Feature",
+          "mention": "Dashboard option",
+          "confidence": "high"
+        },
+        {
+          "name": "Spreadsheet",
+          "type": "Feature",
+          "mention": "Spreadsheet option",
+          "confidence": "high"
+        },
+        {
+          "name": "Search bar",
+          "type": "Feature",
+          "mention": "Search... bar",
+          "confidence": "high"
+        },
+        {
+          "name": "Graph view",
+          "type": "Feature",
+          "mention": "Graph view",
+          "confidence": "high"
+        },
+        {
+          "name": "Pivot view",
+          "type": "Feature",
+          "mention": "Pivot view",
+          "confidence": "high"
+        },
+        {
+          "name": "Cohort view",
+          "type": "Feature",
+          "mention": "Cohort view",
+          "confidence": "high"
+        },
+        {
+          "name": "List view",
+          "type": "Feature",
+          "mention": "List view",
+          "confidence": "high"
+        },
+        {
+          "name": "Measures",
+          "type": "Setting",
+          "mention": "Measures",
+          "confidence": "medium"
+        },
+        {
+          "name": "Insert in Spreadsheet",
+          "type": "Feature",
+          "mention": "Insert in Spreadsheet",
+          "confidence": "high"
+        },
+        {
+          "name": "Bar Chart",
+          "type": "Feature",
+          "mention": "Bar Chart",
+          "confidence": "high"
+        },
+        {
+          "name": "Line Chart",
+          "type": "Feature",
+          "mention": "Line Chart",
+          "confidence": "high"
+        },
+        {
+          "name": "Pie Chart",
+          "type": "Feature",
+          "mention": "Pie Chart",
+          "confidence": "high"
+        },
+        {
+          "name": "Stacked",
+          "type": "Setting",
+          "mention": "Stacked",
+          "confidence": "medium"
+        },
+        {
+          "name": "Descending",
+          "type": "Setting",
+          "mention": "Descending",
+          "confidence": "medium"
+        },
+        {
+          "name": "Ascending",
+          "type": "Setting",
+          "mention": "Ascending",
+          "confidence": "medium"
+        },
+        {
+          "name": "Flip Axis",
+          "type": "Action",
+          "mention": "Flip Axis",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expand All",
+          "type": "Action",
+          "mention": "Expand All",
+          "confidence": "medium"
+        },
+        {
+          "name": "Download xlsx",
+          "type": "Action",
+          "mention": "Download xlsx",
+          "confidence": "medium"
+        },
+        {
+          "name": "bar graph",
+          "type": "Report",
+          "mention": "bar graph",
+          "confidence": "high"
+        },
+        {
+          "name": "lead",
+          "type": "DataObject",
+          "mention": "leads",
+          "confidence": "medium"
+        },
+        {
+          "name": "stage",
+          "type": "Concept",
+          "mention": "stage of the sales pipeline",
+          "confidence": "medium"
+        },
+        {
+          "name": "Created on",
+          "type": "Field",
+          "mention": "Created on",
+          "confidence": "high"
+        },
+        {
+          "name": "Closed Date",
+          "type": "Field",
+          "mention": "Closed Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Knowledge app",
+          "type": "Product",
+          "mention": "*Knowledge* app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dashboards app",
+          "type": "Product",
+          "mention": "*Dashboards* app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Documents app",
+          "type": "Product",
+          "mention": "*Documents* app",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Navigate the pipeline analysis page"
+        },
+        {
+          "source": "Actions menu",
+          "relation": "BELONGS_TO",
+          "target": "Pipeline Analysis page",
+          "evidence": "Actions: represented by the ⚙️ (gear) icon, located next to the\n  Pipeline Analysis page title."
+        },
+        {
+          "source": "Knowledge",
+          "relation": "IS_PART_OF",
+          "target": "Actions menu",
+          "evidence": "When clicked, a drop-down menu appears with three\n  options, each with their own sub-menu: Knowledge, Dashboard,\n  Spreadsheet."
+        },
+        {
+          "source": "Dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Actions menu",
+          "evidence": "When clicked, a drop-down menu appears with three\n  options, each with their own sub-menu: Knowledge, Dashboard,\n  Spreadsheet."
+        },
+        {
+          "source": "Spreadsheet",
+          "relation": "IS_PART_OF",
+          "target": "Actions menu",
+          "evidence": "When clicked, a drop-down menu appears with three\n  options, each with their own sub-menu: Knowledge, Dashboard,\n  Spreadsheet."
+        },
+        {
+          "source": "Knowledge",
+          "relation": "ENABLES",
+          "target": "Knowledge app",
+          "evidence": "The Knowledge option is for linking to or inserting the graph in a *Knowledge* app\n    article."
+        },
+        {
+          "source": "Dashboard",
+          "relation": "ENABLES",
+          "target": "Dashboards app",
+          "evidence": "The Dashboard option is for adding the graph to a dashboard in the *Dashboards* app."
+        },
+        {
+          "source": "Spreadsheet",
+          "relation": "ENABLES",
+          "target": "Documents app",
+          "evidence": "The Spreadsheet option is for linking the graph in a spreadsheet in the *Documents*\n    app."
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_REPORT",
+          "target": "bar graph",
+          "evidence": "Upon accessing the Pipeline Analysis page, a bar graph showcasing the leads from the\npast year automatically populates."
+        },
+        {
+          "source": "Graph view",
+          "relation": "HAS_FEATURE",
+          "target": "Bar Chart",
+          "evidence": "With the graph view selected, the following options are available:\n- Bar Chart: switches the graph to a bar chart."
+        },
+        {
+          "source": "Graph view",
+          "relation": "HAS_FEATURE",
+          "target": "Line Chart",
+          "evidence": "- Line Chart: switches the graph to a line chart."
+        },
+        {
+          "source": "Graph view",
+          "relation": "HAS_FEATURE",
+          "target": "Pie Chart",
+          "evidence": "- Pie Chart: switches the graph to a pie chart."
+        },
+        {
+          "source": "Graph view",
+          "relation": "HAS_FEATURE",
+          "target": "Stacked",
+          "evidence": "- Stacked: when selected, the results of each stage of the graph are stacked on top of\n  each other."
+        },
+        {
+          "source": "Graph view",
+          "relation": "HAS_FEATURE",
+          "target": "Descending",
+          "evidence": "- Descending: re-orders the stages in the graph in descending order from left-to-right."
+        },
+        {
+          "source": "Graph view",
+          "relation": "HAS_FEATURE",
+          "target": "Ascending",
+          "evidence": "- Ascending: re-orders the stages in the graph in ascending order from left-to-right."
+        },
+        {
+          "source": "Pivot view",
+          "relation": "HAS_FEATURE",
+          "target": "Flip Axis",
+          "evidence": "With the pivot view selected, the following options are available:\n- Flip Axis: flips the X and Y axis for the entire table."
+        },
+        {
+          "source": "Pivot view",
+          "relation": "HAS_FEATURE",
+          "target": "Expand All",
+          "evidence": "- Expand All: when additional groupings are selected using the ➕ (plus\n  sign) icons, this button opens those groupings under every row."
+        },
+        {
+          "source": "Pivot view",
+          "relation": "HAS_FEATURE",
+          "target": "Download xlsx",
+          "evidence": "- Download xlsx: downloads the table as an Excel file."
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "Search bar",
+          "evidence": "- Search... bar: shows the filters and groupings currently being applied to the graph."
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "Graph view",
+          "evidence": "In the upper-right corner, there are view options represented by different icons.\n- Graph view: displays the data in a bar graph. This is the default view."
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "Pivot view",
+          "evidence": "- Pivot view: displays the data in a customizable, categorized metrics table."
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "Cohort view",
+          "evidence": "- Cohort view: displays and organizes the data, based on their Created on\n  and Closed Date week (default), day, month, or year."
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "List view",
+          "evidence": "- List view: displays the data in a list."
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "Measures",
+          "evidence": "- Measures: opens a drop-down menu of different measurement options that can be seen in\n  the graph, pivot, or cohort view."
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "Insert in Spreadsheet",
+          "evidence": "- Insert in Spreadsheet: opens a pop-up window with options for adding a graph or pivot\n  table to a spreadsheet in the *Documents* app or a dashboard in the *Dashboards* app."
+        },
+        {
+          "source": "bar graph",
+          "relation": "PRODUCES",
+          "target": "lead",
+          "evidence": "a bar graph showcasing the leads from the\npast year automatically populates"
+        },
+        {
+          "source": "lead",
+          "relation": "RELATED_TO",
+          "target": "stage",
+          "evidence": "The bars represent the number of leads in each stage of the sales\npipeline"
+        },
+        {
+          "source": "Cohort view",
+          "relation": "RELATED_TO",
+          "target": "Created on",
+          "evidence": "Cohort view: displays and organizes the data, based on their Created on\n  and Closed Date week"
+        },
+        {
+          "source": "Cohort view",
+          "relation": "RELATED_TO",
+          "target": "Closed Date",
+          "evidence": "Cohort view: displays and organizes the data, based on their Created on\n  and Closed Date week"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "search-options",
+    "heading": "Search options",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline Analysis page",
+          "type": "Module",
+          "mention": "Pipeline Analysis page",
+          "confidence": "high"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters",
+          "confidence": "high"
+        },
+        {
+          "name": "My Pipeline",
+          "type": "Filter",
+          "mention": "My Pipeline",
+          "confidence": "high"
+        },
+        {
+          "name": "Opportunities",
+          "type": "Filter",
+          "mention": "Opportunities",
+          "confidence": "high"
+        },
+        {
+          "name": "Leads",
+          "type": "Filter",
+          "mention": "Leads",
+          "confidence": "high"
+        },
+        {
+          "name": "Active",
+          "type": "Filter",
+          "mention": "Active",
+          "confidence": "high"
+        },
+        {
+          "name": "Inactive",
+          "type": "Filter",
+          "mention": "Inactive",
+          "confidence": "high"
+        },
+        {
+          "name": "Won",
+          "type": "Filter",
+          "mention": "Won",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost",
+          "type": "Filter",
+          "mention": "Lost",
+          "confidence": "high"
+        },
+        {
+          "name": "Created On",
+          "type": "Filter",
+          "mention": "Created On",
+          "confidence": "high"
+        },
+        {
+          "name": "Expected Closing",
+          "type": "Filter",
+          "mention": "Expected Closing",
+          "confidence": "high"
+        },
+        {
+          "name": "Date Closed",
+          "type": "Filter",
+          "mention": "Date Closed",
+          "confidence": "high"
+        },
+        {
+          "name": "Archived",
+          "type": "Filter",
+          "mention": "Archived",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Filter",
+          "type": "Feature",
+          "mention": "Add Custom Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Group By",
+          "type": "Feature",
+          "mention": "Group By",
+          "confidence": "high"
+        },
+        {
+          "name": "Salesperson",
+          "type": "Grouping",
+          "mention": "Salesperson",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Team",
+          "type": "Grouping",
+          "mention": "Sales Team",
+          "confidence": "high"
+        },
+        {
+          "name": "City",
+          "type": "Grouping",
+          "mention": "City",
+          "confidence": "high"
+        },
+        {
+          "name": "Country",
+          "type": "Grouping",
+          "mention": "Country",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Grouping",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Stage",
+          "type": "Grouping",
+          "mention": "Stage",
+          "confidence": "high"
+        },
+        {
+          "name": "Campaign",
+          "type": "Grouping",
+          "mention": "Campaign",
+          "confidence": "high"
+        },
+        {
+          "name": "Medium",
+          "type": "Grouping",
+          "mention": "Medium",
+          "confidence": "high"
+        },
+        {
+          "name": "Source",
+          "type": "Grouping",
+          "mention": "Source",
+          "confidence": "high"
+        },
+        {
+          "name": "Creation Date",
+          "type": "Grouping",
+          "mention": "Creation Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Conversion Date",
+          "type": "Grouping",
+          "mention": "Conversion Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Expected Closing",
+          "type": "Grouping",
+          "mention": "Expected Closing",
+          "confidence": "high"
+        },
+        {
+          "name": "Closed Date",
+          "type": "Grouping",
+          "mention": "Closed Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost Reason",
+          "type": "Grouping",
+          "mention": "Lost Reason",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Group",
+          "type": "Feature",
+          "mention": "Add Custom Group",
+          "confidence": "high"
+        },
+        {
+          "name": "Comparison",
+          "type": "Feature",
+          "mention": "Comparison",
+          "confidence": "high"
+        },
+        {
+          "name": "Previous Period",
+          "type": "Comparison Option",
+          "mention": "Previous Period",
+          "confidence": "high"
+        },
+        {
+          "name": "Previous Year",
+          "type": "Comparison Option",
+          "mention": "Previous Year",
+          "confidence": "high"
+        },
+        {
+          "name": "Favorites",
+          "type": "Feature",
+          "mention": "Favorites",
+          "confidence": "high"
+        },
+        {
+          "name": "Save current search",
+          "type": "Action",
+          "mention": "Save current search",
+          "confidence": "high"
+        },
+        {
+          "name": "Default filter",
+          "type": "Setting",
+          "mention": "Default filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Shared",
+          "type": "Setting",
+          "mention": "Shared",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "medium"
+        },
+        {
+          "name": "leads",
+          "type": "DataObject",
+          "mention": "leads",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunities",
+          "type": "DataObject",
+          "mention": "opportunities",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "CONTAINS",
+          "target": "search bar",
+          "evidence": "The Pipeline Analysis page can be customized with various filters and grouping options."
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "CONTAINS",
+          "target": "Filters",
+          "evidence": ".. tab:: Filters"
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "CONTAINS",
+          "target": "Group By",
+          "evidence": ".. tab:: Group By"
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "CONTAINS",
+          "target": "Comparison",
+          "evidence": ".. tab:: Comparison"
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "CONTAINS",
+          "target": "Favorites",
+          "evidence": ".. tab:: Favorites"
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "My Pipeline",
+          "evidence": "- My Pipeline: show leads assigned to the current user."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Opportunities",
+          "evidence": "- Opportunities: show leads that have been qualified as opportunities."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Leads",
+          "evidence": "- Leads: show leads that have yet to be qualified as opportunities."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Active",
+          "evidence": "- Active: show active leads."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Inactive",
+          "evidence": "- Inactive: show inactive leads."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Won",
+          "evidence": "- Won: show leads that have been marked **Won**."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Lost",
+          "evidence": "- Lost: show leads that have been marked **Lost**."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Created On",
+          "evidence": "- Created On: show leads that were created during a specific period of time."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Expected Closing",
+          "evidence": "- Expected Closing: show leads that are expected to close (marked **Won**) during a specific period of time."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Date Closed",
+          "evidence": "- Date Closed: show leads that were closed (marked **Won**) during a specific period of time."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Archived",
+          "evidence": "- Archived: show leads that have been archived (marked **Lost**)."
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Add Custom Filter",
+          "evidence": "- Add Custom Filter: allows the user to create a custom filter with numerous options."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Salesperson",
+          "evidence": "- Salesperson: groups the results by the Salesperson to whom a lead is assigned."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Sales Team",
+          "evidence": "- Sales Team: groups the results by the Sales Team to whom a lead is assigned."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "City",
+          "evidence": "- City: groups the results by the city from which a lead originated."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Country",
+          "evidence": "- Country: groups the results by the country from which a lead originated."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "- Company: groups the results by the company to which a lead belongs (if multiple companies are activated in the database)."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Stage",
+          "evidence": "- Stage: groups the results by the stages of the sales pipeline."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Campaign",
+          "evidence": "- Campaign: groups the results by the marketing campaign from which a lead originated."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Medium",
+          "evidence": "- Medium: groups the results by the medium (Email, Google Adwords, Website, etc.) from which a lead originated."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Source",
+          "evidence": "- Source: groups the results by the source (Search engine, Lead Recall, Newsletter, etc.) from which a lead originated."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Creation Date",
+          "evidence": "- Creation Date: groups the results by the date a lead was added to the database."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Conversion Date",
+          "evidence": "- Conversion Date: groups the results by the date a lead was converted to an opportunity."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Expected Closing",
+          "evidence": "- Expected Closing: groups the results by the date a lead is expected to close (marked \"Won\")."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Closed Date",
+          "evidence": "- Closed Date: groups the results by the date a lead was closed(marked \"Won\")."
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Lost Reason",
+          "evidence": "- Lost Reason: groups the results by the reason selected when a lead was marked \"Lost.\""
+        },
+        {
+          "source": "Group By",
+          "relation": "CONTAINS",
+          "target": "Add Custom Group",
+          "evidence": "- Add Custom Group: allows the user to create a custom group with numerous options."
+        },
+        {
+          "source": "Comparison",
+          "relation": "CONTAINS",
+          "target": "Previous Period",
+          "evidence": "- Previous Period: adds a comparison to the same search criteria from the previous period."
+        },
+        {
+          "source": "Comparison",
+          "relation": "CONTAINS",
+          "target": "Previous Year",
+          "evidence": "- Previous Year: adds a comparison to the same search criteria from the previous year."
+        },
+        {
+          "source": "Favorites",
+          "relation": "CONTAINS",
+          "target": "Save current search",
+          "evidence": "- Save current search: save the current search criteria for later."
+        },
+        {
+          "source": "Save current search",
+          "relation": "HAS_FEATURE",
+          "target": "Default filter",
+          "evidence": "- Default filter: when saving a search, check this box to make it the default search filter when the Pipeline Analysis page is opened."
+        },
+        {
+          "source": "Save current search",
+          "relation": "HAS_FEATURE",
+          "target": "Shared",
+          "evidence": "- Shared: when saving a search, check this box to make it available to other users."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Pipeline Analysis page",
+          "evidence": "Product: Odoo\nTitle: Search options\nThe Pipeline Analysis page can be customized with various filters and grouping options."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-custom-filters-and-groups",
+    "heading": "Add custom filters and groups",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline Analysis",
+          "type": "Module",
+          "mention": "Pipeline Analysis page",
+          "confidence": "high"
+        },
+        {
+          "name": "custom filter",
+          "type": "Feature",
+          "mention": "custom filters",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Filter",
+          "type": "Action",
+          "mention": "click Add Custom Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Filter pop-up window",
+          "type": "DataObject",
+          "mention": "Add Custom Filter pop-up window appears",
+          "confidence": "medium"
+        },
+        {
+          "name": "rule",
+          "type": "DataObject",
+          "mention": "default rule",
+          "confidence": "medium"
+        },
+        {
+          "name": "Country",
+          "type": "Field",
+          "mention": "first field (Country)",
+          "confidence": "high"
+        },
+        {
+          "name": "Search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "New Rule",
+          "type": "Action",
+          "mention": "click New Rule",
+          "confidence": "high"
+        },
+        {
+          "name": "Add branch",
+          "type": "Action",
+          "mention": "click the Add branch icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Add",
+          "type": "Action",
+          "mention": "click Add",
+          "confidence": "high"
+        },
+        {
+          "name": "Remove custom filter",
+          "type": "Action",
+          "mention": "To remove a custom filter",
+          "confidence": "high"
+        },
+        {
+          "name": "custom group",
+          "type": "Feature",
+          "mention": "custom groups",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Group",
+          "type": "Action",
+          "mention": "click Add Custom Group",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pipeline Analysis",
+          "relation": "HAS_FEATURE",
+          "target": "custom filter",
+          "evidence": "the Pipeline Analysis page can also utilize custom filters"
+        },
+        {
+          "source": "Pipeline Analysis",
+          "relation": "HAS_FEATURE",
+          "target": "custom group",
+          "evidence": "the Pipeline Analysis page can also utilize... custom groups"
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Add Custom Filter"
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "GENERATES",
+          "target": "Add Custom Filter pop-up window",
+          "evidence": "click Add Custom Filter. The Add Custom Filter pop-up window appears"
+        },
+        {
+          "source": "Add Custom Filter pop-up window",
+          "relation": "CONTAINS",
+          "target": "rule",
+          "evidence": "pop-up window appears with a default rule"
+        },
+        {
+          "source": "rule",
+          "relation": "CONTAINS",
+          "target": "Country",
+          "evidence": "default rule (Country is in _____) comprised of three unique fields. These fields can be edited"
+        },
+        {
+          "source": "custom filter",
+          "relation": "CONTAINS",
+          "target": "rule",
+          "evidence": "multiple rules can be added to a single custom filter"
+        },
+        {
+          "source": "New Rule",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click New Rule"
+        },
+        {
+          "source": "Add branch",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the Add branch icon"
+        },
+        {
+          "source": "Add",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Add to add the custom filter"
+        },
+        {
+          "source": "Remove custom filter",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the ✖️ (x) icon beside the filter"
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Add Custom Group"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "measurement-options",
+    "heading": "Measurement options",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline Analysis page",
+          "type": "Module",
+          "mention": "Pipeline Analysis page",
+          "confidence": "high"
+        },
+        {
+          "name": "Measures button",
+          "type": "Action",
+          "mention": "click the Measures button",
+          "confidence": "high"
+        },
+        {
+          "name": "Days to Assign",
+          "type": "Feature",
+          "mention": "Days to Assign",
+          "confidence": "high"
+        },
+        {
+          "name": "Days to Close",
+          "type": "Feature",
+          "mention": "Days to Close",
+          "confidence": "high"
+        },
+        {
+          "name": "Days to Convert",
+          "type": "Feature",
+          "mention": "Days to Convert",
+          "confidence": "high"
+        },
+        {
+          "name": "Exceeded Closing Days",
+          "type": "Feature",
+          "mention": "Exceeded Closing Days",
+          "confidence": "high"
+        },
+        {
+          "name": "Expected MRR",
+          "type": "Feature",
+          "mention": "Expected MRR",
+          "confidence": "high"
+        },
+        {
+          "name": "Expected Revenue",
+          "type": "Feature",
+          "mention": "Expected Revenue",
+          "confidence": "high"
+        },
+        {
+          "name": "Prorated MRR",
+          "type": "Feature",
+          "mention": "Prorated MRR",
+          "confidence": "high"
+        },
+        {
+          "name": "Prorated Recurring Revenues",
+          "type": "Feature",
+          "mention": "Prorated Recurring Revenues",
+          "confidence": "high"
+        },
+        {
+          "name": "Prorated Revenue",
+          "type": "Feature",
+          "mention": "Prorated Revenue",
+          "confidence": "high"
+        },
+        {
+          "name": "Recurring Revenues",
+          "type": "Feature",
+          "mention": "Recurring Revenues",
+          "confidence": "high"
+        },
+        {
+          "name": "Count",
+          "type": "Feature",
+          "mention": "Count",
+          "confidence": "high"
+        },
+        {
+          "name": "lead",
+          "type": "DataObject",
+          "mention": "leads",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "Count",
+          "evidence": "measures the total Count of leads that match the search criteria"
+        },
+        {
+          "source": "Days to Assign",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the number of days it took a lead to be assigned after creation"
+        },
+        {
+          "source": "Days to Close",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the number of days it took a lead to be closed"
+        },
+        {
+          "source": "Days to Convert",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the number of days it took a lead to be converted to an opportunity"
+        },
+        {
+          "source": "Exceeded Closing Days",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the number of days by which a lead exceeded its Expected Closing date"
+        },
+        {
+          "source": "Expected MRR",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the Expected Recurring Revenue of a lead"
+        },
+        {
+          "source": "Expected Revenue",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the Expected Revenue of a lead"
+        },
+        {
+          "source": "Prorated MRR",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the Prorated Monthly Recurring Revenue of a lead"
+        },
+        {
+          "source": "Prorated Recurring Revenues",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the Prorated Recurring Revenues of a lead"
+        },
+        {
+          "source": "Prorated Revenue",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the Prorated Revenue of a lead"
+        },
+        {
+          "source": "Recurring Revenues",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the Recurring Revenue of a lead"
+        },
+        {
+          "source": "Count",
+          "relation": "RELATED_TO",
+          "target": "lead",
+          "evidence": "measures the total amount of leads that match the search criteria"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-options",
+    "heading": "View options",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline Analysis page",
+          "type": "Feature",
+          "mention": "Pipeline Analysis page",
+          "confidence": "high"
+        },
+        {
+          "name": "graph view",
+          "type": "Feature",
+          "mention": "graph view",
+          "confidence": "high"
+        },
+        {
+          "name": "pivot view",
+          "type": "Feature",
+          "mention": "pivot view",
+          "confidence": "high"
+        },
+        {
+          "name": "cohort view",
+          "type": "Feature",
+          "mention": "cohort view",
+          "confidence": "high"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "high"
+        },
+        {
+          "name": "leads",
+          "type": "DataObject",
+          "mention": "leads",
+          "confidence": "medium"
+        },
+        {
+          "name": "Count of leads",
+          "type": "Feature",
+          "mention": "Count of leads",
+          "confidence": "medium"
+        },
+        {
+          "name": "Measures button",
+          "type": "Action",
+          "mention": "Measures button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Salesperson",
+          "type": "Actor",
+          "mention": "Salesperson",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "graph view",
+          "evidence": "the Pipeline Analysis page can display the data in a variety of ways. By default, the page uses the graph view"
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "pivot view",
+          "evidence": "can be changed to a pivot view, cohort view, or list view"
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "cohort view",
+          "evidence": "can be changed to a pivot view, cohort view, or list view"
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "list view",
+          "evidence": "can be changed to a pivot view, cohort view, or list view"
+        },
+        {
+          "source": "graph view",
+          "relation": "CONTAINS",
+          "target": "leads",
+          "evidence": "the Count of leads in each stage"
+        },
+        {
+          "source": "leads",
+          "relation": "RELATED_TO",
+          "target": "Salesperson",
+          "evidence": "leads assigned to each Salesperson"
+        },
+        {
+          "source": "graph view",
+          "relation": "SUPPORTS",
+          "target": "Count of leads",
+          "evidence": "By default, the graph measures the Count of leads in each group"
+        },
+        {
+          "source": "graph view",
+          "relation": "CONFIGURED_BY",
+          "target": "Measures button",
+          "evidence": "this can be changed by clicking the Measures button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-reports",
+    "heading": "Create reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline Analysis page",
+          "type": "Module",
+          "mention": "Pipeline Analysis page",
+          "confidence": "high"
+        },
+        {
+          "name": "Create reports",
+          "type": "Feature",
+          "mention": "create reports",
+          "confidence": "high"
+        },
+        {
+          "name": "navigate the pipeline analysis page",
+          "type": "Action",
+          "mention": "navigate the pipeline analysis page",
+          "confidence": "high"
+        },
+        {
+          "name": "pre-made options",
+          "type": "Feature",
+          "mention": "pre-made options",
+          "confidence": "medium"
+        },
+        {
+          "name": "custom filter and groupings",
+          "type": "Feature",
+          "mention": "custom filter and groupings",
+          "confidence": "medium"
+        },
+        {
+          "name": "save to favorites",
+          "type": "Action",
+          "mention": "saved to favorites",
+          "confidence": "medium"
+        },
+        {
+          "name": "shared with other users",
+          "type": "Action",
+          "mention": "shared with other users",
+          "confidence": "medium"
+        },
+        {
+          "name": "added to dashboards and spreadsheets",
+          "type": "Action",
+          "mention": "added to dashboards and spreadsheets",
+          "confidence": "medium"
+        },
+        {
+          "name": "common reports",
+          "type": "Report",
+          "mention": "common reports",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create reports",
+          "relation": "IS_PART_OF",
+          "target": "Pipeline Analysis page",
+          "evidence": "Pipeline Analysis page can be used to create and share different reports"
+        },
+        {
+          "source": "navigate the pipeline analysis page",
+          "relation": "ENABLES",
+          "target": "Create reports",
+          "evidence": "After understanding how to navigate the pipeline analysis page, the Pipeline Analysis page can be used to create and share different reports"
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "pre-made options",
+          "evidence": "Between the pre-made options and custom filter and groupings, almost any combination is possible"
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_FEATURE",
+          "target": "custom filter and groupings",
+          "evidence": "Between the pre-made options and custom filter and groupings, almost any combination is possible"
+        },
+        {
+          "source": "Create reports",
+          "relation": "ENABLES",
+          "target": "save to favorites",
+          "evidence": "Once created, reports can be saved to favorites"
+        },
+        {
+          "source": "Create reports",
+          "relation": "ENABLES",
+          "target": "shared with other users",
+          "evidence": "reports can be ... shared with other users"
+        },
+        {
+          "source": "Create reports",
+          "relation": "ENABLES",
+          "target": "added to dashboards and spreadsheets",
+          "evidence": "reports can be ... added to dashboards and spreadsheets"
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "HAS_REPORT",
+          "target": "common reports",
+          "evidence": "A few common reports that can be created using the Pipeline Analysis page are detailed below"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "win-loss-reports",
+    "heading": "Win/Loss reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Win/Loss report",
+          "type": "Report",
+          "mention": "Win/Loss reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline Analysis",
+          "type": "Feature",
+          "mention": "Pipeline Analysis page",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline",
+          "type": "Report",
+          "mention": "Pipeline",
+          "confidence": "high"
+        },
+        {
+          "name": "Stage",
+          "type": "DataObject",
+          "mention": "Stage",
+          "confidence": "high"
+        },
+        {
+          "name": "Active",
+          "type": "Field",
+          "mention": "Active",
+          "confidence": "high"
+        },
+        {
+          "name": "Custom filter",
+          "type": "Feature",
+          "mention": "custom filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Group By",
+          "type": "Setting",
+          "mention": "Group By heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Custom Filter",
+          "type": "Action",
+          "mention": "Add Custom Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "New Rule",
+          "type": "Action",
+          "mention": "New Rule",
+          "confidence": "high"
+        },
+        {
+          "name": "leads",
+          "type": "DataObject",
+          "mention": "leads",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunities",
+          "type": "DataObject",
+          "mention": "opportunities",
+          "confidence": "high"
+        },
+        {
+          "name": "Won",
+          "type": "Concept",
+          "mention": "Won",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost",
+          "type": "Concept",
+          "mention": "Lost",
+          "confidence": "high"
+        },
+        {
+          "name": "Count",
+          "type": "Field",
+          "mention": "Count",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "CRM",
+          "evidence": "Navigate to CRM app"
+        },
+        {
+          "source": "CRM",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "CRM app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Pipeline",
+          "evidence": "Reporting --> Pipeline"
+        },
+        {
+          "source": "Win/Loss report",
+          "relation": "GENERATES",
+          "target": "Count",
+          "evidence": "report now displays the total Count of leads"
+        },
+        {
+          "source": "Win/Loss report",
+          "relation": "REQUIRES",
+          "target": "Custom filter",
+          "evidence": "Creating this report requires a custom filter"
+        },
+        {
+          "source": "Pipeline Analysis",
+          "relation": "HAS_FEATURE",
+          "target": "Custom filter",
+          "evidence": "On the Pipeline Analysis page... filters and groupings"
+        },
+        {
+          "source": "Win/Loss report",
+          "relation": "GROUPED_BY",
+          "target": "Stage",
+          "evidence": "groups the results by their stage in the pipeline"
+        },
+        {
+          "source": "Custom filter",
+          "relation": "CONTAINS",
+          "target": "Active",
+          "evidence": "The rule reads: Active is set"
+        },
+        {
+          "source": "Win/Loss report",
+          "relation": "RELATED_TO",
+          "target": "opportunities",
+          "evidence": "Win/Loss is a calculation of active or previously active leads"
+        },
+        {
+          "source": "Win/Loss report",
+          "relation": "RELATED_TO",
+          "target": "Won",
+          "evidence": "leads that were either marked as Won or Lost"
+        },
+        {
+          "source": "Win/Loss report",
+          "relation": "RELATED_TO",
+          "target": "Lost",
+          "evidence": "leads that were either marked as Won or Lost"
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "TRIGGERED_BY",
+          "target": "Custom filter creation",
+          "evidence": "Under the Filters heading, click Add Custom Filter"
+        },
+        {
+          "source": "Group By",
+          "relation": "CONFIGURED_BY",
+          "target": "Stage",
+          "evidence": "under the Group By heading, click Stage"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "customize-win-loss-reports",
+    "heading": "Customize win/loss reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "win/loss report",
+          "type": "Report",
+          "mention": "win/loss report",
+          "confidence": "high"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "high"
+        },
+        {
+          "name": "Created on",
+          "type": "Field",
+          "mention": "Created on",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Filter",
+          "type": "Action",
+          "mention": "Add Custom Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Last Stage Update",
+          "type": "Field",
+          "mention": "Last Stage Update",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lost Reason",
+          "type": "Field",
+          "mention": "Lost Reason",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Custom Group > Active",
+          "type": "Action",
+          "mention": "Add Custom Group > Active",
+          "confidence": "high"
+        },
+        {
+          "name": "Won",
+          "type": "Concept",
+          "mention": "Won",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost",
+          "type": "Concept",
+          "mention": "Lost",
+          "confidence": "high"
+        },
+        {
+          "name": "Multiple Groupings",
+          "type": "Action",
+          "mention": "Multiple Groupings",
+          "confidence": "high"
+        },
+        {
+          "name": "Salesperson",
+          "type": "Field",
+          "mention": "Salesperson",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Team",
+          "type": "Field",
+          "mention": "Sales Team",
+          "confidence": "high"
+        },
+        {
+          "name": "Stage",
+          "type": "Field",
+          "mention": "Stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Medium",
+          "type": "Field",
+          "mention": "Medium",
+          "confidence": "high"
+        },
+        {
+          "name": "Source",
+          "type": "Field",
+          "mention": "Source",
+          "confidence": "high"
+        },
+        {
+          "name": "sales manager",
+          "type": "Actor",
+          "mention": "sales manager",
+          "confidence": "medium"
+        },
+        {
+          "name": "marketing team",
+          "type": "Actor",
+          "mention": "marketing team",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add Custom Filter",
+          "relation": "ENABLES",
+          "target": "search bar",
+          "evidence": "To add more filters and groups, click the ⬇️ (down arrow) icon, next to the search bar, and select one or more options from the drop-down menu."
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "ENABLES",
+          "target": "Last Stage Update",
+          "evidence": "opens up additional search criteria, like Last Stage Update or Lost Reason."
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "ENABLES",
+          "target": "Lost Reason",
+          "evidence": "opens up additional search criteria, like Last Stage Update or Lost Reason."
+        },
+        {
+          "source": "Add Custom Group > Active",
+          "relation": "PRODUCES",
+          "target": "Won",
+          "evidence": "separates the results into Won (true) or Lost (false)."
+        },
+        {
+          "source": "Add Custom Group > Active",
+          "relation": "PRODUCES",
+          "target": "Lost",
+          "evidence": "separates the results into Won (true) or Lost (false)."
+        },
+        {
+          "source": "Multiple Groupings",
+          "relation": "ENABLES",
+          "target": "Salesperson",
+          "evidence": "Adding Salesperson or Sales Team breaks up the total count of leads in each Stage."
+        },
+        {
+          "source": "Multiple Groupings",
+          "relation": "ENABLES",
+          "target": "Sales Team",
+          "evidence": "Adding Salesperson or Sales Team breaks up the total count of leads in each Stage."
+        },
+        {
+          "source": "Multiple Groupings",
+          "relation": "ENABLES",
+          "target": "Medium",
+          "evidence": "Adding Medium or Source can reveal what marketing avenues generate more sales."
+        },
+        {
+          "source": "Multiple Groupings",
+          "relation": "ENABLES",
+          "target": "Source",
+          "evidence": "Adding Medium or Source can reveal what marketing avenues generate more sales."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "save-and-share-reports",
+    "heading": "Save and share reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline Analysis page",
+          "type": "Module",
+          "mention": "Pipeline Analysis page",
+          "confidence": "medium"
+        },
+        {
+          "name": "report",
+          "type": "Report",
+          "mention": "report",
+          "confidence": "high"
+        },
+        {
+          "name": "win_loss/reports",
+          "type": "Report",
+          "mention": "win_loss/reports",
+          "confidence": "medium"
+        },
+        {
+          "name": "search criteria",
+          "type": "Concept",
+          "mention": "search criteria",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save current search",
+          "type": "Action",
+          "mention": "Save current search",
+          "confidence": "high"
+        },
+        {
+          "name": "Default filter box",
+          "type": "Setting",
+          "mention": "Default filter box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shared box",
+          "type": "Setting",
+          "mention": "Shared box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Favorites heading",
+          "type": "Concept",
+          "mention": "Favorites heading",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "win_loss/reports",
+          "relation": "IS_PART_OF",
+          "target": "report",
+          "evidence": "After creating a report <win_loss/reports>",
+          "confidence": "medium"
+        },
+        {
+          "source": "report",
+          "relation": "HAS_FEATURE",
+          "target": "search criteria",
+          "evidence": "the search criteria can be saved",
+          "confidence": "medium"
+        },
+        {
+          "source": "report",
+          "relation": "HAS_REPORT",
+          "target": "Pipeline Analysis page",
+          "evidence": "On the Pipeline Analysis page",
+          "confidence": "low"
+        },
+        {
+          "source": "Pipeline Analysis page",
+          "relation": "CONTAINS",
+          "target": "Save current search",
+          "evidence": "On the Pipeline Analysis page, click ... Save current search",
+          "confidence": "low"
+        },
+        {
+          "source": "Default filter box",
+          "relation": "CONFIGURED_BY",
+          "target": "report",
+          "evidence": "Checking the Default filter box sets this report as the default analysis",
+          "confidence": "medium"
+        },
+        {
+          "source": "Shared box",
+          "relation": "CONFIGURED_BY",
+          "target": "report",
+          "evidence": "Checking the Shared box makes this report available to other users",
+          "confidence": "medium"
+        },
+        {
+          "source": "Save",
+          "relation": "PRODUCES",
+          "target": "report",
+          "evidence": "Finally, click Save. The report is now saved",
+          "confidence": "high"
+        },
+        {
+          "source": "report",
+          "relation": "BELONGS_TO",
+          "target": "Favorites heading",
+          "evidence": "The report is now saved under the Favorites heading",
+          "confidence": "medium"
+        }
+      ]
+    }
+  }
+]

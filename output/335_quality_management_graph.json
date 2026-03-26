@@ -1,0 +1,91 @@
+[
+  {
+    "section_id": "quality-control-basics",
+    "heading": "Quality control basics",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Module",
+          "mention": "Quality control basics",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Management",
+          "type": "Module",
+          "mention": "quality_management",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Control Points",
+          "type": "Sub-module",
+          "mention": "quality_control_points",
+          "confidence": "low"
+        },
+        {
+          "name": "Quality Alerts",
+          "type": "Sub-module",
+          "mention": "quality_alerts",
+          "confidence": "low"
+        },
+        {
+          "name": "Quality Checks",
+          "type": "Sub-module",
+          "mention": "quality_checks",
+          "confidence": "low"
+        },
+        {
+          "name": "Failure Locations",
+          "type": "Sub-module",
+          "mention": "failure_locations",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Quality Management",
+          "relation": "IS_PART_OF",
+          "target": "Quality Control",
+          "evidence": "Section titles..."
+        },
+        {
+          "source": "Quality Control",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "CONTAINS",
+          "target": "Quality Control Points",
+          "evidence": "toctree contains link"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "CONTAINS",
+          "target": "Quality Alerts",
+          "evidence": "toctree contains link"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "CONTAINS",
+          "target": "Quality Checks",
+          "evidence": "toctree contains link"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "CONTAINS",
+          "target": "Failure Locations",
+          "evidence": "toctree contains link"
+        }
+      ]
+    }
+  }
+]

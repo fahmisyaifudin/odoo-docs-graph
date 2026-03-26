@@ -1,0 +1,587 @@
+[
+  {
+    "section_id": "packaging",
+    "heading": "Packaging",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Packaging",
+          "type": "Concept",
+          "mention": "packaging",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode",
+          "type": "Feature",
+          "mention": "Barcode",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Packaging",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "In Odoo Inventory, packaging refers to disposable containers"
+        },
+        {
+          "source": "Packaging",
+          "relation": "CONFIGURED_BY",
+          "target": "Product Form",
+          "evidence": "must be configured on the individual product form"
+        },
+        {
+          "source": "Packaging",
+          "relation": "APPLIES_TO",
+          "target": "Product",
+          "evidence": "packagings are product specific"
+        },
+        {
+          "source": "Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "In Odoo Inventory"
+        },
+        {
+          "source": "Packaging",
+          "relation": "RELATED_TO",
+          "target": "Barcode",
+          "evidence": "Packaging can be used in conjunction with Odoo Barcode"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Units of Measure & Packagings",
+          "type": "Feature",
+          "mention": "Units of Measure & Packagings feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Packagings",
+          "type": "Concept",
+          "mention": "packagings",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Units of Measure & Packagings",
+          "evidence": "enable the Units of Measure & Packagings feature"
+        },
+        {
+          "source": "Units of Measure & Packagings",
+          "relation": "RELATED_TO",
+          "target": "Packagings",
+          "evidence": "Units of Measure & Packagings feature"
+        },
+        {
+          "source": "Units of Measure & Packagings",
+          "relation": "RELATED_TO",
+          "target": "Units of Measure",
+          "evidence": "Units of Measure & Packagings feature"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-packaging",
+    "heading": "Create packaging",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Create packaging",
+          "type": "Action",
+          "mention": "Title: Create packaging",
+          "confidence": "high"
+        },
+        {
+          "name": "Units & Packagings page",
+          "type": "Module",
+          "mention": "Units & Packagings page",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create packaging",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Create packaging"
+        },
+        {
+          "source": "Units & Packagings page",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Create packaging",
+          "relation": "RELATED_TO",
+          "target": "Units & Packagings page",
+          "evidence": "Packagings can be created directly on the product form, or from the Units & Packagings page."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-product-form",
+    "heading": "From product form",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales tab",
+          "type": "Feature",
+          "mention": "Sales tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Feature",
+          "mention": "Purchase tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Packagings box",
+          "type": "DataObject",
+          "mention": "Create Packagings box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Unit box",
+          "type": "DataObject",
+          "mention": "Create Unit box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Unit Name",
+          "type": "Field",
+          "mention": "Unit Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Reference Unit",
+          "type": "Field",
+          "mention": "Reference Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Package Type",
+          "type": "Field",
+          "mention": "Package Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcodes",
+          "type": "Field",
+          "mention": "Barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Grape Soda",
+          "type": "Concept",
+          "mention": "Grape Soda",
+          "confidence": "high"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit",
+          "type": "Action",
+          "mention": "edit",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Sales tab",
+          "relation": "HAS_FEATURE",
+          "target": "Create Packagings box",
+          "evidence": "open the Sales tab, then... When Create and edit is clicked, a Create Packagings box opens"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "HAS_FEATURE",
+          "target": "Create Unit box",
+          "evidence": "open the Purchase tab... When Create and edit is clicked, the Create Unit box opens"
+        },
+        {
+          "source": "Create Packagings box",
+          "relation": "CONTAINS",
+          "target": "Unit Name",
+          "evidence": "Create Packagings box opens, where information about the packaging can be specified: - Unit Name"
+        },
+        {
+          "source": "Create Packagings box",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "Create Packagings box opens, where information about the packaging can be specified: - Quantity"
+        },
+        {
+          "source": "Create Packagings box",
+          "relation": "CONTAINS",
+          "target": "Reference Unit",
+          "evidence": "Create Packagings box opens, where information about the packaging can be specified: - Reference Unit"
+        },
+        {
+          "source": "Create Packagings box",
+          "relation": "CONTAINS",
+          "target": "Package Type",
+          "evidence": "Create Packagings box opens, where information about the packaging can be specified: - Package Type"
+        },
+        {
+          "source": "Create Packagings box",
+          "relation": "CONTAINS",
+          "target": "Barcodes",
+          "evidence": "Create Packagings box opens, where information about the packaging can be specified: - Barcodes"
+        },
+        {
+          "source": "Create Unit box",
+          "relation": "RELATED_TO",
+          "target": "Create Packagings box",
+          "evidence": "The fields in this box are the same as for the Create Packagings box above"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "CONTAINS",
+          "target": "Vendor",
+          "evidence": "open the Purchase tab, then add a vendor"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-units-&-packagings-page",
+    "heading": "From units & packagings page",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ',' delimiter: line 1 column 2370 (char 2369)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"Inventory app\",\"type\":\"Module\",\"mention\":\"Inventory app\",\"confidence\":\"medium\"},{\"name\":\"Configuration\",\"type\":\"Sub-module\",\"mention\":\"Configuration\",\"confidence\":\"medium\"},{\"name\":\"Units & Packagings\",\"type\":\"Feature\",\"mention\":\"Units & Packagings\",\"confidence\":\"high\"},{\"name\":\"Units & Packagings page\",\"type\":\"Feature\",\"mention\":\"Units & Packagings page\",\"confidence\":\"high\"},{\"name\":\"New\",\"type\":\"Action\",\"mention\":\"clicking New\",\"confidence\":\"high\"},{\"name\":\"packagings\",\"type\":\"DataObject\",\"mention\":\"packagings\",\"confidence\":\"high\"},{\"name\":\"product\",\"type\":\"DataObject\",\"mention\":\"product\",\"confidence\":\"medium\"},{\"name\":\"Grape Soda\",\"type\":\"DataObject\",\"mention\":\"`Grape Soda`\",\"confidence\":\"high\"},{\"name\":\"Diet Coke\",\"type\":\"DataObject\",\"mention\":\"`Diet Coke`\",\"confidence\":\"high\"},{\"name\":\"6-Pack\",\"type\":\"DataObject\",\"mention\":\"`6-Pack`\",\"confidence\":\"high\"},{\"name\":\"12-Pack\",\"type\":\"DataObject\",\"mention\":\"`12-Pack`\",\"confidence\":\"high\"},{\"name\":\"Case\",\"type\":\"DataObject\",\"mention\":\"`Case`\",\"confidence\":\"high\"}],\"relations\":[{\"source\":\"Inventory app\",\"relation\":\"CONTAINS\",\"target\":\"Configuration\",\"evidence\":\"go to Inventory app --> Configuration\"},{\"source\":\"Configuration\",\"relation\":\"CONTAINS\",\"target\":\"Units & Packagings\",\"evidence\":\"Configuration --> Units & Packagings\"},{\"source\":\"Units & Packagings page\",\"relation\":\"GENERATES\",\"target\":\"packagings\",\"evidence\":\"reveals the Units & Packagings page with a complete list of all packagings\"},{\"source\":\"New\",\"relation\":\"ENABLES\",\"target\":\"packagings\",\"evidence\":\"Create new packagings by clicking New\"},{\"source\":\"Units & Packagings\",\"relation\":\"HAS_FEATURE\",\"target\":\"Units & Packagings page\",\"evidence\":\"Doing so reveals the Units & Packagings page\"},{\"source\":\"Grape Soda\",\"relation\":\"RELATED_TO\",\"target\":\"packagings\",\"evidence\":\"have three types of packagings configured\"},{\"source\":\"Diet Coke\",\"relation\":\"RELATED_TO\",\"target\":\"packagings\",\"evidence\":\"have three types of packagings configured\"},{\"source\":\"6-Pack\",\"relation\":\"RELATED_TO\",\"target\":\"product\",\"evidence\":\"contains 6 products\"},{\"source\":\"12-Pack\",\"relation\":\"RELATED_TO\",\"target\":\"product\",\"evidence\":\"of 12 products\"},{\"transformers\":{\"source\":\"Case\",\"relation\":\"RELATED_TO\",\"target\":\"product\",\"evidence\":\"of 32 products\"}]}"
+    }
+  },
+  {
+    "section_id": "partial-reservation",
+    "heading": "Partial reservation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Categories",
+          "type": "Feature",
+          "mention": "Categories",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Packagings",
+          "type": "Feature",
+          "mention": "Product Packagings feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Packaging",
+          "type": "Field",
+          "mention": "Reserve Packaging field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reserve Packagings",
+          "type": "Setting",
+          "mention": "Reserve Packagings",
+          "confidence": "high"
+        },
+        {
+          "name": "Reserve Only Full Packagings",
+          "type": "Setting",
+          "mention": "Reserve Only Full Packagings",
+          "confidence": "high"
+        },
+        {
+          "name": "Reserve Partial Packagings",
+          "type": "Setting",
+          "mention": "Reserve Partial Packagings",
+          "confidence": "high"
+        },
+        {
+          "name": "packaging setup",
+          "type": "Feature",
+          "mention": "packaging setup",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Packagings checkbox",
+          "type": "Setting",
+          "mention": "Product Packagings checkbox",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Configuration --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Categories",
+          "evidence": "Products --> Categories"
+        },
+        {
+          "source": "Product category",
+          "relation": "CONFIGURED_BY",
+          "target": "Reserve Packagings",
+          "evidence": "On the product category's form... Reserve Packagings can be set"
+        },
+        {
+          "source": "Reserve Packagings",
+          "relation": "CONTAINS",
+          "target": "Reserve Only Full Packagings",
+          "evidence": "Reserve Packagings can be set to Reserve Only Full Packagings"
+        },
+        {
+          "source": "Reserve Packagings",
+          "relation": "CONTAINS",
+          "target": "Reserve Partial Packagings",
+          "evidence": "Reserve Packagings can be set to Reserve Partial Packagings"
+        },
+        {
+          "source": "Product Packaging",
+          "relation": "ENABLES",
+          "target": "Reserve Packaging field",
+          "evidence": "To see the Reserve Packaging field, the Product Packaging feature must be enabled"
+        },
+        {
+          "source": "Product Packaging",
+          "relation": "CONFIGURED_BY",
+          "target": "Product Packagings checkbox",
+          "evidence": "To enable this feature... tick the Product Packagings checkbox"
+        },
+        {
+          "source": "Inventory",
+          "relation": "HAS_FEATURE",
+          "target": "Product Packagings",
+          "evidence": "Product Packagings feature"
+        },
+        {
+          "source": "Odoo",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "Inventory app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "apply-packagings",
+    "heading": "Apply packagings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "Sales Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Units field",
+          "type": "Field",
+          "mention": "Units field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Grape Soda",
+          "type": "Product",
+          "mention": "Grape Soda",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales Order",
+          "relation": "CONTAINS",
+          "target": "Units field",
+          "evidence": "The chosen packaging is displayed on the SO (Sales Order) under the Units field."
+        },
+        {
+          "source": "Sales Order",
+          "relation": "BELONGS_TO",
+          "target": "Sales app",
+          "evidence": "When creating a sales order in the Sales app..."
+        }
+      ]
+    }
+  }
+]

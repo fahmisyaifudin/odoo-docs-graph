@@ -1,0 +1,2177 @@
+[
+  {
+    "section_id": "chart-of-accounts",
+    "heading": "Chart of accounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SKR03",
+          "type": "Standard",
+          "mention": "SKR03",
+          "confidence": "high"
+        },
+        {
+          "name": "SKR04",
+          "type": "Standard",
+          "mention": "SKR04",
+          "confidence": "high"
+        },
+        {
+          "name": "Chart of accounts",
+          "type": "Concept",
+          "mention": "Chart of accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Package",
+          "type": "Field",
+          "mention": "Package",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal Localization",
+          "type": "Concept",
+          "mention": "Fiscal Localization",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SKR03",
+          "relation": "BELONGS_TO",
+          "target": "Chart of accounts",
+          "evidence": "Both SKR03 and SKR04 charts of accounts are supported in Odoo."
+        },
+        {
+          "source": "SKR04",
+          "relation": "BELONGS_TO",
+          "target": "Chart of accounts",
+          "evidence": "Both SKR03 and SKR04 charts of accounts are supported in Odoo."
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "SKR03",
+          "evidence": "Both SKR03 and SKR04 charts of accounts are supported in Odoo."
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "SKR04",
+          "evidence": "Both SKR03 and SKR04 charts of accounts are supported in Odoo."
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration --> Settings"
+        },
+        {
+          "source": "Package",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "checking the Package field under the Fiscal Localization section."
+        },
+        {
+          "source": "Fiscal Localization",
+          "relation": "RELATED_TO",
+          "target": "Settings",
+          "evidence": "checking the Package field under the Fiscal Localization section."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reports",
+    "heading": "Reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Balance Sheet",
+          "type": "Report",
+          "mention": "Balance Sheet",
+          "confidence": "high"
+        },
+        {
+          "name": "Profit & Loss",
+          "type": "Report",
+          "mention": "Profit & Loss",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Report",
+          "type": "Report",
+          "mention": "Tax Report (Umsatzsteuervoranmeldung)",
+          "confidence": "high"
+        },
+        {
+          "name": "EC Sales List",
+          "type": "Report",
+          "mention": "EC Sales List",
+          "confidence": "high"
+        },
+        {
+          "name": "Intrastat",
+          "type": "Report",
+          "mention": "Intrastat",
+          "confidence": "high"
+        },
+        {
+          "name": "Germany",
+          "type": "Regulation",
+          "mention": "German-specific",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Balance Sheet",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "available on Odoo Enterprise"
+        },
+        {
+          "source": "Profit & Loss",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "available on Odoo Enterprise"
+        },
+        {
+          "source": "Tax Report",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "available on Odoo Enterprise"
+        },
+        {
+          "source": "EC Sales List",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "available on Odoo Enterprise"
+        },
+        {
+          "source": "Intrastat",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "available on Odoo Enterprise"
+        },
+        {
+          "source": "Balance Sheet",
+          "relation": "APPLIES_TO",
+          "target": "Germany",
+          "evidence": "German-specific"
+        },
+        {
+          "source": "Profit & Loss",
+          "relation": "APPLIES_TO",
+          "target": "Germany",
+          "evidence": "German-specific"
+        },
+        {
+          "source": "Tax Report",
+          "relation": "APPLIES_TO",
+          "target": "Germany",
+          "evidence": "German-specific"
+        },
+        {
+          "source": "EC Sales List",
+          "relation": "APPLIES_TO",
+          "target": "Germany",
+          "evidence": "German-specific"
+        },
+        {
+          "source": "Intrastat",
+          "relation": "APPLIES_TO",
+          "target": "Germany",
+          "evidence": "German-specific"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "exporting-entries-from-odoo-to-datev",
+    "heading": "Exporting entries from Odoo to DATEV",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Exporting entries from Odoo to DATEV",
+          "type": "Feature",
+          "mention": "Exporting entries from Odoo to DATEV",
+          "confidence": "medium"
+        },
+        {
+          "name": "German fiscal localization packages",
+          "type": "Module",
+          "mention": "German fiscal localization packages",
+          "confidence": "medium"
+        },
+        {
+          "name": "general ledger",
+          "type": "DataObject",
+          "mention": "general ledger",
+          "confidence": "medium"
+        },
+        {
+          "name": "DATEV ATCH export",
+          "type": "Feature",
+          "mention": "DATEV ATCH export",
+          "confidence": "high"
+        },
+        {
+          "name": "DATEV DATA export",
+          "type": "Feature",
+          "mention": "DATEV DATA export",
+          "confidence": "high"
+        },
+        {
+          "name": "DATEV",
+          "type": "Integration",
+          "mention": "DATEV",
+          "confidence": "high"
+        },
+        {
+          "name": "DUO - DATEV Unternehmen Online",
+          "type": "Integration",
+          "mention": "DUO - DATEV Unternehmen Online",
+          "confidence": "medium"
+        },
+        {
+          "name": "DATEV Rechnungswesen",
+          "type": "Integration",
+          "mention": "DATEV Rechnungswesen",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Exporting entries from Odoo to DATEV",
+          "relation": "REQUIRES",
+          "target": "German fiscal localization packages",
+          "evidence": "Provided that one of the German fiscal localization packages is installed, you can export your accounting entries from Odoo to DATEV"
+        },
+        {
+          "source": "Exporting entries from Odoo to DATEV",
+          "relation": "PERFORMED_BY",
+          "target": "general ledger",
+          "evidence": "you can export your accounting entries from Odoo to DATEV from the general ledger"
+        },
+        {
+          "source": "Exporting entries from Odoo to DATEV",
+          "relation": "CONTAINS",
+          "target": "DATEV ATCH export",
+          "evidence": "Two types of exports are needed: first the DATEV ATCH export"
+        },
+        {
+          "source": "Exporting entries from Odoo to DATEV",
+          "relation": "CONTAINS",
+          "target": "DATEV DATA export",
+          "evidence": "Two types of exports are needed: then the DATEV DATA export"
+        },
+        {
+          "source": "DATEV",
+          "relation": "HAS_FEATURE",
+          "target": "DUO - DATEV Unternehmen Online",
+          "evidence": "DATEV works with two interfaces, one for clients (DUO - DATEV Unternehmen Online)"
+        },
+        {
+          "source": "DATEV",
+          "relation": "HAS_FEATURE",
+          "target": "DATEV Rechnungswesen",
+          "evidence": "DATEV works with two interfaces, and one for tax advisors (DATEV Rechnungswesen)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "1.-datev-atch",
+    "heading": "1. DATEV ATCH",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "DATEV ATCH",
+          "type": "Module",
+          "mention": "Title: 1. DATEV ATCH",
+          "confidence": "high"
+        },
+        {
+          "name": "General Ledger",
+          "type": "Report",
+          "mention": "Accounting --> Reporting --> General Ledger",
+          "confidence": "high"
+        },
+        {
+          "name": "Datev ATCH (zip)",
+          "type": "Action",
+          "mention": "select Datev ATCH (zip)",
+          "confidence": "medium"
+        },
+        {
+          "name": "DATEV Belegtransfer software",
+          "type": "Integration",
+          "mention": "DATEV Belegtransfer software",
+          "confidence": "high"
+        },
+        {
+          "name": "DATEV ATCH ZIP file",
+          "type": "DataObject",
+          "mention": "DATEV ATCH ZIP file",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Send button",
+          "type": "Feature",
+          "mention": "Send button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Upload button",
+          "type": "Feature",
+          "mention": "Upload button",
+          "confidence": "medium"
+        },
+        {
+          "name": "document.xml",
+          "type": "DataObject",
+          "mention": "document.xml file",
+          "confidence": "high"
+        },
+        {
+          "name": "unique ID",
+          "type": "Field",
+          "mention": "unique ID",
+          "confidence": "medium"
+        },
+        {
+          "name": "GUID",
+          "type": "Field",
+          "mention": "unique ID (GUID)",
+          "confidence": "medium"
+        },
+        {
+          "name": "DATEV DATA file",
+          "type": "DataObject",
+          "mention": "DATEV DATA file",
+          "confidence": "high"
+        },
+        {
+          "name": "tax advisor",
+          "type": "Actor",
+          "mention": "tax advisor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "DATEV ATCH",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: 1. DATEV ATCH"
+        },
+        {
+          "source": "DATEV ATCH",
+          "relation": "HAS_REPORT",
+          "target": "General Ledger",
+          "evidence": "Go to Accounting --> Reporting --> General Ledger"
+        },
+        {
+          "source": "General Ledger",
+          "relation": "CONTAINS",
+          "target": "Datev ATCH (zip)",
+          "evidence": "select Datev ATCH (zip)"
+        },
+        {
+          "source": "DATEV ATCH",
+          "relation": "ENABLES",
+          "target": "DATEV Belegtransfer software",
+          "evidence": "Upload the downloaded ZIP file via the DATEV Belegtransfer software"
+        },
+        {
+          "source": "DATEV ATCH",
+          "relation": "GENERATES",
+          "target": "DATEV ATCH ZIP file",
+          "evidence": "DATEV ATCH ZIP file"
+        },
+        {
+          "source": "DATEV ATCH ZIP file",
+          "relation": "CONTAINS",
+          "target": "invoice",
+          "evidence": "The DATEV ATCH ZIP file includes the files (reports) linked to an Odoo invoice"
+        },
+        {
+          "source": "DATEV ATCH ZIP file",
+          "relation": "CONTAINS",
+          "target": "bill",
+          "evidence": "The DATEV ATCH ZIP file includes the files (reports) linked to an Odoo bill"
+        },
+        {
+          "source": "invoice",
+          "relation": "PRODUCES",
+          "target": "DATEV ATCH ZIP file",
+          "evidence": "the file must have been generated by using the Send button"
+        },
+        {
+          "source": "bill",
+          "relation": "PRODUCES",
+          "target": "DATEV ATCH ZIP file",
+          "evidence": "the file must have been received via an email alias or uploaded by using the Upload button"
+        },
+        {
+          "source": "DATEV ATCH ZIP file",
+          "relation": "CONTAINS",
+          "target": "document.xml",
+          "evidence": "a document.xml file"
+        },
+        {
+          "source": "document.xml",
+          "relation": "GENERATES",
+          "target": "unique ID",
+          "evidence": "used to generate a unique ID (GUID) for each file"
+        },
+        {
+          "source": "unique ID",
+          "relation": "EQUIVALENT_TO",
+          "target": "GUID",
+          "evidence": "unique ID (GUID)"
+        },
+        {
+          "source": "DATEV",
+          "relation": "HAS_REPORT",
+          "target": "DATEV DATA file",
+          "evidence": "the DATEV DATA file in the next step"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "2.-datev-data",
+    "heading": "2. DATEV DATA",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "DATEV DATA",
+          "type": "Feature",
+          "mention": "Datev DATA (zip)",
+          "confidence": "high"
+        },
+        {
+          "name": "General Ledger",
+          "type": "Report",
+          "mention": "General Ledger",
+          "confidence": "high"
+        },
+        {
+          "name": "EXTF_customer_accounts.csv",
+          "type": "DataObject",
+          "mention": "EXTF_customer_accounts.csv",
+          "confidence": "high"
+        },
+        {
+          "name": "EXTF_vendor_accounts.csv",
+          "type": "DataObject",
+          "mention": "EXTF_vendor_accounts.csv",
+          "confidence": "high"
+        },
+        {
+          "name": "EXTF_accounting_entries.csv",
+          "type": "DataObject",
+          "mention": "EXTF_accounting_entries.csv",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "tax advisor",
+          "type": "Actor",
+          "mention": "tax advisor",
+          "confidence": "high"
+        },
+        {
+          "name": "DATEV Rechnungswesen",
+          "type": "Integration",
+          "mention": "DATEV Rechnungswesen",
+          "confidence": "high"
+        },
+        {
+          "name": "DATEV ATCH ZIP file",
+          "type": "DataObject",
+          "mention": "DATEV ATCH ZIP file",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal items",
+          "type": "DataObject",
+          "mention": "journal items",
+          "confidence": "medium"
+        },
+        {
+          "name": "GUID",
+          "type": "Field",
+          "mention": "unique IDs (GUID)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Accounting --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "General Ledger",
+          "evidence": "Reporting --> General Ledger"
+        },
+        {
+          "source": "General Ledger",
+          "relation": "HAS_FEATURE",
+          "target": "DATEV DATA",
+          "evidence": "General Ledger...select Datev DATA"
+        },
+        {
+          "source": "DATEV DATA",
+          "relation": "GENERATES",
+          "target": "EXTF_customer_accounts.csv",
+          "evidence": "The ZIP file contains...EXTF_customer_accounts.csv"
+        },
+        {
+          "source": "DATEV DATA",
+          "relation": "GENERATES",
+          "target": "EXTF_vendor_accounts.csv",
+          "evidence": "The ZIP file contains...EXTF_vendor_accounts.csv"
+        },
+        {
+          "source": "DATEV DATA",
+          "relation": "GENERATES",
+          "target": "EXTF_accounting_entries.csv",
+          "evidence": "The ZIP file contains...EXTF_accounting_entries.csv"
+        },
+        {
+          "source": "EXTF_accounting_entries.csv",
+          "relation": "CONTAINS",
+          "target": "journal items",
+          "evidence": "EXTF_accounting_entries.csv containing all journal items"
+        },
+        {
+          "source": "EXTF_accounting_entries.csv",
+          "relation": "CONTAINS",
+          "target": "GUID",
+          "evidence": "EXTF_accounting_entries.csv containing...the unique IDs (GUID)"
+        },
+        {
+          "source": "DATEV DATA",
+          "relation": "RELATED_TO",
+          "target": "DATEV ATCH ZIP file",
+          "evidence": "DATEV ATCH ZIP file...The ZIP file contains"
+        },
+        {
+          "source": "DATEV DATA",
+          "relation": "ENABLES",
+          "target": "DATEV Rechnungswesen",
+          "evidence": "They should import the ZIP file into DATEV Rechnungswesen"
+        },
+        {
+          "source": "tax advisor",
+          "relation": "PERFORMED_BY",
+          "target": "DATEV DATA import",
+          "evidence": "Transfer the downloaded ZIP file to your tax advisor. They should import..."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Go to Accounting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "gobd-compliance",
+    "heading": "GoBD compliance",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "GoBD",
+          "type": "Regulation",
+          "mention": "GoBD",
+          "confidence": "high"
+        },
+        {
+          "name": "Federal Ministry of Finance",
+          "type": "Actor",
+          "mention": "Federal Ministry of Finance",
+          "confidence": "high"
+        },
+        {
+          "name": "BMF",
+          "type": "Actor",
+          "mention": "BMF",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "COMPLIES_WITH",
+          "target": "GoBD",
+          "evidence": "Odoo is certified GoBD-compliant."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "understanding-gobd-in-relation-to-accounting-software",
+    "heading": "Understanding GoBD in relation to accounting software",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "GoBD",
+          "type": "Regulation",
+          "mention": "GoBD",
+          "confidence": "high"
+        },
+        {
+          "name": "companies that have to present accounts",
+          "type": "Actor",
+          "mention": "companies that have to present accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "SMEs",
+          "type": "Actor",
+          "mention": "SMEs",
+          "confidence": "high"
+        },
+        {
+          "name": "freelancers",
+          "type": "Actor",
+          "mention": "freelancers",
+          "confidence": "high"
+        },
+        {
+          "name": "entrepreneurs",
+          "type": "Actor",
+          "mention": "entrepreneurs",
+          "confidence": "high"
+        },
+        {
+          "name": "taxpayer",
+          "type": "Actor",
+          "mention": "taxpayer himself",
+          "confidence": "high"
+        },
+        {
+          "name": "financial authorities",
+          "type": "Actor",
+          "mention": "financial authorities",
+          "confidence": "high"
+        },
+        {
+          "name": "access rights control",
+          "type": "Concept",
+          "mention": "access rights control",
+          "confidence": "high"
+        },
+        {
+          "name": "segregation of duties",
+          "type": "Concept",
+          "mention": "segregation of duties, functional separating",
+          "confidence": "high"
+        },
+        {
+          "name": "entry controls",
+          "type": "Concept",
+          "mention": "entry controls",
+          "confidence": "high"
+        },
+        {
+          "name": "error notifications",
+          "type": "Concept",
+          "mention": "error notifications",
+          "confidence": "medium"
+        },
+        {
+          "name": "plausibility checks",
+          "type": "Concept",
+          "mention": "plausibility checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "reconciliation checks at data entry",
+          "type": "Concept",
+          "mention": "reconciliation checks at data entry",
+          "confidence": "high"
+        },
+        {
+          "name": "processing controls",
+          "type": "Concept",
+          "mention": "processing controls",
+          "confidence": "high"
+        },
+        {
+          "name": "measures to prevent intentional or unintentional manipulation",
+          "type": "Concept",
+          "mention": "measures to prevent intentional or unintentional manipulation of software, data, or documents",
+          "confidence": "high"
+        },
+        {
+          "name": "internal control systems",
+          "type": "Concept",
+          "mention": "internal control systems",
+          "confidence": "high"
+        },
+        {
+          "name": "sec. 146 of the Fiscal Code",
+          "type": "Regulation",
+          "mention": "sec. 146 of the Fiscal Code",
+          "confidence": "high"
+        },
+        {
+          "name": "control",
+          "type": "Concept",
+          "mention": "control",
+          "confidence": "high"
+        },
+        {
+          "name": "supervision",
+          "type": "Concept",
+          "mention": "supervision",
+          "confidence": "high"
+        },
+        {
+          "name": "documentation",
+          "type": "Concept",
+          "mention": "documentation",
+          "confidence": "high"
+        },
+        {
+          "name": "prevention",
+          "type": "Concept",
+          "mention": "prevention",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "GoBD",
+          "relation": "APPLIES_TO",
+          "target": "companies that have to present accounts",
+          "evidence": "the **GoBD is binding for companies that have to present accounts**"
+        },
+        {
+          "source": "GoBD",
+          "relation": "APPLIES_TO",
+          "target": "SMEs",
+          "evidence": "which includes SMEs"
+        },
+        {
+          "source": "GoBD",
+          "relation": "APPLIES_TO",
+          "target": "freelancers",
+          "evidence": "which includes SMEs, freelancers"
+        },
+        {
+          "source": "GoBD",
+          "relation": "APPLIES_TO",
+          "target": "entrepreneurs",
+          "evidence": "which includes SMEs, freelancers, and entrepreneurs"
+        },
+        {
+          "source": "companies that have to present accounts",
+          "relation": "COMPLIES_WITH",
+          "target": "GoBD",
+          "evidence": "the **GoBD is binding for companies that have to present accounts**"
+        },
+        {
+          "source": "taxpayer",
+          "relation": "PERFORMED_BY",
+          "target": "GoBD",
+          "evidence": "**the taxpayer himself is the sole responsible** for the complete and exhaustive keeping of fiscal-relevant data"
+        },
+        {
+          "source": "internal control systems",
+          "relation": "COMPLIES_WITH",
+          "target": "sec. 146 of the Fiscal Code",
+          "evidence": "ensure internal control systems (*in accordance with sec. 146 of the Fiscal Code*)"
+        },
+        {
+          "source": "internal control systems",
+          "relation": "CONTAINS",
+          "target": "access rights control",
+          "evidence": "access rights control"
+        },
+        {
+          "source": "internal control systems",
+          "relation": "CONTAINS",
+          "target": "segregation of duties",
+          "evidence": "segregation of duties, functional separating"
+        },
+        {
+          "source": "internal control systems",
+          "relation": "CONTAINS",
+          "target": "entry controls",
+          "evidence": "entry controls"
+        },
+        {
+          "source": "entry controls",
+          "relation": "CONTAINS",
+          "target": "error notifications",
+          "evidence": "error notifications"
+        },
+        {
+          "source": "entry controls",
+          "relation": "CONTAINS",
+          "target": "plausibility checks",
+          "evidence": "plausibility checks"
+        },
+        {
+          "source": "internal control systems",
+          "relation": "CONTAINS",
+          "target": "reconciliation checks at data entry",
+          "evidence": "reconciliation checks at data entry"
+        },
+        {
+          "source": "internal control systems",
+          "relation": "CONTAINS",
+          "target": "processing controls",
+          "evidence": "processing controls"
+        },
+        {
+          "source": "internal control systems",
+          "relation": "CONTAINS",
+          "target": "measures to prevent intentional or unintentional manipulation",
+          "evidence": "measures to prevent intentional or unintentional manipulation of software, data, or documents"
+        },
+        {
+          "source": "taxpayer",
+          "relation": "PERFORMED_BY",
+          "target": "control",
+          "evidence": "The user must distribute tasks within their organization to the relevant positions (*control*)"
+        },
+        {
+          "source": "taxpayer",
+          "relation": "PERFORMED_BY",
+          "target": "supervision",
+          "evidence": "verify that the tasks are properly and completely performed (*supervision*)"
+        },
+        {
+          "source": "taxpayer",
+          "relation": "PERFORMED_BY",
+          "target": "documentation",
+          "evidence": "The result of these controls must be recorded (*documentation*)"
+        },
+        {
+          "source": "taxpayer",
+          "relation": "PERFORMED_BY",
+          "target": "prevention",
+          "evidence": "appropriate measures to correct the situation should be put into place (*prevention*)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "data-security",
+    "heading": "Data security",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bookkeeping",
+          "type": "Concept",
+          "mention": "the bookkeeping",
+          "confidence": "medium"
+        },
+        {
+          "name": "GoBD guidelines",
+          "type": "Regulation",
+          "mention": "GoBD guidelines",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Online service",
+          "type": "Feature",
+          "mention": "Odoo Online service",
+          "confidence": "high"
+        },
+        {
+          "name": "Backup infrastructure",
+          "type": "Feature",
+          "mention": "backup infrastructure",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bookings",
+          "type": "DataObject",
+          "mention": "bookings",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxpayer",
+          "type": "Actor",
+          "mention": "The taxpayer",
+          "confidence": "high"
+        },
+        {
+          "name": "User",
+          "type": "Actor",
+          "mention": "the user",
+          "confidence": "high"
+        },
+        {
+          "name": "Regular backups",
+          "type": "Feature",
+          "mention": "regular backups",
+          "confidence": "medium"
+        },
+        {
+          "name": "External systems",
+          "type": "Integration",
+          "mention": "external systems",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo Cloud Hosting - Service Level Agreement",
+          "type": "Unknown",
+          "mention": "Odoo Cloud Hosting - Service Level Agreement",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Taxpayer",
+          "relation": "PERFORMED_BY",
+          "target": "Backup infrastructure",
+          "evidence": "If the server is operated locally, the user is responsible for creating the necessary backup infrastructure."
+        },
+        {
+          "source": "Bookkeeping",
+          "relation": "COMPLIES_WITH",
+          "target": "GoBD guidelines",
+          "evidence": "If the entries are not sufficiently secured, the bookkeeping will be regarded as not in accordance with the GoBD guidelines."
+        },
+        {
+          "source": "Odoo Online service",
+          "relation": "CONTAINS",
+          "target": "Regular backups",
+          "evidence": "If Odoo is used in the cloud, regular backups are part of the Odoo Online service."
+        },
+        {
+          "source": "Bookings",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "Once bookings have been finally posted, they can no longer be changed or deleted via the application."
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "Odoo Cloud Hosting - Service Level Agreement",
+          "evidence": ".. seealso:: `Odoo Cloud Hosting - Service Level Agreement <https://www.odoo.com/cloud-sla>`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "responsibility-of-the-software-editor",
+    "heading": "Responsibility of the software editor",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "software editor",
+          "type": "Actor",
+          "mention": "software editor",
+          "confidence": "high"
+        },
+        {
+          "name": "taxpayer",
+          "type": "Actor",
+          "mention": "taxpayer",
+          "confidence": "medium"
+        },
+        {
+          "name": "GoBD",
+          "type": "Regulation",
+          "mention": "GoBD",
+          "confidence": "high"
+        },
+        {
+          "name": "financial transactional data",
+          "type": "DataObject",
+          "mention": "financial transactional data",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "GoBD",
+          "relation": "APPLIES_TO",
+          "target": "taxpayer",
+          "evidence": "Considering GoBD applies only to the taxpayer"
+        },
+        {
+          "source": "software editor",
+          "relation": "COMPLIES_WITH",
+          "target": "GoBD",
+          "evidence": "provide the necessary tools for the user to respect the software-related guidelines described in the GoBD"
+        },
+        {
+          "source": "software editor",
+          "relation": "GENERATES",
+          "target": "tools",
+          "evidence": "provide the necessary tools"
+        },
+        {
+          "source": "tools",
+          "type": "Feature",
+          "mention": "necessary tools",
+          "confidence": "medium",
+          "relation": "ENABLES",
+          "target": "user",
+          "evidence": "provide the necessary tools for the user to respect the software-related guidelines"
+        },
+        {
+          "source": "GoBD",
+          "relation": "GOVERNED_BY",
+          "target": "guidelines",
+          "evidence": "software-related guidelines described in the GoBD"
+        },
+        {
+          "source": "guidelines",
+          "type": "Regulation",
+          "mention": "software-related guidelines",
+          "confidence": "medium",
+          "relation": "COMPLIES_WITH",
+          "target": "GoBD",
+          "evidence": "software-related guidelines described in the GoBD"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "ensuring-compliance-through-odoo",
+    "heading": "Ensuring compliance through Odoo",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "GoBD",
+          "type": "Regulation",
+          "mention": "GoBD",
+          "confidence": "high"
+        },
+        {
+          "name": "audit-proof archiving",
+          "type": "Concept",
+          "mention": "audit-proof archiving",
+          "confidence": "medium"
+        },
+        {
+          "name": "record",
+          "type": "DataObject",
+          "mention": "Each record in Odoo",
+          "confidence": "medium"
+        },
+        {
+          "name": "creator",
+          "type": "Actor",
+          "mention": "creator",
+          "confidence": "low"
+        },
+        {
+          "name": "creation date",
+          "type": "Field",
+          "mention": "creation date",
+          "confidence": "low"
+        },
+        {
+          "name": "modification date",
+          "type": "Field",
+          "mention": "modification date",
+          "confidence": "low"
+        },
+        {
+          "name": "chatter",
+          "type": "Feature",
+          "mention": "chatter",
+          "confidence": "low"
+        },
+        {
+          "name": "financial data",
+          "type": "Concept",
+          "mention": "financial data",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor bills",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "low"
+        },
+        {
+          "name": "miscellaneous operations",
+          "type": "Concept",
+          "mention": "miscellaneous operations",
+          "confidence": "low"
+        },
+        {
+          "name": "accounts",
+          "type": "Concept",
+          "mention": "accounts",
+          "confidence": "low"
+        },
+        {
+          "name": "purchase orders",
+          "type": "DataObject",
+          "mention": "purchase orders",
+          "confidence": "low"
+        },
+        {
+          "name": "sales orders",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "low"
+        },
+        {
+          "name": "invoices",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "low"
+        },
+        {
+          "name": "Odoo Documents",
+          "type": "Feature",
+          "mention": "Odoo Documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "transactional objects",
+          "type": "Concept",
+          "mention": "transactional objects",
+          "confidence": "low"
+        },
+        {
+          "name": "German Odoo localization",
+          "type": "Setting",
+          "mention": "German Odoo localization",
+          "confidence": "medium"
+        },
+        {
+          "name": "inalterability clause",
+          "type": "Concept",
+          "mention": "inalterability clause",
+          "confidence": "low"
+        },
+        {
+          "name": "third-party expert",
+          "type": "Actor",
+          "mention": "third-party expert",
+          "confidence": "low"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "COMPLIES_WITH",
+          "target": "GoBD",
+          "evidence": "Ensuring compliance through Odoo"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "audit-proof archiving",
+          "evidence": "Odoo provides you with the means to achieve all of these objectives"
+        },
+        {
+          "source": "record",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Each record in Odoo"
+        },
+        {
+          "source": "record",
+          "relation": "CONTAINS",
+          "target": "creator",
+          "evidence": "stamped with the creator"
+        },
+        {
+          "source": "record",
+          "relation": "CONTAINS",
+          "target": "creation date",
+          "evidence": "stamped with the creation date"
+        },
+        {
+          "source": "record",
+          "relation": "CONTAINS",
+          "target": "modification date",
+          "evidence": "stamped with the modification date"
+        },
+        {
+          "source": "record",
+          "relation": "CONTAINS",
+          "target": "chatter",
+          "evidence": "seen in the chatter of the relevant object"
+        },
+        {
+          "source": "Odoo",
+          "relation": "ENABLES",
+          "target": "inalterability clause",
+          "evidence": "Odoo is in standard configured in such a way that the inalterability clause can be adhered to"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONFIGURED_BY",
+          "target": "German Odoo localization",
+          "evidence": "With the German Odoo localization, Odoo is in standard configured"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Odoo Documents",
+          "evidence": "Odoo Documents helps you automate this task"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "financial data",
+          "evidence": "It is the responsibility of the user to encode all financial data"
+        },
+        {
+          "source": "GoBD",
+          "relation": "APPLIES_TO",
+          "target": "financial data",
+          "evidence": "All financial data must be recorded in the system"
+        },
+        {
+          "source": "financial data",
+          "relation": "RELATED_TO",
+          "target": "vendor bills",
+          "evidence": "encode all vendor bills"
+        },
+        {
+          "source": "financial data",
+          "relation": "RELATED_TO",
+          "target": "miscellaneous operations",
+          "evidence": "encode miscellaneous operations"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "accounts",
+          "evidence": "Odoo ensures that, with the correct configuration, the correct accounts are used"
+        },
+        {
+          "source": "purchase orders",
+          "relation": "RELATED_TO",
+          "target": "sales orders",
+          "evidence": "control mechanisms between purchase orders and sales orders"
+        },
+        {
+          "source": "invoices",
+          "relation": "PRODUCES",
+          "target": "accounts",
+          "evidence": "invoice is booked at confirmation"
+        },
+        {
+          "source": "transactional objects",
+          "relation": "RELATED_TO",
+          "target": "invoices",
+          "evidence": "invoice is booked at confirmation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "gobd-export",
+    "heading": "GoBD export",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "GoBD",
+          "type": "Regulation",
+          "mention": "GoBD",
+          "confidence": "high"
+        },
+        {
+          "name": "GoBD export",
+          "type": "Feature",
+          "mention": "GoBD export",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV export of financial data",
+          "type": "Feature",
+          "mention": "CSV export of financial data",
+          "confidence": "medium"
+        },
+        {
+          "name": "XLS export of financial data",
+          "type": "Feature",
+          "mention": "XLS export of financial data",
+          "confidence": "medium"
+        },
+        {
+          "name": "GoBD format",
+          "type": "Standard",
+          "mention": "GoBD format",
+          "confidence": "medium"
+        },
+        {
+          "name": "XML",
+          "type": "Concept",
+          "mention": "XML",
+          "confidence": "low"
+        },
+        {
+          "name": "CSV",
+          "type": "Concept",
+          "mention": "CSV",
+          "confidence": "low"
+        },
+        {
+          "name": "XLS",
+          "type": "Concept",
+          "mention": "XLS",
+          "confidence": "low"
+        },
+        {
+          "name": "XML-based GoBD format",
+          "type": "Standard",
+          "mention": "XML-based GoBD format",
+          "confidence": "medium"
+        },
+        {
+          "name": "Ergänzende Informationen zur Datenträgerüberlassung",
+          "type": "Regulation",
+          "mention": "Ergänzende Informationen zur Datenträgerüberlassung",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "GoBD export",
+          "evidence": "Odoo supports the CSV and XLS export of financial data out of the box."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "CSV export of financial data",
+          "evidence": "Odoo supports the CSV and XLS export of financial data out of the box."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "XLS export of financial data",
+          "evidence": "Odoo supports the CSV and XLS export of financial data out of the box."
+        },
+        {
+          "source": "GoBD export",
+          "relation": "COMPLIES_WITH",
+          "target": "GoBD",
+          "evidence": "GoBD export feature description."
+        },
+        {
+          "source": "GoBD format",
+          "relation": "IS_PART_OF",
+          "target": "GoBD",
+          "evidence": "The GoBD recommends the export in a specific XML-based GoBD format."
+        },
+        {
+          "source": "XML-based GoBD format",
+          "relation": "EQUIVALENT_TO",
+          "target": "GoBD format",
+          "evidence": "The GoBD recommends the export in a specific XML-based GoBD format."
+        },
+        {
+          "source": "GoBD",
+          "relation": "SEE_ALSO",
+          "target": "Ergänzende Informationen zur Datenträgerüberlassung",
+          "evidence": "see Ergänzende Informationen zur Datenträgerüberlassung §3"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "non-compliance",
+    "heading": "Non-compliance",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Non-compliance",
+          "type": "Concept",
+          "mention": "Non-compliance",
+          "confidence": "high"
+        },
+        {
+          "name": "infringement",
+          "type": "Concept",
+          "mention": "infringement",
+          "confidence": "high"
+        },
+        {
+          "name": "fine",
+          "type": "Concept",
+          "mention": "fine",
+          "confidence": "high"
+        },
+        {
+          "name": "court order",
+          "type": "Concept",
+          "mention": "court order",
+          "confidence": "medium"
+        },
+        {
+          "name": "implementation",
+          "type": "Action",
+          "mention": "implementation",
+          "confidence": "medium"
+        },
+        {
+          "name": "specific measures",
+          "type": "Concept",
+          "mention": "specific measures",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "infringement",
+          "relation": "TRIGGERED_BY",
+          "target": "Non-compliance",
+          "evidence": "In the event of an infringement"
+        },
+        {
+          "source": "infringement",
+          "relation": "GENERATES",
+          "target": "fine",
+          "evidence": "you can expect a fine"
+        },
+        {
+          "source": "infringement",
+          "relation": "GENERATES",
+          "target": "court order",
+          "evidence": "and a court order"
+        },
+        {
+          "source": "court order",
+          "relation": "REQUIRES",
+          "target": "implementation",
+          "evidence": "demanding the implementation"
+        },
+        {
+          "source": "implementation",
+          "relation": "PRODUCES",
+          "target": "specific measures",
+          "evidence": "of specific measures"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "technical-security-system",
+    "heading": "Technical security system",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "point_of_sale",
+          "type": "Module",
+          "mention": "point of sale systems",
+          "confidence": "high"
+        },
+        {
+          "name": "technical security system",
+          "type": "Module",
+          "mention": "technical security system",
+          "confidence": "high"
+        },
+        {
+          "name": "TSS",
+          "type": "Concept",
+          "mention": "TSS",
+          "confidence": "high"
+        },
+        {
+          "name": "TSE",
+          "type": "Concept",
+          "mention": "TSE",
+          "confidence": "high"
+        },
+        {
+          "name": "Kassensicherungsverordnung",
+          "type": "Regulation",
+          "mention": "Kassensicherungsverordnung",
+          "confidence": "high"
+        },
+        {
+          "name": "fiskaly",
+          "type": "Integration",
+          "mention": "fiskaly",
+          "confidence": "high"
+        },
+        {
+          "name": "cloud-based solution",
+          "type": "Feature",
+          "mention": "cloud-based solution",
+          "confidence": "high"
+        },
+        {
+          "name": "working internet connection",
+          "type": "Setting",
+          "mention": "working internet connection",
+          "confidence": "medium"
+        },
+        {
+          "name": "VAT rates",
+          "type": "Standard",
+          "mention": "VAT rates",
+          "confidence": "medium"
+        },
+        {
+          "name": "DSFinV-K API",
+          "type": "Report",
+          "mention": "DSFinV-K API",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "point_of_sale",
+          "evidence": "including the point of sale systems"
+        },
+        {
+          "source": "point_of_sale",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "including the point of sale systems"
+        },
+        {
+          "source": "Kassensicherungsverordnung",
+          "relation": "REQUIRES",
+          "target": "technical security system",
+          "evidence": "requires that electronic record-keeping systems... must be equipped with a technical security system"
+        },
+        {
+          "source": "technical security system",
+          "relation": "COMPLIES_WITH",
+          "target": "Kassensicherungsverordnung",
+          "evidence": "must be equipped with a technical security system"
+        },
+        {
+          "source": "technical security system",
+          "relation": "RELATED_TO",
+          "target": "TSS",
+          "evidence": "also called TSS or TSE"
+        },
+        {
+          "source": "technical security system",
+          "relation": "RELATED_TO",
+          "target": "TSE",
+          "evidence": "also called TSS or TSE"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "cloud-based solution",
+          "evidence": "Odoo offers a service... cloud-based solution"
+        },
+        {
+          "source": "cloud-based solution",
+          "relation": "ENABLES",
+          "target": "technical security system",
+          "evidence": "Odoo offers a service that is compliant"
+        },
+        {
+          "source": "cloud-based solution",
+          "relation": "PERFORMED_BY",
+          "target": "fiskaly",
+          "evidence": "compliant with the help of fiskaly"
+        },
+        {
+          "source": "technical security system",
+          "relation": "REQUIRES",
+          "target": "working internet connection",
+          "evidence": "cloud-based solution requires a working internet connection"
+        },
+        {
+          "source": "technical security system",
+          "relation": "USES_METHOD",
+          "target": "VAT rates",
+          "evidence": "The only VAT rates allowed are given by fiskaly"
+        },
+        {
+          "source": "VAT rates",
+          "relation": "RELATED_TO",
+          "target": "DSFinV-K API",
+          "evidence": "check these rates by consulting fiskaly DSFinV-K API"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Germany - Certification for Point of Sale",
+          "type": "Module",
+          "mention": "Germany - Certification for Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "l10n_de_pos_cert",
+          "type": "Module",
+          "mention": "Germany - Certification for Point of Sale (l10n_de_pos_cert)",
+          "confidence": "high"
+        },
+        {
+          "name": "Germany - Certification for Point of Sale of type restaurant",
+          "type": "Module",
+          "mention": "Germany - Certification for Point of Sale of type restaurant",
+          "confidence": "high"
+        },
+        {
+          "name": "l10n_de_pos_res_cert",
+          "type": "Module",
+          "mention": "Germany - Certification for Point of Sale of type restaurant (l10n_de_pos_res_cert)",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "high"
+        },
+        {
+          "name": "Update Info",
+          "type": "Action",
+          "mention": "click Update Info",
+          "confidence": "medium"
+        },
+        {
+          "name": "Companies",
+          "type": "Module",
+          "mention": "Companies section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Company",
+          "type": "DataObject",
+          "mention": "company",
+          "confidence": "high"
+        },
+        {
+          "name": "Company Name",
+          "type": "Field",
+          "mention": "Company Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Address",
+          "type": "Field",
+          "mention": "Address",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT",
+          "type": "Field",
+          "mention": "VAT",
+          "confidence": "high"
+        },
+        {
+          "name": "St.-Nr.",
+          "type": "Field",
+          "mention": "St.-Nr.",
+          "confidence": "high"
+        },
+        {
+          "name": "W-IdNr.",
+          "type": "Field",
+          "mention": "W-IdNr.",
+          "confidence": "high"
+        },
+        {
+          "name": "register company through fiskaly",
+          "type": "Action",
+          "mention": "register your company through fiskaly",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiskaly",
+          "type": "Module",
+          "mention": "Fiskaly tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiskaly Registration",
+          "type": "Action",
+          "mention": "Fiskaly Registration button",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiskaly Organization ID",
+          "type": "Field",
+          "mention": "Fiskaly Organization ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiskaly API Key",
+          "type": "Field",
+          "mention": "Fiskaly API Key",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiskaly API Secret",
+          "type": "Field",
+          "mention": "Fiskaly API Secret",
+          "confidence": "high"
+        },
+        {
+          "name": "New keys",
+          "type": "Action",
+          "mention": "New keys button",
+          "confidence": "high"
+        },
+        {
+          "name": "technical security system",
+          "type": "Concept",
+          "mention": "technical security system",
+          "confidence": "high"
+        },
+        {
+          "name": "TSS",
+          "type": "Concept",
+          "mention": "TSS (Technical Security System)",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create TSS",
+          "type": "Action",
+          "mention": "Create TSS box",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiskaly API",
+          "type": "Module",
+          "mention": "Fiskaly API section",
+          "confidence": "medium"
+        },
+        {
+          "name": "TSS ID",
+          "type": "Field",
+          "mention": "TSS ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiskaly Client ID",
+          "type": "Field",
+          "mention": "Fiskaly Client ID",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Germany - Certification for Point of Sale",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Install the Germany - Certification for Point of Sale (l10n_de_pos_cert) module"
+        },
+        {
+          "source": "Germany - Certification for Point of Sale of type restaurant",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Install the Germany - Certification for Point of Sale of type restaurant (l10n_de_pos_res_cert) modules"
+        },
+        {
+          "source": "Companies",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "Update Info under the Companies section"
+        },
+        {
+          "source": "Company Name",
+          "relation": "IS_PART_OF",
+          "target": "Company",
+          "evidence": "fill in the following fields: Company Name"
+        },
+        {
+          "source": "Address",
+          "relation": "IS_PART_OF",
+          "target": "Company",
+          "evidence": "fill in the following fields: Address"
+        },
+        {
+          "source": "VAT",
+          "relation": "IS_PART_OF",
+          "target": "Company",
+          "evidence": "fill in the following fields: VAT"
+        },
+        {
+          "source": "St.-Nr.",
+          "relation": "IS_PART_OF",
+          "target": "Company",
+          "evidence": "fill in the following fields: St.-Nr. (Steuernummer)"
+        },
+        {
+          "source": "W-IdNr.",
+          "relation": "IS_PART_OF",
+          "target": "Company",
+          "evidence": "fill in the following fields: W-IdNr."
+        },
+        {
+          "source": "register company through fiskaly",
+          "relation": "PERFORMED_BY",
+          "target": "Fiskaly",
+          "evidence": "register your company through fiskaly by opening the Fiskaly tab"
+        },
+        {
+          "source": "Fiskaly",
+          "relation": "CONTAINS",
+          "target": "Fiskaly Registration",
+          "evidence": "opening the Fiskaly tab and clicking the Fiskaly Registration button"
+        },
+        {
+          "source": "Fiskaly Organization ID",
+          "relation": "IS_PART_OF",
+          "target": "Company",
+          "evidence": "Once the registration has been finalized, new fields appear: Fiskaly Organization ID"
+        },
+        {
+          "source": "Fiskaly API Key",
+          "relation": "IS_PART_OF",
+          "target": "Company",
+          "evidence": "Once the registration has been finalized, new fields appear: Fiskaly API Key"
+        },
+        {
+          "source": "Fiskaly API Secret",
+          "relation": "IS_PART_OF",
+          "target": "Company",
+          "evidence": "Once the registration has been finalized, new fields appear: Fiskaly API Secret"
+        },
+        {
+          "source": "Point of Sale",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "To use a point of sale in Germany, first create a TSS by going to Point of Sale"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Point of Sale",
+          "evidence": "Point of Sale --> Configuration --> Point of Sale"
+        },
+        {
+          "source": "Create TSS",
+          "relation": "IS_PART_OF",
+          "target": "Fiskaly API",
+          "evidence": "checking the Create TSS box under the Fiskaly API section"
+        },
+        {
+          "source": "TSS ID",
+          "relation": "IS_PART_OF",
+          "target": "Company",
+          "evidence": "Once the creation of the TSS is successful, you can find the: TSS ID"
+        },
+        {
+          "source": "Fiskaly Client ID",
+          "relation": "IS_PART_OF",
+          "target": "Company",
+          "evidence": "Once the creation of the TSS is successful, you can find the: Fiskaly Client ID"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "dsfinv-k-export",
+    "heading": "DSFinV-K export",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "DSFinV-K export",
+          "type": "Module",
+          "mention": "DSFinV-K export",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "DSFinV-K Exports",
+          "type": "Sub-module",
+          "mention": "DSFinV-K Exports",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Datetime",
+          "type": "Field",
+          "mention": "Start Datetime",
+          "confidence": "high"
+        },
+        {
+          "name": "End Datetime",
+          "type": "Field",
+          "mention": "End Datetime",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Field",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "State",
+          "type": "Field",
+          "mention": "State",
+          "confidence": "high"
+        },
+        {
+          "name": "Refresh State",
+          "type": "Action",
+          "mention": "Refresh State",
+          "confidence": "high"
+        },
+        {
+          "name": "DSFinV-K",
+          "type": "Regulation",
+          "mention": "DSFinV-K",
+          "confidence": "high"
+        },
+        {
+          "name": "fiskaly",
+          "type": "Actor",
+          "mention": "fiskaly",
+          "confidence": "high"
+        },
+        {
+          "name": "close the POS register",
+          "type": "Action",
+          "mention": "close the POS register",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "DSFinV-K export",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: DSFinV-K export"
+        },
+        {
+          "source": "Orders",
+          "relation": "BELONGS_TO",
+          "target": "Point of Sale",
+          "evidence": "going to Point of Sale --> Orders"
+        },
+        {
+          "source": "DSFinV-K Exports",
+          "relation": "BELONGS_TO",
+          "target": "Orders",
+          "evidence": "Orders --> DSFinV-K Exports"
+        },
+        {
+          "source": "New",
+          "relation": "BELONGS_TO",
+          "target": "DSFinV-K Exports",
+          "evidence": "DSFinV-K Exports --> New"
+        },
+        {
+          "source": "DSFinV-K export",
+          "relation": "REQUIRES",
+          "target": "close the POS register",
+          "evidence": "Whenever you close the POS register, the details of the orders are sent to the DSFinV-K"
+        },
+        {
+          "source": "DSFinV-K export",
+          "relation": "COMPLIES_WITH",
+          "target": "DSFinV-K",
+          "evidence": "sent to the DSFinV-K (Digitale Schnittstelle der Finanzverwaltung für Kassensysteme) service"
+        },
+        {
+          "source": "DSFinV-K export",
+          "relation": "ENABLES",
+          "target": "New",
+          "evidence": "export the data sent to DSFinV-K by going to Point of Sale --> Orders --> DSFinV-K Exports --> New"
+        },
+        {
+          "source": "DSFinV-K",
+          "relation": "APPLIES_TO",
+          "target": "Odoo",
+          "evidence": "DSFinV-K (Digitale Schnittstelle der Finanzverwaltung für Kassensysteme)"
+        }
+      ]
+    }
+  }
+]

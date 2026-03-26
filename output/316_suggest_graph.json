@@ -1,0 +1,1158 @@
+[
+  {
+    "section_id": "suggest-quantities-based-on-historical-demand",
+    "heading": "Suggest quantities based on historical demand",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Suggest",
+          "type": "Feature",
+          "mention": "Suggest feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Request for Quotation",
+          "type": "DataObject",
+          "mention": "requests for quotations (RFQs)",
+          "confidence": "high"
+        },
+        {
+          "name": "Historical Demand",
+          "type": "Concept",
+          "mention": "historical demand",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Suggest",
+          "relation": "SUPPORTS",
+          "target": "Push-based replenishment strategy",
+          "evidence": "For a straightforward push-based replenishment strategy, the *Suggest* feature..."
+        },
+        {
+          "source": "Suggest",
+          "relation": "GENERATES",
+          "target": "Quantities to order",
+          "evidence": "recommends quantities to order"
+        },
+        {
+          "source": "Suggest",
+          "relation": "APPLIES_TO",
+          "target": "Request for Quotation",
+          "evidence": "on requests for quotations (RFQs)"
+        },
+        {
+          "source": "Quantities to order",
+          "relation": "USES_METHOD",
+          "target": "Historical Demand",
+          "evidence": "based on historical demand"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "key-parameters",
+    "heading": "Key parameters",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Replenish for",
+          "type": "Setting",
+          "mention": "future coverage window (days)",
+          "confidence": "high"
+        },
+        {
+          "name": "Based on",
+          "type": "Setting",
+          "mention": "period that defines historical demand",
+          "confidence": "high"
+        },
+        {
+          "name": "Factor",
+          "type": "Setting",
+          "mention": "growth or decline factor",
+          "confidence": "high"
+        }
+      ],
+      "relations": []
+    }
+  },
+  {
+    "section_id": "demand-calculation",
+    "heading": "Demand calculation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "average daily demand",
+          "type": "Concept",
+          "mention": "average daily demand",
+          "confidence": "high"
+        },
+        {
+          "name": "estimated demand",
+          "type": "Concept",
+          "mention": "estimated demand",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivered or Consumed Items",
+          "type": "DataObject",
+          "mention": "Delivered or Consumed Items",
+          "confidence": "medium"
+        },
+        {
+          "name": "Based on Days",
+          "type": "Field",
+          "mention": "Based on Days",
+          "confidence": "medium"
+        },
+        {
+          "name": "Factor",
+          "type": "Field",
+          "mention": "Factor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish for Days",
+          "type": "Field",
+          "mention": "Replenish for Days",
+          "confidence": "medium"
+        },
+        {
+          "name": "validated deliveries",
+          "type": "DataObject",
+          "mention": "validated deliveries",
+          "confidence": "medium"
+        },
+        {
+          "name": "components consumed in manufacturing orders",
+          "type": "DataObject",
+          "mention": "components consumed in manufacturing orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory/delivery/one-step",
+          "type": "Unknown",
+          "mention": "inventory/delivery/one-step",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing/basic_setup/setup-components",
+          "type": "Unknown",
+          "mention": "manufacturing/basic_setup/setup-components",
+          "confidence": "medium"
+        },
+        {
+          "name": "../../manufacturing/subcontracting/subcontracting_resupply",
+          "type": "Unknown",
+          "mention": "../../manufacturing/subcontracting/subcontracting_resupply",
+          "confidence": "medium"
+        },
+        {
+          "name": "Assigned or Confirmed moves",
+          "type": "Action",
+          "mention": "Assigned or Confirmed moves",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales quotations",
+          "type": "DataObject",
+          "mention": "sales quotations",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing orders",
+          "type": "DataObject",
+          "mention": "manufacturing orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Draft",
+          "type": "DataObject",
+          "mention": "Draft",
+          "confidence": "medium"
+        },
+        {
+          "name": "validated",
+          "type": "Action",
+          "mention": "validated",
+          "confidence": "medium"
+        },
+        {
+          "name": "internal deliveries",
+          "type": "DataObject",
+          "mention": "internal deliveries",
+          "confidence": "medium"
+        },
+        {
+          "name": "central warehouse",
+          "type": "Actor",
+          "mention": "central warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "individual stores",
+          "type": "Actor",
+          "mention": "individual stores",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "average daily demand",
+          "evidence": "To estimate demand, Odoo sums... The average daily demand is this sum..."
+        },
+        {
+          "source": "average daily demand",
+          "relation": "REQUIRES",
+          "target": "Delivered or Consumed Items",
+          "evidence": "Average Daily Demand = (Delivered or Consumed Items / Based on Days) * Factor"
+        },
+        {
+          "source": "average daily demand",
+          "relation": "REQUIRES",
+          "target": "Based on Days",
+          "evidence": "Average Daily Demand = (Delivered or Consumed Items / Based on Days) * Factor"
+        },
+        {
+          "source": "average daily demand",
+          "relation": "REQUIRES",
+          "target": "Factor",
+          "evidence": "Average Daily Demand = (Delivered or Consumed Items / Based on Days) * Factor"
+        },
+        {
+          "source": "estimated demand",
+          "relation": "REQUIRES",
+          "target": "average daily demand",
+          "evidence": "Estimated Demand = Average Daily Demand * Replenish for Days"
+        },
+        {
+          "source": "estimated demand",
+          "relation": "REQUIRES",
+          "target": "Replenish for Days",
+          "evidence": "Estimated Demand = Average Daily Demand * Replenish for Days"
+        },
+        {
+          "source": "average daily demand",
+          "relation": "CONTAINS",
+          "target": "validated deliveries",
+          "evidence": "To estimate demand, Odoo sums all validated deliveries"
+        },
+        {
+          "source": "average daily demand",
+          "relation": "CONTAINS",
+          "target": "components consumed in manufacturing orders",
+          "evidence": "components consumed in manufacturing orders... coming from the warehouse"
+        },
+        {
+          "source": "average daily demand",
+          "relation": "CONFIGURED_BY",
+          "target": "Assigned or Confirmed moves",
+          "evidence": "Only Assigned or Confirmed moves are taken into account"
+        },
+        {
+          "source": "average daily demand",
+          "relation": "CONFIGURED_BY",
+          "target": "sales quotations",
+          "evidence": "sales quotations or manufacturing orders in Draft are not taken into account until validated"
+        },
+        {
+          "source": "average daily demand",
+          "relation": "CONFIGURED_BY",
+          "target": "manufacturing orders",
+          "evidence": "sales quotations or manufacturing orders in Draft are not taken into account until validated"
+        },
+        {
+          "source": "average daily demand",
+          "relation": "CONTAINS",
+          "target": "internal deliveries",
+          "evidence": "In a multi-warehouse setup, internal deliveries are also counted in demand estimation."
+        },
+        {
+          "source": "average daily demand",
+          "relation": "CONTAINS",
+          "target": "central warehouse",
+          "evidence": "the average daily demand of the central warehouse will include internal transfers to individual stores"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "recommended-quantity",
+    "heading": "Recommended quantity",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish",
+          "type": "Action",
+          "mention": "Replenish",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recommended Quantity",
+          "type": "Feature",
+          "mention": "Recommended Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Estimated Demand",
+          "type": "Feature",
+          "mention": "estimated demand",
+          "confidence": "high"
+        },
+        {
+          "name": "Available Stock",
+          "type": "DataObject",
+          "mention": "Available Stock",
+          "confidence": "high"
+        },
+        {
+          "name": "Incoming Stock",
+          "type": "DataObject",
+          "mention": "Incoming Stock",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Recommended Quantity",
+          "evidence": "Product: Odoo, Title: Recommended quantity"
+        },
+        {
+          "source": "Recommended Quantity",
+          "relation": "ENABLES",
+          "target": "Replenish",
+          "evidence": "In example 1, Odoo recommends... to Replenish"
+        },
+        {
+          "source": "Recommended Quantity",
+          "relation": "REQUIRES",
+          "target": "Estimated Demand",
+          "evidence": "To find the suggested quantity, Odoo deducts the *estimated demand*"
+        },
+        {
+          "source": "Recommended Quantity",
+          "relation": "REQUIRES",
+          "target": "Available Stock",
+          "evidence": "deducts... from the current stock available quantity"
+        },
+        {
+          "source": "Recommended Quantity",
+          "relation": "REQUIRES",
+          "target": "Incoming Stock",
+          "evidence": "deducts... from all incoming shipments"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "prerequisite-setup",
+    "heading": "Prerequisite setup",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor pricelist",
+          "type": "DataObject",
+          "mention": "vendor pricelist",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Type",
+          "type": "Field",
+          "mention": "Product Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Goods",
+          "type": "Concept",
+          "mention": "Goods",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tracked by quantity",
+          "type": "Feature",
+          "mention": "Tracked by quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "Suggest",
+          "type": "Feature",
+          "mention": "Suggest",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Purchase apps must be installed"
+        },
+        {
+          "source": "Inventory",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Inventory apps must be installed"
+        },
+        {
+          "source": "Purchase",
+          "relation": "RELATED_TO",
+          "target": "Inventory",
+          "evidence": "Purchase and Inventory apps must be installed"
+        },
+        {
+          "source": "Suggest",
+          "relation": "ENABLES",
+          "target": "Purchase",
+          "evidence": "The Suggest feature is vendor-specific, so each product needs a matching vendor for accurate purchase quantity and price calculations."
+        },
+        {
+          "source": "Suggest",
+          "relation": "REQUIRES",
+          "target": "vendor",
+          "evidence": "The Suggest feature is vendor-specific"
+        },
+        {
+          "source": "vendor",
+          "relation": "BELONGS_TO",
+          "target": "vendor pricelist",
+          "evidence": "Add a vendor to the vendor pricelist"
+        },
+        {
+          "source": "vendor pricelist",
+          "relation": "BELONGS_TO",
+          "target": "Purchase",
+          "evidence": "Add a vendor to the vendor pricelist"
+        },
+        {
+          "source": "Product Type",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "Set the Product Type"
+        },
+        {
+          "source": "Tracked by quantity",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "ensure the product is Tracked by quantity"
+        },
+        {
+          "source": "Tracked by quantity",
+          "relation": "ENABLES",
+          "target": "Inventory",
+          "evidence": "Ensures the system can manage stock levels and calculate recommended replenishment quantities for tangible items."
+        },
+        {
+          "source": "Goods",
+          "relation": "APPLIES_TO",
+          "target": "Product Type",
+          "evidence": "Set the Product Type to Goods"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "suggest-quantities-to-order",
+    "heading": "Suggest quantities to order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Field",
+          "mention": "Vendor field",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "Products tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Catalog",
+          "type": "Feature",
+          "mention": "Catalog button",
+          "confidence": "high"
+        },
+        {
+          "name": "Suggest",
+          "type": "Feature",
+          "mention": "Suggest",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish for",
+          "type": "Field",
+          "mention": "Replenish for",
+          "confidence": "high"
+        },
+        {
+          "name": "Based on",
+          "type": "Field",
+          "mention": "Based on",
+          "confidence": "high"
+        },
+        {
+          "name": "Period",
+          "type": "Field",
+          "mention": "Period",
+          "confidence": "high"
+        },
+        {
+          "name": "Growth factor %",
+          "type": "Field",
+          "mention": "Growth factor %",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit Price",
+          "type": "Field",
+          "mention": "Unit Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Add All",
+          "type": "Action",
+          "mention": "Add All",
+          "confidence": "high"
+        },
+        {
+          "name": "Back to Quotation",
+          "type": "Action",
+          "mention": "Back to Quotation",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "To suggest quantities based on past sales, navigate to the Purchase app."
+        },
+        {
+          "source": "Catalog",
+          "relation": "IS_PART_OF",
+          "target": "Products",
+          "evidence": "In the Products tab, click the Catalog button"
+        },
+        {
+          "source": "Catalog",
+          "relation": "HAS_FEATURE",
+          "target": "Suggest",
+          "evidence": "Inside the Catalog, toggle Suggest in the left sidebar"
+        },
+        {
+          "source": "Suggest",
+          "relation": "HAS_FEATURE",
+          "target": "Replenish for",
+          "evidence": "Complete its fields as follows: - Replenish for"
+        },
+        {
+          "source": "Suggest",
+          "relation": "HAS_FEATURE",
+          "target": "Based on",
+          "evidence": "Complete its fields as follows: - Based on"
+        },
+        {
+          "source": "Based on",
+          "relation": "CONTAINS",
+          "target": "Period",
+          "evidence": "Based on: There are two inputs: #. Period"
+        },
+        {
+          "source": "Based on",
+          "relation": "CONTAINS",
+          "target": "Growth factor %",
+          "evidence": "Based on: There are two inputs: #. Growth factor %"
+        },
+        {
+          "source": "Add All",
+          "relation": "APPLIES_TO",
+          "target": "Catalog",
+          "evidence": "click Add All to add all suggestions to the order"
+        },
+        {
+          "source": "Back to Quotation",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Back to Quotation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "recommend-at-100%-growth",
+    "heading": "Recommend at 100% growth",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/OUT",
+          "type": "Module",
+          "mention": "WH/OUT",
+          "confidence": "medium"
+        },
+        {
+          "name": "units",
+          "type": "DataObject",
+          "mention": "units",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "WH/OUT",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "module"
+        },
+        {
+          "source": "units",
+          "relation": "BELONGS_TO",
+          "target": "WH/OUT",
+          "evidence": "delivered in a WH/OUT operation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "variables",
+    "heading": "Variables",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish",
+          "type": "Feature",
+          "mention": "Replenish",
+          "confidence": "high"
+        },
+        {
+          "name": "total delivered/consumed in the period",
+          "type": "Field",
+          "mention": "total delivered/consumed in the period: 40 units",
+          "confidence": "medium"
+        },
+        {
+          "name": "Average Daily Demand",
+          "type": "Concept",
+          "mention": "Average Daily Demand",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replenish",
+          "relation": "HAS_FEATURE",
+          "target": "total delivered/consumed in the period",
+          "evidence": "- total delivered/consumed in the period: 40 units"
+        },
+        {
+          "source": "Average Daily Demand",
+          "relation": "IS_PART_OF",
+          "target": "Replenish",
+          "evidence": "Replenish calculation includes Average Daily Demand"
+        },
+        {
+          "source": "Replenish",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "suggested-quantity",
+    "heading": "Suggested quantity",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Suggested Quantity",
+          "type": "Feature",
+          "mention": "Suggested quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "suggestion to purchase",
+          "confidence": "medium"
+        },
+        {
+          "name": "Unit Price",
+          "type": "Field",
+          "mention": "*Unit Price*",
+          "confidence": "high"
+        },
+        {
+          "name": "Orchids",
+          "type": "Actor",
+          "mention": "orchids",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Suggested Quantity",
+          "evidence": "Product: Odoo, Title: Suggested quantity"
+        },
+        {
+          "source": "Suggested Quantity",
+          "relation": "PRODUCES",
+          "target": "Purchase Order",
+          "evidence": "Suggestion to purchase 19 orchids."
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "CONTAINS",
+          "target": "Unit Price",
+          "evidence": "Since the *Unit Price* is $3"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "RELATED_TO",
+          "target": "Orchids",
+          "evidence": "Suggestion to purchase 19 orchids."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "planning-for-mother's-day",
+    "heading": "Planning for Mother's Day",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Planning for Mother's Day",
+          "type": "Concept",
+          "mention": "Title: Planning for Mother's Day",
+          "confidence": "high"
+        },
+        {
+          "name": "Based on",
+          "type": "Feature",
+          "mention": "*Based on*",
+          "confidence": "medium"
+        },
+        {
+          "name": "May 2024",
+          "type": "DataObject",
+          "mention": "May 2024",
+          "confidence": "medium"
+        },
+        {
+          "name": "120% growth factor",
+          "type": "Setting",
+          "mention": "120% growth factor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Planning for Mother's Day",
+          "relation": "USES_METHOD",
+          "target": "Based on",
+          "evidence": "To better plan for the upcoming Mother's day week, the company changes *Based on*"
+        },
+        {
+          "source": "Based on",
+          "relation": "USES_METHOD",
+          "target": "May 2024",
+          "evidence": "changes *Based on* to the same month last year (May 2024)"
+        },
+        {
+          "source": "Planning for Mother's Day",
+          "relation": "CONFIGURED_BY",
+          "target": "120% growth factor",
+          "evidence": "they also decide to add a 120% growth factor"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Based on",
+          "evidence": "Product: Odoo mentions *Based on* feature"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "variables",
+    "heading": "Variables",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Average Daily Demand",
+          "type": "Concept",
+          "mention": "Average Daily Demand",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish for 7 days",
+          "type": "Feature",
+          "mention": "Replenish for 7 days",
+          "confidence": "medium"
+        },
+        {
+          "name": "May 2024",
+          "type": "DataObject",
+          "mention": "May 2024",
+          "confidence": "medium"
+        },
+        {
+          "name": "361 units",
+          "type": "DataObject",
+          "mention": "361 units",
+          "confidence": "medium"
+        },
+        {
+          "name": "120%",
+          "type": "Unknown",
+          "mention": "Factor: 120%",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Replenish for 7 days",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Average Daily Demand",
+          "relation": "RELATED_TO",
+          "target": "Replenish for 7 days",
+          "evidence": "Text and calculation context"
+        },
+        {
+          "source": "Average Daily Demand",
+          "relation": "USES_METHOD",
+          "target": "May 2024",
+          "evidence": "Based on: May 2024"
+        },
+        {
+          "source": "Average Daily Demand",
+          "relation": "USES_METHOD",
+          "target": "361 units",
+          "evidence": "total delivered/consumed in the entire May 2024 month: 361 units"
+        },
+        {
+          "source": "Average Daily Demand",
+          "relation": "USES_METHOD",
+          "target": "120%",
+          "evidence": "Factor: 120%"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "suggested-quantity",
+    "heading": "Suggested quantity",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Suggested quantity",
+          "type": "Feature",
+          "mention": "Suggested quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "orchids",
+          "type": "DataObject",
+          "mention": "orchids",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Suggested quantity",
+          "relation": "GENERATES",
+          "target": "orchids",
+          "evidence": "Suggestion to purchase 102 orchids."
+        },
+        {
+          "source": "orchids",
+          "relation": "RELATED_TO",
+          "target": "Purchase",
+          "evidence": "Suggestion to purchase 102 orchids."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "best-practices",
+    "heading": "Best practices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate historical data",
+          "type": "Feature",
+          "mention": "Validate historical data",
+          "confidence": "medium"
+        },
+        {
+          "name": "Forecasts",
+          "type": "Report",
+          "mention": "Forecasts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery orders",
+          "type": "DataObject",
+          "mention": "delivery orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing orders",
+          "type": "DataObject",
+          "mention": "manufacturing orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Effective Date",
+          "type": "Field",
+          "mention": "Effective Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory actions",
+          "type": "Concept",
+          "mention": "inventory actions",
+          "confidence": "low"
+        },
+        {
+          "name": "Maintain accurate vendor pricelists",
+          "type": "Feature",
+          "mention": "Maintain accurate vendor pricelists",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor pricelists",
+          "type": "DataObject",
+          "mention": "vendor pricelists",
+          "confidence": "high"
+        },
+        {
+          "name": "Test sales projections based on seasonality",
+          "type": "Feature",
+          "mention": "Test sales projections based on seasonality",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales projections",
+          "type": "Report",
+          "mention": "sales projections",
+          "confidence": "medium"
+        },
+        {
+          "name": "Seasonality",
+          "type": "Concept",
+          "mention": "seasonality",
+          "confidence": "high"
+        },
+        {
+          "name": "Review suggestions critically",
+          "type": "Feature",
+          "mention": "Review suggestions critically",
+          "confidence": "medium"
+        },
+        {
+          "name": "Suggestions",
+          "type": "Feature",
+          "mention": "suggestions",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Validate historical data",
+          "relation": "GENERATES",
+          "target": "Forecasts",
+          "evidence": "Forecasts are based on validated delivery orders, manufacturing orders, and other inventory actions"
+        },
+        {
+          "source": "Delivery orders",
+          "relation": "CONTAINS",
+          "target": "Effective Date",
+          "evidence": "For delivery orders, the *Effective Date* field is considered"
+        },
+        {
+          "source": "Forecasts",
+          "relation": "USES_METHOD",
+          "target": "Validate historical data",
+          "evidence": "Forecasts are based on validated delivery orders, manufacturing orders, and other inventory actions"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Validate historical data",
+          "evidence": "#. Validate historical data"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Maintain accurate vendor pricelists",
+          "evidence": "#. Maintain accurate vendor pricelists"
+        },
+        {
+          "source": "Maintain accurate vendor pricelists",
+          "relation": "ENABLES",
+          "target": "Suggestions",
+          "evidence": "ensure correct suggestions"
+        },
+        {
+          "source": "Vendor pricelists",
+          "relation": "RELATED_TO",
+          "target": "Suggestions",
+          "evidence": "Review and update vendor pricelists to... ensure correct suggestions"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Test sales projections based on seasonality",
+          "evidence": "#. Test sales projections based on seasonality"
+        },
+        {
+          "source": "Test sales projections based on seasonality",
+          "relation": "PRODUCES",
+          "target": "Sales projections",
+          "evidence": "Test sales projections based on seasonality"
+        },
+        {
+          "source": "Sales projections",
+          "relation": "RELATED_TO",
+          "target": "Seasonality",
+          "evidence": "project sales based on seasonality"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Review suggestions critically",
+          "evidence": "#. Review suggestions critically"
+        },
+        {
+          "source": "Suggestions",
+          "relation": "BELONGS_TO",
+          "target": "Review suggestions critically",
+          "evidence": "the tool provides a baseline recommendation"
+        },
+        {
+          "source": "Review suggestions critically",
+          "relation": "ENABLES",
+          "target": "Business judgment",
+          "evidence": "always apply business judgment"
+        }
+      ]
+    }
+  }
+]

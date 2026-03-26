@@ -1,0 +1,556 @@
+[
+  {
+    "section_id": "team-performance",
+    "heading": "Team performance",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "**Recruitment** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Team Performance",
+          "type": "Report",
+          "mention": "*Team Performance* report",
+          "confidence": "high"
+        },
+        {
+          "name": "recruiter",
+          "type": "Actor",
+          "mention": "recruiter",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant",
+          "type": "DataObject",
+          "mention": "applicant",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant form",
+          "type": "DataObject",
+          "mention": "applicant form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruiter field",
+          "type": "Field",
+          "mention": "Recruiter field",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Team Performance",
+          "relation": "HAS_REPORT",
+          "target": "Recruitment",
+          "evidence": "The *Team Performance* report in the **Recruitment** app"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "GENERATES",
+          "target": "applicant",
+          "evidence": "report shows how many applicants"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "PERFORMED_BY",
+          "target": "recruiter",
+          "evidence": "each recruiter is managing"
+        },
+        {
+          "source": "applicant form",
+          "relation": "CONTAINS",
+          "target": "Recruiter field",
+          "evidence": "Recruiter field on each applicant form"
+        },
+        {
+          "source": "Recruiter field",
+          "relation": "CONFIGURED_BY",
+          "target": "recruiter",
+          "evidence": "populating the Recruiter field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "open-report",
+    "heading": "Open report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Team Performance",
+          "type": "Report",
+          "mention": "Team Performance report",
+          "confidence": "high"
+        },
+        {
+          "name": "Last 365 Days Applicant",
+          "type": "Filter",
+          "mention": "Last 365 Days Applicant default filter",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-area-chart",
+          "type": "Feature",
+          "mention": "default fa-area-chart (Graph) view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applicant",
+          "type": "DataObject",
+          "mention": "applicants",
+          "confidence": "medium"
+        },
+        {
+          "name": "In Progress",
+          "type": "Field",
+          "mention": "In Progress",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hired",
+          "type": "Field",
+          "mention": "Hired",
+          "confidence": "medium"
+        },
+        {
+          "name": "Refused",
+          "type": "Field",
+          "mention": "Refused",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruiter",
+          "type": "Actor",
+          "mention": "recruiter",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Team Performance",
+          "relation": "HAS_REPORT",
+          "target": "Recruitment",
+          "evidence": "To access the Team Performance report, navigate to Recruitment app --> Reporting"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "navigate to Recruitment app --> Reporting --> Team Performance"
+        },
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Recruitment",
+          "evidence": "navigate to Recruitment app --> Reporting"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "CONTAINS",
+          "target": "In Progress",
+          "evidence": "The number of In Progress, Hired, and Refused applicants"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "CONTAINS",
+          "target": "Hired",
+          "evidence": "The number of In Progress, Hired, and Refused applicants"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "CONTAINS",
+          "target": "Refused",
+          "evidence": "The number of In Progress, Hired, and Refused applicants"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "HAS_FEATURE",
+          "target": "fa-area-chart",
+          "evidence": "displayed in a default fa-area-chart (Graph) view"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "APPLIES_TO",
+          "target": "Applicant",
+          "evidence": "applicants for each recruiter"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "CONFIGURED_BY",
+          "target": "Last 365 Days Applicant",
+          "evidence": "The information shown is for the fa-filter Last 365 Days Applicant default filter"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "PRODUCES",
+          "target": "In Progress",
+          "evidence": "The number of In Progress...applicants for each recruiter is displayed"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "PRODUCES",
+          "target": "Hired",
+          "evidence": "The number of...Hired...applicants for each recruiter is displayed"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "PRODUCES",
+          "target": "Refused",
+          "evidence": "The number of...Refused applicants for each recruiter is displayed"
+        },
+        {
+          "source": "Team Performance",
+          "relation": "APPLIES_TO",
+          "target": "Recruiter",
+          "evidence": "for each recruiter"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "pivot-table-view",
+    "heading": "Pivot table view",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Team Performance report",
+          "type": "Report",
+          "mention": "Team Performance report",
+          "confidence": "high"
+        },
+        {
+          "name": "Pivot table view",
+          "type": "Feature",
+          "mention": "Pivot table view",
+          "confidence": "high"
+        },
+        {
+          "name": "oi-view-pivot",
+          "type": "Feature",
+          "mention": "oi-view-pivot",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pivot",
+          "type": "Feature",
+          "mention": "Pivot",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applicant",
+          "type": "DataObject",
+          "mention": "Applicant",
+          "confidence": "medium"
+        },
+        {
+          "name": "job position",
+          "type": "DataObject",
+          "mention": "job position",
+          "confidence": "medium"
+        },
+        {
+          "name": "Experienced Developer",
+          "type": "DataObject",
+          "mention": "Experienced Developer job position",
+          "confidence": "medium"
+        },
+        {
+          "name": "Marketing and Community Manager",
+          "type": "DataObject",
+          "mention": "Marketing and Community Manager position",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quality Control Inspector",
+          "type": "DataObject",
+          "mention": "Quality Control Inspector position",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hired",
+          "type": "Concept",
+          "mention": "Hired",
+          "confidence": "medium"
+        },
+        {
+          "name": "Refused",
+          "type": "Concept",
+          "mention": "Refused",
+          "confidence": "medium"
+        },
+        {
+          "name": "In Progress",
+          "type": "Concept",
+          "mention": "In Progress",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Pivot table view",
+          "evidence": "Product: Odoo\nTitle: Pivot table view"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Team Performance report",
+          "evidence": "Team Performance report"
+        },
+        {
+          "source": "Pivot table view",
+          "relation": "CONTAINS",
+          "target": "oi-view-pivot",
+          "evidence": "oi-view-pivot (Pivot) icon"
+        },
+        {
+          "source": "oi-view-pivot",
+          "relation": "EQUIVALENT_TO",
+          "target": "Pivot",
+          "evidence": "oi-view-pivot (Pivot)"
+        },
+        {
+          "source": "Pivot table view",
+          "relation": "BELONGS_TO",
+          "target": "Team Performance report",
+          "evidence": "For a more detailed view of the information in the Team Performance report"
+        },
+        {
+          "source": "Team Performance report",
+          "relation": "GENERATES",
+          "target": "Pivot table view",
+          "evidence": "click the oi-view-pivot (Pivot) icon... This displays all the information in a pivot table"
+        },
+        {
+          "source": "Pivot table view",
+          "relation": "CONTAINS",
+          "target": "Applicant",
+          "evidence": "the first column, Applicant"
+        },
+        {
+          "source": "Pivot table view",
+          "relation": "CONTAINS",
+          "target": "job position",
+          "evidence": "the job positions populate the rows"
+        },
+        {
+          "source": "Applicant",
+          "relation": "RELATED_TO",
+          "target": "Hired",
+          "evidence": "total applicants that have been Hired"
+        },
+        {
+          "source": "Applicant",
+          "relation": "RELATED_TO",
+          "target": "Refused",
+          "evidence": "total applicants that have been Refused"
+        },
+        {
+          "source": "Applicant",
+          "relation": "RELATED_TO",
+          "target": "In Progress",
+          "evidence": "total applicants that have been In Progress"
+        },
+        {
+          "source": "Hired",
+          "type": "Concept",
+          "mention": "Hired",
+          "confidence": "medium"
+        },
+        {
+          "source": "Refused",
+          "type": "Concept",
+          "mention": "Refused",
+          "confidence": "medium"
+        },
+        {
+          "source": "In Progress",
+          "type": "Concept",
+          "mention": "In Progress",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-case:-recruiter-performance-over-time",
+    "heading": "Use case: recruiter performance over time",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Team Performance report",
+          "type": "Report",
+          "mention": "Team Performance report",
+          "confidence": "high"
+        },
+        {
+          "name": "oi-view-pivot",
+          "type": "Feature",
+          "mention": "oi-view-pivot",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pivot view",
+          "type": "Feature",
+          "mention": "Pivot",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "low"
+        },
+        {
+          "name": "fa-caret-down",
+          "type": "Feature",
+          "mention": "fa-caret-down",
+          "confidence": "low"
+        },
+        {
+          "name": "Add Custom Group",
+          "type": "Action",
+          "mention": "Add Custom Group",
+          "confidence": "medium"
+        },
+        {
+          "name": "oi-group",
+          "type": "Feature",
+          "mention": "oi-group",
+          "confidence": "low"
+        },
+        {
+          "name": "Group By column",
+          "type": "Feature",
+          "mention": "Group By column",
+          "confidence": "low"
+        },
+        {
+          "name": "Recruiter",
+          "type": "DataObject",
+          "mention": "Recruiter",
+          "confidence": "medium"
+        },
+        {
+          "name": "Application Date",
+          "type": "Field",
+          "mention": "Application Date",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-filter Filters column",
+          "type": "Feature",
+          "mention": "fa-filter Filters column",
+          "confidence": "low"
+        },
+        {
+          "name": "Comparison column",
+          "type": "Feature",
+          "mention": "Comparison column",
+          "confidence": "low"
+        },
+        {
+          "name": "Start Date: Previous Period",
+          "type": "Action",
+          "mention": "Start Date: Previous Period",
+          "confidence": "medium"
+        },
+        {
+          "name": "Maggie Davidsons",
+          "type": "Actor",
+          "mention": "Maggie Davidsons",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Team Performance report",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Team Performance report in the oi-view-pivot (Pivot) view"
+        },
+        {
+          "source": "oi-view-pivot",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "oi-view-pivot (Pivot) view"
+        },
+        {
+          "source": "Team Performance report",
+          "relation": "HAS_REPORT",
+          "target": "Team Performance report",
+          "evidence": "Team Performance report"
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "ENABLES",
+          "target": "Recruiter",
+          "evidence": "Click Add Custom Group... then click Recruiter"
+        },
+        {
+          "source": "Recruiter",
+          "relation": "CONFIGURED_BY",
+          "target": "Group By column",
+          "evidence": "Add Custom Group fa-caret-down at the bottom of the oi-group Group By column"
+        },
+        {
+          "source": "Application Date",
+          "relation": "CONFIGURED_BY",
+          "target": "fa-filter Filters column",
+          "evidence": "Click Application Date fa-caret-down in the fa-filter Filters column"
+        },
+        {
+          "source": "Start Date: Previous Period",
+          "relation": "PERFORMED_BY",
+          "target": "Maggie Davidsons",
+          "evidence": "Maggie Davidsons had the highest increase..."
+        }
+      ]
+    }
+  }
+]

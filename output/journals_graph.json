@@ -1,0 +1,1450 @@
+[
+  {
+    "section_id": "journals",
+    "heading": "Journals",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "Module",
+          "mention": "journals",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Module",
+          "mention": "Accounting Dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank",
+          "type": "Sub-module",
+          "mention": "Bank",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash",
+          "type": "Sub-module",
+          "mention": "Cash",
+          "confidence": "high"
+        },
+        {
+          "name": "Credit Card",
+          "type": "Sub-module",
+          "mention": "Credit Card",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Sub-module",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Sub-module",
+          "mention": "Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "Miscellaneous",
+          "type": "Sub-module",
+          "mention": "Miscellaneous",
+          "confidence": "high"
+        },
+        {
+          "name": "Short Code",
+          "type": "Field",
+          "mention": "Short Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "Currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Allowed accounts",
+          "type": "Field",
+          "mention": "Allowed accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Alias",
+          "type": "Field",
+          "mention": "Email Alias",
+          "confidence": "high"
+        },
+        {
+          "name": "Secure Posted Entries with Hash",
+          "type": "Setting",
+          "mention": "Secure Posted Entries with Hash",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank",
+          "relation": "IS_PART_OF",
+          "target": "Journal",
+          "evidence": "Bank <accounting/journals/bank>"
+        },
+        {
+          "source": "Cash",
+          "relation": "IS_PART_OF",
+          "target": "Journal",
+          "evidence": "Cash <accounting/journals/cash>"
+        },
+        {
+          "source": "Credit Card",
+          "relation": "IS_PART_OF",
+          "target": "Journal",
+          "evidence": "Credit Card <accounting/journals/credit>"
+        },
+        {
+          "source": "Sales",
+          "relation": "IS_PART_OF",
+          "target": "Journal",
+          "evidence": "Sales <accounting/journals/sales>"
+        },
+        {
+          "source": "Purchase",
+          "relation": "IS_PART_OF",
+          "target": "Journal",
+          "evidence": "Purchase <accounting/journals/purchase>"
+        },
+        {
+          "source": "Miscellaneous",
+          "relation": "IS_PART_OF",
+          "target": "Journal",
+          "evidence": "Miscellaneous <accounting/journals/misc>"
+        },
+        {
+          "source": "Journal",
+          "relation": "HAS_FEATURE",
+          "target": "Accounting Dashboard",
+          "evidence": "Each card on the Accounting Dashboard represents a journal."
+        },
+        {
+          "source": "Journal",
+          "relation": "CONTAINS",
+          "target": "Short Code",
+          "evidence": "- Short Code: Each journal must have a unique code (from 1 to 5 characters long)."
+        },
+        {
+          "source": "Journal",
+          "relation": "CONTAINS",
+          "target": "Currency",
+          "evidence": "- Currency: If desired, set the currency of this journal."
+        },
+        {
+          "source": "Journal",
+          "relation": "CONTAINS",
+          "target": "Allowed accounts",
+          "evidence": "- Allowed accounts: Limit which accounts are available when recording journal entries in this journal."
+        },
+        {
+          "source": "Journal",
+          "relation": "CONTAINS",
+          "target": "Email Alias",
+          "evidence": "- Email Alias: Set an email address to create journal entries by digitizing PDFs sent to this address."
+        },
+        {
+          "source": "Journal",
+          "relation": "CONTAINS",
+          "target": "Secure Posted Entries with Hash",
+          "evidence": "- Secure Posted Entries with Hash: Restrict the alterability <../reporting/data_inalterability> of this journal's entries to comply with tax authorities in certain countries."
+        },
+        {
+          "source": "Bank",
+          "relation": "RELATED_TO",
+          "target": "Cash",
+          "evidence": "Bank and cash journals do not have the Secure Posted Entries with Hash or Email Alias fields."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bank,-cash,-and-credit-card-journals",
+    "heading": "Bank, cash, and credit card journals",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank, cash, and credit card journals",
+          "type": "Module",
+          "mention": "Bank, cash, and credit card journals",
+          "confidence": "high"
+        },
+        {
+          "name": "Suspense Account",
+          "type": "Feature",
+          "mention": "Suspense Account",
+          "confidence": "high"
+        },
+        {
+          "name": "bank transaction",
+          "type": "Action",
+          "mention": "When a bank transaction is reconciled",
+          "confidence": "high"
+        },
+        {
+          "name": "general ledger",
+          "type": "DataObject",
+          "mention": "the general ledger",
+          "confidence": "high"
+        },
+        {
+          "name": "bank suspense account",
+          "type": "Account",
+          "mention": "bank suspense account",
+          "confidence": "high"
+        },
+        {
+          "name": "outstanding receipts or payments account",
+          "type": "Account",
+          "mention": "the outstanding receipts or payments account",
+          "confidence": "medium"
+        },
+        {
+          "name": "account receivable or payable",
+          "type": "Account",
+          "mention": "account receivable or payable",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dedicated Payment Sequence",
+          "type": "Feature",
+          "mention": "Dedicated Payment Sequence",
+          "confidence": "high"
+        },
+        {
+          "name": "field",
+          "type": "Field",
+          "mention": "Dedicated Payment Sequence field",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal's short code",
+          "type": "Field",
+          "mention": "journal's short code",
+          "confidence": "medium"
+        },
+        {
+          "name": "Incoming Payments",
+          "type": "Sub-module",
+          "mention": "Incoming Payments tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Outgoing Payments",
+          "type": "Sub-module",
+          "mention": "Outgoing Payments tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment methods",
+          "type": "Feature",
+          "mention": "payment methods",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal type",
+          "type": "Field",
+          "mention": "journal type",
+          "confidence": "medium"
+        },
+        {
+          "name": "outstanding accounts",
+          "type": "Account",
+          "mention": "outstanding accounts",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank, cash, and credit card journals",
+          "relation": "CONTAINS",
+          "target": "Incoming Payments",
+          "evidence": "The Incoming Payments and Outgoing Payments tabs contain the payment methods"
+        },
+        {
+          "source": "Bank, cash, and credit card journals",
+          "relation": "CONTAINS",
+          "target": "Outgoing Payments",
+          "evidence": "The Incoming Payments and Outgoing Payments tabs contain the payment methods"
+        },
+        {
+          "source": "Bank, cash, and credit card journals",
+          "relation": "HAS_FEATURE",
+          "target": "Suspense Account",
+          "evidence": "Bank, cash, and credit card journals share the following features: - Suspense Account"
+        },
+        {
+          "source": "Bank, cash, and credit card journals",
+          "relation": "HAS_FEATURE",
+          "target": "Dedicated Payment Sequence",
+          "evidence": "Bank, cash, and credit card journals share the following features: - Dedicated Payment Sequence"
+        },
+        {
+          "source": "Bank, cash, and credit card journals",
+          "relation": "CONTAINS",
+          "target": "payment methods",
+          "evidence": "The Incoming Payments and Outgoing Payments tabs contain the payment methods"
+        },
+        {
+          "source": "payment methods",
+          "relation": "CONFIGURED_BY",
+          "target": "journal type",
+          "evidence": "Different payment methods are available depending on the journal type"
+        },
+        {
+          "source": "Suspense Account",
+          "relation": "PRODUCES",
+          "target": "general ledger",
+          "evidence": "At any moment, the suspense account's balance in the general ledger shows the balance of transactions"
+        },
+        {
+          "source": "bank transaction",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "When a bank transaction is reconciled, the journal entry is modified"
+        },
+        {
+          "source": "bank transaction",
+          "relation": "TRIGGERED_BY",
+          "target": "Action",
+          "evidence": "When a bank transaction is reconciled"
+        },
+        {
+          "source": "Dedicated Payment Sequence",
+          "relation": "CONFIGURED_BY",
+          "target": "field",
+          "evidence": "Tick this field to use separate sequences"
+        },
+        {
+          "source": "payment methods",
+          "relation": "CONFIGURED_BY",
+          "target": "outstanding accounts",
+          "evidence": "If desired, set outstanding accounts on the payment methods"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "outstanding-accounts",
+    "heading": "Outstanding accounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payments",
+          "type": "Feature",
+          "mention": "payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal entries",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Outstanding accounts",
+          "type": "Concept",
+          "mention": "outstanding accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Outstanding receipts account",
+          "type": "Field",
+          "mention": "outstanding receipts account",
+          "confidence": "high"
+        },
+        {
+          "name": "Outstanding payments account",
+          "type": "Field",
+          "mention": "outstanding payments account",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank journal",
+          "type": "Module",
+          "mention": "bank journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash journal",
+          "type": "Module",
+          "mention": "cash journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Current Assets",
+          "type": "Standard",
+          "mention": "Current Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "Current Liabilities",
+          "type": "Standard",
+          "mention": "Current Liabilities",
+          "confidence": "high"
+        },
+        {
+          "name": "General ledger",
+          "type": "Report",
+          "mention": "general ledger",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payments",
+          "relation": "CONFIGURED_BY",
+          "target": "Outstanding accounts",
+          "evidence": "payments in Odoo do not create journal entries, but they can be configured to create journal entries by using outstanding accounts"
+        },
+        {
+          "source": "Bank journal",
+          "relation": "USES_METHOD",
+          "target": "Outstanding accounts",
+          "evidence": "using outstanding accounts on bank journals"
+        },
+        {
+          "source": "Cash journal",
+          "relation": "USES_METHOD",
+          "target": "Outstanding accounts",
+          "evidence": "using outstanding accounts on cash journals"
+        },
+        {
+          "source": "Outstanding receipts account",
+          "relation": "SUPPORTS",
+          "target": "Current Assets",
+          "evidence": "These accounts are usually of type Current Assets"
+        },
+        {
+          "source": "Outstanding payments account",
+          "relation": "SUPPORTS",
+          "target": "Current Liabilities",
+          "evidence": "These accounts are usually of type Current Liabilities"
+        },
+        {
+          "source": "Outstanding receipts account",
+          "relation": "GENERATES",
+          "target": "General ledger",
+          "evidence": "the outstanding receipts account's balance in the general ledger"
+        },
+        {
+          "source": "Outstanding payments account",
+          "relation": "GENERATES",
+          "target": "General ledger",
+          "evidence": "the outstanding payments account's balance in the general ledger"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Journals",
+          "type": "Module",
+          "mention": "Journals",
+          "confidence": "high"
+        },
+        {
+          "name": "bank journal",
+          "type": "DataObject",
+          "mention": "bank journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "cash journal",
+          "type": "DataObject",
+          "mention": "cash journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Incoming Payments",
+          "type": "Feature",
+          "mention": "Incoming Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Outgoing Payments",
+          "type": "Feature",
+          "mention": "Outgoing Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Outstanding Receipts accounts",
+          "type": "Field",
+          "mention": "Outstanding Receipts accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Outstanding Payments accounts",
+          "type": "Field",
+          "mention": "Outstanding Payments accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "payment method",
+          "type": "DataObject",
+          "mention": "payment method",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal entry",
+          "type": "DataObject",
+          "mention": "journal entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "main bank account",
+          "type": "DataObject",
+          "mention": "main bank account",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "Paid",
+          "type": "Concept",
+          "mention": "Paid",
+          "confidence": "high"
+        },
+        {
+          "name": "registering a payment",
+          "type": "Action",
+          "mention": "registering a payment",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Configuration"
+        },
+        {
+          "source": "Journals",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Journals"
+        },
+        {
+          "source": "bank journal",
+          "relation": "IS_PART_OF",
+          "target": "Journals",
+          "evidence": "select or create a bank journal"
+        },
+        {
+          "source": "cash journal",
+          "relation": "IS_PART_OF",
+          "target": "Journals",
+          "evidence": "select or create a cash journal"
+        },
+        {
+          "source": "Outstanding Receipts accounts",
+          "relation": "BELONGS_TO",
+          "target": "Incoming Payments",
+          "evidence": "In the Incoming Payments tabs, set Outstanding Receipts accounts"
+        },
+        {
+          "source": "Outstanding Payments accounts",
+          "relation": "BELONGS_TO",
+          "target": "Outgoing Payments",
+          "evidence": "Outgoing Payments tabs, set Outstanding Payments accounts"
+        },
+        {
+          "source": "payment method",
+          "relation": "CONFIGURED_BY",
+          "target": "Outstanding Receipts accounts",
+          "evidence": "set Outstanding Receipts accounts for each payment method"
+        },
+        {
+          "source": "payment method",
+          "relation": "CONFIGURED_BY",
+          "target": "Outstanding Payments accounts",
+          "evidence": "Outstanding Payments accounts for each payment method"
+        },
+        {
+          "source": "registering a payment",
+          "relation": "PRODUCES",
+          "target": "journal entry",
+          "evidence": "registering a payment with that payment method will not create any journal entry"
+        },
+        {
+          "source": "payment method",
+          "relation": "REQUIRES",
+          "target": "Outstanding Receipts accounts",
+          "evidence": "payment method is left blank, registering a payment... will not create any journal entry"
+        },
+        {
+          "source": "payment method",
+          "relation": "REQUIRES",
+          "target": "Outstanding Payments accounts",
+          "evidence": "payment method is left blank, registering a payment... will not create any journal entry"
+        },
+        {
+          "source": "main bank account",
+          "relation": "APPLIES_TO",
+          "target": "invoice",
+          "evidence": "invoice or bill's status is directly set to Paid"
+        },
+        {
+          "source": "main bank account",
+          "relation": "APPLIES_TO",
+          "target": "bill",
+          "evidence": "invoice or bill's status is directly set to Paid"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bank",
+    "heading": "Bank",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank",
+          "type": "Module",
+          "mention": "Bank",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank journal",
+          "type": "DataObject",
+          "mention": "Bank journals",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank transaction",
+          "type": "DataObject",
+          "mention": "bank transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment",
+          "type": "DataObject",
+          "mention": "payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Account",
+          "type": "Field",
+          "mention": "Bank Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Account Number",
+          "type": "Field",
+          "mention": "Account Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank",
+          "type": "Field",
+          "mention": "Bank",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Feeds",
+          "type": "Field",
+          "mention": "Bank Feeds",
+          "confidence": "high"
+        },
+        {
+          "name": "Split Transactions",
+          "type": "Field",
+          "mention": "Split Transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA",
+          "type": "Standard",
+          "mention": "SEPA",
+          "confidence": "medium"
+        },
+        {
+          "name": "NACHA",
+          "type": "Standard",
+          "mention": "NACHA",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manual",
+          "type": "Feature",
+          "mention": "Manual",
+          "confidence": "medium"
+        },
+        {
+          "name": "Online Synchronization",
+          "type": "Feature",
+          "mention": "Online Synchronization",
+          "confidence": "medium"
+        },
+        {
+          "name": "CODA",
+          "type": "Standard",
+          "mention": "CODA",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank journal",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Bank journals are used to record journal entries"
+        },
+        {
+          "source": "Bank journal",
+          "relation": "CONTAINS",
+          "target": "Bank Account",
+          "evidence": "Bank Account: This Bank and Cash type account is the default account for this bank journal."
+        },
+        {
+          "source": "Bank journal",
+          "relation": "CONTAINS",
+          "target": "Account Number",
+          "evidence": "The following fields are specific to bank journals: Account Number"
+        },
+        {
+          "source": "Bank journal",
+          "relation": "CONTAINS",
+          "target": "Bank",
+          "evidence": "The following fields are specific to bank journals: Bank"
+        },
+        {
+          "source": "Bank journal",
+          "relation": "CONTAINS",
+          "target": "Bank Feeds",
+          "evidence": "The following fields are specific to bank journals: Bank Feeds"
+        },
+        {
+          "source": "Bank journal",
+          "relation": "CONTAINS",
+          "target": "Split Transactions",
+          "evidence": "The following fields are specific to bank journals: Split Transactions"
+        },
+        {
+          "source": "Account Number",
+          "relation": "REQUIRES",
+          "target": "SEPA",
+          "evidence": "The bank account's number is required for generating outgoing payment files, such as SEPA"
+        },
+        {
+          "source": "Account Number",
+          "relation": "REQUIRES",
+          "target": "NACHA",
+          "evidence": "The bank account's number is required for generating outgoing payment files, such as NACHA"
+        },
+        {
+          "source": "Bank Feeds",
+          "relation": "CONFIGURED_BY",
+          "target": "Manual",
+          "evidence": "Define the method of creating bank transactions, whether Manual"
+        },
+        {
+          "source": "Bank Feeds",
+          "relation": "CONFIGURED_BY",
+          "target": "Online Synchronization",
+          "evidence": "Define the method of creating bank transactions, whether Manual or via Online Synchronization"
+        },
+        {
+          "source": "Split Transactions",
+          "relation": "SUPPORTS",
+          "target": "CODA",
+          "evidence": "Split collective payments for CODA files."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "cash",
+    "heading": "Cash",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash",
+          "type": "Module",
+          "mention": "Title: Cash",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash Account",
+          "type": "Field",
+          "mention": "Cash Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Profit Account",
+          "type": "Field",
+          "mention": "Profit Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Loss Account",
+          "type": "Field",
+          "mention": "Loss Account",
+          "confidence": "high"
+        },
+        {
+          "name": "cash journal",
+          "type": "DataObject",
+          "mention": "cash journals",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank and Cash type account",
+          "type": "Concept",
+          "mention": "Bank and Cash type account",
+          "confidence": "high"
+        },
+        {
+          "name": "Income or Other Income type account",
+          "type": "Concept",
+          "mention": "Income or Other Income type account",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses type account",
+          "type": "Concept",
+          "mention": "Expenses type account",
+          "confidence": "high"
+        },
+        {
+          "name": "cash register",
+          "type": "DataObject",
+          "mention": "cash register",
+          "confidence": "medium"
+        },
+        {
+          "name": "manual payment methods",
+          "type": "Feature",
+          "mention": "manual payment methods",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Cash",
+          "relation": "CONTAINS",
+          "target": "cash journal",
+          "evidence": "Cash journals are used to record journal entries related to cash transactions"
+        },
+        {
+          "source": "cash journal",
+          "relation": "BELONGS_TO",
+          "target": "Cash",
+          "evidence": "Cash journals are used to record journal entries related to cash transactions"
+        },
+        {
+          "source": "cash journal",
+          "relation": "CONTAINS",
+          "target": "Cash Account",
+          "evidence": "The following fields are specific to cash journals: - Cash Account"
+        },
+        {
+          "source": "cash journal",
+          "relation": "CONTAINS",
+          "target": "Profit Account",
+          "evidence": "The following fields are specific to cash journals: - Profit Account"
+        },
+        {
+          "source": "cash journal",
+          "relation": "CONTAINS",
+          "target": "Loss Account",
+          "evidence": "The following fields are specific to cash journals: - Loss Account"
+        },
+        {
+          "source": "Cash Account",
+          "relation": "RELATED_TO",
+          "target": "Bank and Cash type account",
+          "evidence": "This Bank and Cash type account is the default account for this cash journal"
+        },
+        {
+          "source": "Profit Account",
+          "relation": "RELATED_TO",
+          "target": "Income or Other Income type account",
+          "evidence": "This Income or Other Income type account is used"
+        },
+        {
+          "source": "Loss Account",
+          "relation": "RELATED_TO",
+          "target": "Expenses type account",
+          "evidence": "This Expenses type account is used"
+        },
+        {
+          "source": "cash journal",
+          "relation": "SUPPORTS",
+          "target": "manual payment methods",
+          "evidence": "Only manual payment methods are available for cash journals"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "credit-card",
+    "heading": "Credit card",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Credit card journal",
+          "type": "Module",
+          "mention": "credit card journals",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Account",
+          "type": "DataObject",
+          "mention": "Journal Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Feeds",
+          "type": "Feature",
+          "mention": "Bank Feeds",
+          "confidence": "high"
+        },
+        {
+          "name": "Online Synchronization",
+          "type": "Integration",
+          "mention": "Online Synchronization",
+          "confidence": "high"
+        },
+        {
+          "name": "Credit Card",
+          "type": "Product",
+          "mention": "Credit Card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "credit card journal",
+          "type": "Module",
+          "mention": "credit card journal",
+          "confidence": "high"
+        },
+        {
+          "name": "credit card transactions",
+          "type": "DataObject",
+          "mention": "credit card transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "manual payment methods",
+          "type": "Feature",
+          "mention": "manual payment methods",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Credit card journal",
+          "relation": "CONTAINS",
+          "target": "Journal Account",
+          "evidence": "Credit card journals are used to record journal entries related to credit cards. The following fields are specific to credit card journals: - Journal Account"
+        },
+        {
+          "source": "Credit card journal",
+          "relation": "CONTAINS",
+          "target": "Bank Feeds",
+          "evidence": "The following fields are specific to credit card journals: - Bank Feeds"
+        },
+        {
+          "source": "Bank Feeds",
+          "relation": "ENABLES",
+          "target": "credit card transactions",
+          "evidence": "Define the method of creating credit card transactions, whether manual or via Online Synchronization"
+        },
+        {
+          "source": "Bank Feeds",
+          "relation": "SUPPORTS",
+          "target": "Online Synchronization",
+          "evidence": "Define the method of creating credit card transactions, whether manual or via Online Synchronization"
+        },
+        {
+          "source": "Credit card journal",
+          "relation": "HAS_FEATURE",
+          "target": "manual payment methods",
+          "evidence": "Only manual payment methods are available for credit card journals"
+        },
+        {
+          "source": "Credit Card",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Credit card"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sales",
+    "heading": "Sales",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales journals",
+          "type": "Module",
+          "mention": "Sales journals",
+          "confidence": "high"
+        },
+        {
+          "name": "customer invoices",
+          "type": "DataObject",
+          "mention": "customer invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Income Account",
+          "type": "Field",
+          "mention": "Default Income Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Income or Other Income type account",
+          "type": "Field",
+          "mention": "Income or Other Income type account",
+          "confidence": "high"
+        },
+        {
+          "name": "product category",
+          "type": "DataObject",
+          "mention": "product category",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice line",
+          "type": "DataObject",
+          "mention": "invoice line",
+          "confidence": "high"
+        },
+        {
+          "name": "Dedicated Credit Note Sequence",
+          "type": "Field",
+          "mention": "Dedicated Credit Note Sequence",
+          "confidence": "high"
+        },
+        {
+          "name": "credit notes",
+          "type": "DataObject",
+          "mention": "credit notes",
+          "confidence": "high"
+        },
+        {
+          "name": "main invoice sequence",
+          "type": "DataObject",
+          "mention": "main invoice sequence",
+          "confidence": "high"
+        },
+        {
+          "name": "journal's short code",
+          "type": "Field",
+          "mention": "journal's short code",
+          "confidence": "high"
+        },
+        {
+          "name": "Dedicated Debit Note Sequence",
+          "type": "Field",
+          "mention": "Dedicated Debit Note Sequence",
+          "confidence": "high"
+        },
+        {
+          "name": "Advanced Settings tab",
+          "type": "Module",
+          "mention": "Advanced Settings tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Communication Type",
+          "type": "Field",
+          "mention": "Communication Type",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice number",
+          "type": "Field",
+          "mention": "invoice number",
+          "confidence": "high"
+        },
+        {
+          "name": "customer's number",
+          "type": "Field",
+          "mention": "customer's number",
+          "confidence": "high"
+        },
+        {
+          "name": "Communication Standard",
+          "type": "Field",
+          "mention": "Communication Standard",
+          "confidence": "high"
+        },
+        {
+          "name": "payment reference",
+          "type": "DataObject",
+          "mention": "payment reference",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Sales",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "Sales journals",
+          "evidence": "Sales journals, also known as income journals, are used..."
+        },
+        {
+          "source": "Sales journals",
+          "relation": "IS_PART_OF",
+          "target": "Sales",
+          "evidence": "Sales journals, also known as income journals, are used..."
+        },
+        {
+          "source": "Sales journals",
+          "relation": "HAS_FEATURE",
+          "target": "Default Income Account",
+          "evidence": "The following fields are specific..."
+        },
+        {
+          "source": "Sales journals",
+          "relation": "HAS_FEATURE",
+          "target": "Dedicated Credit Note Sequence",
+          "evidence": "The following fields are specific..."
+        },
+        {
+          "source": "Sales journals",
+          "relation": "HAS_FEATURE",
+          "target": "Dedicated Debit Note Sequence",
+          "evidence": "The following fields are specific..."
+        },
+        {
+          "source": "Sales journals",
+          "relation": "HAS_FEATURE",
+          "target": "Advanced Settings tab",
+          "evidence": "Sales journals have additional fields in the Advanced Settings tab"
+        },
+        {
+          "source": "Sales journals",
+          "relation": "GENERATES",
+          "target": "customer invoices",
+          "evidence": "...used to record journal entries related to customer invoices"
+        },
+        {
+          "source": "Advanced Settings tab",
+          "relation": "CONTAINS",
+          "target": "Communication Type",
+          "evidence": "Advanced Settings tab that allow you to set the default communication format"
+        },
+        {
+          "source": "Advanced Settings tab",
+          "relation": "CONTAINS",
+          "target": "Communication Standard",
+          "evidence": "Advanced Settings tab that allow you to set the default communication format"
+        },
+        {
+          "source": "Communication Type",
+          "relation": "RELATED_TO",
+          "target": "invoice number",
+          "evidence": "based on the invoice number"
+        },
+        {
+          "source": "Communication Type",
+          "relation": "RELATED_TO",
+          "target": "customer's number",
+          "evidence": "based on the customer's number"
+        },
+        {
+          "source": "Communication Standard",
+          "relation": "RELATED_TO",
+          "target": "payment reference",
+          "evidence": "Choose the format of the payment reference"
+        },
+        {
+          "source": "Default Income Account",
+          "relation": "RELATED_TO",
+          "target": "Income or Other Income type account",
+          "evidence": "Invoices in this journal use this Income or Other Income type account"
+        },
+        {
+          "source": "customer invoices",
+          "relation": "SEE_ALSO",
+          "target": "../customer_invoices",
+          "evidence": "<../customer_invoices>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "purchase",
+    "heading": "Purchase",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Title: Purchase",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase journal",
+          "type": "Sub-module",
+          "mention": "Purchase journals",
+          "confidence": "medium"
+        },
+        {
+          "name": "Default Expense Account",
+          "type": "Field",
+          "mention": "Default Expense Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Private Part Account",
+          "type": "Field",
+          "mention": "Private Part Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Dedicated Credit Note Sequence",
+          "type": "Field",
+          "mention": "Dedicated Credit Note Sequence",
+          "confidence": "high"
+        },
+        {
+          "name": "Dedicated Debit Note Sequence",
+          "type": "Field",
+          "mention": "Dedicated Debit Note Sequence",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "CONTAINS",
+          "target": "Purchase journal",
+          "evidence": "Purchase journals are used"
+        },
+        {
+          "source": "Purchase journal",
+          "relation": "HAS_FEATURE",
+          "target": "Default Expense Account",
+          "evidence": "The following fields are specific to purchase journals"
+        },
+        {
+          "source": "Purchase journal",
+          "relation": "HAS_FEATURE",
+          "target": "Private Part Account",
+          "evidence": "The following fields are specific to purchase journals"
+        },
+        {
+          "source": "Purchase journal",
+          "relation": "HAS_FEATURE",
+          "target": "Dedicated Credit Note Sequence",
+          "evidence": "The following fields are specific to purchase journals"
+        },
+        {
+          "source": "Purchase journal",
+          "relation": "HAS_FEATURE",
+          "target": "Dedicated Debit Note Sequence",
+          "evidence": "The following fields are specific to purchase journals"
+        },
+        {
+          "source": "Purchase",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Purchase journal",
+          "relation": "BELONGS_TO",
+          "target": "Purchase",
+          "evidence": "Purchase journals are used"
+        },
+        {
+          "source": "Default Expense Account",
+          "relation": "IS_PART_OF",
+          "target": "Purchase journal",
+          "evidence": "The following fields are specific to purchase journals"
+        },
+        {
+          "source": "Private Part Account",
+          "relation": "IS_PART_OF",
+          "target": "Purchase journal",
+          "evidence": "The following fields are specific to purchase journals"
+        },
+        {
+          "source": "Dedicated Credit Note Sequence",
+          "relation": "IS_PART_OF",
+          "target": "Purchase journal",
+          "evidence": "The following fields are specific to purchase journals"
+        },
+        {
+          "source": "Dedicated Debit Note Sequence",
+          "relation": "IS_PART_OF",
+          "target": "Purchase journal",
+          "evidence": "The following fields are specific to purchase journals"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "miscellaneous",
+    "heading": "Miscellaneous",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Miscellaneous",
+          "type": "Module",
+          "mention": "Title: Miscellaneous",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax Return eLearning",
+          "type": "Concept",
+          "mention": "Tax return eLearning",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Miscellaneous",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Miscellaneous",
+          "relation": "SEE_ALSO",
+          "target": "Tax Return eLearning",
+          "evidence": "seealso: Tax return eLearning"
+        },
+        {
+          "source": "Miscellaneous",
+          "relation": "SEE_ALSO",
+          "target": "../reporting/tax_returns",
+          "evidence": "seealso: ../reporting/tax_returns"
+        },
+        {
+          "source": "Miscellaneous",
+          "relation": "SEE_ALSO",
+          "target": "../taxes",
+          "evidence": "seealso: ../taxes"
+        }
+      ]
+    }
+  }
+]

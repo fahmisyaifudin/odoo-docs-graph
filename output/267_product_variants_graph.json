@@ -1,0 +1,982 @@
+[
+  {
+    "section_id": "managing-boms-for-product-variants",
+    "heading": "Managing BoMs for product variants",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Managing BoMs for product variants",
+          "type": "Module",
+          "mention": "Title: Managing BoMs for product variants",
+          "confidence": "medium"
+        },
+        {
+          "name": "bill of materials",
+          "type": "DataObject",
+          "mention": "bill of materials",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM",
+          "type": "DataObject",
+          "mention": "BoM",
+          "confidence": "high"
+        },
+        {
+          "name": "product variants",
+          "type": "DataObject",
+          "mention": "product variants",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "bill of materials",
+          "relation": "BELONGS_TO",
+          "target": "product variants",
+          "evidence": "BoM to be used for multiple variants of the same product"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Managing BoMs for product variants",
+          "evidence": "Odoo allows one bill of materials (BoM) to be used for multiple variants"
+        },
+        {
+          "source": "Managing BoMs for product variants",
+          "relation": "CONTAINS",
+          "target": "bill of materials",
+          "evidence": "Managing BoMs for product variants"
+        },
+        {
+          "source": "Managing BoMs for product variants",
+          "relation": "CONTAINS",
+          "target": "product variants",
+          "evidence": "Managing BoMs for product variants"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "activate-product-variants",
+    "heading": "Activate product variants",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ',' delimiter: line 1 column 698 (char 697)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Odoo\",\"confidence\":\"high\"},{\"name\":\"Inventory app\",\"type\":\"Module\",\"mention\":\"Inventory app\",\"confidence\":\"high\"},{\"name\":\"Configuration\",\"type\":\"Sub-module\",\"mention\":\"Configuration\",\"confidence\":\"high\"},{\"name\":\"Settings\",\"type\":\"Setting\",\"mention\":\"Settings\",\"confidence\":\"high\"},{\"name\":\"Products\",\"type\":\"DataObject\",\"mention\":\"Products\",\"confidence\":\"medium\"},{\"name\":\"Variants\",\"type\":\"Feature\",\"mention\":\"Variants option\",\"confidence\":\"high\"},{\"name\":\"Save\",\"type\":\"Action\",\"mention\":\"Save\",\"confidence\":\"high\"},{\"name\":\"product variants documentation\",\"type\":\"Concept\",\"mention\":\"product variants documentation\",\"confidence\":\"low\"}]],\"relations\":[{\"source\":\"Inventory app\",\"relation\":\"CONTAINS\",\"target\":\"Configuration\",\"evidence\":\"Inventory app --> Configuration\"},{\"source\":\"Configuration\",\"relation\":\"CONTAINS\",\"target\":\"Settings\",\"evidence\":\"Configuration --> Settings\"},{\"source\":\"Settings\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Variants\",\"evidence\":\"click the checkbox to enable the Variants option\"},{\"source\":\"Save\",\"relation\":\"APPLIES_TO\",\"target\":\"Variants\",\"evidence\":\"click Save to apply the setting\"},{\"source\":\"Variants\",\"relation\":\"SEE_ALSO\",\"target\":\"product variants documentation\",\"evidence\":\"refer to the product variants documentation\"}]}"
+    }
+  },
+  {
+    "section_id": "create-custom-product-attributes",
+    "heading": "Create custom product attributes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Attributes",
+          "type": "Feature",
+          "mention": "Attributes",
+          "confidence": "high"
+        },
+        {
+          "name": "Attributes page",
+          "type": "Feature",
+          "mention": "Attributes page",
+          "confidence": "high"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit",
+          "type": "Action",
+          "mention": "Edit",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "product variants feature",
+          "type": "Feature",
+          "mention": "product variants feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Attribute",
+          "type": "DataObject",
+          "mention": "Attribute",
+          "confidence": "high"
+        },
+        {
+          "name": "Attribute Name",
+          "type": "Field",
+          "mention": "Attribute Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Category",
+          "type": "Field",
+          "mention": "Category",
+          "confidence": "high"
+        },
+        {
+          "name": "Display Type",
+          "type": "Field",
+          "mention": "Display Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Variants Creation Mode",
+          "type": "Field",
+          "mention": "Variants Creation Mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Attribute Values",
+          "type": "Feature",
+          "mention": "Attribute Values",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Value",
+          "type": "DataObject",
+          "mention": "Value",
+          "confidence": "medium"
+        },
+        {
+          "name": "Is custom value",
+          "type": "Field",
+          "mention": "Is custom value",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "accessible either from Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Attributes",
+          "evidence": "or by clicking Inventory app --> Configuration --> Attributes"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Attributes",
+          "evidence": "Settings by clicking the Attributes button"
+        },
+        {
+          "source": "Attributes page",
+          "relation": "BELONGS_TO",
+          "target": "Attributes",
+          "evidence": "Attributes page"
+        },
+        {
+          "source": "Create",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "click Create to create a new one"
+        },
+        {
+          "source": "Edit",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "click Edit on its form"
+        },
+        {
+          "source": "Save",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "click Save"
+        },
+        {
+          "source": "product variants feature",
+          "relation": "ENABLES",
+          "target": "Attribute",
+          "evidence": "Once the product variants feature is activated, create and edit product attributes"
+        },
+        {
+          "source": "Attribute",
+          "relation": "HAS_FEATURE",
+          "target": "Attribute Values",
+          "evidence": "Add a line under the Attribute Values tab"
+        },
+        {
+          "source": "Attribute",
+          "relation": "CONTAINS",
+          "target": "Attribute Name",
+          "evidence": "Assign an Attribute Name"
+        },
+        {
+          "source": "Attribute",
+          "relation": "CONTAINS",
+          "target": "Category",
+          "evidence": "choose a category from the Category field"
+        },
+        {
+          "source": "Attribute",
+          "relation": "CONTAINS",
+          "target": "Display Type",
+          "evidence": "select the desired options next to the Display Type"
+        },
+        {
+          "source": "Attribute",
+          "relation": "CONTAINS",
+          "target": "Variants Creation Mode",
+          "evidence": "select the desired options next to the Variants Creation Mode"
+        },
+        {
+          "source": "Add a line",
+          "relation": "PRODUCES",
+          "target": "Value",
+          "evidence": "Add a line under the Attribute Values tab to add a new value"
+        },
+        {
+          "source": "Value",
+          "relation": "CONTAINS",
+          "target": "Is custom value",
+          "evidence": "Included on the Value row is a Is custom value checkbox"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-product-variants-on-the-product-form",
+    "heading": "Add product variants on the product form",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form",
+          "type": "Feature",
+          "mention": "navigate to the product form",
+          "confidence": "high"
+        },
+        {
+          "name": "Variants tab",
+          "type": "Feature",
+          "mention": "click the Variants tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "click Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "product variants",
+          "type": "Concept",
+          "mention": "Add product variants",
+          "confidence": "high"
+        },
+        {
+          "name": "attributes",
+          "type": "Concept",
+          "mention": "Created attributes",
+          "confidence": "medium"
+        },
+        {
+          "name": "BoM",
+          "type": "Concept",
+          "mention": "BoM (bill of materials)",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish on Order (MTO)",
+          "type": "Standard",
+          "mention": "Replenish on Order (MTO)",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rule",
+          "type": "Setting",
+          "mention": "0,0 reordering rule",
+          "confidence": "medium"
+        },
+        {
+          "name": "Edit",
+          "type": "Action",
+          "mention": "click Edit",
+          "confidence": "high"
+        },
+        {
+          "name": "Add product variants on the product form",
+          "type": "Workflow",
+          "mention": "Title: Add product variants on the product form",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "product form",
+          "evidence": "Products --> Products. To make changes to the product, click Edit."
+        },
+        {
+          "source": "Add product variants on the product form",
+          "relation": "IS_PART_OF",
+          "target": "product form",
+          "evidence": "Add product variants on the product form"
+        },
+        {
+          "source": "product form",
+          "relation": "HAS_FEATURE",
+          "target": "Variants tab",
+          "evidence": "Then, click the Variants tab."
+        },
+        {
+          "source": "Variants tab",
+          "relation": "CONTAINS",
+          "target": "Attribute header",
+          "evidence": "Under the Attribute header"
+        },
+        {
+          "source": "Variants tab",
+          "relation": "CONTAINS",
+          "target": "Values header",
+          "evidence": "Under the Values header"
+        },
+        {
+          "source": "Add product variants on the product form",
+          "relation": "TRIGGERED_BY",
+          "target": "Add a line",
+          "evidence": "Under the Attribute header, click Add a line"
+        },
+        {
+          "source": "Add product variants on the product form",
+          "relation": "TRIGGERED_BY",
+          "target": "Save",
+          "evidence": "Once finished, click Save to save changes."
+        },
+        {
+          "source": "BoM",
+          "relation": "RELATED_TO",
+          "target": "product variants",
+          "evidence": "BoM (bill of materials) products with multiple variants"
+        },
+        {
+          "source": "BoM",
+          "relation": "CONFIGURED_BY",
+          "target": "reordering rule",
+          "evidence": "should either have a **0,0 reordering rule** set up"
+        },
+        {
+          "source": "BoM",
+          "relation": "RELATED_TO",
+          "target": "Replenish on Order (MTO)",
+          "evidence": "or have their replenishment routes set to *Replenish on Order (MTO)*."
+        },
+        {
+          "source": "product form",
+          "relation": "CONFIGURED_BY",
+          "target": "Edit",
+          "evidence": "To make changes to the product, click Edit."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "apply-bom-components-to-product-variants",
+    "heading": "Apply BoM components to product variants",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bills of Materials",
+          "type": "Module",
+          "mention": "Bills of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills of Materials form",
+          "type": "Feature",
+          "mention": "Bills of Materials form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product field",
+          "type": "Field",
+          "mention": "Product field",
+          "confidence": "high"
+        },
+        {
+          "name": "Component section",
+          "type": "Feature",
+          "mention": "Component section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Components tab",
+          "type": "Feature",
+          "mention": "Components tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Unit of Measure",
+          "type": "Field",
+          "mention": "Product Unit of Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply on Variants column",
+          "type": "Field",
+          "mention": "Apply on Variants column",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply on Variants",
+          "type": "Field",
+          "mention": "Apply on Variants",
+          "confidence": "high"
+        },
+        {
+          "name": "Variants setting",
+          "type": "Setting",
+          "mention": "Variants setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory application",
+          "type": "Module",
+          "mention": "Inventory application",
+          "confidence": "medium"
+        },
+        {
+          "name": "Consumed in Operation column",
+          "type": "Field",
+          "mention": "Consumed in Operation column",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Manufacturing app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Bills of Materials",
+          "evidence": "Products --> Bills of Materials"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "HAS_FEATURE",
+          "target": "Components tab",
+          "evidence": "Component section of the Components tab"
+        },
+        {
+          "source": "Bills of Materials form",
+          "relation": "ENABLES",
+          "target": "Create",
+          "evidence": "click Create to open a new Bills of Materials form"
+        },
+        {
+          "source": "Apply on Variants",
+          "relation": "REQUIRES",
+          "target": "Variants setting",
+          "evidence": "available once the Variants setting is activated"
+        },
+        {
+          "source": "Variants setting",
+          "relation": "CONFIGURED_BY",
+          "target": "Inventory application",
+          "evidence": "activated from the Inventory application"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "CONTAINS",
+          "target": "Product field",
+          "evidence": "drop-down menu in the Product field"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "CONTAINS",
+          "target": "Apply on Variants column",
+          "evidence": "Apply on Variants column"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "Quantity"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "CONTAINS",
+          "target": "Product Unit of Measure",
+          "evidence": "Product Unit of Measure"
+        },
+        {
+          "source": "Components tab",
+          "relation": "ENABLES",
+          "target": "Add a line",
+          "evidence": "Add a line under the Component section"
+        },
+        {
+          "source": "Odoo",
+          "type": "RELATION",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing app"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Manufacturing app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sell-and-manufacture-variants-of-bom-products",
+    "heading": "Sell and manufacture variants of BoM products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create",
+          "confidence": "high"
+        },
+        {
+          "name": "new quotation",
+          "type": "DataObject",
+          "mention": "new quotation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Sales app -->"
+        },
+        {
+          "source": "Create",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Create to create"
+        },
+        {
+          "source": "Create",
+          "relation": "PRODUCES",
+          "target": "new quotation",
+          "evidence": "Create to create a new quotation"
+        },
+        {
+          "source": "Create",
+          "relation": "CONTAINS",
+          "target": "Sales app",
+          "evidence": "Sales app --> Create"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sell-variant-of-bom-product",
+    "heading": "Sell variant of BoM product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quotation form",
+          "type": "DataObject",
+          "mention": "blank Quotation form",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer field",
+          "type": "Field",
+          "mention": "drop-down next to the Customer field",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Lines tab",
+          "type": "Sub-module",
+          "mention": "Order Lines tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM (bill of materials) product with variants",
+          "type": "Product",
+          "mention": "BoM (bill of materials) product with variants",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure a product pop-up",
+          "type": "Feature",
+          "mention": "Configure a product pop-up",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure pop-up",
+          "type": "Feature",
+          "mention": "Configure pop-up",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order (SO)",
+          "type": "DataObject",
+          "mention": "new sales order (SO)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Quotation form",
+          "relation": "CONTAINS",
+          "target": "Order Lines tab",
+          "evidence": "under the Order Lines tab"
+        },
+        {
+          "source": "Order Lines tab",
+          "relation": "ENABLES",
+          "target": "Add a product",
+          "evidence": "click Add a product"
+        },
+        {
+          "source": "Add a product",
+          "relation": "PRODUCES",
+          "target": "Configure a product pop-up",
+          "evidence": "reveals a Configure a product pop-up"
+        },
+        {
+          "source": "Configure a product pop-up",
+          "relation": "PRODUCES",
+          "target": "Configure pop-up",
+          "evidence": "will change the pop-up to a second Configure pop-up"
+        },
+        {
+          "source": "Configure pop-up",
+          "relation": "CONTAINS",
+          "target": "sales order (SO)",
+          "evidence": "click Confirm to create and confirm a new sales order (SO)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manufacture-variant-of-bom-product",
+    "heading": "Manufacture variant of BoM product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SO (sales order)",
+          "type": "DataObject",
+          "mention": "SO (sales order)",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing smart button",
+          "type": "Feature",
+          "mention": "Manufacturing smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Order form",
+          "type": "Module",
+          "mention": "Manufacturing Order form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Components tab",
+          "type": "Sub-module",
+          "mention": "Components tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Orders tab",
+          "type": "Sub-module",
+          "mention": "Work Orders tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "tablet view work order screen",
+          "type": "Feature",
+          "mention": "tablet view work order screen",
+          "confidence": "medium"
+        },
+        {
+          "name": "tablet icon",
+          "type": "Feature",
+          "mention": "tablet icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mark as Done",
+          "type": "Action",
+          "mention": "Mark as Done",
+          "confidence": "high"
+        },
+        {
+          "name": "Mark as Done button",
+          "type": "Feature",
+          "mention": "Mark as Done button",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing order form",
+          "type": "Module",
+          "mention": "manufacturing order form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Feature",
+          "mention": "Delivery smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Order form",
+          "type": "Module",
+          "mention": "Delivery Order form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply",
+          "type": "Action",
+          "mention": "Apply",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Invoice",
+          "type": "Action",
+          "mention": "Create Invoice",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing smart button",
+          "relation": "IS_PART_OF",
+          "target": "SO (sales order)",
+          "evidence": "Once the SO (sales order) is confirmed, a Manufacturing smart button appears at the top of the SO (sales order) form."
+        },
+        {
+          "source": "Manufacturing Order form",
+          "relation": "CONTAINS",
+          "target": "Components tab",
+          "evidence": "On this form, under the Components tab, the appropriate components for the chosen variant are listed."
+        },
+        {
+          "source": "Manufacturing Order form",
+          "relation": "CONTAINS",
+          "target": "Work Orders tab",
+          "evidence": "To see any mandatory or optional Operation steps, click the Work Orders tab."
+        },
+        {
+          "source": "tablet icon",
+          "relation": "ENABLES",
+          "target": "tablet view work order screen",
+          "evidence": "To enter the tablet view work order screen, click the tablet icon to the right of the row for the desired operation to be completed."
+        },
+        {
+          "source": "tablet view work order screen",
+          "relation": "HAS_FEATURE",
+          "target": "Mark as Done",
+          "evidence": "From the tablet view, click Mark as Done as the operation progresses to complete the operation steps."
+        },
+        {
+          "source": "manufacturing order form",
+          "relation": "HAS_FEATURE",
+          "target": "Mark as Done button",
+          "evidence": "Alternatively, click the Mark as Done button at the top of the manufacturing order form to complete the order."
+        },
+        {
+          "source": "SO (sales order)",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery smart button",
+          "evidence": "Now that the product has been manufactured, click the Delivery smart button to deliver the product to the customer."
+        },
+        {
+          "source": "Delivery Order form",
+          "relation": "CONTAINS",
+          "target": "Validate",
+          "evidence": "From the Delivery Order form, click Validate, then click Apply to deliver the product."
+        },
+        {
+          "source": "Delivery Order form",
+          "relation": "CONTAINS",
+          "target": "Apply",
+          "evidence": "From the Delivery Order form, click Validate, then click Apply to deliver the product."
+        },
+        {
+          "source": "SO (sales order)",
+          "relation": "HAS_FEATURE",
+          "target": "Create Invoice",
+          "evidence": "Then, click Create Invoice followed by Create Invoice again to invoice the customer for the order."
+        }
+      ]
+    }
+  }
+]

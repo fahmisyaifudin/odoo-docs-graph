@@ -1,0 +1,1504 @@
+[
+  {
+    "section_id": "engineering-change-orders",
+    "heading": "Engineering change orders",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "engineering change orders",
+          "type": "Module",
+          "mention": "Engineering change orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "ECO",
+          "type": "Module",
+          "mention": "ECO",
+          "confidence": "medium"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "low"
+        },
+        {
+          "name": "bills of materials",
+          "type": "DataObject",
+          "mention": "bills of materials",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "engineering change orders",
+          "evidence": "Utilize *engineering change orders* (*ECOs*)"
+        },
+        {
+          "source": "engineering change orders",
+          "relation": "EQUIVALENT_TO",
+          "target": "ECO",
+          "evidence": "Utilize *engineering change orders* (*ECOs*)"
+        },
+        {
+          "source": "engineering change orders",
+          "relation": "HAS_FEATURE",
+          "target": "products",
+          "evidence": "to track, implement, and revert change versions made to products"
+        },
+        {
+          "source": "engineering change orders",
+          "relation": "HAS_FEATURE",
+          "target": "bills of materials",
+          "evidence": "to track, implement, and revert change versions made to products, and bills of materials"
+        },
+        {
+          "source": "ECO",
+          "relation": "IS_PART_OF",
+          "target": "engineering change orders",
+          "evidence": "(*ECOs*)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-eco",
+    "heading": "Create ECO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "PLM",
+          "type": "Module",
+          "mention": "PLM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Engineering Change Order",
+          "type": "DataObject",
+          "mention": "Engineering Change Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "ECO type",
+          "type": "DataObject",
+          "mention": "ECO types",
+          "confidence": "high"
+        },
+        {
+          "name": "ECO form",
+          "type": "DataObject",
+          "mention": "ECO form",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "Type",
+          "type": "Field",
+          "mention": "Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply on",
+          "type": "Field",
+          "mention": "Apply on",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials",
+          "type": "Field",
+          "mention": "Bill of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company field",
+          "confidence": "high"
+        },
+        {
+          "name": "Responsible",
+          "type": "Field",
+          "mention": "Responsible",
+          "confidence": "high"
+        },
+        {
+          "name": "Effective",
+          "type": "Field",
+          "mention": "Effective",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags",
+          "type": "Field",
+          "mention": "Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "As soon as possible",
+          "type": "Standard",
+          "mention": "As soon as possible",
+          "confidence": "high"
+        },
+        {
+          "name": "At Date",
+          "type": "Standard",
+          "mention": "At Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Revision",
+          "type": "Action",
+          "mention": "Start Revision button",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents smart button",
+          "type": "Feature",
+          "mention": "Documents smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Revision smart button",
+          "type": "Feature",
+          "mention": "Revision smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Production BOM",
+          "type": "DataObject",
+          "mention": "production BOM",
+          "confidence": "medium"
+        },
+        {
+          "name": "Authorized user",
+          "type": "Actor",
+          "mention": "authorized user",
+          "confidence": "medium"
+        },
+        {
+          "name": "Apply changes",
+          "type": "Action",
+          "mention": "apply the changes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Version number",
+          "type": "Concept",
+          "mention": "version number",
+          "confidence": "medium"
+        },
+        {
+          "name": "ECO stages",
+          "type": "Concept",
+          "mention": "stages of the ECO Type",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Engineering Change Order",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Create ECO"
+        },
+        {
+          "source": "PLM",
+          "relation": "CONTAINS",
+          "target": "Engineering Change Order",
+          "evidence": "To create a new , begin by navigating to the **PLM** app."
+        },
+        {
+          "source": "Engineering Change Order",
+          "relation": "CONTAINS",
+          "target": "ECO type",
+          "evidence": "ECO types categorize and organize change orders."
+        },
+        {
+          "source": "ECO form",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "On the ECO form, fill in the following fields accordingly: - Description"
+        },
+        {
+          "source": "ECO form",
+          "relation": "CONTAINS",
+          "target": "Type",
+          "evidence": "On the ECO form, fill in the following fields accordingly: - Type"
+        },
+        {
+          "source": "ECO form",
+          "relation": "CONTAINS",
+          "target": "Apply on",
+          "evidence": "On the ECO form, fill in the following fields accordingly: - Apply on"
+        },
+        {
+          "source": "ECO form",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "On the ECO form, fill in the following fields accordingly: - Product"
+        },
+        {
+          "source": "ECO form",
+          "relation": "CONTAINS",
+          "target": "Bill of Materials",
+          "evidence": "On the ECO form, fill in the following fields accordingly: - Bill of Materials"
+        },
+        {
+          "source": "ECO form",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "On the ECO form, fill in the following fields accordingly: - Company"
+        },
+        {
+          "source": "ECO form",
+          "relation": "CONTAINS",
+          "target": "Responsible",
+          "evidence": "On the ECO form, fill in the following fields accordingly: - Responsible"
+        },
+        {
+          "source": "ECO form",
+          "relation": "CONTAINS",
+          "target": "Effective",
+          "evidence": "On the ECO form, fill in the following fields accordingly: - Effective"
+        },
+        {
+          "source": "ECO form",
+          "relation": "CONTAINS",
+          "target": "Tags",
+          "evidence": "On the ECO form, fill in the following fields accordingly: - Tags"
+        },
+        {
+          "source": "Start Revision",
+          "relation": "GENERATES",
+          "target": "Documents smart button",
+          "evidence": "By pressing Start Revision, three actions occur: #. The Documents smart button appears"
+        },
+        {
+          "source": "Start Revision",
+          "relation": "GENERATES",
+          "target": "Revision smart button",
+          "evidence": "By pressing Start Revision, three actions occur: #. A copy of the production BOM is stored in the newly-appeared Revision smart button"
+        },
+        {
+          "source": "Effective",
+          "relation": "SUPPORTS",
+          "target": "As soon as possible",
+          "evidence": "Effective specifies when the ECO becomes live. Choosing As soon as possible"
+        },
+        {
+          "source": "Effective",
+          "relation": "SUPPORTS",
+          "target": "At Date",
+          "evidence": "Effective specifies when the ECO becomes live. At Date with a specific date selected"
+        },
+        {
+          "source": "Authorized user",
+          "relation": "PERFORMED_BY",
+          "target": "Apply changes",
+          "evidence": "authorized user applies the changes"
+        },
+        {
+          "source": "Revision smart button",
+          "relation": "REQUIRES",
+          "target": "Bill of Materials",
+          "evidence": "Revision smart button is available only when the Bill of Materials radio button is selected"
+        },
+        {
+          "source": "Revision smart button",
+          "relation": "REQUIRES",
+          "target": "Start Revision",
+          "evidence": "Revision smart button is available only when the Start Revision button has been pressed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-components",
+    "heading": "Change components",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Revision smart button",
+          "type": "Action",
+          "mention": "Revision smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Revision button",
+          "type": "Action",
+          "mention": "Start Revision button",
+          "confidence": "high"
+        },
+        {
+          "name": "D_0045 Stool",
+          "type": "Product",
+          "mention": "product, `[D_0045 Stool]`",
+          "confidence": "medium"
+        },
+        {
+          "name": "Archived tag",
+          "type": "Field",
+          "mention": "Archived tag",
+          "confidence": "medium"
+        },
+        {
+          "name": "Components tab",
+          "type": "Module",
+          "mention": "Components tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line button",
+          "type": "Action",
+          "mention": "Add a line button",
+          "confidence": "medium"
+        },
+        {
+          "name": "🗑️ (trash) icon",
+          "type": "Action",
+          "mention": "🗑️ (trash) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Stabilizers",
+          "type": "Product",
+          "mention": "additional component, `Stabilizers`",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Revision smart button",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Revision smart button on an"
+        },
+        {
+          "source": "Start Revision button",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Start Revision button for an"
+        },
+        {
+          "source": "Add a line button",
+          "relation": "IS_PART_OF",
+          "target": "Components tab",
+          "evidence": "On the new , in the Components tab, proceed... adding new components using the Add a line button"
+        },
+        {
+          "source": "🗑️ (trash) icon",
+          "relation": "IS_PART_OF",
+          "target": "Components tab",
+          "evidence": "On the new , in the Components tab, proceed... removing components with the 🗑️ (trash) icon"
+        },
+        {
+          "source": "Quantity",
+          "relation": "IS_PART_OF",
+          "target": "Components tab",
+          "evidence": "On the new , in the Components tab, proceed to modify the components list, by changing the Quantity"
+        },
+        {
+          "source": "Stabilizers",
+          "relation": "BELONGS_TO",
+          "target": "D_0045 Stool",
+          "evidence": "an additional component, `Stabilizers`, is added for the product"
+        },
+        {
+          "source": "Revision smart button",
+          "relation": "TRIGGERED_BY",
+          "target": "Start Revision button",
+          "evidence": "After clicking the Start Revision button... make changes to the product's by clicking the Revision smart button"
+        },
+        {
+          "source": "Archived tag",
+          "relation": "CONFIGURED_BY",
+          "target": "Revision smart button",
+          "evidence": "flag the test with a large Archived tag"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "compare-changes",
+    "heading": "Compare changes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "PLM Overview",
+          "type": "Module",
+          "mention": "PLM Overview",
+          "confidence": "medium"
+        },
+        {
+          "name": "Engineering Changes",
+          "type": "Feature",
+          "mention": "Engineering Changes",
+          "confidence": "medium"
+        },
+        {
+          "name": "BOM Updates Kanban card",
+          "type": "Report",
+          "mention": "BOM Updates Kanban card",
+          "confidence": "medium"
+        },
+        {
+          "name": "BoM Changes tab",
+          "type": "Feature",
+          "mention": "BoM Changes tab",
+          "confidence": "high"
+        },
+        {
+          "name": "current BOM",
+          "type": "DataObject",
+          "mention": "current BOM",
+          "confidence": "high"
+        },
+        {
+          "name": "revised BOM",
+          "type": "DataObject",
+          "mention": "revised BOM",
+          "confidence": "high"
+        },
+        {
+          "name": "production BOM",
+          "type": "DataObject",
+          "mention": "production BOM",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "PLM Overview",
+          "evidence": "From the PLM Overview, click the Engineering Changes button on the BOM Updates Kanban card."
+        },
+        {
+          "source": "PLM Overview",
+          "relation": "HAS_REPORT",
+          "target": "BOM Updates Kanban card",
+          "evidence": "From the PLM Overview, click the Engineering Changes button on the BOM Updates Kanban card."
+        },
+        {
+          "source": "PLM Overview",
+          "relation": "HAS_FEATURE",
+          "target": "Engineering Changes",
+          "evidence": "From the PLM Overview, click the Engineering Changes button..."
+        },
+        {
+          "source": "revised BOM",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo To compare a revised BOM to the previous version..."
+        },
+        {
+          "source": "revised BOM",
+          "relation": "ENABLES",
+          "target": "BoM Changes tab",
+          "evidence": "On the BOM form, a new BoM Changes tab displays the differences between the current BOM and the new version."
+        },
+        {
+          "source": "BoM Changes tab",
+          "relation": "HAS_FEATURE",
+          "target": "compare changes",
+          "evidence": "On the BOM form, a new BoM Changes tab displays the differences..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-operations",
+    "heading": "Change operations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders",
+          "type": "Feature",
+          "mention": "Work Orders box",
+          "confidence": "high"
+        },
+        {
+          "name": "Revision",
+          "type": "Action",
+          "mention": "Revision smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Feature",
+          "mention": "Operations tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Open: Operations",
+          "type": "Feature",
+          "mention": "Open: Operations pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line button",
+          "confidence": "high"
+        },
+        {
+          "name": "Archive Operation",
+          "type": "Action",
+          "mention": "Archive Operation button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Operations tab",
+          "relation": "CONFIGURED_BY",
+          "target": "Work Orders",
+          "evidence": "The Operations tab is *not* available by default. To enable it... check the Work Orders box."
+        },
+        {
+          "source": "Work Orders",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "To enable it, navigate to Manufacturing app --> Configuration --> Settings, and check the Work Orders box."
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Manufacturing app --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing",
+          "evidence": "Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Manufacturing app --> Configuration"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "compare-changes",
+    "heading": "Compare changes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "PLM Overview",
+          "type": "Module",
+          "mention": "From the PLM Overview",
+          "confidence": "medium"
+        },
+        {
+          "name": "ECO",
+          "type": "DataObject",
+          "mention": "ECO005",
+          "confidence": "low"
+        },
+        {
+          "name": "revised operations",
+          "type": "DataObject",
+          "mention": "revised operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "production version",
+          "type": "DataObject",
+          "mention": "production version",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operation Changes tab",
+          "type": "Feature",
+          "mention": "Operation Changes tab",
+          "confidence": "high"
+        },
+        {
+          "name": "ECO form",
+          "type": "DataObject",
+          "mention": "On the form",
+          "confidence": "low"
+        },
+        {
+          "name": "Assembly Operation",
+          "type": "Feature",
+          "mention": "Assembly Operation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Center",
+          "type": "Concept",
+          "mention": "Work Center",
+          "confidence": "medium"
+        },
+        {
+          "name": "Assembly Line 1",
+          "type": "Concept",
+          "mention": "Assembly Line 1",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manual Duration Change",
+          "type": "Feature",
+          "mention": "Manual Duration Change",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Duration field",
+          "type": "Field",
+          "mention": "Default Duration field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Open: Operations pop-up window",
+          "type": "Feature",
+          "mention": "Open: Operations pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Feature",
+          "mention": "Operations tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Instructions smart button",
+          "type": "Feature",
+          "mention": "Instructions smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Step",
+          "type": "Concept",
+          "mention": "Step",
+          "confidence": "medium"
+        },
+        {
+          "name": "Step Type",
+          "type": "Concept",
+          "mention": "Step Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality control point",
+          "type": "Concept",
+          "mention": "quality control point",
+          "confidence": "medium"
+        },
+        {
+          "name": "QCP00039",
+          "type": "DataObject",
+          "mention": "QCP00039",
+          "confidence": "medium"
+        },
+        {
+          "name": "QCP00034",
+          "type": "DataObject",
+          "mention": "QCP00034",
+          "confidence": "medium"
+        },
+        {
+          "name": "Register Production",
+          "type": "Action",
+          "mention": "Register Production",
+          "confidence": "medium"
+        },
+        {
+          "name": "Instructions",
+          "type": "Concept",
+          "mention": "Instructions",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "PLM Overview",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "PLM Overview",
+          "relation": "CONTAINS",
+          "target": "ECO",
+          "evidence": "From the PLM Overview"
+        },
+        {
+          "source": "ECO",
+          "relation": "IS_PART_OF",
+          "target": "revised operations",
+          "evidence": "ECO005: Improve..."
+        },
+        {
+          "source": "revised operations",
+          "relation": "IS_PART_OF",
+          "target": "production version",
+          "evidence": "current production version"
+        },
+        {
+          "source": "ECO",
+          "relation": "HAS_FEATURE",
+          "target": "Operation Changes tab",
+          "evidence": "On the ECO form, a new Operation Changes tab"
+        },
+        {
+          "source": "Operation Changes tab",
+          "relation": "CONTAINS",
+          "target": "Assembly Operation",
+          "evidence": "Assembly Operation includes"
+        },
+        {
+          "source": "Assembly Operation",
+          "relation": "BELONGS_TO",
+          "target": "Work Center",
+          "evidence": "Work Center Assembly Line 1"
+        },
+        {
+          "source": "Assembly Operation",
+          "relation": "HAS_FEATURE",
+          "target": "Manual Duration Change",
+          "evidence": "Manual Duration Change refers to the Default Duration field"
+        },
+        {
+          "source": "Manual Duration Change",
+          "relation": "CONFIGURED_BY",
+          "target": "Default Duration field",
+          "evidence": "Default Duration field"
+        },
+        {
+          "source": "Default Duration field",
+          "relation": "CONTAINS",
+          "target": "Open: Operations pop-up window",
+          "evidence": "Open: Operations pop-up window"
+        },
+        {
+          "source": "Open: Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Instructions smart button",
+          "evidence": "Instructions smart button"
+        },
+        {
+          "source": "Assembly Operation",
+          "relation": "CONTAINS",
+          "target": "Step",
+          "evidence": "Step specifies the quality control point"
+        },
+        {
+          "source": "Step",
+          "relation": "BELONGS_TO",
+          "target": "Step Type",
+          "evidence": "Step Type"
+        },
+        {
+          "source": "Step Type",
+          "relation": "CONTAINS",
+          "target": "quality control point",
+          "evidence": "quality control point"
+        },
+        {
+          "source": "Step",
+          "relation": "CONTAINS",
+          "target": "QCP00039",
+          "evidence": "QCP00039"
+        },
+        {
+          "source": "QCP00039",
+          "relation": "PERFORMED_BY",
+          "target": "Register Production",
+          "evidence": "Register Production"
+        },
+        {
+          "source": "Step",
+          "relation": "CONTAINS",
+          "target": "QCP00034",
+          "evidence": "QCP00034"
+        },
+        {
+          "source": "QCP00034",
+          "relation": "PERFORMED_BY",
+          "target": "Instructions",
+          "evidence": "Instructions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "apply-changes",
+    "heading": "Apply changes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply Changes",
+          "type": "Action",
+          "mention": "Apply Changes",
+          "confidence": "high"
+        },
+        {
+          "name": "verification stage",
+          "type": "Workflow",
+          "mention": "verification stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "plm/eco/stage-config",
+          "type": "Setting",
+          "mention": "<plm/eco/stage-config>",
+          "confidence": "medium"
+        },
+        {
+          "name": "approver",
+          "type": "Actor",
+          "mention": "approvers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Apply Changes button",
+          "type": "Feature",
+          "mention": "Apply Changes button",
+          "confidence": "medium"
+        },
+        {
+          "name": "closing stage",
+          "type": "Workflow",
+          "mention": "closing stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "production BOM",
+          "type": "DataObject",
+          "mention": "production BOM",
+          "confidence": "low"
+        },
+        {
+          "name": "revised BOM",
+          "type": "DataObject",
+          "mention": "revised BOM",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Apply Changes button",
+          "evidence": "Apply Changes button becomes available"
+        },
+        {
+          "source": "approver",
+          "relation": "PERFORMED_BY",
+          "target": "Apply Changes",
+          "evidence": "Once the approvers accept the changes"
+        },
+        {
+          "source": "Apply Changes button",
+          "relation": "TRIGGERED_BY",
+          "target": "Apply Changes",
+          "evidence": "Click this button"
+        },
+        {
+          "source": "verification stage",
+          "relation": "CONFIGURED_BY",
+          "target": "plm/eco/stage-config",
+          "evidence": "move the to a verification stage <plm/eco/stage-config>"
+        },
+        {
+          "source": "Apply Changes",
+          "relation": "PRODUCES",
+          "target": "closing stage",
+          "evidence": "the is automatically moved to a closing stage"
+        },
+        {
+          "source": "Apply Changes",
+          "relation": "PRODUCES",
+          "target": "revised BOM",
+          "evidence": "the revised becomes the new production"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "verify-changes",
+    "heading": "Verify changes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bill of Materials smart button",
+          "type": "Feature",
+          "mention": "Bill of Materials smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Revision smart button",
+          "type": "Feature",
+          "mention": "Revision smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply Changes button",
+          "type": "Action",
+          "mention": "Apply Changes button",
+          "confidence": "high"
+        },
+        {
+          "name": "Version field",
+          "type": "Field",
+          "mention": "Version field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Miscellaneous tab",
+          "type": "Feature",
+          "mention": "Miscellaneous tab",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "going to Manufacturing app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "product",
+          "evidence": "Products --> Products and select the product"
+        },
+        {
+          "source": "product",
+          "relation": "HAS_FEATURE",
+          "target": "Bill of Materials smart button",
+          "evidence": "on the product form, click the Bill of Materials smart button"
+        },
+        {
+          "source": "Bill of Materials",
+          "relation": "HAS_FEATURE",
+          "target": "Miscellaneous tab",
+          "evidence": "In the Miscellaneous tab of the"
+        },
+        {
+          "source": "Miscellaneous tab",
+          "relation": "CONTAINS",
+          "target": "Version field",
+          "evidence": "In the Miscellaneous tab of the , the Version field"
+        },
+        {
+          "source": "Version field",
+          "relation": "SUPPORTS",
+          "target": "Revision smart button",
+          "evidence": "the Version field is updated to match the version number shown on the Revision smart button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-changes",
+    "heading": "View changes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "PLM app",
+          "type": "Module",
+          "mention": "PLM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Overview",
+          "type": "Sub-module",
+          "mention": "Overview",
+          "confidence": "high"
+        },
+        {
+          "name": "BOM Updates",
+          "type": "Module",
+          "mention": "BOM Updates",
+          "confidence": "high"
+        },
+        {
+          "name": "Engineering Changes",
+          "type": "Feature",
+          "mention": "Engineering Changes",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Workflow",
+          "mention": "New stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operation Changes tab",
+          "type": "Feature",
+          "mention": "Operation Changes tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Revision smart button",
+          "type": "Feature",
+          "mention": "Revision smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Feature",
+          "mention": "Operations tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Show Instructions",
+          "type": "Feature",
+          "mention": "Show Instructions icon",
+          "confidence": "high"
+        },
+        {
+          "name": "MO",
+          "type": "Concept",
+          "mention": "Manufacturing Order",
+          "confidence": "high"
+        },
+        {
+          "name": "BOM Changes",
+          "type": "Feature",
+          "mention": "BOM Changes",
+          "confidence": "high"
+        },
+        {
+          "name": "ECO type",
+          "type": "Concept",
+          "mention": "ECO type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Responsible field",
+          "type": "Field",
+          "mention": "Responsible field",
+          "confidence": "high"
+        },
+        {
+          "name": "operator",
+          "type": "Actor",
+          "mention": "operator",
+          "confidence": "high"
+        },
+        {
+          "name": "employee revising",
+          "type": "Actor",
+          "mention": "employee revising",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "PLM app",
+          "relation": "CONTAINS",
+          "target": "Overview",
+          "evidence": "navigate to the PLM app --> Overview"
+        },
+        {
+          "source": "PLM app",
+          "relation": "CONTAINS",
+          "target": "BOM Updates",
+          "evidence": "BOM Updates type card"
+        },
+        {
+          "source": "BOM Updates",
+          "relation": "HAS_FEATURE",
+          "target": "Engineering Changes",
+          "evidence": "the Engineering Changes button represents..."
+        },
+        {
+          "source": "Engineering Changes",
+          "relation": "ENABLES",
+          "target": "Kanban view",
+          "evidence": "Click on the # Engineering Changes button to open the Kanban view"
+        },
+        {
+          "source": "Kanban view",
+          "relation": "CONTAINS",
+          "target": "New",
+          "evidence": "select an in the New stage"
+        },
+        {
+          "source": "Kanban view",
+          "relation": "HAS_FEATURE",
+          "target": "Operation Changes tab",
+          "evidence": "view a summary...in the Operation Changes tab"
+        },
+        {
+          "source": "Operation Changes tab",
+          "relation": "HAS_FEATURE",
+          "target": "Revision smart button",
+          "evidence": "Click the Revision smart button"
+        },
+        {
+          "source": "Revision smart button",
+          "relation": "ENABLES",
+          "target": "Operations tab",
+          "evidence": "On the revised , switch to the Operations tab"
+        },
+        {
+          "source": "Operations tab",
+          "relation": "HAS_FEATURE",
+          "target": "Show Instructions",
+          "evidence": "select the fa-list-ul (Show Instructions) icon"
+        },
+        {
+          "source": "MO",
+          "relation": "RELATED_TO",
+          "target": "ECO type",
+          "evidence": "created can be viewed...ECO type"
+        },
+        {
+          "source": "ECO type",
+          "relation": "BELONGS_TO",
+          "target": "BOM Changes",
+          "evidence": "BOM Changes ECO type"
+        },
+        {
+          "source": "BOM Changes",
+          "relation": "IS_PART_OF",
+          "target": "Overview",
+          "evidence": "found in PLM app --> Overview"
+        },
+        {
+          "source": "Responsible field",
+          "relation": "PERFORMED_BY",
+          "target": "operator",
+          "evidence": "Responsible field is assigned to the operator"
+        },
+        {
+          "source": "MO",
+          "relation": "PERFORMED_BY",
+          "target": "operator",
+          "evidence": "operator suggested...for the MO"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "quality-control-points",
+    "heading": "Quality control points",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality",
+          "type": "Module",
+          "mention": "Quality <../../quality> app",
+          "confidence": "high"
+        },
+        {
+          "name": "quality control point",
+          "type": "DataObject",
+          "mention": "quality control point <quality/quality_management/quality-control-points> form",
+          "confidence": "high"
+        },
+        {
+          "name": "Title",
+          "type": "Field",
+          "mention": "Title: rename to give a concise description",
+          "confidence": "high"
+        },
+        {
+          "name": "Control per",
+          "type": "Field",
+          "mention": "Control per: using the drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Type",
+          "type": "Field",
+          "mention": "Type: categorizes the control point type",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions",
+          "type": "Action",
+          "mention": "select Instructions to detail an instruction for the worker",
+          "confidence": "high"
+        },
+        {
+          "name": "Take a Picture",
+          "type": "Action",
+          "mention": "Take a Picture",
+          "confidence": "high"
+        },
+        {
+          "name": "Register Consumed Materials",
+          "type": "Action",
+          "mention": "Register Consumed Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Print Label",
+          "type": "Action",
+          "mention": "Print Label",
+          "confidence": "high"
+        },
+        {
+          "name": "Steps list",
+          "type": "Feature",
+          "mention": "return to the Steps list using the breadcrumbs",
+          "confidence": "high"
+        },
+        {
+          "name": "quality control line item",
+          "type": "DataObject",
+          "mention": "drag the last quality control line item",
+          "confidence": "medium"
+        },
+        {
+          "name": "Check for broken switches",
+          "type": "Action",
+          "mention": "Check for broken switches",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Concept",
+          "mention": "broadly for the Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operation",
+          "type": "Concept",
+          "mention": "specifically for this Operation *only*",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity",
+          "type": "Concept",
+          "mention": "particular Quantity of the product",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Quality",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Quality <../../quality> app"
+        },
+        {
+          "source": "quality control point",
+          "relation": "CONFIGURED_BY",
+          "target": "Title",
+          "evidence": "Title: rename to give a concise description"
+        },
+        {
+          "source": "quality control point",
+          "relation": "CONFIGURED_BY",
+          "target": "Control per",
+          "evidence": "Control per: using the drop-down menu, determine whether this instruction applies"
+        },
+        {
+          "source": "quality control point",
+          "relation": "CONFIGURED_BY",
+          "target": "Type",
+          "evidence": "Type: categorizes the control point type"
+        },
+        {
+          "source": "Type",
+          "relation": "ENABLES",
+          "target": "Instructions",
+          "evidence": "select Instructions to detail an instruction for the worker"
+        },
+        {
+          "source": "Type",
+          "relation": "ENABLES",
+          "target": "Take a Picture",
+          "evidence": "Take a Picture"
+        },
+        {
+          "source": "Type",
+          "relation": "ENABLES",
+          "target": "Register Consumed Materials",
+          "evidence": "Register Consumed Materials"
+        },
+        {
+          "source": "Type",
+          "relation": "ENABLES",
+          "target": "Print Label",
+          "evidence": "Print Label"
+        },
+        {
+          "source": "Control per",
+          "relation": "APPLIES_TO",
+          "target": "Product",
+          "evidence": "broadly for the Product"
+        },
+        {
+          "source": "Control per",
+          "relation": "APPLIES_TO",
+          "target": "Operation",
+          "evidence": "specifically for this Operation *only*"
+        },
+        {
+          "source": "Control per",
+          "relation": "APPLIES_TO",
+          "target": "Quantity",
+          "evidence": "particular Quantity of the product"
+        },
+        {
+          "source": "Steps list",
+          "relation": "CONTAINS",
+          "target": "quality control line item",
+          "evidence": "drag the last quality control line item"
+        },
+        {
+          "source": "Check for broken switches",
+          "relation": "IS_PART_OF",
+          "target": "quality control line item",
+          "evidence": "Drag and reorder the `Check for broken switches` instruction"
+        }
+      ]
+    }
+  }
+]

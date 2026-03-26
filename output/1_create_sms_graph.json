@@ -1,0 +1,723 @@
+[
+  {
+    "section_id": "create-sms-messages",
+    "heading": "Create SMS messages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Marketing",
+          "type": "Module",
+          "mention": "main SMS Marketing dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Template Form",
+          "type": "DataObject",
+          "mention": "Odoo reveals a blank SMS template form",
+          "confidence": "high"
+        },
+        {
+          "name": "Subject",
+          "type": "Field",
+          "mention": "give the mailing a Subject",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipients",
+          "type": "Field",
+          "mention": "in the Recipients field, choose to whom this SMS will be sent",
+          "confidence": "high"
+        },
+        {
+          "name": "Mailing List",
+          "type": "Feature",
+          "mention": "Odoo has Mailing List selected",
+          "confidence": "high"
+        },
+        {
+          "name": "Select Mailing List",
+          "type": "Field",
+          "mention": "specify which mailing list Odoo should send this SMS to in the Select Mailing List field",
+          "confidence": "high"
+        },
+        {
+          "name": "Mailing Lists",
+          "type": "Sub-module",
+          "mention": "go to Mailing Lists --> Mailing List",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Filter",
+          "type": "Action",
+          "mention": "an Add Filter button will appear",
+          "confidence": "high"
+        },
+        {
+          "name": "Domain Rule Fields",
+          "type": "Feature",
+          "mention": "reveals fully customizable domain rule fields",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipient Filter Equation",
+          "type": "Feature",
+          "mention": "default recipient filter equation that appears automatically",
+          "confidence": "high"
+        },
+        {
+          "name": "Contact",
+          "type": "DataObject",
+          "mention": "If Contact is chosen, all of the Contacts records in the Odoo database",
+          "confidence": "high"
+        },
+        {
+          "name": "Blacklist",
+          "type": "Feature",
+          "mention": "they haven't blacklisted themselves from any mailings",
+          "confidence": "high"
+        },
+        {
+          "name": "Country",
+          "type": "Field",
+          "mention": "Country > Country Name equals United States",
+          "confidence": "high"
+        },
+        {
+          "name": "Country Name",
+          "type": "Field",
+          "mention": "Country Name equals United States",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Message",
+          "type": "DataObject",
+          "mention": "Create SMS messages",
+          "confidence": "high"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "click Create on the main SMS Marketing dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS",
+          "type": "Concept",
+          "mention": "SMS (Short Message Service)",
+          "confidence": "high"
+        },
+        {
+          "name": "mailing_lists_blacklists",
+          "type": "Feature",
+          "mention": "check out mailing_lists_blacklists",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SMS Marketing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo ... main SMS Marketing dashboard"
+        },
+        {
+          "source": "SMS Marketing",
+          "relation": "CONTAINS",
+          "target": "SMS Template Form",
+          "evidence": "click Create on the main SMS Marketing dashboard, and Odoo reveals a blank SMS template form"
+        },
+        {
+          "source": "SMS Template Form",
+          "relation": "CONTAINS",
+          "target": "Subject",
+          "evidence": "give the mailing a Subject, which describes what the mailing is about"
+        },
+        {
+          "source": "SMS Template Form",
+          "relation": "CONTAINS",
+          "target": "Recipients",
+          "evidence": "in the Recipients field, choose to whom this SMS will be sent"
+        },
+        {
+          "source": "SMS Template Form",
+          "relation": "CONTAINS",
+          "target": "Select Mailing List",
+          "evidence": "specify which mailing list Odoo should send this SMS to in the Select Mailing List field"
+        },
+        {
+          "source": "Recipients",
+          "relation": "HAS_FEATURE",
+          "target": "Mailing List",
+          "evidence": "By default, Odoo has Mailing List selected"
+        },
+        {
+          "source": "Mailing List",
+          "relation": "IS_PART_OF",
+          "target": "Mailing Lists",
+          "evidence": "go to Mailing Lists --> Mailing List"
+        },
+        {
+          "source": "Recipients",
+          "relation": "ENABLES",
+          "target": "Add Filter",
+          "evidence": "if no default recipient filter equation is present, an Add Filter button will appear"
+        },
+        {
+          "source": "Add Filter",
+          "relation": "ENABLES",
+          "target": "Domain Rule Fields",
+          "evidence": "Clicking the Add Filter button, reveals fully customizable domain rule fields"
+        },
+        {
+          "source": "Domain Rule Fields",
+          "relation": "RELATED_TO",
+          "target": "Recipient Filter Equation",
+          "evidence": "domain rule fields, which can be configured similar to an equation"
+        },
+        {
+          "source": "Create",
+          "relation": "PRODUCES",
+          "target": "SMS Template Form",
+          "evidence": "click Create on the main SMS Marketing dashboard, and Odoo reveals a blank SMS template form"
+        },
+        {
+          "source": "Create",
+          "relation": "IS_PART_OF",
+          "target": "SMS Marketing",
+          "evidence": "click Create on the main SMS Marketing dashboard"
+        },
+        {
+          "source": "SMS Template Form",
+          "relation": "CONTAINS",
+          "target": "Recipient Filter Equation",
+          "evidence": "default recipient filter equation that appears automatically"
+        },
+        {
+          "source": "Recipient Filter Equation",
+          "relation": "APPLIES_TO",
+          "target": "Contact",
+          "evidence": "Country > Country Name equals United States ... Blacklist > is > not set"
+        },
+        {
+          "source": "Blacklist",
+          "relation": "APPLIES_TO",
+          "target": "SMS Message",
+          "evidence": "they haven't blacklisted themselves from any mailings"
+        },
+        {
+          "source": "Country Name",
+          "relation": "IS_PART_OF",
+          "target": "Country",
+          "evidence": "Country > Country Name equals United States"
+        },
+        {
+          "source": "mailing_lists_blacklists",
+          "relation": "SEE_ALSO",
+          "target": "Mailing Lists",
+          "evidence": "To learn more about mailing lists and contacts, check out mailing_lists_blacklists"
+        },
+        {
+          "source": "SMS Message",
+          "relation": "BELONGS_TO",
+          "target": "SMS Marketing",
+          "evidence": "Create SMS messages ... SMS Marketing dashboard"
+        },
+        {
+          "source": "Domain Rule Fields",
+          "relation": "CONFIGURED_BY",
+          "target": "Recipient Filter Equation",
+          "evidence": "domain rule fields, which can be configured similar to an equation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "writing-sms-messages",
+    "heading": "Writing SMS messages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Marketing",
+          "type": "Module",
+          "mention": "SMS Marketing app",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Content tab",
+          "type": "Sub-module",
+          "mention": "SMS Content tab",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Message",
+          "type": "DataObject",
+          "mention": "SMS (Short Message Service)",
+          "confidence": "high"
+        },
+        {
+          "name": "Text Field",
+          "type": "Field",
+          "mention": "text field",
+          "confidence": "high"
+        },
+        {
+          "name": "Character Count Display",
+          "type": "Feature",
+          "mention": "Odoo displays how many characters are used in the message",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Mailing Count Display",
+          "type": "Feature",
+          "mention": "how many SMS mailings it will take to deliver the complete message",
+          "confidence": "high"
+        },
+        {
+          "name": "Information Icon",
+          "type": "Feature",
+          "mention": "Information icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Credits",
+          "type": "Concept",
+          "mention": "Credits must be purchased from Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo SMS FAQ",
+          "type": "Report",
+          "mention": "Odoo SMS - FAQ",
+          "confidence": "medium"
+        },
+        {
+          "name": "Links",
+          "type": "Feature",
+          "mention": "Links",
+          "confidence": "medium"
+        },
+        {
+          "name": "Emojis",
+          "type": "Feature",
+          "mention": "emojis",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SMS Marketing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Credits must be purchased from Odoo in order to take advantage of the SMS Marketing app"
+        },
+        {
+          "source": "SMS Content tab",
+          "relation": "IS_PART_OF",
+          "target": "SMS Marketing",
+          "evidence": "Enter the content of the SMS in the text field, found in the SMS Content tab"
+        },
+        {
+          "source": "Text Field",
+          "relation": "IS_PART_OF",
+          "target": "SMS Content tab",
+          "evidence": "Enter the content of the SMS in the text field, found in the SMS Content tab"
+        },
+        {
+          "source": "SMS Content tab",
+          "relation": "CONTAINS",
+          "target": "Text Field",
+          "evidence": "Enter the content of the SMS in the text field, found in the SMS Content tab"
+        },
+        {
+          "source": "Text Field",
+          "relation": "CONTAINS",
+          "target": "Links",
+          "evidence": "Links and emojis can also be included"
+        },
+        {
+          "source": "Text Field",
+          "relation": "CONTAINS",
+          "target": "Emojis",
+          "evidence": "Links and emojis can also be included"
+        },
+        {
+          "source": "SMS Marketing",
+          "relation": "HAS_FEATURE",
+          "target": "Character Count Display",
+          "evidence": "Odoo displays how many characters are used in the message"
+        },
+        {
+          "source": "SMS Marketing",
+          "relation": "HAS_FEATURE",
+          "target": "SMS Mailing Count Display",
+          "evidence": "how many SMS mailings it will take to deliver the complete message"
+        },
+        {
+          "source": "SMS Marketing",
+          "relation": "HAS_FEATURE",
+          "target": "Information Icon",
+          "evidence": "To check the price of sending an SMS for a country, click on the Information icon"
+        },
+        {
+          "source": "SMS Marketing",
+          "relation": "REQUIRES",
+          "target": "Credits",
+          "evidence": "Credits must be purchased from Odoo in order to take advantage of the SMS Marketing app; SMS messages will not be sent without credits"
+        },
+        {
+          "source": "SMS Message",
+          "relation": "IS_PART_OF",
+          "target": "SMS Marketing",
+          "evidence": "Enter the content of the SMS in the text field, found in the SMS Content tab"
+        },
+        {
+          "source": "SMS Marketing",
+          "relation": "SEE_ALSO",
+          "target": "Odoo SMS FAQ",
+          "evidence": "Odoo SMS - FAQ https://iap-services.odoo.com/iap/sms/pricing"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "track-links-used-in-sms-messages",
+    "heading": "Track links used in SMS messages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS",
+          "type": "Module",
+          "mention": "SMS (Short Message Service) messages",
+          "confidence": "high"
+        },
+        {
+          "name": "Link Tracker",
+          "type": "Feature",
+          "mention": "link trackers",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Analytical Data and Metrics",
+          "type": "Concept",
+          "mention": "analytical data and metrics",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SMS",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "When links are used in SMS messages, Odoo automatically generates link trackers"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GENERATES",
+          "target": "Link Tracker",
+          "evidence": "Odoo automatically generates link trackers to gather analytical data and metrics related to those specific links"
+        },
+        {
+          "source": "Link Tracker",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "which can be found by going to Configuration --> Link Tracker"
+        },
+        {
+          "source": "Link Tracker",
+          "relation": "RELATED_TO",
+          "target": "Analytical Data and Metrics",
+          "evidence": "link trackers to gather analytical data and metrics related to those specific links"
+        },
+        {
+          "source": "Link Tracker",
+          "relation": "TRIGGERED_BY",
+          "target": "SMS",
+          "evidence": "When links are used in SMS messages, Odoo automatically generates link trackers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "adjust-sms-settings",
+    "heading": "Adjust SMS settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS Template",
+          "type": "DataObject",
+          "mention": "the SMS template",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings Tab",
+          "type": "Sub-module",
+          "mention": "the Settings tab of the SMS template",
+          "confidence": "high"
+        },
+        {
+          "name": "Include Opt-Out Link",
+          "type": "Setting",
+          "mention": "option to Include opt-out link",
+          "confidence": "high"
+        },
+        {
+          "name": "Tracking Section",
+          "type": "Sub-module",
+          "mention": "the Tracking section of the Settings tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Responsible",
+          "type": "Field",
+          "mention": "designated as the Responsible",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "An employee can be designated as the Responsible",
+          "confidence": "high"
+        },
+        {
+          "name": "Mailing List",
+          "type": "DataObject",
+          "mention": "unsubscribe from the mailing list",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipient",
+          "type": "Actor",
+          "mention": "the recipient is able to unsubscribe",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Settings Tab",
+          "relation": "IS_PART_OF",
+          "target": "SMS Template",
+          "evidence": "Under the Settings tab of the SMS template"
+        },
+        {
+          "source": "Include Opt-Out Link",
+          "relation": "IS_PART_OF",
+          "target": "Settings Tab",
+          "evidence": "Under the Settings tab of the SMS template, there is an option to Include opt-out link"
+        },
+        {
+          "source": "Tracking Section",
+          "relation": "IS_PART_OF",
+          "target": "Settings Tab",
+          "evidence": "the Tracking section of the Settings tab"
+        },
+        {
+          "source": "Responsible",
+          "relation": "IS_PART_OF",
+          "target": "Tracking Section",
+          "evidence": "designated as the Responsible in the Tracking section of the Settings tab"
+        },
+        {
+          "source": "Employee",
+          "relation": "RELATED_TO",
+          "target": "Responsible",
+          "evidence": "An employee can be designated as the Responsible"
+        },
+        {
+          "source": "Include Opt-Out Link",
+          "relation": "ENABLES",
+          "target": "Recipient",
+          "evidence": "If activated, the recipient is able to unsubscribe from the mailing list"
+        },
+        {
+          "source": "SMS Template",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo; the SMS template"
+        },
+        {
+          "source": "Include Opt-Out Link",
+          "relation": "APPLIES_TO",
+          "target": "Mailing List",
+          "evidence": "the recipient is able to unsubscribe from the mailing list, thus avoiding all future mailings"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "send-sms-messages",
+    "heading": "Send SMS messages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Send SMS messages",
+          "type": "Workflow",
+          "mention": "Send SMS messages",
+          "confidence": "high"
+        },
+        {
+          "name": "Mailing",
+          "type": "DataObject",
+          "mention": "mailing is created",
+          "confidence": "high"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Send: sends the message immediately",
+          "confidence": "high"
+        },
+        {
+          "name": "Schedule",
+          "type": "Action",
+          "mention": "Schedule: choose a day (and time) for Odoo to send the mailing",
+          "confidence": "high"
+        },
+        {
+          "name": "Test",
+          "type": "Action",
+          "mention": "Test: allows for an SMS to be sent to one or multiple numbers for test purposes",
+          "confidence": "high"
+        },
+        {
+          "name": "SMS",
+          "type": "Concept",
+          "mention": "SMS (Short Message Service)",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipient List",
+          "type": "DataObject",
+          "mention": "recipient list",
+          "confidence": "medium"
+        },
+        {
+          "name": "Phone Number",
+          "type": "Field",
+          "mention": "phone numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Date",
+          "type": "Field",
+          "mention": "choose a day (and time) for Odoo to send the mailing",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Send SMS messages",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Send SMS messages"
+        },
+        {
+          "source": "Send SMS messages",
+          "relation": "CONTAINS",
+          "target": "Send",
+          "evidence": "choose when Odoo should deliver the message from the following options: Send"
+        },
+        {
+          "source": "Send SMS messages",
+          "relation": "CONTAINS",
+          "target": "Schedule",
+          "evidence": "choose when Odoo should deliver the message from the following options: Schedule"
+        },
+        {
+          "source": "Send SMS messages",
+          "relation": "CONTAINS",
+          "target": "Test",
+          "evidence": "choose when Odoo should deliver the message from the following options: Test"
+        },
+        {
+          "source": "Send",
+          "relation": "APPLIES_TO",
+          "target": "Mailing",
+          "evidence": "Send: sends the message immediately"
+        },
+        {
+          "source": "Schedule",
+          "relation": "APPLIES_TO",
+          "target": "Mailing",
+          "evidence": "Schedule: choose a day (and time) for Odoo to send the mailing"
+        },
+        {
+          "source": "Schedule",
+          "relation": "REQUIRES",
+          "target": "Delivery Date",
+          "evidence": "choose a day (and time) for Odoo to send the mailing"
+        },
+        {
+          "source": "Test",
+          "relation": "APPLIES_TO",
+          "target": "SMS",
+          "evidence": "allows for an SMS (Short Message Service) to be sent to one or multiple numbers for test purposes"
+        },
+        {
+          "source": "Test",
+          "relation": "REQUIRES",
+          "target": "Phone Number",
+          "evidence": "sent to one or multiple numbers for test purposes"
+        },
+        {
+          "source": "Send",
+          "relation": "REQUIRES",
+          "target": "Recipient List",
+          "evidence": "if the recipient list is highly refined"
+        },
+        {
+          "source": "Mailing",
+          "relation": "RELATED_TO",
+          "target": "SMS",
+          "evidence": "Once a mailing is created... SMS (Short Message Service) to be sent"
+        },
+        {
+          "source": "Odoo",
+          "relation": "ENABLES",
+          "target": "Send SMS messages",
+          "evidence": "choose when Odoo should deliver the message"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1554 @@
+[
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Austria - Accounting",
+          "type": "Module",
+          "mention": "l10n_at",
+          "confidence": "high"
+        },
+        {
+          "name": "Austria - Accounting Reports",
+          "type": "Module",
+          "mention": "l10n_at_reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Austrian SAF-T Export",
+          "type": "Module",
+          "mention": "l10n_at_saft",
+          "confidence": "high"
+        },
+        {
+          "name": "Austria - Security Regulation for Point of Sale",
+          "type": "Module",
+          "mention": "l10n_at_pos",
+          "confidence": "high"
+        },
+        {
+          "name": "SAF-T",
+          "type": "Concept",
+          "mention": "SAF-T",
+          "confidence": "medium"
+        },
+        {
+          "name": "RKSV",
+          "type": "Regulation",
+          "mention": "RKSV compliance",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Austria - Accounting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "fiscal localization package"
+        },
+        {
+          "source": "Austria - Accounting Reports",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Adds localized versions of financial reports"
+        },
+        {
+          "source": "Austrian SAF-T Export",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Adds the SAF-T export."
+        },
+        {
+          "source": "Austria - Security Regulation for Point of Sale",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Adds RKSV compliance for POS."
+        },
+        {
+          "source": "Austria - Accounting",
+          "relation": "HAS_FEATURE",
+          "target": "Default fiscal localization package",
+          "evidence": "Default fiscal localization package"
+        },
+        {
+          "source": "Austrian SAF-T Export",
+          "relation": "HAS_FEATURE",
+          "target": "SAF-T export",
+          "evidence": "Adds the SAF-T export."
+        },
+        {
+          "source": "Austria - Security Regulation for Point of Sale",
+          "relation": "COMPLIES_WITH",
+          "target": "RKSV",
+          "evidence": "Adds RKSV compliance for POS."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "financial-reports",
+    "heading": "Financial reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Financial reports",
+          "type": "Module",
+          "mention": "Title: Financial reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Balance sheet",
+          "type": "Report",
+          "mention": "- Balance sheet",
+          "confidence": "high"
+        },
+        {
+          "name": "§ 224 UGB",
+          "type": "Regulation",
+          "mention": "§ 224 UGB",
+          "confidence": "high"
+        },
+        {
+          "name": "Profit and loss",
+          "type": "Report",
+          "mention": "- Profit and loss",
+          "confidence": "high"
+        },
+        {
+          "name": "§ 231 UGB",
+          "type": "Regulation",
+          "mention": "§ 231 UGB",
+          "confidence": "high"
+        },
+        {
+          "name": "Gesamtkostenverfahren",
+          "type": "Concept",
+          "mention": "Gesamtkostenverfahren",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting reporting documentation",
+          "type": "Unknown",
+          "mention": "Accounting reporting documentation",
+          "confidence": "low"
+        },
+        {
+          "name": "localizations/austria/saf-t",
+          "type": "Unknown",
+          "mention": "localizations/austria/saf-t",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Financial reports",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Financial reports"
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "BELONGS_TO",
+          "target": "Financial reports",
+          "evidence": "The following localized reports are available: - Balance sheet"
+        },
+        {
+          "source": "Profit and loss",
+          "relation": "BELONGS_TO",
+          "target": "Financial reports",
+          "evidence": "The following localized reports are available: - Profit and loss"
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "COMPLIES_WITH",
+          "target": "§ 224 UGB",
+          "evidence": "Balance sheet according to § 224 UGB"
+        },
+        {
+          "source": "Profit and loss",
+          "relation": "COMPLIES_WITH",
+          "target": "§ 231 UGB",
+          "evidence": "Profit and loss according to § 231 UGB"
+        },
+        {
+          "source": "Profit and loss",
+          "relation": "USES_METHOD",
+          "target": "Gesamtkostenverfahren",
+          "evidence": "Profit and loss according to § 231 UGB (Gesamtkostenverfahren)"
+        },
+        {
+          "source": "Financial reports",
+          "relation": "SEE_ALSO",
+          "target": "Accounting reporting documentation",
+          "evidence": ".. seealso:: Accounting reporting documentation <../accounting/reporting>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "saf-t-(standard-audit-file-for-tax)",
+    "heading": "SAF-T (Standard Audit File for Tax)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Standard Audit File for Tax",
+          "type": "Concept",
+          "mention": "SAF-T (Standard Audit File for Tax)",
+          "confidence": "high"
+        },
+        {
+          "name": "Austrian SAF-T Export",
+          "type": "Module",
+          "mention": "Austrian SAF-T Export module",
+          "confidence": "high"
+        },
+        {
+          "name": "Austrian tax office",
+          "type": "Actor",
+          "mention": "Austrian tax office",
+          "confidence": "high"
+        },
+        {
+          "name": "SAF-T",
+          "type": "Report",
+          "mention": "SAF-T",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Austrian SAF-T Export",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The Austrian SAF-T Export module allows exporting..."
+        },
+        {
+          "source": "Austrian SAF-T Export",
+          "relation": "GENERATES",
+          "target": "SAF-T",
+          "evidence": "The Austrian SAF-T Export module allows exporting the report..."
+        },
+        {
+          "source": "Austrian tax office",
+          "relation": "PERFORMED_BY",
+          "target": "SAF-T",
+          "evidence": "The Austrian tax office may request a SAF-T."
+        },
+        {
+          "source": "Standard Audit File for Tax",
+          "relation": "EQUIVALENT_TO",
+          "target": "SAF-T",
+          "evidence": "SAF-T (Standard Audit File for Tax)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "SAF-T",
+          "type": "Regulation",
+          "mention": "SAF-T",
+          "confidence": "medium"
+        },
+        {
+          "name": "warning message",
+          "type": "Feature",
+          "mention": "a warning message listing which information is needed",
+          "confidence": "medium"
+        },
+        {
+          "name": "export",
+          "type": "Action",
+          "mention": "the export",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "COMPLIES_WITH",
+          "target": "SAF-T",
+          "evidence": "required by the SAF-T"
+        },
+        {
+          "source": "SAF-T",
+          "relation": "REQUIRES",
+          "target": "configuration",
+          "evidence": "all the information required by the SAF-T is available"
+        },
+        {
+          "source": "warning message",
+          "relation": "TRIGGERED_BY",
+          "target": "export",
+          "evidence": "displayed during the export"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "company-information",
+    "heading": "Company information",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "DataObject",
+          "mention": "company",
+          "confidence": "high"
+        },
+        {
+          "name": "Address",
+          "type": "Field",
+          "mention": "Address",
+          "confidence": "high"
+        },
+        {
+          "name": "Street",
+          "type": "Field",
+          "mention": "Street",
+          "confidence": "high"
+        },
+        {
+          "name": "City",
+          "type": "Field",
+          "mention": "City",
+          "confidence": "high"
+        },
+        {
+          "name": "ZIP",
+          "type": "Field",
+          "mention": "ZIP",
+          "confidence": "high"
+        },
+        {
+          "name": "Country",
+          "type": "Field",
+          "mention": "Country",
+          "confidence": "high"
+        },
+        {
+          "name": "Phone",
+          "type": "Field",
+          "mention": "Phone",
+          "confidence": "high"
+        },
+        {
+          "name": "Company ID",
+          "type": "Field",
+          "mention": "Company ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax ID",
+          "type": "Field",
+          "mention": "Tax ID",
+          "confidence": "high"
+        },
+        {
+          "name": "UID-Nummer",
+          "type": "Concept",
+          "mention": "UID-Nummer",
+          "confidence": "high"
+        },
+        {
+          "name": "Umsatzsteueridentifikationsnummer",
+          "type": "Concept",
+          "mention": "Umsatzsteueridentifikationsnummer",
+          "confidence": "high"
+        },
+        {
+          "name": "Contact person",
+          "type": "DataObject",
+          "mention": "contact person",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts app",
+          "type": "Module",
+          "mention": "Contacts app",
+          "confidence": "high"
+        },
+        {
+          "name": "Individual",
+          "type": "Field",
+          "mention": "Individual",
+          "confidence": "medium"
+        },
+        {
+          "name": "Company name",
+          "type": "Field",
+          "mention": "Company name",
+          "confidence": "high"
+        },
+        {
+          "name": "Phone field",
+          "type": "Field",
+          "mention": "Phone",
+          "confidence": "high"
+        },
+        {
+          "name": "Mobile field",
+          "type": "Field",
+          "mention": "Mobile",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Company",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Address",
+          "evidence": "Ensure the following fields are correctly filled in: - Address"
+        },
+        {
+          "source": "Address",
+          "relation": "CONTAINS",
+          "target": "Street",
+          "evidence": "Street"
+        },
+        {
+          "source": "Address",
+          "relation": "CONTAINS",
+          "target": "City",
+          "evidence": "City"
+        },
+        {
+          "source": "Address",
+          "relation": "CONTAINS",
+          "target": "ZIP",
+          "evidence": "ZIP"
+        },
+        {
+          "source": "Address",
+          "relation": "CONTAINS",
+          "target": "Country",
+          "evidence": "Country"
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Phone",
+          "evidence": "Phone"
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Company ID",
+          "evidence": "Company ID by providing your company's tax ID"
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Tax ID",
+          "evidence": "Tax ID by providing, if you have one, your UID-Nummer"
+        },
+        {
+          "source": "Tax ID",
+          "relation": "USES_METHOD",
+          "target": "UID-Nummer",
+          "evidence": "UID-Nummer (Umsatzsteueridentifikationsnummer)"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Contact person",
+          "evidence": "At least one **contact person** must be linked to your company"
+        },
+        {
+          "source": "Contact person",
+          "relation": "IS_PART_OF",
+          "target": "Contacts app",
+          "evidence": "linked to your company in the Contacts app"
+        },
+        {
+          "source": "Contact person",
+          "relation": "CONTAINS",
+          "target": "Individual",
+          "evidence": "Ensure the contact type is set to Individual."
+        },
+        {
+          "source": "Contact person",
+          "relation": "CONTAINS",
+          "target": "Company name",
+          "evidence": "Select your company in the Company name field."
+        },
+        {
+          "source": "Contact person",
+          "relation": "CONTAINS",
+          "target": "Phone field",
+          "evidence": "Provide at least one phone number using the Phone or Mobile field."
+        },
+        {
+          "source": "Contact person",
+          "relation": "CONTAINS",
+          "target": "Mobile field",
+          "evidence": "Provide at least one phone number using the Phone or Mobile field."
+        },
+        {
+          "source": "Company name",
+          "relation": "RELATED_TO",
+          "target": "Company",
+          "evidence": "Select your company in the Company name field."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "customer-and-supplier-information",
+    "heading": "Customer and supplier information",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts",
+          "type": "Module",
+          "mention": "Contacts app",
+          "confidence": "high"
+        },
+        {
+          "name": "Partner",
+          "type": "DataObject",
+          "mention": "partner",
+          "confidence": "medium"
+        },
+        {
+          "name": "Address",
+          "type": "Field",
+          "mention": "Address",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT Number",
+          "type": "Field",
+          "mention": "VAT number",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax ID",
+          "type": "Field",
+          "mention": "Tax ID field",
+          "confidence": "high"
+        },
+        {
+          "name": "SAF-T Accounting",
+          "type": "Regulation",
+          "mention": "saf-t-accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "Customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Supplier",
+          "type": "Actor",
+          "mention": "supplier",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Contacts",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Customer and supplier information Using the Contacts app"
+        },
+        {
+          "source": "Address",
+          "relation": "BELONGS_TO",
+          "target": "Partner",
+          "evidence": "fill in the Address of any partner"
+        },
+        {
+          "source": "VAT Number",
+          "relation": "EQUIVALENT_TO",
+          "target": "Tax ID",
+          "evidence": "fill in the VAT number (including the country prefix) in the Tax ID field"
+        },
+        {
+          "source": "SAF-T Accounting",
+          "relation": "APPLIES_TO",
+          "target": "Partner",
+          "evidence": "localizations/austria/saf-t-accounting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accounting-settings",
+    "heading": "Accounting settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Austrian localization section",
+          "type": "Module",
+          "mention": "Austrian localization section",
+          "confidence": "medium"
+        },
+        {
+          "name": "ÖNACE-Code",
+          "type": "Field",
+          "mention": "ÖNACE-Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Profit Assessment Method",
+          "type": "Field",
+          "mention": "Profit Assessment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "ÖNACE",
+          "type": "Standard",
+          "mention": "ÖNACE",
+          "confidence": "high"
+        },
+        {
+          "name": "Austrian Economic Chambers",
+          "type": "Actor",
+          "mention": "Austrian Economic Chambers",
+          "confidence": "high"
+        },
+        {
+          "name": "localizations/austria/saf-t-chart-of-account",
+          "type": "Concept",
+          "mention": "localizations/austria/saf-t-chart-of-account",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Austrian localization section",
+          "evidence": "Under the Austrian localization section"
+        },
+        {
+          "source": "Austrian localization section",
+          "relation": "CONTAINS",
+          "target": "ÖNACE-Code",
+          "evidence": "fields: ... ÖNACE-Code"
+        },
+        {
+          "source": "Austrian localization section",
+          "relation": "CONTAINS",
+          "target": "Profit Assessment Method",
+          "evidence": "fields: ... Profit Assessment Method"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo ... Go to Accounting"
+        },
+        {
+          "source": "ÖNACE-Code",
+          "relation": "RELATED_TO",
+          "target": "ÖNACE",
+          "evidence": "ÖNACE-Code"
+        },
+        {
+          "source": "ÖNACE",
+          "relation": "SEE_ALSO",
+          "target": "Austrian Economic Chambers",
+          "evidence": "seealso: ... ÖNACE information on the Austrian Economic Chambers website"
+        },
+        {
+          "source": "localizations/austria/saf-t-chart-of-account",
+          "relation": "RELATED_TO",
+          "target": "Austrian localization section",
+          "evidence": ".. _localizations/austria/saf-t-chart-of-account:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "chart-of-accounts-mapping",
+    "heading": "Chart of accounts mapping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Austrian SAF-T specifications",
+          "type": "Regulation",
+          "mention": "The Austrian SAF-T specifications",
+          "confidence": "medium"
+        },
+        {
+          "name": "SAF-T export",
+          "type": "Feature",
+          "mention": "SAF-T export",
+          "confidence": "medium"
+        },
+        {
+          "name": "Chart of accounts (COA)",
+          "type": "DataObject",
+          "mention": "chart of accounts (COA)",
+          "confidence": "high"
+        },
+        {
+          "name": "Account",
+          "type": "DataObject",
+          "mention": "accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tag",
+          "type": "Field",
+          "mention": "tags",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account code field",
+          "type": "Field",
+          "mention": "code",
+          "confidence": "medium"
+        },
+        {
+          "name": "Austria - Accounting module",
+          "type": "Module",
+          "mention": "The Austria - Accounting module",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Austrian COA",
+          "type": "DataObject",
+          "mention": "the default Austrian COA",
+          "confidence": "medium"
+        },
+        {
+          "name": "SAF-T COA account",
+          "type": "DataObject",
+          "mention": "SAF-T COA account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Export SAF-T report",
+          "type": "Action",
+          "mention": "exporting the SAF-T report",
+          "confidence": "medium"
+        },
+        {
+          "name": "View Problematic Accounts",
+          "type": "Action",
+          "mention": "Clicking View Problematic Accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Warning",
+          "type": "Feature",
+          "mention": "A warning will be displayed",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Austrian SAF-T specifications",
+          "relation": "CONTAINS",
+          "target": "Chart of accounts (COA)",
+          "evidence": "The Austrian SAF-T specifications define a chart of accounts (COA)."
+        },
+        {
+          "source": "Account",
+          "relation": "BELONGS_TO",
+          "target": "Chart of accounts (COA)",
+          "evidence": "All relevant accounts for the SAF-T export must be annotated..."
+        },
+        {
+          "source": "SAF-T export",
+          "relation": "REQUIRES",
+          "target": "Account",
+          "evidence": "All relevant accounts for the SAF-T export must be annotated..."
+        },
+        {
+          "source": "Tag",
+          "relation": "BELONGS_TO",
+          "target": "Account",
+          "evidence": "...by adding tags to the accounts."
+        },
+        {
+          "source": "Tag",
+          "relation": "GOVERNED_BY",
+          "target": "Account code field",
+          "evidence": "...adding the `1000` tag to an account maps it... to the SAF-T COA account with the code `1000`."
+        },
+        {
+          "source": "Austria - Accounting module",
+          "relation": "HAS_FEATURE",
+          "target": "Tag creation",
+          "evidence": "The Austria - Accounting module adds a tag for each SAF-T COA account."
+        },
+        {
+          "source": "Austria - Accounting module",
+          "relation": "PRODUCES",
+          "target": "Account mapping",
+          "evidence": "Furthermore, it automatically maps many accounts from the default Austrian COA."
+        },
+        {
+          "source": "Export SAF-T report",
+          "relation": "ENABLES",
+          "target": "Check for unmapped accounts",
+          "evidence": "You can try exporting the SAF-T report to check if there are unmapped accounts..."
+        },
+        {
+          "source": "View Problematic Accounts",
+          "relation": "ENABLES",
+          "target": "View unmapped accounts",
+          "evidence": "Clicking View Problematic Accounts lets you view them."
+        },
+        {
+          "source": "Austrian SAF-T specifications",
+          "relation": "SEE_ALSO",
+          "target": "Chart of accounts documentation",
+          "evidence": ".. seealso:: Chart of accounts documentation <../accounting/get_started/chart_of_accounts>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "exporting-the-saf-t-report",
+    "heading": "Exporting the SAF-T report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Reports",
+          "type": "Sub-module",
+          "mention": "Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "General Ledger",
+          "type": "Report",
+          "mention": "General Ledger",
+          "confidence": "high"
+        },
+        {
+          "name": "SAF-T report",
+          "type": "Report",
+          "mention": "SAF-T",
+          "confidence": "high"
+        },
+        {
+          "name": "PDF button",
+          "type": "Feature",
+          "mention": "PDF button",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Reports",
+          "evidence": "Accounting --> Reports"
+        },
+        {
+          "source": "Reports",
+          "relation": "CONTAINS",
+          "target": "General Ledger",
+          "evidence": "Reports --> General Ledger"
+        },
+        {
+          "source": "General Ledger",
+          "relation": "HAS_REPORT",
+          "target": "SAF-T report",
+          "evidence": "Click the right side of the PDF button and select SAF-T"
+        },
+        {
+          "source": "PDF button",
+          "relation": "ENABLES",
+          "target": "SAF-T report",
+          "evidence": "Click the right side of the PDF button and select SAF-T"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "rksv-(registrierkassensicherheitsverordnung)",
+    "heading": "RKSV (Registrierkassensicherheitsverordnung)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "RKSV",
+          "type": "Regulation",
+          "mention": "RKSV (Registrierkassensicherheitsverordnung)",
+          "confidence": "high"
+        },
+        {
+          "name": "Austrian regulation",
+          "type": "Regulation",
+          "mention": "Austrian regulation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Signature Creation Unit",
+          "type": "Module",
+          "mention": "Signature Creation Unit (SCU)",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiskaly",
+          "type": "Integration",
+          "mention": "fiskaly",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "COMPLIES_WITH",
+          "target": "RKSV",
+          "evidence": "Odoo provides a compliant solution"
+        },
+        {
+          "source": "Odoo",
+          "relation": "COMPLIES_WITH",
+          "target": "Austrian regulation",
+          "evidence": "The RKSV (Registrierkassensicherheitsverordnung) is an Austrian regulation... Odoo provides a compliant solution"
+        },
+        {
+          "source": "Signature Creation Unit",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "These systems must be equipped with a **Signature Creation Unit (SCU)**, which is responsible for signing each transaction."
+        },
+        {
+          "source": "Odoo",
+          "relation": "RELATED_TO",
+          "target": "fiskaly",
+          "evidence": "Odoo provides a compliant solution through `fiskaly"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Austria - Security Regulation for Point of Sale",
+          "type": "Module",
+          "mention": "**Austria - Security Regulation for Point of Sale** (`l10n_at_pos`) module",
+          "confidence": "high"
+        },
+        {
+          "name": "l10n_at_pos",
+          "type": "Module",
+          "mention": "(`l10n_at_pos`)",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "high"
+        },
+        {
+          "name": "Companies",
+          "type": "Sub-module",
+          "mention": "Companies section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Update Info",
+          "type": "Action",
+          "mention": "Update Info",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiskaly",
+          "type": "Integration",
+          "mention": "Fiskaly",
+          "confidence": "high"
+        },
+        {
+          "name": "Managed by Odoo",
+          "type": "Setting",
+          "mention": "Managed by Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Test Fiskaly",
+          "type": "Setting",
+          "mention": "Test Fiskaly",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate Credentials",
+          "type": "Action",
+          "mention": "Generate Credentials",
+          "confidence": "high"
+        },
+        {
+          "name": "Authenticate Keys",
+          "type": "Action",
+          "mention": "Authenticate Keys",
+          "confidence": "high"
+        },
+        {
+          "name": "FinanzOnline",
+          "type": "Integration",
+          "mention": "FinanzOnline",
+          "confidence": "high"
+        },
+        {
+          "name": "Participant Identifier",
+          "type": "Field",
+          "mention": "Participant Identifier",
+          "confidence": "high"
+        },
+        {
+          "name": "User Identifier",
+          "type": "Field",
+          "mention": "User Identifier",
+          "confidence": "high"
+        },
+        {
+          "name": "User Pin",
+          "type": "Field",
+          "mention": "User Pin",
+          "confidence": "high"
+        },
+        {
+          "name": "Authenticate FON",
+          "type": "Action",
+          "mention": "Authenticate FON",
+          "confidence": "high"
+        },
+        {
+          "name": "Austrian Ministry of Finance",
+          "type": "Actor",
+          "mention": "Austrian Ministry of Finance",
+          "confidence": "high"
+        },
+        {
+          "name": "point of sale",
+          "type": "Module",
+          "mention": "point of sale",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Austria - Security Regulation for Point of Sale",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Configuration Install ... module."
+        },
+        {
+          "source": "l10n_at_pos",
+          "relation": "EQUIVALENT_TO",
+          "target": "Austria - Security Regulation for Point of Sale",
+          "evidence": "(`l10n_at_pos`) module"
+        },
+        {
+          "source": "Companies",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "Open the Settings app, navigate to the Companies section"
+        },
+        {
+          "source": "Managed by Odoo",
+          "relation": "CONFIGURED_BY",
+          "target": "Fiskaly",
+          "evidence": "enable Managed by Odoo fa-toggle-on, which activates automatic integration management."
+        },
+        {
+          "source": "Test Fiskaly",
+          "relation": "CONFIGURED_BY",
+          "target": "Fiskaly",
+          "evidence": "ensure that Test Fiskaly fa-toggle-on is enabled"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "point of sale",
+          "evidence": "start regular point of sale </applications/sales/point_of_sale> operations."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "digitally-signatured-receipts",
+    "heading": "Digitally signatured receipts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Digitally signatured receipts",
+          "type": "Concept",
+          "mention": "Digitally signatured receipts",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt",
+          "type": "DataObject",
+          "mention": "receipts",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt number",
+          "type": "Field",
+          "mention": "receipt number",
+          "confidence": "medium"
+        },
+        {
+          "name": "SCU",
+          "type": "Concept",
+          "mention": "SCU",
+          "confidence": "high"
+        },
+        {
+          "name": "Signature Creation Unit",
+          "type": "Concept",
+          "mention": "Signature Creation Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "QR code",
+          "type": "Feature",
+          "mention": "QR code",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sicherheitseinrichtung ausgefallen",
+          "type": "Concept",
+          "mention": "Sicherheitseinrichtung ausgefallen",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiskaly services",
+          "type": "Integration",
+          "mention": "Fiskaly services",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "DataObject",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders list view",
+          "type": "Feature",
+          "mention": "Orders list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipt Signed? column",
+          "type": "Field",
+          "mention": "Receipt Signed? column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sign Order",
+          "type": "Action",
+          "mention": "Sign Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "medium"
+        },
+        {
+          "name": "oi-settings-adjust (adjust settings) icon",
+          "type": "Feature",
+          "mention": "oi-settings-adjust (adjust settings) icon",
+          "confidence": "low"
+        },
+        {
+          "name": "fa-cog Actions",
+          "type": "Feature",
+          "mention": "fa-cog Actions",
+          "confidence": "low"
+        },
+        {
+          "name": "background process",
+          "type": "Concept",
+          "mention": "background process",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "receipt",
+          "relation": "GENERATES",
+          "target": "QR code",
+          "evidence": "The receipt then displays an encrypted signature as a QR code"
+        },
+        {
+          "source": "QR code",
+          "relation": "CONTAINS",
+          "target": "receipt number",
+          "evidence": "QR code containing the receipt number"
+        },
+        {
+          "source": "Odoo",
+          "relation": "ENABLES",
+          "target": "Digitally signatured receipts",
+          "evidence": "Product: Odoo Title: Digitally signatured receipts"
+        },
+        {
+          "source": "receipt",
+          "relation": "CONFIGURED_BY",
+          "target": "SCU",
+          "evidence": "system automatically signs them using the SCU (Signature Creation Unit)"
+        },
+        {
+          "source": "Odoo",
+          "relation": "INTEGRATES_WITH",
+          "target": "Fiskaly services",
+          "evidence": "the system is linked to Fiskaly services"
+        },
+        {
+          "source": "Sign Order",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Orders that remain unsigned due to SCU unavailability can be signed manually."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "dep7-export",
+    "heading": "DEP7 export",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "DEP7",
+          "type": "Concept",
+          "mention": "DEP7 (Digitale Schnittstelle der Finanzverwaltung für Kassensysteme)",
+          "confidence": "high"
+        },
+        {
+          "name": "Austrian tax authorities",
+          "type": "Regulation",
+          "mention": "Austrian tax authorities",
+          "confidence": "medium"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "DEP7 Reports",
+          "type": "Report",
+          "mention": "DEP7 Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Datetime",
+          "type": "Field",
+          "mention": "Start Datetime",
+          "confidence": "high"
+        },
+        {
+          "name": "End Datetime",
+          "type": "Field",
+          "mention": "End Datetime",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Field",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Print",
+          "type": "Action",
+          "mention": "Print",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "DEP7 Reports",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "go to Point of Sale --> Reporting --> DEP7 Reports"
+        },
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Point of Sale",
+          "evidence": "go to Point of Sale --> Reporting --> DEP7 Reports"
+        },
+        {
+          "source": "DEP7 Reports",
+          "relation": "REQUIRES",
+          "target": "Start Datetime",
+          "evidence": "fill in the following mandatory fields: - Start Datetime"
+        },
+        {
+          "source": "DEP7 Reports",
+          "relation": "REQUIRES",
+          "target": "End Datetime",
+          "evidence": "fill in the following mandatory fields: - End Datetime"
+        },
+        {
+          "source": "DEP7 Reports",
+          "relation": "REQUIRES",
+          "target": "Point of Sale",
+          "evidence": "fill in the following mandatory fields: - Point of Sale: Specify from which point of sale(s) data must be exported."
+        },
+        {
+          "source": "Print",
+          "relation": "PRODUCES",
+          "target": "DEP7 Reports",
+          "evidence": "click Print to download the PDF file with DEP7 data."
+        },
+        {
+          "source": "DEP7 Reports",
+          "relation": "COMPLIES_WITH",
+          "target": "Austrian tax authorities",
+          "evidence": "submit it to the Austrian tax authorities upon request."
+        },
+        {
+          "source": "DEP7",
+          "relation": "EQUIVALENT_TO",
+          "target": "Digitale Schnittstelle der Finanzverwaltung für Kassensysteme",
+          "evidence": "DEP7 (Digitale Schnittstelle der Finanzverwaltung für Kassensysteme)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "monthly---yearly-closing-receipts",
+    "heading": "Monthly / Yearly closing receipts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Monthly / Yearly closing receipts",
+          "type": "Workflow",
+          "mention": "Title: Monthly / Yearly closing receipts",
+          "confidence": "high"
+        },
+        {
+          "name": "POS register",
+          "type": "DataObject",
+          "mention": "POS register",
+          "confidence": "medium"
+        },
+        {
+          "name": "POS dashboard",
+          "type": "Module",
+          "mention": "POS dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Print closing receipts window",
+          "type": "Feature",
+          "mention": "Print closing receipts window",
+          "confidence": "medium"
+        },
+        {
+          "name": "oi-view-list (list view) icon",
+          "type": "Action",
+          "mention": "oi-view-list (list view) icon",
+          "confidence": "low"
+        },
+        {
+          "name": "fa-calendar-o (calendar) icon",
+          "type": "Action",
+          "mention": "fa-calendar-o (calendar) icon",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Monthly / Yearly closing receipts",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Monthly / Yearly closing receipts"
+        },
+        {
+          "source": "Monthly / Yearly closing receipts",
+          "relation": "HAS_FEATURE",
+          "target": "Print closing receipts window",
+          "evidence": "The last month is selected by default in the Print closing receipts window."
+        },
+        {
+          "source": "Monthly / Yearly closing receipts",
+          "relation": "REQUIRES",
+          "target": "POS register",
+          "evidence": "To print monthly/yearly closing receipts, open the related POS register"
+        },
+        {
+          "source": "POS register",
+          "relation": "BELONGS_TO",
+          "target": "POS dashboard",
+          "evidence": "from the POS dashboard."
+        },
+        {
+          "source": "Monthly / Yearly closing receipts",
+          "relation": "TRIGGERED_BY",
+          "target": "oi-view-list (list view) icon",
+          "evidence": "Click the oi-view-list (list view) icon in the top-right corner and select Montly/Yearly Receipts."
+        },
+        {
+          "source": "Print closing receipts window",
+          "relation": "ENABLES",
+          "target": "fa-calendar-o (calendar) icon",
+          "evidence": "To change it, select Monthly or Yearly, then click the fa-calendar-o (calendar) icon to select the desired month/year."
+        }
+      ]
+    }
+  }
+]

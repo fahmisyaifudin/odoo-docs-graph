@@ -1,0 +1,663 @@
+[
+  {
+    "section_id": "lunch",
+    "heading": "Lunch",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lunch",
+          "type": "Module",
+          "mention": "Lunch",
+          "confidence": "high"
+        },
+        {
+          "name": "lunch/settings",
+          "type": "Setting",
+          "mention": "settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "lunch/vendors",
+          "type": "Unknown",
+          "mention": "vendors",
+          "confidence": "low"
+        },
+        {
+          "name": "lunch/locations",
+          "type": "Unknown",
+          "mention": "locations",
+          "confidence": "low"
+        },
+        {
+          "name": "lunch/products",
+          "type": "Unknown",
+          "mention": "products",
+          "confidence": "low"
+        },
+        {
+          "name": "lunch/product-categories",
+          "type": "Unknown",
+          "mention": "product categories",
+          "confidence": "low"
+        },
+        {
+          "name": "employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Lunch",
+          "evidence": "The Lunch application in Odoo"
+        },
+        {
+          "source": "Lunch",
+          "relation": "CONFIGURED_BY",
+          "target": "lunch/settings",
+          "evidence": "Before employees can use the Lunch application, there are a number of configurations that need to be made: settings"
+        },
+        {
+          "source": "Lunch",
+          "relation": "PERFORMED_BY",
+          "target": "employees",
+          "evidence": "Once these are created and configured, employees can view offerings and order food."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "settings",
+    "heading": "Settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Lunch app",
+          "type": "Product",
+          "mention": "Lunch app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Lunch Overdraft",
+          "type": "Setting",
+          "mention": "Lunch Overdraft",
+          "confidence": "high"
+        },
+        {
+          "name": "maximum overdraft amount",
+          "type": "Field",
+          "mention": "Enter the maximum overdraft amount for employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "localization setting",
+          "type": "Setting",
+          "mention": "determined by the localization setting of the company",
+          "confidence": "medium"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "the company",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reception notification",
+          "type": "Setting",
+          "mention": "Reception notification",
+          "confidence": "high"
+        },
+        {
+          "name": "Discuss app",
+          "type": "Product",
+          "mention": "Discuss app",
+          "confidence": "high"
+        },
+        {
+          "name": "Your lunch has been delivered. Enjoy your meal!",
+          "type": "Field",
+          "mention": "default message",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "navigate to Lunch app --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Lunch app",
+          "evidence": "navigate to Lunch app --> Configuration"
+        },
+        {
+          "source": "Lunch Overdraft",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "Configure the following: - Lunch Overdraft"
+        },
+        {
+          "source": "Reception notification",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "Configure the following: - Reception notification"
+        },
+        {
+          "source": "Lunch Overdraft",
+          "relation": "CONFIGURED_BY",
+          "target": "maximum overdraft amount",
+          "evidence": "Enter the maximum overdraft amount for employees"
+        },
+        {
+          "source": "maximum overdraft amount",
+          "relation": "GOVERNED_BY",
+          "target": "localization setting",
+          "evidence": "The currency format is determined by the localization setting of the company"
+        },
+        {
+          "source": "Reception notification",
+          "relation": "CONFIGURED_BY",
+          "target": "Your lunch has been delivered. Enjoy your meal!",
+          "evidence": "The default message `Your lunch has been delivered. Enjoy your meal!` populates this field"
+        },
+        {
+          "source": "Reception notification",
+          "relation": "PRODUCES",
+          "target": "Discuss app",
+          "evidence": "users receive via the **Discuss** app when their food has been delivered"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "translation-support",
+    "heading": "Translation support",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lunch",
+          "type": "Module",
+          "mention": "the **Lunch** application",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reception notification",
+          "type": "Field",
+          "mention": "Reception notification field",
+          "confidence": "medium"
+        },
+        {
+          "name": "company_lunch_notify_message",
+          "type": "DataObject",
+          "mention": "company_lunch_notify_message",
+          "confidence": "medium"
+        },
+        {
+          "name": "language",
+          "type": "Concept",
+          "mention": "multiple languages",
+          "confidence": "medium"
+        },
+        {
+          "name": "translation",
+          "type": "Feature",
+          "mention": "Translation support",
+          "confidence": "high"
+        },
+        {
+          "name": "Translate: company_lunch_notify_message",
+          "type": "Action",
+          "mention": "Translate: company_lunch_notify_message pop-up window",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Lunch",
+          "evidence": "Product: Odoo, the **Lunch** application"
+        },
+        {
+          "source": "Lunch",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to Lunch app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "translation",
+          "evidence": "The image below is an example for the Reception notification field in the settings menu."
+        },
+        {
+          "source": "Reception notification",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "Reception notification field in the settings menu"
+        },
+        {
+          "source": "translation",
+          "relation": "ENABLES",
+          "target": "Translate: company_lunch_notify_message",
+          "evidence": "To add translations for that field, click the two letter language code (for example, EN for English) and a translation pop-up window appears."
+        },
+        {
+          "source": "Translate: company_lunch_notify_message",
+          "relation": "CONFIGURED_BY",
+          "target": "company_lunch_notify_message",
+          "evidence": "Translate: company_lunch_notify_message pop-up window loads with the option to enter a translation"
+        },
+        {
+          "source": "company_lunch_notify_message",
+          "relation": "IS_PART_OF",
+          "target": "Lunch",
+          "evidence": "company_lunch_notify_message pop-up window loads"
+        },
+        {
+          "source": "translation",
+          "relation": "HAS_FEATURE",
+          "target": "language",
+          "evidence": "If a database has multiple languages installed"
+        },
+        {
+          "source": "Lunch",
+          "relation": "HAS_FEATURE",
+          "target": "translation",
+          "evidence": "many forms in the **Lunch** application have the option of entering translations"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "locations",
+    "heading": "Locations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lunch",
+          "type": "Module",
+          "mention": "**Lunch** application",
+          "confidence": "high"
+        },
+        {
+          "name": "HQ Office",
+          "type": "DataObject",
+          "mention": "`HQ Office` location",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Locations",
+          "type": "Sub-module",
+          "mention": "Lunch app --> Configuration --> Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations list view",
+          "type": "Report",
+          "mention": "configured locations appear in a list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "Click the New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Location name field",
+          "type": "Field",
+          "mention": "Enter the name of the location in the field",
+          "confidence": "high"
+        },
+        {
+          "name": "Address field",
+          "type": "Field",
+          "mention": "Address field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "HQ Office",
+          "relation": "IS_PART_OF",
+          "target": "Lunch",
+          "evidence": "`HQ Office` location when the **Lunch** application is installed"
+        },
+        {
+          "source": "Lunch",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Lunch app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Locations",
+          "evidence": "Configuration --> Locations"
+        },
+        {
+          "source": "Locations",
+          "relation": "HAS_REPORT",
+          "target": "Locations list view",
+          "evidence": "configured locations appear in a list view"
+        },
+        {
+          "source": "Locations list view",
+          "relation": "ENABLES",
+          "target": "New button",
+          "evidence": "Click the New button in the top-left corner"
+        },
+        {
+          "source": "New button",
+          "relation": "PRODUCES",
+          "target": "blank line",
+          "evidence": "Click the New button... and a blank line appears"
+        },
+        {
+          "source": "Locations",
+          "relation": "CONTAINS",
+          "target": "Location name field",
+          "evidence": "Enter the name of the location in the field"
+        },
+        {
+          "source": "Locations",
+          "relation": "CONTAINS",
+          "target": "Address field",
+          "evidence": "click into the Address field"
+        },
+        {
+          "source": "Address field",
+          "relation": "ENABLES",
+          "target": "enter multiple lines",
+          "evidence": "It is possible to enter multiple lines in the address field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "alerts",
+    "heading": "Alerts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lunch",
+          "type": "Module",
+          "mention": "Lunch",
+          "confidence": "high"
+        },
+        {
+          "name": "Discuss",
+          "type": "Module",
+          "mention": "Discuss",
+          "confidence": "high"
+        },
+        {
+          "name": "Alerts",
+          "type": "Sub-module",
+          "mention": "Alerts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Alert in app",
+          "type": "Feature",
+          "mention": "Alert in app",
+          "confidence": "high"
+        },
+        {
+          "name": "Chat notification",
+          "type": "Feature",
+          "mention": "Chat notification",
+          "confidence": "high"
+        },
+        {
+          "name": "Alert Name",
+          "type": "Field",
+          "mention": "Alert Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Display",
+          "type": "Field",
+          "mention": "Display",
+          "confidence": "high"
+        },
+        {
+          "name": "Location",
+          "type": "Field",
+          "mention": "Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Show Until",
+          "type": "Field",
+          "mention": "Show Until",
+          "confidence": "high"
+        },
+        {
+          "name": "Active",
+          "type": "Setting",
+          "mention": "Active",
+          "confidence": "high"
+        },
+        {
+          "name": "Message",
+          "type": "Field",
+          "mention": "Message",
+          "confidence": "high"
+        },
+        {
+          "name": "Notification Time",
+          "type": "Field",
+          "mention": "Notification Time",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipients",
+          "type": "Field",
+          "mention": "Recipients",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee who ordered last week",
+          "type": "Actor",
+          "mention": "Employee who ordered last week",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee who ordered last month",
+          "type": "Actor",
+          "mention": "Employee who ordered last month",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee who ordered last year",
+          "type": "Actor",
+          "mention": "Employee who ordered last year",
+          "confidence": "high"
+        },
+        {
+          "name": "Everyone",
+          "type": "Actor",
+          "mention": "Everyone",
+          "confidence": "medium"
+        },
+        {
+          "name": "blank lunch alert form",
+          "type": "DataObject",
+          "mention": "blank lunch alert form",
+          "confidence": "medium"
+        },
+        {
+          "name": "main Lunch app dashboard",
+          "type": "DataObject",
+          "mention": "main Lunch app dashboard",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lunch",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Alerts\nIt is possible to set up alerts that can either be displayed in the **Lunch** app..."
+        },
+        {
+          "source": "Discuss",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "It is possible to set up alerts that can either be displayed in the **Lunch** app, or be sent to specific employees via the **Discuss** app."
+        },
+        {
+          "source": "Alerts",
+          "relation": "IS_PART_OF",
+          "target": "Lunch",
+          "evidence": "Title: Alerts"
+        },
+        {
+          "source": "Alert in app",
+          "relation": "HAS_FEATURE",
+          "target": "Alerts",
+          "evidence": "Display: Select how the alert is shown. The options are:\n  - Alert in app..."
+        },
+        {
+          "source": "Chat notification",
+          "relation": "HAS_FEATURE",
+          "target": "Alerts",
+          "evidence": "Display: Select how the alert is shown. The options are:\n  - Chat notification..."
+        },
+        {
+          "source": "Recipients",
+          "relation": "BELONGS_TO",
+          "target": "Chat notification",
+          "evidence": "If Chat notification was selected for the Display option..."
+        },
+        {
+          "source": "Alert Name",
+          "relation": "BELONGS_TO",
+          "target": "blank lunch alert form",
+          "evidence": "Enter the following information on the form:\n- Alert Name..."
+        },
+        {
+          "source": "Display",
+          "relation": "BELONGS_TO",
+          "target": "blank lunch alert form",
+          "evidence": "Enter the following information on the form:\n- Display..."
+        },
+        {
+          "source": "Location",
+          "relation": "BELONGS_TO",
+          "target": "blank lunch alert form",
+          "evidence": "Enter the following information on the form:\n- Location..."
+        },
+        {
+          "source": "Show Until",
+          "relation": "BELONGS_TO",
+          "target": "blank lunch alert form",
+          "evidence": "Enter the following information on the form:\n- Show Until..."
+        },
+        {
+          "source": "Active",
+          "relation": "BELONGS_TO",
+          "target": "blank lunch alert form",
+          "evidence": "Enter the following information on the form:\n- Active..."
+        },
+        {
+          "source": "Message",
+          "relation": "BELONGS_TO",
+          "target": "blank lunch alert form",
+          "evidence": "Enter the following information on the form:\n- Message..."
+        },
+        {
+          "source": "Notification Time",
+          "relation": "BELONGS_TO",
+          "target": "blank lunch alert form",
+          "evidence": "Enter the following information on the form:\n- Notification Time..."
+        },
+        {
+          "source": "Alert in app",
+          "relation": "ENABLES",
+          "target": "main Lunch app dashboard",
+          "evidence": "Alert in app: The alert is visible on the main **Lunch** app dashboard..."
+        },
+        {
+          "source": "Chat notification",
+          "relation": "ENABLES",
+          "target": "Discuss",
+          "evidence": "Chat notification: The alert is sent to users via the **Discuss** app..."
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,490 @@
+[
+  {
+    "section_id": "multi-package-shipments",
+    "heading": "Multi-package shipments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-package shipments",
+          "type": "Feature",
+          "mention": "Multi-package shipments",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "Package",
+          "type": "DataObject",
+          "mention": "package",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Multi-package shipments",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Delivery order",
+          "relation": "CONTAINS",
+          "target": "Package",
+          "evidence": "a delivery order with multiple items may need to be shipped in more than one package"
+        },
+        {
+          "source": "Delivery order",
+          "relation": "HAS_FEATURE",
+          "target": "Multi-package shipments",
+          "evidence": "Shipping a single delivery order in multiple packages"
+        },
+        {
+          "source": "Multi-package shipments",
+          "relation": "SUPPORTS",
+          "target": "Delivery order",
+          "evidence": "Shipping a single delivery order in multiple packages"
+        },
+        {
+          "source": "Package",
+          "relation": "IS_PART_OF",
+          "target": "Delivery order",
+          "evidence": "shipped in more than one package"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packages",
+          "type": "Setting",
+          "mention": "Packages",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages checkbox",
+          "type": "Setting",
+          "mention": "Packages checkbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Concept",
+          "mention": "Operations",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Packages",
+          "relation": "CONFIGURED_BY",
+          "target": "Packages checkbox",
+          "evidence": "select the Packages checkbox"
+        },
+        {
+          "source": "Packages checkbox",
+          "relation": "BELONGS_TO",
+          "target": "Operations",
+          "evidence": "in the *Operations* section"
+        },
+        {
+          "source": "Packages",
+          "relation": "GOVERNED_BY",
+          "target": "Packages setting",
+          "evidence": "the *Packages* setting must be enabled"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Inventory --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "Inventory --> Configuration"
+        },
+        {
+          "source": "Inventory",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "ship-items-in-multiple-packages",
+    "heading": "Ship items in multiple packages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Overview",
+          "type": "Module",
+          "mention": "Inventory Overview page",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Orders",
+          "type": "DataObject",
+          "mention": "Delivery Orders card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Detailed Operations",
+          "type": "Feature",
+          "mention": "Detailed Operations pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity column",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand",
+          "type": "Field",
+          "mention": "Demand quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Destination Package",
+          "type": "Field",
+          "mention": "Destination Package",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line link",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "click Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages",
+          "type": "Report",
+          "mention": "Packages page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packages",
+          "type": "Field",
+          "mention": "Packages smart button",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Product: Odoo Title: ... begin by navigating to the Inventory app."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Inventory Overview",
+          "evidence": "On the Inventory Overview page"
+        },
+        {
+          "source": "Inventory Overview",
+          "relation": "CONTAINS",
+          "target": "Delivery Orders",
+          "evidence": "... on the Delivery Orders card."
+        },
+        {
+          "source": "Inventory Overview",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "On the Operations tab"
+        },
+        {
+          "source": "Operations",
+          "relation": "HAS_FEATURE",
+          "target": "Detailed Operations",
+          "evidence": "... select the Details link ... opens the Detailed Operations pop-up window."
+        },
+        {
+          "source": "Detailed Operations",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "In the table ... the Quantity column"
+        },
+        {
+          "source": "Detailed Operations",
+          "relation": "CONTAINS",
+          "target": "Demand",
+          "evidence": "... enter the Demand quantity"
+        },
+        {
+          "source": "Detailed Operations",
+          "relation": "CONTAINS",
+          "target": "Destination Package",
+          "evidence": "Then specify a Destination Package"
+        },
+        {
+          "source": "Detailed Operations",
+          "relation": "HAS_FEATURE",
+          "target": "Add a line",
+          "evidence": "... click the Add a line link"
+        },
+        {
+          "source": "Detailed Operations",
+          "relation": "HAS_FEATURE",
+          "target": "Save",
+          "evidence": "Click Save to confirm"
+        },
+        {
+          "source": "Inventory Overview",
+          "relation": "HAS_FEATURE",
+          "target": "Validate",
+          "evidence": "Finally, after all packages have been shipped, click Validate"
+        },
+        {
+          "source": "Inventory Overview",
+          "relation": "HAS_REPORT",
+          "target": "Packages",
+          "evidence": "... Packages smart button ... to open the Packages page"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "Delivery Orders",
+          "evidence": "... to confirm that the delivery order is complete."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-backorder-for-items-to-be-shipped-later",
+    "heading": "Create a backorder for items to be shipped later",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory/shipping/multiple-packages",
+          "type": "Workflow",
+          "mention": "the steps in inventory/shipping/multiple-packages",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery order form",
+          "type": "DataObject",
+          "mention": "the delivery order form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "the Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Destination Package",
+          "type": "Field",
+          "mention": "Destination Package",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate button",
+          "type": "Action",
+          "mention": "click the Validate button",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Backorder? pop-up window",
+          "type": "Feature",
+          "mention": "a *Create Backorder?* pop-up window appears",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Backorder button",
+          "type": "Action",
+          "mention": "Click the Create Backorder button",
+          "confidence": "high"
+        },
+        {
+          "name": "backorder delivery order",
+          "type": "DataObject",
+          "mention": "backorder delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "chatter",
+          "type": "Feature",
+          "mention": "the chatter of the original delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/OUT/XXXXX",
+          "type": "DataObject",
+          "mention": "WH/OUT/XXXXX",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Back Orders # link",
+          "type": "Feature",
+          "mention": "the Back Orders # link",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Orders card",
+          "type": "DataObject",
+          "mention": "the *Delivery Orders* card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "clicking Validate",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "delivery order form",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "Change the Quantity for the backordered items"
+        },
+        {
+          "source": "delivery order form",
+          "relation": "CONTAINS",
+          "target": "Destination Package",
+          "evidence": "mark the Quantity and Destination Package"
+        },
+        {
+          "source": "Create Backorder button",
+          "relation": "TRIGGERED_BY",
+          "target": "Validate button",
+          "evidence": "click the Validate button, and... Click the Create Backorder button"
+        },
+        {
+          "source": "Create Backorder button",
+          "relation": "PRODUCES",
+          "target": "backorder delivery order",
+          "evidence": "creates a new delivery order for the items"
+        },
+        {
+          "source": "backorder delivery order",
+          "relation": "IS_PART_OF",
+          "target": "chatter",
+          "evidence": "listed in the chatter of the original delivery order"
+        },
+        {
+          "source": "WH/OUT/XXXXX",
+          "relation": "EQUIVALENT_TO",
+          "target": "backorder delivery order",
+          "evidence": "The backorder WH/OUT/XXXXX has been created"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Back Orders # link",
+          "evidence": "navigating to Inventory, clicking the Back Orders # link"
+        },
+        {
+          "source": "Delivery Orders card",
+          "relation": "CONTAINS",
+          "target": "Back Orders # link",
+          "evidence": "the Back Orders # link on the *Delivery Orders* card"
+        },
+        {
+          "source": "backorder delivery order",
+          "relation": "HAS_FEATURE",
+          "target": "Validate",
+          "evidence": "clicking Validate"
+        }
+      ]
+    }
+  }
+]

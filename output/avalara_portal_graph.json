@@ -1,0 +1,1638 @@
+[
+  {
+    "section_id": "avalara-(avatax)-portal",
+    "heading": "Avalara (Avatax) portal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Avalara (Avatax) portal",
+          "type": "Feature",
+          "mention": "Avalara (Avatax) portal",
+          "confidence": "high"
+        },
+        {
+          "name": "Avalara",
+          "type": "Actor",
+          "mention": "Avalara",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Product",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "account management",
+          "type": "Feature",
+          "mention": "high"
+        },
+        {
+          "name": "transactions",
+          "type": "DataObject",
+          "mention": "transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "tax reporting",
+          "type": "Report",
+          "mention": "tax reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "tax exemption management",
+          "type": "Feature",
+          "mention": "tax exemption management",
+          "confidence": "high"
+        },
+        {
+          "name": "tax return resources",
+          "type": "Feature",
+          "mention": "tax return resources",
+          "confidence": "high"
+        },
+        {
+          "name": "sandbox environment",
+          "type": "Integration",
+          "mention": "sandbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "production environment",
+          "type": "Integration",
+          "mention": "production",
+          "confidence": "medium"
+        },
+        {
+          "name": "integration",
+          "type": "Integration",
+          "mention": "integration",
+          "confidence": "high"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Avalara (Avatax) portal",
+          "evidence": "Product: Odoo\nTitle: Avalara (Avatax) portal"
+        },
+        {
+          "source": "Avalara (Avatax) portal",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Avalara (Avatax) portal"
+        },
+        {
+          "source": "Avalara",
+          "relation": "PERFORMED_BY",
+          "target": "AvaTax",
+          "evidence": "Avalara is the software developer of the tax software, AvaTax."
+        },
+        {
+          "source": "AvaTax",
+          "relation": "BELONGS_TO",
+          "target": "Avalara",
+          "evidence": "Avalara is the software developer of the tax software, AvaTax."
+        },
+        {
+          "source": "Avalara (Avatax) portal",
+          "relation": "HAS_FEATURE",
+          "target": "account management",
+          "evidence": "offers account management options"
+        },
+        {
+          "source": "account management",
+          "relation": "CONTAINS",
+          "target": "transactions",
+          "evidence": "viewing/editing the transactions"
+        },
+        {
+          "source": "account management",
+          "relation": "CONTAINS",
+          "target": "taxes",
+          "evidence": "details on how the taxes are calculated"
+        },
+        {
+          "source": "account management",
+          "relation": "HAS_REPORT",
+          "target": "tax reporting",
+          "evidence": "tax reporting"
+        },
+        {
+          "source": "account management",
+          "relation": "HAS_FEATURE",
+          "target": "tax exemption management",
+          "evidence": "tax exemption management"
+        },
+        {
+          "source": "account management",
+          "relation": "HAS_FEATURE",
+          "target": "tax return resources",
+          "evidence": "tax return resources"
+        },
+        {
+          "source": "integration",
+          "relation": "CONFIGURED_BY",
+          "target": "account",
+          "evidence": "which type of account was set in the integration"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "transactions",
+    "heading": "Transactions",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ',' delimiter: line 1 column 715 (char 714)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"Transactions\",\"type\":\"Module\",\"mention\":\"Transactions link\",\"confidence\":\"high\"},{\"name\":\"Transactions page\",\"type\":\"Sub-module\",\"mention\":\"Transactions page\",\"confidence\":\"high\"},{\"name\":\"Avalara console\",\"type\":\"Integration\",\"mention\":\"logged into the Avalara console\",\"confidence\":\"medium\"},{\"name\":\"main dashboard\",\"type\":\"Feature\",\"mention\":\"main dashboard\",\"confidence\":\"high\"},{\"name\":\"click\",\"type\":\"Action\",\"mention\":\"click\",\"confidence\":\"high\"},{\"name\":\"navigate\",\"type\":\"Action\",\"mention\":\"navigate\",\"confidence\":\"high\"},{\"name\":\"Avalara\",\"type\":\"Product\",\"mention\":\"avatax/portal\",\"confidence\":\"low\"}]],\"relations\":[{\"source\":\"Transactions\",\"relation\":\"IS_PART_OF\",\"target\":\"Odoo\",\"evidence\":\"Product: Odoo\"},{\"source\":\"Transactions page\",\"relation\":\"IS_PART_OF\",\"target\":\"Transactions\",\"evidence\":\"Transactions --> Transactions\"},{\"source\":\"click\",\"relation\":\"PERFORMED_BY\",\"target\":\"Actor\",\"evidence\":\"click in the Transactions link\"},{\"source\":\"navigate\",\"relation\":\"PERFORMED_BY\",\"target\":\"Actor\",\"evidence\":\"navigate to Transactions --> Transactions\"},{\"source\":\"Odoo\",\"relation\":\"CONTAINS\",\"target\":\"main dashboard\",\"evidence\":\"main dashboard\"},{\"source\":\"Transactions\",\"relation\":\"CONTAINS\",\"target\":\"Transactions page\",\"evidence\":\"Transactions --> Transactions\"}]}"
+    }
+  },
+  {
+    "section_id": "edit-transaction",
+    "heading": "Edit transaction",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit transaction",
+          "type": "Action",
+          "mention": "Title: Edit transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice detail",
+          "type": "DataObject",
+          "mention": "Invoice detail",
+          "confidence": "medium"
+        },
+        {
+          "name": "Additional info",
+          "type": "DataObject",
+          "mention": "Additional info",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer info",
+          "type": "DataObject",
+          "mention": "Customer info",
+          "confidence": "medium"
+        },
+        {
+          "name": "Discount",
+          "type": "Feature",
+          "mention": "A Discount",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Avalara",
+          "type": "Integration",
+          "mention": "Avalara",
+          "confidence": "medium"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "AvaTax",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Edit transaction",
+          "relation": "CONTAINS",
+          "target": "Invoice detail",
+          "evidence": "Click into a transaction... These details include sections on Invoice detail"
+        },
+        {
+          "source": "Edit transaction",
+          "relation": "CONTAINS",
+          "target": "Additional info",
+          "evidence": "Click into a transaction... These details include sections on Additional info"
+        },
+        {
+          "source": "Edit transaction",
+          "relation": "CONTAINS",
+          "target": "Customer info",
+          "evidence": "Click into a transaction... These details include sections on Customer info"
+        },
+        {
+          "source": "Discount",
+          "relation": "APPLIES_TO",
+          "target": "Invoice",
+          "evidence": "A Discount can be added to adjust the invoice"
+        },
+        {
+          "source": "Odoo",
+          "relation": "INTEGRATION",
+          "target": "Avalara",
+          "evidence": "the transaction has already synced with Avalara"
+        },
+        {
+          "source": "Avalara",
+          "relation": "EQUIVALENT_TO",
+          "target": "AvaTax",
+          "evidence": "Avalara / *AvaTax*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "filter",
+    "heading": "Filter",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Transactions page",
+          "type": "Module",
+          "mention": "Transactions page",
+          "confidence": "high"
+        },
+        {
+          "name": "Filter",
+          "type": "Feature",
+          "mention": "Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "From field",
+          "type": "Field",
+          "mention": "From",
+          "confidence": "medium"
+        },
+        {
+          "name": "To field",
+          "type": "Field",
+          "mention": "To",
+          "confidence": "medium"
+        },
+        {
+          "name": "Document Status",
+          "type": "Field",
+          "mention": "Document Status",
+          "confidence": "high"
+        },
+        {
+          "name": "All",
+          "type": "Option",
+          "mention": "All",
+          "confidence": "low"
+        },
+        {
+          "name": "Voided",
+          "type": "Option",
+          "mention": "Voided",
+          "confidence": "low"
+        },
+        {
+          "name": "Committed",
+          "type": "Option",
+          "mention": "Committed",
+          "confidence": "low"
+        },
+        {
+          "name": "Uncommitted",
+          "type": "Option",
+          "mention": "Uncommitted",
+          "confidence": "low"
+        },
+        {
+          "name": "Locked",
+          "type": "Option",
+          "mention": "Locked",
+          "confidence": "low"
+        },
+        {
+          "name": "Document Code",
+          "type": "Field",
+          "mention": "Document Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Exactly match",
+          "type": "Option",
+          "mention": "Exactly match",
+          "confidence": "low"
+        },
+        {
+          "name": "Starts with",
+          "type": "Option",
+          "mention": "Starts with",
+          "confidence": "low"
+        },
+        {
+          "name": "Contains",
+          "type": "Option",
+          "mention": "Contains",
+          "confidence": "low"
+        },
+        {
+          "name": "Customer/Vendor Code",
+          "type": "Field",
+          "mention": "Customer/Vendor Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Country",
+          "type": "Field",
+          "mention": "Country",
+          "confidence": "high"
+        },
+        {
+          "name": "Region",
+          "type": "Field",
+          "mention": "Region",
+          "confidence": "high"
+        },
+        {
+          "name": "Document Type",
+          "type": "Field",
+          "mention": "Document Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Invoice",
+          "type": "DataObject",
+          "mention": "Sales Invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Invoice",
+          "type": "DataObject",
+          "mention": "Purchase Invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Return Invoice",
+          "type": "DataObject",
+          "mention": "Return Invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory Transfer Inbound Invoice",
+          "type": "DataObject",
+          "mention": "Inventory Transfer Inbound Invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory Transfer Outbound Invoice",
+          "type": "DataObject",
+          "mention": "Inventory Transfer Outbound Invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customs Invoice",
+          "type": "DataObject",
+          "mention": "Customs Invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Import ID",
+          "type": "Field",
+          "mention": "Import ID",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Transactions page",
+          "relation": "CONTAINS",
+          "target": "Filter",
+          "evidence": "Filter transactions on the Transactions page"
+        },
+        {
+          "source": "Filter",
+          "relation": "CONTAINS",
+          "target": "From field",
+          "evidence": "setting the From and To fields"
+        },
+        {
+          "source": "Filter",
+          "relation": "CONTAINS",
+          "target": "To field",
+          "evidence": "setting the From and To fields"
+        },
+        {
+          "source": "Filter",
+          "relation": "CONTAINS",
+          "target": "Document Status",
+          "evidence": "including: Document Status"
+        },
+        {
+          "source": "Filter",
+          "relation": "CONTAINS",
+          "target": "Document Code",
+          "evidence": "filter by, including: Document Code"
+        },
+        {
+          "source": "Filter",
+          "relation": "CONTAINS",
+          "target": "Customer/Vendor Code",
+          "evidence": "filter by, including: Customer/Vendor Code"
+        },
+        {
+          "source": "Filter",
+          "relation": "CONTAINS",
+          "target": "Country",
+          "evidence": "filter by, including: Country"
+        },
+        {
+          "source": "Filter",
+          "relation": "CONTAINS",
+          "target": "Region",
+          "evidence": "filter by, including: Region"
+        },
+        {
+          "source": "Filter",
+          "relation": "CONTAINS",
+          "target": "Document Type",
+          "evidence": "Click fa-plus Filters to access the following filter conditions: Document Type"
+        },
+        {
+          "source": "Filter",
+          "relation": "CONTAINS",
+          "target": "Import ID",
+          "evidence": "Click fa-plus Filters to access the following filter conditions: Import ID"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sort-by",
+    "heading": "Sort by",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Transactions page",
+          "type": "Module",
+          "mention": "Transactions page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Doc Code",
+          "type": "Field",
+          "mention": "Doc Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Doc Status",
+          "type": "Field",
+          "mention": "Doc Status",
+          "confidence": "high"
+        },
+        {
+          "name": "Cust/Vendor Code",
+          "type": "Field",
+          "mention": "Cust/Vendor Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Region",
+          "type": "Field",
+          "mention": "Region",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount",
+          "type": "Field",
+          "mention": "Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax",
+          "type": "Field",
+          "mention": "Tax",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Transactions page",
+          "relation": "CONTAINS",
+          "target": "Doc Code",
+          "evidence": "transactions will be listed below, according to the set"
+        },
+        {
+          "source": "Transactions page",
+          "relation": "CONTAINS",
+          "target": "Doc Status",
+          "evidence": "transactions will be listed below, according to the set"
+        },
+        {
+          "source": "Transactions page",
+          "relation": "CONTAINS",
+          "target": "Cust/Vendor Code",
+          "evidence": "transactions will be listed below, according to the set"
+        },
+        {
+          "source": "Transactions page",
+          "relation": "CONTAINS",
+          "target": "Region",
+          "evidence": "transactions will be listed below, according to the set"
+        },
+        {
+          "source": "Transactions page",
+          "relation": "CONTAINS",
+          "target": "Amount",
+          "evidence": "transactions will be listed below, according to the set"
+        },
+        {
+          "source": "Transactions page",
+          "relation": "CONTAINS",
+          "target": "Tax",
+          "evidence": "transactions will be listed below, according to the set"
+        },
+        {
+          "source": "Cust/Vendor Code",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "customer/vendor code in Odoo"
+        },
+        {
+          "source": "Region",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Country selection"
+        },
+        {
+          "source": "Amount",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "total amount on the Odoo document"
+        },
+        {
+          "source": "Tax",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "tax applied to the total"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "customize-columns",
+    "heading": "Customize columns",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Customize columns",
+          "type": "Feature",
+          "mention": "Title: Customize columns",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax calculated",
+          "type": "Field",
+          "mention": "- AvaTax calculated:",
+          "confidence": "high"
+        },
+        {
+          "name": "Country",
+          "type": "Field",
+          "mention": "- Country:",
+          "confidence": "high"
+        },
+        {
+          "name": "Cust/vendor code",
+          "type": "Field",
+          "mention": "- Cust/vendor code:",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "- Currency:",
+          "confidence": "high"
+        },
+        {
+          "name": "Doc date",
+          "type": "Field",
+          "mention": "- Doc date:",
+          "confidence": "high"
+        },
+        {
+          "name": "Doc status",
+          "type": "Field",
+          "mention": "- Doc status:",
+          "confidence": "high"
+        },
+        {
+          "name": "Doc type",
+          "type": "Field",
+          "mention": "- Doc type:",
+          "confidence": "high"
+        },
+        {
+          "name": "Import ID",
+          "type": "Field",
+          "mention": "- Import ID:",
+          "confidence": "high"
+        },
+        {
+          "name": "Last modified",
+          "type": "Field",
+          "mention": "- Last modified:",
+          "confidence": "high"
+        },
+        {
+          "name": "Location code",
+          "type": "Field",
+          "mention": "- Location code:",
+          "confidence": "high"
+        },
+        {
+          "name": "PO number",
+          "type": "Field",
+          "mention": "- PO number:",
+          "confidence": "high"
+        },
+        {
+          "name": "Reference code",
+          "type": "Field",
+          "mention": "- Reference code:",
+          "confidence": "high"
+        },
+        {
+          "name": "Region",
+          "type": "Field",
+          "mention": "- Region:",
+          "confidence": "high"
+        },
+        {
+          "name": "Salesperson code",
+          "type": "Field",
+          "mention": "- Salesperson code:",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax date",
+          "type": "Field",
+          "mention": "- Tax date:",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax override type",
+          "type": "Field",
+          "mention": "- Tax override type:",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-cog Customize columns",
+          "type": "Action",
+          "mention": "clicking the fa-cog Customize columns",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-plus Column",
+          "type": "Action",
+          "mention": "click the fa-plus Column",
+          "confidence": "medium"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Integration",
+          "mention": "calculated by *AvaTax*",
+          "confidence": "medium"
+        },
+        {
+          "name": "Avalara",
+          "type": "Actor",
+          "mention": "refer to this Avalara documentation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "AvaTax calculated",
+          "evidence": "The following columns can be added...- AvaTax calculated:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Country",
+          "evidence": "The following columns can be added...- Country:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Cust/vendor code",
+          "evidence": "The following columns can be added...- Cust/vendor code:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Currency",
+          "evidence": "The following columns can be added...- Currency:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Doc date",
+          "evidence": "The following columns can be added...- Doc date:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Doc status",
+          "evidence": "The following columns can be added...- Doc status:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Doc type",
+          "evidence": "The following columns can be added...- Doc type:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Import ID",
+          "evidence": "The following columns can be added...- Import ID:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Last modified",
+          "evidence": "The following columns can be added...- Last modified:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Location code",
+          "evidence": "The following columns can be added...- Location code:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "PO number",
+          "evidence": "The following columns can be added...- PO number:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Reference code",
+          "evidence": "The following columns can be added...- Reference code:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Region",
+          "evidence": "The following columns can be added...- Region:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Salesperson code",
+          "evidence": "The following columns can be added...- Salesperson code:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Tax date",
+          "evidence": "The following columns can be added...- Tax date:"
+        },
+        {
+          "source": "Customize columns",
+          "relation": "CONTAINS",
+          "target": "Tax override type",
+          "evidence": "The following columns can be added...- Tax override type:"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Customize columns",
+          "evidence": "Product: Odoo...Title: Customize columns"
+        },
+        {
+          "source": "AvaTax calculated",
+          "relation": "REQUIRES",
+          "target": "AvaTax",
+          "evidence": "the amount of tax calculated by *AvaTax*."
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "Avalara",
+          "evidence": "refer to this Avalara documentation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-export",
+    "heading": "Import-export",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Import-export",
+          "type": "Module",
+          "mention": "Import-export",
+          "confidence": "high"
+        },
+        {
+          "name": "avalara/portal-transactions",
+          "type": "Feature",
+          "mention": "avalara/portal-transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Import transactions",
+          "type": "Action",
+          "mention": "fa-download Import transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "Export transactions",
+          "type": "Action",
+          "mention": "fa-upload Export transactions",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Import-export",
+          "relation": "HAS_FEATURE",
+          "target": "avalara/portal-transactions",
+          "evidence": "While on the avalara/portal-transactions"
+        },
+        {
+          "source": "avalara/portal-transactions",
+          "relation": "ENABLES",
+          "target": "Import transactions",
+          "evidence": "click fa-download Import transactions or fa-upload Export transactions to import or export transactions"
+        },
+        {
+          "source": "avalara/portal-transactions",
+          "relation": "ENABLES",
+          "target": "Export transactions",
+          "evidence": "click fa-download Import transactions or fa-upload Export transactions to import or export transactions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reports",
+    "heading": "Reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Avalara",
+          "type": "Product",
+          "mention": "Avalara",
+          "confidence": "high"
+        },
+        {
+          "name": "Reports",
+          "type": "Feature",
+          "mention": "Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Transactions reports",
+          "type": "Report",
+          "mention": "Transactions reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Liability & tax return reports",
+          "type": "Report",
+          "mention": "Liability & tax return reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Exemption reports",
+          "type": "Report",
+          "mention": "Exemption reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Favorites tab",
+          "type": "Feature",
+          "mention": "Favorites tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Downloads tab",
+          "type": "Feature",
+          "mention": "Downloads tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Report Category",
+          "type": "Field",
+          "mention": "Report Category",
+          "confidence": "high"
+        },
+        {
+          "name": "Report Name",
+          "type": "Field",
+          "mention": "Report Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Select a report",
+          "type": "Action",
+          "mention": "Select a report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Select report details",
+          "type": "Action",
+          "mention": "Select report details",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create and download the report instantly",
+          "type": "Action",
+          "mention": "Create and download the report instantly",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create and download the report in the background",
+          "type": "Action",
+          "mention": "Create and download the report in the background",
+          "confidence": "medium"
+        },
+        {
+          "name": "Report preview and export",
+          "type": "Action",
+          "mention": "Report preview and export",
+          "confidence": "medium"
+        },
+        {
+          "name": "PDF",
+          "type": "Report",
+          "mention": "PDF",
+          "confidence": "low"
+        },
+        {
+          "name": "XLS",
+          "type": "Report",
+          "mention": "XLS",
+          "confidence": "low"
+        },
+        {
+          "name": "Preview",
+          "type": "Action",
+          "mention": "Preview",
+          "confidence": "high"
+        },
+        {
+          "name": "Create report",
+          "type": "Action",
+          "mention": "Create report",
+          "confidence": "high"
+        },
+        {
+          "name": "Make this report a favorite",
+          "type": "Action",
+          "mention": "Make this report a favorite",
+          "confidence": "high"
+        },
+        {
+          "name": "Download",
+          "type": "Action",
+          "mention": "Download",
+          "confidence": "high"
+        },
+        {
+          "name": "Frequently used reports",
+          "type": "Feature",
+          "mention": "Frequently used reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting dashboard",
+          "type": "Feature",
+          "mention": "Reporting dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Avalara management console",
+          "type": "Module",
+          "mention": "Avalara management console",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Avalara",
+          "relation": "HAS_FEATURE",
+          "target": "Reports",
+          "evidence": "Product: Odoo...Reports"
+        },
+        {
+          "source": "Reports",
+          "relation": "CONTAINS",
+          "target": "Transactions reports",
+          "evidence": "select from one of the available reporting tabs: Transactions reports"
+        },
+        {
+          "source": "Reports",
+          "relation": "CONTAINS",
+          "target": "Liability & tax return reports",
+          "evidence": "select from one of the available reporting tabs: ... Liability & tax return reports"
+        },
+        {
+          "source": "Reports",
+          "relation": "CONTAINS",
+          "target": "Exemption reports",
+          "evidence": "select from one of the available reporting tabs: ... Exemption reports"
+        },
+        {
+          "source": "Reports",
+          "relation": "CONTAINS",
+          "target": "Favorites tab",
+          "evidence": "Additionally, there is a Favorites tab"
+        },
+        {
+          "source": "Reports",
+          "relation": "CONTAINS",
+          "target": "Downloads tab",
+          "evidence": "Additionally, there is a Downloads tab"
+        },
+        {
+          "source": "Reports",
+          "relation": "IS_PART_OF",
+          "target": "Avalara management console",
+          "evidence": "To access reporting, navigate to the Reports link in the top menu of the Avalara management console."
+        },
+        {
+          "source": "Reports",
+          "relation": "HAS_REPORT",
+          "target": "Transactions reports",
+          "evidence": "select from one of the available reporting tabs: Transactions reports"
+        },
+        {
+          "source": "Reports",
+          "relation": "HAS_REPORT",
+          "target": "Liability & tax return reports",
+          "evidence": "select from one of the available reporting tabs: ... Liability & tax return reports"
+        },
+        {
+          "source": "Reports",
+          "relation": "HAS_REPORT",
+          "target": "Exemption reports",
+          "evidence": "select from one of the available reporting tabs: ... Exemption reports"
+        },
+        {
+          "source": "Favorites tab",
+          "relation": "CONTAINS",
+          "target": "report configurations",
+          "evidence": "The Favorites tab contains any favorited report configurations"
+        },
+        {
+          "source": "Downloads tab",
+          "relation": "CONTAINS",
+          "target": "high-volume transaction reports",
+          "evidence": "The Downloads tab contains a list view where the user can download the high-volume transaction reports"
+        },
+        {
+          "source": "Select a report",
+          "relation": "CONTAINS",
+          "target": "Report Category",
+          "evidence": "Make a selection for the Report Category... under the Select a report section"
+        },
+        {
+          "source": "Select a report",
+          "relation": "CONTAINS",
+          "target": "Report Name",
+          "evidence": "Make a selection for the Report Category, and the Report Name, under the Select a report section"
+        },
+        {
+          "source": "Create report",
+          "relation": "PRODUCES",
+          "target": "report",
+          "evidence": "After making all the configurations, click Create report to download the report."
+        },
+        {
+          "source": "Create and download the report instantly",
+          "relation": "REQUIRES",
+          "target": "small reports",
+          "evidence": "Create and download the report instantly (for small reports)"
+        },
+        {
+          "source": "Create and download the report in the background",
+          "relation": "REQUIRES",
+          "target": "larger reports",
+          "evidence": "Create and download the report in the background (for larger reports)"
+        },
+        {
+          "source": "Report preview and export",
+          "relation": "CONTAINS",
+          "target": "Preview",
+          "evidence": "Alternatively, the file can be previewed by selecting the Preview option."
+        },
+        {
+          "source": "Download",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "After the report is created, click Download to download the file to the device."
+        },
+        {
+          "source": "Reports",
+          "relation": "SEE_ALSO",
+          "target": "Reports in AvaTax",
+          "evidence": "See Avalara's documentation: Reports in AvaTax"
+        },
+        {
+          "source": "Reports",
+          "relation": "CONTAINS",
+          "target": "Frequently used reports",
+          "evidence": "Select a pre-configured report from the Frequently used reports section"
+        },
+        {
+          "source": "Frequently used reports",
+          "relation": "IS_PART_OF",
+          "target": "Reporting dashboard",
+          "evidence": "Select a pre-configured report from the Frequently used reports section of the reporting dashboard."
+        },
+        {
+          "source": "Odoo",
+          "relation": "BELONGS_TO",
+          "target": "Avalara",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-more-jurisdictions",
+    "heading": "Add more jurisdictions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Avalara management console",
+          "type": "Module",
+          "mention": "Avalara management console",
+          "confidence": "high"
+        },
+        {
+          "name": "sandbox",
+          "type": "Feature",
+          "mention": "sandbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "production",
+          "type": "Feature",
+          "mention": "production",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales and use tax",
+          "type": "Sub-module",
+          "mention": "Sales and use tax",
+          "confidence": "high"
+        },
+        {
+          "name": "United States",
+          "type": "Actor",
+          "mention": "United States",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT/GST",
+          "type": "Sub-module",
+          "mention": "VAT/GST",
+          "confidence": "high"
+        },
+        {
+          "name": "Customs duty",
+          "type": "Sub-module",
+          "mention": "Customs duty",
+          "confidence": "high"
+        },
+        {
+          "name": "Add where you collect sales and use tax",
+          "type": "Action",
+          "mention": "Add to where you collect sales and use tax",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a country or territory where you collect VAT/GST",
+          "type": "Action",
+          "mention": "Add a country or territory where you collect VAT/GST",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a country where you calculate customs duty",
+          "type": "Action",
+          "mention": "Add a country where you calculate customs duty",
+          "confidence": "high"
+        },
+        {
+          "name": "Avalara",
+          "type": "Product",
+          "mention": "Avalara",
+          "confidence": "high"
+        },
+        {
+          "name": "Add local jurisdiction taxes",
+          "type": "Concept",
+          "mention": "Add local jurisdiction taxes",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "BELONGS_TO",
+          "target": "Avalara",
+          "evidence": "Integration to Avalara mentioned"
+        },
+        {
+          "source": "Avalara management console",
+          "relation": "CONTAINS",
+          "target": "Sales and use tax",
+          "evidence": "Navigates to Sales and use tax tab"
+        },
+        {
+          "source": "Avalara management console",
+          "relation": "CONTAINS",
+          "target": "VAT/GST",
+          "evidence": "Navigates to VAT/GST tab"
+        },
+        {
+          "source": "Avalara management console",
+          "relation": "CONTAINS",
+          "target": "Customs duty",
+          "evidence": "Navigates to Customs duty tab"
+        },
+        {
+          "source": "Sales and use tax",
+          "relation": "CONTAINS",
+          "target": "United States",
+          "evidence": "Sales and use tax tab includes United States"
+        },
+        {
+          "source": "Add where you collect sales and use tax",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click action performed by user"
+        },
+        {
+          "source": "Add a country or territory where you collect VAT/GST",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click action performed by user"
+        },
+        {
+          "source": "Add a country where you calculate customs duty",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click action performed by user"
+        },
+        {
+          "source": "Avalara",
+          "relation": "SEE_ALSO",
+          "target": "Add local jurisdiction taxes",
+          "evidence": "See Avalara's documentation referenced"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-exemption-certificate",
+    "heading": "Tax exemption certificate",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax exemption certificate",
+          "type": "Concept",
+          "mention": "Tax exemption certificates",
+          "confidence": "high"
+        },
+        {
+          "name": "Avalara",
+          "type": "Actor",
+          "mention": "Avalara",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        },
+        {
+          "name": "AvaTax",
+          "type": "Product",
+          "mention": "AvaTax",
+          "confidence": "high"
+        },
+        {
+          "name": "exception certificate",
+          "type": "DataObject",
+          "mention": "exception certificate",
+          "confidence": "medium"
+        },
+        {
+          "name": "Avalara management console",
+          "type": "Module",
+          "mention": "Avalara management console",
+          "confidence": "medium"
+        },
+        {
+          "name": "Exemption Certificate Management (ECM)",
+          "type": "Module",
+          "mention": "Exemption Certificate Management (ECM)",
+          "confidence": "high"
+        },
+        {
+          "name": "Exemptions --> Customer certificates",
+          "type": "Sub-module",
+          "mention": "Exemptions --> Customer certificates",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a certificate",
+          "type": "Action",
+          "mention": "Add a certificate",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax exemption certificate",
+          "relation": "APPLIES_TO",
+          "target": "Customer",
+          "evidence": "Tax exemption certificates for customers"
+        },
+        {
+          "source": "Tax exemption certificate",
+          "relation": "CONFIGURED_BY",
+          "target": "Add a certificate",
+          "evidence": "click on the fa-plus Add a certificate to configure an exemption"
+        },
+        {
+          "source": "Odoo",
+          "relation": "RELATED_TO",
+          "target": "AvaTax",
+          "evidence": "Tax exemption certificates... so that AvaTax is aware"
+        },
+        {
+          "source": "Add a certificate",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "navigate to Exemptions --> Customer certificates"
+        },
+        {
+          "source": "AvaTax",
+          "relation": "BELONGS_TO",
+          "target": "Avalara",
+          "evidence": "mentioned as a service of Avalara"
+        },
+        {
+          "source": "Tax exemption certificate",
+          "relation": "COMPLIES_WITH",
+          "target": "Regulation",
+          "evidence": "to be ready for an audit"
+        },
+        {
+          "source": "Exemption Certificate Management (ECM)",
+          "relation": "IS_PART_OF",
+          "target": "Avalara",
+          "evidence": "An Avalara subscription to Exemption Certificate Management"
+        },
+        {
+          "source": "Exemptions --> Customer certificates",
+          "relation": "IS_PART_OF",
+          "target": "Avalara management console",
+          "evidence": "navigate to Exemptions --> Customer certificates"
+        },
+        {
+          "source": "exception certificate",
+          "relation": "EQUIVALENT_TO",
+          "target": "Tax exemption certificate",
+          "evidence": "exception certificate"
+        },
+        {
+          "source": "Avalara",
+          "relation": "GENERATES",
+          "target": "Tax exemption certificate",
+          "evidence": "added into the Avalara management console"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "end-of-year-operations",
+    "heading": "End-of-year operations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "End-of-year operations",
+          "type": "Module",
+          "mention": "End-of-year operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Avalara",
+          "type": "Integration",
+          "mention": "Avalara",
+          "confidence": "high"
+        },
+        {
+          "name": "tax return services",
+          "type": "Feature",
+          "mention": "tax return services",
+          "confidence": "high"
+        },
+        {
+          "name": "Returns",
+          "type": "Report",
+          "mention": "Returns",
+          "confidence": "medium"
+        },
+        {
+          "name": "Returns portal",
+          "type": "Module",
+          "mention": "Returns portal",
+          "confidence": "low"
+        },
+        {
+          "name": "Returns button",
+          "type": "Feature",
+          "mention": "Returns button",
+          "confidence": "medium"
+        },
+        {
+          "name": "management portal",
+          "type": "Module",
+          "mention": "management portal",
+          "confidence": "medium"
+        },
+        {
+          "name": "management console",
+          "type": "Module",
+          "mention": "management console",
+          "confidence": "medium"
+        },
+        {
+          "name": "Avalara user",
+          "type": "Actor",
+          "mention": "Avalara user",
+          "confidence": "low"
+        },
+        {
+          "name": "tax return process",
+          "type": "Workflow",
+          "mention": "tax return process",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "End-of-year operations",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: End-of-year operations"
+        },
+        {
+          "source": "End-of-year operations",
+          "relation": "HAS_FEATURE",
+          "target": "tax return services",
+          "evidence": "Avalara's services include tax return services"
+        },
+        {
+          "source": "End-of-year operations",
+          "relation": "SEE_ALSO",
+          "target": "avatax",
+          "evidence": "../avatax"
+        },
+        {
+          "source": "End-of-year operations",
+          "relation": "SEE_ALSO",
+          "target": "avatax_use",
+          "evidence": "avatax_use"
+        },
+        {
+          "source": "tax return services",
+          "relation": "IS_PART_OF",
+          "target": "Avalara",
+          "evidence": "Avalara's services include tax return services"
+        },
+        {
+          "source": "tax return services",
+          "relation": "CONFIGURED_BY",
+          "target": "Returns portal",
+          "evidence": "redirect the user to the Returns portal"
+        },
+        {
+          "source": "tax return process",
+          "relation": "IS_PART_OF",
+          "target": "tax return services",
+          "evidence": "tax return process"
+        },
+        {
+          "source": "tax return process",
+          "relation": "TRIGGERED_BY",
+          "target": "Returns button",
+          "evidence": "click on the Returns button"
+        },
+        {
+          "source": "tax return process",
+          "relation": "GENERATES",
+          "target": "Returns",
+          "evidence": "click Returns"
+        },
+        {
+          "source": "management portal",
+          "relation": "HAS_FEATURE",
+          "target": "Returns button",
+          "evidence": "Returns button in the top menu of the Avalara management console"
+        },
+        {
+          "source": "management portal",
+          "relation": "EQUIVALENT_TO",
+          "target": "management console",
+          "evidence": "management portal, management console"
+        }
+      ]
+    }
+  }
+]

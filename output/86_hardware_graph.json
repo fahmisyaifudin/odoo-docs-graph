@@ -1,0 +1,622 @@
+[
+  {
+    "section_id": "hardware",
+    "heading": "Hardware",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances app",
+          "type": "Module",
+          "mention": "Attendances app",
+          "confidence": "high"
+        },
+        {
+          "name": "Kiosk",
+          "type": "Feature",
+          "mention": "kiosk",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employees",
+          "type": "Actor",
+          "mention": "Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Database users",
+          "type": "Actor",
+          "mention": "database users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Kiosk",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, ... must sign in and out of work using a kiosk"
+        },
+        {
+          "source": "Kiosk",
+          "relation": "HAS_FEATURE",
+          "target": "Employees",
+          "evidence": "Employees who are not database users, ... must sign in and out of work using a kiosk"
+        },
+        {
+          "source": "Employees",
+          "relation": "RELATED_TO",
+          "target": "Database users",
+          "evidence": "Employees who are not database users"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONFIGURED_BY",
+          "target": "Attendances app",
+          "mention": "Employees who are not database users, and therefore, do not have access to the Attendances app",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "kiosk-devices",
+    "heading": "Kiosk devices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "**Attendances** app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kiosk devices",
+          "type": "Concept",
+          "mention": "Kiosk devices",
+          "confidence": "high"
+        },
+        {
+          "name": "Kiosk",
+          "type": "Feature",
+          "mention": "kiosk",
+          "confidence": "high"
+        },
+        {
+          "name": "Check in",
+          "type": "Action",
+          "mention": "check in",
+          "confidence": "medium"
+        },
+        {
+          "name": "Check out",
+          "type": "Action",
+          "mention": "check out",
+          "confidence": "medium"
+        },
+        {
+          "name": "Badge",
+          "type": "DataObject",
+          "mention": "badge",
+          "confidence": "medium"
+        },
+        {
+          "name": "RFID key fob",
+          "type": "DataObject",
+          "mention": "RFID key fob",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kiosk settings",
+          "type": "Setting",
+          "mention": "configuration <attendances/kiosk-settings>",
+          "confidence": "medium"
+        },
+        {
+          "name": "Laptop or Desktop computer",
+          "type": "Actor",
+          "mention": "Laptop or Desktop computer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tablet",
+          "type": "Actor",
+          "mention": "Tablet",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mobile phone",
+          "type": "Actor",
+          "mention": "Mobile phone",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Internet browser",
+          "type": "Actor",
+          "mention": "device with an internet browser",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Attendances",
+          "relation": "CONTAINS",
+          "target": "Kiosk",
+          "evidence": "the **Attendances** app"
+        },
+        {
+          "source": "Kiosk",
+          "relation": "HAS_FEATURE",
+          "target": "Check in",
+          "evidence": "employees can check in and out of work"
+        },
+        {
+          "source": "Kiosk",
+          "relation": "HAS_FEATURE",
+          "target": "Check out",
+          "evidence": "employees can check in and out of work"
+        },
+        {
+          "source": "Kiosk",
+          "relation": "USES_METHOD",
+          "target": "Badge",
+          "evidence": "with either a badge"
+        },
+        {
+          "source": "Kiosk",
+          "relation": "USES_METHOD",
+          "target": "RFID key fob",
+          "evidence": "or an RFID key fob"
+        },
+        {
+          "source": "Kiosk",
+          "relation": "CONFIGURED_BY",
+          "target": "Kiosk settings",
+          "evidence": "configuration <attendances/kiosk-settings> section"
+        },
+        {
+          "source": "Laptop or Desktop computer",
+          "relation": "IS_PART_OF",
+          "target": "Kiosk devices",
+          "evidence": "Kiosks are set up using ... Laptop or Desktop computer"
+        },
+        {
+          "source": "Tablet",
+          "relation": "IS_PART_OF",
+          "target": "Kiosk devices",
+          "evidence": "Kiosks are set up using ... Tablet"
+        },
+        {
+          "source": "Mobile phone",
+          "relation": "IS_PART_OF",
+          "target": "Kiosk devices",
+          "evidence": "Kiosks are set up using ... Mobile phone"
+        },
+        {
+          "source": "Check in",
+          "relation": "PERFORMED_BY",
+          "target": "Employee",
+          "evidence": "employees can check in"
+        },
+        {
+          "source": "Check out",
+          "relation": "PERFORMED_BY",
+          "target": "Employee",
+          "evidence": "employees can check out"
+        },
+        {
+          "source": "Kiosk",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "badges",
+    "heading": "Badges",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Badges",
+          "type": "Concept",
+          "mention": "Badges",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "employee's form",
+          "type": "DataObject",
+          "mention": "employee's form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings tab",
+          "type": "Feature",
+          "mention": "Settings tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "ATTENDANCE/POINT OF SALE/MANUFACTURING section",
+          "type": "Sub-module",
+          "mention": "ATTENDANCE/POINT OF SALE/MANUFACTURING section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Badge ID field",
+          "type": "Field",
+          "mention": "Badge ID field",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate",
+          "type": "Action",
+          "mention": "Generate",
+          "confidence": "high"
+        },
+        {
+          "name": "Print Badge",
+          "type": "Action",
+          "mention": "Print Badge",
+          "confidence": "high"
+        },
+        {
+          "name": "PDF file",
+          "type": "DataObject",
+          "mention": "PDF file",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee's badge",
+          "type": "DataObject",
+          "mention": "employee's badge",
+          "confidence": "medium"
+        },
+        {
+          "name": "kiosk",
+          "type": "Concept",
+          "mention": "kiosk",
+          "confidence": "high"
+        },
+        {
+          "name": "thermal or inkjet printer",
+          "type": "Concept",
+          "mention": "thermal or inkjet printer",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "employee's form",
+          "evidence": "To generate a badge, first navigate to the Employees app. Next, click on the desired employee card to open the employee's form"
+        },
+        {
+          "source": "employee's form",
+          "relation": "CONTAINS",
+          "target": "Settings tab",
+          "evidence": "click on the desired employee card to open the employee's form, then click the Settings tab"
+        },
+        {
+          "source": "Settings tab",
+          "relation": "CONTAINS",
+          "target": "ATTENDANCE/POINT OF SALE/MANUFACTURING section",
+          "evidence": "Under the ATTENDANCE/POINT OF SALE/MANUFACTURING section, there is a Badge ID field"
+        },
+        {
+          "source": "ATTENDANCE/POINT OF SALE/MANUFACTURING section",
+          "relation": "CONTAINS",
+          "target": "Badge ID field",
+          "evidence": "Under the ATTENDANCE/POINT OF SALE/MANUFACTURING section, there is a Badge ID field"
+        },
+        {
+          "source": "Generate",
+          "relation": "PRODUCES",
+          "target": "Badge ID field",
+          "evidence": "click Generate at the end of the Badge ID line, and the field is automatically populated with a new badge ID number"
+        },
+        {
+          "source": "Print Badge",
+          "relation": "PRODUCES",
+          "target": "PDF file",
+          "evidence": "click Print Badge at the end of the badge ID number to create a PDF file of the badge"
+        },
+        {
+          "source": "employee's badge",
+          "relation": "CONTAINS",
+          "target": "employee",
+          "evidence": "The employee's badge contains the employee's photo, name, job position"
+        },
+        {
+          "source": "Badges",
+          "relation": "RELATED_TO",
+          "target": "kiosk",
+          "evidence": "Badges are a way for employees to quickly sign in and out from a kiosk"
+        },
+        {
+          "source": "Print Badge",
+          "relation": "USES_METHOD",
+          "target": "thermal or inkjet printer",
+          "evidence": "Badges can be printed for employees using any thermal or inkjet printer"
+        },
+        {
+          "source": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "barcode-scanners",
+    "heading": "Barcode scanners",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode scanners",
+          "type": "Feature",
+          "mention": "barcode scanners",
+          "confidence": "high"
+        },
+        {
+          "name": "USB barcode scanners",
+          "type": "Feature",
+          "mention": "USB barcode scanners",
+          "confidence": "high"
+        },
+        {
+          "name": "Bluetooth barcode scanners",
+          "type": "Feature",
+          "mention": "Bluetooth barcode scanners",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box",
+          "type": "Module",
+          "mention": "IoT box",
+          "confidence": "high"
+        },
+        {
+          "name": "computer",
+          "type": "Actor",
+          "mention": "computer",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturer",
+          "type": "Actor",
+          "mention": "manufacturer",
+          "confidence": "medium"
+        },
+        {
+          "name": "barcode",
+          "type": "DataObject",
+          "mention": "barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "badges",
+          "type": "DataObject",
+          "mention": "badges",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "kiosk",
+          "type": "Actor",
+          "mention": "kiosk",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "barcode scanners",
+          "evidence": "When using badges to check in and out, the barcode must be scanned to identify the employee. This can be done with the kiosk's camera, if one is available on the device."
+        },
+        {
+          "source": "barcode scanners",
+          "relation": "CONTAINS",
+          "target": "USB barcode scanners",
+          "evidence": "Kiosks work with most USB barcode scanners."
+        },
+        {
+          "source": "barcode scanners",
+          "relation": "CONTAINS",
+          "target": "Bluetooth barcode scanners",
+          "evidence": "Bluetooth barcode scanners are also supported for devices without USB ports, or if a wireless connection is desired."
+        },
+        {
+          "source": "USB barcode scanners",
+          "relation": "CONFIGURED_BY",
+          "target": "computer",
+          "evidence": "If the barcode scanner is connected directly to a computer, it must be configured to use the computer's keyboard layout."
+        },
+        {
+          "source": "Bluetooth barcode scanners",
+          "relation": "CONFIGURED_BY",
+          "target": "computer",
+          "evidence": "If the barcode scanner is connected directly to a computer, it must be configured to use the computer's keyboard layout."
+        },
+        {
+          "source": "IoT box",
+          "relation": "RELATED_TO",
+          "target": "barcode scanners",
+          "evidence": "An IoT box is not required to use a barcode scanner."
+        },
+        {
+          "source": "manufacturer",
+          "relation": "PERFORMED_BY",
+          "target": "barcode scanners",
+          "evidence": "Follow the manufacturer's instructions on the barcode scanner to properly connect the barcode scanner to the kiosk device."
+        },
+        {
+          "source": "badges",
+          "type": "DataObject",
+          "mention": "badges",
+          "confidence": "medium"
+        },
+        {
+          "source": "barcode",
+          "relation": "CONTAINS",
+          "target": "badges",
+          "evidence": "When using badges to check in and out, the barcode must be scanned to identify the employee."
+        },
+        {
+          "source": "badges",
+          "relation": "RELATED_TO",
+          "target": "employee",
+          "evidence": "When using badges to check in and out, the barcode must be scanned to identify the employee."
+        },
+        {
+          "source": "kiosk",
+          "relation": "RELATED_TO",
+          "target": "barcode scanners",
+          "evidence": "If a camera is not available on the kiosk device, an external barcode scanner must be used to scan badges."
+        },
+        {
+          "source": "computer",
+          "relation": "RELATED_TO",
+          "target": "barcode scanners",
+          "evidence": "If the barcode scanner is connected directly to a computer, it must be configured to use the computer's keyboard layout."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "rfid-key-fob-readers",
+    "heading": "RFID key fob readers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "RFID key fob",
+          "type": "DataObject",
+          "mention": "RFID key fobs",
+          "confidence": "medium"
+        },
+        {
+          "name": "RFID reader",
+          "type": "DataObject",
+          "mention": "RFID reader",
+          "confidence": "medium"
+        },
+        {
+          "name": "attendances/hardware/badges",
+          "type": "DataObject",
+          "mention": "badge",
+          "confidence": "medium"
+        },
+        {
+          "name": "check in",
+          "type": "Action",
+          "mention": "check in",
+          "confidence": "high"
+        },
+        {
+          "name": "check out",
+          "type": "Action",
+          "mention": "check out",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "RFID key fob",
+          "relation": "EQUIVALENT_TO",
+          "target": "attendances/hardware/badges",
+          "evidence": "Instead of using a badge <attendances/hardware/badges>, employees can scan a personal RFID key fob"
+        },
+        {
+          "source": "RFID key fob",
+          "relation": "USED_IN",
+          "target": "check in",
+          "evidence": "scan a personal RFID key fob with an RFID reader to check in and out of work"
+        },
+        {
+          "source": "RFID reader",
+          "relation": "USED_IN",
+          "target": "check in",
+          "evidence": "scan a personal RFID key fob with an RFID reader to check in and out of work"
+        },
+        {
+          "source": "RFID key fob",
+          "relation": "USED_IN",
+          "target": "check out",
+          "evidence": "scan a personal RFID key fob with an RFID reader to check in and out of work"
+        },
+        {
+          "source": "RFID reader",
+          "relation": "USED_IN",
+          "target": "check out",
+          "evidence": "scan a personal RFID key fob with an RFID reader to check in and out of work"
+        },
+        {
+          "source": "RFID key fob",
+          "relation": "REQUIRES",
+          "target": "RFID reader",
+          "evidence": "It is required to purchase both RFID key fobs and an RFID reader"
+        },
+        {
+          "source": "RFID reader",
+          "relation": "REQUIRES",
+          "target": "RFID key fob",
+          "evidence": "It is required to purchase both RFID key fobs and an RFID reader"
+        }
+      ]
+    }
+  }
+]

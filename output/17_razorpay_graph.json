@@ -1,0 +1,452 @@
+[
+  {
+    "section_id": "razorpay",
+    "heading": "Razorpay",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Razorpay",
+          "type": "Integration",
+          "mention": "Razorpay",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Razorpay",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Razorpay"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-razorpay-account-with-odoo-(indian-companies-only)",
+    "heading": "Create a Razorpay account with Odoo (Indian companies only)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Razorpay payment provider",
+          "type": "Integration",
+          "mention": "Razorpay payment provider",
+          "confidence": "high"
+        },
+        {
+          "name": "Connect",
+          "type": "Action",
+          "mention": "Connect",
+          "confidence": "high"
+        },
+        {
+          "name": "Razorpay account",
+          "type": "DataObject",
+          "mention": "Razorpay account",
+          "confidence": "high"
+        },
+        {
+          "name": "account creation process",
+          "type": "Workflow",
+          "mention": "account creation process",
+          "confidence": "medium"
+        },
+        {
+          "name": "verification codes",
+          "type": "DataObject",
+          "mention": "verification codes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Razorpay credentials",
+          "type": "DataObject",
+          "mention": "Razorpay credentials",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo database",
+          "type": "DataObject",
+          "mention": "Odoo database",
+          "confidence": "medium"
+        },
+        {
+          "name": "Continue",
+          "type": "Action",
+          "mention": "Continue",
+          "confidence": "high"
+        },
+        {
+          "name": "Authorize",
+          "type": "Action",
+          "mention": "Authorize",
+          "confidence": "high"
+        },
+        {
+          "name": "payment provider",
+          "type": "Module",
+          "mention": "payment provider",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Razorpay payment provider",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Navigate to the Razorpay payment provider"
+        },
+        {
+          "source": "Connect",
+          "relation": "ENABLES",
+          "target": "Razorpay payment provider",
+          "evidence": "click Connect"
+        },
+        {
+          "source": "account creation process",
+          "relation": "PRODUCES",
+          "target": "Razorpay account",
+          "evidence": "Go through the account creation process"
+        },
+        {
+          "source": "Continue",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo database",
+          "evidence": "select the account you want to link to your Odoo database"
+        },
+        {
+          "source": "Authorize",
+          "relation": "TRIGGERED_BY",
+          "target": "account creation process",
+          "evidence": "At the end of the process, click Authorize"
+        },
+        {
+          "source": "payment provider",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "redirected to Odoo, and the payment provider is Enabled"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manual-credentials-and-webhook-input",
+    "heading": "Manual credentials and webhook input",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "payment_providers/razorpay/configure_dashboard",
+          "type": "Module",
+          "mention": "Manual credentials and webhook input",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "payment_providers/razorpay/configure_dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Manual credentials and webhook input"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "razorpay-configuration",
+    "heading": "Razorpay configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Razorpay Dashboard",
+          "type": "Integration",
+          "mention": "Razorpay Dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payments tab",
+          "type": "Feature",
+          "mention": "Payments tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Test Mode",
+          "type": "Setting",
+          "mention": "Test Mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account & Settings",
+          "type": "Feature",
+          "mention": "Account & Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Website and app settings",
+          "type": "Feature",
+          "mention": "Website and app settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "API Keys",
+          "type": "Feature",
+          "mention": "API Keys",
+          "confidence": "medium"
+        },
+        {
+          "name": "Key Id",
+          "type": "Field",
+          "mention": "Key Id",
+          "confidence": "medium"
+        },
+        {
+          "name": "Secret Key",
+          "type": "Field",
+          "mention": "Secret Key",
+          "confidence": "medium"
+        },
+        {
+          "name": "Webhooks",
+          "type": "Integration",
+          "mention": "Webhooks",
+          "confidence": "medium"
+        },
+        {
+          "name": "Webhook URL",
+          "type": "Field",
+          "mention": "Webhook URL",
+          "confidence": "medium"
+        },
+        {
+          "name": "Secret",
+          "type": "Field",
+          "mention": "Secret",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment.authorized",
+          "type": "Event",
+          "mention": "payment.authorized",
+          "confidence": "high"
+        },
+        {
+          "name": "payment.captured",
+          "type": "Event",
+          "mention": "payment.captured",
+          "confidence": "high"
+        },
+        {
+          "name": "payment.failed",
+          "type": "Event",
+          "mention": "payment.failed",
+          "confidence": "high"
+        },
+        {
+          "name": "refund.failed",
+          "type": "Event",
+          "mention": "refund.failed",
+          "confidence": "high"
+        },
+        {
+          "name": "refund.processed",
+          "type": "Event",
+          "mention": "refund.processed",
+          "confidence": "high"
+        },
+        {
+          "name": "Recurring payments",
+          "type": "Feature",
+          "mention": "Recurring payments",
+          "confidence": "medium"
+        }
+      ],
+      "relations": []
+    }
+  },
+  {
+    "section_id": "odoo-configuration",
+    "heading": "Odoo configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Feature",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Razorpay payment provider",
+          "type": "Module",
+          "mention": "Razorpay payment provider",
+          "confidence": "high"
+        },
+        {
+          "name": "Credentials tab",
+          "type": "Sub-module",
+          "mention": "Credentials tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Key Id",
+          "type": "Field",
+          "mention": "Key Id",
+          "confidence": "high"
+        },
+        {
+          "name": "Key Secret",
+          "type": "Field",
+          "mention": "Key Secret",
+          "confidence": "high"
+        },
+        {
+          "name": "Webhook Secret",
+          "type": "Field",
+          "mention": "Webhook Secret",
+          "confidence": "high"
+        },
+        {
+          "name": "State field",
+          "type": "Field",
+          "mention": "State field",
+          "confidence": "high"
+        },
+        {
+          "name": "Enabled",
+          "type": "Setting",
+          "mention": "Enabled",
+          "confidence": "high"
+        },
+        {
+          "name": "Test Mode",
+          "type": "Setting",
+          "mention": "Test Mode",
+          "confidence": "high"
+        },
+        {
+          "name": "capture amounts manually",
+          "type": "Feature",
+          "mention": "capture amounts manually",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual voiding",
+          "type": "Action",
+          "mention": "Manual voiding",
+          "confidence": "medium"
+        },
+        {
+          "name": "transaction",
+          "type": "DataObject",
+          "mention": "transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "Razorpay",
+          "type": "Product",
+          "mention": "Razorpay",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "developer mode",
+          "evidence": "Activate developer mode"
+        },
+        {
+          "source": "Razorpay payment provider",
+          "relation": "CONTAINS",
+          "target": "Credentials tab",
+          "evidence": "In the Credentials tab"
+        },
+        {
+          "source": "Credentials tab",
+          "relation": "CONTAINS",
+          "target": "Key Id",
+          "evidence": "fill the Key Id"
+        },
+        {
+          "source": "Credentials tab",
+          "relation": "CONTAINS",
+          "target": "Key Secret",
+          "evidence": "Key Secret"
+        },
+        {
+          "source": "Credentials tab",
+          "relation": "CONTAINS",
+          "target": "Webhook Secret",
+          "evidence": "Webhook Secret"
+        },
+        {
+          "source": "State field",
+          "relation": "CONFIGURED_BY",
+          "target": "Enabled",
+          "evidence": "Set the State field to Enabled"
+        },
+        {
+          "source": "State field",
+          "relation": "CONFIGURED_BY",
+          "target": "Test Mode",
+          "evidence": "Test Mode if you are trying Razorpay"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "capture amounts manually",
+          "evidence": "configure Odoo to capture amounts manually"
+        },
+        {
+          "source": "capture amounts manually",
+          "relation": "REQUIRES",
+          "target": "Manual voiding",
+          "evidence": "Manual voiding of a transaction is not supported"
+        },
+        {
+          "source": "Razorpay",
+          "relation": "BELONGS_TO",
+          "target": "transaction",
+          "evidence": "transactions"
+        },
+        {
+          "source": "Razorpay payment provider",
+          "relation": "RELATED_TO",
+          "target": "Razorpay",
+          "evidence": "payment_providers/razorpay/configure_dashboard"
+        }
+      ]
+    }
+  }
+]

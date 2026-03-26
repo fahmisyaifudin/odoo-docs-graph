@@ -1,0 +1,728 @@
+[
+  {
+    "section_id": "manage-unsubscriptions-(blacklist)",
+    "heading": "Manage unsubscriptions (blacklist)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage unsubscriptions",
+          "type": "Feature",
+          "mention": "Manage unsubscriptions (blacklist)",
+          "confidence": "high"
+        },
+        {
+          "name": "blacklist",
+          "type": "Concept",
+          "mention": "blacklist",
+          "confidence": "medium"
+        },
+        {
+          "name": "recipients",
+          "type": "Actor",
+          "mention": "recipients",
+          "confidence": "high"
+        },
+        {
+          "name": "mailing lists",
+          "type": "DataObject",
+          "mention": "mailing lists",
+          "confidence": "high"
+        },
+        {
+          "name": "unsubscribe",
+          "type": "Action",
+          "mention": "unsubscribe",
+          "confidence": "high"
+        },
+        {
+          "name": "legal requirement",
+          "type": "Regulation",
+          "mention": "legal requirement",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Manage unsubscriptions",
+          "evidence": "Product: Odoo Title: Manage unsubscriptions (blacklist)"
+        },
+        {
+          "source": "Manage unsubscriptions",
+          "relation": "ENABLES",
+          "target": "unsubscribe",
+          "evidence": "Providing recipients with the power to unsubscribe"
+        },
+        {
+          "source": "unsubscribe",
+          "relation": "APPLIES_TO",
+          "target": "mailing lists",
+          "evidence": "unsubscribe from mailing lists"
+        },
+        {
+          "source": "Manage unsubscriptions",
+          "relation": "COMPLIES_WITH",
+          "target": "legal requirement",
+          "evidence": "legal requirement"
+        },
+        {
+          "source": "unsubscribe",
+          "relation": "PERFORMED_BY",
+          "target": "recipients",
+          "evidence": "recipients with the power to unsubscribe"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "unsubscribe-and-blacklist",
+    "heading": "Unsubscribe and blacklist",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Marketing",
+          "type": "Module",
+          "mention": "Email Marketing",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Blacklist Option when Unsubscribing",
+          "type": "Feature",
+          "mention": "Blacklist Option when Unsubscribing",
+          "confidence": "high"
+        },
+        {
+          "name": "recipient",
+          "type": "Actor",
+          "mention": "recipient",
+          "confidence": "high"
+        },
+        {
+          "name": "unsubscribe",
+          "type": "Action",
+          "mention": "unsubscribe",
+          "confidence": "high"
+        },
+        {
+          "name": "blacklist themselves",
+          "type": "Action",
+          "mention": "blacklist",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "medium"
+        },
+        {
+          "name": "checkbox",
+          "type": "Field",
+          "mention": "checkbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "mailing lists",
+          "type": "Unknown",
+          "mention": "mailing lists",
+          "confidence": "low"
+        },
+        {
+          "name": "marketing emails",
+          "type": "Unknown",
+          "mention": "marketing emails",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Email Marketing",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to Email Marketing app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "checkbox",
+          "evidence": "tick the checkbox next to the Blacklist Option when Unsubscribing feature"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Save",
+          "evidence": "click Save in the upper-left corner of the Settings page"
+        },
+        {
+          "source": "recipient",
+          "relation": "PERFORMED_BY",
+          "target": "unsubscribe",
+          "evidence": "the recipient can also unsubscribe"
+        },
+        {
+          "source": "recipient",
+          "relation": "PERFORMED_BY",
+          "target": "blacklist themselves",
+          "evidence": "the recipient can also blacklist themselves"
+        },
+        {
+          "source": "Blacklist Option when Unsubscribing",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "checkbox next to the Blacklist Option when Unsubscribing feature"
+        },
+        {
+          "source": "Blacklist Option when Unsubscribing",
+          "relation": "REQUIRES",
+          "target": "Email Marketing",
+          "evidence": "must be enabled in the Email Marketing application"
+        },
+        {
+          "source": "blacklist themselves",
+          "relation": "ENABLES",
+          "target": "recipient",
+          "evidence": "they will not receive any more marketing emails"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "unsubscribe",
+    "heading": "Unsubscribe",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Unsubscribe",
+          "type": "Feature",
+          "mention": "Unsubscribe",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Marketing app",
+          "type": "Module",
+          "mention": "Email Marketing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Optout Reasons",
+          "type": "DataObject",
+          "mention": "Optout Reasons",
+          "confidence": "high"
+        },
+        {
+          "name": "Start From Scratch",
+          "type": "Feature",
+          "mention": "Start From Scratch",
+          "confidence": "medium"
+        },
+        {
+          "name": "Footers",
+          "type": "Sub-module",
+          "mention": "Footers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mailing Subscriptions page",
+          "type": "Report",
+          "mention": "Mailing Subscriptions page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Send button",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Feature",
+          "mention": "Configuration",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Email Marketing app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Email Marketing app --> Configuration --> Optout Reasons."
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Optout Reasons",
+          "evidence": "Email Marketing app --> Configuration --> Optout Reasons."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Unsubscribe",
+          "evidence": "The Unsubscribe link does not appear by default..."
+        },
+        {
+          "source": "Footers",
+          "relation": "CONTAINS",
+          "target": "unsubscribe link",
+          "evidence": "or use a block from the Footers section of the email builder, which includes the unsubscribe link."
+        },
+        {
+          "source": "Start From Scratch",
+          "relation": "REQUIRES",
+          "target": "unsubscribe link",
+          "evidence": "The Unsubscribe link does not appear by default if the Start From Scratch template is used..."
+        },
+        {
+          "source": "Unsubscribe",
+          "relation": "TRIGGERED_BY",
+          "target": "recipient",
+          "evidence": "If a recipient clicks the Unsubscribe link in a mailing..."
+        },
+        {
+          "source": "Unsubscribe",
+          "relation": "GENERATES",
+          "target": "Mailing Subscriptions page",
+          "evidence": "Odoo instantly unsubscribes them from the mailing list, presents them with a Mailing Subscriptions page..."
+        },
+        {
+          "source": "Send",
+          "relation": "PRODUCES",
+          "target": "Optout Reasons data",
+          "evidence": "Odoo then logs their reasoning for unsubscribing in the Email Marketing app for future analysis."
+        },
+        {
+          "source": "Optout Reasons",
+          "relation": "CONFIGURED_BY",
+          "target": "Email Marketing app",
+          "evidence": "The opt-out answer options can be created and modified by navigating to Email Marketing app --> Configuration --> Optout Reasons."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "blacklist",
+    "heading": "Blacklist",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Mailing Subscriptions page",
+          "type": "Module",
+          "mention": "Mailing Subscriptions page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email Marketing app",
+          "type": "Module",
+          "mention": "Email Marketing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Exclude Me",
+          "type": "Action",
+          "mention": "Exclude Me",
+          "confidence": "high"
+        },
+        {
+          "name": "Send",
+          "type": "Action",
+          "mention": "Send",
+          "confidence": "high"
+        },
+        {
+          "name": "recipient",
+          "type": "Actor",
+          "mention": "recipient",
+          "confidence": "high"
+        },
+        {
+          "name": "former subscriber",
+          "type": "Actor",
+          "mention": "former subscriber",
+          "confidence": "medium"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "Email added to our blocklist",
+          "type": "Feature",
+          "mention": "✔️ Email added to our blocklist",
+          "confidence": "high"
+        },
+        {
+          "name": "Please let us know why you want to be added to our blocklist",
+          "type": "Feature",
+          "mention": "Please let us know why you want to be added to our blocklist",
+          "confidence": "high"
+        },
+        {
+          "name": "reasoning for blacklisting",
+          "type": "DataObject",
+          "mention": "reasoning for blacklisting",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "recipient",
+          "relation": "PERFORMED_BY",
+          "target": "Exclude Me",
+          "evidence": "they must click Exclude Me"
+        },
+        {
+          "source": "Exclude Me",
+          "relation": "GENERATES",
+          "target": "Email added to our blocklist",
+          "evidence": "Upon clicking Exclude Me, Odoo informs the recipient they have been successfully blacklisted"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "Send",
+          "evidence": "they can click the Send button"
+        },
+        {
+          "source": "Send",
+          "relation": "GENERATES",
+          "target": "reasoning for blacklisting",
+          "evidence": "Odoo then logs their reasoning for blacklisting themselves"
+        },
+        {
+          "source": "reasoning for blacklisting",
+          "relation": "IS_PART_OF",
+          "target": "Email Marketing app",
+          "evidence": "in the Email Marketing app for future analysis"
+        },
+        {
+          "source": "Mailing Subscriptions page",
+          "relation": "CONTAINS",
+          "target": "Exclude Me",
+          "evidence": "on the Mailing Subscriptions page, they must click Exclude Me"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "blacklisted-email-addresses",
+    "heading": "Blacklisted email addresses",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Marketing app",
+          "type": "Module",
+          "mention": "Email Marketing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Blacklisted Email Addresses",
+          "type": "Feature",
+          "mention": "Blacklisted Email Addresses",
+          "confidence": "high"
+        },
+        {
+          "name": "blacklisted email addresses",
+          "type": "DataObject",
+          "mention": "a complete list of all blacklisted email addresses",
+          "confidence": "high"
+        },
+        {
+          "name": "blacklisted record",
+          "type": "DataObject",
+          "mention": "When a blacklisted record is selected",
+          "confidence": "high"
+        },
+        {
+          "name": "recipient's contact information",
+          "type": "DataObject",
+          "mention": "recipient's contact information",
+          "confidence": "low"
+        },
+        {
+          "name": "Reason",
+          "type": "Field",
+          "mention": "Reason why they chose to blacklist themselves",
+          "confidence": "high"
+        },
+        {
+          "name": "chatter",
+          "type": "Feature",
+          "mention": "In the *chatter*",
+          "confidence": "medium"
+        },
+        {
+          "name": "time-stamped message",
+          "type": "DataObject",
+          "mention": "a time-stamped message",
+          "confidence": "low"
+        },
+        {
+          "name": "Mail Blacklist created log note",
+          "type": "DataObject",
+          "mention": "Mail Blacklist created log note",
+          "confidence": "low"
+        },
+        {
+          "name": "marketing mailings",
+          "type": "Feature",
+          "mention": "excluded from all marketing mailings",
+          "confidence": "medium"
+        },
+        {
+          "name": "transactional emails",
+          "type": "Feature",
+          "mention": "can still receive transactional emails",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Blacklisted Email Addresses",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "navigate to Email Marketing app --> Configuration --> Blacklisted Email Addresses."
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Email Marketing app",
+          "evidence": "navigate to Email Marketing app --> Configuration --> Blacklisted Email Addresses."
+        },
+        {
+          "source": "Email Marketing app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title context implies Odoo product"
+        },
+        {
+          "source": "blacklisted record",
+          "relation": "IS_PART_OF",
+          "target": "Blacklisted Email Addresses",
+          "evidence": "When a blacklisted record is selected from this list"
+        },
+        {
+          "source": "blacklisted record",
+          "relation": "CONTAINS",
+          "target": "Reason",
+          "evidence": "page with... the provided Reason"
+        },
+        {
+          "source": "blacklisted record",
+          "relation": "GENERATES",
+          "target": "time-stamped message",
+          "evidence": "there's a time-stamped message"
+        },
+        {
+          "source": "time-stamped message",
+          "relation": "PRODUCED_BY",
+          "target": "Mail Blacklist created log note",
+          "evidence": "message, informing... (via a Mail Blacklist created log note)"
+        },
+        {
+          "source": "Blacklisted Email Addresses",
+          "relation": "HAS_FEATURE",
+          "target": "marketing mailings exclusion",
+          "evidence": "Blacklisted emails are excluded from all marketing mailings"
+        },
+        {
+          "source": "Blacklisted Email Addresses",
+          "relation": "ENABLES",
+          "target": "transactional emails",
+          "evidence": "these emails can still receive transactional emails"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "unblacklist-contacts",
+    "heading": "Unblacklist contacts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Unblacklist",
+          "type": "Feature",
+          "mention": "Unblacklist",
+          "confidence": "high"
+        },
+        {
+          "name": "Unblacklist button",
+          "type": "Action",
+          "mention": "click the Unblacklist button",
+          "confidence": "high"
+        },
+        {
+          "name": "blacklisted record",
+          "type": "DataObject",
+          "mention": "blacklisted record's page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Are you sure you want to unblacklist this Email Address? pop-up window",
+          "type": "Action",
+          "mention": "an Are you sure you want to unblacklist this Email Address? pop-up window appears",
+          "confidence": "high"
+        },
+        {
+          "name": "email address",
+          "type": "Field",
+          "mention": "email address",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reason field",
+          "type": "Field",
+          "mention": "Reason field",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "click Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "contact",
+          "type": "Actor",
+          "mention": "contact",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email Address",
+          "type": "Field",
+          "mention": "Email Address",
+          "confidence": "low"
+        },
+        {
+          "name": "mailings",
+          "type": "Workflow",
+          "mention": "mailings",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Unblacklist button",
+          "relation": "PERFORMED_BY",
+          "target": "contact",
+          "evidence": "click the Unblacklist button"
+        },
+        {
+          "source": "Unblacklist button",
+          "relation": "TRIGGERED_BY",
+          "target": "Are you sure you want to unblacklist this Email Address? pop-up window",
+          "evidence": "When Unblacklist is clicked, an Are you sure you want to unblacklist this Email Address? pop-up window appears"
+        },
+        {
+          "source": "Are you sure you want to unblacklist this Email Address? pop-up window",
+          "relation": "CONTAINS",
+          "target": "Reason field",
+          "evidence": "there's a Reason field"
+        },
+        {
+          "source": "Are you sure you want to unblacklist this Email Address? pop-up window",
+          "relation": "CONTAINS",
+          "target": "email address",
+          "evidence": "the email address of the selected blacklisted record is shown"
+        },
+        {
+          "source": "Confirm",
+          "relation": "PERFORMED_BY",
+          "target": "contact",
+          "evidence": "click Confirm"
+        },
+        {
+          "source": "Confirm",
+          "relation": "ENABLES",
+          "target": "Unblacklist",
+          "evidence": "click Confirm to officially remove that particular contact from the blacklist"
+        },
+        {
+          "source": "Unblacklist",
+          "relation": "REQUIRES",
+          "target": "blacklisted record",
+          "evidence": "click the Unblacklist button in the upper-left corner of a blacklisted record's page"
+        },
+        {
+          "source": "Unblacklist",
+          "relation": "SEE_ALSO",
+          "target": "email_marketing",
+          "evidence": "../email_marketing"
+        },
+        {
+          "source": "Unblacklist",
+          "relation": "SEE_ALSO",
+          "target": "mailing_lists",
+          "evidence": "mailing_lists"
+        }
+      ]
+    }
+  }
+]

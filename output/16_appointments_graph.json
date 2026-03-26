@@ -1,0 +1,1216 @@
+[
+  {
+    "section_id": "appointments",
+    "heading": "Appointments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appointments",
+          "type": "Module",
+          "mention": "Appointments app",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appointments",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo's Appointments app"
+        },
+        {
+          "source": "Appointments",
+          "relation": "INTEGRATES_WITH",
+          "target": "CRM",
+          "evidence": "Appointments can be linked to... CRM opportunities"
+        },
+        {
+          "source": "Appointments",
+          "relation": "BELONGS_TO",
+          "target": "Odoo's suite of business apps",
+          "evidence": "Integrated with Odoo's suite of business apps"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appointments",
+          "type": "Module",
+          "mention": "Appointments",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resources",
+          "type": "Sub-module",
+          "mention": "Resources",
+          "confidence": "high"
+        },
+        {
+          "name": "resources",
+          "type": "DataObject",
+          "mention": "resources",
+          "confidence": "high"
+        },
+        {
+          "name": "capacity",
+          "type": "Field",
+          "mention": "capacity",
+          "confidence": "medium"
+        },
+        {
+          "name": "users",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appointments",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Appointments --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Resources",
+          "evidence": "Appointments --> Configuration --> Resources"
+        },
+        {
+          "source": "Appointments",
+          "relation": "HAS_FEATURE",
+          "target": "schedule new appointments",
+          "evidence": "The Appointments app allows for new appointments to be scheduled"
+        },
+        {
+          "source": "schedule new appointments",
+          "relation": "REQUIRES",
+          "target": "users",
+          "evidence": "scheduled based on the availability of users"
+        },
+        {
+          "source": "schedule new appointments",
+          "relation": "REQUIRES",
+          "target": "resources",
+          "evidence": "or the availability of *resources*"
+        },
+        {
+          "source": "Resources",
+          "relation": "IS_PART_OF",
+          "target": "Appointments",
+          "evidence": ".. _appointments/resources:"
+        },
+        {
+          "source": "resources",
+          "relation": "HAS_FEATURE",
+          "target": "capacity",
+          "evidence": "as well as their individual capacity"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "resources",
+    "heading": "Resources",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Resource",
+          "type": "DataObject",
+          "mention": "resource",
+          "confidence": "high"
+        },
+        {
+          "name": "Capacity",
+          "type": "Field",
+          "mention": "Capacity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Timezone",
+          "type": "Field",
+          "mention": "Timezone",
+          "confidence": "high"
+        },
+        {
+          "name": "Linked Resource",
+          "type": "Field",
+          "mention": "Linked Resource",
+          "confidence": "high"
+        },
+        {
+          "name": "auto-assign",
+          "type": "Setting",
+          "mention": "auto-assign",
+          "confidence": "high"
+        },
+        {
+          "name": "Assignment Method",
+          "type": "Setting",
+          "mention": "Assignment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "create",
+          "type": "Action",
+          "mention": "create",
+          "confidence": "high"
+        },
+        {
+          "name": "select",
+          "type": "Action",
+          "mention": "select",
+          "confidence": "high"
+        },
+        {
+          "name": "add",
+          "type": "Action",
+          "mention": "add",
+          "confidence": "high"
+        },
+        {
+          "name": "appointments/configure",
+          "type": "Module",
+          "mention": "appointments/configure",
+          "confidence": "medium"
+        },
+        {
+          "name": "customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "create",
+          "relation": "PERFORMED_BY",
+          "target": "New",
+          "evidence": "Click New to create a new resource"
+        },
+        {
+          "source": "create",
+          "relation": "PRODUCES",
+          "target": "Resource",
+          "evidence": "create a new resource"
+        },
+        {
+          "source": "Resource",
+          "relation": "CONTAINS",
+          "target": "Capacity",
+          "evidence": "On the blank record, enter... In the Capacity field"
+        },
+        {
+          "source": "Resource",
+          "relation": "CONTAINS",
+          "target": "Timezone",
+          "evidence": "Then, confirm the Timezone for this resource"
+        },
+        {
+          "source": "Resource",
+          "relation": "CONTAINS",
+          "target": "Linked Resource",
+          "evidence": "select one or more Linked Resource from the drop-down"
+        },
+        {
+          "source": "Resource",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "add a Description for this resource"
+        },
+        {
+          "source": "Linked Resource",
+          "relation": "CONFIGURED_BY",
+          "target": "auto-assign",
+          "evidence": "*Linked resources* are only used when using the auto-assign Assignment Method"
+        },
+        {
+          "source": "Description",
+          "relation": "RELATED_TO",
+          "target": "customers",
+          "evidence": "visible to customers when booking an appointment online"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "resource-capacity",
+    "heading": "Resource capacity",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "appointment.resource_max_capacity_allowed",
+          "type": "Setting",
+          "mention": "appointment.resource_max_capacity_allowed",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings app",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Technical",
+          "type": "Sub-module",
+          "mention": "Technical",
+          "confidence": "medium"
+        },
+        {
+          "name": "Parameters",
+          "type": "Feature",
+          "mention": "Parameters",
+          "confidence": "medium"
+        },
+        {
+          "name": "System Parameters",
+          "type": "DataObject",
+          "mention": "System Parameters",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "Click New",
+          "confidence": "medium"
+        },
+        {
+          "name": "Key field",
+          "type": "Field",
+          "mention": "Key field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Value field",
+          "type": "Field",
+          "mention": "Value field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Click fa-cloud-upload (Save manually)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Technical",
+          "relation": "IS_PART_OF",
+          "target": "Settings app",
+          "evidence": "Settings app --> Technical"
+        },
+        {
+          "source": "Parameters",
+          "relation": "BELONGS_TO",
+          "target": "Technical",
+          "evidence": "Technical --> Parameters"
+        },
+        {
+          "source": "System Parameters",
+          "relation": "BELONGS_TO",
+          "target": "Parameters",
+          "evidence": "Parameters --> System Parameters"
+        },
+        {
+          "source": "appointment.resource_max_capacity_allowed",
+          "relation": "CONFIGURED_BY",
+          "target": "System Parameters",
+          "evidence": "System Parameter needs to be added to the database"
+        },
+        {
+          "source": "New",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click New to add a new parameter"
+        },
+        {
+          "source": "Key field",
+          "relation": "CONTAINS",
+          "target": "appointment.resource_max_capacity_allowed",
+          "evidence": "In the Key field, enter appointment.resource_max_capacity_allowed"
+        },
+        {
+          "source": "Save",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click fa-cloud-upload (Save manually)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "appointment-type-configuration",
+    "heading": "Appointment type configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appointments",
+          "type": "Module",
+          "mention": "Appointments app",
+          "confidence": "high"
+        },
+        {
+          "name": "Appointment type",
+          "type": "DataObject",
+          "mention": "appointment type",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "Appointment Title",
+          "type": "Field",
+          "mention": "Appointment Title",
+          "confidence": "high"
+        },
+        {
+          "name": "Duration",
+          "type": "Field",
+          "mention": "Duration",
+          "confidence": "high"
+        },
+        {
+          "name": "Pre-Booking Time",
+          "type": "Field",
+          "mention": "Pre-Booking Time",
+          "confidence": "high"
+        },
+        {
+          "name": "Tennis Courts",
+          "type": "Concept",
+          "mention": "Tennis Courts",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduling Window",
+          "type": "Setting",
+          "mention": "Scheduling Window",
+          "confidence": "high"
+        },
+        {
+          "name": "Available now",
+          "type": "Feature",
+          "mention": "Available now",
+          "confidence": "high"
+        },
+        {
+          "name": "Up to X days into the future",
+          "type": "Field",
+          "mention": "Up to X days into the future field",
+          "confidence": "high"
+        },
+        {
+          "name": "Within a date range",
+          "type": "Feature",
+          "mention": "Within a date range",
+          "confidence": "high"
+        },
+        {
+          "name": "From and to fields",
+          "type": "Field",
+          "mention": "From and to fields",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allow Cancelling",
+          "type": "Setting",
+          "mention": "Allow Cancelling field",
+          "confidence": "high"
+        },
+        {
+          "name": "error message",
+          "type": "Concept",
+          "mention": "error message",
+          "confidence": "medium"
+        },
+        {
+          "name": "contact information",
+          "type": "Concept",
+          "mention": "contact information",
+          "confidence": "medium"
+        },
+        {
+          "name": "Users",
+          "type": "Actor",
+          "mention": "Users",
+          "confidence": "high"
+        },
+        {
+          "name": "Resources",
+          "type": "DataObject",
+          "mention": "Resources",
+          "confidence": "high"
+        },
+        {
+          "name": "Availability on field",
+          "type": "Field",
+          "mention": "Availability on field",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage Capacities",
+          "type": "Feature",
+          "mention": "Manage Capacities",
+          "confidence": "high"
+        },
+        {
+          "name": "Assignment Method",
+          "type": "Setting",
+          "mention": "Assignment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Pick User/Resource then Time",
+          "type": "Feature",
+          "mention": "Pick User/Resource then Time",
+          "confidence": "high"
+        },
+        {
+          "name": "Select Time then User/Resource",
+          "type": "Feature",
+          "mention": "Select Time then User/Resource",
+          "confidence": "high"
+        },
+        {
+          "name": "Select Time then auto-assign",
+          "type": "Feature",
+          "mention": "Select Time then auto-assign",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appointments",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Navigate to the Appointments app dashboard"
+        },
+        {
+          "source": "Appointment type",
+          "relation": "IS_PART_OF",
+          "target": "Appointments",
+          "evidence": "Before appointments can be scheduled or booked, an appointment type must be created."
+        },
+        {
+          "source": "New",
+          "relation": "PERFORMED_BY",
+          "target": "Users",
+          "evidence": "Navigate to the Appointments app dashboard and click New."
+        },
+        {
+          "source": "Appointment type",
+          "relation": "CONTAINS",
+          "target": "Appointment Title",
+          "evidence": "enter an Appointment Title"
+        },
+        {
+          "source": "Appointment type",
+          "relation": "CONTAINS",
+          "target": "Duration",
+          "evidence": "set a Duration for this appointment type."
+        },
+        {
+          "source": "Appointment type",
+          "relation": "CONTAINS",
+          "target": "Pre-Booking Time",
+          "evidence": "set a Pre-Booking Time."
+        },
+        {
+          "source": "Appointment type",
+          "relation": "CONTAINS",
+          "target": "Scheduling Window",
+          "evidence": "Select a Scheduling Window:"
+        },
+        {
+          "source": "Scheduling Window",
+          "relation": "HAS_FEATURE",
+          "target": "Available now",
+          "evidence": "Select Available now to allow customers to book an appointment immediately."
+        },
+        {
+          "source": "Available now",
+          "relation": "REQUIRES",
+          "target": "Up to X days into the future",
+          "evidence": "Use the Up to X days into the future field to define how far in advance customers can schedule appointments."
+        },
+        {
+          "source": "Scheduling Window",
+          "relation": "HAS_FEATURE",
+          "target": "Within a date range",
+          "evidence": "Select Within a date range to limit bookings to a specific range of dates."
+        },
+        {
+          "source": "Within a date range",
+          "relation": "REQUIRES",
+          "target": "From and to fields",
+          "evidence": "click the From and to fields, and use the calendar pop-up window to customize the date and time range."
+        },
+        {
+          "source": "Appointment type",
+          "relation": "CONTAINS",
+          "target": "Allow Cancelling",
+          "evidence": "Update the Allow Cancelling field to limit the amount of time before an appointment where a customer can cancel."
+        },
+        {
+          "source": "Appointment type",
+          "relation": "CONFIGURED_BY",
+          "target": "Users",
+          "evidence": "designate whether this appointment type is based on Users or Resources, by selecting the appropriate radio button."
+        },
+        {
+          "source": "Appointment type",
+          "relation": "CONFIGURED_BY",
+          "target": "Resources",
+          "evidence": "designate whether this appointment type is based on Users or Resources, by selecting the appropriate radio button."
+        },
+        {
+          "source": "Appointment type",
+          "relation": "CONTAINS",
+          "target": "Availability on field",
+          "evidence": "Selecting Resources in the Availability on field reveals the Manage Capacities option."
+        },
+        {
+          "source": "Availability on field",
+          "relation": "ENABLES",
+          "target": "Manage Capacities",
+          "evidence": "Selecting Resources in the Availability on field reveals the Manage Capacities option."
+        },
+        {
+          "source": "Appointment type",
+          "relation": "CONTAINS",
+          "target": "Assignment Method",
+          "evidence": "Choose an Assignment Method by selecting the appropriate radio button:"
+        },
+        {
+          "source": "Assignment Method",
+          "relation": "HAS_FEATURE",
+          "target": "Pick User/Resource then Time",
+          "evidence": "Pick User/Resource then Time: customers select from a list of available users/resources"
+        },
+        {
+          "source": "Assignment Method",
+          "relation": "HAS_FEATURE",
+          "target": "Select Time then User/Resource",
+          "evidence": "Select Time then User/Resource: customers choose a date and time, then select from the list of available users/resources."
+        },
+        {
+          "source": "Assignment Method",
+          "relation": "HAS_FEATURE",
+          "target": "Select Time then auto-assign",
+          "evidence": "Select Time then auto-assign: customers select a time slot and are automatically assigned a user/resource."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "schedule-tab",
+    "heading": "Schedule tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Schedule tab",
+          "type": "Module",
+          "mention": "Schedule tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Click Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Every drop-down menu",
+          "type": "Field",
+          "mention": "Every drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "From field",
+          "type": "Field",
+          "mention": "From and To fields",
+          "confidence": "high"
+        },
+        {
+          "name": "To field",
+          "type": "Field",
+          "mention": "From and To fields",
+          "confidence": "high"
+        },
+        {
+          "name": "trash icon",
+          "type": "Action",
+          "mention": "fa-trash-o (trash) icon to delete an entry",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Schedule tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Schedule tab"
+        },
+        {
+          "source": "Schedule tab",
+          "relation": "CONTAINS",
+          "target": "Add a line",
+          "evidence": "Click Add a line to create a new time frame"
+        },
+        {
+          "source": "Schedule tab",
+          "relation": "CONTAINS",
+          "target": "Every drop-down menu",
+          "evidence": "Select a day of the week from the Every drop-down menu"
+        },
+        {
+          "source": "Schedule tab",
+          "relation": "CONTAINS",
+          "target": "From field",
+          "evidence": "update the times in the From and To fields"
+        },
+        {
+          "source": "Schedule tab",
+          "relation": "CONTAINS",
+          "target": "To field",
+          "evidence": "update the times in the From and To fields"
+        },
+        {
+          "source": "Schedule tab",
+          "relation": "CONTAINS",
+          "target": "trash icon",
+          "evidence": "Click the fa-trash-o (trash) icon to delete an entry"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "options-tab",
+    "heading": "Options tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Options tab",
+          "type": "Module",
+          "mention": "Options tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Front-End Display field",
+          "type": "Setting",
+          "mention": "Front-End Display field",
+          "confidence": "high"
+        },
+        {
+          "name": "Show Pictures radio button",
+          "type": "Setting",
+          "mention": "Show Pictures radio button",
+          "confidence": "high"
+        },
+        {
+          "name": "Timezone field",
+          "type": "Field",
+          "mention": "Timezone field",
+          "confidence": "high"
+        },
+        {
+          "name": "Location field",
+          "type": "Field",
+          "mention": "Location field",
+          "confidence": "high"
+        },
+        {
+          "name": "resource appointments",
+          "type": "Concept",
+          "mention": "resource appointments",
+          "confidence": "medium"
+        },
+        {
+          "name": "user-based appointments",
+          "type": "Concept",
+          "mention": "user-based appointments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Online Meeting",
+          "type": "DataObject",
+          "mention": "Online Meeting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Videoconference Link",
+          "type": "DataObject",
+          "mention": "Videoconference Link",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manual Confirmation checkbox",
+          "type": "Setting",
+          "mention": "Manual Confirmation checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Opportunities",
+          "type": "Feature",
+          "mention": "Create Opportunities",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Product",
+          "mention": "CRM",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reminders field",
+          "type": "Setting",
+          "mention": "Reminders field",
+          "confidence": "high"
+        },
+        {
+          "name": "Allow Guests checkbox",
+          "type": "Setting",
+          "mention": "Allow Guests checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "users",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Options tab",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The Options tab is used to customize the display options for this appointment, as well as notification settings for customers and users."
+        },
+        {
+          "source": "Front-End Display field",
+          "relation": "BELONGS_TO",
+          "target": "Options tab",
+          "evidence": "The Front-End Display field determines how the appointment is presented on the website to customers."
+        },
+        {
+          "source": "Show Pictures radio button",
+          "relation": "CONFIGURED_BY",
+          "target": "Front-End Display field",
+          "evidence": "Select the Show Pictures radio button to publish the default pictures of the user or resources for this appointment on the website."
+        },
+        {
+          "source": "Timezone field",
+          "relation": "BELONGS_TO",
+          "target": "Options tab",
+          "evidence": "The Timezone and Location fields automatically populate for resource appointments, based on where the resource is located."
+        },
+        {
+          "source": "Location field",
+          "relation": "BELONGS_TO",
+          "target": "Options tab",
+          "evidence": "The Timezone and Location fields automatically populate for resource appointments, based on where the resource is located."
+        },
+        {
+          "source": "Videoconference Link",
+          "relation": "GENERATES",
+          "target": "Location field",
+          "evidence": "For user-based appointments, the Location field defaults to an `Online Meeting`, with a Videoconference Link automatically generated."
+        },
+        {
+          "source": "Manual Confirmation checkbox",
+          "relation": "BELONGS_TO",
+          "target": "Options tab",
+          "evidence": "Tick the Manual Confirmation checkbox to require approval before a meeting is accepted."
+        },
+        {
+          "source": "Create Opportunities",
+          "relation": "BELONGS_TO",
+          "target": "Options tab",
+          "evidence": "The Create Opportunities feature adds an opportunity to the CRM app for each scheduled appointment, which is assigned to the responsible user."
+        },
+        {
+          "source": "Create Opportunities",
+          "relation": "REQUIRES",
+          "target": "CRM",
+          "evidence": "This field is only visible if the CRM app is installed on the database."
+        },
+        {
+          "source": "Reminders field",
+          "relation": "BELONGS_TO",
+          "target": "Options tab",
+          "evidence": "The Reminders field is used to set how customers are to be contacted before the appointment time."
+        },
+        {
+          "source": "Allow Guests checkbox",
+          "relation": "BELONGS_TO",
+          "target": "Options tab",
+          "evidence": "Tick the Allow Guests checkbox to grant customers the ability to add additional guests when registering for an appointment."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "questions-tab",
+    "heading": "Questions tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Questions tab",
+          "type": "Module",
+          "mention": "Questions tab",
+          "confidence": "high"
+        },
+        {
+          "name": "customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Questions pop-up window",
+          "type": "Feature",
+          "mention": "Create Questions pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Question",
+          "type": "Field",
+          "mention": "Question",
+          "confidence": "high"
+        },
+        {
+          "name": "Answer Type",
+          "type": "Field",
+          "mention": "Answer Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Mandatory Answer checkbox",
+          "type": "Field",
+          "mention": "Mandatory Answer checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & New",
+          "type": "Action",
+          "mention": "Save & New",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "Save & Close",
+          "confidence": "high"
+        },
+        {
+          "name": "booking an appointment",
+          "type": "Action",
+          "mention": "booking an appointment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Questions tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Questions tab"
+        },
+        {
+          "source": "Questions tab",
+          "relation": "HAS_FEATURE",
+          "target": "Create Questions pop-up window",
+          "evidence": "The Questions tab... On the Create Questions pop-up window..."
+        },
+        {
+          "source": "Add a line",
+          "relation": "PERFORMED_BY",
+          "target": "customers",
+          "evidence": "Click Add a line to add a new question. (context implies customers are performing the action)"
+        },
+        {
+          "source": "booking an appointment",
+          "relation": "PERFORMED_BY",
+          "target": "customers",
+          "evidence": "...customers... they are booking an appointment."
+        },
+        {
+          "source": "Create Questions pop-up window",
+          "relation": "CONTAINS",
+          "target": "Question",
+          "evidence": "On the Create Questions pop-up window, enter the Question..."
+        },
+        {
+          "source": "Create Questions pop-up window",
+          "relation": "CONTAINS",
+          "target": "Answer Type",
+          "evidence": "...enter the Question, then choose an Answer Type."
+        },
+        {
+          "source": "Create Questions pop-up window",
+          "relation": "CONTAINS",
+          "target": "Mandatory Answer checkbox",
+          "evidence": "Tick the Mandatory Answer checkbox..."
+        },
+        {
+          "source": "Mandatory Answer checkbox",
+          "relation": "REQUIRES",
+          "target": "customers",
+          "evidence": "...require customers to answer this question before they are allowed to book an appointment."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "messages-tab",
+    "heading": "Messages tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Messages tab",
+          "type": "Module",
+          "mention": "Messages tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Introduction Message field",
+          "type": "Field",
+          "mention": "Introduction Message field",
+          "confidence": "high"
+        },
+        {
+          "name": "Extra Message on Confirmation",
+          "type": "Field",
+          "mention": "Extra Message on Confirmation",
+          "confidence": "high"
+        },
+        {
+          "name": "customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        },
+        {
+          "name": "website visitors",
+          "type": "Actor",
+          "mention": "website visitors",
+          "confidence": "high"
+        },
+        {
+          "name": "business",
+          "type": "Actor",
+          "mention": "business",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Messages tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Messages tab"
+        },
+        {
+          "source": "Messages tab",
+          "relation": "CONTAINS",
+          "target": "Introduction Message field",
+          "evidence": "In the Introduction Message field, add a short description of the appointment type."
+        },
+        {
+          "source": "Messages tab",
+          "relation": "CONTAINS",
+          "target": "Extra Message on Confirmation",
+          "evidence": "The Extra Message on Confirmation is displayed to a customer after they have booked a meeting."
+        },
+        {
+          "source": "Messages tab",
+          "relation": "GOVERNED_BY",
+          "target": "customers",
+          "evidence": "The content in the Messages tab is visible to customers"
+        },
+        {
+          "source": "Messages tab",
+          "relation": "GOVERNED_BY",
+          "target": "website visitors",
+          "evidence": "The content in the Messages tab is visible to ... website visitors."
+        },
+        {
+          "source": "business",
+          "relation": "PERFORMED_BY",
+          "target": "Introduction Message field",
+          "evidence": "In the Introduction Message field, add a short description of the appointment type."
+        },
+        {
+          "source": "business",
+          "relation": "PERFORMED_BY",
+          "target": "Extra Message on Confirmation",
+          "evidence": "Add any additional information here that the customer should be aware of."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "publishing-an-appointment",
+    "heading": "Publishing an appointment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "appointment",
+          "type": "DataObject",
+          "mention": "appointment",
+          "confidence": "high"
+        },
+        {
+          "name": "Go to Website smart button",
+          "type": "Action",
+          "mention": "click the Go to Website smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-toggle-off Unpublished icon",
+          "type": "Field",
+          "mention": "fa-toggle-off Unpublished icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-toggle-on Published",
+          "type": "Field",
+          "mention": "fa-toggle-on Published",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "appointment",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Publishing an appointment"
+        }
+      ]
+    }
+  }
+]

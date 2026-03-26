@@ -1,0 +1,729 @@
+[
+  {
+    "section_id": "deferred-revenues",
+    "heading": "Deferred revenues",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred revenues",
+          "type": "Concept",
+          "mention": "Deferred revenues",
+          "confidence": "high"
+        },
+        {
+          "name": "unearned revenues",
+          "type": "Concept",
+          "mention": "unearned revenues",
+          "confidence": "high"
+        },
+        {
+          "name": "profit and loss statement",
+          "type": "Concept",
+          "mention": "profit and loss statement",
+          "confidence": "high"
+        },
+        {
+          "name": "income statement",
+          "type": "Concept",
+          "mention": "income statement",
+          "confidence": "high"
+        },
+        {
+          "name": "balance sheet",
+          "type": "Concept",
+          "mention": "balance sheet",
+          "confidence": "high"
+        },
+        {
+          "name": "current liabilities",
+          "type": "Concept",
+          "mention": "current liabilities",
+          "confidence": "high"
+        },
+        {
+          "name": "deferred revenue account",
+          "type": "Concept",
+          "mention": "deferred revenue account",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Accounting",
+          "type": "Module",
+          "mention": "Odoo Accounting",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo Accounting",
+          "relation": "CONTAINS",
+          "target": "Deferred revenues",
+          "evidence": "Odoo Accounting handles deferred revenues"
+        },
+        {
+          "source": "Deferred revenues",
+          "relation": "EQUIVALENT_TO",
+          "target": "unearned revenues",
+          "evidence": "Deferred revenues, or unearned revenues"
+        },
+        {
+          "source": "Deferred revenues",
+          "relation": "APPLIES_TO",
+          "target": "invoice",
+          "evidence": "are invoices addressed to customers"
+        },
+        {
+          "source": "Deferred revenues",
+          "relation": "RELATED_TO",
+          "target": "profit and loss statement",
+          "evidence": "cannot report them on the current profit and loss statement"
+        },
+        {
+          "source": "Deferred revenues",
+          "relation": "EQUIVALENT_TO",
+          "target": "income statement",
+          "evidence": "profit and loss statement, or income statement"
+        },
+        {
+          "source": "Deferred revenues",
+          "relation": "RELATED_TO",
+          "target": "balance sheet",
+          "evidence": "deferred on the company's balance sheet"
+        },
+        {
+          "source": "Deferred revenues",
+          "relation": "RELATED_TO",
+          "target": "current liabilities",
+          "evidence": "among the current liabilities"
+        },
+        {
+          "source": "Deferred revenues",
+          "relation": "RELATED_TO",
+          "target": "deferred revenue account",
+          "evidence": "post this new revenue in a deferred revenue account"
+        },
+        {
+          "source": "Odoo Accounting",
+          "relation": "GENERATES",
+          "target": "entry",
+          "evidence": "by spreading them in multiple entries that are posted periodically"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "DataObject",
+          "mention": "Journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "deferral entries",
+          "type": "DataObject",
+          "mention": "deferral entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "Deferred Revenue",
+          "type": "Standard",
+          "mention": "Deferred Revenue",
+          "confidence": "high"
+        },
+        {
+          "name": "Current Liability account",
+          "type": "DataObject",
+          "mention": "Current Liability account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Generate Entries",
+          "type": "Setting",
+          "mention": "Generate Entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer invoice",
+          "type": "DataObject",
+          "mention": "customer invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manually & Grouped",
+          "type": "Setting",
+          "mention": "Manually & Grouped",
+          "confidence": "medium"
+        },
+        {
+          "name": "Based on",
+          "type": "Setting",
+          "mention": "Based on",
+          "confidence": "medium"
+        },
+        {
+          "name": "Days",
+          "type": "Feature",
+          "mention": "Days",
+          "confidence": "low"
+        },
+        {
+          "name": "Months",
+          "type": "Feature",
+          "mention": "Months",
+          "confidence": "low"
+        },
+        {
+          "name": "Full Months",
+          "type": "Feature",
+          "mention": "Full Months",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Journal",
+          "evidence": "The following options are available: Journal"
+        },
+        {
+          "source": "Journal",
+          "relation": "HAS_REPORT",
+          "target": "deferral entries",
+          "evidence": "The deferral entries are posted in this journal."
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Deferred Revenue",
+          "evidence": "Deferred Revenue"
+        },
+        {
+          "source": "Deferred Revenue",
+          "relation": "USES_METHOD",
+          "target": "Current Liability account",
+          "evidence": "Revenues are deferred on this Current Liability account"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Generate Entries",
+          "evidence": "Generate Entries"
+        },
+        {
+          "source": "Generate Entries",
+          "relation": "CONFIGURED_BY",
+          "target": "customer invoice",
+          "evidence": "generates the deferral entries when you post a customer invoice"
+        },
+        {
+          "source": "Generate Entries",
+          "relation": "CONFIGURED_BY",
+          "target": "Manually & Grouped",
+          "evidence": "choose to generate them manually by selecting the Manually & Grouped option"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Based on",
+          "evidence": "Based on"
+        },
+        {
+          "source": "Based on",
+          "relation": "CONTAINS",
+          "target": "Days",
+          "evidence": "Days: The total amount is divided equally"
+        },
+        {
+          "source": "Based on",
+          "relation": "CONTAINS",
+          "target": "Months",
+          "evidence": "Months: Each full month represents an equal proportion"
+        },
+        {
+          "source": "Based on",
+          "relation": "CONTAINS",
+          "target": "Full Months",
+          "evidence": "Full Months: Any month started is treated as a complete month"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "generate-deferral-entries-on-validation",
+    "heading": "Generate deferral entries on validation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate deferral entries on validation",
+          "type": "Feature",
+          "mention": "Generate deferral entries on validation",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred Date field",
+          "type": "Field",
+          "mention": "Deferred Date field",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Lines",
+          "type": "DataObject",
+          "mention": "Invoice Lines",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Date",
+          "type": "Field",
+          "mention": "Invoice Date",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate Entries field",
+          "type": "Field",
+          "mention": "Generate Entries field",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "On invoice/bill validation",
+          "type": "Setting",
+          "mention": "On invoice/bill validation",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred Entries smart button",
+          "type": "Feature",
+          "mention": "Deferred Entries smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "income account",
+          "type": "DataObject",
+          "mention": "income account",
+          "confidence": "medium"
+        },
+        {
+          "name": "deferred account",
+          "type": "DataObject",
+          "mention": "deferred account",
+          "confidence": "medium"
+        },
+        {
+          "name": "recognize the revenue",
+          "type": "Concept",
+          "mention": "recognize the revenue",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "invoice",
+          "relation": "CONTAINS",
+          "target": "Invoice Lines",
+          "evidence": "For each line of the invoice"
+        },
+        {
+          "source": "Invoice Lines",
+          "relation": "CONTAINS",
+          "target": "Deferred Date field",
+          "evidence": "Make sure the Deferred Date field is visible in the Invoice Lines tab"
+        },
+        {
+          "source": "Generate deferral entries on validation",
+          "relation": "REQUIRES",
+          "target": "Deferred Date field",
+          "evidence": "Make sure the Deferred Date field is visible"
+        },
+        {
+          "source": "Generate deferral entries on validation",
+          "relation": "REQUIRES",
+          "target": "invoice",
+          "evidence": "For each line of the invoice that should be deferred"
+        },
+        {
+          "source": "Generate deferral entries on validation",
+          "relation": "TRIGGERED_BY",
+          "target": "invoice validation",
+          "evidence": "when the invoice is validated"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Generate deferral entries on validation",
+          "evidence": "Title: Generate deferral entries on validation"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Generate Entries field in the Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Generate Entries field",
+          "evidence": "Generate Entries field in the Settings"
+        },
+        {
+          "source": "Generate Entries field",
+          "relation": "CONFIGURED_BY",
+          "target": "On invoice/bill validation",
+          "evidence": "set to On invoice/bill validation"
+        },
+        {
+          "source": "Generate deferral entries on validation",
+          "relation": "CONFIGURED_BY",
+          "target": "On invoice/bill validation",
+          "evidence": "If the Generate Entries field... is set to On invoice/bill validation"
+        },
+        {
+          "source": "Generate deferral entries on validation",
+          "relation": "GENERATES",
+          "target": "deferral entries",
+          "evidence": "Odoo automatically generates the deferral entries"
+        },
+        {
+          "source": "Deferred Entries smart button",
+          "relation": "RELATED_TO",
+          "target": "deferral entries",
+          "evidence": "Click the Deferred Entries smart button to see them"
+        },
+        {
+          "source": "Generate deferral entries on validation",
+          "relation": "PRODUCES",
+          "target": "deferral entries",
+          "evidence": "automatically generates the deferral entries"
+        },
+        {
+          "source": "deferral entries",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Odoo automatically generates"
+        },
+        {
+          "source": "recognize the revenue",
+          "relation": "USES_METHOD",
+          "target": "deferral entries",
+          "evidence": "move the invoice amounts... to recognize the revenue"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reporting",
+    "heading": "Reporting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Title: Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred Revenue Report",
+          "type": "Report",
+          "mention": "deferred revenue report",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred Revenue",
+          "type": "Module",
+          "mention": "Accounting --> Reporting --> Deferred Revenue",
+          "confidence": "high"
+        },
+        {
+          "name": "Account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Items",
+          "type": "DataObject",
+          "mention": "Journal Items",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Date",
+          "type": "Field",
+          "mention": "accounting date",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Deferred Revenue Report",
+          "evidence": "The deferred revenue report computes an overview..."
+        },
+        {
+          "source": "Deferred Revenue",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "Accounting --> Reporting --> Deferred Revenue"
+        },
+        {
+          "source": "Reporting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Reporting"
+        },
+        {
+          "source": "Deferred Revenue Report",
+          "relation": "PRODUCES",
+          "target": "Deferred Revenue",
+          "evidence": "The deferred revenue report computes an overview..."
+        },
+        {
+          "source": "Deferred Revenue Report",
+          "relation": "GENERATES",
+          "target": "Journal Items",
+          "evidence": "click on the account name and then Journal Items"
+        },
+        {
+          "source": "Invoice",
+          "relation": "CONTAINS",
+          "target": "Accounting Date",
+          "evidence": "Only invoices whose accounting date is..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "generate-grouped-deferral-entries-manually",
+    "heading": "Generate grouped deferral entries manually",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred Revenue",
+          "type": "Report",
+          "mention": "Deferred Revenue",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate Entries",
+          "type": "Feature",
+          "mention": "Generate Entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate Entries button",
+          "type": "Action",
+          "mention": "Generate Entries button",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate Entries field",
+          "type": "Field",
+          "mention": "Generate Entries field",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Manually & Grouped",
+          "type": "Setting",
+          "mention": "Manually & Grouped",
+          "confidence": "high"
+        },
+        {
+          "name": "deferred revenue",
+          "type": "Concept",
+          "mention": "deferred revenue",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entries",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "high"
+        },
+        {
+          "name": "deferral entries",
+          "type": "DataObject",
+          "mention": "deferral entries",
+          "confidence": "high"
+        },
+        {
+          "name": "reversal",
+          "type": "Concept",
+          "mention": "reversal",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Income account",
+          "type": "Concept",
+          "mention": "Income account",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred account",
+          "type": "Concept",
+          "mention": "Deferred account",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Generate Entries",
+          "relation": "ENABLES",
+          "target": "Generate grouped deferral entries manually",
+          "evidence": "If you have a lot of deferred revenues and wish to reduce the number of journal entries created, you can generate deferral entries manually. To do so, set the Generate Entries field..."
+        },
+        {
+          "source": "Generate Entries",
+          "relation": "CONFIGURED_BY",
+          "target": "Generate Entries field",
+          "evidence": "To do so, set the Generate Entries field in the Settings to Manually & Grouped."
+        },
+        {
+          "source": "Generate Entries field",
+          "relation": "CONFIGURED_BY",
+          "target": "Manually & Grouped",
+          "evidence": "set the Generate Entries field in the Settings to Manually & Grouped."
+        },
+        {
+          "source": "Generate Entries button",
+          "relation": "TRIGGERED_BY",
+          "target": "Generate grouped deferral entries manually",
+          "evidence": "At the end of each month, go to Accounting --> Reporting --> Deferred Revenue and click the Generate Entries button."
+        },
+        {
+          "source": "Generate Entries button",
+          "relation": "PRODUCES",
+          "target": "deferral entries",
+          "evidence": "click the Generate Entries button. This generates two deferral entries:"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "go to Accounting --> Reporting --> Deferred Revenue"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Deferred Revenue",
+          "evidence": "go to Accounting --> Reporting --> Deferred Revenue"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Reporting --> Deferred Revenue"
+        }
+      ]
+    }
+  }
+]

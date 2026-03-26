@@ -1,0 +1,781 @@
+[
+  {
+    "section_id": "vendors",
+    "heading": "Vendors",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lunch",
+          "type": "Module",
+          "mention": "**Lunch** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Sub-module",
+          "mention": "Vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Lunch Supplier",
+          "type": "DataObject",
+          "mention": "Lunch Supplier card",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor form",
+          "type": "DataObject",
+          "mention": "vendor form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor information",
+          "type": "Field",
+          "mention": "Vendor information",
+          "confidence": "medium"
+        },
+        {
+          "name": "Availability",
+          "type": "Field",
+          "mention": "Availability",
+          "confidence": "medium"
+        },
+        {
+          "name": "Orders",
+          "type": "Field",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Extras",
+          "type": "Field",
+          "mention": "Extras",
+          "confidence": "medium"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Vendors",
+          "relation": "IS_PART_OF",
+          "target": "Lunch",
+          "evidence": "Navigate to Lunch app --> Configuration --> Vendors"
+        },
+        {
+          "source": "Lunch",
+          "relation": "CONTAINS",
+          "target": "Vendors",
+          "evidence": "Vendors for the **Lunch** app"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Vendors",
+          "evidence": "Lunch app --> Configuration --> Vendors"
+        },
+        {
+          "source": "Vendor information",
+          "relation": "BELONGS_TO",
+          "target": "vendor form",
+          "evidence": "fields on the vendor form: - Vendor information"
+        },
+        {
+          "source": "Availability",
+          "relation": "BELONGS_TO",
+          "target": "vendor form",
+          "evidence": "fields on the vendor form: - Availability"
+        },
+        {
+          "source": "Orders",
+          "relation": "BELONGS_TO",
+          "target": "vendor form",
+          "evidence": "fields on the vendor form: - Orders"
+        },
+        {
+          "source": "Extras",
+          "relation": "BELONGS_TO",
+          "target": "vendor form",
+          "evidence": "fields on the vendor form: - Extras"
+        },
+        {
+          "source": "Lunch",
+          "relation": "CONTAINS",
+          "target": "vendor",
+          "evidence": "vendors for the **Lunch** app"
+        },
+        {
+          "source": "products",
+          "relation": "REQUIRES",
+          "target": "vendor",
+          "evidence": "Before products can be added, the restaurants that provide the food needs to be configured"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vendor-information",
+    "heading": "Vendor information",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts",
+          "type": "Product",
+          "mention": "Contacts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor contact form",
+          "type": "DataObject",
+          "mention": "vendor contact form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor name",
+          "type": "Field",
+          "mention": "Enter a name for the vendor in this field",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor drop-down menu",
+          "type": "Field",
+          "mention": "Using the drop-down menu, select the corresponding vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Address",
+          "type": "Field",
+          "mention": "Enter the vendor's address in the various fields",
+          "confidence": "high"
+        },
+        {
+          "name": "Email",
+          "type": "Field",
+          "mention": "Enter the vendor's email in this field",
+          "confidence": "high"
+        },
+        {
+          "name": "Phone",
+          "type": "Field",
+          "mention": "Enter the vendor's phone number in this field",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "If this vendor is only available to a specific company",
+          "confidence": "high"
+        },
+        {
+          "name": "Company drop-down menu",
+          "type": "Field",
+          "mention": "select the company from the drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Multi-company database",
+          "type": "Concept",
+          "mention": "This field only appears in a multi-company database",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "BELONGS_TO",
+          "target": "Vendor",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Contacts",
+          "evidence": "The list of vendors that is presented in the drop-down menu is pulled from the Contacts application"
+        },
+        {
+          "source": "Vendor contact form",
+          "relation": "CONTAINS",
+          "target": "Address",
+          "evidence": "The vendor contact form allows for more details to be entered, such as contact information"
+        },
+        {
+          "source": "Vendor contact form",
+          "relation": "CONTAINS",
+          "target": "Email",
+          "evidence": "The vendor contact form allows for more details to be entered, such as contact information"
+        },
+        {
+          "source": "Vendor contact form",
+          "relation": "CONTAINS",
+          "target": "Phone",
+          "evidence": "The vendor contact form allows for more details to be entered, such as contact information"
+        },
+        {
+          "source": "Vendor",
+          "relation": "RELATED_TO",
+          "target": "Company",
+          "evidence": "If this vendor is only available to a specific company"
+        },
+        {
+          "source": "Company drop-down menu",
+          "relation": "IS_PART_OF",
+          "target": "Vendor contact form",
+          "evidence": "If this vendor is only available to a specific company, select the company from the drop-down menu"
+        },
+        {
+          "source": "Company",
+          "relation": "RELATED_TO",
+          "target": "Multi-company database",
+          "evidence": "This field only appears in a multi-company database"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "availability",
+    "heading": "Availability",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Availability",
+          "type": "Module",
+          "mention": "Title: Availability",
+          "confidence": "medium"
+        },
+        {
+          "name": "days of the week",
+          "type": "Field",
+          "mention": "The days of the week populate the top row",
+          "confidence": "low"
+        },
+        {
+          "name": "Monday",
+          "type": "Concept",
+          "mention": "Monday",
+          "confidence": "low"
+        },
+        {
+          "name": "Friday",
+          "type": "Concept",
+          "mention": "Friday",
+          "confidence": "low"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "the vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "checkboxes",
+          "type": "Feature",
+          "mention": "the bottom row has checkboxes",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Availability",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Title: Availability within section for Product: Odoo"
+        },
+        {
+          "source": "Availability",
+          "relation": "CONTAINS",
+          "target": "days of the week",
+          "evidence": "The days of the week populate the top row"
+        },
+        {
+          "source": "Availability",
+          "relation": "CONTAINS",
+          "target": "checkboxes",
+          "evidence": "the bottom row has checkboxes"
+        },
+        {
+          "source": "Availability",
+          "relation": "CONFIGURED_BY",
+          "target": "vendor",
+          "evidence": "Tick the corresponding checkbox for each day of the week the vendor is available."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "orders",
+    "heading": "Orders",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Module",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "HQ Office",
+          "type": "Actor",
+          "mention": "HQ Office",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery",
+          "type": "Setting",
+          "mention": "Delivery",
+          "confidence": "high"
+        },
+        {
+          "name": "No Delivery",
+          "type": "Setting",
+          "mention": "No Delivery",
+          "confidence": "high"
+        },
+        {
+          "name": "Location",
+          "type": "Field",
+          "mention": "Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Order By",
+          "type": "Setting",
+          "mention": "Send Order By",
+          "confidence": "high"
+        },
+        {
+          "name": "Phone",
+          "type": "Setting",
+          "mention": "Phone",
+          "confidence": "high"
+        },
+        {
+          "name": "Email",
+          "type": "Setting",
+          "mention": "Email",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Time",
+          "type": "Field",
+          "mention": "Order Time",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Orders",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The ORDERS section of..."
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Delivery",
+          "evidence": "The ORDERS section details..."
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Location",
+          "evidence": "The ORDERS section details..."
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Send Order By",
+          "evidence": "The ORDERS section details..."
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Order Time",
+          "evidence": "The ORDERS section details..."
+        },
+        {
+          "source": "Delivery",
+          "relation": "CONFIGURED_BY",
+          "target": "vendor",
+          "evidence": "Using the drop-down menu, select Delivery..."
+        },
+        {
+          "source": "Location",
+          "relation": "CONFIGURED_BY",
+          "target": "vendor",
+          "evidence": "Select which locations are able to order..."
+        },
+        {
+          "source": "Send Order By",
+          "relation": "CONFIGURED_BY",
+          "target": "vendor",
+          "evidence": "Click the radio button to select..."
+        },
+        {
+          "source": "Order Time",
+          "relation": "CONFIGURED_BY",
+          "target": "vendor",
+          "evidence": "Enter the time..."
+        },
+        {
+          "source": "Order Time",
+          "relation": "REQUIRES",
+          "target": "Email",
+          "evidence": "This field only appears if Email is selected..."
+        },
+        {
+          "source": "Email",
+          "relation": "BELONGS_TO",
+          "target": "Send Order By",
+          "evidence": "The available options are Phone or Email..."
+        },
+        {
+          "source": "Phone",
+          "relation": "BELONGS_TO",
+          "target": "Send Order By",
+          "evidence": "The available options are Phone or Email..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "extras",
+    "heading": "Extras",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lunch",
+          "type": "Module",
+          "mention": "Lunch app",
+          "confidence": "high"
+        },
+        {
+          "name": "ordering an item",
+          "type": "Action",
+          "mention": "ordering an item",
+          "confidence": "high"
+        },
+        {
+          "name": "optional extra items",
+          "type": "Concept",
+          "mention": "optional extra items",
+          "confidence": "high"
+        },
+        {
+          "name": "add-ons",
+          "type": "Concept",
+          "mention": "*add-ons*",
+          "confidence": "high"
+        },
+        {
+          "name": "Extras",
+          "type": "Feature",
+          "mention": "`Extras`",
+          "confidence": "high"
+        },
+        {
+          "name": "Beverages",
+          "type": "Feature",
+          "mention": "`Beverages`",
+          "confidence": "high"
+        },
+        {
+          "name": "Extra Label 3",
+          "type": "Feature",
+          "mention": "`Extra Label 3`",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "all products",
+          "type": "Concept",
+          "mention": "**all** products",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Lunch",
+          "evidence": "Product: Odoo, Title: Extras mentions the Lunch app"
+        },
+        {
+          "source": "ordering an item",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "Action 'ordering an item' is mentioned"
+        },
+        {
+          "source": "Lunch",
+          "relation": "HAS_FEATURE",
+          "target": "optional extra items",
+          "evidence": "When ordering an item in the Lunch app, optional extra items can be shown"
+        },
+        {
+          "source": "optional extra items",
+          "relation": "EQUIVALENT_TO",
+          "target": "add-ons",
+          "evidence": "optional extra items, sometimes referred to as *add-ons*"
+        },
+        {
+          "source": "optional extra items",
+          "relation": "BELONGS_TO",
+          "target": "Extras",
+          "evidence": "first type is labeled `Extras`"
+        },
+        {
+          "source": "optional extra items",
+          "relation": "BELONGS_TO",
+          "target": "Beverages",
+          "evidence": "second is labeled `Beverages`"
+        },
+        {
+          "source": "optional extra items",
+          "relation": "BELONGS_TO",
+          "target": "Extra Label 3",
+          "evidence": "third is labeled `Extra Label 3`"
+        },
+        {
+          "source": "optional extra items",
+          "relation": "APPLIES_TO",
+          "target": "all products",
+          "evidence": "only items which apply to **all** products from the vendor should be added"
+        },
+        {
+          "source": "all products",
+          "relation": "BELONGS_TO",
+          "target": "vendor",
+          "evidence": "all products from the vendor"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-extras",
+    "heading": "Configure extras",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Extra Label",
+          "type": "Field",
+          "mention": "Extra (#) Label",
+          "confidence": "high"
+        },
+        {
+          "name": "Extra Quantity",
+          "type": "Setting",
+          "mention": "Extra (#) Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "None or More",
+          "type": "Setting",
+          "mention": "None or More",
+          "confidence": "medium"
+        },
+        {
+          "name": "One or More",
+          "type": "Setting",
+          "mention": "One or More",
+          "confidence": "medium"
+        },
+        {
+          "name": "Only One",
+          "type": "Setting",
+          "mention": "Only One",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Extra Quantity",
+          "relation": "CONTAINS",
+          "target": "None or More",
+          "evidence": "The options are: - None or More"
+        },
+        {
+          "source": "Extra Quantity",
+          "relation": "CONTAINS",
+          "target": "One or More",
+          "evidence": "The options are: - One or More"
+        },
+        {
+          "source": "Extra Quantity",
+          "relation": "CONTAINS",
+          "target": "Only One",
+          "evidence": "The options are: - Only One"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-extras",
+    "heading": "Add extras",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Add extras",
+          "type": "Module",
+          "mention": "Title: Add extras",
+          "confidence": "high"
+        },
+        {
+          "name": "Extra category",
+          "type": "DataObject",
+          "mention": "extra category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Click Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price",
+          "confidence": "high"
+        },
+        {
+          "name": "extra 1 Label",
+          "type": "Setting",
+          "mention": "Extra 1 Label",
+          "confidence": "medium"
+        },
+        {
+          "name": "Extra 1 Quantity",
+          "type": "Setting",
+          "mention": "Extra 1 Quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "pizzeria",
+          "type": "Actor",
+          "mention": "For a pizzeria",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add extras",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Add extras"
+        },
+        {
+          "source": "Add a line",
+          "relation": "ENABLES",
+          "target": "Add extras",
+          "evidence": "Click Add a line at the bottom..."
+        },
+        {
+          "source": "Extra category",
+          "relation": "CONTAINS",
+          "target": "Name",
+          "evidence": "Enter the Name and Price for each item being added"
+        },
+        {
+          "source": "Extra category",
+          "relation": "CONTAINS",
+          "target": "Price",
+          "evidence": "Enter the Name and Price for each item being added"
+        },
+        {
+          "source": "Extra category",
+          "relation": "CONFIGURED_BY",
+          "target": "extra 1 Label",
+          "evidence": "The Extra 1 Label is set to `Toppings`"
+        },
+        {
+          "source": "Extra category",
+          "relation": "CONFIGURED_BY",
+          "target": "Extra 1 Quantity",
+          "evidence": "The Extra 1 Quantity is set to None or More"
+        }
+      ]
+    }
+  }
+]

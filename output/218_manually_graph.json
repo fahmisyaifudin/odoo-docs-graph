@@ -1,0 +1,419 @@
+[
+  {
+    "section_id": "manual-reservation",
+    "heading": "Manual reservation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual reservation",
+          "type": "Feature",
+          "mention": "Manual reservation",
+          "confidence": "high"
+        },
+        {
+          "name": "At Confirmation reservation method",
+          "type": "Feature",
+          "mention": "*At Confirmation* reservation method",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order (SO)",
+          "confidence": "high"
+        },
+        {
+          "name": "product availability",
+          "type": "Feature",
+          "mention": "product availability",
+          "confidence": "medium"
+        },
+        {
+          "name": "reservation methods",
+          "type": "Concept",
+          "mention": "About reservation methods",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manual reservation",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Manual reservation"
+        },
+        {
+          "source": "sales order",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, ... sales order (SO) ..."
+        },
+        {
+          "source": "Manual reservation",
+          "relation": "SEE_ALSO",
+          "target": "reservation methods",
+          "evidence": ".. seealso:: About reservation methods"
+        },
+        {
+          "source": "Manual reservation",
+          "relation": "RELATED_TO",
+          "target": "At Confirmation reservation method",
+          "evidence": "Unlike the *At Confirmation* reservation method, the *Manually* reservation method..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations Types",
+          "type": "DataObject",
+          "mention": "Operations Types",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operation Type",
+          "type": "DataObject",
+          "mention": "Operation Type",
+          "confidence": "high"
+        },
+        {
+          "name": "General tab",
+          "type": "DataObject",
+          "mention": "General tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reservation Method",
+          "type": "Field",
+          "mention": "Reservation Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Manually",
+          "type": "Standard",
+          "mention": "Manually",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipt",
+          "type": "Setting",
+          "mention": "Receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations Type form",
+          "type": "DataObject",
+          "mention": "Operations Type form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Operations Types",
+          "evidence": "Configuration --> Operations Types"
+        },
+        {
+          "source": "Operation Type",
+          "relation": "CONFIGURED_BY",
+          "target": "Reservation Method",
+          "evidence": "select the desired Operation Type to be configured"
+        },
+        {
+          "source": "Reservation Method",
+          "relation": "IS_PART_OF",
+          "target": "General tab",
+          "evidence": "In the General tab, locate the Reservation Method field"
+        },
+        {
+          "source": "Operation Type",
+          "relation": "CONFIGURED_BY",
+          "target": "Receipt",
+          "evidence": "When the Type of Operation is changed to Receipt"
+        },
+        {
+          "source": "Receipt",
+          "relation": "GOVERNED_BY",
+          "target": "Operations Type form",
+          "evidence": "on an Operations Type form, reservation methods are not available"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "workflow",
+    "heading": "Workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer field",
+          "type": "Field",
+          "mention": "Customer field",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Lines tab",
+          "type": "Sub-module",
+          "mention": "Order Lines tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Product line",
+          "type": "Sub-module",
+          "mention": "Product line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity column",
+          "type": "Field",
+          "mention": "Quantity column",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "📈 (area graph) icon",
+          "type": "Feature",
+          "mention": "📈 (area graph) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Availability tooltip",
+          "type": "Feature",
+          "mention": "Availability tooltip",
+          "confidence": "high"
+        },
+        {
+          "name": "Reserved quantity",
+          "type": "Field",
+          "mention": "Reserved quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manually reservation method",
+          "type": "Standard",
+          "mention": "Manually reservation method",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Overview page",
+          "type": "Module",
+          "mention": "Inventory Overview page",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Orders card",
+          "type": "Feature",
+          "mention": "Delivery Orders card",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Order form",
+          "type": "DataObject",
+          "mention": "Delivery Order form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Availability field",
+          "type": "Field",
+          "mention": "Product Availability field",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Sub-module",
+          "mention": "Operations tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand column",
+          "type": "Field",
+          "mention": "Demand column",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity column",
+          "type": "Field",
+          "mention": "Quantity column",
+          "confidence": "high"
+        },
+        {
+          "name": "Check Availability",
+          "type": "Action",
+          "mention": "Check Availability",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Waiting status",
+          "type": "Feature",
+          "mention": "Waiting status",
+          "confidence": "high"
+        },
+        {
+          "name": "Ready status",
+          "type": "Feature",
+          "mention": "Ready status",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Sales app --> New"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Inventory app"
+        },
+        {
+          "source": "Inventory Overview page",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "Inventory app --> Overview"
+        },
+        {
+          "source": "📈 (area graph) icon",
+          "relation": "HAS_FEATURE",
+          "target": "Availability tooltip",
+          "evidence": "reveal the product's Availability tooltip"
+        },
+        {
+          "source": "Availability tooltip",
+          "relation": "CONTAINS",
+          "target": "Reserved quantity",
+          "evidence": "reveals the reserved number of units"
+        },
+        {
+          "source": "Sales workflow",
+          "relation": "USES_METHOD",
+          "target": "Manually reservation method",
+          "evidence": "Because the reservation method is set to *Manually*"
+        },
+        {
+          "source": "Delivery Orders card",
+          "relation": "CONTAINS",
+          "target": "Waiting status",
+          "evidence": "including those with a Waiting status"
+        },
+        {
+          "source": "Delivery Order form",
+          "relation": "CONTAINS",
+          "target": "Product Availability field",
+          "evidence": "On the Delivery Order form, the status in the Product Availability field"
+        },
+        {
+          "source": "Operations tab",
+          "relation": "IS_PART_OF",
+          "target": "Delivery Order form",
+          "evidence": "In the Operations tab"
+        },
+        {
+          "source": "Operations tab",
+          "relation": "CONTAINS",
+          "target": "Demand column",
+          "evidence": "the Demand column"
+        },
+        {
+          "source": "Operations tab",
+          "relation": "CONTAINS",
+          "target": "Quantity column",
+          "evidence": "the Quantity column"
+        },
+        {
+          "source": "Check Availability",
+          "relation": "CONFIGURED_BY",
+          "target": "Manually reservation method",
+          "evidence": "To manually reserve"
+        },
+        {
+          "source": "Check Availability",
+          "relation": "ENABLES",
+          "target": "Validate",
+          "evidence": "Once ready, click Validate"
+        },
+        {
+          "source": "Check Availability",
+          "relation": "TRIGGERED_BY",
+          "target": "Validate",
+          "evidence": "click Validate"
+        },
+        {
+          "source": "Waiting status",
+          "relation": "RELATED_TO",
+          "target": "Ready status",
+          "evidence": "moves the order into Ready status"
+        }
+      ]
+    }
+  }
+]

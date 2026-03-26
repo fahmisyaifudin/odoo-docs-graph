@@ -1,0 +1,2562 @@
+[
+  {
+    "section_id": "accounting-and-invoicing",
+    "heading": "Accounting and Invoicing",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Invoicing",
+          "type": "Module",
+          "mention": "Odoo Invoicing",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "bank reconciliation",
+          "type": "Feature",
+          "mention": "bank reconciliation",
+          "confidence": "high"
+        },
+        {
+          "name": "budgets",
+          "type": "Feature",
+          "mention": "budgets",
+          "confidence": "high"
+        },
+        {
+          "name": "asset management",
+          "type": "Feature",
+          "mention": "asset management",
+          "confidence": "high"
+        },
+        {
+          "name": "standard financial reports",
+          "type": "Report",
+          "mention": "standard financial reports",
+          "confidence": "high"
+        },
+        {
+          "name": "customer invoices",
+          "type": "DataObject",
+          "mention": "customer invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bills",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "payments",
+          "type": "DataObject",
+          "mention": "payments",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo Invoicing",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo... Odoo Invoicing is a standalone app..."
+        },
+        {
+          "source": "Accounting",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo... the Accounting app is a comprehensive accounting solution..."
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Odoo Invoicing",
+          "evidence": "the Accounting app... allows the same actions..."
+        },
+        {
+          "source": "Accounting",
+          "relation": "HAS_FEATURE",
+          "target": "bank reconciliation",
+          "evidence": "includes additional features such as... bank reconciliation..."
+        },
+        {
+          "source": "Accounting",
+          "relation": "HAS_FEATURE",
+          "target": "budgets",
+          "evidence": "includes additional features such as... budgets..."
+        },
+        {
+          "source": "Accounting",
+          "relation": "HAS_FEATURE",
+          "target": "asset management",
+          "evidence": "includes additional features such as... asset management..."
+        },
+        {
+          "source": "Accounting",
+          "relation": "HAS_REPORT",
+          "target": "standard financial reports",
+          "evidence": "includes additional features such as... standard financial reports..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "double-entry-bookkeeping",
+    "heading": "Double-entry bookkeeping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Double-entry bookkeeping",
+          "type": "Concept",
+          "mention": "double-entry bookkeeping system",
+          "confidence": "high"
+        },
+        {
+          "name": "customer invoices",
+          "type": "DataObject",
+          "mention": "customer invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor bills",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "medium"
+        },
+        {
+          "name": "point-of-sales orders",
+          "type": "DataObject",
+          "mention": "point-of-sales orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "expenses",
+          "type": "DataObject",
+          "mention": "expenses",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory valuations",
+          "type": "DataObject",
+          "mention": "inventory valuations",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting transactions",
+          "type": "DataObject",
+          "mention": "accounting transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal entries",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting Cheat Sheet",
+          "type": "Concept",
+          "mention": "Accounting Cheat Sheet",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Double-entry bookkeeping",
+          "evidence": "Odoo uses the double-entry bookkeeping system"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GENERATES",
+          "target": "journal entries",
+          "evidence": "Odoo automatically creates all the underlying journal entries for all accounting transactions"
+        },
+        {
+          "source": "accounting transactions",
+          "relation": "CONTAINS",
+          "target": "customer invoices",
+          "evidence": "accounting transactions (e.g., customer invoices, vendor bills, point-of-sales orders, expenses, inventory valuations, etc.)"
+        },
+        {
+          "source": "accounting transactions",
+          "relation": "CONTAINS",
+          "target": "vendor bills",
+          "evidence": "accounting transactions (e.g., customer invoices, vendor bills, point-of-sales orders, expenses, inventory valuations, etc.)"
+        },
+        {
+          "source": "accounting transactions",
+          "relation": "CONTAINS",
+          "target": "point-of-sales orders",
+          "evidence": "accounting transactions (e.g., customer invoices, vendor bills, point-of-sales orders, expenses, inventory valuations, etc.)"
+        },
+        {
+          "source": "accounting transactions",
+          "relation": "CONTAINS",
+          "target": "expenses",
+          "evidence": "accounting transactions (e.g., customer invoices, vendor bills, point-of-sales orders, expenses, inventory valuations, etc.)"
+        },
+        {
+          "source": "accounting transactions",
+          "relation": "CONTAINS",
+          "target": "inventory valuations",
+          "evidence": "accounting transactions (e.g., customer invoices, vendor bills, point-of-sales orders, expenses, inventory valuations, etc.)"
+        },
+        {
+          "source": "Double-entry bookkeeping",
+          "relation": "SEE_ALSO",
+          "target": "Accounting Cheat Sheet",
+          "evidence": ".. seealso:: Accounting Cheat Sheet"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accrual-and-cash-basis",
+    "heading": "Accrual and cash basis",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accrual and cash basis",
+          "type": "Concept",
+          "mention": "Both accrual and cash basis accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash basis",
+          "type": "Concept",
+          "mention": "Cash basis",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/taxes/cash_basis",
+          "type": "Concept",
+          "mention": "Cash basis <accounting/taxes/cash_basis>",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Accrual and cash basis",
+          "evidence": "Both accrual and cash basis accounting are supported in Odoo."
+        },
+        {
+          "source": "Cash basis",
+          "relation": "SEE_ALSO",
+          "target": "accounting/taxes/cash_basis",
+          "evidence": ".. seealso::\n   Cash basis <accounting/taxes/cash_basis>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "multi-company",
+    "heading": "Multi-company",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-company",
+          "type": "Module",
+          "mention": "Multi-company",
+          "confidence": "high"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "high"
+        },
+        {
+          "name": "chart of accounts",
+          "type": "DataObject",
+          "mention": "chart of accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "consolidation reports",
+          "type": "Report",
+          "mention": "consolidation reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Users",
+          "type": "Actor",
+          "mention": "Users",
+          "confidence": "high"
+        },
+        {
+          "name": "records",
+          "type": "DataObject",
+          "mention": "records",
+          "confidence": "medium"
+        },
+        {
+          "name": "Multi-company",
+          "type": "Concept",
+          "mention": "Multiple companies",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inter-company transactions",
+          "type": "Concept",
+          "mention": "Inter-company transactions",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Multi-company",
+          "relation": "CONTAINS",
+          "target": "company",
+          "evidence": "Multiple companies can be managed"
+        },
+        {
+          "source": "company",
+          "relation": "HAS_FEATURE",
+          "target": "chart of accounts",
+          "evidence": "Each company has its own chart of accounts"
+        },
+        {
+          "source": "company",
+          "relation": "CONFIGURED_BY",
+          "target": "Multi-company",
+          "evidence": "Multiple companies can be managed"
+        },
+        {
+          "source": "Multi-company",
+          "relation": "ENABLES",
+          "target": "consolidation reports",
+          "evidence": "which is useful when viewing consolidation reports"
+        },
+        {
+          "source": "consolidation reports",
+          "relation": "GENERATED_BY",
+          "target": "Multi-company",
+          "evidence": "which is useful when viewing consolidation reports"
+        },
+        {
+          "source": "Users",
+          "relation": "PERFORMED_BY",
+          "target": "company",
+          "evidence": "Users can view records and reports from multiple companies"
+        },
+        {
+          "source": "Users",
+          "relation": "RELATED_TO",
+          "target": "Multi-company",
+          "evidence": "Users can view records and reports from multiple companies"
+        },
+        {
+          "source": "Multi-company",
+          "relation": "SEE_ALSO",
+          "target": "Inter-company transactions",
+          "evidence": "Inter-company transactions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "multi-currency-environment",
+    "heading": "Multi-currency environment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "company currency",
+          "type": "Concept",
+          "mention": "company's default currency",
+          "confidence": "medium"
+        },
+        {
+          "name": "transactions' currency",
+          "type": "Concept",
+          "mention": "transactions' currency value",
+          "confidence": "medium"
+        },
+        {
+          "name": "currency gains and losses",
+          "type": "DataObject",
+          "mention": "currency gains and losses",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal items",
+          "type": "DataObject",
+          "mention": "journal items",
+          "confidence": "low"
+        },
+        {
+          "name": "Manage a bank in a foreign currency",
+          "type": "Feature",
+          "mention": "Manage a bank in a foreign currency",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Multi-currency environment",
+          "evidence": "Multi-currency environment with an automated exchange rate to ease international transactions is available in Odoo."
+        },
+        {
+          "source": "Multi-currency environment",
+          "relation": "SUPPORTS",
+          "target": "company currency",
+          "evidence": "Every transaction is recorded in the company's default currency"
+        },
+        {
+          "source": "Multi-currency environment",
+          "relation": "SUPPORTS",
+          "target": "transactions' currency",
+          "evidence": "for transactions occurring in another currency, Odoo stores both the value in the company's currency and the transactions' currency value"
+        },
+        {
+          "source": "Multi-currency environment",
+          "relation": "GENERATES",
+          "target": "currency gains and losses",
+          "evidence": "Odoo generates currency gains and losses after reconciling the journal items"
+        },
+        {
+          "source": "Odoo",
+          "relation": "RELATED_TO",
+          "target": "Manage a bank in a foreign currency",
+          "evidence": "seealso:: Manage a bank in a foreign currency"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "branches",
+    "heading": "Branches",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Parent companies",
+          "type": "Actor",
+          "mention": "parent companies",
+          "confidence": "medium"
+        },
+        {
+          "name": "Branches",
+          "type": "Actor",
+          "mention": "branches",
+          "confidence": "high"
+        },
+        {
+          "name": "Chart of accounts",
+          "type": "Standard",
+          "mention": "chart of accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Main currency",
+          "type": "Concept",
+          "mention": "main currency",
+          "confidence": "low"
+        },
+        {
+          "name": "Taxes",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "low"
+        },
+        {
+          "name": "Journals",
+          "type": "DataObject",
+          "mention": "journals",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal period",
+          "type": "Concept",
+          "mention": "fiscal period",
+          "confidence": "low"
+        },
+        {
+          "name": "Lock and closing dates",
+          "type": "Concept",
+          "mention": "lock and closing dates",
+          "confidence": "low"
+        },
+        {
+          "name": "Reports",
+          "type": "Report",
+          "mention": "reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoices",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills",
+          "type": "DataObject",
+          "mention": "bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal localization package",
+          "type": "Setting",
+          "mention": "Fiscal localization package",
+          "confidence": "medium"
+        },
+        {
+          "name": "Multi-company functions",
+          "type": "Feature",
+          "mention": "multi-company functions",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Parent companies",
+          "relation": "CONTAINS",
+          "target": "Branches",
+          "evidence": "Parent companies and their branches can be managed within a single database"
+        },
+        {
+          "source": "Chart of accounts",
+          "relation": "APPLIES_TO",
+          "target": "Branches",
+          "evidence": "The parent company’s chart of accounts ... apply to all branches."
+        },
+        {
+          "source": "Main currency",
+          "relation": "APPLIES_TO",
+          "target": "Branches",
+          "evidence": "The parent company’s ... main currency ... apply to all branches."
+        },
+        {
+          "source": "Taxes",
+          "relation": "APPLIES_TO",
+          "target": "Branches",
+          "evidence": "The parent company’s ... taxes apply to all branches."
+        },
+        {
+          "source": "Branches",
+          "relation": "HAS_FEATURE",
+          "target": "Manage dedicated journals",
+          "evidence": "Branches can manage their own dedicated journals and related records."
+        },
+        {
+          "source": "Fiscal period",
+          "relation": "GOVERNED_BY",
+          "target": "Parent company",
+          "evidence": "The parent company manages a common fiscal period"
+        },
+        {
+          "source": "Lock and closing dates",
+          "relation": "APPLIES_TO",
+          "target": "Branches",
+          "evidence": "so its lock and closing dates apply across all branches."
+        },
+        {
+          "source": "Parent company",
+          "relation": "HAS_REPORT",
+          "target": "Reports",
+          "evidence": "The parent company can access all reports"
+        },
+        {
+          "source": "Parent company",
+          "relation": "CONTAINS",
+          "target": "Invoices",
+          "evidence": "invoices ... from its branches"
+        },
+        {
+          "source": "Parent company",
+          "relation": "CONTAINS",
+          "target": "Bills",
+          "evidence": "bills ... from its branches"
+        },
+        {
+          "source": "Branches",
+          "relation": "GOVERNED_BY",
+          "target": "Fiscal localization package",
+          "evidence": "The Fiscal localization package is set on the parent company."
+        },
+        {
+          "source": "Adding a branch",
+          "relation": "ENABLES",
+          "target": "Multi-company functions",
+          "evidence": "Adding a branch to a company enables multi-company functions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reporting",
+    "heading": "Reporting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Title: Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "profit and loss",
+          "type": "Report",
+          "mention": "profit and loss",
+          "confidence": "high"
+        },
+        {
+          "name": "balance sheets",
+          "type": "Report",
+          "mention": "balance sheets",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/reporting",
+          "type": "Concept",
+          "mention": "<accounting/reporting>",
+          "confidence": "high"
+        },
+        {
+          "name": "parent company",
+          "type": "Actor",
+          "mention": "parent company",
+          "confidence": "medium"
+        },
+        {
+          "name": "consolidates accounting operations",
+          "type": "Action",
+          "mention": "consolidates accounting operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "branches",
+          "type": "Actor",
+          "mention": "branches",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/branch/vat",
+          "type": "Concept",
+          "mention": ".. _accounting/branch/vat:",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reporting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\\nTitle: Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "profit and loss",
+          "evidence": "providing a centralized view of financial reports <accounting/reporting>, such as profit and loss"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "balance sheets",
+          "evidence": "providing a centralized view of financial reports <accounting/reporting>, such as ... balance sheets"
+        },
+        {
+          "source": "profit and loss",
+          "relation": "RELATED_TO",
+          "target": "accounting/reporting",
+          "evidence": "providing a centralized view of financial reports <accounting/reporting>, such as profit and loss"
+        },
+        {
+          "source": "balance sheets",
+          "relation": "RELATED_TO",
+          "target": "accounting/reporting",
+          "evidence": "providing a centralized view of financial reports <accounting/reporting>, such as ... balance sheets"
+        },
+        {
+          "source": "accounting/branch/vat",
+          "relation": "SEE_ALSO",
+          "target": "accounting/reporting",
+          "evidence": ".. _accounting/branch/vat:\\n--- END ---"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vat",
+    "heading": "VAT",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "VAT",
+          "type": "Concept",
+          "mention": "VAT",
+          "confidence": "high"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        },
+        {
+          "name": "branch",
+          "type": "Actor",
+          "mention": "branch",
+          "confidence": "medium"
+        },
+        {
+          "name": "VAT number",
+          "type": "Field",
+          "mention": "VAT number",
+          "confidence": "high"
+        },
+        {
+          "name": "legal information",
+          "type": "Concept",
+          "mention": "legal information",
+          "confidence": "medium"
+        },
+        {
+          "name": "VAT return",
+          "type": "Report",
+          "mention": "VAT return",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/reporting/tax_returns",
+          "type": "Module",
+          "mention": "accounting/reporting/tax_returns",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/international-standards",
+          "type": "Module",
+          "mention": "accounting/international-standards",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "VAT",
+          "evidence": "Product: Odoo Title: VAT"
+        },
+        {
+          "source": "company",
+          "relation": "REQUIRES",
+          "target": "VAT number",
+          "evidence": "Each company ... must be configured with ... a VAT number"
+        },
+        {
+          "source": "branch",
+          "relation": "REQUIRES",
+          "target": "VAT number",
+          "evidence": "Each ... branch must be configured with ... a VAT number"
+        },
+        {
+          "source": "branch",
+          "relation": "BELONGS_TO",
+          "target": "company",
+          "evidence": "branches may share the parent company's VAT number"
+        },
+        {
+          "source": "VAT",
+          "relation": "HAS_REPORT",
+          "target": "VAT return",
+          "evidence": "VAT ... resulting in a common or separate VAT return"
+        },
+        {
+          "source": "accounting/reporting/tax_returns",
+          "relation": "IS_PART_OF",
+          "target": "accounting/international-standards",
+          "evidence": "<accounting/reporting/tax_returns> ... .. _accounting/international-standards:"
+        },
+        {
+          "source": "VAT return",
+          "relation": "SEE_ALSO",
+          "target": "accounting/reporting/tax_returns",
+          "evidence": "resulting in a ... VAT return <accounting/reporting/tax_returns>."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "international-standards",
+    "heading": "International standards",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Odoo Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal localizations",
+          "type": "Module",
+          "mention": "Fiscal localizations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Charts of accounts",
+          "type": "Feature",
+          "mention": "charts of accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes",
+          "type": "Feature",
+          "mention": "taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Legal obligations",
+          "type": "Regulation",
+          "mention": "legal obligations",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo Accounting"
+        },
+        {
+          "source": "Fiscal localizations",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Fiscal localizations <fiscal_localizations> handle regional requirements"
+        },
+        {
+          "source": "Fiscal localizations",
+          "relation": "HAS_FEATURE",
+          "target": "Charts of accounts",
+          "evidence": "such as charts of accounts"
+        },
+        {
+          "source": "Fiscal localizations",
+          "relation": "HAS_FEATURE",
+          "target": "Taxes",
+          "evidence": "such as... taxes"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Legal obligations",
+          "evidence": "handle... any other legal obligations"
+        },
+        {
+          "source": "Accounting",
+          "relation": "SUPPORTS",
+          "target": "Legal obligations",
+          "evidence": "comply with local accounting regulations"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accounts-receivable-and-payable",
+    "heading": "Accounts receivable and payable",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounts receivable and payable",
+          "type": "Module",
+          "mention": "Accounts receivable and payable",
+          "confidence": "high"
+        },
+        {
+          "name": "accounts receivable entries",
+          "type": "DataObject",
+          "mention": "accounts receivable entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounts payable entries",
+          "type": "DataObject",
+          "mention": "accounts payable entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "contacts",
+          "type": "DataObject",
+          "mention": "contacts",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "supplier",
+          "type": "Actor",
+          "mention": "supplier",
+          "confidence": "high"
+        },
+        {
+          "name": "Partner Ledger",
+          "type": "Report",
+          "mention": "Partner Ledger",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounts receivable and payable",
+          "evidence": "Product: Odoo Title: Accounts receivable and payable"
+        },
+        {
+          "source": "Accounts receivable and payable",
+          "relation": "CONTAINS",
+          "target": "accounts receivable entries",
+          "evidence": "one account is designated for accounts receivable entries"
+        },
+        {
+          "source": "Accounts receivable and payable",
+          "relation": "CONTAINS",
+          "target": "accounts payable entries",
+          "evidence": "one account is designated for ... accounts payable entries"
+        },
+        {
+          "source": "accounts receivable entries",
+          "relation": "RELATED_TO",
+          "target": "contacts",
+          "evidence": "transactions are linked to contacts"
+        },
+        {
+          "source": "accounts payable entries",
+          "relation": "RELATED_TO",
+          "target": "contacts",
+          "evidence": "transactions are linked to contacts"
+        },
+        {
+          "source": "Accounts receivable and payable",
+          "relation": "HAS_REPORT",
+          "target": "Partner Ledger",
+          "evidence": "The Partner Ledger report displays the balance..."
+        },
+        {
+          "source": "Partner Ledger",
+          "relation": "GENERATES",
+          "target": "customer",
+          "evidence": "run a report per customer"
+        },
+        {
+          "source": "Partner Ledger",
+          "relation": "GENERATES",
+          "target": "vendor",
+          "evidence": "run a report per ... vendor"
+        },
+        {
+          "source": "Partner Ledger",
+          "relation": "GENERATES",
+          "target": "supplier",
+          "evidence": "run a report per ... supplier"
+        },
+        {
+          "source": "Accounts receivable and payable",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Reporting --> Partner Ledger"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Accounting --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Partner Ledger",
+          "evidence": "Reporting --> Partner Ledger"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reporting",
+    "heading": "Reporting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "reporting",
+          "type": "Module",
+          "mention": "Title: Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "financial reports",
+          "type": "Report",
+          "mention": "financial reports",
+          "confidence": "medium"
+        },
+        {
+          "name": "Balance sheet",
+          "type": "Report",
+          "mention": "Balance sheet",
+          "confidence": "high"
+        },
+        {
+          "name": "Profit and loss",
+          "type": "Report",
+          "mention": "Profit and loss",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash flow statement",
+          "type": "Report",
+          "mention": "Cash flow statement",
+          "confidence": "high"
+        },
+        {
+          "name": "Executive summary",
+          "type": "Report",
+          "mention": "Executive summary",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax return",
+          "type": "Report",
+          "mention": "Tax return",
+          "confidence": "high"
+        },
+        {
+          "name": "EC sales list",
+          "type": "Report",
+          "mention": "EC sales list",
+          "confidence": "high"
+        },
+        {
+          "name": "General ledger",
+          "type": "Report",
+          "mention": "General ledger",
+          "confidence": "high"
+        },
+        {
+          "name": "Trial balance",
+          "type": "Report",
+          "mention": "Trial balance",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal audit",
+          "type": "Report",
+          "mention": "Journal audit",
+          "confidence": "high"
+        },
+        {
+          "name": "Intrastat report",
+          "type": "Report",
+          "mention": "Intrastat report",
+          "confidence": "high"
+        },
+        {
+          "name": "Check register",
+          "type": "Report",
+          "mention": "Check register",
+          "confidence": "high"
+        },
+        {
+          "name": "Partner ledger",
+          "type": "Report",
+          "mention": "Partner ledger",
+          "confidence": "high"
+        },
+        {
+          "name": "Aged receivable",
+          "type": "Report",
+          "mention": "Aged receivable",
+          "confidence": "high"
+        },
+        {
+          "name": "Aged payable",
+          "type": "Report",
+          "mention": "Aged payable",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice analysis",
+          "type": "Report",
+          "mention": "Invoice analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Analytic report",
+          "type": "Report",
+          "mention": "Analytic report",
+          "confidence": "high"
+        },
+        {
+          "name": "Audit trail",
+          "type": "Report",
+          "mention": "Audit trail",
+          "confidence": "high"
+        },
+        {
+          "name": "Budget report",
+          "type": "Report",
+          "mention": "Budget report",
+          "confidence": "high"
+        },
+        {
+          "name": "Unrealized currency gains/losses",
+          "type": "Report",
+          "mention": "Unrealized currency gains/losses",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred revenue",
+          "type": "Report",
+          "mention": "Deferred revenue",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred expense",
+          "type": "Report",
+          "mention": "Deferred expense",
+          "confidence": "high"
+        },
+        {
+          "name": "Depreciation schedule",
+          "type": "Report",
+          "mention": "Depreciation schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "Disallowed expenses",
+          "type": "Report",
+          "mention": "Disallowed expenses",
+          "confidence": "high"
+        },
+        {
+          "name": "Loans analysis",
+          "type": "Report",
+          "mention": "Loans analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Product margins",
+          "type": "Report",
+          "mention": "Product margins",
+          "confidence": "high"
+        },
+        {
+          "name": "1099 report",
+          "type": "Report",
+          "mention": "1099 report",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo's report engine",
+          "type": "Feature",
+          "mention": "Odoo's report engine",
+          "confidence": "high"
+        },
+        {
+          "name": "Statement",
+          "type": "Concept",
+          "mention": "Statement",
+          "confidence": "medium"
+        },
+        {
+          "name": "Audit",
+          "type": "Concept",
+          "mention": "Audit",
+          "confidence": "medium"
+        },
+        {
+          "name": "Partner",
+          "type": "Concept",
+          "mention": "Partner",
+          "confidence": "medium"
+        },
+        {
+          "name": "Management",
+          "type": "Concept",
+          "mention": "Management",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "reporting",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Reporting in Product: Odoo"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Balance sheet",
+          "evidence": "financial reports...available...Balance sheet"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Profit and loss",
+          "evidence": "financial reports...available...Profit and loss"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Cash flow statement",
+          "evidence": "financial reports...available...Cash flow statement"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Executive summary",
+          "evidence": "financial reports...available...Executive summary"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Tax return",
+          "evidence": "financial reports...available...Tax return"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "EC sales list",
+          "evidence": "financial reports...available...EC sales list"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "General ledger",
+          "evidence": "financial reports...available...General ledger"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Trial balance",
+          "evidence": "financial reports...available...Trial balance"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Journal audit",
+          "evidence": "financial reports...available...Journal audit"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Intrastat report",
+          "evidence": "financial reports...available...Intrastat report"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Check register",
+          "evidence": "financial reports...available...Check register"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Partner ledger",
+          "evidence": "financial reports...available...Partner ledger"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Aged receivable",
+          "evidence": "financial reports...available...Aged receivable"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Aged payable",
+          "evidence": "financial reports...available...Aged payable"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Invoice analysis",
+          "evidence": "financial reports...available...Invoice analysis"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Analytic report",
+          "evidence": "financial reports...available...Analytic report"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Audit trail",
+          "evidence": "financial reports...available...Audit trail"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Budget report",
+          "evidence": "financial reports...available...Budget report"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Unrealized currency gains/losses",
+          "evidence": "financial reports...available...Unrealized currency gains/losses"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Deferred revenue",
+          "evidence": "financial reports...available...Deferred revenue"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Deferred expense",
+          "evidence": "financial reports...available...Deferred expense"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Depreciation schedule",
+          "evidence": "financial reports...available...Depreciation schedule"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Disallowed expenses",
+          "evidence": "financial reports...available...Disallowed expenses"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Loans analysis",
+          "evidence": "financial reports...available...Loans analysis"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "Product margins",
+          "evidence": "financial reports...available...Product margins"
+        },
+        {
+          "source": "reporting",
+          "relation": "HAS_REPORT",
+          "target": "1099 report",
+          "evidence": "financial reports...available...1099 report"
+        },
+        {
+          "source": "Odoo's report engine",
+          "relation": "ENABLES",
+          "target": "financial reports",
+          "evidence": "Create and customize reports...with Odoo's report engine"
+        },
+        {
+          "source": "Balance sheet",
+          "relation": "BELONGS_TO",
+          "target": "Statement",
+          "evidence": "table structure: Statement contains Balance sheet"
+        },
+        {
+          "source": "Profit and loss",
+          "relation": "BELONGS_TO",
+          "target": "Statement",
+          "evidence": "table structure: Statement contains Profit and loss"
+        },
+        {
+          "source": "Cash flow statement",
+          "relation": "BELONGS_TO",
+          "target": "Statement",
+          "evidence": "table structure: Statement contains Cash flow statement"
+        },
+        {
+          "source": "Executive summary",
+          "relation": "BELONGS_TO",
+          "target": "Statement",
+          "evidence": "table structure: Statement contains Executive summary"
+        },
+        {
+          "source": "Tax return",
+          "relation": "BELONGS_TO",
+          "target": "Statement",
+          "evidence": "table structure: Statement contains Tax return"
+        },
+        {
+          "source": "EC sales list",
+          "relation": "BELONGS_TO",
+          "target": "Statement",
+          "evidence": "table structure: Statement contains EC sales list"
+        },
+        {
+          "source": "General ledger",
+          "relation": "BELONGS_TO",
+          "target": "Audit",
+          "evidence": "table structure: Audit contains General ledger"
+        },
+        {
+          "source": "Trial balance",
+          "relation": "BELONGS_TO",
+          "target": "Audit",
+          "evidence": "table structure: Audit contains Trial balance"
+        },
+        {
+          "source": "Journal audit",
+          "relation": "BELONGS_TO",
+          "target": "Audit",
+          "evidence": "table structure: Audit contains Journal audit"
+        },
+        {
+          "source": "Intrastat report",
+          "relation": "BELONGS_TO",
+          "target": "Audit",
+          "evidence": "table structure: Audit contains Intrastat report"
+        },
+        {
+          "source": "Check register",
+          "relation": "BELONGS_TO",
+          "target": "Audit",
+          "evidence": "table structure: Audit contains Check register"
+        },
+        {
+          "source": "Partner ledger",
+          "relation": "BELONGS_TO",
+          "target": "Partner",
+          "evidence": "table structure: Partner contains Partner ledger"
+        },
+        {
+          "source": "Aged receivable",
+          "relation": "BELONGS_TO",
+          "target": "Partner",
+          "evidence": "table structure: Partner contains Aged receivable"
+        },
+        {
+          "source": "Aged payable",
+          "relation": "BELONGS_TO",
+          "target": "Partner",
+          "evidence": "table structure: Partner contains Aged payable"
+        },
+        {
+          "source": "Invoice analysis",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Invoice analysis"
+        },
+        {
+          "source": "Analytic report",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Analytic report"
+        },
+        {
+          "source": "Audit trail",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Audit trail"
+        },
+        {
+          "source": "Budget report",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Budget report"
+        },
+        {
+          "source": "Unrealized currency gains/losses",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Unrealized currency gains/losses"
+        },
+        {
+          "source": "Deferred revenue",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Deferred revenue"
+        },
+        {
+          "source": "Deferred expense",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Deferred expense"
+        },
+        {
+          "source": "Depreciation schedule",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Depreciation schedule"
+        },
+        {
+          "source": "Disallowed expenses",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Disallowed expenses"
+        },
+        {
+          "source": "Loans analysis",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Loans analysis"
+        },
+        {
+          "source": "Product margins",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains Product margins"
+        },
+        {
+          "source": "1099 report",
+          "relation": "BELONGS_TO",
+          "target": "Management",
+          "evidence": "table structure: Management contains 1099 report"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-return",
+    "heading": "Tax return",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Tax return",
+          "type": "Report",
+          "mention": "Tax return",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting transactions",
+          "type": "DataObject",
+          "mention": "accounting transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax period",
+          "type": "DataObject",
+          "mention": "tax period",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax obligation",
+          "type": "DataObject",
+          "mention": "tax obligation",
+          "confidence": "medium"
+        },
+        {
+          "name": "XML version",
+          "type": "DataObject",
+          "mention": "XML version",
+          "confidence": "medium"
+        },
+        {
+          "name": "VAT platform",
+          "type": "Integration",
+          "mention": "VAT platform",
+          "confidence": "medium"
+        },
+        {
+          "name": "country's localization",
+          "type": "Concept",
+          "mention": "country's localization",
+          "confidence": "medium"
+        },
+        {
+          "name": "taxation authority",
+          "type": "Actor",
+          "mention": "taxation authority",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax return",
+          "relation": "HAS_REPORT",
+          "target": "accounting transactions",
+          "evidence": "computes all accounting transactions"
+        },
+        {
+          "source": "Odoo",
+          "relation": "PRODUCES",
+          "target": "Tax return",
+          "evidence": "Odoo computes [...] uses these totals"
+        },
+        {
+          "source": "Tax return",
+          "relation": "GENERATES",
+          "target": "tax obligation",
+          "evidence": "computes all accounting transactions [...] to calculate the tax obligation"
+        },
+        {
+          "source": "Tax return",
+          "relation": "GENERATES",
+          "target": "XML version",
+          "evidence": "an XML version of the tax report can be generated"
+        },
+        {
+          "source": "Tax return",
+          "relation": "CONFIGURED_BY",
+          "target": "country's localization",
+          "evidence": "Depending on the country's localization"
+        },
+        {
+          "source": "XML version",
+          "relation": "SUPPORTS",
+          "target": "VAT platform",
+          "evidence": "to be uploaded to the VAT platform"
+        },
+        {
+          "source": "Tax return",
+          "relation": "COMPLIES_WITH",
+          "target": "taxation authority",
+          "evidence": "uploaded to the VAT platform of the relevant taxation authority"
+        },
+        {
+          "source": "Tax return",
+          "relation": "RELATED_TO",
+          "target": "tax period",
+          "evidence": "for the specific tax period"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bank-synchronization",
+    "heading": "Bank synchronization",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank synchronization",
+          "type": "Feature",
+          "mention": "Title: Bank synchronization",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Bank synchronization",
+          "evidence": "The bank synchronization system..."
+        },
+        {
+          "source": "Bank synchronization",
+          "relation": "GENERATES",
+          "target": "database",
+          "evidence": "import all transactions into the database."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "inventory-valuation",
+    "heading": "Inventory valuation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Inventory valuation",
+          "type": "Concept",
+          "mention": "Inventory valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Standard Price",
+          "type": "Standard",
+          "mention": "Standard Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Average Cost (AVCO)",
+          "type": "Standard",
+          "mention": "Average Cost (AVCO)",
+          "confidence": "high"
+        },
+        {
+          "name": "First In First Out (FIFO)",
+          "type": "Standard",
+          "mention": "First In First Out (FIFO)",
+          "confidence": "high"
+        },
+        {
+          "name": "periodic (manual) inventory valuation",
+          "type": "Standard",
+          "mention": "periodic (manual)",
+          "confidence": "medium"
+        },
+        {
+          "name": "perpetual (automated) inventory valuation",
+          "type": "Standard",
+          "mention": "perpetual (automated)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory valuation",
+          "relation": "SUPPORTS",
+          "target": "periodic (manual) inventory valuation",
+          "evidence": "Both periodic (manual) and perpetual (automated) inventory valuations are supported in Odoo."
+        },
+        {
+          "source": "Inventory valuation",
+          "relation": "SUPPORTS",
+          "target": "perpetual (automated) inventory valuation",
+          "evidence": "Both periodic (manual) and perpetual (automated) inventory valuations are supported in Odoo."
+        },
+        {
+          "source": "Inventory valuation",
+          "relation": "USES_METHOD",
+          "target": "Standard Price",
+          "evidence": "The available methods are Standard Price, Average Cost (AVCO), and First In First Out (FIFO)."
+        },
+        {
+          "source": "Inventory valuation",
+          "relation": "USES_METHOD",
+          "target": "Average Cost (AVCO)",
+          "evidence": "The available methods are Standard Price, Average Cost (AVCO), and First In First Out (FIFO)."
+        },
+        {
+          "source": "Inventory valuation",
+          "relation": "USES_METHOD",
+          "target": "First In First Out (FIFO)",
+          "evidence": "The available methods are Standard Price, Average Cost (AVCO), and First In First Out (FIFO)."
+        },
+        {
+          "source": "Inventory valuation",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Both periodic (manual) and perpetual (automated) inventory valuations are supported in Odoo."
+        },
+        {
+          "source": "periodic (manual) inventory valuation",
+          "relation": "EQUIVALENT_TO",
+          "target": "Standard Price",
+          "evidence": "Both periodic (manual) and perpetual (automated) inventory valuations are supported in Odoo. The available methods are Standard Price, Average Cost (AVCO), and First In First Out (FIFO)."
+        },
+        {
+          "source": "perpetual (automated) inventory valuation",
+          "relation": "EQUIVALENT_TO",
+          "target": "Standard Price",
+          "evidence": "Both periodic (manual) and perpetual (automated) inventory valuations are supported in Odoo. The available methods are Standard Price, Average Cost (AVCO), and First In First Out (FIFO)."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "retained-earnings",
+    "heading": "Retained earnings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Retained earnings",
+          "type": "Concept",
+          "mention": "Retained earnings",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "profit and loss balance",
+          "type": "DataObject",
+          "mention": "profit and loss balance",
+          "confidence": "medium"
+        },
+        {
+          "name": "balance sheet report",
+          "type": "Report",
+          "mention": "balance sheet report",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Cheat Sheet",
+          "type": "Concept",
+          "mention": "Accounting Cheat Sheet",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Retained earnings",
+          "relation": "RELATED_TO",
+          "target": "profit and loss balance",
+          "evidence": "The profit and loss balance is automatically reported on the balance sheet report."
+        },
+        {
+          "source": "balance sheet report",
+          "relation": "HAS_REPORT",
+          "target": "profit and loss balance",
+          "evidence": "The profit and loss balance is automatically reported on the balance sheet report."
+        },
+        {
+          "source": "Odoo",
+          "relation": "PRODUCES",
+          "target": "balance sheet report",
+          "evidence": "Odoo calculates current year earnings in real-time... The profit and loss balance is automatically reported on the balance sheet report."
+        },
+        {
+          "source": "Accounting Cheat Sheet",
+          "relation": "SEE_ALSO",
+          "target": "Retained earnings",
+          "evidence": ".. seealso:: Accounting Cheat Sheet <accounting/get_started/cheat_sheet>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "fiduciaries",
+    "heading": "Fiduciaries",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Firms mode",
+          "type": "Feature",
+          "mention": "The Accounting Firms mode",
+          "confidence": "high"
+        },
+        {
+          "name": "document's sequence",
+          "type": "Field",
+          "mention": "The document's sequence",
+          "confidence": "high"
+        },
+        {
+          "name": "Total (tax incl.)",
+          "type": "Field",
+          "mention": "The Total (tax incl.) field",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Date",
+          "type": "Field",
+          "mention": "Invoice Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill Date",
+          "type": "Field",
+          "mention": "Bill Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Quick encoding",
+          "type": "Feature",
+          "mention": "A Quick encoding option",
+          "confidence": "high"
+        },
+        {
+          "name": "customer invoices",
+          "type": "DataObject",
+          "mention": "customer invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor bills",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting Firms mode",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "activated by going to Accounting --> Configuration --> Settings"
+        },
+        {
+          "source": "Accounting Firms mode",
+          "relation": "ENABLES",
+          "target": "document's sequence",
+          "evidence": "The document's sequence becomes editable on all documents"
+        },
+        {
+          "source": "Accounting Firms mode",
+          "relation": "ENABLES",
+          "target": "Total (tax incl.)",
+          "evidence": "The Total (tax incl.) field appears"
+        },
+        {
+          "source": "Accounting Firms mode",
+          "relation": "ENABLES",
+          "target": "Invoice Date",
+          "evidence": "Invoice Date and Bill Date are pre-filled"
+        },
+        {
+          "source": "Accounting Firms mode",
+          "relation": "ENABLES",
+          "target": "Bill Date",
+          "evidence": "Invoice Date and Bill Date are pre-filled"
+        },
+        {
+          "source": "Accounting Firms mode",
+          "relation": "ENABLES",
+          "target": "Quick encoding",
+          "evidence": "A Quick encoding option is available"
+        },
+        {
+          "source": "Accounting Firms mode",
+          "relation": "ENABLES",
+          "target": "customer invoices",
+          "evidence": "Quick encoding option is available for customer invoices"
+        },
+        {
+          "source": "Accounting Firms mode",
+          "relation": "ENABLES",
+          "target": "vendor bills",
+          "evidence": "Quick encoding option is available for vendor bills"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "share-invoices-with-external-accountants",
+    "heading": "Share invoices with external accountants",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "external accountant",
+          "type": "Actor",
+          "mention": "external accountant",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/accountant-access-rights",
+          "type": "Feature",
+          "mention": "grant access rights <accounting/accountant-access-rights>",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/send-copy",
+          "type": "Feature",
+          "mention": "automatically send copies of a journal's invoices or bills <accounting/send-copy>",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/zip",
+          "type": "Feature",
+          "mention": "download ZIP files <accounting/zip>",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bills",
+          "confidence": "high"
+        },
+        {
+          "name": "journal",
+          "type": "Module",
+          "mention": "journal's invoices or bills",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "accounting/accountant-access-rights",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo offers ... grant access rights <accounting/accountant-access-rights>"
+        },
+        {
+          "source": "accounting/send-copy",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo offers ... automatically send copies <accounting/send-copy>"
+        },
+        {
+          "source": "accounting/zip",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo offers ... download ZIP files <accounting/zip>"
+        },
+        {
+          "source": "external accountant",
+          "relation": "PERFORMED_BY",
+          "target": "accounting/accountant-access-rights",
+          "evidence": "grant access rights ... to your database"
+        },
+        {
+          "source": "accounting/send-copy",
+          "relation": "GENERATES",
+          "target": "invoice",
+          "evidence": "send copies of a journal's invoices"
+        },
+        {
+          "source": "accounting/send-copy",
+          "relation": "GENERATES",
+          "target": "bill",
+          "evidence": "send copies of a journal's bills"
+        },
+        {
+          "source": "accounting/zip",
+          "relation": "GENERATES",
+          "target": "invoice",
+          "evidence": "ZIP files containing all invoices"
+        },
+        {
+          "source": "accounting/zip",
+          "relation": "GENERATES",
+          "target": "bill",
+          "evidence": "ZIP files containing all bills"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accountant-access-rights",
+    "heading": "Accountant access rights",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "accountant",
+          "type": "Actor",
+          "mention": "accountant",
+          "confidence": "high"
+        },
+        {
+          "name": "company's accountant",
+          "type": "Actor",
+          "mention": "company's accountant",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "company user",
+          "type": "Actor",
+          "mention": "company user",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank",
+          "type": "Module",
+          "mention": "Bank",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank account validation",
+          "type": "Feature",
+          "mention": "Bank account validation",
+          "confidence": "high"
+        },
+        {
+          "name": "Administrator",
+          "type": "Permission",
+          "mention": "Administrator",
+          "confidence": "high"
+        },
+        {
+          "name": "access rights",
+          "type": "Permission",
+          "mention": "access rights",
+          "confidence": "high"
+        },
+        {
+          "name": "appropriate access",
+          "type": "Permission",
+          "mention": "appropriate access",
+          "confidence": "high"
+        },
+        {
+          "name": "company's financial data",
+          "type": "DataObject",
+          "mention": "company's financial data",
+          "confidence": "medium"
+        },
+        {
+          "name": "multi-company environment",
+          "type": "Concept",
+          "mention": "multi-company environment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting section",
+          "type": "Module",
+          "mention": "Accounting section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo Online",
+          "type": "Product",
+          "mention": "Odoo Online",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo.sh",
+          "type": "Product",
+          "mention": "Odoo.sh",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo On-premise",
+          "type": "Product",
+          "mention": "Odoo On-premise",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "company's accountant",
+          "relation": "PERFORMED_BY",
+          "target": "accountant",
+          "evidence": "To grant access to the company's accountant"
+        },
+        {
+          "source": "accountant",
+          "relation": "IS_PART_OF",
+          "target": "user",
+          "evidence": "add the accountant as a new user"
+        },
+        {
+          "source": "user",
+          "relation": "CONFIGURED_BY",
+          "target": "access rights",
+          "evidence": "configure the appropriate access rights"
+        },
+        {
+          "source": "access rights",
+          "relation": "BELONGS_TO",
+          "target": "Accounting section",
+          "evidence": "in the Accounting section"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONFIGURED_BY",
+          "target": "Administrator",
+          "evidence": "Accounting: Select Administrator."
+        },
+        {
+          "source": "Bank",
+          "relation": "ENABLES",
+          "target": "Bank account validation",
+          "evidence": "Bank: Allow bank account validation."
+        },
+        {
+          "source": "accountant",
+          "relation": "CONFIGURED_BY",
+          "target": "appropriate access",
+          "evidence": "set the appropriate access"
+        },
+        {
+          "source": "appropriate access",
+          "relation": "APPLIES_TO",
+          "target": "multi-company environment",
+          "evidence": "For a multi-company environment, set the appropriate access"
+        },
+        {
+          "source": "company's accountant",
+          "relation": "HAS_FEATURE",
+          "target": "company's financial data",
+          "evidence": "enable access to the company's financial data"
+        },
+        {
+          "source": "Odoo Online",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Adding an accountant as a new user in Odoo Online"
+        },
+        {
+          "source": "Odoo.sh",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo.sh"
+        },
+        {
+          "source": "Odoo On-premise",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo On-premise"
+        },
+        {
+          "source": "accountant",
+          "relation": "CONFIGURED_BY",
+          "target": "company user",
+          "evidence": "the same email address as the one listed for the company user"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "send-copies-of-a-journal's-invoices-or-bills",
+    "heading": "Send copies of a journal's invoices or bills",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journals",
+          "type": "Feature",
+          "mention": "Journals",
+          "confidence": "high"
+        },
+        {
+          "name": "journal",
+          "type": "DataObject",
+          "mention": "journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Advanced Settings",
+          "type": "Feature",
+          "mention": "Advanced Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Copy To",
+          "type": "Field",
+          "mention": "Send Copy To",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Navigate to Accounting --> Configuration"
+        },
+        {
+          "source": "Journals",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Navigate to Accounting --> Configuration --> Journals"
+        },
+        {
+          "source": "journal",
+          "relation": "HAS_FEATURE",
+          "target": "Advanced Settings",
+          "evidence": "Open the desired journal. In the Advanced Settings tab"
+        },
+        {
+          "source": "Advanced Settings",
+          "relation": "CONTAINS",
+          "target": "Send Copy To",
+          "evidence": "In the Advanced Settings tab, enter an email address in the Send Copy To field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "zip-file-export",
+    "heading": "ZIP file export",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "Customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoices",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Sub-module",
+          "mention": "Vendors",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bills",
+          "type": "DataObject",
+          "mention": "bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Export ZIP",
+          "type": "Action",
+          "mention": "Export ZIP",
+          "confidence": "high"
+        },
+        {
+          "name": "ZIP file export",
+          "type": "Feature",
+          "mention": "ZIP file export",
+          "confidence": "high"
+        },
+        {
+          "name": "external accountant",
+          "type": "Actor",
+          "mention": "external accountant",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "ZIP file export",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Invoices",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Accounting --> Customers --> Invoices"
+        },
+        {
+          "source": "Bills",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Accounting --> Vendors --> Bills"
+        },
+        {
+          "source": "Customers",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Customers"
+        },
+        {
+          "source": "Vendors",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Vendors"
+        },
+        {
+          "source": "Export ZIP",
+          "relation": "ENABLES",
+          "target": "ZIP file export",
+          "evidence": "Click fa-print Print menu, and click Export ZIP."
+        },
+        {
+          "source": "ZIP file export",
+          "relation": "PRODUCES",
+          "target": "ZIP file",
+          "evidence": "Once the ZIP file is exported"
+        },
+        {
+          "source": "ZIP file",
+          "relation": "RELATED_TO",
+          "target": "external accountant",
+          "evidence": "it can be sent to an external accountant"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1633 @@
+[
+  {
+    "section_id": "inventory-adjustments",
+    "heading": "Inventory adjustments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory adjustments",
+          "type": "Feature",
+          "mention": "Title: Inventory adjustments",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse management system",
+          "type": "Concept",
+          "mention": "warehouse management system",
+          "confidence": "medium"
+        },
+        {
+          "name": "recorded inventory counts",
+          "type": "DataObject",
+          "mention": "recorded inventory counts",
+          "confidence": "medium"
+        },
+        {
+          "name": "actual inventory counts",
+          "type": "Concept",
+          "mention": "actual inventory counts",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse",
+          "type": "Concept",
+          "mention": "warehouse",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory adjustments",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Inventory adjustments"
+        },
+        {
+          "source": "Inventory adjustments",
+          "relation": "ENABLES",
+          "target": "Warehouse management system",
+          "evidence": "In any warehouse management system... inventory adjustments must be made"
+        },
+        {
+          "source": "Inventory adjustments",
+          "relation": "RELATED_TO",
+          "target": "recorded inventory counts",
+          "evidence": "inventory adjustments must be made to reconcile the differences, and ensure that the recorded counts..."
+        },
+        {
+          "source": "Inventory adjustments",
+          "relation": "RELATED_TO",
+          "target": "actual inventory counts",
+          "evidence": "...ensure that the recorded counts in the database match the actual counts in the warehouse"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "physical-inventory-page",
+    "heading": "Physical Inventory page",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Physical Inventory",
+          "type": "Module",
+          "mention": "Physical Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Physical Inventory page",
+          "type": "Report",
+          "mention": "Physical Inventory page",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock",
+          "type": "Feature",
+          "mention": "Stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "Field",
+          "mention": "Lot/Serial Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduled",
+          "type": "Field",
+          "mention": "Scheduled",
+          "confidence": "high"
+        },
+        {
+          "name": "User",
+          "type": "Field",
+          "mention": "User",
+          "confidence": "high"
+        },
+        {
+          "name": "On Hand",
+          "type": "Field",
+          "mention": "On Hand",
+          "confidence": "high"
+        },
+        {
+          "name": "Counted",
+          "type": "Field",
+          "mention": "Counted",
+          "confidence": "high"
+        },
+        {
+          "name": "Difference",
+          "type": "Field",
+          "mention": "Difference",
+          "confidence": "high"
+        },
+        {
+          "name": "oi-settings-adjust icon",
+          "type": "Feature",
+          "mention": "oi-settings-adjust icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Location",
+          "type": "Field",
+          "mention": "Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Setting",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Category",
+          "type": "Field",
+          "mention": "Product Category",
+          "confidence": "high"
+        },
+        {
+          "name": "Last Count Date",
+          "type": "Field",
+          "mention": "Last Count Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration Date",
+          "type": "Field",
+          "mention": "Expiration Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration Dates",
+          "type": "Setting",
+          "mention": "Expiration Dates",
+          "confidence": "high"
+        },
+        {
+          "name": "Package",
+          "type": "Field",
+          "mention": "Package",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit",
+          "type": "Field",
+          "mention": "Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit of Measure",
+          "type": "Concept",
+          "mention": "Unit of Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "create-adjustment",
+          "type": "Action",
+          "mention": "create-adjustment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "navigate to Inventory app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Physical Inventory",
+          "evidence": "Operations --> Physical Inventory"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Inventory app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Stock",
+          "evidence": "Reporting --> Stock"
+        },
+        {
+          "source": "Physical Inventory",
+          "relation": "HAS_REPORT",
+          "target": "Physical Inventory page",
+          "evidence": "Physical Inventory page lists all products"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "for each product line"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Lot/Serial Number",
+          "evidence": "Lot/Serial Number: the tracking identifier"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Scheduled",
+          "evidence": "Scheduled: the date at which a count should be made"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "User",
+          "evidence": "User: the person assigned to the count"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "On Hand",
+          "evidence": "On Hand: the quantity of the product currently recorded"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Counted",
+          "evidence": "Counted: the real quantity counted"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Difference",
+          "evidence": "Difference: the difference between the On Hand quantity and Counted quantity"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONFIGURED_BY",
+          "target": "oi-settings-adjust icon",
+          "evidence": "click the oi-settings-adjust icon to reveal columns"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Location",
+          "evidence": "Location: the specific location in the warehouse"
+        },
+        {
+          "source": "Location",
+          "relation": "GOVERNED_BY",
+          "target": "Storage Locations",
+          "evidence": "This column is only visible if Storage Locations are enabled"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Product Category",
+          "evidence": "Product Category: the category of the product"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Last Count Date",
+          "evidence": "Last Count Date: the last time the quantity was updated"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Expiration Date",
+          "evidence": "Expiration Date: the date on which the goods are due to expire"
+        },
+        {
+          "source": "Expiration Date",
+          "relation": "GOVERNED_BY",
+          "target": "Expiration Dates",
+          "evidence": "Expiration Dates is enabled in the Inventory settings"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Package",
+          "evidence": "Package: the package containing the quantity listed"
+        },
+        {
+          "source": "Physical Inventory page",
+          "relation": "CONTAINS",
+          "target": "Unit",
+          "evidence": "Unit: the unit of measure"
+        },
+        {
+          "source": "Unit",
+          "relation": "EQUIVALENT_TO",
+          "target": "Unit of Measure",
+          "evidence": "the default UoM (Unit of Measure) is Units"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-an-inventory-adjustment",
+    "heading": "Create an inventory adjustment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Physical Inventory page",
+          "type": "Module",
+          "mention": "Physical Inventory page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Forecasted Report",
+          "type": "Report",
+          "mention": "Forecasted Report",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory adjustment",
+          "type": "DataObject",
+          "mention": "inventory adjustment",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory adjustment line",
+          "type": "DataObject",
+          "mention": "inventory adjustment line",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product column",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "Field",
+          "mention": "Lot/Serial Number column",
+          "confidence": "high"
+        },
+        {
+          "name": "Counted",
+          "type": "Field",
+          "mention": "Counted column",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduled date",
+          "type": "Field",
+          "mention": "Scheduled date",
+          "confidence": "high"
+        },
+        {
+          "name": "User",
+          "type": "Field",
+          "mention": "User",
+          "confidence": "high"
+        },
+        {
+          "name": "On Hand quantity",
+          "type": "Field",
+          "mention": "On Hand quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Difference",
+          "type": "Field",
+          "mention": "Difference column",
+          "confidence": "high"
+        },
+        {
+          "name": "lots",
+          "type": "Concept",
+          "mention": "lots",
+          "confidence": "high"
+        },
+        {
+          "name": "serial numbers",
+          "type": "Concept",
+          "mention": "serial numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Update Quantity",
+          "type": "Action",
+          "mention": "click Update Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply All",
+          "type": "Action",
+          "mention": "click Apply All",
+          "confidence": "high"
+        },
+        {
+          "name": "save",
+          "type": "Action",
+          "mention": "saves the adjustment",
+          "confidence": "medium"
+        },
+        {
+          "name": "product record",
+          "type": "DataObject",
+          "mention": "product record",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "inventory adjustment",
+          "relation": "IS_PART_OF",
+          "target": "Physical Inventory page",
+          "evidence": "To create a new inventory adjustment from the Physical Inventory page"
+        },
+        {
+          "source": "Forecasted Report",
+          "relation": "GENERATES",
+          "target": "inventory adjustment",
+          "evidence": "can also be created from the Forecasted Report"
+        },
+        {
+          "source": "inventory adjustment line",
+          "relation": "BELONGS_TO",
+          "target": "inventory adjustment",
+          "evidence": "creates a new, blank inventory adjustment line"
+        },
+        {
+          "source": "Product",
+          "relation": "IS_PART_OF",
+          "target": "inventory adjustment line",
+          "evidence": "under the Product column"
+        },
+        {
+          "source": "Lot/Serial Number",
+          "relation": "IS_PART_OF",
+          "target": "inventory adjustment line",
+          "evidence": "under the Lot/Serial Number column"
+        },
+        {
+          "source": "Counted",
+          "relation": "IS_PART_OF",
+          "target": "inventory adjustment line",
+          "evidence": "Counted column"
+        },
+        {
+          "source": "Scheduled date",
+          "relation": "IS_PART_OF",
+          "target": "inventory adjustment line",
+          "evidence": "Scheduled date"
+        },
+        {
+          "source": "User",
+          "relation": "IS_PART_OF",
+          "target": "inventory adjustment line",
+          "evidence": "User"
+        },
+        {
+          "source": "Difference",
+          "relation": "IS_PART_OF",
+          "target": "inventory adjustment line",
+          "evidence": "Difference column"
+        },
+        {
+          "source": "inventory adjustment",
+          "relation": "HAS_REPORT",
+          "target": "Forecasted Report",
+          "evidence": "can also be created from the Forecasted Report"
+        },
+        {
+          "source": "Forecasted Report",
+          "relation": "IS_PART_OF",
+          "target": "product record",
+          "evidence": "Forecasted Report on an individual product record"
+        },
+        {
+          "source": "New",
+          "relation": "PRODUCES",
+          "target": "inventory adjustment line",
+          "evidence": "click New. Doing so creates a new, blank inventory adjustment line"
+        },
+        {
+          "source": "Apply All",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Apply All"
+        },
+        {
+          "source": "save",
+          "relation": "TRIGGERED_BY",
+          "target": "click away",
+          "evidence": "click away from the line. Doing so saves the adjustment"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "apply-a-single-adjustment",
+    "heading": "Apply a single adjustment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply",
+          "type": "Action",
+          "mention": "Apply button",
+          "confidence": "high"
+        },
+        {
+          "name": "single adjustment",
+          "type": "Feature",
+          "mention": "apply a single adjustment",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "single adjustment",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "single adjustment",
+          "relation": "ENABLES",
+          "target": "Apply",
+          "evidence": "...you can apply adjustments...by clicking the Apply button"
+        },
+        {
+          "source": "Apply",
+          "relation": "IS_PART_OF",
+          "target": "single adjustment",
+          "evidence": "apply adjustments...by clicking the Apply button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "apply-multiple-adjustments",
+    "heading": "Apply multiple adjustments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply All button",
+          "type": "Action",
+          "mention": "Click the Apply All button",
+          "confidence": "high"
+        },
+        {
+          "name": "checkbox",
+          "type": "Action",
+          "mention": "Select the checkbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "Apply button",
+          "type": "Action",
+          "mention": "an Apply button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save button",
+          "type": "Action",
+          "mention": "click the Save button",
+          "confidence": "high"
+        },
+        {
+          "name": "Physical Inventory window",
+          "type": "Module",
+          "mention": "*Physical Inventory* pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Reason",
+          "type": "Field",
+          "mention": "Inventory Reason field",
+          "confidence": "high"
+        },
+        {
+          "name": "Counting Date",
+          "type": "Field",
+          "mention": "Counting Date field",
+          "confidence": "high"
+        },
+        {
+          "name": "Update Quantities",
+          "type": "Action",
+          "mention": "click Update Quantities",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory adjustment",
+          "type": "Workflow",
+          "mention": "apply the inventory adjustment",
+          "confidence": "high"
+        },
+        {
+          "name": "FDA-regulated factory",
+          "type": "Actor",
+          "mention": "FDA-regulated factory",
+          "confidence": "high"
+        },
+        {
+          "name": "federal law",
+          "type": "Regulation",
+          "mention": "federal law",
+          "confidence": "high"
+        },
+        {
+          "name": "stock move",
+          "type": "DataObject",
+          "mention": "stock move record",
+          "confidence": "high"
+        },
+        {
+          "name": "Moves History",
+          "type": "Report",
+          "mention": "*Moves History* report",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Physical Inventory window",
+          "relation": "CONTAINS",
+          "target": "Inventory Reason",
+          "evidence": "In the *Physical Inventory* window, a reference or reason can be assigned... Inventory Reason field"
+        },
+        {
+          "source": "Physical Inventory window",
+          "relation": "CONTAINS",
+          "target": "Counting Date",
+          "evidence": "Today's date is populated in the Counting Date field."
+        },
+        {
+          "source": "Update Quantities",
+          "relation": "PRODUCES",
+          "target": "inventory adjustment",
+          "evidence": "click Update Quantities to apply the inventory adjustment"
+        },
+        {
+          "source": "inventory adjustment",
+          "relation": "GENERATES",
+          "target": "stock move",
+          "evidence": "Applying an inventory adjustment simultaneously creates a stock move record"
+        },
+        {
+          "source": "stock move",
+          "relation": "BELONGS_TO",
+          "target": "Moves History",
+          "evidence": "stock move record <../reporting/moves_history> in the *Moves History* report"
+        },
+        {
+          "source": "FDA-regulated factory",
+          "relation": "COMPLIES_WITH",
+          "target": "federal law",
+          "evidence": "required by law to trace, log, and explain all inventory adjustments... to ensure that it remains in compliance with federal law"
+        },
+        {
+          "source": "inventory adjustment",
+          "relation": "APPLIES_TO",
+          "target": "FDA-regulated factory",
+          "evidence": "An FDA-regulated factory is required by law to trace, log, and explain all inventory adjustments"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "relocate-products",
+    "heading": "Relocate products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Relocate",
+          "type": "Feature",
+          "mention": "Relocate",
+          "confidence": "high"
+        },
+        {
+          "name": "To Location",
+          "type": "Field",
+          "mention": "To Location",
+          "confidence": "high"
+        },
+        {
+          "name": "To Package",
+          "type": "Field",
+          "mention": "To Package",
+          "confidence": "high"
+        },
+        {
+          "name": "Reason for relocation",
+          "type": "Field",
+          "mention": "Reason for relocation",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages",
+          "type": "Feature",
+          "mention": "Packages",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Administrator",
+          "type": "Permission",
+          "mention": "Administrator",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Relocate",
+          "relation": "ENABLES",
+          "target": "To Location",
+          "evidence": "On the resulting pop-up, enter the following information:\n\n- To Location: the new location for the products."
+        },
+        {
+          "source": "Relocate",
+          "relation": "ENABLES",
+          "target": "To Package",
+          "evidence": "- To Package: the new package for the products."
+        },
+        {
+          "source": "Relocate",
+          "relation": "ENABLES",
+          "target": "Reason for relocation",
+          "evidence": "- Reason for relocation: the reason for the move."
+        },
+        {
+          "source": "To Package",
+          "relation": "REQUIRES",
+          "target": "Packages",
+          "evidence": "This field only appears if you have Packages enabled in the *Inventory* settings."
+        },
+        {
+          "source": "Packages",
+          "relation": "CONFIGURED_BY",
+          "target": "Inventory",
+          "evidence": "Packages enabled in the *Inventory* settings."
+        },
+        {
+          "source": "Relocate",
+          "relation": "PERFORMED_BY",
+          "target": "Administrator",
+          "evidence": "Only users with *Administrator* rights can perform product relocations."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-to-zero",
+    "heading": "Set to zero",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Set to 0",
+          "type": "Action",
+          "mention": "Click Set to 0",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory adjustment",
+          "type": "Action",
+          "mention": "apply the adjusted count",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory count",
+          "type": "DataObject",
+          "mention": "inventory counts",
+          "confidence": "high"
+        },
+        {
+          "name": "quantity",
+          "type": "Field",
+          "mention": "quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "Actions button",
+          "type": "Action",
+          "mention": "Actions button",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Set to 0",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "To do this, select the checkbox... At the top of the page, click the fa-gear Actions button... Click Set to 0."
+        },
+        {
+          "source": "Set to 0",
+          "relation": "ENABLES",
+          "target": "inventory adjustment",
+          "evidence": "Once this is complete, apply the adjusted count."
+        },
+        {
+          "source": "Set to 0",
+          "relation": "APPLIES_TO",
+          "target": "product",
+          "evidence": "the line for the desired product"
+        },
+        {
+          "source": "Set to 0",
+          "relation": "PRODUCES",
+          "target": "quantity",
+          "evidence": "set the quantity to zero"
+        },
+        {
+          "source": "product",
+          "relation": "RELATED_TO",
+          "target": "inventory count",
+          "evidence": "clear inventory counts by setting the quantity to zero for the desired product"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "count-products",
+    "heading": "Count products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Physical Inventory",
+          "type": "Sub-module",
+          "mention": "Physical Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Count products",
+          "type": "Action",
+          "mention": "Counting products",
+          "confidence": "high"
+        },
+        {
+          "name": "Counted quantity",
+          "type": "Field",
+          "mention": "Counted column",
+          "confidence": "high"
+        },
+        {
+          "name": "On Hand column",
+          "type": "Field",
+          "mention": "On Hand column",
+          "confidence": "high"
+        },
+        {
+          "name": "Difference column",
+          "type": "Field",
+          "mention": "Difference column",
+          "confidence": "high"
+        },
+        {
+          "name": "Set to quantity on hand",
+          "type": "Action",
+          "mention": "Set to quantity on hand",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-cog Actions menu",
+          "type": "Feature",
+          "mention": "fa-cog Actions menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory adjustment",
+          "type": "DataObject",
+          "mention": "inventory adjustment",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory move",
+          "type": "DataObject",
+          "mention": "an inventory move",
+          "confidence": "medium"
+        },
+        {
+          "name": "product's inventory adjustment history",
+          "type": "Feature",
+          "mention": "product's inventory adjustment history",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory adjustment line",
+          "type": "DataObject",
+          "mention": "inventory adjustment line",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Inventory app --> Operations --> Physical Inventory"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Inventory app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Physical Inventory",
+          "evidence": "Operations --> Physical Inventory"
+        },
+        {
+          "source": "Physical Inventory",
+          "type": "HAS_FEATURE",
+          "target": "Set to quantity on hand",
+          "evidence": "The fa-cog Actions menu includes the option to Set to quantity on hand"
+        },
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "ENABLES",
+          "target": "Set to quantity on hand",
+          "evidence": "The fa-cog Actions menu includes the option to Set to quantity on hand"
+        },
+        {
+          "source": "Count products",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Counting products is a recurring activity"
+        },
+        {
+          "source": "Set to quantity on hand",
+          "relation": "APPLIES_TO",
+          "target": "Counted quantity",
+          "evidence": "sets the selected products' Counted quantity to the On Hand quantity"
+        },
+        {
+          "source": "Count products",
+          "relation": "PRODUCES",
+          "target": "inventory move",
+          "evidence": "an inventory move with `0.00` Done is recorded"
+        },
+        {
+          "source": "Save",
+          "relation": "TRIGGERED_BY",
+          "target": "inventory adjustment",
+          "evidence": "Make sure this is done before opening the fa-cog Actions menu"
+        },
+        {
+          "source": "Counted quantity",
+          "relation": "CONFIGURED_BY",
+          "target": "Difference column",
+          "evidence": "automatically adjusts the value in the Difference column"
+        },
+        {
+          "source": "Count products",
+          "relation": "GENERATES",
+          "target": "product's inventory adjustment history",
+          "evidence": "is recorded in the product's inventory adjustment history"
+        },
+        {
+          "source": "Physical Inventory",
+          "relation": "HAS_FEATURE",
+          "target": "fa-cog Actions menu",
+          "evidence": "The fa-cog Actions menu appears when one or more products' checkboxes are selected"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "revert-an-inventory-adjustment",
+    "heading": "Revert an inventory adjustment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Moves History",
+          "type": "Report",
+          "mention": "Moves History",
+          "confidence": "high"
+        },
+        {
+          "name": "Revert Inventory Adjustment",
+          "type": "Action",
+          "mention": "Revert Inventory Adjustment",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "navigate to Inventory --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Moves History",
+          "evidence": "Reporting --> Moves History"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Moves History",
+          "evidence": "Moves History report"
+        },
+        {
+          "source": "Moves History",
+          "relation": "GENERATES",
+          "target": "additional line",
+          "evidence": "an additional line is added"
+        },
+        {
+          "source": "Revert Inventory Adjustment",
+          "relation": "IS_PART_OF",
+          "target": "Reporting",
+          "evidence": "click Revert Inventory Adjustment"
+        },
+        {
+          "source": "Revert Inventory Adjustment",
+          "relation": "PRODUCES",
+          "target": "additional line",
+          "evidence": "an additional line is added"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-inventory-count-frequency",
+    "heading": "Change inventory count frequency",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Annual Inventory Day and Month setting",
+          "type": "Setting",
+          "mention": "Annual Inventory Day and Month setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations section",
+          "type": "Sub-module",
+          "mention": "Operations section",
+          "confidence": "medium"
+        },
+        {
+          "name": "scheduled date",
+          "type": "Field",
+          "mention": "scheduled date",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Operations section",
+          "evidence": "in the Operations section"
+        },
+        {
+          "source": "Operations section",
+          "relation": "CONTAINS",
+          "target": "Annual Inventory Day and Month setting",
+          "evidence": "locate the Annual Inventory Day and Month setting, which includes a drop-down menu that is set to `31 December` by default"
+        },
+        {
+          "source": "Annual Inventory Day and Month setting",
+          "relation": "CONFIGURED_BY",
+          "target": "scheduled date",
+          "evidence": "To modify the default scheduled date, go to Inventory app --> Configuration --> Settings."
+        },
+        {
+          "source": "Annual Inventory Day and Month setting",
+          "relation": "GOVERNED_BY",
+          "target": "company",
+          "evidence": "for some companies, it is crucial that they have an accurate inventory count at all times"
+        },
+        {
+          "source": "Annual Inventory Day and Month setting",
+          "relation": "ENABLES",
+          "target": "Save",
+          "evidence": "Once all desired changes have been made, click Save to save all changes"
+        },
+        {
+          "source": "Annual Inventory Day and Month setting",
+          "relation": "CONFIGURED_BY",
+          "target": "31 December",
+          "evidence": "which includes a drop-down menu that is set to `31 December` by default"
+        },
+        {
+          "source": "Annual Inventory Day and Month setting",
+          "relation": "CONFIGURED_BY",
+          "target": "drop-down menu",
+          "evidence": "which includes a drop-down menu that is set to `31 December` by default"
+        },
+        {
+          "source": "Annual Inventory Day and Month setting",
+          "relation": "CONFIGURED_BY",
+          "target": "click the `31`",
+          "evidence": "To change the day, click the `31`, enter a number from `1-31`, depending on the desired month of the year"
+        },
+        {
+          "source": "Annual Inventory Day and Month setting",
+          "relation": "CONFIGURED_BY",
+          "target": "click December",
+          "evidence": "Then, to change the month, click December to reveal the drop-down menu, and select the desired month"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "plan-big-inventory-counts",
+    "heading": "Plan big inventory counts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Physical Inventory",
+          "type": "Feature",
+          "mention": "Physical Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Request a Count",
+          "type": "Action",
+          "mention": "Request a Count button",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Request",
+          "type": "DataObject",
+          "mention": "Inventory Request pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign to",
+          "type": "Field",
+          "mention": "Assign to",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduled at",
+          "type": "Field",
+          "mention": "Scheduled at",
+          "confidence": "high"
+        },
+        {
+          "name": "Show Expected Quantity",
+          "type": "Field",
+          "mention": "Show Expected Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Inventory app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Physical Inventory",
+          "evidence": "Operations --> Physical Inventory"
+        },
+        {
+          "source": "Physical Inventory",
+          "relation": "HAS_FEATURE",
+          "target": "Request a Count",
+          "evidence": "click the Request a Count button at the top of the page"
+        },
+        {
+          "source": "Request a Count",
+          "relation": "GENERATES",
+          "target": "Inventory Request",
+          "evidence": "opens the Inventory Request pop-up window"
+        },
+        {
+          "source": "Inventory Request",
+          "relation": "CONTAINS",
+          "target": "Assign to",
+          "evidence": "where the following information can be filled: - Assign to:"
+        },
+        {
+          "source": "Inventory Request",
+          "relation": "CONTAINS",
+          "target": "Scheduled at",
+          "evidence": "- Scheduled at:"
+        },
+        {
+          "source": "Inventory Request",
+          "relation": "CONTAINS",
+          "target": "Show Expected Quantity",
+          "evidence": "- Show Expected Quantity:"
+        },
+        {
+          "source": "Inventory Request",
+          "relation": "CONTAINS",
+          "target": "Confirm",
+          "evidence": "click Confirm to request the count"
+        },
+        {
+          "source": "Barcode",
+          "relation": "SEE_ALSO",
+          "target": "Inventory",
+          "evidence": "In the Odoo Barcode app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "adjustment-history",
+    "heading": "Adjustment history",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Adjustment history",
+          "type": "Feature",
+          "mention": "Title: Adjustment history",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reference field",
+          "type": "Field",
+          "mention": "Reference field",
+          "confidence": "low"
+        },
+        {
+          "name": "Done By",
+          "type": "Field",
+          "mention": "Done By",
+          "confidence": "low"
+        },
+        {
+          "name": "Inventory adjustment",
+          "type": "Concept",
+          "mention": "inventory adjustment",
+          "confidence": "medium"
+        },
+        {
+          "name": "User",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Adjustment history",
+          "relation": "HAS_FEATURE",
+          "target": "Inventory adjustment",
+          "evidence": "Details regarding inventory adjustment can be viewed"
+        },
+        {
+          "source": "Adjustment history",
+          "relation": "CONFIGURED_BY",
+          "target": "Reference field",
+          "evidence": "is listed in parenthesis in the Reference field"
+        },
+        {
+          "source": "Adjustment history",
+          "relation": "CONFIGURED_BY",
+          "target": "Done By",
+          "evidence": "is listed in the Done By"
+        },
+        {
+          "source": "Inventory adjustment",
+          "relation": "RELATED_TO",
+          "target": "User",
+          "evidence": "The user who performed the count"
+        },
+        {
+          "source": "Inventory adjustment",
+          "relation": "RELATED_TO",
+          "target": "User",
+          "evidence": "the user who applied the count"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "inventory-audit",
+    "heading": "Inventory audit",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory audit",
+          "type": "Feature",
+          "mention": "An inventory audit can be accessed",
+          "confidence": "high"
+        },
+        {
+          "name": "Physical Inventory page",
+          "type": "Module",
+          "mention": "from the Physical Inventory page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Request a Count",
+          "type": "Action",
+          "mention": "click the Request a Count button",
+          "confidence": "high"
+        },
+        {
+          "name": "Print",
+          "type": "Action",
+          "mention": "Click Print",
+          "confidence": "high"
+        },
+        {
+          "name": "Count Sheet",
+          "type": "Report",
+          "mention": "Print --> Count Sheet. The Count Sheet exports in PDF form",
+          "confidence": "high"
+        },
+        {
+          "name": "Count Sheet",
+          "type": "DataObject",
+          "mention": "Print --> Count Sheet",
+          "confidence": "medium"
+        },
+        {
+          "name": "cycle_counts",
+          "type": "Concept",
+          "mention": "seealso:: cycle_counts",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory audit",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo. Title: Inventory audit"
+        },
+        {
+          "source": "Inventory audit",
+          "relation": "ENABLES",
+          "target": "Request a Count",
+          "evidence": "An inventory audit can be accessed... Then click the Request a Count button"
+        },
+        {
+          "source": "Inventory audit",
+          "relation": "HAS_REPORT",
+          "target": "Count Sheet",
+          "evidence": "Click Print --> Count Sheet"
+        },
+        {
+          "source": "Request a Count",
+          "relation": "TRIGGERED_BY",
+          "target": "Physical Inventory page",
+          "evidence": "On the Physical Inventory page... click the Request a Count button"
+        },
+        {
+          "source": "Print",
+          "relation": "PRODUCES",
+          "target": "Count Sheet",
+          "evidence": "Click Print --> Count Sheet. The Count Sheet exports in PDF form"
+        },
+        {
+          "source": "Inventory audit",
+          "relation": "SEE_ALSO",
+          "target": "cycle_counts",
+          "evidence": ".. seealso:: cycle_counts"
+        }
+      ]
+    }
+  }
+]

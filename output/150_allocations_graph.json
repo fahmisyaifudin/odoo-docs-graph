@@ -1,0 +1,861 @@
+[
+  {
+    "section_id": "allocations",
+    "heading": "Allocations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "Time Off application",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocations",
+          "type": "Sub-module",
+          "mention": "Allocations",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocations page",
+          "type": "Feature",
+          "mention": "The *Allocations* page",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off Officer",
+          "type": "Permission",
+          "mention": "Time Off Officer",
+          "confidence": "high"
+        },
+        {
+          "name": "Administrator",
+          "type": "Permission",
+          "mention": "Administrator",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "time off",
+          "type": "Concept",
+          "mention": "time off",
+          "confidence": "low"
+        },
+        {
+          "name": "accrual plan",
+          "type": "Standard",
+          "mention": "accrual plan",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Allocations",
+          "relation": "BELONGS_TO",
+          "target": "Time Off",
+          "evidence": "The *Allocations* page of the **Time Off** app"
+        },
+        {
+          "source": "Time Off",
+          "relation": "CONTAINS",
+          "target": "Allocations page",
+          "evidence": "The *Allocations* page of the **Time Off** app"
+        },
+        {
+          "source": "Allocations page",
+          "relation": "REQUIRES",
+          "target": "Time Off Officer",
+          "evidence": "only visible to users who have either *Time Off Officer* or *Administrator* access rights"
+        },
+        {
+          "source": "Allocations page",
+          "relation": "REQUIRES",
+          "target": "Administrator",
+          "evidence": "only visible to users who have either *Time Off Officer* or *Administrator* access rights"
+        },
+        {
+          "source": "Allocations",
+          "relation": "RELATED_TO",
+          "target": "employee",
+          "evidence": "given to employees"
+        },
+        {
+          "source": "Allocations",
+          "relation": "RELATED_TO",
+          "target": "accrual plan",
+          "evidence": "earned as the employee works, through an accrual plan"
+        },
+        {
+          "source": "Allocations",
+          "relation": "RELATED_TO",
+          "target": "time off",
+          "evidence": "amounts of time off given to employees"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "allocate-time-off",
+    "heading": "Allocate time off",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "Time Off app",
+          "confidence": "high"
+        },
+        {
+          "name": "Management",
+          "type": "Sub-module",
+          "mention": "Management",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocations",
+          "type": "Feature",
+          "mention": "Allocations",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "Click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation",
+          "type": "DataObject",
+          "mention": "Allocation form",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name:",
+          "confidence": "high"
+        },
+        {
+          "name": "Annual Vacation Time Off - 2025",
+          "type": "Concept",
+          "mention": "Annual Vacation Time Off - 2025",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off Type",
+          "type": "Field",
+          "mention": "Time Off Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation Type",
+          "type": "Field",
+          "mention": "Allocation Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Regular Allocation",
+          "type": "Concept",
+          "mention": "Regular Allocation",
+          "confidence": "high"
+        },
+        {
+          "name": "Accrual Allocation",
+          "type": "Concept",
+          "mention": "Accrual Allocation",
+          "confidence": "high"
+        },
+        {
+          "name": "Accrual Plan",
+          "type": "Field",
+          "mention": "Accrual Plan",
+          "confidence": "high"
+        },
+        {
+          "name": "accrual plan",
+          "type": "DataObject",
+          "mention": "accrual plan",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validity Period",
+          "type": "Field",
+          "mention": "Validity Period",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Date",
+          "type": "Field",
+          "mention": "Start Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Run until",
+          "type": "Field",
+          "mention": "Run until",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation",
+          "type": "Field",
+          "mention": "Allocation",
+          "confidence": "high"
+        },
+        {
+          "name": "Hours",
+          "type": "Concept",
+          "mention": "Hours",
+          "confidence": "medium"
+        },
+        {
+          "name": "Days",
+          "type": "Concept",
+          "mention": "Days",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee",
+          "type": "Field",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a reason",
+          "type": "Field",
+          "mention": "Add a reason",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Allocations",
+          "relation": "IS_PART_OF",
+          "target": "Management",
+          "evidence": "navigate to Time Off app --> Management --> Allocations"
+        },
+        {
+          "source": "Management",
+          "relation": "IS_PART_OF",
+          "target": "Time Off",
+          "evidence": "navigate to Time Off app --> Management --> Allocations"
+        },
+        {
+          "source": "Time Off",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "New",
+          "relation": "TRIGGERED_BY",
+          "target": "Allocations",
+          "evidence": "Click New to allocate time off"
+        },
+        {
+          "source": "New",
+          "relation": "ENABLES",
+          "target": "Allocation",
+          "evidence": "Click New to allocate time off, and a blank Allocation form appears"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONTAINS",
+          "target": "Name",
+          "evidence": "enter a name for the allocation on the first blank field"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONTAINS",
+          "target": "Time Off Type",
+          "evidence": "enter the following information: Time Off Type"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONTAINS",
+          "target": "Allocation Type",
+          "evidence": "enter the following information: Allocation Type"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONTAINS",
+          "target": "Accrual Plan",
+          "evidence": "enter the following information: Accrual Plan"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONTAINS",
+          "target": "Validity Period",
+          "evidence": "enter the following information: Validity Period/Start Date"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONTAINS",
+          "target": "Start Date",
+          "evidence": "enter the following information: Validity Period/Start Date"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONTAINS",
+          "target": "Run until",
+          "evidence": "enter the following information: Validity Period/Start Date"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONTAINS",
+          "target": "Allocation",
+          "evidence": "enter the following information: Allocation"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONTAINS",
+          "target": "Employee",
+          "evidence": "enter the following information: Employee"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONTAINS",
+          "target": "Add a reason",
+          "evidence": "enter the following information: Add a reason..."
+        },
+        {
+          "source": "Accrual Allocation",
+          "relation": "REQUIRES",
+          "target": "accrual plan",
+          "evidence": "An accrual plan is required when using the Accrual Allocation type"
+        },
+        {
+          "source": "Time Off Type",
+          "relation": "CONFIGURED_BY",
+          "target": "Hours",
+          "evidence": "This field displays the time in either Hours or Days, depending on how the selected Time Off Type is configured"
+        },
+        {
+          "source": "Time Off Type",
+          "relation": "CONFIGURED_BY",
+          "target": "Days",
+          "evidence": "This field displays the time in either Hours or Days, depending on how the selected Time Off Type is configured"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accrual-start-date-behavior",
+    "heading": "Accrual start date behavior",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Date",
+          "type": "Field",
+          "mention": "Start Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Accrual period",
+          "type": "Concept",
+          "mention": "accrual period",
+          "confidence": "high"
+        },
+        {
+          "name": "Accrual plan",
+          "type": "DataObject",
+          "mention": "accrual plan",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accrued Gain Time",
+          "type": "Field",
+          "mention": "Accrued Gain Time",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Start Date",
+          "relation": "BELONGS_TO",
+          "target": "Accrual plan",
+          "evidence": "Accrued Gain Time entered on the accrual plan"
+        },
+        {
+          "source": "Accrual period",
+          "relation": "CONTAINS",
+          "target": "Start Date",
+          "evidence": "If the Start Date is in the middle of an accrual period"
+        },
+        {
+          "source": "Accrued Gain Time",
+          "relation": "GOVERNED_BY",
+          "target": "Accrual plan",
+          "evidence": "Accrued Gain Time entered on the accrual plan"
+        },
+        {
+          "source": "Accrued Gain Time",
+          "relation": "CONFIGURED_BY",
+          "target": "Start Date",
+          "evidence": "Odoo adjusts it to the start or end of that period based on the Accrued Gain Time"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Accrual period",
+          "evidence": "Automatic adjustments on the start date to ensure accruals align with the defined period boundaries"
+        },
+        {
+          "source": "Accrual period",
+          "relation": "RELATED_TO",
+          "target": "Accrual plan",
+          "evidence": "Time off/accrual-plans reference"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "multiple-requests",
+    "heading": "Multiple requests",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Multiple Requests",
+          "type": "Feature",
+          "mention": "Multiple Requests feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation form",
+          "type": "Form",
+          "mention": "Allocation form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allocations",
+          "type": "Module",
+          "mention": "Allocations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mode field",
+          "type": "Field",
+          "mention": "Mode field",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees field",
+          "type": "Field",
+          "mention": "Employees field",
+          "confidence": "high"
+        },
+        {
+          "name": "Company field",
+          "type": "Field",
+          "mention": "Company field",
+          "confidence": "high"
+        },
+        {
+          "name": "Department field",
+          "type": "Field",
+          "mention": "Department field",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee Tag field",
+          "type": "Field",
+          "mention": "Employee Tag field",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off Type",
+          "type": "Field",
+          "mention": "Time Off Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation Request",
+          "type": "DataObject",
+          "mention": "Allocation Request",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Allocations",
+          "type": "Action",
+          "mention": "Create Allocations",
+          "confidence": "high"
+        },
+        {
+          "name": "By Employee",
+          "type": "Setting",
+          "mention": "By Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "By Company",
+          "type": "Setting",
+          "mention": "By Company",
+          "confidence": "high"
+        },
+        {
+          "name": "By Department",
+          "type": "Setting",
+          "mention": "By Department",
+          "confidence": "high"
+        },
+        {
+          "name": "By Employee Tag",
+          "type": "Setting",
+          "mention": "By Employee Tag",
+          "confidence": "high"
+        },
+        {
+          "name": "Raffle Winner - 2025 Employee Picnic Prize",
+          "type": "Tag",
+          "mention": "Raffle Winner - 2025 Employee Picnic Prize",
+          "confidence": "high"
+        },
+        {
+          "name": "Vacation Time Off",
+          "type": "Time Off Type",
+          "mention": "Vacation Time Off",
+          "confidence": "high"
+        },
+        {
+          "name": "Regular Allocation",
+          "type": "Allocation Type",
+          "mention": "Regular Allocation",
+          "confidence": "high"
+        },
+        {
+          "name": "Validity Period",
+          "type": "Setting",
+          "mention": "Validity Period",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation",
+          "type": "DataObject",
+          "mention": "Allocation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off app",
+          "type": "Module",
+          "mention": "Time Off app",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Time Off app",
+          "evidence": "Product: Odoo\nTitle: Multiple requests"
+        },
+        {
+          "source": "Time Off app",
+          "relation": "CONTAINS",
+          "target": "Allocations",
+          "evidence": "navigate to Time Off app --> Management --> Allocations"
+        },
+        {
+          "source": "Allocations",
+          "relation": "ENABLES",
+          "target": "Create Allocations",
+          "evidence": "Fill out the remainder of the Multiple Requests form <time_off/allocation-form>, then click\nCreate Allocations when done"
+        },
+        {
+          "source": "Multiple Requests",
+          "relation": "HAS_FEATURE",
+          "target": "Mode field",
+          "evidence": "with an additional\nMode field"
+        },
+        {
+          "source": "Mode field",
+          "relation": "CONTAINS",
+          "target": "By Employee",
+          "evidence": "By Employee"
+        },
+        {
+          "source": "Mode field",
+          "relation": "CONTAINS",
+          "target": "By Company",
+          "evidence": "By Company"
+        },
+        {
+          "source": "Mode field",
+          "relation": "CONTAINS",
+          "target": "By Department",
+          "evidence": "By Department"
+        },
+        {
+          "source": "Mode field",
+          "relation": "CONTAINS",
+          "target": "By Employee Tag",
+          "evidence": "By Employee Tag"
+        },
+        {
+          "source": "Multiple Requests",
+          "relation": "USES",
+          "target": "Allocation form",
+          "evidence": "This form is identical to the Allocation form"
+        },
+        {
+          "source": "By Employee",
+          "relation": "TRIGGERED_BY",
+          "target": "Employees field",
+          "evidence": "Selecting this reveals an\nEmployees field"
+        },
+        {
+          "source": "By Company",
+          "relation": "TRIGGERED_BY",
+          "target": "Company field",
+          "evidence": "Selecting this reveals a Company field"
+        },
+        {
+          "source": "By Department",
+          "relation": "TRIGGERED_BY",
+          "target": "Department field",
+          "evidence": "Selecting this reveals a Department field"
+        },
+        {
+          "source": "By Employee Tag",
+          "relation": "TRIGGERED_BY",
+          "target": "Employee Tag field",
+          "evidence": "Selecting this reveals an Employee Tag field"
+        },
+        {
+          "source": "Allocation form",
+          "relation": "HAS_FEATURE",
+          "target": "Time Off Type",
+          "evidence": "select the Time Off Type using the drop-down menu"
+        },
+        {
+          "source": "Multiple Requests",
+          "relation": "PRODUCES",
+          "target": "Allocation",
+          "evidence": "create multiple allocations"
+        },
+        {
+          "source": "Time Off Type",
+          "relation": "CONFIGURED_BY",
+          "target": "Vacation Time Off",
+          "evidence": "The Time Off Type is set to Vacation Time Off"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONFIGURED_BY",
+          "target": "Regular Allocation",
+          "evidence": "with the\nAllocation Type set to Regular Allocaiton"
+        },
+        {
+          "source": "Allocation",
+          "relation": "CONFIGURED_BY",
+          "target": "Validity Period",
+          "evidence": "The Validity Period is set to 07/18/2025 oi-arrow-right\n12/31/2025"
+        },
+        {
+          "source": "Allocation",
+          "relation": "APPLIES_TO",
+          "target": "Raffle Winner - 2025 Employee Picnic Prize",
+          "evidence": "The winners of this raffle all have\nthe tag `Raffle Winner - 2025 Employee Picnic Prize` added to their employee profiles"
+        },
+        {
+          "source": "Allocation",
+          "relation": "HAS_REPORT",
+          "target": "Allocation Request",
+          "evidence": "the placeholder name, 'Allocation Request', changes to the name of the selected\nTime Off Type"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "request-allocation",
+    "heading": "Request allocation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Request allocation",
+          "type": "Feature",
+          "mention": "Title: Request allocation",
+          "confidence": "high"
+        },
+        {
+          "name": "Dashboard",
+          "type": "Feature",
+          "mention": "Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "My Allocations",
+          "type": "Feature",
+          "mention": "My Allocations",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation request form",
+          "type": "DataObject",
+          "mention": "new allocation request form",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off Type",
+          "type": "Field",
+          "mention": "Time Off Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Validity Period",
+          "type": "Field",
+          "mention": "Validity Period",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation",
+          "type": "Field",
+          "mention": "Allocation",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a reason...",
+          "type": "Field",
+          "mention": "Add a reason...",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & Close button",
+          "type": "Action",
+          "mention": "Save & Close button",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Request allocation",
+          "evidence": "Product: Odoo Title: Request allocation"
+        },
+        {
+          "source": "Request allocation",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "If an employee has used all their time off, they can request an allocation"
+        },
+        {
+          "source": "Request allocation",
+          "relation": "CONTAINS",
+          "target": "Dashboard",
+          "evidence": "Allocations can be requested... from the Dashboard"
+        },
+        {
+          "source": "Request allocation",
+          "relation": "CONTAINS",
+          "target": "My Allocations",
+          "evidence": "Allocations can be requested... from the My Allocations view"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "ENABLES",
+          "target": "Allocation request form",
+          "evidence": "Both buttons open a new allocation request form"
+        },
+        {
+          "source": "My Allocations",
+          "relation": "ENABLES",
+          "target": "Allocation request form",
+          "evidence": "Both buttons open a new allocation request form"
+        },
+        {
+          "source": "Allocation request form",
+          "relation": "CONTAINS",
+          "target": "Time Off Type",
+          "evidence": "Time Off Type: Using the drop-down menu"
+        },
+        {
+          "source": "Allocation request form",
+          "relation": "CONTAINS",
+          "target": "Validity Period",
+          "evidence": "Validity Period: By default, the current date populates this field"
+        },
+        {
+          "source": "Allocation request form",
+          "relation": "CONTAINS",
+          "target": "Allocation",
+          "evidence": "Allocation: Enter the amount of time being requested"
+        },
+        {
+          "source": "Allocation request form",
+          "relation": "CONTAINS",
+          "target": "Add a reason...",
+          "evidence": "Add a reason...: Enter a description for the allocation request"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "PRODUCES",
+          "target": "Allocation request form",
+          "evidence": "when requested from the Dashboard, the form appears"
+        },
+        {
+          "source": "My Allocations",
+          "relation": "PRODUCES",
+          "target": "Allocation request form",
+          "evidence": "when requested from the My Allocations list view"
+        },
+        {
+          "source": "Save & Close button",
+          "relation": "ENABLES",
+          "target": "Allocation request form",
+          "evidence": "click the Save & Close button to save the information"
+        }
+      ]
+    }
+  }
+]

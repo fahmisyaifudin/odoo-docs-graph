@@ -1,0 +1,293 @@
+[
+  {
+    "section_id": "project-milestones",
+    "heading": "Project milestones",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Milestones",
+          "type": "Feature",
+          "mention": "Milestones",
+          "confidence": "high"
+        },
+        {
+          "name": "Project",
+          "type": "Module",
+          "mention": "project",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "sales",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Milestones",
+          "relation": "HAS_FEATURE",
+          "target": "Odoo",
+          "evidence": "Product: Odoo ... **Milestones** enable you to track ongoing project work"
+        },
+        {
+          "source": "Milestones",
+          "relation": "APPLIES_TO",
+          "target": "Project",
+          "evidence": "enable you to track ongoing project work"
+        },
+        {
+          "source": "Milestones",
+          "relation": "SEE_ALSO",
+          "target": "Sales",
+          "evidence": "</applications/sales/sales/invoicing/milestone>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Project",
+          "type": "Module",
+          "mention": "Project app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tasks Management",
+          "type": "Feature",
+          "mention": "Tasks Management",
+          "confidence": "medium"
+        },
+        {
+          "name": "Milestones",
+          "type": "Feature",
+          "mention": "Milestones",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure project milestones",
+          "type": "Action",
+          "mention": "Configure project milestones",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Deadline",
+          "type": "Field",
+          "mention": "Deadline",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order Item",
+          "type": "Field",
+          "mention": "Sales Order Item",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity (%)",
+          "type": "Field",
+          "mention": "Quantity (%)",
+          "confidence": "high"
+        },
+        {
+          "name": "Reached",
+          "type": "Field",
+          "mention": "Reached",
+          "confidence": "high"
+        },
+        {
+          "name": "Milestone",
+          "type": "DataObject",
+          "mention": "milestone",
+          "confidence": "high"
+        },
+        {
+          "name": "project tasks",
+          "type": "DataObject",
+          "mention": "project tasks",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoicing based on milestones",
+          "type": "Concept",
+          "mention": "invoicing based on milestones",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Milestones",
+          "relation": "CONTAINS",
+          "target": "Name",
+          "evidence": "entering the milestone's Name"
+        },
+        {
+          "source": "Milestones",
+          "relation": "CONTAINS",
+          "target": "Deadline",
+          "evidence": "selecting a Deadline if desired"
+        },
+        {
+          "source": "Milestones",
+          "relation": "CONTAINS",
+          "target": "Sales Order Item",
+          "evidence": "The following options are relevant when using invoicing based on milestones: - Sales Order Item"
+        },
+        {
+          "source": "Milestones",
+          "relation": "CONTAINS",
+          "target": "Quantity (%)",
+          "evidence": "The following options are relevant when using invoicing based on milestones: - Quantity (%)"
+        },
+        {
+          "source": "Sales Order Item",
+          "relation": "GENERATES",
+          "target": "Sales Order number",
+          "evidence": "this field is filled in automatically with the Sales Order number"
+        },
+        {
+          "source": "Milestones",
+          "relation": "HAS_FEATURE",
+          "target": "Reached",
+          "evidence": "milestone will be automatically marked as Reached"
+        },
+        {
+          "source": "Milestones",
+          "relation": "RELATED_TO",
+          "target": "project tasks",
+          "evidence": "you can link project tasks to milestones"
+        },
+        {
+          "source": "Milestones",
+          "relation": "RELATED_TO",
+          "target": "invoicing based on milestones",
+          "evidence": "options are relevant when using invoicing based on milestones"
+        },
+        {
+          "source": "Quantity (%)",
+          "relation": "GENERATES",
+          "target": "sales order",
+          "evidence": "percentage of the ordered quantity that will automatically be delivered on the sales order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "using-milestones",
+    "heading": "Using milestones",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Gantt view",
+          "type": "Feature",
+          "mention": "**Gantt view**",
+          "confidence": "high"
+        },
+        {
+          "name": "milestone",
+          "type": "DataObject",
+          "mention": "milestone",
+          "confidence": "high"
+        },
+        {
+          "name": "project dashboard",
+          "type": "Feature",
+          "mention": "project dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "milestone deadline",
+          "type": "Field",
+          "mention": "deadline",
+          "confidence": "medium"
+        },
+        {
+          "name": "project deadline",
+          "type": "Field",
+          "mention": "project’s deadline",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "milestone",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo offers several ways to oversee the project’s milestones"
+        },
+        {
+          "source": "milestone",
+          "relation": "DISPLAYED_IN",
+          "target": "Gantt view",
+          "evidence": "In the **Gantt view**, a milestone is shown as a vertical line"
+        },
+        {
+          "source": "project dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "milestone",
+          "evidence": "you can also create, edit, and mark milestones as reached from the project dashboard"
+        },
+        {
+          "source": "milestone",
+          "relation": "HAS_FIELD",
+          "target": "milestone deadline",
+          "evidence": "displayed on the day of the milestone’s deadline"
+        }
+      ]
+    }
+  }
+]

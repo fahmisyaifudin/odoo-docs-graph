@@ -1,0 +1,680 @@
+[
+  {
+    "section_id": "invoicing-policies",
+    "heading": "Invoicing policies",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice what is ordered",
+          "type": "Standard",
+          "mention": "Invoice what is ordered",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice what is delivered",
+          "type": "Standard",
+          "mention": "Invoice what is delivered",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoicing Policy",
+          "type": "Setting",
+          "mention": "Invoicing Policy",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic Invoice",
+          "type": "Feature",
+          "mention": "Automatic Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "inventory",
+          "confidence": "low"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice what is ordered",
+          "relation": "IS_PART_OF",
+          "target": "Sales",
+          "evidence": "Invoice what is ordered <invoice-on-order> and Invoice what is delivered <invoice-on-delivery> can be enabled in the **Sales** app"
+        },
+        {
+          "source": "Invoice what is delivered",
+          "relation": "IS_PART_OF",
+          "target": "Sales",
+          "evidence": "Invoice what is ordered <invoice-on-order> and Invoice what is delivered <invoice-on-delivery> can be enabled in the **Sales** app"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "go to Sales app --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Sales",
+          "evidence": "go to Sales app --> Configuration --> Settings"
+        },
+        {
+          "source": "Invoice what is delivered",
+          "relation": "REQUIRES",
+          "target": "delivery order",
+          "evidence": "Regular draft invoices can only be created once the delivery order has been processed and validated."
+        },
+        {
+          "source": "Invoice what is delivered",
+          "relation": "GOVERNED_BY",
+          "target": "Invoicing Policy",
+          "evidence": "select an Invoicing Policy option: Invoice what is ordered or Invoice what is delivered."
+        },
+        {
+          "source": "Invoice what is ordered",
+          "relation": "GOVERNED_BY",
+          "target": "Invoicing Policy",
+          "evidence": "select an Invoicing Policy option: Invoice what is ordered or Invoice what is delivered."
+        },
+        {
+          "source": "Invoice what is delivered",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "To configure an invoicing policy, go to Sales app --> Configuration --> Settings"
+        },
+        {
+          "source": "Invoice what is ordered",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "To configure an invoicing policy, go to Sales app --> Configuration --> Settings"
+        },
+        {
+          "source": "Invoice what is delivered",
+          "relation": "COMPLIES_WITH",
+          "target": "Automatic Invoice",
+          "evidence": "If the Invoice what is delivered option is chosen, it is **not** possible to activate the Automatic Invoice feature"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "changing-the-invoicing-policy-for-existing-products",
+    "heading": "Changing the invoicing policy for existing products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoicing Policy",
+          "type": "Field",
+          "mention": "Invoicing Policy",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information tab",
+          "type": "Sub-module",
+          "mention": "General Information tab",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Sales app",
+          "evidence": "Sales app --> Products --> Products"
+        },
+        {
+          "source": "Sales app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Sales app --> Products --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "IS_PART_OF",
+          "target": "General Information tab",
+          "evidence": "Invoicing Policy option located under the General Information tab"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Invoicing Policy",
+          "evidence": "Invoicing Policy option located under the General Information tab"
+        },
+        {
+          "source": "Invoicing Policy",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "After the invoicing policy has been configured in *Settings*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoicing-what-is-ordered",
+    "heading": "Invoicing what is ordered",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice what is ordered",
+          "type": "Setting",
+          "mention": "Invoice what is ordered",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo sales flow",
+          "type": "Workflow",
+          "mention": "Odoo sales flow",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice what is ordered",
+          "relation": "CONFIGURED_BY",
+          "target": "Sales",
+          "evidence": "used as the default mode in the Sales app"
+        },
+        {
+          "source": "customer",
+          "relation": "PERFORMED_BY",
+          "target": "invoice",
+          "evidence": "customers are invoiced"
+        },
+        {
+          "source": "quotation",
+          "relation": "PRODUCES",
+          "target": "sales order",
+          "evidence": "creation of a quotation in turn leads to the creation and confirmation of a sales order"
+        },
+        {
+          "source": "invoice",
+          "relation": "TRIGGERED_BY",
+          "target": "sales order",
+          "evidence": "invoice can then be created as soon as the sales order is confirmed"
+        },
+        {
+          "source": "Invoice what is ordered",
+          "relation": "RELATED_TO",
+          "target": "Odoo sales flow",
+          "evidence": "This invoicing policy has no impact on the basic Odoo sales flow"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoice-ordered-quantity-workflow",
+    "heading": "Invoice ordered quantity workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice ordered quantity workflow",
+          "type": "Workflow",
+          "mention": "Invoice ordered quantity workflow",
+          "confidence": "high"
+        },
+        {
+          "name": "Ordered quantities",
+          "type": "Setting",
+          "mention": "invoicing policy is set to Ordered quantities",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a quotation",
+          "type": "Action",
+          "mention": "Create a quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "confirmed",
+          "type": "Action",
+          "mention": "the sales order has been confirmed",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Invoice",
+          "type": "Action",
+          "mention": "Create Invoice button",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Draft Invoice",
+          "type": "DataObject",
+          "mention": "Create Draft Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "confirm the invoice",
+          "type": "Action",
+          "mention": "confirm the invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "payment flow",
+          "type": "Workflow",
+          "mention": "payment flow",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice ordered quantity workflow",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Invoice ordered quantity workflow"
+        },
+        {
+          "source": "Invoice ordered quantity workflow",
+          "relation": "REQUIRES",
+          "target": "Ordered quantities",
+          "evidence": "Confirm that the product's invoicing policy is set to Ordered quantities"
+        },
+        {
+          "source": "Invoice ordered quantity workflow",
+          "relation": "TRIGGERED_BY",
+          "target": "confirmed",
+          "evidence": "After the sales order has been confirmed, create an invoice"
+        },
+        {
+          "source": "Invoice ordered quantity workflow",
+          "relation": "CONTAINS",
+          "target": "Create Invoice",
+          "evidence": "create an invoice by clicking the Create Invoice button"
+        },
+        {
+          "source": "Create Invoice",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "create an invoice by clicking the Create Invoice button on the sales order form"
+        },
+        {
+          "source": "invoice",
+          "relation": "PRODUCED_BY",
+          "target": "Create Invoice",
+          "evidence": "create an invoice by clicking the Create Invoice button"
+        },
+        {
+          "source": "Draft Invoice",
+          "type": "GENERATED",
+          "target": "Create Invoice",
+          "evidence": "click Create Draft Invoice"
+        },
+        {
+          "source": "payment flow",
+          "relation": "TRIGGERED_BY",
+          "target": "invoice",
+          "evidence": "confirm the invoice when ready, and proceed with the payment flow as normal"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoicing-what-is-delivered",
+    "heading": "Invoicing what is delivered",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice what is delivered",
+          "type": "Feature",
+          "mention": "Invoice what is delivered",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "Quotation sent",
+          "type": "Action",
+          "mention": "Quotation sent",
+          "confidence": "medium"
+        },
+        {
+          "name": "Backorders",
+          "type": "DataObject",
+          "mention": "Backorders",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivered quantity",
+          "type": "Field",
+          "mention": "delivered quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoiced quantities",
+          "type": "Field",
+          "mention": "invoiced quantities",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice what is delivered",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Invoice what is delivered",
+          "relation": "ENABLES",
+          "target": "Invoiced quantities",
+          "evidence": "invoices customers as different amounts of the ordered goods are delivered"
+        },
+        {
+          "source": "Invoice what is delivered",
+          "relation": "REQUIRES",
+          "target": "Delivered quantity",
+          "evidence": "delivered quantity of a product needs to be manually entered on the sales order"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GENERATES",
+          "target": "Invoiced quantities",
+          "evidence": "Odoo automatically adds both the delivered and invoiced quantities"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GENERATES",
+          "target": "Delivered quantity",
+          "evidence": "Odoo automatically adds both the delivered and invoiced quantities"
+        },
+        {
+          "source": "Odoo",
+          "relation": "TRIGGERED_BY",
+          "target": "Quotation sent",
+          "evidence": "Once a quotation is confirmed, and the status changes from Quotation sent to Sales order"
+        },
+        {
+          "source": "Odoo",
+          "relation": "RELATED_TO",
+          "target": "Backorders",
+          "evidence": "Backorders can be created for partial orders"
+        },
+        {
+          "source": "Quotation",
+          "relation": "EQUIVALENT_TO",
+          "target": "Sales order",
+          "evidence": "Once a quotation is confirmed... status changes... to Sales order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoice-delivered-quantity-workflow",
+    "heading": "Invoice delivered quantity workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivered quantities",
+          "type": "Standard",
+          "mention": "invoicing policy is set to Delivered quantities",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "Create a quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order form",
+          "type": "DataObject",
+          "mention": "sales order form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Action",
+          "mention": "click the Delivery smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "click Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Invoice button",
+          "type": "Action",
+          "mention": "Create Invoice button",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "payment flow",
+          "type": "Workflow",
+          "mention": "payment flow",
+          "confidence": "medium"
+        },
+        {
+          "name": "error message",
+          "type": "Concept",
+          "mention": "error message",
+          "confidence": "medium"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales",
+          "type": "Module",
+          "mention": "sales",
+          "confidence": "low"
+        },
+        {
+          "name": "inventory_and_mrp",
+          "type": "Module",
+          "mention": "inventory_and_mrp",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Delivered quantities",
+          "relation": "APPLIES_TO",
+          "target": "product",
+          "evidence": "Confirm that the product's invoicing policy is set to Delivered quantities in the product form."
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "click Validate to validate the delivery order"
+        },
+        {
+          "source": "Create Invoice button",
+          "relation": "ENABLES",
+          "target": "invoice",
+          "evidence": "The Create Invoice button is now purple to indicate that an invoice can be created"
+        },
+        {
+          "source": "invoice",
+          "relation": "ENABLES",
+          "target": "payment flow",
+          "evidence": "it is possible to proceed with the payment flow as normal"
+        },
+        {
+          "source": "sales",
+          "relation": "SEE_ALSO",
+          "target": "sales_quotations/create_quotations",
+          "evidence": "../sales_quotations/create_quotations"
+        },
+        {
+          "source": "sales",
+          "relation": "SEE_ALSO",
+          "target": "down_payment",
+          "evidence": "down_payment"
+        },
+        {
+          "source": "sales",
+          "relation": "SEE_ALSO",
+          "target": "inventory_and_mrp",
+          "evidence": "../../../inventory_and_mrp/inventory"
+        }
+      ]
+    }
+  }
+]

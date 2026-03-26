@@ -1,0 +1,255 @@
+[
+  {
+    "section_id": "bank-and-cash-accounts",
+    "heading": "Bank and cash accounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "bank account",
+          "type": "DataObject",
+          "mention": "bank account",
+          "confidence": "high"
+        },
+        {
+          "name": "cash account",
+          "type": "DataObject",
+          "mention": "cash account",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal",
+          "type": "DataObject",
+          "mention": "journal",
+          "confidence": "high"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "DataObject",
+          "mention": "Accounting Dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "cards",
+          "type": "DataObject",
+          "mention": "cards",
+          "confidence": "low"
+        },
+        {
+          "name": "action buttons",
+          "type": "Feature",
+          "mention": "action buttons",
+          "confidence": "low"
+        },
+        {
+          "name": "bank/reconciliation",
+          "type": "Concept",
+          "mention": "bank/reconciliation",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/journals/cash",
+          "type": "Concept",
+          "mention": "accounting/journals/cash",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/bank/manage",
+          "type": "Concept",
+          "mention": "accounting/bank/manage",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "bank account",
+          "relation": "CONTAINS",
+          "target": "journal",
+          "evidence": "each bank account has a dedicated journal"
+        },
+        {
+          "source": "bank account",
+          "relation": "CONTAINS",
+          "target": "account",
+          "evidence": "each bank account has a dedicated journal set to post all entries in a dedicated account"
+        },
+        {
+          "source": "journal",
+          "relation": "PRODUCES",
+          "target": "account",
+          "evidence": "journal set to post all entries in a dedicated account"
+        },
+        {
+          "source": "bank account",
+          "relation": "IS_PART_OF",
+          "target": "database",
+          "evidence": "manage as many bank or cash accounts as needed on your database"
+        },
+        {
+          "source": "cash account",
+          "relation": "IS_PART_OF",
+          "target": "database",
+          "evidence": "manage as many bank or cash accounts as needed on your database"
+        },
+        {
+          "source": "bank journal",
+          "relation": "HAS_REPORT",
+          "target": "Accounting Dashboard",
+          "evidence": "Bank journals are displayed by default on the Accounting Dashboard"
+        },
+        {
+          "source": "Accounting Dashboard",
+          "relation": "CONTAINS",
+          "target": "cards",
+          "evidence": "displayed by default on the Accounting Dashboard in the form of cards"
+        },
+        {
+          "source": "cards",
+          "relation": "CONTAINS",
+          "target": "action buttons",
+          "evidence": "cards which include action buttons"
+        },
+        {
+          "source": "bank account",
+          "relation": "SEE_ALSO",
+          "target": "bank/reconciliation",
+          "evidence": "ready for reconciliation <bank/reconciliation> with your journal entries"
+        },
+        {
+          "source": "cash account",
+          "relation": "SEE_ALSO",
+          "target": "accounting/journals/cash",
+          "evidence": "Cash journals <accounting/journals/cash> and accounts must be configured manually"
+        },
+        {
+          "source": "cash account",
+          "relation": "SEE_ALSO",
+          "target": "accounting/bank/manage",
+          "evidence": ".. _accounting/bank/manage:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "connect-a-bank-for-automatic-synchronization",
+    "heading": "Connect a bank for automatic synchronization",
+    "product": "Odoo",
+    "graph": {
+      "error": "Invalid control character at: line 5 column 86 (char 298)",
+      "raw_response": "{\n  \"entities\": [\n    {\"name\": \"Odoo\", \"type\": \"Product\", \"mention\": \"Odoo\", \"confidence\": \"high\"},\n    {\"name\": \"Accounting Dashboard\", \"type\": \"Module\", \"mention\": \"Accounting Dashboard\", \"confidence\": \"high\"},\n    {\"name\": \"Search over 26000 banks\", \"type\": \"Feature\", \"mention\": \"Search over \\\\\n26000 banks\", \"confidence\": \"medium\"},\n    {\"name\": \"Connect\", \"type\": \"Action\", \"mention\": \"Connect\", \"confidence\": \"medium\"},\n    {\"name\": \"bank account\", \"type\": \"DataObject\", \"mention\": \"bank account\", \"confidence\": \"medium\"},\n    {\"name\": \"bank/bank_synchronization\", \"type\": \"Feature\", \"mention\": \"bank/bank_synchronization\", \"confidence\": \"medium\"},\n    {\"name\": \"accounting/bank/create\", \"type\": \"Module\", \"mention\": \"accounting/bank/create\", \"confidence\": \"medium\"}\n  ],\n  \"relations\": [\n    {\"source\": \"Accounting Dashboard\", \"relation\": \"IS_PART_OF\", \"target\": \"Odoo\", \"evidence\": \"To connect your bank account to your database, go to the Accounting Dashboard\"},\n    {\"source\": \"Search over 26000 banks\", \"relation\": \"ENABLES\", \"target\": \"Connect\", \"evidence\": \"on the kanban card of an unconnected bank, click Search over 26000 banks. Select your bank from the list, click on Connect\"},\n    {\"source\": \"Accounting Dashboard\", \"relation\": \"SEE_ALSO\", \"target\": \"bank/bank_synchronization\", \"evidence\": \"seealso: bank/bank_synchronization\"},\n    {\"source\": \"Accounting Dashboard\", \"relation\": \"SEE_ALSO\", \"target\": \"accounting/bank/create\", \"evidence\": \"accounting/bank/create\"}\n  ]\n}"
+    }
+  },
+  {
+    "section_id": "create-a-bank-account",
+    "heading": "Create a bank account",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Module",
+          "mention": "Accounting Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "bank",
+          "type": "DataObject",
+          "mention": "bank",
+          "confidence": "high"
+        },
+        {
+          "name": "bank account",
+          "type": "DataObject",
+          "mention": "bank account",
+          "confidence": "high"
+        },
+        {
+          "name": "bank journal",
+          "type": "DataObject",
+          "mention": "bank journal",
+          "confidence": "high"
+        },
+        {
+          "name": "IBAN",
+          "type": "Field",
+          "mention": "IBAN",
+          "confidence": "high"
+        },
+        {
+          "name": "Record transactions manually",
+          "type": "Action",
+          "mention": "Record transactions manually",
+          "confidence": "high"
+        },
+        {
+          "name": "Search over 26000 banks",
+          "type": "Action",
+          "mention": "Search over breaking over 26000 banks",
+          "confidence": "high"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "bank account",
+          "relation": "CONFIGURED_BY",
+          "target": "bank journal",
+          "evidence": "configure your bank account by going to Accounting --> Configuration --> Accounting: Journals --> Bank"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Record transactions manually",
+          "evidence": "Then, click on Record transactions manually"
+        },
+        {
+          "source": "Accounting Dashboard",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "go to the Accounting Dashboard"
+        },
+        {
+          "source": "bank journal",
+          "relation": "CONTAINS",
+          "target": "IBAN",
+          "evidence": "edit the different fields to match your bank account information"
+        },
+        {
+          "source": "bank account",
+          "relation": "GENERATES",
+          "target": "IBAN",
+          "evidence": "Odoo automatically detects the bank account type (e.g., IBAN)"
+        }
+      ]
+    }
+  }
+]

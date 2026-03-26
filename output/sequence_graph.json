@@ -1,0 +1,341 @@
+[
+  {
+    "section_id": "vendor-bill-sequence",
+    "heading": "Vendor bill sequence",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bill reference number",
+          "type": "Field",
+          "mention": "vendor bill reference number",
+          "confidence": "medium"
+        },
+        {
+          "name": "BILL/year/month/incrementing-number",
+          "type": "Standard",
+          "mention": "BILL/year/month/incrementing-number",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sequence format",
+          "type": "Setting",
+          "mention": "sequence format",
+          "confidence": "medium"
+        },
+        {
+          "name": "Chatter",
+          "type": "Module",
+          "mention": "chatter",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Vendor bill",
+          "evidence": "When confirming a vendor bill, Odoo..."
+        },
+        {
+          "source": "Vendor bill",
+          "relation": "CONFIGURED_BY",
+          "target": "Sequence format",
+          "evidence": "However, it is possible to change the sequence format..."
+        },
+        {
+          "source": "Sequence format",
+          "relation": "SUPPORTS",
+          "target": "BILL/year/month/incrementing-number",
+          "evidence": "uses the sequence format `BILL/year/month/incrementing-number`..."
+        },
+        {
+          "source": "Vendor bill",
+          "relation": "HAS_FEATURE",
+          "target": "Vendor bill reference number",
+          "evidence": "Odoo generates a unique vendor bill reference number"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GENERATES",
+          "target": "Vendor bill reference number",
+          "evidence": "When confirming a vendor bill, Odoo generates a unique vendor bill reference number"
+        },
+        {
+          "source": "Vendor bill",
+          "relation": "RELATED_TO",
+          "target": "Chatter",
+          "evidence": "Changes made to reference numbers are logged in the chatter."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "changing-the-default-sequence",
+    "heading": "Changing the default sequence",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "last confirmed vendor bill",
+          "type": "DataObject",
+          "mention": "last confirmed vendor bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "reference number",
+          "type": "Field",
+          "mention": "vendor bill's reference number",
+          "confidence": "high"
+        },
+        {
+          "name": "Reset to Draft",
+          "type": "Action",
+          "mention": "Reset to Draft",
+          "confidence": "high"
+        },
+        {
+          "name": "sequence format",
+          "type": "Setting",
+          "mention": "sequence format",
+          "confidence": "medium"
+        },
+        {
+          "name": "periodicity",
+          "type": "Field",
+          "mention": "sequence's periodicity",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reset to Draft",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Reset to Draft"
+        },
+        {
+          "source": "vendor bill",
+          "relation": "CONTAINS",
+          "target": "reference number",
+          "evidence": "edit the vendor bill's reference number"
+        },
+        {
+          "source": "vendor bill",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "reference number",
+          "relation": "CONFIGURED_BY",
+          "target": "sequence format",
+          "evidence": "The sequence format can be edited"
+        },
+        {
+          "source": "vendor bill",
+          "relation": "TRIGGERED_BY",
+          "target": "Reset to Draft",
+          "evidence": "open the last confirmed vendor bill, click Reset to Draft"
+        },
+        {
+          "source": "periodicity",
+          "relation": "RELATED_TO",
+          "target": "sequence format",
+          "evidence": "if the current vendor bill's month is withdrawn, the sequence's periodicity will change"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "mass-resequencing-vendor-bills",
+    "heading": "Mass-resequencing vendor bills",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Mass-resequencing vendor bills",
+          "type": "Feature",
+          "mention": "Mass-resequencing vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "resequencing",
+          "type": "Action",
+          "mention": "Resequence",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "administrator",
+          "type": "Permission",
+          "mention": "administrator",
+          "confidence": "high"
+        },
+        {
+          "name": "advisor",
+          "type": "Permission",
+          "mention": "advisor",
+          "confidence": "high"
+        },
+        {
+          "name": "Ordering field",
+          "type": "Setting",
+          "mention": "Ordering field",
+          "confidence": "high"
+        },
+        {
+          "name": "Keep current order",
+          "type": "Setting",
+          "mention": "Keep current order",
+          "confidence": "high"
+        },
+        {
+          "name": "Reorder by accounting date",
+          "type": "Setting",
+          "mention": "Reorder by accounting date",
+          "confidence": "high"
+        },
+        {
+          "name": "First New Sequence",
+          "type": "Setting",
+          "mention": "First New Sequence",
+          "confidence": "high"
+        },
+        {
+          "name": "Preview Modifications",
+          "type": "Action",
+          "mention": "Preview Modifications",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Validation Error",
+          "type": "Feature",
+          "mention": "Validation Error",
+          "confidence": "medium"
+        },
+        {
+          "name": "lock date",
+          "type": "Setting",
+          "mention": "lock date",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting dashboard",
+          "type": "Module",
+          "mention": "Accounting dashboard",
+          "confidence": "low"
+        },
+        {
+          "name": "Vendor Bills journal",
+          "type": "DataObject",
+          "mention": "Vendor Bills journal",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Mass-resequencing vendor bills",
+          "relation": "ENABLES",
+          "target": "resequencing",
+          "evidence": "feature is only available"
+        },
+        {
+          "source": "Mass-resequencing vendor bills",
+          "relation": "REQUIRES",
+          "target": "developer mode",
+          "evidence": "Activate the developer mode"
+        },
+        {
+          "source": "Mass-resequencing vendor bills",
+          "relation": "CONFIGURED_BY",
+          "target": "Ordering field",
+          "evidence": "In the Ordering field, choose"
+        },
+        {
+          "source": "Mass-resequencing vendor bills",
+          "relation": "CONFIGURED_BY",
+          "target": "First New Sequence",
+          "evidence": "Set the First New Sequence"
+        },
+        {
+          "source": "resequencing",
+          "relation": "APPLIES_TO",
+          "target": "vendor bill",
+          "evidence": "select the vendor bills that need a new sequence"
+        },
+        {
+          "source": "Mass-resequencing vendor bills",
+          "relation": "PERFORMED_BY",
+          "target": "administrator",
+          "evidence": "available to users with administrator"
+        },
+        {
+          "source": "Mass-resequencing vendor bills",
+          "relation": "PERFORMED_BY",
+          "target": "advisor",
+          "evidence": "available to users with advisor access"
+        },
+        {
+          "source": "Mass-resequencing vendor bills",
+          "relation": "TRIGGERED_BY",
+          "target": "Preview Modifications",
+          "evidence": "Preview Modifications and click Confirm"
+        },
+        {
+          "source": "resequencing",
+          "relation": "PRODUCES",
+          "target": "Validation Error",
+          "evidence": "Validation Error message appears"
+        },
+        {
+          "source": "resequencing",
+          "relation": "REQUIRES",
+          "target": "lock date",
+          "evidence": "When entries are before a lock date"
+        }
+      ]
+    }
+  }
+]

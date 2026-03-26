@@ -1,0 +1,562 @@
+[
+  {
+    "section_id": "work-center-time-off",
+    "heading": "Work center time off",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "Time Off",
+          "confidence": "high"
+        },
+        {
+          "name": "work center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "medium"
+        },
+        {
+          "name": "work order",
+          "type": "DataObject",
+          "mention": "work order",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing operation",
+          "type": "Workflow",
+          "mention": "manufacturing operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center unavailable",
+          "type": "Action",
+          "mention": "make the work center unavailable",
+          "confidence": "medium"
+        },
+        {
+          "name": "routed to alternative work centers",
+          "type": "Action",
+          "mention": "routed to alternative work centers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Time Off",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Using Odoo's **Time Off** app"
+        },
+        {
+          "source": "Time Off",
+          "relation": "HAS_FEATURE",
+          "target": "work center unavailable",
+          "evidence": "Using Odoo's **Time Off** app, it is possible to designate a work center as being unavailable"
+        },
+        {
+          "source": "work center",
+          "relation": "CONTAINS",
+          "target": "manufacturing operation",
+          "evidence": "work centers are used to carry out manufacturing operations"
+        },
+        {
+          "source": "work center",
+          "relation": "IS_PART_OF",
+          "target": "work order",
+          "evidence": "work orders begin to pile up at the work center"
+        },
+        {
+          "source": "work center unavailable",
+          "relation": "ENABLES",
+          "target": "routed to alternative work centers",
+          "evidence": "make the work center unavailable in Odoo so new work orders are routed to alternative work centers"
+        },
+        {
+          "source": "work center",
+          "relation": "APPLIES_TO",
+          "target": "manufacturing operation",
+          "evidence": "work centers are used to carry out manufacturing operations at specific locations"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Centers",
+          "type": "Sub-module",
+          "mention": "Work Centers",
+          "confidence": "high"
+        },
+        {
+          "name": "Apps app",
+          "type": "Module",
+          "mention": "Apps app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off app",
+          "type": "Module",
+          "mention": "Time Off app",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Feature",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off smart button",
+          "type": "Feature",
+          "mention": "Time Off smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Working Hours page",
+          "type": "Feature",
+          "mention": "Working Hours page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Install button",
+          "type": "Action",
+          "mention": "Install button",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "high"
+        },
+        {
+          "name": "work orders",
+          "type": "DataObject",
+          "mention": "work orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Equipment tab",
+          "type": "Feature",
+          "mention": "Equipment tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Alternative Workcenters drop-down menu",
+          "type": "Feature",
+          "mention": "Alternative Workcenters drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "unavailable work center",
+          "type": "Concept",
+          "mention": "unavailable work center",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Time Off smart button",
+          "relation": "CONFIGURED_BY",
+          "target": "developer mode",
+          "evidence": "This allows the *Time Off* smart button to appear"
+        },
+        {
+          "source": "Time Off app",
+          "relation": "CONTAINS",
+          "target": "work center",
+          "evidence": "including employees and work centers"
+        },
+        {
+          "source": "Time Off app",
+          "relation": "CONTAINS",
+          "target": "employees",
+          "evidence": "including employees and work centers"
+        },
+        {
+          "source": "Work Centers",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing app",
+          "evidence": "navigate to Manufacturing app --> Configuration --> Work Centers"
+        },
+        {
+          "source": "Work Centers",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Manufacturing app --> Configuration --> Work Centers"
+        },
+        {
+          "source": "unavailable work center",
+          "relation": "RELATED_TO",
+          "target": "work orders",
+          "evidence": "work orders that the other cannot accept"
+        },
+        {
+          "source": "Odoo",
+          "relation": "REQUIRES",
+          "target": "developer mode",
+          "evidence": "First, it is necessary to enable developer mode"
+        },
+        {
+          "source": "Odoo",
+          "relation": "REQUIRES",
+          "target": "Time Off app",
+          "evidence": "install the **Time Off** app"
+        },
+        {
+          "source": "Odoo",
+          "relation": "REQUIRES",
+          "target": "work center",
+          "evidence": "it is necessary to have at least two work centers"
+        },
+        {
+          "source": "New",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "To create a work center"
+        },
+        {
+          "source": "Install button",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click the Install button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-time-off-for-a-work-center",
+    "heading": "Add time off for a work center",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Centers",
+          "type": "DataObject",
+          "mention": "Work Centers",
+          "confidence": "high"
+        },
+        {
+          "name": "Working Hours",
+          "type": "Field",
+          "mention": "Working Hours",
+          "confidence": "high"
+        },
+        {
+          "name": "working hours page",
+          "type": "Feature",
+          "mention": "working hours page",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off smart button",
+          "type": "Feature",
+          "mention": "Time Off smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Resource Time Off page",
+          "type": "Feature",
+          "mention": "Resource Time Off page",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "time-off form",
+          "type": "Feature",
+          "mention": "time-off form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reason",
+          "type": "Field",
+          "mention": "Reason",
+          "confidence": "high"
+        },
+        {
+          "name": "Resource",
+          "type": "Field",
+          "mention": "Resource",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Date",
+          "type": "Field",
+          "mention": "Start Date",
+          "confidence": "high"
+        },
+        {
+          "name": "End Date",
+          "type": "Field",
+          "mention": "End Date",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work Centers",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Work Centers, and selecting the affected work center"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Working Hours",
+          "relation": "BELONGS_TO",
+          "target": "work center",
+          "evidence": "Working Hours drop-down menu, to open the working hours page for the work center"
+        },
+        {
+          "source": "Time Off smart button",
+          "relation": "ENABLES",
+          "target": "Resource Time Off page",
+          "evidence": "Click it to open the Resource Time Off page"
+        },
+        {
+          "source": "developer mode",
+          "relation": "ENABLES",
+          "target": "Time Off smart button",
+          "evidence": "With developer mode activated, a fa-plane Time Off smart button appears"
+        },
+        {
+          "source": "New",
+          "relation": "ENABLES",
+          "target": "time-off form",
+          "evidence": "On this page, click New to configure a new time-off entry"
+        },
+        {
+          "source": "time-off form",
+          "relation": "CONTAINS",
+          "target": "Reason",
+          "evidence": "On the time-off form, note the Reason"
+        },
+        {
+          "source": "time-off form",
+          "relation": "CONTAINS",
+          "target": "Resource",
+          "evidence": "select the affected work center as the Resource"
+        },
+        {
+          "source": "time-off form",
+          "relation": "CONTAINS",
+          "target": "Start Date",
+          "evidence": "choose a Start Date"
+        },
+        {
+          "source": "time-off form",
+          "relation": "CONTAINS",
+          "target": "End Date",
+          "evidence": "and End Date"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "alternative-work-center-planning",
+    "heading": "Alternative work center planning",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Orders",
+          "type": "DataObject",
+          "mention": "Work Orders tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Center",
+          "type": "DataObject",
+          "mention": "Work Center column",
+          "confidence": "high"
+        },
+        {
+          "name": "Plan",
+          "type": "Action",
+          "mention": "Plan button",
+          "confidence": "high"
+        },
+        {
+          "name": "work center",
+          "type": "Concept",
+          "mention": "work center",
+          "confidence": "high"
+        },
+        {
+          "name": "time-off period",
+          "type": "Concept",
+          "mention": "time-off period",
+          "confidence": "high"
+        },
+        {
+          "name": "alternative work center",
+          "type": "Concept",
+          "mention": "alternative work center",
+          "confidence": "high"
+        },
+        {
+          "name": "Main Assembly Line",
+          "type": "Actor",
+          "mention": "Main Assembly Line",
+          "confidence": "high"
+        },
+        {
+          "name": "Alternative Assembly Line",
+          "type": "Actor",
+          "mention": "Alternative Assembly Line",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing Orders",
+          "relation": "IS_PART_OF",
+          "target": "Operations",
+          "evidence": "Manufacturing app --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing",
+          "evidence": "Manufacturing app --> Operations"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONTAINS",
+          "target": "Work Orders",
+          "evidence": "On the confirmed , select the Work Orders tab."
+        },
+        {
+          "source": "Work Orders",
+          "relation": "CONTAINS",
+          "target": "Work Center",
+          "evidence": "Work Center column of the Work Orders tab"
+        },
+        {
+          "source": "Plan",
+          "relation": "TRIGGERED_BY",
+          "target": "Work Orders",
+          "evidence": "On the confirmed , select the Work Orders tab... Click Plan"
+        },
+        {
+          "source": "Plan",
+          "relation": "PRODUCES",
+          "target": "alternative work center",
+          "evidence": "Click Plan, and the work center... is automatically changed to the alternative work center."
+        },
+        {
+          "source": "Confirm",
+          "relation": "TRIGGERED_BY",
+          "target": "Manufacturing Orders",
+          "evidence": "On the form, specify a Product... Click Confirm to confirm the ."
+        }
+      ]
+    }
+  }
+]

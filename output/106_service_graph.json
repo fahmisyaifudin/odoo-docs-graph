@@ -1,0 +1,889 @@
+[
+  {
+    "section_id": "services",
+    "heading": "Services",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Services",
+          "type": "Module",
+          "mention": "Title: Services",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet",
+          "type": "Concept",
+          "mention": "fleet of vehicles",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicle",
+          "type": "Actor",
+          "mention": "vehicles",
+          "confidence": "medium"
+        },
+        {
+          "name": "Maintenance",
+          "type": "Concept",
+          "mention": "regular maintenance",
+          "confidence": "high"
+        },
+        {
+          "name": "Repair",
+          "type": "Concept",
+          "mention": "repairs",
+          "confidence": "high"
+        },
+        {
+          "name": "Oil Change",
+          "type": "Feature",
+          "mention": "oil changes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tire Rotation",
+          "type": "Feature",
+          "mention": "tire rotations",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Services",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Services"
+        },
+        {
+          "source": "Services",
+          "relation": "HAS_FEATURE",
+          "target": "Maintenance",
+          "evidence": "Services, such as regular maintenance"
+        },
+        {
+          "source": "Services",
+          "relation": "HAS_FEATURE",
+          "target": "Repair",
+          "evidence": "Other repairs are logged"
+        },
+        {
+          "source": "Maintenance",
+          "relation": "CONTAINS",
+          "target": "Oil Change",
+          "evidence": "like oil changes"
+        },
+        {
+          "source": "Maintenance",
+          "relation": "CONTAINS",
+          "target": "Tire Rotation",
+          "evidence": "like tire rotations"
+        },
+        {
+          "source": "Services",
+          "relation": "HAS_FEATURE",
+          "target": "Oil Change",
+          "evidence": "like oil changes"
+        },
+        {
+          "source": "Services",
+          "relation": "HAS_FEATURE",
+          "target": "Tire Rotation",
+          "evidence": "like tire rotations"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-service-records",
+    "heading": "Create service records",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Create service records",
+          "type": "Workflow",
+          "mention": "Create a service record",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet app",
+          "type": "Module",
+          "mention": "directly in the Fleet app",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting app",
+          "type": "Module",
+          "mention": "from a vendor bill in the Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a service record directly in Fleet",
+          "type": "Action",
+          "mention": "directly in the Fleet app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create a service record from a vendor bill",
+          "type": "Action",
+          "mention": "from a vendor bill in the Accounting app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Service record",
+          "type": "DataObject",
+          "mention": "service record",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "/fleet/service-form",
+          "type": "Feature",
+          "mention": "<fleet/service-form>",
+          "confidence": "medium"
+        },
+        {
+          "name": "/fleet/link-bills",
+          "type": "Feature",
+          "mention": "<fleet/link-bills>",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Fleet app",
+          "evidence": "Product: Odoo, directly in the Fleet app"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting app",
+          "evidence": "Product: Odoo, from a vendor bill in the Accounting app"
+        },
+        {
+          "source": "Create service records",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Create service records"
+        },
+        {
+          "source": "Create a service record directly in Fleet",
+          "relation": "IS_PART_OF",
+          "target": "Create service records",
+          "evidence": "Create a service record... directly in the Fleet app"
+        },
+        {
+          "source": "Create a service record from a vendor bill",
+          "relation": "IS_PART_OF",
+          "target": "Create service records",
+          "evidence": "Create a service record... from a vendor bill in the Accounting app"
+        },
+        {
+          "source": "Fleet app",
+          "relation": "HAS_FEATURE",
+          "target": "/fleet/service-form",
+          "evidence": "directly in the Fleet app <fleet/service-form>"
+        },
+        {
+          "source": "Fleet app",
+          "relation": "HAS_FEATURE",
+          "target": "/fleet/link-bills",
+          "evidence": "from a vendor bill in the Accounting app <fleet/link-bills>"
+        },
+        {
+          "source": "Create a service record from a vendor bill",
+          "relation": "REQUIRES",
+          "target": "Vendor bill",
+          "evidence": "from a vendor bill in the Accounting app"
+        },
+        {
+          "source": "Create a service record directly in Fleet",
+          "relation": "PRODUCES",
+          "target": "Service record",
+          "evidence": "Create a service record... in the Fleet app"
+        },
+        {
+          "source": "Create a service record from a vendor bill",
+          "relation": "PRODUCES",
+          "target": "Service record",
+          "evidence": "Create a service record... from a vendor bill"
+        },
+        {
+          "source": "/fleet/service-form",
+          "relation": "ENABLES",
+          "target": "Create a service record directly in Fleet",
+          "evidence": "directly in the Fleet app <fleet/service-form>"
+        },
+        {
+          "source": "/fleet/link-bills",
+          "relation": "ENABLES",
+          "target": "Create a service record from a vendor bill",
+          "evidence": "from a vendor bill in the Accounting app <fleet/link-bills>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-the-fleet-app",
+    "heading": "From the Fleet app",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet",
+          "confidence": "high"
+        },
+        {
+          "name": "Services",
+          "type": "Sub-module",
+          "mention": "Services",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Service form",
+          "type": "DataObject",
+          "mention": "service form",
+          "confidence": "high"
+        },
+        {
+          "name": "Service Type",
+          "type": "Field",
+          "mention": "Service Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicle",
+          "type": "Field",
+          "mention": "Vehicle",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "Date",
+          "type": "Field",
+          "mention": "Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Cost",
+          "type": "Field",
+          "mention": "Cost",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Field",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Driver",
+          "type": "Field",
+          "mention": "Driver",
+          "confidence": "high"
+        },
+        {
+          "name": "Odometer Value",
+          "type": "Field",
+          "mention": "Odometer Value",
+          "confidence": "high"
+        },
+        {
+          "name": "NOTES",
+          "type": "Field",
+          "mention": "NOTES",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor Bill",
+          "type": "Service Type",
+          "mention": "Vendor Bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "driver",
+          "type": "Actor",
+          "mention": "driver",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fleet",
+          "relation": "CONTAINS",
+          "target": "Services",
+          "evidence": "go to the main Services dashboard by navigating to Fleet app --> Fleet --> Services"
+        },
+        {
+          "source": "Services",
+          "relation": "CONTAINS",
+          "target": "Service form",
+          "evidence": "Open a new service form"
+        },
+        {
+          "source": "Service form",
+          "relation": "CONTAINS",
+          "target": "Service Type",
+          "evidence": "Fill out the information on the form. The only two fields that are required to be populated are Service Type and Vehicle"
+        },
+        {
+          "source": "Service form",
+          "relation": "CONTAINS",
+          "target": "Vehicle",
+          "evidence": "Fill out the information on the form. The only two fields that are required to be populated are Service Type and Vehicle"
+        },
+        {
+          "source": "Service form",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "Description: Enter a brief description"
+        },
+        {
+          "source": "Service form",
+          "relation": "CONTAINS",
+          "target": "Date",
+          "evidence": "Date: Using the calendar selector"
+        },
+        {
+          "source": "Service form",
+          "relation": "CONTAINS",
+          "target": "Cost",
+          "evidence": "Cost: Enter the estimated cost"
+        },
+        {
+          "source": "Service form",
+          "relation": "CONTAINS",
+          "target": "Vendor",
+          "evidence": "Vendor: Using the drop-down menu"
+        },
+        {
+          "source": "Service form",
+          "relation": "CONTAINS",
+          "target": "Driver",
+          "evidence": "Driver: The vehicle's current driver automatically populates this field"
+        },
+        {
+          "source": "Service form",
+          "relation": "CONTAINS",
+          "target": "Odometer Value",
+          "evidence": "Odometer Value: Enter the odometer reading"
+        },
+        {
+          "source": "Service form",
+          "relation": "CONTAINS",
+          "target": "NOTES",
+          "evidence": "NOTES: Enter any notes"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "RELATED_TO",
+          "target": "Driver",
+          "evidence": "When the vehicle is selected, the Driver field is populated"
+        },
+        {
+          "source": "Vehicle",
+          "relation": "RELATED_TO",
+          "target": "Odometer Value",
+          "evidence": "when the vehicle is selected, the unit of measure for the Odometer Value field appears"
+        },
+        {
+          "source": "Vendor",
+          "relation": "PERFORMED_BY",
+          "target": "vendor",
+          "evidence": "select the vendor who is performing the service"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-the-accounting-app",
+    "heading": "From the Accounting app",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting app",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchases",
+          "type": "Feature",
+          "mention": "Purchases",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Lines",
+          "type": "Feature",
+          "mention": "Invoice Lines tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicle",
+          "type": "Field",
+          "mention": "Vehicle field",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet app",
+          "type": "Product",
+          "mention": "Fleet app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet",
+          "confidence": "medium"
+        },
+        {
+          "name": "Services",
+          "type": "Module",
+          "mention": "Services",
+          "confidence": "high"
+        },
+        {
+          "name": "Service Type",
+          "type": "Field",
+          "mention": "Service Type field",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor Bill",
+          "type": "Feature",
+          "mention": "Vendor Bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "Service's Bill smart button",
+          "type": "Feature",
+          "mention": "Service's Bill smart button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "vendor bill",
+          "relation": "BELONGS_TO",
+          "target": "Accounting app",
+          "evidence": "...service records can be created directly from a vendor bill in the Accounting app"
+        },
+        {
+          "source": "Purchases",
+          "relation": "IS_PART_OF",
+          "target": "Accounting app",
+          "evidence": "...open the Accounting app and click Purchases on the dashboard"
+        },
+        {
+          "source": "Invoice Lines",
+          "relation": "IS_PART_OF",
+          "target": "vendor bill",
+          "evidence": "In the Invoice Lines tab..."
+        },
+        {
+          "source": "Vehicle",
+          "relation": "CONFIGURED_BY",
+          "target": "Invoice Lines",
+          "evidence": "In the Invoice Lines tab, click the oi-settings-adjust icon... Click the checkbox next to Vehicle"
+        },
+        {
+          "source": "Services",
+          "relation": "BELONGS_TO",
+          "target": "Fleet app",
+          "evidence": "open the Services dashboard by navigating to Fleet app --> Fleet --> Services"
+        },
+        {
+          "source": "Service Type",
+          "relation": "IS_PART_OF",
+          "target": "service record",
+          "evidence": "Click the Service Type field to reveal a drop-down menu of all available service types"
+        },
+        {
+          "source": "Service's Bill smart button",
+          "relation": "IS_PART_OF",
+          "target": "service record",
+          "evidence": "On the service record, a Service's Bill smart button appears at the top"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-service-type",
+    "heading": "Create service type",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Create service type",
+          "type": "Action",
+          "mention": "The **only** method to create service types",
+          "confidence": "high"
+        },
+        {
+          "name": "service form",
+          "type": "DataObject",
+          "mention": "service form <fleet/service-form>",
+          "confidence": "high"
+        },
+        {
+          "name": "Service Type",
+          "type": "DataObject",
+          "mention": "Create Service Type pop-up form appears",
+          "confidence": "high"
+        },
+        {
+          "name": "Name field",
+          "type": "Field",
+          "mention": "Name field",
+          "confidence": "high"
+        },
+        {
+          "name": "Category",
+          "type": "Field",
+          "mention": "select the Category for the new service type",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract",
+          "type": "Concept",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "Service",
+          "type": "Concept",
+          "mention": "Service",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "click Save & Close",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create service type",
+          "relation": "PERFORMED_BY",
+          "target": "service form",
+          "evidence": "The **only** method to create service types is from a service form <fleet/service-form>"
+        },
+        {
+          "source": "Service Type",
+          "relation": "IS_PART_OF",
+          "target": "service form",
+          "evidence": "create service types is from a service form"
+        },
+        {
+          "source": "Name field",
+          "relation": "IS_PART_OF",
+          "target": "Service Type",
+          "evidence": "populates the Name field"
+        },
+        {
+          "source": "Category",
+          "relation": "IS_PART_OF",
+          "target": "Service Type",
+          "evidence": "select the Category for the new service type"
+        },
+        {
+          "source": "Service Type",
+          "relation": "RELATED_TO",
+          "target": "Contract",
+          "evidence": "If the service applies to **only** contracts or services, select the corresponding Category"
+        },
+        {
+          "source": "Service Type",
+          "relation": "RELATED_TO",
+          "target": "Service",
+          "evidence": "If the service applies to **only** contracts or services, select the corresponding Category"
+        },
+        {
+          "source": "Create service type",
+          "relation": "PRODUCES",
+          "target": "Service Type",
+          "evidence": "the only method to create service types"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-vendor",
+    "heading": "Create vendor",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts",
+          "type": "Module",
+          "mention": "Contacts",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Vendor",
+          "type": "Workflow",
+          "mention": "Create Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Contacts",
+          "evidence": "Vendors are added with the **Contacts** app."
+        },
+        {
+          "source": "Contacts",
+          "relation": "ENABLES",
+          "target": "Create Vendor",
+          "evidence": "Vendors are added with the **Contacts** app."
+        },
+        {
+          "source": "Create Vendor",
+          "relation": "PRODUCES",
+          "target": "vendor",
+          "evidence": "When a service is performed for the first time... the vendor's record has not yet been added to the database."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-services",
+    "heading": "View services",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Services",
+          "type": "Sub-module",
+          "mention": "Fleet --> Services",
+          "confidence": "medium"
+        },
+        {
+          "name": "service type",
+          "type": "Feature",
+          "mention": "service type",
+          "confidence": "medium"
+        },
+        {
+          "name": "service",
+          "type": "DataObject",
+          "mention": "service records",
+          "confidence": "medium"
+        },
+        {
+          "name": "Date",
+          "type": "Field",
+          "mention": "Date:",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description:",
+          "confidence": "high"
+        },
+        {
+          "name": "Service Type",
+          "type": "Field",
+          "mention": "Service Type:",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicle",
+          "type": "Field",
+          "mention": "Vehicle:",
+          "confidence": "high"
+        },
+        {
+          "name": "Driver",
+          "type": "Field",
+          "mention": "Driver:",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Field",
+          "mention": "Vendor:",
+          "confidence": "high"
+        },
+        {
+          "name": "Notes",
+          "type": "Field",
+          "mention": "Notes:",
+          "confidence": "high"
+        },
+        {
+          "name": "Cost",
+          "type": "Field",
+          "mention": "Cost:",
+          "confidence": "high"
+        },
+        {
+          "name": "Stage",
+          "type": "Field",
+          "mention": "Stage:",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Services",
+          "relation": "BELONGS_TO",
+          "target": "Fleet",
+          "evidence": "Fleet app --> Fleet --> Services"
+        },
+        {
+          "source": "Fleet",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Fleet app"
+        },
+        {
+          "source": "service",
+          "relation": "CONTAINS",
+          "target": "Date",
+          "evidence": "Each service listed displays the following information: ... Date:"
+        },
+        {
+          "source": "service",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "Each service listed displays the following information: ... Description:"
+        },
+        {
+          "source": "service",
+          "relation": "CONTAINS",
+          "target": "Service Type",
+          "evidence": "Each service listed displays the following information: ... Service Type:"
+        },
+        {
+          "source": "service",
+          "relation": "CONTAINS",
+          "target": "Vehicle",
+          "evidence": "Each service listed displays the following information: ... Vehicle:"
+        },
+        {
+          "source": "service",
+          "relation": "CONTAINS",
+          "target": "Driver",
+          "evidence": "Each service listed displays the following information: ... Driver:"
+        },
+        {
+          "source": "service",
+          "relation": "CONTAINS",
+          "target": "Vendor",
+          "evidence": "Each service listed displays the following information: ... Vendor:"
+        },
+        {
+          "source": "service",
+          "relation": "CONTAINS",
+          "target": "Notes",
+          "evidence": "Each service listed displays the following information: ... Notes:"
+        },
+        {
+          "source": "service",
+          "relation": "CONTAINS",
+          "target": "Cost",
+          "evidence": "Each service listed displays the following information: ... Cost:"
+        },
+        {
+          "source": "service",
+          "relation": "CONTAINS",
+          "target": "Stage",
+          "evidence": "Each service listed displays the following information: ... Stage:"
+        }
+      ]
+    }
+  }
+]

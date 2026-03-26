@@ -1,0 +1,532 @@
+[
+  {
+    "section_id": "subcontracting",
+    "heading": "Subcontracting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracting",
+          "type": "Module",
+          "mention": "Subcontracting",
+          "confidence": "high"
+        },
+        {
+          "name": "Basic subcontracting",
+          "type": "Sub-module",
+          "mention": "Basic subcontracting",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply subcontractor",
+          "type": "Sub-module",
+          "mention": "Resupply subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship to subcontractor",
+          "type": "Sub-module",
+          "mention": "Dropship to subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "Contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "medium"
+        },
+        {
+          "name": "Subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Components sourcing",
+          "type": "Concept",
+          "mention": "how components are sourced",
+          "confidence": "medium"
+        },
+        {
+          "name": "Finished products",
+          "type": "Concept",
+          "mention": "finished products once they are manufactured",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Basic subcontracting",
+          "relation": "IS_PART_OF",
+          "target": "Subcontracting",
+          "evidence": "Subcontract products without supplying the subcontractor with components."
+        },
+        {
+          "source": "Resupply subcontractor",
+          "relation": "IS_PART_OF",
+          "target": "Subcontracting",
+          "evidence": "Ship components to a subcontractor each time a PO for a subcontracted product is confirmed."
+        },
+        {
+          "source": "Dropship to subcontractor",
+          "relation": "IS_PART_OF",
+          "target": "Subcontracting",
+          "evidence": "Dropship components to a subcontractor each time a PO for a subcontracted product is confirmed."
+        },
+        {
+          "source": "Subcontracting",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "In Odoo, companies can configure their subcontracting workflows..."
+        },
+        {
+          "source": "Contracting company",
+          "relation": "RELATED_TO",
+          "target": "Subcontractor",
+          "evidence": "subcontracting is the process of a company engaging a third-party manufacturer"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracting",
+          "type": "Feature",
+          "mention": "Subcontracting setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Concept",
+          "mention": "Operations heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "BoMs",
+          "type": "DataObject",
+          "mention": "bills of materials (BoMs)",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM Type",
+          "type": "Field",
+          "mention": "BoM Type field",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracting",
+          "type": "Standard",
+          "mention": "Subcontracting option",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Field",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resupply Subcontractor on Order",
+          "type": "Feature",
+          "mention": "Resupply Subcontractor on Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship Subcontractor on Order",
+          "type": "Feature",
+          "mention": "Dropship Subcontractor on Order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Subcontracting",
+          "evidence": "tick the checkbox next to the Subcontracting setting"
+        },
+        {
+          "source": "Subcontracting",
+          "relation": "ENABLES",
+          "target": "BoM Type",
+          "evidence": "On bills of materials (BoMs), the *BoM Type* field now includes a *Subcontracting* option."
+        },
+        {
+          "source": "BoM Type",
+          "relation": "CONTAINS",
+          "target": "Subcontracting",
+          "evidence": "the *BoM Type* field now includes a *Subcontracting* option"
+        },
+        {
+          "source": "Subcontracting",
+          "relation": "ENABLES",
+          "target": "Resupply Subcontractor on Order",
+          "evidence": "Two subcontracting routes become available in the *Inventory* app"
+        },
+        {
+          "source": "Subcontracting",
+          "relation": "ENABLES",
+          "target": "Dropship Subcontractor on Order",
+          "evidence": "Two subcontracting routes become available in the *Inventory* app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "subcontracting-workflows",
+    "heading": "Subcontracting workflows",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracting workflows",
+          "type": "Concept",
+          "mention": "Subcontracting workflows",
+          "confidence": "high"
+        },
+        {
+          "name": "basic subcontracting workflow",
+          "type": "Workflow",
+          "mention": "basic",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply Subcontractor on Order workflow",
+          "type": "Workflow",
+          "mention": "Resupply Subcontractor on Order",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse",
+          "type": "Concept",
+          "mention": "warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship Subcontractor on Order workflow",
+          "type": "Workflow",
+          "mention": "Dropship Subcontractor on Order",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer order",
+          "type": "Concept",
+          "mention": "customer order",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock on-hand",
+          "type": "Concept",
+          "mention": "stock on-hand",
+          "confidence": "medium"
+        },
+        {
+          "name": "end customer",
+          "type": "Actor",
+          "mention": "end customer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "basic subcontracting workflow",
+          "relation": "IS_PART_OF",
+          "target": "Subcontracting workflows",
+          "evidence": "In Odoo, there are three subcontracting workflows, the main difference between them being *how* the subcontractor obtains the necessary components: - In the *basic* subcontracting workflow..."
+        },
+        {
+          "source": "Resupply Subcontractor on Order workflow",
+          "relation": "IS_PART_OF",
+          "target": "Subcontracting workflows",
+          "evidence": "In Odoo, there are three subcontracting workflows... - In the *Resupply Subcontractor on Order* workflow..."
+        },
+        {
+          "source": "Dropship Subcontractor on Order workflow",
+          "relation": "IS_PART_OF",
+          "target": "Subcontracting workflows",
+          "evidence": "In Odoo, there are three subcontracting workflows... - In the *Dropship Subcontractor on Order* workflow..."
+        },
+        {
+          "source": "basic subcontracting workflow",
+          "relation": "CONTAINS",
+          "target": "subcontractor",
+          "evidence": "In the *basic* subcontracting workflow, the subcontractor is fully responsible..."
+        },
+        {
+          "source": "Resupply Subcontractor on Order workflow",
+          "relation": "CONTAINS",
+          "target": "contracting company",
+          "evidence": "In the *Resupply Subcontractor on Order* workflow, the contracting company sends the components..."
+        },
+        {
+          "source": "Resupply Subcontractor on Order workflow",
+          "relation": "RELATED_TO",
+          "target": "warehouse",
+          "evidence": "In the *Resupply Subcontractor on Order* workflow, the contracting company sends the components from their warehouse..."
+        },
+        {
+          "source": "Dropship Subcontractor on Order workflow",
+          "relation": "CONTAINS",
+          "target": "contracting company",
+          "evidence": "In the *Dropship Subcontractor on Order* workflow, the contracting company purchases the components..."
+        },
+        {
+          "source": "Dropship Subcontractor on Order workflow",
+          "relation": "CONTAINS",
+          "target": "vendor",
+          "evidence": "In the *Dropship Subcontractor on Order* workflow, the contracting company purchases the components from a vendor..."
+        },
+        {
+          "source": "Subcontracting workflows",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Subcontracting workflows\nIn Odoo, there are three subcontracting workflows..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "subcontracted-product-valuation",
+    "heading": "Subcontracted product valuation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracted product valuation",
+          "type": "Concept",
+          "mention": "Subcontracted product valuation",
+          "confidence": "high"
+        },
+        {
+          "name": "C",
+          "type": "Concept",
+          "mention": "The cost of the required components",
+          "confidence": "high"
+        },
+        {
+          "name": "M",
+          "type": "Concept",
+          "mention": "The price paid to the subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "S",
+          "type": "Concept",
+          "mention": "The cost of shipping components",
+          "confidence": "high"
+        },
+        {
+          "name": "D",
+          "type": "Concept",
+          "mention": "The cost of dropshipping",
+          "confidence": "high"
+        },
+        {
+          "name": "x",
+          "type": "Concept",
+          "mention": "Any other associated costs",
+          "confidence": "high"
+        },
+        {
+          "name": "P",
+          "type": "Concept",
+          "mention": "the total valuation of a subcontracted product",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontracting/subcontracting_basic",
+          "type": "Feature",
+          "mention": "subcontracting/subcontracting_basic",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracting/basic_subcontracting_lead_times",
+          "type": "Feature",
+          "mention": "subcontracting/basic_subcontracting_lead_times",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracting/subcontracting_resupply",
+          "type": "Feature",
+          "mention": "subcontracting/subcontracting_resupply",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracting/resupply_subcontracting_lead_times",
+          "type": "Feature",
+          "mention": "subcontracting/resupply_subcontracting_lead_times",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracting/subcontracting_dropship",
+          "type": "Feature",
+          "mention": "subcontracting/subcontracting_dropship",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracting/dropship_subcontracting_lead_times",
+          "type": "Feature",
+          "mention": "subcontracting/dropship_subcontracting_lead_times",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Subcontracted product valuation",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Subcontracted product valuation"
+        },
+        {
+          "source": "P",
+          "relation": "COMPOSED_OF",
+          "target": "C",
+          "evidence": "P = C + M + S + D + x"
+        },
+        {
+          "source": "P",
+          "relation": "COMPOSED_OF",
+          "target": "M",
+          "evidence": "P = C + M + S + D + x"
+        },
+        {
+          "source": "P",
+          "relation": "COMPOSED_OF",
+          "target": "S",
+          "evidence": "P = C + M + S + D + x"
+        },
+        {
+          "source": "P",
+          "relation": "COMPOSED_OF",
+          "target": "D",
+          "evidence": "P = C + M + S + D + x"
+        },
+        {
+          "source": "P",
+          "relation": "COMPOSED_OF",
+          "target": "x",
+          "evidence": "P = C + M + S + D + x"
+        },
+        {
+          "source": "subcontracting/subcontracting_basic",
+          "relation": "RELATED_TO",
+          "target": "Subcontracted product valuation",
+          "evidence": ".. toctree:"
+        },
+        {
+          "source": "subcontracting/basic_subcontracting_lead_times",
+          "relation": "RELATED_TO",
+          "target": "Subcontracted product valuation",
+          "evidence": ".. toctree:"
+        },
+        {
+          "source": "subcontracting/subcontracting_resupply",
+          "relation": "RELATED_TO",
+          "target": "Subcontracted product valuation",
+          "evidence": ".. toctree:"
+        },
+        {
+          "source": "subcontracting/resupply_subcontracting_lead_times",
+          "relation": "RELATED_TO",
+          "target": "Subcontracted product valuation",
+          "evidence": ".. toctree:"
+        },
+        {
+          "source": "subcontracting/subcontracting_dropship",
+          "relation": "RELATED_TO",
+          "target": "Subcontracted product valuation",
+          "evidence": ".. toctree:"
+        },
+        {
+          "source": "subcontracting/dropship_subcontracting_lead_times",
+          "relation": "RELATED_TO",
+          "target": "Subcontracted product valuation",
+          "evidence": ".. toctree:"
+        }
+      ]
+    }
+  }
+]

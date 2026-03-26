@@ -1,0 +1,430 @@
+[
+  {
+    "section_id": "appraisal-analysis",
+    "heading": "Appraisal analysis",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals",
+          "type": "Module",
+          "mention": "Appraisals app",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisal Analysis",
+          "type": "Report",
+          "mention": "Appraisal Analysis report",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Appraisal Analysis page",
+          "type": "Feature",
+          "mention": "Appraisal Analysis page",
+          "confidence": "medium"
+        },
+        {
+          "name": "appraisal",
+          "type": "DataObject",
+          "mention": "appraisals",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appraisals",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "navigate to Appraisals app --> Reporting"
+        },
+        {
+          "source": "Appraisals",
+          "relation": "HAS_REPORT",
+          "target": "Appraisal Analysis",
+          "evidence": "To access the *Appraisal Analysis* report, navigate to Appraisals app --> Reporting --> Appraisal Analysis."
+        },
+        {
+          "source": "Appraisal Analysis",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "To access the *Appraisal Analysis* report, navigate to Appraisals app --> Reporting --> Appraisal Analysis."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Appraisals",
+          "evidence": "The **Appraisals** app has..."
+        },
+        {
+          "source": "Appraisal Analysis page",
+          "relation": "GENERATES",
+          "target": "Appraisal Analysis",
+          "evidence": "On the Appraisal Analysis page, a report loads..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-by-status",
+    "heading": "View by status",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Appraisal Analysis",
+          "type": "Report",
+          "mention": "Appraisal Analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Gantt view",
+          "type": "Feature",
+          "mention": "Gantt view",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals app",
+          "type": "Module",
+          "mention": "Appraisals app",
+          "confidence": "high"
+        },
+        {
+          "name": "Done",
+          "type": "Concept",
+          "mention": "Done",
+          "confidence": "medium"
+        },
+        {
+          "name": "Appraisal Sent",
+          "type": "Concept",
+          "mention": "Appraisal Sent",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cancelled",
+          "type": "Concept",
+          "mention": "Cancelled",
+          "confidence": "medium"
+        },
+        {
+          "name": "To Start",
+          "type": "Concept",
+          "mention": "To Start",
+          "confidence": "medium"
+        },
+        {
+          "name": "appraisal",
+          "type": "DataObject",
+          "mention": "appraisal",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appraisals app",
+          "relation": "CONTAINS",
+          "target": "Appraisal Analysis",
+          "evidence": "Navigate to Appraisals app --> Reporting --> Appraisal Analysis"
+        },
+        {
+          "source": "Appraisal Analysis",
+          "relation": "HAS_FEATURE",
+          "target": "Gantt view",
+          "evidence": "Another way to view the *Appraisal Analysis* report is in the Gantt view"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "group-by-status",
+    "heading": "Group by status",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisal Analysis",
+          "type": "Report",
+          "mention": "Appraisal Analysis report",
+          "confidence": "high"
+        },
+        {
+          "name": "status",
+          "type": "Field",
+          "mention": "Status",
+          "confidence": "medium"
+        },
+        {
+          "name": "Toggle Search Panel",
+          "type": "Action",
+          "mention": "Toggle Search Panel",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Canceled",
+          "type": "DataObject",
+          "mention": "Cancelled",
+          "confidence": "low"
+        },
+        {
+          "name": "Done",
+          "type": "DataObject",
+          "mention": "Done",
+          "confidence": "low"
+        },
+        {
+          "name": "To Start",
+          "type": "DataObject",
+          "mention": "To Start",
+          "confidence": "low"
+        },
+        {
+          "name": "Appraisal Sent",
+          "type": "DataObject",
+          "mention": "Appraisal Sent",
+          "confidence": "low"
+        },
+        {
+          "name": "appraisals",
+          "type": "DataObject",
+          "mention": "appraisals",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Appraisal Analysis",
+          "evidence": "default Appraisal Analysis report"
+        },
+        {
+          "source": "Appraisal Analysis",
+          "relation": "CONTAINS",
+          "target": "status",
+          "evidence": "the data by status"
+        },
+        {
+          "source": "search bar",
+          "relation": "CONTAINS",
+          "target": "Toggle Search Panel",
+          "evidence": "Toggle Search Panel) icon in the far-right of the search bar"
+        },
+        {
+          "source": "Toggle Search Panel",
+          "relation": "ENABLES",
+          "target": "status",
+          "evidence": "Click Status"
+        },
+        {
+          "source": "status",
+          "relation": "BELONGS_TO",
+          "target": "appraisals",
+          "evidence": "All the appraisals are now organized by status"
+        },
+        {
+          "source": "status",
+          "relation": "CONTAINS",
+          "target": "Canceled",
+          "evidence": "Cancelled"
+        },
+        {
+          "source": "status",
+          "relation": "CONTAINS",
+          "target": "Done",
+          "evidence": "Done"
+        },
+        {
+          "source": "status",
+          "relation": "CONTAINS",
+          "target": "To Start",
+          "evidence": "To Start"
+        },
+        {
+          "source": "status",
+          "relation": "CONTAINS",
+          "target": "Appraisal Sent",
+          "evidence": "Appraisal Sent"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-case:-view-only-the-user's-appraisals",
+    "heading": "Use case: view only the user's appraisals",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisal Analysis",
+          "type": "Report",
+          "mention": "Appraisal Analysis report",
+          "confidence": "high"
+        },
+        {
+          "name": "Toggle Search Panel",
+          "type": "Action",
+          "mention": "fa-caret-down (Toggle Search Panel) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Custom Filter",
+          "type": "Action",
+          "mention": "Add Custom Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Filter pop-up window",
+          "type": "Feature",
+          "mention": "Add Custom Filter pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters column",
+          "type": "Module",
+          "mention": "Filters column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee",
+          "type": "DataObject",
+          "mention": "Employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manager",
+          "type": "Field",
+          "mention": "Manager",
+          "confidence": "medium"
+        },
+        {
+          "name": "Department",
+          "type": "Field",
+          "mention": "oi-group Department",
+          "confidence": "medium"
+        },
+        {
+          "name": "appraisals",
+          "type": "DataObject",
+          "mention": "appraisals",
+          "confidence": "high"
+        },
+        {
+          "name": "status",
+          "type": "Field",
+          "mention": "status",
+          "confidence": "medium"
+        },
+        {
+          "name": "signed-in user",
+          "type": "Actor",
+          "mention": "signed-in user",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Appraisal Analysis",
+          "evidence": "\"viewing the Appraisal Analysis report\""
+        },
+        {
+          "source": "Appraisal Analysis",
+          "relation": "CONTAINS",
+          "target": "Department",
+          "evidence": "\"default oi-group Department grouping\""
+        },
+        {
+          "source": "Toggle Search Panel",
+          "relation": "ENABLES",
+          "target": "Filters column",
+          "evidence": "\"revealing a drop-down menu\""
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Add Custom Filter",
+          "evidence": "\"Click Add Custom Filter at the bottom of the fa-filter Filters column\""
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "PRODUCES",
+          "target": "Add Custom Filter pop-up window",
+          "evidence": "\"a Add Custom Filter pop-up window appears\""
+        },
+        {
+          "source": "Add Custom Filter pop-up window",
+          "relation": "CONTAINS",
+          "target": "Employee",
+          "evidence": "\"options. Click the fa-chevron-right (right arrow) icon after the word Employee\""
+        },
+        {
+          "source": "Employee",
+          "relation": "CONTAINS",
+          "target": "Manager",
+          "evidence": "\"then scroll down and click on Manager\""
+        },
+        {
+          "source": "Manager",
+          "relation": "EQUIVALENT_TO",
+          "target": "signed-in user",
+          "evidence": "\"select the desired user from the list\""
+        },
+        {
+          "source": "Appraisal Analysis",
+          "relation": "CONTAINS",
+          "target": "status",
+          "evidence": "\"This report can also be grouped by status\""
+        },
+        {
+          "source": "Appraisal Analysis",
+          "relation": "RELATED_TO",
+          "target": "appraisals",
+          "evidence": "\"view only the user's appraisals\""
+        },
+        {
+          "source": "Appraisal Analysis",
+          "relation": "SEE_ALSO",
+          "target": "Odoo essentials reporting",
+          "evidence": "\"Odoo essentials reporting <../../essentials/reporting>\""
+        },
+        {
+          "source": "Appraisal Analysis",
+          "relation": "SEE_ALSO",
+          "target": "../../essentials/search",
+          "evidence": "\"../../essentials/search\""
+        }
+      ]
+    }
+  }
+]

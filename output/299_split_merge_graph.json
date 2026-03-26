@@ -1,0 +1,305 @@
+[
+  {
+    "section_id": "split-and-merge-manufacturing-orders",
+    "heading": "Split and merge manufacturing orders",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Odoo *Manufacturing*",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Concept",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials",
+          "type": "Concept",
+          "mention": "Bill of Materials (BoM)",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit",
+          "type": "Concept",
+          "mention": "unit",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo *Manufacturing*"
+        },
+        {
+          "source": "Manufacturing order",
+          "relation": "HAS_FEATURE",
+          "target": "Split",
+          "evidence": "it is possible to split a manufacturing order that contains multiple units into two or more orders"
+        },
+        {
+          "source": "Manufacturing order",
+          "relation": "HAS_FEATURE",
+          "target": "Merge",
+          "evidence": "merge two or more orders into a single order"
+        },
+        {
+          "source": "Manufacturing order",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "A manufacturing order can only contain one unit of a product"
+        },
+        {
+          "source": "Manufacturing order",
+          "relation": "REQUIRES",
+          "target": "Bill of Materials",
+          "evidence": "multiple units of a single product that all use the same Bill of Materials (BoM)"
+        },
+        {
+          "source": "Manufacturing order",
+          "relation": "CONTAINS",
+          "target": "Unit",
+          "evidence": "can only contain one unit of a product, or multiple units"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "split-manufacturing-orders",
+    "heading": "Split manufacturing orders",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Split",
+          "type": "Feature",
+          "mention": "Select Split",
+          "confidence": "high"
+        },
+        {
+          "name": "Split #",
+          "type": "Field",
+          "mention": "Split # field",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity To Produce",
+          "type": "Field",
+          "mention": "Quantity To Produce column",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "Module",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing Orders",
+          "relation": "BELONGS_TO",
+          "target": "Operations",
+          "evidence": "Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Operations",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing",
+          "evidence": "Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Manufacturing order",
+          "relation": "CONTAINS",
+          "target": "Split #",
+          "evidence": "Split # field"
+        },
+        {
+          "source": "Manufacturing order",
+          "relation": "CONTAINS",
+          "target": "Quantity To Produce",
+          "evidence": "Quantity To Produce column"
+        },
+        {
+          "source": "Split",
+          "relation": "ENABLES",
+          "target": "Manufacturing order",
+          "evidence": "To split a manufacturing order"
+        },
+        {
+          "source": "Split",
+          "relation": "PRODUCES",
+          "target": "Manufacturing order",
+          "evidence": "split into multiple orders"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "merge-manufacturing-orders",
+    "heading": "Merge manufacturing orders",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Merge",
+          "type": "Action",
+          "mention": "Merge from the drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Actions",
+          "type": "Feature",
+          "mention": "click the Actions button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reference Number",
+          "type": "Field",
+          "mention": "reference number",
+          "confidence": "medium"
+        },
+        {
+          "name": "Source Field",
+          "type": "Field",
+          "mention": "Source field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Manufacturing",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Manufacturing --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Manufacturing Orders",
+          "evidence": "Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "BELONGS_TO",
+          "target": "Operations",
+          "evidence": "Manufacturing Orders"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Actions",
+          "evidence": "Select the manufacturing orders that will be merged by activating the checkbox"
+        },
+        {
+          "source": "Actions",
+          "relation": "ENABLES",
+          "target": "Merge",
+          "evidence": "click the Actions button at the top of the page, then select Merge"
+        },
+        {
+          "source": "Merge",
+          "relation": "PRODUCES",
+          "target": "Manufacturing Orders",
+          "evidence": "The selected manufacturing orders are merged into a single order."
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Reference Number",
+          "evidence": "The reference number for the new manufacturing order"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Source Field",
+          "evidence": "The Source field for the manufacturing order created by the merger"
+        },
+        {
+          "source": "Source Field",
+          "relation": "RELATED_TO",
+          "target": "Manufacturing Orders",
+          "evidence": "the source field lists both reference numbers"
+        }
+      ]
+    }
+  }
+]

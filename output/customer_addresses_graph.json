@@ -1,0 +1,341 @@
+[
+  {
+    "section_id": "delivery-and-invoice-addresses",
+    "heading": "Delivery and invoice addresses",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Addresses",
+          "type": "Feature",
+          "mention": "Customer Addresses",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Customer Addresses",
+          "evidence": "Odoo's **Customer Addresses** feature is designed to handle this scenario"
+        },
+        {
+          "source": "Customer Addresses",
+          "relation": "SEE_ALSO",
+          "target": "overview",
+          "evidence": "seealso:: overview"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Invoices",
+          "type": "Sub-module",
+          "mention": "Customer Invoices section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer Addresses",
+          "type": "Setting",
+          "mention": "enable Customer Addresses",
+          "confidence": "high"
+        },
+        {
+          "name": "quotations",
+          "type": "DataObject",
+          "mention": "quotations",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales orders",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoice Address",
+          "type": "Field",
+          "mention": "fields for Invoice Address",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Address",
+          "type": "Field",
+          "mention": "fields for Delivery Address",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "contact record",
+          "type": "DataObject",
+          "mention": "contact record",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contact Form Configuration",
+          "type": "Sub-module",
+          "mention": "Contact Form Configuration",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Customer Invoices",
+          "evidence": "In the Customer Invoices section"
+        },
+        {
+          "source": "Customer Invoices",
+          "relation": "CONTAINS",
+          "target": "Customer Addresses",
+          "evidence": "enable Customer Addresses"
+        },
+        {
+          "source": "quotations",
+          "relation": "HAS_FEATURE",
+          "target": "Invoice Address",
+          "evidence": "On quotations and sales orders, there are now fields for Invoice Address"
+        },
+        {
+          "source": "quotations",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery Address",
+          "evidence": "On quotations and sales orders, there are now fields for Delivery Address"
+        },
+        {
+          "source": "sales orders",
+          "relation": "HAS_FEATURE",
+          "target": "Invoice Address",
+          "evidence": "On quotations and sales orders, there are now fields for Invoice Address"
+        },
+        {
+          "source": "sales orders",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery Address",
+          "evidence": "On quotations and sales orders, there are now fields for Delivery Address"
+        },
+        {
+          "source": "customer",
+          "relation": "RELATED_TO",
+          "target": "contact record",
+          "evidence": "customer has an invoice or delivery address listed on their contact record"
+        },
+        {
+          "source": "Invoice Address",
+          "relation": "RELATED_TO",
+          "target": "contact record",
+          "evidence": "If the customer has an invoice or delivery address listed on their contact record, the corresponding field uses that address"
+        },
+        {
+          "source": "Delivery Address",
+          "relation": "RELATED_TO",
+          "target": "contact record",
+          "evidence": "If the customer has an invoice or delivery address listed on their contact record, the corresponding field uses that address"
+        },
+        {
+          "source": "Contact Form Configuration",
+          "relation": "SEE_ALSO",
+          "target": "contact record",
+          "evidence": "refer to the documentation on Contact Form Configuration"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoice-and-deliver-to-different-addresses",
+    "heading": "Invoice and deliver to different addresses",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery slip",
+          "type": "Report",
+          "mention": "delivery slip reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice report",
+          "type": "Report",
+          "mention": "invoice reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Address",
+          "type": "Field",
+          "mention": "Delivery Address",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Address",
+          "type": "Field",
+          "mention": "Invoice Address",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Studio",
+          "type": "Module",
+          "mention": "Studio",
+          "confidence": "high"
+        },
+        {
+          "name": "Send & Print",
+          "type": "Action",
+          "mention": "Send & Print",
+          "confidence": "high"
+        },
+        {
+          "name": "Send by Post",
+          "type": "Feature",
+          "mention": "Send by Post",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery order",
+          "type": "DataObject",
+          "mention": "Delivery orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales order",
+          "relation": "CONTAINS",
+          "target": "Delivery Address",
+          "evidence": "Delivery orders and their delivery slip reports use the address set as the Delivery Address on the sales order."
+        },
+        {
+          "source": "Sales order",
+          "relation": "CONTAINS",
+          "target": "Invoice Address",
+          "evidence": "the invoice is sent to the email of the address set as the Invoice Address on the sales order."
+        },
+        {
+          "source": "Invoice report",
+          "relation": "HAS_REPORT",
+          "target": "Odoo",
+          "evidence": "invoice reports show both the shipping address and the invoice address"
+        },
+        {
+          "source": "Delivery slip",
+          "relation": "HAS_REPORT",
+          "target": "Odoo",
+          "evidence": "Delivery orders and their delivery slip reports use the address set as the Delivery Address on the sales order."
+        },
+        {
+          "source": "Delivery slip",
+          "relation": "USES_METHOD",
+          "target": "Delivery Address",
+          "evidence": "Delivery orders and their delivery slip reports use the address set as the Delivery Address on the sales order."
+        },
+        {
+          "source": "Invoice report",
+          "relation": "USES_METHOD",
+          "target": "Invoice Address",
+          "evidence": "invoice reports show both the shipping address and the invoice address"
+        },
+        {
+          "source": "Studio",
+          "relation": "ENABLES",
+          "target": "Invoice report",
+          "evidence": "Reports, such as the delivery slip and invoice report, can be customized using Studio"
+        },
+        {
+          "source": "Studio",
+          "relation": "ENABLES",
+          "target": "Delivery slip",
+          "evidence": "Reports, such as the delivery slip and invoice report, can be customized using Studio"
+        },
+        {
+          "source": "Send by Post",
+          "relation": "TRIGGERED_BY",
+          "target": "Send & Print",
+          "evidence": "If Send by Post is checked when you click Send & Print, the invoice will be mailed to the invoice address."
+        },
+        {
+          "source": "Invoice",
+          "relation": "PRODUCED_BY",
+          "target": "Send & Print",
+          "evidence": "If Send by Post is checked when you click Send & Print, the invoice will be mailed to the invoice address."
+        }
+      ]
+    }
+  }
+]

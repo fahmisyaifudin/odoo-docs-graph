@@ -1,0 +1,353 @@
+[
+  {
+    "section_id": "internal-transfers",
+    "heading": "Internal transfers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal transfers",
+          "type": "Workflow",
+          "mention": "Title: Internal transfers",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal money transfers",
+          "type": "Workflow",
+          "mention": "Internal money transfers",
+          "confidence": "high"
+        },
+        {
+          "name": "bank account",
+          "type": "DataObject",
+          "mention": "bank or cash accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "cash account",
+          "type": "DataObject",
+          "mention": "bank or cash accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "How to add an additional bank account",
+          "type": "Workflow",
+          "mention": "How to add an additional bank account",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Internal transfers",
+          "relation": "SEE_ALSO",
+          "target": "How to add an additional bank account",
+          "evidence": ".. seealso:: How to add an additional bank account"
+        },
+        {
+          "source": "Internal money transfers",
+          "relation": "REQUIRES",
+          "target": "bank account",
+          "evidence": "At least two bank or cash accounts are needed to make internal transfers."
+        },
+        {
+          "source": "Internal money transfers",
+          "relation": "REQUIRES",
+          "target": "cash account",
+          "evidence": "At least two bank or cash accounts are needed to make internal transfers."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Internal money transfers",
+          "evidence": "Internal money transfers can be handled in Odoo."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Internal Transfer Account",
+          "type": "DataObject",
+          "mention": "internal transfer account",
+          "confidence": "high"
+        },
+        {
+          "name": "Database",
+          "type": "DataObject",
+          "mention": "your database",
+          "confidence": "medium"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "your company",
+          "confidence": "medium"
+        },
+        {
+          "name": "Localization",
+          "type": "Concept",
+          "mention": "localization",
+          "confidence": "high"
+        },
+        {
+          "name": "Country Legislation",
+          "type": "Regulation",
+          "mention": "your country’s legislation",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Accounts",
+          "type": "Setting",
+          "mention": "Default Accounts section",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Internal Transfer Account",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "To modify the default Internal Transfer account, go to Accounting --> Configuration --> Settings"
+        },
+        {
+          "source": "Internal Transfer Account",
+          "relation": "GENERATES",
+          "target": "Database",
+          "evidence": "An internal transfer account is automatically created on your database"
+        },
+        {
+          "source": "Internal Transfer Account",
+          "relation": "GOVERNED_BY",
+          "target": "Country Legislation",
+          "evidence": "depending on your country’s legislation"
+        },
+        {
+          "source": "Internal Transfer Account",
+          "relation": "CONFIGURED_BY",
+          "target": "Default Accounts",
+          "evidence": "scroll down to the Default Accounts section"
+        },
+        {
+          "source": "Database",
+          "relation": "CONTAINS",
+          "target": "Internal Transfer Account",
+          "evidence": "created on your database"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "register-an-internal-transfer-from-one-bank-to-another",
+    "heading": "Register an internal transfer from one bank to another",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Register an internal transfer",
+          "type": "Action",
+          "mention": "Register an internal transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "bank",
+          "type": "DataObject",
+          "mention": "bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "cash account",
+          "type": "DataObject",
+          "mention": "cash account",
+          "confidence": "medium"
+        },
+        {
+          "name": "transaction",
+          "type": "DataObject",
+          "mention": "transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "journal",
+          "type": "DataObject",
+          "mention": "journal",
+          "confidence": "high"
+        },
+        {
+          "name": "bank_synchronization",
+          "type": "Integration",
+          "mention": "bank synchronization",
+          "confidence": "high"
+        },
+        {
+          "name": "reconcile the transaction",
+          "type": "Action",
+          "mention": "reconcile the transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal Transfers reconciliation model",
+          "type": "Workflow",
+          "mention": "Internal Transfers reconciliation model",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciliation_models",
+          "type": "Workflow",
+          "mention": "reconciliation models",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal transfer account",
+          "type": "DataObject",
+          "mention": "Internal transfer account",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank A",
+          "type": "Actor",
+          "mention": "Bank A",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank B",
+          "type": "Actor",
+          "mention": "Bank B",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank A account",
+          "type": "DataObject",
+          "mention": "Bank A account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank B account",
+          "type": "DataObject",
+          "mention": "Bank B account",
+          "confidence": "medium"
+        },
+        {
+          "name": "reconciliation",
+          "type": "Concept",
+          "mention": "reconciliation",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Register an internal transfer",
+          "relation": "TRIGGERED_BY",
+          "target": "money is transferred",
+          "evidence": "When money is transferred from one bank or cash account to another"
+        },
+        {
+          "source": "transaction",
+          "relation": "IS_PART_OF",
+          "target": "journal",
+          "evidence": "amount appears as two transactions on the corresponding journals"
+        },
+        {
+          "source": "transaction",
+          "relation": "PERFORMED_BY",
+          "target": "bank_synchronization",
+          "evidence": "created manually, via import, or via bank synchronization"
+        },
+        {
+          "source": "reconcile the transaction",
+          "relation": "USES_METHOD",
+          "target": "Internal Transfers reconciliation model",
+          "evidence": "reconcile the transaction, select the Internal Transfers reconciliation model"
+        },
+        {
+          "source": "reconciliation_models",
+          "relation": "SEE_ALSO",
+          "target": "Internal Transfers reconciliation model",
+          "evidence": "reconciliation models"
+        },
+        {
+          "source": "Internal Transfers reconciliation model",
+          "relation": "PRODUCES",
+          "target": "transaction",
+          "evidence": "This reconciliation model button writes the transaction off"
+        },
+        {
+          "source": "reconciliation",
+          "relation": "SEE_ALSO",
+          "target": "reconcile the transaction",
+          "evidence": "reconciliation"
+        },
+        {
+          "source": "transaction",
+          "relation": "APPLIES_TO",
+          "target": "Bank A account",
+          "evidence": "Bank A account"
+        },
+        {
+          "source": "transaction",
+          "relation": "APPLIES_TO",
+          "target": "Bank B account",
+          "evidence": "Bank B account"
+        },
+        {
+          "source": "Bank A account",
+          "relation": "IS_PART_OF",
+          "target": "Bank A",
+          "evidence": "Bank A"
+        },
+        {
+          "source": "Bank B account",
+          "relation": "IS_PART_OF",
+          "target": "Bank B",
+          "evidence": "Bank B"
+        }
+      ]
+    }
+  }
+]

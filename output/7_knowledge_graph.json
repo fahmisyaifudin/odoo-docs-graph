@@ -1,0 +1,2602 @@
+[
+  {
+    "section_id": "knowledge",
+    "heading": "Knowledge",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo Knowledge",
+          "type": "Product",
+          "mention": "Odoo Knowledge",
+          "confidence": "high"
+        },
+        {
+          "name": "articles",
+          "type": "DataObject",
+          "mention": "articles",
+          "confidence": "high"
+        },
+        {
+          "name": "title",
+          "type": "Field",
+          "mention": "title",
+          "confidence": "high"
+        },
+        {
+          "name": "body",
+          "type": "Field",
+          "mention": "body",
+          "confidence": "high"
+        },
+        {
+          "name": "HTML field",
+          "type": "Field",
+          "mention": "HTML field",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo Knowledge",
+          "relation": "CONTAINS",
+          "target": "articles",
+          "evidence": "The pages on which they gather content are called *articles*."
+        },
+        {
+          "source": "articles",
+          "relation": "CONTAINS",
+          "target": "title",
+          "evidence": "They are mainly composed of a title and a body."
+        },
+        {
+          "source": "articles",
+          "relation": "CONTAINS",
+          "target": "body",
+          "evidence": "They are mainly composed of a title and a body."
+        },
+        {
+          "source": "body",
+          "relation": "CONTAINS",
+          "target": "HTML field",
+          "evidence": "The latter is an HTML field containing text, images, links, records from other models, templates, etc."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "article-creation",
+    "heading": "Article creation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Article creation",
+          "type": "Workflow",
+          "mention": "Title: Article creation",
+          "confidence": "high"
+        },
+        {
+          "name": "Knowledge articles",
+          "type": "DataObject",
+          "mention": "Knowledge articles",
+          "confidence": "high"
+        },
+        {
+          "name": "pre-configured template",
+          "type": "DataObject",
+          "mention": "pre-configured template",
+          "confidence": "high"
+        },
+        {
+          "name": "parent article",
+          "type": "Concept",
+          "mention": "parent article",
+          "confidence": "high"
+        },
+        {
+          "name": "child",
+          "type": "Concept",
+          "mention": "child",
+          "confidence": "high"
+        },
+        {
+          "name": "nested article",
+          "type": "Concept",
+          "mention": "nested article",
+          "confidence": "high"
+        },
+        {
+          "name": "sidebar tree",
+          "type": "Module",
+          "mention": "sidebar tree",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-plus (plus) icon",
+          "type": "Feature",
+          "mention": "fa-plus (plus) icon",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Article creation",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\\nTitle: Article creation"
+        },
+        {
+          "source": "nested article",
+          "relation": "BELONGS_TO",
+          "target": "parent article",
+          "evidence": "original one is the **parent article**, while the new one is called a **child** or **nested article**, indicating its subordinate position."
+        },
+        {
+          "source": "Article creation",
+          "relation": "GENERATES",
+          "target": "Knowledge articles",
+          "evidence": "Knowledge articles can be created from scratch or a pre-configured template."
+        },
+        {
+          "source": "fa-plus (plus) icon",
+          "relation": "TRIGGERED_BY",
+          "target": "Article creation",
+          "evidence": "To create a nested article, hover over an article in the sidebar tree and click the fa-plus (plus) icon."
+        },
+        {
+          "source": "sidebar tree",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "in the sidebar tree"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-scratch",
+    "heading": "From scratch",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "New Article",
+          "type": "Action",
+          "mention": "fa-plus New Article",
+          "confidence": "high"
+        },
+        {
+          "name": "Private",
+          "type": "Category",
+          "mention": "Private",
+          "confidence": "medium"
+        },
+        {
+          "name": "Workspace",
+          "type": "Category",
+          "mention": "Workspace",
+          "confidence": "medium"
+        },
+        {
+          "name": "Load a Template",
+          "type": "Action",
+          "mention": "Load a Template",
+          "confidence": "high"
+        },
+        {
+          "name": "Build an Item Kanban",
+          "type": "Action",
+          "mention": "Build an Item Kanban",
+          "confidence": "high"
+        },
+        {
+          "name": "Build an Item List",
+          "type": "Action",
+          "mention": "Build an Item List",
+          "confidence": "high"
+        },
+        {
+          "name": "Build an Item Calendar",
+          "type": "Action",
+          "mention": "Build an Item Calendar",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate an Article with AI",
+          "type": "Action",
+          "mention": "Generate an Article with AI",
+          "confidence": "high"
+        },
+        {
+          "name": "article",
+          "type": "DataObject",
+          "mention": "article",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "New Article",
+          "evidence": "Product: Odoo... To create an article from scratch, click fa-plus New Article..."
+        },
+        {
+          "source": "New Article",
+          "relation": "ENABLES",
+          "target": "Load a Template",
+          "evidence": "Start typing text or select one of the suggested options: - Load a Template:"
+        },
+        {
+          "source": "New Article",
+          "relation": "ENABLES",
+          "target": "Build an Item Kanban",
+          "evidence": "Start typing text or select one of the suggested options: ... - Build an Item Kanban:"
+        },
+        {
+          "source": "New Article",
+          "relation": "ENABLES",
+          "target": "Build an Item List",
+          "evidence": "Start typing text or select one of the suggested options: ... - Build an Item List:"
+        },
+        {
+          "source": "New Article",
+          "relation": "ENABLES",
+          "target": "Build an Item Calendar",
+          "evidence": "Start typing text or select one of the suggested options: ... - Build an Item Calendar:"
+        },
+        {
+          "source": "New Article",
+          "relation": "ENABLES",
+          "target": "Generate an Article with AI",
+          "evidence": "Start typing text or select one of the suggested options: ... - Generate an Article with AI:"
+        },
+        {
+          "source": "New Article",
+          "relation": "PRODUCES",
+          "target": "article",
+          "evidence": "To create an article from scratch, click fa-plus New Article..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "from-a-template",
+    "heading": "From a template",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Browse Templates",
+          "type": "Action",
+          "mention": "Click Browse Templates",
+          "confidence": "high"
+        },
+        {
+          "name": "sidebar tree",
+          "type": "Feature",
+          "mention": "sidebar tree",
+          "confidence": "medium"
+        },
+        {
+          "name": "Load Template",
+          "type": "Action",
+          "mention": "Click Load Template",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Browse Templates",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Click fa-paint-brush Browse Templates at the bottom of the sidebar tree."
+        },
+        {
+          "source": "Load Template",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Click Load Template."
+        },
+        {
+          "source": "sidebar tree",
+          "relation": "CONTAINS",
+          "target": "Browse Templates",
+          "evidence": "Click fa-paint-brush Browse Templates at the bottom of the sidebar tree."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "article-editing",
+    "heading": "Article editing",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Article",
+          "type": "DataObject",
+          "mention": "article",
+          "confidence": "high"
+        },
+        {
+          "name": "article editing",
+          "type": "Workflow",
+          "mention": "edit an article",
+          "confidence": "medium"
+        },
+        {
+          "name": "sidebar tree",
+          "type": "Module",
+          "mention": "sidebar tree",
+          "confidence": "medium"
+        },
+        {
+          "name": "text editor toolbar",
+          "type": "Feature",
+          "mention": "text editor toolbar",
+          "confidence": "high"
+        },
+        {
+          "name": "powerbox commands",
+          "type": "Feature",
+          "mention": "powerbox commands",
+          "confidence": "medium"
+        },
+        {
+          "name": "cover picture",
+          "type": "Feature",
+          "mention": "adding a cover picture",
+          "confidence": "medium"
+        },
+        {
+          "name": "title emoji",
+          "type": "Feature",
+          "mention": "title emoji",
+          "confidence": "medium"
+        },
+        {
+          "name": "More actions icon",
+          "type": "Action",
+          "mention": "fa-ellipsis-v (More actions) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Full Width toggle",
+          "type": "Feature",
+          "mention": "oi-arrows-h Full Width",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "article editing",
+          "relation": "PERFORMED_BY",
+          "target": "sidebar tree",
+          "evidence": "select it in the sidebar tree"
+        },
+        {
+          "source": "article editing",
+          "relation": "ENABLES",
+          "target": "text editor toolbar",
+          "evidence": "edit its content and format it using the text editor toolbar"
+        },
+        {
+          "source": "article editing",
+          "relation": "ENABLES",
+          "target": "powerbox commands",
+          "evidence": "typing powerbox commands"
+        },
+        {
+          "source": "article editing",
+          "relation": "ENABLES",
+          "target": "cover picture",
+          "evidence": "adding a cover picture"
+        },
+        {
+          "source": "cover picture",
+          "relation": "ENABLES",
+          "target": "title emoji",
+          "evidence": "with a title emoji"
+        },
+        {
+          "source": "article editing",
+          "relation": "ENABLES",
+          "target": "Full Width toggle",
+          "evidence": "enlarge or reduce the article's width"
+        },
+        {
+          "source": "More actions icon",
+          "relation": "TRIGGERED_BY",
+          "target": "Full Width toggle",
+          "evidence": "click the fa-ellipsis-v (More actions) icon, then toggle the oi-arrows-h Full Width on or off"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "text-editor-toolbar",
+    "heading": "Text editor toolbar",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Text editor toolbar",
+          "type": "Feature",
+          "mention": "Text editor toolbar",
+          "confidence": "high"
+        },
+        {
+          "name": "Comment",
+          "type": "Action",
+          "mention": "Comment",
+          "confidence": "high"
+        },
+        {
+          "name": "selected text",
+          "type": "DataObject",
+          "mention": "selected text",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Text editor toolbar",
+          "relation": "ENABLES",
+          "target": "Comment",
+          "evidence": "To edit a word, sentence, or paragraph, select or double-click it to display the text editor toolbar and apply the desired formatting options."
+        },
+        {
+          "source": "Comment",
+          "relation": "APPLIES_TO",
+          "target": "selected text",
+          "evidence": "Click fa-commenting-o Comment to add a comment to the selected text."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "commands",
+    "heading": "Commands",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Knowledge app",
+          "type": "Module",
+          "mention": "Knowledge app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Commands",
+          "type": "Module",
+          "mention": "Commands",
+          "confidence": "medium"
+        },
+        {
+          "name": "powerbox",
+          "type": "Feature",
+          "mention": "powerbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "Index",
+          "type": "Action",
+          "mention": "Index",
+          "confidence": "medium"
+        },
+        {
+          "name": "Item Kanban",
+          "type": "Action",
+          "mention": "Item Kanban",
+          "confidence": "medium"
+        },
+        {
+          "name": "Item Cards",
+          "type": "Action",
+          "mention": "Item Cards",
+          "confidence": "medium"
+        },
+        {
+          "name": "Item List",
+          "type": "Action",
+          "mention": "Item List",
+          "confidence": "medium"
+        },
+        {
+          "name": "Item Calendar",
+          "type": "Action",
+          "mention": "Item Calendar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Clipboard",
+          "type": "Feature",
+          "mention": "Clipboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Foldable Section",
+          "type": "Feature",
+          "mention": "Foldable Section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Article",
+          "type": "DataObject",
+          "mention": "Article",
+          "confidence": "high"
+        },
+        {
+          "name": "child pages",
+          "type": "DataObject",
+          "mention": "child pages",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Card view",
+          "type": "Feature",
+          "mention": "Card view",
+          "confidence": "medium"
+        },
+        {
+          "name": "List view",
+          "type": "Feature",
+          "mention": "List view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Calendar view",
+          "type": "Feature",
+          "mention": "Calendar view",
+          "confidence": "medium"
+        },
+        {
+          "name": "clipboard section",
+          "type": "Feature",
+          "mention": "clipboard section",
+          "confidence": "medium"
+        },
+        {
+          "name": "foldable section",
+          "type": "Feature",
+          "mention": "foldable section",
+          "confidence": "medium"
+        },
+        {
+          "name": "other apps",
+          "type": "Integration",
+          "mention": "other apps",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Commands",
+          "relation": "IS_PART_OF",
+          "target": "Knowledge app",
+          "evidence": "The following commands are exclusive to the Knowledge app"
+        },
+        {
+          "source": "Commands",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "powerbox",
+          "relation": "ENABLES",
+          "target": "Commands",
+          "evidence": "Type `/` to open the powerbox <essentials/html_editor/commands> and use a command."
+        },
+        {
+          "source": "Index",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "Display the child pages of the parent article."
+        },
+        {
+          "source": "Item Kanban",
+          "relation": "PRODUCES",
+          "target": "Kanban view",
+          "evidence": "Insert a Kanban view"
+        },
+        {
+          "source": "Item Cards",
+          "relation": "PRODUCES",
+          "target": "Card view",
+          "evidence": "Insert a Card view"
+        },
+        {
+          "source": "Item List",
+          "relation": "PRODUCES",
+          "target": "List view",
+          "evidence": "Insert a List view"
+        },
+        {
+          "source": "Item Calendar",
+          "relation": "PRODUCES",
+          "target": "Calendar view",
+          "evidence": "Insert a Calendar view"
+        },
+        {
+          "source": "Clipboard",
+          "relation": "CONTAINS",
+          "target": "clipboard section",
+          "evidence": "Add a clipboard section"
+        },
+        {
+          "source": "Foldable Section",
+          "relation": "CONTAINS",
+          "target": "foldable section",
+          "evidence": "Hide the text inside a foldable section."
+        },
+        {
+          "source": "Article",
+          "relation": "HAS_FEATURE",
+          "target": "child pages",
+          "evidence": "Display the child pages of the parent article"
+        },
+        {
+          "source": "clipboard section",
+          "relation": "INTEGRATION",
+          "target": "other apps",
+          "evidence": "reuse it in other apps"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "article-items",
+    "heading": "Article items",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ',' delimiter: line 1 column 346 (char 345)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"article\",\"type\":\"DataObject\",\"mention\":\"Article\",\"confidence\":\"medium\"},{\"name\":\"article item\",\"type\":\"DataObject\",\"mention\":\"Article items\",\"confidence\":\"high\"},{\"name\":\"properties\",\"type\":\"Field\",\"mention\":\"properties\",\"confidence\":\"medium\"}]],\"relations\":[{\"source\":\"article item\",\"relation\":\"BELONGS_TO\",\"target\":\"article\",\"evidence\":\"Article items within a parent article\"},{\"source\":\"article\",\"relation\":\"CONTAINS\",\"target\":\"article item\",\"evidence\":\"Article items within a parent article\"},{\"source\":\"article item\",\"relation\":\"CONTAINS\",\"target\":\"properties\",\"evidence\":\"Article items within a parent article can contain properties\"},{\"source\":\"properties\",\"relation\":\"BELONGS_TO\",\"target\":\"article\",\"evidence\":\"shared data fields from the parent\"}]}"
+    }
+  },
+  {
+    "section_id": "cover-pictures",
+    "heading": "Cover pictures",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Cover",
+          "type": "Action",
+          "mention": "Add Cover",
+          "confidence": "high"
+        },
+        {
+          "name": "Replace Cover",
+          "type": "Action",
+          "mention": "Replace Cover",
+          "confidence": "high"
+        },
+        {
+          "name": "Unsplash",
+          "type": "Integration",
+          "mention": "Unsplash",
+          "confidence": "high"
+        },
+        {
+          "name": "image address",
+          "type": "DataObject",
+          "mention": "image address",
+          "confidence": "medium"
+        },
+        {
+          "name": "Upload an image",
+          "type": "Action",
+          "mention": "Upload an image",
+          "confidence": "high"
+        },
+        {
+          "name": "image library",
+          "type": "DataObject",
+          "mention": "image library",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reposition",
+          "type": "Action",
+          "mention": "Reposition",
+          "confidence": "high"
+        },
+        {
+          "name": "Save Position",
+          "type": "Action",
+          "mention": "Save Position",
+          "confidence": "high"
+        },
+        {
+          "name": "Cancel",
+          "type": "Action",
+          "mention": "Cancel",
+          "confidence": "high"
+        },
+        {
+          "name": "Remove",
+          "type": "Action",
+          "mention": "Remove",
+          "confidence": "high"
+        },
+        {
+          "name": "article",
+          "type": "DataObject",
+          "mention": "article",
+          "confidence": "medium"
+        },
+        {
+          "name": "title",
+          "type": "Field",
+          "mention": "title",
+          "confidence": "medium"
+        },
+        {
+          "name": "database library",
+          "type": "DataObject",
+          "mention": "database library",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-trash",
+          "type": "Action",
+          "mention": "fa-trash",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add Cover",
+          "relation": "PERFORMED_BY",
+          "target": "fa-ellipsis-v",
+          "evidence": "To add a cover picture, click the fa-ellipsis-v (More actions) icon, then Add Cover."
+        },
+        {
+          "source": "Replace Cover",
+          "relation": "SUPPORTS",
+          "target": "Unsplash",
+          "evidence": "Search from the Unsplash database library"
+        },
+        {
+          "source": "Replace Cover",
+          "relation": "ENABLES",
+          "target": "image address",
+          "evidence": "click Add URL and paste the image address"
+        },
+        {
+          "source": "Replace Cover",
+          "relation": "ENABLES",
+          "target": "Upload an image",
+          "evidence": "or click Upload an image to upload a file"
+        },
+        {
+          "source": "Upload an image",
+          "relation": "PRODUCES",
+          "target": "image library",
+          "evidence": "to upload a file into the image library."
+        },
+        {
+          "source": "Reposition",
+          "relation": "ENABLES",
+          "target": "Save Position",
+          "evidence": "then click Save Position"
+        },
+        {
+          "source": "Reposition",
+          "relation": "ENABLES",
+          "target": "Cancel",
+          "evidence": "or Cancel."
+        },
+        {
+          "source": "Add Cover",
+          "relation": "PRODUCES",
+          "target": "article",
+          "evidence": "a cover picture is automatically attributed to the article"
+        },
+        {
+          "source": "article",
+          "relation": "CONFIGURED_BY",
+          "target": "title",
+          "evidence": "based on the title."
+        },
+        {
+          "source": "Remove",
+          "relation": "PRODUCES",
+          "target": "database library",
+          "evidence": "A removed cover picture can be retrieved in the database library."
+        },
+        {
+          "source": "database library",
+          "relation": "ENABLES",
+          "target": "fa-trash",
+          "evidence": "To delete it, hover the mouse over it and click the fa-trash (trash) icon."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "title-emoji",
+    "heading": "Title emoji",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "title emoji",
+          "type": "Feature",
+          "mention": "Title emoji",
+          "confidence": "medium"
+        },
+        {
+          "name": "article",
+          "type": "DataObject",
+          "mention": "article",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-ellipsis-v (More actions) icon",
+          "type": "Action",
+          "mention": "Click the fa-ellipsis-v (More actions) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Icon",
+          "type": "Action",
+          "mention": "then Add Icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-file-text-o (page) icon",
+          "type": "Action",
+          "mention": "click the fa-file-text-o (page) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "article's name",
+          "type": "Field",
+          "mention": "article's name",
+          "confidence": "medium"
+        },
+        {
+          "name": "sidebar",
+          "type": "Feature",
+          "mention": "sidebar",
+          "confidence": "low"
+        },
+        {
+          "name": "top bar",
+          "type": "Feature",
+          "mention": "top bar",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "article",
+          "relation": "HAS_FEATURE",
+          "target": "title emoji",
+          "evidence": "To add a title emoji to the article's name and header"
+        },
+        {
+          "source": "fa-ellipsis-v (More actions) icon",
+          "relation": "ENABLES",
+          "target": "Add Icon",
+          "evidence": "Click the fa-ellipsis-v (More actions) icon, then Add Icon"
+        },
+        {
+          "source": "fa-file-text-o (page) icon",
+          "relation": "BELONGS_TO",
+          "target": "article's name",
+          "evidence": "click the fa-file-text-o (page) icon next to the article's name"
+        },
+        {
+          "source": "article's name",
+          "relation": "IS_PART_OF",
+          "target": "sidebar",
+          "evidence": "article's name in the sidebar"
+        },
+        {
+          "source": "article's name",
+          "relation": "IS_PART_OF",
+          "target": "top bar",
+          "evidence": "article's name ... the top bar"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "views-and-links-from-other-apps",
+    "heading": "Views and links from other apps",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Knowledge",
+          "type": "Module",
+          "mention": "Knowledge",
+          "confidence": "high"
+        },
+        {
+          "name": "article",
+          "type": "DataObject",
+          "mention": "article",
+          "confidence": "high"
+        },
+        {
+          "name": "Users",
+          "type": "Actor",
+          "mention": "Users",
+          "confidence": "medium"
+        },
+        {
+          "name": "view",
+          "type": "Feature",
+          "mention": "view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Insert view in article",
+          "type": "Action",
+          "mention": "Insert view in article",
+          "confidence": "medium"
+        },
+        {
+          "name": "Insert link in article",
+          "type": "Action",
+          "mention": "Insert link in article",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Insert view in article",
+          "relation": "ENABLES",
+          "target": "view",
+          "evidence": "Insert view in article"
+        },
+        {
+          "source": "Insert link in article",
+          "relation": "ENABLES",
+          "target": "view",
+          "evidence": "Insert link in article"
+        },
+        {
+          "source": "Knowledge",
+          "relation": "CONTAINS",
+          "target": "article",
+          "evidence": "Knowledge"
+        },
+        {
+          "source": "Users",
+          "relation": "PERFORMED_BY",
+          "target": "Insert view in article",
+          "evidence": "Users"
+        },
+        {
+          "source": "Users",
+          "relation": "PERFORMED_BY",
+          "target": "Insert link in article",
+          "evidence": "Users"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "article-management",
+    "heading": "Article management",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Article management",
+          "type": "Feature",
+          "mention": "Knowledge allows for managing articles",
+          "confidence": "high"
+        },
+        {
+          "name": "structuring articles",
+          "type": "Action",
+          "mention": "structuring",
+          "confidence": "medium"
+        },
+        {
+          "name": "sharing articles",
+          "type": "Action",
+          "mention": "sharing",
+          "confidence": "medium"
+        },
+        {
+          "name": "removing articles",
+          "type": "Action",
+          "mention": "removing",
+          "confidence": "medium"
+        },
+        {
+          "name": "retrieving articles",
+          "type": "Action",
+          "mention": "retrieving",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Article management",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Article management"
+        },
+        {
+          "source": "Article management",
+          "relation": "CONTAINS",
+          "target": "structuring articles",
+          "evidence": "which consists of structuring"
+        },
+        {
+          "source": "Article management",
+          "relation": "CONTAINS",
+          "target": "sharing articles",
+          "evidence": "sharing"
+        },
+        {
+          "source": "Article management",
+          "relation": "CONTAINS",
+          "target": "removing articles",
+          "evidence": "removing"
+        },
+        {
+          "source": "Article management",
+          "relation": "CONTAINS",
+          "target": "retrieving articles",
+          "evidence": "retrieving"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "basic-management",
+    "heading": "Basic management",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Basic management",
+          "type": "Feature",
+          "mention": "Basic management",
+          "confidence": "medium"
+        },
+        {
+          "name": "Move To",
+          "type": "Action",
+          "mention": "Move To",
+          "confidence": "high"
+        },
+        {
+          "name": "Move Article",
+          "type": "Action",
+          "mention": "Move Article",
+          "confidence": "high"
+        },
+        {
+          "name": "Lock Content",
+          "type": "Action",
+          "mention": "Lock Content",
+          "confidence": "high"
+        },
+        {
+          "name": "Unlock",
+          "type": "Action",
+          "mention": "Unlock",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a Copy",
+          "type": "Action",
+          "mention": "Create a Copy",
+          "confidence": "high"
+        },
+        {
+          "name": "Open Version History",
+          "type": "Action",
+          "mention": "Open Version History",
+          "confidence": "high"
+        },
+        {
+          "name": "Download PDF",
+          "type": "Action",
+          "mention": "Download PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to Templates",
+          "type": "Action",
+          "mention": "Add to Templates",
+          "confidence": "high"
+        },
+        {
+          "name": "Send to Trash",
+          "type": "Action",
+          "mention": "Send to Trash",
+          "confidence": "high"
+        },
+        {
+          "name": "Convert into Article Item",
+          "type": "Action",
+          "mention": "Convert into Article Item",
+          "confidence": "high"
+        },
+        {
+          "name": "Convert into Article",
+          "type": "Action",
+          "mention": "Convert into Article",
+          "confidence": "high"
+        },
+        {
+          "name": "Private section",
+          "type": "DataObject",
+          "mention": "Private section",
+          "confidence": "medium"
+        },
+        {
+          "name": "sidebar tree",
+          "type": "Feature",
+          "mention": "sidebar tree",
+          "confidence": "low"
+        },
+        {
+          "name": "article",
+          "type": "DataObject",
+          "mention": "article",
+          "confidence": "high"
+        },
+        {
+          "name": "category",
+          "type": "DataObject",
+          "mention": "category",
+          "confidence": "high"
+        },
+        {
+          "name": "command palette",
+          "type": "Feature",
+          "mention": "command palette",
+          "confidence": "low"
+        },
+        {
+          "name": "Workspace category",
+          "type": "DataObject",
+          "mention": "Workspace category",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Move To",
+          "relation": "ENABLES",
+          "target": "Move Article",
+          "evidence": "Select the article to move under a category or another article, then click Move Article."
+        },
+        {
+          "source": "Lock Content",
+          "relation": "ENABLES",
+          "target": "Unlock",
+          "evidence": "Lock the article to stop edits. Click Unlock to edit again."
+        },
+        {
+          "source": "Create a Copy",
+          "relation": "PRODUCES",
+          "target": "Private section",
+          "evidence": "Copy the article under the Private section."
+        },
+        {
+          "source": "Send to Trash",
+          "relation": "PRODUCES",
+          "target": "trash",
+          "evidence": "Move the article to the trash."
+        },
+        {
+          "source": "sidebar tree",
+          "relation": "HAS_FEATURE",
+          "target": "Move Article",
+          "evidence": "Move an article directly from the sidebar tree by dragging and dropping it under another article or category."
+        },
+        {
+          "source": "command palette",
+          "relation": "HAS_FEATURE",
+          "target": "Open Version History",
+          "evidence": "Click the fa-search (search) icon in the top-left corner or press `CTRL` / `CMD` + `K` to open the command palette, then type `?` to search for visible articles or `$` for hidden articles."
+        },
+        {
+          "source": "Workspace category",
+          "relation": "CONTAINS",
+          "target": "hidden articles",
+          "evidence": "hover over the Workspace category and click the fa-eye (eye) icon to find hidden articles."
+        },
+        {
+          "source": "Convert into Article Item",
+          "relation": "APPLIES_TO",
+          "target": "nested articles",
+          "evidence": "The following actions only apply to nested articles and article items: - Convert into Article Item: Convert the nested article into an article item."
+        },
+        {
+          "source": "Convert into Article",
+          "relation": "APPLIES_TO",
+          "target": "article item",
+          "evidence": "- Convert into Article: Convert the article item into a nested article."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sidebar-structure",
+    "heading": "Sidebar structure",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Favorites",
+          "type": "Module",
+          "mention": "Favorites category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Workspace",
+          "type": "Module",
+          "mention": "Workspace category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shared",
+          "type": "Module",
+          "mention": "Shared category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Private",
+          "type": "Module",
+          "mention": "Private category",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-star-o icon",
+          "type": "Feature",
+          "mention": "fa-star-o (star) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Favorites",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "sidebar structure"
+        },
+        {
+          "source": "Workspace",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "sidebar structure"
+        },
+        {
+          "source": "Shared",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "sidebar structure"
+        },
+        {
+          "source": "Private",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "sidebar structure"
+        },
+        {
+          "source": "fa-star-o icon",
+          "relation": "ENABLES",
+          "target": "Favorites",
+          "evidence": "To mark an article as a favorite and display the Favorites category, click the fa-star-o (star) icon."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "article-structure",
+    "heading": "Article structure",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Article",
+          "type": "DataObject",
+          "mention": "Article",
+          "confidence": "medium"
+        },
+        {
+          "name": "Parent",
+          "type": "DataObject",
+          "mention": "parent",
+          "confidence": "low"
+        },
+        {
+          "name": "Access rights",
+          "type": "Permission",
+          "mention": "access rights",
+          "confidence": "high"
+        },
+        {
+          "name": "Properties",
+          "type": "Setting",
+          "mention": "properties",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Nested articles",
+          "relation": "IS_PART_OF",
+          "target": "Parent",
+          "evidence": "Nested articles inherit their parent's access rights"
+        },
+        {
+          "source": "Nested articles",
+          "relation": "CONFIGURED_BY",
+          "target": "Access rights",
+          "evidence": "Nested articles inherit their parent's access rights"
+        },
+        {
+          "source": "Properties",
+          "relation": "APPLIES_TO",
+          "target": "Nested articles",
+          "evidence": "properties are applied to a group of nested articles"
+        },
+        {
+          "source": "Nested articles",
+          "relation": "BELONGS_TO",
+          "target": "Parent",
+          "evidence": "nested articles under the same parent"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sharing",
+    "heading": "Sharing",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sharing",
+          "type": "Module",
+          "mention": "Sharing",
+          "confidence": "high"
+        },
+        {
+          "name": "article",
+          "type": "DataObject",
+          "mention": "article",
+          "confidence": "high"
+        },
+        {
+          "name": "access rights",
+          "type": "Setting",
+          "mention": "access rights",
+          "confidence": "medium"
+        },
+        {
+          "name": "users",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "high"
+        },
+        {
+          "name": "online access",
+          "type": "Feature",
+          "mention": "online access",
+          "confidence": "medium"
+        },
+        {
+          "name": "sidebar tree",
+          "type": "Feature",
+          "mention": "sidebar tree",
+          "confidence": "medium"
+        },
+        {
+          "name": "category",
+          "type": "DataObject",
+          "mention": "category",
+          "confidence": "medium"
+        },
+        {
+          "name": "command palette",
+          "type": "Feature",
+          "mention": "command palette",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sharing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Sharing"
+        },
+        {
+          "source": "access rights",
+          "relation": "CONFIGURED_BY",
+          "target": "Sharing",
+          "evidence": "Sharing an article involves configuring access rights"
+        },
+        {
+          "source": "users",
+          "relation": "PERFORMED_BY",
+          "target": "Sharing",
+          "evidence": "inviting users"
+        },
+        {
+          "source": "online access",
+          "relation": "HAS_FEATURE",
+          "target": "Sharing",
+          "evidence": "providing online access"
+        },
+        {
+          "source": "sidebar tree",
+          "relation": "HAS_FEATURE",
+          "target": "Sharing",
+          "evidence": "determining its visibility in the sidebar tree"
+        },
+        {
+          "source": "article",
+          "relation": "IS_PART_OF",
+          "target": "category",
+          "evidence": "Articles listed under a category"
+        },
+        {
+          "source": "category",
+          "relation": "IS_PART_OF",
+          "target": "sidebar tree",
+          "evidence": "Articles listed under a category in the sidebar tree"
+        },
+        {
+          "source": "access rights",
+          "relation": "GOVERNED_BY",
+          "target": "article",
+          "evidence": "Articles that certain users must search for through the command palette due to restricted access rights are hidden"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-access-rights",
+    "heading": "Configure access rights",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Configure access rights",
+          "type": "Module",
+          "mention": "Configure access rights",
+          "confidence": "high"
+        },
+        {
+          "name": "Can Edit",
+          "type": "Setting",
+          "mention": "Can Edit",
+          "confidence": "high"
+        },
+        {
+          "name": "Can Read",
+          "type": "Setting",
+          "mention": "Can Read",
+          "confidence": "high"
+        },
+        {
+          "name": "Members only",
+          "type": "Setting",
+          "mention": "Members only",
+          "confidence": "high"
+        },
+        {
+          "name": "Show in workspace",
+          "type": "Feature",
+          "mention": "Show in workspace",
+          "confidence": "medium"
+        },
+        {
+          "name": "Everyone",
+          "type": "Setting",
+          "mention": "Everyone",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Access Rights",
+          "type": "Setting",
+          "mention": "Default Access Rights",
+          "confidence": "high"
+        },
+        {
+          "name": "Workspace",
+          "type": "Module",
+          "mention": "Workspace",
+          "confidence": "medium"
+        },
+        {
+          "name": "Private",
+          "type": "Module",
+          "mention": "Private",
+          "confidence": "medium"
+        },
+        {
+          "name": "sidebar tree",
+          "type": "Feature",
+          "mention": "sidebar tree",
+          "confidence": "low"
+        },
+        {
+          "name": "command palette",
+          "type": "Feature",
+          "mention": "command palette",
+          "confidence": "low"
+        },
+        {
+          "name": "hidden article search",
+          "type": "Feature",
+          "mention": "hidden article search",
+          "confidence": "low"
+        },
+        {
+          "name": "internal users",
+          "type": "Actor",
+          "mention": "internal users",
+          "confidence": "high"
+        },
+        {
+          "name": "members",
+          "type": "Actor",
+          "mention": "members",
+          "confidence": "high"
+        },
+        {
+          "name": "invited users",
+          "type": "Actor",
+          "mention": "invited users",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configure access rights",
+          "relation": "CONTAINS",
+          "target": "Can Edit",
+          "evidence": "Configure access rights\n**************\n.. tabs::\n   .. list-table::\n      :widths: 20 80\n      :header-rows: 1\n      :stub-columns: 1\n      * - Setting\n        - Use\n      * - Can Edit\n        - Allow all internal users to edit the article."
+        },
+        {
+          "source": "Configure access rights",
+          "relation": "CONTAINS",
+          "target": "Can Read",
+          "evidence": "Configure access rights\n**************\n.. tabs::\n   .. list-table::\n      :widths: 20 80\n      :header-rows: 1\n      :stub-columns: 1\n      * - Setting\n        - Use\n      * - Can Read\n        - Allow all internal users to read the article only."
+        },
+        {
+          "source": "Configure access rights",
+          "relation": "CONTAINS",
+          "target": "Members only",
+          "evidence": "Configure access rights\n**************\n.. tabs::\n   .. list-table::\n      :widths: 20 80\n      :header-rows: 1\n      :stub-columns: 1\n      * - Setting\n        - Use\n      * - Members only\n        - Allow only members to access the article from the sidebar tree or by searching for it in\n          the command palette."
+        },
+        {
+          "source": "Show in workspace",
+          "relation": "CONTAINS",
+          "target": "Everyone",
+          "evidence": "Show in workspace\n*****************\n.. tabs::\n   .. list-table::\n      :widths: 20 80\n      :header-rows: 1\n      :stub-columns: 1\n      * - Setting\n        - Use\n      * - Everyone\n        - The article is visible in the sidebar tree to all internal users."
+        },
+        {
+          "source": "Show in workspace",
+          "relation": "CONTAINS",
+          "target": "Members only",
+          "evidence": "Show in workspace\n*****************\n.. tabs::\n   .. list-table::\n      :widths: 20 80\n      :header-rows: 1\n      :stub-columns: 1\n      * - Setting\n        - Use\n      * - Members only\n        - The article is only visible in the sidebar tree to members\n          <knowledge/articles_editing/invite>, while other users can find it using the hidden\n          article search by pressing `CTRL` / `CMD` + `K` and typing `$`."
+        },
+        {
+          "source": "Can Edit",
+          "relation": "APPLIES_TO",
+          "target": "internal users",
+          "evidence": "Allow all internal users to edit the article."
+        },
+        {
+          "source": "Can Read",
+          "relation": "APPLIES_TO",
+          "target": "internal users",
+          "evidence": "Allow all internal users to read the article only."
+        },
+        {
+          "source": "Members only",
+          "relation": "APPLIES_TO",
+          "target": "members",
+          "evidence": "Allow only members to access the article from the sidebar tree or by searching for it in\n          the command palette."
+        },
+        {
+          "source": "Everyone",
+          "relation": "APPLIES_TO",
+          "target": "internal users",
+          "evidence": "The article is visible in the sidebar tree to all internal users."
+        },
+        {
+          "source": "Members only",
+          "relation": "APPLIES_TO",
+          "target": "members",
+          "evidence": "The article is only visible in the sidebar tree to members\n          <knowledge/articles_editing/invite>, while other users can find it using the hidden\n          article search by pressing `CTRL` / `CMD` + `K` and typing `$`."
+        },
+        {
+          "source": "Default Access Rights",
+          "relation": "APPLIES_TO",
+          "target": "internal users",
+          "evidence": "The Default Access Rights apply to all internal users except invited users;"
+        },
+        {
+          "source": "Default Access Rights",
+          "relation": "APPLIES_TO",
+          "target": "invited users",
+          "evidence": "The Default Access Rights apply to all internal users except invited users;"
+        },
+        {
+          "source": "Can Edit",
+          "relation": "GENERATES",
+          "target": "Workspace",
+          "evidence": "Selecting `Can edit` or `Can read` in the Default Access Rights moves the article\n     to the Workspace category"
+        },
+        {
+          "source": "Can Read",
+          "relation": "GENERATES",
+          "target": "Workspace",
+          "evidence": "Selecting `Can edit` or `Can read` in the Default Access Rights moves the article\n     to the Workspace category"
+        },
+        {
+          "source": "Default Access Rights",
+          "relation": "CONTAINS",
+          "target": "No access",
+          "evidence": "while selecting `No access` moves it to the\n     Private category"
+        },
+        {
+          "source": "No access",
+          "relation": "GENERATES",
+          "target": "Private",
+          "evidence": "while selecting `No access` moves it to the\n     Private category"
+        },
+        {
+          "source": "Default Access Rights",
+          "relation": "CONFIGURED_BY",
+          "target": "Can Edit",
+          "evidence": "Selecting `Can edit` or `Can read` in the Default Access Rights"
+        },
+        {
+          "source": "Default Access Rights",
+          "relation": "CONFIGURED_BY",
+          "target": "Can Read",
+          "evidence": "Selecting `Can edit` or `Can read` in the Default Access Rights"
+        },
+        {
+          "source": "Default Access Rights",
+          "relation": "CONFIGURED_BY",
+          "target": "No access",
+          "evidence": "while selecting `No access`"
+        },
+        {
+          "source": "Everyone",
+          "relation": "CONTAINS",
+          "target": "sidebar tree",
+          "evidence": "The article is visible in the sidebar tree to all internal users."
+        },
+        {
+          "source": "Members only",
+          "relation": "CONTAINS",
+          "target": "sidebar tree",
+          "evidence": "The article is only visible in the sidebar tree to members"
+        },
+        {
+          "source": "Members only",
+          "relation": "CONTAINS",
+          "target": "command palette",
+          "evidence": "Allow only members to access the article from the sidebar tree or by searching for it in\n          the command palette."
+        },
+        {
+          "source": "hidden article search",
+          "relation": "CONTAINS",
+          "target": "command palette",
+          "evidence": "while other users can find it using the hidden\n          article search by pressing `CTRL` / `CMD` + `K` and typing `$`."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invite-specific-users",
+    "heading": "Invite specific users",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Share",
+          "type": "Action",
+          "mention": "Click Share",
+          "confidence": "high"
+        },
+        {
+          "name": "Invite",
+          "type": "Action",
+          "mention": "Click Invite",
+          "confidence": "high"
+        },
+        {
+          "name": "Permission",
+          "type": "Permission",
+          "mention": "Select the preferred Permission",
+          "confidence": "high"
+        },
+        {
+          "name": "Recipients field",
+          "type": "Field",
+          "mention": "Recipients field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Share",
+          "relation": "ENABLES",
+          "target": "Invite",
+          "evidence": "Click Share in the top-right menu."
+        },
+        {
+          "source": "Invite",
+          "relation": "PERFORMED_BY",
+          "target": "Recipients field",
+          "evidence": "add users in the Recipients field."
+        },
+        {
+          "source": "Invite",
+          "relation": "CONFIGURED_BY",
+          "target": "Permission",
+          "evidence": "Select the preferred Permission"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "generate-article-url",
+    "heading": "Generate article URL",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Share",
+          "type": "Action",
+          "mention": "click Share",
+          "confidence": "high"
+        },
+        {
+          "name": "Share to web toggle",
+          "type": "Setting",
+          "mention": "Share to web toggle",
+          "confidence": "high"
+        },
+        {
+          "name": "Copy Link",
+          "type": "Action",
+          "mention": "Click Copy Link",
+          "confidence": "high"
+        },
+        {
+          "name": "article",
+          "type": "DataObject",
+          "mention": "article",
+          "confidence": "high"
+        },
+        {
+          "name": "article's URL",
+          "type": "Field",
+          "mention": "article's URL",
+          "confidence": "high"
+        },
+        {
+          "name": "Website app",
+          "type": "Module",
+          "mention": "Website app",
+          "confidence": "high"
+        },
+        {
+          "name": "inserted views",
+          "type": "Feature",
+          "mention": "inserted views",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "article",
+          "relation": "CONFIGURED_BY",
+          "target": "Share to web toggle",
+          "evidence": "activate the Share to web toggle"
+        },
+        {
+          "source": "Share",
+          "relation": "GENERATES",
+          "target": "article's URL",
+          "evidence": "click Share to generate a URL"
+        },
+        {
+          "source": "Copy Link",
+          "relation": "PERFORMS",
+          "target": "Copy Link",
+          "evidence": "Click Copy Link to copy the article's URL"
+        },
+        {
+          "source": "article's URL",
+          "relation": "REQUIRES",
+          "target": "Website app",
+          "evidence": "Having the Website app is necessary to share an article's URL"
+        },
+        {
+          "source": "article",
+          "relation": "HAS_FEATURE",
+          "target": "inserted views",
+          "evidence": "If an article contains inserted views"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "removal",
+    "heading": "Removal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Removal",
+          "type": "Feature",
+          "mention": "Title: Removal",
+          "confidence": "medium"
+        },
+        {
+          "name": "article",
+          "type": "DataObject",
+          "mention": "article",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Removal",
+          "evidence": "Product: Odoo, Title: Removal"
+        },
+        {
+          "source": "Removal",
+          "relation": "CONTAINS",
+          "target": "article",
+          "evidence": "Removing an article involves"
+        },
+        {
+          "source": "article",
+          "relation": "APPLIES_TO",
+          "target": "Removal",
+          "evidence": "Removing an article involves"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "delete-an-article",
+    "heading": "Delete an article",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Delete an article",
+          "type": "Action",
+          "mention": "Delete an article",
+          "confidence": "high"
+        },
+        {
+          "name": "Send to Trash",
+          "type": "Action",
+          "mention": "Send to Trash",
+          "confidence": "high"
+        },
+        {
+          "name": "article",
+          "type": "DataObject",
+          "mention": "an article",
+          "confidence": "high"
+        },
+        {
+          "name": "trash",
+          "type": "Concept",
+          "mention": "trash",
+          "confidence": "high"
+        },
+        {
+          "name": "Drop here to delete this article",
+          "type": "Action",
+          "mention": "Drop here to delete this article",
+          "confidence": "high"
+        },
+        {
+          "name": "Delete",
+          "type": "Action",
+          "mention": "Delete",
+          "confidence": "high"
+        },
+        {
+          "name": "Actions",
+          "type": "Action",
+          "mention": "Actions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Open the Trash",
+          "type": "Action",
+          "mention": "Open the Trash",
+          "confidence": "high"
+        },
+        {
+          "name": "Restore",
+          "type": "Action",
+          "mention": "Restore",
+          "confidence": "high"
+        },
+        {
+          "name": "Filters",
+          "type": "Action",
+          "mention": "Filters",
+          "confidence": "medium"
+        },
+        {
+          "name": "Trashed",
+          "type": "Concept",
+          "mention": "Trashed",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Delete an article",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Select an article in the sidebar tree and click the fa-ellipsis-v (More actions) icon"
+        },
+        {
+          "source": "Send to Trash",
+          "relation": "BELONGS_TO",
+          "target": "Delete an article",
+          "evidence": "Select an article... then Send to Trash"
+        },
+        {
+          "source": "article",
+          "relation": "IS_PART_OF",
+          "target": "trash",
+          "evidence": "The article is moved to the trash"
+        },
+        {
+          "source": "trash",
+          "relation": "CONTAINS",
+          "target": "article",
+          "evidence": "The article is moved to the trash"
+        },
+        {
+          "source": "Delete",
+          "relation": "PRODUCES",
+          "target": "article",
+          "evidence": "click Delete to confirm the deletion of the article"
+        },
+        {
+          "source": "Delete",
+          "relation": "BELONGS_TO",
+          "target": "Actions",
+          "evidence": "click Actions --> Delete"
+        },
+        {
+          "source": "Restore",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "select an article, and click Restore"
+        },
+        {
+          "source": "Trashed",
+          "relation": "BELONGS_TO",
+          "target": "Filters",
+          "evidence": "click Filters --> Trashed"
+        },
+        {
+          "source": "Open the Trash",
+          "relation": "ENABLES",
+          "target": "Restore",
+          "evidence": "To restore a trashed article, click Open the Trash... select an article, and click Restore"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "archive-an-article",
+    "heading": "Archive an article",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Articles",
+          "type": "Module",
+          "mention": "Articles",
+          "confidence": "high"
+        },
+        {
+          "name": "Archive an article",
+          "type": "Workflow",
+          "mention": "Archive an article",
+          "confidence": "high"
+        },
+        {
+          "name": "Actions",
+          "type": "Module",
+          "mention": "Actions",
+          "confidence": "high"
+        },
+        {
+          "name": "Archive",
+          "type": "Action",
+          "mention": "Archive",
+          "confidence": "high"
+        },
+        {
+          "name": "pop-up window",
+          "type": "Feature",
+          "mention": "pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters",
+          "type": "Module",
+          "mention": "Filters",
+          "confidence": "high"
+        },
+        {
+          "name": "Archived",
+          "type": "Setting",
+          "mention": "Archived",
+          "confidence": "medium"
+        },
+        {
+          "name": "Unarchive",
+          "type": "Action",
+          "mention": "Unarchive",
+          "confidence": "high"
+        },
+        {
+          "name": "restore an archived article",
+          "type": "Workflow",
+          "mention": "restore an archived article",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Articles",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Click Articles"
+        },
+        {
+          "source": "Archive an article",
+          "relation": "IS_PART_OF",
+          "target": "Articles",
+          "evidence": "Click Articles, select an article"
+        },
+        {
+          "source": "Archive an article",
+          "relation": "CONTAINS",
+          "target": "Actions",
+          "evidence": "click Actions"
+        },
+        {
+          "source": "Archive",
+          "relation": "PERFORMED_BY",
+          "target": "Archive an article",
+          "evidence": "click Archive"
+        },
+        {
+          "source": "Filters",
+          "relation": "BELONGS_TO",
+          "target": "Articles",
+          "evidence": "In the search bar, click Filters"
+        },
+        {
+          "source": "Archived",
+          "relation": "CONFIGURED_BY",
+          "target": "Filters",
+          "evidence": "Filters --> Archived"
+        },
+        {
+          "source": "Unarchive",
+          "relation": "PERFORMED_BY",
+          "target": "restore an archived article",
+          "evidence": "Actions --> Unarchive"
+        },
+        {
+          "source": "restore an archived article",
+          "relation": "IS_PART_OF",
+          "target": "Articles",
+          "evidence": "To restore an archived article, click Articles."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "retrieval",
+    "heading": "Retrieval",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Knowledge articles",
+          "type": "DataObject",
+          "mention": "Knowledge articles",
+          "confidence": "high"
+        },
+        {
+          "name": "Retrieval",
+          "type": "Feature",
+          "mention": "Retrieving",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo apps",
+          "type": "Module",
+          "mention": "Odoo apps",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Knowledge articles",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Retrieving Knowledge articles consists of accessing them from Odoo apps"
+        },
+        {
+          "source": "Retrieval",
+          "relation": "HAS_FEATURE",
+          "target": "Knowledge articles",
+          "evidence": "Retrieving Knowledge articles consists of accessing them from Odoo apps or restoring previous versions."
+        },
+        {
+          "source": "Retrieval",
+          "relation": "IS_PART_OF",
+          "target": "Odoo apps",
+          "evidence": "Retrieving Knowledge articles consists of accessing them from Odoo apps"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "access-articles-from-odoo-apps",
+    "heading": "Access articles from Odoo apps",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "form view",
+          "type": "Feature",
+          "mention": "form view",
+          "confidence": "high"
+        },
+        {
+          "name": "Knowledge",
+          "type": "Module",
+          "mention": "Knowledge",
+          "confidence": "medium"
+        },
+        {
+          "name": "command palette",
+          "type": "Feature",
+          "mention": "command palette",
+          "confidence": "medium"
+        },
+        {
+          "name": "semantic search",
+          "type": "Feature",
+          "mention": "semantic search",
+          "confidence": "medium"
+        },
+        {
+          "name": "Advanced Search",
+          "type": "Feature",
+          "mention": "Advanced Search",
+          "confidence": "medium"
+        },
+        {
+          "name": "parametric search",
+          "type": "Feature",
+          "mention": "parametric search",
+          "confidence": "medium"
+        },
+        {
+          "name": "filter",
+          "type": "Action",
+          "mention": "filter",
+          "confidence": "low"
+        },
+        {
+          "name": "group",
+          "type": "Action",
+          "mention": "group",
+          "confidence": "low"
+        },
+        {
+          "name": "save articles",
+          "type": "Action",
+          "mention": "save articles",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Knowledge",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Access articles from Odoo apps"
+        },
+        {
+          "source": "form view",
+          "relation": "HAS_FEATURE",
+          "target": "command palette",
+          "evidence": "Click the fa-bookmark (Knowledge) icon in the top right corner to open the command palette"
+        },
+        {
+          "source": "command palette",
+          "relation": "ENABLES",
+          "target": "semantic search",
+          "evidence": "open the command palette, then choose one of the following search methods: Search for an article: start typing the text"
+        },
+        {
+          "source": "command palette",
+          "relation": "ENABLES",
+          "target": "Advanced Search",
+          "evidence": "open the command palette, then choose one of the following search methods: Advanced Search"
+        },
+        {
+          "source": "Advanced Search",
+          "relation": "ENABLES",
+          "target": "parametric search",
+          "evidence": "click Advanced Search to perform a parametric search"
+        },
+        {
+          "source": "parametric search",
+          "relation": "ENABLES",
+          "target": "filter",
+          "evidence": "parametric search with options to filter"
+        },
+        {
+          "source": "parametric search",
+          "relation": "ENABLES",
+          "target": "group",
+          "evidence": "parametric search with options to group"
+        },
+        {
+          "source": "parametric search",
+          "relation": "ENABLES",
+          "target": "save articles",
+          "evidence": "parametric search with options to save articles"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "version-history",
+    "heading": "Version history",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "version history",
+          "type": "Feature",
+          "mention": "version history",
+          "confidence": "medium"
+        },
+        {
+          "name": "article",
+          "type": "DataObject",
+          "mention": "article",
+          "confidence": "high"
+        },
+        {
+          "name": "sidebar tree",
+          "type": "Feature",
+          "mention": "sidebar tree",
+          "confidence": "low"
+        },
+        {
+          "name": "Open Version History",
+          "type": "Action",
+          "mention": "Open Version History",
+          "confidence": "high"
+        },
+        {
+          "name": "Restore history",
+          "type": "Action",
+          "mention": "Restore history",
+          "confidence": "high"
+        },
+        {
+          "name": "Content tab",
+          "type": "Feature",
+          "mention": "Content tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Comparison tab",
+          "type": "Feature",
+          "mention": "Comparison tab",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "version history",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "section discusses feature within Product: Odoo"
+        },
+        {
+          "source": "Open Version History",
+          "relation": "PERFORMED_BY",
+          "target": "Article",
+          "evidence": "Open Version History action performed on the article"
+        },
+        {
+          "source": "Restore history",
+          "relation": "PERFORMED_BY",
+          "target": "Article",
+          "evidence": "Restore history action performed on the article"
+        },
+        {
+          "source": "Content tab",
+          "relation": "IS_PART_OF",
+          "target": "version history",
+          "evidence": "Content tab is a part of the version history feature"
+        },
+        {
+          "source": "Comparison tab",
+          "relation": "IS_PART_OF",
+          "target": "version history",
+          "evidence": "Comparison tab is a part of the version history feature"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "properties",
+    "heading": "Properties",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Properties",
+          "type": "Feature",
+          "mention": "Properties",
+          "confidence": "high"
+        },
+        {
+          "name": "custom fields",
+          "type": "Feature",
+          "mention": "custom fields",
+          "confidence": "medium"
+        },
+        {
+          "name": "knowledge/articles_editing/create-article",
+          "type": "Unknown",
+          "mention": "nested articles",
+          "confidence": "low"
+        },
+        {
+          "name": "article items",
+          "type": "Unknown",
+          "mention": "article items",
+          "confidence": "low"
+        },
+        {
+          "name": "Add a Property",
+          "type": "Action",
+          "mention": "Add a Property",
+          "confidence": "high"
+        },
+        {
+          "name": "Label",
+          "type": "Field",
+          "mention": "Label",
+          "confidence": "high"
+        },
+        {
+          "name": "Field Type",
+          "type": "Field",
+          "mention": "Field Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Display in Cards",
+          "type": "Setting",
+          "mention": "Display in Cards",
+          "confidence": "high"
+        },
+        {
+          "name": "property sidebar panel",
+          "type": "Unknown",
+          "mention": "property sidebar panel",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Properties",
+          "relation": "ENABLES",
+          "target": "custom fields",
+          "evidence": "Properties are custom fields for storing and managing information"
+        },
+        {
+          "source": "Add a Property",
+          "relation": "PRODUCES",
+          "target": "Properties",
+          "evidence": "To add a property, click ... then Add Properties --> Add a Property"
+        },
+        {
+          "source": "Add a Property",
+          "relation": "REQUIRES",
+          "target": "Label",
+          "evidence": "enter a Label"
+        },
+        {
+          "source": "Add a Property",
+          "relation": "REQUIRES",
+          "target": "Field Type",
+          "evidence": "select a Field Type"
+        },
+        {
+          "source": "Properties",
+          "relation": "CONFIGURED_BY",
+          "target": "Display in Cards",
+          "evidence": "Tick Display in Cards to show the properties in an article item's view"
+        },
+        {
+          "source": "Display in Cards",
+          "relation": "APPLIES_TO",
+          "target": "article items",
+          "evidence": "Tick Display in Cards to show the properties in an article item's view"
+        }
+      ]
+    }
+  }
+]

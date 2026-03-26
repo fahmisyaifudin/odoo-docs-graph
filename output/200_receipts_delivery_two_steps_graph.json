@@ -1,0 +1,1252 @@
+[
+  {
+    "section_id": "two-step-receipt-and-delivery",
+    "heading": "Two-step receipt and delivery",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Two-step receipt",
+          "type": "Workflow",
+          "mention": "two-step receipt process",
+          "confidence": "high"
+        },
+        {
+          "name": "Two-step delivery",
+          "type": "Workflow",
+          "mention": "two-step delivery process",
+          "confidence": "high"
+        },
+        {
+          "name": "receiving",
+          "type": "Action",
+          "mention": "receiving",
+          "confidence": "medium"
+        },
+        {
+          "name": "shipping",
+          "type": "Action",
+          "mention": "shipping",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse",
+          "type": "Actor",
+          "mention": "warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "FIFO",
+          "type": "Standard",
+          "mention": "First In, First Out (FIFO)",
+          "confidence": "high"
+        },
+        {
+          "name": "LIFO",
+          "type": "Standard",
+          "mention": "Last In, First Out (LIFO)",
+          "confidence": "high"
+        },
+        {
+          "name": "FEFO",
+          "type": "Standard",
+          "mention": "First Expired, First Out (FEFO)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "In Odoo *Inventory*"
+        },
+        {
+          "source": "Inventory",
+          "relation": "HAS_FEATURE",
+          "target": "Multi-Step Routes",
+          "evidence": "In Odoo *Inventory*, this can be done using *Multi-Step Routes*"
+        },
+        {
+          "source": "Two-step receipt",
+          "relation": "CONFIGURED_BY",
+          "target": "warehouse's settings",
+          "evidence": "warehouse's settings can be configured"
+        },
+        {
+          "source": "Two-step delivery",
+          "relation": "CONFIGURED_BY",
+          "target": "warehouse's settings",
+          "evidence": "warehouse's settings can be configured"
+        },
+        {
+          "source": "company",
+          "relation": "USES_METHOD",
+          "target": "FIFO",
+          "evidence": "companies using a First In, First Out (FIFO)"
+        },
+        {
+          "source": "company",
+          "relation": "USES_METHOD",
+          "target": "LIFO",
+          "evidence": "companies using ... Last In, First Out (LIFO)"
+        },
+        {
+          "source": "company",
+          "relation": "USES_METHOD",
+          "target": "FEFO",
+          "evidence": "companies using ... First Expired, First Out (FEFO)"
+        },
+        {
+          "source": "employee",
+          "relation": "PERFORMED_BY",
+          "target": "receiving",
+          "evidence": "employees can stock"
+        },
+        {
+          "source": "employee",
+          "relation": "PERFORMED_BY",
+          "target": "shipping",
+          "evidence": "employees can stock"
+        },
+        {
+          "source": "Two-step receipt",
+          "relation": "RELATED_TO",
+          "target": "receiving",
+          "evidence": "receiving ... products"
+        },
+        {
+          "source": "Two-step delivery",
+          "relation": "RELATED_TO",
+          "target": "shipping",
+          "evidence": "shipping ... products"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Configuration --> Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "DataObject",
+          "mention": "warehouse",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouses",
+          "type": "Module",
+          "mention": "Warehouses",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse Configuration",
+          "type": "Sub-module",
+          "mention": "Warehouse Configuration tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Incoming Shipments",
+          "type": "Workflow",
+          "mention": "Incoming Shipments",
+          "confidence": "high"
+        },
+        {
+          "name": "Receive goods in input and then stock (2 steps)",
+          "type": "Workflow",
+          "mention": "Receive goods in input and then stock (2 steps)",
+          "confidence": "high"
+        },
+        {
+          "name": "Outgoing Shipments",
+          "type": "Workflow",
+          "mention": "Outgoing Shipments",
+          "confidence": "high"
+        },
+        {
+          "name": "Send goods in output and then deliver (2 steps)",
+          "type": "Workflow",
+          "mention": "Send goods in output and then deliver (2 steps)",
+          "confidence": "high"
+        },
+        {
+          "name": "Input",
+          "type": "DataObject",
+          "mention": "Input",
+          "confidence": "high"
+        },
+        {
+          "name": "Output",
+          "type": "DataObject",
+          "mention": "Output",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Input",
+          "type": "Field",
+          "mention": "WH/Input",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Output",
+          "type": "Field",
+          "mention": "WH/Output",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations",
+          "type": "Module",
+          "mention": "Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Location Name",
+          "type": "Field",
+          "mention": "Location Name",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Multi-Step Routes",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "To enable Multi-Step Routes, navigate to Inventory app --> Configuration --> Settings."
+        },
+        {
+          "source": "Multi-Step Routes",
+          "relation": "ENABLES",
+          "target": "Storage Locations",
+          "evidence": "Doing so also activates the Storage Locations feature."
+        },
+        {
+          "source": "Warehouse",
+          "relation": "HAS_FEATURE",
+          "target": "Incoming Shipments",
+          "evidence": "Under the Warehouse Configuration tab, set Incoming Shipments to Receive goods in input and then stock (2 steps)"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "HAS_FEATURE",
+          "target": "Outgoing Shipments",
+          "evidence": "and set Outgoing Shipments to Send goods in output and then deliver (2 steps)."
+        },
+        {
+          "source": "Receive goods in input and then stock (2 steps)",
+          "relation": "TRIGGERED_BY",
+          "target": "Incoming Shipments",
+          "evidence": "Under the Warehouse Configuration tab, set Incoming Shipments to Receive goods in input and then stock (2 steps)"
+        },
+        {
+          "source": "Send goods in output and then deliver (2 steps)",
+          "relation": "TRIGGERED_BY",
+          "target": "Outgoing Shipments",
+          "evidence": "set Outgoing Shipments to Send goods in output and then deliver (2 steps)."
+        },
+        {
+          "source": "Receive goods in input and then stock (2 steps)",
+          "relation": "GENERATES",
+          "target": "Input",
+          "evidence": "Selecting two-step receipts and deliveries automatically creates new Input and Output warehouse locations in the database"
+        },
+        {
+          "source": "Send goods in output and then deliver (2 steps)",
+          "relation": "GENERATES",
+          "target": "Output",
+          "evidence": "Selecting two-step receipts and deliveries automatically creates new Input and Output warehouse locations in the database"
+        },
+        {
+          "source": "Receive goods in input and then stock (2 steps)",
+          "relation": "GENERATES",
+          "target": "WH/Input",
+          "evidence": "named WH/Input and WH/Output, respectively."
+        },
+        {
+          "source": "Send goods in output and then deliver (2 steps)",
+          "relation": "GENERATES",
+          "target": "WH/Output",
+          "evidence": "named WH/Input and WH/Output, respectively."
+        },
+        {
+          "source": "Locations",
+          "relation": "CONTAINS",
+          "target": "Location Name",
+          "evidence": "On the location's form, change the Location Name"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-receipt-in-two-steps-(input-+-stock)",
+    "heading": "Process receipt in two steps (input + stock)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Process receipt in two steps",
+          "type": "Workflow",
+          "mention": "Process receipt in two steps",
+          "confidence": "high"
+        },
+        {
+          "name": "Input location",
+          "type": "DataObject",
+          "mention": "input location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor location",
+          "type": "DataObject",
+          "mention": "vendor location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warehouse stock",
+          "type": "DataObject",
+          "mention": "warehouse stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "medium"
+        },
+        {
+          "name": "PO",
+          "type": "DataObject",
+          "mention": "PO",
+          "confidence": "medium"
+        },
+        {
+          "name": "Internal transfer",
+          "type": "Workflow",
+          "mention": "internal transfer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validation",
+          "type": "Action",
+          "mention": "validation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Process receipt in two steps",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Process receipt in two steps",
+          "relation": "CONTAINS",
+          "target": "Input location",
+          "evidence": "they first move from the vendor location to an input location"
+        },
+        {
+          "source": "Process receipt in two steps",
+          "relation": "CONTAINS",
+          "target": "Vendor location",
+          "evidence": "they first move from the vendor location"
+        },
+        {
+          "source": "Process receipt in two steps",
+          "relation": "CONTAINS",
+          "target": "Warehouse stock",
+          "evidence": "Then, they move from the input location to warehouse stock"
+        },
+        {
+          "source": "Process receipt in two steps",
+          "relation": "TRIGGERED_BY",
+          "target": "Validation",
+          "evidence": "upon validation of a purchase order"
+        },
+        {
+          "source": "Validation",
+          "relation": "PERFORMED_BY",
+          "target": "Purchase order",
+          "evidence": "validation of a purchase order"
+        },
+        {
+          "source": "Purchase order",
+          "relation": "EQUIVALENT_TO",
+          "target": "PO",
+          "evidence": "PO"
+        },
+        {
+          "source": "Process receipt in two steps",
+          "relation": "CONTAINS",
+          "target": "Internal transfer",
+          "evidence": "and a subsequent internal transfer"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-purchase-order",
+    "heading": "Create purchase order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Request for Quotation (RfQ)",
+          "type": "DataObject",
+          "mention": "Request for Quotation (RfQ)",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Order",
+          "type": "Action",
+          "mention": "Confirm Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "Purchase Order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipt smart button",
+          "type": "Feature",
+          "mention": "Receipt smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse receipt (WH/IN)",
+          "type": "DataObject",
+          "mention": "warehouse receipt (WH/IN)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Deliver To field",
+          "type": "Field",
+          "mention": "Deliver To field",
+          "confidence": "medium"
+        },
+        {
+          "name": "input location",
+          "type": "Concept",
+          "mention": "input location",
+          "confidence": "low"
+        },
+        {
+          "name": "warehouse",
+          "type": "Actor",
+          "mention": "warehouse",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase Order",
+          "relation": "EQUIVALENT_TO",
+          "target": "Request for Quotation (RfQ)",
+          "evidence": "This moves the  to the Purchase Order stage."
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "TRIGGERED_BY",
+          "target": "Purchase Order",
+          "evidence": "Once ready, click Confirm Order. This moves the  to the Purchase Order stage."
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "GENERATES",
+          "target": "Receipt smart button",
+          "evidence": "Once the  is confirmed, a Receipt smart button appears at the top of the form."
+        },
+        {
+          "source": "Receipt smart button",
+          "relation": "ENABLES",
+          "target": "warehouse receipt (WH/IN)",
+          "evidence": "Clicking the smart button opens the warehouse receipt (WH/IN) form."
+        },
+        {
+          "source": "Deliver To field",
+          "relation": "RELATED_TO",
+          "target": "warehouse",
+          "evidence": "For businesses with multiple warehouses... the Deliver To field on the  form **must** be specified as the correct *input location* connected to the two-step warehouse."
+        },
+        {
+          "source": "warehouse",
+          "relation": "RELATED_TO",
+          "target": "input location",
+          "evidence": "...the Deliver To field on the  form **must** be specified as the correct *input location* connected to the two-step warehouse."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-receipt",
+    "heading": "Process receipt",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Warehouse receipt form",
+          "type": "DataObject",
+          "mention": "warehouse receipt form",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Done",
+          "type": "Workflow",
+          "mention": "Done stage",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Input",
+          "type": "Field",
+          "mention": "WH/Input location",
+          "confidence": "high"
+        },
+        {
+          "name": "Received",
+          "type": "Field",
+          "mention": "Received column",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "ordered Quantity",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Warehouse receipt form",
+          "relation": "PRODUCES",
+          "target": "Validate",
+          "evidence": "From the warehouse receipt form, the products ordered can be received into the warehouse. To receive the products, click Validate."
+        },
+        {
+          "source": "Validate",
+          "relation": "TRIGGERED_BY",
+          "target": "Warehouse receipt form",
+          "evidence": "From the warehouse receipt form, the products ordered can be received into the warehouse. To receive the products, click Validate."
+        },
+        {
+          "source": "Validate",
+          "relation": "ENABLES",
+          "target": "Done",
+          "evidence": "Once validated, the receipt moves to the Done stage."
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "To receive the products, click Validate."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-internal-transfer",
+    "heading": "Process internal transfer",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal Transfers",
+          "type": "Feature",
+          "mention": "Internal Transfers",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal transfer",
+          "type": "Workflow",
+          "mention": "Process internal transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "To Process button",
+          "type": "Action",
+          "mention": "Click the # To Process button",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "click Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Input",
+          "type": "Concept",
+          "mention": "WH/Input",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/Stock",
+          "type": "Concept",
+          "mention": "WH/Stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipt",
+          "type": "DataObject",
+          "mention": "receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Internal Transfers",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "navigate to the Inventory app, and locate the Internal Transfers task card"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Product: Odoo; navigate to the Inventory app"
+        },
+        {
+          "source": "Internal transfer",
+          "relation": "TRIGGERED_BY",
+          "target": "Receipt",
+          "evidence": "Once the receipt is validated, an internal transfer is created"
+        },
+        {
+          "source": "Internal Transfers",
+          "relation": "HAS_FEATURE",
+          "target": "To Process button",
+          "evidence": "Click the # To Process button on the task card"
+        },
+        {
+          "source": "To Process button",
+          "relation": "ENABLES",
+          "target": "Internal transfer",
+          "evidence": "Click the # To Process button... select the transfer"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "Product",
+          "evidence": "click Validate to complete the transfer, and move the product"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "WH/Stock",
+          "evidence": "move the product from WH/Input to WH/Stock"
+        },
+        {
+          "source": "Validate",
+          "relation": "TRIGGERED_BY",
+          "target": "Internal transfer",
+          "evidence": "Once ready, click Validate to complete the transfer"
+        },
+        {
+          "source": "Product",
+          "relation": "RELATED_TO",
+          "target": "Customer deliveries",
+          "evidence": "products are available for customer deliveries"
+        },
+        {
+          "source": "Product",
+          "relation": "RELATED_TO",
+          "target": "Manufacturing orders",
+          "evidence": "products are available for manufacturing orders"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-delivery-order-in-two-steps-(pick-+-ship)",
+    "heading": "Process delivery order in two steps (pick + ship)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order (DO)",
+          "type": "DataObject",
+          "mention": "delivery order (DO)",
+          "confidence": "high"
+        },
+        {
+          "name": "picking order",
+          "type": "DataObject",
+          "mention": "picking order",
+          "confidence": "high"
+        },
+        {
+          "name": "Process delivery order in two steps (pick + ship)",
+          "type": "Workflow",
+          "mention": "Process delivery order in two steps (pick + ship)",
+          "confidence": "high"
+        },
+        {
+          "name": "validation",
+          "type": "Action",
+          "mention": "validation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Process delivery order in two steps (pick + ship)",
+          "evidence": "Title is part of product documentation"
+        },
+        {
+          "source": "Process delivery order in two steps (pick + ship)",
+          "relation": "TRIGGERED_BY",
+          "target": "validation",
+          "evidence": "They move... upon validation of a picking order"
+        },
+        {
+          "source": "Process delivery order in two steps (pick + ship)",
+          "relation": "PRODUCES",
+          "target": "delivery order (DO)",
+          "evidence": "they move... upon validation... and a subsequent delivery order (DO)"
+        },
+        {
+          "source": "Process delivery order in two steps (pick + ship)",
+          "relation": "TRIGGERED_BY",
+          "target": "picking order",
+          "evidence": "upon validation of a picking order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-sales-order",
+    "heading": "Create sales order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "Sales Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer field",
+          "type": "Field",
+          "mention": "Customer field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order Lines tab",
+          "type": "Field",
+          "mention": "Order Lines tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order stage",
+          "type": "Feature",
+          "mention": "Sales Order stage",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Feature",
+          "mention": "Delivery smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse delivery (WH/OUT) form",
+          "type": "DataObject",
+          "mention": "warehouse delivery (WH/OUT) form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales Order",
+          "relation": "BELONGS_TO",
+          "target": "Sales app",
+          "evidence": "To create a , navigate to the Sales app"
+        },
+        {
+          "source": "Sales Order",
+          "relation": "CONTAINS",
+          "target": "Customer field",
+          "evidence": "Add a customer in the Customer field"
+        },
+        {
+          "source": "Sales Order",
+          "relation": "CONTAINS",
+          "target": "Order Lines tab",
+          "evidence": "Under the Order Lines tab"
+        },
+        {
+          "source": "Sales Order",
+          "relation": "HAS_FEATURE",
+          "target": "Sales Order stage",
+          "evidence": "This moves the quotation to the Sales Order stage"
+        },
+        {
+          "source": "Sales Order",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery smart button",
+          "evidence": "Once the  is confirmed, a Delivery smart button appears"
+        },
+        {
+          "source": "Order Lines tab",
+          "relation": "ENABLES",
+          "target": "Add a product",
+          "evidence": "Under the Order Lines tab, click Add a product"
+        },
+        {
+          "source": "Add a product",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "click Add a product"
+        },
+        {
+          "source": "Confirm",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "click Confirm"
+        },
+        {
+          "source": "Confirm",
+          "relation": "TRIGGERED_BY",
+          "target": "Add a product",
+          "evidence": "Once ready, click Confirm"
+        },
+        {
+          "source": "Confirm",
+          "relation": "PRODUCES",
+          "target": "Sales Order stage",
+          "evidence": "This moves the quotation to the Sales Order stage"
+        },
+        {
+          "source": "Delivery smart button",
+          "relation": "ENABLES",
+          "target": "warehouse delivery (WH/OUT) form",
+          "evidence": "Clicking the smart button opens the warehouse delivery (WH/OUT) form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-picking",
+    "heading": "Process picking",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Overview dashboard",
+          "type": "Module",
+          "mention": "Inventory Overview dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Pick task card",
+          "type": "Sub-module",
+          "mention": "Pick task card",
+          "confidence": "medium"
+        },
+        {
+          "name": "picking order",
+          "type": "DataObject",
+          "mention": "picking order",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Feature",
+          "mention": "Delivery smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order form",
+          "type": "Feature",
+          "mention": "sales order form",
+          "confidence": "high"
+        },
+        {
+          "name": "Process picking",
+          "type": "Workflow",
+          "mention": "Process picking",
+          "confidence": "high"
+        },
+        {
+          "name": "To Process button",
+          "type": "Action",
+          "mention": "To Process button",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity column",
+          "type": "Field",
+          "mention": "Quantity column",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand column",
+          "type": "Field",
+          "mention": "Demand column",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "sales order",
+          "relation": "GENERATES",
+          "target": "picking order",
+          "evidence": "Once the sales order is confirmed, a picking order is generated"
+        },
+        {
+          "source": "Pick task card",
+          "relation": "CONTAINS",
+          "target": "To Process button",
+          "evidence": "click the # To Process button on the Pick task card"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Inventory Overview dashboard",
+          "evidence": "navigate to the Inventory app, and locate the Pick task card on the Inventory Overview dashboard"
+        },
+        {
+          "source": "Inventory Overview dashboard",
+          "relation": "CONTAINS",
+          "target": "Pick task card",
+          "evidence": "locate the Pick task card on the Inventory Overview dashboard"
+        },
+        {
+          "source": "Delivery smart button",
+          "relation": "CONTAINS",
+          "target": "sales order form",
+          "evidence": "the Delivery smart button at the top of the sales order form"
+        },
+        {
+          "source": "Process picking",
+          "relation": "PERFORMED_BY",
+          "target": "Inventory app",
+          "evidence": "navigate to the Inventory app"
+        },
+        {
+          "source": "Process picking",
+          "relation": "PERFORMED_BY",
+          "target": "To Process button",
+          "evidence": "click the # To Process button"
+        },
+        {
+          "source": "Process picking",
+          "relation": "CONTAINS",
+          "target": "Validate",
+          "evidence": "click Validate to complete the picking"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "WH/Output",
+          "evidence": "move the product from WH/Stock to WH/Output"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-delivery",
+    "heading": "Process delivery",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Process delivery",
+          "type": "Workflow",
+          "mention": "Process delivery",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order form",
+          "type": "DataObject",
+          "mention": "sales order form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Feature",
+          "mention": "Delivery smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Overview page",
+          "type": "DataObject",
+          "mention": "Inventory Overview page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Orders task card",
+          "type": "DataObject",
+          "mention": "Delivery Orders task card",
+          "confidence": "medium"
+        },
+        {
+          "name": "# To Process button",
+          "type": "Feature",
+          "mention": "# To Process button",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand field",
+          "type": "Field",
+          "mention": "Demand field",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Process delivery",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Process delivery"
+        },
+        {
+          "source": "sales order form",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery smart button",
+          "evidence": "Clicking the Delivery smart button on the sales order form"
+        },
+        {
+          "source": "Delivery smart button",
+          "relation": "TRIGGERED_BY",
+          "target": "Process delivery",
+          "evidence": "reveals the newly created delivery order"
+        },
+        {
+          "source": "Inventory Overview page",
+          "relation": "CONTAINS",
+          "target": "Delivery Orders task card",
+          "evidence": "locate the Delivery Orders task card"
+        },
+        {
+          "source": "Delivery Orders task card",
+          "relation": "HAS_FEATURE",
+          "target": "# To Process button",
+          "evidence": "Click the # To Process button on the task card"
+        },
+        {
+          "source": "# To Process button",
+          "relation": "ENABLES",
+          "target": "Process delivery",
+          "evidence": "to reveal a list of all delivery orders to process"
+        },
+        {
+          "source": "Delivery order",
+          "relation": "CONTAINS",
+          "target": "Quantity field",
+          "evidence": "change the value in the Quantity field"
+        },
+        {
+          "source": "Delivery order",
+          "relation": "CONTAINS",
+          "target": "Demand field",
+          "evidence": "to match the ordered quantity in the Demand field"
+        },
+        {
+          "source": "Validate",
+          "relation": "TRIGGERED_BY",
+          "target": "Process delivery",
+          "evidence": "Once ready, click Validate"
+        },
+        {
+          "source": "Process delivery",
+          "relation": "SEE_ALSO",
+          "target": "daily_operations",
+          "evidence": ".. seealso:: ../daily_operations"
+        }
+      ]
+    }
+  }
+]

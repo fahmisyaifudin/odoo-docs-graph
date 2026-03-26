@@ -1,0 +1,2312 @@
+[
+  {
+    "section_id": "export-and-import-data",
+    "heading": "Export and import data",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Export and import data",
+          "type": "Module",
+          "mention": "Title: Export and import data",
+          "confidence": "medium"
+        },
+        {
+          "name": "Export data",
+          "type": "Feature",
+          "mention": "export data",
+          "confidence": "high"
+        },
+        {
+          "name": "Import data",
+          "type": "Feature",
+          "mention": "import data",
+          "confidence": "high"
+        },
+        {
+          "name": "Running reports",
+          "type": "Workflow",
+          "mention": "running reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Data modification",
+          "type": "Workflow",
+          "mention": "data modification",
+          "confidence": "high"
+        },
+        {
+          "name": "Time out error",
+          "type": "Concept",
+          "mention": "time out' error",
+          "confidence": "medium"
+        },
+        {
+          "name": "Record",
+          "type": "DataObject",
+          "mention": "record",
+          "confidence": "medium"
+        },
+        {
+          "name": "Export file",
+          "type": "DataObject",
+          "mention": "exports",
+          "confidence": "low"
+        },
+        {
+          "name": "Import file",
+          "type": "DataObject",
+          "mention": "import file",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Export and import data",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Export and import data"
+        },
+        {
+          "source": "Export data",
+          "relation": "BELONGS_TO",
+          "target": "Export and import data",
+          "evidence": "export data covered by the document"
+        },
+        {
+          "source": "Import data",
+          "relation": "BELONGS_TO",
+          "target": "Export and import data",
+          "evidence": "import data covered by the document"
+        },
+        {
+          "source": "Export data",
+          "relation": "ENABLES",
+          "target": "Running reports",
+          "evidence": "export data for running reports"
+        },
+        {
+          "source": "Export data",
+          "relation": "ENABLES",
+          "target": "Data modification",
+          "evidence": "export data for data modification"
+        },
+        {
+          "source": "Import data",
+          "relation": "ENABLES",
+          "target": "Data modification",
+          "evidence": "import data for data modification"
+        },
+        {
+          "source": "Time out error",
+          "relation": "RELATED_TO",
+          "target": "Export data",
+          "evidence": "time out error with large exports"
+        },
+        {
+          "source": "Time out error",
+          "relation": "RELATED_TO",
+          "target": "Import data",
+          "evidence": "time out error with import file too large"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "export-data-from-odoo",
+    "heading": "Export data from Odoo",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Export Data",
+          "type": "Action",
+          "mention": "Export",
+          "confidence": "high"
+        },
+        {
+          "name": "List view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Action button",
+          "type": "Action",
+          "mention": "Action button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Export Data pop-over window",
+          "type": "Feature",
+          "mention": "Export Data pop-over window",
+          "confidence": "medium"
+        },
+        {
+          "name": "I want to update data (import-compatable export)",
+          "type": "Setting",
+          "mention": "I want to update data (import-compatable export) option",
+          "confidence": "high"
+        },
+        {
+          "name": "Search bar",
+          "type": "Feature",
+          "mention": "Search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Show sub-fields",
+          "type": "Action",
+          "mention": "Show sub-fields",
+          "confidence": "medium"
+        },
+        {
+          "name": "Select field",
+          "type": "Action",
+          "mention": "Select field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fields to export",
+          "type": "Feature",
+          "mention": "Fields to export list",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sort",
+          "type": "Action",
+          "mention": "Sort",
+          "confidence": "medium"
+        },
+        {
+          "name": "Remove field",
+          "type": "Action",
+          "mention": "Remove field",
+          "confidence": "medium"
+        },
+        {
+          "name": "export presets",
+          "type": "Feature",
+          "mention": "export presets",
+          "confidence": "medium"
+        },
+        {
+          "name": "template drop-down menu",
+          "type": "Feature",
+          "mention": "template drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "New template",
+          "type": "Action",
+          "mention": "New template",
+          "confidence": "medium"
+        },
+        {
+          "name": "export template",
+          "type": "Feature",
+          "mention": "export template",
+          "confidence": "medium"
+        },
+        {
+          "name": "Related Company",
+          "type": "Field",
+          "mention": "Related Company",
+          "confidence": "high"
+        },
+        {
+          "name": "parent_id",
+          "type": "Field",
+          "mention": "parent_id",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "List view",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "activate the list view ... on the items that need to be exported"
+        },
+        {
+          "source": "Action button",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "click the Action button, and select ... Export"
+        },
+        {
+          "source": "Action button",
+          "relation": "ENABLES",
+          "target": "Export Data",
+          "evidence": "click the Action button, and select ... Export"
+        },
+        {
+          "source": "Export Data",
+          "relation": "PRODUCES",
+          "target": "Export Data pop-over window",
+          "evidence": "When clicking on ... Export, a Export Data pop-over window appears"
+        },
+        {
+          "source": "Export Data pop-over window",
+          "relation": "CONTAINS",
+          "target": "I want to update data (import-compatable export)",
+          "evidence": "Export Data pop-over window appears, with several options ... I want to update data option ticked"
+        },
+        {
+          "source": "Export Data pop-over window",
+          "relation": "CONTAINS",
+          "target": "Search bar",
+          "evidence": "Use the Search bar to find specific fields"
+        },
+        {
+          "source": "Export Data pop-over window",
+          "relation": "CONTAINS",
+          "target": "Show sub-fields",
+          "evidence": "Use the ... Show sub-fields icon to display more sub-field options"
+        },
+        {
+          "source": "Export Data pop-over window",
+          "relation": "CONTAINS",
+          "target": "Select field",
+          "evidence": "The ... Select field icon button is present to add fields"
+        },
+        {
+          "source": "Export Data pop-over window",
+          "relation": "CONTAINS",
+          "target": "Fields to export",
+          "evidence": "add fields to the Fields to export list"
+        },
+        {
+          "source": "Export Data pop-over window",
+          "relation": "CONTAINS",
+          "target": "Sort",
+          "evidence": "The ... Sort icon to the left of the selected fields"
+        },
+        {
+          "source": "Export Data pop-over window",
+          "relation": "CONTAINS",
+          "target": "Remove field",
+          "evidence": "The ... Remove field icon is used to remove fields"
+        },
+        {
+          "source": "Export Data pop-over window",
+          "relation": "CONTAINS",
+          "target": "template drop-down menu",
+          "evidence": "click on the template drop-down menu"
+        },
+        {
+          "source": "export presets",
+          "relation": "RELATED_TO",
+          "target": "export template",
+          "evidence": "it is helpful to save export presets. ... give a unique name to the export template"
+        },
+        {
+          "source": "template drop-down menu",
+          "relation": "ENABLES",
+          "target": "New template",
+          "evidence": "click on the template drop-down menu. Once there, click on New template"
+        },
+        {
+          "source": "Related Company",
+          "relation": "EQUIVALENT_TO",
+          "target": "parent_id",
+          "evidence": "Related Company ... is equal to *parent_id* (external identifier)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-data-into-odoo",
+    "heading": "Import data into Odoo",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": []
+    }
+  },
+  {
+    "section_id": "get-started",
+    "heading": "Get started",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Excel (.xlsx)",
+          "type": "Standard",
+          "mention": "Excel (.xlsx)",
+          "confidence": "medium"
+        },
+        {
+          "name": "CSV (Comma-separated Values) (.csv)",
+          "type": "Standard",
+          "mention": "CSV (Comma-separated Values) (.csv)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Import records",
+          "type": "Action",
+          "mention": "Import records",
+          "confidence": "high"
+        },
+        {
+          "name": "Upload Data File",
+          "type": "Action",
+          "mention": "Upload Data File",
+          "confidence": "high"
+        },
+        {
+          "name": "Formatting options",
+          "type": "Setting",
+          "mention": "Formatting options",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Field",
+          "type": "Field",
+          "mention": "Odoo Field",
+          "confidence": "high"
+        },
+        {
+          "name": "Load Data File",
+          "type": "Action",
+          "mention": "Load Data File",
+          "confidence": "high"
+        },
+        {
+          "name": "Test",
+          "type": "Action",
+          "mention": "Test",
+          "confidence": "high"
+        },
+        {
+          "name": "Import",
+          "type": "Action",
+          "mention": "Import",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Import records",
+          "evidence": "Data can be imported on any Odoo business object..."
+        },
+        {
+          "source": "Import records",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "...click on fa-cog (Action) icon, and in the drop-down menu select fa-upload (Import records)."
+        },
+        {
+          "source": "Import records",
+          "relation": "REQUIRES",
+          "target": "Excel (.xlsx)",
+          "evidence": "Data can be imported on any Odoo business object using either Excel (.xlsx)..."
+        },
+        {
+          "source": "Import records",
+          "relation": "REQUIRES",
+          "target": "CSV (Comma-separated Values) (.csv)",
+          "evidence": "...or CSV (Comma-separated Values) (.csv) formats."
+        },
+        {
+          "source": "Upload Data File",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "Click Upload Data File and select the desired file."
+        },
+        {
+          "source": "Formatting options",
+          "relation": "APPLIES_TO",
+          "target": "CSV (Comma-separated Values) (.csv)",
+          "evidence": "Adjust the Formatting options as needed (for CSV files only)."
+        },
+        {
+          "source": "Load Data File",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "(Optional) Click Load Data File..."
+        },
+        {
+          "source": "Test",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "Click Test to verify that the data is valid."
+        },
+        {
+          "source": "Import",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "Click Import."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "adapt-a-template",
+    "heading": "Adapt a template",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "import tool",
+          "type": "Module",
+          "mention": "import tool",
+          "confidence": "medium"
+        },
+        {
+          "name": "Import templates",
+          "type": "Feature",
+          "mention": "Import templates",
+          "confidence": "high"
+        },
+        {
+          "name": "contacts",
+          "type": "DataObject",
+          "mention": "contacts",
+          "confidence": "high"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "high"
+        },
+        {
+          "name": "bank statements",
+          "type": "DataObject",
+          "mention": "bank statements",
+          "confidence": "high"
+        },
+        {
+          "name": "External ID (ID) column",
+          "type": "Field",
+          "mention": "External ID (ID) column",
+          "confidence": "high"
+        },
+        {
+          "name": "ID sequencing",
+          "type": "Feature",
+          "mention": "ID sequencing",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft Office",
+          "type": "Integration",
+          "mention": "Microsoft Office",
+          "confidence": "medium"
+        },
+        {
+          "name": "OpenOffice",
+          "type": "Integration",
+          "mention": "OpenOffice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Google Drive",
+          "type": "Integration",
+          "mention": "Google Drive",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "import tool",
+          "relation": "CONTAINS",
+          "target": "Import templates",
+          "evidence": "Import templates are provided in the import tool"
+        },
+        {
+          "source": "Import templates",
+          "relation": "IS_PART_OF",
+          "target": "import tool",
+          "evidence": "Import templates are provided in the import tool"
+        },
+        {
+          "source": "Import templates",
+          "relation": "HAS_FEATURE",
+          "target": "contacts",
+          "evidence": "the most common data to import (contacts,...)"
+        },
+        {
+          "source": "Import templates",
+          "relation": "HAS_FEATURE",
+          "target": "products",
+          "evidence": "the most common data to import (... products, ...)"
+        },
+        {
+          "source": "Import templates",
+          "relation": "HAS_FEATURE",
+          "target": "bank statements",
+          "evidence": "the most common data to import (... bank statements, ...)"
+        },
+        {
+          "source": "Import templates",
+          "relation": "ENABLES",
+          "target": "ID sequencing",
+          "evidence": "Set a unique ID to every record by dragging down the ID sequencing in the External ID (ID) column."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "import tool",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Import templates",
+          "relation": "SUPPORTS",
+          "target": "Microsoft Office",
+          "evidence": "Open them with any spreadsheet software (*Microsoft Office*...)"
+        },
+        {
+          "source": "Import templates",
+          "relation": "SUPPORTS",
+          "target": "OpenOffice",
+          "evidence": "Open them with any spreadsheet software (...*OpenOffice*...)"
+        },
+        {
+          "source": "Import templates",
+          "relation": "SUPPORTS",
+          "target": "Google Drive",
+          "evidence": "Open them with any spreadsheet software (...*Google Drive*, etc.)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-from-another-application",
+    "heading": "Import from another application",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "External ID",
+          "type": "Field",
+          "mention": "External ID (ID)",
+          "confidence": "high"
+        },
+        {
+          "name": "ID",
+          "type": "Field",
+          "mention": "ID",
+          "confidence": "medium"
+        },
+        {
+          "name": "line item",
+          "type": "DataObject",
+          "mention": "line item",
+          "confidence": "medium"
+        },
+        {
+          "name": "unique identifier",
+          "type": "Concept",
+          "mention": "unique identifier",
+          "confidence": "high"
+        },
+        {
+          "name": "previous software",
+          "type": "Actor",
+          "mention": "previous software",
+          "confidence": "medium"
+        },
+        {
+          "name": "Update imports",
+          "type": "Feature",
+          "mention": "Update imports",
+          "confidence": "low"
+        },
+        {
+          "name": "Import relation fields",
+          "type": "Feature",
+          "mention": "Import relation fields",
+          "confidence": "low"
+        },
+        {
+          "name": "record",
+          "type": "DataObject",
+          "mention": "record",
+          "confidence": "high"
+        },
+        {
+          "name": "original application",
+          "type": "Actor",
+          "mention": "original application",
+          "confidence": "medium"
+        },
+        {
+          "name": "XXX/ID",
+          "type": "Field",
+          "mention": "XXX/ID",
+          "confidence": "medium"
+        },
+        {
+          "name": "name",
+          "type": "Field",
+          "mention": "name",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "External ID",
+          "relation": "IS_PART_OF",
+          "target": "line item",
+          "evidence": "The External ID (ID) is a unique identifier for a line item."
+        },
+        {
+          "source": "External ID",
+          "relation": "SUPPORTS",
+          "target": "Update imports",
+          "evidence": "Setting an ID is not mandatory when importing, but it helps in many cases: - Update imports <essentials/update-data>: import the same file several times without creating duplicates."
+        },
+        {
+          "source": "External ID",
+          "relation": "SUPPORTS",
+          "target": "Import relation fields",
+          "evidence": "Setting an ID is not mandatory when importing, but it helps in many cases: ... - Import relation fields <export_import_data/relation-fields>."
+        },
+        {
+          "source": "unique identifier",
+          "relation": "RELATED_TO",
+          "target": "previous software",
+          "evidence": "It is possible to use an External ID (ID) from previous software to facilitate the transition to Odoo."
+        },
+        {
+          "source": "unique identifier",
+          "relation": "RELATED_TO",
+          "target": "original application",
+          "evidence": "To recreate relationships between different records, the unique identifier from the original application should be used to map it to the External ID (ID) column in Odoo."
+        },
+        {
+          "source": "XXX/ID",
+          "relation": "EQUIVALENT_TO",
+          "target": "External ID",
+          "evidence": "When another record is imported that links to the first one, use **XXX/ID** (XXX/External ID) for the original unique identifier."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "field-missing-to-map-column",
+    "heading": "Field missing to map column",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Show fields of relation fields (advanced)",
+          "type": "Feature",
+          "mention": "Show fields of relation fields (advanced) option",
+          "confidence": "high"
+        },
+        {
+          "name": "integer",
+          "type": "Concept",
+          "mention": "*integer* type",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Show fields of relation fields (advanced)",
+          "evidence": "check the Show fields of relation fields (advanced) option"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "integer",
+          "evidence": "only the fields with the *integer* type are presented as options"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-data-import-format",
+    "heading": "Change data import format",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV (Comma-separated Values)",
+          "type": "DataObject",
+          "mention": "CSV (Comma-separated Values) file",
+          "confidence": "high"
+        },
+        {
+          "name": "Excel files (.xls, .xlsx)",
+          "type": "DataObject",
+          "mention": "Excel files (`.xls`, `.xlsx`)",
+          "confidence": "high"
+        },
+        {
+          "name": "Import CSV",
+          "type": "Feature",
+          "mention": "importing a CSV (Comma-separated Values) file",
+          "confidence": "high"
+        },
+        {
+          "name": "Import Excel",
+          "type": "Feature",
+          "mention": "importing Excel files (`.xls`, `.xlsx`)",
+          "confidence": "high"
+        },
+        {
+          "name": "Formatting options",
+          "type": "Feature",
+          "mention": "Formatting options",
+          "confidence": "medium"
+        },
+        {
+          "name": "Date Format",
+          "type": "Field",
+          "mention": "Date Format",
+          "confidence": "high"
+        },
+        {
+          "name": "ISO 8601",
+          "type": "Standard",
+          "mention": "ISO 8601",
+          "confidence": "high"
+        },
+        {
+          "name": "date cells",
+          "type": "Feature",
+          "mention": "date cells",
+          "confidence": "medium"
+        },
+        {
+          "name": "Date Formatting",
+          "type": "Setting",
+          "mention": "Formatting section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Day-month inversions",
+          "type": "Concept",
+          "mention": "day-month inversions",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Import CSV",
+          "evidence": "When importing a CSV (Comma-separated Values) file, Odoo provides Formatting options."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Import Excel",
+          "evidence": "When importing Excel files (`.xls`, `.xlsx`), consider using *date cells* to store dates."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Formatting options",
+          "evidence": "When importing a CSV (Comma-separated Values) file, Odoo provides Formatting options."
+        },
+        {
+          "source": "Import CSV",
+          "relation": "USES_METHOD",
+          "target": "ISO 8601",
+          "evidence": "If this format is incorrect, change it to the preferred format using *ISO 8601* to define the format."
+        },
+        {
+          "source": "Import Excel",
+          "relation": "SUPPORTS",
+          "target": "date cells",
+          "evidence": "consider using *date cells* to store dates."
+        },
+        {
+          "source": "Import CSV",
+          "relation": "CONFIGURED_BY",
+          "target": "Date Formatting",
+          "evidence": "When importing a CSV (Comma-separated Values) file, use Odoo's Formatting section to select the date format columns to import."
+        },
+        {
+          "source": "Date Formatting",
+          "relation": "RELATED_TO",
+          "target": "Date Format",
+          "evidence": "Date Format that is shown when clicking on options under the file selector."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-numbers-with-currency-signs",
+    "heading": "Import numbers with currency signs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Import numbers with currency signs",
+          "type": "Feature",
+          "mention": "Import numbers with currency signs",
+          "confidence": "medium"
+        },
+        {
+          "name": "CSV (Comma-separated Values) file",
+          "type": "DataObject",
+          "mention": "CSV (Comma-separated Values) file",
+          "confidence": "medium"
+        },
+        {
+          "name": "Formatting menu",
+          "type": "Module",
+          "mention": "Formatting menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Thousands Separator",
+          "type": "Setting",
+          "mention": "Thousands Separator",
+          "confidence": "high"
+        },
+        {
+          "name": "number",
+          "type": "Concept",
+          "mention": "numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "currency symbol",
+          "type": "Concept",
+          "mention": "currency symbol",
+          "confidence": "medium"
+        },
+        {
+          "name": "negative value",
+          "type": "Concept",
+          "mention": "negative value",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Import numbers with currency signs",
+          "evidence": "Product: Odoo Title: Import numbers with currency signs"
+        },
+        {
+          "source": "Formatting menu",
+          "relation": "CONTAINS",
+          "target": "Thousands Separator",
+          "evidence": "Under these options, the Thousands Separator can be changed."
+        },
+        {
+          "source": "Odoo",
+          "relation": "BELONGS_TO",
+          "target": "Import numbers with currency signs",
+          "evidence": "Title: Import numbers with currency signs Odoo fully supports numbers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-preview-table-not-displayed-correctly",
+    "heading": "Import preview table not displayed correctly",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Import CSV (Comma-separated Values) file bar",
+          "type": "Feature",
+          "mention": "Import CSV (Comma-separated Values) file bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Formatting options",
+          "type": "Setting",
+          "mention": "Formatting options",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV (Comma-separated Values) file",
+          "type": "DataObject",
+          "mention": "CSV (Comma-separated Values) file",
+          "confidence": "high"
+        },
+        {
+          "name": "import preview",
+          "type": "Feature",
+          "mention": "import preview",
+          "confidence": "high"
+        },
+        {
+          "name": "commas",
+          "type": "Standard",
+          "mention": "commas",
+          "confidence": "low"
+        },
+        {
+          "name": "quotation marks",
+          "type": "Standard",
+          "mention": "quotation marks",
+          "confidence": "low"
+        },
+        {
+          "name": "tabulation",
+          "type": "Standard",
+          "mention": "tabulation",
+          "confidence": "low"
+        },
+        {
+          "name": "spreadsheet application",
+          "type": "Actor",
+          "mention": "spreadsheet application",
+          "confidence": "medium"
+        },
+        {
+          "name": "Change CSV file format",
+          "type": "Concept",
+          "mention": "Change CSV file format",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "import preview",
+          "relation": "CONFIGURED_BY",
+          "target": "Formatting options",
+          "evidence": "modify the Formatting options"
+        },
+        {
+          "source": "Import CSV (Comma-separated Values) file bar",
+          "relation": "CONTAINS",
+          "target": "Formatting options",
+          "evidence": "displayed under the Import CSV (Comma-separated Values) file bar"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Import CSV (Comma-separated Values) file bar",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Formatting options",
+          "relation": "APPLIES_TO",
+          "target": "CSV (Comma-separated Values) file",
+          "evidence": "modify the Formatting options (displayed under the Import CSV (Comma-separated Values) file bar after selecting the CSV (Comma-separated Values) file)."
+        },
+        {
+          "source": "CSV (Comma-separated Values) file",
+          "relation": "USES_METHOD",
+          "target": "commas",
+          "evidence": "the import preview is set on commas as field separators"
+        },
+        {
+          "source": "CSV (Comma-separated Values) file",
+          "relation": "USES_METHOD",
+          "target": "quotation marks",
+          "evidence": "quotation marks as text delimiters"
+        },
+        {
+          "source": "spreadsheet application",
+          "relation": "PERFORMED_BY",
+          "target": "Change CSV file format",
+          "evidence": "The file format options need to be modified in the spreadsheet application."
+        },
+        {
+          "source": "Change CSV file format",
+          "relation": "SEE_ALSO",
+          "target": "export_import_data/change-csv",
+          "evidence": "See the following Change CSV file format <export_import_data/change-csv> section."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-csv-file-format-in-spreadsheet-application",
+    "heading": "Change CSV file format in spreadsheet application",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV file format",
+          "type": "Concept",
+          "mention": "CSV file format",
+          "confidence": "high"
+        },
+        {
+          "name": "spreadsheet application",
+          "type": "Concept",
+          "mention": "spreadsheet application",
+          "confidence": "high"
+        },
+        {
+          "name": "OpenOffice",
+          "type": "Product",
+          "mention": "OpenOffice",
+          "confidence": "high"
+        },
+        {
+          "name": "LibreOffice",
+          "type": "Product",
+          "mention": "LibreOffice",
+          "confidence": "high"
+        },
+        {
+          "name": "Save As dialog box",
+          "type": "Feature",
+          "mention": "Save As dialog box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Edit filter settings",
+          "type": "Feature",
+          "mention": "Edit filter settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft Excel",
+          "type": "Product",
+          "mention": "Microsoft Excel",
+          "confidence": "high"
+        },
+        {
+          "name": "Encoding tab",
+          "type": "Feature",
+          "mention": "Encoding tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tools drop-down menu",
+          "type": "Feature",
+          "mention": "Tools drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "separator",
+          "type": "Concept",
+          "mention": "separator",
+          "confidence": "medium"
+        },
+        {
+          "name": "delimiter",
+          "type": "Concept",
+          "mention": "delimiter",
+          "confidence": "medium"
+        },
+        {
+          "name": "regional settings",
+          "type": "Concept",
+          "mention": "regional settings",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "CSV file format",
+          "evidence": "Odoo suggests using..."
+        },
+        {
+          "source": "OpenOffice",
+          "relation": "SUPPORTS",
+          "target": "CSV file format",
+          "evidence": "Odoo suggests using OpenOffice..."
+        },
+        {
+          "source": "LibreOffice",
+          "relation": "SUPPORTS",
+          "target": "CSV file format",
+          "evidence": "Odoo suggests using LibreOffice, as both applications allow modifications of all three options"
+        },
+        {
+          "source": "LibreOffice",
+          "relation": "HAS_FEATURE",
+          "target": "Save As dialog box",
+          "evidence": "go to 'Save As' dialog box"
+        },
+        {
+          "source": "LibreOffice",
+          "relation": "HAS_FEATURE",
+          "target": "Edit filter settings",
+          "evidence": "Check the box 'Edit filter settings'"
+        },
+        {
+          "source": "Microsoft Excel",
+          "relation": "SUPPORTS",
+          "target": "CSV file format",
+          "evidence": "Microsoft Excel can modify the encoding when saving"
+        },
+        {
+          "source": "Microsoft Excel",
+          "relation": "HAS_FEATURE",
+          "target": "Save As dialog box",
+          "evidence": "Save As dialog box"
+        },
+        {
+          "source": "Microsoft Excel",
+          "relation": "HAS_FEATURE",
+          "target": "Tools drop-down menu",
+          "evidence": "Tools drop-down menu"
+        },
+        {
+          "source": "Microsoft Excel",
+          "relation": "HAS_FEATURE",
+          "target": "Encoding tab",
+          "evidence": "Encoding tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "difference-between-database-id-and-external-id",
+    "heading": "Difference between Database ID and External ID",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Database ID",
+          "type": "Field",
+          "mention": "Database ID",
+          "confidence": "high"
+        },
+        {
+          "name": "External ID",
+          "type": "Field",
+          "mention": "External ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Country",
+          "type": "DataObject",
+          "mention": "'Country' object",
+          "confidence": "high"
+        },
+        {
+          "name": "Country",
+          "type": "Field",
+          "mention": "Country",
+          "confidence": "medium"
+        },
+        {
+          "name": "Country/Database ID",
+          "type": "Field",
+          "mention": "Country/Database ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Country/External ID",
+          "type": "Field",
+          "mention": "Country/External ID",
+          "confidence": "high"
+        },
+        {
+          "name": "ID",
+          "type": "Field",
+          "mention": "ID column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Field/External ID",
+          "type": "Field",
+          "mention": "Field/External ID",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV",
+          "type": "Concept",
+          "mention": "CSV",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Country",
+          "relation": "CONTAINS",
+          "target": "Database ID",
+          "evidence": "Country/Database ID: the unique Odoo ID for a record"
+        },
+        {
+          "source": "Country",
+          "relation": "CONTAINS",
+          "target": "External ID",
+          "evidence": "Country/External ID: the ID of this record referenced in another application"
+        },
+        {
+          "source": "Database ID",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "the unique Odoo ID for a record"
+        },
+        {
+          "source": "External ID",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "the ID of this record referenced in another application"
+        },
+        {
+          "source": "Database ID",
+          "relation": "RELATED_TO",
+          "target": "ID",
+          "evidence": "defined by the ID PostgreSQL column"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-relation-fields",
+    "heading": "Import relation fields",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "object",
+          "type": "Concept",
+          "mention": "Odoo object",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "product categories",
+          "type": "Concept",
+          "mention": "product categories",
+          "confidence": "low"
+        },
+        {
+          "name": "attributes",
+          "type": "DataObject",
+          "mention": "attributes",
+          "confidence": "low"
+        },
+        {
+          "name": "vendors",
+          "type": "Actor",
+          "mention": "vendors",
+          "confidence": "low"
+        },
+        {
+          "name": "import",
+          "type": "Action",
+          "mention": "import",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Attributes / Attribute / ID",
+          "type": "Field",
+          "mention": "Product Attributes / Attribute / ID",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "product",
+          "relation": "RELATED_TO",
+          "target": "product categories",
+          "evidence": "a product is linked to product categories"
+        },
+        {
+          "source": "product",
+          "relation": "RELATED_TO",
+          "target": "attributes",
+          "evidence": "a product is linked to attributes"
+        },
+        {
+          "source": "product",
+          "relation": "RELATED_TO",
+          "target": "vendors",
+          "evidence": "a product is linked to vendors"
+        },
+        {
+          "source": "import",
+          "relation": "REQUIRES",
+          "target": "Product Attributes / Attribute / ID",
+          "evidence": "add `/ ID` at the end of the column title"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "options-for-multiple-matches-on-fields",
+    "heading": "Options for multiple matches on fields",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Category",
+          "type": "Field",
+          "mention": "field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Category",
+          "type": "Module",
+          "mention": "Product Category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Category list",
+          "type": "Report",
+          "mention": "Product Category list",
+          "confidence": "low"
+        },
+        {
+          "name": "External ID",
+          "type": "Field",
+          "mention": "External ID",
+          "confidence": "medium"
+        },
+        {
+          "name": "product category",
+          "type": "Concept",
+          "mention": "product category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sellable",
+          "type": "Unknown",
+          "mention": "Sellable",
+          "confidence": "low"
+        },
+        {
+          "name": "Misc. Products",
+          "type": "Unknown",
+          "mention": "Misc. Products",
+          "confidence": "low"
+        },
+        {
+          "name": "Other Products",
+          "type": "Unknown",
+          "mention": "Other Products",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Category",
+          "relation": "IS_PART_OF",
+          "target": "Product Category",
+          "evidence": "'Category' is described as a field for the Product Category"
+        },
+        {
+          "source": "External ID",
+          "relation": "IS_PART_OF",
+          "target": "Category",
+          "evidence": "External ID is used for the 'Category' field"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Product Category",
+          "evidence": "Product Category is discussed within Odoo documentation"
+        },
+        {
+          "source": "Product Category list",
+          "relation": "GENERATES",
+          "target": "Product Category",
+          "evidence": "Product Category list displays Product Categories"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-many2many-relationship-fields",
+    "heading": "Import many2many relationship fields",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV (Comma-separated Values) file",
+          "type": "DataObject",
+          "mention": "CSV (Comma-separated Values) file",
+          "confidence": "medium"
+        },
+        {
+          "name": "many2many relationship fields",
+          "type": "Concept",
+          "mention": "many2many relationship fields",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturer",
+          "type": "Concept",
+          "mention": "Manufacturer",
+          "confidence": "low"
+        },
+        {
+          "name": "Retailer",
+          "type": "Concept",
+          "mention": "Retailer",
+          "confidence": "low"
+        },
+        {
+          "name": "customer",
+          "type": "DataObject",
+          "mention": "customer",
+          "confidence": "low"
+        },
+        {
+          "name": "export_import_data/m2m-customers-tags.csv",
+          "type": "DataObject",
+          "mention": "export_import_data/m2m-customers-tags.csv",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "many2many relationship fields",
+          "evidence": "Title: Import many2many relationship fields"
+        },
+        {
+          "source": "many2many relationship fields",
+          "relation": "RELATED_TO",
+          "target": "CSV (Comma-separated Values) file",
+          "evidence": "The tags should be separated by a comma... encoded in the same column of the CSV file."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-one2many-relationships",
+    "heading": "Import one2many relationships",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Import one2many relationships",
+          "type": "Feature",
+          "mention": "Import one2many relationships",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV (Comma-separated Values) file",
+          "type": "DataObject",
+          "mention": "CSV (Comma-separated Values) file",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "order line",
+          "type": "DataObject",
+          "mention": "order line",
+          "confidence": "medium"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase order line",
+          "type": "DataObject",
+          "mention": "purchase order line",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "DataObject",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "contact",
+          "type": "DataObject",
+          "mention": "contact",
+          "confidence": "medium"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "low"
+        },
+        {
+          "name": "one2many relationship",
+          "type": "Concept",
+          "mention": "one2many relationships",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Import one2many relationships",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Import one2many relationships"
+        },
+        {
+          "source": "CSV (Comma-separated Values) file",
+          "relation": "USES_METHOD",
+          "target": "Import one2many relationships",
+          "evidence": "If a company wants to import a sales order with several order lines, a specific row must be reserved in the CSV (Comma-separated Values) file for each order line."
+        },
+        {
+          "source": "company",
+          "relation": "PERFORMED_BY",
+          "target": "Import one2many relationships",
+          "evidence": "If a company wants to import a sales order with several order lines..."
+        },
+        {
+          "source": "sales order",
+          "relation": "BELONGS_TO",
+          "target": "Import one2many relationships",
+          "evidence": "...import a sales order with several order lines..."
+        },
+        {
+          "source": "order line",
+          "relation": "BELONGS_TO",
+          "target": "sales order",
+          "evidence": "If a company wants to import a sales order with several order lines..."
+        },
+        {
+          "source": "quotation",
+          "relation": "EQUIVALENT_TO",
+          "target": "sales order",
+          "evidence": "A company imports quotations using a CSV (Comma-separated Values) file"
+        },
+        {
+          "source": "purchase order",
+          "relation": "RELATED_TO",
+          "target": "sales order",
+          "evidence": "A company imports purchase orders with their respective purchase order lines"
+        },
+        {
+          "source": "customer",
+          "relation": "RELATED_TO",
+          "target": "contact",
+          "evidence": "A company imports customers and their respective contacts"
+        },
+        {
+          "source": "one2many relationship",
+          "relation": "RELATED_TO",
+          "target": "Import one2many relationships",
+          "evidence": "Title: Import one2many relationships"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-image-files",
+    "heading": "Import image files",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Image column",
+          "type": "Field",
+          "mention": "Image column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Files to import section",
+          "type": "Feature",
+          "mention": "Files to import section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Load Data File",
+          "type": "Action",
+          "mention": "Load Data File",
+          "confidence": "high"
+        },
+        {
+          "name": "Upload your files",
+          "type": "Action",
+          "mention": "Upload your files",
+          "confidence": "high"
+        },
+        {
+          "name": "Test",
+          "type": "Action",
+          "mention": "Test",
+          "confidence": "high"
+        },
+        {
+          "name": "Import",
+          "type": "Action",
+          "mention": "Import",
+          "confidence": "high"
+        },
+        {
+          "name": "product template",
+          "type": "DataObject",
+          "mention": "product template",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Max size per batch",
+          "type": "Field",
+          "mention": "Max size per batch",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delay after each batch",
+          "type": "Field",
+          "mention": "Delay after each batch",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo Cloud - Acceptable Use Policy",
+          "type": "Regulation",
+          "mention": "Acceptable Use Policy",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Files to import section",
+          "relation": "ENABLES",
+          "target": "Upload your files",
+          "evidence": "The Files to import section is enabled"
+        },
+        {
+          "source": "Import",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "During the import process, Odoo performs a file check"
+        },
+        {
+          "source": "Files to import section",
+          "relation": "CONTAINS",
+          "target": "Max size per batch",
+          "evidence": "fill in the Max size per batch... fields in the Files to import section"
+        },
+        {
+          "source": "Files to import section",
+          "relation": "CONTAINS",
+          "target": "Delay after each batch",
+          "evidence": "fill in the... Delay after each batch fields in the Files to import section"
+        },
+        {
+          "source": "Delay after each batch",
+          "relation": "GOVERNED_BY",
+          "target": "Odoo Cloud - Acceptable Use Policy",
+          "evidence": "default, the delay meets the RPC/API call limit defined in the `Odoo Cloud - Acceptable Use Policy`"
+        },
+        {
+          "source": "product template",
+          "relation": "HAS_FEATURE",
+          "target": "Image column",
+          "evidence": "if the product template has an Image column"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-records-several-times",
+    "heading": "Import records several times",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Import/Export tool",
+          "type": "Module",
+          "mention": "Import/Export tool",
+          "confidence": "medium"
+        },
+        {
+          "name": "Import records several times",
+          "type": "Feature",
+          "mention": "Import records several times",
+          "confidence": "high"
+        },
+        {
+          "name": "External ID",
+          "type": "Field",
+          "mention": "External ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Database ID",
+          "type": "Field",
+          "mention": "Database ID",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV (Comma-separated Values) file",
+          "type": "DataObject",
+          "mention": "CSV (Comma-separated Values) file",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Import records several times",
+          "relation": "IS_PART_OF",
+          "target": "Import/Export tool",
+          "evidence": "This feature allows a company to use the *Import/Export tool* in Odoo"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Import/Export tool",
+          "evidence": "the *Import/Export tool* in Odoo"
+        },
+        {
+          "source": "Import records several times",
+          "relation": "ENABLES",
+          "target": "modify a batch of records in a spreadsheet application",
+          "evidence": "This feature allows a company to use the *Import/Export tool*...to modify a batch of records in a spreadsheet application."
+        },
+        {
+          "source": "CSV (Comma-separated Values) file",
+          "relation": "CONTAINS",
+          "target": "External ID",
+          "evidence": "If an imported file contains one of the columns: External ID"
+        },
+        {
+          "source": "CSV (Comma-separated Values) file",
+          "relation": "CONTAINS",
+          "target": "Database ID",
+          "evidence": "If an imported file contains one of the columns:...Database ID"
+        },
+        {
+          "source": "Import records several times",
+          "relation": "REQUIRES",
+          "target": "CSV (Comma-separated Values) file",
+          "evidence": "allows users to import the same CSV...file several times"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "value-not-provided-for-a-specific-field",
+    "heading": "Value not provided for a specific field",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV file",
+          "type": "DataObject",
+          "mention": "CSV file",
+          "confidence": "medium"
+        },
+        {
+          "name": "default value",
+          "type": "Field",
+          "mention": "default value",
+          "confidence": "medium"
+        },
+        {
+          "name": "empty value",
+          "type": "Field",
+          "mention": "empty value",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "assigns the default value for every non-defined field",
+          "evidence": "If all fields are not set in the CSV file, Odoo assigns the default value for every non-defined field."
+        },
+        {
+          "source": "empty value",
+          "relation": "RELATED_TO",
+          "target": "CSV file",
+          "evidence": "However, if fields are set with empty values in the CSV (Comma-separated Values) file, Odoo sets the empty value in the field."
+        },
+        {
+          "source": "Odoo",
+          "relation": "RELATED_TO",
+          "target": "CSV file",
+          "evidence": "If all fields are not set in the CSV file, Odoo assigns the default value for every non-defined field."
+        },
+        {
+          "source": "CSV file",
+          "relation": "RELATED_TO",
+          "target": "empty value",
+          "evidence": "However, if fields are set with empty values in the CSV (Comma-separated Values) file, Odoo sets the empty value in the field."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "export-import-different-tables-from-an-sql-application-to-odoo",
+    "heading": "Export/import different tables from an SQL application to Odoo",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "External ID",
+          "type": "Field",
+          "mention": "External ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Companies",
+          "type": "DataObject",
+          "mention": "companies",
+          "confidence": "high"
+        },
+        {
+          "name": "People",
+          "type": "DataObject",
+          "mention": "people",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV",
+          "type": "Concept",
+          "mention": "CSV",
+          "confidence": "medium"
+        },
+        {
+          "name": "PostgreSQL",
+          "type": "Concept",
+          "mention": "PostgreSQL",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bigees",
+          "type": "Concept",
+          "mention": "Bigees",
+          "confidence": "low"
+        },
+        {
+          "name": "Organi",
+          "type": "Concept",
+          "mention": "Organi",
+          "confidence": "low"
+        },
+        {
+          "name": "Boum",
+          "type": "Concept",
+          "mention": "Boum",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "External ID",
+          "evidence": "use the `External ID` facilities of Odoo"
+        },
+        {
+          "source": "Person",
+          "relation": "BELONGS_TO",
+          "target": "Company",
+          "evidence": "Each person belongs to one company"
+        },
+        {
+          "source": "People",
+          "relation": "RELATED_TO",
+          "target": "Companies",
+          "evidence": "relations need to be recreated between records belonging to different tables"
+        },
+        {
+          "source": "Odoo",
+          "relation": "RELATED_TO",
+          "target": "PostgreSQL",
+          "evidence": "export from an SQL database"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "update-data-in-odoo",
+    "heading": "Update data in Odoo",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Update data",
+          "type": "Action",
+          "mention": "Updated",
+          "confidence": "medium"
+        },
+        {
+          "name": "data import",
+          "type": "Feature",
+          "mention": "data import",
+          "confidence": "high"
+        },
+        {
+          "name": "External ID",
+          "type": "DataObject",
+          "mention": "External ID",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "data import",
+          "relation": "ENABLES",
+          "target": "Update data",
+          "evidence": "Existing data can be updated in bulk through a data import"
+        },
+        {
+          "source": "Update data",
+          "relation": "REQUIRES",
+          "target": "External ID",
+          "evidence": "as long as the External ID remains consistent"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "prepare-data-export",
+    "heading": "Prepare data export",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Prepare data export",
+          "type": "Workflow",
+          "mention": "Prepare data export",
+          "confidence": "high"
+        },
+        {
+          "name": "List",
+          "type": "Action",
+          "mention": "oi-view-list (List) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "checkbox",
+          "type": "Field",
+          "mention": "checkbox",
+          "confidence": "low"
+        },
+        {
+          "name": "Actions",
+          "type": "Action",
+          "mention": "Actions button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Export",
+          "type": "Action",
+          "mention": "fa-upload Export",
+          "confidence": "medium"
+        },
+        {
+          "name": "Export Data",
+          "type": "Report",
+          "mention": "Export Data pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "I want to update data (import-compatible export)",
+          "type": "Setting",
+          "mention": "I want to update data (import-compatible export) checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "External ID",
+          "type": "Field",
+          "mention": "External ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Fields to export",
+          "type": "Report",
+          "mention": "Fields to export list",
+          "confidence": "high"
+        },
+        {
+          "name": "Export",
+          "type": "Action",
+          "mention": "Export",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Prepare data export",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo | Title: Prepare data export"
+        },
+        {
+          "source": "List",
+          "relation": "TRIGGERED_BY",
+          "target": "oi-view-list (List) icon",
+          "evidence": "select the oi-view-list (List) icon to activate list view"
+        },
+        {
+          "source": "Export",
+          "relation": "TRIGGERED_BY",
+          "target": "Actions",
+          "evidence": "click Actions button, and select fa-upload Export"
+        },
+        {
+          "source": "Export Data",
+          "relation": "GENERATES",
+          "target": "Fields to export",
+          "evidence": "limits the Fields to export list"
+        },
+        {
+          "source": "I want to update data (import-compatible export)",
+          "relation": "ENABLES",
+          "target": "External ID",
+          "evidence": "automatically includes the *External ID* in the export"
+        },
+        {
+          "source": "I want to update data (import-compatible export)",
+          "relation": "CONFIGURED_BY",
+          "target": "checkbox",
+          "evidence": "tick the checkbox labeled, I want to update data (import-compatible export)"
+        },
+        {
+          "source": "Fields to export",
+          "relation": "CONTAINS",
+          "target": "External ID",
+          "evidence": "manually added, but it is still included in the export"
+        },
+        {
+          "source": "Prepare data export",
+          "relation": "REQUIRES",
+          "target": "Export",
+          "evidence": "click Export"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-updated-data",
+    "heading": "Import updated data",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Export Data",
+          "type": "Action",
+          "mention": "exporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Import Data",
+          "type": "Action",
+          "mention": "imported",
+          "confidence": "high"
+        },
+        {
+          "name": "External ID",
+          "type": "Field",
+          "mention": "External ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Record",
+          "type": "DataObject",
+          "mention": "record",
+          "confidence": "medium"
+        },
+        {
+          "name": "Data File",
+          "type": "DataObject",
+          "mention": "data file",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Import Data",
+          "evidence": "When the file is ready, it can be imported"
+        },
+        {
+          "source": "Import Data",
+          "relation": "REQUIRES",
+          "target": "Data File",
+          "evidence": "it can be imported...When the file is ready"
+        },
+        {
+          "source": "Data File",
+          "relation": "CONTAINS",
+          "target": "External ID",
+          "evidence": "make any necessary changes to the data file...the *External ID* remain consistent"
+        },
+        {
+          "source": "Record",
+          "relation": "CONFIGURED_BY",
+          "target": "External ID",
+          "evidence": "this is how the system identifies a record"
+        },
+        {
+          "source": "Import Data",
+          "relation": "IS_PART_OF",
+          "target": "Export Data",
+          "evidence": "After exporting...When the file is ready, it can be imported"
+        },
+        {
+          "source": "Import Data",
+          "relation": "EQUIVALENT_TO",
+          "target": "Import Data",
+          "evidence": "follow the same process as a normal data import"
+        },
+        {
+          "source": "Import Data",
+          "relation": "SEE_ALSO",
+          "target": "essentials/export_import_data/import-data",
+          "evidence": "it can be imported <essentials/export_import_data/import-data>"
+        }
+      ]
+    }
+  }
+]

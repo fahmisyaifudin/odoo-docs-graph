@@ -1,0 +1,931 @@
+[
+  {
+    "section_id": "assign-leads-with-predictive-lead-scoring",
+    "heading": "Assign leads with predictive lead scoring",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM",
+          "confidence": "high"
+        },
+        {
+          "name": "predictive lead scoring",
+          "type": "Feature",
+          "mention": "predictive lead scoring",
+          "confidence": "high"
+        },
+        {
+          "name": "leads",
+          "type": "DataObject",
+          "mention": "leads",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunities",
+          "type": "DataObject",
+          "mention": "opportunities",
+          "confidence": "high"
+        },
+        {
+          "name": "sales teams",
+          "type": "Actor",
+          "mention": "sales teams",
+          "confidence": "medium"
+        },
+        {
+          "name": "salespeople",
+          "type": "Actor",
+          "mention": "salespeople",
+          "confidence": "medium"
+        },
+        {
+          "name": "companies",
+          "type": "Actor",
+          "mention": "Companies",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "CRM",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The Odoo **CRM** app"
+        },
+        {
+          "source": "predictive lead scoring",
+          "relation": "BELONGS_TO",
+          "target": "CRM",
+          "evidence": "Odoo automatically calculates the probability... using a method called *predictive lead scoring*"
+        },
+        {
+          "source": "CRM",
+          "relation": "HAS_FEATURE",
+          "target": "predictive lead scoring",
+          "evidence": "Odoo automatically calculates the probability... using a method called *predictive lead scoring*"
+        },
+        {
+          "source": "leads",
+          "relation": "EQUIVALENT_TO",
+          "target": "opportunities",
+          "evidence": "leads/opportunities"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "predictive-lead-scoring",
+    "heading": "Predictive lead scoring",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Predictive lead scoring",
+          "type": "Module",
+          "mention": "predictive lead scoring",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM",
+          "confidence": "high"
+        },
+        {
+          "name": "naive Bayes",
+          "type": "Standard",
+          "mention": "naive Bayes",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunity form",
+          "type": "DataObject",
+          "mention": "opportunity form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Salesperson",
+          "type": "Actor",
+          "mention": "Salesperson",
+          "confidence": "high"
+        },
+        {
+          "name": "lead_scoring/configuration",
+          "type": "Unknown",
+          "mention": "<lead_scoring/configuration>",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Predictive lead scoring",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Predictive lead scoring is a machine-learning model that uses historical data from Odoo CRM"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "USES_METHOD",
+          "target": "naive Bayes",
+          "evidence": "Odoo's predictive lead scoring uses the *naive Bayes* probability model"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "SUPPORTS",
+          "target": "CRM",
+          "evidence": "uses historical data from Odoo CRM to score open leads/opportunities"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "GENERATES",
+          "target": "opportunity form",
+          "evidence": "The probability of success of each opportunity is displayed on the opportunity form"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "SEE_ALSO",
+          "target": "lead_scoring/configuration",
+          "evidence": "Which variables are considered in this calculation can be configured <lead_scoring/configuration>"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "RELATED_TO",
+          "target": "Salesperson",
+          "evidence": "variables such as the assigned Salesperson, the source of the lead, the language of the lead"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Predictive lead scoring",
+          "type": "Feature",
+          "mention": "predictive lead scoring",
+          "confidence": "high"
+        },
+        {
+          "name": "Update Probabilities",
+          "type": "Action",
+          "mention": "Update Probabilities button",
+          "confidence": "high"
+        },
+        {
+          "name": "State",
+          "type": "Field",
+          "mention": "State",
+          "confidence": "high"
+        },
+        {
+          "name": "Country",
+          "type": "Field",
+          "mention": "Country",
+          "confidence": "high"
+        },
+        {
+          "name": "Phone Quality",
+          "type": "Field",
+          "mention": "Phone Quality",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Quality",
+          "type": "Field",
+          "mention": "Email Quality",
+          "confidence": "high"
+        },
+        {
+          "name": "Source",
+          "type": "Field",
+          "mention": "Source",
+          "confidence": "high"
+        },
+        {
+          "name": "Language",
+          "type": "Field",
+          "mention": "Language",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags",
+          "type": "Field",
+          "mention": "Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Stage",
+          "type": "Field",
+          "mention": "Stage",
+          "confidence": "high"
+        },
+        {
+          "name": "Team",
+          "type": "Field",
+          "mention": "Team",
+          "confidence": "high"
+        },
+        {
+          "name": "Consider leads created as of the:",
+          "type": "Setting",
+          "mention": "Consider leads created as of the:",
+          "confidence": "high"
+        },
+        {
+          "name": "date field",
+          "type": "Field",
+          "mention": "date field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Update",
+          "type": "Action",
+          "mention": "Update",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunity",
+          "type": "DataObject",
+          "mention": "opportunity",
+          "confidence": "high"
+        },
+        {
+          "name": "sales team",
+          "type": "Actor",
+          "mention": "sales team",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "CRM",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Configuration, CRM mentioned as part of Odoo"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "CRM",
+          "evidence": "go to CRM --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "HAS_FEATURE",
+          "target": "Update Probabilities",
+          "evidence": "Under Predictive Lead Scoring, click on the Update Probabilities button"
+        },
+        {
+          "source": "Update Probabilities",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "customized in the settings, go to CRM --> Configuration --> Settings"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "REQUIRES",
+          "target": "State",
+          "evidence": "State: the geographical state from which the opportunity originates"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "REQUIRES",
+          "target": "Country",
+          "evidence": "Country: the geographical country from which the opportunity originates"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "REQUIRES",
+          "target": "Phone Quality",
+          "evidence": "Phone Quality: whether or not a phone number is listed for the opportunity"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "REQUIRES",
+          "target": "Email Quality",
+          "evidence": "Email Quality: whether or not an email address is listed for the opportunity"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "REQUIRES",
+          "target": "Source",
+          "evidence": "Source: the source of an opportunity"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "REQUIRES",
+          "target": "Language",
+          "evidence": "Language: the spoken language specified on the opportunity"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "REQUIRES",
+          "target": "Tags",
+          "evidence": "Tags: the tags placed on the opportunity"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "REQUIRES",
+          "target": "Stage",
+          "evidence": "The variables Stage and Team are always in effect"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "REQUIRES",
+          "target": "Team",
+          "evidence": "The variables Stage and Team are always in effect"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "CONFIGURED_BY",
+          "target": "Consider leads created as of the:",
+          "evidence": "click on the date field next to the option Consider leads created as of the"
+        },
+        {
+          "source": "Update",
+          "relation": "ENABLES",
+          "target": "Predictive lead scoring",
+          "evidence": "click Update to save changes"
+        },
+        {
+          "source": "Stage",
+          "relation": "RELATED_TO",
+          "target": "CRM pipeline",
+          "evidence": "Stage refers to the CRM pipeline stage"
+        },
+        {
+          "source": "Team",
+          "relation": "RELATED_TO",
+          "target": "sales team",
+          "evidence": "Team refers to the sales team that is assigned to an opportunity"
+        },
+        {
+          "source": "Predictive lead scoring",
+          "relation": "GENERATES",
+          "target": "opportunity",
+          "evidence": "probability of success for opportunity"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-the-probability-manually",
+    "heading": "Change the probability manually",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunity",
+          "type": "DataObject",
+          "mention": "opportunity",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunity form",
+          "type": "DataObject",
+          "mention": "opportunity form",
+          "confidence": "high"
+        },
+        {
+          "name": "probability",
+          "type": "Field",
+          "mention": "probability",
+          "confidence": "high"
+        },
+        {
+          "name": "lead",
+          "type": "DataObject",
+          "mention": "lead",
+          "confidence": "high"
+        },
+        {
+          "name": "lead form",
+          "type": "DataObject",
+          "mention": "lead form",
+          "confidence": "medium"
+        },
+        {
+          "name": "pipeline",
+          "type": "Concept",
+          "mention": "pipeline",
+          "confidence": "medium"
+        },
+        {
+          "name": "AI-computed probability",
+          "type": "Feature",
+          "mention": "AI-computed probability",
+          "confidence": "medium"
+        },
+        {
+          "name": "AI icon",
+          "type": "Feature",
+          "mention": "AI icon",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "probability",
+          "relation": "BELONGS_TO",
+          "target": "opportunity form",
+          "evidence": "opportunity's probability... on the opportunity form"
+        },
+        {
+          "source": "lead",
+          "relation": "RELATED_TO",
+          "target": "opportunity",
+          "evidence": "convert a lead... into an opportunity"
+        },
+        {
+          "source": "probability",
+          "relation": "ENABLES",
+          "target": "AI-computed probability",
+          "evidence": "The AI-computed probability remains visible..."
+        },
+        {
+          "source": "pipeline",
+          "relation": "RELATED_TO",
+          "target": "opportunity",
+          "evidence": "opportunity moves through each stage of the pipeline"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assign-leads-based-on-probability",
+    "heading": "Assign leads based on probability",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM",
+          "confidence": "high"
+        },
+        {
+          "name": "leads/opportunities",
+          "type": "DataObject",
+          "mention": "leads/opportunities",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales teams",
+          "type": "Actor",
+          "mention": "sales teams",
+          "confidence": "medium"
+        },
+        {
+          "name": "salespeople",
+          "type": "Actor",
+          "mention": "salespeople",
+          "confidence": "medium"
+        },
+        {
+          "name": "assignment rules",
+          "type": "Workflow",
+          "mention": "assignment rules",
+          "confidence": "high"
+        },
+        {
+          "name": "probability of success",
+          "type": "Field",
+          "mention": "probability of success",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "CRM",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo CRM"
+        },
+        {
+          "source": "assignment rules",
+          "relation": "IS_PART_OF",
+          "target": "CRM",
+          "evidence": "Odoo CRM can assign leads/opportunities... Create assignment rules"
+        },
+        {
+          "source": "CRM",
+          "relation": "GENERATES",
+          "target": "assignment rules",
+          "evidence": "Odoo CRM can assign leads/opportunities... Create assignment rules"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-rule-based-assignment",
+    "heading": "Configure rule-based assignment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "rule-based assignment",
+          "type": "Feature",
+          "mention": "rule-based assignment",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Manually",
+          "type": "Setting",
+          "mention": "Manually",
+          "confidence": "high"
+        },
+        {
+          "name": "Repeatedly",
+          "type": "Setting",
+          "mention": "Repeatedly",
+          "confidence": "high"
+        },
+        {
+          "name": "Running",
+          "type": "Field",
+          "mention": "Running section",
+          "confidence": "high"
+        },
+        {
+          "name": "Repeat every",
+          "type": "Setting",
+          "mention": "Repeat every section",
+          "confidence": "high"
+        },
+        {
+          "name": "Minutes",
+          "type": "Standard",
+          "mention": "Minutes",
+          "confidence": "high"
+        },
+        {
+          "name": "Weeks",
+          "type": "Standard",
+          "mention": "Weeks",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-refresh (Update now) icon",
+          "type": "Action",
+          "mention": "fa-refresh (Update now) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Rule-Based Assignment settings",
+          "type": "Setting",
+          "mention": "Rule-Based Assignment settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign Leads button",
+          "type": "Action",
+          "mention": "Assign Leads button",
+          "confidence": "high"
+        },
+        {
+          "name": "sales team configuration page",
+          "type": "Setting",
+          "mention": "sales team configuration page",
+          "confidence": "high"
+        },
+        {
+          "name": "lead",
+          "type": "DataObject",
+          "mention": "lead",
+          "confidence": "high"
+        },
+        {
+          "name": "salesperson",
+          "type": "Actor",
+          "mention": "salesperson",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunity",
+          "type": "DataObject",
+          "mention": "opportunity",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "rule-based assignment",
+          "relation": "CONTAINS",
+          "target": "Manually",
+          "evidence": "The rule-based assignment feature can be set to run Manually"
+        },
+        {
+          "source": "rule-based assignment",
+          "relation": "CONTAINS",
+          "target": "Repeatedly",
+          "evidence": "or Repeatedly, meaning Odoo automatically triggers the assignment"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "rule-based assignment",
+          "evidence": "To activate rule-based assignment, navigate to CRM --> Configuration --> Settings, and activate Rule-Based Assignment."
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "CRM",
+          "evidence": "navigate to CRM --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Repeat every",
+          "relation": "IS_PART_OF",
+          "target": "Running",
+          "evidence": "The frequency of this automatic assignment is customized within the Repeat every section"
+        },
+        {
+          "source": "fa-refresh (Update now) icon",
+          "relation": "IS_PART_OF",
+          "target": "Rule-Based Assignment settings",
+          "evidence": "using the fa-refresh (Update now) icon in the Rule-Based Assignment settings"
+        },
+        {
+          "source": "Assign Leads button",
+          "relation": "IS_PART_OF",
+          "target": "sales team configuration page",
+          "evidence": "or using the Assign Leads button on the sales team configuration page"
+        },
+        {
+          "source": "Manually",
+          "relation": "REQUIRES",
+          "target": "Odoo user",
+          "evidence": "Manually, meaning an Odoo user must manually trigger the assignment"
+        },
+        {
+          "source": "Repeatedly",
+          "relation": "ENABLES",
+          "target": "fa-refresh (Update now) icon",
+          "evidence": "If rule-based assignment is set to run Repeatedly, the assignment can still be triggered manually using the fa-refresh (Update now) icon"
+        },
+        {
+          "source": "Repeatedly",
+          "relation": "ENABLES",
+          "target": "Assign Leads button",
+          "evidence": "If rule-based assignment is set to run Repeatedly, the assignment can still be triggered manually using... the Assign Leads button"
+        },
+        {
+          "source": "rule-based assignment",
+          "relation": "PRODUCES",
+          "target": "opportunity",
+          "evidence": "the leads are automatically converted into an opportunity by the system"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-assignment-rules",
+    "heading": "Configure assignment rules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales Teams",
+          "type": "Module",
+          "mention": "Sales Teams",
+          "confidence": "medium"
+        },
+        {
+          "name": "assignment rules",
+          "type": "Feature",
+          "mention": "assignment rules",
+          "confidence": "high"
+        },
+        {
+          "name": "sales team",
+          "type": "Actor",
+          "mention": "sales team",
+          "confidence": "high"
+        },
+        {
+          "name": "salesperson",
+          "type": "Actor",
+          "mention": "salesperson",
+          "confidence": "high"
+        },
+        {
+          "name": "leads",
+          "type": "DataObject",
+          "mention": "leads",
+          "confidence": "high"
+        },
+        {
+          "name": "team member",
+          "type": "Actor",
+          "mention": "team member",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit Domain",
+          "type": "Action",
+          "mention": "Edit Domain",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Filter",
+          "type": "Action",
+          "mention": "Add Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Probability",
+          "type": "Field",
+          "mention": "Probability",
+          "confidence": "high"
+        },
+        {
+          "name": "Skip auto assignment",
+          "type": "Setting",
+          "mention": "Skip auto assignment",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign Leads",
+          "type": "Action",
+          "mention": "Assign Leads",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "assignment rules",
+          "relation": "BELONGS_TO",
+          "target": "sales team",
+          "evidence": "configure the *assignment rules* for each sales team or salesperson"
+        },
+        {
+          "source": "assignment rules",
+          "relation": "BELONGS_TO",
+          "target": "salesperson",
+          "evidence": "configure the *assignment rules* for each sales team or salesperson"
+        },
+        {
+          "source": "assignment rules",
+          "relation": "GENERATES",
+          "target": "leads",
+          "evidence": "These rules determine which leads Odoo assigns to which people"
+        },
+        {
+          "source": "CRM",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to CRM --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Sales Teams",
+          "evidence": "navigate to CRM --> Configuration --> Sales Teams"
+        },
+        {
+          "source": "sales team",
+          "relation": "CONTAINS",
+          "target": "team member",
+          "evidence": "From the sales team configuration page, click on a team member in the Members tab"
+        },
+        {
+          "source": "Edit Domain",
+          "relation": "CONFIGURED_BY",
+          "target": "assignment rules",
+          "evidence": "click on Edit Domain to configure the rules that Odoo uses to determine lead assignment"
+        },
+        {
+          "source": "assignment rules",
+          "relation": "REQUIRES",
+          "target": "Probability",
+          "evidence": "To create an assignment rule based on an opportunity's probability of success... select Probability"
+        },
+        {
+          "source": "sales team",
+          "relation": "CONFIGURED_BY",
+          "target": "Skip auto assignment",
+          "evidence": "both the sales team and individual team members have the option to Skip auto assignment"
+        },
+        {
+          "source": "salesperson",
+          "relation": "CONFIGURED_BY",
+          "target": "Skip auto assignment",
+          "evidence": "both the sales team and individual team members have the option to Skip auto assignment"
+        },
+        {
+          "source": "Assign Leads",
+          "relation": "PRODUCES",
+          "target": "leads",
+          "evidence": "This assigns any leads that are currently unassigned and match this team's specified domain"
+        }
+      ]
+    }
+  }
+]

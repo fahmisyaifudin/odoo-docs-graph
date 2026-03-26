@@ -1,0 +1,498 @@
+[
+  {
+    "section_id": "configure-product",
+    "heading": "Configure product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Units of measure",
+          "type": "Module",
+          "mention": "Units of measure (UoM)",
+          "confidence": "high"
+        },
+        {
+          "name": "configure/uom",
+          "type": "Sub-module",
+          "mention": "configure/uom",
+          "confidence": "medium"
+        },
+        {
+          "name": "configure/package",
+          "type": "Sub-module",
+          "mention": "configure/package",
+          "confidence": "medium"
+        },
+        {
+          "name": "configure/packaging",
+          "type": "Sub-module",
+          "mention": "configure/packaging",
+          "confidence": "medium"
+        },
+        {
+          "name": "fabric",
+          "type": "Concept",
+          "mention": "Purchasing fabric",
+          "confidence": "low"
+        },
+        {
+          "name": "box",
+          "type": "Concept",
+          "mention": "box containing assorted items",
+          "confidence": "low"
+        },
+        {
+          "name": "soda",
+          "type": "Concept",
+          "mention": "Cans of soda",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Units of measure",
+          "evidence": "A group of products in Odoo can be further defined using: Units of measure (UoM)"
+        },
+        {
+          "source": "Units of measure",
+          "relation": "CONTAINS",
+          "target": "configure/uom",
+          "evidence": "Units of measure (UoM) <configure/uom>"
+        },
+        {
+          "source": "Units of measure",
+          "relation": "HAS_FEATURE",
+          "target": "automatic conversion",
+          "evidence": "Enables automatic conversion between measurement systems"
+        },
+        {
+          "source": "configure/uom",
+          "relation": "ENABLES",
+          "target": "automatic conversion",
+          "evidence": "Enables automatic conversion between measurement systems"
+        },
+        {
+          "source": "configure/uom",
+          "relation": "RELATED_TO",
+          "target": "fabric",
+          "evidence": "Ex: Purchasing fabric"
+        },
+        {
+          "source": "configure/package",
+          "relation": "RELATED_TO",
+          "target": "box",
+          "evidence": "Ex: A box containing assorted items"
+        },
+        {
+          "source": "configure/packaging",
+          "relation": "RELATED_TO",
+          "target": "soda",
+          "evidence": "Ex: Cans of soda sold in packs"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "comparison",
+    "heading": "Comparison",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ',' delimiter: line 1 column 2316 (char 2315)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"Unit of measure\",\"type\":\"Concept\",\"mention\":\"Unit of measure\",\"confidence\":\"high\"},{\"name\":\"Packages\",\"type\":\"Concept\",\"mention\":\"Packages\",\"confidence\":\"high\"},{\"name\":\"Packaging\",\"type\":\"Concept\",\"mention\":\"Packaging\",\"confidence\":\"high\"},{\"name\":\"cm\",\"type\":\"Concept\",\"mention\":\"cm\",\"confidence\":\"high\"},{\"name\":\"lb\",\"type\":\"Concept\",\"mention\":\"lb\",\"confidence\":\"high\"},{\"name\":\"L\",\"type\":\"Concept\",\"mention\":\"L\",\"confidence\":\"high\"},{\"name\":\"Move Entire Packages\",\"type\":\"Feature\",\"mention\":\"Move Entire Packages feature\",\"confidence\":\"medium\"},{\"name\":\"Inventory app\",\"type\":\"Module\",\"mention\":\"Inventory app\",\"confidence\":\"medium\"},{\"name\":\"Products\",\"type\":\"Sub-module\",\"mention\":\"Products\",\"confidence\":\"medium\"},{\"name\":\"Packages\",\"type\":\"Sub-module\",\"mention\":\"Packages\",\"confidence\":\"medium\"},{\"name\":\"Shipping Weight\",\"type\":\"Field\",\"mention\":\"Shipping Weight field\",\"confidence\":\"high\"},{\"name\":\"Package Use\",\"type\":\"Field\",\"mention\":\"Package Use field\",\"confidence\":\"high\"},{\"name\":\"Package Type\",\"type\":\"Setting\",\"mention\":\"Package Type settings\",\"confidence\":\"high\"},{\"name\":\"lot/serial number tracking\",\"type\":\"Feature\",\"mention\":\"lot/serial number tracking\",\"confidence\":\"medium\"},{\"name\":\"custom routes\",\"type\":\"Feature\",\"mention\":\"custom routes\",\"confidence\":\"medium\"}],\"relations\":[{\"source\":\"Unit of measure\",\"relation\":\"SUPPORTS\",\"target\":\"cm\",\"evidence\":\"Standardized measurement for product units (e.g., cm, lb, L)\"},{\"source\":\"Unit of measure\",\"relation\":\"SUPPORTS\",\"target\":\"lb\",\"evidence\":\"Standardized measurement for product units (e.g., cm, lb, L)\"},{\"source\":\"Unit of measure\",\"relation\":\"SUPPORTS\",\"target\":\"L\",\"evidence\":\"Standardized measurement for product units (e.g., cm, lb, L)\"},{\"source\":\"Packages\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Package Use\",\"evidence\":\"Can be disposable or reusable, configured via the Package Use field\"},{\"source\":\"Packages\",\"relation\":\"HAS_FEATURE\",\"target\":\"lot/serial number tracking\",\"evidence\":\"Applies only to contained products\"},{\"source\":\"Packaging\",\"relation\":\"HAS_FEATURE\",\"target\":\"lot/serial number tracking\",\"evidence\":\"Applies to both contained products and the container\"},{\"source\":\"Packaging\",\"relation\":\"HAS_FEATURE\",\"targ\":\",\"lot/serial number tracking\",\"evidence\":\"Packaging\",\"relation\":\"HAS_FEATURE\",\"target\":\"lot/serial number tracking\",\"evidence\":\"Applies to both contained products and the container\"},{\"source\":\"Packaging\",\"relation\":\"HAS_FEATURE\",\"target\":\"custom routes\",\"evidence\":\"Routes can define specific warehouse paths for a particular packaging type\"},{\"source\":\"Move Entire Packages\",\"relation\":\"ENABLES\",\"target\":\"Packages\",\"evidence\":\"Can enable the Move Entire Packages feature to update the package's contained items' locations\"},{\"source\":\"Odoo\",\"relation\":\"CONTAINS\",\"target\":\"Inventory app\",\"evidence\":\"Inventory app --> Products --> Packages\"},{\"source\":\"Inventory app\",\"relation\":\"CONTAINS\",\"target\":\"Products\",\"evidence\":\"Inventory app --> Products --> Packages\"},{\"source\":\"Products\",\"relation\":\"CONTAINS\",\"target\":\"Packages\",\"evidence\":\"Inventory app --> Products --> Packages\"},{\"source\":\"Packages\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Shipping Weight\",\"evidence\":\"Weight of the container itself is included in the *Shipping Weight* field of a package\"},{\"source\":\"Packaging\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Package Type\",\"evidence\":\"Weight of the container is defined in the *Package Type* settings\"}]}"
+    }
+  },
+  {
+    "section_id": "use-cases",
+    "heading": "Use cases",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory management",
+          "type": "Concept",
+          "mention": "inventory management",
+          "confidence": "medium"
+        },
+        {
+          "name": "logistics workflows",
+          "type": "Concept",
+          "mention": "logistics workflows",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "inventory management",
+          "evidence": "After comparing the various features"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "logistics workflows",
+          "evidence": "After comparing the various features"
+        },
+        {
+          "source": "logistics workflows",
+          "relation": "BELONGS_TO",
+          "target": "inventory management",
+          "evidence": "inventory management and logistics workflows"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "pallets-of-items-using-packaging",
+    "heading": "Pallets of items using packaging",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Module",
+          "mention": "warehouse",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Packaging",
+          "type": "Feature",
+          "mention": "product packaging",
+          "confidence": "high"
+        },
+        {
+          "name": "Shipment",
+          "type": "DataObject",
+          "mention": "shipment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pallet",
+          "type": "DataObject",
+          "mention": "pallet",
+          "confidence": "high"
+        },
+        {
+          "name": "Soap Bar",
+          "type": "DataObject",
+          "mention": "bar",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse Tracking",
+          "type": "Feature",
+          "mention": "Warehouse tracking",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode",
+          "type": "DataObject",
+          "mention": "barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal Transfer",
+          "type": "Workflow",
+          "mention": "internal transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Stock Count",
+          "type": "Feature",
+          "mention": "stock count",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Warehouse",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Pallets of items using packaging A warehouse receives shipments..."
+        },
+        {
+          "source": "Product Packaging",
+          "relation": "HAS_FEATURE",
+          "target": "Warehouse",
+          "evidence": "After evaluating various options, *product packaging* was the most suitable solution."
+        },
+        {
+          "source": "Product Packaging",
+          "relation": "ENABLES",
+          "target": "Barcode",
+          "evidence": "Packaging enables assigning a barcode to a pallet..."
+        },
+        {
+          "source": "Shipment",
+          "relation": "CONTAINS",
+          "target": "Pallet",
+          "evidence": "A warehouse receives shipments of soap organized on physical pallets..."
+        },
+        {
+          "source": "Pallet",
+          "relation": "CONTAINS",
+          "target": "Soap Bar",
+          "evidence": "...containing 96 bars."
+        },
+        {
+          "source": "Warehouse Tracking",
+          "relation": "HAS_FEATURE",
+          "target": "Warehouse",
+          "evidence": "Warehouse tracking limitations..."
+        },
+        {
+          "source": "Warehouse Tracking",
+          "relation": "GENERATES",
+          "target": "Stock Count",
+          "evidence": "Odoo tracks only the total quantity... and the number of individual bars of soap must be included in the stock count..."
+        },
+        {
+          "source": "Barcode",
+          "relation": "RELATED_TO",
+          "target": "Pallet",
+          "evidence": "...assigning a barcode to a pallet..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "capture-product-information-using-barcode",
+    "heading": "Capture product information using barcode",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "**Barcode** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages",
+          "type": "DataObject",
+          "mention": "Packages",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory/warehouses_storage/enable-package",
+          "type": "Setting",
+          "mention": "appropriate setting is enabled <inventory/warehouses_storage/enable-package>",
+          "confidence": "high"
+        },
+        {
+          "name": "Scanning a package barcode",
+          "type": "Action",
+          "mention": "scanning a package barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "**Barcode** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Physical container",
+          "type": "Concept",
+          "mention": "physical containers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contents",
+          "type": "DataObject",
+          "mention": "its contents",
+          "confidence": "medium"
+        },
+        {
+          "name": "Items",
+          "type": "Concept",
+          "mention": "items they hold",
+          "confidence": "low"
+        },
+        {
+          "name": "Inventory moves",
+          "type": "Workflow",
+          "mention": "operations, like inventory moves",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Packages",
+          "relation": "CONFIGURED_BY",
+          "target": "inventory/warehouses_storage/enable-package",
+          "evidence": "When the appropriate setting is enabled"
+        },
+        {
+          "source": "Scanning a package barcode",
+          "relation": "PRODUCES",
+          "target": "Contents",
+          "evidence": "scanning a package barcode displays its contents"
+        },
+        {
+          "source": "Scanning a package barcode",
+          "relation": "PERFORMED_BY",
+          "target": "Barcode",
+          "evidence": "scanning a package barcode displays its contents in the **Barcode** app"
+        },
+        {
+          "source": "Packages",
+          "relation": "RELATED_TO",
+          "target": "Physical container",
+          "evidence": "Packages represent physical containers"
+        },
+        {
+          "source": "Packages",
+          "relation": "CONTAINS",
+          "target": "Items",
+          "evidence": "enabling detailed tracking of the items they hold"
+        },
+        {
+          "source": "Scanning a package barcode",
+          "relation": "ENABLES",
+          "target": "Inventory moves",
+          "evidence": "facilitates operations, like inventory moves"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "track-different-units-of-measure-in-storage",
+    "heading": "Track different units of measure in storage",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit of Measure",
+          "type": "Concept",
+          "mention": "Unit of Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "lot numbers",
+          "type": "DataObject",
+          "mention": "lot numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "LOT1",
+          "type": "DataObject",
+          "mention": "LOT1: Grams (g)",
+          "confidence": "medium"
+        },
+        {
+          "name": "LOT2",
+          "type": "DataObject",
+          "mention": "LOT2: Kilograms (kg)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manual inventory adjustments",
+          "type": "Action",
+          "mention": "Manual inventory adjustments are required",
+          "confidence": "medium"
+        },
+        {
+          "name": "configure/type",
+          "type": "Setting",
+          "mention": "configure/type",
+          "confidence": "low"
+        },
+        {
+          "name": "configure/uom",
+          "type": "Setting",
+          "mention": "configure/uom",
+          "confidence": "low"
+        },
+        {
+          "name": "configure/package",
+          "type": "Setting",
+          "mention": "configure/package",
+          "confidence": "low"
+        },
+        {
+          "name": "configure/pack_in_pack",
+          "type": "Setting",
+          "mention": "configure/pack_in_pack",
+          "confidence": "low"
+        },
+        {
+          "name": "configure/packaging",
+          "type": "Setting",
+          "mention": "configure/packaging",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Unit of Measure",
+          "evidence": "*Unit of Measure* was most suitable. Odoo automatically converts tons to kilograms during receipts."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "lot numbers",
+          "evidence": "the company uses lot numbers to differentiate"
+        },
+        {
+          "source": "lot numbers",
+          "relation": "IS_PART_OF",
+          "target": "LOT1",
+          "evidence": "- LOT1: Grams (g)"
+        },
+        {
+          "source": "lot numbers",
+          "relation": "IS_PART_OF",
+          "target": "LOT2",
+          "evidence": "- LOT2: Kilograms (kg)"
+        },
+        {
+          "source": "Manual inventory adjustments",
+          "relation": "PRODUCES",
+          "target": "LOT1",
+          "evidence": "such as subtracting 1 kg from LOT2 to add 1,000 g to LOT1"
+        },
+        {
+          "source": "Manual inventory adjustments",
+          "relation": "PRODUCES",
+          "target": "LOT2",
+          "evidence": "such as subtracting 1 kg from LOT2 to add 1,000 g to LOT1"
+        }
+      ]
+    }
+  }
+]

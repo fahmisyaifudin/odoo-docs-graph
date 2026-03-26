@@ -1,0 +1,288 @@
+[
+  {
+    "section_id": "online-payments",
+    "heading": "Online payments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Online Payment",
+          "type": "Feature",
+          "mention": "Invoice Online Payment feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Portal",
+          "type": "Module",
+          "mention": "Customer Portal",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay Now",
+          "type": "Action",
+          "mention": "Pay Now button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice Online Payment",
+          "relation": "ENABLES",
+          "target": "Pay Now",
+          "evidence": "... which adds a *Pay Now* button"
+        },
+        {
+          "source": "Invoice Online Payment",
+          "relation": "CONTAINS",
+          "target": "Customer Portal",
+          "evidence": "... on their **Customer Portal**"
+        },
+        {
+          "source": "Invoice Online Payment",
+          "relation": "HAS_FEATURE",
+          "target": "Pay Now",
+          "evidence": "... which adds a *Pay Now* button"
+        },
+        {
+          "source": "Invoice Online Payment",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Pay Now",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "allows your customers to pay directly"
+        },
+        {
+          "source": "Pay Now",
+          "relation": "BELONGS_TO",
+          "target": "Invoice Online Payment",
+          "evidence": "which adds a *Pay Now* button"
+        },
+        {
+          "source": "Customer Portal",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Customer Portal",
+          "relation": "CONTAINS",
+          "target": "Invoice Online Payment",
+          "evidence": "on their **Customer Portal**"
+        },
+        {
+          "source": "Invoice Online Payment",
+          "relation": "CONFIGURED_BY",
+          "target": "Unknown",
+          "evidence": "you can activate the Invoice Online Payment feature"
+        },
+        {
+          "source": "Pay Now",
+          "relation": "GENERATES",
+          "target": "Unknown",
+          "evidence": "pay directly with their favorite payment method"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Wire Transfer",
+          "type": "Integration",
+          "mention": "Wire Transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Payments",
+          "type": "Feature",
+          "mention": "Customer Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Online Payment",
+          "type": "Feature",
+          "mention": "Invoice Online Payment",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice Online Payment",
+          "relation": "BELONGS_TO",
+          "target": "Customer Payments",
+          "evidence": "To activate the Invoice Online Payment, go to Accounting --> Configuration --> Settings --> Customer Payments"
+        },
+        {
+          "source": "Customer Payments",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "Accounting --> Configuration --> Settings --> Customer Payments"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Accounting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, go to Accounting"
+        },
+        {
+          "source": "Wire Transfer",
+          "relation": "CONFIGURED_BY",
+          "target": "Customer Payments",
+          "evidence": "Make sure your payment providers are correctly configured"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Wire Transfer",
+          "evidence": "By default, Wire Transfer is the only payment provider activated"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "customer-portal",
+    "heading": "Customer Portal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Portal",
+          "type": "Module",
+          "mention": "Customer Portal",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Send & Print",
+          "type": "Action",
+          "mention": "*Send & Print*",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay Now",
+          "type": "Action",
+          "mention": "*Pay Now*",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Provider",
+          "type": "Integration",
+          "mention": "Payment Provider",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Send & Print",
+          "relation": "PRODUCES",
+          "target": "invoice",
+          "evidence": "After issuing the invoice, click on *Send & Print*"
+        },
+        {
+          "source": "Send & Print",
+          "relation": "TRIGGERED_BY",
+          "target": "invoice",
+          "evidence": "After issuing the invoice, click on *Send & Print*"
+        },
+        {
+          "source": "Send & Print",
+          "relation": "ENABLES",
+          "target": "Pay Now",
+          "evidence": "They can choose which Payment Provider to use by clicking on *Pay Now*"
+        },
+        {
+          "source": "Customer Portal",
+          "type": "CONTAINS",
+          "target": "invoice",
+          "evidence": "...redirects them to the invoice on their **Customer Portal**"
+        },
+        {
+          "source": "invoice",
+          "relation": "BELONGS_TO",
+          "target": "Customer Portal",
+          "evidence": "...redirects them to the invoice on their **Customer Portal**"
+        },
+        {
+          "source": "Pay Now",
+          "relation": "IS_PART_OF",
+          "target": "Customer Portal",
+          "evidence": "They can choose which Payment Provider to use by clicking on *Pay Now*"
+        },
+        {
+          "source": "Pay Now",
+          "relation": "SUPPORTS",
+          "target": "Payment Provider",
+          "evidence": "They can choose which Payment Provider to use by clicking on *Pay Now*"
+        },
+        {
+          "source": "Payment Provider",
+          "type": "INTEGRATION",
+          "relation": "RELATED_TO",
+          "target": "Pay Now",
+          "evidence": "They can choose which Payment Provider to use by clicking on *Pay Now*"
+        }
+      ]
+    }
+  }
+]

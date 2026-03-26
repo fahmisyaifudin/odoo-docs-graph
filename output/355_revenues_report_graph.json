@@ -1,0 +1,1230 @@
+[
+  {
+    "section_id": "revenues-report",
+    "heading": "Revenues report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events application",
+          "type": "Module",
+          "mention": "Events application",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendees report",
+          "type": "Report",
+          "mention": "reports can either be focused on *Attendees*",
+          "confidence": "medium"
+        },
+        {
+          "name": "Revenues report",
+          "type": "Report",
+          "mention": "Revenues report",
+          "confidence": "high"
+        },
+        {
+          "name": "event-related data",
+          "type": "DataObject",
+          "mention": "event-related data",
+          "confidence": "medium"
+        },
+        {
+          "name": "analytics",
+          "type": "Concept",
+          "mention": "analytics",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Events application",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The Odoo **Events** application"
+        },
+        {
+          "source": "Events application",
+          "relation": "HAS_REPORT",
+          "target": "Attendees report",
+          "evidence": "creates custom reports, based on event-related data and analytics. These reports can either be focused on *Attendees*"
+        },
+        {
+          "source": "Events application",
+          "relation": "HAS_REPORT",
+          "target": "Revenues report",
+          "evidence": "creates custom reports, based on event-related data and analytics. These reports can either be focused on *Attendees* or *Revenues*"
+        },
+        {
+          "source": "Events application",
+          "relation": "GENERATES",
+          "target": "event-related data",
+          "evidence": "creates custom reports, based on event-related data and analytics"
+        },
+        {
+          "source": "Events application",
+          "relation": "RELATED_TO",
+          "target": "analytics",
+          "evidence": "creates custom reports, based on event-related data and analytics"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "revenues-reporting-page",
+    "heading": "Revenues reporting page",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events app",
+          "type": "Module",
+          "mention": "Events app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Revenues reporting page",
+          "type": "Report",
+          "mention": "Revenues reporting page",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendees reporting page",
+          "type": "Report",
+          "mention": "Attendees reporting page",
+          "confidence": "high"
+        },
+        {
+          "name": "Graph",
+          "type": "Feature",
+          "mention": "a graph",
+          "confidence": "medium"
+        },
+        {
+          "name": "Line Chart",
+          "type": "Feature",
+          "mention": "fa-line-chart (Line Chart)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Stacked",
+          "type": "Feature",
+          "mention": "fa-database (Stacked)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Non-free tickets",
+          "type": "Concept",
+          "mention": "Non-free tickets",
+          "confidence": "medium"
+        },
+        {
+          "name": "Event Start Date",
+          "type": "Concept",
+          "mention": "Event Start Date",
+          "confidence": "medium"
+        },
+        {
+          "name": "current year",
+          "type": "Concept",
+          "mention": "current year",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "low"
+        },
+        {
+          "name": "Graph views documentation",
+          "type": "Concept",
+          "mention": "Graph views documentation",
+          "confidence": "low"
+        },
+        {
+          "name": "Pivot table",
+          "type": "Feature",
+          "mention": "pivot table",
+          "confidence": "high"
+        },
+        {
+          "name": "Pivot icon",
+          "type": "Action",
+          "mention": "oi-view-pivot (Pivot) icon",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reporting",
+          "relation": "BELONGS_TO",
+          "target": "Events app",
+          "evidence": "navigate to Events app --> Reporting"
+        },
+        {
+          "source": "Events app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "navigate to Events app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Revenues reporting page",
+          "evidence": "Reporting --> Revenues"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Attendees reporting page",
+          "evidence": "navigate to Events app --> Reporting --> Revenues"
+        },
+        {
+          "source": "Revenues reporting page",
+          "relation": "ENABLES",
+          "target": "Graph",
+          "evidence": "By default, the Revenues reporting page appears as a graph"
+        },
+        {
+          "source": "Revenues reporting page",
+          "relation": "ENABLES",
+          "target": "Line Chart",
+          "evidence": "with fa-line-chart (Line Chart) data"
+        },
+        {
+          "source": "Revenues reporting page",
+          "relation": "ENABLES",
+          "target": "Stacked",
+          "evidence": "with fa-database (Stacked) data"
+        },
+        {
+          "source": "Revenues reporting page",
+          "relation": "ENABLES",
+          "target": "Pivot table",
+          "evidence": "The Revenues reporting page can also be viewed as a pivot table"
+        },
+        {
+          "source": "Pivot icon",
+          "relation": "TRIGGERED_BY",
+          "target": "Pivot table",
+          "evidence": "by clicking the oi-view-pivot (Pivot) icon"
+        },
+        {
+          "source": "Graph",
+          "relation": "SEE_ALSO",
+          "target": "Graph views documentation",
+          "evidence": "refer to the Graph views documentation"
+        },
+        {
+          "source": "Graph",
+          "relation": "RELATED_TO",
+          "target": "Pivot table",
+          "evidence": "page appears as a graph... can also be viewed as a pivot table"
+        },
+        {
+          "source": "Revenues reporting page",
+          "relation": "CONFIGURED_BY",
+          "target": "Non-free tickets",
+          "evidence": "default filters, Non-free tickets"
+        },
+        {
+          "source": "Revenues reporting page",
+          "relation": "CONFIGURED_BY",
+          "target": "Event Start Date",
+          "evidence": "Event Start Date: (current year)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "measures",
+    "heading": "Measures",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Measures",
+          "type": "Feature",
+          "mention": "Choosing specific Measures",
+          "confidence": "high"
+        },
+        {
+          "name": "Revenues reporting page",
+          "type": "Report",
+          "mention": "reporting pages... the Revenues reporting page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Revenues",
+          "type": "Measure",
+          "mention": "Revenues: shows the revenues generated from events.",
+          "confidence": "high"
+        },
+        {
+          "name": "Untaxed Revenues",
+          "type": "Measure",
+          "mention": "Untaxed Revenues: shows the untaxed revenues generated from events.",
+          "confidence": "high"
+        },
+        {
+          "name": "Count",
+          "type": "Measure",
+          "mention": "Count: shows the total amount of registrants who attended events.",
+          "confidence": "high"
+        },
+        {
+          "name": "graph view",
+          "type": "Feature",
+          "mention": "In the default graph view",
+          "confidence": "medium"
+        },
+        {
+          "name": "pivot option",
+          "type": "Feature",
+          "mention": "When the pivot option is selected",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Measures",
+          "relation": "HAS_FEATURE",
+          "target": "Revenues",
+          "evidence": "the measures on the Revenues reporting page are as follows: Revenues"
+        },
+        {
+          "source": "Measures",
+          "relation": "HAS_FEATURE",
+          "target": "Untaxed Revenues",
+          "evidence": "the measures on the Revenues reporting page are as follows: ... Untaxed Revenues"
+        },
+        {
+          "source": "Measures",
+          "relation": "HAS_FEATURE",
+          "target": "Count",
+          "evidence": "the measures on the Revenues reporting page are as follows: ... Count"
+        },
+        {
+          "source": "Revenues reporting page",
+          "relation": "HAS_FEATURE",
+          "target": "Measures",
+          "evidence": "the measures on the Revenues reporting page are as follows"
+        },
+        {
+          "source": "graph view",
+          "relation": "CONFIGURED_BY",
+          "target": "Measures",
+          "evidence": "only the Revenues option is set in the Measures drop-down menu"
+        },
+        {
+          "source": "pivot option",
+          "relation": "CONFIGURED_BY",
+          "target": "Measures",
+          "evidence": "all Measures options are selected, by default"
+        },
+        {
+          "source": "Revenues",
+          "relation": "GENERATES",
+          "target": "Revenues reporting page",
+          "evidence": "Revenues: shows the revenues generated from events."
+        },
+        {
+          "source": "Untaxed Revenues",
+          "relation": "GENERATES",
+          "target": "Revenues reporting page",
+          "evidence": "Untaxed Revenues: shows the untaxed revenues generated from events."
+        },
+        {
+          "source": "Count",
+          "relation": "GENERATES",
+          "target": "Revenues reporting page",
+          "evidence": "Count: shows the total amount of registrants who attended events."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "filters-and-grouping-options",
+    "heading": "Filters and grouping options",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters",
+          "confidence": "high"
+        },
+        {
+          "name": "Group By",
+          "type": "Feature",
+          "mention": "Group By",
+          "confidence": "high"
+        },
+        {
+          "name": "Favorites",
+          "type": "Feature",
+          "mention": "Favorites",
+          "confidence": "high"
+        },
+        {
+          "name": "Comparison",
+          "type": "Feature",
+          "mention": "Comparison",
+          "confidence": "medium"
+        },
+        {
+          "name": "Event Start Date",
+          "type": "Field",
+          "mention": "Event Start Date",
+          "confidence": "low"
+        },
+        {
+          "name": "search",
+          "type": "Concept",
+          "mention": "search",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Filters",
+          "evidence": "Product: Odoo ... Filters column"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Group By",
+          "evidence": "Group By <search/group>"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Favorites",
+          "evidence": "Favorites <search/favorites>"
+        },
+        {
+          "source": "Filters",
+          "relation": "ENABLES",
+          "target": "Comparison",
+          "evidence": "If a time-related option has been selected from the Filters column (e.g. ... ), a Comparison column appears"
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Event Start Date",
+          "evidence": "the default Event Start Date: (year) filter"
+        },
+        {
+          "source": "Comparison",
+          "relation": "SEE_ALSO",
+          "target": "search",
+          "evidence": "../../essentials/search"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "filter-options",
+    "heading": "Filter options",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Filters column",
+          "type": "Module",
+          "mention": "Filters column",
+          "confidence": "high"
+        },
+        {
+          "name": "drop-down mega menu",
+          "type": "Feature",
+          "mention": "drop-down mega menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Non-free tickets",
+          "type": "Feature",
+          "mention": "Non-free tickets",
+          "confidence": "high"
+        },
+        {
+          "name": "Free",
+          "type": "Feature",
+          "mention": "Free",
+          "confidence": "high"
+        },
+        {
+          "name": "Pending payment",
+          "type": "Feature",
+          "mention": "Pending payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Sold",
+          "type": "Feature",
+          "mention": "Sold",
+          "confidence": "high"
+        },
+        {
+          "name": "Registration Date",
+          "type": "Feature",
+          "mention": "Registration Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Upcoming/Running",
+          "type": "Feature",
+          "mention": "Upcoming/Running",
+          "confidence": "high"
+        },
+        {
+          "name": "Past Events",
+          "type": "Feature",
+          "mention": "Past Events",
+          "confidence": "high"
+        },
+        {
+          "name": "Event Start Date",
+          "type": "Feature",
+          "mention": "Event Start Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Event End Date",
+          "type": "Feature",
+          "mention": "Event End Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Published Events",
+          "type": "Feature",
+          "mention": "Published Events",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Filter",
+          "type": "Feature",
+          "mention": "Add Custom Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "custom reports",
+          "type": "Report",
+          "mention": "custom reports",
+          "confidence": "high"
+        },
+        {
+          "name": "event tickets",
+          "type": "DataObject",
+          "mention": "event tickets",
+          "confidence": "high"
+        },
+        {
+          "name": "registrations",
+          "type": "DataObject",
+          "mention": "registrations",
+          "confidence": "high"
+        },
+        {
+          "name": "revenue-related information",
+          "type": "Report",
+          "mention": "revenue-related information",
+          "confidence": "medium"
+        },
+        {
+          "name": "custom filters",
+          "type": "Module",
+          "mention": "custom filters",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Non-free tickets",
+          "evidence": "The Filters column has the following options: - Non-free tickets"
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Free",
+          "evidence": "The Filters column has the following options: - Free"
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Pending payment",
+          "evidence": "The Filters column has the following options: - Pending payment"
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Sold",
+          "evidence": "The Filters column has the following options: - Sold"
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Registration Date",
+          "evidence": "The Filters column has the following options: - Registration Date"
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Upcoming/Running",
+          "evidence": "The Filters column has the following options: - Upcoming/Running"
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Past Events",
+          "evidence": "The Filters column has the following options: - Past Events"
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Event Start Date",
+          "evidence": "The Filters column has the following options: - Event Start Date"
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Event End Date",
+          "evidence": "The Filters column has the following options: - Event End Date"
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Published Events",
+          "evidence": "The Filters column has the following options: - Published Events"
+        },
+        {
+          "source": "Filters column",
+          "relation": "CONTAINS",
+          "target": "Add Custom Filter",
+          "evidence": "The Filters column has the following options: - Add Custom Filter"
+        },
+        {
+          "source": "drop-down mega menu",
+          "relation": "CONTAINS",
+          "target": "Filters column",
+          "evidence": "In the Filters column of the drop-down mega menu"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "drop-down mega menu",
+          "evidence": "Product: Odoo Title: Filter options"
+        },
+        {
+          "source": "Filters column",
+          "relation": "HAS_REPORT",
+          "target": "custom reports",
+          "evidence": "... can be utilized to create custom reports"
+        },
+        {
+          "source": "Non-free tickets",
+          "relation": "RELATED_TO",
+          "target": "event tickets",
+          "evidence": "Non-free tickets: event tickets/registrations"
+        },
+        {
+          "source": "Non-free tickets",
+          "relation": "RELATED_TO",
+          "target": "registrations",
+          "evidence": "Non-free tickets: event tickets/registrations"
+        },
+        {
+          "source": "Pending payment",
+          "relation": "RELATED_TO",
+          "target": "event tickets",
+          "evidence": "Pending payment: event tickets/registrations"
+        },
+        {
+          "source": "Pending payment",
+          "relation": "RELATED_TO",
+          "target": "registrations",
+          "evidence": "Pending payment: event tickets/registrations"
+        },
+        {
+          "source": "Registration Date",
+          "relation": "PRODUCES",
+          "target": "revenue-related information",
+          "evidence": "Select any number of these options to view a specific periods of time and see how many registrations happened during that time."
+        },
+        {
+          "source": "Upcoming/Running",
+          "relation": "PRODUCES",
+          "target": "revenue-related information",
+          "evidence": "Upcoming/Running: include revenue-related information"
+        },
+        {
+          "source": "Past Events",
+          "relation": "PRODUCES",
+          "target": "revenue-related information",
+          "evidence": "Past Events: include revenue-related information"
+        },
+        {
+          "source": "Event Start Date",
+          "relation": "PRODUCES",
+          "target": "revenue-related event data",
+          "evidence": "Select any number of these options to designate event start dates to use as filters for revenue-related event data."
+        },
+        {
+          "source": "Event End Date",
+          "relation": "PRODUCES",
+          "target": "revenue-related event data",
+          "evidence": "Select any number of these options to designate event end dates to use as filters for revenue-related event data."
+        },
+        {
+          "source": "Published Events",
+          "relation": "PRODUCES",
+          "target": "revenue-related data",
+          "evidence": "Published Events: Select this option to show revenue-related data"
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "SEE_ALSO",
+          "target": "custom filters",
+          "evidence": "Add Custom Filter: ... refer to the documentation on custom filters"
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "PRODUCES",
+          "target": "event-related revenue data",
+          "evidence": "Add Custom Filter: Create a custom filter to analyze event-related revenue data."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "group-by-options",
+    "heading": "Group By options",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Group By column",
+          "type": "Feature",
+          "mention": "Group By column",
+          "confidence": "high"
+        },
+        {
+          "name": "Event Type",
+          "type": "Field",
+          "mention": "Event Type: Group data based on the type of event.",
+          "confidence": "high"
+        },
+        {
+          "name": "Event",
+          "type": "Field",
+          "mention": "Event: Organize data into individual groups, separated by events.",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product: Group data based on the event registration product.",
+          "confidence": "high"
+        },
+        {
+          "name": "Ticket",
+          "type": "Field",
+          "mention": "Ticket: Group data based on the type of event ticket purchased by attendees.",
+          "confidence": "high"
+        },
+        {
+          "name": "Registration Status",
+          "type": "Field",
+          "mention": "Registration Status: Group data based on the status of registrations.",
+          "confidence": "high"
+        },
+        {
+          "name": "Sale Order Status",
+          "type": "Field",
+          "mention": "Sale Order Status: Group data based on the status of event-related sales orders.",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Field",
+          "mention": "Customer: Group data based on customer records.",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Group",
+          "type": "Feature",
+          "mention": "Add Custom Group: Click the fa-caret-down (down arrow) icon...",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Group By column",
+          "relation": "CONTAINS",
+          "target": "Event Type",
+          "evidence": "The Group By column has the following options: - Event Type"
+        },
+        {
+          "source": "Group By column",
+          "relation": "CONTAINS",
+          "target": "Event",
+          "evidence": "The Group By column has the following options: - Event"
+        },
+        {
+          "source": "Group By column",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "The Group By column has the following options: - Product"
+        },
+        {
+          "source": "Group By column",
+          "relation": "CONTAINS",
+          "target": "Ticket",
+          "evidence": "The Group By column has the following options: - Ticket"
+        },
+        {
+          "source": "Group By column",
+          "relation": "CONTAINS",
+          "target": "Registration Status",
+          "evidence": "The Group By column has the following options: - Registration Status"
+        },
+        {
+          "source": "Group By column",
+          "relation": "CONTAINS",
+          "target": "Sale Order Status",
+          "evidence": "The Group By column has the following options: - Sale Order Status"
+        },
+        {
+          "source": "Group By column",
+          "relation": "CONTAINS",
+          "target": "Customer",
+          "evidence": "The Group By column has the following options: - Customer"
+        },
+        {
+          "source": "Group By column",
+          "relation": "CONTAINS",
+          "target": "Add Custom Group",
+          "evidence": "The Group By column has the following options: - Add Custom Group"
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "ENABLES",
+          "target": "Event Type",
+          "evidence": "To select one, click on the desired option, and Odoo adds it to the Group By column."
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "ENABLES",
+          "target": "Event",
+          "evidence": "To select one, click on the desired option, and Odoo adds it to the Group By column."
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "ENABLES",
+          "target": "Product",
+          "evidence": "To select one, click on the desired option, and Odoo adds it to the Group By column."
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "ENABLES",
+          "target": "Ticket",
+          "evidence": "To select one, click on the desired option, and Odoo adds it to the Group By column."
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "ENABLES",
+          "target": "Registration Status",
+          "evidence": "To select one, click on the desired option, and Odoo adds it to the Group By column."
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "ENABLES",
+          "target": "Sale Order Status",
+          "evidence": "To select one, click on the desired option, and Odoo adds it to the Group By column."
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "ENABLES",
+          "target": "Customer",
+          "evidence": "To select one, click on the desired option, and Odoo adds it to the Group By column."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sample-report:-event-ticket-analysis-(graph)",
+    "heading": "Sample report: event ticket analysis (graph)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events app",
+          "type": "Module",
+          "mention": "navigate to Events app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting --> Revenues",
+          "confidence": "medium"
+        },
+        {
+          "name": "Revenues",
+          "type": "Report",
+          "mention": "Reporting --> Revenues",
+          "confidence": "high"
+        },
+        {
+          "name": "Free",
+          "type": "Field",
+          "mention": "select Free",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sold",
+          "type": "Field",
+          "mention": "select Sold",
+          "confidence": "medium"
+        },
+        {
+          "name": "Published Events",
+          "type": "Filter",
+          "mention": "Published Events option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Event",
+          "type": "Group",
+          "mention": "Group By column, select the Event",
+          "confidence": "medium"
+        },
+        {
+          "name": "Ticket",
+          "type": "Group",
+          "mention": "Ticket options",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-caret-down",
+          "type": "Action",
+          "mention": "click the fa-caret-down",
+          "confidence": "medium"
+        },
+        {
+          "name": "graph view",
+          "type": "Feature",
+          "mention": "default graph view",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "event ticket analysis",
+          "type": "Concept",
+          "mention": "event ticket analysis (graph)",
+          "confidence": "medium"
+        },
+        {
+          "name": "published events",
+          "type": "Concept",
+          "mention": "published events",
+          "confidence": "medium"
+        },
+        {
+          "name": "free tickets",
+          "type": "Concept",
+          "mention": "free tickets",
+          "confidence": "medium"
+        },
+        {
+          "name": "sold tickets",
+          "type": "Concept",
+          "mention": "sold tickets",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Events app",
+          "evidence": "navigate to Events app"
+        },
+        {
+          "source": "Events app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Reporting --> Revenues"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Revenues",
+          "evidence": "Reporting --> Revenues"
+        },
+        {
+          "source": "graph view",
+          "relation": "RELATED_TO",
+          "target": "Revenues",
+          "evidence": "default graph view"
+        },
+        {
+          "source": "Revenues",
+          "relation": "CONFIGURED_BY",
+          "target": "Free",
+          "evidence": "select Free"
+        },
+        {
+          "source": "Revenues",
+          "relation": "CONFIGURED_BY",
+          "target": "Sold",
+          "evidence": "select Sold"
+        },
+        {
+          "source": "Revenues",
+          "relation": "CONFIGURED_BY",
+          "target": "Published Events",
+          "evidence": "Published Events option"
+        },
+        {
+          "source": "Revenues",
+          "relation": "CONFIGURED_BY",
+          "target": "Event",
+          "evidence": "Group By column, select the Event"
+        },
+        {
+          "source": "Revenues",
+          "relation": "CONFIGURED_BY",
+          "target": "Ticket",
+          "evidence": "Ticket options"
+        },
+        {
+          "source": "fa-caret-down",
+          "relation": "ENABLES",
+          "target": "search bar",
+          "evidence": "click the fa-caret-down to reveal the drop-down mega menu of filter and grouping options"
+        },
+        {
+          "source": "Revenues",
+          "relation": "GENERATES",
+          "target": "event ticket analysis",
+          "evidence": "example of how various filters and grouping options can create a useful analytic graph report related to event revenues"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sample-report:-event-type-analysis-(pivot-table)",
+    "heading": "Sample report: event type analysis (pivot table)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Events",
+          "type": "Module",
+          "mention": "Events app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Revenues",
+          "type": "Report",
+          "mention": "Revenues",
+          "confidence": "medium"
+        },
+        {
+          "name": "event type analysis (pivot table)",
+          "type": "Report",
+          "mention": "Sample report: event type analysis (pivot table)",
+          "confidence": "high"
+        },
+        {
+          "name": "oi-view-pivot (Pivot) icon",
+          "type": "Action",
+          "mention": "oi-view-pivot (Pivot) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "low"
+        },
+        {
+          "name": "Measures drop-down menu",
+          "type": "Feature",
+          "mention": "Measures drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Count",
+          "type": "Measure",
+          "mention": "Count",
+          "confidence": "low"
+        },
+        {
+          "name": "Total",
+          "type": "Field",
+          "mention": "Total",
+          "confidence": "medium"
+        },
+        {
+          "name": "Event Type",
+          "type": "Field",
+          "mention": "Event Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Non-free tickets",
+          "type": "Filter",
+          "mention": "Non-free tickets",
+          "confidence": "low"
+        },
+        {
+          "name": "Event Start Date: (year)",
+          "type": "Filter",
+          "mention": "Event Start Date: (year)",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Events",
+          "evidence": "First, navigate to Events app"
+        },
+        {
+          "source": "Events",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Events app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Revenues",
+          "evidence": "Reporting --> Revenues"
+        },
+        {
+          "source": "Events",
+          "relation": "GENERATES",
+          "target": "event type analysis (pivot table)",
+          "evidence": "Sample report: event type analysis (pivot table)"
+        },
+        {
+          "source": "event type analysis (pivot table)",
+          "relation": "IS_PART_OF",
+          "target": "Revenues",
+          "evidence": "switch to the pivot table view"
+        },
+        {
+          "source": "Revenues",
+          "relation": "CONTAINS",
+          "target": "oi-view-pivot (Pivot) icon",
+          "evidence": "upper-right corner"
+        },
+        {
+          "source": "oi-view-pivot (Pivot) icon",
+          "relation": "ENABLES",
+          "target": "pivot table view",
+          "evidence": "switch to the pivot table view"
+        },
+        {
+          "source": "Measures drop-down menu",
+          "relation": "CONTAINS",
+          "target": "Count",
+          "evidence": "open the Measures drop-down menu, and deselect the option for Count"
+        },
+        {
+          "source": "Measures drop-down menu",
+          "relation": "CONTAINS",
+          "target": "Total",
+          "evidence": "click fa-plus-square Total"
+        },
+        {
+          "source": "Total",
+          "relation": "CONTAINS",
+          "target": "Event Type",
+          "evidence": "select Event Type from the resulting drop-down menu"
+        },
+        {
+          "source": "search bar",
+          "relation": "CONTAINS",
+          "target": "Non-free tickets",
+          "evidence": "Keep the default filters (Non-free tickets)"
+        },
+        {
+          "source": "search bar",
+          "relation": "CONTAINS",
+          "target": "Event Start Date: (year)",
+          "evidence": "Event Start Date: (year)"
+        }
+      ]
+    }
+  }
+]

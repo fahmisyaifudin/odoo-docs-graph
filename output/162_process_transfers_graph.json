@@ -1,0 +1,414 @@
+[
+  {
+    "section_id": "process-batch-transfers",
+    "heading": "Process batch transfers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch transfers",
+          "type": "Workflow",
+          "mention": "Batch",
+          "confidence": "medium"
+        },
+        {
+          "name": "Wave transfers",
+          "type": "Workflow",
+          "mention": "Wave",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cluster transfers",
+          "type": "Workflow",
+          "mention": "Cluster",
+          "confidence": "medium"
+        },
+        {
+          "name": "process transfers",
+          "type": "Action",
+          "mention": "process transfers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Barcode",
+          "relation": "SUPPORTS",
+          "target": "Batch transfers",
+          "evidence": "The Odoo **Barcode** app can be used to process *Batch*, *Wave*, and *Cluster* transfers"
+        },
+        {
+          "source": "Barcode",
+          "relation": "SUPPORTS",
+          "target": "Wave transfers",
+          "evidence": "The Odoo **Barcode** app can be used to process *Batch*, *Wave*, and *Cluster* transfers"
+        },
+        {
+          "source": "Barcode",
+          "relation": "SUPPORTS",
+          "target": "Cluster transfers",
+          "evidence": "The Odoo **Barcode** app can be used to process *Batch*, *Wave*, and *Cluster* transfers"
+        },
+        {
+          "source": "Batch transfers",
+          "relation": "RELATED_TO",
+          "target": "Inventory",
+          "evidence": "transfers that are created in the **Inventory** app"
+        },
+        {
+          "source": "Wave transfers",
+          "relation": "RELATED_TO",
+          "target": "Inventory",
+          "evidence": "transfers that are created in the **Inventory** app"
+        },
+        {
+          "source": "Cluster transfers",
+          "relation": "RELATED_TO",
+          "target": "Inventory",
+          "evidence": "transfers that are created in the **Inventory** app"
+        },
+        {
+          "source": "Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "**Inventory** app"
+        },
+        {
+          "source": "Barcode",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo **Barcode** app"
+        },
+        {
+          "source": "process transfers",
+          "relation": "PERFORMED_BY",
+          "target": "Barcode",
+          "evidence": "The Odoo **Barcode** app can be used to process *Batch*, *Wave*, and *Cluster* transfers"
+        },
+        {
+          "source": "process transfers",
+          "relation": "SEE_ALSO",
+          "target": "../../inventory/shipping_receiving/picking_methods/batch",
+          "evidence": "../../inventory/shipping_receiving/picking_methods/batch"
+        },
+        {
+          "source": "process transfers",
+          "relation": "SEE_ALSO",
+          "target": "../../inventory/shipping_receiving/picking_methods/wave",
+          "evidence": "../../inventory/shipping_receiving/picking_methods/wave"
+        },
+        {
+          "source": "process transfers",
+          "relation": "SEE_ALSO",
+          "target": "../../inventory/shipping_receiving/picking_methods/cluster",
+          "evidence": "../../inventory/shipping_receiving/picking_methods/cluster"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-the-batch",
+    "heading": "Process the batch",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode app",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery orders",
+          "type": "DataObject",
+          "mention": "delivery orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "batch",
+          "type": "DataObject",
+          "mention": "batch",
+          "confidence": "high"
+        },
+        {
+          "name": "batch transfer",
+          "type": "DataObject",
+          "mention": "batch transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "BATCH smart button",
+          "type": "Action",
+          "mention": "BATCH smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Scan the source location barcode",
+          "type": "Action",
+          "mention": "Scan the source location barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "Scan the barcode for the product and package",
+          "type": "Action",
+          "mention": "Scan the barcode for the product and package",
+          "confidence": "high"
+        },
+        {
+          "name": "click the fa-pencil (edit) icon",
+          "type": "Action",
+          "mention": "click the fa-pencil (edit) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "enter the required quantities",
+          "type": "Action",
+          "mention": "enter the required quantities",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate button",
+          "type": "Action",
+          "mention": "Validate button",
+          "confidence": "high"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "high"
+        },
+        {
+          "name": "location",
+          "type": "Field",
+          "mention": "location",
+          "confidence": "medium"
+        },
+        {
+          "name": "picking",
+          "type": "DataObject",
+          "mention": "picking",
+          "confidence": "high"
+        },
+        {
+          "name": "source location",
+          "type": "Field",
+          "mention": "source location",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "package",
+          "type": "DataObject",
+          "mention": "package",
+          "confidence": "high"
+        },
+        {
+          "name": "quantities",
+          "type": "Field",
+          "mention": "quantities",
+          "confidence": "medium"
+        },
+        {
+          "name": "batch transfer screen",
+          "type": "Feature",
+          "mention": "batch transfer screen",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cabinet with Doors",
+          "type": "DataObject",
+          "mention": "Cabinet with Doors",
+          "confidence": "high"
+        },
+        {
+          "name": "Acoustic Bloc Screens",
+          "type": "DataObject",
+          "mention": "Acoustic Bloc Screens",
+          "confidence": "high"
+        },
+        {
+          "name": "Four Person Desks",
+          "type": "DataObject",
+          "mention": "Four Person Desks",
+          "confidence": "high"
+        },
+        {
+          "name": "Units",
+          "type": "Field",
+          "mention": "Units",
+          "confidence": "medium"
+        },
+        {
+          "name": "Scan a serial number",
+          "type": "Action",
+          "mention": "Scan a serial number",
+          "confidence": "high"
+        },
+        {
+          "name": "serial number",
+          "type": "Field",
+          "mention": "serial number",
+          "confidence": "medium"
+        },
+        {
+          "name": "product tracking",
+          "type": "Concept",
+          "mention": "product tracking",
+          "confidence": "medium"
+        },
+        {
+          "name": "picker",
+          "type": "Actor",
+          "mention": "picker",
+          "confidence": "low"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Barcode app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "First, navigate to Barcode app"
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Barcode app",
+          "evidence": "navigate to Barcode app --> Operations"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "products",
+          "evidence": "the products in the picking are grouped by location"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "picking",
+          "evidence": "the products in the picking are grouped by location"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "HAS_FEATURE",
+          "target": "batch transfer screen",
+          "evidence": "On the batch transfer screen"
+        },
+        {
+          "source": "batch transfer screen",
+          "relation": "ENABLES",
+          "target": "Scan the source location barcode",
+          "evidence": "Then, follow the prompt to Scan the source location barcode"
+        },
+        {
+          "source": "batch transfer screen",
+          "relation": "ENABLES",
+          "target": "Scan the barcode for the product and package",
+          "evidence": "Scan the barcode for the product and package to process the transfer"
+        },
+        {
+          "source": "batch transfer screen",
+          "relation": "ENABLES",
+          "target": "click the fa-pencil (edit) icon",
+          "evidence": "To record multiple quantities, click the fa-pencil (edit) icon"
+        },
+        {
+          "source": "click the fa-pencil (edit) icon",
+          "relation": "ENABLES",
+          "target": "enter the required quantities",
+          "evidence": "and enter the required quantities for the picking"
+        },
+        {
+          "source": "batch transfer screen",
+          "relation": "ENABLES",
+          "target": "Validate button",
+          "evidence": "Repeat this for all products, and click the Validate button"
+        },
+        {
+          "source": "Validate button",
+          "relation": "TRIGGERED_BY",
+          "target": "batch transfer",
+          "evidence": "click the Validate button to mark the transfer as Done"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "Cabinet with Doors",
+          "evidence": "Cabinet with Doors"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "Acoustic Bloc Screens",
+          "evidence": "Acoustic Bloc Screens"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "Four Person Desks",
+          "evidence": "Four Person Desks"
+        },
+        {
+          "source": "Scan the barcode for the product and package",
+          "relation": "ENABLES",
+          "target": "Scan a serial number",
+          "evidence": "Odoo prompts the user to Scan a serial number"
+        },
+        {
+          "source": "Scan a serial number",
+          "relation": "PRODUCES",
+          "target": "serial number",
+          "evidence": "Scan a serial number to record the unique serial number"
+        },
+        {
+          "source": "serial number",
+          "relation": "BELONGS_TO",
+          "target": "product tracking",
+          "evidence": "to record the unique serial number for product tracking"
+        }
+      ]
+    }
+  }
+]

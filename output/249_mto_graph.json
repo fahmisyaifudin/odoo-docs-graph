@@ -1,0 +1,661 @@
+[
+  {
+    "section_id": "replenish-on-order-(mto)",
+    "heading": "Replenish on order (MTO)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Replenish on order",
+          "type": "Feature",
+          "mention": "Replenish on order",
+          "confidence": "high"
+        },
+        {
+          "name": "MTO",
+          "type": "Feature",
+          "mention": "MTO",
+          "confidence": "high"
+        },
+        {
+          "name": "make to order",
+          "type": "Feature",
+          "mention": "make to order",
+          "confidence": "high"
+        },
+        {
+          "name": "draft order",
+          "type": "DataObject",
+          "mention": "draft order",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "SO",
+          "type": "DataObject",
+          "mention": "SO",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "medium"
+        },
+        {
+          "name": "MO",
+          "type": "DataObject",
+          "mention": "MO",
+          "confidence": "high"
+        },
+        {
+          "name": "purchased products",
+          "type": "Concept",
+          "mention": "purchased products",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufactured products",
+          "type": "Concept",
+          "mention": "manufactured products",
+          "confidence": "medium"
+        },
+        {
+          "name": "stock",
+          "type": "Concept",
+          "mention": "stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "smart button",
+          "type": "Feature",
+          "mention": "smart button",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replenish on order",
+          "relation": "ENABLES",
+          "target": "draft order",
+          "evidence": "creates a draft order every time"
+        },
+        {
+          "source": "draft order",
+          "relation": "BELONGS_TO",
+          "target": "sales order",
+          "evidence": "needed to fulfill a sales order"
+        },
+        {
+          "source": "draft order",
+          "relation": "BELONGS_TO",
+          "target": "manufacturing order",
+          "evidence": "as a component in a manufacturing order"
+        },
+        {
+          "source": "purchased products",
+          "relation": "REQUIRES",
+          "target": "purchase order",
+          "evidence": "Odoo creates an (purchase order)"
+        },
+        {
+          "source": "manufactured products",
+          "relation": "REQUIRES",
+          "target": "manufacturing order",
+          "evidence": "it creates an (manufacturing order)"
+        },
+        {
+          "source": "sales order",
+          "relation": "TRIGGERED_BY",
+          "target": "stock",
+          "evidence": "If stock is available, no purchase order or manufacturing order is generated"
+        },
+        {
+          "source": "purchase order",
+          "relation": "IS_PART_OF",
+          "target": "sales order",
+          "evidence": "the purchase order or manufacturing order is generated and directly linked to the originating sales order"
+        },
+        {
+          "source": "manufacturing order",
+          "relation": "IS_PART_OF",
+          "target": "sales order",
+          "evidence": "the purchase order or manufacturing order is generated and directly linked to the originating sales order"
+        },
+        {
+          "source": "purchase order",
+          "relation": "RELATED_TO",
+          "target": "smart button",
+          "evidence": "linked to the originating sales order through a smart button"
+        },
+        {
+          "source": "manufacturing order",
+          "relation": "RELATED_TO",
+          "target": "smart button",
+          "evidence": "linked to the originating sales order through a smart button"
+        },
+        {
+          "source": "sales order",
+          "relation": "SEE_ALSO",
+          "target": "purchase order",
+          "evidence": "purchase order"
+        },
+        {
+          "source": "sales order",
+          "relation": "SEE_ALSO",
+          "target": "manufacturing order",
+          "evidence": "manufacturing order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-the-mto-route",
+    "heading": "Enable the MTO route",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse section",
+          "type": "Feature",
+          "mention": "Warehouse section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish on order (MTO)",
+          "type": "Setting",
+          "mention": "Replenish on order (MTO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Click Save",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish on order (MTO)",
+          "type": "Feature",
+          "mention": "the route",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replenish on order (MTO) (Feature)",
+          "relation": "CONFIGURED_BY",
+          "target": "Replenish on order (MTO) (Setting)",
+          "evidence": "the Replenish on order (MTO) setting must be enabled."
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Warehouse section",
+          "evidence": "Go to the Warehouse section"
+        },
+        {
+          "source": "Warehouse section",
+          "relation": "CONTAINS",
+          "target": "Replenish on order (MTO) (Setting)",
+          "evidence": "select the checkbox next to Replenish on order (MTO)"
+        },
+        {
+          "source": "Save",
+          "relation": "CONFIGURED_BY",
+          "target": "Replenish on order (MTO) (Setting)",
+          "evidence": "Click Save to confirm the setting."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-a-product-for-mto",
+    "heading": "Configure a product for MTO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish on Order (MTO)",
+          "type": "Feature",
+          "mention": "Replenish on Order (MTO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish on Order (MTO) route",
+          "type": "Feature",
+          "mention": "Replenish on Order (MTO) route",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase route",
+          "type": "Feature",
+          "mention": "Purchase route",
+          "confidence": "high"
+        },
+        {
+          "name": "Can be Purchased",
+          "type": "Feature",
+          "mention": "Can be Purchased",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials",
+          "type": "DataObject",
+          "mention": "Bill of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials page",
+          "type": "Feature",
+          "mention": "Bill of Materials page",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Feature",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Feature",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Routes field",
+          "type": "Field",
+          "mention": "Routes field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Feature",
+          "mention": "Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials smart button",
+          "type": "Action",
+          "mention": "Bill of Materials smart button",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Products",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "begin by going to Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Replenish on Order (MTO)",
+          "relation": "CONFIGURED_BY",
+          "target": "Routes field",
+          "evidence": "select the checkbox next to the Replenish on Order (MTO) option in the Routes field"
+        },
+        {
+          "source": "Replenish on Order (MTO) route",
+          "relation": "REQUIRES",
+          "target": "Purchase route",
+          "evidence": "The Replenish on Order (MTO) route does not work if the Purchase route is enabled"
+        },
+        {
+          "source": "Can be Purchased",
+          "relation": "ENABLES",
+          "target": "Purchase tab",
+          "evidence": "make the Purchase tab appear"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "CONTAINS",
+          "target": "Vendor",
+          "evidence": "specify a Vendor"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "CONTAINS",
+          "target": "Price",
+          "evidence": "specify ... the Price"
+        },
+        {
+          "source": "product",
+          "relation": "RELATED_TO",
+          "target": "Bill of Materials",
+          "evidence": "If the product is manufactured, make sure it has a bill of materials (BOM) configured for it"
+        },
+        {
+          "source": "Bill of Materials",
+          "relation": "SEE_ALSO",
+          "target": "documentation on bills of materials",
+          "evidence": "see the documentation on bills of materials"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "replenish-using-mto",
+    "heading": "Replenish using MTO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish using MTO",
+          "type": "Concept",
+          "mention": "Title: Replenish using MTO",
+          "confidence": "high"
+        },
+        {
+          "name": "MTO",
+          "type": "Standard",
+          "mention": "route",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy",
+          "type": "Standard",
+          "mention": "Buy",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacture",
+          "type": "Standard",
+          "mention": "Manufacture",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation form",
+          "type": "DataObject",
+          "mention": "blank quotation form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "add a Customer",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Lines",
+          "type": "Module",
+          "mention": "Order Lines tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Click Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "SO",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase smart button",
+          "type": "Action",
+          "mention": "Purchase smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "PO",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Order",
+          "type": "Action",
+          "mention": "Confirm Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Receive Products",
+          "type": "Action",
+          "mention": "Receive Products",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt order",
+          "type": "DataObject",
+          "mention": "receipt order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Action",
+          "mention": "Delivery smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "MTO",
+          "relation": "SUPPORTS",
+          "target": "Buy",
+          "evidence": "The MTO route can be used in unison with the Buy route"
+        },
+        {
+          "source": "MTO",
+          "relation": "SUPPORTS",
+          "target": "Manufacture",
+          "evidence": "the MTO route can be used in unison with the Manufacture routes"
+        },
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "New",
+          "evidence": "Begin by navigating to the Sales app, then click New"
+        },
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "Order Lines",
+          "evidence": "click Add a product under the Order Lines tab"
+        },
+        {
+          "source": "Confirm",
+          "relation": "PRODUCES",
+          "target": "sales order",
+          "evidence": "Click Confirm, and the quotation is turned into an SO"
+        },
+        {
+          "source": "sales order",
+          "relation": "TRIGGERED_BY",
+          "target": "Confirm",
+          "evidence": "Click Confirm, and the quotation is turned into an SO"
+        },
+        {
+          "source": "sales order",
+          "relation": "HAS_FEATURE",
+          "target": "Purchase smart button",
+          "evidence": "A Purchase smart button now appears at the top of the page"
+        },
+        {
+          "source": "Purchase smart button",
+          "relation": "PRODUCES",
+          "target": "purchase order",
+          "evidence": "Clicking it opens the PO associated with the SO"
+        },
+        {
+          "source": "purchase order",
+          "relation": "HAS_FEATURE",
+          "target": "Confirm Order",
+          "evidence": "click Confirm Order to turn it into a PO"
+        },
+        {
+          "source": "purchase order",
+          "relation": "HAS_FEATURE",
+          "target": "Receive Products",
+          "evidence": "Once the products are received, click Receive Products"
+        },
+        {
+          "source": "Receive Products",
+          "relation": "PRODUCES",
+          "target": "receipt order",
+          "evidence": "click Receive Products to open the receipt order"
+        },
+        {
+          "source": "receipt order",
+          "relation": "HAS_FEATURE",
+          "target": "Validate",
+          "evidence": "click Validate to enter the products into inventory"
+        },
+        {
+          "source": "sales order",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery smart button",
+          "evidence": "click the Delivery smart button at the top of the order"
+        },
+        {
+          "source": "Delivery smart button",
+          "relation": "PRODUCES",
+          "target": "delivery order",
+          "evidence": "to open the delivery order"
+        },
+        {
+          "source": "delivery order",
+          "relation": "HAS_FEATURE",
+          "target": "Validate",
+          "evidence": "click Validate to confirm the delivery"
+        },
+        {
+          "source": "sales order",
+          "relation": "BELONGS_TO",
+          "target": "Sales",
+          "evidence": "Return to the SO by navigating to Sales app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "cancel-an-mto-sales-order",
+    "heading": "Cancel an MTO sales order",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ',' delimiter: line 1 column 666 (char 665)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product\",\"confidence\":\"high\"},{\"name\":\"Cancel an MTO sales order\",\"type\":\"Action\",\"mention\":\"Cancel an MTO sales order\",\"confidence\":\"high\"},{\"name\":\"sales order\",\"type\":\"DataObject\",\"mention\":\"sales order\",\"confidence\":\"medium\"},{\"name\":\"delivery order\",\"type\":\"DataObject\",\"mention\":\"delivery order\",\"confidence\":\"high\"},{\"name\":\"resupply_warehouses\",\"type\":\"Concept\",\"mention\":\"resupply_warehouses\",\"confidence\":\"medium\"},{\"name\":\"subcontracting\",\"type\":\"Concept\",\"mention\":\"subcontracting\",\"confidence\":\"medium\"},{\"name\":\"sub_assemblies\",\"type\":\"Concept\",\"mention\":\"sub_assemblies\",\"confidence\":\"medium\"}]],\"relations\":[{\"source\":\"Cancel an MTO sales order\",\"relation\":\"BELONGS_TO\",\"target\":\"Odoo\",\"evidence\":\"Product: Odoo\"},{\"source\":\"Cancel an MTO sales order\",\"relation\":\"TRIGGERED_BY\",\"target\":\"sales order\",\"evidence\":\"When a sales order is canceled\"},{\"source\":\"Cancel an MTO sales order\",\"relation\":\"PRODUCES\",\"target\":\"delivery order\",\"evidence\":\"the related delivery order is canceled automatically\"},{\"source\":\"Cancel an MTO sales order\",\"relation\":\"SEE_ALSO\",\"target\":\"resupply_warehouses\",\"evidence\":\"see the following documentation: - resupply_warehouses\"},{\"source\":\"Cancel an MTO sales order\",\"relation\":\"SEE_ALSO\",\"target\":\"subcontracting\",\"evidence\":\"../manufacturing/subcontracting/subcontracting_basic\"},{\"source\":\"Cancel an MTO sales order\",\"relation\":\"SEE_ALSO\",\"target\":\"sub_assemblies\",\"evidence\":\"../manufacturing/advanced_configuration/sub_assemblies\"}]}"
+    }
+  }
+]

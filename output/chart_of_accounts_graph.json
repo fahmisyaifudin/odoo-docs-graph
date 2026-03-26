@@ -1,0 +1,996 @@
+[
+  {
+    "section_id": "chart-of-accounts",
+    "heading": "Chart of accounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Chart of accounts (COA)",
+          "type": "Concept",
+          "mention": "chart of accounts (COA)",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Chart of Accounts",
+          "type": "Sub-module",
+          "mention": "Chart of Accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounts",
+          "type": "DataObject",
+          "mention": "accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "financial transactions",
+          "type": "DataObject",
+          "mention": "financial transactions",
+          "confidence": "low"
+        },
+        {
+          "name": "general ledger",
+          "type": "DataObject",
+          "mention": "general ledger",
+          "confidence": "low"
+        },
+        {
+          "name": "Code",
+          "type": "Field",
+          "mention": "Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Account Name",
+          "type": "Field",
+          "mention": "Account Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Type",
+          "type": "Field",
+          "mention": "Type",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Chart of Accounts",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "found under Accounting --> Configuration --> Chart of Accounts"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "found under Accounting --> Configuration"
+        },
+        {
+          "source": "accounts",
+          "relation": "CONFIGURED_BY",
+          "target": "Code",
+          "evidence": "sort the accounts by Code"
+        },
+        {
+          "source": "accounts",
+          "relation": "CONFIGURED_BY",
+          "target": "Account Name",
+          "evidence": "sort the accounts by Account Name"
+        },
+        {
+          "source": "accounts",
+          "relation": "CONFIGURED_BY",
+          "target": "Type",
+          "evidence": "sort the accounts by Type"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration-of-an-account",
+    "heading": "Configuration of an account",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "account",
+          "type": "Concept",
+          "mention": "Configuration of an account",
+          "confidence": "medium"
+        },
+        {
+          "name": "database",
+          "type": "Concept",
+          "mention": "the creation of your database",
+          "confidence": "low"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiscal localization package",
+          "type": "Module",
+          "mention": "fiscal localization package",
+          "confidence": "medium"
+        },
+        {
+          "name": "Chart of Accounts",
+          "type": "Module",
+          "mention": "Chart of Accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Code",
+          "type": "Field",
+          "mention": "Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Account Name",
+          "type": "Field",
+          "mention": "Account Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Type",
+          "type": "Field",
+          "mention": "Type",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entry",
+          "type": "DataObject",
+          "mention": "journal entry",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "company",
+          "relation": "CONFIGURED_BY",
+          "target": "fiscal localization package",
+          "evidence": "determines which fiscal localization package is installed"
+        },
+        {
+          "source": "fiscal localization package",
+          "relation": "CONTAINS",
+          "target": "Chart of Accounts",
+          "evidence": "includes a standard chart of accounts"
+        },
+        {
+          "source": "Chart of Accounts",
+          "relation": "COMPLIES_WITH",
+          "target": "country's regulations",
+          "evidence": "configured according to the country's regulations"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Chart of Accounts",
+          "evidence": "Configuration --> Chart of Accounts"
+        },
+        {
+          "source": "account",
+          "relation": "CONFIGURED_BY",
+          "target": "Code",
+          "evidence": "fill in the required fields (Code)"
+        },
+        {
+          "source": "account",
+          "relation": "CONFIGURED_BY",
+          "target": "Account Name",
+          "evidence": "fill in the required fields (Account Name)"
+        },
+        {
+          "source": "account",
+          "relation": "CONFIGURED_BY",
+          "target": "Type",
+          "evidence": "fill in the required fields (Type)"
+        },
+        {
+          "source": "company",
+          "relation": "GOVERNED_BY",
+          "target": "fiscal localization",
+          "evidence": "It is not possible to modify the fiscal localization of a company"
+        },
+        {
+          "source": "fiscal localization",
+          "relation": "TRIGGERED_BY",
+          "target": "journal entry",
+          "evidence": "once a journal entry has been posted"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "code-and-name",
+    "heading": "Code and name",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Code",
+          "type": "Field",
+          "mention": "Code",
+          "confidence": "medium"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "medium"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "medium"
+        },
+        {
+          "name": "chart-of-account/type",
+          "type": "Unknown",
+          "mention": "chart-of-account/type",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "account",
+          "relation": "HAS_FEATURE",
+          "target": "Code",
+          "evidence": "Each account is identified by its Code"
+        },
+        {
+          "source": "account",
+          "relation": "HAS_FEATURE",
+          "target": "Name",
+          "evidence": "Each account is identified by its Name"
+        },
+        {
+          "source": "Code",
+          "relation": "BELONGS_TO",
+          "target": "account",
+          "evidence": "Each account is identified by its Code"
+        },
+        {
+          "source": "Name",
+          "relation": "BELONGS_TO",
+          "target": "account",
+          "evidence": "Each account is identified by its Name"
+        },
+        {
+          "source": "Code",
+          "relation": "RELATED_TO",
+          "target": "Name",
+          "evidence": "Each account is identified by its Code and Name"
+        },
+        {
+          "source": "Code",
+          "relation": "SEE_ALSO",
+          "target": "chart-of-account/type",
+          "evidence": ".. _chart-of-account/type:"
+        },
+        {
+          "source": "Name",
+          "relation": "SEE_ALSO",
+          "target": "chart-of-account/type",
+          "evidence": ".. _chart-of-account/type:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "type",
+    "heading": "Type",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ':' delimiter: line 1 column 2890 (char 2889)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"Type\",\"type\":\"Setting\",\"mention\":\"Type\",\"confidence\":\"high\"},{\"name\":\"Receivable\",\"type\":\"Standard\",\"mention\":\"Receivable\",\"confidence\":\"medium\"},{\"name\":\"Bank and Cash\",\"type\":\"Standard\",\"mention\":\"Bank and Cash\",\"confidence\":\"medium\"},{\"name\":\"Current Assets\",\"type\":\"Standard\",\"mention\":\"Current Assets\",\"confidence\":\"medium\"},{\"name\":\"Non-current Assets\",\"type\":\"Standard\",\"mention\":\"Non-current Assets\",\"confidence\":\"medium\"},{\"name\":\"Prepayments\",\"type\":\"Standard\",\"mention\":\"Prepayments\",\"confidence\":\"medium\"},{\"name\":\"Fixed Assets\",\"type\":\"Standard\",\"mention\":\"Fixed Assets\",\"confidence\":\"medium\"},{\"name\":\"Payable\",\"type\":\"Standard\",\"mention\":\"Payable\",\"confidence\":\"medium\"},{\"name\":\"Credit Card\",\"type\":\"Standard\",\"mention\":\"Credit Card\",\"confidence\":\"medium\"},{\"name\":\"Current Liabilities\",\"type\":\"Standard\",\"mention\":\"Current Liabilities\",\"confidence\":\"medium\"},{\"name\":\"Non-current Liabilities\",\"type\":\"Standard\",\"mention\":\"Non-current Liabilities\",\"confidence\":\"medium\"},{\"name\":\"Equity\",\"type\":\"Standard\",\"mention\":\"Equity\",\"confidence\":\"medium\"},{\"name\":\"Current Year Earnings\",\"type\":\"Standard\",\"mention\":\"Current Year Earnings\",\"confidence\":\"medium\"},{\"name\":\"Income\",\"type\":\"Standard\",\"mention\":\"Income\",\"confidence\":\"medium\"},{\"name\":\"Other Income\",\"type\":\"Standard\",\"mention\":\"Other Income\",\"confidence\":\"medium\"},{\"name\":\"Expense\",\"type\":\"Standard\",\"mention\":\"Expense\",\"confidence\":\"medium\"},{\"name\":\"Depreciation\",\"type\":\"Standard\",\"mention\":\"Depreciation\",\"confidence\":\"medium\"},{\"name\":\"Cost of Revenue\",\"type\":\"Standard\",\"mention\":\"Cost of Revenue\",\"confidence\":\"medium\"},{\"name\":\"Off-Balance Sheet\",\"type\":\"Standard\",\"mention\":\"Off-Balance Sheet\",\"confidence\":\"medium\"},{\"name\":\"Assets\",\"type\":\"Concept\",\"mention\":\"Assets\",\"confidence\":\"medium\"},{\"name\":\"Liabilities\",\"type\":\"Concept\",\"mention\":\"Liabilities\",\"confidence\":\"medium\"},{\"name\":\"Equity\",\"type\":\"Concept\",\"mention\":\"Equity\",\"confidence\":\"medium\"},{\"name\":\"Income\",\"type\":\"Concept\",\"mention\":\"Income\",\"confidence\":\"medium\"},{\"name\":\"Expense\",\"type\":\"Concept\",\"mention\":\"Expense\",\"confidence\":\"medium\"},{\"name\":\"Other\",\"type\":\"Concept\",\"mention\":\"Other\",\"confidence\":\"medium\"},{\"name\":\"Balance Sheet\",\"type\":\"Report\",\"mention\":\"Balance Sheet\",\"confidence\":\"high\"},{\"name\":\"Profit & Loss\",\"type\":\"Report\",\"mention\":\"Profit & Loss\",\"confidence\":\"high\"}],\"relations\":[{\"source\":\"Type\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Odoo\",\"evidence\":\"To configure an account type, open the Type field's drop-down selector\"},{\"source\":\"Receivable\",\"relation\":\"IS_PART_OF\",\"target\":\"Assets\",\"evidence\":\"Balance Sheet | Assets | Receivable\"},{\"source\":\"Bank and Cash\",\"relation\":\"IS_PART_OF\",\"target\":\"Assets\",\"evidence\":\"Balance Sheet | Assets | Bank and Cash\"},{\"source\":\"Current Assets\",\"relation\":\"IS_PART_OF\",\"g\">Assets\",\"evidence\":\"Balance Sheet | Assets | Current Assets\"},{\"source\":\"Non-current Assets\",\"relation\":\"IS_PART_OF\",\"target\":\"Assets\",\"evidence\":\"Balance Sheet | Assets | Non-current Assets\"},{\"source\":\"Prepayments\",\"relation\":\"IS_PART_OF\",\"target\":\"Assets\",\"evidence\":\"Balance Sheet | Assets | Prepayments\"},{\"source\":\"Fixed Assets\",\"relation\":\"IS_PART_OF\",\"target\":\"Assets\",\"evidence\":\"Balance Sheet | Assets | Fixed Assets\"},{\"source\":\"Payable\",\"relation\":\"IS_PART_OF\",\"target\":\"Liabilities\",\"evidence\":\"Balance Sheet | Liabilities | Payable\"},{\"source\":\"Credit Card\",\"relation\":\"IS_PART_OF\",\"target\":\"Liabilities\",\"evidence\":\"Balance Sheet | Liabilities | Credit Card\"},{\"source\":\"Current Liabilities\",\"relation\":\"IS_PART_OF\",\"target\":\"Liabilities\",\"evidence\":\"Balance Sheet | Liabilities | Current Liabilities\"},{\"source\":\"Non-current Liabilities\",\"relation\":\"IS_PART_OF\",\"target\":\"Liabilities\",\"evidence\":\"Balance Sheet | Liabilities | Non-current Liabilities\"},{\"source\":\"Equity\",\"relation\":\"IS_PART_OF\",\"target\":\"Equity\",\"evidence\":\"Balance Sheet | Equity | Equity\"},{\"source\":\"Current Year Earnings\",\"relation\":\"IS_PART_OF\",\"target\":\"Equity\",\"evidence\":\"Balance Sheet | Equity | Current Year Earnings\"},{\"source\":\"Income\",\"relation\":\"IS_PART_OF\",\"target\":\"Income\",\"evidence\":\"Profit & Loss | Income | Income\"},{\"source\":\"Other Income\",\"relation\":\"IS_PART_OF\",\"target\":\"Income\",\"evidence\":\"Profit & Loss | Income | Other Income\"},{\"source\":\"Expense\",\"relation\":\"IS_PART_OF\",\"target\":\"Expense\",\"evidence\":\"Profit & Loss | Expense | Expense\"},{\"source\":\"Depreciation\",\"relation\":\"IS_PART_OF\",\"target\":\"Expense\",\"evidence\":\"Profit & Loss | Expense | Depreciation\"},{\"source\":\"Cost of Revenue\",\"relation\":\"IS_PART_OF\",\"target\":\"Expense\",\"evidence\":\"Profit & Loss | Expense | Cost of Revenue\"},{\"source\":\"Off-Balance Sheet\",\"relation\":\"IS_PART_OF\",\"target\":\"Other\",\"evidence\":\"Other | Other | Off-Balance Sheet\"},{\"source\":\"Assets\",\"relation\":\"IS_PART_OF\",\"target\":\"Balance Sheet\",\"evidence\":\"Balance Sheet | Assets\"},{\"source\":\"Liabilities\",\"relation\":\"IS_PART_OF\",\"target\":\"Balance Sheet\",\"evidence\":\"Balance Sheet | Liabilities\"},{\"source\":\"Equity\",\"relation\":\"IS_PART_OF\",\"target\":\"Balance Sheet\",\"evidence\":\"Balance Sheet | Equity\"},{\"source\":\"Income\",\"relation\":\"IS_PART_OF\",\"target\":\"Profit & Loss\",\"evidence\":\"Profit & Loss | Income\"},{\"source\":\"Expense\",\"relation\":\"IS_PART_OF\",\"target\":\"Profit & Loss\",\"evidence\":\"Profit & Loss | Expense\"},{\"source\":\"Other\",\"relation\":\"IS_PART_OF\",\"target\":\"Other\",\"evidence\":\"Other | Other\"},{\"source\":\"Balance Sheet\",\"relation\":\"GENERATES\",\"target\":\"Receivable\",\"evidence\":\"Generate country-specific legal and financial reports\"},{\"source\":\"Profit & Loss\",\"relation\":\"GENERATES\",\"target\":\"Income\",\"evidence\":\"Generate country-specific legal and financial reports\"},{\"source\":\"Type\",\"relation\":\"GOVERNED_BY\",\"target\":\"Receivable\",\"evidence\":\"Correctly configuring the account type is critical as it serves multiple purposes\"},{\"source\":\"Type\",\"relation\":\"HAS_REPORT\",\"target\":\"Balance Sheet\",\"evidence\":\"Generate country-specific legal and financial reports\"},{\"source\":\"Type\",\"relation\":\"HAS_REPORT\",\"target\":\"Profit & Loss\",\"evidence\":\"Generate country-specific legal and financial reports\"}]}"
+    }
+  },
+  {
+    "section_id": "assets",
+    "heading": "Assets",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Assets",
+          "type": "Module",
+          "mention": "Assets",
+          "confidence": "high"
+        },
+        {
+          "name": "account types",
+          "type": "Concept",
+          "mention": "account types",
+          "confidence": "medium"
+        },
+        {
+          "name": "Automation tab",
+          "type": "Sub-module",
+          "mention": "Automation tab",
+          "confidence": "high"
+        },
+        {
+          "name": "No",
+          "type": "Setting",
+          "mention": "No",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create in draft",
+          "type": "Workflow",
+          "mention": "Create in draft",
+          "confidence": "high"
+        },
+        {
+          "name": "Create and validate",
+          "type": "Workflow",
+          "mention": "Create and validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred Expense Model",
+          "type": "Concept",
+          "mention": "Deferred Expense Model",
+          "confidence": "high"
+        },
+        {
+          "name": "draft entry",
+          "type": "DataObject",
+          "mention": "draft entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "transaction",
+          "type": "DataObject",
+          "mention": "transaction",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Assets",
+          "relation": "CONTAINS",
+          "target": "Automation tab",
+          "evidence": "You have three choices for the Automation tab:"
+        },
+        {
+          "source": "Automation tab",
+          "relation": "CONTAINS",
+          "target": "No",
+          "evidence": "#. No: this is the default value."
+        },
+        {
+          "source": "Automation tab",
+          "relation": "CONTAINS",
+          "target": "Create in draft",
+          "evidence": "#. Create in draft: whenever a transaction..."
+        },
+        {
+          "source": "Automation tab",
+          "relation": "CONTAINS",
+          "target": "Create and validate",
+          "evidence": "#. Create and validate: you must also select..."
+        },
+        {
+          "source": "Create in draft",
+          "relation": "GENERATES",
+          "target": "draft entry",
+          "evidence": "a draft entry is created but not validated."
+        },
+        {
+          "source": "Create and validate",
+          "relation": "REQUIRES",
+          "target": "Deferred Expense Model",
+          "evidence": "you must also select a Deferred Expense Model."
+        },
+        {
+          "source": "Create and validate",
+          "relation": "GENERATES",
+          "target": "entry",
+          "evidence": "an entry is created and immediately validated."
+        },
+        {
+          "source": "account types",
+          "relation": "ENABLES",
+          "target": "Create in draft",
+          "evidence": "Some account types can automate the creation of asset entries."
+        },
+        {
+          "source": "account types",
+          "relation": "ENABLES",
+          "target": "Create and validate",
+          "evidence": "Some account types can automate the creation of asset entries."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "default-taxes",
+    "heading": "Default taxes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "View menu",
+          "type": "Module",
+          "mention": "View menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "high"
+        },
+        {
+          "name": "default tax",
+          "type": "Field",
+          "mention": "default tax",
+          "confidence": "high"
+        },
+        {
+          "name": "product sale",
+          "type": "Concept",
+          "mention": "product sale",
+          "confidence": "low"
+        },
+        {
+          "name": "product purchase",
+          "type": "Concept",
+          "mention": "product purchase",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "account",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "In the View menu of an account"
+        },
+        {
+          "source": "View menu",
+          "relation": "IS_PART_OF",
+          "target": "account",
+          "evidence": "In the View menu of an account"
+        },
+        {
+          "source": "account",
+          "relation": "CONTAINS",
+          "target": "default tax",
+          "evidence": "select a default tax to be applied when this account is chosen"
+        },
+        {
+          "source": "default tax",
+          "relation": "APPLIES_TO",
+          "target": "product sale",
+          "evidence": "to be applied when this account is chosen for a product sale"
+        },
+        {
+          "source": "default tax",
+          "relation": "APPLIES_TO",
+          "target": "product purchase",
+          "evidence": "to be applied when this account is chosen for a product purchase"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tags",
+    "heading": "Tags",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Tags",
+          "type": "Concept",
+          "mention": "Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags field",
+          "type": "Field",
+          "mention": "Tags field",
+          "confidence": "medium"
+        },
+        {
+          "name": "View",
+          "type": "Feature",
+          "mention": "View",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tags",
+          "relation": "CONFIGURED_BY",
+          "target": "Tags field",
+          "evidence": "To add a tag, under View, click the Tags field"
+        },
+        {
+          "source": "Tags field",
+          "relation": "IS_PART_OF",
+          "target": "View",
+          "evidence": "To add a tag, under View, click the Tags field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "account-groups",
+    "heading": "Account groups",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Account groups",
+          "type": "Module",
+          "mention": "Account groups",
+          "confidence": "high"
+        },
+        {
+          "name": "sub-accounts",
+          "type": "DataObject",
+          "mention": "sub-accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Group field",
+          "type": "Field",
+          "mention": "Group field",
+          "confidence": "high"
+        },
+        {
+          "name": "View",
+          "type": "Action",
+          "mention": "View",
+          "confidence": "medium"
+        },
+        {
+          "name": "Trial Balance",
+          "type": "Report",
+          "mention": "Trial Balance",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Account groups",
+          "relation": "CONTAINS",
+          "target": "sub-accounts",
+          "evidence": "Account groups are useful to list multiple accounts as sub-accounts"
+        },
+        {
+          "source": "Account groups",
+          "relation": "HAS_REPORT",
+          "target": "Trial Balance",
+          "evidence": "...thus consolidate reports such as the Trial Balance"
+        },
+        {
+          "source": "Group field",
+          "relation": "BELONGS_TO",
+          "target": "View",
+          "evidence": "You can attribute a specific group to an account in the Group field under View"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-account-groups-manually",
+    "heading": "Create account groups manually",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account Groups",
+          "type": "Sub-module",
+          "mention": "Account Groups",
+          "confidence": "medium"
+        },
+        {
+          "name": "Trial Balance",
+          "type": "Report",
+          "mention": "Trial Balance",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "account group",
+          "type": "Concept",
+          "mention": "new account group",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hierarchy and Subtotals",
+          "type": "Setting",
+          "mention": "Hierarchy and Subtotals",
+          "confidence": "medium"
+        },
+        {
+          "name": "Options",
+          "type": "Sub-module",
+          "mention": "Options menu",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Reporting"
+        },
+        {
+          "source": "Account Groups",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Configuration --> Account Groups"
+        },
+        {
+          "source": "Trial Balance",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "Reporting --> Trial Balance"
+        },
+        {
+          "source": "Account Groups",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "To create a new account group, activate developer mode and head to Accounting --> Configuration --> Account Groups."
+        },
+        {
+          "source": "developer mode",
+          "relation": "ENABLES",
+          "target": "Account Groups",
+          "evidence": "To create a new account group, activate developer mode"
+        },
+        {
+          "source": "Hierarchy and Subtotals",
+          "relation": "CONFIGURED_BY",
+          "target": "Options",
+          "evidence": "open the Options menu and select Hierarchy and Subtotals"
+        },
+        {
+          "source": "Hierarchy and Subtotals",
+          "relation": "RELATED_TO",
+          "target": "Trial Balance",
+          "evidence": "To display your Trial Balance report with your account groups, ... select Hierarchy and Subtotals"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "allow-reconciliation",
+    "heading": "Allow reconciliation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Allow reconciliation",
+          "type": "Setting",
+          "mention": "Allow Reconciliation checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "bank transaction",
+          "type": "DataObject",
+          "mention": "bank transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "cash transaction",
+          "type": "DataObject",
+          "mention": "cash transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "credit card transaction",
+          "type": "DataObject",
+          "mention": "credit card transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal item",
+          "type": "DataObject",
+          "mention": "journal item",
+          "confidence": "high"
+        },
+        {
+          "name": "chart of accounts",
+          "type": "Module",
+          "mention": "chart of accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciliation",
+          "type": "Concept",
+          "mention": "reconciliation process",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Allow reconciliation",
+          "relation": "CONFIGURED_BY",
+          "target": "account",
+          "evidence": "To enable this option on an account, tick the Allow Reconciliation checkbox"
+        },
+        {
+          "source": "Allow reconciliation",
+          "relation": "ENABLES",
+          "target": "reconciliation",
+          "evidence": "when reconciling... with an existing journal item, only journal items that debit or credit accounts with the Allow reconciliation option enabled are displayed"
+        },
+        {
+          "source": "account",
+          "relation": "IS_PART_OF",
+          "target": "chart of accounts",
+          "evidence": "or enable the button from the chart of accounts view"
+        },
+        {
+          "source": "Save",
+          "relation": "TRIGGERED_BY",
+          "target": "Allow reconciliation",
+          "evidence": "tick the Allow Reconciliation checkbox... and Save"
+        },
+        {
+          "source": "bank transaction",
+          "relation": "RELATED_TO",
+          "target": "journal item",
+          "evidence": "reconciling a bank... transaction with an existing journal item"
+        },
+        {
+          "source": "cash transaction",
+          "relation": "RELATED_TO",
+          "target": "journal item",
+          "evidence": "reconciling a cash... transaction with an existing journal item"
+        },
+        {
+          "source": "credit card transaction",
+          "relation": "RELATED_TO",
+          "target": "journal item",
+          "evidence": "reconciling a credit card transaction with an existing journal item"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "shared-accounts",
+    "heading": "Shared Accounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Shared Accounts",
+          "type": "Feature",
+          "mention": "Shared Accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "high"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        },
+        {
+          "name": "multi-company environment",
+          "type": "Concept",
+          "mention": "multi-company environments",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Shared Accounts",
+          "evidence": "The **Shared Accounts** feature allows..."
+        },
+        {
+          "source": "Shared Accounts",
+          "relation": "ENABLES",
+          "target": "account",
+          "evidence": "allows the creation of a single account"
+        },
+        {
+          "source": "account",
+          "relation": "BELONGS_TO",
+          "target": "company",
+          "evidence": "sharing it between multiple companies"
+        },
+        {
+          "source": "Shared Accounts",
+          "relation": "RELATED_TO",
+          "target": "multi-company environment",
+          "evidence": "It is especially useful for multi-company environments"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "deprecated",
+    "heading": "Deprecated",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Deprecated",
+          "type": "Feature",
+          "mention": "Deprecated",
+          "confidence": "high"
+        },
+        {
+          "name": "Deprecated",
+          "type": "Setting",
+          "mention": "Deprecated box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Account",
+          "relation": "CONFIGURED_BY",
+          "target": "Deprecated Setting",
+          "evidence": "check the Deprecated box in the account's settings"
+        },
+        {
+          "source": "Deprecated Feature",
+          "relation": "ENABLES",
+          "target": "Account",
+          "evidence": "make them unusable by using the Deprecated feature"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Account",
+          "evidence": "It is not possible to delete an account once a transaction has been recorded on it."
+        },
+        {
+          "source": "Account",
+          "relation": "SEE_ALSO",
+          "target": "cheat_sheet",
+          "evidence": "seealso: cheat_sheet"
+        }
+      ]
+    }
+  }
+]

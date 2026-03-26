@@ -1,0 +1,592 @@
+[
+  {
+    "section_id": "replenishment",
+    "heading": "Replenishment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock",
+          "type": "Concept",
+          "mention": "stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reordering rules",
+          "type": "Feature",
+          "mention": "Reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Make to order",
+          "type": "Feature",
+          "mention": "make to order",
+          "confidence": "high"
+        },
+        {
+          "name": "Master production schedule",
+          "type": "Feature",
+          "mention": "master production schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "high"
+        },
+        {
+          "name": "Just in time logic",
+          "type": "Feature",
+          "mention": "Just in time logic",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "MPS dashboard",
+          "type": "Module",
+          "mention": "dashboard",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Reordering rules",
+          "evidence": "stock can be replenished one of three ways: *reordering rules*"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Make to order",
+          "evidence": "stock can be replenished one of three ways: *make to order*"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Master production schedule",
+          "evidence": "stock can be replenished one of three ways: *master production schedule*"
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "ENABLES",
+          "target": "Purchase order",
+          "evidence": "Automatically suggest or generate POs when stock falls below a minimum level"
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "ENABLES",
+          "target": "Manufacturing order",
+          "evidence": "Automatically suggest or generate MOs when stock falls below a minimum level"
+        },
+        {
+          "source": "Make to order",
+          "relation": "ENABLES",
+          "target": "Purchase order",
+          "evidence": "Automatically generate POs or MOs when sales orders are confirmed"
+        },
+        {
+          "source": "Make to order",
+          "relation": "ENABLES",
+          "target": "Manufacturing order",
+          "evidence": "Automatically generate POs or MOs when sales orders are confirmed"
+        },
+        {
+          "source": "Make to order",
+          "relation": "TRIGGERED_BY",
+          "target": "Sales order",
+          "evidence": "Automatically generate POs or MOs when sales orders are confirmed"
+        },
+        {
+          "source": "Master production schedule",
+          "relation": "PRODUCES",
+          "target": "Manufacturing order",
+          "evidence": "Master production schedule triggers the creation or suggestion of a manufacturing order"
+        },
+        {
+          "source": "Master production schedule",
+          "relation": "IS_PART_OF",
+          "target": "MPS dashboard",
+          "evidence": "Manage long-term replenishment based on inputted sales forecasts, via a dashboard"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Just in time logic",
+          "evidence": "Just in time logic Avoid overstocking by placing order precisely to meet deadlines"
+        },
+        {
+          "source": "Just in time logic",
+          "relation": "ENABLES",
+          "target": "Purchase order",
+          "evidence": "Just in time logic Avoid overstocking by placing order precisely to meet deadlines"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "replenishment-report-and-reordering-rules",
+    "heading": "Replenishment report and reordering rules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment report",
+          "type": "Report",
+          "mention": "replenishment report",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering rules",
+          "type": "Workflow",
+          "mention": "reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic reordering rules",
+          "type": "Workflow",
+          "mention": "Automatic reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual reordering rules",
+          "type": "Workflow",
+          "mention": "Manual reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Just in time logic",
+          "type": "Concept",
+          "mention": "Just in time logic",
+          "confidence": "high"
+        },
+        {
+          "name": "replenishment/reordering_rules",
+          "type": "Concept",
+          "mention": "replenishment/reordering_rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "replenishment/report",
+          "type": "Concept",
+          "mention": "replenishment/report",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reordering rules",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Reordering rules are rules that can be set up..."
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "ENABLES",
+          "target": "Automatic reordering rules",
+          "evidence": "When using automatic reordering rules, Odoo generates a new order."
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "ENABLES",
+          "target": "Manual reordering rules",
+          "evidence": "When using manual, Odoo suggests orders on the replenishment report."
+        },
+        {
+          "source": "Manual reordering rules",
+          "relation": "HAS_REPORT",
+          "target": "Replenishment report",
+          "evidence": "Generate suggestions in the replenishment report for user review..."
+        },
+        {
+          "source": "Automatic reordering rules",
+          "relation": "GENERATES",
+          "target": "Purchase order",
+          "evidence": "Automatically create purchase order when stock falls below..."
+        },
+        {
+          "source": "Automatic reordering rules",
+          "relation": "GENERATES",
+          "target": "Manufacturing order",
+          "evidence": "Automatically create manufacturing order when stock falls below..."
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "RELATED_TO",
+          "target": "Just in time logic",
+          "evidence": "Just in time logic: A strategy to replenish only what is needed..."
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "SEE_ALSO",
+          "target": "replenishment/reordering_rules",
+          "evidence": "For detailed guidance, refer to the replenishment report..."
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "SEE_ALSO",
+          "target": "replenishment/report",
+          "evidence": "For detailed guidance, refer to the replenishment report..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "make-to-order",
+    "heading": "Make to order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Make to order",
+          "type": "Concept",
+          "mention": "An  strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "procurement",
+          "type": "Action",
+          "mention": "procurement",
+          "confidence": "medium"
+        },
+        {
+          "name": "production",
+          "type": "Action",
+          "mention": "production",
+          "confidence": "medium"
+        },
+        {
+          "name": "reordering rules",
+          "type": "Concept",
+          "mention": "Unlike products replenished using reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "low"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "low"
+        },
+        {
+          "name": "route",
+          "type": "Concept",
+          "mention": "generated by the route",
+          "confidence": "medium"
+        },
+        {
+          "name": "forecasted stock",
+          "type": "Concept",
+          "mention": "product's forecasted stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "minimum quantity",
+          "type": "Setting",
+          "mention": "set minimum quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "quantities",
+          "type": "Field",
+          "mention": "quantities",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Make to order",
+          "relation": "REQUIRES",
+          "target": "sales order",
+          "evidence": "An  strategy means that procurement or production is triggered only after a sales order has been confirmed."
+        },
+        {
+          "source": "Make to order",
+          "relation": "CONTAINS",
+          "target": "procurement",
+          "evidence": "An  strategy means that procurement or production is triggered only after a sales order has been confirmed."
+        },
+        {
+          "source": "Make to order",
+          "relation": "CONTAINS",
+          "target": "production",
+          "evidence": "An  strategy means that procurement or production is triggered only after a sales order has been confirmed."
+        },
+        {
+          "source": "Make to order",
+          "relation": "RELATED_TO",
+          "target": "reordering rules",
+          "evidence": "Unlike products replenished using reordering rules, Odoo automatically links the sales order to the  or  generated by the route."
+        },
+        {
+          "source": "Odoo",
+          "relation": "ENABLES",
+          "target": "Make to order",
+          "evidence": "In Odoo automatically links the sales order to the  or  generated by the route."
+        },
+        {
+          "source": "Odoo",
+          "relation": "PRODUCES",
+          "target": "purchase order",
+          "evidence": "Odoo generates a draft purchase order or manufacturing order immediately after the sales order is confirmed."
+        },
+        {
+          "source": "Odoo",
+          "relation": "PRODUCES",
+          "target": "manufacturing order",
+          "evidence": "Odoo generates a draft purchase order or manufacturing order immediately after the sales order is confirmed."
+        },
+        {
+          "source": "Make to order",
+          "relation": "TRIGGERED_BY",
+          "target": "sales order",
+          "evidence": "Odoo generates a draft purchase order or manufacturing order immediately after the sales order is confirmed."
+        },
+        {
+          "source": "reordering rules",
+          "relation": "TRIGGERED_BY",
+          "target": "forecasted stock",
+          "evidence": "With reordering rules, Odoo generates a draft purchase order or manufacturing order when the product's forecasted stock falls below the set minimum quantity."
+        },
+        {
+          "source": "reordering rules",
+          "relation": "CONFIGURED_BY",
+          "target": "minimum quantity",
+          "evidence": "With reordering rules, Odoo generates a draft purchase order or manufacturing order when the product's forecasted stock falls below the set minimum quantity."
+        },
+        {
+          "source": "route",
+          "relation": "SEE_ALSO",
+          "target": "replenishment/mto",
+          "evidence": ".. seealso:: replenishment/mto"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "master-production-schedule",
+    "heading": "Master production schedule",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Master production schedule",
+          "type": "Module",
+          "mention": "The MPS (Master Production Schedule)",
+          "confidence": "high"
+        },
+        {
+          "name": "MPS",
+          "type": "Concept",
+          "mention": "MPS",
+          "confidence": "high"
+        },
+        {
+          "name": "Dashboard",
+          "type": "Feature",
+          "mention": "dashboard",
+          "confidence": "low"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Forecasted quantities",
+          "type": "DataObject",
+          "mention": "forecasted quantities",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing orders",
+          "type": "DataObject",
+          "mention": "manufacturing orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase orders",
+          "type": "DataObject",
+          "mention": "purchase orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Automated workflow",
+          "type": "Workflow",
+          "mention": "automated workflow",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manual replenishment method",
+          "type": "Concept",
+          "mention": "manual replenishment method",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reordering rules",
+          "type": "Concept",
+          "mention": "reordering rules",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Master production schedule",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Master production schedule"
+        },
+        {
+          "source": "Master production schedule",
+          "relation": "CONTAINS",
+          "target": "Dashboard",
+          "evidence": "The MPS (Master Production Schedule) is a dashboard"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "dashboard where products ... are entered"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "CONTAINS",
+          "target": "Forecasted quantities",
+          "evidence": "dashboard where ... their forecasted quantities are entered"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "RELATED_TO",
+          "target": "Manufacturing orders",
+          "evidence": "Based on confirmed manufacturing orders"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "RELATED_TO",
+          "target": "Purchase orders",
+          "evidence": "Based on ... purchase orders"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "SEE_ALSO",
+          "target": "../../manufacturing/workflows/use_mps",
+          "evidence": ".. seealso:: ../../manufacturing/workflows/use_mps"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "SEE_ALSO",
+          "target": "replenishment/mto",
+          "evidence": "replenishment/mto"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "SEE_ALSO",
+          "target": "replenishment/reordering_rules",
+          "evidence": "replenishment/reordering_rules"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "SEE_ALSO",
+          "target": "replenishment/just_in_time",
+          "evidence": "replenishment/just_in_time"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "SEE_ALSO",
+          "target": "replenishment/report",
+          "evidence": "replenishment/report"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "SEE_ALSO",
+          "target": "replenishment/lead_times",
+          "evidence": "replenishment/lead_times"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "SEE_ALSO",
+          "target": "replenishment/resupply_warehouses",
+          "evidence": "replenishment/resupply_warehouses"
+        },
+        {
+          "source": "Master production schedule",
+          "relation": "RELATED_TO",
+          "target": "MPS",
+          "evidence": "The MPS (Master Production Schedule)"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "RELATED_TO",
+          "target": "MPS",
+          "evidence": "The MPS (Master Production Schedule) is a dashboard"
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "RELATED_TO",
+          "target": "Automated workflow",
+          "evidence": "as the automated workflow disrupts its manual replenishment method"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "RELATED_TO",
+          "target": "Manual replenishment method",
+          "evidence": "manual replenishment method"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "RELATED_TO",
+          "target": "Reordering rules",
+          "evidence": "The MPS ... should absolutely not be used alongside reordering rules"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1499 @@
+[
+  {
+    "section_id": "work-centers",
+    "heading": "Work centers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Work centers",
+          "type": "Feature",
+          "mention": "Work centers",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders",
+          "type": "Feature",
+          "mention": "Work Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Orders checkbox",
+          "type": "Setting",
+          "mention": "Work Orders checkbox",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work Orders",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing",
+          "evidence": "Work orders can be managed in the Manufacturing app"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing app by selecting Operations"
+        },
+        {
+          "source": "Work centers",
+          "relation": "CONFIGURED_BY",
+          "target": "Work Orders checkbox",
+          "evidence": "Work Orders setting is enabled"
+        },
+        {
+          "source": "Work Orders checkbox",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "Work Orders checkbox"
+        },
+        {
+          "source": "Work centers",
+          "relation": "HAS_FEATURE",
+          "target": "Manufacturing",
+          "evidence": "Work centers are where Manufacturing work orders are processed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "work-center-configuration",
+    "heading": "Work center configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Work center configuration",
+          "type": "Concept",
+          "mention": "Work center configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Work center",
+          "type": "Concept",
+          "mention": "Work center",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work center configuration",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Work center configuration"
+        },
+        {
+          "source": "Work center",
+          "relation": "RELATED_TO",
+          "target": "Work center configuration",
+          "evidence": "Title: Work center configuration"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-work-center",
+    "heading": "Create a new work center",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Center Name",
+          "type": "Field",
+          "mention": "Work Center Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Tag",
+          "type": "Field",
+          "mention": "Tag",
+          "confidence": "high"
+        },
+        {
+          "name": "Alternative Workcenters",
+          "type": "Field",
+          "mention": "Alternative Workcenters",
+          "confidence": "high"
+        },
+        {
+          "name": "Code",
+          "type": "Field",
+          "mention": "Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Working Hours",
+          "type": "Field",
+          "mention": "Working Hours",
+          "confidence": "high"
+        },
+        {
+          "name": "work order",
+          "type": "DataObject",
+          "mention": "work order",
+          "confidence": "medium"
+        },
+        {
+          "name": "reporting dashboards",
+          "type": "Module",
+          "mention": "reporting dashboards",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work Center",
+          "relation": "CONTAINS",
+          "target": "Work Center Name",
+          "evidence": "Work Center Name: the label for the work center"
+        },
+        {
+          "source": "Work Center",
+          "relation": "CONTAINS",
+          "target": "Tag",
+          "evidence": "Tag: reusable labels"
+        },
+        {
+          "source": "Work Center",
+          "relation": "CONTAINS",
+          "target": "Alternative Workcenters",
+          "evidence": "Alternative Workcenters: where a work order should be carried out"
+        },
+        {
+          "source": "Work Center",
+          "relation": "CONTAINS",
+          "target": "Code",
+          "evidence": "Code: reference id for the work center"
+        },
+        {
+          "source": "Work Center",
+          "relation": "CONTAINS",
+          "target": "Working Hours",
+          "evidence": "Working Hours: the hours that work center can be used"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Work Center",
+          "evidence": "In the Manufacturing app, select Configuration --> Work Centers"
+        },
+        {
+          "source": "Work Center Name",
+          "relation": "RELATED_TO",
+          "target": "work order",
+          "evidence": "used to select it on a work order"
+        },
+        {
+          "source": "Work Center Name",
+          "relation": "RELATED_TO",
+          "target": "reporting dashboards",
+          "evidence": "used on the reporting dashboards"
+        },
+        {
+          "source": "Alternative Workcenters",
+          "relation": "RELATED_TO",
+          "target": "work order",
+          "evidence": "where a work order should be carried out"
+        },
+        {
+          "source": "Tag",
+          "relation": "RELATED_TO",
+          "target": "list view",
+          "evidence": "can be used to sort work centers in list view"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "working-hours",
+    "heading": "Working hours",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Working hours",
+          "type": "Concept",
+          "mention": "Working hours",
+          "confidence": "high"
+        },
+        {
+          "name": "Work center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "high"
+        },
+        {
+          "name": "Overall equipment efficiency",
+          "type": "Concept",
+          "mention": "overall equipment efficiency",
+          "confidence": "high"
+        },
+        {
+          "name": "Standard 40 hours/week",
+          "type": "Standard",
+          "mention": "Standard 40 hours/week",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal link icon",
+          "type": "Action",
+          "mention": "click the fa-arrow-right (Internal link) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "click the New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Working hours form",
+          "type": "DataObject",
+          "mention": "working hours form",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "click Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Trash icon",
+          "type": "Action",
+          "mention": "click the fa-trash-o (trash) icon",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Working hours",
+          "evidence": "Working hours define when a work center should operate"
+        },
+        {
+          "source": "Working hours",
+          "relation": "IS_PART_OF",
+          "target": "Work center",
+          "evidence": "Working hours define when a work center should operate"
+        },
+        {
+          "source": "Working hours",
+          "relation": "USES_METHOD",
+          "target": "Overall equipment efficiency",
+          "evidence": "These hours also form the basis for calculating overall equipment efficiency"
+        },
+        {
+          "source": "Odoo",
+          "relation": "USES_METHOD",
+          "target": "Standard 40 hours/week",
+          "evidence": "By default, Odoo uses the Standard 40 hours/week working hours"
+        },
+        {
+          "source": "Working hours",
+          "relation": "CONFIGURED_BY",
+          "target": "Internal link icon",
+          "evidence": "To change the working hours, hover over the current Working Hours value and click the fa-arrow-right (Internal link) icon"
+        },
+        {
+          "source": "Internal link icon",
+          "relation": "TRIGGERED_BY",
+          "target": "Working hours form",
+          "evidence": "to open the working hours form"
+        },
+        {
+          "source": "Working hours form",
+          "relation": "CONFIGURED_BY",
+          "target": "New button",
+          "evidence": "To create a new set of working hours, click the New button"
+        },
+        {
+          "source": "Working hours form",
+          "relation": "CONFIGURED_BY",
+          "target": "Add a line",
+          "evidence": "To create a new time range, click Add a line"
+        },
+        {
+          "source": "Working hours form",
+          "relation": "CONFIGURED_BY",
+          "target": "Trash icon",
+          "evidence": "Remove a line by clicking click the fa-trash-o (trash) icon"
+        },
+        {
+          "source": "Working hours",
+          "relation": "SEE_ALSO",
+          "target": "../reporting/oee",
+          "evidence": "../reporting/oee"
+        },
+        {
+          "source": "Working hours",
+          "relation": "SEE_ALSO",
+          "target": "../workflows/work_center_time_off",
+          "evidence": "../workflows/work_center_time_off"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-productivity-standards-and-allowed-employees",
+    "heading": "Set productivity standards and allowed employees",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information tab",
+          "type": "Module",
+          "mention": "General Information tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center form",
+          "type": "Sub-module",
+          "mention": "work center form",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center",
+          "type": "Concept",
+          "mention": "work center",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Efficiency",
+          "type": "Field",
+          "mention": "Time Efficiency",
+          "confidence": "high"
+        },
+        {
+          "name": "Capacity",
+          "type": "Field",
+          "mention": "Capacity",
+          "confidence": "high"
+        },
+        {
+          "name": "OEE Target",
+          "type": "Field",
+          "mention": "OEE Target",
+          "confidence": "high"
+        },
+        {
+          "name": "Setup Time",
+          "type": "Field",
+          "mention": "Setup Time",
+          "confidence": "high"
+        },
+        {
+          "name": "Cleanup Time",
+          "type": "Field",
+          "mention": "Cleanup Time",
+          "confidence": "high"
+        },
+        {
+          "name": "Cost per hour",
+          "type": "Field",
+          "mention": "Cost per hour",
+          "confidence": "high"
+        },
+        {
+          "name": "Allowed Employees",
+          "type": "Setting",
+          "mention": "Allowed Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "work order",
+          "type": "DataObject",
+          "mention": "work order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "General Information tab",
+          "relation": "IS_PART_OF",
+          "target": "work center form",
+          "evidence": "The General Information tab on the work center form"
+        },
+        {
+          "source": "work center form",
+          "relation": "HAS_FEATURE",
+          "target": "Time Efficiency",
+          "evidence": "General Information tab... allows for... Time Efficiency"
+        },
+        {
+          "source": "work center form",
+          "relation": "HAS_FEATURE",
+          "target": "Capacity",
+          "evidence": "General Information tab... allows for... Capacity"
+        },
+        {
+          "source": "work center form",
+          "relation": "HAS_FEATURE",
+          "target": "OEE Target",
+          "evidence": "General Information tab... allows for... OEE Target"
+        },
+        {
+          "source": "work center form",
+          "relation": "HAS_FEATURE",
+          "target": "Setup Time",
+          "evidence": "General Information tab... allows for... Setup Time"
+        },
+        {
+          "source": "work center form",
+          "relation": "HAS_FEATURE",
+          "target": "Cleanup Time",
+          "evidence": "General Information tab... allows for... Cleanup Time"
+        },
+        {
+          "source": "work center form",
+          "relation": "HAS_FEATURE",
+          "target": "Cost per hour",
+          "evidence": "General Information tab... allows for... Cost per hour"
+        },
+        {
+          "source": "work center form",
+          "relation": "HAS_FEATURE",
+          "target": "Allowed Employees",
+          "evidence": "General Information tab... allows for... Allowed Employees"
+        },
+        {
+          "source": "OEE Target",
+          "relation": "SEE_ALSO",
+          "target": "../reporting/oee",
+          "evidence": ".. seealso:: ../reporting/oee"
+        },
+        {
+          "source": "Cost per hour",
+          "relation": "SEE_ALSO",
+          "target": "../basic_setup/mo_costs",
+          "evidence": ".. seealso:: ../basic_setup/mo_costs"
+        },
+        {
+          "source": "Allowed Employees",
+          "relation": "CONFIGURED_BY",
+          "target": "employee",
+          "evidence": "Allowed Employees: the employees who can perform work"
+        },
+        {
+          "source": "Time Efficiency",
+          "relation": "APPLIES_TO",
+          "target": "work order",
+          "evidence": "how using this work center affects the normal speed of execution of a work order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-production-capacities",
+    "heading": "Set production capacities",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Units of Measure",
+          "type": "Feature",
+          "mention": "Units of Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Capacity",
+          "type": "Setting",
+          "mention": "Capacity setting",
+          "confidence": "high"
+        },
+        {
+          "name": "work center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "high"
+        },
+        {
+          "name": "Specific Capacities",
+          "type": "Field",
+          "mention": "Specific Capacities tab",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "HAS_FEATURE",
+          "target": "Units of Measure",
+          "evidence": "enable the *Units of Measure* feature in the **Inventory** app"
+        },
+        {
+          "source": "Capacity",
+          "relation": "CONFIGURED_BY",
+          "target": "work center",
+          "evidence": "Capacity setting on a work center"
+        },
+        {
+          "source": "work center",
+          "relation": "CONTAINS",
+          "target": "Specific Capacities",
+          "evidence": "select the Specific Capacities tab"
+        },
+        {
+          "source": "Units of Measure",
+          "relation": "ENABLES",
+          "target": "Capacity",
+          "evidence": "To specify production capacities in different measurements from a count of units, enable the *Units of Measure* feature"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "integrate-iot-devices",
+    "heading": "Integrate IoT devices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT Triggers tab",
+          "type": "Module",
+          "mention": "The IoT Triggers tab",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT device",
+          "type": "Integration",
+          "mention": "IoT (Internet of Things) device",
+          "confidence": "medium"
+        },
+        {
+          "name": "Device",
+          "type": "Field",
+          "mention": "Device",
+          "confidence": "high"
+        },
+        {
+          "name": "Key",
+          "type": "Field",
+          "mention": "Key",
+          "confidence": "high"
+        },
+        {
+          "name": "Action",
+          "type": "Field",
+          "mention": "Action",
+          "confidence": "high"
+        },
+        {
+          "name": "work center",
+          "type": "Concept",
+          "mention": "work center",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT Triggers tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The IoT Triggers tab enables the integration..."
+        },
+        {
+          "source": "IoT Triggers tab",
+          "relation": "CONTAINS",
+          "target": "Device",
+          "evidence": "- Device: specifies the IoT device..."
+        },
+        {
+          "source": "IoT Triggers tab",
+          "relation": "CONTAINS",
+          "target": "Key",
+          "evidence": "- Key: the security key..."
+        },
+        {
+          "source": "IoT Triggers tab",
+          "relation": "CONTAINS",
+          "target": "Action",
+          "evidence": "- Action: the IoT device action triggered"
+        },
+        {
+          "source": "IoT Triggers tab",
+          "relation": "ENABLES",
+          "target": "Integration of IoT devices",
+          "evidence": "The IoT Triggers tab enables the integration of IoT devices..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assigning-equipment-to-work-centers",
+    "heading": "Assigning equipment to work centers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Maintenance",
+          "type": "Module",
+          "mention": "Maintenance app",
+          "confidence": "high"
+        },
+        {
+          "name": "Assigning equipment to work centers",
+          "type": "Feature",
+          "mention": "Assigning equipment to work centers",
+          "confidence": "high"
+        },
+        {
+          "name": "Equipment",
+          "type": "DataObject",
+          "mention": "Equipment",
+          "confidence": "high"
+        },
+        {
+          "name": "work center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "medium"
+        },
+        {
+          "name": "Maintenance tab",
+          "type": "Sub-module",
+          "mention": "Maintenance tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Equipment tab",
+          "type": "Sub-module",
+          "mention": "Equipment tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "add new equipment",
+          "type": "Action",
+          "mention": "../../maintenance/add_new_equipment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Maintenance",
+          "relation": "CONTAINS",
+          "target": "Assigning equipment to work centers",
+          "evidence": "The Maintenance app makes it possible to add specific equipment to a work center"
+        },
+        {
+          "source": "Maintenance",
+          "relation": "HAS_FEATURE",
+          "target": "Assigning equipment to work centers",
+          "evidence": "The Maintenance app makes it possible to add specific equipment to a work center"
+        },
+        {
+          "source": "Maintenance",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Equipment",
+          "relation": "IS_PART_OF",
+          "target": "Maintenance",
+          "evidence": "It also adds the Equipment and Maintenance tabs to the work center form"
+        },
+        {
+          "source": "Maintenance tab",
+          "relation": "BELONGS_TO",
+          "target": "Maintenance",
+          "evidence": "It also adds the Equipment and Maintenance tabs"
+        },
+        {
+          "source": "Equipment tab",
+          "relation": "BELONGS_TO",
+          "target": "Maintenance",
+          "evidence": "It also adds the Equipment and Maintenance tabs"
+        },
+        {
+          "source": "Assigning equipment to work centers",
+          "relation": "SEE_ALSO",
+          "target": "add new equipment",
+          "evidence": ".. seealso:: ../../maintenance/add_new_equipment"
+        },
+        {
+          "source": "work center",
+          "relation": "CONTAINS",
+          "target": "Equipment",
+          "evidence": "to a work center"
+        },
+        {
+          "source": "Maintenance",
+          "relation": "ADDED_TO",
+          "target": "work center",
+          "evidence": "adds the Equipment and Maintenance tabs to the work center form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-equipment",
+    "heading": "Configure equipment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Equipment",
+          "type": "DataObject",
+          "mention": "Equipment tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "medium"
+        },
+        {
+          "name": "Equipment Name",
+          "type": "Field",
+          "mention": "Equipment Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Technician",
+          "type": "Field",
+          "mention": "Technician",
+          "confidence": "high"
+        },
+        {
+          "name": "Equipment Category",
+          "type": "Field",
+          "mention": "Equipment Category",
+          "confidence": "high"
+        },
+        {
+          "name": "MTBF",
+          "type": "Field",
+          "mention": "MTBF",
+          "confidence": "high"
+        },
+        {
+          "name": "MTTR",
+          "type": "Field",
+          "mention": "MTTR",
+          "confidence": "high"
+        },
+        {
+          "name": "Est. Next Failure",
+          "type": "Field",
+          "mention": "Est. Next Failure",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Equipment",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Using the Equipment tab"
+        },
+        {
+          "source": "Equipment",
+          "relation": "CONTAINS",
+          "target": "Equipment Name",
+          "evidence": "Equipment Name: the name of the piece of equipment"
+        },
+        {
+          "source": "Equipment",
+          "relation": "CONTAINS",
+          "target": "Technician",
+          "evidence": "Technician: the technician responsible for servicing the equipment"
+        },
+        {
+          "source": "Equipment",
+          "relation": "CONTAINS",
+          "target": "Equipment Category",
+          "evidence": "Equipment Category: the category the equipment belongs to"
+        },
+        {
+          "source": "Equipment",
+          "relation": "CONTAINS",
+          "target": "MTBF",
+          "evidence": "MTBF: mean time between failures"
+        },
+        {
+          "source": "Equipment",
+          "relation": "CONTAINS",
+          "target": "MTTR",
+          "evidence": "MTTR: mean time to recovery"
+        },
+        {
+          "source": "Equipment",
+          "relation": "CONTAINS",
+          "target": "Est. Next Failure",
+          "evidence": "Est. Next Failure: an estimate of when the next equipment failure will occur"
+        },
+        {
+          "source": "MTBF",
+          "relation": "GENERATES",
+          "target": "Est. Next Failure",
+          "evidence": "MTBF, MTTR, and Est. Next Failure are all calculated automatically based on past failure data"
+        },
+        {
+          "source": "MTTR",
+          "relation": "GENERATES",
+          "target": "Est. Next Failure",
+          "evidence": "MTBF, MTTR, and Est. Next Failure are all calculated automatically based on past failure data"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "work-center-planning",
+    "heading": "Work center planning",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Planning",
+          "type": "Sub-module",
+          "mention": "Planning",
+          "confidence": "high"
+        },
+        {
+          "name": "Planning by Workcenter",
+          "type": "Feature",
+          "mention": "Planning by Workcenter",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work center",
+          "type": "Concept",
+          "mention": "work center",
+          "confidence": "low"
+        },
+        {
+          "name": "work order",
+          "type": "DataObject",
+          "mention": "work orders",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Planning",
+          "evidence": "Manufacturing app --> Planning"
+        },
+        {
+          "source": "Planning",
+          "relation": "CONTAINS",
+          "target": "Planning by Workcenter",
+          "evidence": "Planning --> Planning by Workcenter"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Manufacturing",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Planning by Workcenter",
+          "relation": "HAS_FEATURE",
+          "target": "view scheduled work orders",
+          "evidence": "The currently scheduled work orders can be viewed by accessing Manufacturing app --> Planning --> Planning by Workcenter"
+        },
+        {
+          "source": "work order",
+          "relation": "IS_PART_OF",
+          "target": "work order scheduling",
+          "evidence": "...dates and times that are currently scheduled for work orders"
+        },
+        {
+          "source": "work order",
+          "relation": "CONFIGURED_BY",
+          "target": "Times and planned work centers",
+          "evidence": "Times and planned work centers can be changed by clicking to access the individual work order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "work-center-performance",
+    "heading": "Work center performance",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Centers",
+          "type": "Sub-module",
+          "mention": "Work Centers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "high"
+        },
+        {
+          "name": "OEE",
+          "type": "Report",
+          "mention": "OEE",
+          "confidence": "high"
+        },
+        {
+          "name": "overall equipment effectiveness",
+          "type": "Concept",
+          "mention": "overall equipment effectiveness",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lost",
+          "type": "Field",
+          "mention": "Lost",
+          "confidence": "medium"
+        },
+        {
+          "name": "Load",
+          "type": "Field",
+          "mention": "Load",
+          "confidence": "medium"
+        },
+        {
+          "name": "Performance",
+          "type": "Field",
+          "mention": "Performance",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "selecting Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Work Centers",
+          "evidence": "Configuration --> Work Centers"
+        },
+        {
+          "source": "Work center",
+          "relation": "HAS_REPORT",
+          "target": "OEE",
+          "evidence": "Metrics are displayed... OEE"
+        },
+        {
+          "source": "OEE",
+          "relation": "SEE_ALSO",
+          "target": "../reporting/oee",
+          "evidence": ".. seealso:: - ../reporting/oee"
+        },
+        {
+          "source": "Work center",
+          "relation": "CONTAINS",
+          "target": "Lost",
+          "evidence": "Metrics are displayed... Lost"
+        },
+        {
+          "source": "Work center",
+          "relation": "CONTAINS",
+          "target": "Load",
+          "evidence": "Metrics are displayed... Load"
+        },
+        {
+          "source": "Work center",
+          "relation": "CONTAINS",
+          "target": "Performance",
+          "evidence": "Metrics are displayed... Performance"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-case:-measuring-performance-by-shift-using-work-centers",
+    "heading": "Use case: measuring performance by shift using work centers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Work centers",
+          "type": "Module",
+          "mention": "Work centers",
+          "confidence": "medium"
+        },
+        {
+          "name": "measuring performance by shift",
+          "type": "Feature",
+          "mention": "measuring performance by shift using work centers",
+          "confidence": "high"
+        },
+        {
+          "name": "defined working hours",
+          "type": "Feature",
+          "mention": "defined working hours",
+          "confidence": "high"
+        },
+        {
+          "name": "tracking of production efficiency",
+          "type": "Feature",
+          "mention": "tracking of production efficiency",
+          "confidence": "high"
+        },
+        {
+          "name": "shift",
+          "type": "Concept",
+          "mention": "shift",
+          "confidence": "high"
+        },
+        {
+          "name": "working hours",
+          "type": "Setting",
+          "mention": "create working hours",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center",
+          "type": "DataObject",
+          "mention": "work center",
+          "confidence": "high"
+        },
+        {
+          "name": "reporting tools",
+          "type": "Report",
+          "mention": "available reporting tools",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work centers",
+          "relation": "HAS_FEATURE",
+          "target": "defined working hours",
+          "evidence": "Work centers support defined working hours"
+        },
+        {
+          "source": "Work centers",
+          "relation": "ENABLES",
+          "target": "tracking of production efficiency",
+          "evidence": "Work centers support defined working hours, enabling the tracking of production efficiency"
+        },
+        {
+          "source": "tracking of production efficiency",
+          "relation": "RELATED_TO",
+          "target": "measuring performance by shift",
+          "evidence": "measuring performance by shift using work centers"
+        },
+        {
+          "source": "tracking of production efficiency",
+          "relation": "GENERATES",
+          "target": "reporting tools",
+          "evidence": "comparing shift productivity can be done with any of the available reporting tools"
+        },
+        {
+          "source": "tracking of production efficiency",
+          "relation": "CONFIGURED_BY",
+          "target": "working hours",
+          "evidence": "To configure shift-based tracking, create working hours"
+        },
+        {
+          "source": "working hours",
+          "relation": "APPLIES_TO",
+          "target": "shift",
+          "evidence": "create working hours for each of the shifts"
+        },
+        {
+          "source": "work center",
+          "relation": "RELATED_TO",
+          "target": "shift",
+          "evidence": "duplicate versions of each work center for each of the shifts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "working-hours-for-multiple-shifts",
+    "heading": "Working hours for multiple shifts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "work center form",
+          "type": "DataObject",
+          "mention": "work center form",
+          "confidence": "high"
+        },
+        {
+          "name": "Working Hours",
+          "type": "Field",
+          "mention": "Working Hours",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-arrow-right (Internal link)",
+          "type": "Action",
+          "mention": "fa-arrow-right (Internal link)",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "working hours",
+          "type": "DataObject",
+          "mention": "working hours",
+          "confidence": "high"
+        },
+        {
+          "name": "day shift",
+          "type": "Concept",
+          "mention": "day shift",
+          "confidence": "medium"
+        },
+        {
+          "name": "night shift",
+          "type": "Concept",
+          "mention": "night shift",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "work center form",
+          "evidence": "Product: Odoo... open a work center form"
+        },
+        {
+          "source": "work center form",
+          "relation": "CONTAINS",
+          "target": "Working Hours",
+          "evidence": "open a work center form and in the Working Hours field"
+        },
+        {
+          "source": "Working Hours",
+          "relation": "TRIGGERED_BY",
+          "target": "fa-arrow-right (Internal link)",
+          "evidence": "in the Working Hours field click the fa-arrow-right (Internal link)"
+        },
+        {
+          "source": "fa-arrow-right (Internal link)",
+          "relation": "ENABLES",
+          "target": "New",
+          "evidence": "click the fa-arrow-right (Internal link), and then click the New button"
+        },
+        {
+          "source": "working hours",
+          "relation": "CONFIGURED_BY",
+          "target": "work center form",
+          "evidence": "Starting from any existing work center, edit the existing working hours"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "work-centers-for-multiple-shifts",
+    "heading": "Work centers for multiple shifts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Work Centers",
+          "type": "Module",
+          "mention": "Configuration --> Work Centers",
+          "confidence": "high"
+        },
+        {
+          "name": "Assembly Line 1",
+          "type": "DataObject",
+          "mention": "`Assembly Line 1`",
+          "confidence": "high"
+        },
+        {
+          "name": "Assembly Line 2",
+          "type": "DataObject",
+          "mention": "`Assembly Line 2`",
+          "confidence": "high"
+        },
+        {
+          "name": "Day Shift",
+          "type": "Concept",
+          "mention": "`Day Shift`",
+          "confidence": "high"
+        },
+        {
+          "name": "Night Shift",
+          "type": "Concept",
+          "mention": "`Night Shift`",
+          "confidence": "high"
+        },
+        {
+          "name": "Duplicate",
+          "type": "Action",
+          "mention": "Duplicating",
+          "confidence": "high"
+        },
+        {
+          "name": "Duplicate",
+          "type": "Action",
+          "mention": "Duplicate",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work Centers",
+          "relation": "CONTAINS",
+          "target": "Assembly Line 1",
+          "evidence": "used by both shifts"
+        },
+        {
+          "source": "Work Centers",
+          "relation": "CONTAINS",
+          "target": "Assembly Line 2",
+          "evidence": "used by both shifts"
+        },
+        {
+          "source": "Work Centers",
+          "relation": "HAS_REPORT",
+          "target": "work center view",
+          "evidence": "return to the work center view"
+        },
+        {
+          "source": "Duplicate",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "duplicating each of the work centers"
+        },
+        {
+          "source": "Duplicate",
+          "relation": "PRODUCES",
+          "target": "Duplicate work centers",
+          "evidence": "duplicating each of the work centers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reports-comparing-different-shifts",
+    "heading": "Reports comparing different shifts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "report",
+          "type": "Report",
+          "mention": "reports that sort by work center",
+          "confidence": "high"
+        },
+        {
+          "name": "shift report",
+          "type": "Report",
+          "mention": "A report has been created to compare the time efficiency",
+          "confidence": "high"
+        },
+        {
+          "name": "work center",
+          "type": "Concept",
+          "mention": "work center",
+          "confidence": "medium"
+        },
+        {
+          "name": "shift",
+          "type": "Concept",
+          "mention": "shifts",
+          "confidence": "medium"
+        },
+        {
+          "name": "work order",
+          "type": "DataObject",
+          "mention": "work orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "OEE",
+          "type": "Concept",
+          "mention": "the OEE",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "report",
+          "evidence": "With multiple work centers... reports that sort by work center will now compare shifts"
+        },
+        {
+          "source": "report",
+          "relation": "HAS_FEATURE",
+          "target": "shift report",
+          "evidence": "A report has been created to compare the time efficiency..."
+        },
+        {
+          "source": "shift report",
+          "relation": "APPLIES_TO",
+          "target": "work center",
+          "evidence": "...producing the same product in the same work center"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,640 @@
+[
+  {
+    "section_id": "before-scheduled-date-reservation",
+    "heading": "Before scheduled date reservation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Before scheduled date reservation",
+          "type": "Feature",
+          "mention": "Before scheduled date reservation method",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order (SO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Reservation methods",
+          "type": "Feature",
+          "mention": "reservation methods",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Before scheduled date reservation",
+          "evidence": "Product: Odoo Title: Before scheduled date reservation"
+        },
+        {
+          "source": "Before scheduled date reservation",
+          "relation": "SEE_ALSO",
+          "target": "Reservation methods",
+          "evidence": ".. seealso:: About reservation methods"
+        },
+        {
+          "source": "Before scheduled date reservation",
+          "relation": "APPLIES_TO",
+          "target": "Sales order",
+          "evidence": "products included in a sales order (SO) should be reserved"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations Types",
+          "type": "Feature",
+          "mention": "Operations Types",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operation Type",
+          "type": "DataObject",
+          "mention": "Operation Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "General tab",
+          "type": "Feature",
+          "mention": "General tab",
+          "confidence": "low"
+        },
+        {
+          "name": "Reservation Method field",
+          "type": "Field",
+          "mention": "Reservation Method field",
+          "confidence": "high"
+        },
+        {
+          "name": "Before scheduled date",
+          "type": "Setting",
+          "mention": "Before scheduled date",
+          "confidence": "high"
+        },
+        {
+          "name": "Reserve before scheduled date field",
+          "type": "Field",
+          "mention": "Reserve before scheduled date field",
+          "confidence": "high"
+        },
+        {
+          "name": "days before",
+          "type": "Field",
+          "mention": "days before",
+          "confidence": "medium"
+        },
+        {
+          "name": "days before when starred",
+          "type": "Field",
+          "mention": "days before when starred",
+          "confidence": "medium"
+        },
+        {
+          "name": "Type of Operation",
+          "type": "Field",
+          "mention": "Type of Operation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipt",
+          "type": "Setting",
+          "mention": "Receipt",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Inventory app"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Operations Types",
+          "evidence": "Configuration --> Operations Types"
+        },
+        {
+          "source": "Operations Types",
+          "relation": "GENERATES",
+          "target": "Operation Type",
+          "evidence": "select the desired Operation Type to configure"
+        },
+        {
+          "source": "Operation Type",
+          "relation": "CONFIGURED_BY",
+          "target": "Reservation Method field",
+          "evidence": "configure, or create a new one by clicking New"
+        },
+        {
+          "source": "Reservation Method field",
+          "relation": "CONTAINS",
+          "target": "Before scheduled date",
+          "evidence": "Reservation Method field, and select Before scheduled date"
+        },
+        {
+          "source": "Before scheduled date",
+          "relation": "ENABLES",
+          "target": "Reserve before scheduled date field",
+          "evidence": "Once selected, a new Reserve before scheduled date field appears"
+        },
+        {
+          "source": "Reserve before scheduled date field",
+          "relation": "CONTAINS",
+          "target": "days before",
+          "evidence": "the number of days before... can be changed"
+        },
+        {
+          "source": "Reserve before scheduled date field",
+          "relation": "CONTAINS",
+          "target": "days before when starred",
+          "evidence": "the number of days before when starred can be changed"
+        },
+        {
+          "source": "Type of Operation",
+          "relation": "CONFIGURED_BY",
+          "target": "Receipt",
+          "evidence": "Type of Operation is changed to Receipt"
+        },
+        {
+          "source": "Receipt",
+          "relation": "RELATED_TO",
+          "target": "Reservation Method field",
+          "evidence": "When the Type of Operation is changed to Receipt... reservation methods are not available"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "edit-product-form",
+    "heading": "Edit product form",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Sub-module",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Logistics section",
+          "type": "Sub-module",
+          "mention": "Logistics section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer Lead Time field",
+          "type": "Field",
+          "mention": "Customer Lead Time field",
+          "confidence": "high"
+        },
+        {
+          "name": "Before scheduled date",
+          "type": "Standard",
+          "mention": "Before scheduled date",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer lead time",
+          "type": "Feature",
+          "mention": "customer lead time",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "scheduled delivery date",
+          "type": "Field",
+          "mention": "scheduled delivery date",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Customer Lead Time field",
+          "relation": "IS_PART_OF",
+          "target": "Logistics section",
+          "evidence": "On the product form, click the Inventory tab, and under the Logistics section, change the value in the Customer Lead Time field."
+        },
+        {
+          "source": "Logistics section",
+          "relation": "IS_PART_OF",
+          "target": "Inventory tab",
+          "evidence": "On the product form, click the Inventory tab, and under the Logistics section, change the value in the Customer Lead Time field."
+        },
+        {
+          "source": "Inventory tab",
+          "relation": "IS_PART_OF",
+          "target": "product form",
+          "evidence": "On the product form, click the Inventory tab, and under the Logistics section, change the value in the Customer Lead Time field."
+        },
+        {
+          "source": "product form",
+          "relation": "BELONGS_TO",
+          "target": "Products",
+          "evidence": "navigate to Inventory app --> Products --> Products, and select the desired product to configure."
+        },
+        {
+          "source": "Products",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "navigate to Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Before scheduled date",
+          "relation": "REQUIRES",
+          "target": "customer lead time",
+          "evidence": "Before the *Before scheduled date* reservation method can be used, ensure that a *customer lead time* is added to products"
+        },
+        {
+          "source": "customer lead time",
+          "relation": "PRODUCES",
+          "target": "scheduled delivery date",
+          "evidence": "This sets the scheduled delivery date for this specific product to five days after the creation date of the sales order."
+        },
+        {
+          "source": "scheduled delivery date",
+          "relation": "RELATED_TO",
+          "target": "sales order",
+          "evidence": "This sets the scheduled delivery date for this specific product to five days after the creation date of the sales order."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "workflow",
+    "heading": "Workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Create new sales order",
+          "type": "Workflow",
+          "mention": "create a new",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Field",
+          "mention": "Customer field",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Lines tab",
+          "type": "Sub-module",
+          "mention": "Order Lines tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "customer lead time",
+          "type": "Setting",
+          "mention": "customer lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "Quotation form",
+          "type": "DataObject",
+          "mention": "quotation form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity column",
+          "type": "Field",
+          "mention": "Quantity column",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Availability tooltip",
+          "type": "Feature",
+          "mention": "Availability tooltip",
+          "confidence": "high"
+        },
+        {
+          "name": "Reserved quantity",
+          "type": "Field",
+          "mention": "Reserved quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Before scheduled date",
+          "type": "Standard",
+          "mention": "Before scheduled date",
+          "confidence": "high"
+        },
+        {
+          "name": "Available in stock",
+          "type": "Concept",
+          "mention": "Available in stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Feature",
+          "mention": "Delivery smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery order form",
+          "type": "DataObject",
+          "mention": "delivery order form",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Availability field",
+          "type": "Field",
+          "mention": "Product Availability field",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduled Date field",
+          "type": "Field",
+          "mention": "Scheduled Date field",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Sub-module",
+          "mention": "Operations tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand column",
+          "type": "Field",
+          "mention": "Demand column",
+          "confidence": "high"
+        },
+        {
+          "name": "Check Availability",
+          "type": "Action",
+          "mention": "Check Availability",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual reservation",
+          "type": "Concept",
+          "mention": "Manual reservation",
+          "confidence": "medium"
+        },
+        {
+          "name": "At confirmation reservation",
+          "type": "Concept",
+          "mention": "At confirmation reservation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Sales app --> New"
+        },
+        {
+          "source": "Create new sales order",
+          "relation": "IS_PART_OF",
+          "target": "Sales app",
+          "evidence": "Sales app --> New"
+        },
+        {
+          "source": "Customer",
+          "relation": "IS_PART_OF",
+          "target": "Sales order",
+          "evidence": "Add a customer in the Customer field"
+        },
+        {
+          "source": "Order Lines tab",
+          "relation": "IS_PART_OF",
+          "target": "Sales order",
+          "evidence": "in the Order Lines tab"
+        },
+        {
+          "source": "Add a product",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "Add a product, and select a product"
+        },
+        {
+          "source": "Product",
+          "relation": "CONFIGURED_BY",
+          "target": "customer lead time",
+          "evidence": "select a product from the drop-down menu that has a configured customer lead time"
+        },
+        {
+          "source": "Quantity column",
+          "relation": "IS_PART_OF",
+          "target": "Sales order",
+          "evidence": "in the Quantity column"
+        },
+        {
+          "source": "Confirm",
+          "relation": "PRODUCES",
+          "target": "Sales order",
+          "evidence": "click Confirm to confirm the sales order"
+        },
+        {
+          "source": "Availability tooltip",
+          "relation": "HAS_FEATURE",
+          "target": "Sales order",
+          "evidence": "Click the green 📈 icon on the product line to reveal the product's Availability tooltip"
+        },
+        {
+          "source": "Availability tooltip",
+          "relation": "GENERATES",
+          "target": "Reserved quantity",
+          "evidence": "This tooltip reveals the reserved number of units"
+        },
+        {
+          "source": "Reserved quantity",
+          "relation": "USES_METHOD",
+          "target": "Before scheduled date",
+          "evidence": "Because the reservation method is set to Before scheduled date"
+        },
+        {
+          "source": "Delivery smart button",
+          "relation": "HAS_FEATURE",
+          "target": "Sales order",
+          "evidence": "Click the Delivery smart button"
+        },
+        {
+          "source": "Delivery smart button",
+          "relation": "GENERATES",
+          "target": "Delivery order form",
+          "evidence": "Click the Delivery smart button to see the delivery order form"
+        },
+        {
+          "source": "Product Availability field",
+          "relation": "IS_PART_OF",
+          "target": "Delivery order form",
+          "evidence": "On the delivery order form, the status in the Product Availability field"
+        },
+        {
+          "source": "Product Availability field",
+          "relation": "BELONGS_TO",
+          "target": "Available",
+          "evidence": "the status in the Product Availability field is listed as Available"
+        },
+        {
+          "source": "Scheduled Date field",
+          "relation": "IS_PART_OF",
+          "target": "Delivery order form",
+          "evidence": "Note the Scheduled Date field, above the Product Availability field"
+        },
+        {
+          "source": "Operations tab",
+          "relation": "IS_PART_OF",
+          "target": "Delivery order form",
+          "evidence": "In the Operations tab on the Product line"
+        },
+        {
+          "source": "Demand column",
+          "relation": "IS_PART_OF",
+          "target": "Operations tab",
+          "evidence": "the numbers in the Demand column"
+        },
+        {
+          "source": "Quantity column",
+          "relation": "IS_PART_OF",
+          "target": "Operations tab",
+          "evidence": "and the Quantity column do not match"
+        },
+        {
+          "source": "Check Availability",
+          "relation": "ENABLES",
+          "target": "Manual reservation",
+          "evidence": "To manually reserve the products sooner than scheduled, click Check Availability"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "Delivery order",
+          "evidence": "Once ready, click Validate"
+        },
+        {
+          "source": "At confirmation reservation",
+          "relation": "SEE_ALSO",
+          "target": "Manual reservation",
+          "evidence": "- Manual reservation <manually> - At confirmation reservation <at_confirmation>"
+        },
+        {
+          "source": "Manual reservation",
+          "relation": "SEE_ALSO",
+          "target": "At confirmation reservation",
+          "evidence": "- Manual reservation <manually> - At confirmation reservation <at_confirmation>"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1164 @@
+[
+  {
+    "section_id": "pricelists",
+    "heading": "Pricelists",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Odoo Sales",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pricelist",
+          "type": "Concept",
+          "mention": "pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo Sales"
+        },
+        {
+          "source": "Pricelist",
+          "relation": "RELATED_TO",
+          "target": "product form",
+          "evidence": "applies a list of prices that overrides the sales price on a product's product form"
+        },
+        {
+          "source": "Pricelist",
+          "relation": "RELATED_TO",
+          "target": "sales order",
+          "evidence": "applies to... sales orders, time periods, etc."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Pricelist",
+          "evidence": "Odoo Sales has a useful pricelist feature"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricelists",
+          "type": "Feature",
+          "mention": "Pricelists",
+          "confidence": "high"
+        },
+        {
+          "name": "Default pricelist",
+          "type": "DataObject",
+          "mention": "Default pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Selectable column",
+          "type": "Field",
+          "mention": "Selectable column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pricelist Name column",
+          "type": "Field",
+          "mention": "Pricelist Name column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Country Group",
+          "type": "DataObject",
+          "mention": "Country Group",
+          "confidence": "medium"
+        },
+        {
+          "name": "eCommerce",
+          "type": "Module",
+          "mention": "eCommerce",
+          "confidence": "high"
+        },
+        {
+          "name": "website visitors",
+          "type": "Actor",
+          "mention": "website visitors",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo 17",
+          "type": "Product",
+          "mention": "Odoo 17",
+          "confidence": "high"
+        },
+        {
+          "name": "sales quotation",
+          "type": "DataObject",
+          "mention": "sales quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricelist field",
+          "type": "Field",
+          "mention": "Pricelist field",
+          "confidence": "high"
+        },
+        {
+          "name": "chatter section",
+          "type": "Feature",
+          "mention": "chatter section",
+          "confidence": "medium"
+        },
+        {
+          "name": "notes and communications",
+          "type": "DataObject",
+          "mention": "notes and communications",
+          "confidence": "low"
+        },
+        {
+          "name": "pricelist forms",
+          "type": "DataObject",
+          "mention": "pricelist forms",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Sales app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Pricelists",
+          "evidence": "tick the checkbox next to the Pricelists feature"
+        },
+        {
+          "source": "Pricelists",
+          "relation": "APPLIES_TO",
+          "target": "sales quotation",
+          "evidence": "If there is no specific pricelist configured on a sales quotation"
+        },
+        {
+          "source": "Default pricelist",
+          "relation": "APPLIES_TO",
+          "target": "sales quotation",
+          "evidence": "the Default pricelist is applied"
+        },
+        {
+          "source": "Default pricelist",
+          "relation": "GOVERNED_BY",
+          "target": "Country Group",
+          "evidence": "without an assigned Country Group"
+        },
+        {
+          "source": "eCommerce",
+          "relation": "APPLIES_TO",
+          "target": "Selectable column",
+          "evidence": "Selectable column is only applicable to Odoo eCommerce"
+        },
+        {
+          "source": "Selectable column",
+          "relation": "ENABLES",
+          "target": "website visitors",
+          "evidence": "allows website visitors to choose a pricelist"
+        },
+        {
+          "source": "Odoo 17",
+          "relation": "SUPPORTS",
+          "target": "sales quotation",
+          "evidence": "you are not required to enter a pricelist...on a sales quotation form"
+        },
+        {
+          "source": "Pricelist field",
+          "relation": "IS_PART_OF",
+          "target": "sales quotation",
+          "evidence": "Pricelist field on a sales quotation form"
+        },
+        {
+          "source": "sales quotation",
+          "relation": "PRODUCES",
+          "target": "sales order",
+          "evidence": "turn it into a sales order"
+        },
+        {
+          "source": "pricelist forms",
+          "relation": "HAS_FEATURE",
+          "target": "chatter section",
+          "evidence": "chatter section is available on pricelist forms"
+        },
+        {
+          "source": "chatter section",
+          "relation": "ENABLES",
+          "target": "notes and communications",
+          "evidence": "allows you to add notes and communications"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "creating-and-editing-pricelists",
+    "heading": "Creating and editing pricelists",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricelists page",
+          "type": "DataObject",
+          "mention": "Pricelists page",
+          "confidence": "high"
+        },
+        {
+          "name": "pricelist",
+          "type": "DataObject",
+          "mention": "pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "pricelist form",
+          "type": "DataObject",
+          "mention": "pricelist form",
+          "confidence": "high"
+        },
+        {
+          "name": "name",
+          "type": "Field",
+          "mention": "name",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "Currency",
+          "confidence": "high"
+        },
+        {
+          "name": "multi-company environment",
+          "type": "Concept",
+          "mention": "multi-company environment",
+          "confidence": "high"
+        },
+        {
+          "name": "Company field",
+          "type": "Field",
+          "mention": "Company field",
+          "confidence": "high"
+        },
+        {
+          "name": "companies",
+          "type": "Actor",
+          "mention": "companies",
+          "confidence": "medium"
+        },
+        {
+          "name": "multinational company",
+          "type": "Concept",
+          "mention": "multinational company",
+          "confidence": "high"
+        },
+        {
+          "name": "Country Groups",
+          "type": "Field",
+          "mention": "Country Groups",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pricelists page",
+          "relation": "CONTAINS",
+          "target": "pricelist",
+          "evidence": "From the Pricelists page, either select the pricelist to edit"
+        },
+        {
+          "source": "pricelist",
+          "relation": "IS_PART_OF",
+          "target": "pricelist form",
+          "evidence": "reveals a blank pricelist form that can be configured"
+        },
+        {
+          "source": "pricelist form",
+          "relation": "CONTAINS",
+          "target": "name",
+          "evidence": "adding a name for the pricelist at the blank field at top of the form"
+        },
+        {
+          "source": "pricelist form",
+          "relation": "CONTAINS",
+          "target": "Currency",
+          "evidence": "select which Currency should be used"
+        },
+        {
+          "source": "pricelist form",
+          "relation": "CONTAINS",
+          "target": "Company field",
+          "evidence": "select which company this pricelist should apply to in the Company field"
+        },
+        {
+          "source": "pricelist form",
+          "relation": "CONTAINS",
+          "target": "Country Groups",
+          "evidence": "select the countries where this pricelist will apply under the Country Groups column"
+        },
+        {
+          "source": "pricelist",
+          "relation": "APPLIES_TO",
+          "target": "companies",
+          "evidence": "the pricelist is automatically applied to all companies in the database"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "pricelist form",
+          "evidence": "Product: Odoo ... reveals a blank pricelist form"
+        },
+        {
+          "source": "New",
+          "relation": "PRODUCES",
+          "target": "pricelist",
+          "evidence": "click New to create a new pricelist"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "price-rules-tab",
+    "heading": "Price Rules tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Price Rules tab",
+          "type": "Module",
+          "mention": "Price Rules tab",
+          "confidence": "high"
+        },
+        {
+          "name": "pricelist rules form",
+          "type": "DataObject",
+          "mention": "pricelist rules form",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Category",
+          "type": "DataObject",
+          "mention": "Category",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply To field",
+          "type": "Field",
+          "mention": "Apply To field",
+          "confidence": "high"
+        },
+        {
+          "name": "Price Type",
+          "type": "Field",
+          "mention": "Price Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Discount",
+          "type": "Standard",
+          "mention": "Discount",
+          "confidence": "high"
+        },
+        {
+          "name": "Formula",
+          "type": "Standard",
+          "mention": "Formula",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed Price",
+          "type": "Standard",
+          "mention": "Fixed Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Min Qty",
+          "type": "Field",
+          "mention": "Min Qty",
+          "confidence": "high"
+        },
+        {
+          "name": "Validity Period",
+          "type": "Field",
+          "mention": "Validity Period",
+          "confidence": "high"
+        },
+        {
+          "name": "Based price field",
+          "type": "Field",
+          "mention": "Based price field",
+          "confidence": "high"
+        },
+        {
+          "name": "Based on field",
+          "type": "Field",
+          "mention": "Based on field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Rounding Method field",
+          "type": "Field",
+          "mention": "Rounding Method field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales Price",
+          "type": "Field",
+          "mention": "Sales Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Extra Fee field",
+          "type": "Field",
+          "mention": "Extra Fee field",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Price Rules tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Price Rules tab"
+        },
+        {
+          "source": "pricelist rules form",
+          "relation": "GENERATES",
+          "target": "Price Rules tab",
+          "evidence": "click on Add a line, which opens a new pricelist rules form"
+        },
+        {
+          "source": "Apply To field",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "If selected in the Apply To field, use this field to choose one or more products"
+        },
+        {
+          "source": "Apply To field",
+          "relation": "CONTAINS",
+          "target": "Category",
+          "evidence": "Select one or more product categories to which this pricelist will apply."
+        },
+        {
+          "source": "Price Type",
+          "relation": "CONTAINS",
+          "target": "Discount",
+          "evidence": "Price Type: Select whether the specialized pricing will fall under Discount, Formula, or Fixed Price."
+        },
+        {
+          "source": "Price Type",
+          "relation": "CONTAINS",
+          "target": "Formula",
+          "evidence": "Price Type: Select whether the specialized pricing will fall under Discount, Formula, or Fixed Price."
+        },
+        {
+          "source": "Price Type",
+          "relation": "CONTAINS",
+          "target": "Fixed Price",
+          "evidence": "Price Type: Select whether the specialized pricing will fall under Discount, Formula, or Fixed Price."
+        },
+        {
+          "source": "Discount",
+          "relation": "APPLIES_TO",
+          "target": "customer",
+          "evidence": "the discount will visible to the customer."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "recurring-prices-tab",
+    "heading": "Recurring Prices tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recurring Prices tab",
+          "type": "Module",
+          "mention": "Recurring Prices tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Time-based rules",
+          "type": "Feature",
+          "mention": "Time-based rules",
+          "confidence": "high"
+        },
+        {
+          "name": "subscription products",
+          "type": "Product",
+          "mention": "subscription products",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Subscriptions",
+          "type": "Module",
+          "mention": "Odoo Subscriptions",
+          "confidence": "high"
+        },
+        {
+          "name": "pricelists",
+          "type": "Feature",
+          "mention": "pricelists",
+          "confidence": "high"
+        },
+        {
+          "name": "Price Rules tab",
+          "type": "Module",
+          "mention": "Price Rules tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Variants",
+          "type": "Feature",
+          "mention": "Product Variants",
+          "confidence": "high"
+        },
+        {
+          "name": "Recurring Plan",
+          "type": "Feature",
+          "mention": "Recurring Plan",
+          "confidence": "high"
+        },
+        {
+          "name": "Products Tab",
+          "type": "Module",
+          "mention": "Products Tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Recurring Plan",
+          "type": "Action",
+          "mention": "Create Recurring Plan",
+          "confidence": "high"
+        },
+        {
+          "name": "Create and edit...",
+          "type": "Action",
+          "mention": "Create and edit...",
+          "confidence": "high"
+        },
+        {
+          "name": "Details",
+          "type": "Feature",
+          "mention": "Details",
+          "confidence": "medium"
+        },
+        {
+          "name": "Self-Service",
+          "type": "Feature",
+          "mention": "Self-Service",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pricing",
+          "type": "Feature",
+          "mention": "Pricing",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "Save & Close",
+          "confidence": "high"
+        },
+        {
+          "name": "Recurring Price",
+          "type": "Feature",
+          "mention": "Recurring Price",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Time-based rules",
+          "relation": "APPLIES_TO",
+          "target": "subscription products",
+          "evidence": "Time-based rules are used specifically with subscription products."
+        },
+        {
+          "source": "Recurring Prices tab",
+          "relation": "CONTAINS",
+          "target": "pricelists",
+          "evidence": "In the Recurring Prices tab, pricelists are configured"
+        },
+        {
+          "source": "Recurring Prices tab",
+          "relation": "SEE_ALSO",
+          "target": "Price Rules tab",
+          "evidence": "configured with the same options as in the Price Rules tab"
+        },
+        {
+          "source": "Recurring Prices tab",
+          "relation": "CONTAINS",
+          "target": "Product Variants",
+          "evidence": "with additional columns for Product Variants and Recurring Plan."
+        },
+        {
+          "source": "Recurring Prices tab",
+          "relation": "CONTAINS",
+          "target": "Recurring Plan",
+          "evidence": "with additional columns for Product Variants and Recurring Plan."
+        },
+        {
+          "source": "Recurring Plan",
+          "relation": "HAS_FEATURE",
+          "target": "recurrence periods",
+          "evidence": "reveal a drop-down menu of pre-designated recurrence periods"
+        },
+        {
+          "source": "Recurring Plan",
+          "relation": "HAS_FEATURE",
+          "target": "Create Recurring Plan",
+          "evidence": "select Create and edit... to reveal a Create Recurring Plan pop-up form"
+        },
+        {
+          "source": "Create Recurring Plan",
+          "relation": "CONTAINS",
+          "target": "Details",
+          "evidence": "the new recurrence period can be configured, with specific Details, Self-Service, and Pricing options"
+        },
+        {
+          "source": "Create Recurring Plan",
+          "relation": "CONTAINS",
+          "target": "Self-Service",
+          "evidence": "the new recurrence period can be configured, with specific Details, Self-Service, and Pricing options"
+        },
+        {
+          "source": "Create Recurring Plan",
+          "relation": "CONTAINS",
+          "target": "Pricing",
+          "evidence": "the new recurrence period can be configured, with specific Details, Self-Service, and Pricing options"
+        },
+        {
+          "source": "Recurring Prices tab",
+          "relation": "CONTAINS",
+          "target": "Recurring Price",
+          "evidence": "add the desired price for this recurring price rule in the Recurring Price column."
+        },
+        {
+          "source": "Product Variants",
+          "relation": "CONFIGURED_BY",
+          "target": "Products Tab",
+          "evidence": "Product Variants are configured under products...Once a product has been selected under the Products Tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "rental-rules-tab",
+    "heading": "Rental rules tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Rental rules tab",
+          "type": "Module",
+          "mention": "Rental rules tab",
+          "confidence": "high"
+        },
+        {
+          "name": "rental products",
+          "type": "Product",
+          "mention": "rental products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Price Rules",
+          "type": "Module",
+          "mention": "Price Rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recurring Prices",
+          "type": "Module",
+          "mention": "Recurring Prices",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "click Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Products column",
+          "type": "Field",
+          "mention": "Products column",
+          "confidence": "high"
+        },
+        {
+          "name": "Variants",
+          "type": "DataObject",
+          "mention": "Variants",
+          "confidence": "medium"
+        },
+        {
+          "name": "Period",
+          "type": "Field",
+          "mention": "Period of time",
+          "confidence": "high"
+        },
+        {
+          "name": "Daily",
+          "type": "Concept",
+          "mention": "Daily",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hourly",
+          "type": "Concept",
+          "mention": "Hourly",
+          "confidence": "medium"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Ecommerce price configuration",
+          "type": "Module",
+          "mention": "Ecommerce price configuration",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Rental rules tab",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Rental rules tab"
+        },
+        {
+          "source": "Rental rules tab",
+          "relation": "CONTAINS",
+          "target": "Products column",
+          "evidence": "Products column. Then, select any specific Variants"
+        },
+        {
+          "source": "Rental rules tab",
+          "relation": "CONTAINS",
+          "target": "Variants",
+          "evidence": "Variants, if necessary"
+        },
+        {
+          "source": "Rental rules tab",
+          "relation": "CONTAINS",
+          "target": "Period",
+          "evidence": "Period of time for the rental rule"
+        },
+        {
+          "source": "Rental rules tab",
+          "relation": "CONTAINS",
+          "target": "Price",
+          "evidence": "configure a Price for the rental rule"
+        },
+        {
+          "source": "Rental rules tab",
+          "relation": "SUPPORTS",
+          "target": "Daily",
+          "evidence": "Period of time for the rental rule (e.g. `Daily`, `Hourly`, etc.)"
+        },
+        {
+          "source": "Rental rules tab",
+          "relation": "SUPPORTS",
+          "target": "Hourly",
+          "evidence": "Period of time for the rental rule (e.g. `Daily`, `Hourly`, etc.)"
+        },
+        {
+          "source": "Rental rules tab",
+          "relation": "SEE_ALSO",
+          "target": "Ecommerce price configuration",
+          "evidence": ".. seealso:: Ecommerce price configuration"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "customer-pricelist-application",
+    "heading": "Customer pricelist application",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Public Pricelist",
+          "type": "Standard",
+          "mention": "Public Pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "contact form",
+          "type": "DataObject",
+          "mention": "contact form",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customers",
+          "type": "DataObject",
+          "mention": "Customers page",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales & Purchase tab",
+          "type": "Feature",
+          "mention": "Sales & Purchase tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales section",
+          "type": "Feature",
+          "mention": "Sales section",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricelist field",
+          "type": "Field",
+          "mention": "Pricelist field",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "medium"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "customer",
+          "relation": "BELONGS_TO",
+          "target": "database",
+          "evidence": "When a customer is added to the database"
+        },
+        {
+          "source": "customer",
+          "relation": "CONFIGURED_BY",
+          "target": "Public Pricelist",
+          "evidence": "default pricelist is automatically applied to them"
+        },
+        {
+          "source": "contact form",
+          "relation": "CONTAINS",
+          "target": "Pricelist field",
+          "evidence": "Pricelist field on a contact form"
+        },
+        {
+          "source": "Pricelist field",
+          "relation": "SUPPORTS",
+          "target": "Public Pricelist",
+          "evidence": "default pricelist appears when that contact form is opened again"
+        },
+        {
+          "source": "quotation",
+          "relation": "CONTAINS",
+          "target": "Pricelist field",
+          "evidence": "Pricelist field on a quotation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "conditions",
+    "heading": "Conditions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Pricelist Rules",
+          "type": "Module",
+          "mention": "Create Pricelist Rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Conditions",
+          "type": "Sub-module",
+          "mention": "Conditions section",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply On field",
+          "type": "Field",
+          "mention": "Apply On field",
+          "confidence": "high"
+        },
+        {
+          "name": "All Products",
+          "type": "Option",
+          "mention": "All Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Category",
+          "type": "Option",
+          "mention": "Product Category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "Option",
+          "mention": "Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Variant",
+          "type": "Option",
+          "mention": "Product Variant",
+          "confidence": "medium"
+        },
+        {
+          "name": "Min. Quantity field",
+          "type": "Field",
+          "mention": "Min. Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Validity field",
+          "type": "Field",
+          "mention": "Validity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "click Save & Close",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & New",
+          "type": "Action",
+          "mention": "click Save & New",
+          "confidence": "high"
+        },
+        {
+          "name": "advanced pricelist rule",
+          "type": "DataObject",
+          "mention": "advanced pricelist rule",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Create Pricelist Rules",
+          "evidence": "Product: Odoo Title: Conditions"
+        },
+        {
+          "source": "Create Pricelist Rules",
+          "relation": "CONTAINS",
+          "target": "Conditions",
+          "evidence": "At the bottom of the Create Pricelist Rules pop-up form is the Conditions section."
+        },
+        {
+          "source": "Conditions",
+          "relation": "CONTAINS",
+          "target": "Apply On field",
+          "evidence": "Here, start by selecting one of the options in the Apply On field:"
+        },
+        {
+          "source": "Apply On field",
+          "relation": "BELONGS_TO",
+          "target": "All Products",
+          "evidence": "selecting one of the options in the Apply On field: - All Products"
+        },
+        {
+          "source": "Apply On field",
+          "relation": "BELONGS_TO",
+          "target": "Product Category",
+          "evidence": "selecting one of the options in the Apply On field: - Product Category"
+        },
+        {
+          "source": "Apply On field",
+          "relation": "BELONGS_TO",
+          "target": "Product",
+          "evidence": "selecting one of the options in the Apply On field: - Product"
+        },
+        {
+          "source": "Apply On field",
+          "relation": "BELONGS_TO",
+          "target": "Product Variant",
+          "evidence": "selecting one of the options in the Apply On field: - Product Variant"
+        },
+        {
+          "source": "Conditions",
+          "relation": "CONTAINS",
+          "target": "Min. Quantity field",
+          "evidence": "Then, select a minimum quantity to be applied to the advanced pricelist rule in the Min. Quantity field."
+        },
+        {
+          "source": "Conditions",
+          "relation": "CONTAINS",
+          "target": "Validity field",
+          "evidence": "select a range of dates for the pricelist item validation in the Validity field."
+        },
+        {
+          "source": "Create Pricelist Rules",
+          "relation": "PRODUCES",
+          "target": "advanced pricelist rule",
+          "evidence": "Once all configurations are complete, either click Save & Close to save the advanced pricelist rule"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,943 @@
+[
+  {
+    "section_id": "post-job-positions",
+    "heading": "Post job positions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Post job positions",
+          "type": "Workflow",
+          "mention": "Title: Post job positions",
+          "confidence": "high"
+        },
+        {
+          "name": "job position",
+          "type": "DataObject",
+          "mention": "job position",
+          "confidence": "high"
+        },
+        {
+          "name": "company website",
+          "type": "Feature",
+          "mention": "company website",
+          "confidence": "medium"
+        },
+        {
+          "name": "job boards",
+          "type": "Feature",
+          "mention": "job boards",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "job position",
+          "relation": "HAS_FEATURE",
+          "target": "company website",
+          "evidence": "Job positions can be shared on the company website"
+        },
+        {
+          "source": "job position",
+          "relation": "HAS_FEATURE",
+          "target": "job boards",
+          "evidence": "or on job boards"
+        },
+        {
+          "source": "Post job positions",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Post job positions (in Odoo product section)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "publish-to-website",
+    "heading": "Publish to website",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "**Recruitment** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Online Posting",
+          "type": "Feature",
+          "mention": "Online Posting option",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Click the Save button",
+          "confidence": "high"
+        },
+        {
+          "name": "Website",
+          "type": "Product",
+          "mention": "Website <../../websites/website> application",
+          "confidence": "high"
+        },
+        {
+          "name": "Applications",
+          "type": "Sub-module",
+          "mention": "Applications",
+          "confidence": "medium"
+        },
+        {
+          "name": "By Job Position",
+          "type": "Report",
+          "mention": "By Job Position",
+          "confidence": "low"
+        },
+        {
+          "name": "toggle",
+          "type": "Action",
+          "mention": "Click on the toggle",
+          "confidence": "high"
+        },
+        {
+          "name": "Not Published",
+          "type": "Setting",
+          "mention": "Not Published",
+          "confidence": "medium"
+        },
+        {
+          "name": "Published",
+          "type": "Setting",
+          "mention": "Published",
+          "confidence": "medium"
+        },
+        {
+          "name": "oi-launch Job Page",
+          "type": "Action",
+          "mention": "oi-launch Job Page",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Online Posting",
+          "relation": "REQUIRES",
+          "target": "Website",
+          "evidence": "The Online Posting is only available if the Website application is also installed."
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to Recruitment app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Online Posting",
+          "evidence": "enable the Online Posting option"
+        },
+        {
+          "source": "Settings",
+          "relation": "PERFORMED_BY",
+          "target": "Save",
+          "evidence": "Click the Save button after making any changes."
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "Applications",
+          "evidence": "Navigate to Recruitment app --> Applications"
+        },
+        {
+          "source": "Applications",
+          "relation": "HAS_REPORT",
+          "target": "By Job Position",
+          "evidence": "Applications --> By Job Position"
+        },
+        {
+          "source": "toggle",
+          "relation": "ENABLES",
+          "target": "Not Published",
+          "evidence": "toggle appears... indicates whether the role is Not Published"
+        },
+        {
+          "source": "toggle",
+          "relation": "ENABLES",
+          "target": "Published",
+          "evidence": "toggle appears... indicates whether the role is Published"
+        },
+        {
+          "source": "toggle",
+          "relation": "PERFORMED_BY",
+          "target": "oi-launch Job Page",
+          "evidence": "click the oi-launch Job Page"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "post-on-job-boards",
+    "heading": "Post on job boards",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Post on job boards",
+          "type": "Module",
+          "mention": "Title",
+          "confidence": "medium"
+        },
+        {
+          "name": "job board",
+          "type": "Integration",
+          "mention": "job board",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Post on job boards",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Post on job boards",
+          "evidence": "Title: Post on job boards"
+        },
+        {
+          "source": "Post on job boards",
+          "relation": "INTEGRATION",
+          "target": "job board",
+          "evidence": "Posting a job on a job board"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "job-board-settings",
+    "heading": "Job board settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruitment Integration Monster",
+          "type": "Module",
+          "mention": "Recruitment Integration Monster module",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Posting",
+          "type": "Sub-module",
+          "mention": "Job Posting section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Monster Credentials",
+          "type": "Feature",
+          "mention": "Monster Credentials section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Username",
+          "type": "Field",
+          "mention": "Username",
+          "confidence": "high"
+        },
+        {
+          "name": "Password",
+          "type": "Field",
+          "mention": "Password",
+          "confidence": "high"
+        },
+        {
+          "name": "Save button",
+          "type": "Action",
+          "mention": "Save button",
+          "confidence": "high"
+        },
+        {
+          "name": "Activate",
+          "type": "Action",
+          "mention": "Activate",
+          "confidence": "high"
+        },
+        {
+          "name": "Module Info",
+          "type": "Action",
+          "mention": "Module Info button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Choose a Job Board",
+          "type": "Action",
+          "mention": "Choose a Job Board",
+          "confidence": "high"
+        },
+        {
+          "name": "Monster",
+          "type": "Integration",
+          "mention": "Monster",
+          "confidence": "high"
+        },
+        {
+          "name": "job board outside of Odoo",
+          "type": "Integration",
+          "mention": "job board outside of Odoo",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Recruitment",
+          "evidence": "Navigate to Recruitment app --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "Job Posting",
+          "evidence": "Job Posting section appears"
+        },
+        {
+          "source": "Job Posting",
+          "relation": "CONTAINS",
+          "target": "Monster Credentials",
+          "evidence": "Monster Credentials section appears in the Job Posting section"
+        },
+        {
+          "source": "Monster Credentials",
+          "relation": "CONTAINS",
+          "target": "Username",
+          "evidence": "Enter the Username and Password for Monster"
+        },
+        {
+          "source": "Monster Credentials",
+          "relation": "CONTAINS",
+          "target": "Password",
+          "evidence": "Enter the Username and Password for Monster"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "HAS_FEATURE",
+          "target": "Recruitment Integration Monster",
+          "evidence": "This loads a page displaying the Recruitment Integration Monster module"
+        },
+        {
+          "source": "Recruitment Integration Monster",
+          "relation": "ENABLES",
+          "target": "Monster",
+          "evidence": "To publish a job listing onto a job board outside of Odoo, first a setting must be configured"
+        },
+        {
+          "source": "Recruitment Integration Monster",
+          "relation": "ENABLES",
+          "target": "job board outside of Odoo",
+          "evidence": "To publish a job listing onto a job board outside of Odoo"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "a setting must be configured in the Recruitment app"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Choose a Job Board",
+          "evidence": "and click Choose a Job Board"
+        },
+        {
+          "source": "Recruitment Integration Monster",
+          "relation": "CONTAINS",
+          "target": "Activate",
+          "evidence": "Click Activate to install the module"
+        },
+        {
+          "source": "Recruitment Integration Monster",
+          "relation": "CONTAINS",
+          "target": "Module Info",
+          "evidence": "only a Module Info button appears"
+        },
+        {
+          "source": "Monster Credentials",
+          "relation": "CONFIGURED_BY",
+          "target": "Save button",
+          "evidence": "then click the Save button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "publish-on-job-board",
+    "heading": "Publish on job board",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment",
+          "confidence": "high"
+        },
+        {
+          "name": "Publish on Job Board",
+          "type": "Action",
+          "mention": "Publish on Job Board button",
+          "confidence": "high"
+        },
+        {
+          "name": "Publish on Job Board form",
+          "type": "Feature",
+          "mention": "Publish on Job Board form",
+          "confidence": "medium"
+        },
+        {
+          "name": "job card",
+          "type": "DataObject",
+          "mention": "job card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Job",
+          "type": "Field",
+          "mention": "Job:",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Board",
+          "type": "Field",
+          "mention": "Job Board:",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply Method",
+          "type": "Field",
+          "mention": "Apply Method:",
+          "confidence": "high"
+        },
+        {
+          "name": "Send an Email",
+          "type": "Option",
+          "mention": "Send an Email",
+          "confidence": "medium"
+        },
+        {
+          "name": "Redirect to company's website",
+          "type": "Option",
+          "mention": "Redirect to company's website",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email or Job url",
+          "type": "Field",
+          "mention": "Email or Job url",
+          "confidence": "high"
+        },
+        {
+          "name": "From",
+          "type": "Field",
+          "mention": "From",
+          "confidence": "medium"
+        },
+        {
+          "name": "to",
+          "type": "Field",
+          "mention": "to",
+          "confidence": "medium"
+        },
+        {
+          "name": "Description tab",
+          "type": "Feature",
+          "mention": "Description tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Generate Description",
+          "type": "Action",
+          "mention": "Generate Description",
+          "confidence": "medium"
+        },
+        {
+          "name": "Post",
+          "type": "Action",
+          "mention": "Post button",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Boards Posts page",
+          "type": "Report",
+          "mention": "Job Boards Posts page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kanban card",
+          "type": "Feature",
+          "mention": "Kanban card",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Navigate to the Recruitment app dashboard"
+        },
+        {
+          "source": "Publish on Job Board",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the Publish on Job Board button"
+        },
+        {
+          "source": "Publish on Job Board",
+          "relation": "PRODUCES",
+          "target": "Publish on Job Board form",
+          "evidence": "a Publish on Job Board form loads"
+        },
+        {
+          "source": "Publish on Job Board form",
+          "relation": "CONTAINS",
+          "target": "Job",
+          "evidence": "Fill out the following information... Job: The name of the job position"
+        },
+        {
+          "source": "Publish on Job Board form",
+          "relation": "CONTAINS",
+          "target": "Job Board",
+          "evidence": "Fill out the following information... Job Board: Using the drop-down menu"
+        },
+        {
+          "source": "Publish on Job Board form",
+          "relation": "CONTAINS",
+          "target": "Apply Method",
+          "evidence": "Fill out the following information... Apply Method: Click the desired radio button"
+        },
+        {
+          "source": "Apply Method",
+          "relation": "RELATED_TO",
+          "target": "Send an Email",
+          "evidence": "Send an Email: Select this"
+        },
+        {
+          "source": "Apply Method",
+          "relation": "RELATED_TO",
+          "target": "Redirect to company's website",
+          "evidence": "Redirect to company's website: Select this"
+        },
+        {
+          "source": "Publish on Job Board form",
+          "relation": "CONTAINS",
+          "target": "Email or Job url",
+          "evidence": "Fill out the following information... Email or Job url:"
+        },
+        {
+          "source": "Email or Job url",
+          "relation": "CONFIGURED_BY",
+          "target": "Apply Method",
+          "evidence": "The selected Apply Method determines which field appears"
+        },
+        {
+          "source": "Publish on Job Board form",
+          "relation": "CONTAINS",
+          "target": "From",
+          "evidence": "...select the date... in the From field"
+        },
+        {
+          "source": "Publish on Job Board form",
+          "relation": "CONTAINS",
+          "target": "to",
+          "evidence": "The to field says No Limit, by default"
+        },
+        {
+          "source": "Publish on Job Board form",
+          "relation": "CONTAINS",
+          "target": "Description tab",
+          "evidence": "Description tab: The description..."
+        },
+        {
+          "source": "Description tab",
+          "relation": "TRIGGERED_BY",
+          "target": "Generate Description",
+          "evidence": "Click the Generate Description (fa-magic AI) to use AI"
+        },
+        {
+          "source": "Post",
+          "relation": "GENERATES",
+          "target": "Job Boards Posts page",
+          "evidence": "After the post has been published... the page reloads to the Job Boards Posts page"
+        },
+        {
+          "source": "Job Boards Posts page",
+          "relation": "CONTAINS",
+          "target": "Kanban card",
+          "evidence": "the new post appears in a Kanban card"
+        },
+        {
+          "source": "job card",
+          "relation": "RELATED_TO",
+          "target": "Job",
+          "evidence": "The name of the job position appears here by default"
+        },
+        {
+          "source": "job card",
+          "relation": "RELATED_TO",
+          "target": "Email or Job url",
+          "evidence": "The field is populated with the information from the job card"
+        },
+        {
+          "source": "job card",
+          "relation": "RELATED_TO",
+          "target": "Description tab",
+          "evidence": "The description from the job card populates this tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "job-board-emails",
+    "heading": "Job board emails",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment app",
+          "type": "Module",
+          "mention": "Recruitment app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Emails",
+          "type": "DataObject",
+          "mention": "Emails",
+          "confidence": "high"
+        },
+        {
+          "name": "LinkedIn",
+          "type": "Actor",
+          "mention": "LinkedIn",
+          "confidence": "high"
+        },
+        {
+          "name": "Jobsdb",
+          "type": "Actor",
+          "mention": "Jobsdb",
+          "confidence": "medium"
+        },
+        {
+          "name": "Indeed",
+          "type": "Actor",
+          "mention": "Indeed",
+          "confidence": "high"
+        },
+        {
+          "name": "Glassdoor",
+          "type": "Actor",
+          "mention": "Glassdoor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email",
+          "type": "Field",
+          "mention": "Email",
+          "confidence": "medium"
+        },
+        {
+          "name": "regex rules",
+          "type": "Field",
+          "mention": "regex rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicant record",
+          "type": "DataObject",
+          "mention": "applicant record",
+          "confidence": "medium"
+        },
+        {
+          "name": "John Doe",
+          "type": "Actor",
+          "mention": "John Doe",
+          "confidence": "medium"
+        },
+        {
+          "name": "job board emails",
+          "type": "Feature",
+          "mention": "job board emails",
+          "confidence": "high"
+        },
+        {
+          "name": "regex rule",
+          "type": "Feature",
+          "mention": "regex rule",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "To view the currently configured job board emails, navigate to Recruitment app --> Configuration --> Emails."
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Emails",
+          "evidence": "To view the currently configured job board emails, navigate to Recruitment app --> Configuration --> Emails."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "job board emails",
+          "evidence": "When posting job positions on a job board, like Indeed or LinkedIn, the job board posts the job position, and typically allows the website visitor to apply to the job directly from the job board."
+        },
+        {
+          "source": "job board emails",
+          "relation": "GENERATES",
+          "target": "applicant record",
+          "evidence": "When Odoo receives an email from the job board's corresponding email address, it runs the regex rule, and pulls applicant information from the email, when creating an applicant record."
+        },
+        {
+          "source": "Emails",
+          "type": "CONFIGURED_BY",
+          "target": "regex rule",
+          "evidence": "The regex rule for LinkedIn (emails received from: `jobs-listings@linkedin.com`) is New application:.*from (.*). This rule tells Odoo to capture everything after the word `from` when creating the applicant record."
+        },
+        {
+          "source": "Emails",
+          "relation": "CONFIGURED_BY",
+          "target": "Email",
+          "evidence": "Next, enter the email address the applications will come from, in the Email field."
+        },
+        {
+          "source": "Emails",
+          "relation": "CONFIGURED_BY",
+          "target": "Name",
+          "evidence": "Enter the Name for the platform, such as `Glassdoor`, in the corresponding field."
+        },
+        {
+          "source": "regex rule",
+          "relation": "GENERATES",
+          "target": "applicant record",
+          "evidence": "An email subject of `New application: Job ID 123 from John Doe` will capture `John Doe` and create an applicant record for `John Doe`."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-job-board-listings",
+    "heading": "View job board listings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Boards Posts",
+          "type": "Module",
+          "mention": "Job Boards Posts",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Boards Posts dashboard",
+          "type": "Report",
+          "mention": "Job Boards Posts dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "job board posting",
+          "type": "DataObject",
+          "mention": "job board postings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kanban card",
+          "type": "Feature",
+          "mention": "Kanban card",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Board Icon",
+          "type": "Field",
+          "mention": "Job Board Icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Board Listing Title",
+          "type": "Field",
+          "mention": "Job Board Listing Title",
+          "confidence": "high"
+        },
+        {
+          "name": "From",
+          "type": "Field",
+          "mention": "From",
+          "confidence": "high"
+        },
+        {
+          "name": "To",
+          "type": "Field",
+          "mention": "To",
+          "confidence": "high"
+        },
+        {
+          "name": "User Icon",
+          "type": "Field",
+          "mention": "User Icon",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Job Boards Posts",
+          "evidence": "To view all the job positions... navigate to Recruitment --> Applications --> Job Boards Posts."
+        },
+        {
+          "source": "Job Boards Posts",
+          "relation": "HAS_REPORT",
+          "target": "Job Boards Posts dashboard",
+          "evidence": "This presents the Job Boards Posts dashboard"
+        },
+        {
+          "source": "Job Boards Posts",
+          "relation": "HAS_FEATURE",
+          "target": "Kanban card",
+          "evidence": "Each listing is displayed in an individual Kanban card"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Job Board Icon",
+          "evidence": "Kanban card, with the following information: Job Board Icon"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Job Board Listing Title",
+          "evidence": "Kanban card, with the following information: Job Board Listing Title"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "From",
+          "evidence": "Kanban card, with the following information: From"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "To",
+          "evidence": "Kanban card, with the following information: To"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "User Icon",
+          "evidence": "Kanban card, with the following information: User Icon"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1883 @@
+[
+  {
+    "section_id": "lead-times",
+    "heading": "Lead times",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Lead times",
+          "type": "Concept",
+          "mention": "Lead times",
+          "confidence": "high"
+        },
+        {
+          "name": "Forecasting delivery dates",
+          "type": "Feature",
+          "mention": "accurately forecasting delivery dates",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing orders",
+          "type": "DataObject",
+          "mention": "manufacturing orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Deliveries",
+          "type": "DataObject",
+          "mention": "deliveries",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipts",
+          "type": "DataObject",
+          "mention": "receipts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lead time configuration",
+          "type": "Feature",
+          "mention": "lead time configuration",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Lead time configuration",
+          "evidence": "The Inventory app allows for comprehensive lead time configuration"
+        },
+        {
+          "source": "Inventory",
+          "relation": "HAS_FEATURE",
+          "target": "Lead time configuration",
+          "evidence": "The Inventory app allows for comprehensive lead time configuration"
+        },
+        {
+          "source": "Lead time configuration",
+          "relation": "RELATED_TO",
+          "target": "Lead times",
+          "evidence": "lead time configuration"
+        },
+        {
+          "source": "Lead time configuration",
+          "relation": "RELATED_TO",
+          "target": "Forecasting delivery dates",
+          "evidence": "lead time configuration, forecasting delivery dates"
+        },
+        {
+          "source": "Lead time configuration",
+          "relation": "ENABLES",
+          "target": "Manufacturing orders",
+          "evidence": "allowing coordination and planning of manufacturing orders"
+        },
+        {
+          "source": "Lead time configuration",
+          "relation": "ENABLES",
+          "target": "Deliveries",
+          "evidence": "allowing coordination and planning of deliveries"
+        },
+        {
+          "source": "Lead time configuration",
+          "relation": "ENABLES",
+          "target": "Receipts",
+          "evidence": "allowing coordination and planning of receipts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "lead-time-types",
+    "heading": "Lead time types",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer lead time",
+          "type": "Concept",
+          "mention": "Customer lead time",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery lead time",
+          "type": "Concept",
+          "mention": "delivery lead time",
+          "confidence": "low"
+        },
+        {
+          "name": "sales order (SO)",
+          "type": "DataObject",
+          "mention": "sales order (SO)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales security lead time",
+          "type": "Concept",
+          "mention": "Sales security lead time",
+          "confidence": "medium"
+        },
+        {
+          "name": "scheduled delivery date",
+          "type": "Field",
+          "mention": "scheduled delivery date",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase lead time",
+          "type": "Concept",
+          "mention": "Purchase lead time",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase order (PO)",
+          "type": "DataObject",
+          "mention": "purchase order (PO)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase security lead time",
+          "type": "Concept",
+          "mention": "Purchase security lead time",
+          "confidence": "medium"
+        },
+        {
+          "name": "order deadline",
+          "type": "Concept",
+          "mention": "order deadline",
+          "confidence": "low"
+        },
+        {
+          "name": "Replenishment report",
+          "type": "Report",
+          "mention": "Replenishment report",
+          "confidence": "high"
+        },
+        {
+          "name": "Days to Purchase",
+          "type": "Concept",
+          "mention": "Days to Purchase",
+          "confidence": "medium"
+        },
+        {
+          "name": "request for quotation (RFQ)",
+          "type": "DataObject",
+          "mention": "request for quotation (RFQ)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing lead time",
+          "type": "Concept",
+          "mention": "Manufacturing lead time",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing order (MO)",
+          "type": "DataObject",
+          "mention": "manufacturing order (MO)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Days to prepare manufacturing order",
+          "type": "Concept",
+          "mention": "Days to prepare manufacturing order",
+          "confidence": "medium"
+        },
+        {
+          "name": "bill of materials (BoM)",
+          "type": "DataObject",
+          "mention": "bill of materials (BoM)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing security lead time",
+          "type": "Concept",
+          "mention": "Manufacturing security lead time",
+          "confidence": "medium"
+        },
+        {
+          "name": "scheduled date",
+          "type": "Field",
+          "mention": "scheduled date",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Customer lead time",
+          "relation": "EQUIVALENT_TO",
+          "target": "delivery lead time",
+          "evidence": "This is also known as *delivery lead time*."
+        },
+        {
+          "source": "Sales security lead time",
+          "relation": "RELATED_TO",
+          "target": "scheduled delivery date",
+          "evidence": "moves the *scheduled delivery date* forward"
+        },
+        {
+          "source": "Purchase security lead time",
+          "relation": "RELATED_TO",
+          "target": "order deadline",
+          "evidence": "advances the order deadline on a PO"
+        },
+        {
+          "source": "Purchase security lead time",
+          "relation": "RELATED_TO",
+          "target": "Replenishment report",
+          "evidence": "the need appears on the *Replenishment report*"
+        },
+        {
+          "source": "Days to Purchase",
+          "relation": "RELATED_TO",
+          "target": "request for quotation (RFQ)",
+          "evidence": "vendor to receive a request for quotation (RFQ) and confirm it"
+        },
+        {
+          "source": "Days to prepare manufacturing order",
+          "relation": "RELATED_TO",
+          "target": "bill of materials (BoM)",
+          "evidence": "set one directly on the bill of materials (BoM)"
+        },
+        {
+          "source": "Manufacturing security lead time",
+          "relation": "RELATED_TO",
+          "target": "scheduled date",
+          "evidence": "moves the scheduled date of the forward"
+        },
+        {
+          "source": "Manufacturing security lead time",
+          "relation": "RELATED_TO",
+          "target": "Replenishment report",
+          "evidence": "makes the need appear earlier on the replenishment report"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sales-lead-times",
+    "heading": "Sales lead times",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "SO",
+          "confidence": "high"
+        },
+        {
+          "name": "expected delivery date",
+          "type": "Feature",
+          "mention": "expected delivery date",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery dates",
+          "type": "Concept",
+          "mention": "delivery dates",
+          "confidence": "high"
+        },
+        {
+          "name": "customer lead time",
+          "type": "Concept",
+          "mention": "customer lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "sales security lead time",
+          "type": "Concept",
+          "mention": "sales security lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "warning message",
+          "type": "Feature",
+          "mention": "warning message",
+          "confidence": "high"
+        },
+        {
+          "name": "Coconut-scented candle",
+          "type": "Product",
+          "mention": "Coconut-scented candle",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales Order",
+          "relation": "CONTAINS",
+          "target": "Coconut-scented candle",
+          "evidence": "A SO (sales order) containing a `Coconut-scented candle`"
+        },
+        {
+          "source": "expected delivery date",
+          "relation": "BELONGS_TO",
+          "target": "Sales Order",
+          "evidence": "expected delivery date on a SO"
+        },
+        {
+          "source": "expected delivery date",
+          "relation": "GENERATES",
+          "target": "warning message",
+          "evidence": "Odoo issues a warning message if the set delivery date is earlier than the expected date"
+        },
+        {
+          "source": "customer lead time",
+          "relation": "RELATED_TO",
+          "target": "expected delivery date",
+          "evidence": "customer lead times ... can be configured to automatically compute an expected delivery date"
+        },
+        {
+          "source": "sales security lead time",
+          "relation": "RELATED_TO",
+          "target": "expected delivery date",
+          "evidence": "sales security lead times ... can be configured to automatically compute an expected delivery date"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "customer-lead-time",
+    "heading": "Customer lead time",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Sub-module",
+          "mention": "Inventory tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Lead Time",
+          "type": "Field",
+          "mention": "Customer Lead Time field",
+          "confidence": "high"
+        },
+        {
+          "name": "Coconut-scented candle",
+          "type": "DataObject",
+          "mention": "Coconut-scented candle",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Customer Lead Time",
+          "relation": "BELONGS_TO",
+          "target": "Inventory tab",
+          "evidence": "Under the Customer Lead Time field"
+        },
+        {
+          "source": "Inventory tab",
+          "relation": "BELONGS_TO",
+          "target": "Products",
+          "evidence": "From there, select the desired product, and switch to the Inventory tab"
+        },
+        {
+          "source": "Products",
+          "relation": "BELONGS_TO",
+          "target": "Sales app",
+          "evidence": "Sales app --> Products --> Products"
+        },
+        {
+          "source": "Sales app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Customer Lead Time",
+          "relation": "CONFIGURED_BY",
+          "target": "Coconut-scented candle",
+          "evidence": "Set a 14-day customer lead time for the Coconut-scented candle"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sales-security-lead-time",
+    "heading": "Sales security lead time",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Advanced Scheduling",
+          "type": "Feature",
+          "mention": "Advanced Scheduling heading",
+          "confidence": "high"
+        },
+        {
+          "name": "Security Lead Time for Sales",
+          "type": "Setting",
+          "mention": "Security Lead Time for Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Order",
+          "type": "DataObject",
+          "mention": "delivery order (DO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduled Date",
+          "type": "Field",
+          "mention": "Scheduled Date",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Advanced Scheduling",
+          "evidence": "On the configuration page, under the Advanced Scheduling heading"
+        },
+        {
+          "source": "Advanced Scheduling",
+          "relation": "CONTAINS",
+          "target": "Security Lead Time for Sales",
+          "evidence": "Under the Advanced Scheduling heading, locate the box for Security Lead Time for Sales"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONFIGURED_BY",
+          "target": "Security Lead Time for Sales",
+          "evidence": "Sales security lead time is set globally for the business"
+        },
+        {
+          "source": "Delivery Order",
+          "relation": "CONTAINS",
+          "target": "Scheduled Date",
+          "evidence": "Scheduled Date of a delivery order"
+        },
+        {
+          "source": "Security Lead Time for Sales",
+          "relation": "CONFIGURED_BY",
+          "target": "Scheduled Date",
+          "evidence": "Setting the Security Lead Time for Sales pushes the Scheduled Date forward"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "deliver-several-products",
+    "heading": "Deliver several products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "Other Info tab",
+          "type": "Feature",
+          "mention": "Other Info tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Shipping Policy",
+          "type": "Setting",
+          "mention": "Shipping Policy",
+          "confidence": "high"
+        },
+        {
+          "name": "As soon as possible",
+          "type": "Setting",
+          "mention": "As soon as possible",
+          "confidence": "high"
+        },
+        {
+          "name": "When all products are ready",
+          "type": "Setting",
+          "mention": "When all products are ready",
+          "confidence": "high"
+        },
+        {
+          "name": "DO (Delivery Order)",
+          "type": "DataObject",
+          "mention": "DO (Delivery Order)",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduled Date",
+          "type": "Field",
+          "mention": "Scheduled Date",
+          "confidence": "high"
+        },
+        {
+          "name": "lead time",
+          "type": "Concept",
+          "mention": "lead time",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "quotation",
+          "relation": "CONTAINS",
+          "target": "Other Info tab",
+          "evidence": "On a quotation, click the Other Info tab"
+        },
+        {
+          "source": "Other Info tab",
+          "relation": "CONTAINS",
+          "target": "Shipping Policy",
+          "evidence": "... and set the Shipping Policy to:"
+        },
+        {
+          "source": "Shipping Policy",
+          "relation": "CONTAINS",
+          "target": "As soon as possible",
+          "evidence": "#. As soon as possible"
+        },
+        {
+          "source": "Shipping Policy",
+          "relation": "CONTAINS",
+          "target": "When all products are ready",
+          "evidence": "#. When all products are ready"
+        },
+        {
+          "source": "DO (Delivery Order)",
+          "relation": "HAS_FEATURE",
+          "target": "Scheduled Date",
+          "evidence": "Scheduled Date of the DO"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "quotation",
+          "evidence": "Product: Odoo - context of documentation"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Other Info tab",
+          "evidence": "Product: Odoo - context of documentation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "purchase-lead-times",
+    "heading": "Purchase lead times",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "RFQ",
+          "type": "DataObject",
+          "mention": "request for quotation (RFQ)",
+          "confidence": "high"
+        },
+        {
+          "name": "PO",
+          "type": "DataObject",
+          "mention": "PO",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Deadline",
+          "type": "Field",
+          "mention": "Order Deadline",
+          "confidence": "high"
+        },
+        {
+          "name": "Expected Arrival",
+          "type": "Field",
+          "mention": "Expected Arrival",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor Lead Time",
+          "type": "Field",
+          "mention": "Vendor Lead Time",
+          "confidence": "high"
+        },
+        {
+          "name": "global security lead times",
+          "type": "Setting",
+          "mention": "global security lead times",
+          "confidence": "high"
+        },
+        {
+          "name": "just-in-time",
+          "type": "Standard",
+          "mention": "just-in-time (JIT)",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rules",
+          "type": "Workflow",
+          "mention": "reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "make to order",
+          "type": "Workflow",
+          "mention": "make to order (MTO)",
+          "confidence": "high"
+        },
+        {
+          "name": "pull rules",
+          "type": "Workflow",
+          "mention": "pull rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Security Lead Time",
+          "type": "Setting",
+          "mention": "Purchase Security Lead Time",
+          "confidence": "high"
+        },
+        {
+          "name": "Days to Purchase",
+          "type": "Setting",
+          "mention": "Days to Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "JIT forecast window",
+          "type": "Feature",
+          "mention": "JIT forecast window",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Purchase lead times"
+        },
+        {
+          "source": "RFQ",
+          "relation": "EQUIVALENT_TO",
+          "target": "PO",
+          "evidence": "RFQ / PO"
+        },
+        {
+          "source": "RFQ",
+          "relation": "CONTAINS",
+          "target": "Order Deadline",
+          "evidence": "Field ... Order Deadline"
+        },
+        {
+          "source": "RFQ",
+          "relation": "CONTAINS",
+          "target": "Expected Arrival",
+          "evidence": "Field ... Expected Arrival"
+        },
+        {
+          "source": "Expected Arrival",
+          "relation": "GENERATES",
+          "target": "Order Deadline",
+          "evidence": "Calculated by Order Deadline + Vendor Lead Time"
+        },
+        {
+          "source": "Expected Arrival",
+          "relation": "ENABLES",
+          "target": "Vendor Lead Time",
+          "evidence": "Calculated by Order Deadline + Vendor Lead Time"
+        },
+        {
+          "source": "Purchase",
+          "relation": "HAS_FEATURE",
+          "target": "global security lead times",
+          "evidence": "Odoo has global security lead times"
+        },
+        {
+          "source": "global security lead times",
+          "relation": "SUPPORTS",
+          "target": "just-in-time",
+          "evidence": "widen the just-in-time (JIT) forecast window"
+        },
+        {
+          "source": "global security lead times",
+          "relation": "REQUIRES",
+          "target": "pull rules",
+          "evidence": "affect only replenishment methods that use pull rules"
+        },
+        {
+          "source": "pull rules",
+          "relation": "ENABLES",
+          "target": "reordering rules",
+          "evidence": "for example reordering rules"
+        },
+        {
+          "source": "pull rules",
+          "relation": "ENABLES",
+          "target": "make to order",
+          "evidence": "or make to order (MTO)"
+        },
+        {
+          "source": "global security lead times",
+          "relation": "CONTAINS",
+          "target": "Purchase Security Lead Time",
+          "evidence": "Purchase Security Lead Time"
+        },
+        {
+          "source": "global security lead times",
+          "relation": "CONTAINS",
+          "target": "Days to Purchase",
+          "evidence": "Days to Purchase"
+        },
+        {
+          "source": "Purchase Security Lead Time",
+          "relation": "RELATED_TO",
+          "target": "JIT forecast window",
+          "evidence": "adds buffer days in the JIT forecast window"
+        },
+        {
+          "source": "Days to Purchase",
+          "relation": "RELATED_TO",
+          "target": "JIT forecast window",
+          "evidence": "adds buffer days in the JIT forecast window"
+        },
+        {
+          "source": "RFQ",
+          "relation": "SEE_ALSO",
+          "target": "reordering rules",
+          "evidence": "PO scheduling with reordering rules"
+        },
+        {
+          "source": "Odoo",
+          "relation": "USES_METHOD",
+          "target": "just-in-time",
+          "evidence": "the just-in-time (JIT) forecast window"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vendor-lead-time",
+    "heading": "Vendor lead time",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products --> Products",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Sub-module",
+          "mention": "Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor pricelist",
+          "type": "Feature",
+          "mention": "vendor pricelist",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line button",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor name",
+          "type": "Field",
+          "mention": "Vendor name",
+          "confidence": "high"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price offered for the product",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Lead Time",
+          "type": "Field",
+          "mention": "Delivery Lead Time",
+          "confidence": "high"
+        },
+        {
+          "name": "Expected Arrival",
+          "type": "Field",
+          "mention": "Expected Arrival date",
+          "confidence": "high"
+        },
+        {
+          "name": "Late",
+          "type": "Feature",
+          "mention": "Late box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase dashboard",
+          "type": "Feature",
+          "mention": "Purchase app's dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "CONTAINS",
+          "target": "product form",
+          "evidence": "Purchase app --> Products --> Products"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Purchase tab",
+          "evidence": "switch to the Purchase tab"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "CONTAINS",
+          "target": "vendor pricelist",
+          "evidence": "In the editable vendor pricelist"
+        },
+        {
+          "source": "vendor pricelist",
+          "relation": "CONTAINS",
+          "target": "Add a line",
+          "evidence": "click the Add a line button"
+        },
+        {
+          "source": "Add a line",
+          "relation": "ENABLES",
+          "target": "Delivery Lead Time",
+          "evidence": "to add vendor details...Delivery Lead Time"
+        },
+        {
+          "source": "Late",
+          "relation": "TRIGGERED_BY",
+          "target": "Expected Arrival",
+          "evidence": "A is marked late if the Expected Arrival date has passed"
+        },
+        {
+          "source": "Purchase",
+          "relation": "CONTAINS",
+          "target": "Purchase dashboard",
+          "evidence": "appears in the Late box on the Purchase app's dashboard"
+        },
+        {
+          "source": "vendor pricelist",
+          "relation": "CONTAINS",
+          "target": "Vendor name",
+          "evidence": "add vendor details, such as the Vendor name"
+        },
+        {
+          "source": "vendor pricelist",
+          "relation": "CONTAINS",
+          "target": "Price",
+          "evidence": "add vendor details, such as the Price offered"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Purchase",
+          "evidence": "navigating to a product form through Purchase app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "purchase-security-lead-time",
+    "heading": "Purchase security lead time",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Advanced Scheduling",
+          "type": "Feature",
+          "mention": "Advanced Scheduling",
+          "confidence": "medium"
+        },
+        {
+          "name": "Security Lead Time for Purchase",
+          "type": "Setting",
+          "mention": "Security Lead Time for Purchase checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase security lead time",
+          "type": "Concept",
+          "mention": "Purchase security lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "calendar days",
+          "type": "Field",
+          "mention": "calendar days",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Security Lead Time for Purchase",
+          "relation": "CONFIGURED_BY",
+          "target": "Advanced Scheduling",
+          "evidence": "Under Advanced Scheduling, tick the Security Lead Time for Purchase checkbox."
+        },
+        {
+          "source": "Advanced Scheduling",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "Under Advanced Scheduling, tick the Security Lead Time for Purchase checkbox."
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "To set it, go to Inventory app --> Configuration --> Settings."
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "To set it, go to Inventory app --> Configuration --> Settings."
+        },
+        {
+          "source": "Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Purchase security lead time",
+          "relation": "RELATED_TO",
+          "target": "Security Lead Time for Purchase",
+          "evidence": "Purchase security lead time is a global buffer... By configuring the security lead time"
+        },
+        {
+          "source": "Security Lead Time for Purchase",
+          "relation": "CONFIGURED_BY",
+          "target": "calendar days",
+          "evidence": "Next, enter the desired number of calendar days."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "days-to-purchase-lead-time",
+    "heading": "Days to purchase lead time",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Advanced Scheduling section",
+          "type": "Module",
+          "mention": "Advanced Scheduling section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Days to Purchase",
+          "type": "Field",
+          "mention": "Days to Purchase field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Advanced Scheduling section",
+          "evidence": "Under the Advanced Scheduling section"
+        },
+        {
+          "source": "Advanced Scheduling section",
+          "relation": "CONTAINS",
+          "target": "Days to Purchase",
+          "evidence": "in the Days to Purchase field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manufacturing-lead-times",
+    "heading": "Manufacturing lead times",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing lead times",
+          "type": "Feature",
+          "mention": "manufacturing lead times",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing security lead times",
+          "type": "Feature",
+          "mention": "manufacturing security lead times",
+          "confidence": "high"
+        },
+        {
+          "name": "Deadline",
+          "type": "Concept",
+          "mention": "deadline",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing process",
+          "type": "Concept",
+          "mention": "manufacturing process",
+          "confidence": "medium"
+        },
+        {
+          "name": "Procurement process",
+          "type": "Workflow",
+          "mention": "procurement process",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bills of materials (BoMs)",
+          "type": "DataObject",
+          "mention": "bills of materials (BoMs)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Consumable materials",
+          "type": "Concept",
+          "mention": "consumable materials",
+          "confidence": "low"
+        },
+        {
+          "name": "Components",
+          "type": "Concept",
+          "mention": "components",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing lead times",
+          "relation": "CONFIGURED_BY",
+          "target": "Manufacturing security lead times",
+          "evidence": "configured by"
+        },
+        {
+          "source": "Manufacturing lead times",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Deadline",
+          "relation": "TRIGGERED_BY",
+          "target": "Manufacturing process",
+          "evidence": "deadline to begin the manufacturing process"
+        },
+        {
+          "source": "Manufacturing process",
+          "relation": "PRODUCES",
+          "target": "Bills of materials (BoMs)",
+          "evidence": "used in manufactured products with bills of materials"
+        },
+        {
+          "source": "Procurement process",
+          "relation": "SUPPORTS",
+          "target": "Consumable materials",
+          "evidence": "simplify the procurement process for consumable materials"
+        },
+        {
+          "source": "Procurement process",
+          "relation": "SUPPORTS",
+          "target": "Components",
+          "evidence": "simplify the procurement process for components"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manufacturing-lead-time",
+    "heading": "Manufacturing lead time",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills of Materials",
+          "type": "DataObject",
+          "mention": "Bills of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of materials (BoM)",
+          "type": "DataObject",
+          "mention": "BoM",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM form",
+          "type": "DataObject",
+          "mention": "BoM form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manuf. Lead Time",
+          "type": "Field",
+          "mention": "Manuf. Lead Time field",
+          "confidence": "high"
+        },
+        {
+          "name": "multi-level BoM",
+          "type": "Concept",
+          "mention": "multi-level",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracted product",
+          "type": "Concept",
+          "mention": "subcontracted product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Deadline",
+          "type": "Concept",
+          "mention": "deadline",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expected delivery date",
+          "type": "Concept",
+          "mention": "expected delivery date",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Order (DO)",
+          "type": "DataObject",
+          "mention": "DO (Delivery Order)",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduled Date",
+          "type": "Field",
+          "mention": "Scheduled Date field",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order (MO)",
+          "type": "DataObject",
+          "mention": "MO (Manufacturing Order)",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing planning",
+          "type": "Workflow",
+          "mention": "Manufacturing planning",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing lead time",
+          "type": "Concept",
+          "mention": "manufacturing lead time",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing lead time",
+          "relation": "CONFIGURED_BY",
+          "target": "Manuf. Lead Time",
+          "evidence": "Manufacturing lead times for products are configured from a product's bill of materials (BoM) form."
+        },
+        {
+          "source": "Manuf. Lead Time",
+          "relation": "IS_PART_OF",
+          "target": "BoM form",
+          "evidence": "On the form, click the Miscellaneous tab. Change the value (in days) in the Manuf. Lead Time field"
+        },
+        {
+          "source": "BoM",
+          "relation": "EQUIVALENT_TO",
+          "target": "Bill of materials (BoM)",
+          "evidence": "references to BoM"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "navigate to Manufacturing app --> Products"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "SEE_ALSO",
+          "target": "Manufacturing planning",
+          "evidence": "Manufacturing planning"
+        },
+        {
+          "source": "Delivery Order (DO)",
+          "relation": "CONTAINS",
+          "target": "Scheduled Date",
+          "evidence": "Scheduled Date field of the DO"
+        },
+        {
+          "source": "Scheduled Date",
+          "relation": "RELATED_TO",
+          "target": "Expected delivery date",
+          "evidence": "based on the *expected delivery date*, indicated in the Scheduled Date field"
+        },
+        {
+          "source": "Deadline",
+          "relation": "RELATED_TO",
+          "target": "Scheduled Date",
+          "evidence": "deadline, which is the Scheduled Date field"
+        },
+        {
+          "source": "Deadline",
+          "relation": "RELATED_TO",
+          "target": "Manufacturing lead time",
+          "evidence": "calculated as the *expected delivery date* subtracted by the manufacturing lead time"
+        },
+        {
+          "source": "Manufacturing Order (MO)",
+          "relation": "RELATED_TO",
+          "target": "Manufacturing lead time",
+          "evidence": "latest date to start the MO... is August 1st"
+        },
+        {
+          "source": "Manufacturing planning",
+          "relation": "SEE_ALSO",
+          "target": "Schedule MOs with reordering rules",
+          "evidence": "Schedule MOs with reordering rules"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "days-to-prepare-manufacturing-order",
+    "heading": "Days to prepare manufacturing order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bills of Materials",
+          "type": "DataObject",
+          "mention": "Bills of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills of Materials",
+          "type": "Report",
+          "mention": "the desired Bills of Materials",
+          "confidence": "medium"
+        },
+        {
+          "name": "Miscellaneous tab",
+          "type": "Module",
+          "mention": "Miscellaneous tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Days to prepare Manufacturing Order",
+          "type": "Field",
+          "mention": "Days to prepare Manufacturing Order field",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "high"
+        },
+        {
+          "name": "Compute",
+          "type": "Action",
+          "mention": "Clicking Compute",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing lead time",
+          "type": "Field",
+          "mention": "manufacturing lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase lead time",
+          "type": "Field",
+          "mention": "purchase lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase security lead times",
+          "type": "Concept",
+          "mention": "Purchase security lead times",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing app"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Manufacturing app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "HAS_REPORT",
+          "target": "Bills of Materials",
+          "evidence": "Products --> Bills of Materials"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "CONTAINS",
+          "target": "Miscellaneous tab",
+          "evidence": "Miscellaneous tab of the Bills of Materials"
+        },
+        {
+          "source": "Miscellaneous tab",
+          "relation": "CONTAINS",
+          "target": "Days to prepare Manufacturing Order",
+          "evidence": "Days to prepare Manufacturing Order field"
+        },
+        {
+          "source": "Days to prepare Manufacturing Order",
+          "relation": "ENABLES",
+          "target": "manufacturing order",
+          "evidence": "creates manufacturing order in advance"
+        },
+        {
+          "source": "Compute",
+          "relation": "TRIGGERED_BY",
+          "target": "Clicking Compute",
+          "evidence": "Clicking Compute"
+        },
+        {
+          "source": "Compute",
+          "relation": "PRODUCES",
+          "target": "longest lead time",
+          "evidence": "calculates the longest lead time"
+        },
+        {
+          "source": "Days to prepare Manufacturing Order",
+          "relation": "CONFIGURED_BY",
+          "target": "Compute",
+          "evidence": "Clicking Compute, located next to the Days to prepare Manufacturing Order field"
+        },
+        {
+          "source": "product",
+          "relation": "HAS_FEATURE",
+          "target": "Days to prepare Manufacturing Order",
+          "evidence": "Configure the days required to gather components to manufacture a product"
+        },
+        {
+          "source": "Purchase security lead times",
+          "relation": "RELATED_TO",
+          "target": "Days to prepare Manufacturing Order",
+          "evidence": "Purchase security lead times that impact this specific product are also added to this value"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manufacturing-security-lead-time",
+    "heading": "Manufacturing security lead time",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing security lead time",
+          "type": "Concept",
+          "mention": "Manufacturing security lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "Security Lead Time checkbox",
+          "type": "Feature",
+          "mention": "tick the checkbox for Security Lead Time",
+          "confidence": "medium"
+        },
+        {
+          "name": "Planning heading",
+          "type": "Feature",
+          "mention": "Under the Planning heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "calendar days field",
+          "type": "Field",
+          "mention": "enter the desired number of calendar days",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing lead time",
+          "type": "Concept",
+          "mention": "manufacturing lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Order",
+          "type": "DataObject",
+          "mention": "DO (Delivery Order)",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Security Lead Time checkbox",
+          "evidence": "tick the checkbox for Security Lead Time"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Planning heading",
+          "evidence": "Under the Planning heading"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "calendar days field",
+          "evidence": "enter the desired number of calendar days"
+        },
+        {
+          "source": "manufacturing security lead time",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "Manufacturing security lead time is set globally for the business in Manufacturing app --> Configuration --> Settings."
+        },
+        {
+          "source": "manufacturing security lead time",
+          "relation": "APPLIES_TO",
+          "target": "Manufacturing Order",
+          "evidence": "Scheduled Date on the Manufacturing Order reflects the latest date to begin the manufacturing order."
+        },
+        {
+          "source": "Manufacturing Order",
+          "relation": "RELATED_TO",
+          "target": "Delivery Order",
+          "evidence": "A product has a scheduled shipment date on the DO (Delivery Order)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "global-example",
+    "heading": "Global example",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales security lead time",
+          "type": "Concept",
+          "mention": "Sales security lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing security lead time",
+          "type": "Concept",
+          "mention": "Manufacturing security lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing lead time",
+          "type": "Concept",
+          "mention": "Manufacturing lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase security lead time",
+          "type": "Concept",
+          "mention": "Purchase security lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor lead time",
+          "type": "Concept",
+          "mention": "Vendor lead time",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufactured product",
+          "type": "DataObject",
+          "mention": "manufactured product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "Sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Salesperson",
+          "type": "Actor",
+          "mention": "salesperson",
+          "confidence": "medium"
+        },
+        {
+          "name": "Components",
+          "type": "DataObject",
+          "mention": "components",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order fulfillment",
+          "type": "Workflow",
+          "mention": "order fulfillment process",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment planning",
+          "type": "Feature",
+          "mention": "replenishment planning",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Replenishment planning",
+          "evidence": "Odoo's replenishment planning maps a business' order fulfillment process"
+        },
+        {
+          "source": "Order fulfillment",
+          "relation": "TRIGGERED_BY",
+          "target": "Sales order",
+          "evidence": "The customer places an order for a manufactured product"
+        },
+        {
+          "source": "Sales order",
+          "relation": "PRODUCES",
+          "target": "Manufactured product",
+          "evidence": "The customer places an order for a manufactured product"
+        },
+        {
+          "source": "Salesperson",
+          "relation": "PERFORMED_BY",
+          "target": "Sales order",
+          "evidence": "Sales order created, confirmed by salesperson."
+        },
+        {
+          "source": "Order fulfillment",
+          "relation": "SUPPORTS",
+          "target": "Sales security lead time",
+          "evidence": "ensures timely order fulfillment"
+        },
+        {
+          "source": "Order fulfillment",
+          "relation": "SUPPORTS",
+          "target": "Manufacturing security lead time",
+          "evidence": "ensures timely order fulfillment"
+        },
+        {
+          "source": "Order fulfillment",
+          "relation": "SUPPORTS",
+          "target": "Manufacturing lead time",
+          "evidence": "ensures timely order fulfillment"
+        },
+        {
+          "source": "Order fulfillment",
+          "relation": "SUPPORTS",
+          "target": "Purchase security lead time",
+          "evidence": "ensures timely order fulfillment"
+        },
+        {
+          "source": "Order fulfillment",
+          "relation": "SUPPORTS",
+          "target": "Vendor lead time",
+          "evidence": "ensures timely order fulfillment"
+        }
+      ]
+    }
+  }
+]

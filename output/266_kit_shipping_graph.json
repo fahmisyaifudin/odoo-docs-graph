@@ -1,0 +1,997 @@
+[
+  {
+    "section_id": "kits",
+    "heading": "Kits",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Kits",
+          "type": "Module",
+          "mention": "Title: Kits",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "kit",
+          "type": "Concept",
+          "mention": "a kit",
+          "confidence": "high"
+        },
+        {
+          "name": "bill of materials",
+          "type": "Concept",
+          "mention": "bill of materials",
+          "confidence": "medium"
+        },
+        {
+          "name": "BoM",
+          "type": "Concept",
+          "mention": "bill of materials (BoM)",
+          "confidence": "high"
+        },
+        {
+          "name": "sell kits",
+          "type": "Action",
+          "mention": "sell kits",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacture kits",
+          "type": "Action",
+          "mention": "manufacture kits",
+          "confidence": "medium"
+        },
+        {
+          "name": "use kits",
+          "type": "Action",
+          "mention": "use kits",
+          "confidence": "medium"
+        },
+        {
+          "name": "standalone products",
+          "type": "Concept",
+          "mention": "standalone products",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "kit",
+          "relation": "IS_PART_OF",
+          "target": "BoM",
+          "evidence": "a kit is a type of bill of materials (BoM)"
+        },
+        {
+          "source": "sell kits",
+          "relation": "REQUIRES",
+          "target": "Manufacturing",
+          "evidence": "To sell kits, the Manufacturing app needs to be installed"
+        },
+        {
+          "source": "sell kits",
+          "relation": "REQUIRES",
+          "target": "Inventory",
+          "evidence": "To sell kits, the Inventory app needs to be installed"
+        },
+        {
+          "source": "manufacture kits",
+          "relation": "REQUIRES",
+          "target": "Manufacturing",
+          "evidence": "To manufacture kits, the Manufacturing app needs to be installed"
+        },
+        {
+          "source": "manufacture kits",
+          "relation": "REQUIRES",
+          "target": "Inventory",
+          "evidence": "To manufacture kits, the Inventory app needs to be installed"
+        },
+        {
+          "source": "use kits",
+          "relation": "REQUIRES",
+          "target": "Manufacturing",
+          "evidence": "To use kits, the Manufacturing app needs to be installed"
+        },
+        {
+          "source": "use kits",
+          "relation": "REQUIRES",
+          "target": "Inventory",
+          "evidence": "To use kits, the Inventory app needs to be installed"
+        },
+        {
+          "source": "Kits",
+          "relation": "CONTAINS",
+          "target": "kit",
+          "evidence": "In Odoo, a kit is a type of bill of materials (BoM)"
+        },
+        {
+          "source": "BoM",
+          "relation": "RELATED_TO",
+          "target": "kit",
+          "evidence": "kits are also useful tools for managing more complex bills of materials (BoMs)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-the-kit-as-a-product",
+    "heading": "Create the kit as a product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Kit product",
+          "type": "DataObject",
+          "mention": "new kit product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Type",
+          "type": "Setting",
+          "mention": "Product Type",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information tab",
+          "type": "Module",
+          "mention": "General Information tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Goods",
+          "type": "Standard",
+          "mention": "Goods",
+          "confidence": "medium"
+        },
+        {
+          "name": "Track Inventory",
+          "type": "Feature",
+          "mention": "Track Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Kit's components",
+          "type": "DataObject",
+          "mention": "kit's components",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "go to Manufacturing app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "New",
+          "evidence": "Products --> Products, and then click New"
+        },
+        {
+          "source": "Kit product",
+          "relation": "CONFIGURED_BY",
+          "target": "Product Type",
+          "evidence": "set the Product Type"
+        },
+        {
+          "source": "Product Type",
+          "relation": "SUPPORTS",
+          "target": "Goods",
+          "evidence": "Product Type to Goods"
+        },
+        {
+          "source": "Kit product",
+          "relation": "CONFIGURED_BY",
+          "target": "Track Inventory",
+          "evidence": "check the box next Track Inventory"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Kit product",
+          "relation": "RELATED_TO",
+          "target": "Kit's components",
+          "evidence": "The kit's components must also be configured"
+        },
+        {
+          "source": "Kit's components",
+          "relation": "BELONGS_TO",
+          "target": "Kit product",
+          "evidence": "kit's components"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "untracked-kit-inventory-setup-details",
+    "heading": "Untracked kit inventory setup details",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Untracked kit inventory setup",
+          "type": "Feature",
+          "mention": "Untracked kit inventory setup details",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kit",
+          "type": "DataObject",
+          "mention": "kit",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing process",
+          "type": "Workflow",
+          "mention": "manufacturing processes",
+          "confidence": "high"
+        },
+        {
+          "name": "Continental Accounting",
+          "type": "Concept",
+          "mention": "Continental Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Costs expensed immediately upon purchase",
+          "type": "Concept",
+          "mention": "costs are expensed immediately upon purchase",
+          "confidence": "medium"
+        },
+        {
+          "name": "Components",
+          "type": "DataObject",
+          "mention": "components",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory count",
+          "type": "Feature",
+          "mention": "Inventory count",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reordering rules",
+          "type": "Feature",
+          "mention": "reordering rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "Selling",
+          "type": "Workflow",
+          "mention": "Selling",
+          "confidence": "medium"
+        },
+        {
+          "name": "Stock Constraints",
+          "type": "Feature",
+          "mention": "Stock Constraints",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery",
+          "type": "Workflow",
+          "mention": "delivery",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Untracked kit inventory setup",
+          "relation": "APPLIES_TO",
+          "target": "Kit",
+          "evidence": "Consider leaving tracking for the kit's inventory untracked"
+        },
+        {
+          "source": "Kit",
+          "relation": "USED_IN",
+          "target": "Manufacturing process",
+          "evidence": "when the kit is used in other manufacturing processes"
+        },
+        {
+          "source": "Kit",
+          "relation": "IS_PART_OF",
+          "target": "Components",
+          "evidence": "Replenishment via Components"
+        },
+        {
+          "source": "Components",
+          "relation": "CONTAINS",
+          "target": "Inventory count",
+          "evidence": "Inventory count is managed at the component level"
+        },
+        {
+          "source": "Components",
+          "relation": "CONFIGURED_BY",
+          "target": "Reordering rules",
+          "evidence": "reordering rules must be set to individual components"
+        },
+        {
+          "source": "Selling",
+          "relation": "REQUIRES",
+          "target": "Kit",
+          "evidence": "Kits cannot be sold"
+        },
+        {
+          "source": "Kit",
+          "relation": "REQUIRES",
+          "target": "Components",
+          "evidence": "if any required component is out of stock"
+        },
+        {
+          "source": "Sales order",
+          "relation": "RELATED_TO",
+          "target": "Delivery",
+          "evidence": "a sales order may appear valid, but delivery can be delayed"
+        },
+        {
+          "source": "Untracked kit inventory setup",
+          "relation": "RECOMMENDED_FOR",
+          "target": "Continental Accounting",
+          "evidence": "Recommended for Continental Accounting"
+        },
+        {
+          "source": "Continental Accounting",
+          "relation": "USES_METHOD",
+          "target": "Costs expensed immediately upon purchase",
+          "evidence": "If costs are expensed immediately upon purchase"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tracked-kit-inventory-setup-details",
+    "heading": "Tracked kit inventory setup details",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Tracked kit inventory setup",
+          "type": "Module",
+          "mention": "Tracked kit inventory setup details",
+          "confidence": "medium"
+        },
+        {
+          "name": "kit",
+          "type": "DataObject",
+          "mention": "kit",
+          "confidence": "medium"
+        },
+        {
+          "name": "tracking for kit's inventory",
+          "type": "Feature",
+          "mention": "tracking for the kit's inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "tangible product",
+          "type": "Concept",
+          "mention": "tangible product",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse tracking",
+          "type": "Concept",
+          "mention": "warehouse and inventory tracking is essential",
+          "confidence": "medium"
+        },
+        {
+          "name": "Angle-Saxon Accounting",
+          "type": "Standard",
+          "mention": "Angle-Saxon Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cost of Goods Sold (COGS)",
+          "type": "Concept",
+          "mention": "Cost of Goods Sold (COGS)",
+          "confidence": "medium"
+        },
+        {
+          "name": "record COGS in journals",
+          "type": "Workflow",
+          "mention": "COGS needs to be recorded in journals",
+          "confidence": "medium"
+        },
+        {
+          "name": "minimum required components",
+          "type": "Concept",
+          "mention": "minimum required components",
+          "confidence": "medium"
+        },
+        {
+          "name": "eCommerce cart",
+          "type": "Module",
+          "mention": "eCommerce cart",
+          "confidence": "medium"
+        },
+        {
+          "name": "continue selling",
+          "type": "Setting",
+          "mention": "continue selling",
+          "confidence": "medium"
+        },
+        {
+          "name": "Serial number tracking",
+          "type": "Feature",
+          "mention": "Serial number tracking",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reordering rule",
+          "type": "Workflow",
+          "mention": "Reordering rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "component-level",
+          "type": "Concept",
+          "mention": "component-level",
+          "confidence": "medium"
+        },
+        {
+          "name": "Stock replenishment",
+          "type": "Workflow",
+          "mention": "Stock replenishment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Tracked kit inventory setup",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Tracked kit inventory setup",
+          "relation": "HAS_FEATURE",
+          "target": "tracking for kit's inventory",
+          "evidence": "tracking for the kit's inventory"
+        },
+        {
+          "source": "kit",
+          "relation": "CONFIGURED_BY",
+          "target": "tracking for kit's inventory",
+          "evidence": "tracking for the kit's inventory"
+        },
+        {
+          "source": "tracking for kit's inventory",
+          "relation": "REQUIRES",
+          "target": "tangible product",
+          "evidence": "when the kit is a tangible product"
+        },
+        {
+          "source": "tracking for kit's inventory",
+          "relation": "REQUIRES",
+          "target": "warehouse tracking",
+          "evidence": "warehouse and inventory tracking is essential"
+        },
+        {
+          "source": "tracking for kit's inventory",
+          "relation": "SUPPORTS",
+          "target": "Angle-Saxon Accounting",
+          "evidence": "Recommended for Angle-Saxon Accounting"
+        },
+        {
+          "source": "Angle-Saxon Accounting",
+          "relation": "REQUIRES",
+          "target": "record COGS in journals",
+          "evidence": "COGS needs to be recorded in journals"
+        },
+        {
+          "source": "kit",
+          "relation": "HAS_FEATURE",
+          "target": "minimum required components",
+          "evidence": "Only the kit's minimum required components"
+        },
+        {
+          "source": "minimum required components",
+          "relation": "ENABLES",
+          "target": "eCommerce cart",
+          "evidence": "can be added to an eCommerce cart"
+        },
+        {
+          "source": "eCommerce cart",
+          "relation": "CONFIGURED_BY",
+          "target": "continue selling",
+          "evidence": "unless the option to continue selling is disabled"
+        },
+        {
+          "source": "kit",
+          "relation": "RELATED_TO",
+          "target": "Serial number tracking",
+          "evidence": "Serial number tracking does not track the kit"
+        },
+        {
+          "source": "Serial number tracking",
+          "relation": "APPLIES_TO",
+          "target": "component-level",
+          "evidence": "only its shipped components"
+        },
+        {
+          "source": "Reordering rule",
+          "relation": "APPLIES_TO",
+          "target": "component-level",
+          "evidence": "Reordering rules should be set at the component-level"
+        },
+        {
+          "source": "Stock replenishment",
+          "relation": "APPLIES_TO",
+          "target": "component-level",
+          "evidence": "Stock replenishment should also be done at the component-level"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "kit-setup-similarities",
+    "heading": "Kit setup similarities",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "No Kit-Level Stock Adjustments",
+          "type": "Feature",
+          "mention": "No Kit-Level Stock Adjustments",
+          "confidence": "high"
+        },
+        {
+          "name": "Kit Value Does Not Change",
+          "type": "Feature",
+          "mention": "Kit Value Does Not Change",
+          "confidence": "high"
+        },
+        {
+          "name": "Kit Internal Transfers",
+          "type": "Workflow",
+          "mention": "Kit Internal Transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "kit",
+          "type": "Concept",
+          "mention": "kit",
+          "confidence": "medium"
+        },
+        {
+          "name": "components",
+          "type": "Concept",
+          "mention": "components",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "No Kit-Level Stock Adjustments",
+          "evidence": "No Kit-Level Stock Adjustments"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Kit Value Does Not Change",
+          "evidence": "Kit Value Does Not Change"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Kit Internal Transfers",
+          "evidence": "Kit Internal Transfers"
+        },
+        {
+          "source": "Kit Internal Transfers",
+          "relation": "PRODUCES",
+          "target": "components",
+          "evidence": "breaks it into components"
+        },
+        {
+          "source": "Kit Internal Transfers",
+          "relation": "TRIGGERED_BY",
+          "target": "kit",
+          "evidence": "for the kit"
+        },
+        {
+          "source": "No Kit-Level Stock Adjustments",
+          "relation": "APPLIES_TO",
+          "target": "kit",
+          "evidence": "kit-level"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-up-the-kit-bom",
+    "heading": "Set up the kit BoM",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills of Materials",
+          "type": "Sub-module",
+          "mention": "Bills of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "kit product",
+          "type": "Product",
+          "mention": "kit product",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM",
+          "type": "DataObject",
+          "mention": "BoM (bill of materials)",
+          "confidence": "high"
+        },
+        {
+          "name": "Product field",
+          "type": "Field",
+          "mention": "Product field",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM Type field",
+          "type": "Field",
+          "mention": "BoM Type field",
+          "confidence": "high"
+        },
+        {
+          "name": "Kit option",
+          "type": "Feature",
+          "mention": "Kit option",
+          "confidence": "high"
+        },
+        {
+          "name": "Components tab",
+          "type": "Sub-module",
+          "mention": "Components tab",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "sellable product",
+          "type": "Concept",
+          "mention": "sellable product",
+          "confidence": "high"
+        },
+        {
+          "name": "line item",
+          "type": "Concept",
+          "mention": "line item",
+          "confidence": "medium"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery orders",
+          "type": "DataObject",
+          "mention": "delivery orders",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "go to Manufacturing app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Bills of Materials",
+          "evidence": "Products --> Bills of Materials"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "HAS_FEATURE",
+          "target": "New",
+          "evidence": "Bills of Materials, and then click New"
+        },
+        {
+          "source": "BoM",
+          "relation": "CONFIGURED_BY",
+          "target": "Product field",
+          "evidence": "Next to the Product field... select the previously configured kit product"
+        },
+        {
+          "source": "BoM",
+          "relation": "CONFIGURED_BY",
+          "target": "BoM Type field",
+          "evidence": "Then, for the BoM Type field, click the Kit option"
+        },
+        {
+          "source": "BoM",
+          "relation": "CONFIGURED_BY",
+          "target": "Components tab",
+          "evidence": "under the Components tab, click Add a line, and add each desired component"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "PRODUCES",
+          "target": "BoM",
+          "evidence": "click Save to save the newly created BoM (bill of materials)"
+        },
+        {
+          "source": "kit product",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "kit product",
+          "relation": "GENERATES",
+          "target": "quotation",
+          "evidence": "When a kit is sold as a product, it appears as a single line item on the quotation"
+        },
+        {
+          "source": "kit product",
+          "relation": "GENERATES",
+          "target": "sales order",
+          "evidence": "it appears as a single line item on the quotation and sales order"
+        },
+        {
+          "source": "kit product",
+          "relation": "GENERATES",
+          "target": "delivery orders",
+          "evidence": "However, on delivery orders, each component of the kit is listed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-kits-to-manage-complex-boms",
+    "heading": "Use kits to manage complex BoMs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "kits",
+          "type": "Feature",
+          "mention": "kits",
+          "confidence": "high"
+        },
+        {
+          "name": "BoMs",
+          "type": "DataObject",
+          "mention": "BoMs",
+          "confidence": "high"
+        },
+        {
+          "name": "complex BoMs",
+          "type": "DataObject",
+          "mention": "complex BoMs",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing",
+          "type": "Workflow",
+          "mention": "manufacturing",
+          "confidence": "medium"
+        },
+        {
+          "name": "procurement",
+          "type": "Action",
+          "mention": "procurement",
+          "confidence": "medium"
+        },
+        {
+          "name": "production",
+          "type": "Action",
+          "mention": "production",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sublevel BoMs",
+          "type": "DataObject",
+          "mention": "Sublevel BoMs",
+          "confidence": "medium"
+        },
+        {
+          "name": "subassemblies",
+          "type": "DataObject",
+          "mention": "subassemblies",
+          "confidence": "medium"
+        },
+        {
+          "name": "semi-finished products",
+          "type": "DataObject",
+          "mention": "semi-finished products",
+          "confidence": "medium"
+        },
+        {
+          "name": "traceability",
+          "type": "Feature",
+          "mention": "traceability",
+          "confidence": "medium"
+        },
+        {
+          "name": "sub_assemblies",
+          "type": "Concept",
+          "mention": "sub_assemblies",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "kits",
+          "relation": "USES_METHOD",
+          "target": "complex BoMs",
+          "evidence": "Use kits to manage complex BoMs"
+        },
+        {
+          "source": "complex BoMs",
+          "relation": "CONTAINS",
+          "target": "BoMs",
+          "evidence": "nests BoMs within other BoMs"
+        },
+        {
+          "source": "kits",
+          "relation": "ENABLES",
+          "target": "manufacturing",
+          "evidence": "simplifying manufacturing"
+        },
+        {
+          "source": "manufacturing",
+          "relation": "REQUIRES",
+          "target": "procurement",
+          "evidence": "defining each procurement"
+        },
+        {
+          "source": "manufacturing",
+          "relation": "REQUIRES",
+          "target": "production",
+          "evidence": "and production step separately"
+        },
+        {
+          "source": "Sublevel BoMs",
+          "relation": "EQUIVALENT_TO",
+          "target": "subassemblies",
+          "evidence": "Sublevel BoMs (subassemblies"
+        },
+        {
+          "source": "Sublevel BoMs",
+          "relation": "EQUIVALENT_TO",
+          "target": "semi-finished products",
+          "evidence": "subassemblies or semi-finished products)"
+        },
+        {
+          "source": "Sublevel BoMs",
+          "relation": "ENABLES",
+          "target": "traceability",
+          "evidence": "streamline these workflows, helping with traceability efforts"
+        },
+        {
+          "source": "traceability",
+          "relation": "SEE_ALSO",
+          "target": "sub_assemblies",
+          "evidence": ".. seealso:: sub_assemblies"
+        }
+      ]
+    }
+  }
+]

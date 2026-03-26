@@ -1,0 +1,893 @@
+[
+  {
+    "section_id": "bill-of-materials",
+    "heading": "Bill of materials",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of materials",
+          "type": "Concept",
+          "mention": "bill of materials",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM",
+          "type": "Concept",
+          "mention": "BoM",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bill of materials",
+          "relation": "EQUIVALENT_TO",
+          "target": "BoM",
+          "evidence": "A *bill of materials* (or *BoM* for short)"
+        },
+        {
+          "source": "Bill of materials",
+          "relation": "CONTAINS",
+          "target": "components",
+          "evidence": "documents specific components"
+        },
+        {
+          "source": "Bill of materials",
+          "relation": "CONTAINS",
+          "target": "quantities",
+          "evidence": "along with their respective quantities"
+        },
+        {
+          "source": "Odoo",
+          "relation": "USES_METHOD",
+          "target": "Bill of materials",
+          "evidence": "In Odoo, serve as blueprints"
+        },
+        {
+          "source": "Bill of materials",
+          "relation": "RELATED_TO",
+          "target": "blueprints",
+          "evidence": "serve as blueprints"
+        },
+        {
+          "source": "Bill of materials",
+          "relation": "RELATED_TO",
+          "target": "manufactured goods",
+          "evidence": "for manufactured goods"
+        },
+        {
+          "source": "Bill of materials",
+          "relation": "RELATED_TO",
+          "target": "kits",
+          "evidence": "and kits"
+        },
+        {
+          "source": "Bill of materials",
+          "relation": "CONTAINS",
+          "target": "production operations",
+          "evidence": "often include production operations"
+        },
+        {
+          "source": "Bill of materials",
+          "relation": "CONTAINS",
+          "target": "step-by-step guidelines",
+          "evidence": "and step-by-step guidelines"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bom-setup",
+    "heading": "BoM setup",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills of Materials",
+          "type": "Feature",
+          "mention": "Bills of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials smart button",
+          "type": "Feature",
+          "mention": "Bill of Materials smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Drawer",
+          "type": "DataObject",
+          "mention": "BoM for `Drawer`",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Manufacturing app",
+          "evidence": "go to Manufacturing app"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Manufacturing app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Bills of Materials",
+          "evidence": "Products --> Bills of Materials"
+        },
+        {
+          "source": "Products",
+          "relation": "HAS_FEATURE",
+          "target": "Bill of Materials smart button",
+          "evidence": "clicking the Bill of Materials smart button on any product form"
+        },
+        {
+          "source": "Drawer",
+          "relation": "RELATED_TO",
+          "target": "Bills of Materials",
+          "evidence": "BoM for `Drawer`"
+        },
+        {
+          "source": "Bill of Materials smart button",
+          "relation": "TRIGGERED_BY",
+          "target": "Product form",
+          "evidence": "accessible through the *Sales*, *Inventory*, and *Manufacturing* apps"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Sales",
+          "evidence": "accessible through the *Sales*"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "accessible through the *Inventory*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "components",
+    "heading": "Components",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Components tab",
+          "type": "Module",
+          "mention": "Components tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Components drop-down menu",
+          "type": "Feature",
+          "mention": "Components drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create \" \" option",
+          "type": "Action",
+          "mention": "Create \" \" option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create and edit... option",
+          "type": "Action",
+          "mention": "Create and edit... option",
+          "confidence": "medium"
+        },
+        {
+          "name": "oi-settings-adjust (settings adjust) icon",
+          "type": "Feature",
+          "mention": "oi-settings-adjust (settings adjust) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Apply on Variants",
+          "type": "Field",
+          "mention": "Apply on Variants",
+          "confidence": "high"
+        },
+        {
+          "name": "product variant",
+          "type": "DataObject",
+          "mention": "product variant",
+          "confidence": "medium"
+        },
+        {
+          "name": "Consumed in Operation",
+          "type": "Field",
+          "mention": "Consumed in Operation",
+          "confidence": "high"
+        },
+        {
+          "name": "operation",
+          "type": "Concept",
+          "mention": "operation",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing readiness",
+          "type": "Concept",
+          "mention": "manufacturing readiness",
+          "confidence": "low"
+        },
+        {
+          "name": "Manual Consumption",
+          "type": "Field",
+          "mention": "Manual Consumption",
+          "confidence": "high"
+        },
+        {
+          "name": "Consumed checkbox",
+          "type": "Field",
+          "mention": "Consumed checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order (MO)",
+          "type": "DataObject",
+          "mention": "manufacturing order (MO)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Components tab",
+          "relation": "CONTAINS",
+          "target": "Components drop-down menu",
+          "evidence": "From the Components drop-down menu, select from existing products"
+        },
+        {
+          "source": "Components tab",
+          "relation": "HAS_FEATURE",
+          "target": "oi-settings-adjust (settings adjust) icon",
+          "evidence": "Optionally, access additional fields by clicking the oi-settings-adjust (settings adjust) icon"
+        },
+        {
+          "source": "oi-settings-adjust (settings adjust) icon",
+          "relation": "ENABLES",
+          "target": "Apply on Variants",
+          "evidence": "Tick the checkboxes for the following features to enable these columns: - Apply on Variants"
+        },
+        {
+          "source": "oi-settings-adjust (settings adjust) icon",
+          "relation": "ENABLES",
+          "target": "Consumed in Operation",
+          "evidence": "Tick the checkboxes for the following features to enable these columns: ... - Consumed in Operation"
+        },
+        {
+          "source": "oi-settings-adjust (settings adjust) icon",
+          "relation": "ENABLES",
+          "target": "Manual Consumption",
+          "evidence": "Tick the checkboxes for the following features to enable these columns: ... - Manual Consumption"
+        },
+        {
+          "source": "Apply on Variants",
+          "relation": "CONFIGURED_BY",
+          "target": "product variant",
+          "evidence": "specify which product variant each component is used in"
+        },
+        {
+          "source": "Consumed in Operation",
+          "relation": "CONFIGURED_BY",
+          "target": "operation",
+          "evidence": "specify the operation using the component"
+        },
+        {
+          "source": "Manual Consumption",
+          "relation": "ENABLES",
+          "target": "Consumed checkbox",
+          "evidence": "tick the checkbox to force operators to check the Consumed checkbox on a manufacturing order (MO)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "operations",
+    "heading": "Operations",
+    "product": "Odoo",
+    "graph": {
+      "error": "Invalid \\escape: line 1 column 2297 (char 2296)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"Operations\",\"type\":\"Module\",\"mention\":\"Title: Operations\",\"confidence\":\"high\"},{\"name\":\"Work Orders\",\"type\":\"Feature\",\"mention\":\"*Work Orders* feature\",\"confidence\":\"high\"},{\"name\":\"Manufacturing app\",\"type\":\"Module\",\"mention\":\"Manufacturing app\",\"confidence\":\"high\"},{\"name\":\"Configuration\",\"type\":\"Sub-module\",\"mention\":\"Configuration\",\"confidence\":\"medium\"},{\"name\":\"Settings\",\"type\":\"Module\",\"mention\":\"Settings\",\"confidence\":\"medium\"},{\"name\":\"Work Orders checkbox\",\"type\":\"Setting\",\"mention\":\"Work Orders checkbox\",\"confidence\":\"high\"},{\"name\":\"Bill of Materials\",\"type\":\"Module\",\"mention\":\"Bill of Materials\",\"confidence\":\"high\"},{\"name\":\"Products\",\"type\":\"Sub-module\",\"mention\":\"Products\",\"confidence\":\"medium\"},{\"name\":\"Operations tab\",\"type\":\"Sub-module\",\"mention\":\"Operations tab\",\"confidence\":\"medium\"},{\"name\":\"Create Operations\",\"type\":\"Workflow\",\"mention\":\"Create Operations pop-up window\",\"confidence\":\"high\"},{\"name\":\"operation\",\"type\":\"DataObject\",\"mention\":\"operation\",\"confidence\":\"high\"},{\"name\":\"Operation\",\"type\":\"Field\",\"mention\":\"Operation: name\",\"confidence\":\"high\"},{\"name\":\"Work Center\",\"type\":\"Field\",\"mention\":\"Work Center\",\"confidence\":\"high\"},{\"name\":\"Apply on Variants\",\"type\":\"Field\",\"mention\":\"Apply on Variants\",\"confidence\":\"high\"},{\"name\":\"Duration Computation\",\"type\":\"Field\",\"mention\":\"Duration Computation\",\"confidence\":\"high\"},{\"name\":\"Compute based on tracked time\",\"type\":\"Feature\",\"mention\":\"Compute based on tracked time\",\"confidence\":\"high\"},{\"name\":\"Set duration manually\",\"type\":\"Feature\",\"mention\":\"Set duration manually\",\"confidence\":\"high\"},{\"name\":\"Default Duration\",\"type\":\"Field\",\"mention\":\"Default Duration\",\"confidence\":\"high\"},{\"name\":\"Company\",\"type\":\"Field\",\"mention\":\"Company\",\"confidence\":\"high\"},{\"name\":\"Work Sheet tab\",\"type\":\"Sub-module\",\"mention\":\"Work Sheet tab\",\"confidence\":\"medium\"},{\"name\":\"PDF\",\"type\":\"Feature\",\"mention\":\"PDF\",\"confidence\":\"medium\"},{\"name\":\"Google Slide\",\"type\":\"Integration\",\"mention\":\"Google Slide\",\"confidence\":\"medium\"},{\"name\":\"Text\",\"type\":\"Feature\",\"mention\":\"Text\",\"confidence\":\"medium\"},{\"name\":\"Description\",\"type\":\"Field\",\"mention\":\"Description text field\",\"confidence\":\"high\"},{\"name\":\"Save \\& Close\",\"type\":\"Action\",\"mention\":\"Save \\& Close\",\"confidence\":\"high\"},{\"name\":\"Save & New\",\"type\":\"Action\",\"mention\":\"Save & New\",\"confidence\":\"high\"},{\"name\":\"Copy Existing Operations\",\"type\":\"Action\",\"mention\":\"Copy Existing Operations button\",\"confidence\":\"high\"}],\"relations\":[{\"source\":\"Operations\",\"relation\":\"IS_PART_OF\",\"target\":\"Odoo\",\"evidence\":\"Title: Operations\"},{\"source\":\"Work Orders\",\"relation\":\"BELONGS_TO\",\"target\":\"Manufacturing app\",\"evidence\":\"Manufacturing app --> Configuration --> Settings\"},{\"source\":\"Manufacturing app\",\"relation\":\"CONTAINS\",\"target\":\"Configuration\",\"evidence\":\"Manufacturing app --> Configuration\"},{\"source\":\"Configuration\",\"relation\":\"CONTAINS\",\"target\":\"Settings\",\"evidence\":\"Configuration --> Settings\"},{\"source\":\"Settings\",\"relation\":\"CONTAINS\",\"target\":\"Work Orders checkbox\",\"evidence\":\"In the Operations section, tick the Work Orders checkbox\"},{\"source\":\"Bill of Materials\",\"relation\":\"IS_PART_OF\",\"target\":\"Manufacturing app\",\"evidence\":\"Manufacturing app --> Products --> Bill of Materials\"},{\"source\":\"Products\",\"relation\":\"CONTAINS\",\"target\":\"Bill of Materials\",\"evidence\":\"Products --> Bill of Materials\"},{\"source\":\"Bill of Materials\",\"relation\":\"CONTAINS\",\"target\":\"Operations tab\",\"evidence\":\"To add a new operation, go to the Operations tab\"},{\"source\":\"Operations tab\",\"relation\":\"CONTAINS\",\"target\":\"operation\",\"evidence\":\"...and click Add a line. Doing so opens the Create Operations pop-up window...\"},{\"source\":\"operation\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Operation\",\"evidence\":\"Operation: name of the operation\"},{\"source\":\"operation\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Work Center\",\"evidence\":\"Work Center: select existing locations\"},{\"source\":\"operation\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Apply on Variants\",\"evidence\":\"Apply on Variants: specify if this operation is only available\"},{\"source\":\"operation\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Duration Computation\",\"evidence\":\"Duration Computation: choose how time spent\"},{\"source\":\"operation\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Default Duration\",\"evidence\":\"Default Duration: estimated amount of time\"},{\"source\":\"operation\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Company\",\"evidence\":\"Company: specify the company\"},{\"source\":\"operation\",\"relation\":\"CONTAINS\",\"target\":\"Work Sheet tab\",\"evidence\":\"Include operation details in the Work Sheet tab\"},{\"source\":\"Work Sheet tab\",\"relation\":\"HAS_FEATURE\",\"target\":\"PDF\",\"evidence\":\"Choose PDF to attach a file\"},{\"source\":\"Work Sheet tab\",\"relation\":\"HAS_FEATURE\",\"target\":\"Google Slide\",\"evidence\":\"or Google Slide with *public* access\"},{\"source\":\"Work Sheet tab\",\"relation\":\"HAS_FEATURE\",\"target\":\"Text\",\"evidence\":\"Select Text to type instructions\"},{\"source\":\"Text\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Description\",\"evidence\":\"Description text field\"},{\"source\":\"Create Operations\",\"relation\":\"GENERATES\",\"target\":\"operation\",\"evidence\":\"...opens the Create Operations pop-up window...\"},{\"source\":\"Create Operations\",\"relation\":\"TRIGGERED_BY\",\"target\":\"Add a line\",\"evidence\":\"...and click Add a line. Doing so opens...\"},{\"source\":\"Operations\",\"relation\":\"SEE_ALSO\",\"target\":\"../advanced_configuration/work_order_dependencies\",\"evidence\":\"../advanced_configuration/work_order_dependencies\"}]}"
+    }
+  },
+  {
+    "section_id": "instructions",
+    "heading": "Instructions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality",
+          "type": "Module",
+          "mention": "*Quality* app",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions",
+          "type": "Feature",
+          "mention": "detailed instructions",
+          "confidence": "high"
+        },
+        {
+          "name": "operations",
+          "type": "DataObject",
+          "mention": "operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "operation",
+          "type": "DataObject",
+          "mention": "operation",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-list-ul",
+          "type": "Action",
+          "mention": "fa-list-ul icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Instructions column",
+          "type": "Field",
+          "mention": "Instructions column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Steps dashboard",
+          "type": "Feature",
+          "mention": "Steps dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "quality control point form",
+          "type": "DataObject",
+          "mention": "quality control point form",
+          "confidence": "high"
+        },
+        {
+          "name": "Title",
+          "type": "Field",
+          "mention": "Title",
+          "confidence": "high"
+        },
+        {
+          "name": "Type",
+          "type": "Field",
+          "mention": "Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Instructions tab",
+          "type": "Feature",
+          "mention": "Instructions tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "quality control points",
+          "type": "Feature",
+          "mention": "quality control points",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Instructions",
+          "relation": "REQUIRES",
+          "target": "Quality",
+          "evidence": "To add detailed instructions to operations, the *Quality* app must be installed."
+        },
+        {
+          "source": "operation",
+          "relation": "HAS_FEATURE",
+          "target": "Instructions",
+          "evidence": "Add specific instructions to an existing operation by clicking the operation's fa-list-ul icon in the Instructions column."
+        },
+        {
+          "source": "Instructions column",
+          "relation": "CONTAINS",
+          "target": "fa-list-ul",
+          "evidence": "clicking the operation's fa-list-ul icon in the Instructions column"
+        },
+        {
+          "source": "Steps dashboard",
+          "relation": "CONTAINS",
+          "target": "New",
+          "evidence": "On the Steps dashboard, click New"
+        },
+        {
+          "source": "New",
+          "relation": "ENABLES",
+          "target": "quality control point form",
+          "evidence": "click New to open a blank quality control point form"
+        },
+        {
+          "source": "quality control point form",
+          "relation": "CONTAINS",
+          "target": "Title",
+          "evidence": "give the specific instruction a Title"
+        },
+        {
+          "source": "quality control point form",
+          "relation": "CONTAINS",
+          "target": "Type",
+          "evidence": "set the Type to Instructions"
+        },
+        {
+          "source": "quality control point form",
+          "relation": "CONTAINS",
+          "target": "Instructions tab",
+          "evidence": "In the Instructions tab of the form"
+        },
+        {
+          "source": "Instructions tab",
+          "relation": "CONTAINS",
+          "target": "Instructions",
+          "evidence": "write out the directions for the step in the operation"
+        },
+        {
+          "source": "quality control points",
+          "relation": "SEE_ALSO",
+          "target": "Quality",
+          "evidence": "For more details about quality control points refer the Instruction check documentation."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "miscellaneous",
+    "heading": "Miscellaneous",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Miscellaneous",
+          "type": "Sub-module",
+          "mention": "Miscellaneous tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Readiness",
+          "type": "Setting",
+          "mention": "Manufacturing Readiness",
+          "confidence": "high"
+        },
+        {
+          "name": "Component Status",
+          "type": "Feature",
+          "mention": "Component Status",
+          "confidence": "high"
+        },
+        {
+          "name": "Not Available",
+          "type": "Concept",
+          "mention": "Not Available",
+          "confidence": "high"
+        },
+        {
+          "name": "Version",
+          "type": "Setting",
+          "mention": "Version",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo PLM",
+          "type": "Product",
+          "mention": "Odoo PLM app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Flexible Consumption",
+          "type": "Setting",
+          "mention": "Flexible Consumption",
+          "confidence": "high"
+        },
+        {
+          "name": "Blocked",
+          "type": "Setting",
+          "mention": "Blocked",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allowed",
+          "type": "Setting",
+          "mention": "Allowed",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allowed with Warning",
+          "type": "Setting",
+          "mention": "Allowed with Warning",
+          "confidence": "medium"
+        },
+        {
+          "name": "Routing",
+          "type": "Setting",
+          "mention": "Routing",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing operation type",
+          "type": "Feature",
+          "mention": "manufacturing operation type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warehouse",
+          "type": "DataObject",
+          "mention": "warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "Analytic Distribution",
+          "type": "Setting",
+          "mention": "Analytic Distribution",
+          "confidence": "high"
+        },
+        {
+          "name": "analytic distribution models",
+          "type": "Report",
+          "mention": "analytic distribution models",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Lead Time",
+          "type": "Setting",
+          "mention": "Manufacturing Lead Time",
+          "confidence": "high"
+        },
+        {
+          "name": "Days to prepare Manufacturing Order",
+          "type": "Setting",
+          "mention": "Days to prepare Manufacturing Order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Miscellaneous",
+          "relation": "CONTAINS",
+          "target": "Manufacturing Readiness",
+          "evidence": "Miscellaneous tab contains more configurations"
+        },
+        {
+          "source": "Manufacturing Readiness",
+          "relation": "ENABLES",
+          "target": "Component Status",
+          "evidence": "choosing When components for the 1st operation are available shows the Component Status"
+        },
+        {
+          "source": "Manufacturing Readiness",
+          "relation": "CONFIGURED_BY",
+          "target": "Not Available",
+          "evidence": "choosing When all components are available displays a Not Available component status"
+        },
+        {
+          "source": "Flexible Consumption",
+          "relation": "CONFIGURED_BY",
+          "target": "Blocked",
+          "evidence": "Choose Blocked"
+        },
+        {
+          "source": "Flexible Consumption",
+          "relation": "CONFIGURED_BY",
+          "target": "Allowed",
+          "evidence": "choose Allowed"
+        },
+        {
+          "source": "Flexible Consumption",
+          "relation": "CONFIGURED_BY",
+          "target": "Allowed with Warning",
+          "evidence": "choose Allowed with Warning"
+        },
+        {
+          "source": "Routing",
+          "relation": "CONFIGURED_BY",
+          "target": "Manufacturing operation type",
+          "evidence": "select the preferred warehouse's manufacturing operation type"
+        },
+        {
+          "source": "Routing",
+          "relation": "APPLIES_TO",
+          "target": "Warehouse",
+          "evidence": "for products produced in multiple warehouses"
+        },
+        {
+          "source": "Analytic Distribution",
+          "relation": "CONFIGURED_BY",
+          "target": "analytic distribution models",
+          "evidence": "select pre-created analytic distribution models"
+        },
+        {
+          "source": "Miscellaneous",
+          "relation": "CONTAINS",
+          "target": "Flexible Consumption",
+          "evidence": "Miscellaneous tab contains more configurations"
+        },
+        {
+          "source": "Miscellaneous",
+          "relation": "CONTAINS",
+          "target": "Routing",
+          "evidence": "Miscellaneous tab contains more configurations"
+        },
+        {
+          "source": "Miscellaneous",
+          "relation": "CONTAINS",
+          "target": "Analytic Distribution",
+          "evidence": "Miscellaneous tab contains more configurations"
+        },
+        {
+          "source": "Miscellaneous",
+          "relation": "CONTAINS",
+          "target": "Manufacturing Lead Time",
+          "evidence": "Miscellaneous tab contains more configurations"
+        },
+        {
+          "source": "Miscellaneous",
+          "relation": "CONTAINS",
+          "target": "Days to prepare Manufacturing Order",
+          "evidence": "Miscellaneous tab contains more configurations"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-by-products-to-boms",
+    "heading": "Add by-products to BoMs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Add by-products to BoMs",
+          "type": "Feature",
+          "mention": "Title",
+          "confidence": "high"
+        },
+        {
+          "name": "by-product",
+          "type": "Concept",
+          "mention": "by-product",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "By-Products",
+          "type": "Feature",
+          "mention": "By-Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Concept",
+          "mention": "Operations section",
+          "confidence": "medium"
+        },
+        {
+          "name": "By-products tab",
+          "type": "Feature",
+          "mention": "By-products tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "By-product",
+          "type": "Field",
+          "mention": "By-product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit of Measure",
+          "type": "Field",
+          "mention": "Unit of Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Produced in Operation",
+          "type": "Field",
+          "mention": "Produced in Operation",
+          "confidence": "high"
+        },
+        {
+          "name": "Mush",
+          "type": "DataObject",
+          "mention": "Mush",
+          "confidence": "high"
+        },
+        {
+          "name": "Grind grapes",
+          "type": "Action",
+          "mention": "Grind grapes",
+          "confidence": "high"
+        },
+        {
+          "name": "Red Wine",
+          "type": "DataObject",
+          "mention": "Red Wine",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Add by-products to BoMs",
+          "evidence": "Product: Odoo, Title: Add by-products to BoMs"
+        },
+        {
+          "source": "Add by-products to BoMs",
+          "relation": "REQUIRES",
+          "target": "By-Products",
+          "evidence": "add by-products to a ... first enable the By-Products feature"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "By-Products",
+          "evidence": "In the Operations section, tick the checkbox for By-Products"
+        },
+        {
+          "source": "Add by-products to BoMs",
+          "relation": "ENABLES",
+          "target": "By-products tab",
+          "evidence": "add by-products to a by clicking the By-products tab"
+        },
+        {
+          "source": "By-products tab",
+          "relation": "ENABLES",
+          "target": "Add a line",
+          "evidence": "Click Add a line"
+        },
+        {
+          "source": "Add a line",
+          "relation": "PRODUCES",
+          "target": "By-product",
+          "evidence": "fill in the By-product"
+        },
+        {
+          "source": "Add a line",
+          "relation": "PRODUCES",
+          "target": "Quantity",
+          "evidence": "fill in the Quantity"
+        },
+        {
+          "source": "Add a line",
+          "relation": "PRODUCES",
+          "target": "Unit of Measure",
+          "evidence": "fill in the Unit of Measure"
+        },
+        {
+          "source": "Add a line",
+          "relation": "PRODUCES",
+          "target": "Produced in Operation",
+          "evidence": "specify a Produced in Operation"
+        },
+        {
+          "source": "Mush",
+          "relation": "PRODUCED_BY",
+          "target": "Grind grapes",
+          "evidence": "created in the Grind grapes operation"
+        },
+        {
+          "source": "Grind grapes",
+          "relation": "PERFORMED_BY",
+          "target": "Red Wine",
+          "evidence": "when producing Red Wine"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,287 @@
+[
+  {
+    "section_id": "dpo-pay",
+    "heading": "DPO Pay",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "DPO Pay",
+          "type": "Integration",
+          "mention": "DPO Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "DPO",
+          "type": "Actor",
+          "mention": "DPO",
+          "confidence": "high"
+        },
+        {
+          "name": "Africa",
+          "type": "Actor",
+          "mention": "Africa",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "DPO Pay",
+          "relation": "RELATED_TO",
+          "target": "DPO",
+          "evidence": "DPO Pay ... is a payment provider based in Africa that operates across multiple countries on the continent."
+        },
+        {
+          "source": "DPO Pay",
+          "relation": "RELATED_TO",
+          "target": "Africa",
+          "evidence": "DPO Pay ... is a payment provider based in Africa that operates across multiple countries on the continent."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "dpo-pay-account-creation",
+    "heading": "DPO Pay account creation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "DPO Pay",
+          "type": "Integration",
+          "mention": "DPO Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "DPO portal",
+          "type": "Integration",
+          "mention": "DPO portal",
+          "confidence": "high"
+        },
+        {
+          "name": "DPO",
+          "type": "Actor",
+          "mention": "DPO",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "DPO Pay onboarding form",
+          "type": "DataObject",
+          "mention": "DPO Pay onboarding form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Terms and Conditions",
+          "type": "DataObject",
+          "mention": "Terms and Conditions",
+          "confidence": "medium"
+        },
+        {
+          "name": "test account",
+          "type": "DataObject",
+          "mention": "test account",
+          "confidence": "medium"
+        },
+        {
+          "name": "live account",
+          "type": "DataObject",
+          "mention": "live account",
+          "confidence": "medium"
+        },
+        {
+          "name": "login credentials",
+          "type": "DataObject",
+          "mention": "login credentials",
+          "confidence": "medium"
+        },
+        {
+          "name": "test credentials",
+          "type": "DataObject",
+          "mention": "test credentials",
+          "confidence": "medium"
+        },
+        {
+          "name": "live credentials",
+          "type": "DataObject",
+          "mention": "live credentials",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "DPO",
+          "relation": "PERFORMED_BY",
+          "target": "DPO Pay onboarding form",
+          "evidence": "DPO creates a test account based on the submitted information"
+        },
+        {
+          "source": "DPO",
+          "relation": "PERFORMED_BY",
+          "target": "login credentials",
+          "evidence": "DPO Pay sends you an email containing your login credentials"
+        },
+        {
+          "source": "DPO",
+          "relation": "PERFORMED_BY",
+          "target": "live credentials",
+          "evidence": "DPO will transition your test account to a live account and send another email containing your live credentials"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "DPO Pay",
+          "evidence": "DPO Pay is referenced as a payment provider in Odoo documentation"
+        },
+        {
+          "source": "DPO Pay",
+          "relation": "SUPPORTS",
+          "target": "test account",
+          "evidence": "DPO Pay creates a test account for trying the service"
+        },
+        {
+          "source": "DPO Pay",
+          "relation": "SUPPORTS",
+          "target": "live account",
+          "evidence": "DPO Pay transitions a test account to a live account after verification"
+        },
+        {
+          "source": "DPO",
+          "relation": "GENERATES",
+          "target": "test credentials",
+          "evidence": "DPO sends test credentials for use in Odoo"
+        },
+        {
+          "source": "DPO",
+          "relation": "GENERATES",
+          "target": "live credentials",
+          "evidence": "DPO sends live credentials for configuration in Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration-in-odoo",
+    "heading": "Configuration in Odoo",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "payment provider",
+          "type": "Integration",
+          "mention": "payment provider",
+          "confidence": "medium"
+        },
+        {
+          "name": "DPO Pay",
+          "type": "Integration",
+          "mention": "DPO Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "Card / Mobile payment method",
+          "type": "Feature",
+          "mention": "Card / Mobile payment method",
+          "confidence": "medium"
+        },
+        {
+          "name": "DPO Pay page",
+          "type": "Feature",
+          "mention": "DPO Pay page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Service ID",
+          "type": "Field",
+          "mention": "Service ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Company Token",
+          "type": "Field",
+          "mention": "Company Token",
+          "confidence": "high"
+        },
+        {
+          "name": "State",
+          "type": "Field",
+          "mention": "State",
+          "confidence": "high"
+        },
+        {
+          "name": "Enabled",
+          "type": "Setting",
+          "mention": "Enabled",
+          "confidence": "medium"
+        },
+        {
+          "name": "Test Mode",
+          "type": "Setting",
+          "mention": "Test Mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "DPO Pay support",
+          "type": "Actor",
+          "mention": "DPO Pay support",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "DPO Pay",
+          "relation": "BELONGS_TO",
+          "target": "payment provider",
+          "evidence": "payment provider DPO Pay"
+        },
+        {
+          "source": "DPO Pay",
+          "relation": "CONFIGURED_BY",
+          "target": "Service ID",
+          "evidence": "Fill in the Service ID...with the information received from DPO Pay"
+        },
+        {
+          "source": "DPO Pay",
+          "relation": "CONFIGURED_BY",
+          "target": "Company Token",
+          "evidence": "Fill in the Company Token...with the information received from DPO Pay"
+        },
+        {
+          "source": "DPO Pay",
+          "relation": "CONFIGURED_BY",
+          "target": "State",
+          "evidence": "Set the State field to Enabled (or Test Mode)"
+        },
+        {
+          "source": "Card / Mobile payment method",
+          "relation": "CONTAINS",
+          "target": "payment methods supported by DPO Pay",
+          "evidence": "All payment methods supported by DPO Pay are grouped under the Card / Mobile payment method"
+        },
+        {
+          "source": "DPO Pay",
+          "relation": "SEE_ALSO",
+          "target": "../payment_providers",
+          "evidence": ".. seealso:: ../payment_providers"
+        },
+        {
+          "source": "DPO Pay",
+          "relation": "PERFORMED_BY",
+          "target": "DPO Pay support",
+          "evidence": "To enable or disable specific payment options, contact DPO Pay support"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1832 @@
+[
+  {
+    "section_id": "bank-reconciliation",
+    "heading": "Bank reconciliation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Bank reconciliation",
+          "type": "Workflow",
+          "mention": "Bank reconciliation",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "transactions",
+          "type": "DataObject",
+          "mention": "transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "customer invoices",
+          "type": "DataObject",
+          "mention": "customer invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bills",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "payments",
+          "type": "DataObject",
+          "mention": "payments",
+          "confidence": "high"
+        },
+        {
+          "name": "bank fees",
+          "type": "DataObject",
+          "mention": "bank fees",
+          "confidence": "medium"
+        },
+        {
+          "name": "default matching rules",
+          "type": "Feature",
+          "mention": "default matching rules",
+          "confidence": "high"
+        },
+        {
+          "name": "customizable bank reconciliation models",
+          "type": "Feature",
+          "mention": "customizable bank reconciliation models",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank reconciliation",
+          "relation": "PRODUCES",
+          "target": "transactions",
+          "evidence": "process of validating bank transactions"
+        },
+        {
+          "source": "Bank reconciliation",
+          "relation": "RELATED_TO",
+          "target": "customer invoices",
+          "evidence": "transactions are matched with counterpart items related to business records such as customer invoices"
+        },
+        {
+          "source": "Bank reconciliation",
+          "relation": "RELATED_TO",
+          "target": "vendor bills",
+          "evidence": "transactions are matched with counterpart items related to business records such as vendor bills"
+        },
+        {
+          "source": "Bank reconciliation",
+          "relation": "RELATED_TO",
+          "target": "payments",
+          "evidence": "transactions are matched with counterpart items related to business records such as payments"
+        },
+        {
+          "source": "transactions",
+          "relation": "RELATED_TO",
+          "target": "bank fees",
+          "evidence": "others that may not have a matching counterpart item (such as bank fees)"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "default matching rules",
+          "evidence": "Thanks to the default matching rules"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "customizable bank reconciliation models",
+          "evidence": "customizable bank reconciliation models"
+        },
+        {
+          "source": "Odoo",
+          "relation": "ENABLES",
+          "target": "Bank reconciliation",
+          "evidence": "Odoo selects the matching items automatically when possible"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bank-reconciliation-view",
+    "heading": "Bank reconciliation view",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank reconciliation view",
+          "type": "Feature",
+          "mention": "Bank reconciliation view",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Feature",
+          "mention": "Accounting Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "journal",
+          "type": "Module",
+          "mention": "journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Transactions",
+          "type": "Feature",
+          "mention": "Transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank Matching view",
+          "type": "Feature",
+          "mention": "Bank Matching view",
+          "confidence": "high"
+        },
+        {
+          "name": "x to reconcile button",
+          "type": "Action",
+          "mention": "x to reconcile button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Not Matched filter",
+          "type": "Setting",
+          "mention": "Not Matched filter",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "transaction",
+          "type": "DataObject",
+          "mention": "transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "date",
+          "type": "Field",
+          "mention": "date",
+          "confidence": "medium"
+        },
+        {
+          "name": "label",
+          "type": "Field",
+          "mention": "label",
+          "confidence": "medium"
+        },
+        {
+          "name": "partner",
+          "type": "Field",
+          "mention": "partner",
+          "confidence": "medium"
+        },
+        {
+          "name": "action buttons",
+          "type": "Feature",
+          "mention": "action buttons",
+          "confidence": "medium"
+        },
+        {
+          "name": "transaction amount",
+          "type": "Field",
+          "mention": "transaction amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "counterpart entry/entries",
+          "type": "DataObject",
+          "mention": "counterpart entry/entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "account(s)",
+          "type": "Module",
+          "mention": "account(s)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting Dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Bank reconciliation view",
+          "evidence": "To access a journal's Bank Reconciliation view, go to the Accounting Dashboard"
+        },
+        {
+          "source": "Bank reconciliation view",
+          "relation": "EQUIVALENT_TO",
+          "target": "Bank Matching view",
+          "evidence": "The Bank Matching view is composed of lines"
+        },
+        {
+          "source": "journal",
+          "relation": "HAS_FEATURE",
+          "target": "Transactions",
+          "evidence": "click the journal name (e.g., Bank) or its Transactions button"
+        },
+        {
+          "source": "journal",
+          "relation": "HAS_FEATURE",
+          "target": "Bank Matching view",
+          "evidence": "To access a journal's Bank Matching view"
+        },
+        {
+          "source": "Bank Matching view",
+          "relation": "CONTAINS",
+          "target": "transaction",
+          "evidence": "The Bank Matching view is composed of lines for each transaction"
+        },
+        {
+          "source": "transaction",
+          "relation": "HAS_FEATURE",
+          "target": "date",
+          "evidence": "Each transaction has a date"
+        },
+        {
+          "source": "transaction",
+          "relation": "HAS_FEATURE",
+          "target": "label",
+          "evidence": "Each transaction has a label"
+        },
+        {
+          "source": "transaction",
+          "relation": "HAS_FEATURE",
+          "target": "partner",
+          "evidence": "Each transaction has a partner"
+        },
+        {
+          "source": "transaction",
+          "relation": "HAS_FEATURE",
+          "target": "action buttons",
+          "evidence": "Each transaction has action buttons"
+        },
+        {
+          "source": "transaction",
+          "relation": "HAS_FEATURE",
+          "target": "transaction amount",
+          "evidence": "Each transaction has the transaction amount"
+        },
+        {
+          "source": "Bank Matching view",
+          "relation": "SUPPORTS",
+          "target": "x to reconcile button",
+          "evidence": "click the x to reconcile button to display only unreconciled transactions"
+        },
+        {
+          "source": "Bank Matching view",
+          "relation": "SUPPORTS",
+          "target": "Not Matched filter",
+          "evidence": "To include previously reconciled transactions, remove the Not Matched filter"
+        },
+        {
+          "source": "Bank Matching view",
+          "relation": "SUPPORTS",
+          "target": "search bar",
+          "evidence": "remove the Not Matched filter from the search bar"
+        },
+        {
+          "source": "counterpart entry/entries",
+          "relation": "RELATED_TO",
+          "target": "transaction",
+          "evidence": "Once a transaction is reconciled, the suggested action button(s) is replaced with the counterpart entry/entries it was matched with"
+        },
+        {
+          "source": "account(s)",
+          "relation": "RELATED_TO",
+          "target": "transaction",
+          "evidence": "Once a transaction is reconciled, the suggested action button(s) is replaced with the counterpart entry/entries it was matched with or the account(s) it was written off to"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "transactions",
+    "heading": "Transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Transactions",
+          "type": "Concept",
+          "mention": "Transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal entry",
+          "type": "DataObject",
+          "mention": "journal entry",
+          "confidence": "high"
+        },
+        {
+          "name": "journal",
+          "type": "DataObject",
+          "mention": "journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "main account",
+          "type": "Field",
+          "mention": "journal's main account",
+          "confidence": "high"
+        },
+        {
+          "name": "suspense account",
+          "type": "Field",
+          "mention": "suspense account",
+          "confidence": "high"
+        },
+        {
+          "name": "account of the counterpart item",
+          "type": "Field",
+          "mention": "account of the counterpart item",
+          "confidence": "medium"
+        },
+        {
+          "name": "manual matching",
+          "type": "Action",
+          "mention": "manual matching",
+          "confidence": "high"
+        },
+        {
+          "name": "Duplicate transactions",
+          "type": "Concept",
+          "mention": "Duplicate transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Missing transactions",
+          "type": "Concept",
+          "mention": "Missing transactions",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Transactions",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Every transaction <transactions> is linked to a journal entry"
+        },
+        {
+          "source": "journal entry",
+          "relation": "CONTAINS",
+          "target": "journal",
+          "evidence": "journal entry that debits/credits the journal's main account"
+        },
+        {
+          "source": "journal",
+          "relation": "CONTAINS",
+          "target": "main account",
+          "evidence": "journal's main account"
+        },
+        {
+          "source": "journal",
+          "relation": "CONTAINS",
+          "target": "suspense account",
+          "evidence": "journal's main account and its suspense account"
+        },
+        {
+          "source": "Transactions",
+          "relation": "TRIGGERED_BY",
+          "target": "manual matching",
+          "evidence": "or, in the case of manual matching <accounting/reconciliation/set-account>"
+        },
+        {
+          "source": "Transactions",
+          "relation": "SEE_ALSO",
+          "target": "Duplicate transactions",
+          "evidence": "Duplicate transactions <accounting/bank-synchronization/duplicate-transactions>"
+        },
+        {
+          "source": "Transactions",
+          "relation": "SEE_ALSO",
+          "target": "Missing transactions",
+          "evidence": "Missing transactions <accounting/bank-synchronization/missing-transactions>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "possible-action-buttons",
+    "heading": "Possible action buttons",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Set Partner",
+          "type": "Action",
+          "mention": "Set Partner",
+          "confidence": "high"
+        },
+        {
+          "name": "Set Account",
+          "type": "Action",
+          "mention": "Set Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Receivable",
+          "type": "Action",
+          "mention": "Receivable",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Action",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Payable",
+          "type": "Action",
+          "mention": "Payable",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconcile",
+          "type": "Action",
+          "mention": "Reconcile",
+          "confidence": "high"
+        },
+        {
+          "name": "Batches",
+          "type": "Action",
+          "mention": "Batches",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciliation_models",
+          "type": "Feature",
+          "mention": "reconciliation_models",
+          "confidence": "medium"
+        },
+        {
+          "name": "Upload bills",
+          "type": "Action",
+          "mention": "Upload bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage Models",
+          "type": "Action",
+          "mention": "Manage Models",
+          "confidence": "high"
+        },
+        {
+          "name": "Open Journal Entry",
+          "type": "Action",
+          "mention": "Open Journal Entry",
+          "confidence": "high"
+        },
+        {
+          "name": "Delete Transaction",
+          "type": "Action",
+          "mention": "Delete Transaction",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales",
+          "relation": "TRIGGERED_BY",
+          "target": "Sales orders belonging to the transaction's Partner",
+          "evidence": "Open a list view of sales orders belonging to the transaction's Partner"
+        },
+        {
+          "source": "Upload bills",
+          "relation": "RELATED_TO",
+          "target": "digitization",
+          "evidence": "Upload one or more bills to be digitized"
+        },
+        {
+          "source": "Upload bills",
+          "relation": "RELATED_TO",
+          "target": "Reconcile action button",
+          "evidence": "the bills are available for matching via the Reconcile action button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reconcile-transactions",
+    "heading": "Reconcile transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconcile transactions",
+          "type": "Module",
+          "mention": "Reconcile transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "transaction",
+          "type": "DataObject",
+          "mention": "transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "Label",
+          "type": "Field",
+          "mention": "Label",
+          "confidence": "high"
+        },
+        {
+          "name": "partner",
+          "type": "Field",
+          "mention": "partner",
+          "confidence": "high"
+        },
+        {
+          "name": "Number",
+          "type": "Field",
+          "mention": "Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Reference",
+          "type": "Field",
+          "mention": "Customer Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill Reference",
+          "type": "Field",
+          "mention": "Bill Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Reference",
+          "type": "Field",
+          "mention": "Payment Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "high"
+        },
+        {
+          "name": "payment",
+          "type": "DataObject",
+          "mention": "payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount",
+          "type": "Field",
+          "mention": "Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Exact match",
+          "type": "Feature",
+          "mention": "Exact match",
+          "confidence": "high"
+        },
+        {
+          "name": "Discounted match",
+          "type": "Feature",
+          "mention": "Discounted match",
+          "confidence": "high"
+        },
+        {
+          "name": "Tolerance match",
+          "type": "Feature",
+          "mention": "Tolerance match",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency match",
+          "type": "Feature",
+          "mention": "Currency match",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount in label",
+          "type": "Feature",
+          "mention": "Amount in label",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciliation models",
+          "type": "Feature",
+          "mention": "reconciliation models",
+          "confidence": "high"
+        },
+        {
+          "name": "unmatched bank transactions",
+          "type": "DataObject",
+          "mention": "unmatched bank transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "counterpart",
+          "type": "Concept",
+          "mention": "counterpart",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/reconciliation/existing-items",
+          "type": "Unknown",
+          "mention": "accounting/reconciliation/existing-items",
+          "confidence": "low"
+        },
+        {
+          "name": "accounting/reconciliation/set-account",
+          "type": "Unknown",
+          "mention": "accounting/reconciliation/set-account",
+          "confidence": "low"
+        },
+        {
+          "name": "../payments/batch",
+          "type": "Unknown",
+          "mention": "../payments/batch",
+          "confidence": "low"
+        },
+        {
+          "name": "accounting/reconciliation/model",
+          "type": "Unknown",
+          "mention": "accounting/reconciliation/model",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reconcile transactions",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Reconcile transactions"
+        },
+        {
+          "source": "transaction",
+          "relation": "IS_PART_OF",
+          "target": "Reconcile transactions",
+          "evidence": "When possible, Odoo automatically reconciles transactions"
+        },
+        {
+          "source": "transaction",
+          "relation": "CONTAINS",
+          "target": "Label",
+          "evidence": "transaction's Label"
+        },
+        {
+          "source": "transaction",
+          "relation": "CONTAINS",
+          "target": "partner",
+          "evidence": "If no partner is set on the transaction"
+        },
+        {
+          "source": "transaction",
+          "relation": "CONTAINS",
+          "target": "Amount",
+          "evidence": "matched with invoices...based on the Amount"
+        },
+        {
+          "source": "invoice",
+          "relation": "CONTAINS",
+          "target": "Number",
+          "evidence": "Number...of existing invoices"
+        },
+        {
+          "source": "invoice",
+          "relation": "CONTAINS",
+          "target": "Customer Reference",
+          "evidence": "Customer Reference...of existing invoices"
+        },
+        {
+          "source": "invoice",
+          "relation": "CONTAINS",
+          "target": "Bill Reference",
+          "evidence": "Bill Reference...of existing invoices"
+        },
+        {
+          "source": "invoice",
+          "relation": "CONTAINS",
+          "target": "Payment Reference",
+          "evidence": "Payment Reference...of existing invoices"
+        },
+        {
+          "source": "bill",
+          "relation": "CONTAINS",
+          "target": "Number",
+          "evidence": "Number...of existing bills"
+        },
+        {
+          "source": "bill",
+          "relation": "CONTAINS",
+          "target": "Customer Reference",
+          "evidence": "Customer Reference...of existing bills"
+        },
+        {
+          "source": "bill",
+          "relation": "CONTAINS",
+          "target": "Bill Reference",
+          "evidence": "Bill Reference...of existing bills"
+        },
+        {
+          "source": "bill",
+          "relation": "CONTAINS",
+          "target": "Payment Reference",
+          "evidence": "Payment Reference...of existing bills"
+        },
+        {
+          "source": "payment",
+          "relation": "CONTAINS",
+          "target": "Number",
+          "evidence": "Number...of existing payments"
+        },
+        {
+          "source": "payment",
+          "relation": "CONTAINS",
+          "target": "Customer Reference",
+          "evidence": "Customer Reference...of existing payments"
+        },
+        {
+          "source": "payment",
+          "relation": "CONTAINS",
+          "target": "Bill Reference",
+          "evidence": "Bill Reference...of existing payments"
+        },
+        {
+          "source": "payment",
+          "relation": "CONTAINS",
+          "target": "Payment Reference",
+          "evidence": "Payment Reference...of existing payments"
+        },
+        {
+          "source": "Exact match",
+          "relation": "BELONGS_TO",
+          "target": "Reconcile transactions",
+          "evidence": "The following rules are used...to identify and apply a match"
+        },
+        {
+          "source": "Discounted match",
+          "relation": "BELONGS_TO",
+          "target": "Reconcile transactions",
+          "evidence": "The following rules are used...to identify and apply a match"
+        },
+        {
+          "source": "Tolerance match",
+          "relation": "BELONGS_TO",
+          "target": "Reconcile transactions",
+          "evidence": "The following rules are used...to identify and apply a match"
+        },
+        {
+          "source": "Currency match",
+          "relation": "BELONGS_TO",
+          "target": "Reconcile transactions",
+          "evidence": "The following rules are used...to identify and apply a match"
+        },
+        {
+          "source": "Amount in label",
+          "relation": "BELONGS_TO",
+          "target": "Reconcile transactions",
+          "evidence": "The following rules are used...to identify and apply a match"
+        },
+        {
+          "source": "reconciliation models",
+          "relation": "BELONGS_TO",
+          "target": "Reconcile transactions",
+          "evidence": "transactions can be matched automatically with the use of reconciliation models"
+        },
+        {
+          "source": "reconciliation models",
+          "relation": "RELATED_TO",
+          "target": "transaction",
+          "evidence": "transactions can be matched automatically with the use of reconciliation models"
+        },
+        {
+          "source": "Reconcile transactions",
+          "relation": "HAS_REPORT",
+          "target": "unmatched bank transactions",
+          "evidence": "Expand the desired line among unmatched bank transactions"
+        },
+        {
+          "source": "Reconcile transactions",
+          "relation": "SEE_ALSO",
+          "target": "accounting/reconciliation/existing-items",
+          "evidence": "including matching existing items <accounting/reconciliation/existing-items>"
+        },
+        {
+          "source": "Reconcile transactions",
+          "relation": "SEE_ALSO",
+          "target": "accounting/reconciliation/set-account",
+          "evidence": "manually setting the account <accounting/reconciliation/set-account>"
+        },
+        {
+          "source": "Reconcile transactions",
+          "relation": "SEE_ALSO",
+          "target": "../payments/batch",
+          "evidence": "matching with batch payments <../payments/batch>"
+        },
+        {
+          "source": "Reconcile transactions",
+          "relation": "SEE_ALSO",
+          "target": "accounting/reconciliation/model",
+          "evidence": "using reconciliation model buttons <accounting/reconciliation/model>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "existing-items",
+    "heading": "Existing items",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Reconcile",
+          "type": "Action",
+          "mention": "Reconcile action button",
+          "confidence": "high"
+        },
+        {
+          "name": "journal item",
+          "type": "DataObject",
+          "mention": "journal item(s)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Partner",
+          "type": "Actor",
+          "mention": "Partner",
+          "confidence": "medium"
+        },
+        {
+          "name": "Search: Journal Items to Match",
+          "type": "Feature",
+          "mention": "Search: Journal Items to Match window",
+          "confidence": "medium"
+        },
+        {
+          "name": "transaction amount",
+          "type": "Field",
+          "mention": "transaction amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "difference",
+          "type": "Field",
+          "mention": "difference",
+          "confidence": "low"
+        },
+        {
+          "name": "counterpart item",
+          "type": "DataObject",
+          "mention": "counterpart item",
+          "confidence": "medium"
+        },
+        {
+          "name": "fully paid",
+          "type": "Action",
+          "mention": "fully paid",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "medium"
+        },
+        {
+          "name": "partial payment",
+          "type": "Action",
+          "mention": "partial payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "remaining balance",
+          "type": "Field",
+          "mention": "remaining balance",
+          "confidence": "medium"
+        },
+        {
+          "name": "draft entries",
+          "type": "DataObject",
+          "mention": "draft entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "automatic moves",
+          "type": "DataObject",
+          "mention": "automatic moves",
+          "confidence": "medium"
+        },
+        {
+          "name": "currency exchange",
+          "type": "Feature",
+          "mention": "currency exchange",
+          "confidence": "low"
+        },
+        {
+          "name": "cash basis moves",
+          "type": "Feature",
+          "mention": "cash basis moves",
+          "confidence": "low"
+        },
+        {
+          "name": "Posting",
+          "type": "Action",
+          "mention": "Posting",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reconcile",
+          "relation": "APPLIES_TO",
+          "target": "journal item",
+          "evidence": "reconcile transactions with existing items"
+        },
+        {
+          "source": "Partner",
+          "relation": "APPLIES_TO",
+          "target": "journal item",
+          "evidence": "list is automatically filtered to only include items related to that partner"
+        },
+        {
+          "source": "Search: Journal Items to Match",
+          "relation": "ENABLES",
+          "target": "Reconcile",
+          "evidence": "Use the search bar... to search for specific journal items"
+        },
+        {
+          "source": "transaction amount",
+          "relation": "RELATED_TO",
+          "target": "invoice",
+          "evidence": "If a transaction amount is lower than the invoice"
+        },
+        {
+          "source": "transaction amount",
+          "relation": "RELATED_TO",
+          "target": "bill",
+          "evidence": "If a transaction amount is lower than the bill"
+        },
+        {
+          "source": "fully paid",
+          "relation": "APPLIES_TO",
+          "target": "invoice",
+          "evidence": "invoice or bill can be marked as fully paid"
+        },
+        {
+          "source": "fully paid",
+          "relation": "APPLIES_TO",
+          "target": "bill",
+          "evidence": "invoice or bill can be marked as fully paid"
+        },
+        {
+          "source": "partial payment",
+          "relation": "APPLIES_TO",
+          "target": "invoice",
+          "evidence": "To reverse this"
+        },
+        {
+          "source": "partial payment",
+          "relation": "APPLIES_TO",
+          "target": "bill",
+          "evidence": "To reverse this"
+        },
+        {
+          "source": "Save",
+          "relation": "PERFORMED_BY",
+          "target": "fully paid",
+          "evidence": "click fully paid, and Save"
+        },
+        {
+          "source": "Save",
+          "relation": "PERFORMED_BY",
+          "target": "partial payment",
+          "evidence": "click partial payment, and Save"
+        },
+        {
+          "source": "remaining balance",
+          "relation": "RELATED_TO",
+          "target": "transaction amount",
+          "evidence": "The remaining balance can be reconciled as any other transaction amount"
+        },
+        {
+          "source": "draft entries",
+          "relation": "HAS_FEATURE",
+          "target": "journal item",
+          "evidence": "Existing items of draft entries can be matched"
+        },
+        {
+          "source": "automatic moves",
+          "relation": "GENERATES",
+          "target": "Reconcile",
+          "evidence": "automatic moves... are created in draft simultaneously with the reconciliation"
+        },
+        {
+          "source": "Posting",
+          "relation": "APPLIES_TO",
+          "target": "automatic moves",
+          "evidence": "Posting the original entry also posts the automatic move"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-account",
+    "heading": "Set account",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Set Account",
+          "type": "Action",
+          "mention": "Click Set Account",
+          "confidence": "high"
+        },
+        {
+          "name": "edit",
+          "type": "Action",
+          "mention": "edit the line",
+          "confidence": "high"
+        },
+        {
+          "name": "account",
+          "type": "Field",
+          "mention": "the appropriate account",
+          "confidence": "medium"
+        },
+        {
+          "name": "transaction",
+          "type": "DataObject",
+          "mention": "selected transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "value",
+          "type": "Field",
+          "mention": "the correct value",
+          "confidence": "medium"
+        },
+        {
+          "name": "amount",
+          "type": "Field",
+          "mention": "remaining amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "partner",
+          "type": "DataObject",
+          "mention": "the partner",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receivable",
+          "type": "Action",
+          "mention": "Receivable action button",
+          "confidence": "high"
+        },
+        {
+          "name": "Payable",
+          "type": "Action",
+          "mention": "Payable action button",
+          "confidence": "high"
+        },
+        {
+          "name": "receivable or payable account",
+          "type": "Field",
+          "mention": "their receivable or payable account",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Set Account",
+          "relation": "ENABLES",
+          "target": "transaction",
+          "evidence": "If no existing item matches the selected transaction, you can still write off the transaction manually: Click Set Account"
+        },
+        {
+          "source": "edit",
+          "relation": "PRODUCES",
+          "target": "value",
+          "evidence": "edit the line to reflect the correct value"
+        },
+        {
+          "source": "Receivable",
+          "relation": "ENABLES",
+          "target": "partner",
+          "evidence": "If the partner is set, write the amount off to their receivable or payable account directly by clicking the Receivable or Payable action button"
+        },
+        {
+          "source": "Payable",
+          "relation": "ENABLES",
+          "target": "partner",
+          "evidence": "If the partner is set, write the amount off to their receivable or payable account directly by clicking the Receivable or Payable action button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reconciliation-models",
+    "heading": "Reconciliation models",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciliation models",
+          "type": "Module",
+          "mention": "reconciliation models",
+          "confidence": "high"
+        },
+        {
+          "name": "custom rules",
+          "type": "Feature",
+          "mention": "custom rules",
+          "confidence": "high"
+        },
+        {
+          "name": "automatically",
+          "type": "Action",
+          "mention": "automatically",
+          "confidence": "high"
+        },
+        {
+          "name": "manually",
+          "type": "Action",
+          "mention": "manually",
+          "confidence": "high"
+        },
+        {
+          "name": "custom buttons",
+          "type": "Feature",
+          "mention": "custom buttons",
+          "confidence": "high"
+        },
+        {
+          "name": "bank transactions",
+          "type": "DataObject",
+          "mention": "bank transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Fees reconciliation model",
+          "type": "Feature",
+          "mention": "Bank Fees reconciliation model",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "counterpart item",
+          "type": "DataObject",
+          "mention": "counterpart item",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "reconciliation models",
+          "relation": "ENABLES",
+          "target": "custom rules",
+          "evidence": "Use reconciliation models to create custom rules"
+        },
+        {
+          "source": "custom rules",
+          "relation": "PERFORMED_BY",
+          "target": "automatically",
+          "evidence": "rules that can be applied automatically"
+        },
+        {
+          "source": "custom rules",
+          "relation": "PERFORMED_BY",
+          "target": "manually",
+          "evidence": "or manually via custom buttons"
+        },
+        {
+          "source": "custom buttons",
+          "relation": "ENABLES",
+          "target": "manually",
+          "evidence": "custom buttons allow you to quickly reconcile bank transactions manually"
+        },
+        {
+          "source": "Bank Fees reconciliation model",
+          "relation": "PRODUCES",
+          "target": "counterpart item",
+          "evidence": "Use the Bank Fees reconciliation model to create a new counterpart item"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "edit-lines-and-unreconcile-transactions",
+    "heading": "Edit lines and unreconcile transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit Line window",
+          "type": "Module",
+          "mention": "Edit Line window",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-pencil (pencil) icon",
+          "type": "Action",
+          "mention": "fa-pencil (pencil) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "existing journal item",
+          "type": "DataObject",
+          "mention": "existing journal item",
+          "confidence": "medium"
+        },
+        {
+          "name": "partially matched",
+          "type": "Concept",
+          "mention": "partially matched",
+          "confidence": "medium"
+        },
+        {
+          "name": "counterpart item",
+          "type": "DataObject",
+          "mention": "counterpart item",
+          "confidence": "high"
+        },
+        {
+          "name": "fully paid",
+          "type": "Concept",
+          "mention": "fully paid",
+          "confidence": "medium"
+        },
+        {
+          "name": "partial payment",
+          "type": "Concept",
+          "mention": "partial payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-trash (trash) icon",
+          "type": "Action",
+          "mention": "fa-trash (trash) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/reconciliation/netting",
+          "type": "Concept",
+          "mention": "accounting/reconciliation/netting",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Edit Line window",
+          "relation": "CONTAINS",
+          "target": "fa-pencil (pencil) icon",
+          "evidence": "edit the necessary fields in Edit Line window."
+        },
+        {
+          "source": "fa-pencil (pencil) icon",
+          "relation": "TRIGGERED_BY",
+          "target": "counterpart item",
+          "evidence": "To edit a counterpart item, expand the line, click the fa-pencil (pencil) icon"
+        },
+        {
+          "source": "existing journal item",
+          "relation": "RELATED_TO",
+          "target": "counterpart item",
+          "evidence": "When the counterpart item is an existing journal item"
+        },
+        {
+          "source": "counterpart item",
+          "relation": "GENERATES",
+          "target": "fully paid",
+          "evidence": "use the link to mark the invoice as fully paid"
+        },
+        {
+          "source": "counterpart item",
+          "relation": "GENERATES",
+          "target": "partial payment",
+          "evidence": "or to switch back to a partial payment."
+        },
+        {
+          "source": "fa-trash (trash) icon",
+          "relation": "PERFORMED_BY",
+          "target": "counterpart item",
+          "evidence": "delete all counterpart items associated with the transaction by clicking on the fa-trash (trash) icon"
+        },
+        {
+          "source": "accounting/reconciliation/netting",
+          "relation": "SEE_ALSO",
+          "target": "counterpart item",
+          "evidence": ".. _accounting/reconciliation/netting:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "netting",
+    "heading": "Netting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Netting",
+          "type": "Feature",
+          "mention": "Netting",
+          "confidence": "high"
+        },
+        {
+          "name": "AP/AR offsetting",
+          "type": "Concept",
+          "mention": "AP/AR offsetting",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entry",
+          "type": "DataObject",
+          "mention": "new journal entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank transaction",
+          "type": "DataObject",
+          "mention": "bank transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/reconciliation/net-transaction",
+          "type": "Feature",
+          "mention": "accounting/reconciliation/net-transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/reconciliation/net-no-transaction",
+          "type": "Feature",
+          "mention": "accounting/reconciliation/net-no-transaction",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Netting",
+          "relation": "EQUIVALENT_TO",
+          "target": "AP/AR offsetting",
+          "evidence": "Netting (also known as AP/AR offsetting)"
+        },
+        {
+          "source": "Netting",
+          "relation": "PRODUCES",
+          "target": "journal entry",
+          "evidence": "Reconciling the incoming and outgoing debts creates a new journal entry"
+        },
+        {
+          "source": "Netting",
+          "relation": "TRIGGERED_BY",
+          "target": "bank transaction",
+          "evidence": "A bank transaction balances... the incoming and outgoing debts"
+        },
+        {
+          "source": "Netting",
+          "relation": "TRIGGERED_BY",
+          "target": "accounting/reconciliation/net-transaction",
+          "evidence": "A bank transaction balances <accounting/reconciliation/net-transaction>"
+        },
+        {
+          "source": "Netting",
+          "relation": "TRIGGERED_BY",
+          "target": "accounting/reconciliation/net-no-transaction",
+          "evidence": "No bank transaction balances <accounting/reconciliation/net-no-transaction> the incoming and outgoing debts"
+        },
+        {
+          "source": "accounting/reconciliation/net-transaction",
+          "relation": "SEE_ALSO",
+          "target": "accounting/reconciliation/net-no-transaction",
+          "evidence": "Two main scenarios exist... No bank transaction balances..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "netting-with-bank-transactions",
+    "heading": "Netting with bank transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Matching view",
+          "type": "Module",
+          "mention": "Bank Matching view",
+          "confidence": "high"
+        },
+        {
+          "name": "reconcile",
+          "type": "Action",
+          "mention": "Click Reconcile",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconcile",
+          "type": "Action",
+          "mention": "Click Reconcile",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank transaction",
+          "type": "DataObject",
+          "mention": "bank transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "counterpart items",
+          "type": "DataObject",
+          "mention": "counterpart items",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "high"
+        },
+        {
+          "name": "remaining balance",
+          "type": "Concept",
+          "mention": "remaining balance",
+          "confidence": "high"
+        },
+        {
+          "name": "Netting with bank transactions",
+          "type": "Concept",
+          "mention": "Netting with bank transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "payable side",
+          "type": "Concept",
+          "mention": "payable side",
+          "confidence": "medium"
+        },
+        {
+          "name": "receivable side",
+          "type": "Concept",
+          "mention": "receivable side",
+          "confidence": "medium"
+        },
+        {
+          "name": "Select",
+          "type": "Action",
+          "mention": "Click Select",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "reconcile",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "Click Reconcile"
+        },
+        {
+          "source": "bank transaction",
+          "relation": "BELONGS_TO",
+          "target": "Bank Matching view",
+          "evidence": "reconcile the bank transaction from the Bank Matching view"
+        },
+        {
+          "source": "Bank Matching view",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "invoice",
+          "relation": "RELATED_TO",
+          "target": "payable side",
+          "evidence": "Select all the relevant counterpart items on both the payable and receivable side"
+        },
+        {
+          "source": "bill",
+          "relation": "RELATED_TO",
+          "target": "receivable side",
+          "evidence": "Select all the relevant counterpart items on both the payable and receivable side"
+        },
+        {
+          "source": "reconcile",
+          "relation": "ENABLES",
+          "target": "Netting with bank transactions",
+          "evidence": "When a bank transaction balances ... reconcile"
+        },
+        {
+          "source": "bank transaction",
+          "relation": "RELATED_TO",
+          "target": "counterpart items",
+          "evidence": "Select all the relevant counterpart items"
+        },
+        {
+          "source": "invoice",
+          "relation": "RELATED_TO",
+          "target": "bank transaction",
+          "evidence": "An invoice, bill, or other item is not fully reconciled"
+        },
+        {
+          "source": "bill",
+          "relation": "RELATED_TO",
+          "target": "bank transaction",
+          "evidence": "An invoice, bill, or other item is not fully reconciled"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "netting-without-bank-transactions",
+    "heading": "Netting without bank transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Go to Accounting --> Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconcile",
+          "type": "Sub-module",
+          "mention": "Accounting --> Accounting --> Reconcile",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Matching view",
+          "type": "Feature",
+          "mention": "Bank Matching view",
+          "confidence": "high"
+        },
+        {
+          "name": "partner ledger",
+          "type": "Feature",
+          "mention": "partner ledger",
+          "confidence": "high"
+        },
+        {
+          "name": "journal items",
+          "type": "DataObject",
+          "mention": "journal items",
+          "confidence": "high"
+        },
+        {
+          "name": "account receivable",
+          "type": "DataObject",
+          "mention": "account receivable",
+          "confidence": "high"
+        },
+        {
+          "name": "account payable",
+          "type": "DataObject",
+          "mention": "account payable",
+          "confidence": "high"
+        },
+        {
+          "name": "Write-Off Entry",
+          "type": "Feature",
+          "mention": "Write-Off Entry popup window",
+          "confidence": "high"
+        },
+        {
+          "name": "Allow partials",
+          "type": "Setting",
+          "mention": "Select Allow partials",
+          "confidence": "high"
+        },
+        {
+          "name": "Account",
+          "type": "Field",
+          "mention": "Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax",
+          "type": "Field",
+          "mention": "Tax",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Label",
+          "type": "Field",
+          "mention": "Label",
+          "confidence": "high"
+        },
+        {
+          "name": "Date",
+          "type": "Field",
+          "mention": "Date",
+          "confidence": "high"
+        },
+        {
+          "name": "To Check",
+          "type": "Field",
+          "mention": "To Check",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconcile",
+          "type": "Action",
+          "mention": "Click Reconcile",
+          "confidence": "high"
+        },
+        {
+          "name": "netting",
+          "type": "Concept",
+          "mention": "Netting without bank transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciliation model",
+          "type": "Feature",
+          "mention": "Use a reconciliation model button",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Go to Accounting --> Accounting"
+        },
+        {
+          "source": "Reconcile",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "Accounting --> Accounting --> Reconcile"
+        },
+        {
+          "source": "Reconcile",
+          "relation": "CONTAINS",
+          "target": "journal items",
+          "evidence": "Select the journal items"
+        },
+        {
+          "source": "journal items",
+          "relation": "RELATED_TO",
+          "target": "account receivable",
+          "evidence": "journal items that debit or credit the account receivable"
+        },
+        {
+          "source": "journal items",
+          "relation": "RELATED_TO",
+          "target": "account payable",
+          "evidence": "journal items that debit or credit the account payable"
+        },
+        {
+          "source": "partner ledger",
+          "relation": "RELATED_TO",
+          "target": "journal items",
+          "evidence": "their balance is removed from the partner ledger"
+        },
+        {
+          "source": "Write-Off Entry",
+          "relation": "TRIGGERED_BY",
+          "target": "Reconcile",
+          "evidence": "If the debts don't balance each other perfectly, a Write-Off Entry popup window appears"
+        },
+        {
+          "source": "Allow partials",
+          "relation": "CONFIGURED_BY",
+          "target": "Reconcile",
+          "evidence": "Select Allow partials"
+        },
+        {
+          "source": "reconciliation model",
+          "relation": "RELATED_TO",
+          "target": "Write-Off Entry",
+          "evidence": "Use a reconciliation model button <reconciliation_models> to write off the balance"
+        },
+        {
+          "source": "Account",
+          "relation": "RELATED_TO",
+          "target": "Write-Off Entry",
+          "evidence": "Manually choose an Account"
+        },
+        {
+          "source": "Tax",
+          "relation": "RELATED_TO",
+          "target": "Write-Off Entry",
+          "evidence": "adjust the Tax"
+        },
+        {
+          "source": "Journal",
+          "relation": "RELATED_TO",
+          "target": "Write-Off Entry",
+          "evidence": "Journal"
+        },
+        {
+          "source": "Label",
+          "relation": "RELATED_TO",
+          "target": "Write-Off Entry",
+          "evidence": "Label"
+        },
+        {
+          "source": "Date",
+          "relation": "RELATED_TO",
+          "target": "Write-Off Entry",
+          "evidence": "Date"
+        },
+        {
+          "source": "To Check",
+          "relation": "RELATED_TO",
+          "target": "Write-Off Entry",
+          "evidence": "To Check"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,849 @@
+[
+  {
+    "section_id": "temporary-reordering-rules",
+    "heading": "Temporary reordering rules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Temporary reordering rules",
+          "type": "Concept",
+          "mention": "temporary reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering rules",
+          "type": "Concept",
+          "mention": "reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Forecasted stock levels",
+          "type": "Concept",
+          "mention": "forecasted stock levels",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy route",
+          "type": "Setting",
+          "mention": "Buy route",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacture route",
+          "type": "Setting",
+          "mention": "Manufacture route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment dashboard",
+          "type": "Module",
+          "mention": "replenishment dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity in stock",
+          "type": "Field",
+          "mention": "quantity in stock",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Temporary reordering rules",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "In Odoo, a 'temporary' reordering rule is created"
+        },
+        {
+          "source": "Temporary reordering rules",
+          "relation": "CONTAINS",
+          "target": "Forecasted stock levels",
+          "evidence": "Reordering rules keep the forecasted stock levels above a certain threshold"
+        },
+        {
+          "source": "Temporary reordering rules",
+          "relation": "CONFIGURED_BY",
+          "target": "Buy route",
+          "evidence": "is configured with a *Buy* route"
+        },
+        {
+          "source": "Temporary reordering rules",
+          "relation": "REQUIRES",
+          "target": "Sales order",
+          "evidence": "is included in a sales order (SO)"
+        },
+        {
+          "source": "Temporary reordering rules",
+          "relation": "GENERATES",
+          "target": "Purchase order",
+          "evidence": "generates an order"
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "GENERATES",
+          "target": "Purchase order",
+          "evidence": "automate purchase orders"
+        },
+        {
+          "source": "Purchase order",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Odoo generates an order"
+        },
+        {
+          "source": "Temporary reordering rules",
+          "relation": "SEE_ALSO",
+          "target": "../../inventory/warehouses_storage/replenishment/reordering_rules",
+          "evidence": "-../../inventory/warehouses_storage/replenishment/reordering_rules"
+        },
+        {
+          "source": "Temporary reordering rules",
+          "relation": "SEE_ALSO",
+          "target": "../../purchase/products/reordering",
+          "evidence": "-../../purchase/products/reordering"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "existing product",
+          "type": "DataObject",
+          "mention": "existing product",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "high"
+        },
+        {
+          "name": "product name",
+          "type": "Field",
+          "mention": "product name",
+          "confidence": "high"
+        },
+        {
+          "name": "Can be Sold",
+          "type": "Feature",
+          "mention": "Can be Sold",
+          "confidence": "high"
+        },
+        {
+          "name": "Can be Purchased",
+          "type": "Feature",
+          "mention": "Can be Purchased",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Name",
+          "type": "Field",
+          "mention": "Product Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Type",
+          "type": "Field",
+          "mention": "Product Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Storable Product",
+          "type": "Concept",
+          "mention": "Storable Product",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information tab",
+          "type": "Module",
+          "mention": "General Information tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Module",
+          "mention": "Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor",
+          "type": "Field",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase price",
+          "type": "Field",
+          "mention": "purchase price",
+          "confidence": "high"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price",
+          "confidence": "medium"
+        },
+        {
+          "name": "PO",
+          "type": "DataObject",
+          "mention": "PO",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment dashboard",
+          "type": "Module",
+          "mention": "Replenishment dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "SO",
+          "type": "DataObject",
+          "mention": "SO",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "On Hand smart button",
+          "type": "Feature",
+          "mention": "On Hand smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reordering Rules smart button",
+          "type": "Feature",
+          "mention": "Reordering Rules smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "temporary reordering rules",
+          "type": "Feature",
+          "mention": "temporary reordering rules",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Products --> Products"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "product name",
+          "evidence": "enter the product name"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Can be Sold",
+          "evidence": "Can be Sold and Can be Purchased options are enabled, located beneath the Product Name field"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Can be Purchased",
+          "evidence": "Can be Sold and Can be Purchased options are enabled, located beneath the Product Name field"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Product Type",
+          "evidence": "set the Product Type"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Purchase tab",
+          "evidence": "click the Purchase tab"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "CONTAINS",
+          "target": "Vendor",
+          "evidence": "under Vendor"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "CONTAINS",
+          "target": "Add a line",
+          "evidence": "Add a line"
+        },
+        {
+          "source": "temporary reordering rules",
+          "relation": "REQUIRES",
+          "target": "vendor",
+          "evidence": "A vendor must be set for temporary reordering rules to work"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "On Hand smart button",
+          "evidence": "On Hand smart button"
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Reordering Rules smart button",
+          "evidence": "Reordering Rules smart button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "trigger-temporary-reordering-rule",
+    "heading": "Trigger temporary reordering rule",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Field",
+          "mention": "Customer field",
+          "confidence": "high"
+        },
+        {
+          "name": "Product column",
+          "type": "Field",
+          "mention": "Product column",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Lines tab",
+          "type": "Field",
+          "mention": "Order Lines tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "temporary reordering rule",
+          "type": "Concept",
+          "mention": "Trigger temporary reordering rule",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Sales app",
+          "evidence": "Product: Odoo... navigate to Sales app"
+        },
+        {
+          "source": "sales order",
+          "relation": "IS_PART_OF",
+          "target": "Sales app",
+          "evidence": "create a new sales order... navigating to Sales app"
+        },
+        {
+          "source": "Sales app",
+          "relation": "HAS_FEATURE",
+          "target": "Add a product",
+          "evidence": "Sales app --> New. Then... click Add a product"
+        },
+        {
+          "source": "sales order",
+          "relation": "HAS_FEATURE",
+          "target": "Confirm",
+          "evidence": "Confirm the SO (sales order)"
+        },
+        {
+          "source": "sales order",
+          "relation": "CONFIGURED_BY",
+          "target": "Customer",
+          "evidence": "add a customer in the Customer field"
+        },
+        {
+          "source": "sales order",
+          "relation": "CONFIGURED_BY",
+          "target": "Product column",
+          "evidence": "Add a product under the Product column"
+        },
+        {
+          "source": "sales order",
+          "relation": "CONFIGURED_BY",
+          "target": "Order Lines tab",
+          "evidence": "under the Product column in the Order Lines tab"
+        },
+        {
+          "source": "customer",
+          "relation": "PERFORMED_BY",
+          "target": "sales order",
+          "evidence": "add a customer in the Customer field"
+        },
+        {
+          "source": "sales order",
+          "relation": "PRODUCES",
+          "target": "product",
+          "evidence": "select the desired product from the drop-down menu"
+        },
+        {
+          "source": "sales order",
+          "relation": "ENABLES",
+          "target": "temporary reordering rule",
+          "evidence": "Trigger temporary reordering rule, create a new sales order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "check-replenishment-report",
+    "heading": "Check replenishment report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment",
+          "type": "Feature",
+          "mention": "Replenishment",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment dashboard",
+          "type": "Feature",
+          "mention": "Replenishment dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "On Hand quantity",
+          "type": "Field",
+          "mention": "On Hand quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Forecast quantity",
+          "type": "Field",
+          "mention": "Forecast quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy Route",
+          "type": "Field",
+          "mention": "*Buy* Route",
+          "confidence": "high"
+        },
+        {
+          "name": "To Order quantity",
+          "type": "Field",
+          "mention": "To Order quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Once",
+          "type": "Action",
+          "mention": "Order Once",
+          "confidence": "high"
+        },
+        {
+          "name": "Automate",
+          "type": "Action",
+          "mention": "Automate",
+          "confidence": "high"
+        },
+        {
+          "name": "temporary reordering rule",
+          "type": "DataObject",
+          "mention": "temporary reordering rule",
+          "confidence": "high"
+        },
+        {
+          "name": "confirmation pop-up window",
+          "type": "Feature",
+          "mention": "confirmation pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "replenishment order",
+          "type": "DataObject",
+          "mention": "replenishment order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "navigate to Inventory app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Replenishment",
+          "evidence": "navigate to Inventory app --> Operations --> Replenishment"
+        },
+        {
+          "source": "Replenishment",
+          "relation": "ENABLES",
+          "target": "Replenishment dashboard",
+          "evidence": "opens the Replenishment dashboard"
+        },
+        {
+          "source": "Replenishment dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "product",
+          "evidence": "locate the product"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "On Hand quantity",
+          "evidence": "On Hand quantity"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "Forecast quantity",
+          "evidence": "Forecast quantity"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "Buy Route",
+          "evidence": "*Buy* Route"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "To Order quantity",
+          "evidence": "To Order quantity"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "temporary reordering rule",
+          "evidence": "temporary reordering rule created for the product"
+        },
+        {
+          "source": "Replenishment dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Order Once",
+          "evidence": "two replenishment options ... Order Once"
+        },
+        {
+          "source": "Replenishment dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Automate",
+          "evidence": "two replenishment options ... Automate"
+        },
+        {
+          "source": "Order Once",
+          "relation": "GENERATES",
+          "target": "purchase order",
+          "evidence": "action triggers ... a new purchase order number"
+        },
+        {
+          "source": "Order Once",
+          "relation": "GENERATES",
+          "target": "replenishment order",
+          "evidence": "The following replenishment order has been generated"
+        },
+        {
+          "source": "Order Once",
+          "relation": "TRIGGERED_BY",
+          "target": "temporary reordering rule",
+          "evidence": "To use the one-time, temporary reordering rule, click Order Once"
+        },
+        {
+          "source": "sales order",
+          "relation": "RELATED_TO",
+          "target": "temporary reordering rule",
+          "evidence": "created for the out-of-stock product included in the sales order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "complete-purchase-order",
+    "heading": "Complete purchase order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment Dashboard",
+          "type": "Sub-module",
+          "mention": "Replenishment dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Requests for Quotation",
+          "type": "Sub-module",
+          "mention": "Requests for Quotation overview",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products --> Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Order",
+          "type": "Action",
+          "mention": "click Confirm Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Receive Products",
+          "type": "Action",
+          "mention": "click Receive Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "click Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering Rules",
+          "type": "Setting",
+          "mention": "Reordering Rules smart button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "HAS_REPORT",
+          "target": "Requests for Quotation",
+          "evidence": "Requests for Quotation overview"
+        },
+        {
+          "source": "Purchase",
+          "relation": "CONTAINS",
+          "target": "Purchase Order",
+          "evidence": "select the generated PO (purchase order) from the Purchase app"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Go to Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Complete Purchase Order",
+          "relation": "TRIGGERED_BY",
+          "target": "Validate",
+          "evidence": "click Validate to complete the purchase order"
+        },
+        {
+          "source": "Validate",
+          "relation": "TRIGGERED_BY",
+          "target": "Receive Products",
+          "evidence": "click Receive Products. Finally, click Validate"
+        },
+        {
+          "source": "Receive Products",
+          "relation": "TRIGGERED_BY",
+          "target": "Confirm Order",
+          "evidence": "click Confirm Order, then click Receive Products"
+        },
+        {
+          "source": "Sales Order",
+          "relation": "BELONGS_TO",
+          "target": "Product",
+          "evidence": "SO (sales order) is delivered and invoiced"
+        },
+        {
+          "source": "Reordering Rules",
+          "relation": "CONFIGURED_BY",
+          "target": "Product",
+          "evidence": "ensure there are no reordering rules on the product form"
+        }
+      ]
+    }
+  }
+]

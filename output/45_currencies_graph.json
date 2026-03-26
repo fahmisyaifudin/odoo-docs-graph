@@ -1,0 +1,1181 @@
+[
+  {
+    "section_id": "foreign-currencies",
+    "heading": "Foreign currencies",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales",
+          "relation": "REQUIRES",
+          "target": "Accounting",
+          "evidence": "the Accounting application must be installed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "settings",
+    "heading": "Settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Main Currency",
+          "type": "Setting",
+          "mention": "Main Currency setting",
+          "confidence": "high"
+        },
+        {
+          "name": "automatic currency rates",
+          "type": "Feature",
+          "mention": "automatic currency rates feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "Currency field",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save the changes",
+          "confidence": "high"
+        },
+        {
+          "name": "Validation Error",
+          "type": "Concept",
+          "mention": "Validation Error message",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "Navigate to Accounting app --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Navigate to Accounting app --> Configuration --> Settings"
+        },
+        {
+          "source": "Main Currency",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "scroll to the Currencies section, and locate the Main Currency setting"
+        },
+        {
+          "source": "automatic currency rates",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "enable the *automatic currency rates* feature on the *Accounting* settings page"
+        },
+        {
+          "source": "Save",
+          "relation": "REQUIRES",
+          "target": "Currency",
+          "evidence": "select the desired currency, and be sure to Save the changes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view,-edit,-and-add-currencies",
+    "heading": "View, edit, and add currencies",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting app",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "Currencies link",
+          "type": "Action",
+          "mention": "Currencies link",
+          "confidence": "high"
+        },
+        {
+          "name": "Currencies page",
+          "type": "Module",
+          "mention": "Currencies page",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "DataObject",
+          "mention": "Currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Symbol",
+          "type": "Field",
+          "mention": "Symbol",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Last Update",
+          "type": "Field",
+          "mention": "date of the Last Update",
+          "confidence": "high"
+        },
+        {
+          "name": "Current Rate",
+          "type": "Field",
+          "mention": "Current Rate",
+          "confidence": "high"
+        },
+        {
+          "name": "Active",
+          "type": "Setting",
+          "mention": "Active",
+          "confidence": "high"
+        },
+        {
+          "name": "pricelist",
+          "type": "DataObject",
+          "mention": "pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "Main Currency drop-down menu",
+          "type": "Feature",
+          "mention": "Main Currency drop-down menu",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Main Currency drop-down menu",
+          "evidence": "making them available on pricelists and on the Main Currency drop-down menu"
+        },
+        {
+          "source": "Currencies link",
+          "relation": "TRIGGERED_BY",
+          "target": "click",
+          "evidence": "When the Currencies link is clicked, a separate Currencies page is revealed."
+        },
+        {
+          "source": "Currencies page",
+          "relation": "CONTAINS",
+          "target": "Currency",
+          "evidence": "Each row shows the corresponding Currency"
+        },
+        {
+          "source": "Currency",
+          "relation": "HAS_FEATURE",
+          "target": "Symbol",
+          "evidence": "Each row shows the corresponding Currency, Symbol"
+        },
+        {
+          "source": "Currency",
+          "relation": "HAS_FEATURE",
+          "target": "Name",
+          "evidence": "Each row shows the corresponding Currency, Symbol, Name"
+        },
+        {
+          "source": "Currency",
+          "relation": "HAS_FEATURE",
+          "target": "Last Update",
+          "evidence": "date of the Last Update"
+        },
+        {
+          "source": "Currency",
+          "relation": "HAS_FEATURE",
+          "target": "Current Rate",
+          "evidence": "Current Rate (compared to the default currency of the country in which the company is based)."
+        },
+        {
+          "source": "Active",
+          "relation": "CONFIGURED_BY",
+          "target": "toggle switch",
+          "evidence": "To toggle options on/off, click the toggle switch in the row for the corresponding column."
+        },
+        {
+          "source": "Active",
+          "relation": "APPLIES_TO",
+          "target": "Currency",
+          "evidence": "this currency is activated"
+        },
+        {
+          "source": "Currency",
+          "relation": "BELONGS_TO",
+          "target": "pricelist",
+          "evidence": "it can be added to a pricelist"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "currency-detail-form",
+    "heading": "Currency detail form",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency detail form",
+          "type": "DataObject",
+          "mention": "currency detail form",
+          "confidence": "high"
+        },
+        {
+          "name": "Currencies page",
+          "type": "DataObject",
+          "mention": "Currencies page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Currency field",
+          "type": "Field",
+          "mention": "Currency field",
+          "confidence": "high"
+        },
+        {
+          "name": "currency code",
+          "type": "Field",
+          "mention": "currency code",
+          "confidence": "medium"
+        },
+        {
+          "name": "Name field",
+          "type": "Field",
+          "mention": "Name field",
+          "confidence": "high"
+        },
+        {
+          "name": "Active toggle",
+          "type": "Setting",
+          "mention": "Active toggle",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency Unit",
+          "type": "Concept",
+          "mention": "Currency Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency Subunit",
+          "type": "Concept",
+          "mention": "Currency Subunit",
+          "confidence": "high"
+        },
+        {
+          "name": "Rates tab",
+          "type": "DataObject",
+          "mention": "Rates tab",
+          "confidence": "high"
+        },
+        {
+          "name": "conversion rates",
+          "type": "DataObject",
+          "mention": "conversion rates",
+          "confidence": "medium"
+        },
+        {
+          "name": "Date",
+          "type": "Field",
+          "mention": "Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit per...",
+          "type": "Field",
+          "mention": "Unit per...",
+          "confidence": "high"
+        },
+        {
+          "name": "...per Unit",
+          "type": "Field",
+          "mention": "...per Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "main currency",
+          "type": "Concept",
+          "mention": "main currency",
+          "confidence": "high"
+        },
+        {
+          "name": "USD",
+          "type": "Concept",
+          "mention": "USD",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Currency detail form",
+          "relation": "IS_PART_OF",
+          "target": "Currencies page",
+          "evidence": "To edit any currency on the Currencies page, click the desired currency to reveal the detail form for that specific currency"
+        },
+        {
+          "source": "Currency detail form",
+          "relation": "CONTAINS",
+          "target": "Currency field",
+          "evidence": "On the currency detail form, the relevant currency code appears in the Currency field."
+        },
+        {
+          "source": "Currency field",
+          "relation": "CONTAINS",
+          "target": "currency code",
+          "evidence": "the relevant currency code appears in the Currency field."
+        },
+        {
+          "source": "Currency detail form",
+          "relation": "CONTAINS",
+          "target": "Name field",
+          "evidence": "Beneath that, the name for the currency is in the Name field."
+        },
+        {
+          "source": "Currency detail form",
+          "relation": "CONTAINS",
+          "target": "Active toggle",
+          "evidence": "Then, toggle the currency's availability with the Active toggle"
+        },
+        {
+          "source": "Currency detail form",
+          "relation": "CONTAINS",
+          "target": "Currency Unit",
+          "evidence": "On the right of the currency detail form, the appropriate Currency Unit (e.g. `Dollars`)"
+        },
+        {
+          "source": "Currency detail form",
+          "relation": "CONTAINS",
+          "target": "Currency Subunit",
+          "evidence": "and Currency Subunit (e.g. `Cents`) can be found."
+        },
+        {
+          "source": "Currency detail form",
+          "relation": "CONTAINS",
+          "target": "Rates tab",
+          "evidence": "Next, under the Rates tab, the various conversion rates can be viewed"
+        },
+        {
+          "source": "Rates tab",
+          "relation": "CONTAINS",
+          "target": "conversion rates",
+          "evidence": "Next, under the Rates tab, the various conversion rates can be viewed"
+        },
+        {
+          "source": "conversion rates",
+          "relation": "CONTAINS",
+          "target": "Date",
+          "evidence": "Each row shows the Date of that specific rate"
+        },
+        {
+          "source": "conversion rates",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "the Company to which it is connected"
+        },
+        {
+          "source": "conversion rates",
+          "relation": "CONTAINS",
+          "target": "Unit per...",
+          "evidence": "followed by the Unit per... and ...per Unit."
+        },
+        {
+          "source": "conversion rates",
+          "relation": "CONTAINS",
+          "target": "...per Unit",
+          "evidence": "followed by the Unit per... and ...per Unit."
+        },
+        {
+          "source": "Unit per...",
+          "relation": "RELATED_TO",
+          "target": "main currency",
+          "evidence": "The *...* in each of the last two columns represents the main currency set for the company."
+        },
+        {
+          "source": "...per Unit",
+          "relation": "RELATED_TO",
+          "target": "main currency",
+          "evidence": "The *...* in each of the last two columns represents the main currency set for the company."
+        },
+        {
+          "source": "Unit per...",
+          "relation": "SEE_ALSO",
+          "target": "Unit per USD",
+          "evidence": "For example, if the main currency is set to `USD`, the columns are titled Unit per USD"
+        },
+        {
+          "source": "...per Unit",
+          "relation": "SEE_ALSO",
+          "target": "USD per Unit",
+          "evidence": "and USD per Unit."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "main-currency-detail-form",
+    "heading": "Main currency detail form",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Main currency detail form",
+          "type": "Form",
+          "mention": "Main currency detail form",
+          "confidence": "high"
+        },
+        {
+          "name": "currency detail form",
+          "type": "Form",
+          "mention": "currency detail form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Rates tab",
+          "type": "UI_Component",
+          "mention": "Rates tab",
+          "confidence": "high"
+        },
+        {
+          "name": "main currency",
+          "type": "Concept",
+          "mention": "main currency of the company",
+          "confidence": "high"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Main currency detail form",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Main currency detail form"
+        },
+        {
+          "source": "main currency",
+          "relation": "BELONGS_TO",
+          "target": "company",
+          "evidence": "main currency of the company"
+        },
+        {
+          "source": "currency detail form",
+          "relation": "EQUIVALENT_TO",
+          "target": "Main currency detail form",
+          "evidence": "All the fields are the same as a typical currency detail form"
+        },
+        {
+          "source": "Main currency detail form",
+          "relation": "CONTAINS",
+          "target": "Rates tab",
+          "evidence": "there will not be a Rates tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-new-currency",
+    "heading": "Create new currency",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Create new currency",
+          "type": "Workflow",
+          "mention": "Title: Create new currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Currencies page",
+          "type": "DataObject",
+          "mention": "Currencies page",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "blank currency template form",
+          "type": "DataObject",
+          "mention": "blank currency template form",
+          "confidence": "high"
+        },
+        {
+          "name": "currency detail form",
+          "type": "DataObject",
+          "mention": "currency detail form",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "Currency field",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name field",
+          "confidence": "high"
+        },
+        {
+          "name": "Active",
+          "type": "Field",
+          "mention": "Active toggle switch",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency Unit",
+          "type": "Field",
+          "mention": "Currency Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency Subunit",
+          "type": "Field",
+          "mention": "Currency Subunit",
+          "confidence": "high"
+        },
+        {
+          "name": "Rates",
+          "type": "Sub-module",
+          "mention": "Rates tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Date",
+          "type": "Field",
+          "mention": "Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit per...",
+          "type": "Field",
+          "mention": "Unit per...",
+          "confidence": "high"
+        },
+        {
+          "name": "...per Unit",
+          "type": "Field",
+          "mention": "...per Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "main currency",
+          "type": "Concept",
+          "mention": "main currency",
+          "confidence": "medium"
+        },
+        {
+          "name": "USD",
+          "type": "Concept",
+          "mention": "USD",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create new currency",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Create new currency, Product: Odoo"
+        },
+        {
+          "source": "New button",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the New button"
+        },
+        {
+          "source": "New button",
+          "relation": "ENABLES",
+          "target": "blank currency template form",
+          "evidence": "click the New button to open a blank currency template form"
+        },
+        {
+          "source": "blank currency template form",
+          "relation": "EQUIVALENT_TO",
+          "target": "currency detail form",
+          "evidence": "blank currency template form, currency detail form"
+        },
+        {
+          "source": "Currency Unit",
+          "relation": "BELONGS_TO",
+          "target": "currency detail form",
+          "evidence": "On the right of the currency detail form, enter the appropriate Currency Unit"
+        },
+        {
+          "source": "Currency Subunit",
+          "relation": "BELONGS_TO",
+          "target": "currency detail form",
+          "evidence": "enter the appropriate Currency Subunit"
+        },
+        {
+          "source": "Rates",
+          "relation": "BELONGS_TO",
+          "target": "currency detail form",
+          "evidence": "under the Rates tab"
+        },
+        {
+          "source": "Add a line",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "add a new rate by clicking Add a line"
+        },
+        {
+          "source": "Unit per...",
+          "relation": "RELATED_TO",
+          "target": "main currency",
+          "evidence": "The *...* in each of the last two columns represents the main currency set for the company"
+        },
+        {
+          "source": "...per Unit",
+          "relation": "RELATED_TO",
+          "target": "main currency",
+          "evidence": "The *...* in each of the last two columns represents the main currency set for the company"
+        },
+        {
+          "source": "USD",
+          "relation": "EQUIVALENT_TO",
+          "target": "main currency",
+          "evidence": "if the main currency is set to `USD`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "currency-specific-pricelists",
+    "heading": "Currency-specific pricelists",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricelists",
+          "type": "Feature",
+          "mention": "Pricelists",
+          "confidence": "high"
+        },
+        {
+          "name": "pricelist",
+          "type": "DataObject",
+          "mention": "pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "Currency field",
+          "confidence": "high"
+        },
+        {
+          "name": "active currency",
+          "type": "Concept",
+          "mention": "active currency",
+          "confidence": "medium"
+        },
+        {
+          "name": "pricelist detail form",
+          "type": "DataObject",
+          "mention": "pricelist detail form",
+          "confidence": "medium"
+        },
+        {
+          "name": "pricing",
+          "type": "Unknown",
+          "mention": "pricing",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pricelists",
+          "relation": "IS_PART_OF",
+          "target": "Products",
+          "evidence": "Products --> Pricelists"
+        },
+        {
+          "source": "Products",
+          "relation": "IS_PART_OF",
+          "target": "Sales app",
+          "evidence": "Sales app --> Products"
+        },
+        {
+          "source": "pricelist",
+          "relation": "BELONGS_TO",
+          "target": "active currency",
+          "evidence": "at least one pricelist is created per active currency"
+        },
+        {
+          "source": "pricelist",
+          "relation": "CONFIGURED_BY",
+          "target": "Currency",
+          "evidence": "adjust the Currency field as desired"
+        },
+        {
+          "source": "Currency-specific pricelists",
+          "relation": "SEE_ALSO",
+          "target": "pricing",
+          "evidence": "seealso:: ./pricing"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "auto-conversion-from-public-price",
+    "heading": "Auto-conversion from public price",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "public price",
+          "type": "Concept",
+          "mention": "public price seen on products",
+          "confidence": "medium"
+        },
+        {
+          "name": "main currency",
+          "type": "Concept",
+          "mention": "main currency the company has set",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting app",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Currencies section",
+          "type": "Sub-module",
+          "mention": "Currencies section",
+          "confidence": "high"
+        },
+        {
+          "name": "Main Currency",
+          "type": "Setting",
+          "mention": "Main Currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency drop-down menu",
+          "type": "Field",
+          "mention": "Currency drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "sales price",
+          "type": "Concept",
+          "mention": "sales price automatically updates",
+          "confidence": "medium"
+        },
+        {
+          "name": "pricelist",
+          "type": "DataObject",
+          "mention": "pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "conversion rate",
+          "type": "Concept",
+          "mention": "conversion rate for that currency",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "main currency",
+          "relation": "GOVERNED_BY",
+          "target": "Main Currency",
+          "evidence": "the main currency the company has set, which is configured by navigating to ... Main Currency"
+        },
+        {
+          "source": "Main Currency",
+          "relation": "BELONGS_TO",
+          "target": "Currencies section",
+          "evidence": "Currencies section --> Main Currency"
+        },
+        {
+          "source": "Currencies section",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings --> Currencies section"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Accounting app",
+          "evidence": "Accounting app --> Configuration"
+        },
+        {
+          "source": "Accounting app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo ... navigating to Accounting app"
+        },
+        {
+          "source": "public price",
+          "relation": "RELATED_TO",
+          "target": "main currency",
+          "evidence": "the public price seen on products is directly related to the main currency the company has set"
+        },
+        {
+          "source": "sales price",
+          "relation": "RELATED_TO",
+          "target": "pricelist",
+          "evidence": "The sales price automatically updates if the pricelist is changed"
+        },
+        {
+          "source": "sales price",
+          "relation": "RELATED_TO",
+          "target": "conversion rate",
+          "evidence": "The change in price is directly related to the updated conversion rate for that currency"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-product-prices",
+    "heading": "Set product prices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Extra Prices smart button",
+          "type": "Action",
+          "mention": "Extra Prices smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Price Rules page",
+          "type": "Module",
+          "mention": "Price Rules page",
+          "confidence": "medium"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricelist",
+          "type": "DataObject",
+          "mention": "pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "Applied On field",
+          "type": "Field",
+          "mention": "Applied On field",
+          "confidence": "high"
+        },
+        {
+          "name": "Min. Quantity field",
+          "type": "Field",
+          "mention": "Min. Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Price field",
+          "type": "Field",
+          "mention": "Price field",
+          "confidence": "high"
+        },
+        {
+          "name": "Start Date",
+          "type": "Field",
+          "mention": "Start Date",
+          "confidence": "high"
+        },
+        {
+          "name": "End Date",
+          "type": "Field",
+          "mention": "End Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Company field",
+          "type": "Field",
+          "mention": "Company field",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        },
+        {
+          "name": "pricing",
+          "type": "Unknown",
+          "mention": "./pricing",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "start by navigating to Sales app"
+        },
+        {
+          "source": "Products",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "start by navigating to ... Products"
+        },
+        {
+          "source": "Products",
+          "relation": "BELONGS_TO",
+          "target": "Sales app",
+          "evidence": "Sales app --> Products"
+        },
+        {
+          "source": "Product",
+          "relation": "BELONGS_TO",
+          "target": "Products",
+          "evidence": "Products --> Products"
+        },
+        {
+          "source": "Price Rules page",
+          "relation": "BELONGS_TO",
+          "target": "Product",
+          "evidence": "a separate Price Rules page, specific to that particular product"
+        },
+        {
+          "source": "Extra Prices smart button",
+          "relation": "TRIGGERED_BY",
+          "target": "Product",
+          "evidence": "on the product detail form, click the Extra Prices smart button"
+        },
+        {
+          "source": "Price Rules page",
+          "relation": "IS_PART_OF",
+          "target": "Product",
+          "evidence": "Price Rules page, specific to that particular product"
+        },
+        {
+          "source": "Pricelist",
+          "relation": "BELONGS_TO",
+          "target": "Price Rules page",
+          "evidence": "select the desired pricelist from the drop-down menu in the Pricelist column"
+        },
+        {
+          "source": "Applied On field",
+          "relation": "BELONGS_TO",
+          "target": "Price Rules page",
+          "evidence": "The Applied On field is auto-populated"
+        },
+        {
+          "source": "Min. Quantity field",
+          "relation": "BELONGS_TO",
+          "target": "Price Rules page",
+          "evidence": "enter in the desired figures in the Min. Quantity and Price fields"
+        },
+        {
+          "source": "Price field",
+          "relation": "BELONGS_TO",
+          "target": "Price Rules page",
+          "evidence": "enter in the desired figures in the Min. Quantity and Price fields"
+        },
+        {
+          "source": "Start Date",
+          "relation": "BELONGS_TO",
+          "target": "Price Rules page",
+          "evidence": "configure a Start Date and End Date for the set prices"
+        },
+        {
+          "source": "End Date",
+          "relation": "BELONGS_TO",
+          "target": "Price Rules page",
+          "evidence": "configure a Start Date and End Date for the set prices"
+        },
+        {
+          "source": "Company field",
+          "relation": "BELONGS_TO",
+          "target": "Price Rules page",
+          "evidence": "designate to which company this price rule should be applied in the Company field"
+        },
+        {
+          "source": "pricing",
+          "relation": "SEE_ALSO",
+          "target": "Price Rules page",
+          "evidence": ".. seealso:: ./pricing"
+        }
+      ]
+    }
+  }
+]

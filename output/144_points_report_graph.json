@@ -1,0 +1,252 @@
+[
+  {
+    "section_id": "points-report",
+    "heading": "Points report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Referrals app",
+          "type": "Module",
+          "mention": "Referrals",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment app",
+          "type": "Module",
+          "mention": "Recruitment",
+          "confidence": "high"
+        },
+        {
+          "name": "Points report",
+          "type": "Report",
+          "mention": "Points report",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Applicant",
+          "type": "DataObject",
+          "mention": "Applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "Stage",
+          "type": "Concept",
+          "mention": "Stage",
+          "confidence": "high"
+        },
+        {
+          "name": "Points",
+          "type": "Concept",
+          "mention": "Points",
+          "confidence": "high"
+        },
+        {
+          "name": "Administrator",
+          "type": "Permission",
+          "mention": "Administrator",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Referrals app",
+          "relation": "HAS_REPORT",
+          "target": "Points report",
+          "evidence": "The points report in the **Referrals** app allows managers to view the total point"
+        },
+        {
+          "source": "Points report",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "To access the *Points* report, navigate to Referrals app --> Reporting --> Points."
+        },
+        {
+          "source": "Reporting",
+          "relation": "BELONGS_TO",
+          "target": "Referrals app",
+          "evidence": "To access the *Points* report, navigate to Referrals app --> Reporting --> Points."
+        },
+        {
+          "source": "Points report",
+          "relation": "REQUIRES",
+          "target": "Recruitment app",
+          "evidence": "Only users with *Administrator* rights for the **Recruitment** app have access to the reporting features in the **Referrals** app."
+        },
+        {
+          "source": "Reporting",
+          "relation": "REQUIRES",
+          "target": "Administrator",
+          "evidence": "Only users with *Administrator* rights for the **Recruitment** app have access to the reporting features in the **Referrals** app."
+        },
+        {
+          "source": "Points report",
+          "relation": "GENERATES",
+          "target": "Points",
+          "evidence": "Each line displays the Applicant, the Stage the applicant reached, and the corresponding Points earned for the stage."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-case:-most-effective-referrers",
+    "heading": "Use case: most effective referrers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Referrals app",
+          "type": "Module",
+          "mention": "Referrals app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Points",
+          "type": "Report",
+          "mention": "Points",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Signed",
+          "type": "Stage",
+          "mention": "Contract Signed",
+          "confidence": "high"
+        },
+        {
+          "name": "Points report",
+          "type": "Report",
+          "mention": "Points report",
+          "confidence": "high"
+        },
+        {
+          "name": "Custom Filter",
+          "type": "Feature",
+          "mention": "Custom Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "search box",
+          "type": "Feature",
+          "mention": "search box",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-filter Filters column",
+          "type": "Feature",
+          "mention": "fa-filter Filters column",
+          "confidence": "low"
+        },
+        {
+          "name": "Joe Plumb",
+          "type": "Actor",
+          "mention": "Joe Plumb",
+          "confidence": "high"
+        },
+        {
+          "name": "Stage",
+          "type": "Field",
+          "mention": "Stage",
+          "confidence": "medium"
+        },
+        {
+          "name": "most successful referrer",
+          "type": "Concept",
+          "mention": "most successful referrer",
+          "confidence": "high"
+        },
+        {
+          "name": "successful referrals",
+          "type": "Concept",
+          "mention": "successful referrals",
+          "confidence": "medium"
+        },
+        {
+          "name": "most effective referrers",
+          "type": "Concept",
+          "mention": "most effective referrers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Referrals app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "navigate to Referrals app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Points",
+          "evidence": "Reporting --> Points"
+        },
+        {
+          "source": "Points",
+          "relation": "SUPPORTS",
+          "target": "most effective referrers",
+          "evidence": "One way to use the Points report is to assess which users are referring successful applicants"
+        },
+        {
+          "source": "Custom Filter",
+          "relation": "CONFIGURED_BY",
+          "target": "Stage",
+          "evidence": "By default, the first field is populated with Stage"
+        },
+        {
+          "source": "Stage",
+          "relation": "IS_PART_OF",
+          "target": "Points",
+          "evidence": "Points report is to show only points earned from the Contract Signed stage"
+        },
+        {
+          "source": "Points",
+          "relation": "PRODUCES",
+          "target": "Points report",
+          "evidence": "The Points report now displays only the successful referrals"
+        },
+        {
+          "source": "Points report",
+          "relation": "APPLIES_TO",
+          "target": "successful referrals",
+          "evidence": "The Points report now displays only the successful referrals"
+        },
+        {
+          "source": "Joe Plumb",
+          "relation": "PERFORMED_BY",
+          "target": "most successful referrer",
+          "evidence": "Joe Plumb is the most successful referrer"
+        },
+        {
+          "source": "Contract Signed",
+          "relation": "IS_PART_OF",
+          "target": "Stage",
+          "evidence": "select Contract Signed"
+        }
+      ]
+    }
+  }
+]

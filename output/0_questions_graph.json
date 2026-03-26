@@ -1,0 +1,1359 @@
+[
+  {
+    "section_id": "create-questions",
+    "heading": "Create questions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Surveys",
+          "type": "Module",
+          "mention": "Surveys",
+          "confidence": "high"
+        },
+        {
+          "name": "Questions",
+          "type": "Module",
+          "mention": "Questions",
+          "confidence": "high"
+        },
+        {
+          "name": "Questions & Answers",
+          "type": "Sub-module",
+          "mention": "Questions & Answers",
+          "confidence": "high"
+        },
+        {
+          "name": "survey questions",
+          "type": "Feature",
+          "mention": "survey questions",
+          "confidence": "medium"
+        },
+        {
+          "name": "survey form",
+          "type": "DataObject",
+          "mention": "survey form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Surveys page",
+          "type": "DataObject",
+          "mention": "Surveys page",
+          "confidence": "low"
+        },
+        {
+          "name": "database",
+          "type": "Concept",
+          "mention": "database",
+          "confidence": "low"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Surveys",
+          "evidence": "Product: Odoo\nTitle: Create questions\nIn Odoo *Surveys*"
+        },
+        {
+          "source": "Surveys",
+          "relation": "CONTAINS",
+          "target": "Questions",
+          "evidence": "To access a list of *all* the questions that have been created in the database, navigate to\nSurveys app --> Questions & Answers --> Questions."
+        },
+        {
+          "source": "Surveys",
+          "relation": "CONTAINS",
+          "target": "Questions & Answers",
+          "evidence": "navigate to\nSurveys app --> Questions & Answers --> Questions."
+        },
+        {
+          "source": "Questions",
+          "relation": "IS_PART_OF",
+          "target": "Questions & Answers",
+          "evidence": "navigate to\nSurveys app --> Questions & Answers --> Questions."
+        },
+        {
+          "source": "Surveys",
+          "relation": "HAS_FEATURE",
+          "target": "survey questions",
+          "evidence": "In Odoo *Surveys*, crafting and tailoring survey questions is crucial for creating and\ncustomizing surveys"
+        },
+        {
+          "source": "survey questions",
+          "relation": "BELONGS_TO",
+          "target": "database",
+          "evidence": "all the questions that have been created in the database"
+        },
+        {
+          "source": "user",
+          "relation": "PERFORMED_BY",
+          "target": "survey questions",
+          "evidence": "users can view and modify\nany question from any survey."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "questions-tab",
+    "heading": "Questions tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "survey form",
+          "type": "DataObject",
+          "mention": "survey form",
+          "confidence": "high"
+        },
+        {
+          "name": "Questions tab",
+          "type": "Module",
+          "mention": "Questions tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Title",
+          "type": "Field",
+          "mention": "Title",
+          "confidence": "high"
+        },
+        {
+          "name": "Question Type",
+          "type": "Field",
+          "mention": "Question Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Randomized per Section",
+          "type": "Setting",
+          "mention": "Randomized per Section option",
+          "confidence": "high"
+        },
+        {
+          "name": "Options tab",
+          "type": "Module",
+          "mention": "Options tab",
+          "confidence": "high"
+        },
+        {
+          "name": "# Questions Randomly Picked",
+          "type": "Field",
+          "mention": "# Questions Randomly Picked",
+          "confidence": "high"
+        },
+        {
+          "name": "Mandatory Answer",
+          "type": "Field",
+          "mention": "Mandatory Answer column",
+          "confidence": "high"
+        },
+        {
+          "name": "optional columns icon",
+          "type": "Feature",
+          "mention": "(optional columns) icon",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Questions tab",
+          "relation": "IS_PART_OF",
+          "target": "survey form",
+          "evidence": "On a survey form, users can view... in the Questions tab."
+        },
+        {
+          "source": "Questions tab",
+          "relation": "CONTAINS",
+          "target": "Title",
+          "evidence": "two columns are present in the Questions tab: Title (i.e. the question)..."
+        },
+        {
+          "source": "Questions tab",
+          "relation": "CONTAINS",
+          "target": "Question Type",
+          "evidence": "two columns are present in the Questions tab: Title... and Question Type."
+        },
+        {
+          "source": "survey form",
+          "relation": "CONTAINS",
+          "target": "Options tab",
+          "evidence": "If the Randomized per Section option is enabled in the Options tab of the survey form"
+        },
+        {
+          "source": "Randomized per Section",
+          "relation": "IS_PART_OF",
+          "target": "Options tab",
+          "evidence": "If the Randomized per Section option is enabled in the Options tab"
+        },
+        {
+          "source": "Randomized per Section",
+          "relation": "ENABLES",
+          "target": "# Questions Randomly Picked",
+          "evidence": "If the Randomized per Section option is enabled... a column titled, # Questions Randomly Picked appears"
+        },
+        {
+          "source": "Questions tab",
+          "relation": "CONTAINS",
+          "target": "# Questions Randomly Picked",
+          "evidence": "a column titled, # Questions Randomly Picked appears in the Questions tab"
+        },
+        {
+          "source": "optional columns icon",
+          "relation": "ENABLES",
+          "target": "Mandatory Answer",
+          "evidence": "To reveal the Mandatory Answer column... click the (optional columns) icon"
+        },
+        {
+          "source": "Questions tab",
+          "relation": "CONTAINS",
+          "target": "Mandatory Answer",
+          "evidence": "To reveal the Mandatory Answer column on the Questions tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-sections",
+    "heading": "Create sections",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "section",
+          "type": "DataObject",
+          "mention": "A *section* divides the survey into organized parts",
+          "confidence": "high"
+        },
+        {
+          "name": "Questions tab",
+          "type": "Feature",
+          "mention": "click Add a section at the bottom of the Questions tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a section",
+          "type": "Action",
+          "mention": "click Add a section",
+          "confidence": "high"
+        },
+        {
+          "name": "Randomized per Section",
+          "type": "Setting",
+          "mention": "If the Randomized per Section option is enabled",
+          "confidence": "high"
+        },
+        {
+          "name": "Options tab",
+          "type": "Feature",
+          "mention": "the Options tab of the survey form",
+          "confidence": "medium"
+        },
+        {
+          "name": "survey",
+          "type": "DataObject",
+          "mention": "questions together. To make a section, click Add a section at the bottom of the Questions tab",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add a section",
+          "relation": "PERFORMED_BY",
+          "target": "Questions tab",
+          "evidence": "click Add a section at the bottom of the Questions tab"
+        },
+        {
+          "source": "section",
+          "relation": "CONFIGURED_BY",
+          "target": "Randomized per Section",
+          "evidence": "If the Randomized per Section option is enabled"
+        },
+        {
+          "source": "section",
+          "relation": "BELONGS_TO",
+          "target": "survey",
+          "evidence": "A *section* divides the survey into organized parts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-questions",
+    "heading": "Create questions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Survey",
+          "type": "Module",
+          "mention": "survey",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Sections and Questions pop-up window",
+          "type": "Feature",
+          "mention": "Create Sections and Questions pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Questions tab",
+          "type": "Feature",
+          "mention": "Questions tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a question",
+          "type": "Action",
+          "mention": "Add a question",
+          "confidence": "high"
+        },
+        {
+          "name": "Survey title",
+          "type": "Field",
+          "mention": "survey title",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "Save & Close",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & New",
+          "type": "Action",
+          "mention": "Save & New",
+          "confidence": "high"
+        },
+        {
+          "name": "Discard",
+          "type": "Action",
+          "mention": "Discard",
+          "confidence": "high"
+        },
+        {
+          "name": "survey form",
+          "type": "DataObject",
+          "mention": "survey form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add a question",
+          "relation": "TRIGGERED_BY",
+          "target": "Questions tab",
+          "evidence": "To create questions for the survey, click Add a question in the Questions tab."
+        },
+        {
+          "source": "Add a question",
+          "relation": "GENERATES",
+          "target": "Create Sections and Questions pop-up window",
+          "evidence": "Clicking Add a question opens the Create Sections and Questions pop-up window"
+        },
+        {
+          "source": "Create Sections and Questions pop-up window",
+          "relation": "BELONGS_TO",
+          "target": "Survey",
+          "evidence": "in which a survey question can be created."
+        },
+        {
+          "source": "Create Sections and Questions pop-up window",
+          "relation": "REQUIRES",
+          "target": "Survey title",
+          "evidence": "There must be a survey title entered in order for the Create Sections and Questions pop-up window to appear."
+        },
+        {
+          "source": "Save & Close",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "click either Save & Close to save the question and return to the survey form"
+        },
+        {
+          "source": "Save & New",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "or Save & New to save the question and create a new one"
+        },
+        {
+          "source": "Save & Close",
+          "relation": "PRODUCES",
+          "target": "survey form",
+          "evidence": "save the question and return to the survey form"
+        },
+        {
+          "source": "Discard",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "Click Discard to discard the question entirely."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-sections-and-questions-pop-up-window",
+    "heading": "Create Sections and Questions pop-up window",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Sections and Questions pop-up window",
+          "type": "Module",
+          "mention": "Create Sections and Questions pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Question field",
+          "type": "Field",
+          "mention": "Question field",
+          "confidence": "high"
+        },
+        {
+          "name": "Question Type",
+          "type": "Concept",
+          "mention": "Question Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Multiple choice: only one answer",
+          "type": "Feature",
+          "mention": "Multiple choice: only one answer",
+          "confidence": "high"
+        },
+        {
+          "name": "Multiple choice: multiple answers allowed",
+          "type": "Feature",
+          "mention": "Multiple choice: multiple answers allowed",
+          "confidence": "high"
+        },
+        {
+          "name": "Multiple Lines Text Box",
+          "type": "Feature",
+          "mention": "Multiple Lines Text Box",
+          "confidence": "high"
+        },
+        {
+          "name": "Single Line Text Box",
+          "type": "Feature",
+          "mention": "Single Line Text Box",
+          "confidence": "high"
+        },
+        {
+          "name": "Numerical Value",
+          "type": "Feature",
+          "mention": "Numerical Value",
+          "confidence": "high"
+        },
+        {
+          "name": "Date",
+          "type": "Feature",
+          "mention": "Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Datetime",
+          "type": "Feature",
+          "mention": "Datetime",
+          "confidence": "high"
+        },
+        {
+          "name": "Matrix",
+          "type": "Feature",
+          "mention": "Matrix",
+          "confidence": "high"
+        },
+        {
+          "name": "Answers tab",
+          "type": "Sub-module",
+          "mention": "Answers tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Description tab",
+          "type": "Sub-module",
+          "mention": "Description tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Options tab",
+          "type": "Sub-module",
+          "mention": "Options tab",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Question field",
+          "relation": "IS_PART_OF",
+          "target": "Create Sections and Questions pop-up window",
+          "evidence": "located at the top of the pop-up window"
+        },
+        {
+          "source": "Multiple choice: only one answer",
+          "relation": "BELONGS_TO",
+          "target": "Question Type",
+          "evidence": "Choose from the following Question Types:"
+        },
+        {
+          "source": "Multiple choice: multiple answers allowed",
+          "relation": "BELONGS_TO",
+          "target": "Question Type",
+          "evidence": "Choose from the following Question Types:"
+        },
+        {
+          "source": "Multiple Lines Text Box",
+          "relation": "BELONGS_TO",
+          "target": "Question Type",
+          "evidence": "Choose from the following Question Types:"
+        },
+        {
+          "source": "Single Line Text Box",
+          "relation": "BELONGS_TO",
+          "target": "Question Type",
+          "evidence": "Choose from the following Question Types:"
+        },
+        {
+          "source": "Numerical Value",
+          "relation": "BELONGS_TO",
+          "target": "Question Type",
+          "evidence": "Choose from the following Question Types:"
+        },
+        {
+          "source": "Date",
+          "relation": "BELONGS_TO",
+          "target": "Question Type",
+          "evidence": "Choose from the following Question Types:"
+        },
+        {
+          "source": "Datetime",
+          "relation": "BELONGS_TO",
+          "target": "Question Type",
+          "evidence": "Choose from the following Question Types:"
+        },
+        {
+          "source": "Matrix",
+          "relation": "BELONGS_TO",
+          "target": "Question Type",
+          "evidence": "Choose from the following Question Types:"
+        },
+        {
+          "source": "Answers tab",
+          "relation": "IS_PART_OF",
+          "target": "Create Sections and Questions pop-up window",
+          "evidence": "there are three possible tabs where information can be customized"
+        },
+        {
+          "source": "Description tab",
+          "relation": "IS_PART_OF",
+          "target": "Create Sections and Questions pop-up window",
+          "evidence": "there are three possible tabs where information can be customized"
+        },
+        {
+          "source": "Options tab",
+          "relation": "IS_PART_OF",
+          "target": "Create Sections and Questions pop-up window",
+          "evidence": "there are three possible tabs where information can be customized"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "answers-tab",
+    "heading": "Answers tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Answers tab",
+          "type": "Feature",
+          "mention": "Answers tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Question Type",
+          "type": "DataObject",
+          "mention": "Question Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Multiple Lines Text Box",
+          "type": "Question Type Option",
+          "mention": "Multiple Lines Text Box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Single Line Text Box",
+          "type": "Question Type Option",
+          "mention": "Single Line Text Box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Input must be an email",
+          "type": "Setting",
+          "mention": "Input must be an email",
+          "confidence": "high"
+        },
+        {
+          "name": "Save as user nickname",
+          "type": "Setting",
+          "mention": "Save as user nickname",
+          "confidence": "high"
+        },
+        {
+          "name": "Save as user email",
+          "type": "Field",
+          "mention": "Save as user email",
+          "confidence": "high"
+        },
+        {
+          "name": "Scoring",
+          "type": "Feature",
+          "mention": "Scoring",
+          "confidence": "high"
+        },
+        {
+          "name": "Options tab",
+          "type": "Feature",
+          "mention": "Options tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "survey form",
+          "type": "DataObject",
+          "mention": "survey form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Choices column",
+          "type": "Field",
+          "mention": "Choices column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Correct column",
+          "type": "Field",
+          "mention": "Correct column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Score column",
+          "type": "Field",
+          "mention": "Score column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Multiple choice: multiple answers allowed",
+          "type": "Question Type Option",
+          "mention": "Multiple choice: multiple answers allowed",
+          "confidence": "medium"
+        },
+        {
+          "name": "Image column",
+          "type": "Field",
+          "mention": "Image column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Matrix",
+          "type": "Question Type Option",
+          "mention": "Matrix",
+          "confidence": "medium"
+        },
+        {
+          "name": "Rows section",
+          "type": "Field",
+          "mention": "Rows section",
+          "confidence": "medium"
+        },
+        {
+          "name": "participant",
+          "type": "Actor",
+          "mention": "participant",
+          "confidence": "medium"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Answers tab",
+          "relation": "IS_PART_OF",
+          "target": "Question Type",
+          "evidence": "The Answers tab **only** appears if the selected Question Type provides answer options to the participant."
+        },
+        {
+          "source": "Answers tab",
+          "relation": "RELATED_TO",
+          "target": "Multiple Lines Text Box",
+          "evidence": "However, if a custom response is required to answer the selected Question Type, like a Multiple Lines Text Box, for example... the Answers tab disappears completely."
+        },
+        {
+          "source": "Single Line Text Box",
+          "relation": "ENABLES",
+          "target": "Input must be an email",
+          "evidence": "If the Single Line Text Box is selected as the Question Type, the Answers tab remains, although it only provides two checkbox options: Input must be an email..."
+        },
+        {
+          "source": "Single Line Text Box",
+          "relation": "ENABLES",
+          "target": "Save as user nickname",
+          "evidence": "If the Single Line Text Box is selected as the Question Type, the Answers tab remains, although it only provides two checkbox options:... Save as user nickname."
+        },
+        {
+          "source": "Input must be an email",
+          "relation": "ENABLES",
+          "target": "Save as user email",
+          "evidence": "If the Input must be an email option is enabled, a new field, Save as user email appears."
+        },
+        {
+          "source": "Scoring",
+          "relation": "REQUIRES",
+          "target": "Options tab",
+          "evidence": "If any *Scoring* option is enabled in the Options tab of the survey form..."
+        },
+        {
+          "source": "Scoring",
+          "relation": "ENABLES",
+          "target": "Correct column",
+          "evidence": "If any *Scoring* option is enabled... the Correct and Score columns appear..."
+        },
+        {
+          "source": "Scoring",
+          "relation": "ENABLES",
+          "target": "Score column",
+          "evidence": "If any *Scoring* option is enabled... the Correct and Score columns appear..."
+        },
+        {
+          "source": "Multiple choice: multiple answers allowed",
+          "relation": "RELATED_TO",
+          "target": "Correct column",
+          "evidence": "If Multiple choice: multiple answers allowed is set as the Question Type, multiple answers in the Choices column can be marked as Correct."
+        },
+        {
+          "source": "Matrix",
+          "relation": "HAS_FEATURE",
+          "target": "Rows section",
+          "evidence": "If that's chosen, the Answers tab remains, but below the typical Choices section, there is a Rows section."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "description-tab",
+    "heading": "Description tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Description tab",
+          "type": "Module",
+          "mention": "Description tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Sections and Questions pop-up window",
+          "type": "DataObject",
+          "mention": "Create Sections and Questions pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "participants",
+          "type": "Actor",
+          "mention": "participants",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Description tab",
+          "relation": "IS_PART_OF",
+          "target": "Create Sections and Questions pop-up window",
+          "evidence": "In the Description tab of the Create Sections and Questions pop-up window"
+        },
+        {
+          "source": "Description tab",
+          "relation": "CONTAINS",
+          "target": "guidelines",
+          "evidence": "used to provide any kind of guidelines"
+        },
+        {
+          "source": "Description tab",
+          "relation": "CONTAINS",
+          "target": "instructions",
+          "evidence": "used to provide ... instructions"
+        },
+        {
+          "source": "Description tab",
+          "relation": "SUPPORTS",
+          "target": "participants",
+          "evidence": "to help participants answer/understand the question"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "options-tab",
+    "heading": "Options tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Options tab",
+          "type": "Module",
+          "mention": "Options tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Sections and Questions pop-up window",
+          "type": "Feature",
+          "mention": "Create Sections and Questions pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Answers",
+          "type": "Sub-module",
+          "mention": "Answers",
+          "confidence": "high"
+        },
+        {
+          "name": "Constraints",
+          "type": "Sub-module",
+          "mention": "Constraints",
+          "confidence": "medium"
+        },
+        {
+          "name": "Conditional Display",
+          "type": "Sub-module",
+          "mention": "Conditional Display",
+          "confidence": "medium"
+        },
+        {
+          "name": "Live Sessions",
+          "type": "Sub-module",
+          "mention": "Live Sessions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Answers section",
+          "type": "Sub-module",
+          "mention": "Answers section",
+          "confidence": "high"
+        },
+        {
+          "name": "Question Type",
+          "type": "Field",
+          "mention": "Question Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Options",
+          "type": "Setting",
+          "mention": "Options",
+          "confidence": "high"
+        },
+        {
+          "name": "survey form",
+          "type": "DataObject",
+          "mention": "survey form",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Options tab",
+          "relation": "CONTAINS",
+          "target": "Answers",
+          "evidence": "four available sections: Answers"
+        },
+        {
+          "source": "Options tab",
+          "relation": "CONTAINS",
+          "target": "Constraints",
+          "evidence": "four available sections: ... Constraints"
+        },
+        {
+          "source": "Options tab",
+          "relation": "CONTAINS",
+          "target": "Conditional Display",
+          "evidence": "four available sections: ... Conditional Display"
+        },
+        {
+          "source": "Options tab",
+          "relation": "CONTAINS",
+          "target": "Live Sessions",
+          "evidence": "four available sections: ... and Live Sessions."
+        },
+        {
+          "source": "Answers section",
+          "relation": "BELONGS_TO",
+          "target": "Options tab",
+          "evidence": "Answers section in the Options tab"
+        },
+        {
+          "source": "Answers section",
+          "relation": "CONTAINS",
+          "target": "Fields",
+          "evidence": "Fields in the Answers section"
+        },
+        {
+          "source": "Fields",
+          "relation": "GOVERNED_BY",
+          "target": "Question Type",
+          "evidence": "Fields ... vary, depending on the selected Question Type"
+        },
+        {
+          "source": "Fields",
+          "relation": "GOVERNED_BY",
+          "target": "Options",
+          "evidence": "Fields ... vary, depending on the ... overall Options configured on the survey form."
+        },
+        {
+          "source": "Options",
+          "relation": "CONFIGURED_BY",
+          "target": "survey form",
+          "evidence": "Options configured on the survey form."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "multiple-choice-question-types",
+    "heading": "Multiple Choice question types",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Multiple choice: only one answer",
+          "type": "Question Type",
+          "mention": "Multiple choice: only one answer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Multiple choice: multiple answers allowed",
+          "type": "Question Type",
+          "mention": "Multiple choice: multiple answers allowed",
+          "confidence": "medium"
+        },
+        {
+          "name": "Show Comments Field",
+          "type": "Field",
+          "mention": "Show Comments Field",
+          "confidence": "high"
+        },
+        {
+          "name": "Answers section",
+          "type": "Unknown",
+          "mention": "Answers section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Comment Message",
+          "type": "Field",
+          "mention": "Comment Message",
+          "confidence": "high"
+        },
+        {
+          "name": "Comment is an answer",
+          "type": "Setting",
+          "mention": "Comment is an answer option",
+          "confidence": "medium"
+        },
+        {
+          "name": "participant",
+          "type": "Actor",
+          "mention": "participant",
+          "confidence": "high"
+        },
+        {
+          "name": "surveys",
+          "type": "Module",
+          "mention": "surveys",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Show Comments Field",
+          "relation": "CONTAINS",
+          "target": "Comment Message",
+          "evidence": "When enabled, two additional fields appear: Comment Message and Comment is an answer."
+        },
+        {
+          "source": "Show Comments Field",
+          "relation": "CONTAINS",
+          "target": "Comment is an answer",
+          "evidence": "When enabled, two additional fields appear: Comment Message and Comment is an answer."
+        },
+        {
+          "source": "Multiple choice: only one answer",
+          "relation": "BELONGS_TO",
+          "target": "Question Type",
+          "evidence": "If the selected Question Type is either Multiple choice: only one answer or Multiple choice: multiple answers allowed"
+        },
+        {
+          "source": "Multiple choice: multiple answers allowed",
+          "relation": "BELONGS_TO",
+          "target": "Question Type",
+          "evidence": "If the selected Question Type is either Multiple choice: only one answer or Multiple choice: multiple answers allowed"
+        },
+        {
+          "source": "Odoo",
+          "relation": "PERFORMED_BY",
+          "target": "participant",
+          "evidence": "Odoo takes the participant's commented response as an answer"
+        },
+        {
+          "source": "Comment is an answer",
+          "relation": "CONFIGURED_BY",
+          "target": "Setting",
+          "evidence": "If the Comment is an answer option is enabled"
+        },
+        {
+          "source": "Comment Message",
+          "relation": "PERFORMED_BY",
+          "target": "participant",
+          "evidence": "type in a guiding message to help participants know what is expected of them"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "multiple-lines-text-box-question-type",
+    "heading": "Multiple Lines Text Box question type",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Multiple Lines Text Box",
+          "type": "Feature",
+          "mention": "Multiple Lines Text Box question type",
+          "confidence": "high"
+        },
+        {
+          "name": "Placeholder field",
+          "type": "Field",
+          "mention": "Placeholder field",
+          "confidence": "high"
+        },
+        {
+          "name": "Answers section",
+          "type": "Module",
+          "mention": "Answers section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Options tab",
+          "type": "Module",
+          "mention": "Options tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Question Type",
+          "type": "Concept",
+          "mention": "Question Type",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Multiple Lines Text Box",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Multiple Lines Text Box question type"
+        },
+        {
+          "source": "Placeholder field",
+          "relation": "IS_PART_OF",
+          "target": "Answers section",
+          "evidence": "a Placeholder field appears in the Answers section"
+        },
+        {
+          "source": "Answers section",
+          "relation": "IS_PART_OF",
+          "target": "Options tab",
+          "evidence": "the Answers section of the Options tab."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "single-line-text-box,-numerical-value,-date,-datetime-question-types",
+    "heading": "Single Line Text Box, Numerical Value, Date, Datetime question types",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Survey",
+          "type": "Module",
+          "mention": "*Live Session* surveys",
+          "confidence": "medium"
+        },
+        {
+          "name": "Live Session survey",
+          "type": "Feature",
+          "mention": "*Live Session* surveys",
+          "confidence": "high"
+        },
+        {
+          "name": "Question Type",
+          "type": "Feature",
+          "mention": "selected Question Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Single Line Text Box",
+          "type": "Question Type",
+          "mention": "Single Line Text Box",
+          "confidence": "high"
+        },
+        {
+          "name": "Numerical Value",
+          "type": "Question Type",
+          "mention": "Numerical Value",
+          "confidence": "high"
+        },
+        {
+          "name": "Date",
+          "type": "Question Type",
+          "mention": "Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Datetime",
+          "type": "Question Type",
+          "mention": "Datetime",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate Entry",
+          "type": "Setting",
+          "mention": "Validate Entry",
+          "confidence": "high"
+        },
+        {
+          "name": "Placeholder",
+          "type": "Field",
+          "mention": "Placeholder",
+          "confidence": "high"
+        },
+        {
+          "name": "Min/Max Limits",
+          "type": "Field",
+          "mention": "Min/Max Limits",
+          "confidence": "high"
+        },
+        {
+          "name": "Validation Error",
+          "type": "Field",
+          "mention": "Validation Error",
+          "confidence": "high"
+        },
+        {
+          "name": "Mandatory Answer",
+          "type": "Setting",
+          "mention": "Mandatory Answer",
+          "confidence": "high"
+        },
+        {
+          "name": "Error Message",
+          "type": "Field",
+          "mention": "Error Message",
+          "confidence": "high"
+        },
+        {
+          "name": "Conditional Display",
+          "type": "Feature",
+          "mention": "Conditional Display",
+          "confidence": "high"
+        },
+        {
+          "name": "Triggering Answers",
+          "type": "Field",
+          "mention": "Triggering Answers",
+          "confidence": "high"
+        },
+        {
+          "name": "Question Time Limit",
+          "type": "Setting",
+          "mention": "Question Time Limit",
+          "confidence": "high"
+        },
+        {
+          "name": "participant",
+          "type": "Actor",
+          "mention": "participant",
+          "confidence": "high"
+        },
+        {
+          "name": "website theme",
+          "type": "Concept",
+          "mention": "website theme",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Single Line Text Box",
+          "relation": "IS_PART_OF",
+          "target": "Question Type",
+          "evidence": "If the selected Question Type is Single Line Text Box"
+        },
+        {
+          "source": "Numerical Value",
+          "relation": "IS_PART_OF",
+          "target": "Question Type",
+          "evidence": "If the selected Question Type is Numerical Value"
+        },
+        {
+          "source": "Date",
+          "relation": "IS_PART_OF",
+          "target": "Question Type",
+          "evidence": "If the selected Question Type is Date"
+        },
+        {
+          "source": "Datetime",
+          "relation": "IS_PART_OF",
+          "target": "Question Type",
+          "evidence": "If the selected Question Type is Datetime"
+        },
+        {
+          "source": "Question Type",
+          "relation": "CONTAINS",
+          "target": "Single Line Text Box",
+          "evidence": "If the selected Question Type is Single Line Text Box"
+        },
+        {
+          "source": "Question Type",
+          "relation": "CONTAINS",
+          "target": "Numerical Value",
+          "evidence": "If the selected Question Type is Numerical Value"
+        },
+        {
+          "source": "Question Type",
+          "relation": "CONTAINS",
+          "target": "Date",
+          "evidence": "If the selected Question Type is Date"
+        },
+        {
+          "source": "Question Type",
+          "relation": "CONTAINS",
+          "target": "Datetime",
+          "evidence": "If the selected Question Type is Datetime"
+        },
+        {
+          "source": "Validate Entry",
+          "relation": "ENABLES",
+          "target": "Min/Max Limits",
+          "evidence": "If the Validate Entry option is enabled, two additional fields appear beneath: Min/Max Limits and Validation Error."
+        },
+        {
+          "source": "Validate Entry",
+          "relation": "ENABLES",
+          "target": "Validation Error",
+          "evidence": "If the Validate Entry option is enabled, two additional fields appear beneath: Min/Max Limits and Validation Error."
+        },
+        {
+          "source": "Mandatory Answer",
+          "relation": "ENABLES",
+          "target": "Error Message",
+          "evidence": "when Mandatory Answer is enabled, that reveals an additional field: Error Message."
+        },
+        {
+          "source": "Live Session survey",
+          "relation": "HAS_FEATURE",
+          "target": "Question Time Limit",
+          "evidence": "The option in the Live Sessions section of the Options tab are **only** supported by *Live Session* surveys."
+        },
+        {
+          "source": "Survey",
+          "relation": "SEE_ALSO",
+          "target": "website theme",
+          "evidence": "Survey text colors are directly linked to the colors used for the website theme"
+        },
+        {
+          "source": "participant",
+          "relation": "PERFORMED_BY",
+          "target": "Mandatory Answer",
+          "evidence": "before they can move on"
+        }
+      ]
+    }
+  }
+]

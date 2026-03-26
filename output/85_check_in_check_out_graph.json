@@ -1,0 +1,491 @@
+[
+  {
+    "section_id": "check-in-and-out",
+    "heading": "Check in and out",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances",
+          "confidence": "high"
+        },
+        {
+          "name": "check in",
+          "type": "Action",
+          "mention": "check in",
+          "confidence": "high"
+        },
+        {
+          "name": "check out",
+          "type": "Action",
+          "mention": "check out",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "medium"
+        },
+        {
+          "name": "kiosk",
+          "type": "Unknown",
+          "mention": "kiosk",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-circle (red circle)",
+          "type": "Feature",
+          "mention": "fa-circle (red circle)",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-circle (green circle)",
+          "type": "Feature",
+          "mention": "fa-circle (green circle)",
+          "confidence": "medium"
+        },
+        {
+          "name": "attendance widget",
+          "type": "Feature",
+          "mention": "attendance widget",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Attendances",
+          "relation": "CONTAINS",
+          "target": "check in",
+          "evidence": "Odoo's **Attendances** application allows users... to check in"
+        },
+        {
+          "source": "Attendances",
+          "relation": "CONTAINS",
+          "target": "check out",
+          "evidence": "Odoo's **Attendances** application allows users... to check out"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Attendances",
+          "evidence": "Product: Odoo, Odoo's **Attendances** application"
+        },
+        {
+          "source": "check in",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "A user can check in and/or out"
+        },
+        {
+          "source": "check out",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "A user can check in and/or out"
+        },
+        {
+          "source": "Attendances",
+          "relation": "HAS_FEATURE",
+          "target": "fa-circle (red circle)",
+          "evidence": "...in the upper-right corner... a fa-circle (red circle)... is visible"
+        },
+        {
+          "source": "Attendances",
+          "relation": "HAS_FEATURE",
+          "target": "fa-circle (green circle)",
+          "evidence": "...in the upper-right corner... a fa-circle (green circle)... is visible"
+        },
+        {
+          "source": "fa-circle (red circle)",
+          "relation": "ENABLES",
+          "target": "attendance widget",
+          "evidence": "Click on the colored circle to reveal the attendance widget"
+        },
+        {
+          "source": "fa-circle (green circle)",
+          "relation": "ENABLES",
+          "target": "attendance widget",
+          "evidence": "Click on the colored circle to reveal the attendance widget"
+        },
+        {
+          "source": "attendance widget",
+          "relation": "ENABLES",
+          "target": "check in",
+          "evidence": "Click... to reveal the attendance widget, enabling the user to check in"
+        },
+        {
+          "source": "attendance widget",
+          "relation": "ENABLES",
+          "target": "check out",
+          "evidence": "Click... to reveal the attendance widget, enabling the user to check out"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "check-in",
+    "heading": "Check in",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances",
+          "confidence": "high"
+        },
+        {
+          "name": "Check in",
+          "type": "Action",
+          "mention": "Check in",
+          "confidence": "high"
+        },
+        {
+          "name": "Check out",
+          "type": "Action",
+          "mention": "Check out",
+          "confidence": "high"
+        },
+        {
+          "name": "attendance widget",
+          "type": "Feature",
+          "mention": "attendance widget",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-circle",
+          "type": "Feature",
+          "mention": "fa-circle",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-sign-in",
+          "type": "Feature",
+          "mention": "fa-sign-in",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-sign-out",
+          "type": "Feature",
+          "mention": "fa-sign-out",
+          "confidence": "medium"
+        },
+        {
+          "name": "location details",
+          "type": "DataObject",
+          "mention": "location details",
+          "confidence": "medium"
+        },
+        {
+          "name": "IP Address",
+          "type": "Field",
+          "mention": "IP Address",
+          "confidence": "medium"
+        },
+        {
+          "name": "GPS coordinates",
+          "type": "Field",
+          "mention": "GPS coordinates",
+          "confidence": "medium"
+        },
+        {
+          "name": "Total today",
+          "type": "Field",
+          "mention": "Total today",
+          "confidence": "medium"
+        },
+        {
+          "name": "HH:MM format",
+          "type": "Feature",
+          "mention": "HH:MM format",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Attendances",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Check in"
+        },
+        {
+          "source": "Attendances",
+          "relation": "HAS_FEATURE",
+          "target": "attendance widget",
+          "evidence": "When the user checks in from the database, the **Attendances** app logs..."
+        },
+        {
+          "source": "Attendances",
+          "relation": "GENERATES",
+          "target": "location details",
+          "evidence": "the **Attendances** app logs the location details"
+        },
+        {
+          "source": "location details",
+          "relation": "CONTAINS",
+          "target": "IP Address",
+          "evidence": "including the IP Address"
+        },
+        {
+          "source": "location details",
+          "relation": "CONTAINS",
+          "target": "GPS coordinates",
+          "evidence": "and GPS coordinates"
+        },
+        {
+          "source": "attendance widget",
+          "relation": "ENABLES",
+          "target": "Check in",
+          "evidence": "displays a green Check in fa-sign-in button"
+        },
+        {
+          "source": "attendance widget",
+          "relation": "CONTAINS",
+          "target": "Total today",
+          "evidence": "a Total today field appears above the button"
+        },
+        {
+          "source": "Check in",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "Click the Check in fa-sign-in button to check in"
+        },
+        {
+          "source": "Check out",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "yellow Check out fa-sign-out button"
+        },
+        {
+          "source": "Check in",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "Click the Check in fa-sign-in button to check in"
+        },
+        {
+          "source": "user",
+          "relation": "CONFIGURED_BY",
+          "target": "attendance widget",
+          "evidence": "Click anywhere on the screen to close the attendance widget."
+        },
+        {
+          "source": "Total today",
+          "relation": "PRODUCES",
+          "target": "HH:MM format",
+          "evidence": "the total amount of time that has been logged for the day appears in that field, in an HH:MM format"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "check-out",
+    "heading": "Check out",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Check out",
+          "type": "Feature",
+          "mention": "Title: Check out",
+          "confidence": "high"
+        },
+        {
+          "name": "Check in",
+          "type": "Feature",
+          "mention": "Check in fa-sign-in button",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances dashboard",
+          "type": "Feature",
+          "mention": "main Attendances dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "attendance widget",
+          "type": "Feature",
+          "mention": "attendance widget",
+          "confidence": "medium"
+        },
+        {
+          "name": "Since HH:MM (AM/PM) field",
+          "type": "Field",
+          "mention": "Since HH:MM (AM/PM) field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Before HH:MM (AM/PM) field",
+          "type": "Field",
+          "mention": "Before HH:MM (AM/PM) field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Total today field",
+          "type": "Field",
+          "mention": "Total today field",
+          "confidence": "medium"
+        },
+        {
+          "name": "logged time",
+          "type": "DataObject",
+          "mention": "logged time",
+          "confidence": "medium"
+        },
+        {
+          "name": "location details",
+          "type": "DataObject",
+          "mention": "location details",
+          "confidence": "medium"
+        },
+        {
+          "name": "check-ins and check-outs",
+          "type": "DataObject",
+          "mention": "check-ins and check-outs",
+          "confidence": "medium"
+        },
+        {
+          "name": "time the user checked in",
+          "type": "Field",
+          "mention": "time the user checked in",
+          "confidence": "low"
+        },
+        {
+          "name": "previously logged time",
+          "type": "Field",
+          "mention": "previously logged time",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Attendances",
+          "evidence": "Product: Odoo; Attendances app"
+        },
+        {
+          "source": "Attendances",
+          "relation": "HAS_FEATURE",
+          "target": "Attendances dashboard",
+          "evidence": "main Attendances dashboard"
+        },
+        {
+          "source": "Check out",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "user is checking out; To check out, click"
+        },
+        {
+          "source": "Check in",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "Users can check in and out"
+        },
+        {
+          "source": "Check out",
+          "relation": "PRODUCES",
+          "target": "logged time",
+          "evidence": "Total today field with the logged time"
+        },
+        {
+          "source": "Check out",
+          "relation": "PRODUCES",
+          "target": "location details",
+          "evidence": "Attendances app logs the location details"
+        },
+        {
+          "source": "Check out",
+          "relation": "GENERATES",
+          "target": "Total today field",
+          "evidence": "Total today field appears"
+        },
+        {
+          "source": "attendance widget",
+          "relation": "CONTAINS",
+          "target": "Total today field",
+          "evidence": "attendance widget updates again, displaying the Total today field"
+        },
+        {
+          "source": "attendance widget",
+          "relation": "CONTAINS",
+          "target": "Since HH:MM (AM/PM) field",
+          "evidence": "Since HH:MM (AM/PM) appears at the top of the widget"
+        },
+        {
+          "source": "user",
+          "relation": "TRIGGERED_BY",
+          "target": "Check in",
+          "evidence": "If the user is checking out for the first time"
+        },
+        {
+          "source": "Check out",
+          "relation": "RELATED_TO",
+          "target": "Check in",
+          "evidence": "Check out button changes to a green Check in button"
+        },
+        {
+          "source": "Since HH:MM (AM/PM) field",
+          "relation": "IS_PART_OF",
+          "target": "Total today field",
+          "evidence": "Total today field is the sum of both the Before HH:MM (AM/PM) and Since HH:MM (AM/PM) fields"
+        },
+        {
+          "source": "Before HH:MM (AM/PM) field",
+          "relation": "IS_PART_OF",
+          "target": "Total today field",
+          "evidence": "Total today field is the sum of both the Before HH:MM (AM/PM) and Since HH:MM (AM/PM) fields"
+        }
+      ]
+    }
+  }
+]

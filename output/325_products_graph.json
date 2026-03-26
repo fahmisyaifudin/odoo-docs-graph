@@ -1,0 +1,67 @@
+[
+  {
+    "section_id": "products",
+    "heading": "Products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "products",
+          "type": "Module",
+          "mention": "Title: Products",
+          "confidence": "high"
+        },
+        {
+          "name": "pricelist",
+          "type": "Sub-module",
+          "mention": "products/pricelist",
+          "confidence": "medium"
+        },
+        {
+          "name": "reordering",
+          "type": "Sub-module",
+          "mention": "products/reordering",
+          "confidence": "medium"
+        },
+        {
+          "name": "temporary_reordering",
+          "type": "Sub-module",
+          "mention": "products/temporary_reordering",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "products",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Products"
+        },
+        {
+          "source": "pricelist",
+          "relation": "IS_PART_OF",
+          "target": "products",
+          "evidence": "products/pricelist"
+        },
+        {
+          "source": "reordering",
+          "relation": "IS_PART_OF",
+          "target": "products",
+          "evidence": "products/reordering"
+        },
+        {
+          "source": "temporary_reordering",
+          "relation": "IS_PART_OF",
+          "target": "products",
+          "evidence": "products/temporary_reordering"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1012 @@
+[
+  {
+    "section_id": "create-and-process-transfers-with-barcodes",
+    "heading": "Create and process transfers with barcodes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal Transfer",
+          "type": "Workflow",
+          "mention": "process internal transfers",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo-compatible barcode scanner",
+          "type": "Integration",
+          "mention": "Odoo-compatible barcode scanner",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo mobile app",
+          "type": "Integration",
+          "mention": "Odoo mobile app",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Barcode",
+          "relation": "CONTAINS",
+          "target": "Internal Transfer",
+          "evidence": "The Barcode app can be used to process internal transfers"
+        },
+        {
+          "source": "Internal Transfer",
+          "relation": "SUPPORTS",
+          "target": "Odoo",
+          "evidence": "process internal transfers for all types of products"
+        },
+        {
+          "source": "Barcode",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The Barcode app can be used..."
+        },
+        {
+          "source": "Inventory",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "refer to the Odoo Inventory..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-barcode-app",
+    "heading": "Enable Barcode app",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Scanner",
+          "type": "Feature",
+          "mention": "Barcode Scanner",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Nomenclature",
+          "type": "Setting",
+          "mention": "Barcode Nomenclature",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Nomenclature",
+          "type": "Setting",
+          "mention": "Default Nomenclature",
+          "confidence": "medium"
+        },
+        {
+          "name": "Default GS1 Nomenclature",
+          "type": "Setting",
+          "mention": "Default GS1 Nomenclature",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configure Product Barcodes",
+          "type": "Action",
+          "mention": "Configure Product Barcodes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Print buttons",
+          "type": "Action",
+          "mention": "Print buttons",
+          "confidence": "medium"
+        },
+        {
+          "name": "Set up your barcode scanner",
+          "type": "Concept",
+          "mention": "Set up your barcode scanner",
+          "confidence": "low"
+        },
+        {
+          "name": "Activate the Barcodes in Odoo",
+          "type": "Concept",
+          "mention": "Activate the Barcodes in Odoo",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "To use the *Barcode* app to process transfers, it must be installed by enabling the feature from the settings of the *Inventory* app."
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to the Inventory app --> Configuration --> Settings."
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "go to the Inventory app --> Configuration --> Settings."
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Barcode Scanner",
+          "evidence": "Then, scroll down to the Barcode section, and click the checkbox next to the Barcode Scanner feature."
+        },
+        {
+          "source": "Barcode Scanner",
+          "relation": "CONTAINS",
+          "target": "Barcode Nomenclature",
+          "evidence": "new options are displayed under the Barcode Scanner feature: Barcode Nomenclature (with a corresponding drop-down menu)"
+        },
+        {
+          "source": "Barcode Nomenclature",
+          "relation": "CONTAINS",
+          "target": "Default Nomenclature",
+          "evidence": "where either Default Nomenclature or Default GS1 Nomenclature can be selected."
+        },
+        {
+          "source": "Barcode Nomenclature",
+          "relation": "CONTAINS",
+          "target": "Default GS1 Nomenclature",
+          "evidence": "where either Default Nomenclature or Default GS1 Nomenclature can be selected."
+        },
+        {
+          "source": "Barcode Scanner",
+          "relation": "CONTAINS",
+          "target": "Configure Product Barcodes",
+          "evidence": "There is also a Configure Product Barcodes internal link arrow"
+        },
+        {
+          "source": "Barcode Scanner",
+          "relation": "CONTAINS",
+          "target": "Print buttons",
+          "evidence": "and a set of Print buttons for printing barcode commands and a barcode demo sheet."
+        },
+        {
+          "source": "Barcode Scanner",
+          "relation": "CONFIGURED_BY",
+          "target": "Barcode Nomenclature",
+          "evidence": "The nomenclature selected changes how scanners interpret barcodes in Odoo."
+        },
+        {
+          "source": "Inventory",
+          "relation": "SEE_ALSO",
+          "target": "Set up your barcode scanner",
+          "evidence": "For more on setting up and configuring the Barcode app, refer to the Set up your barcode scanner <../setup/hardware>"
+        },
+        {
+          "source": "Inventory",
+          "relation": "SEE_ALSO",
+          "target": "Activate the Barcodes in Odoo",
+          "evidence": "and Activate the Barcodes in Odoo <../setup/software> documentation pages."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "scan-barcodes-for-internal-transfers",
+    "heading": "Scan barcodes for internal transfers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse section",
+          "type": "Sub-module",
+          "mention": "Warehouse section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "create and process internal transfers",
+          "type": "Feature",
+          "mention": "create and process internal transfers",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "click the checkboxes",
+          "type": "Action",
+          "mention": "click the checkboxes",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "create and process internal transfers",
+          "relation": "REQUIRES",
+          "target": "Storage Locations",
+          "evidence": "must be enabled"
+        },
+        {
+          "source": "create and process internal transfers",
+          "relation": "REQUIRES",
+          "target": "Multi-Step Routes",
+          "evidence": "must be enabled"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to the Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Warehouse section",
+          "evidence": "scroll down to the Warehouse section"
+        },
+        {
+          "source": "Warehouse section",
+          "relation": "CONTAINS",
+          "target": "Storage Locations",
+          "evidence": "click the checkboxes next to Storage Locations"
+        },
+        {
+          "source": "Warehouse section",
+          "relation": "CONTAINS",
+          "target": "Multi-Step Routes",
+          "evidence": "click the checkboxes next to Multi-Step Routes"
+        },
+        {
+          "source": "Save",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Save"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-an-internal-transfer",
+    "heading": "Create an internal transfer",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Overview dashboard",
+          "type": "Feature",
+          "mention": "Inventory Overview dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Internal Transfers card",
+          "type": "Feature",
+          "mention": "Internal Transfers card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Internal Transfer",
+          "type": "DataObject",
+          "mention": "Internal Transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal Transfer form",
+          "type": "Feature",
+          "mention": "Internal Transfer form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operation Type",
+          "type": "Field",
+          "mention": "Operation Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Source Location",
+          "type": "Field",
+          "mention": "Source Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Destination Location",
+          "type": "Field",
+          "mention": "Destination Location",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/Stock",
+          "type": "DataObject",
+          "mention": "WH/Stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products tab",
+          "type": "Feature",
+          "mention": "Products tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product line",
+          "type": "Feature",
+          "mention": "Product line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Detailed Operations",
+          "type": "Feature",
+          "mention": "Detailed Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Detailed Operations pop-up window",
+          "type": "Feature",
+          "mention": "Detailed Operations pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "To column",
+          "type": "Field",
+          "mention": "To column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Done column",
+          "type": "Field",
+          "mention": "Done column",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "To create an internal transfer, navigate to the Inventory app."
+        },
+        {
+          "source": "Internal Transfers card",
+          "relation": "IS_PART_OF",
+          "target": "Inventory Overview dashboard",
+          "evidence": "From the Inventory Overview dashboard, locate the Internal Transfers card"
+        },
+        {
+          "source": "Internal Transfer form",
+          "relation": "CONTAINS",
+          "target": "Operation Type",
+          "evidence": "On this blank form, the Operation Type is automatically listed as Internal Transfers."
+        },
+        {
+          "source": "Internal Transfer form",
+          "relation": "CONTAINS",
+          "target": "Source Location",
+          "evidence": "Under that field, the Source Location... are set as WH/Stock by default"
+        },
+        {
+          "source": "Internal Transfer form",
+          "relation": "CONTAINS",
+          "target": "Destination Location",
+          "evidence": "Under that field, the Destination Location... are set as WH/Stock by default"
+        },
+        {
+          "source": "Internal Transfer form",
+          "relation": "CONTAINS",
+          "target": "Products tab",
+          "evidence": "On the Product line under the Products tab"
+        },
+        {
+          "source": "Products tab",
+          "relation": "CONTAINS",
+          "target": "Product line",
+          "evidence": "On the Product line under the Products tab"
+        },
+        {
+          "source": "Product line",
+          "relation": "CONTAINS",
+          "target": "Detailed Operations",
+          "evidence": "click the Detailed Operations icon (four lines, at the far right of the Product line)"
+        },
+        {
+          "source": "Detailed Operations",
+          "relation": "CONTAINS",
+          "target": "Detailed Operations pop-up window",
+          "evidence": "to open the Detailed Operations pop-up window"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "To column",
+          "evidence": "in the To column, change the location from WH/Stock"
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Done column",
+          "evidence": "in the Done column, change the quantity"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "scan-barcodes-for-internal-transfer",
+    "heading": "Scan barcodes for internal transfer",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode app",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations button",
+          "type": "Action",
+          "mention": "Operations button",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations overview page",
+          "type": "Workflow",
+          "mention": "Operations overview page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Internal Transfers card",
+          "type": "Module",
+          "mention": "Internal Transfers card",
+          "confidence": "medium"
+        },
+        {
+          "name": "To Process button",
+          "type": "Action",
+          "mention": "To Process button",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode transfer screen",
+          "type": "Workflow",
+          "mention": "barcode transfer screen",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Product",
+          "type": "Action",
+          "mention": "Add Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "scan barcode",
+          "type": "Action",
+          "mention": "scan the barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "+ 1 button",
+          "type": "Action",
+          "mention": "+ 1 button",
+          "confidence": "high"
+        },
+        {
+          "name": "pencil icon",
+          "type": "Action",
+          "mention": "pencil icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "product's pop-up window",
+          "type": "Workflow",
+          "mention": "product's pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity line",
+          "type": "Field",
+          "mention": "Quantity line",
+          "confidence": "high"
+        },
+        {
+          "name": "+1 button",
+          "type": "Action",
+          "mention": "+1",
+          "confidence": "high"
+        },
+        {
+          "name": "-1 button",
+          "type": "Action",
+          "mention": "-1",
+          "confidence": "high"
+        },
+        {
+          "name": "number keys",
+          "type": "Action",
+          "mention": "number keys",
+          "confidence": "high"
+        },
+        {
+          "name": "location lines",
+          "type": "Field",
+          "mention": "location lines",
+          "confidence": "medium"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/INT/000XX",
+          "type": "DataObject",
+          "mention": "WH/INT/000XX",
+          "confidence": "medium"
+        },
+        {
+          "name": "Transfer Product",
+          "type": "DataObject",
+          "mention": "Transfer Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/Stock",
+          "type": "DataObject",
+          "mention": "WH/Stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/Stock/Shelf 1",
+          "type": "DataObject",
+          "mention": "WH/Stock/Shelf 1",
+          "confidence": "medium"
+        },
+        {
+          "name": "TRANSFER_PROD",
+          "type": "Field",
+          "mention": "[TRANSFER_PROD]",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode Lookup database",
+          "type": "Integration",
+          "mention": "Barcode Lookup database",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Barcode app",
+          "evidence": "Product: Odoo\nTitle: Scan barcodes for internal transfer\nTo process and scan barcodes for internal transfers, navigate to the Barcode app."
+        },
+        {
+          "source": "Barcode app",
+          "relation": "CONTAINS",
+          "target": "Barcode Scanning screen",
+          "evidence": "Once inside the Barcode app, a Barcode Scanning screen displaying different options is presented."
+        },
+        {
+          "source": "Barcode Scanning screen",
+          "relation": "CONTAINS",
+          "target": "Operations button",
+          "evidence": "To process internal transfers, click on the Operations button at the bottom of the screen."
+        },
+        {
+          "source": "Operations button",
+          "relation": "TRIGGERED_BY",
+          "target": "Operations overview page",
+          "evidence": "To process internal transfers, click on the Operations button at the bottom of the screen. This navigates to an Operations overview page."
+        },
+        {
+          "source": "Operations overview page",
+          "relation": "CONTAINS",
+          "target": "Internal Transfers card",
+          "evidence": "From this page, locate the Internal Transfers card..."
+        },
+        {
+          "source": "Internal Transfers card",
+          "relation": "CONTAINS",
+          "target": "To Process button",
+          "evidence": "...and click the # To Process button..."
+        },
+        {
+          "source": "To Process button",
+          "relation": "TRIGGERED_BY",
+          "target": "barcode transfer screen",
+          "evidence": "...click the # To Process button to view all outstanding internal transfers. Then, select the desired operation to process. This navigates to the barcode transfer screen."
+        },
+        {
+          "source": "barcode transfer screen",
+          "relation": "HAS_FEATURE",
+          "target": "Add Product",
+          "evidence": "At the bottom of the screen, there are options to Add Product..."
+        },
+        {
+          "source": "barcode transfer screen",
+          "relation": "HAS_FEATURE",
+          "target": "Validate",
+          "evidence": "At the bottom of the screen, there are options to Add Product or Validate..."
+        },
+        {
+          "source": "barcode transfer screen",
+          "relation": "HAS_FEATURE",
+          "target": "scan barcode",
+          "evidence": "Then, scan the barcode of the product to process the internal transfer."
+        },
+        {
+          "source": "barcode transfer screen",
+          "relation": "HAS_FEATURE",
+          "target": "+ 1 button",
+          "mention": "+ 1 button",
+          "confidence": "high"
+        },
+        {
+          "source": "barcode transfer screen",
+          "relation": "HAS_FEATURE",
+          "target": "pencil icon",
+          "mention": "pencil icon",
+          "confidence": "medium"
+        },
+        {
+          "source": "pencil icon",
+          "relation": "TRIGGERED_BY",
+          "target": "product's pop-up window",
+          "mention": "pencil icon",
+          "confidence": "medium"
+        },
+        {
+          "source": "product's pop-up window",
+          "relation": "CONTAINS",
+          "target": "Quantity line",
+          "mention": "Quantity line",
+          "confidence": "high"
+        },
+        {
+          "source": "product's pop-up window",
+          "relation": "CONTAINS",
+          "target": "+1 button",
+          "mention": "+1",
+          "confidence": "high"
+        },
+        {
+          "source": "product's pop-up window",
+          "relation": "CONTAINS",
+          "target": "-1 button",
+          "mention": "-1",
+          "confidence": "high"
+        },
+        {
+          "source": "product's pop-up window",
+          "relation": "CONTAINS",
+          "target": "number keys",
+          "mention": "number keys",
+          "confidence": "high"
+        },
+        {
+          "source": "product's pop-up window",
+          "relation": "CONTAINS",
+          "target": "location lines",
+          "mention": "location lines",
+          "confidence": "medium"
+        },
+        {
+          "source": "product's pop-up window",
+          "relation": "HAS_FEATURE",
+          "target": "Confirm",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "source": "Barcode app",
+          "relation": "REQUIRES",
+          "target": "Inventory app",
+          "evidence": "When using the *Barcode* app without the *Inventory* app..."
+        },
+        {
+          "source": "WH/INT/000XX",
+          "relation": "BELONGS_TO",
+          "target": "Transfer Product",
+          "mention": "Transfer Product",
+          "confidence": "medium"
+        },
+        {
+          "source": "Transfer Product",
+          "relation": "IS_PART_OF",
+          "target": "WH/Stock",
+          "mention": "WH/Stock",
+          "confidence": "medium"
+        },
+        {
+          "source": "Transfer Product",
+          "relation": "IS_PART_OF",
+          "target": "WH/Stock/Shelf 1",
+          "mention": "WH/Stock/Shelf 1",
+          "confidence": "medium"
+        },
+        {
+          "source": "Transfer Product",
+          "relation": "HAS_FEATURE",
+          "target": "TRANSFER_PROD",
+          "mention": "[TRANSFER_PROD]",
+          "confidence": "medium"
+        },
+        {
+          "source": "Barcode app",
+          "relation": "SEE_ALSO",
+          "target": "Barcode Lookup database",
+          "mention": "Barcode Lookup database",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-transfer-from-scratch",
+    "heading": "Create a transfer from scratch",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode app",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "high"
+        },
+        {
+          "name": "Transfer from scratch",
+          "type": "Workflow",
+          "mention": "Create a transfer from scratch",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal transfer",
+          "type": "DataObject",
+          "mention": "internal transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/INT/000XX",
+          "type": "DataObject",
+          "mention": "WH/INT/000XX",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product barcode",
+          "type": "Feature",
+          "mention": "product barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operation type barcode",
+          "type": "Feature",
+          "mention": "operation type barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode scanner",
+          "type": "Actor",
+          "mention": "barcode scanner",
+          "confidence": "medium"
+        },
+        {
+          "name": "USB barcode scanner",
+          "type": "Actor",
+          "mention": "USB barcode scanner",
+          "confidence": "low"
+        },
+        {
+          "name": "Bluetooth barcode scanner",
+          "type": "Actor",
+          "mention": "bluetooth barcode scanner",
+          "confidence": "low"
+        },
+        {
+          "name": "Smartphone",
+          "type": "Actor",
+          "mention": "smartphone",
+          "confidence": "low"
+        },
+        {
+          "name": "Tap to Scan button",
+          "type": "Action",
+          "mention": "Tap to Scan button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Product button",
+          "type": "Action",
+          "mention": "Add Product button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Transfer from scratch",
+          "relation": "IS_PART_OF",
+          "target": "Barcode app",
+          "evidence": "the *Barcode* app can also be used to create transfers from scratch"
+        },
+        {
+          "source": "Barcode app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo's *Barcode* application"
+        },
+        {
+          "source": "Transfer from scratch",
+          "relation": "TRIGGERED_BY",
+          "target": "Scan operation type barcode",
+          "evidence": "Face the camera toward the printed operation type barcode to scan it. Doing so processes the barcode, and navigates to a barcode transfer screen."
+        },
+        {
+          "source": "Barcode scanner",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "When using a USB or bluetooth barcode scanner, directly scan the product barcode. When using a smartphone as the barcode scanner"
+        },
+        {
+          "source": "Transfer from scratch",
+          "relation": "PRODUCES",
+          "target": "Internal transfer",
+          "evidence": "The internal transfer has now been processed"
+        },
+        {
+          "source": "Add Product button",
+          "relation": "ENABLES",
+          "target": "Add product manually",
+          "evidence": "manually enter the product into the system by clicking the Add Product button"
+        },
+        {
+          "source": "Confirm",
+          "relation": "TRIGGERED_BY",
+          "target": "Add products",
+          "evidence": "Once ready, click Confirm to confirm the changes made to the product line."
+        },
+        {
+          "source": "Validate",
+          "relation": "TRIGGERED_BY",
+          "target": "Confirm",
+          "evidence": "Then, from the overview page with all products to process within that transfer (**WH/INT/000XX**), click Validate."
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,467 @@
+[
+  {
+    "section_id": "manufacturing-backorders",
+    "heading": "Manufacturing backorders",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "In the *Manufacturing* app",
+          "confidence": "high"
+        },
+        {
+          "name": "Backorder",
+          "type": "Feature",
+          "mention": "creates a *backorder*",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/MO/00175",
+          "type": "Field",
+          "mention": "*WH/MO/00175*",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/MO/00175-001",
+          "type": "Field",
+          "mention": "*WH/MO/00175-001*",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/MO/00175-002",
+          "type": "Field",
+          "mention": "*WH/MO/00175-002*",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product X",
+          "type": "DataObject",
+          "mention": "*Product X*",
+          "confidence": "medium"
+        },
+        {
+          "name": "Creating a backorder",
+          "type": "Action",
+          "mention": "creates a backorder",
+          "confidence": "high"
+        },
+        {
+          "name": "Splitting an order",
+          "type": "Action",
+          "mention": "splits the original manufacturing order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing",
+          "relation": "HAS_FEATURE",
+          "target": "Backorder",
+          "evidence": "Odoo *Manufacturing* allows for the manufacturing of partial quantities of the order and creates a *backorder*"
+        },
+        {
+          "source": "Backorder",
+          "relation": "ENABLES",
+          "target": "Splitting an order",
+          "evidence": "creating a backorder splits the original manufacturing order into two orders"
+        },
+        {
+          "source": "Employee",
+          "relation": "PERFORMED_BY",
+          "target": "Creating a backorder",
+          "evidence": "they manufacture five units and create a backorder for the remaining five"
+        },
+        {
+          "source": "Manufacturing Order",
+          "relation": "CONTAINS",
+          "target": "WH/MO/00175",
+          "evidence": "A company creates a manufacturing order with the reference tag *WH/MO/00175*"
+        },
+        {
+          "source": "WH/MO/00175",
+          "relation": "BELONGS_TO",
+          "target": "WH/MO/00175-001",
+          "evidence": "This splits the manufacturing order into two separate orders: *WH/MO/00175-001* and *WH/MO/00175-002*"
+        },
+        {
+          "source": "WH/MO/00175",
+          "relation": "BELONGS_TO",
+          "target": "WH/MO/00175-002",
+          "evidence": "This splits the manufacturing order into two separate orders: *WH/MO/00175-001* and *WH/MO/00175-002*"
+        },
+        {
+          "source": "Manufacturing Order",
+          "relation": "CONTAINS",
+          "target": "Product X",
+          "evidence": "for 10 units of *Product X*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-manufacturing-backorder",
+    "heading": "Create a manufacturing backorder",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Backorder",
+          "type": "Action",
+          "mention": "Create Backorder",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/MO/XXXXX-001",
+          "type": "DataObject",
+          "mention": "WH/MO/XXXXX-001",
+          "confidence": "high"
+        },
+        {
+          "name": "WH/MO/XXXXX-002",
+          "type": "DataObject",
+          "mention": "WH/MO/XXXXX-002",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Manufacturing --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Manufacturing Orders",
+          "evidence": "Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "IS_PART_OF",
+          "target": "Operations",
+          "evidence": "Manufacturing Orders is accessed via Operations"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "HAS_REPORT",
+          "target": "WH/MO/XXXXX-001",
+          "evidence": "WH/MO/XXXXX-001 is a tag/reference for the manufactured order"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "HAS_REPORT",
+          "target": "WH/MO/XXXXX-002",
+          "evidence": "WH/MO/XXXXX-002 is a tag/reference for the backorder"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "select a product from the Product drop-down menu"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "enter a quantity... in the Quantity field"
+        },
+        {
+          "source": "Confirm",
+          "relation": "PERFORMED_BY",
+          "target": "Manufacturing Orders",
+          "evidence": "click Confirm to confirm the order"
+        },
+        {
+          "source": "Validate",
+          "relation": "TRIGGERED_BY",
+          "target": "Create Backorder",
+          "evidence": "click Validate... from which a backorder can be created"
+        },
+        {
+          "source": "Create Backorder",
+          "relation": "PERFORMED_BY",
+          "target": "Manufacturing Orders",
+          "evidence": "Click Create Backorder to split the manufacturing order"
+        },
+        {
+          "source": "WH/MO/XXXXX-002",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing Orders",
+          "evidence": "Order 002 is the backorder that contains the items"
+        },
+        {
+          "source": "WH/MO/XXXXX-001",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing Orders",
+          "evidence": "Order 001 contains the items that have been manufactured"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-backorder-in-shop-floor",
+    "heading": "Create a backorder in Shop Floor",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Shop Floor",
+          "type": "Module",
+          "mention": "Shop Floor module",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Orders",
+          "type": "Setting",
+          "mention": "Work Orders checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "Module",
+          "mention": "Manufacturing Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Manufacturing --> Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Orders tab",
+          "type": "Sub-module",
+          "mention": "Work Orders tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Open Work Order",
+          "type": "Action",
+          "mention": "click the Open Work Order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Orders pop-up window",
+          "type": "Feature",
+          "mention": "Work Orders pop-up window",
+          "confidence": "low"
+        },
+        {
+          "name": "Open Shop Floor",
+          "type": "Action",
+          "mention": "Open Shop Floor button",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center",
+          "type": "Concept",
+          "mention": "work center",
+          "confidence": "low"
+        },
+        {
+          "name": "Register Production",
+          "type": "Workflow",
+          "mention": "Register Production step",
+          "confidence": "high"
+        },
+        {
+          "name": "Register Production pop-up window",
+          "type": "Feature",
+          "mention": "Register Production pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "click Validate",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mark as Done",
+          "type": "Action",
+          "mention": "Mark as Done button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Close Production",
+          "type": "Action",
+          "mention": "Close Production",
+          "confidence": "medium"
+        },
+        {
+          "name": "backorder",
+          "type": "Concept",
+          "mention": "backorder",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "Concept",
+          "mention": "manufacturing orders",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Shop Floor",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Backorders for manufacturing orders can also be created from the *Shop Floor* module."
+        },
+        {
+          "source": "Work Orders",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "enable the Work Orders checkbox"
+        },
+        {
+          "source": "Work Orders",
+          "relation": "REQUIRES",
+          "target": "Shop Floor",
+          "evidence": "In order to use the *Shop Floor* module, the *Work Orders* setting must be enabled."
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing",
+          "evidence": "Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "IS_PART_OF",
+          "target": "Operations",
+          "evidence": "Manufacturing --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Open Work Order",
+          "relation": "ENABLES",
+          "target": "Open Shop Floor",
+          "evidence": "click the Open Work Order... On the resulting... click the Open Shop Floor button"
+        },
+        {
+          "source": "Register Production",
+          "relation": "TRIGGERED_BY",
+          "target": "Mark as Done",
+          "evidence": "Complete the steps... until the Register Production step... Next, click the Mark as Done button"
+        },
+        {
+          "source": "Register Production",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "enter the number of units produced in the Quantity field"
+        },
+        {
+          "source": "Register Production",
+          "relation": "CONTAINS",
+          "target": "Validate",
+          "evidence": "Then, click Validate."
+        },
+        {
+          "source": "backorder",
+          "relation": "GENERATES",
+          "target": "manufacturing order",
+          "evidence": "The original 's reference number now appears with a `-001` tag... the backorder 's reference number with a `-002` tag"
+        },
+        {
+          "source": "Close Production",
+          "relation": "APPLIES_TO",
+          "target": "manufacturing order",
+          "evidence": "If the original  has no remaining work orders, it can be closed"
+        },
+        {
+          "source": "Shop Floor",
+          "relation": "HAS_REPORT",
+          "target": "Manufacturing Orders",
+          "evidence": "Select an  for multiple units of a product, for which a backorder needs to be created."
+        }
+      ]
+    }
+  }
+]

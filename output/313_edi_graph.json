@@ -1,0 +1,642 @@
+[
+  {
+    "section_id": "edi-purchase-to-sales-order-import",
+    "heading": "EDI purchase-to-sales order import",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Electronic Data Interchange",
+          "type": "Feature",
+          "mention": "Electronic data interchange (EDI)",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "purchase order (PO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "sales order (SO)",
+          "confidence": "high"
+        },
+        {
+          "name": "XML File",
+          "type": "DataObject",
+          "mention": "XML file",
+          "confidence": "high"
+        },
+        {
+          "name": "UBL Schema",
+          "type": "Standard",
+          "mention": "UBL schema",
+          "confidence": "high"
+        },
+        {
+          "name": "RFQ Upload",
+          "type": "Workflow",
+          "mention": "upload it directly in their Sales dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "PDF",
+          "type": "DataObject",
+          "mention": "PDF version",
+          "confidence": "medium"
+        },
+        {
+          "name": "Buyer",
+          "type": "Actor",
+          "mention": "buyers",
+          "confidence": "high"
+        },
+        {
+          "name": "Seller",
+          "type": "Actor",
+          "mention": "sellers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Electronic Data Interchange",
+          "evidence": "Electronic data interchange (EDI) enables companies using different software systems..."
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "In Odoo, a purchase order (PO) can be exported..."
+        },
+        {
+          "source": "Sales Order",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "...imported as a sales order (SO) into another Odoo database"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "PRODUCES",
+          "target": "XML File",
+          "evidence": "...can be exported as an XML file"
+        },
+        {
+          "source": "XML File",
+          "relation": "SUPPORTS",
+          "target": "UBL Schema",
+          "evidence": "Exported XMLs follow the UBL schema"
+        },
+        {
+          "source": "Seller",
+          "relation": "PERFORMED_BY",
+          "target": "RFQ Upload",
+          "evidence": "sellers can receive a PDF version of the request for quotation (RFQ)...upload it directly"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "roles-and-configuration",
+    "heading": "Roles and configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "companies",
+          "confidence": "high"
+        },
+        {
+          "name": "buyer",
+          "type": "Actor",
+          "mention": "the buyer",
+          "confidence": "high"
+        },
+        {
+          "name": "seller",
+          "type": "Actor",
+          "mention": "the seller",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "buyer",
+          "relation": "IS_PART_OF",
+          "target": "company",
+          "evidence": "the buyer (the company placing the order)"
+        },
+        {
+          "source": "seller",
+          "relation": "IS_PART_OF",
+          "target": "company",
+          "evidence": "the seller (the company fulfilling the order)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "buyer-database",
+    "heading": "Buyer database",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase",
+          "type": "Product",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase orders",
+          "type": "DataObject",
+          "mention": "creating and confirming purchase orders",
+          "confidence": "high"
+        },
+        {
+          "name": "buyer database",
+          "type": "Module",
+          "mention": "The buyer database",
+          "confidence": "high"
+        },
+        {
+          "name": "vendors",
+          "type": "Actor",
+          "mention": "adding vendors",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "buyer database",
+          "relation": "PRODUCES",
+          "target": "purchase orders",
+          "evidence": "The buyer database is responsible for creating and confirming purchase orders"
+        },
+        {
+          "source": "buyer database",
+          "relation": "REQUIRES",
+          "target": "Purchase",
+          "evidence": "Prerequisites include: (required) installing the Purchase app"
+        },
+        {
+          "source": "vendors",
+          "relation": "PERFORMED_BY",
+          "target": "buyer database",
+          "evidence": "Prerequisites include: (optional) adding vendors as portal users."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "seller-database",
+    "heading": "Seller database",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Seller database",
+          "type": "Module",
+          "mention": "The seller database",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales orders",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Seller database",
+          "relation": "CONTAINS",
+          "target": "Sales orders",
+          "evidence": "The seller database is responsible for receiving and processing sales orders."
+        },
+        {
+          "source": "Seller database",
+          "relation": "REQUIRES",
+          "target": "Sales",
+          "evidence": "The only prerequisite is installing the Sales app."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "buyer's-process",
+    "heading": "Buyer's process",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "RFQ",
+          "type": "DataObject",
+          "mention": "RFQ (request for quotation)",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "buyer",
+          "type": "Actor",
+          "mention": "buyer",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "Vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "portal user",
+          "type": "Actor",
+          "mention": "portal user",
+          "confidence": "medium"
+        },
+        {
+          "name": "seller",
+          "type": "Actor",
+          "mention": "seller",
+          "confidence": "medium"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "buyer",
+          "relation": "PERFORMED_BY",
+          "target": "Confirm",
+          "evidence": "the buyer...Confirm the RFQ"
+        },
+        {
+          "source": "Confirm",
+          "relation": "PRODUCES",
+          "target": "purchase order",
+          "evidence": "Doing so converts it into a purchase order"
+        },
+        {
+          "source": "RFQ",
+          "relation": "PRODUCES",
+          "target": "purchase order",
+          "evidence": "Doing so converts it into a purchase order"
+        },
+        {
+          "source": "buyer",
+          "relation": "PERFORMED_BY",
+          "target": "RFQ",
+          "evidence": "the buyer...to create a RFQ"
+        },
+        {
+          "source": "Purchase app",
+          "relation": "CONTAINS",
+          "target": "RFQ",
+          "evidence": "navigates to the Purchase app to create a RFQ"
+        },
+        {
+          "source": "portal user",
+          "relation": "EQUIVALENT_TO",
+          "target": "Vendor",
+          "evidence": "Set the Vendor to the portal user"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "seller's-process",
+    "heading": "Seller's process",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "seller",
+          "type": "Actor",
+          "mention": "seller",
+          "confidence": "high"
+        },
+        {
+          "name": "seller portal",
+          "type": "Module",
+          "mention": "seller's portal dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "XML file",
+          "type": "DataObject",
+          "mention": "XML file",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "seller portal",
+          "relation": "CONTAINS",
+          "target": "",
+          "evidence": "Once the  is confirmed, it appears on the seller's portal dashboard."
+        },
+        {
+          "source": "seller",
+          "relation": "PERFORMED_BY",
+          "target": "downloads the XML file",
+          "evidence": "The seller downloads the XML file"
+        },
+        {
+          "source": "seller",
+          "relation": "PERFORMED_BY",
+          "target": "upload it to their database",
+          "evidence": "and uploads it to their database."
+        },
+        {
+          "source": "XML file",
+          "relation": "BELONGS_TO",
+          "target": "seller",
+          "evidence": "The seller downloads the XML file"
+        },
+        {
+          "source": "XML file",
+          "relation": "PRODUCES",
+          "target": "seller",
+          "evidence": "downloads the XML file and uploads it to their database."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "download-file",
+    "heading": "Download file",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "dashboard",
+          "type": "Feature",
+          "mention": "dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Our Orders button",
+          "type": "Action",
+          "mention": "click the Our Orders button",
+          "confidence": "high"
+        },
+        {
+          "name": "list of purchase orders",
+          "type": "DataObject",
+          "mention": "list of purchase orders",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "Select the desired purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "Connect with your software! button",
+          "type": "Action",
+          "mention": "Connect with your software! button",
+          "confidence": "high"
+        },
+        {
+          "name": "pop-up window",
+          "type": "Feature",
+          "mention": "pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Copy",
+          "type": "Action",
+          "mention": "copy the provided URL",
+          "confidence": "high"
+        },
+        {
+          "name": "XML file",
+          "type": "DataObject",
+          "mention": "XML file",
+          "confidence": "high"
+        },
+        {
+          "name": "portal user",
+          "type": "Actor",
+          "mention": "portal user",
+          "confidence": "high"
+        },
+        {
+          "name": "seller",
+          "type": "Actor",
+          "mention": "seller",
+          "confidence": "high"
+        },
+        {
+          "name": "buyer",
+          "type": "Actor",
+          "mention": "buyer's database",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "dashboard",
+          "relation": "CONTAINS",
+          "target": "Our Orders button",
+          "evidence": "On the dashboard...click the Our Orders button"
+        },
+        {
+          "source": "Our Orders button",
+          "relation": "GENERATES",
+          "target": "list of purchase orders",
+          "evidence": "click the Our Orders button. Doing so reveals a list of purchase orders..."
+        },
+        {
+          "source": "purchase order",
+          "relation": "CONTAINS",
+          "target": "Connect with your software! button",
+          "evidence": "Select the desired purchase order, and the click Connect with your software! button"
+        },
+        {
+          "source": "Connect with your software! button",
+          "relation": "ENABLES",
+          "target": "pop-up window",
+          "evidence": "In the pop-up window"
+        },
+        {
+          "source": "pop-up window",
+          "relation": "CONTAINS",
+          "target": "Copy",
+          "evidence": "In the pop-up window, copy the provided URL"
+        },
+        {
+          "source": "seller",
+          "relation": "PERFORMED_BY",
+          "target": "Copy",
+          "evidence": "the seller, log in...copy the provided URL"
+        },
+        {
+          "source": "Copy",
+          "relation": "ENABLES",
+          "target": "XML file",
+          "evidence": "...paste it into a new browser tab to download the XML file"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "upload-file",
+    "heading": "Upload file",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Upload",
+          "type": "Action",
+          "mention": "Upload",
+          "confidence": "high"
+        },
+        {
+          "name": "XML file",
+          "type": "DataObject",
+          "mention": "XML file",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quotations dashboard",
+          "type": "Sub-module",
+          "mention": "Quotations dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "seller",
+          "type": "Actor",
+          "mention": "seller",
+          "confidence": "high"
+        },
+        {
+          "name": "buyer",
+          "type": "Actor",
+          "mention": "buyer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "logs in to their own Odoo database and opens Sales app"
+        },
+        {
+          "source": "Quotations dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Sales app",
+          "evidence": "drag and drop the file into the Quotations dashboard"
+        },
+        {
+          "source": "Upload",
+          "relation": "GENERATES",
+          "target": "sales order",
+          "evidence": "Doing so automatically generates a sales order"
+        },
+        {
+          "source": "seller",
+          "relation": "PERFORMED_BY",
+          "target": "Upload",
+          "evidence": "the seller logs in to their own Odoo database and opens Sales app. Click Upload"
+        },
+        {
+          "source": "XML file",
+          "relation": "PRODUCES",
+          "target": "sales order",
+          "evidence": "Upload and select the downloaded XML file. Doing so automatically generates a sales order"
+        },
+        {
+          "source": "Upload",
+          "relation": "SEE_ALSO",
+          "target": "../../../sales/sales/sales_quotations/create_quotations",
+          "evidence": ".. seealso:: ../../../sales/sales/sales_quotations/create_quotations"
+        }
+      ]
+    }
+  }
+]

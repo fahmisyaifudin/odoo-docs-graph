@@ -1,0 +1,460 @@
+[
+  {
+    "section_id": "retrieve-epc-codes",
+    "heading": "Retrieve EPC codes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Electronic product codes",
+          "type": "Concept",
+          "mention": "Electronic product codes ()",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode/operations/retrieve_epcs_gs1",
+          "type": "Action",
+          "mention": "After EPCs are obtained <barcode/operations/retrieve_epcs_gs1>",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode/operations/write_epcs",
+          "type": "Action",
+          "mention": "encoded <barcode/operations/write_epcs>",
+          "confidence": "high"
+        },
+        {
+          "name": "setup/rfid",
+          "type": "Setting",
+          "mention": "Set up ../setup/rfid",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "barcode/operations/retrieve_epcs_gs1",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "After EPCs are obtained <barcode/operations/retrieve_epcs_gs1> from ,"
+        },
+        {
+          "source": "barcode/operations/write_epcs",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "encoded <barcode/operations/write_epcs> onto"
+        },
+        {
+          "source": "barcode/operations/write_epcs",
+          "relation": "SEE_ALSO",
+          "target": "barcode/operations/retrieve_epcs_gs1",
+          "evidence": "After EPCs are obtained <barcode/operations/retrieve_epcs_gs1> from , they are encoded <barcode/operations/write_epcs> onto"
+        },
+        {
+          "source": "barcode/operations/retrieve_epcs_gs1",
+          "relation": "SEE_ALSO",
+          "target": "setup/rfid",
+          "evidence": ".. seealso:: Set up ../setup/rfid"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "retrieving-epcs-from-gs1",
+    "heading": "Retrieving EPCs from GS1",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "GS1",
+          "type": "Actor",
+          "mention": "GS1",
+          "confidence": "high"
+        },
+        {
+          "name": "EPC Encoder/Decoder tool",
+          "type": "Feature",
+          "mention": "GS1's EPC Encoder/Decoder tool",
+          "confidence": "high"
+        },
+        {
+          "name": "GTIN-14 barcode",
+          "type": "DataObject",
+          "mention": "GTIN-14 barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "application identifier (01) field",
+          "type": "Field",
+          "mention": "application identifier (01) field",
+          "confidence": "high"
+        },
+        {
+          "name": "serial number",
+          "type": "Field",
+          "mention": "product's serial number",
+          "confidence": "high"
+        },
+        {
+          "name": "(21) field",
+          "type": "Field",
+          "mention": "(21) field",
+          "confidence": "high"
+        },
+        {
+          "name": "company prefix length",
+          "type": "Setting",
+          "mention": "company prefix length",
+          "confidence": "high"
+        },
+        {
+          "name": "size of the tag",
+          "type": "Setting",
+          "mention": "size of the tag",
+          "confidence": "high"
+        },
+        {
+          "name": "filter value",
+          "type": "Setting",
+          "mention": "filter value",
+          "confidence": "high"
+        },
+        {
+          "name": "Retrieving EPCs from GS1",
+          "type": "Workflow",
+          "mention": "Retrieving EPCs from GS1",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Retrieving EPCs from GS1",
+          "relation": "USES_METHOD",
+          "target": "EPC Encoder/Decoder tool",
+          "evidence": "To retrieve an EPC to encode on a tag, use GS1's EPC Encoder/Decoder tool"
+        },
+        {
+          "source": "EPC Encoder/Decoder tool",
+          "relation": "CONTAINS",
+          "target": "application identifier (01) field",
+          "evidence": "Enter the GTIN-14 barcode of the product in the application identifier (01) field."
+        },
+        {
+          "source": "EPC Encoder/Decoder tool",
+          "relation": "CONTAINS",
+          "target": "(21) field",
+          "evidence": "Enter the product's serial number in the (21) field."
+        },
+        {
+          "source": "EPC Encoder/Decoder tool",
+          "relation": "CONTAINS",
+          "target": "company prefix length",
+          "evidence": "Specify a company prefix length."
+        },
+        {
+          "source": "EPC Encoder/Decoder tool",
+          "relation": "CONTAINS",
+          "target": "size of the tag",
+          "evidence": "Specify the size of the tag and its filter value."
+        },
+        {
+          "source": "EPC Encoder/Decoder tool",
+          "relation": "CONTAINS",
+          "target": "filter value",
+          "evidence": "Specify the size of the tag and its filter value."
+        },
+        {
+          "source": "GTIN-14 barcode",
+          "relation": "BELONGS_TO",
+          "target": "product",
+          "evidence": "Enter the GTIN-14 barcode of the product"
+        },
+        {
+          "source": "serial number",
+          "relation": "BELONGS_TO",
+          "target": "product",
+          "evidence": "Enter the product's serial number"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "generating-epcs-in-odoo",
+    "heading": "Generating EPCs in Odoo",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "EPC",
+          "type": "Feature",
+          "mention": "EPCs",
+          "confidence": "high"
+        },
+        {
+          "name": "tracked products",
+          "type": "Concept",
+          "mention": "tracked products",
+          "confidence": "medium"
+        },
+        {
+          "name": "serial number tracking",
+          "type": "Feature",
+          "mention": "tracked by serial number",
+          "confidence": "high"
+        },
+        {
+          "name": "GTIN-14-compatible barcode",
+          "type": "Feature",
+          "mention": "GTIN-14-compatible barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt",
+          "type": "DataObject",
+          "mention": "receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Detailed Operations button",
+          "type": "Action",
+          "mention": "fa-list Detailed Operations button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Detailed Operations box",
+          "type": "Module",
+          "mention": "Detailed Operations box",
+          "confidence": "medium"
+        },
+        {
+          "name": "specify serial numbers",
+          "type": "Action",
+          "mention": "specify or generate serial numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "generate serial numbers",
+          "type": "Action",
+          "mention": "specify or generate serial numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "save serial numbers",
+          "type": "Action",
+          "mention": "save the serial numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "validate receipt",
+          "type": "Action",
+          "mention": "Validate the receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Moves smart button",
+          "type": "Action",
+          "mention": "Moves smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "received items",
+          "type": "DataObject",
+          "mention": "received items",
+          "confidence": "medium"
+        },
+        {
+          "name": "Actions button",
+          "type": "Action",
+          "mention": "fa-cog Actions button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Export",
+          "type": "Action",
+          "mention": "Export",
+          "confidence": "high"
+        },
+        {
+          "name": "Export Data screen",
+          "type": "Module",
+          "mention": "Export Data screen",
+          "confidence": "medium"
+        },
+        {
+          "name": "Electronic Product Code field",
+          "type": "Field",
+          "mention": "Electronic Product Code",
+          "confidence": "high"
+        },
+        {
+          "name": "EPC file",
+          "type": "DataObject",
+          "mention": "file",
+          "confidence": "medium"
+        },
+        {
+          "name": "Moves list",
+          "type": "DataObject",
+          "mention": "Moves list",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "EPC",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Generate EPCs for tracked products directly in Odoo"
+        },
+        {
+          "source": "generate serial numbers",
+          "relation": "ENABLES",
+          "target": "EPC",
+          "evidence": "specify or generate serial numbers for the products"
+        },
+        {
+          "source": "GTIN-14-compatible barcode",
+          "relation": "REQUIRES",
+          "target": "EPC",
+          "evidence": "A GTIN-14-compatible barcode must be set on the product"
+        },
+        {
+          "source": "EPC",
+          "relation": "GENERATES",
+          "target": "EPC file",
+          "evidence": "The file downloads to the device. All of the EPCs for the receipt are included in that file"
+        },
+        {
+          "source": "Export",
+          "relation": "PRODUCES",
+          "target": "EPC file",
+          "evidence": "then click Export. The file downloads to the device"
+        },
+        {
+          "source": "Export Data screen",
+          "relation": "CONTAINS",
+          "target": "Electronic Product Code field",
+          "evidence": "select Electronic Product Code from the list of available fields"
+        },
+        {
+          "source": "Export",
+          "relation": "IS_PART_OF",
+          "target": "Export Data screen",
+          "evidence": "On the Export Data screen"
+        },
+        {
+          "source": "EPC",
+          "relation": "SEE_ALSO",
+          "target": "Moves list",
+          "evidence": "EPCs can be exported from any Moves list"
+        },
+        {
+          "source": "Moves smart button",
+          "relation": "TRIGGERED_BY",
+          "target": "validate receipt",
+          "evidence": "Validate the receipt. Click the Moves smart button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "writing-epcs-to-rfid-tags",
+    "heading": "Writing EPCs to RFID tags",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "EPC",
+          "type": "Concept",
+          "mention": "EPCs",
+          "confidence": "medium"
+        },
+        {
+          "name": "RFID tag",
+          "type": "DataObject",
+          "mention": "RFID tags",
+          "confidence": "medium"
+        },
+        {
+          "name": "RFID writer",
+          "type": "Integration",
+          "mention": "RFID writer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Writing EPCs to RFID tags",
+          "evidence": "Title: Writing EPCs to RFID tags"
+        },
+        {
+          "source": "Writing EPCs to RFID tags",
+          "relation": "PERFORMED_BY",
+          "target": "RFID writer",
+          "evidence": "After retrieving the EPCs, you can use an RFID writer to write the EPCs onto RFID tags."
+        },
+        {
+          "source": "RFID writer",
+          "relation": "CONTAINS",
+          "target": "EPC",
+          "evidence": "After retrieving the EPCs, you can use an RFID writer to write the EPCs onto RFID tags."
+        },
+        {
+          "source": "RFID writer",
+          "relation": "GENERATES",
+          "target": "RFID tag",
+          "evidence": "After retrieving the EPCs, you can use an RFID writer to write the EPCs onto RFID tags."
+        },
+        {
+          "source": "gs1_nomenclature",
+          "relation": "SEE_ALSO",
+          "target": "Odoo",
+          "evidence": ".. seealso:: - gs1_nomenclature"
+        },
+        {
+          "source": "gs1_usage",
+          "relation": "SEE_ALSO",
+          "target": "Odoo",
+          "evidence": ".. seealso:: - gs1_usage"
+        },
+        {
+          "source": "adjustments",
+          "relation": "SEE_ALSO",
+          "target": "Odoo",
+          "evidence": ".. seealso:: - adjustments"
+        }
+      ]
+    }
+  }
+]

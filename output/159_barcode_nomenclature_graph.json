@@ -1,0 +1,1090 @@
+[
+  {
+    "section_id": "default-barcode-nomenclature",
+    "heading": "Default barcode nomenclature",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Nomenclature",
+          "type": "Concept",
+          "mention": "Barcode nomenclatures",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Rule",
+          "type": "Concept",
+          "mention": "rule",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Pattern",
+          "type": "Concept",
+          "mention": "pattern",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "European Article Number",
+          "type": "Standard",
+          "mention": "European Article Number (EAN) format",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Weight",
+          "type": "Feature",
+          "mention": "product weight",
+          "confidence": "medium"
+        },
+        {
+          "name": "Universal Product Code",
+          "type": "Standard",
+          "mention": "Universal Product Code (UPC)",
+          "confidence": "high"
+        },
+        {
+          "name": "GS1",
+          "type": "Standard",
+          "mention": "GS1",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode App",
+          "type": "Module",
+          "mention": "Barcode apps",
+          "confidence": "medium"
+        },
+        {
+          "name": "GS1 Organization",
+          "type": "Actor",
+          "mention": "GS1",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Odoo Barcode",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Barcode Nomenclature",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Barcode nomenclatures define how barcodes are recognized and categorized."
+        },
+        {
+          "source": "Barcode Rule",
+          "relation": "IS_PART_OF",
+          "target": "Barcode Nomenclature",
+          "evidence": "When a barcode is scanned, it is associated to the first rule with a matching pattern."
+        },
+        {
+          "source": "Barcode Pattern",
+          "relation": "IS_PART_OF",
+          "target": "Barcode Rule",
+          "evidence": "The pattern syntax is described in Odoo's nomenclature list using a regular expression."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Product Weight",
+          "evidence": "product weight barcodes in the European Article Number (EAN) format... are used to weigh products"
+        },
+        {
+          "source": "Product Weight",
+          "relation": "USES_METHOD",
+          "target": "European Article Number",
+          "evidence": "product weight barcodes in the European Article Number (EAN) format"
+        },
+        {
+          "source": "European Article Number",
+          "relation": "CONTAINS",
+          "target": "Barcode Pattern",
+          "evidence": "which begin with `21` and have five digits specifying the weight"
+        },
+        {
+          "source": "Product Weight",
+          "relation": "ENABLES",
+          "target": "Barcode Pattern",
+          "evidence": "are used to weigh products and generate a barcode depicting the weight and price."
+        },
+        {
+          "source": "Point of Sale",
+          "relation": "SUPPORTS",
+          "target": "Product Weight",
+          "evidence": "at a Point of Sale station, product weight barcodes... are used"
+        },
+        {
+          "source": "Odoo Barcode",
+          "relation": "SUPPORTS",
+          "target": "Universal Product Code",
+          "evidence": "Odoo Barcode supports , Universal Product Code (UPC)"
+        },
+        {
+          "source": "Odoo Barcode",
+          "relation": "SUPPORTS",
+          "target": "GS1",
+          "evidence": "Odoo Barcode supports , Universal Product Code (UPC), and GS1 formats"
+        },
+        {
+          "source": "GS1",
+          "relation": "PERFORMED_BY",
+          "target": "GS1 Organization",
+          "evidence": "To use... barcodes... they must be purchased from GS1"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Barcodes are also commonly used with Odoo's Inventory and Barcode apps"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Barcode App",
+          "evidence": "Barcodes are also commonly used with Odoo's Inventory and Barcode apps"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Feature",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Scanner",
+          "type": "Feature",
+          "mention": "Barcode Scanner checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Nomenclature",
+          "type": "Field",
+          "mention": "Barcode Nomenclature field",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Nomenclature",
+          "type": "Setting",
+          "mention": "Default Nomenclature",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "default nomenclature list",
+          "type": "Report",
+          "mention": "default nomenclature list",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Product: Odoo, Inventory app"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Barcode Scanner",
+          "evidence": "Settings. Under the Barcode section, tick the Barcode Scanner checkbox"
+        },
+        {
+          "source": "Barcode Scanner",
+          "relation": "CONTAINS",
+          "target": "Barcode",
+          "evidence": "tick the Barcode Scanner checkbox. Doing so installs the Barcode app"
+        },
+        {
+          "source": "Barcode",
+          "relation": "BELONGS_TO",
+          "target": "Module",
+          "evidence": "Barcode app"
+        },
+        {
+          "source": "Barcode Nomenclature",
+          "relation": "CONTAINS",
+          "target": "Default Nomenclature",
+          "evidence": "Barcode Nomenclature field, ensure Default Nomenclature is selected"
+        },
+        {
+          "source": "Barcode",
+          "relation": "ENABLES",
+          "target": "default nomenclature list",
+          "evidence": "the barcode actions detailed in the default nomenclature list are available for use"
+        },
+        {
+          "source": "Save",
+          "relation": "CONFIGURED_BY",
+          "target": "Default Nomenclature",
+          "evidence": "Default Nomenclature selected. Then, click Save"
+        },
+        {
+          "source": "Barcode",
+          "relation": "REQUIRES",
+          "target": "Default Nomenclature",
+          "evidence": "Barcode module installed, and the Default Nomenclature selected"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "example:-product-weight-barcode",
+    "heading": "Example: product weight barcode",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode app",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "product weight barcode",
+          "type": "Feature",
+          "mention": "product weight barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "weighted products",
+          "type": "Concept",
+          "mention": "weighted products",
+          "confidence": "medium"
+        },
+        {
+          "name": "barcode",
+          "type": "DataObject",
+          "mention": "Barcode field on product form",
+          "confidence": "high"
+        },
+        {
+          "name": "Weighted Barcodes 3 Decimals",
+          "type": "Setting",
+          "mention": "Weighted Barcodes 3 Decimals",
+          "confidence": "high"
+        },
+        {
+          "name": "Pasta Bolognese",
+          "type": "DataObject",
+          "mention": "Pasta Bolognese",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit of Measure",
+          "type": "Setting",
+          "mention": "Unit of Measure",
+          "confidence": "high"
+        },
+        {
+          "name": "stock move",
+          "type": "DataObject",
+          "mention": "stock move",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipts",
+          "type": "Workflow",
+          "mention": "Receipts",
+          "confidence": "medium"
+        },
+        {
+          "name": "check digit",
+          "type": "Concept",
+          "mention": "check digit",
+          "confidence": "low"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Point of Sale",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "To better understand how barcode nomenclature is used to identify products in Odoo, this example where product weight barcodes in format are used to allow a Point of Sale business to automatically print barcodes"
+        },
+        {
+          "source": "product weight barcode",
+          "relation": "SUPPORTS",
+          "target": "Point of Sale",
+          "evidence": "where product weight barcodes in format are used to allow a Point of Sale business to automatically print barcodes, and calculate the price using the weight of the item."
+        },
+        {
+          "source": "Weighted Barcodes 3 Decimals",
+          "relation": "CONFIGURED_BY",
+          "target": "Barcode field on product form",
+          "evidence": "Field in Odoo: Barcode field on product form"
+        },
+        {
+          "source": "Pasta Bolognese",
+          "relation": "CONFIGURED_BY",
+          "target": "Barcode field on product form",
+          "evidence": "To configure the product barcode for Pasta Bolognese, the barcode for weighted products, 2112345000008, is entered in the Barcode field on the product form"
+        },
+        {
+          "source": "Pasta Bolognese",
+          "relation": "CONFIGURED_BY",
+          "target": "Unit of Measure",
+          "evidence": "In addition, the Unit of Measure is set to kg."
+        },
+        {
+          "source": "Receipts",
+          "relation": "TRIGGERED_BY",
+          "target": "Barcode app",
+          "evidence": "Ensure the products scan properly, by navigating to the Barcode app --> Operations. Next, click any operation type, such as Receipts."
+        },
+        {
+          "source": "stock move",
+          "relation": "IS_PART_OF",
+          "target": "Barcode app",
+          "evidence": "Scan the product weight barcode, such as 2112345015002, and if the intended product appears, the barcode setup is correct."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-rules",
+    "heading": "Create rules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode Nomenclatures",
+          "type": "Sub-module",
+          "mention": "Barcode Nomenclatures",
+          "confidence": "medium"
+        },
+        {
+          "name": "Default Nomenclature",
+          "type": "DataObject",
+          "mention": "Default Nomenclature",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Rules",
+          "type": "Action",
+          "mention": "create a new rule",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Rules pop-up window",
+          "type": "Workflow",
+          "mention": "Create Rules pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Rule Name",
+          "type": "Field",
+          "mention": "Rule Name field",
+          "confidence": "high"
+        },
+        {
+          "name": "Sequence",
+          "type": "Field",
+          "mention": "Sequence field",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode Type",
+          "type": "Field",
+          "mention": "barcode Type field",
+          "confidence": "high"
+        },
+        {
+          "name": "Encoding",
+          "type": "Field",
+          "mention": "Encoding field",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Pattern",
+          "type": "Field",
+          "mention": "Barcode Pattern field",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & New",
+          "type": "Action",
+          "mention": "Save & New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "Save & Close",
+          "confidence": "high"
+        },
+        {
+          "name": "UPC/EAN Conversion",
+          "type": "Setting",
+          "mention": "UPC/EAN Conversion",
+          "confidence": "high"
+        },
+        {
+          "name": "Is GS1 Nomenclature",
+          "type": "Setting",
+          "mention": "Is GS1 Nomenclature",
+          "confidence": "high"
+        },
+        {
+          "name": "Package",
+          "type": "Concept",
+          "mention": "Package",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lot",
+          "type": "Concept",
+          "mention": "Lot",
+          "confidence": "medium"
+        },
+        {
+          "name": "Location",
+          "type": "Concept",
+          "mention": "Location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Coupon",
+          "type": "Concept",
+          "mention": "Coupon",
+          "confidence": "medium"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Custom development",
+          "type": "Integration",
+          "mention": "Custom development",
+          "confidence": "medium"
+        },
+        {
+          "name": "EAN-13",
+          "type": "Standard",
+          "mention": "EAN-13",
+          "confidence": "medium"
+        },
+        {
+          "name": "EAN-8",
+          "type": "Standard",
+          "mention": "EAN-8",
+          "confidence": "medium"
+        },
+        {
+          "name": "UPC-A",
+          "type": "Standard",
+          "mention": "UPC-A",
+          "confidence": "medium"
+        },
+        {
+          "name": "GS1-28",
+          "type": "Standard",
+          "mention": "GS1-28",
+          "confidence": "medium"
+        },
+        {
+          "name": "GS1 encoding",
+          "type": "Standard",
+          "mention": "GS1 encoding",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Barcode Nomenclatures",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory app --> Configuration --> Barcode Nomenclatures"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Default Nomenclature",
+          "relation": "IS_PART_OF",
+          "target": "Barcode Nomenclatures",
+          "evidence": "Barcode Nomenclatures, and select Default Nomenclature"
+        },
+        {
+          "source": "Create Rules",
+          "relation": "PERFORMED_BY",
+          "target": "Create Rules pop-up window",
+          "evidence": "opens a Create Rules pop-up window to create a new rule"
+        },
+        {
+          "source": "Default Nomenclature",
+          "relation": "CONTAINS",
+          "target": "UPC/EAN Conversion",
+          "evidence": "On this page, configure the following optional fields: - UPC/EAN Conversion"
+        },
+        {
+          "source": "Default Nomenclature",
+          "relation": "CONTAINS",
+          "target": "Is GS1 Nomenclature",
+          "evidence": "On this page, configure the following optional fields: - Is GS1 Nomenclature"
+        },
+        {
+          "source": "UPC/EAN Conversion",
+          "relation": "CONFIGURED_BY",
+          "target": "Setting",
+          "evidence": "configure the following optional fields: - UPC/EAN Conversion"
+        },
+        {
+          "source": "Is GS1 Nomenclature",
+          "relation": "CONFIGURED_BY",
+          "target": "Setting",
+          "evidence": "configure the following optional fields: - Is GS1 Nomenclature"
+        },
+        {
+          "source": "Create Rules",
+          "relation": "CONFIGURED_BY",
+          "target": "Rule Name",
+          "evidence": "The Rule Name field is used internally to identify what the barcode represents."
+        },
+        {
+          "source": "Create Rules",
+          "relation": "CONFIGURED_BY",
+          "target": "Sequence",
+          "evidence": "The Sequence field represents the priority of the rule"
+        },
+        {
+          "source": "Create Rules",
+          "relation": "CONFIGURED_BY",
+          "target": "barcode Type",
+          "evidence": "The barcode Type field represents different classifications of information"
+        },
+        {
+          "source": "Create Rules",
+          "relation": "CONFIGURED_BY",
+          "target": "Encoding",
+          "evidence": "The Encoding field specifies which encoding the barcode uses."
+        },
+        {
+          "source": "Create Rules",
+          "relation": "CONFIGURED_BY",
+          "target": "Barcode Pattern",
+          "evidence": "The Barcode Pattern field represents how the sequence of letters or numbers is recognized"
+        },
+        {
+          "source": "Create Rules",
+          "relation": "TRIGGERED_BY",
+          "target": "Add a line",
+          "evidence": "click Add a line at the bottom of the table, which opens a Create Rules pop-up window"
+        },
+        {
+          "source": "Add a line",
+          "relation": "TRIGGERED_BY",
+          "target": "Default Nomenclature",
+          "evidence": "On the Default Nomenclature page, click Add a line"
+        },
+        {
+          "source": "barcode Type",
+          "relation": "SUPPORTS",
+          "target": "Package",
+          "evidence": "barcode Type field represents different classifications (e.g., Package)"
+        },
+        {
+          "source": "barcode Type",
+          "relation": "SUPPORTS",
+          "target": "Lot",
+          "evidence": "barcode Type field represents different classifications (e.g., Lot)"
+        },
+        {
+          "source": "barcode Type",
+          "relation": "SUPPORTS",
+          "target": "Location",
+          "evidence": "barcode Type field represents different classifications (e.g., Location)"
+        },
+        {
+          "source": "barcode Type",
+          "relation": "SUPPORTS",
+          "target": "Coupon",
+          "evidence": "barcode Type field represents different classifications (e.g., Coupon)"
+        },
+        {
+          "source": "Encoding",
+          "relation": "SUPPORTS",
+          "target": "EAN-13",
+          "evidence": "The available Encoding options are: EAN-13"
+        },
+        {
+          "source": "Encoding",
+          "relation": "SUPPORTS",
+          "target": "EAN-8",
+          "evidence": "The available Encoding options are: EAN-8"
+        },
+        {
+          "source": "Encoding",
+          "relation": "SUPPORTS",
+          "target": "UPC-A",
+          "evidence": "The available Encoding options are: UPC-A"
+        },
+        {
+          "source": "Encoding",
+          "relation": "SUPPORTS",
+          "target": "GS1-28",
+          "evidence": "The available Encoding options are: GS1-28"
+        },
+        {
+          "source": "Default Nomenclature",
+          "relation": "USES_METHOD",
+          "target": "GS1 encoding",
+          "evidence": "ensure this checkbox is not ticked, as the Default Nomenclature uses encoding, not GS1 encoding."
+        },
+        {
+          "source": "Inventory app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, navigate to Inventory app"
+        },
+        {
+          "source": "Create Rules",
+          "relation": "REQUIRES",
+          "target": "developer mode",
+          "evidence": "To create a rule, first enable developer mode."
+        },
+        {
+          "source": "Odoo",
+          "relation": "RELATED_TO",
+          "target": "Custom development",
+          "mention": "`Custom development <https://www.odoo.com/appointment/132>`_",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "default-nomenclature-list",
+    "heading": "Default nomenclature list",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Default nomenclature list",
+          "type": "Concept",
+          "mention": "Default nomenclature list",
+          "confidence": "medium"
+        },
+        {
+          "name": "Price Barcodes 2 Decimals",
+          "type": "Feature",
+          "mention": "Price Barcodes 2 Decimals",
+          "confidence": "high"
+        },
+        {
+          "name": "Discounted Product",
+          "type": "Concept",
+          "mention": "Discounted Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Discount Barcodes",
+          "type": "Feature",
+          "mention": "Discount Barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "Weight Barcodes 3 Decimals",
+          "type": "Feature",
+          "mention": "Weight Barcodes 3 Decimals",
+          "confidence": "high"
+        },
+        {
+          "name": "Weighted Product",
+          "type": "Concept",
+          "mention": "Weighted Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer Barcodes",
+          "type": "Feature",
+          "mention": "Customer Barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "Client",
+          "type": "Actor",
+          "mention": "Client",
+          "confidence": "high"
+        },
+        {
+          "name": "Coupon & Gift Card Barcodes",
+          "type": "Feature",
+          "mention": "Coupon & Gift Card Barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "Coupon",
+          "type": "DataObject",
+          "mention": "Coupon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cashier Barcodes",
+          "type": "Feature",
+          "mention": "Cashier Barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "Cashier",
+          "type": "Actor",
+          "mention": "Cashier",
+          "confidence": "high"
+        },
+        {
+          "bond": "Location Barcodes",
+          "type": "Feature",
+          "mention": "Location barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "Location",
+          "type": "Concept",
+          "mention": "Location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Package barcodes",
+          "type": "Feature",
+          "mention": "Package barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "Package",
+          "type": "DataObject",
+          "mention": "Package",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lot barcodes",
+          "type": "Feature",
+          "mention": "Lot barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot",
+          "type": "DataObject",
+          "mention": "Lot",
+          "confidence": "medium"
+        },
+        {
+          "name": "Magnetic Credit Card",
+          "type": "Feature",
+          "mention": "Magnetic Credit Card",
+          "confidence": "high"
+        },
+        {
+          "name": "Credit Card",
+          "type": "DataObject",
+          "mention": "Credit Card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Barcodes",
+          "type": "Feature",
+          "mention": "Product Barcodes",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit Product",
+          "type": "Concept",
+          "mention": "Unit Product",
+          "confidence": "medium"
+        },
+        {
+          "name": "gs1_nomenclature",
+          "type": "Concept",
+          "mention": "gs1_nomenclature",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Default nomenclature list",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Default nomenclature list"
+        },
+        {
+          "source": "Price Barcodes 2 Decimals",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Price Barcodes 2 Decimals",
+          "relation": "RELATED_TO",
+          "target": "Priced Product",
+          "evidence": "Rule Name Price Barcodes 2 Decimals, Type Priced Product"
+        },
+        {
+          "source": "Discount Barcodes",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Discount Barcodes",
+          "relation": "RELATED_TO",
+          "target": "Discounted Product",
+          "evidence": "Rule Name Discount Barcodes, Type Discounted Product"
+        },
+        {
+          "source": "Weight Barcodes 3 Decimals",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Weight Barcodes 3 Decimals",
+          "relation": "RELATED_TO",
+          "target": "Weighted Product",
+          "evidence": "Rule Name Weight Barcodes 3 Decimals, Type Weighted Product"
+        },
+        {
+          "source": "Customer Barcodes",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Customer Barcodes",
+          "relation": "RELATED_TO",
+          "target": "Client",
+          "evidence": "Rule Name Customer Barcodes, Type Client"
+        },
+        {
+          "source": "Coupon & Gift Card Barcodes",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Coupon & Gift Card Barcodes",
+          "relation": "RELATED_TO",
+          "target": "Coupon",
+          "evidence": "Rule Name Coupon & Gift Card Barcodes, Type Coupon"
+        },
+        {
+          "source": "Cashier Barcodes",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Cashier Barcodes",
+          "relation": "RELATED_TO",
+          "target": "Cashier",
+          "evidence": "Rule Name Cashier Barcodes, Type Cashier"
+        },
+        {
+          "source": "Location Barcodes",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Location Barcodes",
+          "relation": "RELATED_TO",
+          "target": "Location",
+          "evidence": "Rule Name Location barcodes, Type Location"
+        },
+        {
+          "source": "Package barcodes",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Package barcodes",
+          "relation": "RELATED_TO",
+          "target": "Package",
+          "evidence": "Rule Name Package barcodes, Type Package"
+        },
+        {
+          "source": "Lot barcodes",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Lot barcodes",
+          "relation": "RELATED_TO",
+          "target": "Lot",
+          "evidence": "Rule Name Lot barcodes, Type Lot"
+        },
+        {
+          "source": "Magnetic Credit Card",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Magnetic Credit Card",
+          "relation": "RELATED_TO",
+          "target": "Credit Card",
+          "evidence": "Rule Name Magnetic Credit Card, Type Credit Card"
+        },
+        {
+          "source": "Product Barcodes",
+          "relation": "BELONGS_TO",
+          "target": "Default nomenclature list",
+          "evidence": "The table below contains Odoo's list of Default Nomenclature rules."
+        },
+        {
+          "source": "Product Barcodes",
+          "relation": "RELATED_TO",
+          "target": "Unit Product",
+          "evidence": "Rule Name Product Barcodes, Type Unit Product"
+        },
+        {
+          "source": "Default nomenclature list",
+          "relation": "SEE_ALSO",
+          "target": "gs1_nomenclature",
+          "evidence": ".. seealso:: gs1_nomenclature"
+        }
+      ]
+    }
+  }
+]

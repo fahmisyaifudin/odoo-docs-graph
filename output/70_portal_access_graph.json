@@ -1,0 +1,382 @@
+[
+  {
+    "section_id": "granting-portal-access",
+    "heading": "Granting portal access",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts",
+          "type": "Module",
+          "mention": "**Contacts** application",
+          "confidence": "high"
+        },
+        {
+          "name": "Granting portal access",
+          "type": "Workflow",
+          "mention": "Granting portal access",
+          "confidence": "medium"
+        },
+        {
+          "name": "customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendors",
+          "type": "Actor",
+          "mention": "vendors",
+          "confidence": "medium"
+        },
+        {
+          "name": "business",
+          "type": "Actor",
+          "mention": "business",
+          "confidence": "low"
+        },
+        {
+          "name": "user portal",
+          "type": "Feature",
+          "mention": "user portal",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Granting portal access",
+          "relation": "PERFORMED_BY",
+          "target": "business",
+          "evidence": "by the business"
+        },
+        {
+          "source": "Granting portal access",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "For the customers and vendors of a business to begin using a user portal, they must first be granted access by the business. The process to do this begins in the **Contacts** application."
+        },
+        {
+          "source": "Granting portal access",
+          "relation": "TRIGGERED_BY",
+          "target": "vendors",
+          "evidence": "For the customers and vendors"
+        },
+        {
+          "source": "Granting portal access",
+          "relation": "TRIGGERED_BY",
+          "target": "customers",
+          "evidence": "For the customers and vendors"
+        },
+        {
+          "source": "Granting portal access",
+          "relation": "SUPPORTS",
+          "target": "user portal",
+          "evidence": "to begin using a user portal"
+        },
+        {
+          "source": "Contacts",
+          "relation": "CONTAINS",
+          "target": "Granting portal access",
+          "evidence": "begins in the **Contacts** application"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "adding-portal-access-to-a-contact",
+    "heading": "Adding portal access to a contact",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts application",
+          "type": "Module",
+          "mention": "Contacts application",
+          "confidence": "high"
+        },
+        {
+          "name": "Portal Access Management window",
+          "type": "Module",
+          "mention": "Portal Access Management window",
+          "confidence": "medium"
+        },
+        {
+          "name": "contact",
+          "type": "Actor",
+          "mention": "contact",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Grant portal access",
+          "type": "Action",
+          "mention": "Grant portal access",
+          "confidence": "high"
+        },
+        {
+          "name": "Contact",
+          "type": "Field",
+          "mention": "Contact",
+          "confidence": "high"
+        },
+        {
+          "name": "Email",
+          "type": "Field",
+          "mention": "Email",
+          "confidence": "high"
+        },
+        {
+          "name": "Latest Authentication",
+          "type": "Field",
+          "mention": "Latest Authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "Grant Access",
+          "type": "Action",
+          "mention": "Grant Access",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Contacts application",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "From the main Odoo dashboard, open the Contacts application."
+        },
+        {
+          "source": "Grant portal access",
+          "relation": "IS_PART_OF",
+          "target": "Portal Access Management window",
+          "evidence": "This brings up the Portal Access Management window"
+        },
+        {
+          "source": "Portal Access Management window",
+          "relation": "CONTAINS",
+          "target": "Contact",
+          "evidence": "Portal Access Management window, which has three fields: - Contact:"
+        },
+        {
+          "source": "Portal Access Management window",
+          "relation": "CONTAINS",
+          "target": "Email",
+          "evidence": "Portal Access Management window, which has three fields: - Email:"
+        },
+        {
+          "source": "Portal Access Management window",
+          "relation": "CONTAINS",
+          "target": "Latest Authentication",
+          "evidence": "Portal Access Management window, which has three fields: - Latest Authentication:"
+        },
+        {
+          "source": "Grant portal access",
+          "relation": "CONFIGURED_BY",
+          "target": "Grant Access",
+          "evidence": "To grant portal access, ... click the Grant Access button to finish."
+        },
+        {
+          "source": "Grant portal access",
+          "relation": "PERFORMED_BY",
+          "target": "Company",
+          "evidence": "When portal access is granted to a Company, all contacts affiliated with that company will be granted portal access."
+        },
+        {
+          "source": "Grant portal access",
+          "relation": "PERFORMED_BY",
+          "target": "contact",
+          "evidence": "If the contact to be granted access is not yet in the database"
+        },
+        {
+          "source": "Grant Access",
+          "relation": "PRODUCES",
+          "target": "portal access",
+          "evidence": "click the Grant Access button to finish."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "granting-accesss-to-multiple-users-at-once",
+    "heading": "Granting accesss to multiple users at once",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "grant portal access",
+          "type": "Action",
+          "mention": "Grant portal access",
+          "confidence": "high"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "high"
+        },
+        {
+          "name": "contact listing",
+          "type": "Report",
+          "mention": "contact listing",
+          "confidence": "medium"
+        },
+        {
+          "name": "Action",
+          "type": "Feature",
+          "mention": "Action",
+          "confidence": "low"
+        },
+        {
+          "name": "Grant portal access",
+          "type": "Action",
+          "mention": "Grant portal access",
+          "confidence": "high"
+        },
+        {
+          "name": "portal user",
+          "type": "Actor",
+          "mention": "portal user",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo database",
+          "type": "Product",
+          "mention": "Odoo database",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "grant portal access",
+          "relation": "ENABLES",
+          "target": "portal user",
+          "evidence": "Grant portal access to view a list of the company's related contacts."
+        },
+        {
+          "source": "company",
+          "relation": "HAS_REPORT",
+          "target": "contact listing",
+          "evidence": "navigate to the contact listing for that company"
+        },
+        {
+          "source": "grant portal access",
+          "relation": "PERFORMED_BY",
+          "target": "company",
+          "evidence": "Grant portal access to multiple users from a single company"
+        },
+        {
+          "source": "portal user",
+          "relation": "BELONGS_TO",
+          "target": "Odoo database",
+          "evidence": "portal user for that Odoo database"
+        },
+        {
+          "source": "Action",
+          "relation": "CONTAINS",
+          "target": "Grant portal access",
+          "evidence": "click Action --> Grant portal access"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "revoking-portal-access",
+    "heading": "Revoking portal access",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "portal access",
+          "type": "Feature",
+          "mention": "Portal access",
+          "confidence": "medium"
+        },
+        {
+          "name": "Revoke",
+          "type": "Action",
+          "mention": "Revoke Access",
+          "confidence": "high"
+        },
+        {
+          "name": "Grant portal access",
+          "type": "Feature",
+          "mention": "Grant portal access",
+          "confidence": "medium"
+        },
+        {
+          "name": "contact",
+          "type": "DataObject",
+          "mention": "contact",
+          "confidence": "medium"
+        },
+        {
+          "name": "Action",
+          "type": "Action",
+          "mention": "Action",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "portal access",
+          "evidence": "Portal access can be revoked"
+        },
+        {
+          "source": "Revoke",
+          "relation": "BELONGS_TO",
+          "target": "Grant portal access",
+          "evidence": "clicking Action --> Grant portal access, and then clicking Revoke Access"
+        },
+        {
+          "source": "Revoke",
+          "relation": "PERFORMED_BY",
+          "target": "contact",
+          "evidence": "Portal access can be revoked from a contact"
+        },
+        {
+          "source": "contact",
+          "relation": "CONTAINS",
+          "target": "Action",
+          "evidence": "clicking Action"
+        }
+      ]
+    }
+  }
+]

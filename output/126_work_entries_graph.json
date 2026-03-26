@@ -1,0 +1,1853 @@
+[
+  {
+    "section_id": "work-entries",
+    "heading": "Work entries",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry",
+          "type": "DataObject",
+          "mention": "A *work entry* is an individual record",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee's timesheet",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "**Payroll** app",
+          "confidence": "high"
+        },
+        {
+          "name": "salary structure type",
+          "type": "Concept",
+          "mention": "salary structure type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Planning",
+          "type": "Module",
+          "mention": "**Planning**",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "**Attendances**",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "**Time Off**",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendance",
+          "type": "Feature",
+          "mention": "Attendance",
+          "confidence": "high"
+        },
+        {
+          "name": "Sick Time Off",
+          "type": "Feature",
+          "mention": "Sick Time Off",
+          "confidence": "high"
+        },
+        {
+          "name": "Training",
+          "type": "Feature",
+          "mention": "Training",
+          "confidence": "high"
+        },
+        {
+          "name": "Public Holiday",
+          "type": "Feature",
+          "mention": "Public Holiday",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry types",
+          "type": "Concept",
+          "mention": "work entry types",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "work entry",
+          "relation": "IS_PART_OF",
+          "target": "employee",
+          "evidence": "individual record on an employee's timesheet"
+        },
+        {
+          "source": "work entry",
+          "relation": "CONFIGURED_BY",
+          "target": "work entry types",
+          "evidence": "Work entries can be configured to account for all types of work and time off"
+        },
+        {
+          "source": "work entry types",
+          "relation": "CONTAINS",
+          "target": "Attendance",
+          "evidence": "such as Attendance"
+        },
+        {
+          "source": "work entry types",
+          "relation": "CONTAINS",
+          "target": "Sick Time Off",
+          "evidence": "such as Sick Time Off"
+        },
+        {
+          "source": "work entry types",
+          "relation": "CONTAINS",
+          "target": "Training",
+          "evidence": "such as Training"
+        },
+        {
+          "source": "work entry types",
+          "relation": "CONTAINS",
+          "target": "Public Holiday",
+          "evidence": "such as Public Holiday"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "GENERATES",
+          "target": "work entry",
+          "evidence": "automatically creates work entries"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "REQUIRES",
+          "target": "salary structure type",
+          "evidence": "based on the employee's salary structure type"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "REQUIRES",
+          "target": "Planning",
+          "evidence": "from the **Planning**"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "REQUIRES",
+          "target": "Attendances",
+          "evidence": "and **Attendances**"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "REQUIRES",
+          "target": "Time Off",
+          "evidence": "and **Time Off** applications"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "REQUIRES",
+          "target": "work entry",
+          "evidence": "provide the **Payroll** app with the worked hours"
+        },
+        {
+          "source": "employee",
+          "relation": "RELATED_TO",
+          "target": "work entry",
+          "evidence": "compute employee paychecks"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "work-entry-dashboard",
+    "heading": "Work entry dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "**Payroll** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entry dashboard",
+          "type": "Feature",
+          "mention": "Work Entry dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Conflicting filter",
+          "type": "Feature",
+          "mention": "Conflicting filter",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work Entry dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Payroll",
+          "evidence": "The *Work Entries* dashboard of the **Payroll** app"
+        },
+        {
+          "source": "Work Entry dashboard",
+          "relation": "CONTAINS",
+          "target": "Conflicting filter",
+          "evidence": "The Work Entry dashboard has a default Conflicting filter"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-new-work-entry",
+    "heading": "Add a new work entry",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a new work entry",
+          "type": "Workflow",
+          "mention": "Title: Add a new work entry",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry",
+          "type": "DataObject",
+          "mention": "work entry",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry dashboard",
+          "type": "Feature",
+          "mention": "work entry dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create work entry pop-up form",
+          "type": "DataObject",
+          "mention": "Create work entry pop-up form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Field",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entry Type",
+          "type": "Field",
+          "mention": "Work Entry Type",
+          "confidence": "high"
+        },
+        {
+          "name": "From",
+          "type": "Field",
+          "mention": "From",
+          "confidence": "high"
+        },
+        {
+          "name": "To",
+          "type": "Field",
+          "mention": "To",
+          "confidence": "high"
+        },
+        {
+          "name": "Duration",
+          "type": "Field",
+          "mention": "Duration",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "Click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "click Save & Close",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendance",
+          "type": "Feature",
+          "mention": "Attendance",
+          "confidence": "low"
+        },
+        {
+          "name": "Sick Time",
+          "type": "Concept",
+          "mention": "sick time",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add a new work entry",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Title: Add a new work entry"
+        },
+        {
+          "source": "Add a new work entry",
+          "relation": "PERFORMED_BY",
+          "target": "New",
+          "evidence": "Click New on the work entry dashboard"
+        },
+        {
+          "source": "New",
+          "relation": "GENERATES",
+          "target": "Create work entry pop-up form",
+          "evidence": "Click New ... a blank Create work entry pop-up form appears"
+        },
+        {
+          "source": "Create work entry pop-up form",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "Enter the following information ... Description"
+        },
+        {
+          "source": "Create work entry pop-up form",
+          "relation": "CONTAINS",
+          "target": "Employee",
+          "evidence": "Enter the following information ... Employee"
+        },
+        {
+          "source": "Create work entry pop-up form",
+          "relation": "CONTAINS",
+          "target": "Work Entry Type",
+          "evidence": "Enter the following information ... Work Entry Type"
+        },
+        {
+          "source": "Create work entry pop-up form",
+          "relation": "CONTAINS",
+          "target": "From",
+          "evidence": "Enter the following information ... From and To"
+        },
+        {
+          "source": "Create work entry pop-up form",
+          "relation": "CONTAINS",
+          "target": "To",
+          "evidence": "Enter the following information ... From and To"
+        },
+        {
+          "source": "Create work entry pop-up form",
+          "relation": "CONTAINS",
+          "target": "Duration",
+          "evidence": "Enter the following information ... Duration"
+        },
+        {
+          "source": "Add a new work entry",
+          "relation": "TRIGGERED_BY",
+          "target": "Save & Close",
+          "evidence": "Once the desired information is entered, click Save & Close"
+        },
+        {
+          "source": "Description",
+          "relation": "RELATED_TO",
+          "target": "Attendance",
+          "evidence": "The default entry is `Attendance: (Employee)`"
+        },
+        {
+          "source": "Sick Time",
+          "relation": "RELATED_TO",
+          "target": "Description",
+          "evidence": "Enter a short description for the work entry, such as `Sick Time`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "conflicts",
+    "heading": "Conflicts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Entry dashboard",
+          "type": "DataObject",
+          "mention": "Work Entry dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entries",
+          "type": "DataObject",
+          "mention": "Work Entries",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry",
+          "type": "DataObject",
+          "mention": "work entry",
+          "confidence": "high"
+        },
+        {
+          "name": "conflict",
+          "type": "Concept",
+          "mention": "conflict",
+          "confidence": "high"
+        },
+        {
+          "name": "request",
+          "type": "Concept",
+          "mention": "request",
+          "confidence": "medium"
+        },
+        {
+          "name": "sick time",
+          "type": "Feature",
+          "mention": "sick time",
+          "confidence": "low"
+        },
+        {
+          "name": "vacation",
+          "type": "Feature",
+          "mention": "vacation",
+          "confidence": "low"
+        },
+        {
+          "name": "pay period",
+          "type": "Concept",
+          "mention": "pay period",
+          "confidence": "medium"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslips",
+          "confidence": "medium"
+        },
+        {
+          "name": "orange triangle",
+          "type": "Feature",
+          "mention": "orange triangle",
+          "confidence": "low"
+        },
+        {
+          "name": "Open pop-up window",
+          "type": "Feature",
+          "mention": "Open pop-up window",
+          "confidence": "low"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Field",
+          "mention": "Employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Entry Type",
+          "type": "Field",
+          "mention": "Work Entry Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "From",
+          "type": "Field",
+          "mention": "From",
+          "confidence": "medium"
+        },
+        {
+          "name": "To",
+          "type": "Field",
+          "mention": "To",
+          "confidence": "medium"
+        },
+        {
+          "name": "Duration",
+          "type": "Field",
+          "mention": "Duration",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work Entry dashboard",
+          "relation": "CONTAINS",
+          "target": "work entry",
+          "evidence": "Any work entry... is indicated on the main Work Entry dashboard"
+        },
+        {
+          "source": "Work Entry dashboard",
+          "relation": "BELONGS_TO",
+          "target": "Payroll app",
+          "evidence": "Work Entry dashboard, which can be accessed by navigating to Payroll app"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Conflicts, and Payroll app"
+        },
+        {
+          "source": "conflict",
+          "relation": "APPLIES_TO",
+          "target": "work entry",
+          "evidence": "Any work entry that has a conflict"
+        },
+        {
+          "source": "work entry",
+          "relation": "CONTAINS",
+          "target": "orange triangle",
+          "evidence": "Conflicts are indicated with an orange triangle... of each individual work entry"
+        },
+        {
+          "source": "work entry",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "The Description... are listed on the left side of the pop-up window"
+        },
+        {
+          "source": "work entry",
+          "relation": "CONTAINS",
+          "target": "Employee",
+          "evidence": "The Employee... are listed on the left side of the pop-up window"
+        },
+        {
+          "source": "work entry",
+          "relation": "CONTAINS",
+          "target": "Work Entry Type",
+          "evidence": "The Work Entry Type... are listed on the left side of the pop-up window"
+        },
+        {
+          "source": "work entry",
+          "relation": "CONTAINS",
+          "target": "From",
+          "evidence": "The From and To date and time range... appears on the right side"
+        },
+        {
+          "source": "work entry",
+          "relation": "CONTAINS",
+          "target": "To",
+          "evidence": "The From and To date and time range... appears on the right side"
+        },
+        {
+          "source": "work entry",
+          "relation": "CONTAINS",
+          "target": "Duration",
+          "evidence": "the total time... in the Duration field, appears on the right side"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "time-off-conflicts",
+    "heading": "Time off conflicts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time off conflicts",
+          "type": "Concept",
+          "mention": "Time off conflicts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off",
+          "type": "Field",
+          "mention": "Time Off field",
+          "confidence": "medium"
+        },
+        {
+          "name": "work entry",
+          "type": "DataObject",
+          "mention": "work entries",
+          "confidence": "high"
+        },
+        {
+          "name": "time off request",
+          "type": "DataObject",
+          "mention": "time off request",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Time Off",
+          "evidence": "... in a Time Off field."
+        },
+        {
+          "source": "time off request",
+          "relation": "BELONGS_TO",
+          "target": "work entry",
+          "evidence": "When time off is requested after these work entries are generated..."
+        },
+        {
+          "source": "time off request",
+          "relation": "CONFIGURED_BY",
+          "target": "Time Off",
+          "evidence": "If there is a conflict... the time off request is entered in a Time Off field."
+        },
+        {
+          "source": "work entry",
+          "relation": "RELATED_TO",
+          "target": "Time off conflicts",
+          "evidence": "The most common work entry conflicts are for time off requests."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "resolve-on-work-entry",
+    "heading": "Resolve on work entry",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entry dashboard",
+          "type": "Module",
+          "mention": "Work Entry dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry pop-up window",
+          "type": "Module",
+          "mention": "work entry pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "time off request",
+          "type": "DataObject",
+          "mention": "time off request",
+          "confidence": "high"
+        },
+        {
+          "name": "Refuse Time Off button",
+          "type": "Action",
+          "mention": "Refuse Time Off buttons",
+          "confidence": "high"
+        },
+        {
+          "name": "Approve Time Off button",
+          "type": "Action",
+          "mention": "Approve Time Off buttons",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & Close button",
+          "type": "Action",
+          "mention": "Save & Close button",
+          "confidence": "high"
+        },
+        {
+          "name": "time off conflict",
+          "type": "Workflow",
+          "mention": "time off conflict",
+          "confidence": "medium"
+        },
+        {
+          "name": "status",
+          "type": "Field",
+          "mention": "status",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cancelled",
+          "type": "Concept",
+          "mention": "Cancelled",
+          "confidence": "medium"
+        },
+        {
+          "name": "Draft",
+          "type": "Concept",
+          "mention": "Draft",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work Entry dashboard",
+          "relation": "CONTAINS",
+          "target": "work entry pop-up window",
+          "evidence": "... the time off conflict can be resolved directly from the work entry pop-up window."
+        },
+        {
+          "source": "work entry pop-up window",
+          "relation": "CONTAINS",
+          "target": "Refuse Time Off button",
+          "evidence": "Click either the Refuse Time Off or Approve Time Off buttons"
+        },
+        {
+          "source": "work entry pop-up window",
+          "relation": "CONTAINS",
+          "target": "Approve Time Off button",
+          "evidence": "Click either the Refuse Time Off or Approve Time Off buttons"
+        },
+        {
+          "source": "work entry pop-up window",
+          "relation": "CONTAINS",
+          "target": "Save & Close button",
+          "evidence": "Click the Save & Close button"
+        },
+        {
+          "source": "Refuse Time Off button",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Click either the Refuse Time Off or Approve Time Off buttons"
+        },
+        {
+          "source": "Approve Time Off button",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Click either the Refuse Time Off or Approve Time Off buttons"
+        },
+        {
+          "source": "Save & Close button",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Click the Save & Close button"
+        },
+        {
+          "source": "Approve Time Off button",
+          "relation": "TRIGGERED_BY",
+          "target": "time off request",
+          "evidence": "... to refuse or approve the time off request"
+        },
+        {
+          "source": "Refuse Time Off button",
+          "relation": "TRIGGERED_BY",
+          "target": "time off request",
+          "evidence": "... to refuse or approve the time off request"
+        },
+        {
+          "source": "time off conflict",
+          "relation": "RELATED_TO",
+          "target": "status",
+          "evidence": "... the status of the work entry conflict changes to Cancelled."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "resolve-on-time-off-request",
+    "heading": "Resolve on time off request",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Feature",
+          "mention": "Time Off",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off field",
+          "type": "Field",
+          "mention": "Time Off field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Open: Time Off pop-up window",
+          "type": "Module",
+          "mention": "Open: Time Off pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Approve",
+          "type": "Action",
+          "mention": "Approve",
+          "confidence": "high"
+        },
+        {
+          "name": "Refuse",
+          "type": "Action",
+          "mention": "Refuse",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry conflict pop-up window",
+          "type": "Module",
+          "mention": "work entry conflict pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "Save & Close",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entry dashboard",
+          "type": "Module",
+          "mention": "Work Entry dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "payroll/regenerate-work-entries",
+          "type": "Concept",
+          "mention": "payroll/regenerate-work-entries",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Open: Time Off pop-up window",
+          "relation": "CONTAINS",
+          "target": "Time Off",
+          "evidence": "Open: Time Off pop-up window ... with all the time off request details"
+        },
+        {
+          "source": "Time Off field",
+          "relation": "ENABLES",
+          "target": "Open: Time Off pop-up window",
+          "evidence": "hover over the entry in the Time Off field ... causes an Open: Time Off pop-up window to load"
+        },
+        {
+          "source": "Open: Time Off pop-up window",
+          "relation": "CONTAINS",
+          "target": "Approve",
+          "evidence": "Click either the Approve or Refuse buttons"
+        },
+        {
+          "source": "Open: Time Off pop-up window",
+          "relation": "CONTAINS",
+          "target": "Refuse",
+          "evidence": "Click either the Approve or Refuse buttons"
+        },
+        {
+          "source": "work entry conflict pop-up window",
+          "relation": "CONTAINS",
+          "target": "Save & Close",
+          "evidence": "click the Save & Close button to save the changes, and go back to the work entry conflict pop-up window"
+        },
+        {
+          "source": "Work Entry dashboard",
+          "relation": "CONTAINS",
+          "target": "work entry conflict pop-up window",
+          "evidence": "The conflict disappears from the Work Entry dashboard"
+        },
+        {
+          "source": "payroll/regenerate-work-entries",
+          "relation": "RELATED_TO",
+          "target": "Time Off",
+          "evidence": "cross-reference"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "regenerate-work-entries",
+    "heading": "Regenerate work entries",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Planning",
+          "type": "Module",
+          "mention": "Planning app",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances",
+          "confidence": "high"
+        },
+        {
+          "name": "Regenerate Work Entries",
+          "type": "Action",
+          "mention": "Regenerate Work Entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entries dashboard",
+          "type": "Sub-module",
+          "mention": "Work Entries --> Work Entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Entry Regeneration pop-up window",
+          "type": "Feature",
+          "mention": "Work Entry Regeneration pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employees",
+          "type": "DataObject",
+          "mention": "Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "From",
+          "type": "Field",
+          "mention": "From",
+          "confidence": "high"
+        },
+        {
+          "name": "To",
+          "type": "Field",
+          "mention": "To",
+          "confidence": "high"
+        },
+        {
+          "name": "date range",
+          "type": "Concept",
+          "mention": "date range",
+          "confidence": "medium"
+        },
+        {
+          "name": "work entry conflicts",
+          "type": "Concept",
+          "mention": "conflicts",
+          "confidence": "high"
+        },
+        {
+          "name": "work stations",
+          "type": "Concept",
+          "mention": "work stations",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Work Entries dashboard",
+          "evidence": "open the work entry dashboard by navigating to Payroll app --> Work Entries --> Work Entries"
+        },
+        {
+          "source": "Payroll",
+          "relation": "HAS_FEATURE",
+          "target": "Regenerate Work Entries",
+          "evidence": "Click the Regenerate Work Entries button at the top of the Work Entries dashboard"
+        },
+        {
+          "source": "Regenerate Work Entries",
+          "relation": "ENABLES",
+          "target": "work entry conflicts",
+          "evidence": "The affected work entries must be regenerated. This recreates the specified work entries"
+        },
+        {
+          "source": "Planning",
+          "relation": "ENABLES",
+          "target": "work entry conflicts",
+          "evidence": "conflicts are caused by another application, such as Planning"
+        },
+        {
+          "source": "Attendances",
+          "relation": "ENABLES",
+          "target": "work entry conflicts",
+          "evidence": "conflicts are caused by another application, such as Planning or Attendances"
+        },
+        {
+          "source": "Planning",
+          "relation": "RELATED_TO",
+          "target": "Payroll",
+          "evidence": "The Payroll app then pulls the new, corrected data form the Planning app"
+        },
+        {
+          "source": "Regenerate Work Entries",
+          "relation": "PERFORMED_BY",
+          "target": "Employees",
+          "evidence": "Select the Employees to regenerate work entries for"
+        },
+        {
+          "source": "Work Entry Regeneration pop-up window",
+          "relation": "CONTAINS",
+          "target": "Employees",
+          "evidence": "Select the Employees to regenerate work entries for, using the drop-down menu"
+        },
+        {
+          "source": "Work Entry Regeneration pop-up window",
+          "relation": "CONTAINS",
+          "target": "From",
+          "evidence": "Adjust the From and To fields"
+        },
+        {
+          "source": "Work Entry Regeneration pop-up window",
+          "relation": "CONTAINS",
+          "target": "To",
+          "evidence": "Adjust the From and To fields"
+        },
+        {
+          "source": "Regenerate Work Entries",
+          "relation": "PRODUCES",
+          "target": "work entry conflicts",
+          "evidence": "Click the Regenerate Work Entries button, and the work entries are recreated"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "work-entry-types",
+    "heading": "Work entry types",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "**Payroll**",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "**Time Off**",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry",
+          "type": "DataObject",
+          "mention": "work entry",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry type",
+          "type": "DataObject",
+          "mention": "work entry type",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "payroll localization",
+          "type": "Setting",
+          "mention": "payroll localization",
+          "confidence": "medium"
+        },
+        {
+          "name": "code",
+          "type": "Field",
+          "mention": "code",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "fee",
+          "type": "Concept",
+          "mention": "fees",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "work entry type",
+          "evidence": "comes with nine preconfigured work entry types"
+        },
+        {
+          "source": "work entry",
+          "relation": "REQUIRES",
+          "target": "work entry type",
+          "evidence": "a work entry type needs to be selected"
+        },
+        {
+          "source": "work entry type",
+          "relation": "BELONGS_TO",
+          "target": "Payroll",
+          "evidence": "in the Payroll application"
+        },
+        {
+          "source": "work entry type",
+          "relation": "HAS_FEATURE",
+          "target": "code",
+          "evidence": "has a code"
+        },
+        {
+          "source": "code",
+          "relation": "ENABLES",
+          "target": "payslip",
+          "evidence": "aid in the creation of payslips"
+        },
+        {
+          "source": "code",
+          "relation": "SUPPORTS",
+          "target": "tax",
+          "evidence": "ensure all taxes and fees are correctly entered"
+        },
+        {
+          "source": "code",
+          "relation": "SUPPORTS",
+          "target": "fee",
+          "evidence": "ensure all taxes and fees are correctly entered"
+        },
+        {
+          "source": "payroll localization",
+          "relation": "ENABLES",
+          "target": "work entry type",
+          "evidence": "additional country-specific work entries may be configured"
+        },
+        {
+          "source": "Time Off",
+          "relation": "REQUIRES",
+          "target": "work entry type",
+          "evidence": "when a new time off type is created in the Time Off application, a work entry type needs to be selected"
+        },
+        {
+          "source": "work entry type",
+          "relation": "CONFIGURED_BY",
+          "target": "payroll localization",
+          "evidence": "depending on the installed payroll localization"
+        },
+        {
+          "source": "Payroll",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Time Off",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "new-work-entry-type",
+    "heading": "New work entry type",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entries",
+          "type": "Sub-module",
+          "mention": "Work Entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entry Types",
+          "type": "Feature",
+          "mention": "Work Entry Types",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "go to Payroll app"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Payroll",
+          "evidence": "Payroll app --> Configuration"
+        },
+        {
+          "source": "Work Entries",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Work Entries"
+        },
+        {
+          "source": "Work Entry Types",
+          "relation": "IS_PART_OF",
+          "target": "Work Entries",
+          "evidence": "Work Entries --> Work Entry Types"
+        },
+        {
+          "source": "New",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click New"
+        },
+        {
+          "source": "Work Entry Types",
+          "relation": "CONTAINS",
+          "target": "New",
+          "evidence": "Work Entry Types and click New"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "general-information-section",
+    "heading": "General information section",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Work Entry Type Name",
+          "type": "Field",
+          "mention": "Work Entry Type Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Sick Time",
+          "type": "Workflow",
+          "mention": "`Sick Time`",
+          "confidence": "medium"
+        },
+        {
+          "name": "Training",
+          "type": "Workflow",
+          "mention": "`Training`",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payroll Code",
+          "type": "Field",
+          "mention": "Payroll Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "**Accounting**",
+          "confidence": "high"
+        },
+        {
+          "name": "External Code",
+          "type": "Field",
+          "mention": "External Code",
+          "confidence": "high"
+        },
+        {
+          "name": "third-party payroll service",
+          "type": "Integration",
+          "mention": "third-party payroll service",
+          "confidence": "high"
+        },
+        {
+          "name": "Color",
+          "type": "Setting",
+          "mention": "Color",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry dashboard",
+          "type": "Report",
+          "mention": "work entry dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "work entry type",
+          "type": "DataObject",
+          "mention": "work entry type",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work Entry Type Name",
+          "relation": "BELONGS_TO",
+          "target": "work entry type",
+          "evidence": "Enter a name for the work entry type"
+        },
+        {
+          "source": "Payroll Code",
+          "relation": "BELONGS_TO",
+          "target": "work entry type",
+          "evidence": "Enter a code for the work entry type"
+        },
+        {
+          "source": "External Code",
+          "relation": "BELONGS_TO",
+          "target": "work entry type",
+          "evidence": "Enter a code to use for exporting data"
+        },
+        {
+          "source": "Color",
+          "relation": "BELONGS_TO",
+          "target": "work entry type",
+          "evidence": "Select a color for the particular work entry type"
+        },
+        {
+          "source": "Payroll Code",
+          "relation": "RELATED_TO",
+          "target": "Accounting",
+          "evidence": "Since the code is used in conjunction with the **Accounting** application"
+        },
+        {
+          "source": "External Code",
+          "relation": "RELATED_TO",
+          "target": "third-party payroll service",
+          "evidence": "Enter a code to use for exporting data to a third-party payroll service"
+        },
+        {
+          "source": "work entry dashboard",
+          "relation": "CONTAINS",
+          "target": "work entry type",
+          "evidence": "This color appears on the work entry dashboard"
+        },
+        {
+          "source": "Work Entry Type Name",
+          "relation": "REQUIRES",
+          "target": "Sick Time",
+          "evidence": "such as `Sick Time` or `Training`"
+        },
+        {
+          "source": "Work Entry Type Name",
+          "relation": "REQUIRES",
+          "target": "Training",
+          "evidence": "such as `Sick Time` or `Training`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "display-in-payslip-section",
+    "heading": "Display in payslip section",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Rounding",
+          "type": "Setting",
+          "mention": "Rounding: Select how the time entered for the work entry should be rounded.",
+          "confidence": "high"
+        },
+        {
+          "name": "Rounding Type",
+          "type": "Setting",
+          "mention": "Rounding Type: If either Half Day or Day is selected in the Rounding field, this field appears.",
+          "confidence": "high"
+        },
+        {
+          "name": "No Rounding",
+          "type": "Concept",
+          "mention": "No Rounding: Work entries are not modified.",
+          "confidence": "medium"
+        },
+        {
+          "name": "Half Day",
+          "type": "Concept",
+          "mention": "Half Day: Work entries are rounded to the closest half day amount.",
+          "confidence": "medium"
+        },
+        {
+          "name": "Day",
+          "type": "Concept",
+          "mention": "Day: Work entries are rounded to the closest full day amount.",
+          "confidence": "medium"
+        },
+        {
+          "name": "Up",
+          "type": "Concept",
+          "mention": "Select either Up or Down to determine how the rounding is handled.",
+          "confidence": "medium"
+        },
+        {
+          "name": "Down",
+          "type": "Concept",
+          "mention": "Select either Up or Down to determine how the rounding is handled.",
+          "confidence": "medium"
+        },
+        {
+          "name": "work entry",
+          "type": "DataObject",
+          "mention": "the time entered for the work entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "working time",
+          "type": "Setting",
+          "mention": "The working time is set to an 8-hour work day",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Rounding",
+          "relation": "CONFIGURED_BY",
+          "target": "No Rounding",
+          "evidence": "Rounding: Select how... The options are: No Rounding"
+        },
+        {
+          "source": "Rounding",
+          "relation": "CONFIGURED_BY",
+          "target": "Half Day",
+          "evidence": "Rounding: Select how... The options are: Half Day"
+        },
+        {
+          "source": "Rounding",
+          "relation": "CONFIGURED_BY",
+          "target": "Day",
+          "evidence": "Rounding: Select how... The options are: Day"
+        },
+        {
+          "source": "Rounding Type",
+          "relation": "CONFIGURED_BY",
+          "target": "Up",
+          "evidence": "Select either Up or Down to determine how the rounding is handled."
+        },
+        {
+          "source": "Rounding Type",
+          "relation": "CONFIGURED_BY",
+          "target": "Down",
+          "evidence": "Select either Up or Down to determine how the rounding is handled."
+        },
+        {
+          "source": "Rounding Type",
+          "relation": "REQUIRES",
+          "target": "Rounding",
+          "evidence": "Rounding Type: If either Half Day or Day is selected in the Rounding field, this field appears."
+        },
+        {
+          "source": "Half Day",
+          "relation": "BELONGS_TO",
+          "target": "Rounding",
+          "evidence": "The options are: ... Half Day"
+        },
+        {
+          "source": "Day",
+          "relation": "BELONGS_TO",
+          "target": "Rounding",
+          "evidence": "The options are: ... Day"
+        },
+        {
+          "source": "work entry",
+          "relation": "CONFIGURED_BY",
+          "target": "Rounding",
+          "evidence": "Rounding: Select how the time entered for the work entry should be rounded."
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Rounding",
+          "evidence": "Product: Odoo Title: Display in payslip section - Rounding"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "unpaid-section",
+    "heading": "Unpaid section",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Unpaid section",
+          "type": "Concept",
+          "mention": "Unpaid section",
+          "confidence": "high"
+        },
+        {
+          "name": "Unpaid",
+          "type": "Concept",
+          "mention": "Unpaid",
+          "confidence": "high"
+        },
+        {
+          "name": "Structures Types",
+          "type": "Concept",
+          "mention": "Structures Types",
+          "confidence": "medium"
+        },
+        {
+          "name": "work entry type",
+          "type": "Concept",
+          "mention": "work entry type",
+          "confidence": "medium"
+        },
+        {
+          "name": "pay structure",
+          "type": "Concept",
+          "mention": "pay structure",
+          "confidence": "medium"
+        },
+        {
+          "name": "drop-down menu",
+          "type": "Feature",
+          "mention": "drop-down menu",
+          "confidence": "low"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslip",
+          "confidence": "high"
+        },
+        {
+          "name": "unpaid internships",
+          "type": "Concept",
+          "mention": "unpaid internships",
+          "confidence": "low"
+        },
+        {
+          "name": "unpaid training",
+          "type": "Concept",
+          "mention": "unpaid training",
+          "confidence": "low"
+        },
+        {
+          "name": "volunteer work",
+          "type": "Concept",
+          "mention": "volunteer work",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Unpaid",
+          "relation": "BELONGS_TO",
+          "target": "Unpaid section",
+          "evidence": "\"Unpaid section\" - \"Unpaid\""
+        },
+        {
+          "source": "Structures Types",
+          "relation": "RELATED_TO",
+          "target": "work entry type",
+          "evidence": "\"Unpaid in Structures Types\" references work entry types"
+        },
+        {
+          "source": "work entry type",
+          "relation": "APPLIES_TO",
+          "target": "pay structure",
+          "evidence": "\"specify which pay structure the unpaid work entry type applies to\""
+        },
+        {
+          "source": "work entry type",
+          "relation": "CONFIGURED_BY",
+          "target": "drop-down menu",
+          "evidence": "\"using the drop-down menu\""
+        },
+        {
+          "source": "payslip",
+          "relation": "RELATED_TO",
+          "target": "work entry type",
+          "evidence": "\"work is logged on a payslip\""
+        },
+        {
+          "source": "work entry type",
+          "relation": "RELATED_TO",
+          "target": "unpaid internships",
+          "evidence": "\"such as unpaid internships\""
+        },
+        {
+          "source": "work entry type",
+          "relation": "RELATED_TO",
+          "target": "unpaid training",
+          "evidence": "\"or unpaid training\""
+        },
+        {
+          "source": "work entry type",
+          "relation": "RELATED_TO",
+          "target": "volunteer work",
+          "evidence": "\"or volunteer work\""
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "time-off-options-section",
+    "heading": "Time off options section",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "Time Off",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off Type",
+          "type": "DataObject",
+          "mention": "Time Off Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Paid Time Off",
+          "type": "Feature",
+          "mention": "Paid Time Off",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sick Time Off",
+          "type": "Feature",
+          "mention": "Sick Time Off",
+          "confidence": "medium"
+        },
+        {
+          "name": "Extra Hours",
+          "type": "Feature",
+          "mention": "Extra Hours",
+          "confidence": "medium"
+        },
+        {
+          "name": "work entry type",
+          "type": "DataObject",
+          "mention": "work entry type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off Type field",
+          "type": "Field",
+          "mention": "Time Off Type field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Keep Time Off Right",
+          "type": "Feature",
+          "mention": "Keep Time Off Right",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Time Off",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Time off options section"
+        },
+        {
+          "source": "Time Off",
+          "relation": "CONTAINS",
+          "target": "Time Off Type",
+          "evidence": "This field has a drop-down menu to select the specific types of time off"
+        },
+        {
+          "source": "Time Off Type",
+          "relation": "RELATED_TO",
+          "target": "work entry type",
+          "evidence": "Select the Time Off Type associated with the work entry type."
+        },
+        {
+          "source": "Time Off Type",
+          "relation": "CONTAINS",
+          "target": "Paid Time Off",
+          "evidence": "...such as `Paid Time Off`, `Sick Time Off`, or `Extra Hours`"
+        },
+        {
+          "source": "Time Off Type",
+          "relation": "CONTAINS",
+          "target": "Sick Time Off",
+          "evidence": "...such as `Paid Time Off`, `Sick Time Off`, or `Extra Hours`"
+        },
+        {
+          "source": "Time Off Type",
+          "relation": "CONTAINS",
+          "target": "Extra Hours",
+          "evidence": "...such as `Paid Time Off`, `Sick Time Off`, or `Extra Hours`"
+        },
+        {
+          "source": "Time Off",
+          "relation": "HAS_FEATURE",
+          "target": "Keep Time Off Right",
+          "evidence": "- Keep Time Off Right: Tick this checkbox..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reporting-section",
+    "heading": "Reporting section",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting section",
+          "type": "Module",
+          "mention": "Reporting section",
+          "confidence": "medium"
+        },
+        {
+          "name": "unforeseen absences report",
+          "type": "Report",
+          "mention": "unforeseen absences report",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry type",
+          "type": "DataObject",
+          "mention": "work entry type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tick this box",
+          "type": "Setting",
+          "mention": "Tick this box",
+          "confidence": "high"
+        },
+        {
+          "name": "payslips",
+          "type": "Report",
+          "mention": "payslips",
+          "confidence": "medium"
+        },
+        {
+          "name": "pay_runs",
+          "type": "DataObject",
+          "mention": "pay_runs",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Reporting section",
+          "evidence": "Product: Odoo\nTitle: Reporting section"
+        },
+        {
+          "source": "Reporting section",
+          "relation": "HAS_REPORT",
+          "target": "unforeseen absences report",
+          "evidence": "Unforeseen Absence: Tick this box if the work entry type should be visible on the\n  unforeseen absences report."
+        },
+        {
+          "source": "Tick this box",
+          "relation": "CONFIGURED_BY",
+          "target": "unforeseen absences report",
+          "evidence": "Unforeseen Absence: Tick this box if the work entry type should be visible on the\n  unforeseen absences report."
+        },
+        {
+          "source": "Tick this box",
+          "relation": "CONFIGURED_BY",
+          "target": "work entry type",
+          "evidence": "Unforeseen Absence: Tick this box if the work entry type should be visible on the\n  unforeseen absences report."
+        },
+        {
+          "source": "Reporting section",
+          "relation": "SEE_ALSO",
+          "target": "payslips",
+          "evidence": "\n.. seealso::\n   payslips"
+        },
+        {
+          "source": "Reporting section",
+          "relation": "SEE_ALSO",
+          "target": "pay_runs",
+          "evidence": "   pay_runs"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1830 @@
+[
+  {
+    "section_id": "modules",
+    "heading": "Modules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "New Zealand - Accounting",
+          "type": "Module",
+          "mention": "New Zealand - Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Employment Hero NZ Payroll",
+          "type": "Module",
+          "mention": "Employment Hero NZ Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "EFT Batch Payment",
+          "type": "Module",
+          "mention": "EFT Batch Payment",
+          "confidence": "high"
+        },
+        {
+          "name": "remittance advice report",
+          "type": "Report",
+          "mention": "remittance advice report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employment Hero",
+          "type": "Actor",
+          "mention": "Employment Hero",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal entries",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "pay runs",
+          "type": "DataObject",
+          "mention": "pay runs",
+          "confidence": "medium"
+        },
+        {
+          "name": "payroll",
+          "type": "Feature",
+          "mention": "payroll",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor payments",
+          "type": "Feature",
+          "mention": "vendor payments",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "New Zealand - Accounting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The following modules related to the New Zealand localization are available"
+        },
+        {
+          "source": "Employment Hero NZ Payroll",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The following modules related to the New Zealand localization are available"
+        },
+        {
+          "source": "EFT Batch Payment",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The following modules related to the New Zealand localization are available"
+        },
+        {
+          "source": "New Zealand - Accounting",
+          "relation": "HAS_REPORT",
+          "target": "remittance advice report",
+          "evidence": "This module also installs the remittance advice report module."
+        },
+        {
+          "source": "Employment Hero NZ Payroll",
+          "relation": "INTEGRATION",
+          "target": "Employment Hero",
+          "evidence": "This module synchronizes all pay runs from Employment Hero with Odoo's journal entries."
+        },
+        {
+          "source": "Employment Hero NZ Payroll",
+          "relation": "PRODUCES",
+          "target": "journal entries",
+          "evidence": "synchronizes all pay runs from Employment Hero with Odoo's journal entries."
+        },
+        {
+          "source": "EFT Batch Payment",
+          "relation": "HAS_FEATURE",
+          "target": "payroll",
+          "evidence": "streamline bulk payments like payroll"
+        },
+        {
+          "source": "EFT Batch Payment",
+          "relation": "HAS_FEATURE",
+          "target": "vendor payments",
+          "evidence": "streamline bulk payments like payroll and vendor payments."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "localization-overview",
+    "heading": "Localization overview",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Chart of Accounts",
+          "type": "Module",
+          "mention": "chart_of_accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "New Zealand Accounting Standards",
+          "type": "Standard",
+          "mention": "New Zealand accounting standards",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal Positions",
+          "type": "Module",
+          "mention": "fiscal_positions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax adjustments",
+          "type": "Feature",
+          "mention": "automated tax adjustments",
+          "confidence": "high"
+        },
+        {
+          "name": "Registration status",
+          "type": "Concept",
+          "mention": "customer or supplier registration status",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes-GST",
+          "type": "Module",
+          "mention": "taxes-gst",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Localizations/New Zealand/Taxes-GST",
+          "type": "Module",
+          "mention": "localizations/new_zealand/taxes-gst",
+          "confidence": "high"
+        },
+        {
+          "name": "Localizations/New Zealand/Reporting",
+          "type": "Module",
+          "mention": "localizations/new_zealand/reporting",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Chart of Accounts",
+          "relation": "SUPPORTS",
+          "target": "New Zealand Accounting Standards",
+          "evidence": "a predefined structure tailored to New Zealand accounting standards"
+        },
+        {
+          "source": "Fiscal Positions",
+          "relation": "HAS_FEATURE",
+          "target": "Tax adjustments",
+          "evidence": "automated tax adjustments based on customer or supplier registration status"
+        },
+        {
+          "source": "Tax adjustments",
+          "relation": "ENABLES",
+          "target": "Registration status",
+          "evidence": "based on customer or supplier registration status"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Localizations/New Zealand/Taxes-GST",
+          "evidence": "localizations/new_zealand/taxes-gst"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Localizations/New Zealand/Reporting",
+          "evidence": "localizations/new_zealand/reporting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "taxes-and-gst",
+    "heading": "Taxes and GST",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "GST report",
+          "type": "Report",
+          "mention": "GST report",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax Return",
+          "type": "Report",
+          "mention": "Tax Return",
+          "confidence": "medium"
+        },
+        {
+          "name": "Goods and Service Tax",
+          "type": "Concept",
+          "mention": "Goods and Service Tax",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes",
+          "type": "Concept",
+          "mention": "default taxes",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "GST report",
+          "evidence": "The default taxes impact the GST report"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Accounting --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Tax Return",
+          "evidence": "Reporting --> Tax Return"
+        },
+        {
+          "source": "Tax Return",
+          "relation": "BELONGS_TO",
+          "target": "GST report",
+          "evidence": "Tax Return (mentioned as part of GST report context)"
+        },
+        {
+          "source": "taxes",
+          "relation": "GENERATES",
+          "target": "GST report",
+          "evidence": "The default taxes impact the GST report"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "GST report",
+          "evidence": ".. seealso:: GST report"
+        },
+        {
+          "source": "GST report",
+          "relation": "SEE_ALSO",
+          "target": "Tax Return",
+          "evidence": ".. seealso:: GST report links to tax_returns"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-mapping",
+    "heading": "Tax mapping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "New Zealand localization package",
+          "type": "Module",
+          "mention": "Within the New Zealand localization package",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Concept",
+          "mention": "These are the taxes in Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "GST",
+          "type": "Standard",
+          "mention": "GST name, GST Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "GST Sales (15%)",
+          "type": "Standard",
+          "mention": "GST Sales (15%)",
+          "confidence": "medium"
+        },
+        {
+          "name": "GST Purchases (15%)",
+          "type": "Standard",
+          "mention": "GST Purchases (15%)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Zero Rated (Export) Sales",
+          "type": "Standard",
+          "mention": "Zero Rated (Export) Sales",
+          "confidence": "medium"
+        },
+        {
+          "name": "GST Free Purchases",
+          "type": "Standard",
+          "mention": "GST Free Purchases",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase (Taxable Imports) - Tax Paid Separately",
+          "type": "Standard",
+          "mention": "Purchase (Taxable Imports) - Tax Paid Separately",
+          "confidence": "medium"
+        },
+        {
+          "name": "GST Only on Imports",
+          "type": "Standard",
+          "mention": "GST Only on Imports",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales",
+          "type": "Concept",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchases",
+          "type": "Concept",
+          "mention": "Purchases",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax mapping",
+          "type": "Module",
+          "mention": "Title: Tax mapping",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "New Zealand localization package",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Within the New Zealand localization package"
+        },
+        {
+          "source": "Tax mapping",
+          "relation": "BELONGS_TO",
+          "target": "New Zealand localization package",
+          "evidence": "Title: Tax mapping"
+        },
+        {
+          "source": "Tax mapping",
+          "relation": "COMPLIES_WITH",
+          "target": "GST",
+          "evidence": "Taxes encompass the tax rate as an integral part"
+        },
+        {
+          "source": "GST Sales (15%)",
+          "relation": "IS_PART_OF",
+          "target": "GST",
+          "evidence": "GST name, GST Type"
+        },
+        {
+          "source": "GST Purchases (15%)",
+          "relation": "IS_PART_OF",
+          "target": "GST",
+          "evidence": "GST name, GST Type"
+        },
+        {
+          "source": "Zero Rated (Export) Sales",
+          "relation": "IS_PART_OF",
+          "target": "GST",
+          "evidence": "GST name, GST Type"
+        },
+        {
+          "source": "GST Free Purchases",
+          "relation": "IS_PART_OF",
+          "target": "GST",
+          "evidence": "GST name, GST Type"
+        },
+        {
+          "source": "Purchase (Taxable Imports) - Tax Paid Separately",
+          "relation": "IS_PART_OF",
+          "target": "GST",
+          "evidence": "GST name, GST Type"
+        },
+        {
+          "source": "GST Only on Imports",
+          "relation": "IS_PART_OF",
+          "target": "GST",
+          "evidence": "GST name, GST Type"
+        },
+        {
+          "source": "Tax mapping",
+          "relation": "SEE_ALSO",
+          "target": "Taxes",
+          "evidence": ".. seealso:: Taxes documentation"
+        },
+        {
+          "source": "Tax mapping",
+          "relation": "APPLIES_TO",
+          "target": "Sales",
+          "evidence": "GST Type: Sales"
+        },
+        {
+          "source": "Tax mapping",
+          "relation": "APPLIES_TO",
+          "target": "Purchases",
+          "evidence": "GST Type: Purchases"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "gst-report",
+    "heading": "GST report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Goods and Services Tax (GST) report",
+          "type": "Report",
+          "mention": "GST report",
+          "confidence": "high"
+        },
+        {
+          "name": "Inland Revenue Department (IRD)",
+          "type": "Actor",
+          "mention": "IRD",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Concept",
+          "mention": "Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "tax return periodicity",
+          "type": "Setting",
+          "mention": "tax return periodicity",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Return report",
+          "type": "Report",
+          "mention": "Tax Return report",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Return",
+          "type": "DataObject",
+          "mention": "tax return",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Groups",
+          "type": "Module",
+          "mention": "Tax Groups",
+          "confidence": "high"
+        },
+        {
+          "name": "GST payable account",
+          "type": "DataObject",
+          "mention": "GST payable account",
+          "confidence": "high"
+        },
+        {
+          "name": "GST receivable account",
+          "type": "DataObject",
+          "mention": "GST receivable account",
+          "confidence": "high"
+        },
+        {
+          "name": "GST payable",
+          "type": "Concept",
+          "mention": "GST payable",
+          "confidence": "high"
+        },
+        {
+          "name": "GST receivable",
+          "type": "Concept",
+          "mention": "GST receivable",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Return report",
+          "type": "Report",
+          "mention": "Tax Return report",
+          "confidence": "high"
+        },
+        {
+          "name": "tax clearing account",
+          "type": "DataObject",
+          "mention": "tax clearing account",
+          "confidence": "medium"
+        },
+        {
+          "name": "IRD portal",
+          "type": "Integration",
+          "mention": "IRD portal",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Goods and Services Tax (GST) report",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The **Goods and Services Tax (GST) report** is a critical tax reporting requirement for businesses registered for GST."
+        },
+        {
+          "source": "GST payable account",
+          "relation": "CONFIGURED_BY",
+          "target": "Tax Groups",
+          "evidence": "go to Accounting --> Configuration --> Tax Groups to set the default **GST payable account** and **GST receivable account**."
+        },
+        {
+          "source": "GST receivable account",
+          "relation": "CONFIGURED_BY",
+          "target": "Tax Groups",
+          "evidence": "go to Accounting --> Configuration --> Tax Groups to set the default **GST payable account** and **GST receivable account**."
+        },
+        {
+          "source": "Tax Return report",
+          "relation": "GENERATES",
+          "target": "journal closing entry",
+          "evidence": "the **Tax Return** report generates an accurate journal closing entry automatically"
+        },
+        {
+          "source": "Goods and Services Tax (GST) report",
+          "relation": "SEE_ALSO",
+          "target": "Taxes",
+          "evidence": "seealso:: Taxes documentation"
+        },
+        {
+          "source": "Goods and Services Tax (GST) report",
+          "relation": "SEE_ALSO",
+          "target": "Year-end closing documentation",
+          "evidence": "seealso:: Year-end closing documentation"
+        },
+        {
+          "source": "Goods and Services Tax (GST) report",
+          "relation": "COMPLIES_WITH",
+          "target": "IRD",
+          "evidence": "businesses can then submit these values to the **IRD portal**"
+        },
+        {
+          "source": "Tax Return report",
+          "relation": "PERFORMED_BY",
+          "target": "IRD",
+          "evidence": "submitting the tax return (**GST report**) to the **IRD**"
+        },
+        {
+          "source": "Tax Groups",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Configuration --> Tax Groups"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "remittance-advice",
+    "heading": "Remittance advice",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Module",
+          "mention": "Vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Receipt",
+          "type": "Report",
+          "mention": "Payment Receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment(s)",
+          "type": "DataObject",
+          "mention": "payment(s)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Print",
+          "type": "Action",
+          "mention": "fa-print Print",
+          "confidence": "high"
+        },
+        {
+          "name": "Remittance advice",
+          "type": "Concept",
+          "mention": "Remittance advice",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo. To access it, go to Accounting"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Vendors",
+          "evidence": "go to Accounting --> Vendors"
+        },
+        {
+          "source": "Vendors",
+          "relation": "HAS_REPORT",
+          "target": "Payment Receipt",
+          "evidence": "Vendors --> Payments... select Payment Receipt"
+        },
+        {
+          "source": "Payment(s)",
+          "type": "DataObject",
+          "mention": "payment(s)",
+          "confidence": "medium"
+        },
+        {
+          "source": "Print",
+          "relation": "PRODUCES",
+          "target": "Payment Receipt",
+          "evidence": "Then click fa-print Print and select Payment Receipt."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "e-invoicing",
+    "heading": "E-invoicing",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "E-invoicing",
+          "type": "Module",
+          "mention": "E-invoicing",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/e-invoicing/configuration",
+          "type": "Setting",
+          "mention": "accounting/e-invoicing/configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "contact",
+          "type": "Actor",
+          "mention": "contact",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "credit note",
+          "type": "DataObject",
+          "mention": "credit note",
+          "confidence": "medium"
+        },
+        {
+          "name": "PEPPOL network",
+          "type": "Integration",
+          "mention": "PEPPOL network",
+          "confidence": "high"
+        },
+        {
+          "name": "XML file",
+          "type": "DataObject",
+          "mention": "XML file",
+          "confidence": "high"
+        },
+        {
+          "name": "ANZ region",
+          "type": "Concept",
+          "mention": "ANZ region",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "E-invoicing",
+          "relation": "HAS_FEATURE",
+          "target": "Odoo",
+          "evidence": "Odoo allows electronic invoicing"
+        },
+        {
+          "source": "accounting/e-invoicing/configuration",
+          "relation": "CONFIGURED_BY",
+          "target": "E-invoicing",
+          "evidence": "settings to be configured"
+        },
+        {
+          "source": "accounting/e-invoicing/configuration",
+          "relation": "APPLIES_TO",
+          "target": "contact",
+          "evidence": "configured per contact"
+        },
+        {
+          "source": "PEPPOL network",
+          "relation": "SUPPORTS",
+          "target": "contact",
+          "evidence": "for a contact on the PEPPOL network"
+        },
+        {
+          "source": "invoice",
+          "relation": "TRIGGERED_BY",
+          "target": "credit note",
+          "evidence": "Validating an invoice or credit note"
+        },
+        {
+          "source": "invoice",
+          "relation": "PRODUCES",
+          "target": "XML file",
+          "evidence": "will download a compliant XML file"
+        },
+        {
+          "source": "XML file",
+          "relation": "COMPLIES_WITH",
+          "target": "PEPPOL network",
+          "evidence": "compliant XML file that can be manually uploaded to the PEPPOL network"
+        },
+        {
+          "source": "Odoo",
+          "relation": "RELATED_TO",
+          "target": "ANZ region",
+          "evidence": "Odoo is currently in the process of becoming an access point for the ANZ region"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "eft-batch-payments",
+    "heading": "EFT batch payments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "EFT batch payments",
+          "type": "Feature",
+          "mention": "EFT batch payments",
+          "confidence": "high"
+        },
+        {
+          "name": "EFT (electronic funds transfer) batch file",
+          "type": "DataObject",
+          "mention": "EFT (electronic funds transfer) batch file",
+          "confidence": "high"
+        },
+        {
+          "name": "bulk payment processing",
+          "type": "Workflow",
+          "mention": "bulk payment processing",
+          "confidence": "medium"
+        },
+        {
+          "name": "Business",
+          "type": "Actor",
+          "mention": "businesses",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payroll",
+          "type": "Concept",
+          "mention": "payroll",
+          "confidence": "medium"
+        },
+        {
+          "name": "Suppliers",
+          "type": "Actor",
+          "mention": "suppliers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "EFT batch payments",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: EFT batch payments"
+        },
+        {
+          "source": "EFT batch payments",
+          "relation": "HAS_FEATURE",
+          "target": "EFT (electronic funds transfer) batch file",
+          "evidence": "An EFT (electronic funds transfer) batch file is a digital format used to facilitate bulk payment processing"
+        },
+        {
+          "source": "EFT batch payments",
+          "relation": "ENABLES",
+          "target": "bulk payment processing",
+          "evidence": "An EFT (electronic funds transfer) batch file is a digital format used to facilitate bulk payment processing"
+        },
+        {
+          "source": "EFT batch payments",
+          "relation": "SUPPORTS",
+          "target": "Payroll",
+          "evidence": "This process is commonly used by businesses handling multiple payments at once, such as payroll"
+        },
+        {
+          "source": "EFT batch payments",
+          "relation": "SUPPORTS",
+          "target": "Suppliers",
+          "evidence": "or payments to multiple suppliers"
+        },
+        {
+          "source": "EFT (electronic funds transfer) batch file",
+          "relation": "ENABLES",
+          "target": "bulk payment processing",
+          "evidence": "An EFT (electronic funds transfer) batch file is a digital format used to facilitate bulk payment processing"
+        },
+        {
+          "source": "EFT batch payments",
+          "relation": "PERFORMED_BY",
+          "target": "Business",
+          "evidence": "It allows companies to consolidate multiple inbound and outbound payments"
+        },
+        {
+          "source": "bulk payment processing",
+          "relation": "PERFORMED_BY",
+          "target": "Business",
+          "evidence": "This process is commonly used by businesses handling multiple payments at once"
+        },
+        {
+          "source": "bulk payment processing",
+          "relation": "SUPPORTS",
+          "target": "Payroll",
+          "evidence": "This process is commonly used by businesses handling multiple payments at once, such as payroll"
+        },
+        {
+          "source": "bulk payment processing",
+          "relation": "SUPPORTS",
+          "target": "Suppliers",
+          "evidence": "or payments to multiple suppliers"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "EFT Batch Payment module",
+          "type": "Module",
+          "mention": "EFT Batch Payment module",
+          "confidence": "high"
+        },
+        {
+          "name": "l10n_nz_eft",
+          "type": "Sub-module",
+          "mention": "`l10n_nz_eft`",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Payments",
+          "type": "Feature",
+          "mention": "Customer Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch Payments",
+          "type": "Feature",
+          "mention": "Batch Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank journal",
+          "type": "Feature",
+          "mention": "Bank journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journals",
+          "type": "Feature",
+          "mention": "Journals",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journal Entries",
+          "type": "DataObject",
+          "mention": "Journal Entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account Number",
+          "type": "Field",
+          "mention": "Account Number",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank",
+          "type": "Field",
+          "mention": "Bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "Send Money",
+          "type": "Feature",
+          "mention": "Send Money",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency",
+          "type": "Field",
+          "mention": "Currency",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contacts",
+          "type": "Feature",
+          "mention": "Contacts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customers",
+          "type": "Actor",
+          "mention": "Customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendors",
+          "type": "Actor",
+          "mention": "Vendors",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank Accounts",
+          "type": "Feature",
+          "mention": "Bank Accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account Holder",
+          "type": "Field",
+          "mention": "Account Holder",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "EFT Batch Payment module",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Install the EFT Batch Payment module"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Go to Accounting --> Configuration"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Customers",
+          "evidence": "Accounting --> Customers --> Customers"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Vendors",
+          "evidence": "Accounting --> Vendors --> Vendors"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Journals",
+          "evidence": "Configuration --> Journals"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Customer Payments",
+          "evidence": "In the Customer Payments section"
+        },
+        {
+          "source": "Customer Payments",
+          "relation": "HAS_FEATURE",
+          "target": "Batch Payments",
+          "evidence": "enable Batch Payments"
+        },
+        {
+          "source": "Bank journal",
+          "relation": "RELATED_TO",
+          "target": "Journals",
+          "evidence": "to configure the bank journal"
+        },
+        {
+          "source": "Journal Entries",
+          "relation": "IS_PART_OF",
+          "target": "Journals",
+          "evidence": "In the Journal Entries tab"
+        },
+        {
+          "source": "Journal Entries",
+          "relation": "CONTAINS",
+          "target": "Account Number",
+          "evidence": "enter the Account Number"
+        },
+        {
+          "source": "Journal Entries",
+          "relation": "CONTAINS",
+          "target": "Bank",
+          "evidence": "fill in the Bank"
+        },
+        {
+          "source": "Bank",
+          "relation": "CONFIGURED_BY",
+          "target": "Send Money",
+          "evidence": "enable Send Money to set the bank account as trusted"
+        },
+        {
+          "source": "Journal Entries",
+          "relation": "CONTAINS",
+          "target": "Currency",
+          "evidence": "The Currency field"
+        },
+        {
+          "source": "Contacts",
+          "relation": "RELATED_TO",
+          "target": "Customers",
+          "evidence": "access the contact directly through the Contacts app"
+        },
+        {
+          "source": "Contacts",
+          "relation": "RELATED_TO",
+          "target": "Vendors",
+          "evidence": "access the contact directly through the Contacts app"
+        },
+        {
+          "source": "Bank Accounts",
+          "relation": "IS_PART_OF",
+          "target": "Customers",
+          "evidence": "Bank Accounts section"
+        },
+        {
+          "source": "Bank Accounts",
+          "relation": "IS_PART_OF",
+          "target": "Vendors",
+          "evidence": "Bank Accounts section"
+        },
+        {
+          "source": "Bank Accounts",
+          "relation": "CONTAINS",
+          "target": "Account Number",
+          "evidence": "Account Number"
+        },
+        {
+          "source": "Bank Accounts",
+          "relation": "CONTAINS",
+          "target": "Bank",
+          "evidence": "Bank"
+        },
+        {
+          "source": "Bank Accounts",
+          "relation": "CONTAINS",
+          "target": "Account Holder",
+          "evidence": "Account Holder"
+        },
+        {
+          "source": "Bank Accounts",
+          "relation": "CONFIGURED_BY",
+          "target": "Send Money",
+          "evidence": "Send Money must be enabled"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "generate-an-eft-file",
+    "heading": "Generate an EFT file",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "Customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoices",
+          "type": "DataObject",
+          "mention": "Invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Sub-module",
+          "mention": "Vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills",
+          "type": "DataObject",
+          "mention": "Bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay",
+          "type": "Action",
+          "mention": "Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Method",
+          "type": "Field",
+          "mention": "Payment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "New Zealand EFT",
+          "type": "Feature",
+          "mention": "New Zealand EFT",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Payment",
+          "type": "Action",
+          "mention": "Create Payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Group Payment",
+          "type": "Setting",
+          "mention": "Group Payment checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "contact",
+          "type": "Actor",
+          "mention": "contact",
+          "confidence": "medium"
+        },
+        {
+          "name": "payments",
+          "type": "DataObject",
+          "mention": "payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Particulars",
+          "type": "Field",
+          "mention": "Particulars",
+          "confidence": "high"
+        },
+        {
+          "name": "Analysis Code",
+          "type": "Field",
+          "mention": "Analysis Code",
+          "confidence": "high"
+        },
+        {
+          "name": "EFT file format",
+          "type": "Field",
+          "mention": "EFT file format",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Reference",
+          "type": "Field",
+          "mention": "Payment Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Particulars",
+          "type": "Field",
+          "mention": "Payment Particulars",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "EFT file",
+          "type": "DataObject",
+          "mention": "EFT file",
+          "confidence": "high"
+        },
+        {
+          "name": "chatter",
+          "type": "Unknown",
+          "mention": "chatter",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank",
+          "type": "Actor",
+          "mention": "bank",
+          "confidence": "high"
+        },
+        {
+          "name": "Direct Debit Information",
+          "type": "Field",
+          "mention": "Direct Debit Information",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dishonour Account",
+          "type": "Field",
+          "mention": "Dishonour Account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batch payments by bank deposit",
+          "type": "Workflow",
+          "mention": "Batch paments by bank deposit documentation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Customers",
+          "evidence": "Accounting --> Customers"
+        },
+        {
+          "source": "Customers",
+          "relation": "HAS_REPORT",
+          "target": "Invoices",
+          "evidence": "Customers --> Invoices"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Vendors",
+          "evidence": "Accounting --> Vendors"
+        },
+        {
+          "source": "Vendors",
+          "relation": "HAS_REPORT",
+          "target": "Bills",
+          "evidence": "Vendors --> Bills"
+        },
+        {
+          "source": "Pay",
+          "relation": "TRIGGERED_BY",
+          "target": "Invoices",
+          "evidence": "Select the invoices... and click Pay"
+        },
+        {
+          "source": "Pay",
+          "relation": "TRIGGERED_BY",
+          "target": "Bills",
+          "evidence": "Select the invoices/bills... and click Pay"
+        },
+        {
+          "source": "Create Payment",
+          "relation": "TRIGGERED_BY",
+          "target": "New Zealand EFT",
+          "evidence": "select New Zealand EFT and click Create Payment"
+        },
+        {
+          "source": "Group Payment",
+          "relation": "CONFIGURED_BY",
+          "target": "contact",
+          "evidence": "multiple invoices or bills from the same contact"
+        },
+        {
+          "source": "payments",
+          "relation": "CONTAINS",
+          "target": "Particulars",
+          "evidence": "EFT information for each payment, such as Particulars"
+        },
+        {
+          "source": "payments",
+          "relation": "CONTAINS",
+          "target": "Analysis Code",
+          "evidence": "EFT information for each payment, such as Analysis Code"
+        },
+        {
+          "source": "EFT file",
+          "relation": "GENERATED_BY",
+          "target": "Validate",
+          "evidence": "click Validate. Odoo will generate the EFT file"
+        },
+        {
+          "source": "EFT file",
+          "relation": "BELONGS_TO",
+          "target": "chatter",
+          "evidence": "EFT file in the chatter"
+        },
+        {
+          "source": "New Zealand EFT",
+          "relation": "CONFIGURED_BY",
+          "target": "bank",
+          "evidence": "Each bank has its specific format requirements for EFT batch payments"
+        },
+        {
+          "source": "Batch payments by bank deposit",
+          "relation": "SEE_ALSO",
+          "target": "New Zealand EFT",
+          "evidence": "Batch paments by bank deposit documentation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "starshipit-shipping",
+    "heading": "Starshipit shipping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Starshipit",
+          "type": "Integration",
+          "mention": "Starshipit",
+          "confidence": "high"
+        },
+        {
+          "name": "Starshipit webinar recording",
+          "type": "Concept",
+          "mention": "Starshipit webinar recording",
+          "confidence": "medium"
+        },
+        {
+          "name": "Starshipit shipping",
+          "type": "Module",
+          "mention": "Starshipit shipping",
+          "confidence": "high"
+        },
+        {
+          "name": "buynow-paylater",
+          "type": "Unknown",
+          "mention": "buynow-paylater",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Starshipit",
+          "relation": "RELATED_TO",
+          "target": "Odoo",
+          "evidence": "Starshipit is a shipping service operator that facilitates the integration of Australasian shipping couriers with Odoo."
+        },
+        {
+          "source": "Starshipit",
+          "relation": "SEE_ALSO",
+          "target": "Starshipit webinar recording",
+          "evidence": "- Starshipit webinar recording"
+        },
+        {
+          "source": "Starshipit",
+          "relation": "SEE_ALSO",
+          "target": "Starshipit shipping",
+          "evidence": "- Starshipit shipping"
+        },
+        {
+          "source": "Starshipit shipping",
+          "relation": "SEE_ALSO",
+          "target": "buynow-paylater",
+          "evidence": "localizations/new_zealand/buynow-paylater"
+        },
+        {
+          "source": "Starshipit shipping",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Starshipit is a shipping service operator that facilitates the integration of Australasian shipping couriers with Odoo."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "buy-now,-pay-later-solutions",
+    "heading": "Buy Now, Pay Later solutions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy Now, Pay Later solutions",
+          "type": "Concept",
+          "mention": "Buy Now, Pay Later solutions",
+          "confidence": "high"
+        },
+        {
+          "name": "Stripe",
+          "type": "Integration",
+          "mention": "Stripe",
+          "confidence": "high"
+        },
+        {
+          "name": "AsiaPay payment",
+          "type": "Integration",
+          "mention": "AsiaPay payment",
+          "confidence": "high"
+        },
+        {
+          "name": "AsiaPay Payment Provider documentation",
+          "type": "Concept",
+          "mention": "AsiaPay Payment Provider documentation",
+          "confidence": "high"
+        },
+        {
+          "name": "Stripe Payment Provider documentation",
+          "type": "Concept",
+          "mention": "Stripe Payment Provider documentation",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Buy Now, Pay Later solutions",
+          "evidence": "Buy Now, Pay Later solutions are popular payment methods for e-shops."
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Stripe",
+          "evidence": "Some of these solutions are available via the Stripe ... providers."
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "AsiaPay payment",
+          "evidence": "Some of these solutions are available via the ... AsiaPay payment providers."
+        },
+        {
+          "source": "Buy Now, Pay Later solutions",
+          "relation": "SEE_ALSO",
+          "target": "AsiaPay Payment Provider documentation",
+          "evidence": "- AsiaPay Payment Provider documentation <../../../applications/finance/payment_providers/asiapay>"
+        },
+        {
+          "source": "Buy Now, Pay Later solutions",
+          "relation": "SEE_ALSO",
+          "target": "Stripe Payment Provider documentation",
+          "evidence": "Stripe Payment Provider documentation <../../../applications/finance/payment_providers/stripe>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "point-of-sale-terminals",
+    "heading": "Point of Sale terminals",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale terminals",
+          "type": "Module",
+          "mention": "Point of Sale terminals",
+          "confidence": "high"
+        },
+        {
+          "name": "Stripe terminal",
+          "type": "Integration",
+          "mention": "Stripe terminal",
+          "confidence": "high"
+        },
+        {
+          "name": "EFTPOS",
+          "type": "Integration",
+          "mention": "EFTPOS",
+          "confidence": "high"
+        },
+        {
+          "name": "cashiers",
+          "type": "Actor",
+          "mention": "cashiers",
+          "confidence": "medium"
+        },
+        {
+          "name": "final payment amount",
+          "type": "Concept",
+          "mention": "final payment amount",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Stripe terminal",
+          "relation": "CONTAINS",
+          "target": "EFTPOS",
+          "evidence": "Odoo supports the EFTPOS payment solution."
+        },
+        {
+          "source": "Point of Sale terminals",
+          "relation": "ENABLES",
+          "target": "Integration with Stripe terminal",
+          "evidence": "To have a direct connection between Odoo and a PoS terminal, a Stripe terminal is needed."
+        },
+        {
+          "source": "cashiers",
+          "relation": "PERFORMS",
+          "target": "manual entry of payment amount",
+          "evidence": "cashiers must manually enter the final payment amount on the terminal."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "employment-hero-integration",
+    "heading": "Employment Hero integration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employment Hero",
+          "type": "Integration",
+          "mention": "Employment Hero",
+          "confidence": "high"
+        },
+        {
+          "name": "Employment Hero connector",
+          "type": "Integration",
+          "mention": "connector",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employment Hero module",
+          "type": "Module",
+          "mention": "module",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal entries",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "payroll administration",
+          "type": "Workflow",
+          "mention": "Payroll administration",
+          "confidence": "low"
+        },
+        {
+          "name": "payslip accounting entries",
+          "type": "DataObject",
+          "mention": "payslip accounting entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "expenses",
+          "type": "DataObject",
+          "mention": "expenses",
+          "confidence": "low"
+        },
+        {
+          "name": "social charges",
+          "type": "DataObject",
+          "mention": "social charges",
+          "confidence": "low"
+        },
+        {
+          "name": "liabilities",
+          "type": "DataObject",
+          "mention": "liabilities",
+          "confidence": "low"
+        },
+        {
+          "name": "taxes",
+          "type": "DataObject",
+          "mention": "taxes",
+          "confidence": "low"
+        },
+        {
+          "name": "Employment Hero API",
+          "type": "Feature",
+          "mention": "Employment Hero API",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll URL",
+          "type": "Setting",
+          "mention": "Payroll URL",
+          "confidence": "medium"
+        },
+        {
+          "name": "New Zealand",
+          "type": "Actor",
+          "mention": "New Zealand",
+          "confidence": "low"
+        },
+        {
+          "name": "https://api.nzpayroll.co.nz/",
+          "type": "Setting",
+          "mention": "https://api.nzpayroll.co.nz/",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employment Hero module",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "The Employment Hero module automatically synchronises payslip accounting entries from Employment Hero to Odoo."
+        },
+        {
+          "source": "Employment Hero module",
+          "relation": "ENABLES",
+          "target": "synchronises payslip accounting entries",
+          "evidence": "The Employment Hero module automatically synchronises payslip accounting entries from Employment Hero to Odoo."
+        },
+        {
+          "source": "Employment Hero module",
+          "relation": "SUPPORTS",
+          "target": "Employment Hero",
+          "evidence": "The Employment Hero module automatically synchronises payslip accounting entries from Employment Hero to Odoo."
+        },
+        {
+          "source": "payroll administration",
+          "relation": "PERFORMED_BY",
+          "target": "Employment Hero",
+          "evidence": "Payroll administration is still done in Employment Hero; only the journal entries are recorded in Odoo."
+        },
+        {
+          "source": "journal entries",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "only the journal entries are recorded in Odoo."
+        },
+        {
+          "source": "Employment Hero API",
+          "relation": "CONFIGURED_BY",
+          "target": "Payroll URL",
+          "evidence": "To configure the Employment Hero API for New Zealand, use the following value as Payroll URL: https://api.nzpayroll.co.nz/."
+        },
+        {
+          "source": "Payroll URL",
+          "relation": "CONFIGURED_BY",
+          "target": "https://api.nzpayroll.co.nz/",
+          "evidence": "use the following value as Payroll URL: https://api.nzpayroll.co.nz/."
+        },
+        {
+          "source": "Employment Hero API",
+          "relation": "APPLIES_TO",
+          "target": "New Zealand",
+          "evidence": "To configure the Employment Hero API for New Zealand"
+        }
+      ]
+    }
+  }
+]

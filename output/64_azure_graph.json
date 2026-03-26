@@ -1,0 +1,1259 @@
+[
+  {
+    "section_id": "microsoft-azure-sign-in-authentication",
+    "heading": "Microsoft Azure sign-in authentication",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Azure OAuth sign-in authentication",
+          "type": "Feature",
+          "mention": "Microsoft Azure OAuth sign-in authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Azure account",
+          "type": "Integration",
+          "mention": "Microsoft Azure account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft Accounts",
+          "type": "Integration",
+          "mention": "Microsoft Accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Azure Workspace",
+          "type": "Integration",
+          "mention": "Azure Workspace",
+          "confidence": "medium"
+        },
+        {
+          "name": "OAuth login",
+          "type": "Feature",
+          "mention": "OAuth login",
+          "confidence": "medium"
+        },
+        {
+          "name": "calendar/outlook",
+          "type": "Integration",
+          "mention": "calendar/outlook",
+          "confidence": "low"
+        },
+        {
+          "name": "azure_oauth",
+          "type": "Feature",
+          "mention": "azure_oauth",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Microsoft Azure OAuth sign-in authentication",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Microsoft Azure OAuth sign-in authentication",
+          "relation": "CONTAINS",
+          "target": "OAuth login",
+          "evidence": "The Microsoft Azure OAuth sign-in authentication is a useful function"
+        },
+        {
+          "source": "Microsoft Azure OAuth sign-in authentication",
+          "relation": "ENABLES",
+          "target": "Microsoft Azure account",
+          "evidence": "allows Odoo users to sign in to their database with their Microsoft Azure account"
+        },
+        {
+          "source": "Microsoft Azure OAuth sign-in authentication",
+          "relation": "SUPPORTS",
+          "target": "Azure Workspace",
+          "evidence": "This is particularly helpful if the organization uses Azure Workspace"
+        },
+        {
+          "source": "Microsoft Azure OAuth sign-in authentication",
+          "relation": "SEE_ALSO",
+          "target": "calendar/outlook",
+          "evidence": "../productivity/calendar/outlook"
+        },
+        {
+          "source": "Microsoft Azure OAuth sign-in authentication",
+          "relation": "SEE_ALSO",
+          "target": "azure_oauth",
+          "evidence": "../email_communication/azure_oauth"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft",
+          "type": "Integration",
+          "mention": "Microsoft",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft sign-in function",
+          "type": "Feature",
+          "mention": "Microsoft sign-in function",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Concept",
+          "mention": "Configuration",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Microsoft sign-in function",
+          "relation": "BELONGS_TO",
+          "target": "Microsoft",
+          "evidence": "Microsoft sign-in function"
+        },
+        {
+          "source": "Microsoft sign-in function",
+          "relation": "REQUIRES",
+          "target": "Configuration",
+          "evidence": "requires configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "configuration on Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "odoo-system-parameter",
+    "heading": "Odoo System Parameter",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Technical",
+          "type": "Sub-module",
+          "mention": "Technical",
+          "confidence": "high"
+        },
+        {
+          "name": "System Parameters",
+          "type": "Feature",
+          "mention": "System Parameters",
+          "confidence": "high"
+        },
+        {
+          "name": "developer mode",
+          "type": "Setting",
+          "mention": "developer mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "auth_oauth.authorization_header",
+          "type": "Setting",
+          "mention": "auth_oauth.authorization_header",
+          "confidence": "high"
+        },
+        {
+          "name": "Key",
+          "type": "Field",
+          "mention": "Key",
+          "confidence": "medium"
+        },
+        {
+          "name": "Value",
+          "type": "Field",
+          "mention": "Value",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "System Parameters",
+          "relation": "IS_PART_OF",
+          "target": "Technical",
+          "evidence": "go to Settings --> Technical --> System Parameters."
+        },
+        {
+          "source": "Technical",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "go to Settings --> Technical --> System Parameters."
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "auth_oauth.authorization_header",
+          "relation": "CONFIGURED_BY",
+          "target": "Key",
+          "evidence": "add the following system parameter `auth_oauth.authorization_header` to the Key field"
+        },
+        {
+          "source": "auth_oauth.authorization_header",
+          "relation": "CONFIGURED_BY",
+          "target": "Value",
+          "evidence": "set the Value to `1`"
+        },
+        {
+          "source": "System Parameters",
+          "relation": "CONFIGURED_BY",
+          "target": "auth_oauth.authorization_header",
+          "evidence": "add the following system parameter `auth_oauth.authorization_header`"
+        },
+        {
+          "source": "developer mode",
+          "relation": "ENABLES",
+          "target": "System Parameters",
+          "evidence": "First activate the developer mode <developer-mode>, and then go to Settings --> Technical --> System Parameters."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-application",
+    "heading": "Create a new application",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Azure",
+          "type": "Integration",
+          "mention": "Microsoft Azure",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft's Azure Portal",
+          "type": "Integration",
+          "mention": "Microsoft's Azure Portal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft Outlook Office 365 account",
+          "type": "Actor",
+          "mention": "Microsoft Outlook Office 365 account",
+          "confidence": "medium"
+        },
+        {
+          "name": "personal Microsoft account",
+          "type": "Actor",
+          "mention": "personal Microsoft account",
+          "confidence": "medium"
+        },
+        {
+          "name": "administrative access",
+          "type": "Permission",
+          "mention": "administrative access",
+          "confidence": "low"
+        },
+        {
+          "name": "Azure Settings",
+          "type": "Setting",
+          "mention": "Azure Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manage Microsoft Entra ID",
+          "type": "Feature",
+          "mention": "Manage Microsoft Entra ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Azure Active Directory",
+          "type": "Feature",
+          "mention": "Azure Active Directory",
+          "confidence": "low"
+        },
+        {
+          "name": "App registration",
+          "type": "Feature",
+          "mention": "App registration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Register an application screen",
+          "type": "Feature",
+          "mention": "Register an application screen",
+          "confidence": "medium"
+        },
+        {
+          "name": "Name field",
+          "type": "Field",
+          "mention": "Name field",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Login OAuth",
+          "type": "Feature",
+          "mention": "Odoo Login OAuth",
+          "confidence": "high"
+        },
+        {
+          "name": "Supported account types",
+          "type": "Setting",
+          "mention": "Supported account types",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounts in this organizational directory only",
+          "type": "Setting",
+          "mention": "Accounts in this organizational directory only",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Directory only - Single tenant",
+          "type": "Setting",
+          "mention": "Default Directory only - Single tenant",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft account type",
+          "type": "Setting",
+          "mention": "Microsoft account type",
+          "confidence": "medium"
+        },
+        {
+          "name": "end use of the OAuth",
+          "type": "Concept",
+          "mention": "end use of the OAuth",
+          "confidence": "medium"
+        },
+        {
+          "name": "internal users",
+          "type": "Actor",
+          "mention": "internal users",
+          "confidence": "high"
+        },
+        {
+          "name": "organization",
+          "type": "Actor",
+          "mention": "organization",
+          "confidence": "high"
+        },
+        {
+          "name": "customer portal access",
+          "type": "Concept",
+          "mention": "customer portal access",
+          "confidence": "medium"
+        },
+        {
+          "name": "portal users",
+          "type": "Actor",
+          "mention": "portal users",
+          "confidence": "medium"
+        },
+        {
+          "name": "company users",
+          "type": "Actor",
+          "mention": "company users",
+          "confidence": "medium"
+        },
+        {
+          "name": "Redirect URL",
+          "type": "Field",
+          "mention": "Redirect URL",
+          "confidence": "high"
+        },
+        {
+          "name": "Web",
+          "type": "Setting",
+          "mention": "Web",
+          "confidence": "medium"
+        },
+        {
+          "name": "https://<odoo base url>/auth_oauth/signin",
+          "type": "Field",
+          "mention": "https://<odoo base url>/auth_oauth/signin",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo base URL",
+          "type": "Field",
+          "mention": "Odoo base URL",
+          "confidence": "high"
+        },
+        {
+          "name": "Uniform Resource Locator",
+          "type": "Concept",
+          "mention": "Uniform Resource Locator",
+          "confidence": "low"
+        },
+        {
+          "name": "canonical domain",
+          "type": "Concept",
+          "mention": "canonical domain",
+          "confidence": "low"
+        },
+        {
+          "name": "Odoo instance",
+          "type": "Concept",
+          "mention": "Odoo instance",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "COMPLIES_WITH",
+          "target": "Microsoft Azure",
+          "evidence": "system parameters in Odoo have been set up, it's time to create a corresponding application inside of Microsoft Azure"
+        },
+        {
+          "source": "Microsoft's Azure Portal",
+          "relation": "CONTAINS",
+          "target": "Manage Microsoft Entra ID",
+          "evidence": "navigate to the section labeled Manage Microsoft Entra ID"
+        },
+        {
+          "source": "Azure Settings",
+          "relation": "CONTAINS",
+          "target": "administrative access",
+          "evidence": "A user with administrative access to the *Azure Settings*"
+        },
+        {
+          "source": "Manage Microsoft Entra ID",
+          "relation": "HAS_FEATURE",
+          "target": "App registration",
+          "evidence": "select App registration from the drop-down menu"
+        },
+        {
+          "source": "Register an application screen",
+          "relation": "CONTAINS",
+          "target": "Name field",
+          "evidence": "On the Register an application screen, rename the Name field"
+        },
+        {
+          "source": "Register an application screen",
+          "relation": "CONTAINS",
+          "target": "Supported account types",
+          "evidence": "Under the Supported account types section"
+        },
+        {
+          "source": "Register an application screen",
+          "relation": "CONTAINS",
+          "target": "Redirect URL",
+          "evidence": "Under the Redirect URL section"
+        },
+        {
+          "source": "Supported account types",
+          "relation": "RELATED_TO",
+          "target": "Microsoft account type",
+          "evidence": "The Supported account types can vary by Microsoft account type"
+        },
+        {
+          "source": "Supported account types",
+          "relation": "RELATED_TO",
+          "target": "end use of the OAuth",
+          "evidence": "and end use of the OAuth"
+        },
+        {
+          "source": "Accounts in this organizational directory only",
+          "relation": "APPLIES_TO",
+          "target": "internal users",
+          "evidence": "The above configuration is used for internal users in an organization"
+        },
+        {
+          "source": "Accounts in this organizational directory only",
+          "relation": "APPLIES_TO",
+          "target": "company users",
+          "evidence": "Choose Accounts in this organizational directory only (Default Directory only - Single tenant) if the target audience is company users"
+        },
+        {
+          "source": "Personal Microsoft accounts only",
+          "relation": "APPLIES_TO",
+          "target": "portal users",
+          "evidence": "Choose Personal Microsoft accounts only if the target audience is meant for portal users"
+        },
+        {
+          "source": "Redirect URL",
+          "relation": "CONTAINS",
+          "target": "https://<odoo base url>/auth_oauth/signin",
+          "evidence": "input `https://<odoo base url>/auth_oauth/signin` in the URL field"
+        },
+        {
+          "source": "Redirect URL",
+          "relation": "SUPPORTS",
+          "target": "Web",
+          "evidence": "select Web as the platform"
+        },
+        {
+          "source": "https://<odoo base url>/auth_oauth/signin",
+          "relation": "RELATED_TO",
+          "target": "Odoo base URL",
+          "evidence": "The Odoo base URL (Uniform Resource Locator) is the canonical domain"
+        },
+        {
+          "source": "Odoo base URL",
+          "relation": "RELATED_TO",
+          "target": "canonical domain",
+          "evidence": "is the canonical domain at which your Odoo instance can be reached"
+        },
+        {
+          "source": "Odoo base URL",
+          "relation": "RELATED_TO",
+          "target": "Uniform Resource Locator",
+          "evidence": "(Uniform Resource Locator)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "authentication",
+    "heading": "Authentication",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Authentication",
+          "type": "Module",
+          "mention": "Authentication",
+          "confidence": "medium"
+        },
+        {
+          "name": "OAuth authentication",
+          "type": "Feature",
+          "mention": "OAuth authentication",
+          "confidence": "medium"
+        },
+        {
+          "name": "tokens",
+          "type": "Concept",
+          "mention": "tokens",
+          "confidence": "medium"
+        },
+        {
+          "name": "authentication tokens",
+          "type": "Concept",
+          "mention": "authentication tokens",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft",
+          "type": "Actor",
+          "mention": "Microsoft",
+          "confidence": "low"
+        },
+        {
+          "name": "APIs",
+          "type": "Concept",
+          "mention": "APIs",
+          "confidence": "low"
+        },
+        {
+          "name": "Access tokens",
+          "type": "Concept",
+          "mention": "Access tokens",
+          "confidence": "medium"
+        },
+        {
+          "name": "ID tokens",
+          "type": "Concept",
+          "mention": "ID tokens",
+          "confidence": "medium"
+        },
+        {
+          "name": "authorization endpoint",
+          "type": "Feature",
+          "mention": "authorization endpoint",
+          "confidence": "low"
+        },
+        {
+          "name": "implicit flows",
+          "type": "Concept",
+          "mention": "implicit flows",
+          "confidence": "low"
+        },
+        {
+          "name": "hybrid flows",
+          "type": "Concept",
+          "mention": "hybrid flows",
+          "confidence": "low"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "authentication menu item",
+          "type": "Feature",
+          "mention": "Authentication menu item",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "OAuth authentication",
+          "relation": "HAS_FEATURE",
+          "target": "tokens",
+          "evidence": "the type of *tokens* needed for the OAuth authentication will be chosen"
+        },
+        {
+          "source": "tokens",
+          "relation": "RELATED_TO",
+          "target": "authentication tokens",
+          "evidence": "These are not currency tokens but rather authentication tokens"
+        },
+        {
+          "source": "authentication tokens",
+          "relation": "RELATED_TO",
+          "target": "Microsoft",
+          "evidence": "authentication tokens that are passed between Microsoft and Odoo"
+        },
+        {
+          "source": "authentication tokens",
+          "relation": "RELATED_TO",
+          "target": "APIs",
+          "evidence": "they are used merely for authentication purposes between two APIs"
+        },
+        {
+          "source": "authorization endpoint",
+          "relation": "RELATED_TO",
+          "target": "Access tokens",
+          "evidence": "Select the tokens that should be issued by the authorization endpoint... Access tokens"
+        },
+        {
+          "source": "authorization endpoint",
+          "relation": "RELATED_TO",
+          "target": "ID tokens",
+          "evidence": "Select the tokens that should be issued by the authorization endpoint... ID tokens"
+        },
+        {
+          "source": "Access tokens",
+          "relation": "RELATED_TO",
+          "target": "implicit flows",
+          "evidence": "Access tokens (used for implicit flows)"
+        },
+        {
+          "source": "ID tokens",
+          "relation": "RELATED_TO",
+          "target": "implicit flows",
+          "evidence": "ID tokens (used for implicit and hybrid flows)"
+        },
+        {
+          "source": "ID tokens",
+          "relation": "RELATED_TO",
+          "target": "hybrid flows",
+          "evidence": "ID tokens (used for implicit and hybrid flows)"
+        },
+        {
+          "source": "Save",
+          "relation": "ENABLES",
+          "target": "settings",
+          "evidence": "Click Save to ensure these settings are saved"
+        },
+        {
+          "source": "Authentication",
+          "relation": "CONTAINS",
+          "target": "authentication menu item",
+          "evidence": "Authentication menu item in the left menu"
+        },
+        {
+          "source": "authentication menu item",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "by clicking on the Authentication menu item"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "gather-credentials",
+    "heading": "Gather credentials",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Microsoft Azure console",
+          "type": "Integration",
+          "mention": "Microsoft Azure console",
+          "confidence": "high"
+        },
+        {
+          "name": "Overview menu item",
+          "type": "Feature",
+          "mention": "Overview menu item",
+          "confidence": "high"
+        },
+        {
+          "name": "Application (client) ID",
+          "type": "Field",
+          "mention": "Application (client) ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo configuration",
+          "type": "Setting",
+          "mention": "Odoo configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Endpoints",
+          "type": "Feature",
+          "mention": "Endpoints",
+          "confidence": "high"
+        },
+        {
+          "name": "copy icon",
+          "type": "Action",
+          "mention": "copy icon",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth 2.0 authorization endpoint (v2)",
+          "type": "Field",
+          "mention": "OAuth 2.0 authorization endpoint (v2)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Microsoft Azure console",
+          "relation": "CONTAINS",
+          "target": "Overview menu item",
+          "evidence": "Overview menu item in the left-hand column"
+        },
+        {
+          "source": "Microsoft Azure console",
+          "relation": "CONTAINS",
+          "target": "Endpoints",
+          "evidence": "click on Endpoints on the top menu"
+        },
+        {
+          "source": "Overview menu item",
+          "relation": "ENABLES",
+          "target": "Application (client) ID",
+          "evidence": "Select and copy the Application (client) ID"
+        },
+        {
+          "source": "Endpoints",
+          "relation": "ENABLES",
+          "target": "OAuth 2.0 authorization endpoint (v2)",
+          "evidence": "click the *copy icon* next to OAuth 2.0 authorization endpoint (v2) field"
+        },
+        {
+          "source": "Application (client) ID",
+          "relation": "RELATED_TO",
+          "target": "Odoo configuration",
+          "evidence": "this credential will be used in the Odoo configuration later"
+        },
+        {
+          "source": "OAuth 2.0 authorization endpoint (v2)",
+          "relation": "RELATED_TO",
+          "target": "Odoo configuration",
+          "evidence": "Paste this value... will be used in configuration later"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "api-permissions",
+    "heading": "API permissions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Graph",
+          "type": "Integration",
+          "mention": "Microsoft Graph",
+          "confidence": "high"
+        },
+        {
+          "name": "User.Read",
+          "type": "Permission",
+          "mention": "User.Read",
+          "confidence": "high"
+        },
+        {
+          "name": "Azure app registration",
+          "type": "Integration",
+          "mention": "Azure app registration",
+          "confidence": "medium"
+        },
+        {
+          "name": "signed-in user's profile information",
+          "type": "DataObject",
+          "mention": "signed-in user's profile information",
+          "confidence": "medium"
+        },
+        {
+          "name": "OAuth flow",
+          "type": "Workflow",
+          "mention": "OAuth flow",
+          "confidence": "medium"
+        },
+        {
+          "name": "login process",
+          "type": "Workflow",
+          "mention": "login process",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "REQUIRES",
+          "target": "User.Read",
+          "evidence": "Odoo needs permission to read the signed-in user's profile information"
+        },
+        {
+          "source": "User.Read",
+          "relation": "BELONGS_TO",
+          "target": "Microsoft Graph",
+          "evidence": "Select Microsoft Graph under Commonly Used Microsoft APIs"
+        },
+        {
+          "source": "User.Read",
+          "relation": "CONFIGURED_BY",
+          "target": "Azure app registration",
+          "evidence": "At minimum, ensure the delegated permission User.Read is granted on the Azure app registration"
+        },
+        {
+          "source": "OAuth flow",
+          "relation": "ENABLES",
+          "target": "login process",
+          "evidence": "during the OAuth flow. Otherwise, the login process may fail"
+        },
+        {
+          "source": "login process",
+          "relation": "PRODUCES",
+          "target": "Odoo user",
+          "evidence": "to correctly link the Microsoft account to the Odoo user"
+        },
+        {
+          "source": "Microsoft Graph",
+          "relation": "SUPPORTS",
+          "target": "User.Read",
+          "evidence": "Search for User.Read, select it, and click Add permissions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "odoo-setup",
+    "heading": "Odoo setup",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Integrations",
+          "type": "Sub-module",
+          "mention": "Integrations",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth Authentication",
+          "type": "Feature",
+          "mention": "OAuth Authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth Providers",
+          "type": "DataObject",
+          "mention": "OAuth Providers",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "Azure",
+          "type": "Integration",
+          "mention": "Azure",
+          "confidence": "high"
+        },
+        {
+          "name": "Provider name",
+          "type": "Field",
+          "mention": "Provider name",
+          "confidence": "high"
+        },
+        {
+          "name": "Application (client) ID",
+          "type": "Field",
+          "mention": "Application (client) ID",
+          "confidence": "high"
+        },
+        {
+          "name": "Client ID",
+          "type": "Field",
+          "mention": "Client ID",
+          "confidence": "high"
+        },
+        {
+          "name": "OAuth 2.0 authorization endpoint (v2)",
+          "type": "Field",
+          "mention": "OAuth 2.0 authorization endpoint (v2)",
+          "confidence": "high"
+        },
+        {
+          "name": "Authorization URL",
+          "type": "Field",
+          "mention": "Authorization URL",
+          "confidence": "high"
+        },
+        {
+          "name": "UserInfo URL",
+          "type": "Field",
+          "mention": "UserInfo URL",
+          "confidence": "high"
+        },
+        {
+          "name": "Scope",
+          "type": "Field",
+          "mention": "Scope",
+          "confidence": "high"
+        },
+        {
+          "name": "CSS class",
+          "type": "Field",
+          "mention": "CSS class",
+          "confidence": "high"
+        },
+        {
+          "name": "Allowed",
+          "type": "Field",
+          "mention": "Allowed",
+          "confidence": "high"
+        },
+        {
+          "name": "Login button label",
+          "type": "Field",
+          "mention": "Login button label",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Azure",
+          "type": "Integration",
+          "mention": "Microsoft Azure",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft",
+          "type": "Integration",
+          "mention": "Microsoft Azure",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Integrations",
+          "evidence": "Navigate to Settings --> Integrations"
+        },
+        {
+          "source": "Integrations",
+          "relation": "CONTAINS",
+          "target": "OAuth Authentication",
+          "evidence": "enable the checkbox for OAuth Authentication"
+        },
+        {
+          "source": "OAuth Authentication",
+          "relation": "CONFIGURED_BY",
+          "target": "Allowed",
+          "evidence": "Check the box next to the Allowed field"
+        },
+        {
+          "source": "OAuth Authentication",
+          "relation": "ENABLES",
+          "target": "New",
+          "evidence": "Then click New"
+        },
+        {
+          "source": "OAuth Providers",
+          "relation": "PRODUCES",
+          "target": "OAuth Authentication",
+          "evidence": "OAuth Providers"
+        },
+        {
+          "source": "Azure",
+          "relation": "CONFIGURED_BY",
+          "target": "Provider name",
+          "evidence": "Enter the Provider name as `Azure`"
+        },
+        {
+          "source": "Azure",
+          "relation": "CONFIGURED_BY",
+          "target": "Client ID",
+          "evidence": "Paste the Application (client) ID into the Client ID field"
+        },
+        {
+          "source": "Azure",
+          "relation": "CONFIGURED_BY",
+          "target": "Authorization URL",
+          "evidence": "paste the new OAuth 2.0 authorization endpoint (v2) value into the Authorization URL field"
+        },
+        {
+          "source": "Azure",
+          "relation": "CONFIGURED_BY",
+          "target": "UserInfo URL",
+          "evidence": "In the UserInfo URL field, paste the following URL"
+        },
+        {
+          "source": "Azure",
+          "relation": "CONFIGURED_BY",
+          "target": "Scope",
+          "evidence": "In the Scope field, paste the following value"
+        },
+        {
+          "source": "Azure",
+          "relation": "CONFIGURED_BY",
+          "target": "CSS class",
+          "evidence": "in the CSS class field"
+        },
+        {
+          "source": "Azure",
+          "relation": "CONFIGURED_BY",
+          "target": "Allowed",
+          "evidence": "Check the box next to the Allowed field"
+        },
+        {
+          "source": "Azure",
+          "relation": "CONFIGURED_BY",
+          "target": "Login button label",
+          "evidence": "Finally, add `Microsoft Azure` to the Login button label field"
+        },
+        {
+          "source": "Microsoft Azure",
+          "relation": "RELATED_TO",
+          "target": "Azure",
+          "evidence": "Microsoft Azure"
+        },
+        {
+          "source": "Microsoft",
+          "relation": "RELATED_TO",
+          "target": "Microsoft Azure",
+          "evidence": "Microsoft Azure"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "user-experience-flows",
+    "heading": "User experience flows",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Azure",
+          "type": "Integration",
+          "mention": "Microsoft Azure",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft Azure OAuth provider",
+          "type": "Feature",
+          "mention": "Microsoft Azure OAuth provider",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo password reset page",
+          "type": "Workflow",
+          "mention": "Odoo password reset page",
+          "confidence": "high"
+        },
+        {
+          "name": "password reset",
+          "type": "Action",
+          "mention": "password reset",
+          "confidence": "high"
+        },
+        {
+          "name": "Microsoft login page",
+          "type": "Workflow",
+          "mention": "Microsoft login page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft Email Address",
+          "type": "Field",
+          "mention": "Microsoft Email Address",
+          "confidence": "medium"
+        },
+        {
+          "name": "Two Factor Authentication",
+          "type": "Feature",
+          "mention": "2FA",
+          "confidence": "medium"
+        },
+        {
+          "name": "permissions page",
+          "type": "Workflow",
+          "mention": "permissions page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accept",
+          "type": "Action",
+          "mention": "Accept",
+          "confidence": "medium"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "existing users",
+          "type": "Actor",
+          "mention": "Existing users",
+          "confidence": "medium"
+        },
+        {
+          "name": "new Odoo users",
+          "type": "Actor",
+          "mention": "New Odoo users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Microsoft Azure OAuth provider",
+          "evidence": "To sign in to Odoo for the first time using the Microsoft Azure OAuth provider"
+        },
+        {
+          "source": "Microsoft Azure OAuth provider",
+          "relation": "ENABLES",
+          "target": "password reset",
+          "evidence": "the only way that Odoo is able to link the Microsoft Azure account and allow the user to log in"
+        },
+        {
+          "source": "password reset",
+          "relation": "IS_PART_OF",
+          "target": "Odoo password reset page",
+          "evidence": "a user to log in to Odoo using Microsoft Azure, the user must be on the Odoo password reset page"
+        },
+        {
+          "source": "new Odoo users",
+          "relation": "PERFORMED_BY",
+          "target": "Accept",
+          "evidence": "the user will be prompted to Accept the conditions"
+        },
+        {
+          "source": "new Odoo users",
+          "relation": "TRIGGERED_BY",
+          "target": "new user invitation link",
+          "evidence": "New Odoo users must click the new user invitation link"
+        },
+        {
+          "source": "Microsoft Azure",
+          "relation": "IS_PART_OF",
+          "target": "Microsoft Azure OAuth provider",
+          "evidence": "Microsoft Azure OAuth provider"
+        },
+        {
+          "source": "Two Factor Authentication",
+          "relation": "RELATED_TO",
+          "target": "Microsoft login page",
+          "evidence": "Should 2FA (Two Factor Authentication) be turned on, then an extra step may be required"
+        },
+        {
+          "source": "Microsoft login page",
+          "relation": "GENERATES",
+          "target": "permissions page",
+          "evidence": "after logging in to the account, the page will redirect to a permissions page"
+        }
+      ]
+    }
+  }
+]

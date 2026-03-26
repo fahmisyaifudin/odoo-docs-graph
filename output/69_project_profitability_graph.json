@@ -1,0 +1,515 @@
+[
+  {
+    "section_id": "project-profitability",
+    "heading": "Project profitability",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "project dashboard",
+          "type": "Module",
+          "mention": "project dashboard <project_dashboard>",
+          "confidence": "high"
+        },
+        {
+          "name": "profitability dashboard",
+          "type": "Sub-module",
+          "mention": "profitability dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "project profitability",
+          "type": "Feature",
+          "mention": "project profitability",
+          "confidence": "high"
+        },
+        {
+          "name": "analytic account",
+          "type": "DataObject",
+          "mention": "analytic account",
+          "confidence": "high"
+        },
+        {
+          "name": "timesheet",
+          "type": "DataObject",
+          "mention": "timesheet",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "Project app",
+          "type": "Module",
+          "mention": "Project app",
+          "confidence": "medium"
+        },
+        {
+          "name": "project's Kanban view",
+          "type": "Feature",
+          "mention": "project's Kanban view",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Project app",
+          "evidence": "To access the project dashboard <project_dashboard>, open the **Project** app"
+        },
+        {
+          "source": "Project app",
+          "relation": "CONTAINS",
+          "target": "project dashboard",
+          "evidence": "open the **Project** app and navigate to the applicable project"
+        },
+        {
+          "source": "project dashboard",
+          "relation": "CONTAINS",
+          "target": "profitability dashboard",
+          "evidence": "The **profitability dashboard** is on the right side of the project dashboard"
+        },
+        {
+          "source": "profitability dashboard",
+          "relation": "RELATED_TO",
+          "target": "project profitability",
+          "evidence": "The **profitability dashboard** ... displays data for all records linked to the project"
+        },
+        {
+          "source": "profitability dashboard",
+          "relation": "RELATED_TO",
+          "target": "analytic account",
+          "evidence": "displays data for all records linked to the project and its analytic account"
+        },
+        {
+          "source": "project profitability",
+          "relation": "REQUIRES",
+          "target": "analytic account",
+          "evidence": "In order for a record to be displayed on the profitability dashboard, it must be linked to the project and its analytic account"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "revenues",
+    "heading": "Revenues",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Revenues",
+          "type": "Module",
+          "mention": "Revenues",
+          "confidence": "high"
+        },
+        {
+          "name": "Timesheets",
+          "type": "Module",
+          "mention": "Timesheets",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoicing Policy",
+          "type": "Setting",
+          "mention": "Invoicing Policy",
+          "confidence": "high"
+        },
+        {
+          "name": "Prepaid/Fixed Price",
+          "type": "Setting",
+          "mention": "Prepaid/Fixed Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Based on Timesheets",
+          "type": "Setting",
+          "mention": "Based on Timesheets",
+          "confidence": "high"
+        },
+        {
+          "name": "Based on Milestones",
+          "type": "Setting",
+          "mention": "Based on Milestones",
+          "confidence": "high"
+        },
+        {
+          "name": "Materials",
+          "type": "Module",
+          "mention": "Materials",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer invoices",
+          "type": "DataObject",
+          "mention": "Customer invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Subscriptions",
+          "type": "Module",
+          "mention": "Subscriptions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Down payments",
+          "type": "Module",
+          "mention": "Down payments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expenses",
+          "type": "Module",
+          "mention": "Expenses",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Timesheets",
+          "relation": "BELONGS_TO",
+          "target": "Revenues",
+          "evidence": "Timesheets: revenues from timesheets"
+        },
+        {
+          "source": "Materials",
+          "relation": "BELONGS_TO",
+          "target": "Revenues",
+          "evidence": "Materials: total of sales prices..."
+        },
+        {
+          "source": "Customer invoices",
+          "relation": "BELONGS_TO",
+          "target": "Revenues",
+          "evidence": "Customer invoices: a total of invoices..."
+        },
+        {
+          "source": "Subscriptions",
+          "relation": "BELONGS_TO",
+          "target": "Revenues",
+          "evidence": "Subscriptions: a total of sales prices..."
+        },
+        {
+          "source": "Down payments",
+          "relation": "BELONGS_TO",
+          "target": "Revenues",
+          "evidence": "Down payments: a total of down payments..."
+        },
+        {
+          "source": "Expenses",
+          "relation": "BELONGS_TO",
+          "target": "Revenues",
+          "evidence": "Expenses: any expenses that have been reinvoiced..."
+        },
+        {
+          "source": "Revenues",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Revenues"
+        },
+        {
+          "source": "Timesheets",
+          "relation": "RELATED_TO",
+          "target": "Invoicing Policy",
+          "evidence": "broken down according to the Invoicing Policy selected..."
+        },
+        {
+          "source": "Timesheets",
+          "relation": "SUPPORTS",
+          "target": "Prepaid/Fixed Price",
+          "evidence": "e.g., Prepaid/Fixed Price"
+        },
+        {
+          "source": "Timesheets",
+          "relation": "SUPPORTS",
+          "target": "Based on Timesheets",
+          "evidence": "Based on Timesheets"
+        },
+        {
+          "source": "Timesheets",
+          "relation": "SUPPORTS",
+          "target": "Based on Milestones",
+          "evidence": "Based on Milestones"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "costs",
+    "heading": "Costs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Costs",
+          "type": "Module",
+          "mention": "Costs",
+          "confidence": "high"
+        },
+        {
+          "name": "Timesheets",
+          "type": "Sub-module",
+          "mention": "Timesheets",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "Sub-module",
+          "mention": "Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Materials",
+          "type": "Sub-module",
+          "mention": "Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Project",
+          "type": "Concept",
+          "mention": "project",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock moves",
+          "type": "DataObject",
+          "mention": "stock moves",
+          "confidence": "high"
+        },
+        {
+          "name": "Analytic Costs",
+          "type": "Feature",
+          "mention": "Analytic Costs",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations Types",
+          "type": "Setting",
+          "mention": "Operations Types",
+          "confidence": "high"
+        },
+        {
+          "name": "Product's cost",
+          "type": "Concept",
+          "mention": "product's cost",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses",
+          "type": "Sub-module",
+          "mention": "Expenses",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bills",
+          "type": "Sub-module",
+          "mention": "Vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Analytic account",
+          "type": "DataObject",
+          "mention": "analytic account",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing orders",
+          "type": "Sub-module",
+          "mention": "Manufacturing orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Other costs",
+          "type": "Sub-module",
+          "mention": "Other costs",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Costs",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Costs"
+        },
+        {
+          "source": "Timesheets",
+          "relation": "IS_PART_OF",
+          "target": "Costs",
+          "evidence": "- Timesheets: total cost of time tracked by employees via timesheets"
+        },
+        {
+          "source": "Timesheets",
+          "relation": "REQUIRES",
+          "target": "Employees",
+          "evidence": "total cost of time tracked by employees via timesheets"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "IS_PART_OF",
+          "target": "Costs",
+          "evidence": "- Purchase Orders: total cost of purchase orders"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "GENERATES",
+          "target": "Vendor bill",
+          "evidence": "This entry only appears once the vendor bill is posted."
+        },
+        {
+          "source": "Materials",
+          "relation": "IS_PART_OF",
+          "target": "Costs",
+          "evidence": "- Materials: total cost of products"
+        },
+        {
+          "source": "Materials",
+          "relation": "RELATED_TO",
+          "target": "Project",
+          "evidence": "total cost of products... for the project"
+        },
+        {
+          "source": "Materials",
+          "relation": "GENERATES",
+          "target": "Stock moves",
+          "evidence": "total cost of products included in stock moves"
+        },
+        {
+          "source": "Materials",
+          "relation": "REQUIRES",
+          "target": "Analytic Costs",
+          "evidence": "This section is only displayed if Analytic Costs have been enabled"
+        },
+        {
+          "source": "Analytic Costs",
+          "relation": "CONFIGURED_BY",
+          "target": "Operations Types",
+          "evidence": "Analytic Costs have been enabled in Inventory --> Configuration --> Operations Types"
+        },
+        {
+          "source": "Operations Types",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Inventory --> Configuration --> Operations Types"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "Inventory --> Configuration"
+        },
+        {
+          "source": "Stock moves",
+          "relation": "USES_METHOD",
+          "target": "Product's cost",
+          "evidence": "ensures that the product's cost is tracked during the stock move"
+        },
+        {
+          "source": "Expenses",
+          "relation": "IS_PART_OF",
+          "target": "Costs",
+          "evidence": "- Expenses: total costs of expenses"
+        },
+        {
+          "source": "Vendor bills",
+          "relation": "IS_PART_OF",
+          "target": "Costs",
+          "evidence": "- Vendor bills: total costs of vendor bills"
+        },
+        {
+          "source": "Vendor bills",
+          "relation": "RELATED_TO",
+          "target": "Analytic account",
+          "evidence": "vendor bills linked to the project's analytic account"
+        },
+        {
+          "source": "Manufacturing orders",
+          "relation": "IS_PART_OF",
+          "target": "Costs",
+          "evidence": "- Manufacturing orders: total costs of manufacturing orders"
+        },
+        {
+          "source": "Manufacturing orders",
+          "relation": "RELATED_TO",
+          "target": "Analytic account",
+          "evidence": "manufacturing orders linked to the project's analytic account"
+        },
+        {
+          "source": "Other costs",
+          "relation": "IS_PART_OF",
+          "target": "Costs",
+          "evidence": "- Other costs: any other costs"
+        },
+        {
+          "source": "Other costs",
+          "relation": "RELATED_TO",
+          "target": "Analytic account",
+          "evidence": "any other costs linked to the project's analytic account"
+        }
+      ]
+    }
+  }
+]

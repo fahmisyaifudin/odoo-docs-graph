@@ -1,0 +1,221 @@
+[
+  {
+    "section_id": "in-person-payments",
+    "heading": "In-person payments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment",
+          "type": "Action",
+          "mention": "paid",
+          "confidence": "high"
+        },
+        {
+          "name": "In-person payment",
+          "type": "Feature",
+          "mention": "in-person payment method",
+          "confidence": "high"
+        },
+        {
+          "name": "In-person payment method",
+          "type": "Payment Method",
+          "mention": "in-person payment method",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "In-person payment",
+          "relation": "ENABLES",
+          "target": "Payment",
+          "evidence": "Sales orders are automatically confirmed when paid using an in-person payment method."
+        },
+        {
+          "source": "Payment",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Sales orders are automatically confirmed when paid using an in-person payment method."
+        },
+        {
+          "source": "Payment",
+          "relation": "PRODUCES",
+          "target": "Sales Order",
+          "evidence": "Sales orders are automatically confirmed when paid using an in-person payment method."
+        },
+        {
+          "source": "Payment",
+          "relation": "USES_METHOD",
+          "target": "In-person payment method",
+          "evidence": "Sales orders are automatically confirmed when paid using an in-person payment method."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "pay-on-site",
+    "heading": "Pay on site",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Click & Collect",
+          "type": "Feature",
+          "mention": "Click & Collect",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay on Site",
+          "type": "Feature",
+          "mention": "Pay on Site",
+          "confidence": "high"
+        },
+        {
+          "name": "ecommerce/shipping/instore-pickup",
+          "type": "Setting",
+          "mention": "ecommerce/shipping/instore-pickup",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment_providers/supported_providers",
+          "type": "Setting",
+          "mention": "payment_providers/supported_providers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pick up in store",
+          "type": "Feature",
+          "mention": "Pick up in store",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Click & Collect",
+          "relation": "ENABLES",
+          "target": "Pay on Site",
+          "evidence": "To allow customers...pay when collecting them in-store, enable and configure the Click & Collect feature"
+        },
+        {
+          "source": "Click & Collect",
+          "relation": "CONFIGURED_BY",
+          "target": "ecommerce/shipping/instore-pickup",
+          "evidence": "enable and configure the Click & Collect feature <ecommerce/shipping/instore-pickup>"
+        },
+        {
+          "source": "Pay on Site",
+          "relation": "CONFIGURED_BY",
+          "target": "payment_providers/supported_providers",
+          "evidence": "access the payment provider form <payment_providers/supported_providers>"
+        },
+        {
+          "source": "Pay on Site",
+          "relation": "TRIGGERED_BY",
+          "target": "Pick up in store",
+          "evidence": "The method is only available at checkout for customers who select the **Pick up in store** delivery method."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "cash-on-delivery",
+    "heading": "Cash on delivery",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash on Delivery",
+          "type": "Feature",
+          "mention": "Cash on Delivery",
+          "confidence": "high"
+        },
+        {
+          "name": "payment method",
+          "type": "Feature",
+          "mention": "payment method",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery method",
+          "type": "Module",
+          "mention": "delivery method",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery method form",
+          "type": "DataObject",
+          "mention": "delivery method form",
+          "confidence": "high"
+        },
+        {
+          "name": "payment provider",
+          "type": "Feature",
+          "mention": "payment provider",
+          "confidence": "high"
+        },
+        {
+          "name": "payment provider form",
+          "type": "DataObject",
+          "mention": "payment provider form",
+          "confidence": "high"
+        },
+        {
+          "name": "Messages tab",
+          "type": "Module",
+          "mention": "Messages tab",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Cash on Delivery",
+          "relation": "HAS_FEATURE",
+          "target": "payment method",
+          "evidence": "The Cash on Delivery payment method"
+        },
+        {
+          "source": "Cash on Delivery",
+          "relation": "ENABLES",
+          "target": "payment provider",
+          "evidence": "The Cash on Delivery payment provider is automatically enabled and published"
+        },
+        {
+          "source": "Cash on Delivery",
+          "relation": "IS_PART_OF",
+          "target": "delivery method",
+          "evidence": "for customers who select a delivery method with the Cash on Delivery feature enabled"
+        },
+        {
+          "source": "payment provider",
+          "relation": "CONTAINS",
+          "target": "Messages tab",
+          "evidence": "access the payment provider form and go to the Messages tab"
+        }
+      ]
+    }
+  }
+]

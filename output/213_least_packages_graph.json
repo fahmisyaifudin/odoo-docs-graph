@@ -1,0 +1,781 @@
+[
+  {
+    "section_id": "least-packages-removal",
+    "heading": "Least packages removal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Least Packages removal strategy",
+          "type": "Feature",
+          "mention": "least packages removal strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse",
+          "type": "Actor",
+          "mention": "warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "flour",
+          "type": "Concept",
+          "mention": "flour",
+          "confidence": "medium"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Least Packages removal strategy",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Least packages removal"
+        },
+        {
+          "source": "Least Packages removal strategy",
+          "relation": "ENABLES",
+          "target": "maintaining organized stock",
+          "evidence": "ideal for maintaining organized stock"
+        },
+        {
+          "source": "Least Packages removal strategy",
+          "relation": "REQUIRES",
+          "target": "warehouse",
+          "evidence": "consider the following example, featuring a warehouse"
+        },
+        {
+          "source": "order",
+          "relation": "TRIGGERED_BY",
+          "target": "Least Packages removal strategy",
+          "evidence": "fulfills an order by opening the fewest number of packages"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enabling-the-least-packages-removal-strategy",
+    "heading": "Enabling the least packages removal strategy",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Navigate to Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Feature",
+          "mention": "Operations section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packages",
+          "type": "Feature",
+          "mention": "Packages feature",
+          "confidence": "high"
+        },
+        {
+          "name": "least packages removal strategy",
+          "type": "Concept",
+          "mention": "least packages removal strategy",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "and in the Operations section"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Packages",
+          "evidence": "select the check box for the Packages feature"
+        },
+        {
+          "source": "Packages",
+          "relation": "ENABLES",
+          "target": "least packages removal strategy",
+          "evidence": "Packages feature is required for the *least packages* removal strategy"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "store-products-in-packages",
+    "heading": "Store products in packages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory/warehouses_storage/pack",
+          "type": "Module",
+          "mention": "inventory/warehouses_storage/pack",
+          "confidence": "medium"
+        },
+        {
+          "name": "Store products in packages",
+          "type": "Feature",
+          "mention": "Title: Store products in packages",
+          "confidence": "high"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "packages",
+          "type": "DataObject",
+          "mention": "packages",
+          "confidence": "medium"
+        },
+        {
+          "name": "transfer",
+          "type": "Workflow",
+          "mention": "during a transfer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Store products in packages",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Title: Store products in packages"
+        },
+        {
+          "source": "inventory/warehouses_storage/pack",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "inventory/warehouses_storage/pack"
+        },
+        {
+          "source": "Store products in packages",
+          "relation": "HAS_FEATURE",
+          "target": "packages",
+          "evidence": "Title: Store products in packages"
+        },
+        {
+          "source": "Store products in packages",
+          "relation": "HAS_FEATURE",
+          "target": "products",
+          "evidence": "First, products are received"
+        },
+        {
+          "source": "transfer",
+          "relation": "ENABLES",
+          "target": "Store products in packages",
+          "evidence": "Next, the received products are stored in packages created during a transfer"
+        },
+        {
+          "source": "inventory/warehouses_storage/pack",
+          "relation": "ENABLES",
+          "target": "transfer",
+          "evidence": "inventory/warehouses_storage/pack"
+        },
+        {
+          "source": "packages",
+          "relation": "BELONGS_TO",
+          "target": "Store products in packages",
+          "evidence": "Store products in packages"
+        },
+        {
+          "source": "products",
+          "relation": "BELONGS_TO",
+          "target": "Store products in packages",
+          "evidence": "Store products in packages"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "set-the-removal-strategy",
+    "heading": "Set the removal strategy",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "product inventory",
+          "type": "DataObject",
+          "mention": "product inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "removal strategy",
+          "type": "Feature",
+          "mention": "removal strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "storage location",
+          "type": "DataObject",
+          "mention": "storage location",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory/warehouses_storage/lp-location",
+          "type": "DataObject",
+          "mention": "<inventory/warehouses_storage/lp-location>",
+          "confidence": "high"
+        },
+        {
+          "name": "product category",
+          "type": "DataObject",
+          "mention": "product category",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory/warehouses_storage/lp-category",
+          "type": "DataObject",
+          "mention": "<inventory/warehouses_storage/lp-category>",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "product inventory",
+          "evidence": "After you have configured your product inventory"
+        },
+        {
+          "source": "removal strategy",
+          "relation": "CONFIGURED_BY",
+          "target": "storage location",
+          "evidence": "set the removal strategy on the storage location"
+        },
+        {
+          "source": "removal strategy",
+          "relation": "CONFIGURED_BY",
+          "target": "product category",
+          "evidence": "set the removal strategy on... product category"
+        },
+        {
+          "source": "storage location",
+          "relation": "RELATED_TO",
+          "target": "inventory/warehouses_storage/lp-location",
+          "evidence": "storage location <inventory/warehouses_storage/lp-location>"
+        },
+        {
+          "source": "product category",
+          "relation": "RELATED_TO",
+          "target": "inventory/warehouses_storage/lp-category",
+          "evidence": "product category <inventory/warehouses_storage/lp-category>"
+        },
+        {
+          "source": "product inventory",
+          "relation": "RELATED_TO",
+          "target": "storage location",
+          "evidence": "After you have configured your product inventory, set the removal strategy on the storage location"
+        },
+        {
+          "source": "product inventory",
+          "relation": "RELATED_TO",
+          "target": "product category",
+          "evidence": "After you have configured your product inventory, set the removal strategy on the storage location or product category"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "on-the-storage-location",
+    "heading": "On the storage location",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse section",
+          "type": "Feature",
+          "mention": "Warehouse section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations",
+          "type": "Feature",
+          "mention": "Locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "location",
+          "type": "DataObject",
+          "mention": "location",
+          "confidence": "high"
+        },
+        {
+          "name": "Logistics heading",
+          "type": "Feature",
+          "mention": "Logistics heading",
+          "confidence": "low"
+        },
+        {
+          "name": "Removal Strategy",
+          "type": "Feature",
+          "mention": "Removal Strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "Least Packages",
+          "type": "Standard",
+          "mention": "Least Packages",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Storage Locations",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "enable a couple settings in the Inventory configuration settings"
+        },
+        {
+          "source": "Multi-Step Routes",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "enable a couple settings in the Inventory configuration settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "Open Inventory app --> Configuration"
+        },
+        {
+          "source": "Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Open Inventory app"
+        },
+        {
+          "source": "Warehouse section",
+          "relation": "CONTAINS",
+          "target": "Storage Locations",
+          "evidence": "Warehouse section, enable Storage Locations"
+        },
+        {
+          "source": "Warehouse section",
+          "relation": "CONTAINS",
+          "target": "Multi-Step Routes",
+          "evidence": "Warehouse section, enable Multi-Step Routes"
+        },
+        {
+          "source": "Warehouse section",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "Warehouse section"
+        },
+        {
+          "source": "Locations",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Locations"
+        },
+        {
+          "source": "location",
+          "relation": "CONFIGURED_BY",
+          "target": "Removal Strategy",
+          "evidence": "On the location form... set the Removal Strategy"
+        },
+        {
+          "source": "Removal Strategy",
+          "relation": "USES_METHOD",
+          "target": "Least Packages",
+          "evidence": "set the Removal Strategy. to Least Packages"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "on-the-product-category",
+    "heading": "On the product category",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Categories",
+          "type": "Feature",
+          "mention": "Categories",
+          "confidence": "high"
+        },
+        {
+          "name": "product category",
+          "type": "DataObject",
+          "mention": "product category",
+          "confidence": "high"
+        },
+        {
+          "name": "Force Removal Strategy field",
+          "type": "Field",
+          "mention": "Force Removal Strategy field",
+          "confidence": "high"
+        },
+        {
+          "name": "Least Packages",
+          "type": "Standard",
+          "mention": "Least Packages",
+          "confidence": "medium"
+        },
+        {
+          "name": "flour",
+          "type": "Concept",
+          "mention": "flour",
+          "confidence": "medium"
+        },
+        {
+          "name": "Baking Materials",
+          "type": "Concept",
+          "mention": "Baking Materials",
+          "confidence": "medium"
+        },
+        {
+          "name": "closest location",
+          "type": "Standard",
+          "mention": "closest_location",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Categories",
+          "relation": "CONTAINS",
+          "target": "product category",
+          "evidence": "Categories and selecting the intended product category."
+        },
+        {
+          "source": "product category",
+          "relation": "HAS_FEATURE",
+          "target": "Force Removal Strategy field",
+          "evidence": "Next, in the Force Removal Strategy field, select Least Packages."
+        },
+        {
+          "source": "Force Removal Strategy field",
+          "relation": "CONFIGURED_BY",
+          "target": "Least Packages",
+          "evidence": "in the Force Removal Strategy field, select Least Packages."
+        },
+        {
+          "source": "product category",
+          "relation": "USES_METHOD",
+          "target": "Least Packages",
+          "evidence": "the flour's product category, Baking Materials, uses the least packages removal strategy."
+        },
+        {
+          "source": "product category",
+          "relation": "RELATED_TO",
+          "target": "closest location",
+          "evidence": "When there are different removal strategies applied on both the location and product category for a product."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "workflow",
+    "heading": "Workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Least packages removal strategy",
+          "type": "Concept",
+          "mention": "least packages removal strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "Flour (kg)",
+          "type": "Product",
+          "mention": "Flour (kg)",
+          "confidence": "high"
+        },
+        {
+          "name": "kg",
+          "type": "Feature",
+          "mention": "kg",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "high"
+        },
+        {
+          "name": "product category",
+          "type": "DataObject",
+          "mention": "product category",
+          "confidence": "high"
+        },
+        {
+          "name": "Force Removal Strategy",
+          "type": "Setting",
+          "mention": "Force Removal Strategy",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Locations report",
+          "type": "Report",
+          "mention": "Locations report",
+          "confidence": "high"
+        },
+        {
+          "name": "On Hand",
+          "type": "Field",
+          "mention": "On Hand",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Details",
+          "type": "Action",
+          "mention": "Details",
+          "confidence": "high"
+        },
+        {
+          "name": "Detailed Operations pop-up window",
+          "type": "DataObject",
+          "mention": "Detailed Operations pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Pick From field",
+          "type": "Field",
+          "mention": "Pick From field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "product category",
+          "relation": "CONFIGURED_BY",
+          "target": "Force Removal Strategy",
+          "evidence": "The product category's Force Removal Strategy is set to Least Packages."
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "Open Inventory app --> Reporting --> Locations."
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Locations report",
+          "evidence": "Open Inventory app --> Reporting --> Locations."
+        },
+        {
+          "source": "Sales app",
+          "relation": "ENABLES",
+          "target": "sales order",
+          "evidence": "A sales order is created for eighty kilograms of flour by going to the Sales app and creating a new quotation."
+        },
+        {
+          "source": "Sales app",
+          "relation": "ENABLES",
+          "target": "quotation",
+          "evidence": "A sales order is created for eighty kilograms of flour by going to the Sales app and creating a new quotation."
+        },
+        {
+          "source": "sales order",
+          "relation": "ENABLES",
+          "target": "Confirm",
+          "evidence": "After clicking Confirm, the delivery order is created."
+        },
+        {
+          "source": "Confirm",
+          "relation": "TRIGGERED_BY",
+          "target": "delivery order",
+          "evidence": "After clicking Confirm, the delivery order is created."
+        },
+        {
+          "source": "delivery order",
+          "relation": "CONTAINS",
+          "target": "Quantity field",
+          "evidence": "On the delivery order, the Quantity field displays the amount automatically picked."
+        },
+        {
+          "source": "delivery order",
+          "relation": "ENABLES",
+          "target": "Details",
+          "evidence": "For more details about where the units were picked, click Details on the product line."
+        },
+        {
+          "source": "Details",
+          "relation": "TRIGGERED_BY",
+          "target": "Detailed Operations pop-up window",
+          "evidence": "Doing so opens the Detailed Operations pop-up window."
+        },
+        {
+          "source": "Detailed Operations pop-up window",
+          "relation": "CONTAINS",
+          "target": "Pick From field",
+          "evidence": "In the Detailed Operations pop-up window, the Pick From field displays where the quantities to fulfill the Demand are picked."
+        }
+      ]
+    }
+  }
+]

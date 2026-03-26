@@ -1,0 +1,1341 @@
+[
+  {
+    "section_id": "conduct-appraisals",
+    "heading": "Conduct appraisals",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee self-assessment",
+          "type": "Workflow",
+          "mention": "Employee self-assessment",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee's Feedback",
+          "type": "DataObject",
+          "mention": "Employee's Feedback",
+          "confidence": "high"
+        },
+        {
+          "name": "Visible to Manager",
+          "type": "Setting",
+          "mention": "Visible to Manager",
+          "confidence": "high"
+        },
+        {
+          "name": "Manager feedback",
+          "type": "Workflow",
+          "mention": "Manager feedback",
+          "confidence": "high"
+        },
+        {
+          "name": "Manager's Feedback",
+          "type": "DataObject",
+          "mention": "Manager's Feedback",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisal review",
+          "type": "Workflow",
+          "mention": "Appraisal review",
+          "confidence": "high"
+        },
+        {
+          "name": "Completion and rating",
+          "type": "Workflow",
+          "mention": "Completion and rating",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Manager",
+          "type": "Actor",
+          "mention": "manager",
+          "confidence": "high"
+        },
+        {
+          "name": "Private notes",
+          "type": "DataObject",
+          "mention": "private notes",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employee self-assessment",
+          "relation": "CONTAINS",
+          "target": "Employee's Feedback",
+          "evidence": "The employee completes the Employee's Feedback template"
+        },
+        {
+          "source": "Employee self-assessment",
+          "relation": "CONFIGURED_BY",
+          "target": "Visible to Manager",
+          "evidence": "Responses remain hidden until the employee sets the form to Visible to Manager"
+        },
+        {
+          "source": "Employee self-assessment",
+          "relation": "PERFORMED_BY",
+          "target": "Employee",
+          "evidence": "The employee completes the Employee's Feedback template"
+        },
+        {
+          "source": "Manager feedback",
+          "relation": "CONTAINS",
+          "target": "Manager's Feedback",
+          "evidence": "the manager... fills out the Manager's Feedback template"
+        },
+        {
+          "source": "Manager feedback",
+          "relation": "PERFORMED_BY",
+          "target": "Manager",
+          "evidence": "the manager reviews goals... and fills out the Manager's Feedback template"
+        },
+        {
+          "source": "Appraisal review",
+          "relation": "PERFORMED_BY",
+          "target": "Manager",
+          "evidence": "Manager and employee meet"
+        },
+        {
+          "source": "Appraisal review",
+          "relation": "PERFORMED_BY",
+          "target": "Employee",
+          "evidence": "Manager and employee meet"
+        },
+        {
+          "source": "Completion and rating",
+          "relation": "PRODUCES",
+          "target": "Private notes",
+          "evidence": "the manager assigns a final rating, adds any private notes"
+        },
+        {
+          "source": "Completion and rating",
+          "relation": "PERFORMED_BY",
+          "target": "Manager",
+          "evidence": "After the discussion, the manager assigns a final rating"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "employee-self-assessment",
+    "heading": "Employee self-assessment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals",
+          "type": "Module",
+          "mention": "Appraisals app",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee self-assessment",
+          "type": "Feature",
+          "mention": "Employee self-assessment",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisal",
+          "type": "DataObject",
+          "mention": "appraisal",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisal form",
+          "type": "DataObject",
+          "mention": "appraisal form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee's Feedback",
+          "type": "Sub-module",
+          "mention": "Employee's Feedback half",
+          "confidence": "medium"
+        },
+        {
+          "name": "My work",
+          "type": "Sub-module",
+          "mention": "My work",
+          "confidence": "low"
+        },
+        {
+          "name": "My future",
+          "type": "Sub-module",
+          "mention": "My future",
+          "confidence": "low"
+        },
+        {
+          "name": "My feelings",
+          "type": "Sub-module",
+          "mention": "My feelings",
+          "confidence": "low"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "confirmation email",
+          "type": "DataObject",
+          "mention": "confirmation email",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employee self-assessment",
+          "relation": "IS_PART_OF",
+          "target": "Appraisals",
+          "evidence": "open their appraisal in the **Appraisals** app"
+        },
+        {
+          "source": "appraisal",
+          "relation": "CONTAINS",
+          "target": "Employee's Feedback",
+          "evidence": "fill out their half of the default appraisal template"
+        },
+        {
+          "source": "Employee's Feedback",
+          "relation": "CONTAINS",
+          "target": "My work",
+          "evidence": "includes the following sections: My work"
+        },
+        {
+          "source": "Employee's Feedback",
+          "relation": "CONTAINS",
+          "target": "My future",
+          "evidence": "includes the following sections: My future"
+        },
+        {
+          "source": "Employee's Feedback",
+          "relation": "CONTAINS",
+          "target": "My feelings",
+          "evidence": "includes the following sections: My feelings"
+        },
+        {
+          "source": "Employee self-assessment",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "the employee is required to fill out the self-assessment"
+        },
+        {
+          "source": "Employee self-assessment",
+          "relation": "ENABLES",
+          "target": "appraisal",
+          "evidence": "fill out their half of the default appraisal template"
+        },
+        {
+          "source": "appraisal",
+          "relation": "REQUIRES",
+          "target": "confirmation email",
+          "evidence": "click on the link in the confirmation email to navigate to the appraisal"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "complete-the-self-assessment",
+    "heading": "Complete the self-assessment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Complete the self-assessment",
+          "type": "Action",
+          "mention": "Title: Complete the self-assessment",
+          "confidence": "high"
+        },
+        {
+          "name": "employee feedback",
+          "type": "DataObject",
+          "mention": "employee feedback",
+          "confidence": "medium"
+        },
+        {
+          "name": "Private toggle",
+          "type": "Feature",
+          "mention": "Private toggle",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shared to Appraisers toggle",
+          "type": "Feature",
+          "mention": "Shared to Appraisers toggle",
+          "confidence": "medium"
+        },
+        {
+          "name": "self-assessment",
+          "type": "Workflow",
+          "mention": "self-assessment",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisers",
+          "type": "Actor",
+          "mention": "appraisers",
+          "confidence": "medium"
+        },
+        {
+          "name": "manager-feedback",
+          "type": "Unknown",
+          "mention": "_appraisals/manager-feedback:",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Private toggle",
+          "relation": "EQUIVALENT_TO",
+          "target": "Shared to Appraisers toggle",
+          "evidence": "This changes the toggle text to Shared to Appraisers"
+        },
+        {
+          "source": "employee",
+          "relation": "PERFORMED_BY",
+          "target": "Complete the self-assessment",
+          "evidence": "the employee is performing their self-assessment"
+        },
+        {
+          "source": "self-assessment",
+          "relation": "HAS_FEATURE",
+          "target": "Private toggle",
+          "evidence": "they click the gray Private toggle"
+        },
+        {
+          "source": "employee feedback",
+          "relation": "GENERATES",
+          "target": "self-assessment",
+          "evidence": "The employee feedback remains hidden... while the employee is performing their self-assessment"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manager-feedback",
+    "heading": "Manager feedback",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee's Feedback",
+          "type": "DataObject",
+          "mention": "Employee's Feedback section",
+          "confidence": "high"
+        },
+        {
+          "name": "Manager's Feedback",
+          "type": "DataObject",
+          "mention": "Manager's Feedback section",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisers",
+          "type": "Actor",
+          "mention": "appraisers",
+          "confidence": "high"
+        },
+        {
+          "name": "manager",
+          "type": "Actor",
+          "mention": "manager",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "coworkers",
+          "type": "Actor",
+          "mention": "employee's coworkers",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisal form",
+          "type": "DataObject",
+          "mention": "appraisal form",
+          "confidence": "high"
+        },
+        {
+          "name": "Feedback",
+          "type": "DataObject",
+          "mention": "Feedback section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Evaluation",
+          "type": "DataObject",
+          "mention": "Evaluation section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Improvements",
+          "type": "DataObject",
+          "mention": "Improvements section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Private toggle",
+          "type": "Feature",
+          "mention": "Private toggle",
+          "confidence": "high"
+        },
+        {
+          "name": "Shared to Employee",
+          "type": "Feature",
+          "mention": "Shared to Employee",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "appraisal form",
+          "relation": "CONTAINS",
+          "target": "Manager's Feedback",
+          "evidence": "Anyone added as an appraiser is able to review the appraisal and populate the Manager's Feedback section."
+        },
+        {
+          "source": "manager",
+          "relation": "PERFORMED_BY",
+          "target": "appraisal",
+          "evidence": "Typically, managers conduct appraisals with their employees, one on one."
+        },
+        {
+          "source": "Manager's Feedback",
+          "relation": "CONTAINS",
+          "target": "Feedback",
+          "evidence": "The manager's half has the following sections: Feedback, Evaluation, and Improvements."
+        },
+        {
+          "source": "Manager's Feedback",
+          "relation": "CONTAINS",
+          "target": "Evaluation",
+          "evidence": "The manager's half has the following sections: Feedback, Evaluation, and Improvements."
+        },
+        {
+          "source": "Manager's Feedback",
+          "relation": "CONTAINS",
+          "target": "Improvements",
+          "evidence": "The manager's half has the following sections: Feedback, Evaluation, and Improvements."
+        },
+        {
+          "source": "Private toggle",
+          "relation": "ENABLES",
+          "target": "Shared to Employee",
+          "evidence": "When the feedback section is completed, the manager clicks the Private toggle. This changes the toggle text to Shared to Employee..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "ask-for-feedback",
+    "heading": "Ask for feedback",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Ask for feedback",
+          "type": "Action",
+          "mention": "Title: Ask for feedback",
+          "confidence": "high"
+        },
+        {
+          "name": "360 Feedback",
+          "type": "Feature",
+          "mention": "*360 Feedback*",
+          "confidence": "high"
+        },
+        {
+          "name": "Manager",
+          "type": "Actor",
+          "mention": "the manager",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "an employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Coworkers",
+          "type": "Actor",
+          "mention": "coworkers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Appraisal",
+          "type": "Workflow",
+          "mention": "the appraisal process",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manager",
+          "relation": "PERFORMED_BY",
+          "target": "Ask for feedback",
+          "evidence": "the manager can request feedback"
+        },
+        {
+          "source": "Ask for feedback",
+          "relation": "ENABLES",
+          "target": "360 Feedback",
+          "evidence": "request feedback for an employee... referred to as *360 Feedback*"
+        },
+        {
+          "source": "360 Feedback",
+          "relation": "REQUIRES",
+          "target": "Appraisal",
+          "evidence": "To request feedback, the appraisal **must** be confirmed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "appraisal-review",
+    "heading": "Appraisal review",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisal review",
+          "type": "Module",
+          "mention": "Appraisal review",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee's Feedback",
+          "type": "DataObject",
+          "mention": "Employee's Feedback",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manager feedback",
+          "type": "DataObject",
+          "mention": "Manager feedback",
+          "confidence": "medium"
+        },
+        {
+          "name": "skills",
+          "type": "DataObject",
+          "mention": "skills",
+          "confidence": "medium"
+        },
+        {
+          "name": "goals",
+          "type": "DataObject",
+          "mention": "goals",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "manager",
+          "type": "Actor",
+          "mention": "manager",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appraisal review",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Appraisal review"
+        },
+        {
+          "source": "Employee's Feedback",
+          "relation": "IS_PART_OF",
+          "target": "Appraisal review",
+          "evidence": "During the appraisal meeting, the manager reviews both the Employee's Feedback section"
+        },
+        {
+          "source": "Manager feedback",
+          "relation": "IS_PART_OF",
+          "target": "Appraisal review",
+          "evidence": "During the appraisal meeting, the manager reviews... their own Manager feedback"
+        },
+        {
+          "source": "skills",
+          "relation": "IS_PART_OF",
+          "target": "Appraisal review",
+          "evidence": "Additionally, the employee's skills... are reviewed at this time"
+        },
+        {
+          "source": "goals",
+          "relation": "IS_PART_OF",
+          "track": "Appraisal review",
+          "evidence": "Additionally... goals... are reviewed at this time"
+        },
+        {
+          "source": "manager",
+          "relation": "PERFORMED_BY",
+          "target": "Appraisal review",
+          "evidence": "During the appraisal meeting, the manager reviews..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "schedule-appraisal-review",
+    "heading": "Schedule appraisal review",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals app",
+          "type": "Module",
+          "mention": "Appraisals app",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals",
+          "type": "Module",
+          "mention": "Appraisals",
+          "confidence": "medium"
+        },
+        {
+          "name": "Schedule Meeting",
+          "type": "Action",
+          "mention": "Schedule Meeting button",
+          "confidence": "high"
+        },
+        {
+          "name": "Meetings dashboard",
+          "type": "Feature",
+          "mention": "Meetings dashboard loads",
+          "confidence": "medium"
+        },
+        {
+          "name": "calendar",
+          "type": "Feature",
+          "mention": "calendar on the right side",
+          "confidence": "low"
+        },
+        {
+          "name": "New Event",
+          "type": "DataObject",
+          "mention": "New Event pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Title",
+          "type": "Field",
+          "mention": "fa-tag (Title) field",
+          "confidence": "high"
+        },
+        {
+          "name": "Dates",
+          "type": "Field",
+          "mention": "fa-clock-o (Dates) fields",
+          "confidence": "high"
+        },
+        {
+          "name": "Participants",
+          "type": "Field",
+          "mention": "fa-user (Participants) field",
+          "confidence": "high"
+        },
+        {
+          "name": "Location",
+          "type": "Field",
+          "mention": "fa-map (Location)",
+          "confidence": "high"
+        },
+        {
+          "name": "Video",
+          "type": "Action",
+          "mention": "fa-plus Video",
+          "confidence": "medium"
+        },
+        {
+          "name": "Videocall URL",
+          "type": "Field",
+          "mention": "fa-video-camera (Videocall URL)",
+          "confidence": "high"
+        },
+        {
+          "name": "Visibility",
+          "type": "Field",
+          "mention": "fa-lock (Visibility)",
+          "confidence": "high"
+        },
+        {
+          "name": "Private",
+          "type": "Setting",
+          "mention": "Private",
+          "confidence": "medium"
+        },
+        {
+          "name": "Public",
+          "type": "Setting",
+          "mention": "Public",
+          "confidence": "medium"
+        },
+        {
+          "name": "Only internal users",
+          "type": "Setting",
+          "mention": "Only internal users",
+          "confidence": "medium"
+        },
+        {
+          "name": "Notes",
+          "type": "Field",
+          "mention": "fa-sticky-note (Notes)",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Schedule appraisal review",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Schedule Meeting",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "Click the Schedule Meeting button"
+        },
+        {
+          "source": "Schedule Meeting",
+          "relation": "TRIGGERED_BY",
+          "target": "Schedule Meeting button",
+          "evidence": "Click the Schedule Meeting button"
+        },
+        {
+          "source": "Schedule Meeting",
+          "relation": "ENABLES",
+          "target": "Meetings dashboard",
+          "evidence": "Schedule Meeting button, and the Meetings dashboard loads"
+        },
+        {
+          "source": "Schedule Meeting",
+          "relation": "PRODUCES",
+          "target": "New Event",
+          "evidence": "opens a *New Event* pop-up window"
+        },
+        {
+          "source": "New Event",
+          "relation": "CONTAINS",
+          "target": "Title",
+          "evidence": "fa-tag (Title) field"
+        },
+        {
+          "source": "New Event",
+          "relation": "CONTAINS",
+          "target": "Dates",
+          "evidence": "fa-clock-o (Dates) fields"
+        },
+        {
+          "source": "New Event",
+          "relation": "CONTAINS",
+          "target": "Participants",
+          "evidence": "fa-user (Participants) field"
+        },
+        {
+          "source": "New Event",
+          "relation": "CONTAINS",
+          "target": "Location",
+          "evidence": "fa-map (Location)"
+        },
+        {
+          "source": "Video",
+          "relation": "ENABLES",
+          "target": "Videocall URL",
+          "evidence": "fa-plus Video, and a fa-video-camera (Videocall URL) link appears"
+        },
+        {
+          "source": "New Event",
+          "relation": "CONTAINS",
+          "target": "Visibility",
+          "evidence": "fa-lock (Visibility)"
+        },
+        {
+          "source": "Visibility",
+          "relation": "CONFIGURED_BY",
+          "target": "Private",
+          "evidence": "The options are either Private"
+        },
+        {
+          "source": "Visibility",
+          "relation": "CONFIGURED_BY",
+          "target": "Public",
+          "evidence": "The options are either Public"
+        },
+        {
+          "source": "Visibility",
+          "relation": "CONFIGURED_BY",
+          "target": "Only internal users",
+          "evidence": "The options are either Only internal users"
+        },
+        {
+          "source": "New Event",
+          "relation": "CONTAINS",
+          "target": "Notes",
+          "evidence": "fa-sticky-note (Notes) line"
+        },
+        {
+          "source": "Save",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "click Save"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "review-employee-skills",
+    "heading": "Review employee skills",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisal",
+          "type": "Module",
+          "mention": "an appraisal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Appraisal Form",
+          "type": "DataObject",
+          "mention": "appraisal form",
+          "confidence": "high"
+        },
+        {
+          "name": "Skills Tab",
+          "type": "Feature",
+          "mention": "Skills tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee Form",
+          "type": "DataObject",
+          "mention": "employee form",
+          "confidence": "high"
+        },
+        {
+          "name": "Target Job Field",
+          "type": "Field",
+          "mention": "Target Job field",
+          "confidence": "high"
+        },
+        {
+          "name": "Skill",
+          "type": "Concept",
+          "mention": "skill",
+          "confidence": "high"
+        },
+        {
+          "name": "Skill Level",
+          "type": "Field",
+          "mention": "Skill Level",
+          "confidence": "high"
+        },
+        {
+          "name": "Current Progress",
+          "type": "Field",
+          "mention": "Current progress",
+          "confidence": "high"
+        },
+        {
+          "name": "Justification",
+          "type": "Field",
+          "mention": "Justification",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Target Column",
+          "type": "Field",
+          "mention": "Job Target column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appraisal",
+          "relation": "CONTAINS",
+          "target": "Skills Tab",
+          "evidence": "Part of an appraisal is evaluating an employee's skills"
+        },
+        {
+          "source": "Skills Tab",
+          "relation": "IS_PART_OF",
+          "target": "Appraisal Form",
+          "evidence": "Skills tab of the appraisal form"
+        },
+        {
+          "source": "Skills Tab",
+          "relation": "ENABLES",
+          "target": "Add New Skills",
+          "evidence": "If necessary, add any new skills for the employee"
+        },
+        {
+          "source": "Skills Tab",
+          "relation": "CONFIGURED_BY",
+          "target": "Appraisal Confirmation",
+          "evidence": "Skills tab does not appear on the appraisal until the appraisal is confirmed"
+        },
+        {
+          "source": "Employee Form",
+          "relation": "GENERATES",
+          "target": "Skills",
+          "evidence": "skills from the employee form"
+        },
+        {
+          "source": "Target Job Field",
+          "relation": "GENERATES",
+          "target": "Skills",
+          "evidence": "the corresponding skills and expected levels also appear"
+        },
+        {
+          "source": "Skill",
+          "relation": "GENERATES",
+          "target": "Skill Level",
+          "evidence": "Each skill is grouped with like skills, and the Skill Level"
+        },
+        {
+          "source": "Skill",
+          "relation": "GENERATES",
+          "target": "Current Progress",
+          "evidence": "Current progress, and Justification are displayed for each skill"
+        },
+        {
+          "source": "Skill",
+          "relation": "GENERATES",
+          "target": "Justification",
+          "evidence": "Justification are displayed for each skill"
+        },
+        {
+          "source": "Employee",
+          "relation": "PERFORMED_BY",
+          "target": "Update Skill Level",
+          "evidence": "Click on the Skill Level for the skill that has changed"
+        },
+        {
+          "source": "Skill",
+          "relation": "GENERATES",
+          "target": "Justification Field",
+          "evidence": "enter any relevant details explaining the change"
+        },
+        {
+          "source": "Skills Tab",
+          "relation": "CONTAINS",
+          "target": "Add New Skills",
+          "evidence": "add any new skills for the employee"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "complete-an-appraisal",
+    "heading": "Complete an appraisal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisal",
+          "type": "DataObject",
+          "mention": "appraisal",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "manager",
+          "type": "Actor",
+          "mention": "manager",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisal form",
+          "type": "DataObject",
+          "mention": "appraisal form",
+          "confidence": "medium"
+        },
+        {
+          "name": "appraisals/notes",
+          "type": "Feature",
+          "mention": "<appraisals/notes>",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisals/rate",
+          "type": "Feature",
+          "mention": "<appraisals/rate>",
+          "confidence": "high"
+        },
+        {
+          "name": "Mark as Done button",
+          "type": "Action",
+          "mention": "Mark as Done button",
+          "confidence": "high"
+        },
+        {
+          "name": "Reopen button",
+          "type": "Action",
+          "mention": "Reopen button",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirmed",
+          "type": "DataObject",
+          "mention": "Confirmed",
+          "confidence": "low"
+        },
+        {
+          "name": "Done",
+          "type": "DataObject",
+          "mention": "Done",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "manager",
+          "relation": "PERFORMED_BY",
+          "target": "appraisals/notes",
+          "evidence": "the manager then logs any notes <appraisals/notes>"
+        },
+        {
+          "source": "manager",
+          "relation": "PERFORMED_BY",
+          "target": "appraisals/rate",
+          "evidence": "and assigns a rating <appraisals/rate>"
+        },
+        {
+          "source": "Mark as Done button",
+          "relation": "PRODUCES",
+          "target": "Done",
+          "evidence": "Once the appraisal is marked as *Done*, the status changes from Confirmed to Done"
+        },
+        {
+          "source": "Done",
+          "relation": "BELONGS_TO",
+          "target": "appraisal",
+          "evidence": "Once the appraisal is marked as *Done*, the status changes from Confirmed to Done"
+        },
+        {
+          "source": "Reopen button",
+          "relation": "ENABLES",
+          "target": "Mark as Done button",
+          "evidence": "click the Reopen button, then make any needed modifications. Once all modifications are complete, click the Mark as Done button again"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-private-note",
+    "heading": "Add a private note",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a private note",
+          "type": "Action",
+          "mention": "Title: Add a private note",
+          "confidence": "high"
+        },
+        {
+          "name": "Managers",
+          "type": "Actor",
+          "mention": "Managers",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisal",
+          "type": "DataObject",
+          "mention": "appraisal",
+          "confidence": "high"
+        },
+        {
+          "name": "Private Note tab",
+          "type": "Sub-module",
+          "mention": "Private Note tab",
+          "confidence": "high"
+        },
+        {
+          "name": "employee being evaluated",
+          "type": "Actor",
+          "mention": "employee being evaluated",
+          "confidence": "medium"
+        },
+        {
+          "name": "appraisal process",
+          "type": "Workflow",
+          "mention": "appraisal process",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Managers",
+          "relation": "PERFORMED_BY",
+          "target": "Add a private note",
+          "evidence": "Managers can log notes"
+        },
+        {
+          "source": "Add a private note",
+          "relation": "BELONGS_TO",
+          "target": "appraisal process",
+          "evidence": "This can be done anytime during the appraisal process."
+        },
+        {
+          "source": "Add a private note",
+          "relation": "CONFIGURED_BY",
+          "target": "Private Note tab",
+          "evidence": "Enter any notes in the *Private Note* tab."
+        },
+        {
+          "source": "Private Note tab",
+          "relation": "CONTAINS",
+          "target": "Add a private note",
+          "evidence": "Enter any notes in the *Private Note* tab."
+        },
+        {
+          "source": "Private Note tab",
+          "relation": "IS_PART_OF",
+          "target": "appraisal",
+          "evidence": "Log notes on an appraisal"
+        },
+        {
+          "source": "employee being evaluated",
+          "relation": "RELATED_TO",
+          "target": "appraisal",
+          "evidence": "The employee being evaluated...appraisal"
+        },
+        {
+          "source": "Private Note tab",
+          "relation": "RELATED_TO",
+          "target": "employee being evaluated",
+          "evidence": "does not appear on their appraisal"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "provide-a-final-rating",
+    "heading": "Provide a final rating",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals",
+          "type": "Module",
+          "mention": "Appraisals",
+          "confidence": "high"
+        },
+        {
+          "name": "Evaluation Scale",
+          "type": "Setting",
+          "mention": "Evaluation Scale",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Final Rating",
+          "type": "Field",
+          "mention": "Final Rating",
+          "confidence": "high"
+        },
+        {
+          "name": "manager",
+          "type": "Actor",
+          "mention": "manager",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "Appraisals dashboard",
+          "type": "Report",
+          "mention": "Appraisals dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "medium"
+        },
+        {
+          "name": "goals",
+          "type": "Concept",
+          "mention": "../appraisals/goals",
+          "confidence": "medium"
+        },
+        {
+          "name": "appraisal_analysis",
+          "type": "Report",
+          "mention": "../appraisals/appraisal_analysis",
+          "confidence": "medium"
+        },
+        {
+          "name": "skills_evolution",
+          "type": "Report",
+          "mention": "../appraisals/skills_evolution",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appraisals",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to Appraisals app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Evaluation Scale",
+          "evidence": "Configuration --> Evaluation Scale"
+        },
+        {
+          "source": "Final Rating",
+          "relation": "CONFIGURED_BY",
+          "target": "Evaluation Scale",
+          "evidence": "To add a new rating, navigate to...Evaluation Scale"
+        },
+        {
+          "source": "Appraisals",
+          "relation": "HAS_REPORT",
+          "target": "Appraisals dashboard",
+          "evidence": "Click Appraisals in the top menu to return to the Appraisals dashboard"
+        },
+        {
+          "source": "Appraisals",
+          "relation": "SEE_ALSO",
+          "target": "goals",
+          "evidence": "../appraisals/goals"
+        },
+        {
+          "source": "Appraisals",
+          "relation": "SEE_ALSO",
+          "target": "appraisal_analysis",
+          "evidence": "../appraisals/appraisal_analysis"
+        },
+        {
+          "source": "Appraisals",
+          "relation": "SEE_ALSO",
+          "target": "skills_evolution",
+          "evidence": "../appraisals/skills_evolution"
+        }
+      ]
+    }
+  }
+]

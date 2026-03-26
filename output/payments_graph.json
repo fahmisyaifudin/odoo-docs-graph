@@ -1,0 +1,2104 @@
+[
+  {
+    "section_id": "payments",
+    "heading": "Payments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment",
+          "type": "DataObject",
+          "mention": "payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal Transfers",
+          "type": "Concept",
+          "mention": "Internal transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank Reconciliation",
+          "type": "Concept",
+          "mention": "bank/reconciliation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payment",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "In Odoo, payments..."
+        },
+        {
+          "source": "Payment",
+          "relation": "RELATED_TO",
+          "target": "Invoice",
+          "evidence": "If a payment is **linked to an invoice or bill**..."
+        },
+        {
+          "source": "Payment",
+          "relation": "RELATED_TO",
+          "target": "Bill",
+          "evidence": "If a payment is **linked to an invoice or bill**..."
+        },
+        {
+          "source": "Customer",
+          "relation": "RELATED_TO",
+          "target": "Company",
+          "evidence": "the customer has an outstanding credit with the company..."
+        },
+        {
+          "source": "Company",
+          "relation": "RELATED_TO",
+          "target": "Vendor",
+          "evidence": "or the company has an outstanding debit with a vendor."
+        },
+        {
+          "source": "Payment",
+          "relation": "SEE_ALSO",
+          "target": "Internal Transfers",
+          "evidence": ".. seealso:: - Internal transfers"
+        },
+        {
+          "source": "Payment",
+          "relation": "SEE_ALSO",
+          "target": "Bank Reconciliation",
+          "evidence": ".. seealso:: - bank/reconciliation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "payment-methods",
+    "heading": "Payment methods",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment methods",
+          "type": "Module",
+          "mention": "Payment methods",
+          "confidence": "high"
+        },
+        {
+          "name": "manual payments",
+          "type": "Feature",
+          "mention": "manual payments",
+          "confidence": "high"
+        },
+        {
+          "name": "cash",
+          "type": "Concept",
+          "mention": "cash",
+          "confidence": "medium"
+        },
+        {
+          "name": "checks",
+          "type": "Feature",
+          "mention": "checks",
+          "confidence": "high"
+        },
+        {
+          "name": "batch payment files",
+          "type": "Feature",
+          "mention": "batch payment files",
+          "confidence": "high"
+        },
+        {
+          "name": "NACHA",
+          "type": "Standard",
+          "mention": "NACHA",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA",
+          "type": "Standard",
+          "mention": "SEPA",
+          "confidence": "high"
+        },
+        {
+          "name": "Incoming Payments",
+          "type": "Module",
+          "mention": "Incoming Payments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Outgoing Payments",
+          "type": "Module",
+          "mention": "Outgoing Payments",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank or cash journal",
+          "type": "DataObject",
+          "mention": "bank or cash journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payment methods",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Payment methods are available in Odoo"
+        },
+        {
+          "source": "Payment methods",
+          "relation": "CONTAINS",
+          "target": "manual payments",
+          "evidence": "Examples of payment methods include manual payments"
+        },
+        {
+          "source": "Payment methods",
+          "relation": "CONTAINS",
+          "target": "checks",
+          "evidence": "Examples of payment methods include checks"
+        },
+        {
+          "source": "Payment methods",
+          "relation": "CONTAINS",
+          "target": "batch payment files",
+          "evidence": "Examples of payment methods include batch payment files"
+        },
+        {
+          "source": "checks",
+          "relation": "SEE_ALSO",
+          "target": "<payments/pay_checks>",
+          "evidence": "checks <payments/pay_checks>"
+        },
+        {
+          "source": "batch payment files",
+          "relation": "SUPPORTS",
+          "target": "NACHA",
+          "evidence": "batch payment files (such as NACHA)"
+        },
+        {
+          "source": "batch payment files",
+          "relation": "SUPPORTS",
+          "target": "SEPA",
+          "evidence": "batch payment files (such as SEPA)"
+        },
+        {
+          "source": "NACHA",
+          "relation": "SEE_ALSO",
+          "target": "<l10n_us/ach-electronic-transfers>",
+          "evidence": "NACHA <l10n_us/ach-electronic-transfers>"
+        },
+        {
+          "source": "SEPA",
+          "relation": "SEE_ALSO",
+          "target": "<payments/pay_sepa>",
+          "evidence": "SEPA <payments/pay_sepa>"
+        },
+        {
+          "source": "Payment methods",
+          "relation": "CONFIGURED_BY",
+          "target": "Incoming Payments",
+          "evidence": "Payment methods can be configured in the Incoming Payments tab"
+        },
+        {
+          "source": "Payment methods",
+          "relation": "CONFIGURED_BY",
+          "target": "Outgoing Payments",
+          "evidence": "Payment methods can be configured in the Outgoing Payments tab"
+        },
+        {
+          "source": "Incoming Payments",
+          "relation": "IS_PART_OF",
+          "target": "bank or cash journal",
+          "evidence": "... tabs of a bank or cash journal"
+        },
+        {
+          "source": "Outgoing Payments",
+          "relation": "IS_PART_OF",
+          "target": "bank or cash journal",
+          "evidence": "... tabs of a bank or cash journal"
+        },
+        {
+          "source": "Payment methods",
+          "relation": "SEE_ALSO",
+          "target": "Point of Sale",
+          "evidence": "../../sales/point_of_sale/payment_methods for Point of Sale"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "preferred-payment-method",
+    "heading": "Preferred payment method",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "Customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Sub-module",
+          "mention": "Vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales & Purchase tab",
+          "type": "Sub-module",
+          "mention": "Sales & Purchase tab",
+          "confidence": "high"
+        },
+        {
+          "name": "contact form",
+          "type": "DataObject",
+          "mention": "contact form",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Preferred payment method",
+          "type": "Feature",
+          "mention": "preferred Payment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "payment method",
+          "type": "Field",
+          "mention": "Payment Method",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Method",
+          "type": "Concept",
+          "mention": "Payment Method",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contacts app",
+          "type": "Module",
+          "mention": "Contacts app",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Preferred payment method",
+          "relation": "ENABLES",
+          "target": "payment method",
+          "evidence": "A contact's preferred payment method can be set so that when a payment is created for that contact, the payment method is automatically selected by default."
+        },
+        {
+          "source": "Preferred payment method",
+          "relation": "CONFIGURED_BY",
+          "target": "customer",
+          "evidence": "To set a preferred Payment Method for a customer"
+        },
+        {
+          "source": "Preferred payment method",
+          "relation": "CONFIGURED_BY",
+          "target": "vendor",
+          "evidence": "or a vendor"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Customers",
+          "evidence": "go to Accounting --> Customers --> Customers"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Vendors",
+          "evidence": "Accounting --> Vendors --> Vendors"
+        },
+        {
+          "source": "Customers",
+          "relation": "CONTAINS",
+          "target": "customer",
+          "evidence": "Customers --> Customers"
+        },
+        {
+          "source": "Vendors",
+          "relation": "CONTAINS",
+          "target": "vendor",
+          "evidence": "Vendors --> Vendors"
+        },
+        {
+          "source": "customer",
+          "relation": "IS_PART_OF",
+          "target": "contact form",
+          "evidence": "select the customer or vendor. In the Sales & Purchase tab of the contact form"
+        },
+        {
+          "source": "vendor",
+          "relation": "IS_PART_OF",
+          "target": "contact form",
+          "evidence": "select the customer or vendor. In the Sales & Purchase tab of the contact form"
+        },
+        {
+          "source": "Preferred payment method",
+          "relation": "BELONGS_TO",
+          "target": "Sales & Purchase tab",
+          "evidence": "In the Sales & Purchase tab of the contact form, select the preferred Payment Method"
+        },
+        {
+          "source": "Preferred payment method",
+          "relation": "SEE_ALSO",
+          "target": "Contacts app",
+          "evidence": "Access the full contact list through the Contacts app."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "checks",
+    "heading": "Checks",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "checks",
+          "type": "Module",
+          "mention": "Checks",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bill",
+          "type": "DataObject",
+          "mention": "Vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Outgoing payment method",
+          "type": "Feature",
+          "mention": "dedicated outgoing payment method",
+          "confidence": "high"
+        },
+        {
+          "name": "Check",
+          "type": "Feature",
+          "mention": "Check payment method",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual Payment payment method",
+          "type": "Feature",
+          "mention": "Manual Payment payment method",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank journal",
+          "type": "Module",
+          "mention": "Bank journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Memo",
+          "type": "Field",
+          "mention": "Memo",
+          "confidence": "medium"
+        },
+        {
+          "name": "Check number",
+          "type": "DataObject",
+          "mention": "check number",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer payment",
+          "type": "Action",
+          "mention": "customer payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reconciliation",
+          "type": "Action",
+          "mention": "reconciled",
+          "confidence": "low"
+        },
+        {
+          "name": "Deposit",
+          "type": "Action",
+          "mention": "deposited",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "checks",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Checks"
+        },
+        {
+          "source": "Outgoing payment method",
+          "relation": "BELONGS_TO",
+          "target": "checks",
+          "evidence": "Vendor bills can be paid by check using a dedicated outgoing payment method"
+        },
+        {
+          "source": "Outgoing payment method",
+          "relation": "CONFIGURED_BY",
+          "target": "Check",
+          "evidence": "dedicated outgoing payment method, which allows check numbers to be tracked"
+        },
+        {
+          "source": "Manual Payment payment method",
+          "relation": "SUPPORTS",
+          "target": "checks",
+          "evidence": "For incoming customer check payments, you can use the default Manual Payment payment method"
+        },
+        {
+          "source": "Check",
+          "relation": "CONFIGURED_BY",
+          "target": "Bank journal",
+          "evidence": "To create a Check payment method, follow these steps: Go to Accounting --> Configuration --> Journals and select the Bank journal"
+        },
+        {
+          "source": "Check",
+          "relation": "PRODUCES",
+          "target": "Check number",
+          "evidence": "Memo when registering a customer payment by check"
+        },
+        {
+          "source": "Customer payment",
+          "relation": "CONFIGURED_BY",
+          "target": "Check",
+          "evidence": "When registering a customer payment on an invoice or not related to an invoice, use the new Check payment method"
+        },
+        {
+          "source": "Customer payment",
+          "relation": "TRIGGERED_BY",
+          "target": "Invoice",
+          "evidence": "registering a customer payment on an invoice"
+        },
+        {
+          "source": "Deposit",
+          "relation": "TRIGGERED_BY",
+          "target": "Customer payment",
+          "evidence": "Once deposited to your bank, the check should appear as a bank transaction"
+        },
+        {
+          "source": "Reconciliation",
+          "relation": "TRIGGERED_BY",
+          "target": "Deposit",
+          "evidence": "at which point it can be reconciled with the registered payment"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "registering-payment-from-an-invoice-or-bill",
+    "heading": "Registering payment from an invoice or bill",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "customer invoice",
+          "type": "DataObject",
+          "mention": "customer invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay",
+          "type": "Action",
+          "mention": "Click Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay window",
+          "type": "Module",
+          "mention": "Pay window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "Journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Date",
+          "type": "Field",
+          "mention": "Payment Date",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Method",
+          "type": "Field",
+          "mention": "Payment Method",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment terms",
+          "type": "Concept",
+          "mention": "payment terms",
+          "confidence": "medium"
+        },
+        {
+          "name": "Amount",
+          "type": "Field",
+          "mention": "Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "full amount",
+          "type": "Action",
+          "mention": "click full amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "Memo",
+          "type": "Field",
+          "mention": "Memo",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Payment",
+          "private": true
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pay",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Click Pay on a customer invoice or vendor bill."
+        },
+        {
+          "source": "customer invoice",
+          "relation": "IS_PART_OF",
+          "target": "Pay window",
+          "evidence": "In the Pay window, select the Journal and the Payment Date."
+        },
+        {
+          "source": "vendor bill",
+          "relation": "IS_PART_OF",
+          "target": "Pay window",
+          "evidence": "In the Pay window, select the Journal and the Payment Date."
+        },
+        {
+          "source": "Journal",
+          "relation": "BELONGS_TO",
+          "target": "Pay window",
+          "evidence": "select the Journal"
+        },
+        {
+          "source": "Payment Date",
+          "relation": "BELONGS_TO",
+          "target": "Pay window",
+          "evidence": "select the Payment Date"
+        },
+        {
+          "source": "Payment Method",
+          "relation": "RELATED_TO",
+          "target": "payment terms",
+          "evidence": "the contact's preferred Payment Method"
+        },
+        {
+          "source": "Amount",
+          "relation": "BELONGS_TO",
+          "target": "Pay window",
+          "evidence": "the Amount is automatically set"
+        },
+        {
+          "source": "Memo",
+          "relation": "BELONGS_TO",
+          "target": "Pay window",
+          "evidence": "edit the Memo"
+        },
+        {
+          "source": "Create Payment",
+          "relation": "TRIGGERED_BY",
+          "target": "Pay",
+          "evidence": "Click Create Payment."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "registering-payments-not-tied-to-an-invoice-or-bill",
+    "heading": "Registering payments not tied to an invoice or bill",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Module",
+          "mention": "Customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Module",
+          "mention": "Vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "Payments",
+          "type": "Module",
+          "mention": "Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Registering payments not tied to an invoice or bill",
+          "type": "Feature",
+          "mention": "Registering payments not tied to an invoice or bill",
+          "confidence": "high"
+        },
+        {
+          "name": "outstanding accounts",
+          "type": "Concept",
+          "mention": "outstanding accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "account receivable",
+          "type": "Concept",
+          "mention": "account receivable",
+          "confidence": "medium"
+        },
+        {
+          "name": "account payable",
+          "type": "Concept",
+          "mention": "account payable",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "high"
+        },
+        {
+          "name": "payment",
+          "type": "DataObject",
+          "mention": "payment",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entry",
+          "type": "DataObject",
+          "mention": "journal entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "Amount Due",
+          "type": "Field",
+          "mention": "Amount Due",
+          "confidence": "medium"
+        },
+        {
+          "name": "reconciling",
+          "type": "Action",
+          "mention": "reconciling",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank transaction",
+          "type": "DataObject",
+          "mention": "bank transaction",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Registering payments not tied to an invoice or bill",
+          "relation": "BELONGS_TO",
+          "target": "Customers",
+          "evidence": "via Customers / Vendors --> Payments"
+        },
+        {
+          "source": "Registering payments not tied to an invoice or bill",
+          "relation": "BELONGS_TO",
+          "target": "Vendors",
+          "evidence": "via Customers / Vendors --> Payments"
+        },
+        {
+          "source": "Registering payments not tied to an invoice or bill",
+          "relation": "BELONGS_TO",
+          "target": "Payments",
+          "evidence": "via Customers / Vendors --> Payments"
+        },
+        {
+          "source": "Registering payments not tied to an invoice or bill",
+          "relation": "ENABLES",
+          "target": "payment",
+          "evidence": "When a new payment is registered"
+        },
+        {
+          "source": "Registering payments not tied to an invoice or bill",
+          "relation": "REQUIRES",
+          "target": "outstanding accounts",
+          "evidence": "should not be registered without using outstanding accounts"
+        },
+        {
+          "source": "payment",
+          "relation": "PRODUCES",
+          "target": "journal entry",
+          "evidence": "Instead, the payment's journal entry matches the outstanding account"
+        },
+        {
+          "source": "reconciling",
+          "relation": "TRIGGERED_BY",
+          "target": "payment",
+          "evidence": "reconciling the payment with the bank transaction"
+        },
+        {
+          "source": "payment",
+          "relation": "RELATED_TO",
+          "target": "invoice",
+          "evidence": "linked to an invoice or bill"
+        },
+        {
+          "source": "payment",
+          "relation": "RELATED_TO",
+          "target": "bill",
+          "evidence": "linked to an invoice or bill"
+        },
+        {
+          "source": "Payment",
+          "relation": "CONTAINS",
+          "target": "Registering payments not tied to an invoice or bill",
+          "evidence": "via Customers / Vendors --> Payments"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "payments-matching",
+    "heading": "Payments matching",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payments matching",
+          "type": "Module",
+          "mention": "Payments matching",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank reconciliation process",
+          "type": "Workflow",
+          "mention": "bank reconciliation process",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank reconciliation",
+          "type": "Concept",
+          "mention": "bank reconciliation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Remaining balance",
+          "type": "DataObject",
+          "mention": "remaining balance",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank transaction",
+          "type": "DataObject",
+          "mention": "bank transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "Debits",
+          "type": "Field",
+          "mention": "debits",
+          "confidence": "medium"
+        },
+        {
+          "name": "Credits",
+          "type": "Field",
+          "mention": "credits",
+          "confidence": "medium"
+        },
+        {
+          "name": "Record",
+          "type": "DataObject",
+          "mention": "records",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank reconciliation process",
+          "relation": "ENABLES",
+          "target": "Payments matching",
+          "evidence": "During the bank reconciliation process, a remaining balance is identified..."
+        },
+        {
+          "source": "Bank reconciliation process",
+          "relation": "IS_PART_OF",
+          "target": "Payments matching",
+          "evidence": "During the bank reconciliation process..."
+        },
+        {
+          "source": "Record",
+          "relation": "BELONGS_TO",
+          "target": "Bank reconciliation process",
+          "evidence": "...when records are compared..."
+        },
+        {
+          "source": "Bank transaction",
+          "relation": "BELONGS_TO",
+          "target": "Bank reconciliation process",
+          "evidence": "...when records are compared with bank transactions."
+        },
+        {
+          "source": "Debits",
+          "relation": "BELONGS_TO",
+          "target": "Remaining balance",
+          "evidence": "...the total debits and credits do not match..."
+        },
+        {
+          "source": "Credits",
+          "relation": "BELONGS_TO",
+          "target": "Remaining balance",
+          "evidence": "...the total debits and credits do not match..."
+        },
+        {
+          "source": "Remaining balance",
+          "relation": "HAS_FEATURE",
+          "target": "Bank reconciliation process",
+          "evidence": "...a remaining balance is identified..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "for-a-single-invoice-or-bill",
+    "heading": "For a single invoice or bill",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment",
+          "type": "Action",
+          "mention": "payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Entry",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Outstanding Payment",
+          "type": "DataObject",
+          "mention": "outstanding payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Outstanding Credits",
+          "type": "DataObject",
+          "mention": "Outstanding Credits",
+          "confidence": "medium"
+        },
+        {
+          "name": "Outstanding Debits",
+          "type": "DataObject",
+          "mention": "Outstanding Debits",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payment",
+          "relation": "PRODUCES",
+          "target": "Journal Entry",
+          "evidence": "payments in Odoo do not create journal entries"
+        },
+        {
+          "source": "Invoice",
+          "relation": "RELATED_TO",
+          "target": "Customer",
+          "evidence": "invoice/bill and an outstanding payment exists for this specific customer"
+        },
+        {
+          "source": "Bill",
+          "relation": "RELATED_TO",
+          "target": "Vendor",
+          "evidence": "invoice/bill and an outstanding payment exists for this specific vendor"
+        },
+        {
+          "source": "Invoice",
+          "relation": "RELATED_TO",
+          "target": "Outstanding Payment",
+          "evidence": "invoice/bill and an outstanding payment exists"
+        },
+        {
+          "source": "Bill",
+          "relation": "RELATED_TO",
+          "target": "Outstanding Payment",
+          "evidence": "invoice/bill and an outstanding payment exists"
+        },
+        {
+          "source": "Invoice",
+          "relation": "RELATED_TO",
+          "target": "Outstanding Credits",
+          "evidence": "click Add under Outstanding Credits"
+        },
+        {
+          "source": "Bill",
+          "relation": "RELATED_TO",
+          "target": "Outstanding Credits",
+          "evidence": "click Add under Outstanding Credits"
+        },
+        {
+          "source": "Invoice",
+          "relation": "RELATED_TO",
+          "target": "Outstanding Debits",
+          "evidence": "click Add under Outstanding Debits"
+        },
+        {
+          "source": "Bill",
+          "relation": "RELATED_TO",
+          "target": "Outstanding Debits",
+          "evidence": "click Add under Outstanding Debits"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "for-multiple-invoices-or-bills",
+    "heading": "For multiple invoices or bills",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payments matching",
+          "type": "Feature",
+          "mention": "Payments matching",
+          "confidence": "high"
+        },
+        {
+          "name": "Auto-reconcile",
+          "type": "Feature",
+          "mention": "Auto-reconcile",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Module",
+          "mention": "Accounting Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Invoices",
+          "type": "DataObject",
+          "mention": "Customer Invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor Bills",
+          "type": "DataObject",
+          "mention": "Vendor Bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Payments Matching",
+          "type": "Action",
+          "mention": "Payments Matching",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconcile",
+          "type": "Action",
+          "mention": "Reconcile",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconcile",
+          "type": "DataObject",
+          "mention": "Reconcile",
+          "confidence": "high"
+        },
+        {
+          "name": "Auto-Reconcile",
+          "type": "Feature",
+          "mention": "Auto-Reconcile",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal Items",
+          "type": "DataObject",
+          "mention": "Journal Items",
+          "confidence": "high"
+        },
+        {
+          "name": "receivable account",
+          "type": "DataObject",
+          "mention": "receivable account",
+          "confidence": "high"
+        },
+        {
+          "name": "payable account",
+          "type": "DataObject",
+          "mention": "payable account",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconcile automatically",
+          "type": "Action",
+          "mention": "Reconcile automatically",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconcile Automatically",
+          "type": "DataObject",
+          "mention": "Reconcile Automatically",
+          "confidence": "high"
+        },
+        {
+          "name": "Reconcile",
+          "type": "Action",
+          "mention": "Reconcile",
+          "confidence": "high"
+        },
+        {
+          "name": "Perfect Match",
+          "type": "Standard",
+          "mention": "Perfect Match",
+          "confidence": "high"
+        },
+        {
+          "name": "Clear Accounts",
+          "type": "Standard",
+          "mention": "Clear Accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "debit journal item",
+          "type": "DataObject",
+          "mention": "debit journal item",
+          "confidence": "high"
+        },
+        {
+          "name": "credit journal item",
+          "type": "DataObject",
+          "mention": "credit journal item",
+          "confidence": "high"
+        },
+        {
+          "name": "invoices",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "bills",
+          "type": "DataObject",
+          "mention": "bills",
+          "confidence": "high"
+        },
+        {
+          "name": "payments",
+          "type": "DataObject",
+          "mention": "payments",
+          "confidence": "high"
+        },
+        {
+          "name": "bank transactions",
+          "type": "DataObject",
+          "mention": "bank transactions",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payments matching",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Payments matching or Auto-reconcile tool allows reconciling journal items with each other"
+        },
+        {
+          "source": "Auto-reconcile",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Payments matching or Auto-reconcile tool allows reconciling journal items with each other"
+        },
+        {
+          "source": "Auto-reconcile",
+          "relation": "ENABLES",
+          "target": "Reconcile automatically",
+          "evidence": "To use the Auto-Reconcile feature, follow these steps"
+        },
+        {
+          "source": "Accounting Dashboard",
+          "relation": "CONTAINS",
+          "target": "Customer Invoices",
+          "evidence": "Access the Accounting Dashboard, click the ellipsis button from the Customer Invoices or Vendor Bills journals"
+        },
+        {
+          "source": "Accounting Dashboard",
+          "relation": "CONTAINS",
+          "target": "Vendor Bills",
+          "evidence": "Access the Accounting Dashboard, click the ellipsis button from the Customer Invoices or Vendor Bills journals"
+        },
+        {
+          "source": "Accounting Dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Payments Matching",
+          "evidence": "Access the Accounting Dashboard, click the ellipsis button from the Customer Invoices or Vendor Bills journals, and select Payments Matching"
+        },
+        {
+          "source": "Accounting",
+          "relation": "HAS_FEATURE",
+          "target": "Reconcile",
+          "evidence": "Alternatively, go to Accounting --> Accounting --> Reconcile"
+        },
+        {
+          "source": "Reconcile",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "To manually Reconcile journal items, select the individual items from the list view and click Reconcile"
+        },
+        {
+          "source": "Reconcile automatically",
+          "relation": "PRODUCES",
+          "target": "Reconcile",
+          "evidence": "In the Reconcile automatically window, click Reconcile"
+        },
+        {
+          "source": "Reconcile Automatically",
+          "relation": "CONTAINS",
+          "target": "Reconcile",
+          "evidence": "In the Reconcile Automatically window, set the Reconcile field"
+        },
+        {
+          "source": "Perfect Match",
+          "relation": "APPLIES_TO",
+          "target": "debit journal item",
+          "evidence": "Perfect Match: Each debit journal item will be matched with the corresponding credit journal item of the same value"
+        },
+        {
+          "source": "Perfect Match",
+          "relation": "APPLIES_TO",
+          "target": "credit journal item",
+          "evidence": "Perfect Match: Each debit journal item will be matched with the corresponding credit journal item of the same value"
+        },
+        {
+          "source": "Clear Accounts",
+          "relation": "APPLIES_TO",
+          "target": "Journal Items",
+          "evidence": "Clear Accounts: All reconciled journal items will have the same matching number"
+        },
+        {
+          "source": "Reconcile Automatically",
+          "relation": "USES_METHOD",
+          "target": "Perfect Match",
+          "evidence": "set the Reconcile field depending on how you want to match journal items: Perfect Match"
+        },
+        {
+          "source": "Reconcile Automatically",
+          "relation": "USES_METHOD",
+          "target": "Clear Accounts",
+          "evidence": "set the Reconcile field depending on how you want to match journal items: Clear Accounts"
+        },
+        {
+          "source": "invoices",
+          "relation": "GENERATES",
+          "target": "payments",
+          "evidence": "Invoices and bills are automatically matched to their corresponding payments"
+        },
+        {
+          "source": "bills",
+          "relation": "GENERATES",
+          "target": "payments",
+          "evidence": "Invoices and bills are automatically matched to their corresponding payments"
+        },
+        {
+          "source": "payments",
+          "relation": "REQUIRES",
+          "target": "bank transactions",
+          "evidence": "marked as In payment until they are reconciled with their corresponding bank transactions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "registering-payments-on-multiple-invoices-credit-notes-or-bills-refunds-(group-payments)",
+    "heading": "Registering payments on multiple invoices/credit notes or bills/refunds (group payments)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting --> Customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Module",
+          "mention": "Customers",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoices/Credit Notes",
+          "type": "DataObject",
+          "mention": "invoices/credit notes",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors",
+          "type": "Module",
+          "mention": "Vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills/Refunds",
+          "type": "DataObject",
+          "mention": "bills/refunds",
+          "confidence": "high"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pay",
+          "type": "Action",
+          "mention": "click Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Method",
+          "type": "Field",
+          "mention": "Payment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay window",
+          "type": "Feature",
+          "mention": "Pay window",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Date",
+          "type": "Field",
+          "mention": "Payment Date",
+          "confidence": "high"
+        },
+        {
+          "name": "contact",
+          "type": "Actor",
+          "mention": "contact",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Method",
+          "type": "Field",
+          "mention": "Payment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "payment terms",
+          "type": "Setting",
+          "mention": "payment terms",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount",
+          "type": "Field",
+          "mention": "Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "full amount",
+          "type": "Action",
+          "mention": "click full amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Group Payments",
+          "type": "Setting",
+          "mention": "Group Payments option",
+          "confidence": "high"
+        },
+        {
+          "name": "Create payment",
+          "type": "Action",
+          "mention": "Create payment",
+          "confidence": "high"
+        },
+        {
+          "name": "In payment",
+          "type": "Field",
+          "mention": "marked as In payment",
+          "confidence": "high"
+        },
+        {
+          "name": "bank transactions",
+          "type": "DataObject",
+          "mention": "bank transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciliation",
+          "type": "Concept",
+          "mention": "reconciled",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pay",
+          "relation": "PERFORMED_BY",
+          "target": "contact",
+          "evidence": "select the relevant invoices... and click Pay"
+        },
+        {
+          "source": "contact",
+          "relation": "CONFIGURED_BY",
+          "target": "Payment Method",
+          "evidence": "the contact's preferred Payment Method is automatically selected"
+        },
+        {
+          "source": "Amount",
+          "relation": "CONFIGURED_BY",
+          "target": "payment terms",
+          "evidence": "the Amount is automatically set based on the installment amounts defined by the payment term"
+        },
+        {
+          "source": "Create payment",
+          "relation": "PRODUCES",
+          "target": "In payment",
+          "evidence": "The invoices or bills are then marked as In payment"
+        },
+        {
+          "source": "Create payment",
+          "relation": "RELATED_TO",
+          "target": "reconciliation",
+          "evidence": "until they are reconciled with the bank transactions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "registering-a-single-payment-for-multiple-customers-or-vendors-(batch-payments)",
+    "heading": "Registering a single payment for multiple customers or vendors (batch payments)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch payments",
+          "type": "Module",
+          "mention": "batch payments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Registering a single payment for multiple customers or vendors",
+          "type": "Feature",
+          "mention": "Registering a single payment for multiple customers or vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "grouping payments from multiple customers",
+          "type": "Action",
+          "mention": "grouping payments from multiple customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "depositing checks",
+          "type": "Action",
+          "mention": "depositing checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "cash payments to the bank",
+          "type": "Action",
+          "mention": "cash payments to the bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "generating bank payment files",
+          "type": "Action",
+          "mention": "generating bank payment files",
+          "confidence": "medium"
+        },
+        {
+          "name": "SEPA",
+          "type": "Standard",
+          "mention": "SEPA",
+          "confidence": "medium"
+        },
+        {
+          "name": "NACHA",
+          "type": "Standard",
+          "mention": "NACHA",
+          "confidence": "medium"
+        },
+        {
+          "name": "payments/batch",
+          "type": "Concept",
+          "mention": "payments/batch",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/payments/matching",
+          "type": "Concept",
+          "mention": "accounting/payments/matching",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Batch payments",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Batch payments allow grouping payments from multiple customers"
+        },
+        {
+          "source": "Batch payments",
+          "relation": "CONTAINS",
+          "target": "Registering a single payment for multiple customers or vendors",
+          "evidence": "Registering a single payment for multiple customers or vendors (batch payments)"
+        },
+        {
+          "source": "Batch payments",
+          "relation": "ENABLES",
+          "target": "grouping payments from multiple customers",
+          "evidence": "Batch payments allow grouping payments from multiple customers"
+        },
+        {
+          "source": "Batch payments",
+          "relation": "SUPPORTS",
+          "target": "depositing checks",
+          "evidence": "They are also useful when depositing checks"
+        },
+        {
+          "source": "Batch payments",
+          "relation": "SUPPORTS",
+          "target": "cash payments to the bank",
+          "evidence": "or cash payments to the bank"
+        },
+        {
+          "source": "Batch payments",
+          "relation": "SUPPORTS",
+          "target": "generating bank payment files",
+          "evidence": "or for generating bank payment files"
+        },
+        {
+          "source": "generating bank payment files",
+          "relation": "SUPPORTS",
+          "target": "SEPA",
+          "evidence": "such as SEPA"
+        },
+        {
+          "source": "generating bank payment files",
+          "relation": "SUPPORTS",
+          "target": "NACHA",
+          "evidence": "or NACHA"
+        },
+        {
+          "source": "accounting/payments/matching",
+          "relation": "SEE_ALSO",
+          "target": "payments/batch",
+          "evidence": ".. seealso:: payments/batch"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "payments-matching",
+    "heading": "Payments matching",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Module",
+          "mention": "Accounting Dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reconcile",
+          "type": "Action",
+          "mention": "Reconcile",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer Invoices",
+          "type": "DataObject",
+          "mention": "Customer Invoices",
+          "confidence": "low"
+        },
+        {
+          "name": "Vendor Bills",
+          "type": "DataObject",
+          "mention": "Vendor Bills",
+          "confidence": "low"
+        },
+        {
+          "name": "Payments Matching",
+          "type": "Feature",
+          "mention": "Payments Matching",
+          "confidence": "high"
+        },
+        {
+          "name": "bank/reconciliation",
+          "type": "Workflow",
+          "mention": "reconciliation <bank/reconciliation>",
+          "confidence": "low"
+        },
+        {
+          "name": "debits",
+          "type": "Concept",
+          "mention": "debits",
+          "confidence": "low"
+        },
+        {
+          "name": "credits",
+          "type": "Concept",
+          "mention": "credits",
+          "confidence": "low"
+        },
+        {
+          "name": "remaining balance",
+          "type": "Concept",
+          "mention": "remaining balance",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payments Matching",
+          "relation": "ENABLES",
+          "target": "bank/reconciliation",
+          "evidence": "The Payments matching tool opens all unreconciled journal items and allows them to be processed individually, matching all payments and journal items."
+        },
+        {
+          "source": "Payments Matching",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Payments Matching",
+          "relation": "CONFIGURED_BY",
+          "target": "Accounting Dashboard",
+          "evidence": "Go to the Accounting Dashboard, go to Accounting --> Accounting --> Reconcile"
+        },
+        {
+          "source": "Payments Matching",
+          "relation": "CONFIGURED_BY",
+          "target": "Accounting",
+          "evidence": "Go to the Accounting Dashboard, go to Accounting --> Accounting --> Reconcile"
+        },
+        {
+          "source": "Payments Matching",
+          "relation": "CONFIGURED_BY",
+          "target": "Reconcile",
+          "evidence": "Go to the Accounting Dashboard, go to Accounting --> Accounting --> Reconcile"
+        },
+        {
+          "source": "bank/reconciliation",
+          "relation": "GENERATES",
+          "target": "remaining balance",
+          "evidence": "During the reconciliation <bank/reconciliation>, if the sum of the debits and credits does not match, there is a remaining balance."
+        },
+        {
+          "source": "remaining balance",
+          "relation": "PERFORMED_BY",
+          "target": "debits",
+          "evidence": "if the sum of the debits and credits does not match"
+        },
+        {
+          "source": "remaining balance",
+          "relation": "PERFORMED_BY",
+          "target": "credits",
+          "evidence": "if the sum of the debits and credits does not match"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "registering-a-partial-payment",
+    "heading": "Registering a partial payment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Registering a partial payment",
+          "type": "Workflow",
+          "mention": "Registering a partial payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay",
+          "type": "Action",
+          "mention": "click on Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount paid",
+          "type": "Field",
+          "mention": "Amount paid",
+          "confidence": "high"
+        },
+        {
+          "name": "total remaining amount",
+          "type": "Concept",
+          "mention": "total remaining amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Difference",
+          "type": "Field",
+          "mention": "Payment Difference field",
+          "confidence": "high"
+        },
+        {
+          "name": "outstanding balance",
+          "type": "Concept",
+          "mention": "outstanding balance",
+          "confidence": "medium"
+        },
+        {
+          "name": "Keep open",
+          "type": "Action",
+          "mention": "Keep open",
+          "confidence": "high"
+        },
+        {
+          "name": "Partial banner",
+          "type": "Concept",
+          "mention": "Partial banner",
+          "confidence": "low"
+        },
+        {
+          "name": "Mark as fully paid",
+          "type": "Action",
+          "mention": "Mark as fully paid",
+          "confidence": "high"
+        },
+        {
+          "name": "Post Difference In",
+          "type": "Field",
+          "mention": "Post Difference In field",
+          "confidence": "high"
+        },
+        {
+          "name": "Label",
+          "type": "Field",
+          "mention": "Label",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entry",
+          "type": "DataObject",
+          "mention": "journal entry",
+          "confidence": "high"
+        },
+        {
+          "name": "accounts payable",
+          "type": "Concept",
+          "mention": "accounts payable",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounts receivable",
+          "type": "Concept",
+          "mention": "accounts receivable",
+          "confidence": "medium"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Registering a partial payment",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Registering a partial payment"
+        },
+        {
+          "source": "invoice",
+          "relation": "RELATED_TO",
+          "target": "Registering a partial payment",
+          "evidence": "To register a partial payment, click on Pay from the related invoice or bill."
+        },
+        {
+          "source": "bill",
+          "relation": "RELATED_TO",
+          "target": "Registering a partial payment",
+          "evidence": "To register a partial payment, click on Pay from the related invoice or bill."
+        },
+        {
+          "source": "Pay",
+          "relation": "TRIGGERED_BY",
+          "target": "Registering a partial payment",
+          "evidence": "click on Pay from the related invoice or bill."
+        },
+        {
+          "source": "Amount paid",
+          "relation": "BELONGS_TO",
+          "target": "Pay",
+          "evidence": "fill in the Amount in the Pay window."
+        },
+        {
+          "source": "Payment Difference",
+          "relation": "BELONGS_TO",
+          "target": "Pay",
+          "evidence": "the Payment Difference field displays the outstanding balance."
+        },
+        {
+          "source": "Post Difference In",
+          "relation": "BELONGS_TO",
+          "target": "Pay",
+          "evidence": "Select an account in the Post Difference In field"
+        },
+        {
+          "source": "Label",
+          "relation": "BELONGS_TO",
+          "target": "Pay",
+          "evidence": "change the Label if needed"
+        },
+        {
+          "source": "Mark as fully paid",
+          "relation": "PRODUCES",
+          "target": "journal entry",
+          "evidence": "A journal entry will be created to balance the accounts payable or receivable with the selected account."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reconciling-payments-with-bank-transactions",
+    "heading": "Reconciling payments with bank transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill",
+          "type": "DataObject",
+          "mention": "bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment",
+          "type": "DataObject",
+          "mention": "payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank transaction",
+          "type": "DataObject",
+          "mention": "bank transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank reconciliation",
+          "type": "Workflow",
+          "mention": "reconciling",
+          "confidence": "medium"
+        },
+        {
+          "name": "Finalize payment workflow",
+          "type": "Workflow",
+          "mention": "finalize the payment workflow",
+          "confidence": "medium"
+        },
+        {
+          "name": "Paid status",
+          "type": "Status",
+          "mention": "Paid",
+          "confidence": "low"
+        },
+        {
+          "name": "In payment status",
+          "type": "Status",
+          "mention": "In payment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payment",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "product context"
+        },
+        {
+          "source": "Invoice",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "product context"
+        },
+        {
+          "source": "Bill",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "product context"
+        },
+        {
+          "source": "Bank transaction",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "product context"
+        },
+        {
+          "source": "Bank reconciliation",
+          "relation": "CONTAINS",
+          "target": "Payment",
+          "evidence": "The next step is reconciling"
+        },
+        {
+          "source": "Bank reconciliation",
+          "relation": "CONTAINS",
+          "target": "Bank transaction",
+          "evidence": "the related bank transaction line"
+        },
+        {
+          "source": "Bank reconciliation",
+          "relation": "GENERATES",
+          "target": "Paid status",
+          "evidence": "mark the invoice or bill as Paid"
+        },
+        {
+          "source": "Payment registration",
+          "relation": "TRIGGERED_BY",
+          "target": "Invoice/Bill",
+          "evidence": "Once a payment has been registered"
+        },
+        {
+          "source": "Payment registration",
+          "relation": "PRODUCES",
+          "target": "In payment status",
+          "evidence": "the status of the invoice or bill is In payment"
+        }
+      ]
+    }
+  }
+]

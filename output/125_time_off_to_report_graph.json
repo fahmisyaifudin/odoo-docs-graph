@@ -1,0 +1,484 @@
+[
+  {
+    "section_id": "time-off-to-report",
+    "heading": "Time off to report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "Time off to report",
+          "type": "Feature",
+          "mention": "Time off to report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Deferral of time off",
+          "type": "Action",
+          "mention": "deferral of the time off taken",
+          "confidence": "high"
+        },
+        {
+          "name": "Paycheck",
+          "type": "DataObject",
+          "mention": "paycheck",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll Department",
+          "type": "Actor",
+          "mention": "payroll department",
+          "confidence": "high"
+        },
+        {
+          "name": "Time off balances",
+          "type": "DataObject",
+          "mention": "time off balances",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work entries",
+          "type": "DataObject",
+          "mention": "work entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "Working schedule",
+          "type": "DataObject",
+          "mention": "working schedule",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Time off to report",
+          "evidence": "Title: Time off to report"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Payroll",
+          "evidence": "Payroll is often processed..."
+        },
+        {
+          "source": "Payroll",
+          "relation": "GENERATES",
+          "target": "Paycheck",
+          "evidence": "The payroll department processes paychecks..."
+        },
+        {
+          "source": "Paycheck",
+          "relation": "RELATED_TO",
+          "target": "Employee",
+          "evidence": "Each employee is paid..."
+        },
+        {
+          "source": "Deferral of time off",
+          "relation": "ENABLES",
+          "target": "Time off balances",
+          "evidence": "This ensures all time off balances are correct..."
+        },
+        {
+          "source": "Deferral of time off",
+          "relation": "RELATED_TO",
+          "target": "Paycheck",
+          "evidence": "Instead of cancelling the paycheck..."
+        },
+        {
+          "source": "Employee",
+          "relation": "TRIGGERED_BY",
+          "target": "Work entries",
+          "evidence": "automatically generated work entries..."
+        },
+        {
+          "source": "Work entries",
+          "relation": "RELATED_TO",
+          "target": "Working schedule",
+          "evidence": "based on their working schedule"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "time-off-dashboard",
+    "heading": "Time off dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entries",
+          "type": "Sub-module",
+          "mention": "Work Entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Page",
+          "mention": "Time Off page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off",
+          "type": "Feature",
+          "mention": "Time Off",
+          "confidence": "medium"
+        },
+        {
+          "name": "To Defer",
+          "type": "Setting",
+          "mention": "default filter is To Defer",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslip State",
+          "type": "Field",
+          "mention": "Payslip State",
+          "confidence": "high"
+        },
+        {
+          "name": "To defer to next payslip",
+          "type": "Setting",
+          "mention": "To defer to next payslip",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Work Entries",
+          "evidence": "navigate to Payroll app --> Work Entries"
+        },
+        {
+          "source": "Work Entries",
+          "relation": "CONTAINS",
+          "target": "Time Off",
+          "evidence": "Work Entries --> Time Off to Report"
+        },
+        {
+          "source": "Time Off",
+          "relation": "CONFIGURED_BY",
+          "target": "To Defer",
+          "evidence": "The Time Off page default filter is To Defer"
+        },
+        {
+          "source": "Time Off",
+          "relation": "CONTAINS",
+          "target": "Payslip State",
+          "evidence": "displays all requests with a Payslip State"
+        },
+        {
+          "source": "Payslip State",
+          "relation": "RELATED_TO",
+          "target": "To defer to next payslip",
+          "evidence": "Payslip State of To defer to next payslip"
+        },
+        {
+          "source": "Time Off",
+          "relation": "PRODUCES",
+          "target": "employee",
+          "evidence": "the employee was already paid for that time"
+        },
+        {
+          "source": "employee",
+          "relation": "PERFORMED_BY",
+          "target": "Time Off",
+          "evidence": "the employee was already paid for that time"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "defer-multiple-time-off-entries",
+    "heading": "Defer multiple time off entries",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off page",
+          "type": "Module",
+          "mention": "Time Off page",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off Dashboard",
+          "type": "Module",
+          "mention": "Time Off page <payroll/time-off-dashboard>",
+          "confidence": "medium"
+        },
+        {
+          "name": "time off request",
+          "type": "DataObject",
+          "mention": "time off request",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry",
+          "type": "DataObject",
+          "mention": "work entry",
+          "confidence": "high"
+        },
+        {
+          "name": "work entry line",
+          "type": "DataObject",
+          "mention": "work entry line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee column",
+          "type": "Field",
+          "mention": "Employee column title",
+          "confidence": "medium"
+        },
+        {
+          "name": "selected button",
+          "type": "Action",
+          "mention": "selected button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Actions button",
+          "type": "Action",
+          "mention": "Actions button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Defer to Next Month",
+          "type": "Action",
+          "mention": "Defer to Next Month",
+          "confidence": "high"
+        },
+        {
+          "name": "pay period",
+          "type": "Concept",
+          "mention": "pay period",
+          "confidence": "medium"
+        },
+        {
+          "name": "month",
+          "type": "Concept",
+          "mention": "month",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee's",
+          "confidence": "medium"
+        },
+        {
+          "name": "time off balances",
+          "type": "Concept",
+          "mention": "time off balances",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Time Off Dashboard",
+          "evidence": "Time Off page <payroll/time-off-dashboard>"
+        },
+        {
+          "source": "Time Off Dashboard",
+          "relation": "HAS_REPORT",
+          "target": "Time Off page",
+          "evidence": "on the Time Off page"
+        },
+        {
+          "source": "time off request",
+          "relation": "APPLIES_TO",
+          "target": "pay period",
+          "evidence": "the time off request must be applied to the following pay period"
+        },
+        {
+          "source": "Actions button",
+          "relation": "ENABLES",
+          "target": "Defer to Next Month",
+          "evidence": "Click the fa-gear Actions button, and a menu appears... Click Defer to Next Month"
+        },
+        {
+          "source": "Defer to Next Month",
+          "relation": "PRODUCES",
+          "target": "work entry",
+          "evidence": "all selected entries are deferred to the following month"
+        },
+        {
+          "source": "work entry line",
+          "relation": "IS_PART_OF",
+          "target": "work entry",
+          "evidence": "work entry line on the Time Off page"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "defer-individual-time-off-entries",
+    "heading": "Defer individual time off entries",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "Time Off page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Defer individual time off entries",
+          "type": "Feature",
+          "mention": "Title: Defer individual time off entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off page",
+          "type": "Report",
+          "mention": "Time Off page <payroll/time-off-dashboard>",
+          "confidence": "medium"
+        },
+        {
+          "name": "time off request",
+          "type": "DataObject",
+          "mention": "time off request",
+          "confidence": "high"
+        },
+        {
+          "name": "Report to Next Month",
+          "type": "Action",
+          "mention": "Report to Next Month button",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee's submitted time off requests",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payslip State",
+          "type": "Field",
+          "mention": "Payslip State",
+          "confidence": "high"
+        },
+        {
+          "name": "To defer to next payslip",
+          "type": "Field Value",
+          "mention": "To defer to next payslip",
+          "confidence": "low"
+        },
+        {
+          "name": "Computed in Current Payslip",
+          "type": "Field Value",
+          "mention": "Computed in Current Payslip",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Time Off",
+          "evidence": "Product: Odoo, Title: Defer individual time off entries"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Defer individual time off entries",
+          "evidence": "Product: Odoo, Title: Defer individual time off entries"
+        },
+        {
+          "source": "Time Off",
+          "relation": "HAS_REPORT",
+          "target": "Time Off page",
+          "evidence": "Time Off page <payroll/time-off-dashboard>"
+        },
+        {
+          "source": "Time Off page",
+          "relation": "BELONGS_TO",
+          "target": "Time Off",
+          "evidence": "Time Off page <payroll/time-off-dashboard>"
+        },
+        {
+          "source": "Report to Next Month",
+          "relation": "PRODUCES",
+          "target": "time off request",
+          "evidence": "To defer the time off request to the next payslip, click the Report to Next Month button"
+        },
+        {
+          "source": "Report to Next Month",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "Click on an individual time off request, and the details for that request load"
+        },
+        {
+          "source": "time off request",
+          "relation": "CONTAINS",
+          "target": "Payslip State",
+          "evidence": "Once processed, the Report to Next Month button disappears, and the Payslip State changes"
+        },
+        {
+          "source": "Report to Next Month",
+          "relation": "TRIGGERED_BY",
+          "target": "time off request",
+          "evidence": "Click on an individual time off request, and the details for that request load"
+        },
+        {
+          "source": "Defer individual time off entries",
+          "relation": "ENABLES",
+          "target": "Report to Next Month",
+          "evidence": "Title: Defer individual time off entries, To defer the time off request to the next payslip"
+        }
+      ]
+    }
+  }
+]

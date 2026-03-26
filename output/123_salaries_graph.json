@@ -1,0 +1,2144 @@
+[
+  {
+    "section_id": "salaries",
+    "heading": "Salaries",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Salaries",
+          "type": "Concept",
+          "mention": "salaries",
+          "confidence": "high"
+        },
+        {
+          "name": "salary structure types",
+          "type": "Module",
+          "mention": "structure types",
+          "confidence": "high"
+        },
+        {
+          "name": "salary structures",
+          "type": "Sub-module",
+          "mention": "structures",
+          "confidence": "high"
+        },
+        {
+          "name": "rules",
+          "type": "Feature",
+          "mention": "rules",
+          "confidence": "high"
+        },
+        {
+          "name": "rule parameters",
+          "type": "Feature",
+          "mention": "parameters",
+          "confidence": "high"
+        },
+        {
+          "name": "other input types",
+          "type": "Feature",
+          "mention": "other input types",
+          "confidence": "high"
+        },
+        {
+          "name": "payslips",
+          "type": "DataObject",
+          "mention": "payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "worked time",
+          "type": "Concept",
+          "mention": "worked time",
+          "confidence": "medium"
+        },
+        {
+          "name": "work entries",
+          "type": "DataObject",
+          "mention": "work entries",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "salary structure types",
+          "relation": "CONTAINS",
+          "target": "salary structures",
+          "evidence": "Each *structure type* contains one or more *structures* within it."
+        },
+        {
+          "source": "salary structures",
+          "relation": "CONTAINS",
+          "target": "rules",
+          "evidence": "Each *structure* contains a set of *rules*."
+        },
+        {
+          "source": "rules",
+          "relation": "REQUIRES",
+          "target": "rule parameters",
+          "evidence": "every *rule* uses *parameters* to define how specific amounts are calculated."
+        },
+        {
+          "source": "rules",
+          "relation": "ENABLES",
+          "target": "Salaries",
+          "evidence": "Together, these determine how each employee's pay is calculated."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "salary structure types",
+          "evidence": "In Odoo, salaries are calculated and determined by five factors: salary structure types"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "salary structures",
+          "evidence": "In Odoo, salaries are calculated and determined by five factors: salary structure types, salary structures"
+        },
+        {
+          "source": "payslips",
+          "relation": "TRIGGERED_BY",
+          "target": "employee",
+          "evidence": "When payslips are calculated, Odoo calculates the employee's worked time"
+        },
+        {
+          "source": "payslips",
+          "relation": "REQUIRES",
+          "target": "salary structures",
+          "evidence": "When payslips are calculated, Odoo... applies the relevant structure"
+        },
+        {
+          "source": "worked time",
+          "relation": "GENERATES",
+          "target": "payslips",
+          "evidence": "Odoo calculates the employee's worked time from their work entries, then applies... to determine their total pay."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "structure-types",
+    "heading": "Structure types",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Structure Type",
+          "type": "Concept",
+          "mention": "structure type",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Structure Type",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Worker",
+          "type": "Structure Type",
+          "mention": "Worker",
+          "confidence": "high"
+        },
+        {
+          "name": "Regular Pay",
+          "type": "Structure",
+          "mention": "Regular Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "End of Year Bonus",
+          "type": "Structure",
+          "mention": "End of Year Bonus",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Structure Type",
+          "relation": "CONTAINS",
+          "target": "Structure",
+          "evidence": "groups related salary structures"
+        },
+        {
+          "source": "Employee",
+          "relation": "CONTAINS",
+          "target": "Regular Pay",
+          "evidence": "contains two different structures within it"
+        },
+        {
+          "source": "Employee",
+          "relation": "CONTAINS",
+          "target": "End of Year Bonus",
+          "evidence": "contains two different structures within it"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Configuration is under Payroll app"
+        },
+        {
+          "source": "Configuration",
+          "relation": "HAS_REPORT",
+          "target": "Structure Types",
+          "evidence": "View existing structure types by navigating to Configuration"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Payroll",
+          "evidence": "Part of Odoo product"
+        },
+        {
+          "source": "Employee",
+          "relation": "BELONGS_TO",
+          "target": "Structure Type",
+          "evidence": "default structure type"
+        },
+        {
+          "source": "Worker",
+          "relation": "BELONGS_TO",
+          "target": "Structure Type",
+          "evidence": "default structure type"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "new-structure-type",
+    "heading": "New structure type",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Structure Types",
+          "type": "DataObject",
+          "mention": "Structure Types",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "structure type",
+          "type": "DataObject",
+          "mention": "structure type",
+          "confidence": "medium"
+        },
+        {
+          "name": "local and national laws",
+          "type": "Regulation",
+          "mention": "local and national laws",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting department",
+          "type": "Actor",
+          "mention": "accounting department",
+          "confidence": "medium"
+        },
+        {
+          "name": "Structure Type",
+          "type": "Field",
+          "mention": "Structure Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Country",
+          "type": "Field",
+          "mention": "Country",
+          "confidence": "high"
+        },
+        {
+          "name": "Wage Type",
+          "type": "Field",
+          "mention": "Wage Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed Wage",
+          "type": "Concept",
+          "mention": "Fixed Wage",
+          "confidence": "high"
+        },
+        {
+          "name": "Hourly Wage",
+          "type": "Concept",
+          "mention": "Hourly Wage",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Scheduled Pay",
+          "type": "Field",
+          "mention": "Default Scheduled Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Working Hours",
+          "type": "Field",
+          "mention": "Default Working Hours",
+          "confidence": "high"
+        },
+        {
+          "name": "Standard 40 hours/week",
+          "type": "Concept",
+          "mention": "Standard 40 hours/week option",
+          "confidence": "medium"
+        },
+        {
+          "name": "default working hours",
+          "type": "DataObject",
+          "mention": "default working hours",
+          "confidence": "medium"
+        },
+        {
+          "name": "Regular Pay Structure",
+          "type": "Field",
+          "mention": "Regular Pay Structure",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Work Entry Type",
+          "type": "Field",
+          "mention": "Default Work Entry Type",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Payroll app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Structure Types",
+          "evidence": "Configuration --> Structure Types"
+        },
+        {
+          "source": "New",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click New"
+        },
+        {
+          "source": "structure type",
+          "relation": "COMPLIES_WITH",
+          "target": "local and national laws",
+          "evidence": "ensure all local and national laws are accounted for"
+        },
+        {
+          "source": "Actor",
+          "relation": "CONFIGURED_BY",
+          "target": "accounting department",
+          "evidence": "Confirm with the accounting department"
+        },
+        {
+          "source": "Structure Types",
+          "relation": "CONTAINS",
+          "target": "Structure Type",
+          "evidence": "Structure Type: Enter the name"
+        },
+        {
+          "source": "Structure Types",
+          "relation": "CONTAINS",
+          "target": "Country",
+          "evidence": "Country: Select the country"
+        },
+        {
+          "source": "Structure Types",
+          "relation": "CONTAINS",
+          "target": "Wage Type",
+          "evidence": "Wage Type: Select the wage type"
+        },
+        {
+          "source": "Structure Types",
+          "relation": "CONTAINS",
+          "target": "Default Scheduled Pay",
+          "evidence": "Default Scheduled Pay: Select the typical pay schedule"
+        },
+        {
+          "source": "Structure Types",
+          "relation": "CONTAINS",
+          "target": "Default Working Hours",
+          "evidence": "Default Working Hours: Select the default working hours"
+        },
+        {
+          "source": "Structure Types",
+          "relation": "CONTAINS",
+          "target": "Regular Pay Structure",
+          "evidence": "Regular Pay Structure: Type in the name"
+        },
+        {
+          "source": "Structure Types",
+          "relation": "CONTAINS",
+          "target": "Default Work Entry Type",
+          "evidence": "Default Work Entry Type: Select the default work entry type"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "new-default-working-hours",
+    "heading": "New default working hours",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Working Hours",
+          "type": "Module",
+          "mention": "New default working hours",
+          "confidence": "medium"
+        },
+        {
+          "name": "Default Working Hours field",
+          "type": "Field",
+          "mention": "Default Working Hours field",
+          "confidence": "high"
+        },
+        {
+          "name": "new structure type form",
+          "type": "DataObject",
+          "mention": "new structure type form",
+          "confidence": "medium"
+        },
+        {
+          "name": "default working hours form",
+          "type": "DataObject",
+          "mention": "default working hours form",
+          "confidence": "high"
+        },
+        {
+          "name": "Working Hours tab",
+          "type": "Sub-module",
+          "mention": "Working Hours tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Flexible Hours",
+          "type": "Feature",
+          "mention": "Flexible Hours",
+          "confidence": "high"
+        },
+        {
+          "name": "Company Full Time",
+          "type": "Field",
+          "mention": "Company Full Time",
+          "confidence": "high"
+        },
+        {
+          "name": "Average Hour Per Day",
+          "type": "Field",
+          "mention": "Average Hour Per Day",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Time Rate",
+          "type": "Field",
+          "mention": "Work Time Rate",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Timezone",
+          "type": "Field",
+          "mention": "Timezone",
+          "confidence": "high"
+        },
+        {
+          "name": "Standard 20 Hours/Week",
+          "type": "Concept",
+          "mention": "Standard 20 Hours/Week",
+          "confidence": "medium"
+        },
+        {
+          "name": "40-hour week",
+          "type": "Concept",
+          "mention": "40-hour week",
+          "confidence": "medium"
+        },
+        {
+          "name": "24-hour time format",
+          "type": "Concept",
+          "mention": "24-hour time format",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Switch to 2 week calendar",
+          "type": "Action",
+          "mention": "Switch to 2 week calendar button",
+          "confidence": "high"
+        },
+        {
+          "name": "resource planning",
+          "type": "Concept",
+          "mention": "resource planning",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Default Working Hours",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "new structure type form",
+          "relation": "CONTAINS",
+          "target": "Default Working Hours field",
+          "evidence": "Default Working Hours field on the new structure type form"
+        },
+        {
+          "source": "default working hours form",
+          "relation": "CONTAINS",
+          "target": "Working Hours tab",
+          "evidence": "A default working hours form pops up... and a tab listing all the individual working hours by day and time"
+        },
+        {
+          "source": "default working hours form",
+          "relation": "CONTAINS",
+          "target": "General information section",
+          "evidence": "general information section"
+        },
+        {
+          "source": "Average Hour Per Day",
+          "relation": "ENABLES",
+          "target": "resource planning",
+          "evidence": "This entry affects resource planning"
+        },
+        {
+          "source": "default working hours form",
+          "relation": "GENERATES",
+          "target": "Average Hour Per Day",
+          "evidence": "Auto-populated based on the working hours in the Working Hours tab"
+        },
+        {
+          "source": "default working hours form",
+          "relation": "GENERATES",
+          "target": "Work Time Rate",
+          "evidence": "This percentage is auto-generated"
+        },
+        {
+          "source": "default working hours form",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "Company: Select the company"
+        },
+        {
+          "source": "default working hours form",
+          "relation": "CONTAINS",
+          "target": "Timezone",
+          "evidence": "Timezone: Select the time zone"
+        },
+        {
+          "source": "default working hours form",
+          "relation": "CONTAINS",
+          "target": "Name",
+          "evidence": "Name: Type in the name"
+        },
+        {
+          "source": "default working hours form",
+          "relation": "CONTAINS",
+          "target": "Flexible Hours",
+          "evidence": "Flexible Hours: Check the checkbox"
+        },
+        {
+          "source": "default working hours form",
+          "relation": "CONTAINS",
+          "target": "Company Full Time",
+          "evidence": "Company Full Time: Enter the number"
+        },
+        {
+          "source": "Flexible Hours",
+          "relation": "ENABLES",
+          "target": "employee",
+          "evidence": "Check the checkbox to let employees adjust their start and end times"
+        },
+        {
+          "source": "Company Full Time",
+          "relation": "APPLIES_TO",
+          "target": "employee",
+          "evidence": "Enter the number of hours per week an employee needs to work"
+        },
+        {
+          "source": "Working Hours tab",
+          "relation": "CONTAINS",
+          "target": "morning (8:00–12:00), lunch (12:00–13:00), and afternoon (13:00–17:00) periods",
+          "evidence": "Each day includes morning (8:00–12:00), lunch (12:00–13:00), and afternoon (13:00–17:00) periods"
+        },
+        {
+          "source": "Working Hours",
+          "relation": "GOVERNED_BY",
+          "target": "Company",
+          "evidence": "Working hours are company-specific"
+        },
+        {
+          "source": "Switch to 2 week calendar",
+          "relation": "CONFIGURED_BY",
+          "target": "default working hours form",
+          "evidence": "click the Switch to 2 week calendar button at the top of the new default working hours form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "structures",
+    "heading": "Structures",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Structures",
+          "type": "Module",
+          "mention": "Structures",
+          "confidence": "medium"
+        },
+        {
+          "name": "Salary structures",
+          "type": "Concept",
+          "mention": "Salary structures",
+          "confidence": "high"
+        },
+        {
+          "name": "structure",
+          "type": "Concept",
+          "mention": "structure",
+          "confidence": "high"
+        },
+        {
+          "name": "Bonus",
+          "type": "Feature",
+          "mention": "Bonus",
+          "confidence": "high"
+        },
+        {
+          "name": "Structure types",
+          "type": "Concept",
+          "mention": "structure type",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Rules",
+          "type": "Concept",
+          "mention": "Salary Rules",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslip",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        },
+        {
+          "name": "payroll localization",
+          "type": "Integration",
+          "mention": "payroll localization",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Payroll app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Structures",
+          "evidence": "Configuration --> Structures"
+        },
+        {
+          "source": "Structures",
+          "relation": "IS_PART_OF",
+          "target": "Payroll",
+          "evidence": "structures for each structure type"
+        },
+        {
+          "source": "Structure types",
+          "relation": "CONTAINS",
+          "target": "Salary structures",
+          "evidence": "lists the various structures associated with it"
+        },
+        {
+          "source": "Salary structures",
+          "relation": "CONTAINS",
+          "target": "Bonus",
+          "evidence": "common example of an additional structure is a Bonus"
+        },
+        {
+          "source": "Salary structures",
+          "relation": "HAS_FEATURE",
+          "target": "Salary Rules",
+          "evidence": "contains a set of rules that define it"
+        },
+        {
+          "source": "Salary Rules",
+          "relation": "GENERATES",
+          "target": "payslip",
+          "evidence": "define how the payslip will be computed"
+        },
+        {
+          "source": "payroll localization",
+          "relation": "CONTAINS",
+          "target": "Salary structures",
+          "evidence": "relevant structures are installed"
+        },
+        {
+          "source": "Salary structures",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "an employee could be paid"
+        },
+        {
+          "source": "Salary structures",
+          "relation": "PERFORMED_BY",
+          "target": "company",
+          "evidence": "company needs for each structure type"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "salary-rules",
+    "heading": "Salary rules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary rules",
+          "type": "Concept",
+          "mention": "Salary rules",
+          "confidence": "high"
+        },
+        {
+          "name": "structure",
+          "type": "Concept",
+          "mention": "structure",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Rules",
+          "type": "Module",
+          "mention": "Rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Regular Pay",
+          "type": "Concept",
+          "mention": "Regular Pay",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Payroll app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Rules",
+          "evidence": "Configuration --> Rules"
+        },
+        {
+          "source": "structure",
+          "relation": "CONTAINS",
+          "target": "Salary rules",
+          "evidence": "Each *structure* has a set of salary *rules"
+        },
+        {
+          "source": "Salary rules",
+          "relation": "CONFIGURED_BY",
+          "target": "localization",
+          "evidence": "These rules are configured by the localization"
+        },
+        {
+          "source": "Salary rules",
+          "relation": "HAS_FEATURE",
+          "target": "compute salaries",
+          "evidence": "used to compute the various amounts considered in the pay"
+        },
+        {
+          "source": "Rules",
+          "relation": "IS_PART_OF",
+          "target": "Regular Pay",
+          "evidence": "Click on a structure (such as Regular Pay) to view all the rules"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-new-rule",
+    "heading": "Add a new rule",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Rules form",
+          "type": "Module",
+          "mention": "Salary Rules form",
+          "confidence": "high"
+        },
+        {
+          "name": "Rule Name",
+          "type": "Field",
+          "mention": "Rule Name",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslip",
+          "confidence": "medium"
+        },
+        {
+          "name": "Code",
+          "type": "Field",
+          "mention": "Code",
+          "confidence": "high"
+        },
+        {
+          "name": "rule ID",
+          "type": "Concept",
+          "mention": "rule ID",
+          "confidence": "medium"
+        },
+        {
+          "name": "Category",
+          "type": "Field",
+          "mention": "Category",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Structure",
+          "type": "Field",
+          "mention": "Salary Structure",
+          "confidence": "high"
+        },
+        {
+          "name": "Sequence",
+          "type": "Field",
+          "mention": "Sequence",
+          "confidence": "high"
+        },
+        {
+          "name": "Appears on Payslip",
+          "type": "Field",
+          "mention": "Appears on Payslip",
+          "confidence": "high"
+        },
+        {
+          "name": "Contributes to Employer Cost",
+          "type": "Field",
+          "mention": "Contributes to Employer Cost",
+          "confidence": "high"
+        },
+        {
+          "name": "employer cost",
+          "type": "Concept",
+          "mention": "employer cost",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Salary Rules form",
+          "relation": "CONTAINS",
+          "target": "Rule Name",
+          "evidence": "Enter a name for the rule in the Salary Rules form."
+        },
+        {
+          "source": "Salary Rules form",
+          "relation": "CONTAINS",
+          "target": "Code",
+          "evidence": "Enter a code for the new rule in the Salary Rules form."
+        },
+        {
+          "source": "Salary Rules form",
+          "relation": "CONTAINS",
+          "target": "Category",
+          "evidence": "Select or enter a category in the Salary Rules form."
+        },
+        {
+          "source": "Salary Rules form",
+          "relation": "CONTAINS",
+          "target": "Salary Structure",
+          "evidence": "Select or enter a salary structure in the Salary Rules form."
+        },
+        {
+          "source": "Salary Rules form",
+          "relation": "CONTAINS",
+          "target": "Sequence",
+          "evidence": "Enter a sequence number in the Salary Rules form."
+        },
+        {
+          "source": "Salary Rules form",
+          "relation": "CONTAINS",
+          "target": "Appears on Payslip",
+          "evidence": "Check a checkbox on the Salary Rules form."
+        },
+        {
+          "source": "Salary Rules form",
+          "relation": "CONTAINS",
+          "target": "Contributes to Employer Cost",
+          "evidence": "Check a checkbox on the Salary Rules form."
+        },
+        {
+          "source": "Rule Name",
+          "relation": "RELATED_TO",
+          "target": "payslip",
+          "evidence": "Rule name is displayed in the payslip."
+        },
+        {
+          "source": "Code",
+          "relation": "RELATED_TO",
+          "target": "rule ID",
+          "evidence": "Code is used as the rule ID."
+        },
+        {
+          "source": "Contributes to Employer Cost",
+          "relation": "RELATED_TO",
+          "target": "employer cost",
+          "evidence": "The rule is included when computing employer cost."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "general-tab",
+    "heading": "General tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "General tab",
+          "type": "Module",
+          "mention": "General tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Condition Based on",
+          "type": "Setting",
+          "mention": "Condition Based on",
+          "confidence": "high"
+        },
+        {
+          "name": "Always True",
+          "type": "Feature",
+          "mention": "Always True",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Input",
+          "type": "Feature",
+          "mention": "Salary Input",
+          "confidence": "high"
+        },
+        {
+          "name": "Input on",
+          "type": "Setting",
+          "mention": "Input on",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "DataObject",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslip",
+          "type": "DataObject",
+          "mention": "Payslip",
+          "confidence": "high"
+        },
+        {
+          "name": "Section",
+          "type": "Setting",
+          "mention": "Section",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit",
+          "type": "Setting",
+          "mention": "Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Monetary",
+          "type": "Concept",
+          "mention": "Monetary",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Concept",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage",
+          "type": "Concept",
+          "mention": "Percentage",
+          "confidence": "high"
+        },
+        {
+          "name": "Checkbox",
+          "type": "Feature",
+          "mention": "Checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Input Description",
+          "type": "Field",
+          "mention": "Input Description",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Value",
+          "type": "Field",
+          "mention": "Default Value",
+          "confidence": "high"
+        },
+        {
+          "name": "Selected by Default",
+          "type": "Field",
+          "mention": "Selected by Default",
+          "confidence": "high"
+        },
+        {
+          "name": "Depends On",
+          "type": "Setting",
+          "mention": "Depends On",
+          "confidence": "high"
+        },
+        {
+          "name": "Other Input",
+          "type": "Feature",
+          "mention": "Other Input",
+          "confidence": "high"
+        },
+        {
+          "name": "Condition Other Input",
+          "type": "Setting",
+          "mention": "Condition Other Input field",
+          "confidence": "high"
+        },
+        {
+          "name": "Python Expression",
+          "type": "Feature",
+          "mention": "Python Expression",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "hr.payslip object",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "DataObject",
+          "mention": "hr.employee object",
+          "confidence": "high"
+        },
+        {
+          "name": "version",
+          "type": "DataObject",
+          "mention": "hr.version object",
+          "confidence": "medium"
+        },
+        {
+          "name": "result_rules",
+          "type": "DataObject",
+          "mention": "result_rules",
+          "confidence": "high"
+        },
+        {
+          "name": "categories",
+          "type": "DataObject",
+          "mention": "categories",
+          "confidence": "high"
+        },
+        {
+          "name": "worked_days",
+          "type": "DataObject",
+          "mention": "worked_days",
+          "confidence": "high"
+        },
+        {
+          "name": "inputs",
+          "type": "DataObject",
+          "mention": "inputs",
+          "confidence": "high"
+        },
+        {
+          "name": "Domain",
+          "type": "Setting",
+          "mention": "Domain",
+          "confidence": "high"
+        },
+        {
+          "name": "Applicability Domain",
+          "type": "Setting",
+          "mention": "Applicability Domain",
+          "confidence": "high"
+        },
+        {
+          "name": "Computation",
+          "type": "Module",
+          "mention": "Computation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Amount Type",
+          "type": "Setting",
+          "mention": "Amount Type field",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage (%)",
+          "type": "Concept",
+          "mention": "Percentage (%)",
+          "confidence": "high"
+        },
+        {
+          "name": "Percentage based on",
+          "type": "Setting",
+          "mention": "Percentage based on",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Concept",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed Amount",
+          "type": "Feature",
+          "mention": "Fixed Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount Other Input",
+          "type": "Setting",
+          "mention": "Amount Other Input field",
+          "confidence": "high"
+        },
+        {
+          "name": "Python Code",
+          "type": "Feature",
+          "mention": "Python Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Company contribution",
+          "type": "Module",
+          "mention": "Company contribution",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "General tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: General tab"
+        },
+        {
+          "source": "Condition Based on",
+          "relation": "CONFIGURED_BY",
+          "target": "General tab",
+          "evidence": "Fill out the following sections of the General tab."
+        },
+        {
+          "source": "Always True",
+          "relation": "BELONGS_TO",
+          "target": "Condition Based on",
+          "evidence": "Choose from one of the following options: Always True"
+        },
+        {
+          "source": "Salary Input",
+          "relation": "BELONGS_TO",
+          "target": "Condition Based on",
+          "evidence": "Choose from one of the following options: Salary Input"
+        },
+        {
+          "source": "Other Input",
+          "relation": "BELONGS_TO",
+          "target": "Condition Based on",
+          "evidence": "Choose from one of the following options: Other Input"
+        },
+        {
+          "source": "Python Expression",
+          "relation": "BELONGS_TO",
+          "target": "Condition Based on",
+          "evidence": "Choose from one of the following options: Python Expression"
+        },
+        {
+          "source": "Salary Input",
+          "relation": "ENABLES",
+          "target": "Input on",
+          "evidence": "If selected, the following additional fields appear"
+        },
+        {
+          "source": "Salary Input",
+          "relation": "ENABLES",
+          "target": "Section",
+          "evidence": "If selected, the following additional fields appear"
+        },
+        {
+          "source": "Salary Input",
+          "relation": "ENABLES",
+          "target": "Unit",
+          "evidence": "If selected, the following additional fields appear"
+        },
+        {
+          "source": "Salary Input",
+          "relation": "ENABLES",
+          "target": "Input Description",
+          "evidence": "If selected, the following additional fields appear"
+        },
+        {
+          "source": "Salary Input",
+          "relation": "ENABLES",
+          "target": "Default Value",
+          "evidence": "If selected, the following additional fields appear"
+        },
+        {
+          "source": "Salary Input",
+          "relation": "ENABLES",
+          "target": "Depends On",
+          "evidence": "If selected, the following additional fields appear"
+        },
+        {
+          "source": "Unit",
+          "relation": "HAS_FEATURE",
+          "target": "Monetary",
+          "evidence": "The available options are: Monetary"
+        },
+        {
+          "source": "Unit",
+          "relation": "HAS_FEATURE",
+          "target": "Quantity",
+          "evidence": "The available options are: Quantity"
+        },
+        {
+          "source": "Unit",
+          "relation": "HAS_FEATURE",
+          "target": "Percentage",
+          "evidence": "The available options are: Percentage"
+        },
+        {
+          "source": "Unit",
+          "relation": "HAS_FEATURE",
+          "target": "Checkbox",
+          "evidence": "The available options are: Checkbox"
+        },
+        {
+          "source": "Other Input",
+          "relation": "ENABLES",
+          "target": "Condition Other Input",
+          "evidence": "When selected, a Condition Other Input field appears."
+        },
+        {
+          "source": "Domain",
+          "relation": "BELONGS_TO",
+          "target": "Condition Based on",
+          "evidence": "Domain: Select this option"
+        },
+        {
+          "source": "Domain",
+          "relation": "ENABLES",
+          "target": "Applicability Domain",
+          "evidence": "Configure the Applicability Domain that appears beneath this option when selected."
+        },
+        {
+          "source": "Computation",
+          "relation": "CONFIGURED_BY",
+          "target": "General tab",
+          "evidence": "Fill out the following sections of the General tab."
+        },
+        {
+          "source": "Amount Type",
+          "relation": "CONFIGURED_BY",
+          "target": "Computation",
+          "evidence": "This section determines the final value of the rule"
+        },
+        {
+          "source": "Percentage (%)",
+          "relation": "BELONGS_TO",
+          "target": "Amount Type",
+          "evidence": "Using the drop-down menu, select one of the following options for the Amount Type field: Percentage (%)"
+        },
+        {
+          "source": "Fixed Amount",
+          "relation": "BELONGS_TO",
+          "target": "Amount Type",
+          "evidence": "Using the drop-down menu, select one of the following options for the Amount Type field: Fixed Amount"
+        },
+        {
+          "source": "Other Input",
+          "relation": "BELONGS_TO",
+          "target": "Amount Type",
+          "evidence": "Using the drop-down menu, select one of the following options for the Amount Type field: Other Input"
+        },
+        {
+          "source": "Python Code",
+          "relation": "BELONGS_TO",
+          "target": "Amount Type",
+          "evidence": "Using the drop-down menu, select one of the following options for the Amount Type field: Python Code"
+        },
+        {
+          "source": "Percentage (%)",
+          "relation": "ENABLES",
+          "target": "Percentage based on",
+          "evidence": "When selected, configure the following fields"
+        },
+        {
+          "source": "Percentage (%)",
+          "relation": "ENABLES",
+          "target": "Quantity",
+          "evidence": "When selected, configure the following fields"
+        },
+        {
+          "source": "Percentage (%)",
+          "relation": "ENABLES",
+          "target": "Percentage",
+          "evidence": "When selected, configure the following fields"
+        },
+        {
+          "source": "Fixed Amount",
+          "relation": "ENABLES",
+          "target": "Quantity",
+          "evidence": "When selected, configure the following fields"
+        },
+        {
+          "source": "Fixed Amount",
+          "relation": "ENABLES",
+          "target": "Fixed Amount",
+          "evidence": "When selected, configure the following fields"
+        },
+        {
+          "source": "Other Input",
+          "relation": "ENABLES",
+          "target": "Amount Other Input",
+          "evidence": "When selected, an Amount Other Input field appears beneath it."
+        },
+        {
+          "source": "Company contribution",
+          "relation": "CONFIGURED_BY",
+          "target": "General tab",
+          "evidence": "Fill out the following sections of the General tab."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "display-tab",
+    "heading": "Display tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Display tab",
+          "type": "Module",
+          "mention": "Display tab",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip PDF",
+          "type": "DataObject",
+          "mention": "payslip PDF",
+          "confidence": "medium"
+        },
+        {
+          "name": "Color",
+          "type": "Field",
+          "mention": "Color",
+          "confidence": "high"
+        },
+        {
+          "name": "color picker",
+          "type": "Feature",
+          "mention": "color picker",
+          "confidence": "high"
+        },
+        {
+          "name": "Title checkbox",
+          "type": "Field",
+          "mention": "Title checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "salary rule's title",
+          "type": "Field",
+          "mention": "salary rule's *title*",
+          "confidence": "high"
+        },
+        {
+          "name": "salary rule's description",
+          "type": "Field",
+          "mention": "salary rule's *description*",
+          "confidence": "high"
+        },
+        {
+          "name": "Indented checkbox",
+          "type": "Field",
+          "mention": "Indented",
+          "confidence": "high"
+        },
+        {
+          "name": "Space Above checkbox",
+          "type": "Field",
+          "mention": "Space Above",
+          "confidence": "high"
+        },
+        {
+          "name": "Bold checkbox",
+          "type": "Field",
+          "mention": "Bold",
+          "confidence": "high"
+        },
+        {
+          "name": "Underline checkbox",
+          "type": "Field",
+          "mention": "Underline",
+          "confidence": "high"
+        },
+        {
+          "name": "Italic checkbox",
+          "type": "Field",
+          "mention": "Italic",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Display tab",
+          "relation": "CONTAINS",
+          "target": "Color",
+          "evidence": "This section determines the appearance..."
+        },
+        {
+          "source": "Display tab",
+          "relation": "CONTAINS",
+          "target": "Title checkbox",
+          "evidence": "Check the Title checkbox..."
+        },
+        {
+          "source": "Display tab",
+          "relation": "CONTAINS",
+          "target": "Indented checkbox",
+          "evidence": "Check the Indented..."
+        },
+        {
+          "source": "Display tab",
+          "relation": "CONTAINS",
+          "target": "Space Above checkbox",
+          "evidence": "Check the Space Above..."
+        },
+        {
+          "source": "Display tab",
+          "relation": "CONTAINS",
+          "target": "Bold checkbox",
+          "evidence": "Check the Bold..."
+        },
+        {
+          "source": "Display tab",
+          "relation": "CONTAINS",
+          "target": "Underline checkbox",
+          "evidence": "Check the Underline..."
+        },
+        {
+          "source": "Display tab",
+          "relation": "CONTAINS",
+          "target": "Italic checkbox",
+          "evidence": "Check the Italic..."
+        },
+        {
+          "source": "Display tab",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "Finally, enter a Description..."
+        },
+        {
+          "source": "Display tab",
+          "relation": "APPLIES_TO",
+          "target": "payslip PDF",
+          "evidence": "This section determines the appearance of the rule on the payslip PDF..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accounting-tab",
+    "heading": "Accounting tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "**Accounting** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting tab",
+          "type": "Sub-module",
+          "mention": "Accounting tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Debit Account",
+          "type": "Field",
+          "mention": "Debit Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Credit Account",
+          "type": "Field",
+          "mention": "Credit Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Split on names",
+          "type": "Setting",
+          "mention": "Split on names",
+          "confidence": "high"
+        },
+        {
+          "name": "Excluded from Net",
+          "type": "Setting",
+          "mention": "Excluded from Net",
+          "confidence": "high"
+        },
+        {
+          "name": "Set employee on account line",
+          "type": "Setting",
+          "mention": "Set employee on account line",
+          "confidence": "high"
+        },
+        {
+          "name": "Net salary",
+          "type": "Concept",
+          "mention": "Net salary",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip line name",
+          "type": "Field",
+          "mention": "payslip line name",
+          "confidence": "high"
+        },
+        {
+          "name": "deductions and reimbursements",
+          "type": "Concept",
+          "mention": "deductions and reimbursements",
+          "confidence": "medium"
+        },
+        {
+          "name": "salary adjustments",
+          "type": "Concept",
+          "mention": "salary adjustments",
+          "confidence": "medium"
+        },
+        {
+          "name": "net salary rule",
+          "type": "Concept",
+          "mention": "net salary rule",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entries",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal items",
+          "type": "DataObject",
+          "mention": "journal items",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting entries",
+          "type": "DataObject",
+          "mention": "accounting entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "rule",
+          "type": "Concept",
+          "mention": "rule",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\\nTitle: Accounting tab",
+          "confidence": "high"
+        },
+        {
+          "source": "Accounting tab",
+          "relation": "REQUIRES",
+          "target": "Accounting",
+          "evidence": "This tab is **only** available if the **Accounting** app is installed.",
+          "confidence": "high"
+        },
+        {
+          "source": "Accounting tab",
+          "relation": "CONTAINS",
+          "target": "Debit Account",
+          "evidence": "Configure the following fields in this section:\\n\\n- Debit Account:",
+          "confidence": "high"
+        },
+        {
+          "source": "Accounting tab",
+          "relation": "CONTAINS",
+          "target": "Credit Account",
+          "evidence": "- Credit Account:",
+          "confidence": "high"
+        },
+        {
+          "source": "Accounting tab",
+          "relation": "CONTAINS",
+          "target": "Split on names",
+          "evidence": "- Split on names:",
+          "confidence": "high"
+        },
+        {
+          "source": "Accounting tab",
+          "relation": "CONTAINS",
+          "target": "Excluded from Net",
+          "evidence": "- Excluded from Net:",
+          "confidence": "high"
+        },
+        {
+          "source": "Accounting tab",
+          "relation": "CONTAINS",
+          "target": "Set employee on account line",
+          "evidence": "- Set employee on account line:",
+          "confidence": "high"
+        },
+        {
+          "source": "Accounting tab",
+          "relation": "HAS_FEATURE",
+          "target": "determines how the rule affects the various accounting journals",
+          "evidence": "This section determines how the rule affects the various accounting journals",
+          "confidence": "high"
+        },
+        {
+          "source": "Accounting tab",
+          "relation": "HAS_FEATURE",
+          "target": "how the Net salary is calculated for employees",
+          "evidence": "and how the Net salary is calculated for employees.",
+          "confidence": "high"
+        },
+        {
+          "source": "Split on names",
+          "relation": "ENABLES",
+          "target": "to split the accounting entries for this rule according to the payslip line name",
+          "evidence": "to split the accounting entries for this rule\\n  according to the payslip line name.",
+          "confidence": "high"
+        },
+        {
+          "source": "Excluded from Net",
+          "relation": "ENABLES",
+          "target": "to exclude the rule's calculations from the net salary rule in journal entries",
+          "evidence": "to exclude the rule's calculations from the net\\n  salary rule in journal entries.",
+          "confidence": "high"
+        },
+        {
+          "source": "Set employee on account line",
+          "relation": "ENABLES",
+          "target": "to have the employee's name visible on the journal items",
+          "evidence": "to have the employee's name visible\\n  on the journal items.",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "rule-parameters",
+    "heading": "Rule parameters",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Rule Parameters",
+          "type": "Sub-module",
+          "mention": "Rule Parameters",
+          "confidence": "high"
+        },
+        {
+          "name": "Rule parameters",
+          "type": "Feature",
+          "mention": "Rule parameters",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll",
+          "confidence": "low"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslip",
+          "confidence": "medium"
+        },
+        {
+          "name": "rule",
+          "type": "Concept",
+          "mention": "rule",
+          "confidence": "high"
+        },
+        {
+          "name": "code",
+          "type": "Field",
+          "mention": "code",
+          "confidence": "medium"
+        },
+        {
+          "name": "parameter value",
+          "type": "Field",
+          "mention": "parameter value",
+          "confidence": "medium"
+        },
+        {
+          "name": "overtime pay",
+          "type": "Feature",
+          "mention": "overtime pay",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "time and a half",
+          "type": "Concept",
+          "mention": "time and a half",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Payroll app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Rule Parameters",
+          "evidence": "Configuration --> Rule Parameters"
+        },
+        {
+          "source": "Rule parameters",
+          "relation": "ENABLES",
+          "target": "payslip",
+          "evidence": "Rule parameters inform Odoo how to calculate each line of a payslip"
+        },
+        {
+          "source": "overtime pay",
+          "relation": "IS_PART_OF",
+          "target": "Rule parameters",
+          "evidence": "The rule parameters for overtime pay"
+        },
+        {
+          "source": "Rule parameters",
+          "relation": "HAS_FEATURE",
+          "target": "code",
+          "evidence": "Each rule parameter displays the ... code"
+        },
+        {
+          "source": "Rule parameters",
+          "relation": "HAS_FEATURE",
+          "target": "parameter value",
+          "evidence": "Each rule parameter displays the ... parameter value"
+        },
+        {
+          "source": "Rule parameters",
+          "relation": "CONFIGURED_BY",
+          "target": "employees",
+          "evidence": "employees receive time and a half when working over 40 hours"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "other-input-types",
+    "heading": "Other input types",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Other Input Types",
+          "type": "Feature",
+          "mention": "Other Input Types",
+          "confidence": "high"
+        },
+        {
+          "name": "tips",
+          "type": "Concept",
+          "mention": "tips",
+          "confidence": "low"
+        },
+        {
+          "name": "commissions",
+          "type": "Concept",
+          "mention": "commissions",
+          "confidence": "low"
+        },
+        {
+          "name": "expenses",
+          "type": "Concept",
+          "mention": "expenses",
+          "confidence": "low"
+        },
+        {
+          "name": "deductions",
+          "type": "Concept",
+          "mention": "deductions",
+          "confidence": "low"
+        },
+        {
+          "name": "input type",
+          "type": "DataObject",
+          "mention": "input type",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "Code",
+          "type": "Field",
+          "mention": "Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Availability in Structure",
+          "type": "Field",
+          "mention": "Availability in Structure field",
+          "confidence": "high"
+        },
+        {
+          "name": "Available in attachments",
+          "type": "Setting",
+          "mention": "Available in attachments checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "salary attachment",
+          "type": "Concept",
+          "mention": "salary attachment",
+          "confidence": "medium"
+        },
+        {
+          "name": "salary rules",
+          "type": "Feature",
+          "mention": "salary rules",
+          "confidence": "high"
+        },
+        {
+          "name": "payslips",
+          "type": "DataObject",
+          "mention": "payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslips",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Other Input Types",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Other Input Types can be found by navigating to Payroll app --> Configuration --> Other Input Types."
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Payroll app",
+          "evidence": "Other Input Types can be found by navigating to Payroll app --> Configuration --> Other Input Types."
+        },
+        {
+          "source": "Payroll app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "New",
+          "relation": "ENABLES",
+          "target": "input type",
+          "evidence": "If a new input type is needed... click the New button to create a new input type."
+        },
+        {
+          "source": "input type",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "Enter the Description, the Code..."
+        },
+        {
+          "source": "input type",
+          "relation": "CONTAINS",
+          "target": "Code",
+          "evidence": "Enter the Description, the Code..."
+        },
+        {
+          "source": "input type",
+          "relation": "CONTAINS",
+          "target": "Availability in Structure",
+          "evidence": "...and select which structure it applies to in the Availability in Structure field."
+        },
+        {
+          "source": "input type",
+          "relation": "CONFIGURED_BY",
+          "target": "Available in attachments",
+          "evidence": "Check the Available in attachments checkbox if the input should be a salary attachment."
+        },
+        {
+          "source": "input type",
+          "relation": "GENERATES",
+          "target": "salary attachment",
+          "evidence": "Check the Available in attachments checkbox if the input should be a salary attachment."
+        },
+        {
+          "source": "Code",
+          "relation": "USES_METHOD",
+          "target": "salary rules",
+          "evidence": "The Code is used in the salary rules to compute payslips."
+        },
+        {
+          "source": "payslip",
+          "relation": "CONTAINS",
+          "target": "input type",
+          "evidence": "When creating payslips, it is sometimes necessary to add other entries for specific circumstances..."
+        }
+      ]
+    }
+  }
+]

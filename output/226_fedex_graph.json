@@ -1,0 +1,1197 @@
+[
+  {
+    "section_id": "fedex-integration",
+    "heading": "FedEx integration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx integration",
+          "type": "Integration",
+          "mention": "FedEx integration",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx account",
+          "type": "Actor",
+          "mention": "FedEx account",
+          "confidence": "medium"
+        },
+        {
+          "name": "FedEx shipping connector",
+          "type": "Feature",
+          "mention": "FedEx shipping connector",
+          "confidence": "high"
+        },
+        {
+          "name": "shipping method",
+          "type": "Feature",
+          "mention": "shipping method",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx Legacy",
+          "type": "Integration",
+          "mention": "FedEx Legacy",
+          "confidence": "high"
+        },
+        {
+          "name": "third-party shipper",
+          "type": "Concept",
+          "mention": "third-party shipper",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "makes it possible to calculate delivery rates, and generate delivery labels within Odoo"
+        },
+        {
+          "source": "FedEx integration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "Integrating a FedEx account with Odoo's Inventory app"
+        },
+        {
+          "source": "FedEx integration",
+          "relation": "SUPPORTS",
+          "target": "FedEx account",
+          "evidence": "Integrating a FedEx account with Odoo's Inventory app"
+        },
+        {
+          "source": "Inventory",
+          "relation": "HAS_FEATURE",
+          "target": "FedEx shipping connector",
+          "evidence": "This is accomplished by enabling the FedEx shipping connector"
+        },
+        {
+          "source": "FedEx shipping connector",
+          "relation": "CONFIGURED_BY",
+          "target": "shipping method",
+          "evidence": "then configuring at least one shipping method"
+        },
+        {
+          "source": "FedEx integration",
+          "relation": "ENABLES",
+          "target": "FedEx Legacy",
+          "evidence": "Any existing integrations using the FedEx Legacy provider currently work"
+        },
+        {
+          "source": "FedEx integration",
+          "relation": "SEE_ALSO",
+          "target": "third-party shipper",
+          "evidence": "See the documentation on third-party shipper"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-shipping-connector",
+    "heading": "Enable shipping connector",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Shipping Connectors section",
+          "type": "Feature",
+          "mention": "Shipping Connectors section",
+          "confidence": "medium"
+        },
+        {
+          "name": "FedEx Connector",
+          "type": "Integration",
+          "mention": "FedEx Connector",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx",
+          "type": "Actor",
+          "mention": "FedEx",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx Shipping Methods button",
+          "type": "Feature",
+          "mention": "FedEx Shipping Methods button",
+          "confidence": "medium"
+        },
+        {
+          "name": "checkbox",
+          "type": "Field",
+          "mention": "checkbox",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "FedEx Connector",
+          "relation": "BELONGS_TO",
+          "target": "Shipping Connectors section",
+          "evidence": "Shipping Connectors section, and tick the checkbox next to FedEx Connector"
+        },
+        {
+          "source": "FedEx",
+          "relation": "RELATED_TO",
+          "target": "FedEx Connector",
+          "evidence": "FedEx Connector"
+        },
+        {
+          "source": "FedEx Shipping Methods button",
+          "relation": "BELONGS_TO",
+          "target": "FedEx Connector",
+          "evidence": "FedEx Shipping Methods button appears below FedEx Connector"
+        },
+        {
+          "source": "FedEx Connector",
+          "relation": "CONFIGURED_BY",
+          "target": "checkbox",
+          "evidence": "tick the checkbox next to FedEx Connector"
+        },
+        {
+          "source": "FedEx Shipping Methods button",
+          "relation": "TRIGGERED_BY",
+          "target": "Save",
+          "evidence": "After doing so, a FedEx Shipping Methods button appears"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-delivery-method",
+    "heading": "Configure delivery method",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "FedEx shipping connector",
+          "type": "Module",
+          "mention": "FedEx shipping connector",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Product",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx Shipping Methods",
+          "type": "Feature",
+          "mention": "FedEx Shipping Methods button",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Methods",
+          "type": "Feature",
+          "mention": "Delivery Methods",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx delivery methods",
+          "type": "Feature",
+          "mention": "FedEx delivery methods",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx US",
+          "type": "Feature",
+          "mention": "FedEx US",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx International",
+          "type": "Feature",
+          "mention": "FedEx International",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery method",
+          "type": "Feature",
+          "mention": "delivery method",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx account",
+          "type": "Actor",
+          "mention": "FedEx account",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "FedEx Shipping Methods",
+          "evidence": "click the FedEx Shipping Methods button below the FedEx Connector checkbox"
+        },
+        {
+          "source": "FedEx shipping connector",
+          "relation": "HAS_FEATURE",
+          "target": "FedEx US",
+          "evidence": "enabling the FedEx shipping connector automatically creates two default shipping methods: FedEx US"
+        },
+        {
+          "source": "FedEx shipping connector",
+          "relation": "HAS_FEATURE",
+          "target": "FedEx International",
+          "evidence": "enabling the FedEx shipping connector automatically creates two default shipping methods: FedEx International"
+        },
+        {
+          "source": "FedEx US",
+          "relation": "CONFIGURED_BY",
+          "target": "test credentials",
+          "evidence": "pre-configured with test credentials"
+        },
+        {
+          "source": "FedEx International",
+          "relation": "CONFIGURED_BY",
+          "target": "test credentials",
+          "evidence": "pre-configured with test credentials"
+        },
+        {
+          "source": "delivery method",
+          "relation": "CONFIGURED_BY",
+          "target": "FedEx account",
+          "evidence": "credentials from a valid FedEx account"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "general-information",
+    "heading": "General information",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Method",
+          "type": "Feature",
+          "mention": "delivery method",
+          "confidence": "high"
+        },
+        {
+          "name": "Provider field",
+          "type": "Field",
+          "mention": "Provider field",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx",
+          "type": "Integration",
+          "mention": "FedEx",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery providers",
+          "type": "Actor",
+          "mention": "delivery providers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Third-party shippers documentation",
+          "type": "Concept",
+          "mention": "documentation on third-party shippers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Delivery Method",
+          "relation": "CONTAINS",
+          "target": "Provider field",
+          "evidence": "At the very top of a delivery method form are fields used to configure the way the method operates in Odoo."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery Method",
+          "evidence": "At the very top of a delivery method form are fields used to configure the way the method operates in Odoo."
+        },
+        {
+          "source": "Provider field",
+          "relation": "CONTAINS",
+          "target": "FedEx",
+          "evidence": "In the Provider field, select FedEx from the drop-down menu..."
+        },
+        {
+          "source": "Delivery providers",
+          "relation": "RELATED_TO",
+          "target": "Third-party shippers documentation",
+          "evidence": "The rest of the fields in this section are general to all delivery providers. For details on how to fill them out, see the documentation on third-party shippers."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "fedex-configuration-tab",
+    "heading": "Fedex Configuration tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fedex Configuration tab",
+          "type": "Feature",
+          "mention": "Fedex Configuration tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "FedEx delivery method form",
+          "type": "Feature",
+          "mention": "FedEx delivery method form",
+          "confidence": "medium"
+        },
+        {
+          "name": "FedEx account",
+          "type": "Integration",
+          "mention": "FedEx account",
+          "confidence": "medium"
+        },
+        {
+          "name": "FedEx developer account",
+          "type": "Integration",
+          "mention": "FedEx developer account",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx",
+          "type": "Actor",
+          "mention": "FedEx",
+          "confidence": "low"
+        },
+        {
+          "name": "drop-off type",
+          "type": "Setting",
+          "mention": "drop-off type",
+          "confidence": "medium"
+        },
+        {
+          "name": "package type",
+          "type": "Setting",
+          "mention": "package type",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "FedEx delivery method form",
+          "evidence": "The options in the Fedex Configuration tab of a FedEx delivery method form are used to"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONFIGURED_BY",
+          "target": "drop-off type",
+          "evidence": "configure the delivery details associated with the method (drop-off type, package type, etc.)"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONFIGURED_BY",
+          "target": "package type",
+          "evidence": "configure the delivery details associated with the method (drop-off type, package type, etc.)"
+        },
+        {
+          "source": "FedEx delivery method form",
+          "relation": "CONTAINS",
+          "target": "Fedex Configuration tab",
+          "evidence": "The options in the Fedex Configuration tab of a FedEx delivery method form are used to"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "ENABLES",
+          "target": "FedEx account",
+          "evidence": "connect the method to a FedEx account"
+        },
+        {
+          "source": "FedEx developer account",
+          "relation": "EQUIVALENT_TO",
+          "target": "FedEx account",
+          "evidence": "A FedEx developer account is required to obtain the information needed to fill out the fields in this tab."
+        },
+        {
+          "source": "FedEx developer account",
+          "relation": "REQUIRES",
+          "target": "FedEx",
+          "evidence": "To create a new account, navigate to FedEx's Open Account page"
+        },
+        {
+          "source": "FedEx developer account",
+          "relation": "BELONGS_TO",
+          "target": "FedEx",
+          "evidence": "FedEx's Open Account page"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-api-project",
+    "heading": "Create API Project",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "developer account",
+          "type": "Actor",
+          "mention": "developer account",
+          "confidence": "low"
+        },
+        {
+          "name": "My Projects tab",
+          "type": "Feature",
+          "mention": "My Projects tab",
+          "confidence": "low"
+        },
+        {
+          "name": "CREATE API PROJECT",
+          "type": "Action",
+          "mention": "CREATE API PROJECT",
+          "confidence": "high"
+        },
+        {
+          "name": "Ships with FedEX and needs to integrate FedEx APIs into their system",
+          "type": "Concept",
+          "mention": "Ships with FedEX and needs to integrate FedEx APIs into their system",
+          "confidence": "low"
+        },
+        {
+          "name": "Ship, Rate & Other APIs",
+          "type": "Integration",
+          "mention": "Ship, Rate & Other APIs",
+          "confidence": "high"
+        },
+        {
+          "name": "Address Validation API",
+          "type": "Integration",
+          "mention": "Address Validation API",
+          "confidence": "high"
+        },
+        {
+          "name": "Rates and Transit Times API",
+          "type": "Integration",
+          "mention": "Rates and Transit Times API",
+          "confidence": "high"
+        },
+        {
+          "name": "Ship API",
+          "type": "Integration",
+          "mention": "Ship API",
+          "confidence": "high"
+        },
+        {
+          "name": "Trade Documents Upload API",
+          "type": "Integration",
+          "mention": "Trade Documents Upload API",
+          "confidence": "high"
+        },
+        {
+          "name": "Project",
+          "type": "DataObject",
+          "mention": "Project",
+          "confidence": "high"
+        },
+        {
+          "name": "Project name",
+          "type": "Field",
+          "mention": "Project name",
+          "confidence": "high"
+        },
+        {
+          "name": "Production key tab",
+          "type": "Feature",
+          "mention": "Production key tab",
+          "confidence": "low"
+        },
+        {
+          "name": "Shipping Account",
+          "type": "Integration",
+          "mention": "Shipping Account",
+          "confidence": "low"
+        },
+        {
+          "name": "API Key",
+          "type": "Field",
+          "mention": "API Key",
+          "confidence": "high"
+        },
+        {
+          "name": "Secret Key",
+          "type": "Field",
+          "mention": "Secret Key",
+          "confidence": "high"
+        },
+        {
+          "name": "Account number",
+          "type": "Field",
+          "mention": "Account number",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Methods form",
+          "type": "DataObject",
+          "mention": "Delivery Methods form",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "CREATE API PROJECT",
+          "relation": "PERFORMED_BY",
+          "target": "developer account",
+          "evidence": "After creating a developer account , navigate to the My Projects tab, and click CREATE API PROJECT."
+        },
+        {
+          "source": "CREATE API PROJECT",
+          "relation": "ENABLES",
+          "target": "Ships with FedEX and needs to integrate FedEx APIs into their system",
+          "evidence": "On the Tell us about your API needs popup, select Ships with FedEX and needs to integrate FedEx APIs into their system in the I work for a company that: drop-down."
+        },
+        {
+          "source": "CREATE API PROJECT",
+          "relation": "CONTAINS",
+          "target": "Project",
+          "evidence": "Enter a Project name, then select any countries where packages will be shipped to, or delivered from."
+        },
+        {
+          "source": "Project",
+          "relation": "CONFIGURED_BY",
+          "target": "Project name",
+          "evidence": "Enter a Project name"
+        },
+        {
+          "source": "Project",
+          "relation": "CONFIGURED_BY",
+          "target": "API Key",
+          "evidence": "Copy the API Key, then paste them into the appropriate fields on the Delivery Methods form."
+        },
+        {
+          "source": "Project",
+          "relation": "CONFIGURED_BY",
+          "target": "Secret Key",
+          "evidence": "Copy the Secret Key, then paste them into the appropriate fields on the Delivery Methods form."
+        },
+        {
+          "source": "Project",
+          "relation": "CONFIGURED_BY",
+          "target": "Account number",
+          "evidence": "Copy the Account number, then paste them into the appropriate fields on the Delivery Methods form."
+        },
+        {
+          "source": "Project",
+          "relation": "GENERATES",
+          "target": "Shipping Account",
+          "evidence": "From there, link a Shipping Account."
+        },
+        {
+          "source": "Shipping Account",
+          "relation": "IS_PART_OF",
+          "target": "Production key tab",
+          "evidence": "To move the project to production, click the Production key tab. From there, link a Shipping Account."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "certification-process",
+    "heading": "Certification process",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx shipping labels",
+          "type": "Feature",
+          "mention": "FedEx shipping labels",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx developer portal",
+          "type": "Integration",
+          "mention": "FedEx `developer portal",
+          "confidence": "high"
+        },
+        {
+          "name": "API Certification",
+          "type": "Workflow",
+          "mention": "API Certification",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx support team",
+          "type": "Actor",
+          "mention": "FedEx support team",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "FedEx shipping labels",
+          "relation": "ENABLES",
+          "target": "FedEx shipping labels",
+          "evidence": "To enable the creation of FedEx shipping labels"
+        },
+        {
+          "source": "FedEx shipping labels",
+          "relation": "REQUIRES",
+          "target": "API Certification",
+          "evidence": "To enable the creation of FedEx shipping labels, the API must be certified"
+        },
+        {
+          "source": "API Certification",
+          "relation": "PERFORMED_BY",
+          "target": "FedEx support team",
+          "evidence": "These certification often require reaching out to the FedEx support team via email"
+        },
+        {
+          "source": "API Certification",
+          "relation": "TRIGGERED_BY",
+          "target": "FedEx developer portal",
+          "evidence": "On the sidebar menu in the FedEx developer portal, click API Certification"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "account-number-fields",
+    "heading": "Account Number fields",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "FedEx Account",
+          "type": "DataObject",
+          "mention": "FedEx account",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx account number",
+          "type": "Field",
+          "mention": "Account Number",
+          "confidence": "high"
+        },
+        {
+          "name": "account holder's name",
+          "type": "Field",
+          "mention": "account holder's name",
+          "confidence": "medium"
+        },
+        {
+          "name": "Password",
+          "type": "Field",
+          "mention": "Password",
+          "confidence": "high"
+        },
+        {
+          "name": "Fedex Configuration tab",
+          "type": "Module",
+          "mention": "Fedex Configuration tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery method form",
+          "type": "DataObject",
+          "mention": "delivery method form",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx",
+          "type": "Actor",
+          "mention": "FedEx",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "FedEx Account",
+          "relation": "CONTAINS",
+          "target": "FedEx account number",
+          "evidence": "An *account number* is the unique number assigned to each FedEx account."
+        },
+        {
+          "source": "delivery method form",
+          "relation": "CONTAINS",
+          "target": "Fedex Configuration tab",
+          "evidence": "enter them in the Password and Account Number fields on the Fedex Configuration tab of the delivery method form"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "FedEx account number",
+          "evidence": "enter them in the Password and Account Number fields on the Fedex Configuration tab"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "Password",
+          "evidence": "enter them in the Password and Account Number fields on the Fedex Configuration tab"
+        },
+        {
+          "source": "FedEx",
+          "relation": "PERFORMED_BY",
+          "target": "FedEx Account",
+          "evidence": "An *account number* is the unique number assigned to each FedEx account."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "delivery-details",
+    "heading": "Delivery details",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fedex Configuration tab",
+          "type": "Module",
+          "mention": "main section of the Fedex Configuration tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Method",
+          "type": "Concept",
+          "mention": "delivery method",
+          "confidence": "high"
+        },
+        {
+          "name": "Fedex Service Type",
+          "type": "Field",
+          "mention": "Fedex Service Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Fedex Drop-Off Type",
+          "type": "Field",
+          "mention": "Fedex Drop-Off Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Fedex Package Type",
+          "type": "Field",
+          "mention": "Fedex Package Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Package Weight Unit",
+          "type": "Field",
+          "mention": "Package Weight Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Package Length Unit",
+          "type": "Field",
+          "mention": "Package Length Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Label Type",
+          "type": "Field",
+          "mention": "Label Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Label Format",
+          "type": "Field",
+          "mention": "Label Format",
+          "confidence": "high"
+        },
+        {
+          "name": "Commercial Invoice Type",
+          "type": "Field",
+          "mention": "Commercial Invoice Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Label",
+          "type": "DataObject",
+          "mention": "delivery labels",
+          "confidence": "medium"
+        },
+        {
+          "name": "FedEx",
+          "type": "Actor",
+          "mention": "FedEx",
+          "confidence": "medium"
+        },
+        {
+          "name": "FedEx Account",
+          "type": "Actor",
+          "mention": "associated FedEx account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account Management page",
+          "type": "Module",
+          "mention": "Account Management page",
+          "confidence": "medium"
+        },
+        {
+          "name": "FedEx website",
+          "type": "Actor",
+          "mention": "FedEx website",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer Service Representative",
+          "type": "Actor",
+          "mention": "customer service representative",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "Fedex Service Type",
+          "evidence": "includes a number of additional fields"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "Fedex Drop-Off Type",
+          "evidence": "includes a number of additional fields"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "Fedex Package Type",
+          "evidence": "includes a number of additional fields"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "Package Weight Unit",
+          "evidence": "includes a number of additional fields"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "Package Length Unit",
+          "evidence": "includes a number of additional fields"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "Label Type",
+          "evidence": "includes a number of additional fields"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "Label Format",
+          "evidence": "includes a number of additional fields"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "CONTAINS",
+          "target": "Commercial Invoice Type",
+          "evidence": "includes a number of additional fields"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "BELONGS_TO",
+          "target": "Delivery Method",
+          "evidence": "tab of a delivery method"
+        },
+        {
+          "source": "Fedex Configuration tab",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Delivery Method",
+          "relation": "USES_METHOD",
+          "target": "Fedex Service Type",
+          "evidence": "used to ship a package"
+        },
+        {
+          "source": "Delivery Method",
+          "relation": "USES_METHOD",
+          "target": "Fedex Drop-Off Type",
+          "evidence": "method for getting a package"
+        },
+        {
+          "source": "Delivery Method",
+          "relation": "USES_METHOD",
+          "target": "Fedex Package Type",
+          "evidence": "type of package used for the delivery method"
+        },
+        {
+          "source": "Label Format",
+          "relation": "GENERATES",
+          "target": "Delivery Label",
+          "evidence": "used by Odoo to generate delivery labels"
+        },
+        {
+          "source": "Delivery Method",
+          "relation": "CONFIGURED_BY",
+          "target": "FedEx Account",
+          "evidence": "depends on the negotiated delivery services of the associated FedEx account"
+        },
+        {
+          "source": "FedEx Account",
+          "relation": "CONTAINS",
+          "target": "Account Management page",
+          "evidence": "Account Management page"
+        },
+        {
+          "source": "FedEx Account",
+          "relation": "CONTAINS",
+          "target": "FedEx website",
+          "evidence": "visit the *Account Management* page after logging in to the FedEx website"
+        },
+        {
+          "source": "FedEx Account",
+          "relation": "PERFORMED_BY",
+          "target": "Customer Service Representative",
+          "evidence": "speak with a customer service representative"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "options-section",
+    "heading": "Options section",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Fedex Configuration tab",
+          "type": "Unknown",
+          "mention": "Fedex Configuration tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Saturday Delivery",
+          "type": "Feature",
+          "mention": "Saturday Delivery",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate Return Label",
+          "type": "Feature",
+          "mention": "Generate Return Label",
+          "confidence": "high"
+        },
+        {
+          "name": "Duties paid by",
+          "type": "Setting",
+          "mention": "Duties paid by",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Saturday Delivery",
+          "relation": "CONFIGURED_BY",
+          "target": "Fedex Configuration tab",
+          "evidence": "Tick the checkbox to allow packages shipped with the delivery method to be delivered on Saturdays."
+        },
+        {
+          "source": "Generate Return Label",
+          "relation": "CONFIGURED_BY",
+          "target": "Fedex Configuration tab",
+          "evidence": "Tick the checkbox to automatically generate a return label upon validation of a delivery order."
+        },
+        {
+          "source": "Duties paid by",
+          "relation": "CONFIGURED_BY",
+          "target": "Fedex Configuration tab",
+          "evidence": "Use the drop-down menu to select whether duty charges should be paid by the Sender or Recipient."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "activate-delivery-method",
+    "heading": "Activate delivery method",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery method",
+          "type": "Module",
+          "mention": "delivery method",
+          "confidence": "high"
+        },
+        {
+          "name": "Test Environment",
+          "type": "Setting",
+          "mention": "test environment",
+          "confidence": "high"
+        },
+        {
+          "name": "production environment",
+          "type": "Setting",
+          "mention": "production environment",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery label",
+          "type": "DataObject",
+          "mention": "delivery label",
+          "confidence": "high"
+        },
+        {
+          "name": "FedEx",
+          "type": "Integration",
+          "mention": "FedEx",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "delivery method",
+          "relation": "CONFIGURED_BY",
+          "target": "Test Environment",
+          "evidence": "By default, delivery methods in Odoo are created within a *test environment*."
+        },
+        {
+          "source": "delivery method",
+          "relation": "CONFIGURED_BY",
+          "target": "production environment",
+          "evidence": "To activate a delivery method in a *production environment*, click..."
+        },
+        {
+          "source": "delivery method",
+          "relation": "ENABLES",
+          "target": "delivery label",
+          "evidence": "With the production environment enabled, validating a delivery order using the delivery method generates an actual delivery label with FedEx."
+        },
+        {
+          "source": "delivery method",
+          "relation": "SUPPORTS",
+          "target": "FedEx",
+          "evidence": "generates an actual delivery label with FedEx"
+        },
+        {
+          "source": "delivery order",
+          "relation": "USES_METHOD",
+          "target": "delivery method",
+          "evidence": "validating a delivery order using the delivery method"
+        }
+      ]
+    }
+  }
+]

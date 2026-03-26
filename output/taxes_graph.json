@@ -1,0 +1,2389 @@
+[
+  {
+    "section_id": "taxes",
+    "heading": "Taxes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax regulations",
+          "type": "Regulation",
+          "mention": "Tax regulations",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "companies",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax amounts",
+          "type": "Concept",
+          "mention": "tax amounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales",
+          "type": "Concept",
+          "mention": "sales",
+          "confidence": "medium"
+        },
+        {
+          "name": "Record",
+          "type": "DataObject",
+          "mention": "record",
+          "confidence": "low"
+        },
+        {
+          "name": "Accumulated tax debit",
+          "type": "Concept",
+          "mention": "accumulated tax debit",
+          "confidence": "low"
+        },
+        {
+          "name": "Accumulated tax credit",
+          "type": "Concept",
+          "mention": "accumulated tax credit",
+          "confidence": "low"
+        },
+        {
+          "name": "Tax returns",
+          "type": "Concept",
+          "mention": "tax returns",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax returns filing",
+          "type": "Workflow",
+          "mention": "file this information in tax returns",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax regulations",
+          "relation": "REQUIRES",
+          "target": "Company",
+          "evidence": "Tax regulations generally require companies"
+        },
+        {
+          "source": "Tax regulations",
+          "relation": "APPLIES_TO",
+          "target": "Sales",
+          "evidence": "compute tax amounts on sales"
+        },
+        {
+          "source": "Company",
+          "relation": "PERFORMED_BY",
+          "target": "Tax returns filing",
+          "evidence": "periodically file this information in tax returns"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "overview",
+    "heading": "Overview",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Product",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Product",
+          "mention": "Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Product",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Product",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "tax",
+          "confidence": "medium"
+        },
+        {
+          "name": "document",
+          "type": "DataObject",
+          "mention": "documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax amount",
+          "type": "Concept",
+          "mention": "tax amounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting document",
+          "type": "DataObject",
+          "mention": "accounting documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "journal item",
+          "type": "DataObject",
+          "mention": "journal items",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax debit",
+          "type": "Field",
+          "mention": "tax debit",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax credit",
+          "type": "Field",
+          "mention": "tax credit",
+          "confidence": "medium"
+        },
+        {
+          "name": "total base",
+          "type": "Concept",
+          "mention": "total base",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax return report",
+          "type": "Report",
+          "mention": "tax return report",
+          "confidence": "high"
+        },
+        {
+          "name": "tax return",
+          "type": "Concept",
+          "mention": "tax return",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "via the Sales, Purchase, Accounting, and Point of Sale apps"
+        },
+        {
+          "source": "Purchase",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "via the Sales, Purchase, Accounting, and Point of Sale apps"
+        },
+        {
+          "source": "Accounting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "via the Sales, Purchase, Accounting, and Point of Sale apps"
+        },
+        {
+          "source": "Point of Sale",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "via the Sales, Purchase, Accounting, and Point of Sale apps"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GENERATES",
+          "target": "tax amount",
+          "evidence": "Odoo automatically computes tax amounts on the documents"
+        },
+        {
+          "source": "Odoo",
+          "relation": "GENERATES",
+          "target": "journal item",
+          "evidence": "On accounting documents, Odoo generates journal items"
+        },
+        {
+          "source": "tax return report",
+          "relation": "CONTAINS",
+          "target": "total base",
+          "evidence": "The total base... can be viewed in the tax return report"
+        },
+        {
+          "source": "tax return report",
+          "relation": "CONTAINS",
+          "target": "tax debit",
+          "evidence": "tax debit... can be viewed in the tax return report"
+        },
+        {
+          "source": "tax return report",
+          "relation": "CONTAINS",
+          "target": "tax credit",
+          "evidence": "tax credit... can be viewed in the tax return report"
+        },
+        {
+          "source": "tax return report",
+          "relation": "ENABLES",
+          "target": "tax return",
+          "evidence": "and used to file a tax return"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "taxes-on-sales-and-purchases",
+    "heading": "Taxes on sales and purchases",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting app",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "customer invoices",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bills",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "sales quotations",
+          "type": "DataObject",
+          "mention": "sales quotations",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase orders",
+          "type": "DataObject",
+          "mention": "purchase orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale app",
+          "type": "Module",
+          "mention": "Point of Sale app",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes field",
+          "type": "Field",
+          "mention": "Taxes field",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "line",
+          "type": "DataObject",
+          "mention": "line",
+          "confidence": "high"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "high"
+        },
+        {
+          "name": "fiscal position",
+          "type": "DataObject",
+          "mention": "fiscal position",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "customer invoices",
+          "relation": "BELONGS_TO",
+          "target": "Accounting app",
+          "evidence": "invoices <customer_invoices> and vendor bills <vendor_bills> in the Accounting app"
+        },
+        {
+          "source": "vendor bills",
+          "relation": "BELONGS_TO",
+          "target": "Accounting app",
+          "evidence": "invoices <customer_invoices> and vendor bills <vendor_bills> in the Accounting app"
+        },
+        {
+          "source": "sales quotations",
+          "relation": "BELONGS_TO",
+          "target": "Sales app",
+          "evidence": "sales quotations <../../sales/sales/sales_quotations> in the Sales app"
+        },
+        {
+          "source": "purchase orders",
+          "relation": "BELONGS_TO",
+          "target": "Purchase app",
+          "evidence": "purchase orders <../../inventory_and_mrp/purchase/manage_deals/rfq> in the Purchase app"
+        },
+        {
+          "source": "customer invoices",
+          "relation": "CONTAINS",
+          "target": "Taxes field",
+          "evidence": "Most sales and purchase documents have a Taxes field where taxes can be applied to individual lines. This includes invoices"
+        },
+        {
+          "source": "vendor bills",
+          "relation": "CONTAINS",
+          "target": "Taxes field",
+          "evidence": "Most sales and purchase documents have a Taxes field where taxes can be applied to individual lines. This includes vendor bills"
+        },
+        {
+          "source": "sales quotations",
+          "relation": "CONTAINS",
+          "target": "Taxes field",
+          "evidence": "Most sales and purchase documents have a Taxes field where taxes can be applied to individual lines. This includes sales quotations"
+        },
+        {
+          "source": "purchase orders",
+          "relation": "CONTAINS",
+          "target": "Taxes field",
+          "evidence": "Most sales and purchase documents have a Taxes field where taxes can be applied to individual lines. This includes purchase orders"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "tax",
+          "evidence": "the taxes assigned to the product"
+        },
+        {
+          "source": "Taxes field",
+          "relation": "APPLIES_TO",
+          "target": "line",
+          "evidence": "Taxes field where taxes can be applied to individual lines"
+        },
+        {
+          "source": "tax",
+          "relation": "APPLIES_TO",
+          "target": "line",
+          "evidence": "When adding a product to a sale or purchase line, the taxes assigned to the product are automatically applied to the line"
+        },
+        {
+          "source": "tax",
+          "relation": "APPLIES_TO",
+          "target": "order",
+          "evidence": "In the Point of Sale app, the taxes assigned to the products are applied directly to the order"
+        },
+        {
+          "source": "fiscal position",
+          "relation": "RELATED_TO",
+          "target": "tax",
+          "evidence": "cannot be changed except by a fiscal position"
+        },
+        {
+          "source": "point of sale app",
+          "relation": "HAS_REPORT",
+          "target": "order",
+          "evidence": "the taxes assigned to the products are applied directly to the order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "automatic-computation-of-tax-amounts",
+    "heading": "Automatic computation of tax amounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax computation documentation",
+          "type": "Concept",
+          "mention": "the Tax computation documentation",
+          "confidence": "high"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "a tax",
+          "confidence": "high"
+        },
+        {
+          "name": "tax amount",
+          "type": "Concept",
+          "mention": "the tax amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "sale line",
+          "type": "DataObject",
+          "mention": "sale line",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase line",
+          "type": "DataObject",
+          "mention": "purchase line",
+          "confidence": "medium"
+        },
+        {
+          "name": "subtotal",
+          "type": "Field",
+          "mention": "subtotal",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax's configuration",
+          "type": "Setting",
+          "mention": "the tax's configuration",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "tax amount",
+          "evidence": "Applying a tax to a sale or purchase line allows Odoo to automatically compute the tax amount"
+        },
+        {
+          "source": "tax amount",
+          "relation": "COMPLIES_WITH",
+          "target": "tax",
+          "evidence": "The details of the computation are explained in the Tax computation documentation"
+        },
+        {
+          "source": "tax amount",
+          "relation": "SEE_ALSO",
+          "target": "Tax computation documentation",
+          "evidence": "explained in the Tax computation documentation"
+        },
+        {
+          "source": "tax amount",
+          "relation": "GENERATED_BY",
+          "target": "sale line",
+          "evidence": "compute the tax amount based on the sale or purchase line's subtotal"
+        },
+        {
+          "source": "tax amount",
+          "relation": "GENERATED_BY",
+          "target": "purchase line",
+          "evidence": "compute the tax amount based on the sale or purchase line's subtotal"
+        },
+        {
+          "source": "tax amount",
+          "relation": "COMPUTED_USING",
+          "target": "subtotal",
+          "evidence": "based on the sale or purchase line's subtotal"
+        },
+        {
+          "source": "tax amount",
+          "relation": "CONFIGURED_BY",
+          "target": "tax's configuration",
+          "evidence": "based on the tax's configuration"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "automatic-generation-of-tax-journal-items",
+    "heading": "Automatic generation of tax journal items",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "customer_invoices",
+          "type": "DataObject",
+          "mention": "invoice <customer_invoices>",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor_bills",
+          "type": "DataObject",
+          "mention": "vendor bill <vendor_bills>",
+          "confidence": "high"
+        },
+        {
+          "name": "tax payable journal item",
+          "type": "DataObject",
+          "mention": "tax payable journal item",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Grids",
+          "type": "Feature",
+          "mention": "Tax Grids <accounting/tax-returns/tax-grids>",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Return",
+          "type": "Report",
+          "mention": "Tax Return <reporting/tax_returns>",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash Basis",
+          "type": "Feature",
+          "mention": "Cash Basis <taxes/cash_basis>",
+          "confidence": "high"
+        },
+        {
+          "name": "payment",
+          "type": "DataObject",
+          "mention": "payment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Automatic generation of tax journal items",
+          "evidence": "Product: Odoo Title: Automatic generation of tax journal items",
+          "confidence": "high"
+        },
+        {
+          "source": "Automatic generation of tax journal items",
+          "relation": "PRODUCES",
+          "target": "tax payable journal item",
+          "evidence": "Upon applying a tax..., a tax payable journal item is automatically generated",
+          "confidence": "high"
+        },
+        {
+          "source": "customer_invoices",
+          "relation": "TRIGGERED_BY",
+          "target": "Applying a tax",
+          "evidence": "Upon applying a tax on an invoice <customer_invoices>",
+          "confidence": "medium"
+        },
+        {
+          "source": "vendor_bills",
+          "relation": "TRIGGERED_BY",
+          "target": "Applying a tax",
+          "evidence": "Upon applying a tax on... vendor bill <vendor_bills>",
+          "confidence": "medium"
+        },
+        {
+          "source": "Applying a tax",
+          "relation": "REQUIRES",
+          "target": "tax payable journal item",
+          "evidence": "a tax payable journal item is automatically generated",
+          "confidence": "low"
+        },
+        {
+          "source": "tax payable journal item",
+          "relation": "HAS_FEATURE",
+          "target": "Tax Grids",
+          "evidence": "Tax Grids <accounting/tax-returns/tax-grids> are added both to the automatically created tax payable journal item",
+          "confidence": "high"
+        },
+        {
+          "source": "invoice line",
+          "relation": "IS_PART_OF",
+          "target": "customer_invoices",
+          "evidence": "...invoice line on which the tax is applied",
+          "confidence": "medium"
+        },
+        {
+          "source": "invoice line",
+          "relation": "HAS_FEATURE",
+          "target": "Tax Grids",
+          "evidence": "Tax Grids <accounting/tax-returns/tax-grids> are added... to the invoice line",
+          "confidence": "high"
+        },
+        {
+          "source": "Tax Grids",
+          "relation": "ENABLES",
+          "target": "Tax Return",
+          "evidence": "These tags are used to retrieve the journal items... in the Tax Return <reporting/tax_returns> report",
+          "confidence": "high"
+        },
+        {
+          "source": "Cash Basis",
+          "relation": "ENABLES",
+          "target": "additional journal entry",
+          "evidence": "If Cash Basis <taxes/cash_basis> is enabled, ... an additional journal entry is created",
+          "confidence": "high"
+        },
+        {
+          "source": "payment",
+          "relation": "TRIGGERED_BY",
+          "target": "reconciliation",
+          "evidence": "upon reconciling the invoice or vendor bill with the payment",
+          "confidence": "low"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "filing-tax-returns",
+    "heading": "Filing tax returns",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Filing tax returns",
+          "type": "Module",
+          "mention": "Title: Filing tax returns",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Return report",
+          "type": "Report",
+          "mention": "Tax Return <reporting/tax_returns> report",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor Bill",
+          "type": "DataObject",
+          "mention": "vendor bills",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal localization",
+          "type": "Concept",
+          "mention": "fiscal localization",
+          "confidence": "medium"
+        },
+        {
+          "name": "Government",
+          "type": "Actor",
+          "mention": "government",
+          "confidence": "low"
+        },
+        {
+          "name": "Tax declaration",
+          "type": "Regulation",
+          "mention": "tax declarations",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Filing tax returns",
+          "relation": "HAS_REPORT",
+          "target": "Tax Return report",
+          "evidence": "The Tax Return <reporting/tax_returns> report aggregates..."
+        },
+        {
+          "source": "Tax Return report",
+          "relation": "GENERATES",
+          "target": "Invoice",
+          "evidence": "...aggregates the base and tax amounts from invoices..."
+        },
+        {
+          "source": "Tax Return report",
+          "relation": "GENERATES",
+          "target": "Vendor Bill",
+          "evidence": "...aggregates the base and tax amounts from invoices and vendor bills..."
+        },
+        {
+          "source": "Tax Return report",
+          "relation": "SUPPORTS",
+          "target": "Fiscal localization",
+          "evidence": "...in a format tailored to the fiscal localization <../fiscal_localizations>."
+        },
+        {
+          "source": "Tax Return report",
+          "relation": "PRODUCES",
+          "target": "Tax declaration",
+          "evidence": "The amounts presented in the tax return report can be used to complete tax declarations..."
+        },
+        {
+          "source": "Tax declaration",
+          "relation": "REQUIRES",
+          "target": "Government",
+          "evidence": "...tax declarations that need to be periodically submitted to the government."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "basic-tax-configuration",
+    "heading": "Basic tax configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/configuration/company",
+          "type": "Feature",
+          "mention": "Enable any relevant company-wide options <taxes/configuration/company>.",
+          "confidence": "medium"
+        },
+        {
+          "name": "taxes/list_activation",
+          "type": "Feature",
+          "mention": "Activate any needed pre-configured taxes <taxes/list_activation>.",
+          "confidence": "medium"
+        },
+        {
+          "name": "taxes/product",
+          "type": "Feature",
+          "mention": "Assign taxes on your products <taxes/product>.",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "taxes/configuration/company",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "taxes/list_activation",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "taxes/product",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "company-wide-options",
+    "heading": "Company-wide options",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Taxes"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Taxes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "default-taxes",
+    "heading": "Default taxes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Firms mode",
+          "type": "Module",
+          "mention": "Accounting Firms mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales Tax",
+          "type": "Standard",
+          "mention": "Sales Tax",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Tax",
+          "type": "Standard",
+          "mention": "Purchase Tax",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice line",
+          "type": "DataObject",
+          "mention": "invoice lines",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor bill line",
+          "type": "DataObject",
+          "mention": "vendor bill lines",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Included",
+          "type": "Setting",
+          "mention": "Tax Included",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Default taxes",
+          "evidence": "Title: Default taxes"
+        },
+        {
+          "source": "Default taxes",
+          "relation": "CONTAINS",
+          "target": "Sales Tax",
+          "evidence": "The default Sales Tax"
+        },
+        {
+          "source": "Default taxes",
+          "relation": "CONTAINS",
+          "target": "Purchase Tax",
+          "evidence": "and Purchase Tax"
+        },
+        {
+          "source": "Default taxes",
+          "relation": "APPLIES_TO",
+          "target": "Product",
+          "evidence": "are automatically set on products when creating new products."
+        },
+        {
+          "source": "Accounting Firms mode",
+          "relation": "ENABLES",
+          "target": "Default taxes",
+          "evidence": "If Accounting Firms <accounting/fiduciaries> mode is enabled, the default sales tax is automatically set on new invoice lines"
+        },
+        {
+          "source": "Default taxes",
+          "relation": "APPLIES_TO",
+          "target": "Invoice line",
+          "evidence": "the default sales tax is automatically set on new invoice lines"
+        },
+        {
+          "source": "Default taxes",
+          "relation": "APPLIES_TO",
+          "target": "Vendor bill line",
+          "evidence": "and the default purchase tax is automatically set on new vendor bill lines"
+        },
+        {
+          "source": "Tax Included",
+          "relation": "GOVERNED_BY",
+          "target": "Prices",
+          "evidence": "Prices can be changed to Tax Included"
+        },
+        {
+          "source": "Tax Included",
+          "relation": "RELATED_TO",
+          "target": "taxes",
+          "evidence": "to treat all taxes as tax included"
+        },
+        {
+          "source": "Tax Included",
+          "relation": "SUPPORTS",
+          "target": "pricing tax-included",
+          "evidence": "This would be appropriate if all of a company's pricing is done tax-included."
+        },
+        {
+          "source": "Tax Included",
+          "relation": "SUPPORTS",
+          "target": "individual taxes",
+          "evidence": "individual taxes can be set as Tax Included."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "eu-intra-community-distance-selling",
+    "heading": "EU intra-community distance selling",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "EU intra-community distance selling",
+          "type": "Setting",
+          "mention": "Activate this option",
+          "confidence": "high"
+        },
+        {
+          "name": "EU intra-community distance selling",
+          "type": "Concept",
+          "mention": "EU intra-community distance selling",
+          "confidence": "medium"
+        },
+        {
+          "name": "EU",
+          "type": "Actor",
+          "mention": "you are based in the EU",
+          "confidence": "high"
+        },
+        {
+          "name": "consumer",
+          "type": "Actor",
+          "mention": "sell to consumers",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "EU intra-community distance selling (Setting)",
+          "relation": "CONFIGURED_BY",
+          "target": "EU intra-community distance selling",
+          "evidence": "Activate this option"
+        },
+        {
+          "source": "EU intra-community distance selling",
+          "relation": "SEE_ALSO",
+          "target": "EU intra-community distance selling",
+          "evidence": ".. seealso:: EU intra-community distance selling<taxes/eu_distance_selling>"
+        },
+        {
+          "source": "EU intra-community distance selling (Setting)",
+          "relation": "APPLIES_TO",
+          "target": "EU",
+          "evidence": "if you are based in the EU"
+        },
+        {
+          "source": "EU intra-community distance selling (Setting)",
+          "relation": "APPLIES_TO",
+          "target": "consumer",
+          "evidence": "sell to consumers in other EU countries"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "cash-basis",
+    "heading": "Cash basis",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash basis",
+          "type": "Standard",
+          "mention": "Cash basis",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash basis accounting",
+          "type": "Concept",
+          "mention": "cash rather than accruals basis",
+          "confidence": "high"
+        },
+        {
+          "name": "Activate this option",
+          "type": "Feature",
+          "mention": "Activate this option",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounted for",
+          "type": "Action",
+          "mention": "accounted for",
+          "confidence": "medium"
+        },
+        {
+          "name": "countries",
+          "type": "Actor",
+          "mention": "countries",
+          "confidence": "low"
+        },
+        {
+          "name": "fiscal localization package",
+          "type": "Module",
+          "mention": "fiscal localization package",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Cash basis",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Cash basis"
+        },
+        {
+          "source": "Cash basis",
+          "relation": "SEE_ALSO",
+          "target": "taxes/cash_basis",
+          "evidence": ".. seealso:: Cash basis <taxes/cash_basis>"
+        },
+        {
+          "source": "Activate this option",
+          "relation": "ENABLES",
+          "target": "Cash basis accounting",
+          "evidence": "Activate this option if taxes must be accounted for on a cash rather than accruals basis"
+        },
+        {
+          "source": "countries",
+          "relation": "GOVERNED_BY",
+          "target": "Cash basis accounting",
+          "evidence": "Some countries mandate cash basis accounting"
+        },
+        {
+          "source": "Activate this option",
+          "relation": "CONFIGURED_BY",
+          "target": "fiscal localization package",
+          "evidence": "in that case, this option will be activated by default by the fiscal localization package"
+        },
+        {
+          "source": "fiscal localization package",
+          "type": "CONTAINS",
+          "target": "Cash basis",
+          "evidence": "this option will be activated by default by the fiscal localization package"
+        },
+        {
+          "source": "taxes",
+          "relation": "USES_METHOD",
+          "target": "Cash basis accounting",
+          "evidence": "taxes must be accounted for on a cash rather than accruals basis"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "activate-pre-configured-taxes",
+    "heading": "Activate pre-configured taxes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes",
+          "type": "DataObject",
+          "mention": "Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "list of taxes",
+          "type": "Feature",
+          "mention": "list of taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "fiscal localization package",
+          "type": "Module",
+          "mention": "fiscal localization package",
+          "confidence": "high"
+        },
+        {
+          "name": "sales tax rates",
+          "type": "Concept",
+          "mention": "sales tax rates",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax rate",
+          "type": "Concept",
+          "mention": "tax rate",
+          "confidence": "medium"
+        },
+        {
+          "name": "Active column",
+          "type": "Field",
+          "mention": "Active column",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Taxes",
+          "evidence": "Configuration --> Taxes"
+        },
+        {
+          "source": "Taxes",
+          "relation": "CONTAINS",
+          "target": "list of taxes",
+          "evidence": "list of taxes"
+        },
+        {
+          "source": "fiscal localization package",
+          "relation": "PRODUCES",
+          "target": "sales tax rates",
+          "evidence": "created for most sales tax rates"
+        },
+        {
+          "source": "sales tax rates",
+          "relation": "BELONGS_TO",
+          "target": "Taxes",
+          "evidence": "taxes"
+        },
+        {
+          "source": "sales tax rates",
+          "relation": "CONFIGURED_BY",
+          "target": "Active column",
+          "evidence": "click the toggle in the Active column"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "fiscal localization package",
+          "evidence": "fiscal localization package"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assign-taxes-on-products",
+    "heading": "Assign taxes on products",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customers",
+          "type": "Module",
+          "mention": "Customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "taxes",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Taxes",
+          "type": "Field",
+          "mention": "Sales Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Taxes",
+          "type": "Field",
+          "mention": "Purchase Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "medium"
+        },
+        {
+          "name": "point of sale order",
+          "type": "DataObject",
+          "mention": "point of sale order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Default Taxes",
+          "type": "Setting",
+          "mention": "Default Taxes",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Customers",
+          "evidence": "go to Accounting --> Customers"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "go to Accounting --> Customers --> Products"
+        },
+        {
+          "source": "product",
+          "relation": "HAS_FEATURE",
+          "target": "Sales Taxes",
+          "evidence": "fill the Sales Taxes fields"
+        },
+        {
+          "source": "product",
+          "relation": "HAS_FEATURE",
+          "target": "Purchase Taxes",
+          "evidence": "fill the Purchase Taxes fields"
+        },
+        {
+          "source": "product",
+          "relation": "BELONGS_TO",
+          "target": "Products",
+          "evidence": "select the product to configure"
+        },
+        {
+          "source": "Sales Taxes",
+          "relation": "APPLIES_TO",
+          "target": "invoice",
+          "evidence": "These taxes are automatically applied when adding the product to an invoice"
+        },
+        {
+          "source": "Sales Taxes",
+          "relation": "APPLIES_TO",
+          "target": "sales order",
+          "evidence": "These taxes are automatically applied when adding the product to a sales order"
+        },
+        {
+          "source": "Sales Taxes",
+          "relation": "APPLIES_TO",
+          "target": "point of sale order",
+          "evidence": "These taxes are automatically applied when adding the product to a point of sale order"
+        },
+        {
+          "source": "Purchase Taxes",
+          "relation": "APPLIES_TO",
+          "target": "vendor bill",
+          "evidence": "These taxes are automatically applied when adding the product to a vendor bill"
+        },
+        {
+          "source": "Purchase Taxes",
+          "relation": "APPLIES_TO",
+          "target": "purchase order",
+          "evidence": "These taxes are automatically applied when adding the product to a purchase order"
+        },
+        {
+          "source": "Default Taxes",
+          "relation": "CONFIGURED_BY",
+          "target": "Sales Taxes",
+          "evidence": "to automatically fill these fields on new products"
+        },
+        {
+          "source": "Default Taxes",
+          "relation": "CONFIGURED_BY",
+          "target": "Purchase Taxes",
+          "evidence": "to automatically fill these fields on new products"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "advanced-tax-configuration",
+    "heading": "Advanced tax configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes",
+          "type": "Module",
+          "mention": "Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "tax",
+          "type": "DataObject",
+          "mention": "tax",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax payable journal items",
+          "type": "DataObject",
+          "mention": "tax payable journal items",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal positions",
+          "type": "Concept",
+          "mention": "fiscal positions",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax's configuration",
+          "type": "Setting",
+          "mention": "tax's configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "tax name",
+          "type": "Field",
+          "mention": "tax name",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Taxes",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Configuration --> Taxes"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "go to Accounting --> Configuration --> Taxes"
+        },
+        {
+          "source": "Taxes",
+          "relation": "CONTAINS",
+          "target": "tax",
+          "evidence": "then click the tax name"
+        },
+        {
+          "source": "tax",
+          "relation": "CONFIGURED_BY",
+          "target": "tax's configuration",
+          "evidence": "To open a tax's configuration"
+        },
+        {
+          "source": "tax",
+          "relation": "RELATED_TO",
+          "target": "Tax payable journal items",
+          "evidence": "How tax payable journal items are created"
+        },
+        {
+          "source": "tax",
+          "relation": "RELATED_TO",
+          "target": "Fiscal positions",
+          "evidence": "other taxes according to fiscal positions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-backend-appearance-and-availability",
+    "heading": "Configure backend appearance and availability",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure backend appearance and availability",
+          "type": "Feature",
+          "mention": "Title: Configure backend appearance and availability",
+          "confidence": "medium"
+        },
+        {
+          "name": "taxes/name",
+          "type": "Unknown",
+          "mention": ".. _taxes/name:",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configure backend appearance and availability",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "taxes/name",
+          "relation": "RELATED_TO",
+          "target": "Configure backend appearance and availability",
+          "evidence": ".. _taxes/name:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-name",
+    "heading": "Tax name",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Tax name",
+          "type": "Feature",
+          "mention": "Tax Name",
+          "confidence": "high"
+        },
+        {
+          "name": "backend users",
+          "type": "Actor",
+          "mention": "backend users",
+          "confidence": "medium"
+        },
+        {
+          "name": "Taxes field",
+          "type": "Field",
+          "mention": "Taxes field",
+          "confidence": "high"
+        },
+        {
+          "name": "sales orders",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "high"
+        },
+        {
+          "name": "invoices",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "customer_invoices",
+          "type": "DataObject",
+          "mention": "customer_invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "product forms",
+          "type": "DataObject",
+          "mention": "product forms",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Module",
+          "mention": "Taxes",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Taxes field",
+          "relation": "IS_PART_OF",
+          "target": "sales orders",
+          "evidence": "in the Taxes field in sales orders"
+        },
+        {
+          "source": "Taxes field",
+          "relation": "IS_PART_OF",
+          "target": "invoices",
+          "evidence": "invoices <customer_invoices>"
+        },
+        {
+          "source": "Taxes field",
+          "relation": "IS_PART_OF",
+          "target": "product forms",
+          "evidence": "product forms, etc."
+        },
+        {
+          "source": "Tax name",
+          "relation": "APPLIES_TO",
+          "target": "Taxes field",
+          "evidence": "The Tax Name appears for backend users in the Taxes field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-type",
+    "heading": "Tax type",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Tax Type",
+          "type": "Setting",
+          "mention": "Tax type",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Concept",
+          "mention": "Sales",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase",
+          "type": "Concept",
+          "mention": "Purchase",
+          "confidence": "medium"
+        },
+        {
+          "name": "None",
+          "type": "Concept",
+          "mention": "None",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax Type",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Tax Type",
+          "relation": "CONTAINS",
+          "target": "Sales",
+          "evidence": "Sales: Customer invoices, product customer taxes, etc."
+        },
+        {
+          "source": "Tax Type",
+          "relation": "CONTAINS",
+          "target": "Purchase",
+          "evidence": "Purchase: Vendor bills, product vendor taxes, etc."
+        },
+        {
+          "source": "Tax Type",
+          "relation": "CONTAINS",
+          "target": "None",
+          "evidence": "Use None for taxes that you want..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-scope",
+    "heading": "Tax scope",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Tax Scope",
+          "type": "Feature",
+          "mention": "Tax Scope",
+          "confidence": "high"
+        },
+        {
+          "name": "goods",
+          "type": "Concept",
+          "mention": "goods",
+          "confidence": "medium"
+        },
+        {
+          "name": "services",
+          "type": "Concept",
+          "mention": "services",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax Scope",
+          "relation": "APPLIES_TO",
+          "target": "goods",
+          "evidence": "The Tax Scope restricts the use of taxes to a type of product, either goods"
+        },
+        {
+          "source": "Tax Scope",
+          "relation": "APPLIES_TO",
+          "target": "services",
+          "evidence": "The Tax Scope restricts the use of taxes to a type of product, either goods or services."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "description",
+    "heading": "Description",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Description",
+          "type": "Setting",
+          "mention": "Description",
+          "confidence": "high"
+        },
+        {
+          "name": "internal documentation",
+          "type": "Concept",
+          "mention": "internal documentation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Description",
+          "relation": "CONFIGURED_BY",
+          "target": "internal documentation",
+          "evidence": "The Description can be edited for the purpose of internal documentation."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "label-on-invoices",
+    "heading": "Label on invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Label on Invoices",
+          "type": "Feature",
+          "mention": "Label on Invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice lines",
+          "type": "DataObject",
+          "mention": "invoice lines",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice PDFs",
+          "type": "Report",
+          "mention": "invoice PDFs",
+          "confidence": "high"
+        },
+        {
+          "name": "customer portal",
+          "type": "Feature",
+          "mention": "customer portal",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "invoice PDFs",
+          "relation": "CONTAINS",
+          "target": "invoice lines",
+          "evidence": "appears on invoice lines in invoice PDFs"
+        },
+        {
+          "source": "invoice lines",
+          "relation": "CONTAINS",
+          "target": "Label on Invoices",
+          "evidence": "The Label on Invoices appears on invoice lines"
+        },
+        {
+          "source": "customer portal",
+          "relation": "CONTAINS",
+          "target": "invoice lines",
+          "evidence": "and on the customer portal."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-group",
+    "heading": "Tax group",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Group",
+          "type": "Concept",
+          "mention": "Tax Group",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax Group",
+          "relation": "BELONGS_TO",
+          "target": "invoice totals section",
+          "evidence": "The Tax Group is shown in the totals section of the invoice"
+        },
+        {
+          "source": "taxes",
+          "relation": "BELONGS_TO",
+          "target": "Tax Group",
+          "evidence": "Multiple taxes that belong to the same tax group"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-how-tax-journal-items-are-created",
+    "heading": "Configure how tax journal items are created",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Distribution for Invoices",
+          "type": "Module",
+          "mention": "Distribution for Invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "Distribution for Refunds",
+          "type": "Module",
+          "mention": "Distribution for Refunds",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax payable journal items",
+          "type": "DataObject",
+          "mention": "tax payable journal items",
+          "confidence": "high"
+        },
+        {
+          "name": "tax grids",
+          "type": "DataObject",
+          "mention": "tax grids",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice lines",
+          "type": "DataObject",
+          "mention": "invoice lines",
+          "confidence": "medium"
+        },
+        {
+          "name": "Base line",
+          "type": "Sub-module",
+          "mention": "Base line",
+          "confidence": "high"
+        },
+        {
+          "name": "% of tax lines",
+          "type": "Sub-module",
+          "mention": "% of tax lines",
+          "confidence": "high"
+        },
+        {
+          "name": "tax payable account",
+          "type": "Field",
+          "mention": "Account",
+          "confidence": "medium"
+        },
+        {
+          "name": "EU intra-community reverse-charge VAT",
+          "type": "Concept",
+          "mention": "EU intra-community reverse-charge VAT",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Distribution for Invoices",
+          "relation": "GENERATES",
+          "target": "tax payable journal items",
+          "evidence": "control the generation of tax payable journal items in invoices"
+        },
+        {
+          "source": "Distribution for Refunds",
+          "relation": "GENERATES",
+          "target": "tax payable journal items",
+          "evidence": "control the generation of tax payable journal items in credit notes"
+        },
+        {
+          "source": "tax grids",
+          "relation": "IS_PART_OF",
+          "target": "invoice lines",
+          "evidence": "set on invoice lines"
+        },
+        {
+          "source": "Base line",
+          "relation": "CONTAINS",
+          "target": "Tax Grids",
+          "evidence": "Base line can have one or more Tax Grids set"
+        },
+        {
+          "source": "% of tax lines",
+          "relation": "GENERATES",
+          "target": "tax payable journal items",
+          "evidence": "each line is then used as a template to create a tax payable journal item"
+        },
+        {
+          "source": "% of tax lines",
+          "relation": "RELATED_TO",
+          "target": "Account",
+          "evidence": "each line... with the same Account"
+        },
+        {
+          "source": "EU intra-community reverse-charge VAT",
+          "relation": "RELATED_TO",
+          "target": "tax payable journal items",
+          "evidence": "the tax simultaneously generates both a tax debit and a tax credit"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tax-mapping",
+    "heading": "Tax mapping",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Tax mapping",
+          "type": "Concept",
+          "mention": "Tax mapping",
+          "confidence": "high"
+        },
+        {
+          "name": "tax",
+          "type": "Concept",
+          "mention": "tax",
+          "confidence": "high"
+        },
+        {
+          "name": "fiscal position",
+          "type": "Concept",
+          "mention": "fiscal positions",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal Position field",
+          "type": "Field",
+          "mention": "Fiscal Position field",
+          "confidence": "high"
+        },
+        {
+          "name": "Replaces field",
+          "type": "Field",
+          "mention": "Replaces field",
+          "confidence": "high"
+        },
+        {
+          "name": "0% Exports tax",
+          "type": "Concept",
+          "mention": "0% Exports tax",
+          "confidence": "high"
+        },
+        {
+          "name": "15% tax",
+          "type": "Concept",
+          "mention": "15% tax",
+          "confidence": "high"
+        },
+        {
+          "name": "Foreign Trade fiscal position",
+          "type": "Concept",
+          "mention": "Foreign Trade fiscal position",
+          "confidence": "high"
+        },
+        {
+          "name": "company's default",
+          "type": "Concept",
+          "mention": "company's default",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "taxes list view",
+          "type": "Concept",
+          "mention": "taxes list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "oi-settings-adjust adjust settings",
+          "type": "Setting",
+          "mention": "oi-settings-adjust adjust settings",
+          "confidence": "low"
+        },
+        {
+          "name": "active taxes",
+          "type": "Concept",
+          "mention": "active taxes",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tax mapping",
+          "relation": "CONTAINS",
+          "target": "tax",
+          "evidence": "Taxes can be combined with fiscal positions"
+        },
+        {
+          "source": "tax",
+          "relation": "CONFIGURED_BY",
+          "target": "Fiscal Position field",
+          "evidence": "When configuring a tax, leave the Fiscal Position field blank"
+        },
+        {
+          "source": "tax",
+          "relation": "CONFIGURED_BY",
+          "target": "Replaces field",
+          "evidence": "use the Replaces field to select all of the taxes that this tax should replace"
+        },
+        {
+          "source": "0% Exports tax",
+          "relation": "REPLACES",
+          "target": "15% tax",
+          "evidence": "the 0% Exports tax is used instead"
+        },
+        {
+          "source": "Foreign Trade fiscal position",
+          "relation": "TRIGGERED_BY",
+          "target": "fiscal position",
+          "evidence": "applies to quotations, sales orders, and invoices that use the Foreign Trade fiscal position"
+        },
+        {
+          "source": "company's default",
+          "relation": "GOVERNED_BY",
+          "target": "fiscal position",
+          "evidence": "the first fiscal position in the sequence is considered the company's default"
+        },
+        {
+          "source": "taxes list view",
+          "relation": "CONFIGURED_BY",
+          "target": "oi-settings-adjust adjust settings",
+          "evidence": "use the oi-settings-adjust adjust settings in the taxes list view"
+        },
+        {
+          "source": "Tax mapping",
+          "relation": "APPLIES_TO",
+          "target": "active taxes",
+          "evidence": "Tax mapping only works with active taxes"
+        },
+        {
+          "source": "Tax mapping",
+          "relation": "RELATED_TO",
+          "target": "0% Exports tax",
+          "evidence": "the 0% Exports tax applies"
+        },
+        {
+          "source": "Tax mapping",
+          "relation": "RELATED_TO",
+          "target": "Foreign Trade fiscal position",
+          "evidence": "applies to quotations, sales orders, and invoices that use the Foreign Trade fiscal position"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "extra-taxes",
+    "heading": "Extra taxes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Extra taxes",
+          "type": "Concept",
+          "mention": "Extra taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "luxury taxes",
+          "type": "Concept",
+          "mention": "luxury taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "environmental taxes",
+          "type": "Concept",
+          "mention": "environmental taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "import duties taxes",
+          "type": "Concept",
+          "mention": "import taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "export duties taxes",
+          "type": "Concept",
+          "mention": "export taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Belgium",
+          "type": "Regulation",
+          "mention": "In Belgium",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/configuration",
+          "type": "Module",
+          "mention": "taxes/configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Computation",
+          "type": "Setting",
+          "mention": "Tax Computation",
+          "confidence": "high"
+        },
+        {
+          "name": "Affect Base of Subsequent Taxes",
+          "type": "Setting",
+          "mention": "Affect Base of Subsequent Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/base-subsequent",
+          "type": "Module",
+          "mention": "taxes/base-subsequent",
+          "confidence": "medium"
+        },
+        {
+          "name": "Ecotax",
+          "type": "Concept",
+          "mention": "environmental tax (Ecotax)",
+          "confidence": "high"
+        },
+        {
+          "name": "Belgian base tax",
+          "type": "Concept",
+          "mention": "Belgian base tax",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/tax_computation",
+          "type": "Module",
+          "mention": "taxes/tax_computation",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/fiscal_positions",
+          "type": "Module",
+          "mention": "taxes/fiscal_positions",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/B2B_B2C",
+          "type": "Module",
+          "mention": "taxes/B2B_B2C",
+          "confidence": "high"
+        },
+        {
+          "name": "reporting/tax_returns",
+          "type": "Module",
+          "mention": "reporting/tax_returns",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/cash_basis",
+          "type": "Module",
+          "mention": "taxes/cash_basis",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/retention",
+          "type": "Module",
+          "mention": "taxes/retention",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/vat_verification",
+          "type": "Module",
+          "mention": "taxes/vat_verification",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/avatax",
+          "type": "Module",
+          "mention": "taxes/avatax",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes/eu_distance_selling",
+          "type": "Module",
+          "mention": "taxes/eu_distance_selling",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Extra taxes",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Extra taxes"
+        },
+        {
+          "source": "luxury taxes",
+          "relation": "BELONGS_TO",
+          "target": "Extra taxes",
+          "evidence": "Extra taxes can be luxury taxes"
+        },
+        {
+          "source": "environmental taxes",
+          "relation": "BELONGS_TO",
+          "target": "Extra taxes",
+          "evidence": "Extra taxes can be environmental taxes"
+        },
+        {
+          "source": "import duties taxes",
+          "relation": "BELONGS_TO",
+          "target": "Extra taxes",
+          "evidence": "Extra taxes can be import taxes"
+        },
+        {
+          "source": "export duties taxes",
+          "relation": "BELONGS_TO",
+          "target": "Extra taxes",
+          "evidence": "Extra taxes can be export taxes"
+        },
+        {
+          "source": "environmental tax computation",
+          "relation": "APPLIES_TO",
+          "target": "Belgium",
+          "evidence": "In Belgium, the formula to compute an environmental tax"
+        },
+        {
+          "source": "taxes/configuration",
+          "relation": "CONTAINS",
+          "target": "Tax Computation",
+          "evidence": "select a Tax Computation"
+        },
+        {
+          "source": "taxes/configuration",
+          "relation": "CONTAINS",
+          "target": "Affect Base of Subsequent Taxes",
+          "evidence": "enable Affect Base of Subsequent Taxes"
+        },
+        {
+          "source": "taxes/base-subsequent",
+          "relation": "CONTAINS",
+          "target": "tax computation order",
+          "evidence": "drag and drop the taxes in the order they should be computed"
+        },
+        {
+          "source": "Extra taxes",
+          "relation": "SEE_ALSO",
+          "target": "taxes/tax_computation",
+          "evidence": ".. seealso:: taxes/tax_computation"
+        },
+        {
+          "source": "Extra taxes",
+          "relation": "SEE_ALSO",
+          "target": "taxes/fiscal_positions",
+          "evidence": ".. seealso:: taxes/fiscal_positions"
+        },
+        {
+          "source": "Extra taxes",
+          "relation": "SEE_ALSO",
+          "target": "taxes/B2B_B2C",
+          "evidence": ".. seealso:: taxes/B2B_B2C"
+        },
+        {
+          "source": "Extra taxes",
+          "relation": "SEE_ALSO",
+          "target": "reporting/tax_returns",
+          "evidence": ".. seealso:: reporting/tax_returns"
+        }
+      ]
+    }
+  }
+]

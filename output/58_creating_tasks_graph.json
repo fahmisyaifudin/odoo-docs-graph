@@ -1,0 +1,286 @@
+[
+  {
+    "section_id": "creating-field-service-tasks",
+    "heading": "Creating field service tasks",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "field service tasks",
+          "type": "Workflow",
+          "mention": "Tasks in Odoo Field Service",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales orders",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "high"
+        },
+        {
+          "name": "helpdesk tickets",
+          "type": "DataObject",
+          "mention": "helpdesk tickets",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "field service tasks",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Tasks in Odoo Field Service"
+        },
+        {
+          "source": "field service tasks",
+          "relation": "TRIGGERED_BY",
+          "target": "sales orders",
+          "evidence": "created... automatically, including from sales orders"
+        },
+        {
+          "source": "field service tasks",
+          "relation": "TRIGGERED_BY",
+          "target": "helpdesk tickets",
+          "evidence": "created... automatically, including from... helpdesk tickets"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manual-task-creation",
+    "heading": "Manual task creation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Field service app",
+          "type": "Module",
+          "mention": "Field service app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Field Service",
+          "type": "Module",
+          "mention": "Field Service",
+          "confidence": "high"
+        },
+        {
+          "name": "All Tasks",
+          "type": "Sub-module",
+          "mention": "All Tasks",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "Click New",
+          "confidence": "high"
+        },
+        {
+          "name": "task title",
+          "type": "Field",
+          "mention": "task title",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Field",
+          "mention": "Customer",
+          "confidence": "high"
+        },
+        {
+          "name": "save manually",
+          "type": "Action",
+          "mention": "save manually",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Field service app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Open the Field service app"
+        },
+        {
+          "source": "All Tasks",
+          "relation": "BELONGS_TO",
+          "target": "Field Service",
+          "evidence": "go to Field Service --> All Tasks --> All Tasks"
+        },
+        {
+          "source": "New",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click New"
+        },
+        {
+          "source": "New",
+          "relation": "TRIGGERED_BY",
+          "target": "Action",
+          "evidence": "Click New"
+        },
+        {
+          "source": "Field service app",
+          "relation": "CONTAINS",
+          "target": "Field Service",
+          "evidence": "Open the Field service app and go to Field Service"
+        },
+        {
+          "source": "save manually",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "then save manually"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "task-creation-from-a-sales-order",
+    "heading": "Task creation from a sales order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "field service tasks",
+          "type": "DataObject",
+          "mention": "field service tasks",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "service product",
+          "type": "Product",
+          "mention": "service product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Field Service project",
+          "type": "Module",
+          "mention": "Field Service project",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tasks smart button",
+          "type": "Feature",
+          "mention": "Tasks smart button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Task creation from a sales order",
+          "evidence": "Title: Task creation from a sales order"
+        },
+        {
+          "source": "Task creation from a sales order",
+          "relation": "GENERATES",
+          "target": "field service tasks",
+          "evidence": "This feature allows for field service tasks to be automatically created from a sales order"
+        },
+        {
+          "source": "Task creation from a sales order",
+          "relation": "REQUIRES",
+          "target": "service product",
+          "evidence": "When you create a quotation with the service product and confirm it, a task is automatically created"
+        },
+        {
+          "source": "Task creation from a sales order",
+          "relation": "GENERATES",
+          "target": "Field Service project",
+          "evidence": "a task is automatically created in your Field Service project"
+        },
+        {
+          "source": "Tasks smart button",
+          "relation": "ENABLES",
+          "target": "access it from the sales order",
+          "evidence": "Click the Tasks smart button to access it from the sales order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "task-creation-from-a-helpdesk-ticket",
+    "heading": "Task creation from a helpdesk ticket",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Helpdesk app",
+          "type": "Module",
+          "mention": "Helpdesk app",
+          "confidence": "high"
+        },
+        {
+          "name": "Task creation from a helpdesk ticket",
+          "type": "Workflow",
+          "mention": "Task creation from a helpdesk ticket",
+          "confidence": "high"
+        },
+        {
+          "name": "field service tasks",
+          "type": "Feature",
+          "mention": "field service tasks",
+          "confidence": "medium"
+        },
+        {
+          "name": "helpdesk ticket",
+          "type": "DataObject",
+          "mention": "helpdesk ticket",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Helpdesk app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Task creation from a helpdesk ticket",
+          "relation": "HAS_FEATURE",
+          "target": "field service tasks",
+          "evidence": "can create field service tasks from a helpdesk ticket"
+        }
+      ]
+    }
+  }
+]

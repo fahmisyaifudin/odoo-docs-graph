@@ -1,0 +1,437 @@
+[
+  {
+    "section_id": "paymob",
+    "heading": "Paymob",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Paymob",
+          "type": "Integration",
+          "mention": "Paymob",
+          "confidence": "high"
+        },
+        {
+          "name": "Egypt",
+          "type": "Actor",
+          "mention": "Egypt",
+          "confidence": "medium"
+        },
+        {
+          "name": "Oman",
+          "type": "Actor",
+          "mention": "Oman",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pakistan",
+          "type": "Actor",
+          "mention": "Pakistan",
+          "confidence": "medium"
+        },
+        {
+          "name": "Saudi Arabia",
+          "type": "Actor",
+          "mention": "Saudi Arabia",
+          "confidence": "medium"
+        },
+        {
+          "name": "United Arab Emirates",
+          "type": "Actor",
+          "mention": "United Arab Emirates",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Paymob",
+          "relation": "ENABLES",
+          "target": "accept online payments",
+          "evidence": "It allows businesses to accept online payments"
+        },
+        {
+          "source": "accept online payments",
+          "relation": "REQUIRES",
+          "target": "credit and debit cards",
+          "evidence": "through credit and debit cards"
+        },
+        {
+          "source": "accept online payments",
+          "relation": "REQUIRES",
+          "target": "local payment methods",
+          "evidence": "as well as several local payment methods"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration-on-the-paymob-dashboard",
+    "heading": "Configuration on the Paymob dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Paymob dashboard",
+          "type": "Integration",
+          "mention": "Paymob dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Paymob account",
+          "type": "Integration",
+          "mention": "Paymob account",
+          "confidence": "high"
+        },
+        {
+          "name": "Test mode",
+          "type": "Setting",
+          "mention": "Test mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Live mode",
+          "type": "Setting",
+          "mention": "Live mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account Info",
+          "type": "Sub-module",
+          "mention": "Account Info",
+          "confidence": "medium"
+        },
+        {
+          "name": "HMAC field",
+          "type": "Field",
+          "mention": "HMAC field",
+          "confidence": "high"
+        },
+        {
+          "name": "API Key",
+          "type": "Field",
+          "mention": "API Key",
+          "confidence": "high"
+        },
+        {
+          "name": "Secret Key",
+          "type": "Field",
+          "mention": "Secret Key",
+          "confidence": "high"
+        },
+        {
+          "name": "Public Key",
+          "type": "Field",
+          "mention": "Public Key",
+          "confidence": "high"
+        },
+        {
+          "name": "Developers",
+          "type": "Module",
+          "mention": "Developers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Integrations",
+          "type": "Sub-module",
+          "mention": "Payment Integrations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment methods",
+          "type": "Feature",
+          "mention": "payment methods",
+          "confidence": "high"
+        },
+        {
+          "name": "Paymob support",
+          "type": "Actor",
+          "mention": "Paymob support",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Paymob dashboard",
+          "relation": "BELONGS_TO",
+          "target": "Paymob account",
+          "evidence": "Create a Paymob account if necessary and log into the Paymob dashboard"
+        },
+        {
+          "source": "Paymob dashboard",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Navigate to Settings in the left menu."
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Account Info",
+          "evidence": "In the Account Info section"
+        },
+        {
+          "source": "Account Info",
+          "relation": "CONTAINS",
+          "target": "HMAC field",
+          "evidence": "copy the value of the HMAC field"
+        },
+        {
+          "source": "Account Info",
+          "relation": "CONTAINS",
+          "target": "API Key",
+          "evidence": "Click View next to the API Key"
+        },
+        {
+          "source": "Account Info",
+          "relation": "CONTAINS",
+          "target": "Secret Key",
+          "evidence": "Secret Key"
+        },
+        {
+          "source": "Account Info",
+          "relation": "CONTAINS",
+          "target": "Public Key",
+          "evidence": "Public Key"
+        },
+        {
+          "source": "Paymob dashboard",
+          "relation": "CONTAINS",
+          "target": "Developers",
+          "evidence": "Navigate to Developers"
+        },
+        {
+          "source": "Developers",
+          "relation": "CONTAINS",
+          "target": "Payment Integrations",
+          "evidence": "Payment Integrations in the left menu."
+        },
+        {
+          "source": "Payment Integrations",
+          "relation": "HAS_FEATURE",
+          "target": "Payment methods",
+          "evidence": "Ensure that all required payment methods are listed"
+        },
+        {
+          "source": "Payment methods",
+          "relation": "REQUIRES",
+          "target": "Paymob support",
+          "evidence": "If any payment method is missing, contact Paymob support."
+        },
+        {
+          "source": "Paymob dashboard",
+          "relation": "ENABLES",
+          "target": "Test mode",
+          "evidence": "Use the Test mode to try the integration"
+        },
+        {
+          "source": "Paymob dashboard",
+          "relation": "ENABLES",
+          "target": "Live mode",
+          "evidence": "Switch to Live mode once you are ready to accept payments."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration-on-odoo",
+    "heading": "Configuration on Odoo",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "payment provider Paymob",
+          "type": "Integration",
+          "mention": "payment provider Paymob",
+          "confidence": "high"
+        },
+        {
+          "name": "Enabled",
+          "type": "Setting",
+          "mention": "Enabled",
+          "confidence": "medium"
+        },
+        {
+          "name": "Test Mode",
+          "type": "Setting",
+          "mention": "Test Mode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Credentials tab",
+          "type": "Feature",
+          "mention": "Credentials tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account Country",
+          "type": "Field",
+          "mention": "Account Country field",
+          "confidence": "high"
+        },
+        {
+          "name": "HMAC Key",
+          "type": "Field",
+          "mention": "HMAC Key",
+          "confidence": "high"
+        },
+        {
+          "name": "API key",
+          "type": "Field",
+          "mention": "API key",
+          "confidence": "high"
+        },
+        {
+          "name": "Secret Key",
+          "type": "Field",
+          "mention": "Secret Key",
+          "confidence": "high"
+        },
+        {
+          "name": "Public Key",
+          "type": "Field",
+          "mention": "Public Key",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration tab",
+          "type": "Feature",
+          "mention": "Configuration tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Enable Payment Methods",
+          "type": "Action",
+          "mention": "Enable Payment Methods",
+          "confidence": "high"
+        },
+        {
+          "name": "payment methods",
+          "type": "Integration",
+          "mention": "payment methods",
+          "confidence": "high"
+        },
+        {
+          "name": "Synchronize with Paymob",
+          "type": "Action",
+          "mention": "Synchronize with Paymob",
+          "confidence": "high"
+        },
+        {
+          "name": "Paymob dashboard",
+          "type": "Integration",
+          "mention": "Paymob dashboard",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "payment provider Paymob",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "payment provider Paymob"
+        },
+        {
+          "source": "Enabled",
+          "relation": "CONFIGURED_BY",
+          "target": "payment provider Paymob",
+          "evidence": "change its state to Enabled"
+        },
+        {
+          "source": "Test Mode",
+          "relation": "CONFIGURED_BY",
+          "target": "payment provider Paymob",
+          "evidence": "Test Mode if you are trying Paymob"
+        },
+        {
+          "source": "Credentials tab",
+          "relation": "IS_PART_OF",
+          "target": "payment provider Paymob",
+          "evidence": "In the Credentials tab"
+        },
+        {
+          "source": "Account Country",
+          "relation": "IS_PART_OF",
+          "target": "Credentials tab",
+          "evidence": "set the Account Country field"
+        },
+        {
+          "source": "HMAC Key",
+          "relation": "IS_PART_OF",
+          "target": "Credentials tab",
+          "evidence": "Fill in the HMAC Key"
+        },
+        {
+          "source": "API key",
+          "relation": "IS_PART_OF",
+          "target": "Credentials tab",
+          "evidence": "API key"
+        },
+        {
+          "source": "Secret Key",
+          "relation": "IS_PART_OF",
+          "target": "Credentials tab",
+          "evidence": "Secret Key"
+        },
+        {
+          "source": "Public Key",
+          "relation": "IS_PART_OF",
+          "target": "Credentials tab",
+          "evidence": "Public Key"
+        },
+        {
+          "source": "Configuration tab",
+          "relation": "IS_PART_OF",
+          "target": "payment provider Paymob",
+          "evidence": "In the Configuration tab"
+        },
+        {
+          "source": "Enable Payment Methods",
+          "relation": "PERFORMED_BY",
+          "target": "Configuration tab",
+          "evidence": "click Enable Payment Methods"
+        },
+        {
+          "source": "Enable Payment Methods",
+          "relation": "ENABLES",
+          "target": "payment methods",
+          "evidence": "activate the payment methods"
+        },
+        {
+          "source": "payment methods",
+          "relation": "IS_PART_OF",
+          "target": "payment provider Paymob",
+          "evidence": "payment methods"
+        },
+        {
+          "source": "Synchronize with Paymob",
+          "relation": "PERFORMED_BY",
+          "target": "payment provider Paymob",
+          "evidence": "Return to the provider's form and click Synchronize with Paymob"
+        },
+        {
+          "source": "payment methods",
+          "relation": "REQUIRES",
+          "target": "Paymob dashboard",
+          "evidence": "must be activated in Odoo and added to the list of payment integrations on the Paymob dashboard"
+        }
+      ]
+    }
+  }
+]

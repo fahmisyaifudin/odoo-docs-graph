@@ -1,0 +1,348 @@
+[
+  {
+    "section_id": "internet-of-things-(iot)",
+    "heading": "Internet of Things (IoT)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Internet of Things (IoT)",
+          "type": "Module",
+          "mention": "Internet of Things (IoT)",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box",
+          "type": "Module",
+          "mention": "IoT box",
+          "confidence": "high"
+        },
+        {
+          "name": "Windows virtual IoT",
+          "type": "Module",
+          "mention": "Windows virtual IoT",
+          "confidence": "high"
+        },
+        {
+          "name": "barcode scanners",
+          "type": "Integration",
+          "mention": "barcode scanners",
+          "confidence": "medium"
+        },
+        {
+          "name": "receipt printers",
+          "type": "Integration",
+          "mention": "receipt printers",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment terminals",
+          "type": "Integration",
+          "mention": "payment terminals",
+          "confidence": "medium"
+        },
+        {
+          "name": "measurement tools",
+          "type": "Integration",
+          "mention": "measurement tools",
+          "confidence": "medium"
+        },
+        {
+          "name": "MRP (Material Requirement Planning) devices",
+          "type": "Integration",
+          "mention": "MRP (Material Requirement Planning) devices",
+          "confidence": "medium"
+        },
+        {
+          "name": "cameras",
+          "type": "Integration",
+          "mention": "cameras",
+          "confidence": "medium"
+        },
+        {
+          "name": "Windows",
+          "type": "Concept",
+          "mention": "Windows",
+          "confidence": "medium"
+        },
+        {
+          "name": "Windows computer",
+          "type": "Actor",
+          "mention": "Windows computer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Windows Virtual Machine",
+          "type": "Concept",
+          "mention": "Windows Virtual Machine",
+          "confidence": "medium"
+        },
+        {
+          "name": "MacOS",
+          "type": "Concept",
+          "mention": "MacOS",
+          "confidence": "low"
+        },
+        {
+          "name": "Linux",
+          "type": "Concept",
+          "mention": "Linux",
+          "confidence": "low"
+        },
+        {
+          "name": "Odoo database",
+          "type": "DataObject",
+          "mention": "Odoo database",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Internet of Things (IoT)",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo Internet of Things (IoT)"
+        },
+        {
+          "source": "Internet of Things (IoT)",
+          "relation": "HAS_FEATURE",
+          "target": "barcode scanners",
+          "evidence": "connect physical devices such as barcode scanners"
+        },
+        {
+          "source": "Internet of Things (IoT)",
+          "relation": "HAS_FEATURE",
+          "target": "receipt printers",
+          "evidence": "connect physical devices such as receipt printers"
+        },
+        {
+          "source": "Internet of Things (IoT)",
+          "relation": "HAS_FEATURE",
+          "target": "payment terminals",
+          "evidence": "connect physical devices such as payment terminals"
+        },
+        {
+          "source": "Internet of Things (IoT)",
+          "relation": "HAS_FEATURE",
+          "target": "measurement tools",
+          "evidence": "connect physical devices such as measurement tools"
+        },
+        {
+          "source": "IoT box",
+          "relation": "IS_PART_OF",
+          "target": "Internet of Things (IoT)",
+          "evidence": "The following IoT systems are supported: - IoT box"
+        },
+        {
+          "source": "Windows virtual IoT",
+          "relation": "IS_PART_OF",
+          "target": "Internet of Things (IoT)",
+          "evidence": "The following IoT systems are supported: - Windows virtual IoT"
+        },
+        {
+          "source": "Windows virtual IoT",
+          "relation": "REQUIRES",
+          "target": "Windows",
+          "evidence": "Windows virtual IoT: Odoo IoT program for Windows"
+        },
+        {
+          "source": "Windows virtual IoT",
+          "relation": "PERFORMED_BY",
+          "target": "Windows computer",
+          "evidence": "Windows virtual IoT: Odoo IoT program for Windows that can be installed on a Windows computer"
+        },
+        {
+          "source": "MRP (Material Requirement Planning) devices",
+          "relation": "RELATED_TO",
+          "target": "Windows virtual IoT",
+          "evidence": "MRP (Material Requirement Planning) devices, including cameras and measurement tools, are not compatible with the Windows virtual IoT"
+        },
+        {
+          "source": "cameras",
+          "relation": "RELATED_TO",
+          "target": "MRP (Material Requirement Planning) devices",
+          "evidence": "MRP (Material Requirement Planning) devices, including cameras and measurement tools"
+        },
+        {
+          "source": "measurement tools",
+          "relation": "RELATED_TO",
+          "target": "MRP (Material Requirement Planning) devices",
+          "evidence": "MRP (Material Requirement Planning) devices, including cameras and measurement tools"
+        },
+        {
+          "source": "Internet of Things (IoT)",
+          "relation": "CONFIGURED_BY",
+          "target": "Windows Virtual Machine",
+          "evidence": "It is also possible to create a Windows Virtual Machine on a MacOS/Linux computer."
+        },
+        {
+          "source": "Windows Virtual Machine",
+          "relation": "RELATED_TO",
+          "target": "MacOS",
+          "evidence": "create a Windows Virtual Machine on a MacOS/Linux computer"
+        },
+        {
+          "source": "Windows Virtual Machine",
+          "relation": "RELATED_TO",
+          "target": "Linux",
+          "evidence": "create a Windows Virtual Machine on a MacOS/Linux computer"
+        },
+        {
+          "source": "Internet of Things (IoT)",
+          "relation": "REQUIRES",
+          "target": "Odoo database",
+          "evidence": "connect physical devices ... to an Odoo database"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "iot-box-subscription",
+    "heading": "IoT box subscription",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT box subscription",
+          "type": "Feature",
+          "mention": "An IoT box subscription",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT systems",
+          "type": "Module",
+          "mention": "IoT systems",
+          "confidence": "high"
+        },
+        {
+          "name": "HTTPS certificate",
+          "type": "Feature",
+          "mention": "HTTPS certificate <iot/connect/https_certificate>",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT system connection",
+          "type": "Feature",
+          "mention": "IoT system connection",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "database",
+          "confidence": "high"
+        },
+        {
+          "name": "database's account manager",
+          "type": "Actor",
+          "mention": "database's account manager",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo partner",
+          "type": "Actor",
+          "mention": "Odoo partner",
+          "confidence": "medium"
+        },
+        {
+          "name": "IoT box",
+          "type": "Module",
+          "mention": "IoT box",
+          "confidence": "high"
+        },
+        {
+          "name": "Windows virtual IoT",
+          "type": "Module",
+          "mention": "Windows virtual IoT",
+          "confidence": "high"
+        },
+        {
+          "name": "Devices",
+          "type": "Feature",
+          "mention": "Devices",
+          "confidence": "high"
+        },
+        {
+          "name": "Troubleshooting",
+          "type": "Feature",
+          "mention": "Troubleshooting",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT system updates",
+          "type": "Feature",
+          "mention": "IoT system updates",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT box subscription",
+          "relation": "REQUIRES",
+          "target": "IoT systems",
+          "evidence": "An IoT box subscription is required for production use of IoT systems"
+        },
+        {
+          "source": "IoT box subscription",
+          "relation": "GENERATES",
+          "target": "HTTPS certificate",
+          "evidence": "An IoT box subscription is required... generating the HTTPS certificate"
+        },
+        {
+          "source": "IoT system connection",
+          "relation": "GENERATES",
+          "target": "IoT box subscription",
+          "evidence": "It is created automatically when an IoT system is connected to the database"
+        },
+        {
+          "source": "IoT systems",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "IoT systems is a module of Product: Odoo"
+        },
+        {
+          "source": "IoT box",
+          "relation": "BELONGS_TO",
+          "target": "IoT systems",
+          "evidence": "IoT box is a sub-module card"
+        },
+        {
+          "source": "Windows virtual IoT",
+          "relation": "BELONGS_TO",
+          "target": "IoT systems",
+          "evidence": "Windows virtual IoT is a sub-module card"
+        },
+        {
+          "source": "Devices",
+          "relation": "BELONGS_TO",
+          "target": "IoT systems",
+          "evidence": "Devices is a sub-module card"
+        },
+        {
+          "source": "Troubleshooting",
+          "relation": "BELONGS_TO",
+          "target": "IoT systems",
+          "evidence": "Troubleshooting is a sub-module card"
+        },
+        {
+          "source": "IoT system updates",
+          "relation": "BELONGS_TO",
+          "target": "IoT systems",
+          "evidence": "IoT system updates is a sub-module card"
+        }
+      ]
+    }
+  }
+]

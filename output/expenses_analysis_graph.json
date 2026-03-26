@@ -1,0 +1,412 @@
+[
+  {
+    "section_id": "expenses-analysis",
+    "heading": "Expenses analysis",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses analysis",
+          "type": "Module",
+          "mention": "Expenses analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense reporting",
+          "type": "Feature",
+          "mention": "Expense reporting",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses analysis",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Expenses analysis"
+        },
+        {
+          "source": "Expense reporting",
+          "relation": "IS_PART_OF",
+          "target": "Expenses analysis",
+          "evidence": "Expense reporting allows for detailed information..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-expense-analysis-report",
+    "heading": "View expense analysis report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses app",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expenses Analysis",
+          "type": "Report",
+          "mention": "Expenses Analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "View expense analysis report",
+          "type": "Action",
+          "mention": "view the default Expenses Analysis report",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses Analysis report",
+          "type": "Report",
+          "mention": "Expenses Analysis report",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "navigate to Expenses app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Expenses Analysis",
+          "evidence": "Reporting --> Expenses Analysis"
+        },
+        {
+          "source": "View expense analysis report",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "To view"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The Expenses Analysis report displays"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "PRODUCES",
+          "target": "DataObject",
+          "evidence": "displays all expenses"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "SUPPORTS",
+          "target": "Concept",
+          "evidence": "grouped by month"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-expenses-by-employee",
+    "heading": "View expenses by employee",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses app",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expenses Analysis",
+          "type": "Report",
+          "mention": "Expenses Analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "view the report",
+          "type": "Action",
+          "mention": "view the report",
+          "confidence": "medium"
+        },
+        {
+          "name": "oi-view-pivot (Pivot) icon",
+          "type": "Action",
+          "mention": "click the oi-view-pivot (Pivot) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "total monthly expenses",
+          "type": "DataObject",
+          "mention": "total monthly expenses",
+          "confidence": "medium"
+        },
+        {
+          "name": "click fa-minus-square-o Total",
+          "type": "Action",
+          "mention": "click fa-minus-square-o Total",
+          "confidence": "medium"
+        },
+        {
+          "name": "Total In Currency box",
+          "type": "Field",
+          "mention": "Total In Currency box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mike Smith",
+          "type": "Actor",
+          "mention": "Mike Smith",
+          "confidence": "high"
+        },
+        {
+          "name": "Ronnie Hart",
+          "type": "Actor",
+          "mention": "Ronnie Hart",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses Analysis",
+          "relation": "GENERATES",
+          "target": "total monthly expenses",
+          "evidence": "present the data with the *employees* populating the rows, and the *total monthly expenses* populate the columns"
+        },
+        {
+          "source": "Expenses app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "navigate to Expenses app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Expenses Analysis",
+          "evidence": "Reporting --> Expenses Analysis"
+        },
+        {
+          "source": "view the report",
+          "relation": "ENABLES",
+          "target": "Expenses Analysis",
+          "evidence": "To view the report in this way"
+        },
+        {
+          "source": "oi-view-pivot (Pivot) icon",
+          "relation": "ENABLES",
+          "target": "Expenses Analysis",
+          "evidence": "click the oi-view-pivot (Pivot) icon to view the data in a pivot table"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "APPLIES_TO",
+          "target": "employees",
+          "evidence": "data with the *employees* populating the rows"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "PRODUCES",
+          "target": "total monthly expenses",
+          "evidence": "total monthly expenses populate the columns"
+        },
+        {
+          "source": "click fa-minus-square-o Total",
+          "relation": "ENABLES",
+          "target": "total monthly expenses",
+          "evidence": "click fa-minus-square-o Total at the top of the monthly columns to hide the individual monthly totals, and present only the *total* amount for the year"
+        },
+        {
+          "source": "click fa-minus-square-o Total",
+          "relation": "RELATED_TO",
+          "target": "Expenses Analysis",
+          "evidence": "present only the *total* amount for the year"
+        },
+        {
+          "source": "Total In Currency box",
+          "relation": "ENABLES",
+          "target": "Expenses Analysis",
+          "evidence": "Click Total In Currency again to reverse the order"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "APPLIES_TO",
+          "target": "Mike Smith",
+          "evidence": "Mike Smith has the highest amount of expenses"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "APPLIES_TO",
+          "target": "Ronnie Hart",
+          "evidence": "Ronnie Hart, who has the second highest expenses"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Expenses app",
+          "evidence": "Expenses app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-expenses-by-category",
+    "heading": "View expenses by category",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses app",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses Analysis",
+          "type": "Report",
+          "mention": "Expenses Analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Category",
+          "type": "Concept",
+          "mention": "Category",
+          "confidence": "high"
+        },
+        {
+          "name": "Total In Currency",
+          "type": "Concept",
+          "mention": "Total In Currency",
+          "confidence": "high"
+        },
+        {
+          "name": "Pivot",
+          "type": "Feature",
+          "mention": "oi-view-pivot (Pivot)",
+          "confidence": "high"
+        },
+        {
+          "name": "Total monthly expenses",
+          "type": "Concept",
+          "mention": "total monthly expenses",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Concept",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "TRANS & ACC Travel & Accommodation",
+          "type": "Concept",
+          "mention": "expense category [TRANS & ACC] Travel & Accommodation",
+          "confidence": "high"
+        },
+        {
+          "name": "MIL Mileage",
+          "type": "Concept",
+          "mention": "[MIL] Mileage expenses",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses Analysis",
+          "relation": "HAS_REPORT",
+          "target": "Expenses Analysis",
+          "evidence": "Expenses app --> Reporting --> Expenses Analysis"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "CONTAINS",
+          "target": "Category",
+          "evidence": "expense categories now populate the rows"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "CONTAINS",
+          "target": "Total monthly expenses",
+          "evidence": "total monthly expenses populate the columns"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "CONTAINS",
+          "target": "Employees",
+          "evidence": "employees populating the rows"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "CONTAINS",
+          "target": "Total In Currency",
+          "evidence": "Click the Total In Currency box"
+        },
+        {
+          "source": "Expenses Analysis",
+          "relation": "HAS_FEATURE",
+          "target": "Pivot",
+          "evidence": "click the oi-view-pivot (Pivot) icon to view the data in a pivot table"
+        },
+        {
+          "source": "TRANS & ACC Travel & Accommodation",
+          "relation": "BELONGS_TO",
+          "target": "Category",
+          "evidence": "expense category [TRANS & ACC] Travel & Accommodation"
+        },
+        {
+          "source": "MIL Mileage",
+          "relation": "BELONGS_TO",
+          "target": "Category",
+          "evidence": "[MIL] Mileage expenses"
+        }
+      ]
+    }
+  }
+]

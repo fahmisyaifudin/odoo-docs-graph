@@ -1,0 +1,1407 @@
+[
+  {
+    "section_id": "models-&-manufacturers",
+    "heading": "Models & manufacturers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturer",
+          "type": "DataObject",
+          "mention": "manufacturer",
+          "confidence": "high"
+        },
+        {
+          "name": "model",
+          "type": "DataObject",
+          "mention": "model",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle",
+          "type": "DataObject",
+          "mention": "vehicle",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fleet",
+          "relation": "CONTAINS",
+          "target": "manufacturer",
+          "evidence": "Odoo's **Fleet** app categorizes each vehicle by *manufacturer*"
+        },
+        {
+          "source": "Fleet",
+          "relation": "CONTAINS",
+          "target": "model",
+          "evidence": "Odoo's **Fleet** app categorizes each vehicle by *model*"
+        },
+        {
+          "source": "manufacturer",
+          "relation": "BELONGS_TO",
+          "target": "vehicle",
+          "evidence": "Odoo's **Fleet** app categorizes each vehicle by *manufacturer*"
+        },
+        {
+          "source": "model",
+          "relation": "BELONGS_TO",
+          "target": "vehicle",
+          "evidence": "Odoo's **Fleet** app categorizes each vehicle by *model*"
+        },
+        {
+          "source": "vehicle",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Before a vehicle can be added to the Odoo database"
+        },
+        {
+          "source": "manufacturer",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "its manufacturer record must already exist in the database"
+        },
+        {
+          "source": "model",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "model record must already exist in the database"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manufacturers",
+    "heading": "Manufacturers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturers",
+          "type": "DataObject",
+          "mention": "Manufacturers",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturers dashboard",
+          "type": "Report",
+          "mention": "Manufacturers dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "With Models",
+          "type": "Setting",
+          "mention": "default filter, With Models",
+          "confidence": "medium"
+        },
+        {
+          "name": "models",
+          "type": "DataObject",
+          "mention": "models",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Feature",
+          "mention": "Configuration",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fleet",
+          "relation": "CONTAINS",
+          "target": "Manufacturers",
+          "evidence": "Fleet app --> Configuration --> Manufacturers"
+        },
+        {
+          "source": "Fleet",
+          "relation": "HAS_REPORT",
+          "target": "Manufacturers dashboard",
+          "evidence": "go to Fleet app --> Configuration --> Manufacturers, and the Manufacturers dashboard loads"
+        },
+        {
+          "source": "Manufacturers",
+          "relation": "CONTAINS",
+          "target": "models",
+          "evidence": "each card shows how many specific models are configured for each particular manufacturer"
+        },
+        {
+          "source": "Manufacturers dashboard",
+          "relation": "CONFIGURED_BY",
+          "target": "With Models",
+          "evidence": "The default filter, With Models, displays only manufacturers that already have vehicle models."
+        },
+        {
+          "source": "Manufacturers",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo's Fleet app comes preconfigured..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-manufacturer",
+    "heading": "Add a manufacturer",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturers dashboard",
+          "type": "Module",
+          "mention": "Manufacturers dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturers form",
+          "type": "DataObject",
+          "mention": "manufacturers form",
+          "confidence": "high"
+        },
+        {
+          "name": "Name field",
+          "type": "Field",
+          "mention": "Name field",
+          "confidence": "high"
+        },
+        {
+          "name": "Logo",
+          "type": "Field",
+          "mention": "Logo",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturer",
+          "type": "Actor",
+          "mention": "manufacturer",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturers dashboard",
+          "relation": "CONTAINS",
+          "target": "Manufacturers form",
+          "evidence": "Manufacturers dashboard loads a manufacturers form"
+        },
+        {
+          "source": "Manufacturers dashboard",
+          "relation": "CONTAINS",
+          "target": "New",
+          "evidence": "New is in the upper-left corner of the Manufacturers dashboard"
+        },
+        {
+          "source": "Manufacturers form",
+          "relation": "CONTAINS",
+          "target": "Name field",
+          "evidence": "manufacturers form has a Name field"
+        },
+        {
+          "source": "Manufacturers form",
+          "relation": "CONTAINS",
+          "target": "Logo",
+          "evidence": "manufacturers form has a Logo field"
+        },
+        {
+          "source": "New",
+          "relation": "TRIGGERED_BY",
+          "target": "Manufacturer",
+          "evidence": "click New to add a new manufacturer"
+        },
+        {
+          "source": "New",
+          "relation": "PRODUCES",
+          "target": "Manufacturers form",
+          "evidence": "click New and a blank manufacturers form loads"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "models",
+    "heading": "Models",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle",
+          "type": "DataObject",
+          "mention": "vehicle",
+          "confidence": "medium"
+        },
+        {
+          "name": "vehicle model",
+          "type": "DataObject",
+          "mention": "vehicle model",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturers",
+          "type": "Actor",
+          "mention": "manufacturers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fleet",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "vehicle model",
+          "relation": "BELONGS_TO",
+          "target": "vehicle",
+          "evidence": "When adding a vehicle to the fleet, specify the vehicle model"
+        },
+        {
+          "source": "vehicle",
+          "relation": "IS_PART_OF",
+          "target": "Fleet",
+          "evidence": "When adding a vehicle to the fleet"
+        },
+        {
+          "source": "vehicle model",
+          "relation": "RELATED_TO",
+          "target": "manufacturers",
+          "evidence": "Unlike manufacturers, models do not come preconfigured"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-model",
+    "heading": "Add a model",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet app",
+          "type": "Module",
+          "mention": "Fleet app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Models",
+          "type": "Feature",
+          "mention": "Models",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a model",
+          "type": "Action",
+          "mention": "Add a new vehicle model",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "Click New",
+          "confidence": "medium"
+        },
+        {
+          "name": "model form",
+          "type": "DataObject",
+          "mention": "new model form",
+          "confidence": "high"
+        },
+        {
+          "name": "Model name",
+          "type": "Field",
+          "mention": "Model name",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturer",
+          "type": "Field",
+          "mention": "Manufacturer",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicle Type",
+          "type": "Field",
+          "mention": "Vehicle Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Car",
+          "type": "Concept",
+          "mention": "Car",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bike",
+          "type": "Concept",
+          "mention": "Bike",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fleet",
+          "type": "Module",
+          "mention": "Fleet",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "Category",
+          "type": "Field",
+          "mention": "Category",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fleet app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Fleet app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Models",
+          "evidence": "Configuration --> Models"
+        },
+        {
+          "source": "Add a model",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "To add a new vehicle model"
+        },
+        {
+          "source": "Models",
+          "relation": "HAS_FEATURE",
+          "target": "Add a model",
+          "evidence": "To add a new vehicle model, navigate to Fleet app --> Configuration --> Models"
+        },
+        {
+          "source": "New",
+          "relation": "ENABLES",
+          "target": "Add a model",
+          "evidence": "Click New in the upper-left corner"
+        },
+        {
+          "source": "Add a model",
+          "relation": "PRODUCES",
+          "target": "model form",
+          "evidence": "enter the following information on the new model form"
+        },
+        {
+          "source": "model form",
+          "relation": "CONTAINS",
+          "target": "Model name",
+          "evidence": "enter the following information on the new model form. - Model name"
+        },
+        {
+          "source": "model form",
+          "relation": "CONTAINS",
+          "target": "Manufacturer",
+          "evidence": "enter the following information on the new model form. - Manufacturer"
+        },
+        {
+          "source": "model form",
+          "relation": "CONTAINS",
+          "target": "Vehicle Type",
+          "evidence": "enter the following information on the new model form. - Vehicle Type"
+        },
+        {
+          "source": "model form",
+          "relation": "CONTAINS",
+          "target": "Category",
+          "evidence": "enter the following information on the new model form. - Category"
+        },
+        {
+          "source": "Vehicle Type",
+          "relation": "RELATED_TO",
+          "target": "Car",
+          "evidence": "select one of two preconfigured vehicle types, either Car"
+        },
+        {
+          "source": "Vehicle Type",
+          "relation": "RELATED_TO",
+          "target": "Bike",
+          "evidence": "select one of two preconfigured vehicle types, either Car or Bike"
+        },
+        {
+          "source": "Fleet",
+          "relation": "RELATED_TO",
+          "target": "Payroll",
+          "evidence": "Fleet keeps them fixed to preserve its Payroll integration"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "information-tab",
+    "heading": "Information tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Information tab",
+          "type": "Sub-module",
+          "mention": "Information tab",
+          "confidence": "high"
+        },
+        {
+          "name": "car model",
+          "type": "DataObject",
+          "mention": "car model",
+          "confidence": "high"
+        },
+        {
+          "name": "car size",
+          "type": "Field",
+          "mention": "car size",
+          "confidence": "high"
+        },
+        {
+          "name": "passenger capacity",
+          "type": "Field",
+          "mention": "passenger capacity",
+          "confidence": "high"
+        },
+        {
+          "name": "engine information",
+          "type": "Field",
+          "mention": "engine information",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Information tab",
+          "relation": "CONTAINS",
+          "target": "car size",
+          "evidence": "specify details about the car model, such as the car size"
+        },
+        {
+          "source": "Information tab",
+          "relation": "CONTAINS",
+          "target": "passenger capacity",
+          "evidence": "specify details about the car model, such as the passenger capacity"
+        },
+        {
+          "source": "Information tab",
+          "relation": "CONTAINS",
+          "target": "engine information",
+          "evidence": "specify details about the car model, such as the engine information"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "model",
+    "heading": "Model",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Model",
+          "type": "DataObject",
+          "mention": "Model",
+          "confidence": "medium"
+        },
+        {
+          "name": "Model Year",
+          "type": "Field",
+          "mention": "Model Year",
+          "confidence": "high"
+        },
+        {
+          "name": "Seating Capacity",
+          "habit": "Field",
+          "mention": "Seating Capacity",
+          "confidence": "high"
+        },
+        {
+          "name": "Number of Doors",
+          "type": "Field",
+          "mention": "Number of Doors",
+          "confidence": "high"
+        },
+        {
+          "name": "Color",
+          "type": "Field",
+          "mention": "Color",
+          "confidence": "high"
+        },
+        {
+          "name": "Trailer Hitch",
+          "type": "Field",
+          "mention": "Trailer Hitch",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Model",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Model Year",
+          "relation": "BELONGS_TO",
+          "target": "Model",
+          "evidence": "- Model Year"
+        },
+        {
+          "source": "Seating Capacity",
+          "relation": "BELONGS_TO",
+          "target": "Model",
+          "evidence": "- Seating Capacity"
+        },
+        {
+          "source": "Number of Doors",
+          "relation": "BELONGS_TO",
+          "target": "Model",
+          "evidence": "- Number of Doors"
+        },
+        {
+          "source": "Color",
+          "relation": "BELONGS_TO",
+          "target": "Model",
+          "evidence": "- Color"
+        },
+        {
+          "source": "Trailer Hitch",
+          "relation": "BELONGS_TO",
+          "target": "Model",
+          "evidence": "- Trailer Hitch"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "salary",
+    "heading": "Salary",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary",
+          "type": "Module",
+          "mention": "Title: Salary",
+          "confidence": "high"
+        },
+        {
+          "name": "Belgium",
+          "type": "Setting",
+          "mention": "localization setting set to Belgium",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "high"
+        },
+        {
+          "name": "Can be requested",
+          "type": "Feature",
+          "mention": "Can be requested: Enable this checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee Contract",
+          "type": "DataObject",
+          "mention": "employee contract",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vehicle",
+          "type": "DataObject",
+          "mention": "vehicle",
+          "confidence": "high"
+        },
+        {
+          "name": "Catalog Value (VAT Incl.)",
+          "type": "Field",
+          "mention": "Catalog Value (VAT Incl.)",
+          "confidence": "high"
+        },
+        {
+          "name": "MSRP",
+          "type": "Concept",
+          "mention": "MSRP (Manufacturer's Suggested Retail Price)",
+          "confidence": "high"
+        },
+        {
+          "name": "CO2 fee",
+          "type": "Field",
+          "mention": "C02 fee",
+          "confidence": "high"
+        },
+        {
+          "name": "Belgian government",
+          "type": "Actor",
+          "mention": "Belgian government",
+          "confidence": "high"
+        },
+        {
+          "name": "Belgian laws and regulations",
+          "type": "Regulation",
+          "mention": "Belgian laws and regulations",
+          "confidence": "high"
+        },
+        {
+          "name": "CO2 Emissions",
+          "type": "Field",
+          "mention": "CO2 Emissions field",
+          "confidence": "high"
+        },
+        {
+          "name": "Engine section",
+          "type": "Sub-module",
+          "mention": "Engine section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Information tab",
+          "type": "Sub-module",
+          "mention": "Information tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vehicle form",
+          "type": "DataObject",
+          "mention": "vehicle form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cost (Depreciated)",
+          "type": "Field",
+          "mention": "Cost (Depreciated)",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary configurator",
+          "type": "Feature",
+          "mention": "salary configurator",
+          "confidence": "medium"
+        },
+        {
+          "name": "Gross salary",
+          "type": "Field",
+          "mention": "gross salary",
+          "confidence": "low"
+        },
+        {
+          "name": "Net salary",
+          "type": "Field",
+          "mention": "net salary",
+          "confidence": "low"
+        },
+        {
+          "name": "Local tax laws",
+          "type": "Regulation",
+          "mention": "local tax laws",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicle model",
+          "type": "DataObject",
+          "mention": "vehicle model",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "medium"
+        },
+        {
+          "name": "Total Cost (Depreciated)",
+          "type": "Field",
+          "mention": "Total Cost (Depreciated)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Salary",
+          "relation": "CONTAINS",
+          "target": "Catalog Value (VAT Incl.)",
+          "evidence": "Title: Salary, mention of Catalog Value (VAT Incl.)"
+        },
+        {
+          "source": "Salary",
+          "relation": "CONTAINS",
+          "target": "CO2 fee",
+          "evidence": "Title: Salary, mention of C02 fee"
+        },
+        {
+          "source": "Salary",
+          "relation": "CONTAINS",
+          "target": "Cost (Depreciated)",
+          "evidence": "Title: Salary, mention of Cost (Depreciated)"
+        },
+        {
+          "source": "Salary",
+          "relation": "CONTAINS",
+          "target": "Total Cost (Depreciated)",
+          "evidence": "Title: Salary, mention of Total Cost (Depreciated)"
+        },
+        {
+          "source": "Salary",
+          "relation": "CONTAINS",
+          "target": "Can be requested",
+          "evidence": "Title: Salary, mention of Can be requested"
+        },
+        {
+          "source": "Salary",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Salary"
+        },
+        {
+          "source": "Salary",
+          "relation": "CONFIGURED_BY",
+          "target": "Belgium",
+          "evidence": "The Salary section only appears if the company has their localization setting set to Belgium"
+        },
+        {
+          "source": "CO2 fee",
+          "relation": "GENERATES",
+          "target": "Total Cost (Depreciated)",
+          "evidence": "Total Cost (Depreciated)... is the combination of the Cost (Depreciated) and the C02 fee fields"
+        },
+        {
+          "source": "Cost (Depreciated)",
+          "relation": "GENERATES",
+          "target": "Total Cost (Depreciated)",
+          "evidence": "Total Cost (Depreciated)... is the combination of the Cost (Depreciated) and the C02 fee fields"
+        },
+        {
+          "source": "CO2 fee",
+          "relation": "COMPLIES_WITH",
+          "target": "Belgian laws and regulations",
+          "evidence": "based on Belgian laws and regulations"
+        },
+        {
+          "source": "CO2 fee",
+          "relation": "USES_METHOD",
+          "target": "Belgian laws and regulations",
+          "evidence": "based on Belgian laws and regulations"
+        },
+        {
+          "source": "CO2 fee",
+          "relation": "PERFORMED_BY",
+          "target": "Belgian government",
+          "evidence": "paid to the Belgian government"
+        },
+        {
+          "source": "CO2 fee",
+          "relation": "CONFIGURED_BY",
+          "target": "CO2 Emissions",
+          "evidence": "based on the figure entered in the CO2 Emissions field"
+        },
+        {
+          "source": "CO2 Emissions",
+          "type": "Field",
+          "target": "Engine section",
+          "relation": "IS_PART_OF",
+          "evidence": "in the Engine section"
+        },
+        {
+          "source": "Engine section",
+          "relation": "IS_PART_OF",
+          "target": "Information tab",
+          "evidence": "Engine section of the Information tab"
+        },
+        {
+          "source": "Information tab",
+          "relation": "IS_PART_OF",
+          "target": "Vehicle form",
+          "evidence": "on the vehicle form"
+        },
+        {
+          "source": "Cost (Depreciated)",
+          "relation": "COMPLIES_WITH",
+          "target": "Local tax laws",
+          "evidence": "depreciated over time, according to local tax laws"
+        },
+        {
+          "source": "Cost (Depreciated)",
+          "relation": "USES_METHOD",
+          "target": "Local tax laws",
+          "evidence": "depreciated over time, according to local tax laws"
+        },
+        {
+          "source": "Can be requested",
+          "relation": "ENABLES",
+          "target": "Employee",
+          "evidence": "if employees can request this model vehicle"
+        },
+        {
+          "source": "Can be requested",
+          "relation": "CONFIGURED_BY",
+          "target": "Employee Contract",
+          "evidence": "if a vehicle is part of their employee contract"
+        },
+        {
+          "source": "Catalog Value (VAT Incl.)",
+          "relation": "RELATED_TO",
+          "target": "MSRP",
+          "evidence": "Enter the MSRP..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "engine",
+    "heading": "Engine",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fuel Type",
+          "type": "Field",
+          "mention": "Fuel Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Range",
+          "type": "Field",
+          "mention": "Range",
+          "confidence": "high"
+        },
+        {
+          "name": "CO2 Emissions",
+          "type": "Field",
+          "mention": "CO2 Emissions",
+          "confidence": "high"
+        },
+        {
+          "name": "Emission Standard",
+          "type": "Field",
+          "mention": "Emission Standard",
+          "confidence": "high"
+        },
+        {
+          "name": "Transmission",
+          "type": "Field",
+          "mention": "Transmission",
+          "confidence": "high"
+        },
+        {
+          "name": "Power Unit",
+          "type": "Field",
+          "mention": "Power Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Power",
+          "type": "Field",
+          "mention": "Power",
+          "confidence": "high"
+        },
+        {
+          "name": "Horsepower",
+          "type": "Field",
+          "mention": "Horsepower",
+          "confidence": "high"
+        },
+        {
+          "name": "Horsepower Taxation",
+          "type": "Field",
+          "mention": "Horsepower Taxation",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax Deduction",
+          "type": "Field",
+          "mention": "Tax Deduction",
+          "confidence": "high"
+        },
+        {
+          "name": "EPA",
+          "type": "Regulation",
+          "mention": "EPA (Environmental Protection Agency)",
+          "confidence": "high"
+        },
+        {
+          "name": "Euro 6",
+          "type": "Regulation",
+          "mention": "Euro 6",
+          "confidence": "high"
+        },
+        {
+          "name": "local tax laws",
+          "type": "Regulation",
+          "mention": "local tax laws",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Fuel Type",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "Using the drop-down menu"
+        },
+        {
+          "source": "Range",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "Enter the distance"
+        },
+        {
+          "source": "CO2 Emissions",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "Enter the average carbon dioxide emissions"
+        },
+        {
+          "source": "Emission Standard",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "Enter the regulatory test procedure"
+        },
+        {
+          "source": "Emission Standard",
+          "relation": "COMPLIES_WITH",
+          "target": "EPA",
+          "evidence": "such as the EPA"
+        },
+        {
+          "source": "Emission Standard",
+          "relation": "COMPLIES_WITH",
+          "target": "Euro 6",
+          "evidence": "or Euro 6"
+        },
+        {
+          "source": "Transmission",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "Using the drop-down menu"
+        },
+        {
+          "source": "Power Unit",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "Using the drop-down menu"
+        },
+        {
+          "source": "Power",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "enter the power the vehicle uses"
+        },
+        {
+          "source": "Horsepower",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "Enter the vehicle's horsepower"
+        },
+        {
+          "source": "Horsepower Taxation",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "Enter the amount of taxes incurred"
+        },
+        {
+          "source": "Horsepower Taxation",
+          "relation": "APPLIES_TO",
+          "target": "local tax laws",
+          "evidence": "dependent on the local tax laws"
+        },
+        {
+          "source": "Tax Deduction",
+          "relation": "CONFIGURED_BY",
+          "target": "Odoo",
+          "evidence": "populated based on the localization"
+        },
+        {
+          "source": "Tax Deduction",
+          "relation": "GOVERNED_BY",
+          "target": "local tax laws",
+          "evidence": "based on the localization"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vendors-tab",
+    "heading": "Vendors tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Vehicle",
+          "type": "DataObject",
+          "mention": "vehicle",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendors tab",
+          "type": "Sub-module",
+          "mention": "Vendors tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Vendors",
+          "type": "Action",
+          "mention": "Add Vendors",
+          "confidence": "high"
+        },
+        {
+          "name": "Add: Vendors pop-up window",
+          "type": "Feature",
+          "mention": "Add: Vendors pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Vendors form",
+          "type": "Feature",
+          "mention": "Create Vendors form",
+          "confidence": "high"
+        },
+        {
+          "name": "Contacts",
+          "type": "Module",
+          "mention": "Contacts",
+          "confidence": "high"
+        },
+        {
+          "name": "Requests for quotations",
+          "type": "Workflow",
+          "mention": "requests for quotations",
+          "confidence": "medium"
+        },
+        {
+          "name": "RFQ",
+          "type": "Workflow",
+          "mention": "rfq",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Vendors tab",
+          "relation": "IS_PART_OF",
+          "target": "Vehicle",
+          "evidence": "Specify the vendors a vehicle can be purchased from in this tab."
+        },
+        {
+          "source": "Vehicle",
+          "relation": "PERFORMED_BY",
+          "target": "Vendor",
+          "evidence": "Specify the vendors a vehicle can be purchased from in this tab."
+        },
+        {
+          "source": "Purchase",
+          "relation": "ENABLES",
+          "target": "Requests for quotations",
+          "evidence": "With proper setup, requests for quotations... can be created through Odoo's Purchase app."
+        },
+        {
+          "source": "Add Vendors",
+          "relation": "TRIGGERED_BY",
+          "target": "Add Vendors",
+          "evidence": "To add a vendor, click the Add Vendors block in the Vendors tab."
+        },
+        {
+          "source": "Add Vendors",
+          "relation": "HAS_FEATURE",
+          "target": "Add: Vendors pop-up window",
+          "evidence": "This opens an Add: Vendors pop-up window."
+        },
+        {
+          "source": "Add Vendors",
+          "relation": "HAS_FEATURE",
+          "target": "Create Vendors form",
+          "evidence": "add a new vendor by clicking New... In the Create Vendors form that appears"
+        },
+        {
+          "source": "Contacts",
+          "relation": "CONTAINS",
+          "target": "Vendor",
+          "evidence": "Vendors are stored in the Contacts application."
+        },
+        {
+          "source": "RFQ",
+          "relation": "EQUIVALENT_TO",
+          "target": "Requests for quotations",
+          "evidence": "requests for quotations <../../inventory_and_mrp/purchase/manage_deals/rfq>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "model-category",
+    "heading": "Model category",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fleet app",
+          "type": "Module",
+          "mention": "Fleet app",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle model",
+          "type": "DataObject",
+          "mention": "vehicle models",
+          "confidence": "high"
+        },
+        {
+          "name": "vehicle model form",
+          "type": "Feature",
+          "mention": "vehicle model form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Categories",
+          "type": "Feature",
+          "mention": "Categories",
+          "confidence": "high"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "model category",
+          "type": "DataObject",
+          "mention": "Model categories",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "vehicle model",
+          "relation": "BELONGS_TO",
+          "target": "model category",
+          "evidence": "vehicle models housed under a specific category"
+        },
+        {
+          "source": "model category",
+          "relation": "CONFIGURED_BY",
+          "target": "vehicle model form",
+          "evidence": "Model categories are set on the vehicle model form"
+        },
+        {
+          "source": "Fleet app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Fleet app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Categories",
+          "evidence": "Configuration --> Categories"
+        },
+        {
+          "source": "Categories",
+          "relation": "PRODUCES",
+          "target": "list view",
+          "evidence": "All categories are displayed in a list view"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-new-model-category",
+    "heading": "Add a new model category",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Categories dashboard",
+          "type": "DataObject",
+          "mention": "Categories dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "oi-draggable icon",
+          "type": "Feature",
+          "mention": "oi-draggable icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Max Weight field",
+          "type": "Field",
+          "mention": "Max Weight",
+          "confidence": "medium"
+        },
+        {
+          "name": "Max Volume field",
+          "type": "Field",
+          "mention": "Max Volume",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "oi-draggable icon",
+          "relation": "ENABLES",
+          "target": "Categories dashboard",
+          "evidence": "click on the oi-draggable icon... to drag the line"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Categories dashboard",
+          "evidence": "When used with the Inventory app"
+        },
+        {
+          "source": "Categories dashboard",
+          "relation": "CONTAINS",
+          "target": "Max Weight field",
+          "evidence": "Max Weight fields track a vehicle's capacity"
+        },
+        {
+          "source": "Categories dashboard",
+          "relation": "CONTAINS",
+          "target": "Max Volume field",
+          "evidence": "Max Volume fields track a vehicle's capacity"
+        }
+      ]
+    }
+  }
+]

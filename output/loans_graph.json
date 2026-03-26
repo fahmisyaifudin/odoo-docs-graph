@@ -1,0 +1,723 @@
+[
+  {
+    "section_id": "loans-management",
+    "heading": "Loans management",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Loan management",
+          "type": "Module",
+          "mention": "loans management",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "your company",
+          "confidence": "high"
+        },
+        {
+          "name": "List of all loans",
+          "type": "DataObject",
+          "mention": "list of all loans undertaken by your company",
+          "confidence": "high"
+        },
+        {
+          "name": "Cash forecast",
+          "type": "Report",
+          "mention": "cash forecast",
+          "confidence": "high"
+        },
+        {
+          "name": "Amortization schedules",
+          "type": "DataObject",
+          "mention": "amortization schedules",
+          "confidence": "high"
+        },
+        {
+          "name": "Monthly interest adjustments",
+          "type": "Action",
+          "mention": "monthly interest adjustments",
+          "confidence": "high"
+        },
+        {
+          "name": "Principal adjustments",
+          "type": "Action",
+          "mention": "principal adjustments",
+          "confidence": "high"
+        },
+        {
+          "name": "Financial reports",
+          "type": "Report",
+          "mention": "financial reports",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Loan management",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo's loan management"
+        },
+        {
+          "source": "Loan management",
+          "relation": "CONTAINS",
+          "target": "List of all loans",
+          "evidence": "gives a comprehensive list of all loans"
+        },
+        {
+          "source": "List of all loans",
+          "relation": "PERFORMED_BY",
+          "target": "Company",
+          "evidence": "loans undertaken by your company"
+        },
+        {
+          "source": "Loan management",
+          "relation": "HAS_REPORT",
+          "target": "Cash forecast",
+          "evidence": "forecasted view of upcoming due dates (e.g., cash forecast)"
+        },
+        {
+          "source": "Loan management",
+          "relation": "CONTAINS",
+          "target": "Amortization schedules",
+          "evidence": "Set up amortization schedules—or import them"
+        },
+        {
+          "source": "Loan management",
+          "relation": "ENABLES",
+          "target": "Monthly interest adjustments",
+          "evidence": "let Odoo automatically handle monthly interest"
+        },
+        {
+          "source": "Loan management",
+          "relation": "ENABLES",
+          "target": "Principal adjustments",
+          "evidence": "let Odoo automatically handle principal adjustments"
+        },
+        {
+          "source": "Loan management",
+          "relation": "GENERATES",
+          "target": "Financial reports",
+          "evidence": "so that your financial reports are always accurate"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-loan",
+    "heading": "Create a new loan",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Loans",
+          "type": "Sub-module",
+          "mention": "Loans",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a new loan",
+          "type": "Action",
+          "mention": "create a new loan",
+          "confidence": "high"
+        },
+        {
+          "name": "importing it from a supported file",
+          "type": "Action",
+          "mention": "importing it from a supported file",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount Borrowed",
+          "type": "Field",
+          "mention": "Amount Borrowed",
+          "confidence": "high"
+        },
+        {
+          "name": "Duration",
+          "type": "Field",
+          "mention": "Duration",
+          "confidence": "high"
+        },
+        {
+          "name": "Compute",
+          "type": "Action",
+          "mention": "Compute",
+          "confidence": "high"
+        },
+        {
+          "name": "manually filling in the lines of the schedule",
+          "type": "Action",
+          "mention": "manually filling in the lines of the schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "Date",
+          "type": "Field",
+          "mention": "Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Principal",
+          "type": "Field",
+          "mention": "Principal",
+          "confidence": "high"
+        },
+        {
+          "name": "Interest",
+          "type": "Field",
+          "mention": "Interest",
+          "confidence": "high"
+        },
+        {
+          "name": "amortization schedule",
+          "type": "DataObject",
+          "mention": "amortization schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "lines of the amortization schedule",
+          "type": "DataObject",
+          "mention": "lines of the amortization schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Accounting --> Accounting"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Loans",
+          "evidence": "Accounting --> Accounting --> Loans"
+        },
+        {
+          "source": "Loans",
+          "relation": "ENABLES",
+          "target": "Create a new loan",
+          "evidence": "Create a new loan by going to Accounting --> Accounting --> Loans"
+        },
+        {
+          "source": "Create a new loan",
+          "relation": "SUPPORTS",
+          "target": "importing it from a supported file",
+          "evidence": "three options for how to create amortization schedules: - importing it from a supported file"
+        },
+        {
+          "source": "Create a new loan",
+          "relation": "SUPPORTS",
+          "target": "Compute",
+          "evidence": "three options for how to create amortization schedules: - calculating it ... using the Compute button"
+        },
+        {
+          "source": "Amount Borrowed",
+          "relation": "RELATED_TO",
+          "target": "Compute",
+          "evidence": "calculating it from multiple input values (e.g., the Amount Borrowed"
+        },
+        {
+          "source": "Duration",
+          "relation": "RELATED_TO",
+          "target": "Compute",
+          "evidence": "calculating it from multiple input values (e.g., the Amount Borrowed, the Duration"
+        },
+        {
+          "source": "Compute",
+          "relation": "PRODUCES",
+          "target": "amortization schedule",
+          "evidence": "calculating it from multiple input values ... using the Compute button"
+        },
+        {
+          "source": "Create a new loan",
+          "relation": "SUPPORTS",
+          "target": "manually filling in the lines of the schedule",
+          "evidence": "three options for how to create amortization schedules: - manually filling in the lines of the schedule"
+        },
+        {
+          "source": "amortization schedule",
+          "relation": "CONTAINS",
+          "target": "lines of the amortization schedule",
+          "evidence": "lines of the amortization schedule"
+        },
+        {
+          "source": "lines of the amortization schedule",
+          "relation": "CONTAINS",
+          "target": "Date",
+          "evidence": "three different fields are required for each line ...: the Date"
+        },
+        {
+          "source": "lines of the amortization schedule",
+          "relation": "CONTAINS",
+          "target": "Principal",
+          "evidence": "three different fields are required for each line ...: the Principal"
+        },
+        {
+          "source": "lines of the amortization schedule",
+          "relation": "CONTAINS",
+          "target": "Interest",
+          "evidence": "three different fields are required for each line ...: the Interest"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Amount Borrowed",
+          "relation": "APPLIES_TO",
+          "target": "lines of the amortization schedule",
+          "evidence": "Amount Borrowed ... fields will be red if the sum of the lines does not match"
+        },
+        {
+          "source": "Interest",
+          "relation": "APPLIES_TO",
+          "target": "lines of the amortization schedule",
+          "evidence": "Interest ... fields will be red if the sum of the lines does not match"
+        },
+        {
+          "source": "Duration",
+          "relation": "APPLIES_TO",
+          "target": "lines of the amortization schedule",
+          "evidence": "Duration ... fields will be red if the sum of the lines does not match"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "loan-entries-mechanism",
+    "heading": "Loan entries mechanism",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Loan",
+          "type": "Product",
+          "mention": "Loan",
+          "confidence": "high"
+        },
+        {
+          "name": "Loan Settings",
+          "type": "Module",
+          "mention": "Loan Settings tab",
+          "confidence": "high"
+        },
+        {
+          "name": "journal entries",
+          "type": "DataObject",
+          "mention": "journal entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "amortization schedule",
+          "type": "DataObject",
+          "mention": "amortization schedule",
+          "confidence": "medium"
+        },
+        {
+          "name": "long-term account",
+          "type": "DataObject",
+          "mention": "long-term account",
+          "confidence": "medium"
+        },
+        {
+          "name": "short-term account",
+          "type": "DataObject",
+          "mention": "short-term account",
+          "confidence": "medium"
+        },
+        {
+          "name": "expense account",
+          "type": "DataObject",
+          "mention": "expense account",
+          "confidence": "medium"
+        },
+        {
+          "name": "principal amount",
+          "type": "Field",
+          "mention": "principal amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "interest amount",
+          "type": "Field",
+          "mention": "interest amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment amount",
+          "type": "Field",
+          "mention": "payment amount",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment entry",
+          "type": "Workflow",
+          "mention": "payment entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "reclassification entry",
+          "type": "Workflow",
+          "mention": "reclassification entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "reversed entry",
+          "type": "Workflow",
+          "mention": "reversed entry",
+          "confidence": "medium"
+        },
+        {
+          "name": "long-term and short-term principal reclassification mechanism",
+          "type": "Feature",
+          "mention": "long-term and short-term principal reclassification mechanism",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Loan",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Loan Settings",
+          "relation": "BELONGS_TO",
+          "target": "Loan",
+          "evidence": "Loan Settings tab"
+        },
+        {
+          "source": "Loan",
+          "relation": "HAS_FEATURE",
+          "target": "long-term and short-term principal reclassification mechanism",
+          "evidence": "automated with a long-term and short-term principal reclassification mechanism"
+        },
+        {
+          "source": "Loan",
+          "relation": "PRODUCES",
+          "target": "journal entries",
+          "evidence": "creates the necessary journal entries"
+        },
+        {
+          "source": "long-term and short-term principal reclassification mechanism",
+          "relation": "ENABLES",
+          "target": "payment entry",
+          "evidence": "For each line...creates the following entries"
+        },
+        {
+          "source": "long-term and short-term principal reclassification mechanism",
+          "relation": "ENABLES",
+          "target": "reclassification entry",
+          "evidence": "For each line...creates the following entries"
+        },
+        {
+          "source": "long-term and short-term principal reclassification mechanism",
+          "relation": "ENABLES",
+          "target": "reversed entry",
+          "evidence": "For each line...creates the following entries"
+        },
+        {
+          "source": "payment entry",
+          "relation": "PRODUCES",
+          "target": "principal amount",
+          "evidence": "debits the principal amount"
+        },
+        {
+          "source": "payment entry",
+          "relation": "PRODUCES",
+          "target": "interest amount",
+          "evidence": "debits the interest amount"
+        },
+        {
+          "source": "payment entry",
+          "relation": "PRODUCES",
+          "target": "payment amount",
+          "evidence": "credits the payment amount"
+        },
+        {
+          "source": "Loan Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "long-term account",
+          "evidence": "long-term account (defined in the Loan Settings tab)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "closing-a-loan",
+    "heading": "Closing a loan",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Closing a loan",
+          "type": "Workflow",
+          "mention": "Closing a loan",
+          "confidence": "high"
+        },
+        {
+          "name": "loan",
+          "type": "DataObject",
+          "mention": "a loan",
+          "confidence": "high"
+        },
+        {
+          "name": "last payment entry",
+          "type": "DataObject",
+          "mention": "its last payment entry",
+          "confidence": "high"
+        },
+        {
+          "name": "Close button",
+          "type": "Action",
+          "mention": "the Close button",
+          "confidence": "high"
+        },
+        {
+          "name": "wizard",
+          "type": "Feature",
+          "mention": "A wizard",
+          "confidence": "medium"
+        },
+        {
+          "name": "date",
+          "type": "Field",
+          "mention": "from which date",
+          "confidence": "medium"
+        },
+        {
+          "name": "draft entries",
+          "type": "DataObject",
+          "mention": "All draft entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "cancelled",
+          "type": "Action",
+          "mention": "cancelled",
+          "confidence": "low"
+        },
+        {
+          "name": "entries",
+          "type": "DataObject",
+          "mention": "all entries",
+          "confidence": "medium"
+        },
+        {
+          "name": "posted",
+          "type": "Action",
+          "mention": "posted",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Closing a loan",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Closing a loan"
+        },
+        {
+          "source": "loan",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Closing a loan",
+          "relation": "TRIGGERED_BY",
+          "target": "last payment entry",
+          "evidence": "a loan will be closed whenever its last payment entry is posted"
+        },
+        {
+          "source": "Closing a loan",
+          "relation": "TRIGGERED_BY",
+          "target": "Close button",
+          "evidence": "it can also be manually closed ... by clicking on the Close button"
+        },
+        {
+          "source": "Closing a loan",
+          "relation": "ENABLES",
+          "target": "wizard",
+          "evidence": "A wizard will appear"
+        },
+        {
+          "source": "wizard",
+          "relation": "PRODUCES",
+          "target": "date",
+          "evidence": "asking from which date"
+        },
+        {
+          "source": "Closing a loan",
+          "relation": "GENERATES",
+          "target": "draft entries",
+          "evidence": "All draft entries after this date will be deleted too"
+        },
+        {
+          "source": "loan",
+          "relation": "RELATED_TO",
+          "target": "cancelled",
+          "evidence": "A loan can also be cancelled"
+        },
+        {
+          "source": "cancelled",
+          "relation": "GENERATES",
+          "target": "entries",
+          "evidence": "all entries will be deleted"
+        },
+        {
+          "source": "entries",
+          "relation": "RELATED_TO",
+          "target": "posted",
+          "evidence": "even if they were already posted"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "loans-analysis-report",
+    "heading": "Loans Analysis Report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Loans Analysis Report",
+          "type": "Report",
+          "mention": "Loans Analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Review",
+          "type": "Module",
+          "mention": "Review",
+          "confidence": "medium"
+        },
+        {
+          "name": "principal",
+          "type": "Field",
+          "mention": "principal",
+          "confidence": "medium"
+        },
+        {
+          "name": "interest",
+          "type": "Field",
+          "mention": "interest",
+          "confidence": "medium"
+        },
+        {
+          "name": "total payment",
+          "type": "Field",
+          "mention": "total payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "year",
+          "type": "Field",
+          "mention": "year",
+          "confidence": "medium"
+        },
+        {
+          "name": "duration of the loan",
+          "type": "Field",
+          "mention": "duration of the loan",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Loans Analysis Report",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "By going to Accounting --> Review --> Loans Analysis"
+        },
+        {
+          "source": "Loans Analysis Report",
+          "relation": "BELONGS_TO",
+          "target": "Review",
+          "evidence": "By going to Accounting --> Review --> Loans Analysis"
+        },
+        {
+          "source": "Loans Analysis Report",
+          "relation": "HAS_REPORT",
+          "target": "Odoo",
+          "evidence": "Loans Analysis Report is accessed in Odoo"
+        },
+        {
+          "source": "Loans Analysis Report",
+          "relation": "CONTAINS",
+          "target": "principal",
+          "evidence": "the report shows the principal"
+        },
+        {
+          "source": "Loans Analysis Report",
+          "relation": "CONTAINS",
+          "target": "interest",
+          "evidence": "the report shows the interest"
+        },
+        {
+          "source": "Loans Analysis Report",
+          "relation": "CONTAINS",
+          "target": "total payment",
+          "evidence": "the report shows the total payment"
+        },
+        {
+          "source": "Loans Analysis Report",
+          "relation": "CONTAINS",
+          "target": "year",
+          "evidence": "shows for each year"
+        },
+        {
+          "source": "Loans Analysis Report",
+          "relation": "CONTAINS",
+          "target": "duration of the loan",
+          "evidence": "for the duration of the loan"
+        }
+      ]
+    }
+  }
+]

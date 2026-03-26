@@ -1,0 +1,364 @@
+[
+  {
+    "section_id": "change-languages",
+    "heading": "Change languages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "database",
+          "type": "DataObject",
+          "mention": "your database",
+          "confidence": "medium"
+        },
+        {
+          "name": "language",
+          "type": "Feature",
+          "mention": "language",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "high"
+        },
+        {
+          "name": "website",
+          "type": "DataObject",
+          "mention": "your website",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "language",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "You select the language of your database upon its creation."
+        },
+        {
+          "source": "language",
+          "relation": "CONFIGURED_BY",
+          "target": "database",
+          "evidence": "You select the language of your database upon its creation."
+        },
+        {
+          "source": "language",
+          "relation": "ENABLES",
+          "target": "user",
+          "evidence": "allow users to manage the database in another language"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "language",
+          "evidence": "However, you can add and install additional languages"
+        },
+        {
+          "source": "language",
+          "relation": "ENABLES",
+          "target": "website",
+          "evidence": "to translate your website"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-languages",
+    "heading": "Add languages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Add languages",
+          "type": "Feature",
+          "mention": "Add languages",
+          "confidence": "high"
+        },
+        {
+          "name": "My profile",
+          "type": "Feature",
+          "mention": "My profile",
+          "confidence": "medium"
+        },
+        {
+          "name": "Language field",
+          "type": "Field",
+          "mention": "Language field",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Languages",
+          "type": "Sub-module",
+          "mention": "Languages",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Languages",
+          "type": "Action",
+          "mention": "Add Languages",
+          "confidence": "high"
+        },
+        {
+          "name": "profile icon",
+          "type": "Feature",
+          "mention": "profile icon",
+          "confidence": "low"
+        },
+        {
+          "name": "dropdown menu",
+          "type": "Feature",
+          "mention": "dropdown menu",
+          "confidence": "low"
+        },
+        {
+          "name": "Add",
+          "type": "Action",
+          "mention": "Add",
+          "confidence": "high"
+        },
+        {
+          "name": "Translations",
+          "type": "Concept",
+          "mention": "Translations",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Add languages",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Add languages"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Languages",
+          "evidence": "go to the **Settings** app, and click Add Languages in the Languages section"
+        },
+        {
+          "source": "Languages",
+          "relation": "CONTAINS",
+          "target": "Add Languages",
+          "evidence": "click Add Languages in the Languages section"
+        },
+        {
+          "source": "Add Languages",
+          "relation": "PRODUCES",
+          "target": "Add languages",
+          "evidence": "You can then select the languages... and click Add"
+        },
+        {
+          "source": "Add languages",
+          "relation": "SEE_ALSO",
+          "target": "Translations",
+          "evidence": ".. seealso:: Translations"
+        },
+        {
+          "source": "Add languages",
+          "relation": "PERFORMED_BY",
+          "target": "My profile",
+          "evidence": "either click the profile icon... select My profile"
+        },
+        {
+          "source": "Add languages",
+          "relation": "CONFIGURED_BY",
+          "target": "Language field",
+          "evidence": "click the fa-globe (globe) icon next to the Language field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-languages",
+    "heading": "Change languages",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "users",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        },
+        {
+          "name": "profile icon",
+          "type": "Feature",
+          "mention": "profile icon",
+          "confidence": "low"
+        },
+        {
+          "name": "My profile",
+          "type": "Feature",
+          "mention": "My profile",
+          "confidence": "low"
+        },
+        {
+          "name": "Language",
+          "type": "Field",
+          "mention": "Language",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "users",
+          "relation": "PERFORMED_BY",
+          "target": "profile icon",
+          "evidence": "users can click the profile icon"
+        },
+        {
+          "source": "users",
+          "relation": "PERFORMED_BY",
+          "target": "My profile",
+          "evidence": "go to My profile"
+        },
+        {
+          "source": "users",
+          "relation": "PERFORMED_BY",
+          "target": "Language",
+          "evidence": "select a Language in the dropdown list"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-another-user's-language",
+    "heading": "Change another user's language",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage Users",
+          "type": "Feature",
+          "mention": "Manage Users",
+          "confidence": "high"
+        },
+        {
+          "name": "Users",
+          "type": "DataObject",
+          "mention": "Users",
+          "confidence": "medium"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "Preferences",
+          "type": "Sub-module",
+          "mention": "Preferences tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Language",
+          "type": "Field",
+          "mention": "Language dropdown menu",
+          "confidence": "high"
+        },
+        {
+          "name": "language",
+          "type": "Setting",
+          "mention": "database language",
+          "confidence": "high"
+        },
+        {
+          "name": "Emails",
+          "type": "DataObject",
+          "mention": "Emails",
+          "confidence": "medium"
+        },
+        {
+          "name": "documents",
+          "type": "DataObject",
+          "mention": "documents",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Manage Users",
+          "evidence": "Go to the Settings app and click Manage Users"
+        },
+        {
+          "source": "Manage Users",
+          "relation": "HAS_REPORT",
+          "target": "Users",
+          "evidence": "Manage Users in the Users section"
+        },
+        {
+          "source": "Preferences",
+          "relation": "BELONGS_TO",
+          "target": "user",
+          "evidence": "click on the user... go to the Preferences tab"
+        },
+        {
+          "source": "Preferences",
+          "relation": "CONTAINS",
+          "target": "Language",
+          "evidence": "Preferences tab... Language dropdown menu"
+        },
+        {
+          "source": "Language",
+          "relation": "CONFIGURED_BY",
+          "target": "language",
+          "evidence": "select... language from the Language dropdown"
+        },
+        {
+          "source": "language",
+          "relation": "APPLIES_TO",
+          "target": "Emails",
+          "evidence": "Emails and documents will be sent... in the selected language"
+        },
+        {
+          "source": "language",
+          "relation": "APPLIES_TO",
+          "target": "documents",
+          "evidence": "Emails and documents will be sent... in the selected language"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,603 @@
+[
+  {
+    "section_id": "failure-locations",
+    "heading": "Failure locations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "quality control point",
+          "type": "Feature",
+          "mention": "quality control points",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "Action",
+          "mention": "quality checks",
+          "confidence": "high"
+        },
+        {
+          "name": "failure location",
+          "type": "Feature",
+          "mention": "failure locations",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "operation",
+          "type": "Workflow",
+          "mention": "operations",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "quality check",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "prompt employees to confirm the quality of products"
+        },
+        {
+          "source": "quality control point",
+          "relation": "ENABLES",
+          "target": "quality check",
+          "evidence": "are used to create quality checks"
+        },
+        {
+          "source": "quality check",
+          "relation": "BELONGS_TO",
+          "target": "operation",
+          "evidence": "when they are included in certain operations"
+        },
+        {
+          "source": "failure location",
+          "relation": "CONTAINS",
+          "target": "product",
+          "evidence": "products that fail the quality checks can be sent to one of the specified locations"
+        },
+        {
+          "source": "quality check",
+          "relation": "REQUIRES",
+          "target": "quality control point",
+          "evidence": "quality control points are used to create quality checks"
+        },
+        {
+          "source": "quality control point",
+          "relation": "HAS_FEATURE",
+          "target": "failure location",
+          "evidence": "By setting one or more failure locations on a"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Setting",
+          "mention": "Storage Locations setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Failure Locations",
+          "type": "Feature",
+          "mention": "failure locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouses",
+          "type": "Module",
+          "mention": "Warehouses heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Storable Product",
+          "type": "Product Type",
+          "mention": "Storable Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Consumable",
+          "type": "Product Type",
+          "mention": "consumable",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality checks",
+          "type": "Feature",
+          "mention": "Quality checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Type",
+          "type": "Field",
+          "mention": "Product Type field",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information",
+          "type": "Sub-module",
+          "mention": "General Information tab",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Failure Locations",
+          "relation": "REQUIRES",
+          "target": "Storage Locations",
+          "evidence": "To use failure locations, the *Storage Locations* setting **must** be enabled"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Warehouses",
+          "evidence": "under the Warehouses heading"
+        },
+        {
+          "source": "Warehouses",
+          "relation": "CONTAINS",
+          "target": "Storage Locations",
+          "evidence": "checkbox next to Storage Locations, under the Warehouses heading"
+        },
+        {
+          "source": "Failure Locations",
+          "relation": "RELATED_TO",
+          "target": "Storable Product",
+          "evidence": "Failure locations are most effective when used for products configured as *storable products*."
+        },
+        {
+          "source": "Consumable",
+          "relation": "RELATED_TO",
+          "target": "Quality checks",
+          "evidence": "Quality checks can still be created for consumable products"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "navigate to Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "Products --> Products"
+        },
+        {
+          "source": "Product",
+          "relation": "CONTAINS",
+          "target": "General Information",
+          "evidence": "General Information tab"
+        },
+        {
+          "source": "General Information",
+          "relation": "CONTAINS",
+          "target": "Product Type",
+          "evidence": "Product Type field on the General Information tab"
+        },
+        {
+          "source": "Storable Product",
+          "type": "Concept",
+          "mention": "Storable Product",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-failure-location-to-qcp",
+    "heading": "Add failure location to QCP",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality",
+          "type": "Module",
+          "mention": "Quality app",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Control",
+          "type": "Sub-module",
+          "mention": "Quality Control",
+          "confidence": "high"
+        },
+        {
+          "name": "Control Points",
+          "type": "Feature",
+          "mention": "Control Points",
+          "confidence": "medium"
+        },
+        {
+          "name": "QCP",
+          "type": "Feature",
+          "mention": "QCP",
+          "confidence": "low"
+        },
+        {
+          "name": "Control Per",
+          "type": "Field",
+          "mention": "Control Per field",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Standard",
+          "mention": "Quantity option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Failure Locations",
+          "type": "Field",
+          "mention": "Failure Locations field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Control Points",
+          "relation": "BELONGS_TO",
+          "target": "Quality Control",
+          "evidence": "Quality Control --> Control Points"
+        },
+        {
+          "source": "Quality Control",
+          "relation": "BELONGS_TO",
+          "target": "Quality",
+          "evidence": "Quality app --> Quality Control"
+        },
+        {
+          "source": "Quality",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Control Per",
+          "relation": "IS_PART_OF",
+          "target": "Control Points",
+          "evidence": "Control Per field on the Control Points form"
+        },
+        {
+          "source": "Failure Locations",
+          "relation": "IS_PART_OF",
+          "target": "Control Points",
+          "evidence": "Failure Locations field to appear on the form"
+        },
+        {
+          "source": "Failure Locations",
+          "relation": "REQUIRES",
+          "target": "Quantity",
+          "evidence": "This field is only available when the Quantity option is selected."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "send-products-to-failure-location",
+    "heading": "Send products to failure location",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipts",
+          "type": "DataObject",
+          "mention": "Receipts",
+          "confidence": "medium"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "an order",
+          "confidence": "high"
+        },
+        {
+          "name": "Quality Checks button",
+          "type": "Action",
+          "mention": "click the Quality Checks button",
+          "confidence": "high"
+        },
+        {
+          "name": "Fail button",
+          "type": "Action",
+          "mention": "click the Fail button",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "click Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate button",
+          "type": "Action",
+          "mention": "click the Validate button",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity Failed field",
+          "type": "Field",
+          "mention": "Quantity Failed field",
+          "confidence": "high"
+        },
+        {
+          "name": "Failure Location field",
+          "type": "Field",
+          "mention": "Failure Location field",
+          "confidence": "high"
+        },
+        {
+          "name": "quality check",
+          "type": "Workflow",
+          "mention": "quality check",
+          "confidence": "high"
+        },
+        {
+          "name": "failure location",
+          "type": "Concept",
+          "mention": "failure locations",
+          "confidence": "high"
+        },
+        {
+          "name": "products",
+          "type": "Concept",
+          "mention": "products",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "navigate to Inventory app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Receipts",
+          "evidence": "navigate to Inventory app --> Operations --> Receipts"
+        },
+        {
+          "source": "order",
+          "relation": "HAS_REPORT",
+          "target": "quality check",
+          "evidence": "click the Quality Checks button to open a pop-up window, from which the quality check can be processed"
+        },
+        {
+          "source": "Quality Checks button",
+          "relation": "TRIGGERED_BY",
+          "target": "order",
+          "evidence": "open an order ... click the Quality Checks button"
+        },
+        {
+          "source": "Fail button",
+          "relation": "TRIGGERED_BY",
+          "target": "Quality Checks button",
+          "evidence": "click the Quality Checks button ... click the Fail button"
+        },
+        {
+          "source": "Confirm",
+          "relation": "TRIGGERED_BY",
+          "target": "Fail button",
+          "evidence": "click the Fail button ... click Confirm"
+        },
+        {
+          "source": "Validate button",
+          "relation": "PERFORMED_BY",
+          "target": "order",
+          "evidence": "on the order, click the Validate button"
+        },
+        {
+          "source": "quality check",
+          "relation": "CONFIGURED_BY",
+          "target": "failure location",
+          "evidence": " has been configured with one or more failure locations"
+        },
+        {
+          "source": "products",
+          "relation": "BELONGS_TO",
+          "target": "order",
+          "evidence": "open an order that requires a quality check"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-failure-location-inventory",
+    "heading": "View failure location inventory",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Locations",
+          "type": "Sub-module",
+          "mention": "Locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "failure location",
+          "type": "DataObject",
+          "mention": "failure location",
+          "confidence": "high"
+        },
+        {
+          "name": "Current Stock smart button",
+          "type": "Feature",
+          "mention": "Current Stock smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "product quantities",
+          "type": "Field",
+          "mention": "product quantities",
+          "confidence": "medium"
+        },
+        {
+          "name": "products stored",
+          "type": "DataObject",
+          "mention": "products stored",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Locations",
+          "evidence": "Configuration --> Locations"
+        },
+        {
+          "source": "Locations",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "Locations from the Inventory app"
+        },
+        {
+          "source": "Current Stock smart button",
+          "relation": "HAS_FEATURE",
+          "target": "failure location",
+          "evidence": "click the Current Stock smart button on the location's page"
+        },
+        {
+          "source": "failure location",
+          "relation": "CONTAINS",
+          "target": "products stored",
+          "evidence": "A failure location's page lists all of the products stored within the location"
+        },
+        {
+          "source": "Current Stock smart button",
+          "relation": "GENERATES",
+          "target": "product quantities",
+          "evidence": "view the product quantities stored in a failure location"
+        }
+      ]
+    }
+  }
+]

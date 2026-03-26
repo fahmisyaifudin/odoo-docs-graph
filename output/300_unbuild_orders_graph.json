@@ -1,0 +1,401 @@
+[
+  {
+    "section_id": "unbuild-orders",
+    "heading": "Unbuild orders",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "unbuild orders",
+          "type": "Feature",
+          "mention": "unbuild orders",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "manufactured products",
+          "confidence": "medium"
+        },
+        {
+          "name": "components",
+          "type": "DataObject",
+          "mention": "individual components",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory",
+          "type": "DataObject",
+          "mention": "inventory",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Manufacturing",
+          "evidence": "In Odoo Manufacturing"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "HAS_FEATURE",
+          "target": "unbuild orders",
+          "evidence": "products can be dismantled, and their components returned to inventory, using unbuild orders"
+        },
+        {
+          "source": "unbuild orders",
+          "relation": "PRODUCES",
+          "target": "components",
+          "evidence": "components returned to inventory"
+        },
+        {
+          "source": "unbuild orders",
+          "relation": "APPLIES_TO",
+          "target": "product",
+          "evidence": "dismantle manufactured products"
+        },
+        {
+          "source": "unbuild orders",
+          "relation": "TRIGGERED_BY",
+          "target": "product",
+          "evidence": "if too many units of a product were built, or if the components of one product must be reclaimed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-unbuild-order",
+    "heading": "Create unbuild order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Unbuild Orders",
+          "type": "Sub-module",
+          "mention": "Unbuild Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Unbuild order",
+          "type": "DataObject",
+          "mention": "unbuild order",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Material",
+          "type": "Field",
+          "mention": "Bill of Material",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of materials",
+          "type": "Concept",
+          "mention": "bill of materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "Field",
+          "mention": "Manufacturing Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "high"
+        },
+        {
+          "name": "Source Location",
+          "type": "Field",
+          "mention": "Source Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Destination Location",
+          "type": "Field",
+          "mention": "Destination Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots & Serial Numbers",
+          "type": "Feature",
+          "mention": "Lots & Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/Serial Number",
+          "type": "Field",
+          "mention": "Lot/Serial Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Unbuild button",
+          "type": "Action",
+          "mention": "Unbuild button",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory counts",
+          "type": "Report",
+          "mention": "inventory counts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Coat Rack",
+          "type": "DataObject",
+          "mention": "Coat Rack",
+          "confidence": "high"
+        },
+        {
+          "name": "Wooden Pole",
+          "type": "DataObject",
+          "mention": "Wooden Pole",
+          "confidence": "high"
+        },
+        {
+          "name": "Wooden Dowel",
+          "type": "DataObject",
+          "mention": "Wooden Dowel",
+          "confidence": "high"
+        },
+        {
+          "name": "on-hand quantity",
+          "type": "Concept",
+          "mention": "on-hand quantity",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Manufacturing app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Unbuild Orders",
+          "evidence": "Operations --> Unbuild Orders"
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "IS_PART_OF",
+          "target": "Unbuild Orders",
+          "evidence": "Unbuild Orders, and clicking New."
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "selecting a Product to unbuild"
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "CONTAINS",
+          "target": "Bill of Material",
+          "evidence": "the Bill of Material field"
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "specify the Quantity"
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "CONTAINS",
+          "target": "Manufacturing Order",
+          "evidence": "select it in the Manufacturing Order field"
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "CONTAINS",
+          "target": "Source Location",
+          "evidence": "In the Source Location field"
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "CONTAINS",
+          "target": "Destination Location",
+          "evidence": "In the Destination Location field"
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "CONTAINS",
+          "target": "Lot/Serial Number",
+          "evidence": "Lot/Serial Number field appears on the unbuild order"
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "Company field appears on the unbuild order"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "HAS_FEATURE",
+          "target": "Lots & Serial Numbers",
+          "evidence": "Lots & Serial Numbers feature is enabled in the settings of the Inventory app"
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "GENERATES",
+          "target": "inventory counts",
+          "evidence": "inventory counts automatically update"
+        },
+        {
+          "source": "Unbuild",
+          "relation": "PERFORMED_BY",
+          "target": "Unbuild button",
+          "evidence": "click the Unbuild button"
+        },
+        {
+          "source": "Coat Rack",
+          "type": "RELATED_TO",
+          "target": "Wooden Pole",
+          "evidence": "comprised of one Wooden Pole"
+        },
+        {
+          "source": "Coat Rack",
+          "type": "RELATED_TO",
+          "target": "Wooden Dowel",
+          "evidence": "comprised of six Wooden Dowel"
+        },
+        {
+          "source": "Unbuild order",
+          "relation": "GENERATES",
+          "target": "on-hand quantity",
+          "evidence": "the on-hand quantity of Coat Racks decreases"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "scrap-unusable-components",
+    "heading": "Scrap unusable components",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "unbuilding process",
+          "type": "Workflow",
+          "mention": "unbuilding process",
+          "confidence": "medium"
+        },
+        {
+          "name": "scrap order",
+          "type": "Action",
+          "mention": "scrap order",
+          "confidence": "high"
+        },
+        {
+          "name": "component",
+          "type": "DataObject",
+          "mention": "component",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory",
+          "type": "Module",
+          "mention": "inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Scrap unusable components",
+          "type": "Feature",
+          "mention": "Scrap unusable components",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "scrap order",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "To ensure that inventory counts accurately reflect the quantity of usable components on-hand, any component that can no longer be used should be removed from inventory using a scrap order."
+        },
+        {
+          "source": "scrap order",
+          "relation": "APPLIES_TO",
+          "target": "component",
+          "evidence": "any component that can no longer be used should be removed from inventory using a scrap order"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Scrap unusable components",
+          "evidence": "Product: Odoo Title: Scrap unusable components"
+        },
+        {
+          "source": "component",
+          "relation": "IS_PART_OF",
+          "target": "inventory",
+          "evidence": "should be removed from inventory"
+        }
+      ]
+    }
+  }
+]

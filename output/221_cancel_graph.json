@@ -1,0 +1,239 @@
+[
+  {
+    "section_id": "overview",
+    "heading": "Overview",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery methods",
+          "type": "Feature",
+          "mention": "delivery methods",
+          "confidence": "medium"
+        },
+        {
+          "name": "third party shippers",
+          "type": "Actor",
+          "mention": "third party shippers",
+          "confidence": "medium"
+        },
+        {
+          "name": "transportation company tracking system",
+          "type": "Integration",
+          "mention": "transportation company tracking system",
+          "confidence": "medium"
+        },
+        {
+          "name": "transport company",
+          "type": "Actor",
+          "mention": "transport company",
+          "confidence": "low"
+        },
+        {
+          "name": "real prices",
+          "type": "DataObject",
+          "mention": "real prices",
+          "confidence": "low"
+        },
+        {
+          "name": "destination",
+          "type": "Field",
+          "mention": "destination",
+          "confidence": "low"
+        },
+        {
+          "name": "carrier system",
+          "type": "Actor",
+          "mention": "carrier system",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "delivery methods",
+          "evidence": "Odoo can handle various delivery methods"
+        },
+        {
+          "source": "delivery methods",
+          "relation": "CONTAINS",
+          "target": "third party shippers",
+          "evidence": "including third party shippers"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "transportation company tracking system",
+          "evidence": "Odoo will be linked with the transportation company tracking system"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "how-to-cancel-a-shipping-request?",
+    "heading": "How to cancel a shipping request?",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Cancel",
+          "type": "Action",
+          "mention": "Cancel",
+          "confidence": "high"
+        },
+        {
+          "name": "Carrier Tracking Ref",
+          "type": "Field",
+          "mention": "Carrier Tracking Ref",
+          "confidence": "medium"
+        },
+        {
+          "name": "carrier",
+          "type": "Concept",
+          "mention": "carrier",
+          "confidence": "medium"
+        },
+        {
+          "name": "shipment",
+          "type": "DataObject",
+          "mention": "shipment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "Carrier Tracking Ref",
+          "evidence": "the request has been made and you should have received the tracking number"
+        },
+        {
+          "source": "Cancel",
+          "relation": "APPLIES_TO",
+          "target": "shipment",
+          "evidence": "Simply click on the Cancel button... You will now see that the shipment has been cancelled"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "how-to-send-a-shipping-request-after-cancelling-one?",
+    "heading": "How to send a shipping request after cancelling one?",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Send to shipper",
+          "type": "Action",
+          "mention": "Send to shipper",
+          "confidence": "high"
+        },
+        {
+          "name": "shipping request",
+          "type": "Workflow",
+          "mention": "shipping request",
+          "confidence": "medium"
+        },
+        {
+          "name": "carrier",
+          "type": "Concept",
+          "mention": "carrier",
+          "confidence": "medium"
+        },
+        {
+          "name": "tracking number",
+          "type": "DataObject",
+          "mention": "tracking number",
+          "confidence": "medium"
+        },
+        {
+          "name": "label",
+          "type": "DataObject",
+          "mention": "label",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoicing",
+          "type": "Concept",
+          "mention": "invoicing",
+          "confidence": "high"
+        },
+        {
+          "name": "multipack",
+          "type": "Concept",
+          "mention": "multipack",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "shipping request",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "How to send a shipping request after cancelling one?"
+        },
+        {
+          "source": "Send to shipper",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Confirm it by clicking on the Send to shipper button."
+        },
+        {
+          "source": "Send to shipper",
+          "relation": "PRODUCES",
+          "target": "tracking number",
+          "evidence": "You will get a new tracking number and a new label."
+        },
+        {
+          "source": "Send to shipper",
+          "relation": "PRODUCES",
+          "target": "label",
+          "evidence": "You will get a new tracking number and a new label."
+        },
+        {
+          "source": "shipping request",
+          "relation": "SEE_ALSO",
+          "target": "invoicing",
+          "evidence": "seealso: invoicing"
+        },
+        {
+          "source": "shipping request",
+          "relation": "SEE_ALSO",
+          "target": "multipack",
+          "evidence": "seealso: multipack"
+        }
+      ]
+    }
+  }
+]

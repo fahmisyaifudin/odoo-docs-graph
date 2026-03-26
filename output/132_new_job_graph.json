@@ -1,0 +1,871 @@
+[
+  {
+    "section_id": "job-positions",
+    "heading": "Job positions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment",
+          "confidence": "high"
+        },
+        {
+          "name": "Job positions",
+          "type": "DataObject",
+          "mention": "job positions",
+          "confidence": "high"
+        },
+        {
+          "name": "default dashboard",
+          "type": "Feature",
+          "mention": "default dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban card",
+          "type": "Feature",
+          "mention": "Kanban card",
+          "confidence": "high"
+        },
+        {
+          "name": "active",
+          "type": "Setting",
+          "mention": "active",
+          "confidence": "medium"
+        },
+        {
+          "name": "inactive",
+          "type": "Setting",
+          "mention": "inactive",
+          "confidence": "medium"
+        },
+        {
+          "name": "PUBLISHED banner",
+          "type": "Feature",
+          "mention": "PUBLISHED banner",
+          "confidence": "medium"
+        },
+        {
+          "name": "View submitted applications",
+          "type": "Action",
+          "mention": "View submitted applications",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Recruitment",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "Job positions",
+          "evidence": "In Odoo's **Recruitment** application, all job positions are shown"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "HAS_FEATURE",
+          "target": "default dashboard",
+          "evidence": "all job positions are shown on the default dashboard"
+        },
+        {
+          "source": "Job positions",
+          "relation": "BELONGS_TO",
+          "target": "Recruitment",
+          "evidence": "In Odoo's **Recruitment** application, all job positions are shown"
+        },
+        {
+          "source": "Job positions",
+          "relation": "CONFIGURED_BY",
+          "target": "active",
+          "evidence": "If the job position is active"
+        },
+        {
+          "source": "Job positions",
+          "relation": "CONFIGURED_BY",
+          "target": "inactive",
+          "evidence": "includes both active and inactive positions"
+        },
+        {
+          "source": "Job positions",
+          "relation": "PRODUCES",
+          "target": "Kanban card",
+          "evidence": "Each job position is shown in an individual Kanban card"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "HAS_FEATURE",
+          "target": "PUBLISHED banner",
+          "evidence": "a PUBLISHED banner appears in the top-right corner of the card"
+        },
+        {
+          "source": "Job positions",
+          "relation": "HAS_FEATURE",
+          "target": "View submitted applications",
+          "evidence": "View submitted applications by clicking anywhere on a job position card"
+        },
+        {
+          "source": "View submitted applications",
+          "relation": "TRIGGERED_BY",
+          "target": "Kanban card",
+          "evidence": "by clicking anywhere on a job position card"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-job-position",
+    "heading": "Create a new job position",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a Job Position",
+          "type": "Workflow",
+          "mention": "Create a Job Position pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Position",
+          "type": "DataObject",
+          "mention": "Job Position",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "name of the Job Position",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Manager",
+          "type": "DataObject",
+          "mention": "Sales Manager",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mechanical Engineer",
+          "type": "DataObject",
+          "mention": "Mechanical Engineer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Application email",
+          "type": "Field",
+          "mention": "Application email",
+          "confidence": "high"
+        },
+        {
+          "name": "Applicants",
+          "type": "Actor",
+          "mention": "Applicants",
+          "confidence": "high"
+        },
+        {
+          "name": "Create",
+          "type": "Action",
+          "mention": "Create button",
+          "confidence": "high"
+        },
+        {
+          "name": "Discard",
+          "type": "Action",
+          "mention": "Discard button",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "New",
+          "evidence": "create a new job position from the main dashboard in the Recruitment app"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "Create a Job Position",
+          "evidence": "Create a Job Position pop-up window appears"
+        },
+        {
+          "source": "Recruitment",
+          "relation": "CONTAINS",
+          "target": "Kanban view",
+          "evidence": "it appears as a card in the Kanban view on the main Recruitment app dashboard"
+        },
+        {
+          "source": "Create a Job Position",
+          "relation": "CONTAINS",
+          "target": "Job Position",
+          "evidence": "a Create a Job Position pop-up window appears"
+        },
+        {
+          "source": "Job Position",
+          "relation": "HAS_FEATURE",
+          "target": "Name",
+          "evidence": "enter the name of the Job Position"
+        },
+        {
+          "source": "Job Position",
+          "relation": "HAS_FEATURE",
+          "target": "Application email",
+          "evidence": "enter an Application email"
+        },
+        {
+          "source": "Applicants",
+          "relation": "PERFORMED_BY",
+          "target": "Odoo",
+          "evidence": "Odoo creates an application for them automatically"
+        },
+        {
+          "source": "Create a Job Position",
+          "relation": "ENABLES",
+          "target": "Create",
+          "evidence": "click the Create button to save the entry"
+        },
+        {
+          "source": "Create a Job Position",
+          "relation": "ENABLES",
+          "target": "Discard",
+          "evidence": "the Discard button to delete it"
+        },
+        {
+          "source": "Job Position",
+          "relation": "CONTAINED_BY",
+          "target": "Kanban view",
+          "evidence": "it appears as a card in the Kanban view"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "edit-a-new-job-position",
+    "heading": "Edit a new job position",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "job position",
+          "type": "DataObject",
+          "mention": "job position",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "job position",
+          "relation": "CONFIGURED_BY",
+          "target": "Configuration",
+          "evidence": "Click on the fa-ellipsis-v (Dropdown menu) icon in the upper-right corner of the relevant card to reveal several options, and then click Configuration to edit the details."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "recruitment-tab",
+    "heading": "Recruitment tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment tab",
+          "type": "Module",
+          "mention": "Recruitment tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Department",
+          "type": "Field",
+          "mention": "Department",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Location",
+          "type": "Field",
+          "mention": "Job Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Employment Type",
+          "type": "Field",
+          "mention": "Employment Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Summary tab",
+          "type": "Field",
+          "mention": "Job Summary tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Industry",
+          "type": "Field",
+          "mention": "Industry",
+          "confidence": "high"
+        },
+        {
+          "name": "Email Alias",
+          "type": "Field",
+          "mention": "Email Alias",
+          "confidence": "high"
+        },
+        {
+          "name": "Working Schedule",
+          "type": "Field",
+          "mention": "Working Schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Range",
+          "type": "Field",
+          "mention": "Salary Range",
+          "confidence": "high"
+        },
+        {
+          "name": "Expected Skills",
+          "type": "Field",
+          "mention": "Expected Skills",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Mission Dates",
+          "type": "Field",
+          "mention": "Mission Dates",
+          "confidence": "high"
+        },
+        {
+          "name": "Target",
+          "type": "Field",
+          "mention": "Target",
+          "confidence": "high"
+        },
+        {
+          "name": "Website",
+          "type": "Field",
+          "mention": "Website",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruiter",
+          "type": "Field",
+          "mention": "Recruiter",
+          "confidence": "high"
+        },
+        {
+          "name": "Interviewers",
+          "type": "Field",
+          "mention": "Interviewers",
+          "confidence": "high"
+        },
+        {
+          "name": "Interview Form",
+          "type": "Field",
+          "mention": "Interview Form",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Template",
+          "type": "Field",
+          "mention": "Contract Template",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "All the basic information about the job position is listed under the Recruitment tab."
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Department",
+          "evidence": "configure and populate the Department"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Job Location",
+          "evidence": "configure and populate the Job Location"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Employment Type",
+          "evidence": "configure and populate the Employment Type"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Job Summary tab",
+          "evidence": "configure and populate the Job Summary tab"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Industry",
+          "evidence": "Industry: Select the relevant industry"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Email Alias",
+          "evidence": "Email Alias: Enter an email address"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Working Schedule",
+          "evidence": "Working Schedule: Select the working schedule"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Salary Range",
+          "evidence": "Salary Range: Enter both the minimum and maximum salaries"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Expected Skills",
+          "evidence": "Expected Skills: Select all the desired skills"
+        },
+        {
+          "source": "Expected Skills",
+          "relation": "CONFIGURED_BY",
+          "target": "Employees app",
+          "evidence": "The skills presented are configured in the Employees app"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "Company: Select the company"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Mission Dates",
+          "evidence": "Mission Dates: Using the calendar selector"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Target",
+          "evidence": "Target: Enter the number of employees"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Website",
+          "evidence": "Website: Select the website"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Recruiter",
+          "evidence": "Recruiter: Select the person responsible"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Interviewers",
+          "evidence": "Interviewers: Select who should perform the interviews"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Interview Form",
+          "evidence": "Interview Form: select an Interview form"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Contract Template",
+          "evidence": "Contract Template: Select a contract template"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "job-summary-tab",
+    "heading": "Job summary tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Job summary tab",
+          "type": "Module",
+          "mention": "Title: Job summary tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "job description",
+          "type": "Feature",
+          "mention": "Enter the job description",
+          "confidence": "medium"
+        },
+        {
+          "name": "website",
+          "type": "Module",
+          "mention": "visible on the website",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Job summary tab",
+          "relation": "CONTAINS",
+          "target": "job description",
+          "evidence": "Enter the job description in the Job Summary tab"
+        },
+        {
+          "source": "job description",
+          "relation": "RELATED_TO",
+          "target": "website",
+          "evidence": "This description is visible on the website."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "application-info-tab",
+    "heading": "Application info tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Application info tab",
+          "type": "Module",
+          "mention": "Title: Application info tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Process Details",
+          "type": "Sub-module",
+          "mention": "Process Details",
+          "confidence": "high"
+        },
+        {
+          "name": "Time to Answer",
+          "type": "Field",
+          "mention": "Time to Answer",
+          "confidence": "high"
+        },
+        {
+          "name": "Days",
+          "type": "Field",
+          "mention": "days",
+          "confidence": "low"
+        },
+        {
+          "name": "Process",
+          "type": "Field",
+          "mention": "Process",
+          "confidence": "high"
+        },
+        {
+          "name": "Phone Call",
+          "type": "Feature",
+          "mention": "Phone Call",
+          "confidence": "high"
+        },
+        {
+          "name": "Onsite Interview",
+          "type": "Feature",
+          "mention": "Onsite Interview",
+          "confidence": "high"
+        },
+        {
+          "name": "Days to get an Offer",
+          "type": "Field",
+          "mention": "Days to get an Offer",
+          "confidence": "high"
+        },
+        {
+          "name": "Applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "website",
+          "type": "Integration",
+          "mention": "website",
+          "confidence": "medium"
+        },
+        {
+          "name": "text field",
+          "type": "Field",
+          "mention": "text field",
+          "confidence": "low"
+        },
+        {
+          "name": "recruitment/interview",
+          "type": "Workflow",
+          "mention": "recruitment/interview",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Process Details",
+          "relation": "IS_PART_OF",
+          "target": "Application info tab",
+          "evidence": "The Process Details section of the Application Info tab"
+        },
+        {
+          "source": "Application info tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Process Details",
+          "relation": "CONTAINS",
+          "target": "Time to Answer",
+          "evidence": "Time to Answer: Enter the number of days"
+        },
+        {
+          "source": "Process Details",
+          "relation": "CONTAINS",
+          "target": "Process",
+          "evidence": "Process: Enter the various stages"
+        },
+        {
+          "source": "Process Details",
+          "relation": "CONTAINS",
+          "target": "Days to get an Offer",
+          "evidence": "Days to get an Offer: Enter the number of days"
+        },
+        {
+          "source": "Process",
+          "relation": "CONTAINS",
+          "target": "Phone Call",
+          "evidence": "By default, two process steps are visible: 1 Phone Call"
+        },
+        {
+          "source": "Process",
+          "relation": "CONTAINS",
+          "target": "Onsite Interview",
+          "evidence": "By default, two process steps are visible: 1 Onsite Interview"
+        },
+        {
+          "source": "Process Details",
+          "relation": "APPLIES_TO",
+          "target": "Applicant",
+          "evidence": "informs the applicants of the timeline and steps"
+        },
+        {
+          "source": "Process Details",
+          "relation": "RELATED_TO",
+          "target": "website",
+          "evidence": "The text is displayed on the website"
+        },
+        {
+          "source": "Process Details",
+          "relation": "SEE_ALSO",
+          "target": "recruitment/interview",
+          "evidence": ".. _recruitment/interview:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-interview-form",
+    "heading": "Create interview form",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment app",
+          "type": "Module",
+          "mention": "Navigate to Recruitment app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Recruitment app --> Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Configuration --> Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Send Interview Survey option",
+          "type": "Setting",
+          "mention": "ensure the Send Interview Survey option is enabled",
+          "confidence": "high"
+        },
+        {
+          "name": "Interview Form",
+          "type": "Feature",
+          "mention": "An *Interview Form* is used",
+          "confidence": "high"
+        },
+        {
+          "name": "Recruitment Process",
+          "type": "Concept",
+          "mention": "under the Recruitment Process section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruitment tab",
+          "type": "Feature",
+          "mention": "Recruitment tab of the Job Position form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Job Position form",
+          "type": "DataObject",
+          "mention": "Job Position form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Interview Form field",
+          "type": "Field",
+          "mention": "In the Interview Form field",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Interview Form pop-up window",
+          "type": "Feature",
+          "mention": "a Create Interview Form pop-up window appears",
+          "confidence": "medium"
+        },
+        {
+          "name": "survey",
+          "type": "Module",
+          "mention": "refer to the survey essentials",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Recruitment app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to Recruitment app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Send Interview Survey option",
+          "evidence": "under the Recruitment Process section, ensure the Send Interview Survey option is enabled"
+        },
+        {
+          "source": "Interview Form",
+          "relation": "RELATED_TO",
+          "target": "Recruitment Process",
+          "evidence": "Interview forms are determined by the recruitment team."
+        },
+        {
+          "source": "Job Position form",
+          "relation": "CONTAINS",
+          "target": "Recruitment tab",
+          "evidence": "Recruitment tab of the Job Position form"
+        },
+        {
+          "source": "Recruitment tab",
+          "relation": "CONTAINS",
+          "target": "Interview Form field",
+          "evidence": "In the Recruitment tab... Interview Form field"
+        },
+        {
+          "source": "Interview Form",
+          "relation": "ENABLES",
+          "target": "Create Interview Form pop-up window",
+          "evidence": "Click Create and edit... and a Create Interview Form pop-up window appears"
+        },
+        {
+          "source": "Interview Form",
+          "relation": "SEE_ALSO",
+          "target": "survey",
+          "evidence": "For specific directions... refer to the survey essentials"
+        }
+      ]
+    }
+  }
+]

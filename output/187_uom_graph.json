@@ -1,0 +1,1093 @@
+[
+  {
+    "section_id": "units-of-measure",
+    "heading": "Units of measure",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Units of measure",
+          "type": "Module",
+          "mention": "Units of measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Units of measure (UoM)",
+          "type": "Concept",
+          "mention": "*units of measure (UoM)*",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Units of measure",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Units of measure"
+        },
+        {
+          "source": "Units of measure",
+          "relation": "CONTAINS",
+          "target": "Units of measure (UoM)",
+          "evidence": "Odoo can be set up to use different *units of measure (UoM)* for one product."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Units of measure (UoM)",
+          "evidence": "Odoo can be set up to use different *units of measure (UoM)* for one product."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Products section",
+          "type": "Sub-module",
+          "mention": "Products section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Units of Measure & Packagings setting",
+          "type": "Setting",
+          "mention": "Units of Measure & Packagings setting",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Products section",
+          "evidence": "under the Products section"
+        },
+        {
+          "source": "Units of Measure & Packagings setting",
+          "relation": "IS_PART_OF",
+          "target": "Products section",
+          "evidence": "under the Products section, activate the Units of Measure & Packagings setting"
+        },
+        {
+          "source": "Units of Measure & Packagings setting",
+          "relation": "GOVERNED_BY",
+          "target": "Settings",
+          "evidence": "go to Inventory app --> Configuration --> Settings, and ... activate the Units of Measure & Packagings setting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-units-of-measure",
+    "heading": "Configure units of measure",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form page",
+          "type": "DataObject",
+          "mention": "product form page",
+          "confidence": "medium"
+        },
+        {
+          "name": "units of measure",
+          "type": "Feature",
+          "mention": "Configure units of measure",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "product",
+          "evidence": "Products --> Products and select a product"
+        },
+        {
+          "source": "product",
+          "relation": "PRODUCES",
+          "target": "product form page",
+          "evidence": "select a product to open its product form page"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "units of measure",
+          "evidence": "Configure units of measure"
+        },
+        {
+          "source": "product",
+          "relation": "CONFIGURED_BY",
+          "target": "units of measure",
+          "evidence": "set units of measure on a product"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "inventory-unit-of-measure",
+    "heading": "Inventory unit of measure",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory unit of measure",
+          "type": "Concept",
+          "mention": "Inventory unit of measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Price",
+          "type": "Field",
+          "mention": "Sales Price",
+          "confidence": "high"
+        },
+        {
+          "name": "Cost",
+          "type": "Field",
+          "mention": "Cost",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Price unit of measure",
+          "type": "Setting",
+          "mention": "Sales Price units of measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Cost unit of measure",
+          "type": "Setting",
+          "mention": "Cost units of measure",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory unit of measure",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Inventory unit of measure"
+        },
+        {
+          "source": "Inventory unit of measure",
+          "relation": "CONFIGURED_BY",
+          "target": "Sales Price unit of measure",
+          "evidence": "update the second field of the Sales Price or Cost fields"
+        },
+        {
+          "source": "Inventory unit of measure",
+          "relation": "CONFIGURED_BY",
+          "target": "Cost unit of measure",
+          "evidence": "update the second field of the Sales Price or Cost fields"
+        },
+        {
+          "source": "Sales Price unit of measure",
+          "relation": "RELATED_TO",
+          "target": "Cost unit of measure",
+          "evidence": "cannot be updated independently of each other"
+        },
+        {
+          "source": "Cost unit of measure",
+          "relation": "RELATED_TO",
+          "target": "Sales Price unit of measure",
+          "evidence": "When one unit of measure is updated, the other unit of measure automatically updates"
+        },
+        {
+          "source": "Sales Price",
+          "relation": "CONTAINS",
+          "target": "Sales Price unit of measure",
+          "evidence": "second field of the Sales Price"
+        },
+        {
+          "source": "Cost",
+          "relation": "CONTAINS",
+          "target": "Cost unit of measure",
+          "evidence": "second field of the Cost fields"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sales-unit-of-measure-(packagings)",
+    "heading": "Sales unit of measure (packagings)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales tab",
+          "type": "Sub-module",
+          "mention": "Sales tab",
+          "confidence": "low"
+        },
+        {
+          "name": "Upsell & Cross-Sell",
+          "type": "Feature",
+          "mention": "Upsell & Cross-Sell section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packagings field",
+          "type": "Field",
+          "mention": "Packagings field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packaging",
+          "type": "Concept",
+          "mention": "Packaging",
+          "confidence": "medium"
+        },
+        {
+          "name": "Packaging",
+          "type": "Module",
+          "mention": "Packaging",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Packaging",
+          "relation": "SEE_ALSO",
+          "target": "packaging",
+          "evidence": ".. seealso:: Packaging <packaging>"
+        },
+        {
+          "source": "Sales",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Sales tab of the product"
+        },
+        {
+          "source": "Upsell & Cross-Sell",
+          "relation": "BELONGS_TO",
+          "target": "Sales",
+          "evidence": "in the Upsell & Cross-Sell section"
+        },
+        {
+          "source": "Packagings field",
+          "relation": "CONTAINS",
+          "target": "Packaging",
+          "evidence": "add a packaging to the Packagings field"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Packaging",
+          "evidence": "Units of measure that the product is sold in are considered packagings."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "purchase-unit-of-measure",
+    "heading": "Purchase unit of measure",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Module",
+          "mention": "Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase unit of measure",
+          "type": "Concept",
+          "mention": "Purchase unit of measure",
+          "confidence": "high"
+        },
+        {
+          "name": "unit of measure",
+          "type": "Concept",
+          "mention": "Units of measure",
+          "confidence": "medium"
+        },
+        {
+          "name": "default unit of measure",
+          "type": "Concept",
+          "mention": "default unit of measure",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase order",
+          "type": "DataObject",
+          "mention": "Purchase orders",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase unit of measure",
+          "relation": "IS_PART_OF",
+          "target": "Purchase tab",
+          "evidence": "Units of measure...are defined in the Purchase tab"
+        },
+        {
+          "source": "Purchase order",
+          "relation": "USES_METHOD",
+          "target": "Purchase unit of measure",
+          "evidence": "Purchase orders can be created in these units of measure"
+        },
+        {
+          "source": "Purchase unit of measure",
+          "relation": "SUPPORTS",
+          "target": "default unit of measure",
+          "evidence": "Purchase units of measure must be in the same category as the default unit of measure."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "unit-conversion",
+    "heading": "Unit conversion",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit conversion",
+          "type": "Feature",
+          "mention": "Unit conversion",
+          "confidence": "high"
+        },
+        {
+          "name": "UoM",
+          "type": "Concept",
+          "mention": "UoMs (Units of Measure)",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase order",
+          "type": "DataObject",
+          "mention": "purchase orders (POs)",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor order",
+          "type": "DataObject",
+          "mention": "Vendor orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Buying products in a different purchase UoM",
+          "type": "Feature",
+          "mention": "<inventory/product_replenishment/buy-in-uom>",
+          "confidence": "medium"
+        },
+        {
+          "name": "Internal warehouse document",
+          "type": "DataObject",
+          "mention": "internal warehouse documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "Automatic replenishment",
+          "type": "Feature",
+          "mention": "Automatic replenishment",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock level",
+          "type": "Concept",
+          "mention": "stock levels",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase request",
+          "type": "DataObject",
+          "mention": "generates purchase requests",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order (SO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Selling products in a different UoM",
+          "type": "Feature",
+          "mention": "<inventory/product_replenishment/sell-in-uom>",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Unit conversion",
+          "evidence": "Odoo automatically converts unit measurements"
+        },
+        {
+          "source": "Unit conversion",
+          "relation": "APPLIES_TO",
+          "target": "Product",
+          "evidence": "when products have different UoMs"
+        },
+        {
+          "source": "Buying products in a different purchase UoM",
+          "relation": "BELONGS_TO",
+          "target": "Unit conversion",
+          "evidence": "This occurs in various scenarios, including: #. Vendor orders <inventory/product_replenishment/buy-in-uom>"
+        },
+        {
+          "source": "Buying products in a different purchase UoM",
+          "relation": "PRODUCES",
+          "target": "Internal warehouse document",
+          "evidence": "purchase on purchase orders (POs) converts to on internal warehouse documents"
+        },
+        {
+          "source": "Automatic replenishment",
+          "relation": "BELONGS_TO",
+          "target": "Unit conversion",
+          "evidence": "This occurs in various scenarios, including: #. Automatic replenishment"
+        },
+        {
+          "source": "Automatic replenishment",
+          "relation": "PRODUCES",
+          "target": "Purchase request",
+          "evidence": "generates purchase requests when the stock levels of a product dips below a certain level"
+        },
+        {
+          "source": "Automatic replenishment",
+          "relation": "APPLIES_TO",
+          "target": "Product",
+          "evidence": "when the stock levels of a product dips below a certain level"
+        },
+        {
+          "source": "Automatic replenishment",
+          "relation": "USES_METHOD",
+          "target": "Purchase UoM",
+          "evidence": "But, the purchase requests are created using the purchase UoM"
+        },
+        {
+          "source": "Selling products in a different UoM",
+          "relation": "BELONGS_TO",
+          "target": "Unit conversion",
+          "evidence": "This occurs in various scenarios, including: #. Sell products <inventory/product_replenishment/sell-in-uom>"
+        },
+        {
+          "source": "Selling products in a different UoM",
+          "relation": "PRODUCES",
+          "target": "Delivery order",
+          "evidence": "the quantity is converted to the warehouse's preferred UoM on the delivery order"
+        },
+        {
+          "source": "Selling products in a different UoM",
+          "relation": "APPLIES_TO",
+          "target": "Sales order",
+          "evidence": "if a different UoM is used on the sales order (SO)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "buy-products-in-the-purchase-uom",
+    "heading": "Buy products in the purchase UoM",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "RFQ",
+          "type": "DataObject",
+          "mention": "request for quotation (RFQ)",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit",
+          "type": "Field",
+          "mention": "Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Feature",
+          "mention": "Purchase tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipt smart button",
+          "type": "Feature",
+          "mention": "Receipt smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipt",
+          "type": "DataObject",
+          "mention": "receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand column",
+          "type": "Field",
+          "mention": "Demand column",
+          "confidence": "high"
+        },
+        {
+          "name": "sales/inventory unit of measure",
+          "type": "Concept",
+          "mention": "sales/inventory unit of measure",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase Unit",
+          "type": "Field",
+          "mention": "purchase Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory unit of measure",
+          "type": "Concept",
+          "mention": "inventory unit of measure",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "in the *Purchase* app"
+        },
+        {
+          "source": "Purchase",
+          "relation": "HAS_REPORT",
+          "target": "RFQ",
+          "evidence": "When creating a new request for quotation (RFQ) in the *Purchase* app"
+        },
+        {
+          "source": "RFQ",
+          "relation": "PRODUCED_BY",
+          "target": "Purchase",
+          "evidence": "When creating a new request for quotation (RFQ) in the *Purchase* app"
+        },
+        {
+          "source": "RFQ",
+          "relation": "CONTAINS",
+          "target": "Unit",
+          "evidence": "defined in the Unit field"
+        },
+        {
+          "source": "Product",
+          "relation": "CONTAINS",
+          "target": "Purchase tab",
+          "evidence": "Purchase tab of the product"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "CONTAINS",
+          "target": "Unit",
+          "evidence": "Unit field of the vendor line in the Purchase tab"
+        },
+        {
+          "source": "Receipt smart button",
+          "relation": "BELONGS_TO",
+          "target": "Purchase Order",
+          "evidence": "click the Receipt smart button at the top of the purchase order"
+        },
+        {
+          "source": "Receipt smart button",
+          "relation": "ENABLES",
+          "target": "Receipt",
+          "evidence": "After the purchase order is confirmed into a receipt"
+        },
+        {
+          "source": "Receipt",
+          "relation": "CONTAINS",
+          "target": "Demand column",
+          "evidence": "the Demand column of the delivery receipt"
+        },
+        {
+          "source": "purchase Unit",
+          "relation": "RELATED_TO",
+          "target": "sales/inventory unit of measure",
+          "evidence": "Odoo automatically converts the purchase unit of measure into the product's sales/inventory unit of measure"
+        },
+        {
+          "source": "inventory unit of measure",
+          "type": "Concept",
+          "mention": "inventory unit of measure",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "replenishment",
+    "heading": "Replenishment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Forecasted Report",
+          "type": "Report",
+          "mention": "Forecasted Report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish",
+          "type": "Action",
+          "mention": "Replenish",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Replenish box",
+          "type": "Module",
+          "mention": "Product Replenish box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "click Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase",
+          "type": "Field",
+          "mention": "Purchase tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Forecasted Inventory",
+          "type": "Module",
+          "mention": "Forecasted Inventory section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Requests for quotation",
+          "type": "Workflow",
+          "mention": "Requests for quotation line",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase ",
+          "type": "DataObject",
+          "mention": "purchase ",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Forecasted Report",
+          "relation": "HAS_REPORT",
+          "target": "Odoo",
+          "evidence": "To open the Forecasted Report, click the Forecasted smart button on the product form."
+        },
+        {
+          "source": "Replenish",
+          "relation": "TRIGGERED_BY",
+          "target": "Forecasted Report",
+          "evidence": "A request for quotation for a product can also be generated directly from the product's Forecasted Report using the Replenish button."
+        },
+        {
+          "source": "Replenish",
+          "relation": "PRODUCES",
+          "target": "Product Replenish box",
+          "evidence": "After clicking Replenish, a Product Replenish box pops up."
+        },
+        {
+          "source": "Product Replenish box",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "The purchase unit of measure can be manually edited in the Quantity field."
+        },
+        {
+          "source": "Confirm",
+          "relation": "PRODUCES",
+          "target": "purchase ",
+          "evidence": "Then, click Confirm to create the ."
+        },
+        {
+          "source": "purchase ",
+          "relation": "REQUIRES",
+          "target": "vendor",
+          "evidence": "A can only be automatically generated if at least one vendor is listed in the product form's Purchase tab."
+        },
+        {
+          "source": "product form",
+          "relation": "CONTAINS",
+          "target": "Purchase",
+          "evidence": "vendor is listed in the product form's Purchase tab"
+        },
+        {
+          "source": "Forecasted Inventory",
+          "relation": "CONTAINS",
+          "target": "Requests for quotation",
+          "evidence": "Navigate to the created by scrolling down to the Forecasted Inventory section, and in the Requests for quotation line"
+        },
+        {
+          "source": "Requests for quotation",
+          "relation": "PRODUCES",
+          "target": "purchase ",
+          "evidence": "click the reference number to open the draft ."
+        },
+        {
+          "source": "purchase ",
+          "relation": "RELATED_TO",
+          "target": "Odoo",
+          "evidence": "the purchase can be edited directly on the ."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sell-in-a-different-uom",
+    "heading": "Sell in a different UoM",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation",
+          "type": "DataObject",
+          "mention": "quotation",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Feature",
+          "mention": "Delivery smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "unit of measure",
+          "type": "Concept",
+          "mention": "Unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit",
+          "type": "Field",
+          "mention": "Unit",
+          "confidence": "medium"
+        },
+        {
+          "name": "Demand",
+          "type": "Field",
+          "mention": "Demand column",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "sales Unit",
+          "type": "Field",
+          "mention": "sales \"Unit\"",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory unit of measure",
+          "type": "Concept",
+          "mention": "inventory unit of measure",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery",
+          "type": "DataObject",
+          "mention": "delivery",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse",
+          "type": "Module",
+          "mention": "warehouse documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "m",
+          "type": "Standard",
+          "mention": "m (meters)",
+          "confidence": "medium"
+        },
+        {
+          "name": "yard",
+          "type": "Standard",
+          "mention": "yard",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "quotation",
+          "evidence": "When creating a new quotation in the *Sales* app"
+        },
+        {
+          "source": "sales order",
+          "relation": "TRIGGERED_BY",
+          "target": "quotation",
+          "evidence": "confirmed into a sales order"
+        },
+        {
+          "source": "sales order",
+          "relation": "CONTAINS",
+          "target": "Delivery smart button",
+          "evidence": "click the Delivery smart button at the top"
+        },
+        {
+          "source": "Delivery smart button",
+          "relation": "HAS_FEATURE",
+          "target": "unit of measure conversion",
+          "evidence": "Odoo automatically converts the unit of measure"
+        },
+        {
+          "source": "unit of measure",
+          "relation": "APPLIES_TO",
+          "target": "product",
+          "evidence": "the product's specified unit of measure"
+        },
+        {
+          "source": "sales Unit",
+          "relation": "IS_PART_OF",
+          "target": "product",
+          "evidence": "product's sales Unit"
+        },
+        {
+          "source": "inventory unit of measure",
+          "relation": "IS_PART_OF",
+          "target": "product",
+          "evidence": "its inventory unit of measure"
+        },
+        {
+          "source": "sales Unit",
+          "relation": "USES_METHOD",
+          "target": "m",
+          "evidence": "sales Unit is `m` (meters)"
+        },
+        {
+          "source": "inventory unit of measure",
+          "relation": "USES_METHOD",
+          "target": "yard",
+          "evidence": "inventory unit of measure is `yard`"
+        },
+        {
+          "source": "sales order",
+          "relation": "GENERATES",
+          "target": "delivery",
+          "evidence": "the delivery shows the converted quantity"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Sales",
+          "evidence": "in the *Sales* app"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "unit of measure conversion",
+          "evidence": "Odoo automatically converts the unit of measure"
+        },
+        {
+          "source": "quotation",
+          "relation": "CONFIGURED_BY",
+          "target": "Unit",
+          "evidence": "the Unit can be manually edited on the quotation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-custom-units-of-measure",
+    "heading": "Create custom units of measure",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ':' delimiter: line 1 column 1997 (char 1996)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"Inventory app\",\"type\":\"Module\",\"mention\":\"Inventory app\",\"confidence\":\"high\"},{\"name\":\"Configuration\",\"type\":\"Sub-module\",\"mention\":\"Configuration\",\"confidence\":\"high\"},{\"name\":\"Units & Packagings\",\"type\":\"Module\",\"mention\":\"Units & Packagings\",\"confidence\":\"medium\"},{\"name\":\"New button\",\"type\":\"Action\",\"mention\":\"click the New button\",\"confidence\":\"medium\"},{\"name\":\"unit name\",\"type\":\"Field\",\"mention\":\"Specify a unit name\",\"confidence\":\"high\"},{\"name\":\"quantity\",\"type\":\"Field\",\"mention\":\"Quantity field\",\"confidence\":\"high\"},{\"name\":\"reference unit of measure\",\"type\":\"Concept\",\"mention\":\"reference unit of measure\",\"confidence\":\"medium\"},{\"name\":\"UNSPSC Category\",\"type\":\"Field\",\"mention\":\"UNSPSC Category\",\"confidence\":\"high\"},{\"name\":\"GS1\",\"type\":\"Actor\",\"mention\":\"GS1\",\"confidence\":\"medium\"},{\"name\":\"yard\",\"type\":\"Concept\",\"mention\":\"yard\",\"confidence\":\"medium\"},{\"name\":\"meter\",\"type\":\"Concept\",\"mention\":\"m\",\"confidence\":\"medium\"},{\"name\":\"fabric\",\"type\":\"Concept\",\"mention\":\"fabric\",\"confidence\":\"low\"}],\"relations\":[{\"source\":\"Units & Packagings\",\"relation\":\"IS_PART_OF\",\"target\":\"Inventory app\",\"evidence\":\"Inventory app --> Configuration --> Units & Packagings\"},{\"source\":\"Configuration\",\"relation\":\"IS_PART_OF\",\"target\":\"Inventory app\",\"evidence\":\"Inventory app --> Configuration\"},{\"source\":\"New button\",\"relation\":\"ENABLES\",\"target\":\"create a new unit\",\"evidence\":\"To create a new unit, click the New button\"},{\"source\":\"UNSPSC Category\",\"relation\":\"RELATED_TO\",\"target\":\"GS1\",\"evidence\":\"UNSPSC Category, which is a globally recognized code managed by GS1\"},{\"source\":\"yard\",\"relation\":\"RELATED_TO\",\"target\":\"meter\",\"evidence\":\"Specify that one yard is equal to `0.9144` of its reference unit, `m`\"},{\"source\":\"unit name\",\"relation\":\"IS_PART_OF\",\"target\":\"Create custom units of measure\",\"evidence\":\"Specify a unit name\"},{\"source\":\"quantity\",\"relation\":\"IS_PART_OF\",\"978\",\"target\":\"Create custom units of measure\",\"evidence\":\"If you want to convert between units, specify a quantity\"},{\"source\":\"UNSPSC Category\",\"relation\":\"IS_PART_OF\",\"target\":\"Create custom units of measure\",\"evidence\":\"If applicable, enter a UNSPSC Category\"},{\"source\":\"yard\",\"relation\":\"USES_METHOD\",\"target\":\"meter\",\"evidence\":\"Specify that one yard is equal to `0.9144` of its reference unit, `m`\"},{\"source\":\"meter\",\"relation\":\"RELATED_TO\",\"target\":\"reference unit of measure\",\"evidence\":\"Specify that one yard is equal to `0.9144` of its reference unit, `m`\"},{\"source\":\"yard\",\"relation\":\"RELATED_TO\",\"target\":\"reference unit of measure\",\"evidence\":\"Specify that one yard is equal to `0.9144` of its reference unit, `m`\"}]}"
+    }
+  }
+]

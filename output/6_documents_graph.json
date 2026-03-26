@@ -1,0 +1,2178 @@
+[
+  {
+    "section_id": "documents",
+    "heading": "Documents",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo Documents",
+          "type": "Product",
+          "mention": "Odoo Documents",
+          "confidence": "high"
+        },
+        {
+          "name": "All",
+          "type": "Module",
+          "mention": "All",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Module",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "My Drive",
+          "type": "Module",
+          "mention": "My Drive",
+          "confidence": "high"
+        },
+        {
+          "name": "Shared with me",
+          "type": "Module",
+          "mention": "Shared with me",
+          "confidence": "high"
+        },
+        {
+          "name": "Recent",
+          "type": "Module",
+          "mention": "Recent",
+          "confidence": "high"
+        },
+        {
+          "name": "Trash",
+          "type": "Module",
+          "mention": "Trash",
+          "confidence": "high"
+        },
+        {
+          "name": "folder",
+          "type": "DataObject",
+          "mention": "folder",
+          "confidence": "high"
+        },
+        {
+          "name": "file",
+          "type": "DataObject",
+          "mention": "file",
+          "confidence": "high"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "chatter",
+          "type": "Feature",
+          "mention": "chatter",
+          "confidence": "medium"
+        },
+        {
+          "name": "Details panel",
+          "type": "Feature",
+          "mention": "Details panel",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "All",
+          "relation": "IS_PART_OF",
+          "target": "Odoo Documents",
+          "evidence": "All: displays all folders and files the user has access to."
+        },
+        {
+          "source": "Company",
+          "relation": "IS_PART_OF",
+          "target": "Odoo Documents",
+          "evidence": "fa-building Company: contains folders and files shared across the company."
+        },
+        {
+          "source": "My Drive",
+          "relation": "IS_PART_OF",
+          "target": "Odoo Documents",
+          "evidence": "fa-hdd-o My Drive: the user's personal workspace for organizing and accessing files and folders they own or have uploaded."
+        },
+        {
+          "source": "Shared with me",
+          "relation": "IS_PART_OF",
+          "target": "Odoo Documents",
+          "evidence": "fa-users Shared with me: includes files that have been shared with the user but are not part of any parent folder they have access to."
+        },
+        {
+          "source": "Recent",
+          "relation": "IS_PART_OF",
+          "target": "Odoo Documents",
+          "evidence": "fa-clock-o Recent: shows recently modified files the user has permission to view or edit."
+        },
+        {
+          "source": "Trash",
+          "relation": "IS_PART_OF",
+          "target": "Odoo Documents",
+          "evidence": "fa-trash Trash: stores deleted files and folders <documents/deletion-delay>."
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "folder",
+          "evidence": "fa-building Company: contains folders and files shared across the company."
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "file",
+          "evidence": "fa-building Company: contains folders and files shared across the company."
+        },
+        {
+          "source": "Odoo Documents",
+          "relation": "HAS_FEATURE",
+          "target": "search bar",
+          "evidence": "Use the search bar <search/values> to quickly find specific items."
+        },
+        {
+          "source": "Odoo Documents",
+          "relation": "HAS_FEATURE",
+          "target": "chatter",
+          "evidence": "The chatter <discuss/chatter> tracks changes to folders and files and allows communication with internal users and external contacts."
+        },
+        {
+          "source": "chatter",
+          "relation": "IS_PART_OF",
+          "target": "Details panel",
+          "evidence": "Open the Details panel <documents/details-panel> to access it."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "deletion-delay",
+    "heading": "Deletion delay",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Deletion delay (days)",
+          "type": "Field",
+          "mention": "Deletion delay (days)",
+          "confidence": "high"
+        },
+        {
+          "name": "Deletion delay",
+          "type": "Feature",
+          "mention": "Deletion delay",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Documents",
+          "evidence": "Product: Odoo ... go to Documents"
+        },
+        {
+          "source": "Documents",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "go to Documents --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Deletion delay (days)",
+          "evidence": "Settings ... edit the Deletion delay (days) field"
+        },
+        {
+          "source": "Deletion delay",
+          "relation": "CONFIGURED_BY",
+          "target": "Deletion delay (days)",
+          "evidence": "To adjust this delay ... edit the Deletion delay (days) field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "file-centralization",
+    "heading": "File centralization",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents",
+          "confidence": "high"
+        },
+        {
+          "name": "File Centralization",
+          "type": "Feature",
+          "mention": "File centralization",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Human Resources",
+          "type": "Module",
+          "mention": "Human Resources",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales journal",
+          "type": "DataObject",
+          "mention": "Sales",
+          "confidence": "low"
+        },
+        {
+          "name": "Purchase journal",
+          "type": "DataObject",
+          "mention": "Purchase",
+          "confidence": "low"
+        },
+        {
+          "name": "Bank journal",
+          "type": "DataObject",
+          "mention": "Bank",
+          "confidence": "low"
+        },
+        {
+          "name": "Employee",
+          "type": "DataObject",
+          "mention": "employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contracts",
+          "type": "DataObject",
+          "mention": "Contracts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payslips",
+          "type": "DataObject",
+          "mention": "Payslips",
+          "confidence": "medium"
+        },
+        {
+          "name": "Default folder",
+          "type": "Setting",
+          "mention": "default folder",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tags",
+          "type": "Setting",
+          "mention": "tags",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Documents",
+          "evidence": "go to Documents --> Configuration --> Settings"
+        },
+        {
+          "source": "Documents",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "go to Documents --> Configuration --> Settings"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "File Centralization",
+          "evidence": "File centralization allows for automatically organizing all files"
+        },
+        {
+          "source": "File Centralization",
+          "relation": "APPLIES_TO",
+          "target": "Accounting",
+          "evidence": "File centralization cannot be disabled for Accounting documents."
+        },
+        {
+          "source": "File Centralization",
+          "relation": "APPLIES_TO",
+          "target": "Human Resources",
+          "evidence": "For Human Resources files, a sub-folder is automatically created"
+        },
+        {
+          "source": "File Centralization",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "go to Documents --> Configuration --> Settings, and edit the relevant setting under the File Centralization section."
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "go to Documents --> Configuration --> Settings"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "folders",
+    "heading": "Folders",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Folders",
+          "type": "Feature",
+          "mention": "Folders",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Concept",
+          "mention": "fa-building Company",
+          "confidence": "medium"
+        },
+        {
+          "name": "My Drive",
+          "type": "Concept",
+          "mention": "fa-hdd-o My Drive",
+          "confidence": "medium"
+        },
+        {
+          "name": "Download",
+          "type": "Action",
+          "mention": "Download",
+          "confidence": "high"
+        },
+        {
+          "name": "Rename",
+          "type": "Action",
+          "mention": "Rename",
+          "confidence": "high"
+        },
+        {
+          "name": "Share",
+          "type": "Action",
+          "mention": "Share",
+          "confidence": "high"
+        },
+        {
+          "name": "Add star",
+          "type": "Action",
+          "mention": "Add star",
+          "confidence": "high"
+        },
+        {
+          "name": "Starred filter",
+          "type": "Feature",
+          "mention": "Starred filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Info & Tags",
+          "type": "Feature",
+          "mention": "Info & Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Move to trash",
+          "type": "Action",
+          "mention": "Move to trash",
+          "confidence": "high"
+        },
+        {
+          "name": "Actions on Select",
+          "type": "Feature",
+          "mention": "Actions on Select",
+          "confidence": "high"
+        },
+        {
+          "name": "Automations",
+          "type": "Feature",
+          "mention": "Automations",
+          "confidence": "high"
+        },
+        {
+          "name": "studio",
+          "type": "Module",
+          "mention": "studio",
+          "confidence": "medium"
+        },
+        {
+          "name": "AI Auto-sort",
+          "type": "Feature",
+          "mention": "AI Auto-sort",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo AI",
+          "type": "Module",
+          "mention": "Odoo AI",
+          "confidence": "medium"
+        },
+        {
+          "name": "Export",
+          "type": "Action",
+          "mention": "Export",
+          "confidence": "high"
+        },
+        {
+          "name": "Insert in spreadsheet",
+          "type": "Action",
+          "mention": "Insert in spreadsheet",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Folders",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Folders"
+        },
+        {
+          "source": "Download",
+          "relation": "IS_PART_OF",
+          "target": "Folders",
+          "evidence": "The following options are available in the menu: - fa-download Download:"
+        },
+        {
+          "source": "Rename",
+          "relation": "IS_PART_OF",
+          "target": "Folders",
+          "evidence": "The following options are available in the menu: ... - fa-pencil-square-o Rename:"
+        },
+        {
+          "source": "Share",
+          "relation": "IS_PART_OF",
+          "target": "Folders",
+          "evidence": "The following options are available in the menu: ... - fa-share-alt Share:"
+        },
+        {
+          "source": "Add star",
+          "relation": "IS_PART_OF",
+          "target": "Folders",
+          "evidence": "The following options are available in the menu: ... - fa-star-o Add star:"
+        },
+        {
+          "source": "Move to trash",
+          "relation": "IS_PART_OF",
+          "target": "Folders",
+          "evidence": "The following options are available in the menu: ... - fa-trash Move to trash:"
+        },
+        {
+          "source": "Actions on Select",
+          "relation": "IS_PART_OF",
+          "target": "Folders",
+          "evidence": "The following options are available in the menu: ... - fa-cog Actions on Select:"
+        },
+        {
+          "source": "Automations",
+          "relation": "IS_PART_OF",
+          "target": "Folders",
+          "evidence": "The following options are available in the menu: ... - fa-cog Automations:"
+        },
+        {
+          "source": "AI Auto-sort",
+          "relation": "IS_PART_OF",
+          "target": "Folders",
+          "evidence": "The following options are available in the menu: ... - AI Auto-sort:"
+        },
+        {
+          "source": "AI Auto-sort",
+          "relation": "REQUIRES",
+          "target": "Odoo AI",
+          "evidence": "This option requires the **Odoo AI** app to be installed."
+        },
+        {
+          "source": "Export",
+          "relation": "ENABLES",
+          "target": "Folders",
+          "evidence": "Switch to the list view to: ... - fa-upload Export"
+        },
+        {
+          "source": "Insert in spreadsheet",
+          "relation": "ENABLES",
+          "target": "Folders",
+          "evidence": "Switch to the list view to: ... - oi-view-list Insert in spreadsheet"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "files",
+    "heading": "Files",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Upload",
+          "type": "Action",
+          "mention": "Upload",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Online",
+          "type": "Product",
+          "mention": "Odoo Online",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents app",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "medium"
+        },
+        {
+          "name": "drag and drop",
+          "type": "Action",
+          "mention": "drag and drop",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Upload",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "To upload a file... in the Documents app."
+        },
+        {
+          "source": "Odoo Online",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "On Odoo Online databases..."
+        },
+        {
+          "source": "Upload",
+          "relation": "REQUIRES",
+          "target": "Documents app",
+          "evidence": "To upload a file... in the Documents app."
+        },
+        {
+          "source": "drag and drop",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "You can also drag and drop a file... within the Documents app."
+        },
+        {
+          "source": "drag and drop",
+          "relation": "EQUIVALENT_TO",
+          "target": "Upload",
+          "evidence": "You can also drag and drop a file... To upload a file..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "url-links",
+    "heading": "URL links",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "URL",
+          "type": "Concept",
+          "mention": "URL",
+          "confidence": "medium"
+        },
+        {
+          "name": "Link",
+          "type": "Action",
+          "mention": "click New and select Link",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "medium"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "add a Name",
+          "confidence": "medium"
+        },
+        {
+          "name": "Folder",
+          "type": "DataObject",
+          "mention": "select the appropriate Folder",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Link",
+          "evidence": "To add a link to a URL... click New and select Link"
+        },
+        {
+          "source": "Link",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "click New and select Link"
+        },
+        {
+          "source": "Link",
+          "relation": "PRODUCES",
+          "target": "URL",
+          "evidence": "To add a link to a URL"
+        },
+        {
+          "source": "Link",
+          "relation": "HAS_FEATURE",
+          "target": "Name",
+          "evidence": "Enter the URL, add a Name"
+        },
+        {
+          "source": "Link",
+          "relation": "BELONGS_TO",
+          "target": "Folder",
+          "evidence": "select the appropriate Folder."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "spreadsheets",
+    "heading": "Spreadsheets",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Spreadsheets",
+          "type": "Module",
+          "mention": "Spreadsheets",
+          "confidence": "high"
+        },
+        {
+          "name": "Spreadsheet",
+          "type": "DataObject",
+          "mention": "spreadsheet",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Spreadsheets",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Spreadsheets"
+        },
+        {
+          "source": "Spreadsheet",
+          "relation": "SEE_ALSO",
+          "target": "spreadsheet",
+          "evidence": "Spreadsheet documentation <spreadsheet>"
+        },
+        {
+          "source": "New",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click New and select Spreadsheet",
+          "note": "Actor type assigned as 'Unknown' but relation implied by user action"
+        },
+        {
+          "source": "Spreadsheet",
+          "relation": "PRODUCED_BY",
+          "target": "New",
+          "evidence": "To create a spreadsheet, click New and select Spreadsheet",
+          "note": "PRODUCED_BY is not in given relation types, but implied; using GENERATES as closest match",
+          "relation_adjusted": "GENERATES"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "managing-files",
+    "heading": "Managing files",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Share",
+          "type": "Action",
+          "mention": "Share",
+          "confidence": "high"
+        },
+        {
+          "name": "Download",
+          "type": "Action",
+          "mention": "Download",
+          "confidence": "high"
+        },
+        {
+          "name": "Duplicate",
+          "type": "Action",
+          "mention": "Duplicate",
+          "confidence": "high"
+        },
+        {
+          "name": "Move to Trash",
+          "type": "Action",
+          "mention": "Move to Trash",
+          "confidence": "high"
+        },
+        {
+          "name": "Rename",
+          "type": "Action",
+          "mention": "Rename",
+          "confidence": "high"
+        },
+        {
+          "name": "Info & tags",
+          "type": "Action",
+          "mention": "Info & tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Move",
+          "type": "Action",
+          "mention": "Move",
+          "confidence": "high"
+        },
+        {
+          "name": "Create shortcut",
+          "type": "Action",
+          "mention": "Create shortcut",
+          "confidence": "high"
+        },
+        {
+          "name": "Manage versions",
+          "type": "Action",
+          "mention": "Manage versions",
+          "confidence": "high"
+        },
+        {
+          "name": "Lock",
+          "type": "Action",
+          "mention": "Lock",
+          "confidence": "high"
+        },
+        {
+          "name": "Copy Links",
+          "type": "Action",
+          "mention": "Copy Links",
+          "confidence": "high"
+        },
+        {
+          "name": "Split PDF",
+          "type": "Action",
+          "mention": "Split PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-cog Actions menu",
+          "type": "Menu",
+          "mention": "fa-cog Actions menu",
+          "confidence": "high"
+        },
+        {
+          "name": "file",
+          "type": "DataObject",
+          "mention": "file",
+          "confidence": "high"
+        },
+        {
+          "name": "folder",
+          "type": "DataObject",
+          "mention": "folder",
+          "confidence": "high"
+        },
+        {
+          "name": "shortcut",
+          "type": "DataObject",
+          "mention": "shortcut",
+          "confidence": "high"
+        },
+        {
+          "name": "trash",
+          "type": "DataObject",
+          "mention": "trash",
+          "confidence": "medium"
+        },
+        {
+          "name": "access rights",
+          "type": "Concept",
+          "mention": "access rights",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "CONTAINS",
+          "target": "Duplicate",
+          "evidence": "The following options are available in the fa-cog Actions menu"
+        },
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "CONTAINS",
+          "target": "Move to Trash",
+          "evidence": "The following options are available in the fa-cog Actions menu"
+        },
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "CONTAINS",
+          "target": "Rename",
+          "evidence": "The following options are available in the fa-cog Actions menu"
+        },
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "CONTAINS",
+          "target": "Info & tags",
+          "evidence": "The following options are available in the fa-cog Actions menu"
+        },
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "CONTAINS",
+          "target": "Move",
+          "evidence": "The following options are available in the fa-cog Actions menu"
+        },
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "CONTAINS",
+          "target": "Create shortcut",
+          "evidence": "The following options are available in the fa-cog Actions menu"
+        },
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "CONTAINS",
+          "target": "Manage versions",
+          "evidence": "The following options are available in the fa-cog Actions menu"
+        },
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "CONTAINS",
+          "target": "Lock",
+          "evidence": "The following options are available in the fa-cog Actions menu"
+        },
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "CONTAINS",
+          "target": "Copy Links",
+          "evidence": "The following options are available in the fa-cog Actions menu"
+        },
+        {
+          "source": "fa-cog Actions menu",
+          "relation": "CONTAINS",
+          "target": "Split PDF",
+          "evidence": "The following options are available in the fa-cog Actions menu"
+        },
+        {
+          "source": "Share",
+          "relation": "APPLIES_TO",
+          "target": "access rights",
+          "evidence": "Share: to share the file and manage its access rights"
+        },
+        {
+          "source": "Duplicate",
+          "relation": "PRODUCES",
+          "target": "file",
+          "evidence": "Duplicate: Create a copy of the file"
+        },
+        {
+          "source": "Move to Trash",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "Move the file to the trash"
+        },
+        {
+          "source": "Create shortcut",
+          "relation": "PRODUCES",
+          "target": "shortcut",
+          "evidence": "Create shortcut: A shortcut is a pointer to a file"
+        },
+        {
+          "source": "Copy Links",
+          "relation": "PRODUCES",
+          "target": "URL",
+          "evidence": "Copy Links: Copy the file's URL for sharing"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "splitting-and-merging-pdfs",
+    "heading": "Splitting and merging PDFs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Split PDF",
+          "type": "Action",
+          "mention": "select fa-scissors Split PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "Merge PDFs",
+          "type": "Action",
+          "mention": "select fa-scissors Merge PDFs",
+          "confidence": "high"
+        },
+        {
+          "name": "Split PDF",
+          "type": "Workflow",
+          "mention": "To divide a PDF... Split to confirm.",
+          "confidence": "medium"
+        },
+        {
+          "name": "Merge PDFs",
+          "type": "Workflow",
+          "mention": "To merge PDF files, follow these steps...",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delete",
+          "type": "Action",
+          "mention": "click Delete",
+          "confidence": "high"
+        },
+        {
+          "name": "PDF",
+          "type": "DataObject",
+          "mention": "open the PDF",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Split PDF",
+          "relation": "IS_PART_OF",
+          "target": "Split PDF",
+          "evidence": "click the fa-cog Actions button, and select fa-scissors Split PDF."
+        },
+        {
+          "source": "Merge PDFs",
+          "relation": "IS_PART_OF",
+          "target": "Merge PDFs",
+          "evidence": "click the fa-cog Actions button and select fa-scissors Merge PDFs."
+        },
+        {
+          "source": "Delete",
+          "relation": "IS_PART_OF",
+          "target": "Split PDF",
+          "evidence": "To delete a specific page, select the page, then click Delete."
+        },
+        {
+          "source": "Split PDF",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Splitting and merging PDFs"
+        },
+        {
+          "source": "Merge PDFs",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Splitting and merging PDFs"
+        },
+        {
+          "source": "PDF",
+          "relation": "RELATED_TO",
+          "target": "Split PDF",
+          "evidence": "open the PDF, click... and select fa-scissors Split PDF."
+        },
+        {
+          "source": "PDF",
+          "relation": "RELATED_TO",
+          "target": "Merge PDFs",
+          "evidence": "Navigate to the folder containing the files you want to merge."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "requesting-files",
+    "heading": "Requesting files",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Request",
+          "type": "Action",
+          "mention": "select Request",
+          "confidence": "high"
+        },
+        {
+          "name": "Document Name",
+          "type": "Field",
+          "mention": "Document Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Request To",
+          "type": "Field",
+          "mention": "Request To field",
+          "confidence": "high"
+        },
+        {
+          "name": "Due Date In",
+          "type": "Field",
+          "mention": "Due Date In",
+          "confidence": "high"
+        },
+        {
+          "name": "Folder",
+          "type": "Field",
+          "mention": "Folder",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags",
+          "type": "Field",
+          "mention": "Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Message",
+          "type": "Field",
+          "mention": "Message",
+          "confidence": "high"
+        },
+        {
+          "name": "placeholder",
+          "type": "DataObject",
+          "mention": "placeholder",
+          "confidence": "medium"
+        },
+        {
+          "name": "scheduled activities",
+          "type": "Concept",
+          "mention": "scheduled activities",
+          "confidence": "medium"
+        },
+        {
+          "name": "Documents app",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "high"
+        },
+        {
+          "name": "Activity view",
+          "type": "Feature",
+          "mention": "Activity view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Requested Document column",
+          "type": "Feature",
+          "mention": "Requested Document column",
+          "confidence": "medium"
+        },
+        {
+          "name": "requested file's date",
+          "type": "Field",
+          "mention": "requested file's date",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-upload (upload) button",
+          "type": "Action",
+          "mention": "fa-upload (upload) button",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-pencil (edit) button",
+          "type": "Action",
+          "mention": "fa-pencil (edit) button",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-remove (cancel) button",
+          "type": "Action",
+          "mention": "fa-remove (cancel) button",
+          "confidence": "high"
+        },
+        {
+          "name": "reminder email",
+          "type": "DataObject",
+          "mention": "reminder email",
+          "confidence": "medium"
+        },
+        {
+          "name": "Preview",
+          "type": "Action",
+          "mention": "Preview",
+          "confidence": "high"
+        },
+        {
+          "name": "Send Now",
+          "type": "Action",
+          "mention": "Send Now",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-ellipsis-v (ellipsis) icon",
+          "type": "Feature",
+          "mention": "fa-ellipsis-v (ellipsis) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Document Request: Reminder",
+          "type": "Action",
+          "mention": "Document Request: Reminder",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Documents app",
+          "evidence": "switch to the Activity view of the Documents app"
+        },
+        {
+          "source": "Documents app",
+          "relation": "HAS_FEATURE",
+          "target": "Activity view",
+          "evidence": "switch to the Activity view of the Documents app"
+        },
+        {
+          "source": "Activity view",
+          "relation": "CONTAINS",
+          "target": "Requested Document column",
+          "evidence": "switch to the Activity view...and go to the Requested Document column"
+        },
+        {
+          "source": "Request",
+          "relation": "GENERATES",
+          "target": "placeholder",
+          "evidence": "A placeholder for the missing file is created"
+        },
+        {
+          "source": "placeholder",
+          "relation": "RELATED_TO",
+          "target": "fa-upload (upload) button",
+          "evidence": "click the placeholder to upload it"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "details-panel",
+    "heading": "Details panel",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Details panel",
+          "type": "Module",
+          "mention": "The details panel",
+          "confidence": "high"
+        },
+        {
+          "name": "folder",
+          "type": "DataObject",
+          "mention": "folder",
+          "confidence": "medium"
+        },
+        {
+          "name": "file",
+          "type": "DataObject",
+          "mention": "file",
+          "confidence": "medium"
+        },
+        {
+          "name": "Info & Tags",
+          "type": "Action",
+          "mention": "select fa-info-circle Info & Tags",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-cog icon",
+          "type": "Action",
+          "mention": "click the fa-cog icon",
+          "confidence": "low"
+        },
+        {
+          "name": "fa-cog Actions button",
+          "type": "Action",
+          "mention": "click the fa-cog Actions button",
+          "confidence": "low"
+        },
+        {
+          "name": "fa-info-circle button",
+          "type": "Action",
+          "mention": "click the fa-info-circle (Info & Tags) button",
+          "confidence": "low"
+        },
+        {
+          "name": "owner",
+          "type": "Field",
+          "mention": "owner",
+          "confidence": "high"
+        },
+        {
+          "name": "contact",
+          "type": "Field",
+          "mention": "contact",
+          "confidence": "high"
+        },
+        {
+          "name": "Viewer access rights",
+          "type": "Permission",
+          "mention": "Viewer access rights",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-remove button",
+          "type": "Action",
+          "mention": "click the fa-remove (remove) button",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Details panel",
+          "evidence": "Product: Odoo Title: Details panel"
+        },
+        {
+          "source": "Details panel",
+          "relation": "ENABLES",
+          "target": "Info & Tags",
+          "evidence": "To view a folder's or file's information and tags, select...and select fa-info-circle Info & Tags."
+        },
+        {
+          "source": "Info & Tags",
+          "relation": "REQUIRES",
+          "target": "folder",
+          "evidence": "To view a folder's or file's information and tags, select the folder or file..."
+        },
+        {
+          "source": "Info & Tags",
+          "relation": "REQUIRES",
+          "target": "file",
+          "evidence": "To view a folder's or file's information and tags, select the folder or file..."
+        },
+        {
+          "source": "owner",
+          "relation": "IS_PART_OF",
+          "target": "file",
+          "evidence": "Change the file's or folder's owner and contact."
+        },
+        {
+          "source": "owner",
+          "relation": "IS_PART_OF",
+          "target": "folder",
+          "evidence": "Change the file's or folder's owner and contact."
+        },
+        {
+          "source": "contact",
+          "relation": "IS_PART_OF",
+          "target": "file",
+          "evidence": "Change the file's or folder's owner and contact."
+        },
+        {
+          "source": "contact",
+          "relation": "IS_PART_OF",
+          "target": "folder",
+          "evidence": "Change the file's or folder's owner and contact."
+        },
+        {
+          "source": "contact",
+          "relation": "CONFIGURED_BY",
+          "target": "Viewer access rights",
+          "evidence": "The contact is a person who only has Viewer access rights..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "email-aliases",
+    "heading": "Email aliases",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "General Settings",
+          "type": "Module",
+          "mention": "General Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "email-inbound-custom-domain",
+          "type": "Setting",
+          "mention": "a custom alias domain",
+          "confidence": "medium"
+        },
+        {
+          "name": "Info & Tags",
+          "type": "Feature",
+          "mention": "fa-info-circle (Info & Tags)",
+          "confidence": "high"
+        },
+        {
+          "name": "Activity",
+          "type": "Feature",
+          "mention": "Activity",
+          "confidence": "medium"
+        },
+        {
+          "name": "Activity type",
+          "type": "Setting",
+          "mention": "Activity type",
+          "confidence": "medium"
+        },
+        {
+          "name": "assignee",
+          "type": "Actor",
+          "mention": "assignee",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tags",
+          "type": "Feature",
+          "mention": "Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "email alias",
+          "type": "Feature",
+          "mention": "email alias",
+          "confidence": "high"
+        },
+        {
+          "name": "folder",
+          "type": "DataObject",
+          "mention": "folder",
+          "confidence": "medium"
+        },
+        {
+          "name": "Email aliases",
+          "type": "Feature",
+          "mention": "Email aliases",
+          "confidence": "high"
+        },
+        {
+          "name": "email subject",
+          "type": "Field",
+          "mention": "email subject",
+          "confidence": "medium"
+        },
+        {
+          "name": "files",
+          "type": "DataObject",
+          "mention": "files",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Email aliases",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Email aliases"
+        },
+        {
+          "source": "Email aliases",
+          "relation": "HAS_FEATURE",
+          "target": "email alias",
+          "evidence": "You can use an email alias"
+        },
+        {
+          "source": "email-inbound-custom-domain",
+          "relation": "IS_PART_OF",
+          "target": "General Settings",
+          "evidence": "configured in the General Settings"
+        },
+        {
+          "source": "email alias",
+          "relation": "REQUIRES",
+          "target": "email-inbound-custom-domain",
+          "evidence": "Make sure a custom alias domain <email-inbound-custom-domain> is configured"
+        },
+        {
+          "source": "email alias",
+          "relation": "IS_PART_OF",
+          "target": "Info & Tags",
+          "evidence": "Click the fa-info-circle (Info & Tags)... In the details panel, enter the desired email alias."
+        },
+        {
+          "source": "email alias",
+          "relation": "CONFIGURED_BY",
+          "target": "Activity type",
+          "evidence": "Optionally, specify an Activity type"
+        },
+        {
+          "source": "email alias",
+          "relation": "CONFIGURED_BY",
+          "target": "assignee",
+          "evidence": "Optionally, specify an Activity type and assignee"
+        },
+        {
+          "source": "email alias",
+          "relation": "CONFIGURED_BY",
+          "target": "Tags",
+          "evidence": "Optionally, select the Tags <documents/tags> to automatically apply"
+        },
+        {
+          "source": "Email aliases",
+          "relation": "SEE_ALSO",
+          "target": "/applications/general/email_communication/email_servers_inbound",
+          "evidence": ".. seealso:: /applications/general/email_communication/email_servers_inbound"
+        },
+        {
+          "source": "folder",
+          "relation": "CONTAINS",
+          "target": "files",
+          "evidence": "automatically save files sent to the email alias into a specific folder."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "tags",
+    "heading": "Tags",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tags",
+          "type": "Feature",
+          "mention": "Tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Alias tags",
+          "type": "Feature",
+          "mention": "Alias tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Tag Name",
+          "type": "Field",
+          "mention": "Tag Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Color",
+          "type": "Field",
+          "mention": "Color",
+          "confidence": "high"
+        },
+        {
+          "name": "Tooltip",
+          "type": "Field",
+          "mention": "Tooltip",
+          "confidence": "high"
+        },
+        {
+          "name": "Tags dropdown menu",
+          "type": "Feature",
+          "mention": "Tags dropdown menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Add tags",
+          "type": "Field",
+          "mention": "Add tags",
+          "confidence": "medium"
+        },
+        {
+          "name": "documents/email-aliases",
+          "type": "Unknown",
+          "mention": "documents/email-aliases",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Tags",
+          "relation": "IS_PART_OF",
+          "target": "Documents",
+          "evidence": "go to Documents --> Configuration --> Tags"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Tags",
+          "evidence": "go to Documents --> Configuration --> Tags"
+        },
+        {
+          "source": "Tags",
+          "relation": "HAS_FEATURE",
+          "target": "Alias tags",
+          "evidence": "Alias tags ... can also be used to automatically apply tags"
+        },
+        {
+          "source": "Alias tags",
+          "relation": "SEE_ALSO",
+          "target": "documents/email-aliases",
+          "evidence": "Alias tags <documents/email-aliases>"
+        },
+        {
+          "source": "Tags",
+          "relation": "CONTAINS",
+          "target": "Tag Name",
+          "evidence": "Enter the Tag Name"
+        },
+        {
+          "source": "Tags",
+          "relation": "CONTAINS",
+          "target": "Color",
+          "evidence": "select a Color"
+        },
+        {
+          "source": "Tags",
+          "relation": "CONTAINS",
+          "target": "Tooltip",
+          "evidence": "add a Tooltip"
+        },
+        {
+          "source": "Tags dropdown menu",
+          "relation": "BELONGS_TO",
+          "target": "Tags",
+          "evidence": "select a tag from the Tags dropdown menu"
+        },
+        {
+          "source": "Tags dropdown menu",
+          "relation": "CONTAINS",
+          "target": "Add tags",
+          "evidence": "identifiable by its placeholder Add tags"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "linked-records",
+    "heading": "Linked records",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Linked to field",
+          "type": "Field",
+          "mention": "Linked to field",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents app",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "medium"
+        },
+        {
+          "name": "file centralization",
+          "type": "Feature",
+          "mention": "file centralization",
+          "confidence": "low"
+        },
+        {
+          "name": "attachment",
+          "type": "DataObject",
+          "mention": "attachment",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Documents app",
+          "relation": "HAS_FEATURE",
+          "target": "file centralization",
+          "evidence": "If file centralization ... is enabled for a specific app"
+        },
+        {
+          "source": "attachment",
+          "relation": "PRODUCES",
+          "target": "file",
+          "evidence": "uploading an attachment automatically adds the corresponding record"
+        },
+        {
+          "source": "file",
+          "relation": "CONFIGURED_BY",
+          "target": "Linked to field",
+          "evidence": "the Linked to field of the file"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sharing-and-access-rights",
+    "heading": "Sharing and access rights",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sharing and access rights",
+          "type": "Feature",
+          "mention": "Sharing and access rights",
+          "confidence": "high"
+        },
+        {
+          "name": "folder",
+          "type": "DataObject",
+          "mention": "folders",
+          "confidence": "high"
+        },
+        {
+          "name": "file",
+          "type": "DataObject",
+          "mention": "files",
+          "confidence": "high"
+        },
+        {
+          "name": "Share",
+          "type": "Action",
+          "mention": "Share",
+          "confidence": "high"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invite people",
+          "type": "Action",
+          "mention": "fa-user-plus (Invite people)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Role",
+          "type": "Field",
+          "mention": "Role field",
+          "confidence": "high"
+        },
+        {
+          "name": "Viewer",
+          "type": "Permission",
+          "mention": "Viewer",
+          "confidence": "high"
+        },
+        {
+          "name": "Editor",
+          "type": "Permission",
+          "mention": "Editor",
+          "confidence": "high"
+        },
+        {
+          "name": "Notify",
+          "type": "Setting",
+          "mention": "Notify switch",
+          "confidence": "high"
+        },
+        {
+          "name": "Copy Links",
+          "type": "Action",
+          "mention": "Copy Links",
+          "confidence": "high"
+        },
+        {
+          "name": "remove permission",
+          "type": "Action",
+          "mention": "remove a permission",
+          "confidence": "medium"
+        },
+        {
+          "name": "expiration date",
+          "type": "Setting",
+          "mention": "expiration date",
+          "confidence": "medium"
+        },
+        {
+          "name": "General access",
+          "type": "Setting",
+          "mention": "General access",
+          "confidence": "medium"
+        },
+        {
+          "name": "Internal users",
+          "type": "Actor",
+          "mention": "Internal users",
+          "confidence": "high"
+        },
+        {
+          "name": "Access through link",
+          "type": "Feature",
+          "mention": "Access through link",
+          "confidence": "high"
+        },
+        {
+          "name": "None",
+          "type": "Permission",
+          "mention": "None",
+          "confidence": "high"
+        },
+        {
+          "name": "Discoverable",
+          "type": "Setting",
+          "mention": "Discoverable",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "URL",
+          "type": "DataObject",
+          "mention": "folder and file URL",
+          "confidence": "medium"
+        },
+        {
+          "name": "portal",
+          "type": "Feature",
+          "mention": "dedicated portal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Portal users",
+          "type": "Actor",
+          "mention": "Portal users",
+          "confidence": "high"
+        },
+        {
+          "name": "customer portal",
+          "type": "Feature",
+          "mention": "customer portal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Documents card",
+          "type": "Feature",
+          "mention": "Documents card",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Share",
+          "relation": "CONTAINS",
+          "target": "Role",
+          "evidence": "Set the Role field to Viewer or Editor."
+        },
+        {
+          "source": "Share",
+          "relation": "CONTAINS",
+          "target": "Notify",
+          "evidence": "toggle the Notify switch off"
+        },
+        {
+          "source": "Role",
+          "relation": "HAS_FEATURE",
+          "target": "Viewer",
+          "evidence": "Set the Role field to Viewer"
+        },
+        {
+          "source": "Role",
+          "relation": "HAS_FEATURE",
+          "target": "Editor",
+          "evidence": "Set the Role field to Editor"
+        },
+        {
+          "source": "General access",
+          "relation": "CONFIGURED_BY",
+          "target": "Viewer",
+          "evidence": "select Viewer"
+        },
+        {
+          "source": "General access",
+          "relation": "CONFIGURED_BY",
+          "target": "Editor",
+          "evidence": "select Editor"
+        },
+        {
+          "source": "General access",
+          "relation": "CONFIGURED_BY",
+          "target": "None",
+          "evidence": "select None (to completely restrict access)"
+        },
+        {
+          "source": "Access through link",
+          "relation": "CONFIGURED_BY",
+          "target": "Discoverable",
+          "evidence": "specify whether the folder or file should be Discoverable"
+        },
+        {
+          "source": "Portal users",
+          "relation": "PERFORMED_BY",
+          "target": "Documents card",
+          "evidence": "Portal users can access folders and files... by clicking the Documents card."
+        },
+        {
+          "source": "folder",
+          "relation": "HAS_REPORT",
+          "target": "URL",
+          "evidence": "Each folder and file URL includes the access rights assigned to it."
+        },
+        {
+          "source": "file",
+          "relation": "HAS_REPORT",
+          "target": "URL",
+          "evidence": "Each folder and file URL includes the access rights assigned to it."
+        },
+        {
+          "source": "folder",
+          "relation": "GENERATES",
+          "target": "portal",
+          "evidence": "When you share a link to a folder, recipients are directed to a dedicated portal"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "managing-files-across-apps",
+    "heading": "Managing files across apps",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents app",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "high"
+        },
+        {
+          "name": "record",
+          "type": "DataObject",
+          "mention": "record",
+          "confidence": "high"
+        },
+        {
+          "name": "record's chatter",
+          "type": "Feature",
+          "mention": "record's chatter",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-hdd-o icon",
+          "type": "Action",
+          "mention": "fa-hdd-o icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to Documents",
+          "type": "Action",
+          "mention": "Add to Documents",
+          "confidence": "high"
+        },
+        {
+          "name": "Add from Documents icon",
+          "type": "Action",
+          "mention": "Add from Documents icon",
+          "confidence": "high"
+        },
+        {
+          "name": "Paste Link(s)",
+          "type": "Action",
+          "mention": "Paste Link(s)",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo rich-text editor",
+          "type": "Module",
+          "mention": "Odoo rich-text editor",
+          "confidence": "high"
+        },
+        {
+          "name": "file",
+          "type": "DataObject",
+          "mention": "file",
+          "confidence": "high"
+        },
+        {
+          "name": "document's access rights",
+          "type": "Permission",
+          "mention": "access rights",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Documents app",
+          "relation": "CONTAINS",
+          "target": "file",
+          "evidence": "save files to ... Documents app"
+        },
+        {
+          "source": "fa-hdd-o icon",
+          "relation": "ENABLES",
+          "target": "Add to Documents",
+          "evidence": "click the fa-hdd-o (Add to Documents) icon."
+        },
+        {
+          "source": "Add from Documents icon",
+          "relation": "TRIGGERED_BY",
+          "target": "record's chatter",
+          "evidence": "attach a file to a record from the record's chatter, click the Add from Documents icon"
+        },
+        {
+          "source": "Paste Link(s)",
+          "relation": "ENABLES",
+          "target": "document's access rights",
+          "evidence": "Paste Link(s) to insert a link to the file (and preserve the document's access rights)"
+        },
+        {
+          "source": "Odoo rich-text editor",
+          "relation": "HAS_FEATURE",
+          "target": "/file command",
+          "evidence": "type `/file`, then select the desired file"
+        },
+        {
+          "source": "file",
+          "relation": "RELATED_TO",
+          "target": "document's access rights",
+          "evidence": "preserve the document's access rights"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "file-digitization-with-ai",
+    "heading": "File digitization with AI",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Finance folder",
+          "type": "DataObject",
+          "mention": "Files available in the Finance folder can be digitized.",
+          "confidence": "high"
+        },
+        {
+          "name": "File",
+          "type": "DataObject",
+          "mention": "Select the file",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Vendor Bill",
+          "type": "Action",
+          "mention": "Create Vendor Bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Customer Invoice",
+          "type": "Action",
+          "mention": "Create Customer Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Customer Credit Note",
+          "type": "Action",
+          "mention": "Create Customer Credit Note",
+          "confidence": "high"
+        },
+        {
+          "name": "Send for Digitization",
+          "type": "Action",
+          "mention": "click Send for Digitization",
+          "confidence": "high"
+        },
+        {
+          "name": "AI-powered document digitization",
+          "type": "Feature",
+          "mention": "AI-powered document digitization",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "File",
+          "relation": "CONTAINS",
+          "target": "Finance folder",
+          "evidence": "Files available in the Finance folder can be digitized."
+        },
+        {
+          "source": "File",
+          "relation": "ENABLES",
+          "target": "Create Vendor Bill",
+          "evidence": "Select the file, click Create Vendor Bill"
+        },
+        {
+          "source": "File",
+          "relation": "ENABLES",
+          "target": "Create Customer Invoice",
+          "evidence": "Select the file, click Create Customer Invoice"
+        },
+        {
+          "source": "File",
+          "relation": "ENABLES",
+          "target": "Create Customer Credit Note",
+          "evidence": "Select the file, click Create Customer Credit Note"
+        },
+        {
+          "source": "Create Vendor Bill",
+          "relation": "TRIGGERED_BY",
+          "target": "Send for Digitization",
+          "evidence": "Select the file, click Create Vendor Bill, or Create Customer Invoice, or Create Customer Credit Note, then click Send for Digitization."
+        },
+        {
+          "source": "Create Customer Invoice",
+          "relation": "TRIGGERED_BY",
+          "target": "Send for Digitization",
+          "evidence": "Select the file, click Create Vendor Bill, or Create Customer Invoice, or Create Customer Credit Note, then click Send for Digitization."
+        },
+        {
+          "source": "Create Customer Credit Note",
+          "relation": "TRIGGERED_BY",
+          "target": "Send for Digitization",
+          "evidence": "Select the file, click Create Vendor Bill, or Create Customer Invoice, or Create Customer Credit Note, then click Send for Digitization."
+        },
+        {
+          "source": "Send for Digitization",
+          "relation": "PRODUCES",
+          "target": "AI-powered document digitization",
+          "evidence": "Select the file... then click Send for Digitization."
+        }
+      ]
+    }
+  }
+]

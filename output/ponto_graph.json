@@ -1,0 +1,769 @@
+[
+  {
+    "section_id": "ponto",
+    "heading": "Ponto",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Ponto",
+          "type": "Integration",
+          "mention": "Ponto",
+          "confidence": "high"
+        },
+        {
+          "name": "companies",
+          "type": "Actor",
+          "mention": "companies",
+          "confidence": "medium"
+        },
+        {
+          "name": "professionals",
+          "type": "Actor",
+          "mention": "professionals",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank accounts",
+          "type": "DataObject",
+          "mention": "bank accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "unified view",
+          "type": "Feature",
+          "mention": "unified view",
+          "confidence": "low"
+        },
+        {
+          "name": "transactions",
+          "type": "DataObject",
+          "mention": "transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "synchronizes bank transactions",
+          "type": "Feature",
+          "mention": "automatically synchronizes bank transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank_synchronization",
+          "type": "Module",
+          "mention": "bank_synchronization",
+          "confidence": "medium"
+        },
+        {
+          "name": "Financial institutions connected to Ponto",
+          "type": "DataObject",
+          "mention": "Financial institutions connected to Ponto",
+          "confidence": "medium"
+        },
+        {
+          "name": "applicable fees",
+          "type": "Concept",
+          "mention": "applicable fees",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Ponto",
+          "relation": "ENABLES",
+          "target": "companies",
+          "evidence": "Ponto is a paid third-party service that enables companies"
+        },
+        {
+          "source": "Ponto",
+          "relation": "ENABLES",
+          "target": "professionals",
+          "evidence": "Ponto is a paid third-party service that enables companies and professionals"
+        },
+        {
+          "source": "Ponto",
+          "relation": "SUPPORTS",
+          "target": "bank accounts",
+          "evidence": "connect multiple bank accounts to a single platform"
+        },
+        {
+          "source": "Ponto",
+          "relation": "HAS_FEATURE",
+          "target": "unified view",
+          "evidence": "provides a unified view of all transactions within a single interface"
+        },
+        {
+          "source": "Ponto",
+          "relation": "HAS_FEATURE",
+          "target": "synchronizes bank transactions",
+          "evidence": "When integrated with Odoo, it automatically synchronizes bank transactions"
+        },
+        {
+          "source": "Ponto",
+          "relation": "GOVERNED_BY",
+          "target": "applicable fees",
+          "evidence": "Using Ponto is subject to applicable fees."
+        },
+        {
+          "source": "Ponto",
+          "relation": "SEE_ALSO",
+          "target": "bank_synchronization",
+          "evidence": "../bank_synchronization"
+        },
+        {
+          "source": "Ponto",
+          "relation": "SEE_ALSO",
+          "target": "Financial institutions connected to Ponto",
+          "evidence": "Financial institutions connected to Ponto"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Ponto",
+          "type": "Integration",
+          "mention": "Ponto",
+          "confidence": "high"
+        },
+        {
+          "name": "bank",
+          "type": "Actor",
+          "mention": "bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "email address",
+          "type": "Field",
+          "mention": "Email field",
+          "confidence": "medium"
+        },
+        {
+          "name": "profile icon",
+          "type": "Feature",
+          "mention": "profile icon",
+          "confidence": "low"
+        },
+        {
+          "name": "My profile",
+          "type": "Feature",
+          "mention": "My profile",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "ENABLES",
+          "target": "bank",
+          "evidence": "connect a bank with Odoo"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Ponto",
+          "evidence": "using Ponto as the third-party provider"
+        },
+        {
+          "source": "Ponto",
+          "relation": "IS_PART_OF",
+          "target": "accounting/bank-synchronization/ponto",
+          "evidence": "<accounting/bank-synchronization/ponto/ponto-account-creation>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "ponto-account-creation",
+    "heading": "Ponto account creation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Ponto",
+          "type": "Product",
+          "mention": "Ponto",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "myponto.com",
+          "type": "Integration",
+          "mention": "Ponto website",
+          "confidence": "high"
+        },
+        {
+          "name": "Login",
+          "type": "Action",
+          "mention": "Click Login",
+          "confidence": "high"
+        },
+        {
+          "name": "Not a user yet?",
+          "type": "Action",
+          "mention": "Not a user yet?",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a new account",
+          "type": "Action",
+          "mention": "create a new account",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo profile",
+          "type": "DataObject",
+          "mention": "Odoo profile",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create an Organization",
+          "type": "Action",
+          "mention": "create an Organization",
+          "confidence": "high"
+        },
+        {
+          "name": "Give consent",
+          "type": "Action",
+          "mention": "Give consent",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounts",
+          "type": "Module",
+          "mention": "Accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Add account",
+          "type": "Action",
+          "mention": "Add account",
+          "confidence": "high"
+        },
+        {
+          "name": "Choose your bank",
+          "type": "Action",
+          "mention": "Choose your bank",
+          "confidence": "high"
+        },
+        {
+          "name": "Enter the bank account reference",
+          "type": "Action",
+          "mention": "enter the bank account reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank accounts",
+          "type": "DataObject",
+          "mention": "bank accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Synchronized with Odoo",
+          "type": "Feature",
+          "mention": "synchronized with Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Ponto",
+          "relation": "CONTAINS",
+          "target": "myponto.com",
+          "evidence": "Access the Ponto website"
+        },
+        {
+          "source": "Ponto",
+          "relation": "HAS_FEATURE",
+          "target": "Synchronized with Odoo",
+          "evidence": "bank accounts that need to be synchronized with Odoo"
+        },
+        {
+          "source": "Create a new account",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "follow the instructions"
+        },
+        {
+          "source": "Create an Organization",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "create an Organization"
+        },
+        {
+          "source": "Give consent",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Give consent to Ponto"
+        },
+        {
+          "source": "Accounts",
+          "relation": "IS_PART_OF",
+          "target": "Ponto",
+          "evidence": "Click Accounts"
+        },
+        {
+          "source": "Add account",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Add account"
+        },
+        {
+          "source": "Choose your bank",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Choose your bank"
+        },
+        {
+          "source": "Enter the bank account reference",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "enter the bank account reference"
+        },
+        {
+          "source": "Bank accounts",
+          "relation": "BELONGS_TO",
+          "target": "Accounts",
+          "evidence": "Add all relevant bank accounts"
+        },
+        {
+          "source": "Synchronized with Odoo",
+          "relation": "ENABLES",
+          "target": "Bank accounts",
+          "evidence": "bank accounts that need to be synchronized with Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "connection-with-odoo",
+    "heading": "Connection with Odoo",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Ponto",
+          "type": "Integration",
+          "mention": "Ponto",
+          "confidence": "high"
+        },
+        {
+          "name": "bank",
+          "type": "Actor",
+          "mention": "bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "account",
+          "type": "DataObject",
+          "mention": "account",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting/bank-synchronization/first-synchronization",
+          "type": "Workflow",
+          "mention": "accounting/bank-synchronization/first-synchronization",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/bank-synchronization/update-credentials",
+          "type": "Workflow",
+          "mention": "accounting/bank-synchronization/update-credentials",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting/bank-synchronization/ponto/payments",
+          "type": "Unknown",
+          "mention": "accounting/bank-synchronization/ponto/payments",
+          "confidence": "low"
+        },
+        {
+          "name": "third-party Provider",
+          "type": "Concept",
+          "mention": "third-party Provider",
+          "confidence": "medium"
+        },
+        {
+          "name": "consent checkbox",
+          "type": "Setting",
+          "mention": "consent checkbox",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Ponto",
+          "relation": "PERFORMED_BY",
+          "target": "bank",
+          "evidence": "When connecting a bank to Odoo using Ponto as the third-party provider"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "accounting/bank-synchronization/first-synchronization",
+          "evidence": "When connecting a bank to Odoo using accounting/bank-synchronization/first-synchronization"
+        },
+        {
+          "source": "accounting/bank-synchronization/first-synchronization",
+          "relation": "USES_METHOD",
+          "target": "third-party Provider",
+          "evidence": "Make sure Ponto is selected as the third-party Provider"
+        },
+        {
+          "source": "accounting/bank-synchronization/first-synchronization",
+          "relation": "CONFIGURED_BY",
+          "target": "consent checkbox",
+          "evidence": "Make sure to check the consent checkbox"
+        },
+        {
+          "source": "accounting/bank-synchronization/first-synchronization",
+          "relation": "SEE_ALSO",
+          "target": "accounting/bank-synchronization/update-credentials",
+          "evidence": "seealso: Update synchronization credentials accounting/bank-synchronization/update-credentials"
+        },
+        {
+          "source": "accounting/bank-synchronization/first-synchronization",
+          "relation": "RELATED_TO",
+          "target": "accounting/bank-synchronization/ponto/payments",
+          "evidence": "_accounting/bank-synchronization/ponto/payments"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "vendor-payments-with-ponto",
+    "heading": "Vendor payments with Ponto",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Account Online Payment",
+          "type": "Module",
+          "mention": "Account Online Payment (`account_online_payment`) module",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA Credit Transfer",
+          "type": "Feature",
+          "mention": "SEPA Credit Transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor payment",
+          "type": "Workflow",
+          "mention": "register a vendor payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Ponto",
+          "type": "Integration",
+          "mention": "Ponto",
+          "confidence": "high"
+        },
+        {
+          "name": "bank journal",
+          "type": "DataObject",
+          "mention": "bank journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Method",
+          "type": "DataObject",
+          "mention": "Payment Method",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor Bank Account",
+          "type": "DataObject",
+          "mention": "Vendor Bank Account",
+          "confidence": "medium"
+        },
+        {
+          "name": "trusted",
+          "type": "Field",
+          "mention": "vendor's bank account has been marked as trusted",
+          "confidence": "low"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "click Confirm",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batch Payments",
+          "type": "DataObject",
+          "mention": "Batch Payments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Initiate Payment",
+          "type": "Action",
+          "mention": "Initiate Payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "sign the payment",
+          "type": "Action",
+          "mention": "sign the payment",
+          "confidence": "low"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "SEPA Credit Transfer",
+          "relation": "BELONGS_TO",
+          "target": "Payment Method",
+          "evidence": "select SEPA Credit Transfer ... as the Payment Method"
+        },
+        {
+          "source": "vendor payment",
+          "relation": "PERFORMED_BY",
+          "target": "vendor",
+          "evidence": "register a vendor payment"
+        },
+        {
+          "source": "vendor payment",
+          "relation": "USES_METHOD",
+          "target": "SEPA Credit Transfer",
+          "evidence": "register a vendor payment using Ponto ... select SEPA Credit Transfer"
+        },
+        {
+          "source": "vendor payment",
+          "relation": "SUPPORTS",
+          "target": "Ponto",
+          "evidence": "register a vendor payment using Ponto"
+        },
+        {
+          "source": "Account Online Payment",
+          "relation": "REQUIRES",
+          "target": "SEPA Credit Transfer",
+          "evidence": "Before managing vendor payments with Ponto, make sure ... SEPA Credit Transfer is activated"
+        },
+        {
+          "source": "vendor payment",
+          "relation": "CONFIGURED_BY",
+          "target": "bank journal",
+          "evidence": "create the payment. Fill in the relevant bank Journal field"
+        },
+        {
+          "source": "vendor payment",
+          "relation": "CONFIGURED_BY",
+          "target": "Payment Method",
+          "evidence": "select SEPA Credit Transfer ... as the Payment Method"
+        },
+        {
+          "source": "vendor payment",
+          "relation": "CONFIGURED_BY",
+          "target": "Vendor Bank Account",
+          "evidence": "enter the Vendor Bank Account"
+        },
+        {
+          "source": "Batch Payments",
+          "relation": "CONTAINS",
+          "target": "vendor payment",
+          "evidence": "select the payment created in the previous step"
+        },
+        {
+          "source": "Batch Payments",
+          "relation": "CONFIGURED_BY",
+          "target": "bank journal",
+          "evidence": "Select the same bank Journal"
+        },
+        {
+          "source": "Batch Payments",
+          "relation": "CONFIGURED_BY",
+          "target": "Payment Method",
+          "evidence": "and Payment Method"
+        },
+        {
+          "source": "Initiate Payment",
+          "relation": "TRIGGERED_BY",
+          "target": "vendor payment",
+          "evidence": "create a batch ... select the payment created in the previous step"
+        },
+        {
+          "source": "Initiate Payment",
+          "relation": "ENABLES",
+          "target": "Ponto",
+          "evidence": "Initiate Payment to connect to Ponto"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "troubleshooting",
+    "heading": "Troubleshooting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting",
+          "type": "Module",
+          "mention": "accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank-synchronization",
+          "type": "Sub-module",
+          "mention": "bank-synchronization",
+          "confidence": "medium"
+        },
+        {
+          "name": "Troubleshooting",
+          "type": "Feature",
+          "mention": "Title: Troubleshooting",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "bank-synchronization",
+          "relation": "IS_PART_OF",
+          "target": "accounting",
+          "evidence": "accounting/bank-synchronization"
+        },
+        {
+          "source": "accounting",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Troubleshooting",
+          "relation": "SEE_ALSO",
+          "target": "Bank synchronization troubleshooting",
+          "evidence": "Bank synchronization troubleshooting <accounting/bank-synchronization/troubleshooting>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "why-has-the-authorization-expired?",
+    "heading": "Why has the authorization expired?",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Ponto",
+          "type": "Integration",
+          "mention": "Ponto",
+          "confidence": "high"
+        },
+        {
+          "name": "bank account",
+          "type": "DataObject",
+          "mention": "bank account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Ponto website",
+          "type": "Integration",
+          "mention": "Ponto website",
+          "confidence": "medium"
+        },
+        {
+          "name": "authorization",
+          "type": "Concept",
+          "mention": "authorization",
+          "confidence": "medium"
+        },
+        {
+          "name": "synchronization",
+          "type": "Feature",
+          "mention": "synchronization",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "bank account",
+          "evidence": "bank account"
+        },
+        {
+          "source": "bank account",
+          "relation": "REQUIRES",
+          "target": "authorization",
+          "evidence": "authorization"
+        },
+        {
+          "source": "authorization",
+          "relation": "PERFORMED_BY",
+          "target": "Ponto website",
+          "evidence": "via the Ponto website"
+        },
+        {
+          "source": "bank account",
+          "relation": "REQUIRES",
+          "target": "synchronization",
+          "evidence": "synchronization stopping"
+        },
+        {
+          "source": "synchronization",
+          "relation": "REQUIRES",
+          "target": "authorization",
+          "evidence": "Failure to do so will result in synchronization stopping"
+        }
+      ]
+    }
+  }
+]

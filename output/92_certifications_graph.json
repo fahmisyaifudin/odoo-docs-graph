@@ -1,0 +1,944 @@
+[
+  {
+    "section_id": "certifications",
+    "heading": "Certifications",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Certifications report",
+          "type": "Report",
+          "mention": "*Certifications* report",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee profile",
+          "type": "DataObject",
+          "mention": "employee profile",
+          "confidence": "medium"
+        },
+        {
+          "name": "certifications",
+          "type": "DataObject",
+          "mention": "certifications",
+          "confidence": "medium"
+        },
+        {
+          "name": "Surveys app",
+          "type": "Module",
+          "mention": "**Surveys** app",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Certifications report",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "To add certifications to an employee profile and to access the *Certifications* report"
+        },
+        {
+          "source": "Surveys app",
+          "relation": "REQUIRES",
+          "target": "Certifications report",
+          "evidence": "To add certifications to an employee profile and to access the *Certifications* report, the **Surveys** app **must** be installed."
+        },
+        {
+          "source": "Surveys app",
+          "relation": "REQUIRES",
+          "target": "employee profile",
+          "evidence": "To add certifications to an employee profile and to access the *Certifications* report, the **Surveys** app **must** be installed."
+        },
+        {
+          "source": "employee profile",
+          "relation": "CONTAINS",
+          "target": "certifications",
+          "evidence": "To add certifications to an employee profile"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-certifications",
+    "heading": "Create certifications",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Skill Types",
+          "type": "DataObject",
+          "mention": "Skill Types",
+          "confidence": "high"
+        },
+        {
+          "name": "Create certifications",
+          "type": "Action",
+          "mention": "To create a certification",
+          "confidence": "high"
+        },
+        {
+          "name": "Skill Type",
+          "type": "Field",
+          "mention": "Skill Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Color",
+          "type": "Field",
+          "mention": "Color",
+          "confidence": "high"
+        },
+        {
+          "name": "Certification",
+          "type": "Field",
+          "mention": "Certification",
+          "confidence": "high"
+        },
+        {
+          "name": "Skills",
+          "type": "Field",
+          "mention": "Skills",
+          "confidence": "high"
+        },
+        {
+          "name": "Levels",
+          "type": "Field",
+          "mention": "Levels",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Progress percentage",
+          "type": "Field",
+          "mention": "Progress percentage",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Level",
+          "type": "Field",
+          "mention": "Default Level",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to the Employees app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Skill Types",
+          "evidence": "Configuration --> Skill Types"
+        },
+        {
+          "source": "Create certifications",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "To create a certification"
+        },
+        {
+          "source": "Create certifications",
+          "relation": "TRIGGERED_BY",
+          "target": "New",
+          "evidence": "Click the New button"
+        },
+        {
+          "source": "Skill Types",
+          "relation": "CONTAINS",
+          "target": "Skill Type",
+          "evidence": "Enter the following information on the form: Skill Type"
+        },
+        {
+          "source": "Skill Types",
+          "relation": "CONTAINS",
+          "target": "Color",
+          "evidence": "Enter the following information on the form: Color"
+        },
+        {
+          "source": "Skill Types",
+          "relation": "CONTAINS",
+          "target": "Certification",
+          "evidence": "Enter the following information on the form: Certification"
+        },
+        {
+          "source": "Skill Types",
+          "relation": "CONTAINS",
+          "target": "Skills",
+          "evidence": "Enter the following information on the form: Skills"
+        },
+        {
+          "source": "Skill Types",
+          "relation": "CONTAINS",
+          "target": "Levels",
+          "evidence": "Enter the following information on the form: Levels"
+        },
+        {
+          "source": "Levels",
+          "relation": "CONTAINS",
+          "target": "Name",
+          "evidence": "enter a Name"
+        },
+        {
+          "source": "Levels",
+          "relation": "CONTAINS",
+          "target": "Progress percentage",
+          "evidence": "Progress percentage"
+        },
+        {
+          "source": "Levels",
+          "relation": "CONTAINS",
+          "target": "Default Level",
+          "evidence": "Set a Default Level"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-certifications",
+    "heading": "View certifications",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Learning",
+          "type": "Sub-module",
+          "mention": "Learning",
+          "confidence": "medium"
+        },
+        {
+          "name": "Certifications",
+          "type": "Feature",
+          "mention": "Certifications",
+          "confidence": "high"
+        },
+        {
+          "name": "Certifications report",
+          "type": "Report",
+          "mention": "Certifications report",
+          "confidence": "high"
+        },
+        {
+          "name": "skill type records",
+          "type": "DataObject",
+          "mention": "skill type records",
+          "confidence": "medium"
+        },
+        {
+          "name": "Certification toggle",
+          "type": "Setting",
+          "mention": "Certification toggle",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "employee form",
+          "type": "Feature",
+          "mention": "employee form",
+          "confidence": "medium"
+        },
+        {
+          "name": "resume section",
+          "type": "Feature",
+          "mention": "resume section",
+          "confidence": "medium"
+        },
+        {
+          "name": "certification type",
+          "type": "Field",
+          "mention": "certification *type*",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Certifications",
+          "relation": "BELONGS_TO",
+          "target": "Learning",
+          "evidence": "navigate to the Employees app --> Learning --> Certifications"
+        },
+        {
+          "source": "Learning",
+          "relation": "BELONGS_TO",
+          "target": "Employees app",
+          "evidence": "navigate to the Employees app --> Learning"
+        },
+        {
+          "source": "Certifications",
+          "relation": "HAS_REPORT",
+          "target": "Certifications report",
+          "evidence": "Only skill type records ... appear on the Certifications report"
+        },
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "Learning",
+          "evidence": "navigate to the Employees app --> Learning"
+        },
+        {
+          "source": "Certifications report",
+          "relation": "CONFIGURED_BY",
+          "target": "Certification toggle",
+          "evidence": "Only skill type records with the *Certification* toggle set to active appear on the Certifications report"
+        },
+        {
+          "source": "Certifications report",
+          "relation": "REQUIRES",
+          "target": "skill type records",
+          "evidence": "Only skill type records ... appear on the Certifications report"
+        },
+        {
+          "source": "employee form",
+          "relation": "CONTAINS",
+          "target": "resume section",
+          "evidence": "appear in the resume section of the employee form"
+        },
+        {
+          "source": "Certifications",
+          "relation": "GENERATES",
+          "target": "certification type",
+          "evidence": "grouped by certification *type*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-certifications-by-expiration-status",
+    "heading": "View certifications by expiration status",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Learning",
+          "type": "Sub-module",
+          "mention": "Learning",
+          "confidence": "high"
+        },
+        {
+          "name": "Certifications",
+          "type": "Sub-module",
+          "mention": "Certifications",
+          "confidence": "high"
+        },
+        {
+          "name": "certifications",
+          "type": "DataObject",
+          "mention": "certifications",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Toggle Search Panel",
+          "type": "Action",
+          "mention": "Toggle Search Panel",
+          "confidence": "low"
+        },
+        {
+          "name": "Custom Group",
+          "type": "Action",
+          "mention": "Custom Group",
+          "confidence": "low"
+        },
+        {
+          "name": "Validity Stop",
+          "type": "Field",
+          "mention": "Validity Stop",
+          "confidence": "high"
+        },
+        {
+          "name": "expiration status",
+          "type": "Concept",
+          "mention": "expiration status",
+          "confidence": "medium"
+        },
+        {
+          "name": "expiration month",
+          "type": "Concept",
+          "mention": "expiration month",
+          "confidence": "medium"
+        },
+        {
+          "name": "oi-group Type grouping",
+          "type": "Setting",
+          "mention": "oi-group Type grouping",
+          "confidence": "low"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "Learning",
+          "evidence": "navigate to the Employees app --> Learning"
+        },
+        {
+          "source": "Learning",
+          "relation": "CONTAINS",
+          "target": "Certifications",
+          "evidence": "Learning --> Certifications"
+        },
+        {
+          "source": "Certifications",
+          "relation": "IS_PART_OF",
+          "target": "Employees app",
+          "evidence": "Learning --> Certifications"
+        },
+        {
+          "source": "Certifications",
+          "relation": "RELATED_TO",
+          "target": "certifications",
+          "evidence": "certifications"
+        },
+        {
+          "source": "Certifications",
+          "relation": "HAS_REPORT",
+          "target": "certifications",
+          "evidence": "all the certifications are grouped"
+        },
+        {
+          "source": "certifications",
+          "relation": "BELONGS_TO",
+          "target": "employees",
+          "evidence": "employees with a variety of certifications"
+        },
+        {
+          "source": "Validity Stop",
+          "relation": "APPLIES_TO",
+          "target": "certifications",
+          "evidence": "certifications grouped by expiration month"
+        },
+        {
+          "source": "certifications",
+          "relation": "RELATED_TO",
+          "target": "expiration status",
+          "evidence": "view the certifications by expiration status"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "log-a-certification",
+    "heading": "Log a certification",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Learning",
+          "type": "Module",
+          "mention": "Learning",
+          "confidence": "medium"
+        },
+        {
+          "name": "Certifications",
+          "type": "Module",
+          "mention": "Certifications",
+          "confidence": "high"
+        },
+        {
+          "name": "certification form",
+          "type": "DataObject",
+          "mention": "certification form",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Field",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Category",
+          "type": "Field",
+          "mention": "Category",
+          "confidence": "high"
+        },
+        {
+          "name": "Skill",
+          "type": "Field",
+          "mention": "Skill",
+          "confidence": "high"
+        },
+        {
+          "name": "Skill Level",
+          "type": "Field",
+          "mention": "Skill Level",
+          "confidence": "high"
+        },
+        {
+          "name": "Validity",
+          "type": "Field",
+          "mention": "Validity",
+          "confidence": "high"
+        },
+        {
+          "name": "validity start date",
+          "type": "Field",
+          "mention": "validity start",
+          "confidence": "medium"
+        },
+        {
+          "name": "validity end date",
+          "type": "Field",
+          "mention": "validity end",
+          "confidence": "medium"
+        },
+        {
+          "name": "To field",
+          "type": "Field",
+          "mention": "To field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save button",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Certifications report",
+          "type": "Report",
+          "mention": "Certifications report",
+          "confidence": "high"
+        },
+        {
+          "name": "employee record",
+          "type": "DataObject",
+          "mention": "employee record",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "Learning",
+          "evidence": "navigate to the Employees app --> Learning"
+        },
+        {
+          "source": "Learning",
+          "relation": "CONTAINS",
+          "target": "Certifications",
+          "evidence": "Learning --> Certifications"
+        },
+        {
+          "source": "Certifications",
+          "relation": "CONTAINS",
+          "target": "certification form",
+          "evidence": "Click New to load a blank certification form"
+        },
+        {
+          "source": "certification form",
+          "relation": "HAS_REPORT",
+          "target": "Certifications report",
+          "evidence": "appears on the Certifications report"
+        },
+        {
+          "source": "certification form",
+          "relation": "RELATED_TO",
+          "target": "employee record",
+          "evidence": "appears on the employee record"
+        },
+        {
+          "source": "Employee",
+          "relation": "BELONGS_TO",
+          "target": "employee",
+          "evidence": "Select the employee"
+        },
+        {
+          "source": "Category",
+          "relation": "RELATED_TO",
+          "target": "Skill",
+          "evidence": "The presented options change if the Category is changed"
+        },
+        {
+          "source": "Save button",
+          "relation": "PRODUCES",
+          "target": "certification form",
+          "evidence": "click the Save button. The certification is logged"
+        },
+        {
+          "source": "employee",
+          "relation": "PERFORMED_BY",
+          "target": "Skill Level",
+          "evidence": "Click on a level to select the level achieved"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "certifications-report",
+    "heading": "Certifications Report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Certifications",
+          "type": "Sub-module",
+          "mention": "Certifications",
+          "confidence": "high"
+        },
+        {
+          "name": "Certifications Report",
+          "type": "Report",
+          "mention": "Certifications Report",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee Certification",
+          "type": "DataObject",
+          "mention": "certification entry",
+          "confidence": "high"
+        },
+        {
+          "name": "employee's name",
+          "type": "Field",
+          "mention": "Employee: The employee's name",
+          "confidence": "high"
+        },
+        {
+          "name": "avatar image",
+          "type": "Field",
+          "mention": "avatar image",
+          "confidence": "high"
+        },
+        {
+          "name": "Certification Type",
+          "type": "Field",
+          "mention": "Certification Type",
+          "confidence": "high"
+        },
+        {
+          "name": "skill type",
+          "type": "Concept",
+          "mention": "skill type",
+          "confidence": "medium"
+        },
+        {
+          "name": "certification category",
+          "type": "Concept",
+          "mention": "certification category",
+          "confidence": "medium"
+        },
+        {
+          "name": "Certification",
+          "type": "DataObject",
+          "mention": "The name of the certification",
+          "confidence": "high"
+        },
+        {
+          "name": "Validity Start",
+          "type": "Field",
+          "mention": "Validity Start",
+          "confidence": "high"
+        },
+        {
+          "name": "Certification Level",
+          "type": "Field",
+          "mention": "Certification Level",
+          "confidence": "high"
+        },
+        {
+          "name": "level",
+          "type": "Concept",
+          "mention": "level",
+          "confidence": "medium"
+        },
+        {
+          "name": "Current Level",
+          "type": "Field",
+          "mention": "Current Level",
+          "confidence": "high"
+        },
+        {
+          "name": "percentage",
+          "type": "Concept",
+          "mention": "percentage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Display Type",
+          "type": "Field",
+          "mention": "Display Type",
+          "confidence": "high"
+        },
+        {
+          "name": "certification form",
+          "type": "DataObject",
+          "mention": "certification form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee Certifications report",
+          "type": "Report",
+          "mention": "Employee Certifications report",
+          "confidence": "high"
+        },
+        {
+          "name": "resume section",
+          "type": "Module",
+          "mention": "resume section",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee form",
+          "type": "DataObject",
+          "mention": "employee form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Employees app",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "Reporting",
+          "evidence": "navigate to the Employees app --> Reporting"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Certifications",
+          "evidence": "Reporting --> Certifications."
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Certifications Report",
+          "evidence": "Title: Certifications Report"
+        },
+        {
+          "source": "Certifications Report",
+          "relation": "BELONGS_TO",
+          "target": "Employees app",
+          "evidence": "To view a report of all employee certifications, navigate to the Employees app"
+        },
+        {
+          "source": "Certifications Report",
+          "relation": "CONTAINS",
+          "target": "Employee Certification",
+          "evidence": "All certifications appear in a list view"
+        },
+        {
+          "source": "Employee Certification",
+          "relation": "CONTAINS",
+          "target": "employee's name",
+          "evidence": "Each certification entry displays the following: - Employee: The employee's name"
+        },
+        {
+          "source": "Employee Certification",
+          "relation": "CONTAINS",
+          "target": "avatar image",
+          "evidence": "Each certification entry displays the following: - Employee: The employee's name, along with their avatar image."
+        },
+        {
+          "source": "Employee Certification",
+          "relation": "CONTAINS",
+          "target": "Certification Type",
+          "evidence": "Each certification entry displays the following: - Certification Type"
+        },
+        {
+          "source": "Certification Type",
+          "relation": "RELATED_TO",
+          "target": "skill type",
+          "evidence": "Certification Type: The *skill type* configured for the certification"
+        },
+        {
+          "source": "skill type",
+          "relation": "RELATED_TO",
+          "target": "certification category",
+          "evidence": "This can be thought of as the certification *category*"
+        },
+        {
+          "source": "Employee Certification",
+          "relation": "CONTAINS",
+          "target": "Certification",
+          "evidence": "Each certification entry displays the following: - Certification"
+        },
+        {
+          "source": "Employee Certification",
+          "relation": "CONTAINS",
+          "target": "Validity Start",
+          "evidence": "Each certification entry displays the following: - Validity Start"
+        },
+        {
+          "source": "Employee Certification",
+          "relation": "CONTAINS",
+          "target": "Certification Level",
+          "evidence": "Each certification entry displays the following: - Certification Level"
+        },
+        {
+          "source": "Certification Level",
+          "relation": "RELATED_TO",
+          "target": "level",
+          "evidence": "The level the employee achieved for the certification. This is determined by the configured levels on the *skill type*"
+        },
+        {
+          "source": "Employee Certification",
+          "relation": "CONTAINS",
+          "target": "Current Level",
+          "evidence": "Each certification entry displays the following: - Current Level"
+        },
+        {
+          "source": "Current Level",
+          "relation": "RELATED_TO",
+          "target": "percentage",
+          "evidence": "The corresponding percentage for the Certification Level"
+        },
+        {
+          "source": "Employee Certification",
+          "relation": "CONFIGURED_BY",
+          "target": "Display Type",
+          "evidence": "certification records with the *Display Type* set to *Certification*"
+        },
+        {
+          "source": "Certifications Report",
+          "relation": "IS_PART_OF",
+          "target": "Employee Certifications report",
+          "evidence": "Only certification records... appear on the Employee Certifications report"
+        },
+        {
+          "source": "Certifications Report",
+          "relation": "RELATED_TO",
+          "target": "certification form",
+          "evidence": "certification records with the *Display Type* set to *Certification* on their certification form"
+        },
+        {
+          "source": "certification form",
+          "relation": "SEE_ALSO",
+          "target": "Certifications",
+          "evidence": "certification form <employees/certifications-form>"
+        },
+        {
+          "source": "certification form",
+          "relation": "SEE_ALSO",
+          "target": "employee form",
+          "evidence": "employee form <employees/resume>"
+        }
+      ]
+    }
+  }
+]

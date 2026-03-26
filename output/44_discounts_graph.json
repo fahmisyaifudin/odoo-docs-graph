@@ -1,0 +1,425 @@
+[
+  {
+    "section_id": "discounts",
+    "heading": "Discounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Discounts",
+          "type": "Feature",
+          "mention": "*Discounts* feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Discounts checkbox",
+          "type": "Setting",
+          "mention": "Discounts checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricing section",
+          "type": "Module",
+          "mention": "Pricing section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quotations",
+          "type": "Module",
+          "mention": "Quotations",
+          "confidence": "high"
+        },
+        {
+          "name": "sales quotation or order",
+          "type": "DataObject",
+          "mention": "sales quotation or order",
+          "confidence": "high"
+        },
+        {
+          "name": "item lines",
+          "type": "DataObject",
+          "mention": "item lines",
+          "confidence": "medium"
+        },
+        {
+          "name": "products' sales price",
+          "type": "Field",
+          "mention": "products' sales price",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Discounts",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, The *Discounts* feature"
+        },
+        {
+          "source": "Discounts",
+          "relation": "HAS_FEATURE",
+          "target": "sales quotation or order",
+          "evidence": "allows users to decrease or increase the price on item lines in a sales quotation or order"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Sales",
+          "evidence": "navigate to Sales app --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Discounts checkbox",
+          "relation": "IS_PART_OF",
+          "target": "Pricing section",
+          "evidence": "In the Pricing section, tick the Discounts checkbox"
+        },
+        {
+          "source": "Discounts",
+          "relation": "CONFIGURED_BY",
+          "target": "Discounts checkbox",
+          "evidence": "tick the Discounts checkbox"
+        },
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "Orders",
+          "evidence": "Sales app --> Orders"
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Quotations",
+          "evidence": "Orders --> Quotations"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "discounts-on-product-lines",
+    "heading": "Discounts on product lines",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "quotation form",
+          "type": "DataObject",
+          "mention": "quotation form",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Lines tab",
+          "type": "Feature",
+          "mention": "Order Lines tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Disc.% column",
+          "type": "Field",
+          "mention": "Disc.%",
+          "confidence": "high"
+        },
+        {
+          "name": "Total",
+          "type": "Field",
+          "mention": "Total",
+          "confidence": "high"
+        },
+        {
+          "name": "unit price",
+          "type": "Field",
+          "mention": "unit price",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Sales app",
+          "evidence": "Product: Odoo, Navigate to Sales app"
+        },
+        {
+          "source": "Sales app",
+          "relation": "CONTAINS",
+          "target": "Orders",
+          "evidence": "Sales app --> Orders"
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "sales order",
+          "evidence": "Orders --> Orders, click the desired sales order"
+        },
+        {
+          "source": "quotation form",
+          "relation": "HAS_FEATURE",
+          "target": "Order Lines tab",
+          "evidence": "In the Order Lines tab of the quotation form"
+        },
+        {
+          "source": "Order Lines tab",
+          "relation": "CONTAINS",
+          "target": "Disc.% column",
+          "evidence": "a new column heading appears labeled Disc.%"
+        },
+        {
+          "source": "Order Lines tab",
+          "relation": "CONTAINS",
+          "target": "Total",
+          "evidence": "the new price is automatically calculated in the Total"
+        },
+        {
+          "source": "Disc.% column",
+          "relation": "ENABLES",
+          "target": "Total calculation",
+          "evidence": "Enter the desired discount...and the new price is automatically calculated in the Total"
+        },
+        {
+          "source": "Disc.% column",
+          "relation": "APPLIES_TO",
+          "target": "customer",
+          "evidence": "Positive values, or price decreases, will be visible to the customer, while negative values...will not be visible to the customer"
+        },
+        {
+          "source": "Disc.% column",
+          "relation": "RELATED_TO",
+          "target": "unit price",
+          "evidence": "Instead of a discount column, the negative discount will change the product's unit price"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "discount-button",
+    "heading": "Discount button",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Discount button",
+          "type": "Feature",
+          "mention": "Discount button",
+          "confidence": "high"
+        },
+        {
+          "name": "Discounts",
+          "type": "Setting",
+          "mention": "Discounts settings",
+          "confidence": "high"
+        },
+        {
+          "name": "sales orders",
+          "type": "DataObject",
+          "mention": "sales orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Discount button",
+          "type": "Action",
+          "mention": "Clicking the Discount button",
+          "confidence": "high"
+        },
+        {
+          "name": "pop-up window",
+          "type": "Unknown",
+          "mention": "pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Discount percentage",
+          "type": "Field",
+          "mention": "Discount percentage",
+          "confidence": "high"
+        },
+        {
+          "name": "options",
+          "type": "Unknown",
+          "mention": "options",
+          "confidence": "medium"
+        },
+        {
+          "name": "On All Order Lines",
+          "type": "Feature",
+          "mention": "On All Order Lines",
+          "confidence": "high"
+        },
+        {
+          "name": "order lines",
+          "type": "DataObject",
+          "mention": "order lines",
+          "confidence": "high"
+        },
+        {
+          "name": "Discount field",
+          "type": "Field",
+          "mention": "Discount field",
+          "confidence": "high"
+        },
+        {
+          "name": "Global Discount",
+          "type": "Feature",
+          "mention": "Global Discount",
+          "confidence": "high"
+        },
+        {
+          "name": "discount product line",
+          "type": "DataObject",
+          "mention": "discount product line",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed Amount",
+          "type": "Feature",
+          "mention": "Fixed Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Unit Price",
+          "type": "Field",
+          "mention": "Unit Price",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Discount button",
+          "relation": "CONFIGURED_BY",
+          "target": "Discounts",
+          "evidence": "With the *Discounts* settings enabled, a Discount button appears"
+        },
+        {
+          "source": "Discount button",
+          "relation": "IS_PART_OF",
+          "target": "sales orders",
+          "evidence": "a Discount button appears at the bottom of sales orders"
+        },
+        {
+          "source": "Discount button",
+          "relation": "ENABLES",
+          "target": "pop-up window",
+          "evidence": "Clicking the Discount button on a sales order opens a pop-up window"
+        },
+        {
+          "source": "pop-up window",
+          "relation": "CONTAINS",
+          "target": "Discount field",
+          "evidence": "configured in the Discount field of the pop-up window"
+        },
+        {
+          "source": "On All Order Lines",
+          "relation": "APPLIES_TO",
+          "target": "order lines",
+          "evidence": "Add the specified discount percentage on all existing order lines"
+        },
+        {
+          "source": "On All Order Lines",
+          "relation": "USES_METHOD",
+          "target": "Discount field",
+          "evidence": "configured in the Discount field of the pop-up window"
+        },
+        {
+          "source": "Global Discount",
+          "relation": "PRODUCES",
+          "target": "discount product line",
+          "evidence": "Add a discount product line to the order"
+        },
+        {
+          "source": "Fixed Amount",
+          "relation": "PRODUCES",
+          "target": "product line",
+          "evidence": "this amount is added to the order as a product line"
+        },
+        {
+          "source": "Fixed Amount",
+          "relation": "USES_METHOD",
+          "target": "Discount field",
+          "evidence": "Add a monetary amount to the Discount field"
+        },
+        {
+          "source": "product line",
+          "relation": "CONTAINS",
+          "target": "Unit Price",
+          "evidence": "appears as a product line, with a negative Unit Price"
+        }
+      ]
+    }
+  }
+]

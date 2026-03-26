@@ -1,0 +1,984 @@
+[
+  {
+    "section_id": "helpdesk",
+    "heading": "Helpdesk",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Helpdesk",
+          "type": "Module",
+          "mention": "Odoo **Helpdesk**",
+          "confidence": "high"
+        },
+        {
+          "name": "team",
+          "type": "DataObject",
+          "mention": "Multiple teams",
+          "confidence": "medium"
+        },
+        {
+          "name": "dashboard",
+          "type": "Module",
+          "mention": "one dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "pipeline",
+          "type": "Workflow",
+          "mention": "their own pipeline",
+          "confidence": "high"
+        },
+        {
+          "name": "ticket",
+          "type": "DataObject",
+          "mention": "tickets submitted by customers",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        },
+        {
+          "name": "stage",
+          "type": "Sub-module",
+          "mention": "customizable stages",
+          "confidence": "high"
+        },
+        {
+          "name": "team",
+          "type": "Actor",
+          "mention": "teams",
+          "confidence": "medium"
+        },
+        {
+          "name": "issue",
+          "type": "DataObject",
+          "mention": "customer issues",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Helpdesk",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Helpdesk"
+        },
+        {
+          "source": "Helpdesk",
+          "relation": "CONTAINS",
+          "target": "dashboard",
+          "evidence": "Multiple teams can be configured and managed in one dashboard"
+        },
+        {
+          "source": "Helpdesk",
+          "relation": "SUPPORTS",
+          "target": "pipeline",
+          "evidence": "each with their own pipeline for tickets submitted by customers"
+        },
+        {
+          "source": "pipeline",
+          "relation": "TRIGGERED_BY",
+          "target": "ticket",
+          "evidence": "pipeline for tickets submitted by customers"
+        },
+        {
+          "source": "ticket",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "tickets submitted by customers"
+        },
+        {
+          "source": "pipeline",
+          "relation": "HAS_FEATURE",
+          "target": "stage",
+          "evidence": "Pipelines are organized in customizable stages"
+        },
+        {
+          "source": "stage",
+          "relation": "ENABLES",
+          "target": "team",
+          "evidence": "enable teams to track, prioritize, and solve customer issues"
+        },
+        {
+          "source": "team",
+          "relation": "RELATED_TO",
+          "target": "ticket",
+          "evidence": "teams to track, prioritize, and solve customer issues efficiently"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-helpdesk-team",
+    "heading": "Create a Helpdesk team",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Helpdesk",
+          "type": "Module",
+          "mention": "Helpdesk app",
+          "confidence": "high"
+        },
+        {
+          "name": "Helpdesk Teams",
+          "type": "Sub-module",
+          "mention": "Helpdesk Teams",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a new team",
+          "type": "Action",
+          "mention": "To create a new team",
+          "confidence": "high"
+        },
+        {
+          "name": "Helpdesk team form",
+          "type": "DataObject",
+          "mention": "Helpdesk team form",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "enter a Name",
+          "confidence": "high"
+        },
+        {
+          "name": "team description",
+          "type": "Field",
+          "mention": "description of the team",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "public facing website form",
+          "type": "DataObject",
+          "mention": "public facing website form",
+          "confidence": "medium"
+        },
+        {
+          "name": "customers",
+          "type": "Actor",
+          "mention": "customers",
+          "confidence": "high"
+        },
+        {
+          "name": "portal users",
+          "type": "Actor",
+          "mention": "portal users",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Helpdesk Teams",
+          "relation": "IS_PART_OF",
+          "target": "Helpdesk",
+          "evidence": "go to Helpdesk app --> Configuration --> Helpdesk Teams"
+        },
+        {
+          "source": "Helpdesk Teams",
+          "relation": "CONTAINS",
+          "target": "Helpdesk team form",
+          "evidence": "On the blank Helpdesk team form"
+        },
+        {
+          "source": "Helpdesk team form",
+          "relation": "CONTAINS",
+          "target": "Name",
+          "evidence": "enter a Name for the new team"
+        },
+        {
+          "source": "Helpdesk team form",
+          "relation": "CONTAINS",
+          "target": "team description",
+          "evidence": "enter a description of the team in the field below"
+        },
+        {
+          "source": "Helpdesk team form",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "select it from the Company drop-down menu"
+        },
+        {
+          "source": "team description",
+          "relation": "RELATED_TO",
+          "target": "public facing website form",
+          "evidence": "The team description is published on the public facing website form"
+        },
+        {
+          "source": "public facing website form",
+          "relation": "PERFORMED_BY",
+          "target": "customers",
+          "evidence": "where customers and portal users submit tickets"
+        },
+        {
+          "source": "public facing website form",
+          "relation": "PERFORMED_BY",
+          "target": "portal users",
+          "evidence": "where customers and portal users submit tickets"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "visibility-&-assignment",
+    "heading": "Visibility & Assignment",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Visibility",
+          "type": "Setting",
+          "mention": "*Visibility* settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Assignment",
+          "type": "Setting",
+          "mention": "*Assignment* settings",
+          "confidence": "high"
+        },
+        {
+          "name": "internal users",
+          "type": "Actor",
+          "mention": "internal users",
+          "confidence": "medium"
+        },
+        {
+          "name": "portal users",
+          "type": "Actor",
+          "mention": "portal users",
+          "confidence": "medium"
+        },
+        {
+          "name": "team",
+          "type": "Concept",
+          "mention": "team",
+          "confidence": "medium"
+        },
+        {
+          "name": "tickets",
+          "type": "DataObject",
+          "mention": "tickets",
+          "confidence": "medium"
+        },
+        {
+          "name": "users",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Visibility",
+          "relation": "CONTAINS",
+          "target": "internal users",
+          "evidence": "Visibility settings alter which internal users... have access to this team and its tickets"
+        },
+        {
+          "source": "Visibility",
+          "relation": "CONTAINS",
+          "target": "portal users",
+          "evidence": "Visibility settings alter which... portal users have access to this team and its tickets"
+        },
+        {
+          "source": "Visibility",
+          "relation": "APPLIES_TO",
+          "target": "team",
+          "evidence": "Visibility settings alter which... have access to this team"
+        },
+        {
+          "source": "Visibility",
+          "relation": "APPLIES_TO",
+          "target": "tickets",
+          "evidence": "Visibility settings alter which... have access to... its tickets"
+        },
+        {
+          "source": "Assignment",
+          "relation": "CONTAINS",
+          "target": "users",
+          "evidence": "Assignment settings alter how users are assigned to handle each ticket"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "determine-team-visibility",
+    "heading": "Determine team visibility",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Visibility section",
+          "type": "Setting",
+          "mention": "Under the Visibility section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invited internal users (private)",
+          "type": "Permission",
+          "mention": "Invited internal users (private)",
+          "confidence": "high"
+        },
+        {
+          "name": "All internal users (company)",
+          "type": "Permission",
+          "mention": "All internal users (company)",
+          "confidence": "high"
+        },
+        {
+          "name": "Invited portal users and all internal users (public)",
+          "type": "Permission",
+          "mention": "Invited portal users and all internal users (public)",
+          "confidence": "high"
+        },
+        {
+          "name": "Internal users",
+          "type": "Actor",
+          "mention": "Internal users",
+          "confidence": "high"
+        },
+        {
+          "name": "Portal users",
+          "type": "Actor",
+          "mention": "Portal users",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer Support",
+          "type": "Unknown",
+          "mention": "Customer Support",
+          "confidence": "high"
+        },
+        {
+          "name": "Financial Services",
+          "type": "Unknown",
+          "mention": "Financial Services",
+          "confidence": "high"
+        },
+        {
+          "name": "helpdesk/follow",
+          "type": "Unknown",
+          "mention": "<helpdesk/follow>",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Visibility section",
+          "evidence": "Under the Visibility section, select one of the following options to determine who can view this team and its tickets:"
+        },
+        {
+          "source": "Visibility section",
+          "relation": "CONTAINS",
+          "target": "Invited internal users (private)",
+          "evidence": "Under the Visibility section, select one of the following options: - Invited internal users (private)"
+        },
+        {
+          "source": "Visibility section",
+          "relation": "CONTAINS",
+          "target": "All internal users (company)",
+          "evidence": "Under the Visibility section, select one of the following options: - All internal users (company)"
+        },
+        {
+          "source": "Visibility section",
+          "relation": "CONTAINS",
+          "target": "Invited portal users and all internal users (public)",
+          "evidence": "Under the Visibility section, select one of the following options: - Invited portal users and all internal users (public)"
+        },
+        {
+          "source": "Invited internal users (private)",
+          "relation": "APPLIES_TO",
+          "target": "Internal users",
+          "evidence": "Internal users can access the team and the tickets they are following. This access can be modified on each ticket individually by adding or removing the user as a follower."
+        },
+        {
+          "source": "All internal users (company)",
+          "relation": "APPLIES_TO",
+          "target": "Internal users",
+          "evidence": "All internal users can access the team and all of its tickets."
+        },
+        {
+          "source": "Invited portal users and all internal users (public)",
+          "relation": "APPLIES_TO",
+          "target": "Internal users",
+          "evidence": "All internal users can access the team and all of its tickets."
+        },
+        {
+          "source": "Invited portal users and all internal users (public)",
+          "relation": "APPLIES_TO",
+          "target": "Portal users",
+          "evidence": "Portal users can only access the tickets they are following."
+        },
+        {
+          "source": "helpdesk/follow",
+          "relation": "SEE_ALSO",
+          "target": "Internal users",
+          "evidence": "Internal users are considered *invited* once they are added as followers to an individual ticket, or to the team itself <helpdesk/follow>."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "follow-all-team's-tickets",
+    "heading": "Follow all team's tickets",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Followers drop-down menu",
+          "type": "Field",
+          "mention": "Followers drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Follow All Team's Tickets field",
+          "type": "Field",
+          "mention": "Follow All Team's Tickets field",
+          "confidence": "high"
+        },
+        {
+          "name": "Followers field",
+          "type": "Field",
+          "mention": "Followers field",
+          "confidence": "high"
+        },
+        {
+          "name": "External contacts",
+          "type": "Actor",
+          "mention": "External contacts",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "team",
+          "type": "Actor",
+          "mention": "team",
+          "confidence": "high"
+        },
+        {
+          "name": "Invited internal users (private)",
+          "type": "Permission",
+          "mention": "Invited internal users (private)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Followers field",
+          "relation": "CONTAINS",
+          "target": "External contacts",
+          "evidence": "External contacts can be selected in the Followers field."
+        },
+        {
+          "source": "team",
+          "relation": "CONFIGURED_BY",
+          "target": "Invited internal users (private)",
+          "evidence": "If the team's visibility is set to Invited internal users (private), followers are notified about updates to the team's tickets, but are **not** able to view them in the portal."
+        },
+        {
+          "source": "Follow All Team's Tickets field",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo ... located in the Follow All Team's Tickets field."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "automatically-assign-new-tickets",
+    "heading": "Automatically assign new tickets",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic Assignment",
+          "type": "Feature",
+          "mention": "Automatic Assignment",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off application",
+          "type": "Module",
+          "mention": "Time Off application",
+          "confidence": "high"
+        },
+        {
+          "name": "team",
+          "type": "Actor",
+          "mention": "team",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Each user is assigned an equal number of tickets",
+          "type": "Standard",
+          "mention": "Each user is assigned an equal number of tickets",
+          "confidence": "high"
+        },
+        {
+          "name": "Each user has an equal number of open tickets",
+          "type": "Standard",
+          "mention": "Each user has an equal number of open tickets",
+          "confidence": "high"
+        },
+        {
+          "name": "Team Members",
+          "type": "Actor",
+          "mention": "Team Members",
+          "confidence": "high"
+        },
+        {
+          "name": "user account settings",
+          "type": "Setting",
+          "mention": "user account settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dispatch tickets based on tags",
+          "type": "Feature",
+          "mention": "Dispatch tickets based on tags",
+          "confidence": "high"
+        },
+        {
+          "name": "Ticket Tag",
+          "type": "DataObject",
+          "mention": "Ticket Tag",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricing",
+          "type": "Ticket Tag",
+          "mention": "Pricing",
+          "confidence": "medium"
+        },
+        {
+          "name": "IT",
+          "type": "Ticket Tag",
+          "mention": "IT",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manage users",
+          "type": "Feature",
+          "mention": "Manage users",
+          "confidence": "medium"
+        },
+        {
+          "name": "Access rights",
+          "type": "Permission",
+          "mention": "Access rights",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Automatic Assignment",
+          "relation": "HAS_FEATURE",
+          "target": "Dispatch tickets based on tags",
+          "evidence": "Dispatch tickets based on tags under Automatic Assignment"
+        },
+        {
+          "source": "Automatic Assignment",
+          "relation": "CONFIGURED_BY",
+          "target": "Automatic Assignment checkbox",
+          "evidence": "Check the Automatic Assignment checkbox to enable this feature"
+        },
+        {
+          "source": "Automatic Assignment",
+          "relation": "BELONGS_TO",
+          "target": "team",
+          "evidence": "enable this feature for the team"
+        },
+        {
+          "source": "Ticket Tag",
+          "relation": "CONTAINS",
+          "target": "Pricing",
+          "evidence": "create a new Ticket Tag, such as Pricing"
+        },
+        {
+          "source": "Ticket Tag",
+          "relation": "CONTAINS",
+          "target": "IT",
+          "evidence": "create a new Ticket Tag, such as IT"
+        },
+        {
+          "source": "Team Members",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "team members are employees"
+        },
+        {
+          "source": "Automatic Assignment",
+          "relation": "USES_METHOD",
+          "target": "Each user is assigned an equal number of tickets",
+          "evidence": "Select one of the following assignment methods"
+        },
+        {
+          "source": "Automatic Assignment",
+          "relation": "USES_METHOD",
+          "target": "Each user has an equal number of open tickets",
+          "evidence": "Select one of the following assignment methods"
+        },
+        {
+          "source": "Team Members",
+          "relation": "CONFIGURED_BY",
+          "target": "user account settings",
+          "evidence": "access rights configured in their user account settings"
+        },
+        {
+          "source": "employee",
+          "relation": "BELONGS_TO",
+          "target": "Time Off application",
+          "evidence": "employee has time off scheduled in the Time Off application"
+        },
+        {
+          "source": "Manage users",
+          "relation": "SEE_ALSO",
+          "target": "users/add-individual",
+          "evidence": "Manage users <users/add-individual>"
+        },
+        {
+          "source": "Access rights",
+          "relation": "SEE_ALSO",
+          "target": "../general/users/access_rights",
+          "evidence": "Access rights <../general/users/access_rights>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "merge-tickets",
+    "heading": "Merge tickets",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Helpdesk",
+          "type": "Module",
+          "mention": "Helpdesk",
+          "confidence": "high"
+        },
+        {
+          "name": "Data Cleaning",
+          "type": "Module",
+          "mention": "Data Cleaning",
+          "confidence": "high"
+        },
+        {
+          "name": "merge",
+          "type": "Feature",
+          "mention": "merge feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Tickets",
+          "type": "DataObject",
+          "mention": "Tickets",
+          "confidence": "high"
+        },
+        {
+          "name": "All Tickets",
+          "type": "Report",
+          "mention": "All Tickets",
+          "confidence": "medium"
+        },
+        {
+          "name": "Merge",
+          "type": "Action",
+          "mention": "Merge",
+          "confidence": "high"
+        },
+        {
+          "name": "DISCARD",
+          "type": "Action",
+          "mention": "DISCARD",
+          "confidence": "medium"
+        },
+        {
+          "name": "Actions",
+          "type": "Feature",
+          "mention": "Actions icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Similarity rating",
+          "type": "Field",
+          "mention": "Similarity rating",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "merge",
+          "relation": "REQUIRES",
+          "target": "Data Cleaning",
+          "evidence": "The *merge* feature is **only** accessible if the Data Cleaning application is installed"
+        },
+        {
+          "source": "Tickets",
+          "relation": "BELONGS_TO",
+          "target": "Helpdesk",
+          "evidence": "duplicate tickets are found in **Helpdesk**"
+        },
+        {
+          "source": "Merge",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "select Merge from the drop-down menu"
+        },
+        {
+          "source": "Helpdesk",
+          "relation": "CONTAINS",
+          "target": "Tickets",
+          "evidence": "navigate to Helpdesk app --> Tickets"
+        },
+        {
+          "source": "All Tickets",
+          "relation": "RELATED_TO",
+          "target": "Tickets",
+          "evidence": "Tickets --> All Tickets"
+        },
+        {
+          "source": "Merge",
+          "relation": "PRODUCES",
+          "target": "Tickets",
+          "evidence": "to combine the tickets"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "convert-tickets-to-opportunities",
+    "heading": "Convert tickets to opportunities",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Convert to Opportunity button",
+          "type": "Action",
+          "mention": "Convert to Opportunity button",
+          "confidence": "high"
+        },
+        {
+          "name": "Convert to Opportunity pop-up",
+          "type": "Action",
+          "mention": "Convert to Opportunity pop-up",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customer",
+          "type": "Field",
+          "mention": "Customer",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Team",
+          "type": "Field",
+          "mention": "Sales Team",
+          "confidence": "high"
+        },
+        {
+          "name": "Salesperson",
+          "type": "Field",
+          "mention": "Salesperson",
+          "confidence": "high"
+        },
+        {
+          "name": "Convert to Opportunity",
+          "type": "Action",
+          "mention": "Convert to Opportunity",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunity",
+          "type": "DataObject",
+          "mention": "opportunity",
+          "confidence": "high"
+        },
+        {
+          "name": "ticket",
+          "type": "DataObject",
+          "mention": "ticket",
+          "confidence": "high"
+        },
+        {
+          "name": "sales team",
+          "type": "Actor",
+          "mention": "sales team",
+          "confidence": "medium"
+        },
+        {
+          "name": "support team",
+          "type": "Actor",
+          "mention": "support team",
+          "confidence": "medium"
+        },
+        {
+          "name": "CRM app",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Helpdesk app",
+          "type": "Module",
+          "mention": "Helpdesk app",
+          "confidence": "high"
+        },
+        {
+          "name": "leads",
+          "type": "DataObject",
+          "mention": "leads",
+          "confidence": "high"
+        },
+        {
+          "name": "Convert to Lead",
+          "type": "Action",
+          "mention": "Convert to Lead",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Convert tickets to opportunities",
+          "relation": "HAS_FEATURE",
+          "target": "Convert to Opportunity button",
+          "evidence": "To convert a ticket to an opportunity, first navigate to a ticket... At the top of the ticket, click the Convert to Opportunity button."
+        },
+        {
+          "source": "Convert to Opportunity button",
+          "relation": "TRIGGERED_BY",
+          "target": "click",
+          "evidence": "At the top of the ticket, click the Convert to Opportunity button."
+        },
+        {
+          "source": "Convert to Opportunity button",
+          "relation": "GENERATES",
+          "target": "Convert to Opportunity pop-up",
+          "evidence": "This opens the Convert to Opportunity pop-up."
+        },
+        {
+          "source": "Convert to Opportunity",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "After completing the form, click Convert to Opportunity."
+        },
+        {
+          "source": "Convert to Opportunity",
+          "relation": "PRODUCES",
+          "target": "opportunity",
+          "evidence": "Doing so creates a new opportunity in the CRM app."
+        },
+        {
+          "source": "opportunity",
+          "relation": "BELONGS_TO",
+          "target": "CRM app",
+          "evidence": "creates a new opportunity in the CRM app."
+        },
+        {
+          "source": "opportunity",
+          "relation": "RELATED_TO",
+          "target": "ticket",
+          "evidence": "The original ticket is linked in the chatter of the new opportunity for traceability."
+        },
+        {
+          "source": "Convert tickets to opportunities",
+          "relation": "REQUIRES",
+          "target": "CRM app",
+          "evidence": "This feature is only available if the CRM app is installed."
+        },
+        {
+          "source": "Convert to Opportunity pop-up",
+          "relation": "CONTAINS",
+          "target": "Customer",
+          "evidence": "Fill in or select the following information on the pop-up: - Customer:"
+        },
+        {
+          "source": "Convert to Opportunity pop-up",
+          "relation": "CONTAINS",
+          "target": "Sales Team",
+          "evidence": "- Sales Team: Specify which Sales Team and Salesperson this created opportunity is assigned to."
+        },
+        {
+          "source": "Convert to Opportunity pop-up",
+          "relation": "CONTAINS",
+          "target": "Salesperson",
+          "evidence": "- Sales Team: Specify which Sales Team and Salesperson this created opportunity is assigned to."
+        }
+      ]
+    }
+  }
+]

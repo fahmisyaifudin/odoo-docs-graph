@@ -1,0 +1,1152 @@
+[
+  {
+    "section_id": "adjust-inventory-with-barcodes",
+    "heading": "Adjust inventory with barcodes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory adjustment",
+          "type": "Concept",
+          "mention": "inventory adjustment",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory audit",
+          "type": "Concept",
+          "mention": "inventory audit",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Concept",
+          "mention": "warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manager",
+          "type": "Actor",
+          "mention": "managers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Physical stock",
+          "type": "Concept",
+          "mention": "physical stock",
+          "confidence": "low"
+        },
+        {
+          "name": "Quantities",
+          "type": "Concept",
+          "mention": "quantities",
+          "confidence": "low"
+        },
+        {
+          "name": "Database",
+          "type": "Concept",
+          "mention": "database",
+          "confidence": "low"
+        },
+        {
+          "name": "Stock discrepancies",
+          "type": "Concept",
+          "mention": "stock discrepancies",
+          "confidence": "low"
+        },
+        {
+          "name": "Operations",
+          "type": "Concept",
+          "mention": "operations",
+          "confidence": "low"
+        },
+        {
+          "name": "Location",
+          "type": "Concept",
+          "mention": "locations",
+          "confidence": "low"
+        },
+        {
+          "name": "Product barcode",
+          "type": "Concept",
+          "mention": "product barcodes",
+          "confidence": "low"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Barcode",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode application",
+          "type": "Module",
+          "mention": "Barcode application",
+          "confidence": "high"
+        },
+        {
+          "name": "Compatible scanner",
+          "type": "Feature",
+          "mention": "compatible scanner",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo mobile app",
+          "type": "Module",
+          "mention": "Odoo mobile app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo Inventory Hardware page",
+          "type": "Integration",
+          "mention": "Odoo Inventory • Hardware page",
+          "confidence": "high"
+        },
+        {
+          "name": "Demo data",
+          "type": "DataObject",
+          "mention": "demo data",
+          "confidence": "high"
+        },
+        {
+          "name": "Demo data sheet",
+          "type": "DataObject",
+          "mention": "demo data sheet",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcodes",
+          "type": "DataObject",
+          "mention": "barcodes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Home screen",
+          "type": "Feature",
+          "mention": "home screen",
+          "confidence": "low"
+        },
+        {
+          "name": "Scanner",
+          "type": "Feature",
+          "mention": "scanner",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory adjustment",
+          "relation": "EQUIVALENT_TO",
+          "target": "Inventory audit",
+          "evidence": "An *inventory adjustment*, or inventory audit"
+        },
+        {
+          "source": "Barcode application",
+          "relation": "CONTAINS",
+          "target": "Demo data",
+          "evidence": "Odoo's **Barcode** application provides demo data"
+        },
+        {
+          "source": "Barcode application",
+          "relation": "ENABLES",
+          "target": "Inventory adjustment",
+          "evidence": "Inventory adjustments can be completed through the **Barcode** application"
+        },
+        {
+          "source": "Inventory",
+          "relation": "SEE_ALSO",
+          "target": "Odoo Inventory Hardware page",
+          "evidence": "refer to the `Odoo Inventory • Hardware page"
+        },
+        {
+          "source": "Inventory",
+          "relation": "SEE_ALSO",
+          "target": "../warehouses_storage/inventory_management/count_products",
+          "evidence": "../../inventory/warehouses_storage/inventory_management/count_products"
+        },
+        {
+          "source": "Barcode application",
+          "relation": "RELATED_TO",
+          "target": "Inventory",
+          "evidence": "For a list of Odoo-compatible barcode mobile scanners, and other hardware for the **Inventory** and **Barcode** apps"
+        },
+        {
+          "source": "Inventory adjustment",
+          "relation": "PERFORMED_BY",
+          "target": "Manager",
+          "evidence": "managers typically assign inventory counts to employees"
+        },
+        {
+          "source": "Inventory adjustment",
+          "relation": "PERFORMED_BY",
+          "target": "Employee",
+          "evidence": "employees, who then walk to designated locations, scan product barcodes, and adjust quantities as needed"
+        },
+        {
+          "source": "Demo data",
+          "relation": "GENERATES",
+          "target": "Demo data sheet",
+          "evidence": "demo data sheet"
+        },
+        {
+          "source": "Demo data",
+          "relation": "GENERATES",
+          "target": "Barcodes",
+          "evidence": "barcodes"
+        },
+        {
+          "source": "Barcode application",
+          "relation": "HAS_REPORT",
+          "target": "Home screen",
+          "evidence": "printed from the home screen of the app"
+        },
+        {
+          "source": "Barcode application",
+          "relation": "HAS_REPORT",
+          "target": "Scanner",
+          "evidence": "above the scanner"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assigning-inventory-counts",
+    "heading": "Assigning inventory counts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Physical Inventory",
+          "type": "Sub-module",
+          "mention": "Physical Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory/plan-counts",
+          "type": "Feature",
+          "mention": "inventory/plan-counts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode app",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Count Inventory",
+          "type": "Action",
+          "mention": "Count Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "managers",
+          "type": "Actor",
+          "mention": "managers",
+          "confidence": "low"
+        },
+        {
+          "name": "employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "low"
+        },
+        {
+          "name": "User",
+          "type": "Actor",
+          "mention": "User",
+          "confidence": "medium"
+        },
+        {
+          "name": "users",
+          "type": "Actor",
+          "mention": "users",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "inventory/plan-counts",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "Through Inventory app --> Operations --> Physical Inventory by selecting specific locations and products for counting"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Inventory app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Physical Inventory",
+          "evidence": "Operations --> Physical Inventory"
+        },
+        {
+          "source": "Barcode app",
+          "relation": "HAS_FEATURE",
+          "target": "Count Inventory",
+          "evidence": "If a count has been requested, the number of products to be counted is listed on the Count Inventory button."
+        },
+        {
+          "source": "inventory/plan-counts",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "selecting specific locations and products for counting, and assigning a User to them"
+        },
+        {
+          "source": "inventory/plan-counts",
+          "relation": "ENABLES",
+          "target": "pending counts",
+          "evidence": "Once assigned, users will see pending counts when they open the Barcode app."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Scanner",
+          "type": "Feature",
+          "mention": "Barcode Scanner",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode Nomenclature",
+          "type": "Feature",
+          "mention": "Barcode Nomenclature",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Nomenclature",
+          "type": "Setting",
+          "mention": "Default Nomenclature",
+          "confidence": "medium"
+        },
+        {
+          "name": "Default GS1 Nomenclature",
+          "type": "Setting",
+          "mention": "Default GS1 Nomenclature",
+          "confidence": "medium"
+        },
+        {
+          "name": "One-App-Free database",
+          "type": "Concept",
+          "mention": "One-App-Free database",
+          "confidence": "medium"
+        },
+        {
+          "name": "Set Product Barcodes",
+          "type": "Feature",
+          "mention": "Set Product Barcodes",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Navigate to Inventory app --> Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Barcode Scanner",
+          "evidence": "Select the checkbox next to Barcode Scanner"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Barcode Nomenclature",
+          "evidence": "a new drop-down menu appears under the Barcode Scanner option, labeled Barcode Nomenclature"
+        },
+        {
+          "source": "Barcode Nomenclature",
+          "relation": "CONTAINS",
+          "target": "Default Nomenclature",
+          "evidence": "Default Nomenclature or Default GS1 Nomenclature can be selected"
+        },
+        {
+          "source": "Barcode Nomenclature",
+          "relation": "CONTAINS",
+          "target": "Default GS1 Nomenclature",
+          "evidence": "Default Nomenclature or Default GS1 Nomenclature can be selected"
+        },
+        {
+          "source": "Barcode",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Barcode app"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Barcode",
+          "evidence": "Before an inventory adjustment can be performed with the **Barcode** app"
+        },
+        {
+          "source": "Barcode Scanner",
+          "relation": "REQUIRES",
+          "target": "Barcode",
+          "evidence": "Enabling the **Barcode** feature requires installing the **Barcode** application"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "performing-an-inventory-count",
+    "heading": "Performing an inventory count",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode app",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory adjustment",
+          "type": "Workflow",
+          "mention": "perform an inventory adjustment",
+          "confidence": "high"
+        },
+        {
+          "name": "Count Inventory",
+          "type": "Action",
+          "mention": "tap Count Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "storage location",
+          "type": "DataObject",
+          "mention": "storage location",
+          "confidence": "medium"
+        },
+        {
+          "name": "location barcode",
+          "type": "DataObject",
+          "mention": "scan the location barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "product barcode",
+          "type": "DataObject",
+          "mention": "scan the product barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "multi-location feature",
+          "type": "Feature",
+          "mention": "warehouse *multi-location* feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Count Entire Locations",
+          "type": "Feature",
+          "mention": "Count Entire Locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "medium"
+        },
+        {
+          "name": "quantities",
+          "type": "DataObject",
+          "mention": "quantities",
+          "confidence": "medium"
+        },
+        {
+          "name": "keypad",
+          "type": "Component",
+          "mention": "keypad",
+          "confidence": "low"
+        },
+        {
+          "name": "Quantity line",
+          "type": "Field",
+          "mention": "Quantity line",
+          "confidence": "medium"
+        },
+        {
+          "name": "+1 button",
+          "type": "Action",
+          "mention": "+1",
+          "confidence": "low"
+        },
+        {
+          "name": "-1 button",
+          "type": "Action",
+          "mention": "-1",
+          "confidence": "low"
+        },
+        {
+          "name": "number keys",
+          "type": "Component",
+          "mention": "number keys",
+          "confidence": "low"
+        },
+        {
+          "name": "WH/Stock/Shelf 1",
+          "type": "DataObject",
+          "mention": "WH/Stock/Shelf 1",
+          "confidence": "medium"
+        },
+        {
+          "name": "FURN_7888 Desk Stand with Screen",
+          "type": "DataObject",
+          "mention": "[FURN_7888] Desk Stand with Screen",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "inventory adjustment",
+          "relation": "IS_PART_OF",
+          "target": "Barcode app",
+          "evidence": "To perform an inventory adjustment, first navigate to the Barcode app."
+        },
+        {
+          "source": "Count Inventory",
+          "relation": "ENABLES",
+          "target": "inventory adjustment",
+          "evidence": "If assigned counts exist, tap Count Inventory to view pending tasks."
+        },
+        {
+          "source": "storage location",
+          "relation": "RELATED_TO",
+          "target": "location barcode",
+          "evidence": "Walk to the designated storage location, then scan the location barcode."
+        },
+        {
+          "source": "product barcode",
+          "relation": "TRIGGERED_BY",
+          "target": "inventory adjustment",
+          "evidence": "Instead, scan the product barcode to start the inventory adjustment."
+        },
+        {
+          "source": "Count Entire Locations",
+          "relation": "ENABLES",
+          "target": "inventory adjustment",
+          "evidence": "...the Count Entire Locations feature is **not** enabled, no products may appear after the location barcode is scanned."
+        },
+        {
+          "source": "quantities",
+          "relation": "CONFIGURED_BY",
+          "target": "Quantity line",
+          "evidence": "Edit the number in the Quantity line to change the quantity."
+        },
+        {
+          "source": "quantities",
+          "relation": "RELATED_TO",
+          "target": "+1 button",
+          "evidence": "the +1 and -1 buttons can be clicked to add or subtract quantity of the product"
+        },
+        {
+          "source": "quantities",
+          "relation": "RELATED_TO",
+          "target": "-1 button",
+          "evidence": "the +1 and -1 buttons can be clicked to add or subtract quantity of the product"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "count-entire-locations",
+    "heading": "Count entire locations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Count Entire Locations",
+          "type": "Feature",
+          "mention": "Count Entire Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode app",
+          "type": "Module",
+          "mention": "Barcode app",
+          "confidence": "high"
+        },
+        {
+          "name": "Count Inventory",
+          "type": "Feature",
+          "mention": "Count Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        },
+        {
+          "name": "location",
+          "type": "DataObject",
+          "mention": "location",
+          "confidence": "medium"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "cycle counts",
+          "type": "Workflow",
+          "mention": "cycle counts",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Count Entire Locations",
+          "relation": "REQUIRES",
+          "target": "Storage Locations",
+          "evidence": "You can only count entire locations if Storage Locations is enabled"
+        },
+        {
+          "source": "Storage Locations",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "Storage Locations is enabled in the Inventory settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Settings, found at Inventory app --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Count Entire Locations",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "assigns a user to count all the products"
+        },
+        {
+          "source": "Count Entire Locations",
+          "relation": "APPLIES_TO",
+          "target": "location",
+          "evidence": "count all the products within a location"
+        },
+        {
+          "source": "Count Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Barcode app",
+          "evidence": "navigate to Barcode app --> Count Inventory"
+        },
+        {
+          "source": "Count Inventory",
+          "relation": "HAS_FEATURE",
+          "target": "Count Entire Locations",
+          "evidence": "select the Count Entire Locations check box"
+        },
+        {
+          "source": "Count Entire Locations",
+          "relation": "ENABLES",
+          "target": "cycle counts",
+          "evidence": "This allows for easier cycle counts"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "cycle counts",
+          "evidence": "During cycle counts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "show-quantity-to-count",
+    "heading": "Show quantity to count",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Physical Inventory",
+          "type": "Module",
+          "mention": "Physical Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Request a Count",
+          "type": "Action",
+          "mention": "Request a Count",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Request",
+          "type": "DataObject",
+          "mention": "Inventory Request",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign to",
+          "type": "Field",
+          "mention": "Assign to",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduled at",
+          "type": "Field",
+          "mention": "Scheduled at",
+          "confidence": "high"
+        },
+        {
+          "name": "Show Expected Quantity",
+          "type": "Setting",
+          "mention": "Show Expected Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Count Inventory",
+          "type": "Sub-module",
+          "mention": "Count Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory count",
+          "type": "Workflow",
+          "mention": "inventory count",
+          "confidence": "high"
+        },
+        {
+          "name": "expected quantity",
+          "type": "Concept",
+          "mention": "expected quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse managers",
+          "type": "Actor",
+          "mention": "Warehouse managers",
+          "confidence": "high"
+        },
+        {
+          "name": "Cable Management Box",
+          "type": "Concept",
+          "mention": "Cable Management Box",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Request a Count",
+          "relation": "IS_PART_OF",
+          "target": "Physical Inventory",
+          "evidence": "Request a count by selecting the check boxes to the left of the products to count, then clicking the Request a Count button."
+        },
+        {
+          "source": "Physical Inventory",
+          "relation": "IS_PART_OF",
+          "target": "Operations",
+          "evidence": "navigate to Inventory app --> Operations --> Physical Inventory."
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "navigate to Inventory app --> Operations --> Physical Inventory."
+        },
+        {
+          "source": "Inventory Request",
+          "relation": "CONTAINS",
+          "target": "Assign to",
+          "evidence": "Specify a user to assign the count to in the Assign to field."
+        },
+        {
+          "source": "Inventory Request",
+          "relation": "CONTAINS",
+          "target": "Scheduled at",
+          "evidence": "Specify the date to perform the count in the Scheduled at field."
+        },
+        {
+          "source": "Inventory Request",
+          "relation": "CONTAINS",
+          "target": "Show Expected Quantity",
+          "evidence": "Select the Show Expected Quantity check box."
+        },
+        {
+          "source": "Show Expected Quantity",
+          "relation": "ENABLES",
+          "target": "expected quantity",
+          "evidence": "Select the Show Expected Quantity check box to show the expected quantity."
+        },
+        {
+          "source": "inventory count",
+          "relation": "USES_METHOD",
+          "target": "expected quantity",
+          "evidence": "When conducting an inventory count, the expected quantity of products is not displayed by default."
+        },
+        {
+          "source": "Warehouse managers",
+          "relation": "PERFORMED_BY",
+          "target": "inventory count",
+          "evidence": "Warehouse managers have requested a count..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manually-add-products-to-an-inventory-count",
+    "heading": "Manually add products to an inventory count",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Barcode",
+          "type": "Module",
+          "mention": "Odoo **Barcode**",
+          "confidence": "high"
+        },
+        {
+          "name": "Count Inventory",
+          "type": "Workflow",
+          "mention": "Count Inventory",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Product",
+          "type": "Action",
+          "mention": "Add Product button",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "quantity",
+          "type": "Field",
+          "mention": "quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "source location",
+          "type": "Field",
+          "mention": "source location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product line",
+          "type": "Field",
+          "mention": "Product line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity line",
+          "type": "Field",
+          "mention": "Quantity line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Location line",
+          "type": "Field",
+          "mention": "Location line",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/Stock",
+          "type": "Setting",
+          "mention": "`WH/Stock`",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Click Confirm",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Barcode",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo **Barcode**"
+        },
+        {
+          "source": "Barcode",
+          "relation": "HAS_FEATURE",
+          "target": "Count Inventory",
+          "evidence": "Barcode app --> Count Inventory"
+        },
+        {
+          "source": "Add Product",
+          "relation": "ENABLES",
+          "target": "Count Inventory",
+          "evidence": "To manually add products to this adjustment, click the white Add Product button"
+        },
+        {
+          "source": "Count Inventory",
+          "relation": "CONFIGURED_BY",
+          "target": "WH/Stock",
+          "evidence": "Below the number pad is the Location line, which should read `WH/Stock` by default."
+        },
+        {
+          "source": "Count Inventory",
+          "relation": "PRODUCES",
+          "target": "product",
+          "evidence": "choose the product whose stock count should be adjusted"
+        },
+        {
+          "source": "Count Inventory",
+          "relation": "PRODUCES",
+          "target": "quantity",
+          "evidence": "manually enter the quantity of that product"
+        },
+        {
+          "source": "Count Inventory",
+          "relation": "PRODUCES",
+          "target": "source location",
+          "evidence": "choose the location for this inventory adjustment"
+        },
+        {
+          "source": "Confirm",
+          "relation": "TRIGGERED_BY",
+          "target": "Count Inventory",
+          "evidence": "Click Confirm to confirm the changes."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "finalizing-an-inventory-count",
+    "heading": "Finalizing an inventory count",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Finalizing an inventory count",
+          "type": "Workflow",
+          "mention": "Finalizing an inventory count",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate barcode",
+          "type": "Action",
+          "mention": "Validate barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "Barcode Scanning screen",
+          "type": "Feature",
+          "mention": "Barcode Scanning screen",
+          "confidence": "medium"
+        },
+        {
+          "name": "inventory count",
+          "type": "DataObject",
+          "mention": "inventory count",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Finalizing an inventory count",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Finalizing an inventory count"
+        },
+        {
+          "source": "Finalizing an inventory count",
+          "relation": "ENABLES",
+          "target": "Confirm",
+          "evidence": "To complete the inventory adjustment, click Confirm."
+        },
+        {
+          "source": "Validate barcode",
+          "relation": "EQUIVALENT_TO",
+          "target": "Confirm",
+          "evidence": "The Validate barcode can be scanned in place of clicking the Confirm button."
+        },
+        {
+          "source": "Finalizing an inventory count",
+          "relation": "TRIGGERED_BY",
+          "target": "Confirm",
+          "evidence": "To complete the inventory adjustment, click Confirm."
+        },
+        {
+          "source": "Confirm",
+          "relation": "PRODUCES",
+          "target": "inventory count",
+          "evidence": "A small green banner appears in the top-right corner, confirming the inventory count has been updated."
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,1671 @@
+[
+  {
+    "section_id": "printable-delivery-pdfs",
+    "heading": "Printable delivery PDFs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery slip",
+          "type": "Report",
+          "mention": "#. Delivery slip",
+          "confidence": "high"
+        },
+        {
+          "name": "Return slip",
+          "type": "Report",
+          "mention": "#. Return slip",
+          "confidence": "high"
+        },
+        {
+          "name": "Product labels of items in the order",
+          "type": "Report",
+          "mention": "#. Product labels of items in the order",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot and serial number labels",
+          "type": "Report",
+          "mention": "#. Lot and serial number labels",
+          "confidence": "high"
+        },
+        {
+          "name": "Carrier labels",
+          "type": "Report",
+          "mention": "#. Carrier labels",
+          "confidence": "high"
+        },
+        {
+          "name": "Export documents",
+          "type": "Report",
+          "mention": "#. Export documents",
+          "confidence": "high"
+        },
+        {
+          "name": "Package content",
+          "type": "Report",
+          "mention": "#. Package content",
+          "confidence": "high"
+        },
+        {
+          "name": "Package label",
+          "type": "Report",
+          "mention": "#. Package label",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations Types",
+          "type": "DataObject",
+          "mention": "Operations Types",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hardware tab",
+          "type": "Setting",
+          "mention": "Hardware tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Print on Validation section",
+          "type": "Setting",
+          "mention": "Print on Validation section",
+          "confidence": "medium"
+        },
+        {
+          "name": "validate",
+          "type": "Action",
+          "mention": "validating",
+          "confidence": "high"
+        },
+        {
+          "name": "download",
+          "type": "Action",
+          "mention": "download",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "navigate to Inventory app",
+          "confidence": "high"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "Inventory app --> Configuration",
+          "confidence": "medium"
+        },
+        {
+          "source": "Operations Types",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Operations Types",
+          "confidence": "medium"
+        },
+        {
+          "source": "Delivery slip",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "<inventory/shipping_receiving/delivery-slip>",
+          "confidence": "high"
+        },
+        {
+          "source": "Return slip",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "<inventory/shipping_receiving/return-slip>",
+          "confidence": "high"
+        },
+        {
+          "source": "Product labels of items in the order",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "<inventory/shipping_receiving/product-labels>",
+          "confidence": "high"
+        },
+        {
+          "source": "Lot and serial number labels",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "<inventory/shipping_receiving/lot-sn-labels>",
+          "confidence": "high"
+        },
+        {
+          "source": "Carrier labels",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "<inventory/shipping_receiving/carrier-labels>",
+          "confidence": "high"
+        },
+        {
+          "source": "Export documents",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "<inventory/shipping_receiving/export-doc>",
+          "confidence": "high"
+        },
+        {
+          "source": "Package content",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "<inventory/shipping_receiving/package-content>",
+          "confidence": "high"
+        },
+        {
+          "source": "Package label",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "<inventory/shipping_receiving/package-label>",
+          "confidence": "high"
+        },
+        {
+          "source": "Operations Types",
+          "relation": "CONFIGURED_BY",
+          "target": "Hardware tab",
+          "evidence": "select the desired operation type. In the Hardware tab",
+          "confidence": "medium"
+        },
+        {
+          "source": "Print on Validation section",
+          "relation": "IS_PART_OF",
+          "target": "Hardware tab",
+          "evidence": "In the Hardware tab, tick each of the desired options available in the Print on Validation section",
+          "confidence": "medium"
+        },
+        {
+          "source": "validate",
+          "relation": "PRODUCES",
+          "target": "Delivery slip",
+          "evidence": "print upon validating an *Inventory* operation",
+          "confidence": "medium"
+        },
+        {
+          "source": "validate",
+          "relation": "TRIGGERED_BY",
+          "target": "Print on Validation section",
+          "evidence": "automatically after validating the Operation Type",
+          "confidence": "low"
+        },
+        {
+          "source": "download",
+          "relation": "PRODUCES",
+          "target": "Delivery slip",
+          "evidence": "to download the PDF of those selected documents",
+          "confidence": "low"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "delivery-slip",
+    "heading": "Delivery slip",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery slip",
+          "type": "DataObject",
+          "mention": "A *delivery slip*",
+          "confidence": "high"
+        },
+        {
+          "name": "recipient",
+          "type": "Field",
+          "mention": "recipient",
+          "confidence": "medium"
+        },
+        {
+          "name": "package",
+          "type": "Field",
+          "mention": "package",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tracking label",
+          "type": "DataObject",
+          "mention": "Tracking label",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Slip setting",
+          "type": "Setting",
+          "mention": "Delivery Slip setting",
+          "confidence": "high"
+        },
+        {
+          "name": "Hardware tab",
+          "type": "Module",
+          "mention": "Hardware tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "operation type",
+          "type": "Feature",
+          "mention": "operation type",
+          "confidence": "medium"
+        },
+        {
+          "name": "PDF",
+          "type": "DataObject",
+          "mention": "PDF",
+          "confidence": "low"
+        },
+        {
+          "name": "products",
+          "type": "Field",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "quantities",
+          "type": "Field",
+          "mention": "quantities",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery order reference number",
+          "type": "Field",
+          "mention": "delivery order reference number",
+          "confidence": "medium"
+        },
+        {
+          "name": "total order weight",
+          "type": "Field",
+          "mention": "total order weight",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "delivery slip",
+          "relation": "CONTAINS",
+          "target": "recipient",
+          "evidence": "contains recipient"
+        },
+        {
+          "source": "delivery slip",
+          "relation": "CONTAINS",
+          "target": "package",
+          "evidence": "contains recipient and package details"
+        },
+        {
+          "source": "Delivery Slip setting",
+          "relation": "BELONGS_TO",
+          "target": "Hardware tab",
+          "evidence": "in the Hardware tab configuration options"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "PDF",
+          "evidence": "Validate on the desired operation type downloads a PDF"
+        },
+        {
+          "source": "PDF",
+          "relation": "EQUIVALENT_TO",
+          "target": "delivery slip",
+          "evidence": "downloads a PDF of the delivery slip"
+        },
+        {
+          "source": "delivery slip",
+          "relation": "CONTAINS",
+          "target": "products",
+          "evidence": "shows products"
+        },
+        {
+          "source": "delivery slip",
+          "relation": "CONTAINS",
+          "target": "quantities",
+          "evidence": "shows quantities"
+        },
+        {
+          "source": "delivery slip",
+          "relation": "CONTAINS",
+          "target": "delivery order reference number",
+          "evidence": "shows the delivery order reference number"
+        },
+        {
+          "source": "delivery slip",
+          "relation": "CONTAINS",
+          "target": "total order weight",
+          "evidence": "shows the total order weight"
+        },
+        {
+          "source": "Tracking label",
+          "relation": "SEE_ALSO",
+          "target": "delivery slip",
+          "evidence": "Tracking label"
+        },
+        {
+          "source": "delivery slip",
+          "relation": "CONFIGURED_BY",
+          "target": "Delivery Slip setting",
+          "evidence": "After enabling the Delivery Slip setting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "return-slip",
+    "heading": "Return slip",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Return slip",
+          "type": "DataObject",
+          "mention": "return slip",
+          "confidence": "high"
+        },
+        {
+          "name": "Print",
+          "type": "Action",
+          "mention": "Print",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hardware tab",
+          "type": "Module",
+          "mention": "Hardware tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Return Slip setting",
+          "type": "Setting",
+          "mention": "Return Slip setting",
+          "confidence": "high"
+        },
+        {
+          "name": "return address",
+          "type": "Field",
+          "mention": "return address",
+          "confidence": "medium"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "medium"
+        },
+        {
+          "name": "return operation",
+          "type": "DataObject",
+          "mention": "return operation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Print",
+          "evidence": "Print a *return slip*"
+        },
+        {
+          "source": "Print",
+          "relation": "PRODUCES",
+          "target": "Return slip",
+          "evidence": "Print a *return slip*"
+        },
+        {
+          "source": "Return slip",
+          "relation": "CONTAINS",
+          "target": "order",
+          "evidence": "links to the sales order"
+        },
+        {
+          "source": "Return slip",
+          "relation": "CONTAINS",
+          "target": "return address",
+          "evidence": "displays the company's return address"
+        },
+        {
+          "source": "Return Slip setting",
+          "relation": "ENABLES",
+          "target": "Print",
+          "evidence": "After enabling the Return Slip setting... clicking Validate downloads a PDF"
+        },
+        {
+          "source": "Hardware tab",
+          "relation": "CONTAINS",
+          "target": "Return Slip setting",
+          "evidence": "in the Hardware tab configuration options"
+        },
+        {
+          "source": "Validate",
+          "relation": "TRIGGERED_BY",
+          "target": "Print",
+          "evidence": "clicking Validate on the desired operation type downloads a PDF"
+        },
+        {
+          "source": "Return slip",
+          "relation": "CONTAINS",
+          "target": "return operation",
+          "evidence": "barcodes for both the order and the return operation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "product-labels",
+    "heading": "Product labels",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ':' delimiter: line 1 column 4116 (char 4115)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Product: Odoo\",\"confidence\":\"high\"},{\"name\":\"Inventory app\",\"type\":\"Module\",\"mention\":\"Inventory app\",\"confidence\":\"high\"},{\"name\":\"Configuration\",\"type\":\"Sub-module\",\"mention\":\"Configuration\",\"confidence\":\"medium\"},{\"name\":\"Operations Types\",\"type\":\"Sub-module\",\"mention\":\"Operations Types\",\"confidence\":\"high\"},{\"name\":\"Hardware tab\",\"type\":\"Feature\",\"mention\":\"Hardware tab\",\"confidence\":\"high\"},{\"name\":\"Product Labels option\",\"type\":\"Setting\",\"mention\":\"Product Labels option\",\"confidence\":\"high\"},{\"name\":\"Print label as\",\"type\":\"Feature\",\"mention\":\"Print label as\",\"confidence\":\"high\"},{\"name\":\"Print label as: drop-down menu\",\"type\":\"Feature\",\"mention\":\"Print label as: drop-down menu\",\"confidence\":\"high\"},{\"name\":\"2 x 7 with price\",\"type\":\"Report\",\"mention\":\"2 x 7 with price\",\"confidence\":\"high\"},{\"name\":\"4 x 7 with price\",\"type\":\"Report\",\"mention\":\"4 x 7 with price\",\"confidence\":\"high\"},{\"name\":\"4 x 12\",\"type\":\"Report\",\"mention\":\"4 x 12\",\"confidence\":\"high\"},{\"name\":\"4 x 12 with price\",\"type\":\"Report\",\"mention\":\"4 x 12 with price\",\"confidence\":\"high\"},{\"name\":\"ZPL Labels\",\"type\":\"Report\",\"mention\":\"ZPL Labels\",\"confidence\":\"high\"},{\"name\":\"ZPL Labels with price\",\"type\":\"Report\",\"mention\":\"ZPL Labels with price\",\"confidence\":\"high\"},{\"name\":\"Print Labels button\",\"type\":\"Action\",\"mention\":\"Print Labels button\",\"confidence\":\"high\"},{\"name\":\"product labels\",\"type\":\"DataObject\",\"mention\":\"product labels\",\"confidence\":\"high\"},{\"name\":\"product name\",\"type\":\"Field\",\"mention\":\"product name\",\"confidence\":\"high\"},{\"name\":\"barcode\",\"type\":\"Field\",\"mention\":\"barcode\",\"confidence\":\"high\"},{\"name\":\"price\",\"type\":\"Field\",\"mention\":\"price\",\"confidence\":\"high\"}],\"relations\":[{\"source\":\"Product Labels option\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Hardware tab\",\"evidence\":\"in the Hardware tab, tick the Product Labels option.\"},{\"source\":\"Hardware tab\",\"relation\":\"IS_PART_OF\",\"target\":\"Operations Types\",\"evidence\":\"After navigating to the intended operation type (Inventory app --> Configuration --> Operations Types), in the Hardware tab\"},{\"source\":\"Operations Types\",\"relation\":\"IS_PART_OF\",\"target\":\"Configuration\",\"evidence\":\"Inventory app --> Configuration --> Operations Types\"},{\"source\":\"Configuration\",\"relation\":\"IS_PART_OF\",\"target\":\"Inventory app\",\"evidence\":\"Inventory app --> Configuration\"},{\"source\":\"Inventory app\",\"relation\":\"BELONGS_TO\",\"target\":\"Odoo\",\"evidence\":\"Product: Odoo Title: Product labels\"},{\"source\":\"Print label as: drop-down menu\",\"relation\":\"CONTAINS\",\"target\":\"2 x 7 with price\",\"evidence\":\"drop-down menu visible, where each product label can be printed as: - 2 x 7 with price\"},{\"source\":\"Print label as: drop-down menu\",\"relation\":\"CONTAINS\",\"target\":\"4 x 7 with price\",\"evidence\":\"drop-down menu visible, where each product label can be printed as: ... - 4 x 7 with price\"},{\"source\":\"Print label as: drop-down menu\",\"relation\":\"CONTAINS\",\"target\":\"4 x 12\",\"evidence\":\"drop-down menu visible, where each product label can be printed as: ... - 4 x 12\"},{\"source\":\"Print label as: drop-down menu\",\"relation\":\"CONTAINS\",\"target\":\"4 x 12 with price\",\"evidence\":\"drop-down menu visible, where each product label can be printed as: ... - 4 x 12 with price\"},{\"source\":\"Print label as: drop-down menu\",\"relation\":\"CONTAINS\",\"target\":\"ZPL Labels\",\"evidence\":\"drop-down menu visible, where each product label can be printed as: ... - ZPL Labels\"},{\"source\":\"Print label as: drop-down menu\",\"relation\":\"CONTAINS\",\"target\":\"ZPL Labels with price\",\"evidence\":\"drop-down menu visible, where each product label can be printed as: ... - ZPL Labels with price\"},{\"source\":\"2 x 7 with price\",\"relation\":\"GENERATES\",\"target\":\"product labels\",\"evidence\":\"PDF displays product name, barcode, and price\"},{\"source\":\"4 x 7 with price\",\"relation\":\"GENERATES\",\"target\":\"product labels\",\"evidence\":\"displays product name, barcode, and price\"},{\"source\":\"4 x 12\",\"relation\":\"GENERATES\",\"target\":\"product labels\",\"evidence\":\"displays product name and barcode\"},{\"source\":\"4 x 12 with price\",\"relation\":\"GENERATES\",\"2 x 7 with price\",\"target\":\"product labels\",\"evidence\":\"displays product name, barcode, and price\"},{\"source\":\"ZPL Labels\",\"relation\":\"GENERATES\",\"target\":\"product labels\",\"evidence\":\"prints labels in the Zebra Programming Language (ZPL) containing the product name and barcode\"},{\"source\":\"ZPL Labels with price\",\"relation\":\"GENERATES\",\"target\":\"product labels\",\"evidence\":\"prints labels in the ZPL (Zebra Programming Language) containing the product name, barcode, and price\"},{\"source\":\"Print Labels button\",\"relation\":\"PRODUCES\",\"target\":\"product labels\",\"evidence\":\"Product labels can be manually printed from any delivery order, by clicking the Print Labels button\"},{\"source\":\"product labels\",\"relation\":\"CONTAINS\",\"target\":\"product name\",\"evidence\":\"Print product labels to affix to items in an order, providing essential information, such as product name\"},{\"source\":\"product labels\",\"relation\":\"CONTAINS\",\"target\":\"barcode\",\"evidence\":\"Print product labels to affix to items in an order, providing essential information, such as ... barcode\"},{\"source\":\"product labels\",\"relation\":\"CONTAINS\",\"target\":\"price\",\"evidence\":\"Print product labels to affix to items in an order, providing essential information, such as ... and price\"}]}"
+    }
+  },
+  {
+    "section_id": "lot-sn-labels",
+    "heading": "Lot/SN Labels",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot/SN Labels",
+          "type": "Feature",
+          "mention": "lot/SN labels",
+          "confidence": "high"
+        },
+        {
+          "name": "Print label as: drop-down menu",
+          "type": "Feature",
+          "mention": "Print label as: drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "4 x 12 - One per lot/SN",
+          "type": "Feature",
+          "mention": "4 x 12 - One per lot/SN",
+          "confidence": "high"
+        },
+        {
+          "name": "4 x 12 - One per unit",
+          "type": "Feature",
+          "mention": "4 x 12 - One per unit",
+          "confidence": "high"
+        },
+        {
+          "name": "ZPL Labels - One per lot/SN",
+          "type": "Feature",
+          "mention": "ZPL Labels - One per lot/SN",
+          "confidence": "high"
+        },
+        {
+          "name": "ZPL Labels - One per unit",
+          "type": "Feature",
+          "mention": "ZPL Labels - One per unit",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations Types",
+          "type": "Feature",
+          "mention": "Operations Types",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hardware tab",
+          "type": "Feature",
+          "mention": "Hardware tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Zebra Programming Language",
+          "type": "Integration",
+          "mention": "ZPL (Zebra Programming Language)",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lot/SN Labels",
+          "relation": "ENABLES",
+          "target": "Print label as: drop-down menu",
+          "evidence": "Doing so makes the Print label as: drop-down menu visible"
+        },
+        {
+          "source": "Print label as: drop-down menu",
+          "relation": "CONTAINS",
+          "target": "4 x 12 - One per lot/SN",
+          "evidence": "where each product label can be printed as: - 4 x 12 - One per lot/SN"
+        },
+        {
+          "source": "Print label as: drop-down menu",
+          "relation": "CONTAINS",
+          "target": "4 x 12 - One per unit",
+          "evidence": "where each product label can be printed as: - 4 x 12 - One per unit"
+        },
+        {
+          "source": "Print label as: drop-down menu",
+          "relation": "CONTAINS",
+          "target": "ZPL Labels - One per lot/SN",
+          "evidence": "where each product label can be printed as: - ZPL Labels - One per lot/SN"
+        },
+        {
+          "source": "Print label as: drop-down menu",
+          "relation": "CONTAINS",
+          "target": "ZPL Labels - One per unit",
+          "evidence": "where each product label can be printed as: - ZPL Labels - One per unit"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Operations Types",
+          "evidence": "Configuration --> Operations Types"
+        },
+        {
+          "source": "Operations Types",
+          "relation": "CONTAINS",
+          "target": "Hardware tab",
+          "evidence": "the intended operation type's options page. Then, in the Hardware tab"
+        },
+        {
+          "source": "Hardware tab",
+          "relation": "CONTAINS",
+          "target": "Lot/SN Labels option",
+          "evidence": "in the Hardware tab, tick the Lot/SN Labels option"
+        },
+        {
+          "source": "ZPL Labels - One per lot/SN",
+          "relation": "USES_METHOD",
+          "target": "Zebra Programming Language",
+          "evidence": "prints labels in ZPL (Zebra Programming Language)"
+        },
+        {
+          "source": "ZPL Labels - One per unit",
+          "relation": "USES_METHOD",
+          "target": "Zebra Programming Language",
+          "evidence": "prints labels with the quantity of items in ZPL (Zebra Programming Language)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "carrier-labels",
+    "heading": "Carrier labels",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Carrier Labels checkbox",
+          "type": "Setting",
+          "mention": "Carrier Labels checkbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "operation type settings",
+          "type": "Module",
+          "mention": "operation type settings",
+          "confidence": "low"
+        },
+        {
+          "name": "printer",
+          "type": "Integration",
+          "mention": "printer",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT app",
+          "type": "Module",
+          "mention": "IoT",
+          "confidence": "high"
+        },
+        {
+          "name": "carrier label",
+          "type": "DataObject",
+          "mention": "carrier label",
+          "confidence": "high"
+        },
+        {
+          "name": "shipping method's label type",
+          "type": "Setting",
+          "mention": "shipping method's label type",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "carrier label",
+          "relation": "CONFIGURED_BY",
+          "target": "Carrier Labels checkbox",
+          "evidence": "Tick the Carrier Labels checkbox"
+        },
+        {
+          "source": "printer",
+          "relation": "IS_PART_OF",
+          "target": "IoT app",
+          "evidence": "Connect a printer to Odoo's *IoT* app"
+        },
+        {
+          "source": "carrier label",
+          "relation": "ASSIGNED_TO",
+          "target": "printer",
+          "evidence": "Assign the carrier label to the printer"
+        },
+        {
+          "source": "carrier label",
+          "relation": "CONFIGURED_BY",
+          "target": "shipping method's label type",
+          "evidence": "Configure the shipping method's label type"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "IoT app",
+          "evidence": "Odoo's *IoT* app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assign-printer",
+    "heading": "Assign printer",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT app",
+          "type": "Module",
+          "mention": "IoT",
+          "confidence": "high"
+        },
+        {
+          "name": "Devices",
+          "type": "Sub-module",
+          "mention": "Devices",
+          "confidence": "high"
+        },
+        {
+          "name": "printer configuration form",
+          "type": "DataObject",
+          "mention": "printer configuration form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Printer Reports tab",
+          "type": "DataObject",
+          "mention": "Printer Reports tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Add: Reports pop-up window",
+          "type": "DataObject",
+          "mention": "Add: Reports pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Search... bar",
+          "type": "Field",
+          "mention": "Search... bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shipping Labels report",
+          "type": "Report",
+          "mention": "Shipping Labels",
+          "confidence": "high"
+        },
+        {
+          "name": "Shipping Documents report",
+          "type": "Report",
+          "mention": "Shipping Documents",
+          "confidence": "high"
+        },
+        {
+          "name": "Report Type",
+          "type": "Field",
+          "mention": "Report Type",
+          "confidence": "high"
+        },
+        {
+          "name": "PDF",
+          "type": "Standard",
+          "mention": "PDF",
+          "confidence": "medium"
+        },
+        {
+          "name": "Text",
+          "type": "Standard",
+          "mention": "Text",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT app",
+          "relation": "CONTAINS",
+          "target": "Devices",
+          "evidence": "IoT app --> Devices"
+        },
+        {
+          "source": "Devices",
+          "relation": "BELONGS_TO",
+          "target": "IoT app",
+          "evidence": "IoT app --> Devices"
+        },
+        {
+          "source": "Devices",
+          "relation": "CONTAINS",
+          "target": "printer configuration form",
+          "evidence": "selecting the desired printer"
+        },
+        {
+          "source": "printer configuration form",
+          "relation": "CONTAINS",
+          "target": "Printer Reports tab",
+          "evidence": "go to the Printer Reports tab"
+        },
+        {
+          "source": "Printer Reports tab",
+          "relation": "CONTAINS",
+          "target": "Add: Reports pop-up window",
+          "evidence": "Click Add a line to open the Add: Reports pop-up window"
+        },
+        {
+          "source": "Add a line",
+          "relation": "TRIGGERED_BY",
+          "target": "Add: Reports pop-up window",
+          "evidence": "Click Add a line to open the Add: Reports pop-up window"
+        },
+        {
+          "source": "Add: Reports pop-up window",
+          "relation": "CONTAINS",
+          "target": "Search... bar",
+          "evidence": "In the Search... bar"
+        },
+        {
+          "source": "Shipping Labels report",
+          "relation": "GENERATES",
+          "target": "Shipping Labels",
+          "evidence": "type `Shipping`, and select Shipping Labels"
+        },
+        {
+          "source": "Printer Reports tab",
+          "relation": "CONTAINS",
+          "target": "Shipping Labels report",
+          "evidence": "adding the Shipping Labels report in the Printer Reports tab"
+        },
+        {
+          "source": "Shipping Labels report",
+          "relation": "CONTAINS",
+          "target": "Report Type",
+          "evidence": "ensure the Report Type matches"
+        },
+        {
+          "source": "Report Type",
+          "relation": "SUPPORTS",
+          "target": "PDF",
+          "evidence": "For laser printers, set the Report Type to PDF"
+        },
+        {
+          "source": "Report Type",
+          "relation": "SUPPORTS",
+          "target": "Text",
+          "evidence": "For Zebra printers, set the Report Type to Text"
+        },
+        {
+          "source": "Shipping Documents report",
+          "relation": "RELATED_TO",
+          "target": "Shipping Labels report",
+          "evidence": "The Shipping Documents report is for export documents"
+        },
+        {
+          "source": "Shipping Labels report",
+          "relation": "SEE_ALSO",
+          "target": "Shipping Documents report",
+          "evidence": "The Shipping Documents report is for export documents"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "shipping-carrier-label-type",
+    "heading": "Shipping carrier label type",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Shipping Methods",
+          "type": "Sub-module",
+          "mention": "Configuration --> Shipping Methods",
+          "confidence": "high"
+        },
+        {
+          "name": "shipping method configuration form",
+          "type": "Feature",
+          "mention": "shipping method configuration form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Label Format",
+          "type": "Field",
+          "mention": "Label Format",
+          "confidence": "high"
+        },
+        {
+          "name": "PDF",
+          "type": "Report",
+          "mention": "PDF",
+          "confidence": "medium"
+        },
+        {
+          "name": "ZPL2",
+          "type": "Report",
+          "mention": "ZPL2",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Shipping Methods",
+          "evidence": "go to Inventory app --> Configuration --> Shipping Methods"
+        },
+        {
+          "source": "Shipping Methods",
+          "relation": "CONTAINS",
+          "target": "shipping method configuration form",
+          "evidence": "select the desired shipping method... On the shipping method configuration form"
+        },
+        {
+          "source": "shipping method configuration form",
+          "relation": "CONTAINS",
+          "target": "Label Format",
+          "evidence": "On the shipping method configuration form, in the [carrier name] Configuration tab, ensure the Label Format"
+        },
+        {
+          "source": "Label Format",
+          "relation": "CONFIGURED_BY",
+          "target": "PDF",
+          "evidence": "For laser printers, set the Label Format to PDF."
+        },
+        {
+          "source": "Label Format",
+          "relation": "CONFIGURED_BY",
+          "target": "ZPL2",
+          "evidence": "For Zebra printers, set the Label Format to ZPL2."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "example-carrier-label",
+    "heading": "Example carrier label",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "carrier label",
+          "type": "DataObject",
+          "mention": "carrier label",
+          "confidence": "medium"
+        },
+        {
+          "name": "FedEx",
+          "type": "Actor",
+          "mention": "FedEx",
+          "confidence": "high"
+        },
+        {
+          "name": "recipient address",
+          "type": "Field",
+          "mention": "recipient address",
+          "confidence": "low"
+        },
+        {
+          "name": "tracking number",
+          "type": "Field",
+          "mention": "tracking number",
+          "confidence": "low"
+        },
+        {
+          "name": "barcode",
+          "type": "Field",
+          "mention": "barcode",
+          "confidence": "low"
+        },
+        {
+          "name": "shipping information",
+          "type": "Field",
+          "mention": "shipping information",
+          "confidence": "low"
+        },
+        {
+          "name": "IoT-connected printer",
+          "type": "Integration",
+          "mention": "IoT-connected printer",
+          "confidence": "high"
+        },
+        {
+          "name": "chatter",
+          "type": "Feature",
+          "mention": "chatter",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "carrier label",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "carrier label",
+          "relation": "CONTAINS",
+          "target": "recipient address",
+          "evidence": "Carrier label for FedEx, containing the recipient address"
+        },
+        {
+          "source": "carrier label",
+          "relation": "CONTAINS",
+          "target": "tracking number",
+          "evidence": "Carrier label for FedEx, containing ... tracking number"
+        },
+        {
+          "source": "carrier label",
+          "relation": "CONTAINS",
+          "target": "barcode",
+          "evidence": "Carrier label for FedEx, containing ... barcode"
+        },
+        {
+          "source": "carrier label",
+          "relation": "CONTAINS",
+          "target": "shipping information",
+          "evidence": "Carrier label for FedEx, containing ... shipping information"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "chatter",
+          "evidence": "the carrier label is generated in the chatter"
+        },
+        {
+          "source": "IoT-connected printer",
+          "relation": "CONTAINS",
+          "target": "barcode",
+          "evidence": "IoT-connected printer"
+        },
+        {
+          "source": "IoT-connected printer",
+          "relation": "GENERATES",
+          "target": "carrier label",
+          "evidence": "printed using the IoT-connected printer"
+        },
+        {
+          "source": "IoT-connected printer",
+          "relation": "SUPPORTS",
+          "target": "FedEx",
+          "evidence": "FedEx, containing the recipient address"
+        },
+        {
+          "source": "carrier label",
+          "relation": "PRODUCES",
+          "target": "tracking number",
+          "evidence": "Carrier label for FedEx, containing the tracking number"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "export-document",
+    "heading": "Export document",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Export document",
+          "type": "DataObject",
+          "mention": "export document",
+          "confidence": "high"
+        },
+        {
+          "name": "operation type settings",
+          "type": "Module",
+          "mention": "operation type settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Export Documents checkbox",
+          "type": "Setting",
+          "mention": "Export Documents checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT app",
+          "type": "Module",
+          "mention": "IoT app",
+          "confidence": "high"
+        },
+        {
+          "name": "printer",
+          "type": "Integration",
+          "mention": "printer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Export document",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "export document, required by customs to ship packages from one country to another, can be automatically printed in Odoo"
+        },
+        {
+          "source": "Export Documents checkbox",
+          "relation": "CONFIGURED_BY",
+          "target": "operation type settings",
+          "evidence": "Tick the Export Documents checkbox in the operation type settings"
+        },
+        {
+          "source": "operation type settings",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "in the operation type settings"
+        },
+        {
+          "source": "IoT app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Connect a printer to Odoo's IoT app"
+        },
+        {
+          "source": "printer",
+          "relation": "CONNECTED_TO",
+          "target": "IoT app",
+          "evidence": "Connect a printer to Odoo's IoT app"
+        },
+        {
+          "source": "Export document",
+          "relation": "GENERATES",
+          "target": "printer",
+          "evidence": "Assign the export document to the printer"
+        },
+        {
+          "source": "Export document",
+          "relation": "CONFIGURED_BY",
+          "target": "Export Documents checkbox",
+          "evidence": "Tick the Export Documents checkbox to print export document automatically"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assign-printer",
+    "heading": "Assign printer",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "IoT app",
+          "type": "Module",
+          "mention": "IoT app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Printer configuration form",
+          "type": "DataObject",
+          "mention": "Printer configuration form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Printer Reports tab",
+          "type": "Sub-module",
+          "mention": "Printer Reports tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add: Reports pop-up window",
+          "type": "DataObject",
+          "mention": "Add: Reports pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shipping Documents report",
+          "type": "Report",
+          "mention": "Shipping Documents report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Export document",
+          "type": "Report",
+          "mention": "Export document",
+          "confidence": "medium"
+        },
+        {
+          "name": "carrier labels",
+          "type": "Report",
+          "mention": "carrier labels",
+          "confidence": "low"
+        },
+        {
+          "name": "compatible printer",
+          "type": "Unknown",
+          "mention": "compatible printer",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "IoT app",
+          "relation": "CONTAINS",
+          "target": "Devices",
+          "evidence": "IoT app --> Devices"
+        },
+        {
+          "source": "IoT app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "connecting a compatible printer to the Odoo *IoT* app"
+        },
+        {
+          "source": "Printer configuration form",
+          "relation": "CONTAINS",
+          "target": "Printer Reports tab",
+          "evidence": "In the printer configuration form, go to the Printer Reports tab"
+        },
+        {
+          "source": "Printer Reports tab",
+          "relation": "ENABLES",
+          "target": "Add a line",
+          "evidence": "click Add a line"
+        },
+        {
+          "source": "Add a line",
+          "relation": "TRIGGERED_BY",
+          "target": "Printer Reports tab",
+          "evidence": "click Add a line"
+        },
+        {
+          "source": "Add a line",
+          "relation": "PRODUCES",
+          "target": "Add: Reports pop-up window",
+          "evidence": "Add: Reports pop-up window that appears"
+        },
+        {
+          "source": "Add: Reports pop-up window",
+          "relation": "HAS_REPORT",
+          "target": "Shipping Documents report",
+          "evidence": "add the Shipping Documents report"
+        },
+        {
+          "source": "Shipping Documents report",
+          "relation": "EQUIVALENT_TO",
+          "target": "Export document",
+          "evidence": "assign the export document to the printer"
+        },
+        {
+          "source": "carrier labels",
+          "relation": "SEE_ALSO",
+          "target": "Assign printer",
+          "evidence": "Similar to the printer assignment instructions for carrier labels <inventory/shipping_receiving/assign-printer>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "package-content",
+    "heading": "Package content",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operation Types",
+          "type": "Sub-module",
+          "mention": "Operation Types",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hardware",
+          "type": "Sub-module",
+          "mention": "Hardware tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Package Contents checkbox",
+          "type": "Setting",
+          "mention": "Package Contents checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages feature",
+          "type": "Feature",
+          "mention": "Packages feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages checkbox",
+          "type": "Setting",
+          "mention": "Packages checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "package content PDF",
+          "type": "Report",
+          "mention": "package content PDF",
+          "confidence": "high"
+        },
+        {
+          "name": "Package",
+          "type": "DataObject",
+          "mention": "package",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Operation Types",
+          "evidence": "Configuration --> Operation Types"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Operation Types",
+          "relation": "CONTAINS",
+          "target": "Hardware",
+          "evidence": "operation type...go to the Hardware tab"
+        },
+        {
+          "source": "Hardware",
+          "relation": "CONFIGURED_BY",
+          "target": "Package Contents checkbox",
+          "evidence": "Hardware tab, and tick the Package Contents checkbox"
+        },
+        {
+          "source": "Packages feature",
+          "relation": "ENABLES",
+          "target": "Package Contents checkbox",
+          "evidence": "enable the Packages feature...ticking the Package Contents checkbox"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Packages checkbox",
+          "evidence": "Settings, ticking the Packages checkbox"
+        },
+        {
+          "source": "Packages checkbox",
+          "relation": "ENABLES",
+          "target": "Packages feature",
+          "evidence": "enable the Packages feature...ticking the Packages checkbox"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Product: Odoo...Inventory app"
+        },
+        {
+          "source": "Package",
+          "relation": "GENERATES",
+          "target": "package content PDF",
+          "evidence": "package's...package content PDF"
+        },
+        {
+          "source": "Packages checkbox",
+          "relation": "REQUIRES",
+          "target": "Packages feature",
+          "evidence": "enable the Packages feature...ticking the Packages checkbox"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "package-label",
+    "heading": "Package label",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Package label",
+          "type": "DataObject",
+          "mention": "package label",
+          "confidence": "high"
+        },
+        {
+          "name": "Packages",
+          "type": "Feature",
+          "mention": "Packages feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Put in Pack",
+          "type": "Action",
+          "mention": "Put in Pack button",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Operation Types",
+          "type": "Sub-module",
+          "mention": "Operation Types",
+          "confidence": "high"
+        },
+        {
+          "name": "Package Label checkbox",
+          "type": "Setting",
+          "mention": "Package Label checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Hardware tab",
+          "type": "Setting",
+          "mention": "Hardware tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Print label as",
+          "type": "Field",
+          "mention": "Print label as field",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt",
+          "type": "Workflow",
+          "mention": "receipt",
+          "confidence": "medium"
+        },
+        {
+          "name": "pickings",
+          "type": "Workflow",
+          "mention": "pickings",
+          "confidence": "medium"
+        },
+        {
+          "name": "internal transfers",
+          "type": "Workflow",
+          "mention": "internal transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery orders",
+          "type": "Workflow",
+          "mention": "delivery orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "package's barcode",
+          "type": "Field",
+          "mention": "package's barcode",
+          "confidence": "medium"
+        },
+        {
+          "name": "pack date",
+          "type": "Field",
+          "mention": "pack date",
+          "confidence": "medium"
+        },
+        {
+          "name": "PDF",
+          "type": "Unknown",
+          "mention": "PDF",
+          "confidence": "medium"
+        },
+        {
+          "name": "ZPL",
+          "type": "Unknown",
+          "mention": "ZPL",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "HAS_FEATURE",
+          "target": "Packages",
+          "evidence": "the Packages feature is enabled in Inventory app"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Inventory app --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Operation Types",
+          "evidence": "Inventory app --> Configuration --> Operation Types"
+        },
+        {
+          "source": "Put in Pack",
+          "relation": "CONFIGURED_BY",
+          "target": "Packages",
+          "evidence": "the Put in Pack button is available only when the Packages feature is enabled"
+        },
+        {
+          "source": "Put in Pack",
+          "relation": "PRODUCES",
+          "target": "Package label",
+          "evidence": "A package label ... can be configured to print upon clicking the Put in Pack button."
+        },
+        {
+          "source": "Package label",
+          "relation": "CONTAINS",
+          "target": "package's barcode",
+          "evidence": "package label that shows the package's barcode"
+        },
+        {
+          "source": "Package label",
+          "relation": "CONTAINS",
+          "target": "pack date",
+          "evidence": "package label that shows the ... pack date"
+        },
+        {
+          "source": "Operation Types",
+          "relation": "CONFIGURED_BY",
+          "target": "Package Label checkbox",
+          "evidence": "Select the desired operation type, and tick the Package Label checkbox"
+        },
+        {
+          "source": "Package Label checkbox",
+          "relation": "IS_PART_OF",
+          "target": "Hardware tab",
+          "evidence": "tick the Package Label checkbox in the Hardware tab"
+        },
+        {
+          "source": "Print label as",
+          "relation": "CONFIGURED_BY",
+          "target": "PDF",
+          "evidence": "Labels can be printed in PDF or ZPL file formats, as defined in the Print label as field."
+        },
+        {
+          "source": "Print label as",
+          "relation": "CONFIGURED_BY",
+          "target": "ZPL",
+          "evidence": "Labels can be printed in PDF or ZPL file formats, as defined in the Print label as field."
+        }
+      ]
+    }
+  }
+]

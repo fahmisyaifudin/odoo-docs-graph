@@ -1,0 +1,2057 @@
+[
+  {
+    "section_id": "reordering-rules",
+    "heading": "Reordering rules",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering rules",
+          "type": "Feature",
+          "mention": "Reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy",
+          "type": "Workflow",
+          "mention": "Buy route",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacture",
+          "type": "Workflow",
+          "mention": "Manufacture route",
+          "confidence": "high"
+        },
+        {
+          "name": "request for quotation",
+          "type": "DataObject",
+          "mention": "request for quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reordering rules",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Reordering rules"
+        },
+        {
+          "source": "Buy",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "product uses the Buy route"
+        },
+        {
+          "source": "Manufacture",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "product uses the Manufacture route"
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "GENERATES",
+          "target": "request for quotation",
+          "evidence": "RFQ is created when the reordering rule is triggered"
+        },
+        {
+          "source": "Reordering rules",
+          "relation": "GENERATES",
+          "target": "manufacturing order",
+          "evidence": "MO is created when the reordering rule is triggered"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reordering-rules-setup",
+    "heading": "Reordering rules setup",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering rules setup",
+          "type": "Module",
+          "mention": "Title",
+          "confidence": "high"
+        },
+        {
+          "name": "Product type configuration",
+          "type": "Action",
+          "mention": "Product type configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment method",
+          "type": "Action",
+          "mention": "Replenishment method",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create rule",
+          "type": "Action",
+          "mention": "Create rule",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reordering rules setup",
+          "relation": "CONTAINS",
+          "target": "Product type configuration",
+          "evidence": "To configure automatic and manual reordering rules, complete the following:"
+        },
+        {
+          "source": "Reordering rules setup",
+          "relation": "CONTAINS",
+          "target": "Replenishment method",
+          "evidence": "To configure automatic and manual reordering rules, complete the following:"
+        },
+        {
+          "source": "Reordering rules setup",
+          "relation": "CONTAINS",
+          "target": "Create rule",
+          "evidence": "To configure automatic and manual reordering rules, complete the following:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "product-type-configuration",
+    "heading": "Product type configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information",
+          "type": "Sub-module",
+          "mention": "General Information tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product Type",
+          "type": "Field",
+          "mention": "Product Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Goods",
+          "type": "Concept",
+          "mention": "Goods",
+          "confidence": "medium"
+        },
+        {
+          "name": "Track Inventory",
+          "type": "Setting",
+          "mention": "Track Inventory checkbox",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Product",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "On the product form, under the General Information tab"
+        },
+        {
+          "source": "Product",
+          "relation": "CONFIGURED_BY",
+          "target": "Product Type",
+          "evidence": "On the product form, under the General Information tab, set the Product Type"
+        },
+        {
+          "source": "Product",
+          "relation": "CONFIGURED_BY",
+          "target": "Track Inventory",
+          "evidence": "On the product form, under the General Information tab, ... make sure the Track Inventory checkbox is ticked"
+        },
+        {
+          "source": "Product Type",
+          "relation": "RELATED_TO",
+          "target": "Goods",
+          "evidence": "set the Product Type to Goods"
+        },
+        {
+          "source": "Product",
+          "relation": "BELONGS_TO",
+          "target": "Products",
+          "evidence": "Products --> Products, then select an existing product"
+        },
+        {
+          "source": "Products",
+          "relation": "BELONGS_TO",
+          "target": "Inventory",
+          "evidence": "Inventory app --> Products"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "replenishment-method",
+    "heading": "Replenishment method",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment method",
+          "type": "Concept",
+          "mention": "Replenishment method",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor pricelist",
+          "type": "DataObject",
+          "mention": "vendor pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rules",
+          "type": "Workflow",
+          "mention": "reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "bill of materials",
+          "type": "DataObject",
+          "mention": "bill of materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials smart button",
+          "type": "Feature",
+          "mention": "Bill of Materials smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "manufacturing orders",
+          "type": "DataObject",
+          "mention": "manufacturing orders",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM",
+          "type": "DataObject",
+          "mention": "BoM",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configure BoM",
+          "type": "Concept",
+          "mention": "Configure BoM",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replenishment method",
+          "relation": "CONFIGURED_BY",
+          "target": "Purchase",
+          "evidence": "configure the replenishment method (e.g. buy or manufacture)."
+        },
+        {
+          "source": "Replenishment method",
+          "relation": "CONFIGURED_BY",
+          "target": "Manufacturing",
+          "evidence": "configure the replenishment method (e.g. buy or manufacture)."
+        },
+        {
+          "source": "Purchase",
+          "relation": "SUPPORTS",
+          "target": "reordering rules",
+          "evidence": "Odoo uses the vendor at the top of the list to generate when reordering rules are triggered."
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "SUPPORTS",
+          "target": "manufacturing orders",
+          "evidence": "Odoo only creates manufacturing orders (MOs) for products with a ."
+        },
+        {
+          "source": "Bill of Materials smart button",
+          "relation": "CONTAINS",
+          "target": "bill of materials",
+          "evidence": "at least one bill of materials (BoM) is displayed in the Bill of Materials smart button"
+        },
+        {
+          "source": "manufacturing orders",
+          "relation": "REQUIRES",
+          "target": "bill of materials",
+          "evidence": "necessary because Odoo only creates manufacturing orders (MOs) for products with a ."
+        },
+        {
+          "source": "vendor pricelist",
+          "relation": "SEE_ALSO",
+          "target": "Configure BoM",
+          "evidence": ".. seealso:: Vendor pricelist and Configure BoM"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-reordering-rule",
+    "heading": "Create a reordering rule",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment",
+          "type": "Sub-module",
+          "mention": "Replenishment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create a reordering rule",
+          "type": "Workflow",
+          "mention": "Create a reordering rule",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rule",
+          "type": "Feature",
+          "mention": "reordering rule",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Location",
+          "type": "Field",
+          "mention": "Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Min",
+          "type": "Field",
+          "mention": "Min",
+          "confidence": "high"
+        },
+        {
+          "name": "Max",
+          "type": "Field",
+          "mention": "Max",
+          "confidence": "high"
+        },
+        {
+          "name": "On Hand",
+          "type": "Field",
+          "mention": "On Hand",
+          "confidence": "medium"
+        },
+        {
+          "name": "Forecast",
+          "type": "Field",
+          "mention": "Forecast",
+          "confidence": "medium"
+        },
+        {
+          "name": "To Order",
+          "type": "Field",
+          "mention": "To Order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Just in time logic",
+          "type": "Concept",
+          "mention": "Just in time logic",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering Rules smart button",
+          "type": "Feature",
+          "mention": "Reordering Rules smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Inventory app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Replenishment",
+          "evidence": "Operations --> Replenishment"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "reordering rule",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Create a reordering rule",
+          "relation": "TRIGGERED_BY",
+          "target": "New",
+          "evidence": "click New"
+        },
+        {
+          "source": "Create a reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Product",
+          "evidence": "Product: The product..."
+        },
+        {
+          "source": "Create a reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Location",
+          "evidence": "Location: The location..."
+        },
+        {
+          "source": "Create a reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Min",
+          "evidence": "Min: The minimum quantity..."
+        },
+        {
+          "source": "Create a reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Max",
+          "evidence": "Max: The maximum quantity..."
+        },
+        {
+          "source": "On Hand",
+          "relation": "RELATED_TO",
+          "target": "Just in time logic",
+          "evidence": "calculated using on-hand quantities"
+        },
+        {
+          "source": "Forecast",
+          "relation": "RELATED_TO",
+          "target": "Just in time logic",
+          "evidence": "calculated using... future demand"
+        },
+        {
+          "source": "To Order",
+          "relation": "RELATED_TO",
+          "target": "Just in time logic",
+          "evidence": "see Just in time logic"
+        },
+        {
+          "source": "product form",
+          "relation": "HAS_FEATURE",
+          "target": "Reordering Rules smart button",
+          "evidence": "Reordering Rules smart button on the product form."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "0-0-1-reordering-rule",
+    "heading": "0/0/1 reordering rule",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering Rules",
+          "type": "Feature",
+          "mention": "Reordering Rules",
+          "confidence": "high"
+        },
+        {
+          "name": "0/0/1 reordering rule",
+          "type": "Feature",
+          "mention": "0/0/1",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering Rules page",
+          "type": "Feature",
+          "mention": "Reordering Rules page",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "SO",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "PO",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/Stock",
+          "type": "Location",
+          "mention": "WH/Stock",
+          "confidence": "high"
+        },
+        {
+          "name": "Min field",
+          "type": "Field",
+          "mention": "Min field",
+          "confidence": "high"
+        },
+        {
+          "name": "Max field",
+          "type": "Field",
+          "mention": "Max field",
+          "confidence": "high"
+        },
+        {
+          "name": "To Order field",
+          "type": "Field",
+          "mention": "To Order field",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy route",
+          "type": "Route",
+          "mention": "Buy route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish on Order (MTO) route",
+          "type": "Feature",
+          "mention": "Replenish on Order (MTO) route",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "0/0/1 reordering rule",
+          "relation": "BELONGS_TO",
+          "target": "Reordering Rules",
+          "evidence": "The *0/0/1* reordering rule is a specialty rule used to replenish a product"
+        },
+        {
+          "source": "Reordering Rules",
+          "relation": "BELONGS_TO",
+          "target": "Products",
+          "evidence": "click the fa-refresh Reordering Rules smart button"
+        },
+        {
+          "source": "Products",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "navigate to Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "0/0/1 reordering rule",
+          "relation": "ENABLES",
+          "target": "Replenish on Order (MTO) route",
+          "evidence": "The 0/0/1 reordering rule is similar to the *Replenish on Order (MTO)* route"
+        },
+        {
+          "source": "0/0/1 reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Location field",
+          "evidence": "In the Location field of the new reordering rule, select the location"
+        },
+        {
+          "source": "0/0/1 reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Route field",
+          "evidence": "In the Route field, select the route the rule should use"
+        },
+        {
+          "source": "0/0/1 reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Min field",
+          "evidence": "In the Min field and Max field, leave the values set to `0.00`"
+        },
+        {
+          "source": "0/0/1 reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Max field",
+          "evidence": "In the Min field and Max field, leave the values set to `0.00`"
+        },
+        {
+          "source": "0/0/1 reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "To Order field",
+          "evidence": "In the To Order field, enter a value of `1.00`"
+        },
+        {
+          "source": "0/0/1 reordering rule",
+          "relation": "TRIGGERED_BY",
+          "target": "sales order",
+          "evidence": "each time an SO causes the forecasted quantity of the product to fall below the Min of `0.00`"
+        },
+        {
+          "source": "sales order",
+          "relation": "PRODUCES",
+          "target": "purchase order",
+          "evidence": "This triggers the reordering rule, which automatically creates a PO for one unit"
+        },
+        {
+          "source": "Replenish on Order (MTO) route",
+          "relation": "SEE_ALSO",
+          "target": "0/0/1 reordering rule",
+          "evidence": "See the Replenish on Order (MTO) documentation for a full overview"
+        },
+        {
+          "source": "Reordering Rules",
+          "relation": "HAS_FEATURE",
+          "target": "Reordering Rules page",
+          "evidence": "click the fa-refresh Reordering Rules smart button to open the Reordering Rules page"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "multiple",
+    "heading": "Multiple",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment",
+          "type": "Feature",
+          "mention": "Replenishment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Multiple field",
+          "type": "Field",
+          "mention": "Multiple field",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment report",
+          "type": "Report",
+          "mention": "replenishment report",
+          "confidence": "high"
+        },
+        {
+          "name": "Max quantity",
+          "type": "Field",
+          "mention": "Max",
+          "confidence": "medium"
+        },
+        {
+          "name": "Min quantity",
+          "type": "Field",
+          "mention": "Min",
+          "confidence": "medium"
+        },
+        {
+          "name": "reordering rule",
+          "type": "Workflow",
+          "mention": "reordering rule",
+          "confidence": "medium"
+        },
+        {
+          "name": "Units",
+          "type": "Concept",
+          "mention": "Units",
+          "confidence": "medium"
+        },
+        {
+          "name": "ordered quantity",
+          "type": "Concept",
+          "mention": "ordered quantity",
+          "confidence": "low"
+        },
+        {
+          "name": "To Order",
+          "type": "Feature",
+          "mention": "To Order",
+          "confidence": "medium"
+        },
+        {
+          "name": "forecasted quantity",
+          "type": "Concept",
+          "mention": "forecasted quantity",
+          "confidence": "low"
+        },
+        {
+          "name": "On Hand quantity",
+          "type": "Concept",
+          "mention": "On Hand quantity",
+          "confidence": "low"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "low"
+        },
+        {
+          "name": "fa-warning warning",
+          "type": "Feature",
+          "mention": "fa-warning warning",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Replenishment report",
+          "relation": "CONTAINS",
+          "target": "Multiple field",
+          "evidence": "The Multiple field on the replenishment report"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Inventory app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Replenishment",
+          "evidence": "Operations --> Replenishment"
+        },
+        {
+          "source": "Multiple field",
+          "relation": "ENABLES",
+          "target": "ordered quantity",
+          "evidence": "defines the unit used when replenishing a product"
+        },
+        {
+          "source": "Multiple field",
+          "relation": "CONFIGURED_BY",
+          "target": "Units",
+          "evidence": "If no multiples apply, select Units"
+        },
+        {
+          "source": "reordering rule",
+          "relation": "CONTAINS",
+          "target": "Max quantity",
+          "evidence": "Max quantity set on the reordering rule"
+        },
+        {
+          "source": "reordering rule",
+          "relation": "CONTAINS",
+          "target": "Min quantity",
+          "evidence": "For a reordering rule with the Min = `10` and Max = `40`"
+        },
+        {
+          "source": "To Order",
+          "relation": "PRODUCES",
+          "target": "ordered quantity",
+          "evidence": "the amount To Order is `30`"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "fa-warning warning",
+          "evidence": "expect to see a fa-warning warning"
+        },
+        {
+          "source": "Multiple field",
+          "relation": "RELATED_TO",
+          "target": "forecasted quantity",
+          "evidence": "If the forecasted quantity is `10`"
+        },
+        {
+          "source": "Multiple field",
+          "relation": "RELATED_TO",
+          "target": "On Hand quantity",
+          "evidence": "bring the On Hand quantity to exactly the maximum"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Multiple",
+          "type": "Field",
+          "mention": "Multiple field",
+          "confidence": "high"
+        },
+        {
+          "name": "packaging",
+          "type": "DataObject",
+          "mention": "defined packagings",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor pricelist",
+          "type": "DataObject",
+          "mention": "product's vendor pricelist",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Multiple",
+          "relation": "CONFIGURED_BY",
+          "target": "vendor pricelist",
+          "evidence": "Only packaging types listed on the product's vendor pricelist appear as options in the Multiple field"
+        },
+        {
+          "source": "Multiple",
+          "relation": "CONFIGURED_BY",
+          "target": "packaging",
+          "evidence": "Multiples are based on defined packagings. Only packaging types listed... appear as options in the Multiple field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "trigger",
+    "heading": "Trigger",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Trigger",
+          "type": "Feature",
+          "mention": "Trigger",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering rule",
+          "type": "Module",
+          "mention": "reordering rule",
+          "confidence": "medium"
+        },
+        {
+          "name": "Auto trigger",
+          "type": "Feature",
+          "mention": "Auto",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual trigger",
+          "type": "Feature",
+          "mention": "Manual",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment report",
+          "type": "Report",
+          "mention": "Replenishment report",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment",
+          "type": "Sub-module",
+          "mention": "Replenishment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Trigger column",
+          "type": "Field",
+          "mention": "Trigger column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Trigger checkbox",
+          "type": "Setting",
+          "mention": "Trigger checkbox",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reordering rule",
+          "relation": "CONTAINS",
+          "target": "Trigger",
+          "evidence": "A reordering rule's *trigger*"
+        },
+        {
+          "source": "Auto trigger",
+          "relation": "BELONGS_TO",
+          "target": "Trigger",
+          "evidence": "select Auto or Manual"
+        },
+        {
+          "source": "Manual trigger",
+          "relation": "BELONGS_TO",
+          "target": "Trigger",
+          "evidence": "select Auto or Manual"
+        },
+        {
+          "source": "Trigger",
+          "relation": "CONFIGURED_BY",
+          "target": "Trigger checkbox",
+          "evidence": "tick the Trigger checkbox"
+        },
+        {
+          "source": "Reordering rule",
+          "relation": "HAS_REPORT",
+          "target": "Replenishment report",
+          "evidence": "Manual trigger: The Replenishment report"
+        },
+        {
+          "source": "Replenishment",
+          "relation": "IS_PART_OF",
+          "target": "Operations",
+          "evidence": "go to Inventory app --> Operations --> Replenishment"
+        },
+        {
+          "source": "Operations",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "go to Inventory app --> Operations"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Trigger column",
+          "evidence": "In the Trigger column, select Auto or Manual"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "auto",
+    "heading": "Auto",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reordering Rule",
+          "type": "Module",
+          "mention": "Automatic reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Trigger field",
+          "type": "Field",
+          "mention": "Trigger field",
+          "confidence": "high"
+        },
+        {
+          "name": "Auto",
+          "type": "Setting",
+          "mention": "Auto",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing Order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "high"
+        },
+        {
+          "name": "Forecasted quantity",
+          "type": "Field",
+          "mention": "Forecasted quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduler",
+          "type": "Feature",
+          "mention": "The scheduler runs",
+          "confidence": "high"
+        },
+        {
+          "name": "Minimum",
+          "type": "Field",
+          "mention": "the minimum",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Buy route",
+          "type": "Setting",
+          "mention": "Buy route",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacture route",
+          "type": "Setting",
+          "mention": "Manufacture route",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Feature",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Requests for Quotation",
+          "type": "DataObject",
+          "mention": "Requests for Quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Feature",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Run Scheduler",
+          "type": "Action",
+          "mention": "Run Scheduler",
+          "confidence": "high"
+        },
+        {
+          "name": "Developer mode",
+          "type": "Permission",
+          "mention": "developer mode",
+          "confidence": "high"
+        },
+        {
+          "name": "Route",
+          "type": "Setting",
+          "mention": "Route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Feature",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Office Lamp",
+          "type": "Product",
+          "mention": "Office Lamp",
+          "confidence": "medium"
+        },
+        {
+          "name": "Min Quantity",
+          "type": "Field",
+          "mention": "Min Quantity",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reordering Rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Trigger field",
+          "evidence": "enabled by setting the reordering rule's Trigger field"
+        },
+        {
+          "source": "Trigger field",
+          "relation": "CONTAINS",
+          "target": "Auto",
+          "evidence": "Trigger field to Auto"
+        },
+        {
+          "source": "Reordering Rule",
+          "relation": "GENERATES",
+          "target": "Purchase Order",
+          "evidence": "generate purchase orders"
+        },
+        {
+          "source": "Reordering Rule",
+          "relation": "GENERATES",
+          "target": "Manufacturing Order",
+          "evidence": "generate manufacturing orders"
+        },
+        {
+          "source": "Reordering Rule",
+          "relation": "TRIGGERED_BY",
+          "target": "Scheduler",
+          "evidence": "The scheduler runs, and the Forecasted quantity is below the minimum"
+        },
+        {
+          "source": "Reordering Rule",
+          "relation": "TRIGGERED_BY",
+          "target": "Sales Order",
+          "evidence": "A Sales Order is confirmed, and lowers the Forecasted quantity"
+        },
+        {
+          "source": "Buy route",
+          "relation": "ENABLES",
+          "target": "Purchase Order",
+          "evidence": "If the Buy route is selected, then a Purchase Order is generated"
+        },
+        {
+          "source": "Manufacture route",
+          "relation": "ENABLES",
+          "target": "Manufacturing Order",
+          "evidence": "If the Manufacture route is selected, then a Manufacturing Order is generated"
+        },
+        {
+          "source": "Purchase app",
+          "relation": "HAS_REPORT",
+          "target": "Requests for Quotation",
+          "evidence": "To view and manage, navigate to Purchase app --> Orders --> Requests for Quotation"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "HAS_REPORT",
+          "target": "Manufacturing Orders",
+          "evidence": "To view and manage, navigate to Manufacturing app --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Route",
+          "relation": "CONFIGURED_BY",
+          "target": "Inventory tab",
+          "evidence": "the Route specified in the Inventory tab"
+        },
+        {
+          "source": "Product",
+          "relation": "CONFIGURED_BY",
+          "target": "Route",
+          "evidence": "Route specified in the Inventory tab of the product form"
+        },
+        {
+          "source": "Reordering Rule",
+          "relation": "CONFIGURED_BY",
+          "target": "Min Quantity",
+          "evidence": "trigger when the forecasted quantity falls below the Min Quantity"
+        },
+        {
+          "source": "Reordering Rule",
+          "relation": "RELATED_TO",
+          "target": "Office Lamp",
+          "evidence": "example product Office Lamp"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manual",
+    "heading": "Manual",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Manual reordering rules",
+          "type": "Feature",
+          "mention": "Manual reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "replenishment dashboard",
+          "type": "Report",
+          "mention": "replenishment dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "needs",
+          "type": "DataObject",
+          "mention": "needs",
+          "confidence": "high"
+        },
+        {
+          "name": "To Reorder filter",
+          "type": "Feature",
+          "mention": "To Reorder filter",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order button",
+          "type": "Action",
+          "mention": "Order button",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "medium"
+        },
+        {
+          "name": "To Order",
+          "type": "Field",
+          "mention": "To Order",
+          "confidence": "low"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment",
+          "type": "Feature",
+          "mention": "Replenishment",
+          "confidence": "medium"
+        },
+        {
+          "name": "forecasted quantity",
+          "type": "Field",
+          "mention": "forecasted quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "minimum",
+          "type": "Field",
+          "mention": "minimum",
+          "confidence": "low"
+        },
+        {
+          "name": "Trigger",
+          "type": "Field",
+          "mention": "Trigger field",
+          "confidence": "high"
+        },
+        {
+          "name": "forecasted stock levels",
+          "type": "Concept",
+          "mention": "forecasted stock levels",
+          "confidence": "low"
+        },
+        {
+          "name": "order deadlines",
+          "type": "Concept",
+          "mention": "order deadlines",
+          "confidence": "low"
+        },
+        {
+          "name": "lead times",
+          "type": "Concept",
+          "mention": "lead times",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manual reordering rules",
+          "relation": "CONFIGURED_BY",
+          "target": "Trigger",
+          "evidence": "configured by setting the reordering rule's Trigger field to Manual"
+        },
+        {
+          "source": "Manual reordering rules",
+          "relation": "PRODUCES",
+          "target": "needs",
+          "evidence": "list a product on the replenishment dashboard <report> when... called *needs*"
+        },
+        {
+          "source": "Manual reordering rules",
+          "relation": "PRODUCES",
+          "target": "replenishment dashboard",
+          "evidence": "list a product on the replenishment dashboard"
+        },
+        {
+          "source": "Replenishment",
+          "relation": "BELONGS_TO",
+          "target": "Operations",
+          "evidence": "accessible by navigating to Inventory app --> Operations --> Replenishment"
+        },
+        {
+          "source": "Operations",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "accessible by navigating to Inventory app --> Operations --> Replenishment"
+        },
+        {
+          "source": "Order button",
+          "relation": "PRODUCES",
+          "target": "purchase order",
+          "evidence": "clicking the Order button generates the purchase order"
+        },
+        {
+          "source": "Order button",
+          "relation": "PRODUCES",
+          "target": "manufacturing order",
+          "evidence": "clicking the Order button generates the manufacturing order"
+        },
+        {
+          "source": "Order button",
+          "relation": "GENERATES",
+          "target": "replenishment dashboard",
+          "evidence": "When a product appears on the replenishment dashboard, clicking the Order button generates..."
+        },
+        {
+          "source": "To Reorder filter",
+          "relation": "ENABLES",
+          "target": "replenishment dashboard",
+          "evidence": "It displays needs **only** when it is time to reorder items, thanks to the To Reorder filter"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "route",
+    "heading": "Route",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment",
+          "type": "Sub-module",
+          "mention": "Operations --> Replenishment",
+          "confidence": "high"
+        },
+        {
+          "name": "Route",
+          "type": "Feature",
+          "mention": "Route",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy",
+          "type": "Feature",
+          "mention": "Buy",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacture",
+          "type": "Feature",
+          "mention": "Manufacture",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "product form",
+          "type": "DataObject",
+          "mention": "product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Feature",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "reordering rule",
+          "type": "Feature",
+          "mention": "reordering rule",
+          "confidence": "high"
+        },
+        {
+          "name": "preferred route",
+          "type": "Setting",
+          "mention": "preferred route",
+          "confidence": "high"
+        },
+        {
+          "name": "Route column",
+          "type": "Field",
+          "mention": "Route column",
+          "confidence": "high"
+        },
+        {
+          "name": "set-method",
+          "type": "Concept",
+          "mention": "Set route on product form",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Inventory app"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Replenishment",
+          "evidence": "Operations --> Replenishment"
+        },
+        {
+          "source": "product",
+          "relation": "HAS_FEATURE",
+          "target": "Route",
+          "evidence": "select route as replenishment method"
+        },
+        {
+          "source": "product",
+          "relation": "CONFIGURED_BY",
+          "target": "preferred route",
+          "evidence": "set a preferred route for a product's reordering rule"
+        },
+        {
+          "source": "Route",
+          "relation": "CONTAINS",
+          "target": "Buy",
+          "evidence": "routes Buy and Manufacture"
+        },
+        {
+          "source": "Route",
+          "relation": "CONTAINS",
+          "target": "Manufacture",
+          "evidence": "routes Buy and Manufacture"
+        },
+        {
+          "source": "reordering rule",
+          "relation": "HAS_FEATURE",
+          "target": "Route",
+          "evidence": "column shows all available routes for that rule"
+        },
+        {
+          "source": "reordering rule",
+          "relation": "CONFIGURED_BY",
+          "target": "preferred route",
+          "evidence": "set it as the preferred route"
+        },
+        {
+          "source": "preferred route",
+          "relation": "BELONGS_TO",
+          "target": "Route",
+          "evidence": "preferred route for a product's reordering rule"
+        },
+        {
+          "source": "Route",
+          "relation": "SEE_ALSO",
+          "target": "set-method",
+          "evidence": "Set route on product form <inventory/warehouses_storage/set-method>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "advanced-uses",
+    "heading": "Advanced uses",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "reordering rules",
+          "type": "Feature",
+          "mention": "reordering rules",
+          "confidence": "high"
+        },
+        {
+          "name": "replenishment report",
+          "type": "Report",
+          "mention": "replenishment report",
+          "confidence": "high"
+        },
+        {
+          "name": "Route",
+          "type": "Field",
+          "mention": "Route",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy",
+          "type": "Feature",
+          "mention": "Buy",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor pricelist",
+          "type": "DataObject",
+          "mention": "vendor pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials",
+          "type": "Module",
+          "mention": "Bill of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacture",
+          "type": "Feature",
+          "mention": "Manufacture",
+          "confidence": "high"
+        },
+        {
+          "name": "draft manufacturing orders",
+          "type": "DataObject",
+          "mention": "draft manufacturing orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Procurement Group",
+          "type": "Feature",
+          "mention": "Procurement Group",
+          "confidence": "high"
+        },
+        {
+          "name": "SO35",
+          "type": "DataObject",
+          "mention": "SO35",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "smart buttons",
+          "type": "Feature",
+          "mention": "smart buttons",
+          "confidence": "high"
+        },
+        {
+          "name": "MTO route",
+          "type": "Feature",
+          "mention": "MTO route",
+          "confidence": "medium"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Azure Interior",
+          "type": "Actor",
+          "mention": "Azure Interior",
+          "confidence": "high"
+        },
+        {
+          "name": "Order button",
+          "type": "Action",
+          "mention": "Order button",
+          "confidence": "high"
+        },
+        {
+          "name": "Just-in-time logic",
+          "type": "Concept",
+          "mention": "Just-in-time logic",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "reordering rules",
+          "relation": "CONFIGURED_BY",
+          "target": "replenishment report",
+          "evidence": "Pairing Route with one of the following fields on the replenishment report unlocks advanced configurations of reordering rules."
+        },
+        {
+          "source": "Vendor",
+          "relation": "IS_PART_OF",
+          "target": "vendor pricelist",
+          "evidence": "setting the Vendor field to one of the multiple vendors on the vendor pricelist"
+        },
+        {
+          "source": "Replenishment",
+          "relation": "TRIGGERED_BY",
+          "target": "Route",
+          "evidence": "setting the Route to Buy"
+        },
+        {
+          "source": "purchase order",
+          "relation": "GENERATED_BY",
+          "target": "reordering rules",
+          "evidence": "reordering rule triggers the creation of a purchase order."
+        },
+        {
+          "source": "draft manufacturing orders",
+          "relation": "CONFIGURED_BY",
+          "target": "Bill of Materials",
+          "evidence": "specifying the desired Bill of Materials in the replenishment report, draft manufacturing orders are created"
+        },
+        {
+          "source": "Procurement Group",
+          "relation": "BELONGS_TO",
+          "target": "Route",
+          "evidence": "Selecting a procurement group in the Procurement Group field on the replenishment report ensures that all linked orders are grouped under the same demand, based on the defined route."
+        },
+        {
+          "source": "smart buttons",
+          "relation": "ENABLED_BY",
+          "target": "Procurement Group",
+          "evidence": "To enable smart buttons for products replenished by reordering rules (not MTO (Make to Order)), with specific quantities linked to specific demands (e.g. ), assign a procurement group."
+        },
+        {
+          "source": "SO35",
+          "relation": "RELATED_TO",
+          "target": "sales order",
+          "evidence": "How can you set the Procurement Group, Vendor, and Route fields on the replenishment report to generate a single purchase order for five different products in sales order SO35"
+        },
+        {
+          "source": "Azure Interior",
+          "relation": "RELATED_TO",
+          "target": "Vendor",
+          "evidence": "Set the Vendor to Azure Interior"
+        },
+        {
+          "source": "Order button",
+          "relation": "PRODUCES",
+          "target": "purchase order",
+          "evidence": "Click the Order button to generate a single purchase order"
+        },
+        {
+          "source": "Just-in-time logic",
+          "relation": "SEE_ALSO",
+          "target": "reordering rules",
+          "evidence": "Just-in-time logic <just_in_time>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "horizon-days",
+    "heading": "Horizon days",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Horizon days",
+          "type": "Feature",
+          "mention": "Horizon days",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Advanced Scheduling",
+          "type": "Sub-module",
+          "mention": "Advanced Scheduling",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment Horizon",
+          "type": "Field",
+          "mention": "Replenishment Horizon field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenishment report",
+          "type": "Report",
+          "mention": "Replenishment report article",
+          "confidence": "high"
+        },
+        {
+          "name": "manual reordering rules",
+          "type": "Concept",
+          "mention": "manual reordering rules",
+          "confidence": "medium"
+        },
+        {
+          "name": "Forecasted date",
+          "type": "Concept",
+          "mention": "forecasted date",
+          "confidence": "high"
+        },
+        {
+          "name": "Current date",
+          "type": "Concept",
+          "mention": "Current date",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor Lead Time",
+          "type": "Concept",
+          "mention": "Vendor Lead Time",
+          "confidence": "high"
+        },
+        {
+          "name": "company level",
+          "type": "Concept",
+          "mention": "company level",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Horizon days",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "Horizon days are configured on a company level. The default horizon days setting can be set or updated by navigating to the Inventory app"
+        },
+        {
+          "source": "Horizon days",
+          "relation": "IS_PART_OF",
+          "target": "Advanced Scheduling",
+          "evidence": "The default horizon days setting can be set or updated by navigating to the Inventory app --> Advanced Scheduling"
+        },
+        {
+          "source": "Horizon days",
+          "relation": "CONFIGURED_BY",
+          "target": "Replenishment Horizon",
+          "evidence": "Enter the desired number of days in the Replenishment Horizon field"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "HAS_REPORT",
+          "target": "Replenishment report",
+          "evidence": "find details about the feature in the Replenishment report article"
+        },
+        {
+          "source": "Horizon days",
+          "relation": "ENABLES",
+          "target": "manual reordering rules",
+          "evidence": "Since horizon days are only meant to be used with manual reordering rules"
+        },
+        {
+          "source": "Forecasted date",
+          "relation": "RELATED_TO",
+          "target": "Horizon days",
+          "evidence": "allow users to extend the time window between today's date and the forecasted date when calculating for the forecasted quantity"
+        },
+        {
+          "source": "Horizon days",
+          "relation": "GOVERNED_BY",
+          "target": "company level",
+          "evidence": "Horizon days are configured on a company level"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "example-of-how-horizon-days-affect-replenishment-planning",
+    "heading": "Example of how horizon days affect replenishment planning",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenishment report",
+          "type": "Report",
+          "mention": "Replenishment report",
+          "confidence": "high"
+        },
+        {
+          "name": "Drawer, Black",
+          "type": "DataObject",
+          "mention": "`Drawer, Black`",
+          "confidence": "high"
+        },
+        {
+          "name": "Corner Desk",
+          "type": "DataObject",
+          "mention": "`Corner Desk`",
+          "confidence": "high"
+        },
+        {
+          "name": "Individual Workplace",
+          "type": "DataObject",
+          "mention": "`[FURN_0789] Individual Workplace`",
+          "confidence": "high"
+        },
+        {
+          "name": "horizon days",
+          "type": "Setting",
+          "mention": "horizon days",
+          "confidence": "high"
+        },
+        {
+          "name": "on-hand stock",
+          "type": "Concept",
+          "mention": "on-hand stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "forecasted stock level",
+          "type": "Concept",
+          "mention": "forecasted stock level",
+          "confidence": "medium"
+        },
+        {
+          "name": "delivery scheduled",
+          "type": "Action",
+          "mention": "delivery scheduled",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_REPORT",
+          "target": "Replenishment report",
+          "evidence": "On the Replenishment report"
+        },
+        {
+          "source": "Replenishment report",
+          "relation": "CONTAINS",
+          "target": "Drawer, Black",
+          "evidence": "two products listed...`Drawer, Black`"
+        },
+        {
+          "source": "Replenishment report",
+          "relation": "CONTAINS",
+          "target": "Corner Desk",
+          "evidence": "two products listed...`Corner Desk`"
+        },
+        {
+          "source": "Replenishment report",
+          "relation": "CONTAINS",
+          "target": "Individual Workplace",
+          "evidence": "an additional product...`Individual Workplace`"
+        },
+        {
+          "source": "Replenishment report",
+          "relation": "CONFIGURED_BY",
+          "target": "horizon days",
+          "evidence": "The default horizon days is set as `20`...by extending the horizon days"
+        },
+        {
+          "source": "Replenishment report",
+          "relation": "GENERATES",
+          "target": "Individual Workplace",
+          "evidence": "by extending the horizon days to `30`, an additional product is added to the list"
+        }
+      ]
+    }
+  }
+]

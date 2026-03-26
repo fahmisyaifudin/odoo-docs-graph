@@ -1,0 +1,1796 @@
+[
+  {
+    "section_id": "dropship-to-subcontractor",
+    "heading": "Dropship to subcontractor",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship Subcontractor on Order",
+          "type": "Module",
+          "mention": "*Dropship Subcontractor on Order* route",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship",
+          "type": "Module",
+          "mention": "*Dropship* route",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "high"
+        },
+        {
+          "name": "end customer",
+          "type": "Actor",
+          "mention": "end customer",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order (PO)",
+          "confidence": "high"
+        },
+        {
+          "name": "components",
+          "type": "DataObject",
+          "mention": "components",
+          "confidence": "medium"
+        },
+        {
+          "name": "finished product",
+          "type": "DataObject",
+          "mention": "finished product",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing",
+          "type": "Concept",
+          "mention": "manufacturing",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Dropship Subcontractor on Order",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "In Odoo, the *Dropship Subcontractor on Order* route is used"
+        },
+        {
+          "source": "Dropship",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The *Dropship* route is used"
+        },
+        {
+          "source": "Dropship Subcontractor on Order",
+          "relation": "USES_METHOD",
+          "target": "purchase order",
+          "evidence": "used to purchase the necessary components ... each time a purchase order (PO) for that product is confirmed"
+        },
+        {
+          "source": "Dropship Subcontractor on Order",
+          "relation": "RELATED_TO",
+          "target": "vendor",
+          "evidence": "purchase the necessary components ... from the vendor"
+        },
+        {
+          "source": "Dropship Subcontractor on Order",
+          "relation": "RELATED_TO",
+          "target": "subcontractor",
+          "evidence": "have them delivered directly to the subcontractor"
+        },
+        {
+          "source": "subcontractor",
+          "relation": "PERFORMED_BY",
+          "target": "finished product",
+          "evidence": "The subcontractor then uses the components to manufacture the desired product"
+        },
+        {
+          "source": "subcontractor",
+          "relation": "RELATED_TO",
+          "target": "contracting company",
+          "evidence": "before shipping it back to the contracting company"
+        },
+        {
+          "source": "Dropship",
+          "relation": "RELATED_TO",
+          "target": "vendor",
+          "evidence": "to purchase products from a vendor"
+        },
+        {
+          "source": "Dropship",
+          "relation": "RELATED_TO",
+          "target": "end customer",
+          "evidence": "have them shipped directly to the end customer"
+        },
+        {
+          "source": "manufacturing",
+          "type": "Concept",
+          "mention": "manufacturing",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracting",
+          "type": "Setting",
+          "mention": "Subcontracting",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Concept",
+          "mention": "Operations heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship Subcontractor on Order",
+          "type": "Workflow",
+          "mention": "Dropship Subcontractor on Order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing",
+          "evidence": "navigate to Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Subcontracting",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "enable the checkbox next to Subcontracting"
+        },
+        {
+          "source": "Subcontracting",
+          "relation": "BELONGS_TO",
+          "target": "Operations",
+          "evidence": "Subcontracting, under the Operations heading"
+        },
+        {
+          "source": "Subcontracting",
+          "relation": "ENABLES",
+          "target": "Dropship Subcontractor on Order",
+          "evidence": "To use the *Dropship Subcontractor on Order* route... enable the checkbox next to Subcontracting"
+        },
+        {
+          "source": "Manufacturing",
+          "type": "Unknown",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-product",
+    "heading": "Configure product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configure product",
+          "type": "Action",
+          "mention": "Configure product",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Sub-module",
+          "mention": "Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor drop-down menu",
+          "type": "Field",
+          "mention": "Vendor drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Price field",
+          "type": "Field",
+          "mention": "Price field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Sub-module",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Buy route",
+          "type": "Setting",
+          "mention": "Buy route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Replenish on Order (MTO) route",
+          "type": "Feature",
+          "mention": "Replenish on Order (MTO) route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship route",
+          "type": "Feature",
+          "mention": "Dropship route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship Subcontractor on Order route",
+          "type": "Feature",
+          "mention": "Dropship Subcontractor on Order route",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configure product",
+          "relation": "PERFORMED_BY",
+          "target": "Unknown",
+          "evidence": "navigate to Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Configure product",
+          "evidence": "Products --> Products, and select a product"
+        },
+        {
+          "source": "Configure product",
+          "relation": "REQUIRES",
+          "target": "Purchase tab",
+          "evidence": "Select the Purchase tab"
+        },
+        {
+          "source": "Configure product",
+          "relation": "REQUIRES",
+          "target": "Inventory tab",
+          "evidence": "click on the Inventory tab"
+        },
+        {
+          "source": "Add a line",
+          "relation": "ENABLES",
+          "target": "Configure product",
+          "evidence": "add the product's subcontractor as a vendor by clicking Add a line"
+        },
+        {
+          "source": "Add a line",
+          "relation": "REQUIRES",
+          "target": "Vendor drop-down menu",
+          "evidence": "selecting the subcontractor in the Vendor drop-down menu"
+        },
+        {
+          "source": "Configure product",
+          "relation": "HAS_FEATURE",
+          "target": "Dropship Subcontractor on Order route",
+          "evidence": "configure a product for the Dropship Subcontractor on Order route"
+        },
+        {
+          "source": "Configure product",
+          "relation": "GOVERNED_BY",
+          "target": "Buy route",
+          "evidence": "make sure that the Buy route is selected"
+        },
+        {
+          "source": "Configure product",
+          "relation": "GOVERNED_BY",
+          "target": "Replenish on Order (MTO) route",
+          "evidence": "select the Replenish on Order (MTO) route"
+        },
+        {
+          "source": "Configure product",
+          "relation": "GOVERNED_BY",
+          "target": "Dropship route",
+          "evidence": "make sure that only the Dropship route is selected"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Configure product",
+          "relation": "PERFORMED_BY",
+          "target": "subcontractor",
+          "evidence": "the subcontractor in the Vendor drop-down menu"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-bill-of-materials",
+    "heading": "Configure bill of materials",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills of Materials",
+          "type": "Module",
+          "mention": "Bills of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials",
+          "type": "Feature",
+          "mention": "Bill of Materials smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship Subcontractor on Order",
+          "type": "Feature",
+          "mention": "Dropship Subcontractor on Order route",
+          "confidence": "medium"
+        },
+        {
+          "name": "BoM Type field",
+          "type": "Field",
+          "mention": "BoM Type field",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracting option",
+          "type": "Setting",
+          "mention": "Subcontracting option",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontractors field",
+          "type": "Field",
+          "mention": "Subcontractors field",
+          "confidence": "high"
+        },
+        {
+          "name": "Components tab",
+          "type": "Feature",
+          "mention": "Components tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Component drop-down menu",
+          "type": "Field",
+          "mention": "Component drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of materials",
+          "type": "Concept",
+          "mention": "Bill of materials",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Manufacturing app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Bills of Materials",
+          "evidence": "Products --> Bills of Materials"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Bills of Materials in Odoo documentation"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "HAS_FEATURE",
+          "target": "Bill of Materials",
+          "evidence": "Bill of Materials smart button on the product's page"
+        },
+        {
+          "source": "Bill of Materials",
+          "relation": "RELATED_TO",
+          "target": "Dropship Subcontractor on Order",
+          "evidence": "configure a for the Dropship Subcontractor on Order route"
+        },
+        {
+          "source": "Bill of Materials",
+          "relation": "SEE_ALSO",
+          "target": "Bill of materials",
+          "evidence": "For a full overview of configuration, see the Bill of materials"
+        },
+        {
+          "source": "Components tab",
+          "relation": "CONTAINS",
+          "target": "Add a line",
+          "evidence": "To add a new component, click Add a line"
+        },
+        {
+          "source": "Add a line",
+          "relation": "RELATED_TO",
+          "target": "Component drop-down menu",
+          "evidence": "Add a line, select the component in the Component drop-down menu"
+        },
+        {
+          "source": "Add a line",
+          "relation": "RELATED_TO",
+          "target": "Quantity field",
+          "evidence": "Add a line... and specify the required quantity in the Quantity field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-components",
+    "heading": "Configure Components",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship Subcontractor on Order",
+          "type": "Concept",
+          "mention": "Dropship Subcontractor on Order route",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "component product form",
+          "type": "DataObject",
+          "mention": "component product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Sub-module",
+          "mention": "Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor",
+          "type": "Field",
+          "mention": "Vendor field",
+          "confidence": "high"
+        },
+        {
+          "name": "Price",
+          "type": "Field",
+          "mention": "Price field",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Sub-module",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Routes",
+          "type": "Section",
+          "mention": "Routes section",
+          "confidence": "low"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Products --> Products"
+        },
+        {
+          "source": "component product form",
+          "relation": "CONTAINS",
+          "target": "Purchase tab",
+          "evidence": "select the Purchase tab"
+        },
+        {
+          "source": "component product form",
+          "relation": "CONTAINS",
+          "target": "Inventory tab",
+          "evidence": "click on the Inventory tab"
+        },
+        {
+          "source": "Inventory tab",
+          "relation": "CONTAINS",
+          "target": "Routes",
+          "evidence": "select ... in the Routes section"
+        },
+        {
+          "source": "vendor",
+          "relation": "PERFORMED_BY",
+          "target": "sends components to the subcontractor",
+          "evidence": "the vendor that sends components to the subcontractor"
+        },
+        {
+          "source": "Dropship Subcontractor on Order",
+          "relation": "APPLIES_TO",
+          "target": "component",
+          "evidence": "configure components for the Dropship Subcontractor on Order route"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "dropship-subcontractor-on-order-workflow",
+    "heading": "Dropship subcontractor on order workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Order (SO)",
+          "type": "DataObject",
+          "mention": "sales order (SO)",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "PO",
+          "confidence": "medium"
+        },
+        {
+          "name": "Subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contracting Company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship Subcontractor Order",
+          "type": "DataObject",
+          "mention": "Dropship Subcontractor order",
+          "confidence": "high"
+        },
+        {
+          "name": "Request for Quotation (RfQ)",
+          "type": "DataObject",
+          "mention": "request for quotation (RfQ)",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipt Order",
+          "type": "DataObject",
+          "mention": "receipt order",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship Order",
+          "type": "DataObject",
+          "mention": "dropship order",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery Order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracted Product",
+          "type": "DataObject",
+          "mention": "subcontracted product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Finished Product",
+          "type": "DataObject",
+          "mention": "finished product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Components",
+          "type": "DataObject",
+          "mention": "components",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship subcontractor on order workflow",
+          "type": "Workflow",
+          "mention": "dropship subcontractor on order workflow",
+          "confidence": "high"
+        },
+        {
+          "name": "Create sales order",
+          "type": "Action",
+          "mention": "Create a sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm purchase order",
+          "type": "Action",
+          "mention": "Confirm the PO",
+          "confidence": "medium"
+        },
+        {
+          "name": "Process dropship subcontractor order",
+          "type": "Action",
+          "mention": "Process the Dropship Subcontractor order",
+          "confidence": "high"
+        },
+        {
+          "name": "Process receipt",
+          "type": "Action",
+          "mention": "Process the receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Process dropship order",
+          "type": "Action",
+          "mention": "process the dropship order",
+          "confidence": "high"
+        },
+        {
+          "name": "Process delivery order",
+          "type": "Action",
+          "mention": "process the delivery order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Dropship subcontractor on order workflow",
+          "relation": "CONTAINS",
+          "target": "Create sales order",
+          "evidence": "The dropship subcontractor on order workflow consists of up to six steps: #. Create a sales order..."
+        },
+        {
+          "source": "Create sales order",
+          "relation": "PRODUCES",
+          "target": "Purchase Order",
+          "evidence": "Create a sales order (SO)... doing so creates a subcontractor PO to purchase the product from the subcontractor."
+        },
+        {
+          "source": "Confirm purchase order",
+          "relation": "PRODUCES",
+          "target": "Request for Quotation (RfQ)",
+          "evidence": "Confirm the PO... doing so creates a request for quotation (RfQ)..."
+        },
+        {
+          "source": "Confirm purchase order",
+          "relation": "PRODUCES",
+          "target": "Receipt Order",
+          "evidence": "Confirm the PO... doing so creates... a receipt order..."
+        },
+        {
+          "source": "Confirm purchase order",
+          "relation": "PRODUCES",
+          "target": "Dropship Order",
+          "evidence": "Confirm the PO... doing so creates... a dropship order."
+        },
+        {
+          "source": "Confirm purchase order",
+          "relation": "PRODUCES",
+          "target": "Dropship Subcontractor Order",
+          "evidence": "Confirm the PO... doing so creates a Dropship Subcontractor order."
+        },
+        {
+          "source": "Process dropship subcontractor order",
+          "relation": "PERFORMED_BY",
+          "target": "Vendor",
+          "evidence": "Process the Dropship Subcontractor order once the vendor has sent the components..."
+        },
+        {
+          "source": "Process dropship subcontractor order",
+          "relation": "PERFORMED_BY",
+          "target": "Subcontractor",
+          "evidence": "Process the receipt once the subcontractor has finished manufacturing..."
+        },
+        {
+          "source": "Process dropship order",
+          "relation": "PERFORMED_BY",
+          "target": "Subcontractor",
+          "evidence": "process the dropship order to ship the product directly to the end customer."
+        },
+        {
+          "source": "Process dropship order",
+          "relation": "PERFORMED_BY",
+          "target": "Customer",
+          "evidence": "...ship the product directly to the end customer."
+        },
+        {
+          "source": "Process delivery order",
+          "relation": "PERFORMED_BY",
+          "target": "Subcontractor",
+          "evidence": "If... and the finished product is not dropshipped... process the delivery order once the product has been shipped to the customer."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-an-so",
+    "heading": "Create an SO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Module",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales Orders",
+          "type": "DataObject",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Create New Sales Order",
+          "type": "Action",
+          "mention": "click New",
+          "confidence": "high"
+        },
+        {
+          "name": "Select Customer",
+          "type": "Action",
+          "mention": "Select the customer in the Customer drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer",
+          "type": "Field",
+          "mention": "Customer drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "click Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Lines",
+          "type": "DataObject",
+          "mention": "Order Lines tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Enter Quantity",
+          "type": "Action",
+          "mention": "enter a quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Sales Order",
+          "type": "Action",
+          "mention": "Click Confirm to confirm the",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontractor Purchase Order",
+          "type": "DataObject",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Smart Button",
+          "type": "Feature",
+          "mention": "Purchase smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish on Order (MTO)",
+          "type": "Setting",
+          "mention": "Replenish on Order (MTO) route",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Page",
+          "type": "Feature",
+          "mention": "product's page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Concept",
+          "mention": "warehouse",
+          "confidence": "low"
+        },
+        {
+          "name": "Customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "Stock On-Hand",
+          "type": "Concept",
+          "mention": "stock on-hand",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropshipped Product",
+          "type": "Concept",
+          "mention": "subcontracted products that are dropshipped",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create New Sales Order",
+          "relation": "IS_PART_OF",
+          "target": "Sales Orders",
+          "evidence": "navigate to Sales app --> Orders --> Orders, and click New"
+        },
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "Orders",
+          "evidence": "Sales app --> Orders"
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Sales Orders",
+          "evidence": "Orders --> Orders"
+        },
+        {
+          "source": "Select Customer",
+          "relation": "IS_PART_OF",
+          "target": "Create New Sales Order",
+          "evidence": "Select the customer... Then, click Add a product"
+        },
+        {
+          "source": "Add a product",
+          "relation": "IS_PART_OF",
+          "target": "Create New Sales Order",
+          "evidence": "Then, click Add a product"
+        },
+        {
+          "source": "Enter Quantity",
+          "relation": "IS_PART_OF",
+          "target": "Create New Sales Order",
+          "evidence": "select the product... and enter a quantity"
+        },
+        {
+          "source": "Confirm Sales Order",
+          "relation": "IS_PART_OF",
+          "target": "Create New Sales Order",
+          "evidence": "Click Confirm"
+        },
+        {
+          "source": "Sales Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Purchase Smart Button",
+          "evidence": "a Purchase smart button appears"
+        },
+        {
+          "source": "Confirm Sales Order",
+          "relation": "TRIGGERED_BY",
+          "target": "Sales Orders",
+          "evidence": "Click Confirm to confirm the"
+        },
+        {
+          "source": "Confirm Sales Order",
+          "relation": "GENERATES",
+          "target": "Subcontractor Purchase Order",
+          "evidence": "This is the subcontractor"
+        },
+        {
+          "source": "Confirm Sales Order",
+          "relation": "GENERATES",
+          "target": "Delivery Order",
+          "evidence": "confirming an for the product will instead create a delivery order"
+        },
+        {
+          "source": "Replenish on Order (MTO)",
+          "relation": "CONFIGURED_BY",
+          "target": "Product Page",
+          "evidence": "enabled on the product's page"
+        },
+        {
+          "source": "Subcontractor Purchase Order",
+          "relation": "REQUIRES",
+          "target": "Replenish on Order (MTO)",
+          "evidence": "only creates a subcontractor if the Replenish on Order (MTO) route is enabled"
+        },
+        {
+          "source": "Confirm Sales Order",
+          "relation": "REQUIRES",
+          "target": "Stock On-Hand",
+          "evidence": "there is no stock of the product on-hand"
+        },
+        {
+          "source": "Confirm Sales Order",
+          "relation": "PERFORMED_BY",
+          "target": "Customer",
+          "evidence": "Select the customer"
+        },
+        {
+          "source": "Subcontractor Purchase Order",
+          "relation": "RELATED_TO",
+          "target": "Subcontractor",
+          "evidence": "purchase the subcontracted product from the subcontractor"
+        },
+        {
+          "source": "Sales Orders",
+          "relation": "CONTAINS",
+          "target": "Order Lines",
+          "evidence": "Order Lines tab"
+        },
+        {
+          "source": "Order Lines",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "Product drop-down menu"
+        },
+        {
+          "source": "Order Lines",
+          "relation": "CONTAINS",
+          "target": "Quantity",
+          "evidence": "Quantity field"
+        },
+        {
+          "source": "Dropshipped Product",
+          "relation": "GENERATES",
+          "target": "Subcontractor Purchase Order",
+          "evidence": "a subcontractor is always created, even if there is stock on-hand"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-subcontractor-po",
+    "heading": "Process subcontractor PO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "Feature",
+          "mention": "Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "Vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Products tab",
+          "type": "Feature",
+          "mention": "Products tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Order",
+          "type": "Action",
+          "mention": "Confirm Order",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt",
+          "type": "DataObject",
+          "mention": "receipt",
+          "confidence": "medium"
+        },
+        {
+          "name": "dropship order",
+          "type": "DataObject",
+          "mention": "dropship order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receipt or Dropship smart button",
+          "type": "Feature",
+          "mention": "Receipt or Dropship smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship Subcontractor order",
+          "type": "DataObject",
+          "mention": "Dropship Subcontractor order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase Orders",
+          "relation": "IS_PART_OF",
+          "target": "Purchase app",
+          "evidence": "Purchase app --> Orders --> Purchase Orders"
+        },
+        {
+          "source": "Orders",
+          "relation": "IS_PART_OF",
+          "target": "Purchase app",
+          "evidence": "Purchase app --> Orders"
+        },
+        {
+          "source": "New",
+          "relation": "PERFORMED_BY",
+          "target": "Actor (user)",
+          "evidence": "clicking New"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "CONTAINS",
+          "target": "Vendor drop-down menu",
+          "evidence": "filling out the by selecting a subcontractor from the Vendor drop-down menu"
+        },
+        {
+          "source": "Products tab",
+          "relation": "HAS_FEATURE",
+          "target": "Add a product",
+          "evidence": "In the Products tab, click Add a product"
+        },
+        {
+          "source": "Product",
+          "relation": "BELONGS_TO",
+          "target": "Products tab",
+          "evidence": "Select a product produced by the subcontractor in the Product field"
+        },
+        {
+          "source": "Quantity",
+          "relation": "BELONGS_TO",
+          "target": "Products tab",
+          "evidence": "enter the quantity in the Quantity field"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "PRODUCES",
+          "target": "receipt",
+          "evidence": "When a is confirmed for a product that requires dropshipping components to a subcontractor, a receipt or dropship order is automatically created"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "PRODUCES",
+          "target": "dropship order",
+          "evidence": "When a is confirmed for a product that requires dropshipping components to a subcontractor, a receipt or dropship order is automatically created"
+        },
+        {
+          "source": "receipt",
+          "relation": "RELATED_TO",
+          "target": "Receipt or Dropship smart button",
+          "evidence": "can be accessed from the corresponding Receipt or Dropship smart button"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "TRIGGERED_BY",
+          "target": "vendor",
+          "evidence": "Once the is confirmed and becomes a vendor"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "PRODUCES",
+          "target": "Dropship Subcontractor order",
+          "evidence": "Once the is confirmed and becomes a vendor, a Dropship Subcontractor order is created"
+        },
+        {
+          "source": "Dropship Subcontractor order",
+          "relation": "RELATED_TO",
+          "target": "vendor",
+          "evidence": "This order is linked to both the vendor and the subcontractor"
+        },
+        {
+          "source": "Dropship Subcontractor order",
+          "relation": "RELATED_TO",
+          "target": "subcontractor",
+          "evidence": "This order is linked to both the vendor and the subcontractor"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "confirm-vendor-rfq",
+    "heading": "Confirm vendor RfQ",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase",
+          "type": "Product",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Requests for Quotation",
+          "type": "Sub-module",
+          "mention": "Requests for Quotation",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Field",
+          "mention": "Vendor field",
+          "confidence": "high"
+        },
+        {
+          "name": "Source Document",
+          "type": "Field",
+          "mention": "Source Document field",
+          "confidence": "high"
+        },
+        {
+          "name": "Deliver To",
+          "type": "Field",
+          "mention": "Deliver To field",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship Subcontractor",
+          "type": "DataObject",
+          "mention": "Dropship Subcontractor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship Address",
+          "type": "Field",
+          "mention": "Dropship Address field",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Order",
+          "type": "Action",
+          "mention": "Click Confirm Order",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor purchase order",
+          "type": "DataObject",
+          "mention": "vendor purchase order",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship smart button",
+          "type": "Feature",
+          "mention": "Dropship smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resupply smart button",
+          "type": "Feature",
+          "mention": "Resupply smart button",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "CONTAINS",
+          "target": "Orders",
+          "evidence": "Purchase app --> Orders"
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Requests for Quotation",
+          "evidence": "Orders --> Requests for Quotation"
+        },
+        {
+          "source": "Requests for Quotation",
+          "relation": "HAS_FEATURE",
+          "target": "Vendor",
+          "evidence": "Select the that lists the correct vendor in the Vendor field"
+        },
+        {
+          "source": "Requests for Quotation",
+          "relation": "HAS_FEATURE",
+          "target": "Source Document",
+          "evidence": "the reference number... in the Source Document field"
+        },
+        {
+          "source": "vendor purchase order",
+          "relation": "HAS_FEATURE",
+          "target": "Deliver To",
+          "evidence": "On the , the Deliver To field reads"
+        },
+        {
+          "source": "Deliver To",
+          "relation": "SUPPORTS",
+          "target": "Dropship Subcontractor",
+          "evidence": "Deliver To field reads Dropship Subcontractor"
+        },
+        {
+          "source": "vendor purchase order",
+          "relation": "HAS_FEATURE",
+          "target": "Dropship Address",
+          "evidence": "the Dropship Address field shows"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "PRODUCES",
+          "target": "vendor purchase order",
+          "evidence": "Click Confirm Order to turn the into a vendor purchase order"
+        },
+        {
+          "source": "vendor purchase order",
+          "relation": "HAS_FEATURE",
+          "target": "Dropship smart button",
+          "evidence": "a Dropship smart button appears at the top of the vendor purchase order"
+        },
+        {
+          "source": "subcontractor receipt",
+          "relation": "HAS_FEATURE",
+          "target": "Resupply smart button",
+          "evidence": "a Resupply smart button appears at the top of the subcontractor receipt"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-dropship-subcontractor-order",
+    "heading": "Process Dropship Subcontractor order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "DataObject",
+          "mention": "Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship",
+          "type": "Action",
+          "mention": "Dropship smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply",
+          "type": "Action",
+          "mention": "Resupply smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate button",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship Subcontractor order",
+          "type": "DataObject",
+          "mention": "Dropship Subcontractor order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "CONTAINS",
+          "target": "Orders",
+          "evidence": "Purchase app --> Orders"
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Purchase Orders",
+          "evidence": "Orders --> Purchase Orders"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "IS_PART_OF",
+          "target": "Orders",
+          "evidence": "Orders --> Purchase Orders"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "HAS_REPORT",
+          "target": "Dropship Subcontractor order",
+          "evidence": "opens the Dropship Subcontractor order"
+        },
+        {
+          "source": "Dropship",
+          "relation": "ENABLES",
+          "target": "Dropship Subcontractor order",
+          "evidence": "Clicking either button opens the Dropship Subcontractor order"
+        },
+        {
+          "source": "Resupply",
+          "relation": "ENABLES",
+          "target": "Dropship Subcontractor order",
+          "evidence": "Clicking either button opens the Dropship Subcontractor order"
+        },
+        {
+          "source": "Validate",
+          "relation": "ENABLES",
+          "target": "Dropship Subcontractor order",
+          "evidence": "Click the Validate button at the top of the order to confirm"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "PERFORMED_BY",
+          "target": "vendor",
+          "evidence": "select the vendor"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "PERFORMED_BY",
+          "target": "subcontractor",
+          "evidence": "select the subcontractor"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-receipt-or-dropship-order",
+    "heading": "Process receipt or dropship order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase Orders",
+          "type": "DataObject",
+          "mention": "*subcontractor*",
+          "confidence": "high"
+        },
+        {
+          "name": "Receive Products",
+          "type": "Action",
+          "mention": "Receive Products button",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "click Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipt",
+          "type": "DataObject",
+          "mention": "Receipt smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship",
+          "type": "Action",
+          "mention": "Dropship button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase Orders",
+          "relation": "CONTAINS",
+          "target": "*subcontractor*",
+          "evidence": "select the *subcontractor*"
+        },
+        {
+          "source": "*subcontractor*",
+          "relation": "TRIGGERED_BY",
+          "target": "Validate",
+          "evidence": "click Validate at the top of the receipt"
+        },
+        {
+          "source": "Receive Products",
+          "relation": "ENABLES",
+          "target": "Validate",
+          "evidence": "click Validate at the top of the receipt"
+        },
+        {
+          "source": "Receipt",
+          "relation": "TRIGGERED_BY",
+          "target": "Validate",
+          "evidence": "click Validate at the top of the receipt"
+        },
+        {
+          "source": "Dropship",
+          "relation": "TRIGGERED_BY",
+          "target": "Validate",
+          "evidence": "click Validate once the subcontractor has sent the product"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-delivery-order",
+    "heading": "Process delivery order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Feature",
+          "mention": "Delivery smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontracting workflow",
+          "type": "Workflow",
+          "mention": "subcontracting workflow",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "high"
+        },
+        {
+          "name": "finished product",
+          "type": "Product",
+          "mention": "finished product",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "click Validate"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "delivery order",
+          "evidence": "Validate to confirm"
+        },
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "Delivery smart button",
+          "evidence": "select the Delivery smart button"
+        },
+        {
+          "source": "Delivery smart button",
+          "relation": "ENABLES",
+          "target": "delivery order",
+          "evidence": "to open the delivery order"
+        },
+        {
+          "source": "subcontracting workflow",
+          "relation": "TRIGGERED_BY",
+          "target": "customer",
+          "evidence": "subcontracting workflow was started by a customer"
+        }
+      ]
+    }
+  }
+]

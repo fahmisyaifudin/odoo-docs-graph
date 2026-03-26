@@ -1,0 +1,769 @@
+[
+  {
+    "section_id": "employees",
+    "heading": "Employees",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "new_employee",
+          "type": "Sub-module",
+          "mention": "New employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "payroll/contracts",
+          "type": "Sub-module",
+          "mention": "Contracts",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees/departments",
+          "type": "Sub-module",
+          "mention": "Departments",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees/certifications",
+          "type": "Sub-module",
+          "mention": "Certifications",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees/learning",
+          "type": "Sub-module",
+          "mention": "Learning",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees/badges",
+          "type": "Sub-module",
+          "mention": "Badges",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees/equipment",
+          "type": "Sub-module",
+          "mention": "Equipment",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees/onboarding",
+          "type": "Sub-module",
+          "mention": "Onboarding",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees/offboarding",
+          "type": "Sub-module",
+          "mention": "Offboarding",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee record",
+          "type": "DataObject",
+          "mention": "employee record",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees/retention_report",
+          "type": "Report",
+          "mention": "Employee retention report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dashboard",
+          "type": "Feature",
+          "mention": "dashboard",
+          "confidence": "low"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "settings",
+          "confidence": "low"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "new_employee",
+          "evidence": "employees/new_employee"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "employees/departments",
+          "evidence": "employees/departments"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "employees/certifications",
+          "evidence": "employees/certifications"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "employees/learning",
+          "evidence": "employees/learning"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "employees/badges",
+          "evidence": "employees/badges"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "employees/equipment",
+          "evidence": "employees/equipment"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "employees/onboarding",
+          "evidence": "employees/onboarding"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONTAINS",
+          "target": "employees/offboarding",
+          "evidence": "employees/offboarding"
+        },
+        {
+          "source": "Employees",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Employees"
+        },
+        {
+          "source": "Employee record",
+          "relation": "HAS_FEATURE",
+          "target": "employees/certifications",
+          "evidence": "employee record tracks certifications"
+        },
+        {
+          "source": "Employee record",
+          "relation": "HAS_FEATURE",
+          "target": "employees/learning",
+          "evidence": "employee record tracks training"
+        },
+        {
+          "source": "Employee record",
+          "relation": "HAS_FEATURE",
+          "target": "employees/badges",
+          "evidence": "employee record tracks badges"
+        },
+        {
+          "source": "Employee record",
+          "relation": "HAS_FEATURE",
+          "target": "employees/equipment",
+          "evidence": "employee record tracks equipment"
+        },
+        {
+          "source": "Employees",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "configuring the settings"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "HAS_REPORT",
+          "target": "employees/retention_report",
+          "evidence": "Employee retention report"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "settings",
+    "heading": "Settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Settings",
+          "mention": "Settings",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Employees app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Employees app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "navigate to Employees app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "employees",
+    "heading": "Employees",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Presence Display",
+          "type": "Sub-module",
+          "mention": "Presence Display",
+          "confidence": "high"
+        },
+        {
+          "name": "attendances",
+          "type": "Module",
+          "mention": "attendances",
+          "confidence": "medium"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances",
+          "confidence": "medium"
+        },
+        {
+          "name": "check-in",
+          "type": "Action",
+          "mention": "check-in",
+          "confidence": "medium"
+        },
+        {
+          "name": "check_in_check_out",
+          "type": "Feature",
+          "mention": "check_in_check_out",
+          "confidence": "medium"
+        },
+        {
+          "name": "Advanced Presence Control",
+          "type": "Sub-module",
+          "mention": "Advanced Presence Control",
+          "confidence": "high"
+        },
+        {
+          "name": "Sent Emails",
+          "type": "Field",
+          "mention": "Sent Emails",
+          "confidence": "high"
+        },
+        {
+          "name": "IP Addresses",
+          "type": "Field",
+          "mention": "IP Addresses",
+          "confidence": "high"
+        },
+        {
+          "name": "Skills Management",
+          "type": "Feature",
+          "mention": "Skills Management",
+          "confidence": "high"
+        },
+        {
+          "name": "resumé tab",
+          "type": "Feature",
+          "mention": "resumé tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees/resume",
+          "type": "Feature",
+          "mention": "employees/resume",
+          "confidence": "medium"
+        },
+        {
+          "name": "work experience",
+          "type": "DataObject",
+          "mention": "work experience",
+          "confidence": "medium"
+        },
+        {
+          "name": "skills",
+          "type": "DataObject",
+          "mention": "skills",
+          "confidence": "medium"
+        },
+        {
+          "name": "certifications",
+          "type": "DataObject",
+          "mention": "certifications",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Employees"
+        },
+        {
+          "source": "Presence Display",
+          "relation": "BELONGS_TO",
+          "target": "Employees",
+          "evidence": "Title: Employees\n- Presence Display"
+        },
+        {
+          "source": "Advanced Presence Control",
+          "relation": "BELONGS_TO",
+          "target": "Employees",
+          "evidence": "Title: Employees\n- Advanced Presence Control"
+        },
+        {
+          "source": "Presence Display",
+          "relation": "USES_METHOD",
+          "target": "attendances",
+          "evidence": "- Based on attendances"
+        },
+        {
+          "source": "Presence Display",
+          "relation": "USES_METHOD",
+          "target": "check_in_check_out",
+          "evidence": "- Based on user status in system"
+        },
+        {
+          "source": "Advanced Presence Control",
+          "relation": "CONFIGURED_BY",
+          "target": "Sent Emails",
+          "evidence": "Enter the minimum number of emails... in the Sent Emails field"
+        },
+        {
+          "source": "Advanced Presence Control",
+          "relation": "CONFIGURED_BY",
+          "target": "IP Addresses",
+          "evidence": "Enter the IP addresses in the IP Addresses field"
+        },
+        {
+          "source": "Skills Management",
+          "relation": "ENABLES",
+          "target": "resumé tab",
+          "evidence": "Enable this option to display the resumé tab"
+        },
+        {
+          "source": "Skills Management",
+          "relation": "ENABLES",
+          "target": "employees/resume",
+          "evidence": "Enable this option to display the resumé tab <employees/resume>"
+        },
+        {
+          "source": "resumé tab",
+          "relation": "HAS_FEATURE",
+          "target": "work experience",
+          "evidence": "This allows for the display of work experience"
+        },
+        {
+          "source": "resumé tab",
+          "relation": "HAS_FEATURE",
+          "target": "skills",
+          "evidence": "skills <employees/skills>"
+        },
+        {
+          "source": "resumé tab",
+          "relation": "HAS_FEATURE",
+          "target": "certifications",
+          "evidence": "and certifications <employees/certifications>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "work-organization",
+    "heading": "Work organization",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Company Working Hours",
+          "type": "Setting",
+          "mention": "default Company Working Hours",
+          "confidence": "high"
+        },
+        {
+          "name": "Standard 40 hours/week",
+          "type": "Standard",
+          "mention": "Standard 40 hours/week",
+          "confidence": "high"
+        },
+        {
+          "name": "Appointment Resource Default Calendar",
+          "type": "Standard",
+          "mention": "Appointment Resource Default Calendar",
+          "confidence": "medium"
+        },
+        {
+          "name": "working schedules",
+          "type": "Feature",
+          "mention": "working schedules",
+          "confidence": "high"
+        },
+        {
+          "name": "Working hours",
+          "type": "Feature",
+          "mention": "Working hours",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Company Working Hours",
+          "relation": "SUPPORTS",
+          "target": "Standard 40 hours/week",
+          "evidence": "The default options are a Standard 40 hours/week"
+        },
+        {
+          "source": "Company Working Hours",
+          "relation": "SUPPORTS",
+          "target": "Appointment Resource Default Calendar",
+          "evidence": "The default options are a Standard 40 hours/week or an Appointment Resource Default Calendar."
+        },
+        {
+          "source": "working schedules",
+          "relation": "BELONGS_TO",
+          "target": "Payroll",
+          "evidence": "configured working schedules in the Payroll app"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "working schedules",
+          "evidence": "configured working schedules in the Payroll app"
+        },
+        {
+          "source": "Working hours",
+          "relation": "CONFIGURED_BY",
+          "target": "Company Working Hours",
+          "evidence": "select the default Company Working Hours"
+        },
+        {
+          "source": "Working hours",
+          "relation": "RELATED_TO",
+          "target": "working schedules",
+          "evidence": "The available working hours listed are the same as the configured working schedules"
+        },
+        {
+          "source": "Payroll",
+          "relation": "RELATED_TO",
+          "target": "Employees",
+          "evidence": "Working hours can be created and modified from both the Payroll and Employees apps."
+        },
+        {
+          "source": "Employees",
+          "relation": "RELATED_TO",
+          "target": "Payroll",
+          "evidence": "Working hours can be created and modified from both the Payroll and Employees apps."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "contract",
+    "heading": "Contract",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract",
+          "type": "Module",
+          "mention": "Contract",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Expiration Notice Period",
+          "type": "Setting",
+          "mention": "Contract Expiration Notice Period",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Permit Expiration Notice Period",
+          "type": "Setting",
+          "mention": "Work Permit Expiration Notice Period",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Contract Expiration Notice Period",
+          "relation": "CONFIGURED_BY",
+          "target": "Contract",
+          "evidence": "Define the number of days in advance that a manager is notified... in the respective Contract Expiration Notice Period field."
+        },
+        {
+          "source": "Work Permit Expiration Notice Period",
+          "relation": "CONFIGURED_BY",
+          "target": "Contract",
+          "evidence": "Define the number of days in advance that a manager is notified... in the respective Work Permit Expiration Notice Period field."
+        },
+        {
+          "source": "Contract",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo\nTitle: Contract"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "salary-configurator",
+    "heading": "Salary configurator",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Configurator",
+          "type": "Module",
+          "mention": "Salary Configurator",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Package Configurator field",
+          "type": "Field",
+          "mention": "Salary Package Configurator field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Salary Configurator",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "This field only appears if the **Salary Configurator** module is installed."
+        },
+        {
+          "source": "Salary Package Configurator field",
+          "relation": "IS_PART_OF",
+          "target": "Salary Configurator",
+          "evidence": "This field only appears if the **Salary Configurator** module is installed."
+        },
+        {
+          "source": "Salary Package Configurator field",
+          "relation": "CONFIGURED_BY",
+          "target": "Define how long an offer remains valid when extending a job offer or changing a salary",
+          "evidence": "Define how long an offer remains valid when extending a job offer or changing a salary. Enter the duration, in days, in the Salary Package Configurator field."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "extra-time-off-allocation",
+    "heading": "Extra time off allocation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Salary Configurator",
+          "type": "Module",
+          "mention": "Salary Configurator",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary package negotiations",
+          "type": "Workflow",
+          "mention": "salary package negotiations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Extra time off allocation",
+          "type": "Feature",
+          "mention": "Extra time off allocation",
+          "confidence": "high"
+        },
+        {
+          "name": "additional time off requests",
+          "type": "Feature",
+          "mention": "additional time off requests",
+          "confidence": "high"
+        },
+        {
+          "name": "checkbox",
+          "type": "Setting",
+          "mention": "checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off Type",
+          "type": "DataObject",
+          "mention": "Time Off Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Paid Time Off",
+          "type": "DataObject",
+          "mention": "Paid Time Off",
+          "confidence": "medium"
+        },
+        {
+          "name": "Compensatory Days",
+          "type": "DataObject",
+          "mention": "Compensatory Days",
+          "confidence": "medium"
+        },
+        {
+          "name": "Extra Time Off",
+          "type": "DataObject",
+          "mention": "Extra Time Off",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "Time Off",
+          "confidence": "high"
+        },
+        {
+          "name": "drop-down menu",
+          "type": "Field",
+          "mention": "drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Salary Configurator",
+          "relation": "CONTAINS",
+          "target": "Extra time off allocation",
+          "evidence": "This field only appears if the Salary Configurator module is installed."
+        },
+        {
+          "source": "Salary Configurator",
+          "relation": "REQUIRES",
+          "target": "Extra time off allocation",
+          "evidence": "This field only appears if the Salary Configurator module is installed."
+        },
+        {
+          "source": "checkbox",
+          "relation": "ENABLES",
+          "target": "additional time off requests",
+          "evidence": "enable the checkbox... if additional time off requests are allowed."
+        },
+        {
+          "source": "Time Off",
+          "relation": "CONTAINS",
+          "target": "Time Off Type",
+          "evidence": "If other time off types are configured in the Time Off app"
+        },
+        {
+          "source": "Extra time off allocation",
+          "relation": "CONTAINS",
+          "target": "drop-down menu",
+          "evidence": "select the Time Off Type... using the drop-down menu"
+        },
+        {
+          "source": "drop-down menu",
+          "relation": "CONTAINS",
+          "target": "Paid Time Off",
+          "evidence": "The default available options are Paid Time Off"
+        },
+        {
+          "source": "drop-down menu",
+          "relation": "CONTAINS",
+          "target": "Compensatory Days",
+          "evidence": "The default available options are Compensatory Days"
+        },
+        {
+          "source": "drop-down menu",
+          "relation": "CONTAINS",
+          "target": "Extra Time Off",
+          "evidence": "The default available options are Extra Time Off"
+        }
+      ]
+    }
+  }
+]

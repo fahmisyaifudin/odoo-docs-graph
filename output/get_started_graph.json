@@ -1,0 +1,1197 @@
+[
+  {
+    "section_id": "get-started",
+    "heading": "Get started",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo Accounting",
+          "type": "Product",
+          "mention": "Odoo Accounting app",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Module",
+          "mention": "Accounting Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "onboarding banner",
+          "type": "Feature",
+          "mention": "onboarding banner",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal Localization Package",
+          "type": "Module",
+          "mention": "Fiscal Localization Package",
+          "confidence": "high"
+        },
+        {
+          "name": "accounts",
+          "type": "DataObject",
+          "mention": "accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "reports",
+          "type": "Report",
+          "mention": "reports",
+          "confidence": "medium"
+        },
+        {
+          "name": "taxes",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo Accounting",
+          "relation": "CONTAINS",
+          "target": "Accounting Dashboard",
+          "evidence": "When you first open your Odoo Accounting app, the Accounting Dashboard welcomes you"
+        },
+        {
+          "source": "Accounting Dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "onboarding banner",
+          "evidence": "...the Accounting Dashboard welcomes you with a step-by-step onboarding banner"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "by going to Accounting --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "by going to Accounting --> Configuration --> Settings"
+        },
+        {
+          "source": "Odoo Accounting",
+          "relation": "HAS_FEATURE",
+          "target": "onboarding banner",
+          "evidence": "...onboarding banner, a wizard that helps you get started"
+        },
+        {
+          "source": "onboarding banner",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "The settings visible in the onboarding banner can still be modified later by going to Accounting --> Configuration --> Settings"
+        },
+        {
+          "source": "Odoo Accounting",
+          "relation": "GENERATES",
+          "target": "Fiscal Localization Package",
+          "evidence": "Odoo Accounting automatically installs the appropriate Fiscal Localization Package for your company"
+        },
+        {
+          "source": "Fiscal Localization Package",
+          "relation": "CONTAINS",
+          "target": "accounts",
+          "evidence": "the right accounts, reports, and taxes are ready-to-go"
+        },
+        {
+          "source": "Fiscal Localization Package",
+          "relation": "HAS_REPORT",
+          "target": "reports",
+          "evidence": "the right accounts, reports, and taxes are ready-to-go"
+        },
+        {
+          "source": "Fiscal Localization Package",
+          "relation": "CONTAINS",
+          "target": "taxes",
+          "evidence": "the right accounts, reports, and taxes are ready-to-go"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accounting-onboarding-banner",
+    "heading": "Accounting onboarding banner",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting onboarding banner",
+          "type": "Workflow",
+          "mention": "Accounting onboarding banner",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting-setup-periods",
+          "type": "Action",
+          "mention": "accounting-setup-periods",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting-setup-bank",
+          "type": "Action",
+          "mention": "accounting-setup-bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting-setup-taxes",
+          "type": "Action",
+          "mention": "accounting-setup-taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounting-setup-chart",
+          "type": "Action",
+          "mention": "accounting-setup-chart",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting onboarding banner",
+          "relation": "CONTAINS",
+          "target": "accounting-setup-periods",
+          "evidence": "The step-by-step Accounting onboarding banner is composed of four steps:"
+        },
+        {
+          "source": "Accounting onboarding banner",
+          "relation": "CONTAINS",
+          "target": "accounting-setup-bank",
+          "evidence": "The step-by-step Accounting onboarding banner is composed of four steps:"
+        },
+        {
+          "source": "Accounting onboarding banner",
+          "relation": "CONTAINS",
+          "target": "accounting-setup-taxes",
+          "evidence": "The step-by-step Accounting onboarding banner is composed of four steps:"
+        },
+        {
+          "source": "Accounting onboarding banner",
+          "relation": "CONTAINS",
+          "target": "accounting-setup-chart",
+          "evidence": "The step-by-step Accounting onboarding banner is composed of four steps:"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accounting-periods",
+    "heading": "Accounting Periods",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal Years",
+          "type": "DataObject",
+          "mention": "Fiscal Years",
+          "confidence": "medium"
+        },
+        {
+          "name": "Tax Return Periodicity",
+          "type": "Setting",
+          "mention": "Tax Return Periodicity",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fiscal Periods",
+          "type": "Feature",
+          "mention": "Fiscal Periods",
+          "confidence": "medium"
+        },
+        {
+          "name": "reports",
+          "type": "Report",
+          "mention": "reports",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Fiscal Periods",
+          "evidence": "Settings --> Fiscal Periods"
+        },
+        {
+          "source": "Fiscal Periods",
+          "relation": "CONFIGURED_BY",
+          "target": "Fiscal Years",
+          "evidence": "Fiscal Periods"
+        },
+        {
+          "source": "Fiscal Years",
+          "relation": "GENERATES",
+          "target": "reports",
+          "evidence": "generate reports automatically"
+        },
+        {
+          "source": "Tax Return Periodicity",
+          "relation": "CONFIGURED_BY",
+          "target": "Fiscal Years",
+          "evidence": "set your Tax Return Periodicity"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "bank-account",
+    "heading": "Bank Account",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Account",
+          "type": "DataObject",
+          "mention": "Bank Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Account's Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Account Number",
+          "type": "Field",
+          "mention": "Account Number",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank",
+          "type": "DataObject",
+          "mention": "Bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank Institution's Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Identifier Code",
+          "type": "Field",
+          "mention": "Identifier Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Code",
+          "type": "Field",
+          "mention": "Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "DataObject",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a Bank Account",
+          "type": "Feature",
+          "mention": "Add a Bank Account",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank Account",
+          "relation": "CONTAINS",
+          "target": "Bank Account's Name",
+          "evidence": "Name: the bank account's name"
+        },
+        {
+          "source": "Bank Account",
+          "relation": "CONTAINS",
+          "target": "Account Number",
+          "evidence": "Account Number: your bank account number"
+        },
+        {
+          "source": "Bank Account",
+          "relation": "CONTAINS",
+          "target": "Bank",
+          "evidence": "Bank: click Create and edit to configure the bank's details"
+        },
+        {
+          "source": "Bank",
+          "relation": "CONTAINS",
+          "target": "Bank Institution's Name",
+          "evidence": "Add the bank institution's Name"
+        },
+        {
+          "source": "Bank",
+          "relation": "CONTAINS",
+          "target": "Identifier Code",
+          "evidence": "and its Identifier Code"
+        },
+        {
+          "source": "Bank Account",
+          "relation": "CONTAINS",
+          "target": "Code",
+          "evidence": "Code: this code is your Journal's Short Code"
+        },
+        {
+          "source": "Bank Account",
+          "relation": "CONTAINS",
+          "target": "Journal",
+          "evidence": "Journal: This field is displayed..."
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Accounting --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "HAS_FEATURE",
+          "target": "Add a Bank Account",
+          "evidence": "Configuration --> Add a Bank Account"
+        },
+        {
+          "source": "Add a Bank Account",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "mentioned in Odoo documentation"
+        },
+        {
+          "source": "Bank Account",
+          "relation": "BELONGS_TO",
+          "target": "Accounting",
+          "evidence": "You can add as many bank accounts... by going to Accounting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "taxes",
+    "heading": "Taxes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Taxes",
+          "type": "Feature",
+          "mention": "This menu allows you to create new taxes",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Taxes",
+          "evidence": "Product: Odoo... This menu allows you to create new taxes"
+        },
+        {
+          "source": "Taxes",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo... This menu allows you to create new taxes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "chart-of-accounts",
+    "heading": "Chart of Accounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Chart of Accounts",
+          "type": "Concept",
+          "mention": "Chart of Accounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Setup",
+          "type": "Action",
+          "mention": "Setup button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Setup",
+          "relation": "ENABLES",
+          "target": "Chart of Accounts",
+          "evidence": "To access all the settings of an account, click on the Setup button"
+        },
+        {
+          "source": "Chart of Accounts",
+          "relation": "CONFIGURED_BY",
+          "target": "Setup",
+          "evidence": "To access all the settings of an account, click on the Setup button at the end of the line"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoicing-onboarding-banner",
+    "heading": "Invoicing onboarding banner",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoicing",
+          "type": "Module",
+          "mention": "Invoicing",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Sub-module",
+          "mention": "Customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoices",
+          "type": "DataObject",
+          "mention": "Invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoicing onboarding banner",
+          "type": "Feature",
+          "mention": "Invoicing onboarding banner",
+          "confidence": "high"
+        },
+        {
+          "name": "invoicing-setup-company",
+          "type": "Workflow",
+          "mention": "invoicing-setup-company",
+          "confidence": "high"
+        },
+        {
+          "name": "invoicing-setup-layout",
+          "type": "Workflow",
+          "mention": "invoicing-setup-layout",
+          "confidence": "high"
+        },
+        {
+          "name": "invoicing-setup-invoice",
+          "type": "Workflow",
+          "mention": "invoicing-setup-invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "invoicing-setup-payments",
+          "type": "Workflow",
+          "mention": "invoicing-setup-payments",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoicing onboarding banner",
+          "relation": "HAS_FEATURE",
+          "target": "invoicing-setup-company",
+          "evidence": "The Invoicing onboarding banner consists of four main steps: #. invoicing-setup-company"
+        },
+        {
+          "source": "Invoicing onboarding banner",
+          "relation": "HAS_FEATURE",
+          "target": "invoicing-setup-layout",
+          "evidence": "The Invoicing onboarding banner consists of four main steps: #. invoicing-setup-layout"
+        },
+        {
+          "source": "Invoicing onboarding banner",
+          "relation": "HAS_FEATURE",
+          "target": "invoicing-setup-invoice",
+          "evidence": "The Invoicing onboarding banner consists of four main steps: #. invoicing-setup-invoice"
+        },
+        {
+          "source": "Invoicing onboarding banner",
+          "relation": "HAS_FEATURE",
+          "target": "invoicing-setup-payments",
+          "evidence": "The Invoicing onboarding banner consists of four main steps: #. invoicing-setup-payments"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Customers",
+          "evidence": "go to Accounting --> Customers"
+        },
+        {
+          "source": "Customers",
+          "relation": "CONTAINS",
+          "target": "Invoices",
+          "evidence": "Customers --> Invoices"
+        },
+        {
+          "source": "Invoicing onboarding banner",
+          "relation": "BELONGS_TO",
+          "target": "Invoicing",
+          "evidence": "The Invoicing onboarding banner is the one that welcomes you if you use the Invoicing app"
+        },
+        {
+          "source": "Invoicing",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "your Odoo Invoicing apps"
+        },
+        {
+          "source": "Accounting",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "your Odoo Accounting apps"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "company-data",
+    "heading": "Company Data",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "DataObject",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Company name",
+          "type": "Field",
+          "mention": "name",
+          "confidence": "high"
+        },
+        {
+          "name": "Company address",
+          "type": "Field",
+          "mention": "address",
+          "confidence": "high"
+        },
+        {
+          "name": "Company logo",
+          "type": "Field",
+          "mention": "logo",
+          "confidence": "high"
+        },
+        {
+          "name": "Company website",
+          "type": "Field",
+          "mention": "website",
+          "confidence": "high"
+        },
+        {
+          "name": "Company phone number",
+          "type": "Field",
+          "mention": "phone number",
+          "confidence": "high"
+        },
+        {
+          "name": "Company email address",
+          "type": "Field",
+          "mention": "email address",
+          "confidence": "high"
+        },
+        {
+          "name": "Company Tax ID or VAT number",
+          "type": "Field",
+          "mention": "Tax ID or VAT number",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "General Settings",
+          "type": "Sub-module",
+          "mention": "General Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Companies section",
+          "type": "Feature",
+          "mention": "Companies section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Update Info",
+          "type": "Action",
+          "mention": "Update Info",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoices",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Company name",
+          "evidence": "Add your company’s details, such as the name"
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Company address",
+          "evidence": "Add your company’s details, such as the address"
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Company logo",
+          "evidence": "Add your company’s details, such as the logo"
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Company website",
+          "evidence": "Add your company’s details, such as the website"
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Company phone number",
+          "evidence": "Add your company’s details, such as the phone number"
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Company email address",
+          "evidence": "Add your company’s details, such as the email address"
+        },
+        {
+          "source": "Company",
+          "relation": "CONTAINS",
+          "target": "Company Tax ID or VAT number",
+          "evidence": "Add your company’s details, such as the Tax ID or VAT number"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "going to Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "General Settings",
+          "evidence": "Settings --> General Settings"
+        },
+        {
+          "source": "General Settings",
+          "relation": "CONTAINS",
+          "target": "Companies section",
+          "evidence": "scrolling down to the Companies section"
+        },
+        {
+          "source": "Companies section",
+          "relation": "HAS_FEATURE",
+          "target": "Update Info",
+          "evidence": "and Update Info"
+        },
+        {
+          "source": "Update Info",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "You can also change"
+        },
+        {
+          "source": "Company",
+          "relation": "GENERATES",
+          "target": "Invoice",
+          "evidence": "These details are then displayed on your documents, such as invoices"
+        },
+        {
+          "source": "Update Info",
+          "relation": "RELATED_TO",
+          "target": "Company",
+          "evidence": "change the company's details"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "documents-layout",
+    "heading": "Documents Layout",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice Layout",
+          "type": "Setting",
+          "mention": "Customize the default invoice layout",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "General Settings",
+          "type": "Sub-module",
+          "mention": "General Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Companies section",
+          "type": "Sub-module",
+          "mention": "Companies section",
+          "confidence": "low"
+        },
+        {
+          "name": "Configure Document Layout",
+          "type": "Action",
+          "mention": "Configure Document Layout",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoice Layout",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "You can also change the invoice layout by going to Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "General Settings",
+          "evidence": "Settings --> General Settings"
+        },
+        {
+          "source": "General Settings",
+          "relation": "CONTAINS",
+          "target": "Companies section",
+          "evidence": "General Settings, scrolling down to the Companies section"
+        },
+        {
+          "source": "Companies section",
+          "relation": "HAS_FEATURE",
+          "target": "Configure Document Layout",
+          "evidence": "Companies section, and clicking Configure Document Layout"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Product: Odoo and mention of Settings"
+        },
+        {
+          "source": "Invoice Layout",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Section is under Product: Odoo discussing invoice layout"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-invoice",
+    "heading": "Create Invoice",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Invoice",
+          "type": "Action",
+          "mention": "Create Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "bank account number",
+          "type": "Field",
+          "mention": "bank account number",
+          "confidence": "medium"
+        },
+        {
+          "name": "General Terms & Condition",
+          "type": "DataObject",
+          "mention": "General Terms & Condition",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Create Invoice",
+          "relation": "PRODUCES",
+          "target": "Invoice",
+          "evidence": "Create Invoice. Create your first invoice."
+        },
+        {
+          "source": "Invoice",
+          "relation": "CONTAINS",
+          "target": "General Terms & Condition",
+          "evidence": "Add your bank account number and a link to your General Terms & Condition in the footer."
+        },
+        {
+          "source": "Invoice",
+          "relation": "CONTAINS",
+          "target": "bank account number",
+          "evidence": "Add your bank account number and a link to your General Terms & Condition in the footer."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "online-payments",
+    "heading": "Online Payments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Stripe",
+          "type": "Integration",
+          "mention": "Stripe",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoicing",
+          "type": "Module",
+          "mention": "Invoicing",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Providers",
+          "type": "Module",
+          "mention": "Payment Providers",
+          "confidence": "high"
+        },
+        {
+          "name": "Online Payments",
+          "type": "Feature",
+          "mention": "Online Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "bank",
+          "type": "Concept",
+          "mention": "bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "chart_of_accounts",
+          "type": "Concept",
+          "mention": "chart_of_accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "consolidation",
+          "type": "Concept",
+          "mention": "consolidation",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank/bank_synchronization",
+          "type": "Concept",
+          "mention": "bank/bank_synchronization",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiscal_localizations",
+          "type": "Concept",
+          "mention": "fiscal_localizations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting and Invoicing",
+          "type": "Concept",
+          "mention": "Accounting and Invoicing",
+          "confidence": "medium"
+        },
+        {
+          "name": "cheat_sheet",
+          "type": "Concept",
+          "mention": "cheat_sheet",
+          "confidence": "medium"
+        },
+        {
+          "name": "journals",
+          "type": "Concept",
+          "mention": "journals",
+          "confidence": "medium"
+        },
+        {
+          "name": "multi_currency",
+          "type": "Concept",
+          "mention": "multi_currency",
+          "confidence": "medium"
+        },
+        {
+          "num": "avg_price_valuation",
+          "type": "Concept",
+          "mention": "avg_price_valuation",
+          "confidence": "medium"
+        },
+        {
+          "name": "tax_units",
+          "type": "Concept",
+          "mention": "tax_units",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Online Payments",
+          "evidence": "Online Payments"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "ENABLES",
+          "target": "Stripe",
+          "evidence": "Get started with Stripe"
+        },
+        {
+          "source": "Stripe",
+          "relation": "SUPPORTS",
+          "target": "Online Payments",
+          "evidence": "enable secure integrated credit and debit card payments"
+        },
+        {
+          "source": "Invoicing",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Invoicing --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Payment Providers",
+          "evidence": "Configuration --> Payment Providers"
+        },
+        {
+          "source": "Payment Providers",
+          "relation": "HAS_FEATURE",
+          "target": "Online Payments",
+          "evidence": "enable the desired providers"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "bank",
+          "evidence": "seealso: bank"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "chart_of_accounts",
+          "evidence": "seealso: chart_of_accounts"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "consolidation",
+          "evidence": "seealso: consolidation"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "bank/bank_synchronization",
+          "evidence": "seealso: bank/bank_synchronization"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "fiscal_localizations",
+          "evidence": "seealso: fiscal_localizations"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "Accounting and Invoicing",
+          "evidence": "seealso: Accounting and Invoicing"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "cheat_sheet",
+          "evidence": "toctree: cheat_sheet"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "chart_of_accounts",
+          "evidence": "toctree: chart_of_accounts"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "consolidation",
+          "evidence": "toctree: consolidation"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "journals",
+          "evidence": "toctree: journals"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "multi_currency",
+          "evidence": "toctree: multi_currency"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "avg_price_valuation",
+          "evidence": "toctree: avg_price_valuation"
+        },
+        {
+          "source": "Online Payments",
+          "relation": "SEE_ALSO",
+          "target": "tax_units",
+          "evidence": "toctree: tax_units"
+        }
+      ]
+    }
+  }
+]

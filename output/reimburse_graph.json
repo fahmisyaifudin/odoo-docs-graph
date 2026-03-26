@@ -1,0 +1,819 @@
+[
+  {
+    "section_id": "reimburse-employees",
+    "heading": "Reimburse employees",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "expense report",
+          "type": "DataObject",
+          "mention": "expense report",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting journal",
+          "type": "Module",
+          "mention": "accounting journal",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "cash",
+          "type": "Feature",
+          "mention": "cash",
+          "confidence": "medium"
+        },
+        {
+          "name": "check",
+          "type": "Feature",
+          "mention": "check",
+          "confidence": "medium"
+        },
+        {
+          "name": "direct deposit",
+          "type": "Feature",
+          "mention": "direct deposit",
+          "confidence": "medium"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "employee's payslip",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "expense report",
+          "relation": "BELONGS_TO",
+          "target": "accounting journal",
+          "evidence": "expense report is posted to an accounting journal"
+        },
+        {
+          "source": "cash",
+          "relation": "RELATED_TO",
+          "target": "employee",
+          "evidence": "Employees can be reimbursed via cash"
+        },
+        {
+          "source": "check",
+          "relation": "RELATED_TO",
+          "target": "employee",
+          "evidence": "Employees can be reimbursed via cash, check"
+        },
+        {
+          "source": "direct deposit",
+          "relation": "RELATED_TO",
+          "target": "employee",
+          "evidence": "Employees can be reimbursed via cash, check, or direct deposit"
+        },
+        {
+          "source": "employee",
+          "relation": "CONTAINS",
+          "target": "payslip",
+          "evidence": "employee's payslip"
+        },
+        {
+          "source": "payslip",
+          "relation": "IS_PART_OF",
+          "target": "employee",
+          "evidence": "employee's payslip"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reimbursement-settings",
+    "heading": "Reimbursement settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses app",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Reimburse in Payslip",
+          "type": "Setting",
+          "mention": "Reimburse in Payslip option",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Methods",
+          "type": "Setting",
+          "mention": "Payment Methods",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual Payment (Cash)",
+          "type": "Setting",
+          "mention": "Manual Payment (Cash)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manual Payment (Bank)",
+          "type": "Setting",
+          "mention": "Manual Payment (Bank)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batch Deposit (Bank)",
+          "type": "Setting",
+          "mention": "Batch Deposit (Bank)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Checks (Bank)",
+          "type": "Setting",
+          "mention": "Checks (Bank)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Expenses app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Expenses app",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Reimburse in Payslip",
+          "evidence": "Tick the checkbox beside the Reimburse in Payslip option in the Expenses section"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Payment Methods",
+          "evidence": "set how payments are made in the Accounting section. Click the drop-down menu under Payment Methods"
+        },
+        {
+          "source": "Payment Methods",
+          "relation": "CONTAINS",
+          "target": "Manual Payment (Cash)",
+          "evidence": "default options include paying by Manual Payment (Cash)"
+        },
+        {
+          "source": "Payment Methods",
+          "relation": "CONTAINS",
+          "target": "Manual Payment (Bank)",
+          "evidence": "default options include paying by Manual Payment (Bank)"
+        },
+        {
+          "source": "Payment Methods",
+          "relation": "CONTAINS",
+          "target": "Batch Deposit (Bank)",
+          "evidence": "default options include paying by Batch Deposit (Bank)"
+        },
+        {
+          "source": "Payment Methods",
+          "relation": "CONTAINS",
+          "target": "Checks (Bank)",
+          "evidence": "default options include paying by Checks (Bank)"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Save",
+          "evidence": "click Save to activate the settings"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reimburse-in-payslips",
+    "heading": "Reimburse in payslips",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Reimburse in Payslip",
+          "type": "Setting",
+          "mention": "the *Reimburse in Payslip* option",
+          "confidence": "high"
+        },
+        {
+          "name": "expenses/reimburse-settings",
+          "type": "Setting",
+          "mention": "expenses/reimburse-settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses app",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Reports",
+          "type": "DataObject",
+          "mention": "Expense Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "expense report",
+          "type": "DataObject",
+          "mention": "expense report",
+          "confidence": "high"
+        },
+        {
+          "name": "Report in Next Payslip",
+          "type": "Action",
+          "mention": "Report in Next Payslip button",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslip",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "chatter",
+          "type": "Feature",
+          "mention": "chatter",
+          "confidence": "medium"
+        },
+        {
+          "name": "Approved",
+          "type": "Concept",
+          "mention": "Approved",
+          "confidence": "medium"
+        },
+        {
+          "name": "Posted",
+          "type": "Concept",
+          "mention": "Posted",
+          "confidence": "medium"
+        },
+        {
+          "name": "Done",
+          "type": "Concept",
+          "mention": "Done",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payslips",
+          "type": "Module",
+          "mention": "Payslips",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "expense report",
+          "relation": "CONFIGURED_BY",
+          "target": "Reimburse in Payslip",
+          "evidence": "If the *Reimburse in Payslip* option is activated on the settings page, payments can be added to the employee's next payslip"
+        },
+        {
+          "source": "Reimburse in Payslip",
+          "relation": "IS_PART_OF",
+          "target": "expenses/reimburse-settings",
+          "evidence": "the *Reimburse in Payslip* option on the settings <expenses/reimburse-settings> page"
+        },
+        {
+          "source": "Expense Reports",
+          "relation": "BELONGS_TO",
+          "target": "Expenses app",
+          "evidence": "Navigate to Expenses app --> Expense Reports"
+        },
+        {
+          "source": "Report in Next Payslip",
+          "relation": "ENABLES",
+          "target": "expense report",
+          "evidence": "Click the Report in Next Payslip button, and the expenses are added to the next payslip"
+        },
+        {
+          "source": "Report in Next Payslip",
+          "relation": "PRODUCES",
+          "target": "message",
+          "evidence": "Once the expense report is added... a message is logged in the chatter"
+        },
+        {
+          "source": "Report in Next Payslip",
+          "relation": "TRIGGERED_BY",
+          "target": "expense report",
+          "evidence": "...click on the individual expense report... Click the Report in Next Payslip button"
+        },
+        {
+          "source": "expense report",
+          "relation": "IS_PART_OF",
+          "target": "payslip",
+          "evidence": "expenses are added to the next payslip"
+        },
+        {
+          "source": "Report in Next Payslip",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "click on the individual expense report to reimburse on the following paycheck"
+        },
+        {
+          "source": "expense report",
+          "relation": "RELATED_TO",
+          "target": "Payslips",
+          "evidence": "Refer to the Payslips documentation"
+        },
+        {
+          "source": "expense report",
+          "relation": "GENERATES",
+          "target": "payslip",
+          "evidence": "The expense report... will be added to the next payslip"
+        },
+        {
+          "source": "expense report",
+          "relation": "HAS_REPORT",
+          "target": "chatter",
+          "evidence": "a message is logged in the chatter"
+        },
+        {
+          "source": "expense report",
+          "relation": "CONFIGURED_BY",
+          "target": "Approved",
+          "evidence": "only be done individually for an *approved* expense report"
+        },
+        {
+          "source": "expense report",
+          "relation": "CONFIGURED_BY",
+          "target": "Posted",
+          "evidence": "Once an expense report has a status of *Posted*, the option... is not available"
+        },
+        {
+          "source": "expense report",
+          "relation": "CONFIGURED_BY",
+          "target": "Done",
+          "evidence": "The status only changes to Posted (and then Done)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reimburse-individually",
+    "heading": "Reimburse individually",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Reports",
+          "type": "Sub-module",
+          "mention": "Expense Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Report",
+          "type": "DataObject",
+          "mention": "expense report",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay",
+          "type": "Action",
+          "mention": "Click the Pay button",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank",
+          "type": "Concept",
+          "mention": "Bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cash",
+          "type": "Concept",
+          "mention": "Cash",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Method",
+          "type": "Field",
+          "mention": "Payment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual Payment",
+          "type": "Concept",
+          "mention": "Manual Payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Checks",
+          "type": "Concept",
+          "mention": "Checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recipient Bank Account",
+          "type": "Field",
+          "mention": "Recipient Bank Account",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount",
+          "type": "Field",
+          "mention": "Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Date",
+          "type": "Field",
+          "mention": "Payment Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Memo",
+          "type": "Field",
+          "mention": "Memo",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Report Summary",
+          "type": "Field",
+          "mention": "Expense Report Summary field",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Payment",
+          "type": "Action",
+          "mention": "click the Create Payment button",
+          "confidence": "high"
+        },
+        {
+          "name": "Posted",
+          "type": "Standard",
+          "mention": "status of Posted",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses",
+          "relation": "CONTAINS",
+          "target": "Expense Reports",
+          "evidence": "navigate to Expenses app --> Expense Reports"
+        },
+        {
+          "source": "Expense Report",
+          "relation": "HAS_FEATURE",
+          "target": "Pay",
+          "evidence": "Click the Pay button in the top-left corner of the expense report"
+        },
+        {
+          "source": "Pay",
+          "relation": "TRIGGERED_BY",
+          "target": "Expense Report",
+          "evidence": "Click the Pay button in the top-left corner of the expense report"
+        },
+        {
+          "source": "Pay",
+          "relation": "PRODUCES",
+          "target": "Create Payment",
+          "evidence": "click the Create Payment button to register the payment"
+        },
+        {
+          "source": "Pay",
+          "relation": "CONFIGURED_BY",
+          "target": "Journal",
+          "evidence": "Journal: Select the accounting journal"
+        },
+        {
+          "source": "Pay",
+          "relation": "CONFIGURED_BY",
+          "target": "Payment Method",
+          "evidence": "Payment Method: Select how the payment is made"
+        },
+        {
+          "source": "Pay",
+          "relation": "CONFIGURED_BY",
+          "target": "Recipient Bank Account",
+          "evidence": "Recipient Bank Account: This field only appears"
+        },
+        {
+          "source": "Pay",
+          "relation": "CONFIGURED_BY",
+          "target": "Amount",
+          "evidence": "Amount: The total amount being reimbursed"
+        },
+        {
+          "source": "Pay",
+          "relation": "CONFIGURED_BY",
+          "target": "Payment Date",
+          "evidence": "Payment Date: Enter the date the payment is issued"
+        },
+        {
+          "source": "Pay",
+          "relation": "CONFIGURED_BY",
+          "target": "Memo",
+          "evidence": "Memo: The text entered in the Expense Report Summary field"
+        },
+        {
+          "source": "Memo",
+          "relation": "RELATED_TO",
+          "target": "Expense Report Summary",
+          "evidence": "Memo: The text entered in the Expense Report Summary field of the expense report"
+        },
+        {
+          "source": "Create Payment",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "reimburse the employee"
+        },
+        {
+          "source": "Expense Report",
+          "relation": "SUPPORTS",
+          "target": "Posted",
+          "evidence": "expense reports with a status of Posted can be reimbursed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "reimburse-in-bulk",
+    "heading": "Reimburse in bulk",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses app",
+          "type": "Module",
+          "mention": "Expenses app",
+          "confidence": "high"
+        },
+        {
+          "name": "Expense Reports",
+          "type": "DataObject",
+          "mention": "Expense Reports",
+          "confidence": "high"
+        },
+        {
+          "name": "List view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Status",
+          "type": "Field",
+          "mention": "STATUS",
+          "confidence": "high"
+        },
+        {
+          "name": "Posted",
+          "type": "Field",
+          "mention": "Posted",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pay button",
+          "type": "Action",
+          "mention": "Pay button",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay pop-up window",
+          "type": "Feature",
+          "mention": "Pay pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Journal",
+          "type": "Field",
+          "mention": "Journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank",
+          "type": "Concept",
+          "mention": "Bank",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cash",
+          "type": "Concept",
+          "mention": "Cash",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Method",
+          "type": "Field",
+          "mention": "Payment Method",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual Payment",
+          "type": "Feature",
+          "mention": "Manual Payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Checks",
+          "type": "Feature",
+          "mention": "Checks",
+          "confidence": "medium"
+        },
+        {
+          "name": "Group Payments",
+          "type": "Feature",
+          "mention": "Group Payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount",
+          "type": "Field",
+          "mention": "Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Date",
+          "type": "Field",
+          "mention": "Payment Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Payments",
+          "type": "Action",
+          "mention": "Create Payments button",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslip",
+          "type": "DataObject",
+          "mention": "payslip",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reimburse",
+          "type": "Workflow",
+          "mention": "reimburse",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Expenses app",
+          "relation": "CONTAINS",
+          "target": "Expense Reports",
+          "evidence": "navigate to Expenses app --> Expense Reports"
+        },
+        {
+          "source": "Reimburse",
+          "relation": "PERFORMED_BY",
+          "target": "Employee",
+          "evidence": "reimburse the employees"
+        },
+        {
+          "source": "Expense Reports",
+          "relation": "GENERATES",
+          "target": "Payslip",
+          "evidence": "not via a payslip"
+        },
+        {
+          "source": "Status",
+          "relation": "HAS_FEATURE",
+          "target": "Posted",
+          "evidence": "expense reports with a status of Posted"
+        },
+        {
+          "source": "Pay pop-up window",
+          "relation": "CONTAINS",
+          "target": "Journal",
+          "evidence": "Enter the following information in the pop-up window: - Journal"
+        },
+        {
+          "source": "Pay pop-up window",
+          "relation": "CONTAINS",
+          "target": "Payment Method",
+          "evidence": "Enter the following information in the pop-up window: - Payment Method"
+        },
+        {
+          "source": "Pay pop-up window",
+          "relation": "CONTAINS",
+          "target": "Group Payments",
+          "evidence": "Enter the following information in the pop-up window: - Group Payments"
+        },
+        {
+          "source": "Pay pop-up window",
+          "relation": "CONTAINS",
+          "target": "Amount",
+          "evidence": "Enter the following information in the pop-up window: - Amount"
+        },
+        {
+          "source": "Pay pop-up window",
+          "relation": "CONTAINS",
+          "target": "Payment Date",
+          "evidence": "Enter the following information in the pop-up window: - Payment Date"
+        },
+        {
+          "source": "Reimburse",
+          "relation": "TRIGGERED_BY",
+          "target": "Pay button",
+          "evidence": "click the Pay button"
+        },
+        {
+          "source": "Create Payments",
+          "relation": "PRODUCES",
+          "target": "Expense Reports",
+          "evidence": "register the payments, and reimburse the employees"
+        }
+      ]
+    }
+  }
+]

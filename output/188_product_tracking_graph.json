@@ -1,0 +1,470 @@
+[
+  {
+    "section_id": "product-tracking",
+    "heading": "Product tracking",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot",
+          "type": "Concept",
+          "mention": "lot",
+          "confidence": "medium"
+        },
+        {
+          "name": "serial number",
+          "type": "Concept",
+          "mention": "serial number",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Lot",
+          "evidence": "Lots and serial numbers are the two ways to identify and track products in Odoo."
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "serial number",
+          "evidence": "Lots and serial numbers are the two ways to identify and track products in Odoo."
+        },
+        {
+          "source": "Lot",
+          "relation": "SEE_ALSO",
+          "target": "product_tracking/lots",
+          "evidence": ".. seealso:: - product_tracking/lots"
+        },
+        {
+          "source": "serial number",
+          "relation": "SEE_ALSO",
+          "target": "product_tracking/serial_numbers",
+          "evidence": ".. seealso:: - product_tracking/serial_numbers"
+        },
+        {
+          "source": "Lot",
+          "relation": "RELATED_TO",
+          "target": "serial number",
+          "evidence": "Lots and serial numbers are the two ways to identify and track products in Odoo."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enable-lots-&-serial-numbers",
+    "heading": "Enable lots & serial numbers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Traceability",
+          "type": "Feature",
+          "mention": "Traceability section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lots & Serial Numbers",
+          "type": "Feature",
+          "mention": "Lots & Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots & Serial Numbers box",
+          "type": "Setting",
+          "mention": "click the box next to Lots & Serial Numbers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save button",
+          "type": "Action",
+          "mention": "Save button",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory",
+          "evidence": "Inventory app"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Traceability",
+          "evidence": "scroll down to the Traceability section"
+        },
+        {
+          "source": "Traceability",
+          "relation": "HAS_FEATURE",
+          "target": "Lots & Serial Numbers",
+          "evidence": "the Traceability section, and ... Lots & Serial Numbers"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Lots & Serial Numbers box",
+          "evidence": "click the box next to Lots & Serial Numbers"
+        },
+        {
+          "source": "Lots & Serial Numbers",
+          "relation": "RELATED_TO",
+          "target": "Lots & Serial Numbers box",
+          "evidence": "the box next to Lots & Serial Numbers"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Save button",
+          "evidence": "click the Save button to save changes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "when-to-use-lots",
+    "heading": "When to use lots",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Lots",
+          "type": "Concept",
+          "mention": "Lots",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Concept",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturers",
+          "type": "Actor",
+          "mention": "Manufacturers",
+          "confidence": "high"
+        },
+        {
+          "name": "Product recalls",
+          "type": "Concept",
+          "mention": "product recalls",
+          "confidence": "high"
+        },
+        {
+          "name": "Expiration dates",
+          "type": "Concept",
+          "mention": "expiration dates",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lots",
+          "relation": "RELATED_TO",
+          "target": "Product",
+          "evidence": "Lots are useful for products"
+        },
+        {
+          "source": "Lots",
+          "relation": "RELATED_TO",
+          "target": "Product recalls",
+          "evidence": "especially useful when managing product recalls"
+        },
+        {
+          "source": "Lots",
+          "relation": "RELATED_TO",
+          "target": "Expiration dates",
+          "evidence": "especially useful when managing product recalls or expiration dates"
+        },
+        {
+          "source": "Manufacturers",
+          "relation": "PERFORMED_BY",
+          "target": "Lots",
+          "evidence": "Manufacturers assign lot numbers to groups of products"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "when-to-use-serial-numbers",
+    "heading": "When to use serial numbers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "serial numbers",
+          "type": "Concept",
+          "mention": "serial numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "products",
+          "type": "Concept",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "supply chain",
+          "type": "Concept",
+          "mention": "supply chain",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturers",
+          "type": "Actor",
+          "mention": "manufacturers",
+          "confidence": "medium"
+        }
+      ],
+      "relations": []
+    }
+  },
+  {
+    "section_id": "traceability",
+    "heading": "Traceability",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots/Serial Numbers",
+          "type": "Sub-module",
+          "mention": "Lots/Serial Numbers",
+          "confidence": "high"
+        },
+        {
+          "name": "Lots/Serial Numbers dashboard",
+          "type": "Feature",
+          "mention": "Lots/Serial Numbers dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "traceability reports",
+          "type": "Report",
+          "mention": "traceability reports",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "Concept",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "lot",
+          "type": "Concept",
+          "mention": "lot",
+          "confidence": "high"
+        },
+        {
+          "name": "serial number",
+          "type": "Concept",
+          "mention": "serial number",
+          "confidence": "high"
+        },
+        {
+          "name": "Lot or Serial Number form",
+          "type": "DataObject",
+          "mention": "Lot or Serial Number form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Location",
+          "type": "Field",
+          "mention": "Location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Traceability",
+          "type": "Field",
+          "mention": "Traceability",
+          "confidence": "medium"
+        },
+        {
+          "name": "Group By",
+          "type": "Action",
+          "mention": "Group By",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Group",
+          "type": "Action",
+          "mention": "Add Custom Group",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply",
+          "type": "Action",
+          "mention": "Apply",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "go to Inventory app"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Lots/Serial Numbers",
+          "evidence": "Products --> Lots/Serial Numbers"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "HAS_FEATURE",
+          "target": "Lots/Serial Numbers dashboard",
+          "evidence": "reveals the Lots/Serial Numbers dashboard"
+        },
+        {
+          "source": "Products",
+          "relation": "HAS_REPORT",
+          "target": "traceability reports",
+          "evidence": "refer to traceability reports"
+        },
+        {
+          "source": "traceability reports",
+          "relation": "APPLIES_TO",
+          "target": "product",
+          "evidence": "see the entire life cycle of a product"
+        },
+        {
+          "source": "traceability reports",
+          "relation": "APPLIES_TO",
+          "target": "lot",
+          "evidence": "group products by lots"
+        },
+        {
+          "source": "traceability reports",
+          "relation": "APPLIES_TO",
+          "target": "serial number",
+          "evidence": "group products by serial numbers"
+        },
+        {
+          "source": "Lots/Serial Numbers dashboard",
+          "relation": "CONTAINS",
+          "target": "product",
+          "evidence": "products with lots or serial numbers assigned to them are listed"
+        },
+        {
+          "source": "product",
+          "relation": "RELATED_TO",
+          "target": "lot",
+          "evidence": "lots or serial numbers assigned to them"
+        },
+        {
+          "source": "product",
+          "relation": "RELATED_TO",
+          "target": "serial number",
+          "evidence": "lots or serial numbers assigned to them"
+        },
+        {
+          "source": "Group By",
+          "relation": "TRIGGERED_BY",
+          "target": "Add Custom Group",
+          "evidence": "click Group By, and select Add Custom Group"
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "PRODUCES",
+          "target": "Lot/Serial Number",
+          "evidence": "select Lot/Serial Number"
+        },
+        {
+          "source": "Apply",
+          "relation": "PRODUCES",
+          "target": "lot",
+          "evidence": "reveals all existing lots"
+        },
+        {
+          "source": "Apply",
+          "relation": "PRODUCES",
+          "target": "serial number",
+          "evidence": "reveals all existing serial numbers"
+        },
+        {
+          "source": "Lot or Serial Number form",
+          "relation": "CONFIGURED_BY",
+          "target": "Location",
+          "evidence": "Location smart button"
+        },
+        {
+          "source": "Lot or Serial Number form",
+          "relation": "CONFIGURED_BY",
+          "target": "Traceability",
+          "evidence": "Traceability smart button"
+        }
+      ]
+    }
+  }
+]

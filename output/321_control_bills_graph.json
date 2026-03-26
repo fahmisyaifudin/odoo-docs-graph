@@ -1,0 +1,568 @@
+[
+  {
+    "section_id": "control-policies",
+    "heading": "Control policies",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase",
+          "confidence": "high"
+        },
+        {
+          "name": "Control Policy",
+          "type": "Setting",
+          "mention": "Control Policy",
+          "confidence": "high"
+        },
+        {
+          "name": "On ordered quantities",
+          "type": "Standard",
+          "mention": "On ordered quantities",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Product record",
+          "confidence": "high"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order (PO)",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Actor",
+          "mention": "vendors",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bill",
+          "type": "Concept",
+          "mention": "bill",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "In Odoo's Purchase app"
+        },
+        {
+          "source": "Control Policy",
+          "relation": "CONFIGURED_BY",
+          "target": "Product",
+          "evidence": "The control policy is selected on the Product record"
+        },
+        {
+          "source": "Control Policy",
+          "relation": "APPLIES_TO",
+          "target": "Purchase Order (PO)",
+          "evidence": "determines the quantities billed by vendors on every purchase order"
+        },
+        {
+          "source": "On ordered quantities",
+          "relation": "RELATED_TO",
+          "target": "Bill",
+          "evidence": "choosing On ordered quantities means the bill is based on ordered items"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "product record",
+          "type": "DataObject",
+          "mention": "product record",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Feature",
+          "mention": "Purchase tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor Bills",
+          "type": "Sub-module",
+          "mention": "Vendor Bills",
+          "confidence": "medium"
+        },
+        {
+          "name": "Control Policy",
+          "type": "Feature",
+          "mention": "Control Policy",
+          "confidence": "medium"
+        },
+        {
+          "name": "On ordered quantities",
+          "type": "Feature",
+          "mention": "On ordered quantities",
+          "confidence": "high"
+        },
+        {
+          "name": "On received quantities",
+          "type": "Feature",
+          "mention": "On recieved quantities",
+          "confidence": "high"
+        },
+        {
+          "name": "vendor bill",
+          "type": "DataObject",
+          "mention": "vendor bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Services",
+          "type": "Concept",
+          "mention": "Services",
+          "confidence": "high"
+        },
+        {
+          "name": "Goods",
+          "type": "Concept",
+          "mention": "Goods",
+          "confidence": "high"
+        },
+        {
+          "name": "On delivered quantities",
+          "type": "Feature",
+          "mention": "On delivered quantities",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "navigate to Purchase app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Products --> Products"
+        },
+        {
+          "source": "product record",
+          "relation": "IS_PART_OF",
+          "target": "Products",
+          "evidence": "click on a product record to open it"
+        },
+        {
+          "source": "product record",
+          "relation": "HAS_FEATURE",
+          "target": "Purchase tab",
+          "evidence": "Click to the Purchase tab"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "CONTAINS",
+          "target": "Vendor Bills",
+          "evidence": "Scroll to the Vendor Bills section"
+        },
+        {
+          "source": "Vendor Bills",
+          "relation": "CONTAINS",
+          "target": "Control Policy",
+          "evidence": "Under Control Policy"
+        },
+        {
+          "source": "Control Policy",
+          "relation": "CONTAINS",
+          "target": "On ordered quantities",
+          "evidence": "tick the radio button for either On ordered quantities or On recieved quantities"
+        },
+        {
+          "source": "Control Policy",
+          "relation": "CONTAINS",
+          "target": "On received quantities",
+          "evidence": "tick the radio button for either On ordered quantities or On recieved quantities"
+        },
+        {
+          "source": "On ordered quantities",
+          "relation": "ENABLES",
+          "target": "vendor bill",
+          "evidence": "Creates a vendor bill as soon as a  is confirmed"
+        },
+        {
+          "source": "On received quantities",
+          "relation": "ENABLES",
+          "target": "vendor bill",
+          "evidence": "A bill is created only *after* part of the total order has been received"
+        },
+        {
+          "source": "Services",
+          "relation": "CONFIGURED_BY",
+          "target": "On ordered quantities",
+          "evidence": "Services: The default control policy is *On ordered quantities*"
+        },
+        {
+          "source": "Goods",
+          "relation": "CONFIGURED_BY",
+          "target": "On delivered quantities",
+          "evidence": "Goods: The default control policy is *On delivered quantities*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "pay-vendor-bills-with-3-way-matching",
+    "heading": "Pay vendor bills with 3-way matching",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoicing",
+          "type": "Sub-module",
+          "mention": "Invoicing section",
+          "confidence": "medium"
+        },
+        {
+          "name": "3-way matching",
+          "type": "Feature",
+          "mention": "3-way matching",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "Report",
+          "mention": "Purchase Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Vendor Bill",
+          "type": "DataObject",
+          "mention": "Vendor Bill",
+          "confidence": "high"
+        },
+        {
+          "name": "Should Be Paid",
+          "type": "Field",
+          "mention": "Should Be Paid field",
+          "confidence": "high"
+        },
+        {
+          "name": "Other Info",
+          "type": "Field",
+          "mention": "Other Info tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bill Date",
+          "type": "Field",
+          "mention": "Bill Date field",
+          "confidence": "high"
+        },
+        {
+          "name": "Invalid Operation pop-up window",
+          "type": "Feature",
+          "mention": "Invalid Operation pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Register Payment",
+          "type": "Feature",
+          "mention": "Register Payment",
+          "confidence": "high"
+        },
+        {
+          "name": "Register Payment pop-up window",
+          "type": "Feature",
+          "mention": "Register Payment pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "medium"
+        },
+        {
+          "name": "products",
+          "type": "Concept",
+          "mention": "products",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Purchase app"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Purchase",
+          "evidence": "Purchase app --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Invoicing",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Settings, and scroll down to the Invoicing section"
+        },
+        {
+          "source": "Invoicing",
+          "relation": "CONTAINS",
+          "target": "3-way matching",
+          "evidence": "Then, tick the checkbox for 3-way matching"
+        },
+        {
+          "source": "Orders",
+          "relation": "IS_PART_OF",
+          "target": "Purchase",
+          "evidence": "Purchase app --> Orders"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "HAS_REPORT",
+          "target": "Orders",
+          "evidence": "Orders --> Purchase Orders"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Should Be Paid",
+          "evidence": "vendor bills display a Should Be Paid field"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Other Info",
+          "evidence": "Click the Other Info tab"
+        },
+        {
+          "source": "Vendor Bill",
+          "relation": "CONTAINS",
+          "target": "Bill Date",
+          "evidence": "select a date in the Bill Date field"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "3-way matching",
+          "evidence": "The 3-way matching feature"
+        },
+        {
+          "source": "3-way matching",
+          "relation": "ENABLES",
+          "target": "Should Be Paid",
+          "evidence": "When 3-way matching is enabled, vendor bills display a Should Be Paid field"
+        },
+        {
+          "source": "Register Payment",
+          "relation": "TRIGGERED_BY",
+          "target": "Vendor Bill",
+          "evidence": "click Register Payment to process the vendor bill"
+        },
+        {
+          "source": "Register Payment",
+          "relation": "ENABLES",
+          "target": "Register Payment pop-up window",
+          "evidence": "opens a Register Payment pop-up window"
+        },
+        {
+          "source": "Create Bill",
+          "relation": "PRODUCES",
+          "target": "Vendor Bill",
+          "evidence": "Click Create Bill. Doing so opens a new draft Vendor Bill form"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-a-purchase-order's-billing-status",
+    "heading": "View a purchase order's billing status",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "Module",
+          "mention": "Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase order",
+          "type": "DataObject",
+          "mention": "purchase order",
+          "confidence": "high"
+        },
+        {
+          "name": "Other Information tab",
+          "type": "Feature",
+          "mention": "Other Information tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Billing Status",
+          "type": "Field",
+          "mention": "Billing Status field",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill Control",
+          "type": "Setting",
+          "mention": "Bill Control policy",
+          "confidence": "high"
+        },
+        {
+          "name": "Nothing to Bill",
+          "type": "Concept",
+          "mention": "Nothing to Bill",
+          "confidence": "medium"
+        },
+        {
+          "name": "Waiting Bills",
+          "type": "Concept",
+          "mention": "Waiting Bills",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fully Billed",
+          "type": "Concept",
+          "mention": "Fully Billed",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase Orders",
+          "relation": "IS_PART_OF",
+          "target": "Purchase app",
+          "evidence": "Purchase app --> Orders --> Purchase Orders"
+        },
+        {
+          "source": "Purchase order",
+          "relation": "HAS_FEATURE",
+          "target": "Other Information tab",
+          "evidence": "on the purchase order form"
+        },
+        {
+          "source": "Other Information tab",
+          "relation": "CONTAINS",
+          "target": "Billing Status",
+          "evidence": "locate the Billing Status field"
+        },
+        {
+          "source": "Billing Status",
+          "relation": "CONFIGURED_BY",
+          "target": "Bill Control",
+          "evidence": "depending on the Bill Control policy"
+        },
+        {
+          "source": "Nothing to Bill",
+          "relation": "APPLIES_TO",
+          "target": "Billing Status",
+          "evidence": "Billing Status field could read"
+        },
+        {
+          "source": "Waiting Bills",
+          "relation": "APPLIES_TO",
+          "target": "Billing Status",
+          "evidence": "Billing Status field could read"
+        },
+        {
+          "source": "Fully Billed",
+          "relation": "APPLIES_TO",
+          "target": "Billing Status",
+          "evidence": "Billing Status field could read"
+        }
+      ]
+    }
+  }
+]

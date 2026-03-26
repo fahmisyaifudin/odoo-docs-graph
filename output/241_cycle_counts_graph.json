@@ -1,0 +1,597 @@
+[
+  {
+    "section_id": "cycle-counts",
+    "heading": "Cycle counts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Cycle counts",
+          "type": "Module",
+          "mention": "cycle counts",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory adjustment",
+          "type": "Action",
+          "mention": "inventory adjustment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory count",
+          "type": "Workflow",
+          "mention": "inventory count",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warehouse stock",
+          "type": "DataObject",
+          "mention": "warehouse stock",
+          "confidence": "low"
+        },
+        {
+          "name": "Cycle counting",
+          "type": "Feature",
+          "mention": "cycle counting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Locations",
+          "type": "Concept",
+          "mention": "locations",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Cycle counts",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Cycle counts"
+        },
+        {
+          "source": "Inventory adjustment",
+          "relation": "TRIGGERED_BY",
+          "target": "Inventory count",
+          "evidence": "after making an *inventory adjustment* in Odoo"
+        },
+        {
+          "source": "Cycle counting",
+          "relation": "ENABLES",
+          "target": "Inventory count",
+          "evidence": "Cycle counting is a method by which companies count their inventory more often"
+        },
+        {
+          "source": "Cycle counting",
+          "relation": "USES_METHOD",
+          "target": "Cycle counts",
+          "evidence": "These companies use *cycle counts*"
+        },
+        {
+          "source": "Inventory count",
+          "relation": "RELATED_TO",
+          "target": "Warehouse stock",
+          "evidence": "warehouse stock only needs to be counted once a year"
+        },
+        {
+          "source": "Cycle counting",
+          "relation": "RELATED_TO",
+          "target": "Locations",
+          "evidence": "count their inventory more often in certain *locations*"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "Cycle counts",
+          "type": "Feature",
+          "mention": "cycle counts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Module",
+          "mention": "Warehouse",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings (checkbox)",
+          "type": "Setting",
+          "mention": "checkbox",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Cycle counts",
+          "relation": "PERFORMED_BY",
+          "target": "Location",
+          "evidence": "cycle counts are performed by location"
+        },
+        {
+          "source": "Cycle counts",
+          "relation": "REQUIRES",
+          "target": "Storage Locations",
+          "evidence": "the Storage Locations feature needs to be enabled before performing a cycle count"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONTAINS",
+          "target": "Storage Locations",
+          "evidence": "Warehouse section"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "HAS_FEATURE",
+          "target": "Storage Locations",
+          "evidence": "tick the checkbox next to Storage Locations"
+        },
+        {
+          "source": "Storage Locations",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings (checkbox)",
+          "evidence": "tick the checkbox"
+        },
+        {
+          "source": "Save",
+          "relation": "PRODUCES",
+          "target": "Unknown",
+          "evidence": "click Save"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-inventory-count-frequency-by-location",
+    "heading": "Change inventory count frequency by location",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations feature",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Locations",
+          "type": "DataObject",
+          "mention": "Locations",
+          "confidence": "high"
+        },
+        {
+          "name": "location",
+          "type": "DataObject",
+          "mention": "location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cyclic Counting section",
+          "type": "Sub-module",
+          "mention": "Cyclic Counting section",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory Frequency (Days)",
+          "type": "Field",
+          "mention": "Inventory Frequency (Days) field",
+          "confidence": "high"
+        },
+        {
+          "name": "inventory adjustment",
+          "type": "Action",
+          "mention": "inventory adjustment",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Storage Locations",
+          "relation": "HAS_FEATURE",
+          "target": "Odoo",
+          "evidence": "Once the *Storage Locations* feature is enabled"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Locations",
+          "evidence": "Configuration --> Locations"
+        },
+        {
+          "source": "Cyclic Counting section",
+          "relation": "IS_PART_OF",
+          "target": "location",
+          "evidence": "Under the Cyclic Counting section"
+        },
+        {
+          "source": "Inventory Frequency (Days)",
+          "relation": "IS_PART_OF",
+          "target": "Cyclic Counting section",
+          "evidence": "Under the Cyclic Counting section, locate the Inventory Frequency (Days) field"
+        },
+        {
+          "source": "inventory adjustment",
+          "relation": "APPLIES_TO",
+          "target": "location",
+          "evidence": "once an inventory adjustment is applied to this location"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "count-inventory-by-location",
+    "heading": "Count inventory by location",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Physical Inventory",
+          "type": "Feature",
+          "mention": "Physical Inventory",
+          "confidence": "medium"
+        },
+        {
+          "name": "Inventory Adjustments page",
+          "type": "DataObject",
+          "mention": "Inventory Adjustments page",
+          "confidence": "high"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters",
+          "confidence": "high"
+        },
+        {
+          "name": "Group By",
+          "type": "Feature",
+          "mention": "Group By",
+          "confidence": "high"
+        },
+        {
+          "name": "Search bar",
+          "type": "Feature",
+          "mention": "Search... bar",
+          "confidence": "low"
+        },
+        {
+          "name": "Location",
+          "type": "Field",
+          "mention": "Location",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Group",
+          "type": "Action",
+          "mention": "Add Custom Group",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Filter",
+          "type": "Action",
+          "mention": "Add Custom Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Filter pop-up window",
+          "type": "DataObject",
+          "mention": "Add Custom Filter pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "cycle count",
+          "type": "Workflow",
+          "mention": "cycle count",
+          "confidence": "high"
+        },
+        {
+          "name": "warehouse",
+          "type": "Actor",
+          "mention": "warehouse",
+          "confidence": "low"
+        },
+        {
+          "name": "products",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "navigate to Inventory app --> Operations"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Physical Inventory",
+          "evidence": "Operations --> Physical Inventory"
+        },
+        {
+          "source": "Physical Inventory",
+          "relation": "ENABLES",
+          "target": "Inventory Adjustments page",
+          "evidence": "reveals an Inventory Adjustments page"
+        },
+        {
+          "source": "Inventory Adjustments page",
+          "relation": "HAS_FEATURE",
+          "target": "Filters",
+          "evidence": "the Filters and Group By options"
+        },
+        {
+          "source": "Inventory Adjustments page",
+          "relation": "HAS_FEATURE",
+          "target": "Group By",
+          "evidence": "the Filters and Group By options"
+        },
+        {
+          "source": "Filters",
+          "relation": "ENABLES",
+          "target": "Add Custom Filter",
+          "evidence": "click Add Custom Filter"
+        },
+        {
+          "source": "Group By",
+          "relation": "ENABLES",
+          "target": "Add Custom Group",
+          "evidence": "click Add Custom Group"
+        },
+        {
+          "source": "Add Custom Group",
+          "relation": "GENERATES",
+          "target": "drop-down menu",
+          "evidence": "reveal a new drop-down menu"
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "GENERATES",
+          "target": "Add Custom Filter pop-up window",
+          "evidence": "open an Add Custom Filter pop-up window"
+        },
+        {
+          "source": "Location",
+          "relation": "BELONGS_TO",
+          "target": "drop-down menu",
+          "evidence": "select Location from the list of options"
+        },
+        {
+          "source": "cycle count",
+          "relation": "PERFORMED_BY",
+          "target": "warehouse",
+          "evidence": "in the warehouse"
+        },
+        {
+          "source": "Inventory Adjustments page",
+          "relation": "CONTAINS",
+          "target": "products",
+          "evidence": "containing all products"
+        },
+        {
+          "source": "cycle count",
+          "relation": "APPLIES_TO",
+          "target": "products",
+          "evidence": "perform a cycle count for a specific location... products within that location"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "change-full-inventory-count-frequency",
+    "heading": "Change full inventory count frequency",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Annual Inventory Day and Month",
+          "type": "Setting",
+          "mention": "Annual Inventory Day and Month setting field",
+          "confidence": "high"
+        },
+        {
+          "name": "full inventory count",
+          "type": "Workflow",
+          "mention": "full inventory counts",
+          "confidence": "medium"
+        },
+        {
+          "name": "count_products",
+          "type": "Feature",
+          "mention": "count_products",
+          "confidence": "medium"
+        },
+        {
+          "name": "use_locations",
+          "type": "Feature",
+          "mention": "use_locations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "full inventory count",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "full inventory counts of all in-stock products in the warehouse"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "go to Inventory app --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Annual Inventory Day and Month",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "in the Operations section, locate the Annual Inventory Day and Month setting field"
+        },
+        {
+          "source": "Annual Inventory Day and Month",
+          "relation": "GOVERNED_BY",
+          "target": "full inventory count",
+          "evidence": "the scheduled date for full inventory counts"
+        },
+        {
+          "source": "count_products",
+          "relation": "SEE_ALSO",
+          "target": "full inventory count",
+          "evidence": "seealso: count_products"
+        },
+        {
+          "source": "use_locations",
+          "relation": "SEE_ALSO",
+          "target": "full inventory count",
+          "evidence": "seealso: use_locations"
+        },
+        {
+          "source": "Save",
+          "relation": "CONFIGURED_BY",
+          "target": "Annual Inventory Day and Month",
+          "evidence": "Once all necessary changes have been made, click Save"
+        }
+      ]
+    }
+  }
+]

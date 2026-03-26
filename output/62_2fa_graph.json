@@ -1,0 +1,561 @@
+[
+  {
+    "section_id": "two-factor-authentication",
+    "heading": "Two-factor authentication",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Two-factor authentication",
+          "type": "Feature",
+          "mention": "Two-factor authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "authenticator",
+          "type": "Actor",
+          "mention": "authenticator",
+          "confidence": "medium"
+        },
+        {
+          "name": "mobile phone",
+          "type": "Actor",
+          "mention": "mobile phone",
+          "confidence": "medium"
+        },
+        {
+          "name": "unauthorized user",
+          "type": "Actor",
+          "mention": "unauthorized user",
+          "confidence": "low"
+        },
+        {
+          "name": "account password",
+          "type": "Field",
+          "mention": "account password",
+          "confidence": "medium"
+        },
+        {
+          "name": "Australian government",
+          "type": "Regulation",
+          "mention": "Australian government",
+          "confidence": "high"
+        },
+        {
+          "name": "Fiscal localizations",
+          "type": "Concept",
+          "mention": "fiscal localizations",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Australian government",
+          "relation": "APPLIES_TO",
+          "target": "Two-factor authentication",
+          "evidence": "Some governments, such as the Australian ... government, require . For these fiscal localizations ..., it is not possible to deactivate ."
+        },
+        {
+          "source": "Fiscal localizations",
+          "relation": "GOVERNED_BY",
+          "target": "Australian government",
+          "evidence": "For these fiscal localizations ..., it is not possible to deactivate ."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "requirements",
+    "heading": "Requirements",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Phone-based authenticators",
+          "type": "Concept",
+          "mention": "Phone-based authenticators are the easiest and most commonly used.",
+          "confidence": "high"
+        },
+        {
+          "name": "Authy",
+          "type": "Product",
+          "mention": "`Authy <https://authy.com/>`_",
+          "confidence": "medium"
+        },
+        {
+          "name": "FreeOTP",
+          "type": "Product",
+          "mention": "`FreeOTP <https://freeotp.github.io/>`_",
+          "confidence": "medium"
+        },
+        {
+          "name": "Google Authenticator",
+          "type": "Product",
+          "mention": "`Google Authenticator <https://support.google.com/accounts/answer/1066447?hl=en>`_",
+          "confidence": "medium"
+        },
+        {
+          "name": "LastPass Authenticator",
+          "type": "Product",
+          "mention": "`LastPass Authenticator <https://lastpass.com/auth/>`_",
+          "confidence": "medium"
+        },
+        {
+          "name": "Microsoft Authenticator",
+          "type": "Product",
+          "mention": "`Microsoft Authenticator <https://www.microsoft.com/en-gb/account/authenticator>`_",
+          "confidence": "medium"
+        },
+        {
+          "name": "Password managers",
+          "type": "Concept",
+          "mention": "Password managers are another option.",
+          "confidence": "high"
+        },
+        {
+          "name": "1Password",
+          "type": "Product",
+          "mention": "`1Password <https://support.1password.com/one-time-passwords/>`_",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bitwarden",
+          "type": "Product",
+          "mention": "`Bitwarden <https://bitwarden.com/help/article/authenticator-keys/>`_",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Authy",
+          "relation": "IS_PART_OF",
+          "target": "Phone-based authenticators",
+          "evidence": "Examples include ... Authy"
+        },
+        {
+          "source": "FreeOTP",
+          "relation": "IS_PART_OF",
+          "target": "Phone-based authenticators",
+          "evidence": "Examples include ... FreeOTP"
+        },
+        {
+          "source": "Google Authenticator",
+          "relation": "IS_PART_OF",
+          "target": "Phone-based authenticators",
+          "evidence": "Examples include ... Google Authenticator"
+        },
+        {
+          "source": "LastPass Authenticator",
+          "relation": "IS_PART_OF",
+          "target": "Phone-based authenticators",
+          "evidence": "Examples include ... LastPass Authenticator"
+        },
+        {
+          "source": "Microsoft Authenticator",
+          "relation": "IS_PART_OF",
+          "target": "Phone-based authenticators",
+          "evidence": "Examples include ... Microsoft Authenticator"
+        },
+        {
+          "source": "1Password",
+          "relation": "IS_PART_OF",
+          "target": "Password managers",
+          "evidence": "Common examples include ... 1Password"
+        },
+        {
+          "source": "Bitwarden",
+          "relation": "IS_PART_OF",
+          "target": "Password managers",
+          "evidence": "Common examples include ... Bitwarden"
+        },
+        {
+          "source": "Google Authenticator",
+          "relation": "RELATED_TO",
+          "target": "Odoo",
+          "evidence": "The remainder of this document uses Google Authenticator as an example"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "two-factor-authentication-setup",
+    "heading": "Two-factor authentication setup",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Two-factor authentication",
+          "type": "Feature",
+          "mention": "Two-Factor Authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "Profile avatar",
+          "type": "Action",
+          "mention": "profile avatar",
+          "confidence": "medium"
+        },
+        {
+          "name": "My Profile",
+          "type": "Module",
+          "mention": "My Profile",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account Security tab",
+          "type": "Module",
+          "mention": "Account Security tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Security Control pop-up window",
+          "type": "Feature",
+          "mention": "Security Control pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Two-Factor Authentication Activation pop-up window",
+          "type": "Feature",
+          "mention": "Two-Factor Authentication Activation pop-up window",
+          "confidence": "medium"
+        },
+        {
+          "name": "QR code",
+          "type": "Feature",
+          "mention": "QR code",
+          "confidence": "medium"
+        },
+        {
+          "name": "Verification Code field",
+          "type": "Field",
+          "mention": "Verification Code field",
+          "confidence": "high"
+        },
+        {
+          "name": "verification code",
+          "type": "DataObject",
+          "mention": "verification code",
+          "confidence": "medium"
+        },
+        {
+          "name": "authenticator application",
+          "type": "Integration",
+          "mention": "authenticator application",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Two-factor authentication",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Two-factor authentication setup in Odoo"
+        },
+        {
+          "source": "Profile avatar",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the profile avatar"
+        },
+        {
+          "source": "My Profile",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "select My Profile from the resulting drop-down menu"
+        },
+        {
+          "source": "Account Security tab",
+          "relation": "CONTAINS",
+          "target": "Two-factor authentication",
+          "evidence": "Account Security tab, then slide the Two-Factor Authentication toggle"
+        },
+        {
+          "source": "Two-factor authentication",
+          "relation": "ENABLES",
+          "target": "Security Control pop-up window",
+          "evidence": "This generates a Security Control pop-up window"
+        },
+        {
+          "source": "Two-factor authentication",
+          "relation": "ENABLES",
+          "target": "Two-Factor Authentication Activation pop-up window",
+          "evidence": "Next, a Two-Factor Authentication Activation pop-up window appears"
+        },
+        {
+          "source": "Two-Factor Authentication Activation pop-up window",
+          "relation": "CONTAINS",
+          "target": "QR code",
+          "evidence": "Two-Factor Authentication Activation pop-up window appears, with a QR code"
+        },
+        {
+          "source": "Two-factor authentication",
+          "relation": "CONFIGURED_BY",
+          "target": "authenticator application",
+          "evidence": "Using the desired authenticator application"
+        },
+        {
+          "source": "Two-factor authentication",
+          "relation": "REQUIRES",
+          "target": "verification code",
+          "evidence": "Enter the code into the Verification Code field"
+        },
+        {
+          "source": "Two-factor authentication",
+          "relation": "CONFIGURED_BY",
+          "target": "Verification Code field",
+          "evidence": "Enter the code into the Verification Code field"
+        },
+        {
+          "source": "verification code",
+          "relation": "PRODUCED_BY",
+          "target": "authenticator application",
+          "evidence": "Afterwards, the authenticator should display a verification code"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "logging-in",
+    "heading": "Logging in",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Logging in",
+          "type": "Action",
+          "mention": "Log in",
+          "confidence": "medium"
+        },
+        {
+          "name": "Two-factor Authentication",
+          "type": "Feature",
+          "mention": "Two-factor Authentication",
+          "confidence": "medium"
+        },
+        {
+          "name": "Authentication Code",
+          "type": "Field",
+          "mention": "Authentication Code field",
+          "confidence": "medium"
+        },
+        {
+          "name": "authenticator",
+          "type": "Actor",
+          "mention": "authenticator",
+          "confidence": "low"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "medium"
+        },
+        {
+          "name": "administrator",
+          "type": "Actor",
+          "mention": "administrator",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Logging in",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "input the username and password"
+        },
+        {
+          "source": "Two-factor Authentication",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "On the Two-factor Authentication page"
+        },
+        {
+          "source": "Authentication Code",
+          "relation": "IS_PART_OF",
+          "target": "Two-factor Authentication",
+          "evidence": "input the code provided by the chosen authenticator in the Authentication Code field"
+        },
+        {
+          "source": "user",
+          "relation": "RELATED_TO",
+          "target": "authenticator",
+          "evidence": "code provided by the chosen authenticator"
+        },
+        {
+          "source": "administrator",
+          "relation": "RELATED_TO",
+          "target": "user",
+          "evidence": "an administrator must deactivate on the account before the user can log in"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "enforce-two-factor-authentication",
+    "heading": "Enforce two-factor authentication",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings app",
+          "confidence": "high"
+        },
+        {
+          "name": "Enforce two-factor authentication",
+          "type": "Setting",
+          "mention": "Enforce two-factor authentication",
+          "confidence": "high"
+        },
+        {
+          "name": "Permissions",
+          "type": "Sub-module",
+          "mention": "Permissions section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employees only",
+          "type": "Setting",
+          "mention": "Employees only",
+          "confidence": "high"
+        },
+        {
+          "name": "All users",
+          "type": "Setting",
+          "mention": "All users",
+          "confidence": "high"
+        },
+        {
+          "name": "portal users",
+          "type": "Actor",
+          "mention": "portal users",
+          "confidence": "medium"
+        },
+        {
+          "name": "employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "administrators",
+          "type": "Actor",
+          "mention": "Administrators",
+          "confidence": "medium"
+        },
+        {
+          "name": "auth_timeout",
+          "type": "Module",
+          "mention": "auth_timeout module",
+          "confidence": "medium"
+        },
+        {
+          "name": "Timeouts",
+          "type": "Setting",
+          "mention": "Timeouts settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Session and inactivity timeouts",
+          "type": "Concept",
+          "mention": "Session and inactivity timeouts",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Permissions",
+          "evidence": "In the Permissions section"
+        },
+        {
+          "source": "Permissions",
+          "relation": "CONTAINS",
+          "target": "Enforce two-factor authentication",
+          "evidence": "In the Permissions section, tick the checkbox labeled Enforce two-factor authentication"
+        },
+        {
+          "source": "Enforce two-factor authentication",
+          "relation": "CONFIGURED_BY",
+          "target": "Employees only",
+          "evidence": "use the radio buttons to choose whether to apply this setting to Employees only or All users"
+        },
+        {
+          "source": "Enforce two-factor authentication",
+          "relation": "CONFIGURED_BY",
+          "target": "All users",
+          "evidence": "use the radio buttons to choose whether to apply this setting to Employees only or All users"
+        },
+        {
+          "source": "All users",
+          "relation": "APPLIES_TO",
+          "target": "portal users",
+          "evidence": "Selecting All users applies the setting to portal users in addition to employees"
+        },
+        {
+          "source": "All users",
+          "relation": "APPLIES_TO",
+          "target": "employees",
+          "evidence": "Selecting All users applies the setting to portal users in addition to employees"
+        },
+        {
+          "source": "Permissions",
+          "relation": "PERFORMED_BY",
+          "target": "administrators",
+          "evidence": "Administrators can configure these policies"
+        },
+        {
+          "source": "Timeouts",
+          "relation": "CONFIGURED_BY",
+          "target": "administrators",
+          "evidence": "Administrators can configure these policies using the *Timeouts* settings"
+        },
+        {
+          "source": "Timeouts",
+          "relation": "CONTAINS",
+          "target": "auth_timeout",
+          "evidence": "available on user groups when the *auth_timeout* module is installed"
+        },
+        {
+          "source": "Timeouts",
+          "relation": "SEE_ALSO",
+          "target": "Session and inactivity timeouts",
+          "evidence": "See Session and inactivity timeouts ... for more information"
+        }
+      ]
+    }
+  }
+]

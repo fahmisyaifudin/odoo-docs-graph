@@ -1,0 +1,1183 @@
+[
+  {
+    "section_id": "manufacturing-order-costs",
+    "heading": "Manufacturing order costs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing order",
+          "type": "DataObject",
+          "mention": "manufacturing order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing order cost",
+          "type": "Concept",
+          "mention": "MO cost",
+          "confidence": "high"
+        },
+        {
+          "name": "Real cost",
+          "type": "Concept",
+          "mention": "real cost",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of materials",
+          "type": "DataObject",
+          "mention": "bill of materials",
+          "confidence": "medium"
+        },
+        {
+          "name": "BoM",
+          "type": "DataObject",
+          "mention": "BoM",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product profitability",
+          "type": "Concept",
+          "mention": "product profitability",
+          "confidence": "medium"
+        },
+        {
+          "name": "Average production cost",
+          "type": "Concept",
+          "mention": "average production cost",
+          "confidence": "high"
+        },
+        {
+          "name": "Component",
+          "type": "DataObject",
+          "mention": "components",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operation",
+          "type": "Workflow",
+          "mention": "operations",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Odoo's Manufacturing app"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "HAS_FEATURE",
+          "target": "Manufacturing order cost calculation",
+          "evidence": "automatically calculates the cost to complete each manufacturing order"
+        },
+        {
+          "source": "Manufacturing",
+          "relation": "HAS_FEATURE",
+          "target": "Average production cost calculation",
+          "evidence": "automatically calculates... the average production cost"
+        },
+        {
+          "source": "Manufacturing order",
+          "relation": "USES_METHOD",
+          "target": "Manufacturing order cost",
+          "evidence": "the cost to complete each manufacturing order"
+        },
+        {
+          "source": "Manufacturing order",
+          "relation": "USES_METHOD",
+          "target": "Real cost",
+          "evidence": "the real cost represents how much it *actually* costs to complete"
+        },
+        {
+          "source": "Manufacturing order cost",
+          "relation": "RELATED_TO",
+          "target": "Product profitability",
+          "evidence": "critical when determining product profitability"
+        },
+        {
+          "source": "Manufacturing order cost",
+          "relation": "CONFIGURED_BY",
+          "target": "Bill of materials",
+          "evidence": "based on the configuration of the product's bill of materials"
+        },
+        {
+          "source": "Manufacturing order cost",
+          "relation": "CONFIGURED_BY",
+          "target": "Component",
+          "evidence": "takes into account the cost and quantity of components"
+        },
+        {
+          "source": "Manufacturing order cost",
+          "relation": "CONFIGURED_BY",
+          "target": "Operation",
+          "evidence": "takes into account... the cost of completing the necessary operations"
+        },
+        {
+          "source": "Real cost",
+          "relation": "RELATED_TO",
+          "target": "Operation",
+          "evidence": "an operation may take longer to complete than estimated"
+        },
+        {
+          "source": "Real cost",
+          "relation": "RELATED_TO",
+          "target": "Component",
+          "evidence": "a greater component quantity might be needed... or the price of components may change"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "cost-configuration",
+    "heading": "Cost configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "manufactured product",
+          "type": "Product",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "component",
+          "type": "DataObject",
+          "mention": "components",
+          "confidence": "medium"
+        },
+        {
+          "name": "operation",
+          "type": "Workflow",
+          "mention": "operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center",
+          "type": "DataObject",
+          "mention": "work centers",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "COMPUTES",
+          "target": "costs",
+          "evidence": "Odoo computes costs"
+        },
+        {
+          "source": "costs",
+          "relation": "DEPENDS_ON",
+          "target": "manufactured product",
+          "evidence": "based on the configuration of the used to manufacture a product"
+        },
+        {
+          "source": "manufactured product",
+          "relation": "CONTAINS",
+          "target": "component",
+          "evidence": "cost and quantity of components"
+        },
+        {
+          "source": "manufactured product",
+          "relation": "CONTAINS",
+          "target": "operation",
+          "evidence": "and operations listed on the"
+        },
+        {
+          "source": "costs",
+          "relation": "INCLUDES",
+          "target": "operating costs",
+          "evidence": "in addition to the operating costs"
+        },
+        {
+          "source": "operation",
+          "relation": "LOCATED_IN",
+          "target": "work center",
+          "evidence": "operations are carried out"
+        },
+        {
+          "source": "costs",
+          "relation": "INCLUDES",
+          "target": "employee payment",
+          "evidence": "amount paid to each employee"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "component-cost",
+    "heading": "Component cost",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "Products, product form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cost",
+          "type": "Feature",
+          "mention": "Cost field",
+          "confidence": "medium"
+        },
+        {
+          "name": "General Information tab",
+          "type": "Sub-module",
+          "mention": "General Information tab",
+          "confidence": "low"
+        },
+        {
+          "name": "Component cost",
+          "type": "Feature",
+          "mention": "Component cost",
+          "confidence": "high"
+        },
+        {
+          "name": "Component",
+          "type": "DataObject",
+          "mention": "component product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase cost",
+          "type": "Concept",
+          "mention": "average purchase cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase orders",
+          "type": "DataObject",
+          "mention": "purchase orders",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "navigate to Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "Products --> Products"
+        },
+        {
+          "source": "Product",
+          "relation": "CONTAINS",
+          "target": "General Information tab",
+          "evidence": "on the component's product form"
+        },
+        {
+          "source": "Product",
+          "relation": "CONTAINS",
+          "target": "Cost",
+          "evidence": "Cost field of the General Information tab"
+        },
+        {
+          "source": "Component cost",
+          "relation": "BELONGS_TO",
+          "target": "Product",
+          "evidence": "component's cost"
+        },
+        {
+          "source": "Component",
+          "relation": "IS_PART_OF",
+          "target": "Product",
+          "evidence": "component product"
+        },
+        {
+          "source": "Component cost",
+          "relation": "RELATED_TO",
+          "evidence": "based on the average purchase cost"
+        },
+        {
+          "source": "Purchase orders",
+          "relation": "RELATED_TO",
+          "target": "Purchase cost",
+          "evidence": "across all purchase orders"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "work-center-cost",
+    "heading": "Work center cost",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Centers",
+          "type": "Feature",
+          "mention": "Work Centers",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center",
+          "type": "Concept",
+          "mention": "work center",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information tab",
+          "type": "Feature",
+          "mention": "General Information tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cost per hour",
+          "type": "Concept",
+          "mention": "Cost per hour",
+          "confidence": "high"
+        },
+        {
+          "name": "cost",
+          "type": "Concept",
+          "mention": "cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "real cost",
+          "type": "Concept",
+          "mention": "real cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "employee cost section",
+          "type": "Feature",
+          "mention": "employee cost section",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "work center",
+          "relation": "CONFIGURED_BY",
+          "target": "General Information tab",
+          "evidence": "located beside the Cost per hour section on the work center's General Information tab"
+        },
+        {
+          "source": "Work Centers",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing app --> Configuration --> Work Centers"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing app --> Configuration --> Work Centers"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Manufacturing app"
+        },
+        {
+          "source": "employee",
+          "relation": "PERFORMED_BY",
+          "target": "work center",
+          "evidence": "employee that operates the work center"
+        },
+        {
+          "source": "employee cost section",
+          "relation": "SEE_ALSO",
+          "target": "manufacturing/mo-costs/employee-cost",
+          "evidence": "See the employee cost section <manufacturing/mo-costs/employee-cost> below"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "employee-cost",
+    "heading": "Employee cost",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee's form",
+          "type": "DataObject",
+          "mention": "employee's form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings tab",
+          "type": "Sub-module",
+          "mention": "Settings tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hourly Cost field",
+          "type": "Field",
+          "mention": "Hourly Cost field",
+          "confidence": "high"
+        },
+        {
+          "name": "Application Settings",
+          "type": "Sub-module",
+          "mention": "Application Settings section",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center cost",
+          "type": "Concept",
+          "mention": "work center cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "real cost",
+          "type": "Concept",
+          "mention": "real cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "estimated cost",
+          "type": "Concept",
+          "mention": "estimated cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing cost",
+          "type": "Concept",
+          "mention": "cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center's form",
+          "type": "DataObject",
+          "mention": "work center's form",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Hourly Cost field",
+          "relation": "IS_PART_OF",
+          "target": "Application Settings",
+          "evidence": "Hourly Cost field of the Application Settings section"
+        },
+        {
+          "source": "Hourly Cost field",
+          "relation": "USES_METHOD",
+          "target": "employee cost",
+          "evidence": "value entered in the Hourly Cost field is used to calculate the real cost"
+        },
+        {
+          "source": "Hourly Cost field",
+          "relation": "RELATED_TO",
+          "target": "work center's form",
+          "evidence": "per employee cost set on each work center's form"
+        },
+        {
+          "source": "work center cost",
+          "relation": "SEE_ALSO",
+          "target": "manufacturing/mo-costs/work-center-cost",
+          "evidence": "work center cost section <manufacturing/mo-costs/work-center-cost>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "|bom|-configuration",
+    "heading": "|BoM| configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills of Materials",
+          "type": "DataObject",
+          "mention": "Bills of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Components tab",
+          "type": "Sub-module",
+          "mention": "Components tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Sub-module",
+          "mention": "Operations tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create Operations",
+          "type": "Action",
+          "mention": "Create Operations",
+          "confidence": "high"
+        },
+        {
+          "name": "Operation",
+          "type": "Field",
+          "mention": "Operation field",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Center",
+          "type": "DataObject",
+          "mention": "Work Center",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Duration",
+          "type": "Field",
+          "mention": "Default Duration field",
+          "confidence": "high"
+        },
+        {
+          "name": "Duration Computation",
+          "type": "Field",
+          "mention": "Duration Computation field",
+          "confidence": "high"
+        },
+        {
+          "name": "Set duration manually",
+          "type": "Setting",
+          "mention": "Set duration manually",
+          "confidence": "high"
+        },
+        {
+          "name": "Compute based on tracked time",
+          "type": "Setting",
+          "mention": "Compute based on tracked time",
+          "confidence": "high"
+        },
+        {
+          "name": "Based on",
+          "type": "Field",
+          "mention": "Based on field",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & Close",
+          "type": "Action",
+          "mention": "Save & Close",
+          "confidence": "high"
+        },
+        {
+          "name": "Save & New",
+          "type": "Action",
+          "mention": "Save & New",
+          "confidence": "high"
+        },
+        {
+          "name": "bill_configuration",
+          "type": "Concept",
+          "mention": "bills of materials",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Manufacturing app",
+          "evidence": "Begin by navigating to Manufacturing app"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Manufacturing app --> Products"
+        },
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Manufacturing app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "HAS_REPORT",
+          "target": "Bills of Materials",
+          "evidence": "Products --> Bills of Materials"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "CONTAINS",
+          "target": "Components tab",
+          "evidence": "In the Components tab of the form"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "CONTAINS",
+          "target": "Operations tab",
+          "evidence": "In the Operations tab"
+        },
+        {
+          "source": "Create Operations",
+          "relation": "PRODUCES",
+          "target": "Operation",
+          "evidence": "Enter a title for the operation in the Operation field"
+        },
+        {
+          "source": "Duration Computation",
+          "relation": "GOVERNED_BY",
+          "target": "Set duration manually",
+          "evidence": "Duration Computation field is set to Set duration manually"
+        },
+        {
+          "source": "Duration Computation",
+          "relation": "GOVERNED_BY",
+          "target": "Compute based on tracked time",
+          "evidence": "Selecting Compute based on tracked time"
+        },
+        {
+          "source": "Default Duration",
+          "relation": "RELATED_TO",
+          "target": "Based on",
+          "evidence": "duration based on a certain number of work orders, which is set in the Based on field"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "SEE_ALSO",
+          "target": "bill_configuration",
+          "evidence": "see the documentation on bills of materials <bill_configuration>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "|mo|-overview",
+    "heading": "|MO| overview",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manufacturing Orders",
+          "type": "DataObject",
+          "mention": "Manufacturing Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "MO Cost",
+          "type": "DataObject",
+          "mention": "MO Cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "Real Cost",
+          "type": "DataObject",
+          "mention": "Real Cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "estimated cost",
+          "type": "Concept",
+          "mention": "estimated cost",
+          "confidence": "medium"
+        },
+        {
+          "name": "components",
+          "type": "Concept",
+          "mention": "components",
+          "confidence": "low"
+        },
+        {
+          "name": "work order",
+          "type": "Workflow",
+          "mention": "work order",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "work center",
+          "type": "Concept",
+          "mention": "work center",
+          "confidence": "low"
+        },
+        {
+          "name": "Produce All",
+          "type": "Action",
+          "mention": "Produce All",
+          "confidence": "high"
+        },
+        {
+          "name": "Overview",
+          "type": "Feature",
+          "mention": "Overview",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Overview",
+          "evidence": "To view the overview for an , navigate to Manufacturing app --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "Manufacturing Orders",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing app",
+          "evidence": "Manufacturing app --> Operations --> Manufacturing Orders"
+        },
+        {
+          "source": "MO Cost",
+          "relation": "PRODUCES",
+          "target": "estimated cost",
+          "evidence": "Before work begins on an , the MO Cost and Real Cost columns display the same costs. This is the *estimated* cost"
+        },
+        {
+          "source": "MO Cost",
+          "relation": "GENERATES",
+          "target": "Real Cost",
+          "evidence": "Once the has been completed by clicking Produce All, the values in the MO Cost column update to match those displayed in the Real Cost column"
+        },
+        {
+          "source": "Produce All",
+          "relation": "TRIGGERED_BY",
+          "target": "Real Cost",
+          "evidence": "Once the has been completed by clicking Produce All, the values in the MO Cost column update to match those displayed in the Real Cost column"
+        },
+        {
+          "source": "employee",
+          "relation": "RELATED_TO",
+          "target": "work order",
+          "evidence": "the hourly cost of the employee performing a work order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "average-manufacturing-cost",
+    "heading": "Average manufacturing cost",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Products",
+          "type": "Module",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Report",
+          "mention": "Products",
+          "confidence": "low"
+        },
+        {
+          "name": "Cost",
+          "type": "Field",
+          "mention": "Cost field",
+          "confidence": "high"
+        },
+        {
+          "name": "General Information tab",
+          "type": "Module",
+          "mention": "General Information tab",
+          "confidence": "low"
+        },
+        {
+          "name": "Compute Price from BoM",
+          "type": "Action",
+          "mention": "Compute Price from BoM button",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM",
+          "type": "Concept",
+          "mention": "",
+          "confidence": "low"
+        },
+        {
+          "name": "average manufacturing cost",
+          "type": "Concept",
+          "mention": "average cost of manufacturing",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "Concept",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "completed manufacturing order",
+          "type": "Concept",
+          "mention": "completed",
+          "confidence": "low"
+        },
+        {
+          "name": "components",
+          "type": "Concept",
+          "mention": "components",
+          "confidence": "low"
+        },
+        {
+          "name": "operations",
+          "type": "Concept",
+          "mention": "operations",
+          "confidence": "low"
+        },
+        {
+          "name": "expected cost",
+          "type": "Concept",
+          "mention": "expected cost",
+          "confidence": "low"
+        },
+        {
+          "name": "manufacturing order",
+          "type": "Concept",
+          "mention": "",
+          "confidence": "low"
+        },
+        {
+          "name": "MO Cost",
+          "type": "Field",
+          "mention": "MO Cost",
+          "confidence": "low"
+        },
+        {
+          "name": "Real Cost",
+          "type": "Field",
+          "mention": "Real Cost",
+          "confidence": "low"
+        },
+        {
+          "name": "Fairway Fields",
+          "type": "Actor",
+          "mention": "Fairway Fields",
+          "confidence": "high"
+        },
+        {
+          "name": "putting green",
+          "type": "Product",
+          "mention": "putting green",
+          "confidence": "medium"
+        },
+        {
+          "name": "green felt",
+          "type": "Product",
+          "mention": "green felt",
+          "confidence": "low"
+        },
+        {
+          "name": "rubber pad",
+          "type": "Product",
+          "mention": "rubber pad",
+          "confidence": "low"
+        },
+        {
+          "name": "Assembly Station 1",
+          "type": "Actor",
+          "mention": "Assembly Station 1",
+          "confidence": "low"
+        },
+        {
+          "name": "Cut felt",
+          "type": "Action",
+          "mention": "Cut felt",
+          "confidence": "low"
+        },
+        {
+          "name": "Cut rubber pad",
+          "type": "Action",
+          "mention": "Cut rubber pad",
+          "confidence": "low"
+        },
+        {
+          "name": "Attach pad to felt",
+          "type": "Action",
+          "mention": "Attach pad to felt",
+          "confidence": "low"
+        },
+        {
+          "name": "Cut holes",
+          "type": "Action",
+          "mention": "Cut holes",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "average manufacturing cost",
+          "evidence": "Odoo also tracks the average cost of manufacturing the product"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "navigate to Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "HAS_REPORT",
+          "target": "Products",
+          "evidence": "navigate to Inventory app --> Products --> Products"
+        },
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "Cost",
+          "evidence": "The manufacturing cost of the product is displayed per unit of measure in the Cost field"
+        },
+        {
+          "source": "product",
+          "relation": "CONFIGURED_BY",
+          "target": "Compute Price from BoM",
+          "evidence": "Click this button to reset the cost of the product"
+        },
+        {
+          "source": "Compute Price from BoM",
+          "relation": "REQUIRES",
+          "target": "BoM",
+          "evidence": "only appears for products with at least one"
+        },
+        {
+          "source": "Compute Price from BoM",
+          "relation": "PRODUCES",
+          "target": "expected cost",
+          "evidence": "reset the cost of the product to the expected cost"
+        },
+        {
+          "source": "average manufacturing cost",
+          "relation": "USES_METHOD",
+          "target": "completed manufacturing order",
+          "evidence": "taking into account the cost of every completed"
+        },
+        {
+          "source": "expected cost",
+          "relation": "USES_METHOD",
+          "target": "components",
+          "evidence": "only takes into account the components and operations listed on the"
+        },
+        {
+          "source": "expected cost",
+          "relation": "USES_METHOD",
+          "target": "operations",
+          "evidence": "only takes into account the components and operations listed on the"
+        },
+        {
+          "source": "manufacturing order",
+          "relation": "CONTAINS",
+          "target": "MO Cost",
+          "evidence": "MO Cost fields"
+        },
+        {
+          "source": "manufacturing order",
+          "relation": "CONTAINS",
+          "target": "Real Cost",
+          "evidence": "Real Cost fields"
+        },
+        {
+          "source": "Fairway Fields",
+          "type": "Actor",
+          "relation": "PERFORMED_BY",
+          "target": "putting green",
+          "evidence": "Fairway Fields produces a variety of golf products, including an indoor putting green"
+        },
+        {
+          "source": "putting green",
+          "type": "Product",
+          "relation": "CONTAINS",
+          "target": "Cost",
+          "evidence": "This cost is reflected in the Cost field on the putting green's product form"
+        },
+        {
+          "source": "putting green",
+          "type": "Product",
+          "relation": "SUPPORTS",
+          "target": "BoM",
+          "mention": "BoM",
+          "evidence": "They have configured a for the putting green"
+        },
+        {
+          "source": "BoM",
+          "mention": "BoM",
+          "relation": "CONTAINS",
+          "target": "green felt",
+          "evidence": "One unit of green felt"
+        },
+        {
+          "source": "BoM",
+          "mention": "BoM",
+          "relation": "CONTAINS",
+          "target": "rubber pad",
+          "evidence": "One unit of a rubber pad"
+        },
+        {
+          "source": "Assembly Station 1",
+          "type": "Actor",
+          "relation": "PERFORMED_BY",
+          "target": "Cut felt",
+          "mention": "Cut felt",
+          "evidence": "all of which are carried out at Assembly Station 1"
+        },
+        {
+          "source": "Assembly Station 1",
+          "type": "Actor",
+          "relation": "PERFORMED_BY",
+          "target": "Cut rubber pad",
+          "mention": "Cut rubber pad",
+          "evidence": "all of which are carried out at Assembly Station 1"
+        },
+        {
+          "source": "Assembly Station 1",
+          "type": "Actor",
+          "relation": "PERFORMED_BY",
+          "target": "Attach pad to felt",
+          "mention": "Attach pad to felt",
+          "evidence": "all of which are carried out at Assembly Station 1"
+        },
+        {
+          "source": "Assembly Station 1",
+          "type": "Actor",
+          "relation": "PERFORMED_BY",
+          "target": "Cut holes",
+          "mention": "Cut holes",
+          "evidence": "all of which are carried out at Assembly Station 1"
+        }
+      ]
+    }
+  }
+]

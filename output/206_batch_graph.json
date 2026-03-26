@@ -1,0 +1,1201 @@
+[
+  {
+    "section_id": "batch-picking",
+    "heading": "Batch picking",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch picking",
+          "type": "Feature",
+          "mention": "Batch picking",
+          "confidence": "high"
+        },
+        {
+          "name": "Order",
+          "type": "DataObject",
+          "mention": "orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Picker",
+          "type": "Actor",
+          "mention": "picker",
+          "confidence": "high"
+        },
+        {
+          "name": "Warehouse location",
+          "type": "DataObject",
+          "mention": "warehouse location",
+          "confidence": "high"
+        },
+        {
+          "name": "Picking list",
+          "type": "DataObject",
+          "mention": "picking list",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batch",
+          "type": "DataObject",
+          "mention": "batch",
+          "confidence": "high"
+        },
+        {
+          "name": "Output location",
+          "type": "DataObject",
+          "mention": "output location",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery package",
+          "type": "DataObject",
+          "mention": "delivery packages",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "DataObject",
+          "mention": "products",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Batch picking",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "ENABLES",
+          "target": "A single picker to handle multiple orders at once",
+          "evidence": "Batch picking enables a single picker to handle multiple orders at once"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "GENERATES",
+          "target": "Picking list",
+          "evidence": "orders are consolidated into a picking list"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "TRIGGERED_BY",
+          "target": "Grouping and consolidating orders",
+          "evidence": "When picking in batches, orders are grouped and consolidated"
+        },
+        {
+          "source": "Batch",
+          "relation": "PRODUCES",
+          "target": "Delivery package",
+          "evidence": "products are sorted into their respective delivery packages"
+        },
+        {
+          "source": "Picker",
+          "relation": "PERFORMED_BY",
+          "target": "Batch picking",
+          "evidence": "a single picker to handle multiple orders"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "REQUIRES",
+          "target": "Sorting at output location",
+          "evidence": "orders must be sorted at the output location after being picked"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Configuration --> Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Module",
+          "mention": "Operations section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batch picking",
+          "type": "Feature",
+          "mention": "batch picking option",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch, Wave & Cluster Transfers",
+          "type": "Feature",
+          "mention": "Batch, Wave & Cluster Transfers box",
+          "confidence": "medium"
+        },
+        {
+          "name": "pick",
+          "type": "Action",
+          "mention": "pick operation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Storage Locations",
+          "type": "Feature",
+          "mention": "Storage Locations option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Multi-Step Routes",
+          "type": "Feature",
+          "mention": "Multi-Step Routes option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warehouse",
+          "type": "Module",
+          "mention": "Warehouse heading",
+          "confidence": "medium"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "click Save",
+          "confidence": "high"
+        },
+        {
+          "name": "Delivery in two steps",
+          "type": "Concept",
+          "mention": "Delivery in two steps",
+          "confidence": "medium"
+        },
+        {
+          "name": "receipts_delivery_two_steps",
+          "type": "Concept",
+          "mention": "../daily_operations/receipts_delivery_two_steps",
+          "confidence": "low"
+        },
+        {
+          "name": "delivery_three_steps",
+          "type": "Concept",
+          "mention": "../daily_operations/delivery_three_steps",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Inventory app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Under the Operations section"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "ENABLES",
+          "target": "pick",
+          "evidence": "batch picking is a method to optimize the *pick* operation"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "CONFIGURED_BY",
+          "target": "Batch, Wave & Cluster Transfers",
+          "evidence": "check the Batch, Wave & Cluster Transfers box"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "REQUIRES",
+          "target": "Storage Locations",
+          "evidence": "Storage Locations and Multi-Step Routes options...must also be checked"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "REQUIRES",
+          "target": "Multi-Step Routes",
+          "evidence": "Storage Locations and Multi-Step Routes options...must also be checked"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Warehouse",
+          "evidence": "Warehouse heading"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONTAINS",
+          "target": "Storage Locations",
+          "evidence": "Storage Locations...under the Warehouse heading"
+        },
+        {
+          "source": "Warehouse",
+          "relation": "CONTAINS",
+          "target": "Multi-Step Routes",
+          "evidence": "Multi-Step Routes...under the Warehouse heading"
+        },
+        {
+          "source": "Save",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "When finished, click Save"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "SEE_ALSO",
+          "target": "Delivery in two steps",
+          "evidence": ".. seealso:: - Delivery in two steps"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "SEE_ALSO",
+          "target": "receipts_delivery_two_steps",
+          "evidence": ".. seealso:: <../daily_operations/receipts_delivery_two_steps>"
+        },
+        {
+          "source": "Batch picking",
+          "relation": "SEE_ALSO",
+          "target": "delivery_three_steps",
+          "evidence": ".. seealso:: ../daily_operations/delivery_three_steps"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-batch-transfers",
+    "heading": "Create batch transfers",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Create batch transfers",
+          "type": "Action",
+          "mention": "Create batch transfers",
+          "confidence": "high"
+        },
+        {
+          "name": "batch transfer",
+          "type": "DataObject",
+          "mention": "batch transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "batch transfer form",
+          "type": "DataObject",
+          "mention": "batch transfer form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Responsible",
+          "type": "Field",
+          "mention": "Responsible",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee assigned",
+          "confidence": "high"
+        },
+        {
+          "name": "Operation Type",
+          "type": "Field",
+          "mention": "Operation Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Scheduled Date",
+          "type": "Field",
+          "mention": "Scheduled Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Worker",
+          "type": "Actor",
+          "mention": "any worker",
+          "confidence": "medium"
+        },
+        {
+          "name": "transfers",
+          "type": "DataObject",
+          "mention": "transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Transfers list",
+          "type": "DataObject",
+          "mention": "Transfers list",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add: Transfers window",
+          "type": "DataObject",
+          "mention": "Add: Transfers window",
+          "confidence": "medium"
+        },
+        {
+          "name": "transfer records",
+          "type": "DataObject",
+          "mention": "transfer records",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "dispatch management system",
+          "type": "Integration",
+          "mention": "dispatch management system",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dock Location",
+          "type": "Field",
+          "mention": "Dock Location",
+          "confidence": "low"
+        },
+        {
+          "name": "Vehicle",
+          "type": "Field",
+          "mention": "Vehicle",
+          "confidence": "low"
+        },
+        {
+          "name": "Vehicle Category",
+          "type": "Field",
+          "mention": "Vehicle Category",
+          "confidence": "low"
+        },
+        {
+          "name": "Inventory Overview menu",
+          "type": "DataObject",
+          "mention": "Inventory Overview menu",
+          "confidence": "low"
+        },
+        {
+          "name": "Receipts Kanban card",
+          "type": "DataObject",
+          "mention": "Receipts Kanban card",
+          "confidence": "low"
+        },
+        {
+          "name": "Prepare Batch",
+          "type": "Action",
+          "mention": "Prepare Batch",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pick",
+          "type": "Unknown",
+          "mention": "Pick Operation Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Joel Willis",
+          "type": "Actor",
+          "mention": "Joel Willis",
+          "confidence": "medium"
+        },
+        {
+          "name": "August 11",
+          "type": "Unknown",
+          "mention": "August 11",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Inventory app"
+        },
+        {
+          "source": "Create batch transfers",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "employee assigned to the picking"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "Responsible",
+          "evidence": "fill the following fields out accordingly: Responsible"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "Operation Type",
+          "evidence": "fill the following fields out accordingly: Operation Type"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "Scheduled Date",
+          "evidence": "fill the following fields out accordingly: Scheduled Date"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "SUPPORTS",
+          "target": "dispatch management system",
+          "evidence": "see dispatch management system"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "SEE_ALSO",
+          "target": "dispatch management system",
+          "evidence": "see dispatch management system"
+        },
+        {
+          "source": "Add a line",
+          "relation": "TRIGGERED_BY",
+          "target": "Create batch transfers",
+          "evidence": "Next, in the Transfers list, click Add a line"
+        },
+        {
+          "source": "Add a line",
+          "relation": "ENABLES",
+          "target": "New",
+          "evidence": "Click the New button to create a new transfer"
+        },
+        {
+          "source": "New",
+          "relation": "PRODUCES",
+          "target": "transfer records",
+          "evidence": "create a new transfer"
+        },
+        {
+          "source": "Confirm",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "Once the transfer records are selected, click Confirm"
+        },
+        {
+          "source": "Operation Type",
+          "relation": "RELATED_TO",
+          "target": "Pick",
+          "evidence": "Pick Operation Type"
+        },
+        {
+          "source": "Responsible",
+          "relation": "RELATED_TO",
+          "target": "Joel Willis",
+          "evidence": "Responsible, Joel Willis"
+        },
+        {
+          "source": "Scheduled Date",
+          "relation": "RELATED_TO",
+          "target": "August 11",
+          "evidence": "Scheduled Date is set to August 11"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-batch-from-transfers-list",
+    "heading": "Add batch from transfers list",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Transfers",
+          "type": "DataObject",
+          "mention": "Transfers",
+          "confidence": "high"
+        },
+        {
+          "name": "transfers list",
+          "type": "Feature",
+          "mention": "transfers list",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add to batch",
+          "type": "Action",
+          "mention": "Add to batch",
+          "confidence": "high"
+        },
+        {
+          "name": "Add to batch pop-up window",
+          "type": "Feature",
+          "mention": "Add to batch pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Responsible for the picking",
+          "type": "Field",
+          "mention": "Responsible for the picking",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "batch transfer",
+          "type": "DataObject",
+          "mention": "batch transfer",
+          "confidence": "high"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description field",
+          "confidence": "high"
+        },
+        {
+          "name": "Draft",
+          "type": "Field",
+          "mention": "Draft checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Navigate to the Inventory app --> Operations drop-down menu"
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Transfers",
+          "evidence": "select any of the Transfers"
+        },
+        {
+          "source": "Inventory",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo; Navigate to the Inventory app"
+        },
+        {
+          "source": "transfers list",
+          "relation": "HAS_FEATURE",
+          "target": "Add to batch",
+          "evidence": "On the transfers list... click Add to batch"
+        },
+        {
+          "source": "Add to batch",
+          "relation": "CONFIGURED_BY",
+          "target": "Responsible for the picking",
+          "evidence": "wherein the employee Responsible for the picking can be assigned"
+        },
+        {
+          "source": "Add to batch pop-up window",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "opens an Add to batch pop-up window... Description field"
+        },
+        {
+          "source": "Add to batch pop-up window",
+          "relation": "CONTAINS",
+          "target": "Draft",
+          "evidence": "opens an Add to batch pop-up window... select the Draft checkbox"
+        },
+        {
+          "source": "Add to batch pop-up window",
+          "relation": "TRIGGERED_BY",
+          "target": "Add to batch",
+          "evidence": "Doing so opens an Add to batch pop-up window"
+        },
+        {
+          "source": "Add to batch pop-up window",
+          "relation": "PRODUCES",
+          "target": "batch transfer",
+          "evidence": "Choose... to add to an existing batch transfer or create a new batch transfer"
+        },
+        {
+          "source": "Confirm",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "Conclude the process by clicking Confirm."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "automatic-batches",
+    "heading": "Automatic batches",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Automatic Batches",
+          "type": "Feature",
+          "mention": "Automatic Batches",
+          "confidence": "high"
+        },
+        {
+          "name": "Operation Types",
+          "type": "Sub-module",
+          "mention": "Configuration --> Operation Types",
+          "confidence": "high"
+        },
+        {
+          "name": "Operation type",
+          "type": "Setting",
+          "mention": "operation type",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch Grouping criteria",
+          "type": "Setting",
+          "mention": "Batch Grouping criteria",
+          "confidence": "high"
+        },
+        {
+          "name": "Contact",
+          "type": "Field",
+          "mention": "Contact",
+          "confidence": "medium"
+        },
+        {
+          "name": "Carrier",
+          "type": "Field",
+          "mention": "Carrier",
+          "confidence": "medium"
+        },
+        {
+          "name": "Destination Country",
+          "type": "Field",
+          "mention": "Destination Country",
+          "confidence": "medium"
+        },
+        {
+          "name": "Source Location",
+          "type": "Field",
+          "mention": "Source Location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Destination Location",
+          "type": "Field",
+          "mention": "Destination Location",
+          "confidence": "medium"
+        },
+        {
+          "name": "Picking operation",
+          "type": "Action",
+          "mention": "picking operation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Shipping operation",
+          "type": "Action",
+          "mention": "shipping operation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery",
+          "type": "Workflow",
+          "mention": "Delivery",
+          "confidence": "low"
+        },
+        {
+          "name": "Pick",
+          "type": "Action",
+          "mention": "Pick",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Inventory app",
+          "evidence": "Product: Odoo, To enable *Automatic Batches*, navigate to Inventory app"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operation Types",
+          "evidence": "navigate to Inventory app --> Configuration --> Operation Types"
+        },
+        {
+          "source": "Operation Types",
+          "relation": "CONTAINS",
+          "target": "Operation type",
+          "evidence": "Operation Types, and select the desired operation type"
+        },
+        {
+          "source": "Operation type",
+          "relation": "CONFIGURED_BY",
+          "target": "Automatic Batches",
+          "evidence": "The *Automatic Batches* option is defined on the *operation type* level"
+        },
+        {
+          "source": "Operation type",
+          "relation": "CONFIGURED_BY",
+          "target": "Batch Grouping criteria",
+          "evidence": "Then, select one or more Batch Grouping criteria by ticking the appropriate checkbox"
+        },
+        {
+          "source": "Batch Grouping criteria",
+          "relation": "CONTAINS",
+          "target": "Contact",
+          "evidence": "Batches can be automatically generated based on the following criteria: - Contact"
+        },
+        {
+          "source": "Batch Grouping criteria",
+          "relation": "CONTAINS",
+          "target": "Carrier",
+          "evidence": "Batches can be automatically generated based on the following criteria: - Carrier"
+        },
+        {
+          "source": "Batch Grouping criteria",
+          "relation": "CONTAINS",
+          "target": "Destination Country",
+          "evidence": "Batches can be automatically generated based on the following criteria: - Destination Country"
+        },
+        {
+          "source": "Batch Grouping criteria",
+          "relation": "CONTAINS",
+          "target": "Source Location",
+          "evidence": "Batches can be automatically generated based on the following criteria: - Source Location"
+        },
+        {
+          "source": "Batch Grouping criteria",
+          "relation": "CONTAINS",
+          "target": "Destination Location",
+          "evidence": "Batches can be automatically generated based on the following criteria: - Destination Location"
+        },
+        {
+          "source": "Automatic Batches",
+          "relation": "ENABLES",
+          "target": "Picking operation",
+          "evidence": "In a multi-steps delivery process, the picking operation can be grouped by customer"
+        },
+        {
+          "source": "Automatic Batches",
+          "relation": "ENABLES",
+          "target": "Shipping operation",
+          "evidence": "while the shipping operation can be organized by carrier and destination country"
+        },
+        {
+          "source": "Operation Types",
+          "relation": "CONTAINS",
+          "target": "Delivery",
+          "evidence": "Operation Types, and select the desired operation type (e.g. Delivery, Pick, etc)"
+        },
+        {
+          "source": "Operation Types",
+          "relation": "CONTAINS",
+          "target": "Pick",
+          "evidence": "Operation Types, and select the desired operation type (e.g. Delivery, Pick, etc)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-batch-transfer",
+    "heading": "Process batch transfer",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        },
+        {
+          "name": "Batch Transfers",
+          "type": "Sub-module",
+          "mention": "Batch Transfers",
+          "confidence": "medium"
+        },
+        {
+          "name": "batch transfer",
+          "type": "DataObject",
+          "mention": "batch transfer",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Detailed Operations tab",
+          "type": "Feature",
+          "mention": "Detailed Operations tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Done quantities",
+          "type": "Field",
+          "mention": "Done quantities",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Check Availability",
+          "type": "Action",
+          "mention": "Check Availability",
+          "confidence": "high"
+        },
+        {
+          "name": "in-stock",
+          "type": "Concept",
+          "mention": "in-stock",
+          "confidence": "medium"
+        },
+        {
+          "name": "WH/PICK/00001",
+          "type": "DataObject",
+          "mention": "WH/PICK/00001",
+          "confidence": "low"
+        },
+        {
+          "name": "WH/PICK/00002",
+          "type": "DataObject",
+          "mention": "WH/PICK/00002",
+          "confidence": "low"
+        },
+        {
+          "name": "Cabinet with Doors",
+          "type": "DataObject",
+          "mention": "Cabinet with Doors",
+          "confidence": "low"
+        },
+        {
+          "name": "Done column",
+          "type": "Field",
+          "mention": "Done column",
+          "confidence": "high"
+        },
+        {
+          "name": "Reserved column",
+          "type": "Field",
+          "mention": "Reserved column",
+          "confidence": "high"
+        },
+        {
+          "name": "Cable Management Box",
+          "type": "DataObject",
+          "mention": "Cable Management Box",
+          "confidence": "low"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Feature",
+          "mention": "Operations tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand column",
+          "type": "Field",
+          "mention": "Demand column",
+          "confidence": "high"
+        },
+        {
+          "name": "Reserved column",
+          "type": "Field",
+          "mention": "Reserved column",
+          "confidence": "high"
+        },
+        {
+          "name": "Desk Pad",
+          "type": "DataObject",
+          "mention": "Desk Pad",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operations",
+          "evidence": "Handle batch transfers in the Inventory app --> Operations --> Batch Transfers page."
+        },
+        {
+          "source": "Operations",
+          "relation": "CONTAINS",
+          "target": "Batch Transfers",
+          "evidence": "Handle batch transfers in the Inventory app --> Operations --> Batch Transfers page."
+        },
+        {
+          "source": "Batch Transfers",
+          "relation": "HAS_FEATURE",
+          "target": "Detailed Operations tab",
+          "evidence": "input the Done quantities for each product, under the Detailed Operations tab."
+        },
+        {
+          "source": "Batch Transfers",
+          "relation": "HAS_FEATURE",
+          "target": "Operations tab",
+          "evidence": "To view the complete product list, switch to the Operations tab."
+        },
+        {
+          "source": "Detailed Operations tab",
+          "relation": "CONTAINS",
+          "target": "Done column",
+          "evidence": "Done column matches the value in the Reserved column."
+        },
+        {
+          "source": "Detailed Operations tab",
+          "relation": "CONTAINS",
+          "target": "Reserved column",
+          "evidence": "Done column matches the value in the Reserved column."
+        },
+        {
+          "source": "Operations tab",
+          "relation": "CONTAINS",
+          "target": "Demand column",
+          "evidence": "On this list, the Demand column indicates the required quantity for the order."
+        },
+        {
+          "source": "Operations tab",
+          "relation": "CONTAINS",
+          "target": "Reserved column",
+          "evidence": "The Reserved column shows the available stock to fulfill the order."
+        },
+        {
+          "source": "Operations tab",
+          "relation": "CONTAINS",
+          "target": "Done column",
+          "evidence": "Lastly, the Done column specifies the products that have been picked."
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "batch transfer",
+          "evidence": "Finally, select Validate to complete the picking."
+        },
+        {
+          "source": "Check Availability",
+          "relation": "PERFORMED_BY",
+          "target": "batch transfer",
+          "evidence": "Click the Check Availability button to search the stock again for available products."
+        },
+        {
+          "source": "Detailed Operations tab",
+          "relation": "CONFIGURED_BY",
+          "target": "in-stock",
+          "evidence": "Only in-stock products are visible in the Detailed Operations tab."
+        },
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "product",
+          "evidence": "input the Done quantities for each product"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-backorder",
+    "heading": "Create backorder",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "batch transfer",
+          "type": "DataObject",
+          "mention": "batch transfer form",
+          "confidence": "high"
+        },
+        {
+          "name": "Done quantity",
+          "type": "Field",
+          "mention": "Done quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Reserved quantity",
+          "type": "Field",
+          "mention": "Reserved quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Backorder",
+          "type": "Action",
+          "mention": "Create Backorder",
+          "confidence": "high"
+        },
+        {
+          "name": "backorder",
+          "type": "DataObject",
+          "mention": "new backorder",
+          "confidence": "high"
+        },
+        {
+          "name": "No Backorder",
+          "type": "Action",
+          "mention": "Click No Backorder",
+          "confidence": "high"
+        },
+        {
+          "name": "Discard",
+          "type": "Action",
+          "mention": "Click Discard",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "Done quantity",
+          "evidence": "On the batch transfer form, if the Done quantity"
+        },
+        {
+          "source": "batch transfer",
+          "relation": "CONTAINS",
+          "target": "Reserved quantity",
+          "evidence": "Done quantity of the product is *less* than the Reserved quantity"
+        },
+        {
+          "source": "Create Backorder",
+          "relation": "PRODUCES",
+          "target": "backorder",
+          "evidence": "Clicking the Create Backorder button automatically creates a new batch transfer."
+        },
+        {
+          "source": "batch transfer",
+          "relation": "TRIGGERED_BY",
+          "target": "Create Backorder",
+          "evidence": "a pop-up window appears. This pop-up window provides the option: Create Backorder?."
+        },
+        {
+          "source": "batch transfer",
+          "relation": "TRIGGERED_BY",
+          "target": "No Backorder",
+          "evidence": "Click No Backorder to finish the picking *without* creating another batch picking."
+        },
+        {
+          "source": "batch transfer",
+          "relation": "TRIGGERED_BY",
+          "target": "Discard",
+          "evidence": "Click Discard to cancel the validation, and return to the batch transfer form."
+        }
+      ]
+    }
+  }
+]

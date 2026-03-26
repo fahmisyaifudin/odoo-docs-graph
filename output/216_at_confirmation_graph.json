@@ -1,0 +1,413 @@
+[
+  {
+    "section_id": "at-confirmation-reservation",
+    "heading": "At confirmation reservation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "At confirmation",
+          "type": "Standard",
+          "mention": "at confirmation",
+          "confidence": "high"
+        },
+        {
+          "name": "Product",
+          "type": "Concept",
+          "mention": "products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order (SO)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "At confirmation",
+          "relation": "USES_METHOD",
+          "target": "Sales order",
+          "evidence": "reserves products only when a sales order (SO) is confirmed"
+        },
+        {
+          "source": "Sales order",
+          "relation": "CONTAINS",
+          "target": "Product",
+          "evidence": "reserves products only when a sales order (SO) is confirmed"
+        },
+        {
+          "source": "At confirmation",
+          "relation": "SEE_ALSO",
+          "target": "reservation methods",
+          "evidence": "About reservation methods <../reservation_methods>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Feature",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations Types",
+          "type": "Feature",
+          "mention": "Operations Types",
+          "confidence": "high"
+        },
+        {
+          "name": "Operation Type",
+          "type": "DataObject",
+          "mention": "Operation Type",
+          "confidence": "high"
+        },
+        {
+          "name": "General tab",
+          "type": "Module",
+          "mention": "General tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reservation Method",
+          "type": "Field",
+          "mention": "Reservation Method",
+          "confidence": "high"
+        },
+        {
+          "name": "At Confirmation",
+          "type": "Setting",
+          "mention": "At Confirmation",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "navigate to the Inventory app --> Configuration"
+        },
+        {
+          "source": "Operations Types",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Configuration --> Operations Types"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Operation Type",
+          "evidence": "select the desired Operation Type to configure"
+        },
+        {
+          "source": "General tab",
+          "relation": "CONTAINS",
+          "target": "Reservation Method",
+          "evidence": "In the *General* tab... locate the Reservation Method field"
+        },
+        {
+          "source": "Reservation Method",
+          "relation": "CONTAINS",
+          "target": "At Confirmation",
+          "evidence": "Reservation Method field and select At Confirmation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "workflow",
+    "heading": "Workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Quotations",
+          "type": "Sub-module",
+          "mention": "Quotations page",
+          "confidence": "high"
+        },
+        {
+          "name": "Create quotation",
+          "type": "Action",
+          "mention": "create a new ...",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer field",
+          "type": "Field",
+          "mention": "Customer field",
+          "confidence": "high"
+        },
+        {
+          "name": "Order Lines",
+          "type": "Sub-module",
+          "mention": "Order Lines tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity column",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "click Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales order",
+          "type": "DataObject",
+          "mention": "sales order",
+          "confidence": "high"
+        },
+        {
+          "name": "Availability tooltip",
+          "type": "Feature",
+          "mention": "Availability tooltip",
+          "confidence": "high"
+        },
+        {
+          "name": "Reserved quantity",
+          "type": "Field",
+          "mention": "Reserved quantity",
+          "confidence": "high"
+        },
+        {
+          "name": "Forecasted Report",
+          "type": "Report",
+          "mention": "Forecasted Report",
+          "confidence": "high"
+        },
+        {
+          "name": "Forecasted quantity",
+          "type": "Field",
+          "mention": "Forecasted quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "On Hand",
+          "type": "Field",
+          "mention": "On Hand",
+          "confidence": "medium"
+        },
+        {
+          "name": "Incoming quantity",
+          "type": "Field",
+          "mention": "Incoming quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "Outgoing quantity",
+          "type": "Field",
+          "mention": "Outgoing quantity",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery",
+          "type": "Action",
+          "mention": "click ... Delivery smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Product Availability",
+          "type": "Field",
+          "mention": "Product Availability field",
+          "confidence": "high"
+        },
+        {
+          "name": "Demand",
+          "type": "Field",
+          "mention": "Demand column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "click Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Manual reservation",
+          "type": "Feature",
+          "mention": "Manual reservation",
+          "confidence": "medium"
+        },
+        {
+          "name": "Before scheduled date reservation",
+          "type": "Feature",
+          "mention": "Before scheduled date reservation",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales",
+          "relation": "CONTAINS",
+          "target": "Quotations",
+          "evidence": "Sales app. On the *Quotations* page"
+        },
+        {
+          "source": "Quotations",
+          "relation": "HAS_FEATURE",
+          "target": "Create quotation",
+          "evidence": "... Quotations page, click New"
+        },
+        {
+          "source": "Quotations",
+          "relation": "CONTAINS",
+          "target": "Customer field",
+          "evidence": "On the quotation, add a customer in the Customer field"
+        },
+        {
+          "source": "Quotations",
+          "relation": "CONTAINS",
+          "target": "Order Lines",
+          "evidence": "Then, in the *Order Lines* tab"
+        },
+        {
+          "source": "Order Lines",
+          "relation": "HAS_FEATURE",
+          "target": "Add a product",
+          "evidence": "click Add a product"
+        },
+        {
+          "source": "Quotations",
+          "relation": "HAS_FEATURE",
+          "target": "Confirm",
+          "evidence": "Once ready, click Confirm"
+        },
+        {
+          "source": "Confirm",
+          "relation": "PRODUCES",
+          "target": "Sales order",
+          "evidence": "click Confirm to create the sales order"
+        },
+        {
+          "source": "Sales order",
+          "relation": "HAS_FEATURE",
+          "target": "Availability tooltip",
+          "evidence": "product's Availability tooltip"
+        },
+        {
+          "source": "Availability tooltip",
+          "relation": "CONTAINS",
+          "target": "Reserved quantity",
+          "evidence": "shows the Reserved quantity"
+        },
+        {
+          "source": "Sales order",
+          "relation": "HAS_REPORT",
+          "target": "Forecasted Report",
+          "evidence": "click ... to view the Forecasted Report dashboard"
+        },
+        {
+          "source": "Forecasted Report",
+          "relation": "CONTAINS",
+          "target": "Forecasted quantity",
+          "evidence": "Forecasted quantity is calculated"
+        },
+        {
+          "source": "Forecasted quantity",
+          "relation": "GENERATES",
+          "target": "On Hand",
+          "evidence": "by adding the On Hand ... quantity"
+        },
+        {
+          "source": "Forecasted quantity",
+          "relation": "GENERATES",
+          "target": "Incoming quantity",
+          "evidence": "adding ... Incoming quantity"
+        },
+        {
+          "source": "Forecasted quantity",
+          "relation": "GENERATES",
+          "target": "Outgoing quantity",
+          "evidence": "subtracting the Outgoing quantity"
+        },
+        {
+          "source": "Sales order",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery",
+          "evidence": "click the fa-truck Delivery smart button"
+        },
+        {
+          "source": "Sales order",
+          "relation": "CONTAINS",
+          "target": "Product Availability",
+          "evidence": "Product Availability field reads"
+        },
+        {
+          "source": "Product Availability",
+          "relation": "RELATED_TO",
+          "target": "Demand",
+          "evidence": "numbers in the Demand and Quantity columns"
+        },
+        {
+          "source": "Sales order",
+          "relation": "HAS_FEATURE",
+          "target": "Validate",
+          "evidence": "click Validate"
+        },
+        {
+          "source": "Inventory",
+          "relation": "SEE_ALSO",
+          "target": "Manual reservation",
+          "evidence": "Manual reservation <manually>"
+        },
+        {
+          "source": "Inventory",
+          "relation": "SEE_ALSO",
+          "target": "Before scheduled date reservation",
+          "evidence": "Before scheduled date reservation <before_scheduled_date>"
+        }
+      ]
+    }
+  }
+]

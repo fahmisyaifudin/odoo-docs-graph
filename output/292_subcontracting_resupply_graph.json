@@ -1,0 +1,1705 @@
+[
+  {
+    "section_id": "resupply-subcontractor",
+    "heading": "Resupply subcontractor",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply Subcontractor on Order",
+          "type": "Workflow",
+          "mention": "*Resupply Subcontractor on Order* route",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship Subcontractor on Order",
+          "type": "Workflow",
+          "mention": "*Dropship Subcontractor on Order* route",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontracting",
+          "type": "Concept",
+          "mention": "subcontracting",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "high"
+        },
+        {
+          "name": "purchase order",
+          "type": "DataObject",
+          "mention": "purchase order (PO)",
+          "confidence": "high"
+        },
+        {
+          "name": "components",
+          "type": "DataObject",
+          "mention": "components",
+          "confidence": "medium"
+        },
+        {
+          "name": "manufacturing",
+          "type": "Module",
+          "mention": "manufacturing",
+          "confidence": "medium"
+        },
+        {
+          "name": "warehouse",
+          "type": "DataObject",
+          "mention": "warehouse",
+          "confidence": "low"
+        },
+        {
+          "name": "vendor",
+          "type": "Actor",
+          "mention": "vendor",
+          "confidence": "low"
+        },
+        {
+          "name": "subcontracting_dropship",
+          "type": "Report",
+          "mention": "subcontracting_dropship documentation",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Resupply Subcontractor on Order",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "In Odoo, the *Resupply Subcontractor on Order* route is used"
+        },
+        {
+          "source": "Resupply Subcontractor on Order",
+          "relation": "GENERATES",
+          "target": "purchase order",
+          "evidence": "deliver the necessary components... each time a purchase order (PO) for that product is confirmed"
+        },
+        {
+          "source": "Resupply Subcontractor on Order",
+          "relation": "PERFORMED_BY",
+          "target": "contracting company",
+          "evidence": "components are shipped from the warehouse of the contracting company"
+        },
+        {
+          "source": "Dropship Subcontractor on Order",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "See the subcontracting_dropship documentation for a full overview of the *Dropship Subcontractor on Order* route."
+        },
+        {
+          "source": "Dropship Subcontractor on Order",
+          "relation": "PERFORMED_BY",
+          "target": "vendor",
+          "evidence": "components are purchased from a vendor and shipped directly to the subcontractor"
+        },
+        {
+          "source": "Resupply Subcontractor on Order",
+          "relation": "SEE_ALSO",
+          "target": "Dropship Subcontractor on Order",
+          "evidence": "See the subcontracting_dropship documentation for a full overview of the *Dropship Subcontractor on Order* route."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Sub-module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply Subcontractor on Order",
+          "type": "Workflow",
+          "mention": "Resupply Subcontractor on Order",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracting",
+          "type": "Setting",
+          "mention": "Subcontracting",
+          "confidence": "high"
+        },
+        {
+          "name": "Operations",
+          "type": "Sub-module",
+          "mention": "Operations",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Manufacturing app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "navigate to Manufacturing app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Subcontracting",
+          "evidence": "checkbox next to Subcontracting"
+        },
+        {
+          "source": "Subcontracting",
+          "relation": "BELONGS_TO",
+          "target": "Operations",
+          "evidence": "under the Operations heading"
+        },
+        {
+          "source": "Resupply Subcontractor on Order",
+          "type": "Workflow",
+          "mention": "Resupply Subcontractor on Order",
+          "confidence": "high"
+        },
+        {
+          "source": "Resupply Subcontractor on Order",
+          "relation": "CONFIGURED_BY",
+          "target": "Subcontracting",
+          "evidence": "use the route... enable the checkbox"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-product",
+    "heading": "Configure product",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products --> Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure product",
+          "type": "Action",
+          "mention": "Configure product",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase tab",
+          "type": "Feature",
+          "mention": "Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resupply Subcontractor on Order",
+          "type": "Workflow",
+          "mention": "Resupply Subcontractor on Order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a line",
+          "type": "Action",
+          "mention": "Add a line",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor drop-down menu",
+          "type": "Feature",
+          "mention": "Vendor drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Price field",
+          "type": "Field",
+          "mention": "Price field",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Feature",
+          "mention": "Inventory tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Buy route",
+          "type": "Feature",
+          "mention": "Buy route",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish on Order (MTO)",
+          "type": "Workflow",
+          "mention": "Replenish on Order (MTO)",
+          "confidence": "high"
+        },
+        {
+          "name": "sales order (SO)",
+          "type": "DataObject",
+          "mention": "sales order (SO)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Dropship route",
+          "type": "Feature",
+          "mention": "Dropship route",
+          "confidence": "high"
+        },
+        {
+          "name": "finished product",
+          "type": "DataObject",
+          "mention": "finished product",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Configure product",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "To configure a product for the *Resupply Subcontractor on Order* route, navigate to Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Inventory app",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Configure product",
+          "relation": "BELONGS_TO",
+          "target": "Products",
+          "evidence": "To configure a product for the *Resupply Subcontractor on Order* route, navigate to Inventory app --> Products --> Products"
+        },
+        {
+          "source": "Configure product",
+          "relation": "BELONGS_TO",
+          "target": "Purchase tab",
+          "evidence": "Select the Purchase tab, and add the product's subcontractor as a vendor"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "CONTAINS",
+          "target": "Vendor drop-down menu",
+          "evidence": "Add a line, selecting the subcontractor in the Vendor drop-down menu"
+        },
+        {
+          "source": "Purchase tab",
+          "relation": "CONTAINS",
+          "target": "Price field",
+          "evidence": "entering a price in the Price field"
+        },
+        {
+          "source": "Configure product",
+          "relation": "BELONGS_TO",
+          "target": "Inventory tab",
+          "evidence": "Then, click on the Inventory tab"
+        },
+        {
+          "source": "Inventory tab",
+          "relation": "CONTAINS",
+          "target": "Buy route",
+          "evidence": "make sure that the Buy route is selected"
+        },
+        {
+          "source": "Inventory tab",
+          "relation": "CONTAINS",
+          "target": "Dropship route",
+          "evidence": "make sure that only the Dropship route is selected"
+        },
+        {
+          "source": "Configure product",
+          "relation": "CONFIGURED_BY",
+          "target": "Resupply Subcontractor on Order",
+          "evidence": "To configure a product for the *Resupply Subcontractor on Order* route"
+        },
+        {
+          "source": "Configure product",
+          "relation": "CONFIGURED_BY",
+          "target": "subcontractor",
+          "evidence": "add the product's subcontractor as a vendor"
+        },
+        {
+          "source": "Replenish on Order (MTO)",
+          "relation": "GENERATES",
+          "target": "sales order (SO)",
+          "evidence": "automatically create a for the product upon confirmation of a sales order (SO)"
+        },
+        {
+          "source": "finished product",
+          "relation": "PRODUCED_BY",
+          "target": "subcontractor",
+          "evidence": "once it has been manufactured by the subcontractor"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-bom",
+    "heading": "Configure BoM",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Manufacturing app",
+          "type": "Module",
+          "mention": "Manufacturing app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "DataObject",
+          "mention": "Products",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills of Materials",
+          "type": "DataObject",
+          "mention": "Bills of Materials",
+          "confidence": "high"
+        },
+        {
+          "name": "Bill of Materials",
+          "type": "Feature",
+          "mention": "Bill of Materials smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "BoM Type field",
+          "type": "Field",
+          "mention": "BoM Type field",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontracting",
+          "type": "Concept",
+          "mention": "Subcontracting option",
+          "confidence": "high"
+        },
+        {
+          "name": "Subcontractors field",
+          "type": "Field",
+          "mention": "Subcontractors field",
+          "confidence": "high"
+        },
+        {
+          "name": "Components tab",
+          "type": "Feature",
+          "mention": "Components tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Component drop-down menu",
+          "type": "Field",
+          "mention": "Component drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply Subcontractor on Order",
+          "type": "Workflow",
+          "mention": "Resupply Subcontractor on Order route",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure BoM",
+          "type": "Action",
+          "mention": "Configure a BoM",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Products",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing app",
+          "evidence": "navigate to Manufacturing app --> Products"
+        },
+        {
+          "source": "Bills of Materials",
+          "relation": "BELONGS_TO",
+          "target": "Manufacturing app",
+          "evidence": "navigate to Manufacturing app --> Products --> Bills of Materials"
+        },
+        {
+          "source": "Configure BoM",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click the Bill of Materials smart button"
+        },
+        {
+          "source": "BoM Type field",
+          "relation": "CONTAINS",
+          "target": "Subcontracting",
+          "evidence": "In the BoM Type field, select the Subcontracting option."
+        },
+        {
+          "source": "Resupply Subcontractor on Order",
+          "relation": "REQUIRES",
+          "target": "Configure BoM",
+          "evidence": "To configure a BoM for the Resupply Subcontractor on Order route"
+        },
+        {
+          "source": "Configure BoM",
+          "relation": "TRIGGERED_BY",
+          "target": "Bill of Materials",
+          "evidence": "click the Bill of Materials smart button on the product's page"
+        },
+        {
+          "source": "Configure BoM",
+          "relation": "CONFIGURED_BY",
+          "target": "Subcontractors field",
+          "evidence": "add one or more subcontractors in the Subcontractors field"
+        },
+        {
+          "source": "Configure BoM",
+          "relation": "CONFIGURED_BY",
+          "target": "Components tab",
+          "evidence": "make sure that all necessary components are specified on the Components tab"
+        },
+        {
+          "source": "Configure BoM",
+          "relation": "CONFIGURED_BY",
+          "target": "Component drop-down menu",
+          "evidence": "select the component in the Component drop-down menu"
+        },
+        {
+          "source": "Configure BoM",
+          "relation": "CONFIGURED_BY",
+          "target": "Quantity field",
+          "evidence": "specify the required quantity in the Quantity field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configure-components",
+    "heading": "Configure components",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Resupply Subcontractor on Order",
+          "type": "Workflow",
+          "mention": "Resupply Subcontractor on Order route",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Products",
+          "type": "Sub-module",
+          "mention": "Products",
+          "confidence": "medium"
+        },
+        {
+          "name": "Component product",
+          "type": "DataObject",
+          "mention": "component product",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory tab",
+          "type": "Feature",
+          "mention": "Inventory tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Routes",
+          "type": "Feature",
+          "mention": "Routes section",
+          "confidence": "high"
+        },
+        {
+          "name": "Component",
+          "type": "DataObject",
+          "mention": "component",
+          "confidence": "high"
+        },
+        {
+          "name": "Components tab",
+          "type": "Feature",
+          "mention": "Components tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Select component",
+          "type": "Action",
+          "mention": "selecting the component's name",
+          "confidence": "high"
+        },
+        {
+          "name": "Click arrow",
+          "type": "Action",
+          "mention": "clicking the ➡️ (right arrow) button",
+          "confidence": "high"
+        },
+        {
+          "name": "Navigate to component",
+          "type": "Action",
+          "mention": "navigate to each component",
+          "confidence": "high"
+        },
+        {
+          "name": "Configure route",
+          "type": "Action",
+          "mention": "select the Resupply Subcontractor on Order route",
+          "confidence": "high"
+        },
+        {
+          "name": "Repeat for components",
+          "type": "Action",
+          "mention": "Repeat the process",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Resupply Subcontractor on Order",
+          "relation": "IS_PART_OF",
+          "target": "Inventory",
+          "evidence": "configure components for the *Resupply Subcontractor on Order* route, navigate to Inventory app"
+        },
+        {
+          "source": "Inventory",
+          "relation": "CONTAINS",
+          "target": "Products",
+          "evidence": "Inventory app --> Products"
+        },
+        {
+          "source": "Products",
+          "relation": "CONTAINS",
+          "target": "Component product",
+          "evidence": "Products, and selecting the component"
+        },
+        {
+          "source": "Component product",
+          "relation": "HAS_FEATURE",
+          "target": "Inventory tab",
+          "evidence": "On the component product form, click on the Inventory tab"
+        },
+        {
+          "source": "Inventory tab",
+          "relation": "HAS_FEATURE",
+          "target": "Routes",
+          "evidence": "select the Resupply Subcontractor on Order route in the Routes section"
+        },
+        {
+          "source": "Inventory",
+          "relation": "HAS_REPORT",
+          "target": "Components tab",
+          "evidence": "from the by selecting the component's name in the Components tab"
+        },
+        {
+          "source": "Select component",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "selecting the component's name"
+        },
+        {
+          "source": "Click arrow",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "clicking the ➡️ (right arrow) button"
+        },
+        {
+          "source": "Configure route",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "select the Resupply Subcontractor on Order route"
+        },
+        {
+          "source": "Repeat for components",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Repeat the process for every component"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "resupply-subcontractor-on-order-workflow",
+    "heading": "Resupply subcontractor on order workflow",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply subcontractor on order workflow",
+          "type": "Workflow",
+          "mention": "Resupply subcontractor on order workflow",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply Subcontractor order",
+          "type": "DataObject",
+          "mention": "Resupply Subcontractor order",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply Subcontractor card",
+          "type": "Feature",
+          "mention": "Resupply Subcontractor card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery Address field",
+          "type": "Field",
+          "mention": "Delivery Address field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Operations tab",
+          "type": "Feature",
+          "mention": "Operations tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product drop-down field",
+          "type": "Field",
+          "mention": "Product drop-down field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Demand field",
+          "type": "Field",
+          "mention": "Demand field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mark as Todo",
+          "type": "Action",
+          "mention": "Mark as Todo",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "subcontracted product",
+          "type": "Concept",
+          "mention": "subcontracted product",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resupply Subcontractor on Order route",
+          "type": "Workflow",
+          "mention": "Resupply Subcontractor on Order route",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Resupply subcontractor on order workflow",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Resupply subcontractor on order workflow"
+        },
+        {
+          "source": "Resupply Subcontractor on Order route",
+          "relation": "RELATED_TO",
+          "target": "Resupply subcontractor on order workflow",
+          "evidence": "While the *Resupply Subcontractor on Order* route can be used..."
+        },
+        {
+          "source": "Resupply Subcontractor card",
+          "relation": "IS_PART_OF",
+          "target": "Inventory app",
+          "evidence": "To resupply a subcontractor manually, navigate to the Inventory app, and click on the Resupply Subcontractor card."
+        },
+        {
+          "source": "Inventory app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "navigate to the Inventory app"
+        },
+        {
+          "source": "Mark as Todo",
+          "relation": "PERFORMED_BY",
+          "target": "subcontractor",
+          "evidence": "Finally, click Mark as Todo to register the order."
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "subcontractor",
+          "evidence": "click Validate to confirm that the order has been sent."
+        },
+        {
+          "source": "Delivery Address field",
+          "relation": "CONFIGURED_BY",
+          "target": "subcontractor",
+          "evidence": "In the Delivery Address field, select the subcontractor..."
+        },
+        {
+          "source": "Operations tab",
+          "relation": "CONTAINS",
+          "target": "Product drop-down field",
+          "evidence": "add each component to the Operations tab...selecting the component in the Product drop-down field"
+        },
+        {
+          "source": "Operations tab",
+          "relation": "CONTAINS",
+          "target": "Demand field",
+          "evidence": "add each component to the Operations tab...specifying a quantity in the Demand field."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-so",
+    "heading": "Create SO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Module",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "Customer drop-down menu",
+          "type": "Field",
+          "mention": "Customer drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Order Lines tab",
+          "type": "Sub-module",
+          "mention": "Order Lines tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product drop-down menu",
+          "type": "Field",
+          "mention": "Product drop-down menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quantity field",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "medium"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase smart button",
+          "type": "Feature",
+          "mention": "Purchase smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Replenish on Order (MTO) route",
+          "type": "Setting",
+          "mention": "Replenish on Order (MTO) route",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontracted product",
+          "type": "Concept",
+          "mention": "subcontracted product",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Sales app",
+          "relation": "CONTAINS",
+          "target": "Orders",
+          "evidence": "navigate to Sales app --> Orders"
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Orders",
+          "evidence": "Orders --> Orders"
+        },
+        {
+          "source": "Orders",
+          "relation": "HAS_FEATURE",
+          "target": "New",
+          "evidence": "Orders, and click New"
+        },
+        {
+          "source": "Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Customer drop-down menu",
+          "evidence": "Select the customer in the Customer drop-down menu"
+        },
+        {
+          "source": "Orders",
+          "relation": "CONTAINS",
+          "target": "Order Lines tab",
+          "evidence": "Then, click Add a product on the Order Lines tab"
+        },
+        {
+          "source": "Order Lines tab",
+          "relation": "HAS_FEATURE",
+          "target": "Add a product",
+          "evidence": "click Add a product on the Order Lines tab"
+        },
+        {
+          "source": "Order Lines tab",
+          "relation": "HAS_FEATURE",
+          "target": "Product drop-down menu",
+          "evidence": "Add a product..., select a subcontracted product in the Product drop-down menu"
+        },
+        {
+          "source": "Order Lines tab",
+          "relation": "HAS_FEATURE",
+          "target": "Quantity field",
+          "evidence": "and enter a quantity in the Quantity field"
+        },
+        {
+          "source": "Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Confirm",
+          "evidence": "Click Confirm to confirm the SO"
+        },
+        {
+          "source": "Orders",
+          "relation": "HAS_FEATURE",
+          "target": "Purchase smart button",
+          "evidence": "at which point a Purchase smart button appears at the top of the page"
+        },
+        {
+          "source": "subcontracted product",
+          "relation": "CONFIGURED_BY",
+          "target": "Replenish on Order (MTO) route",
+          "evidence": "only creates a PO if the *Replenish on Order (MTO)* route is enabled on the product's page"
+        },
+        {
+          "source": "subcontracted product",
+          "relation": "RELATED_TO",
+          "target": "subcontractor",
+          "evidence": "being purchased from the subcontractor"
+        },
+        {
+          "source": "Orders",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "Select the customer..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-po",
+    "heading": "Process PO",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Purchase",
+          "type": "Product",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "Module",
+          "mention": "Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Order",
+          "type": "DataObject",
+          "mention": "",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm Order",
+          "type": "Action",
+          "mention": "click Confirm Order",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "clicking New",
+          "confidence": "high"
+        },
+        {
+          "name": "Vendor",
+          "type": "Field",
+          "mention": "Vendor drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Products tab",
+          "type": "Sub-module",
+          "mention": "Products tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Add a product",
+          "type": "Action",
+          "mention": "Add a product",
+          "confidence": "high"
+        },
+        {
+          "name": "Product line",
+          "type": "DataObject",
+          "mention": "product line",
+          "confidence": "medium"
+        },
+        {
+          "name": "Product",
+          "type": "Field",
+          "mention": "Product field",
+          "confidence": "high"
+        },
+        {
+          "name": "Quantity",
+          "type": "Field",
+          "mention": "Quantity field",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipt",
+          "type": "DataObject",
+          "mention": "receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship order",
+          "type": "DataObject",
+          "mention": "dropship order",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipt smart button",
+          "type": "Feature",
+          "mention": "Receipt smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship smart button",
+          "type": "Feature",
+          "mention": "Dropship smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply Subcontractor order",
+          "type": "DataObject",
+          "mention": "Resupply Subcontractor order",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply smart button",
+          "type": "Feature",
+          "mention": "Resupply smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase Orders",
+          "relation": "BELONGS_TO",
+          "target": "Purchase",
+          "evidence": "Purchase app --> Orders --> Purchase Orders"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "CONTAINS",
+          "target": "Purchase Order",
+          "evidence": "select the"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "CONFIGURED_BY",
+          "target": "Vendor",
+          "evidence": "selecting a subcontractor from the Vendor drop-down menu"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "CONTAINS",
+          "target": "Products tab",
+          "evidence": "In the Products tab"
+        },
+        {
+          "source": "Products tab",
+          "relation": "ENABLES",
+          "target": "Add a product",
+          "evidence": "click Add a product"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "CONFIGURED_BY",
+          "target": "Product",
+          "evidence": "Select a subcontracted product in the Product field"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "CONFIGURED_BY",
+          "target": "Quantity",
+          "evidence": "enter the quantity in the Quantity field"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "PERFORMED_BY",
+          "target": "User",
+          "evidence": "click Confirm Order"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "TRIGGERED_BY",
+          "target": "Purchase Order",
+          "evidence": "Then, click Confirm Order to confirm it"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "GENERATES",
+          "target": "Receipt",
+          "evidence": "a receipt or dropship order is automatically created"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "GENERATES",
+          "target": "Dropship order",
+          "evidence": "a receipt or dropship order is automatically created"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "HAS_FEATURE",
+          "target": "Receipt smart button",
+          "evidence": "accessed from the corresponding Receipt or Dropship smart button"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "HAS_FEATURE",
+          "target": "Dropship smart button",
+          "evidence": "accessed from the corresponding Receipt or Dropship smart button"
+        },
+        {
+          "source": "Purchase Order",
+          "relation": "HAS_FEATURE",
+          "target": "Resupply smart button",
+          "evidence": "by clicking the Resupply smart button"
+        },
+        {
+          "source": "Confirm Order",
+          "relation": "GENERATES",
+          "target": "Resupply Subcontractor order",
+          "evidence": "a Resupply Subcontractor order is created"
+        },
+        {
+          "source": "Resupply Subcontractor order",
+          "relation": "PERFORMED_BY",
+          "target": "subcontractor",
+          "evidence": "to ship the required components to the subcontractor"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-resupply-subcontractor-order",
+    "heading": "Process Resupply Subcontractor order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "DataObject",
+          "mention": "Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply smart button",
+          "type": "Action",
+          "mention": "Resupply smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Resupply Subcontractor order",
+          "type": "DataObject",
+          "mention": "Resupply Subcontractor order",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "Inventory app",
+          "type": "Module",
+          "mention": "Inventory app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resupply Subcontractor card",
+          "type": "DataObject",
+          "mention": "Resupply Subcontractor card",
+          "confidence": "medium"
+        },
+        {
+          "name": "Resupply Subcontractor order",
+          "type": "DataObject",
+          "mention": "Resupply Subcontractor order",
+          "confidence": "high"
+        },
+        {
+          "name": "Process Resupply Subcontractor order",
+          "type": "Workflow",
+          "mention": "Title: Process Resupply Subcontractor order",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Process Resupply Subcontractor order",
+          "relation": "CONTAINS",
+          "target": "Navigate to Purchase app --> Orders --> Purchase Orders",
+          "evidence": "Once the subcontracted product's components... navigate to Purchase app --> Orders --> Purchase Orders"
+        },
+        {
+          "source": "Process Resupply Subcontractor order",
+          "relation": "CONTAINS",
+          "target": "Click the Resupply smart button",
+          "evidence": "Click the Resupply smart button at the top of the screen"
+        },
+        {
+          "source": "Process Resupply Subcontractor order",
+          "relation": "CONTAINS",
+          "target": "Click Validate",
+          "evidence": "click Validate to confirm"
+        },
+        {
+          "source": "Process Resupply Subcontractor order",
+          "relation": "CONTAINS",
+          "target": "Navigate to Inventory app",
+          "evidence": "Alternatively, navigate to the Inventory app"
+        },
+        {
+          "source": "Purchase Orders",
+          "relation": "BELONGS_TO",
+          "target": "Orders",
+          "evidence": "Orders --> Purchase Orders"
+        },
+        {
+          "source": "Orders",
+          "relation": "BELONGS_TO",
+          "target": "Purchase app",
+          "evidence": "Purchase app --> Orders"
+        },
+        {
+          "source": "Resupply Subcontractor card",
+          "relation": "BELONGS_TO",
+          "target": "Inventory app",
+          "evidence": "Inventory app, click... on the Resupply Subcontractor card"
+        },
+        {
+          "source": "Resupply Subcontractor card",
+          "relation": "CONTAINS",
+          "target": "Resupply Subcontractor order",
+          "evidence": "select the *Resupply Subcontractor* order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-receipt-or-dropship-order",
+    "heading": "Process receipt or dropship order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Process receipt or dropship order",
+          "type": "Workflow",
+          "mention": "Title: Process receipt or dropship order",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "high"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "high"
+        },
+        {
+          "name": "end customer",
+          "type": "Actor",
+          "mention": "end customer",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Process receipt or dropship order",
+          "relation": "PERFORMED_BY",
+          "target": "subcontractor",
+          "evidence": "Once the subcontractor has finished manufacturing the product, they either ship it..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-receipt",
+    "heading": "Process receipt",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "Sub-module",
+          "mention": "Orders --> Purchase Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Receive Products button",
+          "type": "Action",
+          "mention": "Receive Products button",
+          "confidence": "high"
+        },
+        {
+          "name": "Receipt smart button",
+          "type": "Action",
+          "mention": "Receipt smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "receipt",
+          "type": "DataObject",
+          "mention": "to open the receipt",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "click Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "subcontractor",
+          "confidence": "medium"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase Orders",
+          "relation": "IS_PART_OF",
+          "target": "Purchase",
+          "evidence": "navigate to Purchase app --> Orders --> Purchase Orders"
+        },
+        {
+          "source": "Purchase",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, navigate to Purchase app"
+        },
+        {
+          "source": "receipt",
+          "relation": "GENERATES",
+          "target": "DataObject",
+          "evidence": "to open the receipt"
+        },
+        {
+          "source": "Validate",
+          "relation": "PRODUCES",
+          "target": "DataObject",
+          "evidence": "click Validate... to enter the product into inventory"
+        },
+        {
+          "source": "Validate",
+          "relation": "IS_PART_OF",
+          "target": "receipt",
+          "evidence": "click Validate at the top of the receipt"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-dropship-order",
+    "heading": "Process dropship order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Purchase app",
+          "type": "Module",
+          "mention": "Purchase app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Purchase Orders",
+          "type": "DataObject",
+          "mention": "Purchase Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Process dropship order",
+          "type": "Workflow",
+          "mention": "Title: Process dropship order",
+          "confidence": "high"
+        },
+        {
+          "name": "Dropship smart button",
+          "type": "Feature",
+          "mention": "Dropship smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "click Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "subcontractor",
+          "type": "Actor",
+          "mention": "the subcontractor",
+          "confidence": "medium"
+        },
+        {
+          "name": "product",
+          "type": "Concept",
+          "mention": "the product",
+          "confidence": "low"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "the customer",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Purchase Orders",
+          "relation": "IS_PART_OF",
+          "target": "Orders",
+          "evidence": "Purchase Orders, and select the ."
+        },
+        {
+          "source": "Orders",
+          "relation": "IS_PART_OF",
+          "target": "Purchase app",
+          "evidence": "Purchase app --> Orders --> Purchase Orders"
+        },
+        {
+          "source": "Purchase app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Process dropship order",
+          "relation": "TRIGGERED_BY",
+          "target": "Validate",
+          "evidence": "click Validate at the top of the order to confirm"
+        },
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "subcontractor",
+          "evidence": "If the subcontractor dropships the product, once they have sent it..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-delivery-order",
+    "heading": "Process delivery order",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales app",
+          "type": "Module",
+          "mention": "Sales app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Delivery smart button",
+          "type": "Feature",
+          "mention": "Delivery smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "delivery order",
+          "type": "DataObject",
+          "mention": "delivery order",
+          "confidence": "high"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "contracting company",
+          "type": "Actor",
+          "mention": "contracting company",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Validate",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "click Validate on the order to confirm that the product has been shipped to the customer"
+        },
+        {
+          "source": "delivery order",
+          "relation": "CONTAINS",
+          "target": "Validate",
+          "evidence": "click Validate on the order"
+        },
+        {
+          "source": "Sales app",
+          "relation": "HAS_FEATURE",
+          "target": "Delivery smart button",
+          "evidence": "Select the Delivery smart button"
+        },
+        {
+          "source": "Delivery smart button",
+          "relation": "ENABLES",
+          "target": "delivery order",
+          "evidence": "Select the Delivery smart button at the top of the page to open the delivery order"
+        }
+      ]
+    }
+  }
+]

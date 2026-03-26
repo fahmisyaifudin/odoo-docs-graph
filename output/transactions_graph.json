@@ -1,0 +1,1122 @@
+[
+  {
+    "section_id": "transactions",
+    "heading": "Transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank synchronization",
+          "type": "Feature",
+          "mention": "bank synchronization",
+          "confidence": "medium"
+        },
+        {
+          "name": "Import bank transactions",
+          "type": "Feature",
+          "mention": "Import bank transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Register bank transactions",
+          "type": "Feature",
+          "mention": "Register bank transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Transactions",
+          "type": "DataObject",
+          "mention": "transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank statements",
+          "type": "DataObject",
+          "mention": "bank statements",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank account transactions",
+          "type": "DataObject",
+          "mention": "bank account transactions",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank synchronization",
+          "relation": "SUPPORTS",
+          "target": "Import bank transactions",
+          "evidence": "automates the process"
+        },
+        {
+          "source": "Import bank transactions",
+          "relation": "RELATED_TO",
+          "target": "Bank statements",
+          "evidence": "Importing transactions from your bank statements"
+        },
+        {
+          "source": "Register bank transactions",
+          "relation": "RELATED_TO",
+          "target": "Transactions",
+          "evidence": "Register bank transactions manually"
+        },
+        {
+          "source": "Transactions",
+          "relation": "RELATED_TO",
+          "target": "Bank account transactions",
+          "evidence": "Importing transactions from your bank statements allows keeping track of bank account transactions"
+        },
+        {
+          "source": "Bank account transactions",
+          "relation": "RELATED_TO",
+          "target": "Bank statements",
+          "evidence": "Importing transactions from your bank statements allows keeping track of bank account transactions"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "transaction-view",
+    "heading": "Transaction view",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Module",
+          "mention": "Accounting Dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank Matching view",
+          "type": "Module",
+          "mention": "Bank Matching view",
+          "confidence": "medium"
+        },
+        {
+          "name": "list of transactions",
+          "type": "DataObject",
+          "mention": "list of transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "bank journal",
+          "type": "DataObject",
+          "mention": "bank journal",
+          "confidence": "high"
+        },
+        {
+          "name": "transactions",
+          "type": "DataObject",
+          "mention": "transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "unreconciled transactions",
+          "type": "DataObject",
+          "mention": "unreconciled transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "date of the transaction",
+          "type": "Field",
+          "mention": "date of the transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "button linked to the chatter",
+          "type": "Action",
+          "mention": "button linked to the chatter",
+          "confidence": "high"
+        },
+        {
+          "name": "chatter",
+          "type": "Feature",
+          "mention": "chatter",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-comments-o (comments) icon",
+          "type": "Action",
+          "mention": "fa-comments-o (comments) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "attachments",
+          "type": "DataObject",
+          "mention": "attachments",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-paperclip (attachments) icon",
+          "type": "Action",
+          "mention": "fa-paperclip (attachments) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-clock-o (activities) icon",
+          "type": "Action",
+          "mention": "fa-clock-o (activities) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "label of the transaction",
+          "type": "Field",
+          "mention": "label of the transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "partner of the transaction",
+          "type": "Field",
+          "mention": "partner of the transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "action buttons",
+          "type": "Action",
+          "mention": "action buttons",
+          "confidence": "high"
+        },
+        {
+          "name": "balance of the transaction",
+          "type": "Field",
+          "mention": "balance of the transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciliation",
+          "type": "Feature",
+          "mention": "reconciliation",
+          "confidence": "high"
+        },
+        {
+          "name": "Set Account action button",
+          "type": "Action",
+          "mention": "Set Account action button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Not Matched filter",
+          "type": "Feature",
+          "mention": "Not Matched filter",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Accounting Dashboard",
+          "relation": "CONTAINS",
+          "target": "Bank Matching view",
+          "evidence": "To access it, go to the Accounting Dashboard"
+        },
+        {
+          "source": "Bank Matching view",
+          "relation": "CONTAINS",
+          "target": "list of transactions",
+          "evidence": "The list of transactions for the bank journal is displayed in the Bank Matching view"
+        },
+        {
+          "source": "Bank Matching view",
+          "relation": "CONTAINS",
+          "target": "bank journal",
+          "evidence": "The list of transactions for the bank journal is displayed in the Bank Matching view"
+        },
+        {
+          "source": "Bank Matching view",
+          "relation": "CONTAINS",
+          "target": "transactions",
+          "evidence": "displayed in the Bank Matching view"
+        },
+        {
+          "source": "transactions",
+          "relation": "BELONGS_TO",
+          "target": "unreconciled transactions",
+          "evidence": "unreconciled transactions"
+        },
+        {
+          "source": "transactions",
+          "relation": "HAS_FEATURE",
+          "target": "reconciliation",
+          "evidence": "Once a transaction is reconciled"
+        },
+        {
+          "source": "unreconciled transactions",
+          "relation": "CONTAINS",
+          "target": "date of the transaction",
+          "evidence": "display the following information while collapsed: ... The date of the transaction"
+        },
+        {
+          "source": "unreconciled transactions",
+          "relation": "CONTAINS",
+          "target": "button linked to the chatter",
+          "evidence": "display the following information while collapsed: ... A button linked to the chatter"
+        },
+        {
+          "source": "button linked to the chatter",
+          "relation": "TRIGGERED_BY",
+          "target": "fa-comments-o (comments) icon",
+          "evidence": "The chatter can be opened and closed by clicking the fa-comments-o (comments) icon"
+        },
+        {
+          "source": "button linked to the chatter",
+          "relation": "TRIGGERED_BY",
+          "target": "fa-times (close) icon",
+          "evidence": "the fa-times (close) icon in the top right of the view"
+        },
+        {
+          "source": "unreconciled transactions",
+          "relation": "CONTAINS",
+          "target": "label of the transaction",
+          "evidence": "display the following information while collapsed: ... The label of the transaction"
+        },
+        {
+          "source": "unreconciled transactions",
+          "relation": "CONTAINS",
+          "target": "partner of the transaction",
+          "evidence": "display the following information while collapsed: ... The partner of the transaction"
+        },
+        {
+          "source": "unreconciled transactions",
+          "relation": "CONTAINS",
+          "target": "action buttons",
+          "evidence": "display the following information while collapsed: ... Up to two action buttons"
+        },
+        {
+          "source": "action buttons",
+          "relation": "RELATED_TO",
+          "target": "Set Account action button",
+          "evidence": "reconciled with the Set Account action button"
+        },
+        {
+          "source": "unreconciled transactions",
+          "relation": "CONTAINS",
+          "target": "balance of the transaction",
+          "evidence": "display the following information while collapsed: ... The balance of the transaction"
+        },
+        {
+          "source": "Bank Matching view",
+          "relation": "HAS_FEATURE",
+          "target": "Not Matched filter",
+          "evidence": "remove the Not Matched filter from the search bar"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "duplicate-transactions",
+    "heading": "Duplicate transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Module",
+          "mention": "Accounting Dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bank Matching view",
+          "type": "Feature",
+          "mention": "Bank Matching view",
+          "confidence": "high"
+        },
+        {
+          "name": "Duplicate transaction view",
+          "type": "Feature",
+          "mention": "Duplicate transaction view",
+          "confidence": "high"
+        },
+        {
+          "name": "Find Duplicate Transactions",
+          "type": "Action",
+          "mention": "Find Duplicate Transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "Provider Duplicates tab",
+          "type": "Feature",
+          "mention": "Provider Duplicates tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Delete Selected",
+          "type": "Action",
+          "mention": "Delete Selected",
+          "confidence": "high"
+        },
+        {
+          "name": "bank sync",
+          "type": "Feature",
+          "mention": "bank sync",
+          "confidence": "high"
+        },
+        {
+          "name": "transaction",
+          "type": "DataObject",
+          "mention": "transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "potential duplicate transaction",
+          "type": "DataObject",
+          "mention": "potential duplicate transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "Starting Date",
+          "type": "Field",
+          "mention": "Starting Date",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Duplicate transaction view",
+          "relation": "BELONGS_TO",
+          "target": "Accounting Dashboard",
+          "evidence": "The duplicate transaction view identifies potential duplicate transactions so they can be selected and deleted. To access the duplicate transaction view, first access the Bank Matching view by going to the Accounting Dashboard and clicking the bank journal's name"
+        },
+        {
+          "source": "Find Duplicate Transactions",
+          "relation": "IS_PART_OF",
+          "target": "Actions menu",
+          "evidence": "then open the fa-cog Actions menu and click Find Duplicate Transactions"
+        },
+        {
+          "source": "Find Duplicate Transactions",
+          "relation": "ENABLES",
+          "target": "Duplicate transaction view",
+          "evidence": "To access the duplicate transaction view, first access the Bank Matching view by going to the Accounting Dashboard and clicking the bank journal's name, then open the fa-cog Actions menu and click Find Duplicate Transactions"
+        },
+        {
+          "source": "Duplicate transaction view",
+          "relation": "HAS_FEATURE",
+          "target": "Provider Duplicates tab",
+          "evidence": "Any transactions created by bank sync that the bank sync provider determines to be potential duplicates are displayed in the Provider Duplicates tab"
+        },
+        {
+          "source": "Delete Selected",
+          "relation": "PRODUCES",
+          "target": "potential duplicate transaction",
+          "evidence": "then select the transactions to delete and click fa-trash Delete Selected"
+        },
+        {
+          "source": "transaction",
+          "relation": "CONFIGURED_BY",
+          "target": "Starting Date",
+          "evidence": "Select a Starting Date to view the corresponding potential duplicate transactions"
+        },
+        {
+          "source": "transaction",
+          "relation": "RELATED_TO",
+          "target": "bank sync",
+          "evidence": "if the transaction is created via bank sync"
+        },
+        {
+          "source": "potential duplicate transaction",
+          "relation": "IS_PART_OF",
+          "target": "Duplicate transaction view",
+          "evidence": "The duplicate transaction view identifies potential duplicate transactions so they can be selected and deleted"
+        },
+        {
+          "source": "bank sync",
+          "relation": "SUPPORTS",
+          "target": "Provider Duplicates tab",
+          "evidence": "Any transactions created by bank sync that the bank sync provider determines to be potential duplicates are displayed in the Provider Duplicates tab"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "import-transactions",
+    "heading": "Import transactions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Module",
+          "mention": "Accounting Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank journal",
+          "type": "Sub-module",
+          "mention": "Bank journal",
+          "confidence": "high"
+        },
+        {
+          "name": "Import file",
+          "type": "Action",
+          "mention": "Import file",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Matching view",
+          "type": "Module",
+          "mention": "Bank Matching view",
+          "confidence": "high"
+        },
+        {
+          "name": "CAMT.053",
+          "type": "Integration",
+          "mention": "SEPA recommended Cash Management format (CAMT.053)",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV",
+          "type": "Integration",
+          "mention": "Comma-separated values (CSV)",
+          "confidence": "high"
+        },
+        {
+          "name": "Excel (XLSX)",
+          "type": "Integration",
+          "mention": "Excel (XLSX)",
+          "confidence": "high"
+        },
+        {
+          "name": "OFX",
+          "type": "Integration",
+          "mention": "Open Financial Exchange (OFX)",
+          "confidence": "high"
+        },
+        {
+          "name": "QIF",
+          "type": "Integration",
+          "mention": "Quicken Interchange Format (QIF)",
+          "confidence": "high"
+        },
+        {
+          "name": "CODA",
+          "type": "Integration",
+          "mention": "Belgium: Coded Statement of Account (CODA)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "BELONGS_TO",
+          "target": "Accounting Dashboard",
+          "evidence": "To import a file, go to the Accounting Dashboard"
+        },
+        {
+          "source": "Accounting Dashboard",
+          "relation": "CONTAINS",
+          "target": "Bank journal",
+          "evidence": "click the fa-ellipsis-v (ellipsis) icon on the Bank journal"
+        },
+        {
+          "source": "Bank journal",
+          "relation": "HAS_FEATURE",
+          "target": "Import file",
+          "evidence": "select Import file"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "CAMT.053",
+          "evidence": "Odoo supports multiple file formats... CAMT.053"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "CSV",
+          "evidence": "Odoo supports multiple file formats... CSV"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "Excel (XLSX)",
+          "evidence": "Odoo supports multiple file formats... Excel (XLSX)"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "OFX",
+          "evidence": "Odoo supports multiple file formats... OFX"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "QIF",
+          "evidence": "Odoo supports multiple file formats... QIF"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SUPPORTS",
+          "target": "CODA",
+          "evidence": "Odoo supports multiple file formats... CODA"
+        },
+        {
+          "source": "Odoo",
+          "relation": "SEE_ALSO",
+          "target": "/applications/essentials/export_import_data",
+          "evidence": ".. seealso:: /applications/essentials/export_import_data"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "register-bank-transactions-manually",
+    "heading": "Register bank transactions manually",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Module",
+          "mention": "Accounting Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank journal",
+          "type": "DataObject",
+          "mention": "Bank journal",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "high"
+        },
+        {
+          "name": "Partner",
+          "type": "Field",
+          "mention": "Partner",
+          "confidence": "high"
+        },
+        {
+          "name": "Label",
+          "type": "Field",
+          "mention": "Label",
+          "confidence": "high"
+        },
+        {
+          "name": "Date",
+          "type": "Field",
+          "mention": "Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Register bank transactions manually",
+          "type": "Action",
+          "mention": "Register bank transactions manually",
+          "confidence": "high"
+        },
+        {
+          "name": "record your bank transactions manually",
+          "type": "Action",
+          "mention": "record your bank transactions manually",
+          "confidence": "high"
+        },
+        {
+          "name": "reconciliation process",
+          "type": "Concept",
+          "mention": "reconciliation process",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank journal",
+          "relation": "IS_PART_OF",
+          "target": "Accounting Dashboard",
+          "evidence": "To do so, go to the Accounting Dashboard, click the Bank journal's name"
+        },
+        {
+          "source": "Accounting Dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "New",
+          "relation": "IS_PART_OF",
+          "target": "Bank journal",
+          "evidence": "click the Bank journal's name, and then on New"
+        },
+        {
+          "source": "Partner",
+          "relation": "BELONGS_TO",
+          "target": "Bank journal",
+          "evidence": "The Partner field is optional"
+        },
+        {
+          "source": "Label",
+          "relation": "BELONGS_TO",
+          "target": "Bank journal",
+          "evidence": "the Label ... fields are mandatory"
+        },
+        {
+          "source": "Date",
+          "relation": "BELONGS_TO",
+          "target": "Bank journal",
+          "evidence": "the Date ... fields are mandatory"
+        },
+        {
+          "source": "Register bank transactions manually",
+          "relation": "EQUIVALENT_TO",
+          "target": "record your bank transactions manually",
+          "evidence": "You can also record your bank transactions manually"
+        },
+        {
+          "source": "Partner",
+          "relation": "RELATED_TO",
+          "target": "reconciliation process",
+          "evidence": "The Partner field is optional to ease the reconciliation process"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "statements",
+    "heading": "Statements",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting Dashboard",
+          "type": "Feature",
+          "mention": "Accounting Dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank statement",
+          "type": "DataObject",
+          "mention": "bank statement",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Statements list view",
+          "type": "Feature",
+          "mention": "Bank Statements list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "statement",
+          "type": "DataObject",
+          "mention": "statement",
+          "confidence": "medium"
+        },
+        {
+          "name": "statement lines",
+          "type": "DataObject",
+          "mention": "Statement lines",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank journal",
+          "type": "DataObject",
+          "mention": "bank journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "cash journal",
+          "type": "DataObject",
+          "mention": "cash journal",
+          "confidence": "medium"
+        },
+        {
+          "name": "transactions",
+          "type": "DataObject",
+          "mention": "transactions",
+          "confidence": "high"
+        },
+        {
+          "name": "ending balance",
+          "type": "Concept",
+          "mention": "ending balances",
+          "confidence": "medium"
+        },
+        {
+          "name": "opening transaction",
+          "type": "Action",
+          "mention": "opening transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "bank account",
+          "type": "DataObject",
+          "mention": "bank account",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "bank statement",
+          "relation": "IS_PART_OF",
+          "target": "Accounting",
+          "evidence": "In Odoo Accounting"
+        },
+        {
+          "source": "Accounting Dashboard",
+          "relation": "CONTAINS",
+          "target": "Bank Statements list view",
+          "evidence": "To access a list of existing statements, go to the Accounting Dashboard... then click Statements."
+        },
+        {
+          "source": "Bank Statements list view",
+          "relation": "CONTAINS",
+          "target": "statement",
+          "evidence": "To access a list of existing statements... then click Statements."
+        },
+        {
+          "source": "statement",
+          "relation": "CONTAINS",
+          "target": "statement lines",
+          "evidence": "...open a statement and click the Statement lines smart button."
+        },
+        {
+          "source": "Bank Statements list view",
+          "relation": "RELATED_TO",
+          "target": "bank journal",
+          "evidence": "...next to the bank or cash journal you want to check"
+        },
+        {
+          "source": "Bank Statements list view",
+          "relation": "RELATED_TO",
+          "target": "cash journal",
+          "evidence": "...next to the bank or cash journal you want to check"
+        },
+        {
+          "source": "bank statement",
+          "relation": "CONTAINS",
+          "target": "transactions",
+          "evidence": "A bank statement... lists the transactions"
+        },
+        {
+          "source": "opening transaction",
+          "relation": "ENABLES",
+          "target": "ending balance",
+          "evidence": "...create an opening transaction... This is necessary to ensure the accuracy."
+        },
+        {
+          "source": "opening transaction",
+          "relation": "RELATED_TO",
+          "target": "bank account",
+          "evidence": "...record the bank account balance..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "statement-creation",
+    "heading": "Statement creation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Matching view",
+          "type": "Module",
+          "mention": "The Bank Matching view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Statement",
+          "type": "DataObject",
+          "mention": "statement",
+          "confidence": "high"
+        },
+        {
+          "name": "Transaction",
+          "type": "DataObject",
+          "mention": "transaction",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Statement window",
+          "type": "Module",
+          "mention": "Create Statement window",
+          "confidence": "medium"
+        },
+        {
+          "name": "Statement button",
+          "type": "Action",
+          "mention": "Statement button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Reference",
+          "type": "Field",
+          "mention": "Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Starting Balance",
+          "type": "Field",
+          "mention": "Starting Balance",
+          "confidence": "high"
+        },
+        {
+          "name": "Ending Balance",
+          "type": "Field",
+          "mention": "Ending Balance",
+          "confidence": "high"
+        },
+        {
+          "name": "Save",
+          "type": "Action",
+          "mention": "Save",
+          "confidence": "high"
+        },
+        {
+          "name": "list view",
+          "type": "Module",
+          "mention": "list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Statement column",
+          "type": "Field",
+          "mention": "Statement column",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Bank Matching view",
+          "relation": "CONTAINS",
+          "target": "Transaction",
+          "evidence": "The Bank Matching view displays transactions..."
+        },
+        {
+          "source": "Statement",
+          "relation": "CONTAINS",
+          "target": "Transaction",
+          "evidence": "To add transactions to a statement..."
+        },
+        {
+          "source": "Statement button",
+          "relation": "TRIGGERED_BY",
+          "target": "Create Statement window",
+          "evidence": "...click the Statement button... Doing so creates a statement..."
+        },
+        {
+          "source": "Statement",
+          "relation": "IS_PART_OF",
+          "target": "Create Statement window",
+          "evidence": "In the Create Statement window, fill out the statement's Reference..."
+        },
+        {
+          "source": "Save",
+          "relation": "TRIGGERED_BY",
+          "target": "Create Statement window",
+          "evidence": "...click Save."
+        },
+        {
+          "source": "list view",
+          "relation": "RELATED_TO",
+          "target": "Bank Matching view",
+          "evidence": "Transactions can also be added to statements from the list view."
+        },
+        {
+          "source": "Statement column",
+          "relation": "IS_PART_OF",
+          "target": "list view",
+          "evidence": "...in the Statement column..."
+        },
+        {
+          "source": "Transaction",
+          "relation": "CONFIGURED_BY",
+          "target": "Statement column",
+          "evidence": "Select all the transactions corresponding to the bank statement, and, in the Statement column, select an existing statement..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "statement-viewing,-editing,-and-printing",
+    "heading": "Statement viewing, editing, and printing",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Statement",
+          "type": "DataObject",
+          "mention": "statement",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Matching",
+          "type": "Module",
+          "mention": "Bank Matching",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Matching view",
+          "type": "Feature",
+          "mention": "Bank Matching view",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Matching list view",
+          "type": "Feature",
+          "mention": "Bank Matching list view",
+          "confidence": "high"
+        },
+        {
+          "name": "Reference",
+          "type": "Field",
+          "mention": "Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Starting Balance",
+          "type": "Field",
+          "mention": "Starting Balance",
+          "confidence": "high"
+        },
+        {
+          "name": "Ending Balance",
+          "type": "Field",
+          "mention": "Ending Balance",
+          "confidence": "high"
+        },
+        {
+          "name": "Attachments",
+          "type": "Field",
+          "mention": "Attachments",
+          "confidence": "high"
+        },
+        {
+          "name": "Print Statement PDF",
+          "type": "Action",
+          "mention": "print",
+          "confidence": "high"
+        },
+        {
+          "name": "Previous statement",
+          "type": "DataObject",
+          "mention": "previous statement",
+          "confidence": "medium"
+        },
+        {
+          "name": "Transactions",
+          "type": "DataObject",
+          "mention": "transactions",
+          "confidence": "medium"
+        },
+        {
+          "name": "Running balance",
+          "type": "Concept",
+          "mention": "running balance",
+          "confidence": "medium"
+        },
+        {
+          "name": "Warning",
+          "type": "Feature",
+          "mention": "warning",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Statement",
+          "relation": "IS_PART_OF",
+          "target": "Bank Matching",
+          "evidence": "To view an existing statement, click the statement amount in the Bank Matching view or click the statement name in the Bank Matching list view."
+        },
+        {
+          "source": "Statement",
+          "relation": "CONTAINS",
+          "target": "Reference",
+          "evidence": "From here, you can edit the Reference, Starting Balance, Ending Balance, and Attachments."
+        },
+        {
+          "source": "Statement",
+          "relation": "CONTAINS",
+          "target": "Starting Balance",
+          "evidence": "From here, you can edit the Reference, Starting Balance, Ending Balance, and Attachments."
+        },
+        {
+          "source": "Statement",
+          "relation": "CONTAINS",
+          "target": "Ending Balance",
+          "evidence": "From here, you can edit the Reference, Starting Balance, Ending Balance, and Attachments."
+        },
+        {
+          "source": "Statement",
+          "relation": "CONTAINS",
+          "target": "Attachments",
+          "evidence": "From here, you can edit the Reference, Starting Balance, Ending Balance, and Attachments."
+        },
+        {
+          "source": "Starting Balance",
+          "relation": "PRODUCES",
+          "target": "Ending Balance",
+          "evidence": "Manually updating the Starting Balance automatically updates the Ending Balance based on the new value of the Starting Balance and the value of the statement's transactions."
+        },
+        {
+          "source": "Starting Balance",
+          "relation": "RELATED_TO",
+          "target": "Previous statement",
+          "evidence": "If the Starting Balance doesn't equal the previous statement's Ending Balance, a warning appears..."
+        },
+        {
+          "source": "Ending Balance",
+          "relation": "RELATED_TO",
+          "target": "Running balance",
+          "evidence": "if the Ending Balance doesn't equal the running balance (Starting Balance plus the statement's transactions), a warning appears..."
+        },
+        {
+          "source": "Print Statement PDF",
+          "relation": "PRODUCES",
+          "target": "Statement",
+          "evidence": "To generate and print a PDF of the bank statement..."
+        }
+      ]
+    }
+  }
+]
