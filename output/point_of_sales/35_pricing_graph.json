@@ -1,0 +1,1550 @@
+[
+  {
+    "section_id": "discounts",
+    "heading": "Discounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Discounts",
+          "type": "Feature",
+          "mention": "Discounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Global Discounts",
+          "type": "Feature",
+          "mention": "Global Discounts",
+          "confidence": "high"
+        },
+        {
+          "name": "Line Discounts",
+          "type": "Feature",
+          "mention": "Line Discounts",
+          "confidence": "high"
+        },
+        {
+          "name": "POS orders",
+          "type": "DataObject",
+          "mention": "POS orders",
+          "confidence": "high"
+        },
+        {
+          "name": "item lines",
+          "type": "DataObject",
+          "mention": "item lines",
+          "confidence": "medium"
+        },
+        {
+          "name": "POS settings",
+          "type": "Module",
+          "mention": "POS settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricing section",
+          "type": "Module",
+          "mention": "Pricing section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Discount % field",
+          "type": "Field",
+          "mention": "Discount % field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Discounts",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo... Discounts allow users..."
+        },
+        {
+          "source": "Discounts",
+          "relation": "APPLIES_TO",
+          "target": "POS orders",
+          "evidence": "Discounts allow users to reduce the price of item lines in POS orders."
+        },
+        {
+          "source": "Discounts",
+          "relation": "APPLIES_TO",
+          "target": "item lines",
+          "evidence": "Discounts allow users to reduce the price of item lines..."
+        },
+        {
+          "source": "Global Discounts",
+          "relation": "BELONGS_TO",
+          "target": "Discounts",
+          "evidence": "enable: - Global Discounts to allow users to set a discount on the entire order."
+        },
+        {
+          "source": "Line Discounts",
+          "relation": "BELONGS_TO",
+          "target": "Discounts",
+          "evidence": "enable: ... - Line Discounts to allow users to set discounts on specific products..."
+        },
+        {
+          "source": "Global Discounts",
+          "relation": "IS_PART_OF",
+          "target": "POS settings",
+          "evidence": "To activate discounts, navigate to the POS settings... and enable: - Global Discounts..."
+        },
+        {
+          "source": "Line Discounts",
+          "relation": "IS_PART_OF",
+          "target": "POS settings",
+          "evidence": "To activate discounts, navigate to the POS settings... and enable: ... - Line Discounts..."
+        },
+        {
+          "source": "Pricing section",
+          "relation": "CONTAINS",
+          "target": "Global Discounts",
+          "evidence": "scroll down to the Pricing section, and enable: - Global Discounts..."
+        },
+        {
+          "source": "Pricing section",
+          "relation": "CONTAINS",
+          "target": "Line Discounts",
+          "evidence": "scroll down to the Pricing section, and enable: ... - Line Discounts..."
+        },
+        {
+          "source": "Global Discounts",
+          "relation": "CONFIGURED_BY",
+          "target": "Discount % field",
+          "evidence": "Modify the default discount percentage in the Discount % field if needed."
+        },
+        {
+          "source": "Discounts",
+          "relation": "SEE_ALSO",
+          "target": "Unknown",
+          "evidence": ".. seealso:: ../../sales/products_prices/prices/discounts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "global-discounts",
+    "heading": "Global discounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Global discounts",
+          "type": "Feature",
+          "mention": "Global discounts",
+          "confidence": "high"
+        },
+        {
+          "name": "POS register",
+          "type": "Module",
+          "mention": "POS register",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-ellipsis-v icon",
+          "type": "Action",
+          "mention": "fa-ellipsis-v (vertical ellipsis) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-tag Discount",
+          "type": "Action",
+          "mention": "fa-tag Discount",
+          "confidence": "high"
+        },
+        {
+          "name": "Set discount percentage",
+          "type": "Action",
+          "mention": "Set the discount percentage",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm",
+          "type": "Action",
+          "mention": "Confirm",
+          "confidence": "high"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Global discounts",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Global discounts"
+        },
+        {
+          "source": "Global discounts",
+          "relation": "REQUIRES",
+          "target": "POS register",
+          "evidence": "To apply a discount on the whole order from the POS register"
+        },
+        {
+          "source": "Global discounts",
+          "relation": "TRIGGERED_BY",
+          "target": "fa-ellipsis-v icon",
+          "evidence": "click the fa-ellipsis-v (vertical ellipsis) icon"
+        },
+        {
+          "source": "fa-ellipsis-v icon",
+          "relation": "ENABLES",
+          "target": "fa-tag Discount",
+          "evidence": "then fa-tag Discount"
+        },
+        {
+          "source": "fa-tag Discount",
+          "relation": "ENABLES",
+          "target": "Set discount percentage",
+          "evidence": "Set the discount percentage and click Confirm."
+        },
+        {
+          "source": "Set discount percentage",
+          "relation": "ENABLES",
+          "target": "Confirm",
+          "evidence": "and click Confirm."
+        },
+        {
+          "source": "Global discounts",
+          "relation": "APPLIES_TO",
+          "target": "order",
+          "evidence": "apply a discount on the whole order"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "line-discounts",
+    "heading": "Line discounts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "cart",
+          "type": "DataObject",
+          "mention": "cart",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "DataObject",
+          "mention": "product",
+          "confidence": "high"
+        },
+        {
+          "name": "%",
+          "type": "Feature",
+          "mention": "%",
+          "confidence": "medium"
+        },
+        {
+          "name": "Qty",
+          "type": "Feature",
+          "mention": "Qty",
+          "confidence": "medium"
+        },
+        {
+          "name": "⌫",
+          "type": "Action",
+          "mention": "⌫",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "product",
+          "relation": "CONTAINS",
+          "target": "cart",
+          "evidence": "select the product from the cart"
+        },
+        {
+          "source": "%",
+          "relation": "ENABLES",
+          "target": "discount",
+          "evidence": "click the % cart modifier from the pad, then use the numpad to set the discount"
+        },
+        {
+          "source": "adding other products",
+          "relation": "TRIGGERED_BY",
+          "target": "Qty",
+          "evidence": "Adding other products to the cart switches the cart modifier back to Qty automatically."
+        },
+        {
+          "source": "⌫",
+          "relation": "ENABLES",
+          "target": "remove a discount",
+          "evidence": "To remove a discount, select the product from the cart, click %, then click ⌫"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "discount-and-loyalty-programs",
+    "heading": "Discount and loyalty programs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Discount and loyalty programs",
+          "type": "Feature",
+          "mention": "Discount and loyalty programs",
+          "confidence": "high"
+        },
+        {
+          "name": "Promotions, Coupons, Gift Card & Loyalty Program",
+          "type": "Feature",
+          "mention": "Promotions, Coupons, Gift Card & Loyalty Program",
+          "confidence": "high"
+        },
+        {
+          "name": "Discount & Loyalty",
+          "type": "Feature",
+          "mention": "Discount & Loyalty",
+          "confidence": "medium"
+        },
+        {
+          "name": "Discount and loyalty programs",
+          "type": "Feature",
+          "mention": "discount and loyalty programs",
+          "confidence": "medium"
+        },
+        {
+          "name": "cashier",
+          "type": "Actor",
+          "mention": "cashier",
+          "confidence": "high"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "medium"
+        },
+        {
+          "name": "pricelists",
+          "type": "Concept",
+          "mention": "pricelists",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Discount and loyalty programs",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Promotions, Coupons, Gift Card & Loyalty Program",
+          "relation": "IS_PART_OF",
+          "target": "Discount and loyalty programs",
+          "evidence": "Discount and loyalty programs provide flexible, customer-facing pricing strategies."
+        },
+        {
+          "source": "Discount & Loyalty",
+          "relation": "IS_PART_OF",
+          "target": "Point of Sale",
+          "evidence": "go to Point of Sale --> Products --> Discount & Loyalty"
+        },
+        {
+          "source": "Point of Sale",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Discount and loyalty programs",
+          "relation": "ENABLES",
+          "target": "Promotions, Coupons, Gift Card & Loyalty Program",
+          "evidence": "To activate discount and loyalty programs in Point of Sale... enable Promotions, Coupons, Gift Card & Loyalty Program."
+        },
+        {
+          "source": "Discount and loyalty programs",
+          "relation": "CONFIGURED_BY",
+          "target": "Point of Sale settings",
+          "evidence": "navigate to the POS settings, scroll down to the Pricing section, and enable Promotions, Coupons, Gift Card & Loyalty Program."
+        },
+        {
+          "source": "order",
+          "relation": "TRIGGERED_BY",
+          "target": "Discount and loyalty programs",
+          "evidence": "These programs are triggered when an order meets the defined requirements."
+        },
+        {
+          "source": "cashier",
+          "relation": "PERFORMED_BY",
+          "target": "manual application of rewards",
+          "evidence": "rewards are either applied automatically or manually by the cashier."
+        },
+        {
+          "source": "Discount and loyalty programs",
+          "relation": "SEE_ALSO",
+          "target": "pricelists",
+          "evidence": "Unlike pricelists, which define structured pricing rules"
+        },
+        {
+          "source": "Discount and loyalty programs",
+          "relation": "SEE_ALSO",
+          "target": "../../sales/products/loyalty-programs",
+          "evidence": "configure the desired discount and loyalty programs"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "codes",
+    "heading": "Codes",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "gift card",
+          "type": "DataObject",
+          "mention": "gift card",
+          "confidence": "high"
+        },
+        {
+          "name": "discount code",
+          "type": "DataObject",
+          "mention": "discount code",
+          "confidence": "high"
+        },
+        {
+          "name": "coupon",
+          "type": "DataObject",
+          "mention": "coupon",
+          "confidence": "high"
+        },
+        {
+          "name": "next-order coupon",
+          "type": "DataObject",
+          "mention": "next-order coupon",
+          "confidence": "high"
+        },
+        {
+          "name": "customer receipts",
+          "type": "Report",
+          "mention": "customer receipts",
+          "confidence": "high"
+        },
+        {
+          "name": "Enter Code",
+          "type": "Action",
+          "mention": "Enter Code",
+          "confidence": "high"
+        },
+        {
+          "name": "Apply",
+          "type": "Action",
+          "mention": "Apply",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Enter Code",
+          "relation": "PRODUCES",
+          "target": "gift card",
+          "evidence": "To apply a gift card ... select ... Enter Code, enter or scan the code"
+        },
+        {
+          "source": "Enter Code",
+          "relation": "PRODUCES",
+          "target": "discount code",
+          "evidence": "To apply a ... discount code ... select ... Enter Code, enter or scan the code"
+        },
+        {
+          "source": "Enter Code",
+          "relation": "PRODUCES",
+          "target": "coupon",
+          "evidence": "To apply a ... coupon ... select ... Enter Code, enter or scan the code"
+        },
+        {
+          "source": "Apply",
+          "relation": "ENABLES",
+          "target": "gift card",
+          "evidence": "... enter or scan the code, and click Apply"
+        },
+        {
+          "source": "Apply",
+          "relation": "ENABLES",
+          "target": "discount code",
+          "evidence": "... enter or scan the code, and click Apply"
+        },
+        {
+          "source": "Apply",
+          "relation": "ENABLES",
+          "target": "coupon",
+          "evidence": "... enter or scan the code, and click Apply"
+        },
+        {
+          "source": "customer receipts",
+          "relation": "CONTAINS",
+          "target": "coupon",
+          "evidence": "Coupon ... codes are printed directly on customer receipts"
+        },
+        {
+          "source": "customer receipts",
+          "relation": "CONTAINS",
+          "target": "next-order coupon",
+          "evidence": "Coupon and next-order coupon codes are printed directly on customer receipts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "promotions",
+    "heading": "Promotions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Promotions",
+          "type": "Feature",
+          "mention": "Promotions",
+          "confidence": "high"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "medium"
+        },
+        {
+          "name": "program conditions",
+          "type": "Feature",
+          "mention": "program conditions",
+          "confidence": "medium"
+        },
+        {
+          "name": "minimum spent",
+          "type": "Feature",
+          "mention": "minimum spent",
+          "confidence": "low"
+        },
+        {
+          "name": "specific products",
+          "type": "Product",
+          "mention": "specific products",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Promotions",
+          "relation": "APPLIES_TO",
+          "target": "order",
+          "evidence": "Promotions are applied to the order"
+        },
+        {
+          "source": "Promotions",
+          "relation": "ENABLES",
+          "target": "program conditions",
+          "evidence": "Promotions are applied to the order as soon as all program conditions are met"
+        },
+        {
+          "source": "program conditions",
+          "relation": "CONTAINS",
+          "target": "minimum spent",
+          "evidence": "program conditions (such as minimum spent)"
+        },
+        {
+          "source": "program conditions",
+          "relation": "CONTAINS",
+          "target": "specific products",
+          "evidence": "program conditions (such as specific products)"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "buy-x-get-y",
+    "heading": "Buy X get Y",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Buy X get Y deal",
+          "type": "Feature",
+          "mention": "**Buy X get Y** deal",
+          "confidence": "high"
+        },
+        {
+          "name": "Reward",
+          "type": "Feature",
+          "mention": "Reward",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-ellipsis-v icon",
+          "type": "Action",
+          "mention": "fa-ellipsis-v (vertical ellipsis) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-star Reward",
+          "type": "Action",
+          "mention": "fa-star Reward",
+          "confidence": "medium"
+        },
+        {
+          "name": "desired item",
+          "type": "DataObject",
+          "mention": "desired item",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Buy X get Y deal",
+          "evidence": "Product: Odoo ... When the order qualifies for a **Buy X get Y** deal"
+        },
+        {
+          "source": "Buy X get Y deal",
+          "relation": "REQUIRES",
+          "target": "Reward",
+          "evidence": "When the order qualifies for a **Buy X get Y** deal, the reward must be added manually"
+        },
+        {
+          "source": "fa-ellipsis-v icon",
+          "relation": "ENABLES",
+          "target": "fa-star Reward",
+          "evidence": "Click the fa-ellipsis-v (vertical ellipsis) icon, select fa-star Reward"
+        },
+        {
+          "source": "fa-star Reward",
+          "relation": "ENABLES",
+          "target": "desired item",
+          "evidence": "and choose the desired item from the list."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "loyalty-cards",
+    "heading": "Loyalty cards",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Loyalty points",
+          "type": "Feature",
+          "mention": "Loyalty point(s)",
+          "confidence": "high"
+        },
+        {
+          "name": "Loyalty cards",
+          "type": "Feature",
+          "mention": "Loyalty cards",
+          "confidence": "high"
+        },
+        {
+          "name": "oi-ellipsis-v",
+          "type": "Action",
+          "mention": "oi-ellipsis-v",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-star Reward",
+          "type": "Action",
+          "mention": "fa-star Reward",
+          "confidence": "high"
+        },
+        {
+          "name": "reward",
+          "type": "DataObject",
+          "mention": "reward",
+          "confidence": "medium"
+        },
+        {
+          "name": "POS register",
+          "type": "Module",
+          "mention": "POS register",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "cart",
+          "type": "DataObject",
+          "mention": "cart",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Loyalty cards",
+          "relation": "HAS_FEATURE",
+          "target": "Loyalty points",
+          "evidence": "To track or spend loyalty points, you must first select a customer"
+        },
+        {
+          "source": "Loyalty points",
+          "relation": "APPLIES_TO",
+          "target": "customer",
+          "evidence": "To track or spend loyalty points, you must first select a customer"
+        },
+        {
+          "source": "POS register",
+          "relation": "CONTAINS",
+          "target": "cart",
+          "evidence": "their Loyalty point(s) are displayed at the bottom of the cart"
+        },
+        {
+          "source": "Loyalty points",
+          "relation": "BELONGS_TO",
+          "target": "cart",
+          "evidence": "their Loyalty point(s) are displayed at the bottom of the cart"
+        },
+        {
+          "source": "oi-ellipsis-v",
+          "relation": "ENABLES",
+          "target": "fa-star Reward",
+          "evidence": "click the oi-ellipsis-v (vertical ellipsis) icon, select fa-star Reward"
+        },
+        {
+          "source": "fa-star Reward",
+          "relation": "PRODUCES",
+          "target": "reward",
+          "evidence": "choose the desired item from the list"
+        },
+        {
+          "source": "fa-star Reward",
+          "relation": "APPLIES_TO",
+          "target": "Loyalty points",
+          "evidence": "To redeem points for a reward"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "pricelists",
+    "heading": "Pricelists",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricelists",
+          "type": "Module",
+          "mention": "Title: Pricelists",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pricelists",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Pricelists"
+        },
+        {
+          "source": "Pricelists",
+          "relation": "ENABLES",
+          "target": "automate price adjustments",
+          "evidence": "Pricelists allow you to automate price adjustments"
+        },
+        {
+          "source": "Pricelists",
+          "relation": "CONFIGURED_BY",
+          "target": "specific criteria",
+          "evidence": "automate price adjustments based on specific criteria"
+        },
+        {
+          "source": "Pricelists",
+          "relation": "ENABLES",
+          "target": "set POS-specific prices",
+          "evidence": "They can be used to set POS-specific prices"
+        },
+        {
+          "source": "Pricelists",
+          "relation": "ENABLES",
+          "target": "create temporary discount periods",
+          "evidence": "create temporary discount periods"
+        },
+        {
+          "source": "Pricelists",
+          "relation": "ENABLES",
+          "target": "reward loyal customers",
+          "evidence": "reward loyal customers"
+        },
+        {
+          "source": "Pricelists",
+          "relation": "ENABLES",
+          "target": "offer bulk-buy discounts",
+          "evidence": "offer bulk-buy discounts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale app",
+          "type": "Module",
+          "mention": "Point of Sale app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricing section",
+          "type": "Feature",
+          "mention": "Pricing section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Flexible Pricelists feature",
+          "type": "Feature",
+          "mention": "Flexible Pricelists feature",
+          "confidence": "high"
+        },
+        {
+          "name": "Pricelists",
+          "type": "Feature",
+          "mention": "Pricelists",
+          "confidence": "medium"
+        },
+        {
+          "name": "Available field",
+          "type": "Field",
+          "mention": "Available field",
+          "confidence": "high"
+        },
+        {
+          "name": "Default",
+          "type": "Setting",
+          "mention": "Default",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Point of Sale app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Point of Sale app",
+          "evidence": "Navigate to Point of Sale --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Navigate to Point of Sale --> Configuration --> Settings"
+        },
+        {
+          "source": "Flexible Pricelists feature",
+          "relation": "ENABLES",
+          "target": "Pricelists",
+          "evidence": "activate the Flexible Pricelists feature and Save"
+        },
+        {
+          "source": "Available field",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "return to the POS settings to add all relevant pricelists to the Available field"
+        },
+        {
+          "source": "Default",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "select the one to be used as the Default"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "assign-pricelists",
+    "heading": "Assign pricelists",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Assign pricelists",
+          "type": "Action",
+          "mention": "Assign pricelists",
+          "confidence": "high"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "high"
+        },
+        {
+          "name": "POS register",
+          "type": "Feature",
+          "mention": "POS register",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-ellipsis-v icon",
+          "type": "Action",
+          "mention": "fa-ellipsis-v (vertical ellipsis) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-th-list icon",
+          "type": "Action",
+          "mention": "fa-th-list icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "pricelist",
+          "type": "DataObject",
+          "mention": "pricelist",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "DataObject",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Customers",
+          "type": "DataObject",
+          "mention": "Customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pricelist field",
+          "type": "Field",
+          "mention": "Pricelist field",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales section",
+          "type": "Module",
+          "mention": "Sales section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales & Purchase tab",
+          "type": "Module",
+          "mention": "Sales & Purchase tab",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pricing",
+          "type": "Feature",
+          "mention": "pricing",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Assign pricelists",
+          "relation": "PERFORMED_BY",
+          "target": "customer",
+          "evidence": "You can also set a pricelist to be selected automatically for a specific customer"
+        },
+        {
+          "source": "pricelist",
+          "relation": "BELONGS_TO",
+          "target": "order",
+          "evidence": "assign a pricelist to an order"
+        },
+        {
+          "source": "POS register",
+          "relation": "HAS_FEATURE",
+          "target": "fa-ellipsis-v icon",
+          "evidence": "click the fa-ellipsis-v (vertical ellipsis) icon and the fa-th-list icon"
+        },
+        {
+          "source": "POS register",
+          "relation": "HAS_FEATURE",
+          "target": "fa-th-list icon",
+          "evidence": "click the fa-ellipsis-v (vertical ellipsis) icon and the fa-th-list icon"
+        },
+        {
+          "source": "customer",
+          "relation": "CONFIGURED_BY",
+          "target": "Pricelist field",
+          "evidence": "assign a pricelist in the Pricelist field of the Sales section"
+        },
+        {
+          "source": "Sales section",
+          "relation": "IS_PART_OF",
+          "target": "Sales & Purchase tab",
+          "evidence": "Sales section in the Sales & Purchase tab"
+        },
+        {
+          "source": "Pricing",
+          "relation": "SEE_ALSO",
+          "target": "Pricelists",
+          "evidence": "Pricelists in eCommerce"
+        },
+        {
+          "source": "Assign pricelists",
+          "relation": "SEE_ALSO",
+          "target": "pricing",
+          "evidence": "../../sales/products_prices/prices/pricing"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "cash-rounding",
+    "heading": "Cash rounding",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Cash rounding",
+          "type": "Concept",
+          "mention": "Cash rounding",
+          "confidence": "high"
+        },
+        {
+          "name": "Currency denomination",
+          "type": "Concept",
+          "mention": "physical currency denomination",
+          "confidence": "medium"
+        },
+        {
+          "name": "Coin",
+          "type": "Concept",
+          "mention": "coin",
+          "confidence": "medium"
+        },
+        {
+          "name": "Unit of account",
+          "type": "Concept",
+          "mention": "unit of account",
+          "confidence": "medium"
+        },
+        {
+          "name": "Point of sale",
+          "type": "Module",
+          "mention": "point of sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Rounding rules",
+          "type": "Setting",
+          "mention": "rounding rules",
+          "confidence": "high"
+        },
+        {
+          "name": "Bills",
+          "type": "DataObject",
+          "mention": "bills",
+          "confidence": "low"
+        },
+        {
+          "name": "Receipts",
+          "type": "DataObject",
+          "mention": "receipts",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Cash rounding",
+          "relation": "APPLIES_TO",
+          "target": "Currency denomination",
+          "evidence": "Cash rounding is used when the smallest physical currency denomination (the smallest coin) is higher than the minimum unit of account."
+        },
+        {
+          "source": "Cash rounding",
+          "relation": "RELATED_TO",
+          "target": "Coin",
+          "evidence": "Cash rounding is used when the smallest physical currency denomination (the smallest coin) is higher than the minimum unit of account."
+        },
+        {
+          "source": "Cash rounding",
+          "relation": "RELATED_TO",
+          "target": "Unit of account",
+          "evidence": "Cash rounding is used when the smallest physical currency denomination (the smallest coin) is higher than the minimum unit of account."
+        },
+        {
+          "source": "Point of sale",
+          "relation": "CONFIGURED_BY",
+          "target": "Rounding rules",
+          "evidence": "In Odoo, each point of sale can be individually configured to apply these rounding rules to bills and receipts."
+        },
+        {
+          "source": "Rounding rules",
+          "relation": "APPLIES_TO",
+          "target": "Bills",
+          "evidence": "In Odoo, each point of sale can be individually configured to apply these rounding rules to bills and receipts."
+        },
+        {
+          "source": "Rounding rules",
+          "relation": "APPLIES_TO",
+          "target": "Receipts",
+          "evidence": "In Odoo, each point of sale can be individually configured to apply these rounding rules to bills and receipts."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "error": "Expecting ':' delimiter: line 1 column 3223 (char 3222)",
+      "raw_response": "{\"entities\":[{\"name\":\"Odoo\",\"type\":\"Product\",\"mention\":\"Odoo\",\"confidence\":\"high\"},{\"name\":\"Point of Sale\",\"type\":\"Module\",\"mention\":\"Point of Sale\",\"confidence\":\"high\"},{\"name\":\"Configuration\",\"type\":\"Module\",\"mention\":\"Configuration\",\"confidence\":\"high\"},{\"name\":\"Settings\",\"type\":\"Sub-module\",\"mention\":\"Settings\",\"confidence\":\"medium\"},{\"name\":\"Payment\",\"type\":\"Sub-module\",\"mention\":\"Payment\",\"confidence\":\"medium\"},{\"name\":\"Cash Rounding\",\"type\":\"Feature\",\"mention\":\"Cash Rounding\",\"confidence\":\"high\"},{\"name\":\"Apply only on cash methods\",\"type\":\"Setting\",\"mention\":\"Apply only on cash methods\",\"confidence\":\"high\"},{\"name\":\"Rounding Method\",\"type\":\"Field\",\"mention\":\"Rounding Method\",\"confidence\":\"high\"},{\"name\":\"Rounding Precision\",\"type\":\"Field\",\"mention\":\"Rounding Precision\",\"confidence\":\"high\"},{\"name\":\"Rounding Strategy\",\"type\":\"Field\",\"mention\":\"Rounding Strategy\",\"confidence\":\"high\"},{\"name\":\"Modify tax amount\",\"type\":\"Feature\",\"mention\":\"Modify tax amount\",\"confidence\":\"high\"},{\"name\":\"Add a rounding line\",\"type\":\"Feature\",\"mention\":\"Add a rounding line\",\"confidence\":\"high\"},{\"name\":\"Profit Account\",\"type\":\"Field\",\"mention\":\"Profit Account\",\"confidence\":\"high\"},{\"name\":\"Loss Account\",\"type\":\"Field\",\"mention\":\"Loss Account\",\"confidence\":\"high\"},{\"name\":\"Up\",\"type\":\"Setting\",\"mention\":\"Up\",\"confidence\":\"medium\"},{\"name\":\"Down\",\"type\":\"Setting\",\"mention\":\"Down\",\"confidence\":\"medium\"},{\"name\":\"Nearest\",\"type\":\"Setting\",\"mention\":\"Nearest\",\"confidence\":\"medium\"},{\"name\":\"receipt\",\"type\":\"DataObject\",\"mention\":\"receipt\",\"confidence\":\"medium\"},{\"name\":\"invoice\",\"type\":\"DataObject\",\"mention\":\"invoice\",\"confidence\":\"medium\"},{\"name\":\"Total\",\"type\":\"Field\",\"mention\":\"Total\",\"confidence\":\"medium\"}],\"relations\":[{\"source\":\"Point of Sale\",\"relation\":\"IS_PART_OF\",\"target\":\"Odoo\",\"evidence\":\"Go to Point of Sale --> Configuration --> Settings.\"},{\"source\":\"Configuration\",\"relation\":\"IS_PART_OF\",\"target\":\"Point of Sale\",\"evidence\":\"Go to Point of Sale --> Configuration --> Settings.\"},{\"source\":\"Settings\",\"relation\":\"IS_PART_OF\",\"target\":\"Configuration\",\"evidence\":\"Go to Point of Sale --> Configuration --> Settings.\"},{\"source\":\"Payment\",\"relation\":\"IS_PART_OF\",\"target\":\"Settings\",\"evidence\":\"In the Payment section\"},{\"source\":\"Cash Rounding\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Apply only on cash methods\",\"evidence\":\"Enable Apply only on cash methods to deactivate rounding for card payments\"},{\"source\":\"Cash Rounding\",\"relation\":\"CONFIGURED_BY\",\"target\":\"Rounding Method\",\"evidence\":\"In the Rounding Method field, select an existing method\"},{\"source\":\"Rounding Method\",\"relation\":\"CONTAINS\",\"target\":\"Rounding Precision\",\"evidence\":\"Rounding Precision: The value of the smallest coinage available\"},{\"source\":\"Rounding Method\",\"relation\":\"CONTAINS\",\"target\":\"Rounding Strategy\",\"evidence\":\"Rounding Strategy: Choose how the adjustment is recorded\"},{\"source\":\"Rounding Method\",\"relation\":\"CONTAINS\",\"target\":\"Profit Account\",\"evidence\":\"Profit Account and Loss Account: The accounts used\"},{\"source\":\"Rounding Method\",\"relation\":\"CONTAINS\",\"target\":\"Loss Account\",\"evidence\":\"Profit Account and Loss Account: The accounts used\"},{\"source\":\"Rounding Method\",\"relation\":\"CONTAINS\",\"tdown\",\"Up\",\"evidence\":\"Up\"},{\"source\":\"Rounding Method\",\"relation\":\"CONTAINS\",\"target\":\"Down\",\"evidence\":\"Down\"},{\"source\":\"Rounding Method\",\"relation\":\"CONTAINS\",\"target\":\"Nearest\",\"evidence\":\"Nearest\"},{\"source\":\"Add a rounding line\",\"relation\":\"GENERATES\",\"target\":\"receipt\",\"evidence\":\"The rounding difference is added as a separate line on the receipt\"},{\"source\":\"Add a rounding line\",\"relation\":\"GENERATES\",\"target\":\"invoice\",\"evidence\":\"The rounding difference is added as a separate line on the invoice\"},{\"source\":\"Add a rounding line\",\"relation\":\"ENABLES\",\"target\":\"Cash Rounding\",\"evidence\":\"Odoo Point of Sale only supports the Add a rounding line rounding strategy.\"},{\"source\":\"Cash Rounding\",\"relation\":\"APPLIES_TO\",\"target\":\"Total\",\"evidence\":\"Rounding only applies to the **Total** of the receipt, not to individual product prices.\"}]}"
+    }
+  },
+  {
+    "section_id": "flexible-taxes-(fiscal-positions)",
+    "heading": "Flexible taxes (fiscal positions)",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Flexible taxes",
+          "type": "Feature",
+          "mention": "Flexible taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "fiscal positions",
+          "type": "Feature",
+          "mention": "fiscal positions",
+          "confidence": "high"
+        },
+        {
+          "name": "taxes",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "accounts",
+          "type": "Concept",
+          "mention": "accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "transaction",
+          "type": "Concept",
+          "mention": "transaction",
+          "confidence": "medium"
+        },
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "../../../finance/accounting/taxes/fiscal_positions",
+          "type": "Concept",
+          "mention": "../../../finance/accounting/taxes/fiscal_positions",
+          "confidence": "medium"
+        },
+        {
+          "name": "../../../finance/accounting/taxes",
+          "type": "Concept",
+          "mention": "../../../finance/accounting/taxes",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "fiscal positions",
+          "relation": "ENABLES",
+          "target": "Flexible taxes",
+          "evidence": "Fiscal positions allow you to define rules that automatically select the appropriate taxes and accounts used for each transaction."
+        },
+        {
+          "source": "Flexible taxes",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Flexible taxes (fiscal positions)"
+        },
+        {
+          "source": "fiscal positions",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Flexible taxes (fiscal positions)"
+        },
+        {
+          "source": "../../../finance/accounting/taxes/fiscal_positions",
+          "relation": "SEE_ALSO",
+          "target": "fiscal positions",
+          "evidence": ".. seealso:: - ../../../finance/accounting/taxes/fiscal_positions"
+        },
+        {
+          "source": "../../../finance/accounting/taxes",
+          "relation": "SEE_ALSO",
+          "target": "taxes",
+          "evidence": ".. seealso:: - ../../../finance/accounting/taxes"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting section",
+          "confidence": "medium"
+        },
+        {
+          "name": "Flexible Taxes",
+          "type": "Feature",
+          "mention": "Flexible Taxes",
+          "confidence": "high"
+        },
+        {
+          "name": "Default fiscal position",
+          "type": "Setting",
+          "mention": "Set the default fiscal position",
+          "confidence": "high"
+        },
+        {
+          "name": "Default field",
+          "type": "Field",
+          "mention": "Default field",
+          "confidence": "high"
+        },
+        {
+          "name": "Allowed field",
+          "type": "Field",
+          "mention": "Allowed field",
+          "confidence": "high"
+        },
+        {
+          "name": "fiscal position",
+          "type": "Concept",
+          "mention": "configure the fiscal position",
+          "confidence": "high"
+        },
+        {
+          "name": "sales",
+          "type": "Concept",
+          "mention": "sales",
+          "confidence": "medium"
+        },
+        {
+          "name": "POS",
+          "type": "Concept",
+          "mention": "selected POS",
+          "confidence": "medium"
+        },
+        {
+          "name": "fiscal localization package",
+          "type": "Module",
+          "mention": "fiscal localization package",
+          "confidence": "medium"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sales Taxes field",
+          "type": "Field",
+          "mention": "Sales Taxes field",
+          "confidence": "high"
+        },
+        {
+          "name": "product",
+          "type": "Concept",
+          "mention": "product's",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Flexible Taxes",
+          "relation": "ENABLES",
+          "target": "fiscal position",
+          "evidence": "enable Flexible Taxes. Then, configure the fiscal position"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "Point of Sale",
+          "evidence": "Point of Sale --> Configuration"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Accounting",
+          "relation": "IS_PART_OF",
+          "target": "Settings",
+          "evidence": "Settings, scroll down to the Accounting section"
+        },
+        {
+          "source": "Default fiscal position",
+          "relation": "CONFIGURED_BY",
+          "target": "Default field",
+          "evidence": "Set the default fiscal position ... using the Default field"
+        },
+        {
+          "source": "Default fiscal position",
+          "relation": "APPLIES_TO",
+          "target": "sales",
+          "evidence": "applied to all sales"
+        },
+        {
+          "source": "Default fiscal position",
+          "relation": "APPLIES_TO",
+          "target": "POS",
+          "evidence": "to all sales in the selected POS"
+        },
+        {
+          "source": "Allowed field",
+          "relation": "ENABLES",
+          "target": "fiscal position",
+          "evidence": "Select additional fiscal positions ... to make them selectable"
+        },
+        {
+          "source": "fiscal localization package",
+          "relation": "CONTAINS",
+          "target": "fiscal position",
+          "evidence": "several fiscal positions are already preconfigured"
+        },
+        {
+          "source": "Default fiscal position",
+          "relation": "APPLIES_TO",
+          "target": "customer",
+          "evidence": "A default fiscal position can also be assigned to a customer"
+        },
+        {
+          "source": "Sales Taxes field",
+          "relation": "APPLIES_TO",
+          "target": "product",
+          "evidence": "tax defined in the product's Sales Taxes field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "apply-fiscal-positions",
+    "heading": "Apply fiscal positions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "fiscal position",
+          "type": "Setting",
+          "mention": "fiscal position",
+          "confidence": "high"
+        },
+        {
+          "name": "POS order",
+          "type": "DataObject",
+          "mention": "POS order",
+          "confidence": "high"
+        },
+        {
+          "name": "POS register",
+          "type": "Module",
+          "mention": "POS register",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-ellipsis-v (vertical ellipsis) icon",
+          "type": "Action",
+          "mention": "click the fa-ellipsis-v (vertical ellipsis) icon",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-book Tax button",
+          "type": "Action",
+          "mention": "click the fa-book Tax button",
+          "confidence": "high"
+        },
+        {
+          "name": "choose the desired fiscal position from the list",
+          "type": "Action",
+          "mention": "choose the desired fiscal position from the list",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "POS order",
+          "relation": "CONFIGURED_BY",
+          "target": "fiscal position",
+          "evidence": "apply a fiscal position to a POS order"
+        },
+        {
+          "source": "POS order",
+          "relation": "APPLIES_TO",
+          "target": "fiscal position",
+          "evidence": "apply a fiscal position to a POS order"
+        },
+        {
+          "source": "POS register",
+          "relation": "CONTAINS",
+          "target": "POS order",
+          "evidence": "POS order in the POS register"
+        },
+        {
+          "source": "fa-ellipsis-v (vertical ellipsis) icon",
+          "relation": "TRIGGERED_BY",
+          "target": "POS register",
+          "evidence": "in the POS register click the fa-ellipsis-v (vertical ellipsis) icon"
+        },
+        {
+          "source": "fa-book Tax button",
+          "relation": "TRIGGERED_BY",
+          "target": "fa-ellipsis-v (vertical ellipsis) icon",
+          "evidence": "click the fa-ellipsis-v (vertical ellipsis) icon, click the fa-book Tax button"
+        },
+        {
+          "source": "choose the desired fiscal position from the list",
+          "relation": "TRIGGERED_BY",
+          "target": "fa-book Tax button",
+          "evidence": "click the fa-book Tax button, and choose the desired fiscal position from the list"
+        },
+        {
+          "source": "choose the desired fiscal position from the list",
+          "relation": "PERFORMED_BY",
+          "target": "fiscal position",
+          "evidence": "choose the desired fiscal position from the list"
+        }
+      ]
+    }
+  }
+]

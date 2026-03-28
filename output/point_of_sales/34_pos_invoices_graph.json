@@ -1,0 +1,617 @@
+[
+  {
+    "section_id": "invoices",
+    "heading": "Invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoices",
+          "type": "Sub-module",
+          "mention": "Invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "issue invoices",
+          "type": "Action",
+          "mention": "issue",
+          "confidence": "high"
+        },
+        {
+          "name": "print invoices",
+          "type": "Action",
+          "mention": "print invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "retrieve past invoiced orders",
+          "type": "Action",
+          "mention": "retrieve all past invoiced orders",
+          "confidence": "high"
+        },
+        {
+          "name": "registered customers",
+          "type": "Actor",
+          "mention": "registered customers",
+          "confidence": "high"
+        },
+        {
+          "name": "payment",
+          "type": "Action",
+          "mention": "payment",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "accounting journal",
+          "type": "DataObject",
+          "mention": "accounting journal",
+          "confidence": "high"
+        },
+        {
+          "name": "POS settings",
+          "type": "Setting",
+          "mention": "POS settings",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice configuration",
+          "type": "Setting",
+          "mention": "invoice configuration",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Invoices",
+          "relation": "IS_PART_OF",
+          "target": "Point of Sale",
+          "evidence": "Invoices sub-module in Point of Sale"
+        },
+        {
+          "source": "Point of Sale",
+          "relation": "HAS_FEATURE",
+          "target": "issue invoices",
+          "evidence": "Point of Sale allows you to issue invoices"
+        },
+        {
+          "source": "Point of Sale",
+          "relation": "HAS_FEATURE",
+          "target": "print invoices",
+          "evidence": "Point of Sale allows you to print invoices"
+        },
+        {
+          "source": "Point of Sale",
+          "relation": "HAS_FEATURE",
+          "target": "retrieve past invoiced orders",
+          "evidence": "Point of Sale allows you to retrieve all past invoiced orders"
+        },
+        {
+          "source": "issue invoices",
+          "relation": "TRIGGERED_BY",
+          "target": "payment",
+          "evidence": "issue invoices upon payment"
+        },
+        {
+          "source": "issue invoices",
+          "relation": "APPLIES_TO",
+          "target": "registered customers",
+          "evidence": "issue invoices for registered customers"
+        },
+        {
+          "source": "invoice",
+          "relation": "GENERATES",
+          "target": "accounting journal",
+          "evidence": "An invoice creates an entry into the corresponding accounting journal"
+        },
+        {
+          "source": "accounting journal",
+          "relation": "CONFIGURED_BY",
+          "target": "POS settings",
+          "evidence": "accounting journal configured in the POS settings"
+        },
+        {
+          "source": "invoice configuration",
+          "relation": "RELATED_TO",
+          "target": "POS settings",
+          "evidence": "configured in the POS settings <pos_invoices/invoice_configuration>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "configuration",
+    "heading": "Configuration",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "POS",
+          "type": "Module",
+          "mention": "POS",
+          "confidence": "high"
+        },
+        {
+          "name": "Default Journals",
+          "type": "Setting",
+          "mention": "Default Journals",
+          "confidence": "medium"
+        },
+        {
+          "name": "Orders",
+          "type": "DataObject",
+          "mention": "Orders",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoices",
+          "type": "DataObject",
+          "mention": "Invoices",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment method",
+          "type": "Feature",
+          "mention": "payment method",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Default Journals",
+          "relation": "CONFIGURED_BY",
+          "target": "POS",
+          "evidence": "To define the default journals for a specific POS, go to the POS' settings",
+          "confidence": "high"
+        },
+        {
+          "source": "Default Journals",
+          "relation": "APPLIES_TO",
+          "target": "Orders",
+          "evidence": "select the appropriate journals for Orders and Invoices under Default Journals",
+          "confidence": "high"
+        },
+        {
+          "source": "Default Journals",
+          "relation": "APPLIES_TO",
+          "target": "Invoices",
+          "evidence": "select the appropriate journals for Orders and Invoices under Default Journals",
+          "confidence": "high"
+        },
+        {
+          "source": "payment method",
+          "relation": "SEE_ALSO",
+          "target": "Default Journals",
+          "evidence": "Specific journals can also be defined for each payment method",
+          "confidence": "high"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "invoice-a-customer",
+    "heading": "Invoice a customer",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice a customer",
+          "type": "Workflow",
+          "mention": "Title: Invoice a customer",
+          "confidence": "high"
+        },
+        {
+          "name": "customer",
+          "type": "Actor",
+          "mention": "customer",
+          "confidence": "high"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "medium"
+        },
+        {
+          "name": "payment",
+          "type": "Action",
+          "mention": "payment",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoice",
+          "type": "Action",
+          "mention": "click Invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "issue an invoice, The invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "payment method",
+          "type": "Setting",
+          "mention": "payment method",
+          "confidence": "medium"
+        },
+        {
+          "name": "Validate",
+          "type": "Action",
+          "mention": "click Validate",
+          "confidence": "high"
+        },
+        {
+          "name": "downloaded",
+          "type": "Action",
+          "mention": "ready to be downloaded",
+          "confidence": "medium"
+        },
+        {
+          "name": "printed",
+          "type": "Action",
+          "mention": "and/or printed",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Invoice a customer",
+          "evidence": "Product: Odoo Title: Invoice a customer",
+          "confidence": "high"
+        },
+        {
+          "source": "Invoice a customer",
+          "relation": "REQUIRES",
+          "target": "customer",
+          "evidence": "To invoice a customer, first make sure a customer is set",
+          "confidence": "high"
+        },
+        {
+          "source": "Invoice a customer",
+          "relation": "REQUIRES",
+          "target": "order",
+          "evidence": "for the order",
+          "confidence": "medium"
+        },
+        {
+          "source": "Invoice a customer",
+          "relation": "TRIGGERED_BY",
+          "target": "payment",
+          "evidence": "upon processing the payment",
+          "confidence": "medium"
+        },
+        {
+          "source": "Invoice a customer",
+          "relation": "CONTAINS",
+          "target": "Invoice",
+          "evidence": "click Invoice... to issue an invoice",
+          "confidence": "high"
+        },
+        {
+          "source": "Invoice",
+          "relation": "PRODUCES",
+          "target": "invoice",
+          "evidence": "click Invoice... to issue an invoice",
+          "confidence": "high"
+        },
+        {
+          "source": "Invoice",
+          "relation": "REQUIRES",
+          "target": "payment method",
+          "evidence": "Select the payment method",
+          "confidence": "medium"
+        },
+        {
+          "source": "Invoice",
+          "relation": "CONTAINS",
+          "target": "Validate",
+          "evidence": "click Validate",
+          "confidence": "high"
+        },
+        {
+          "source": "invoice",
+          "relation": "GENERATES",
+          "target": "downloaded",
+          "evidence": "ready to be downloaded",
+          "confidence": "medium"
+        },
+        {
+          "source": "invoice",
+          "relation": "GENERATES",
+          "target": "printed",
+          "evidence": "and/or printed",
+          "confidence": "medium"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "retrieve-invoices",
+    "heading": "Retrieve invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Retrieve invoices",
+          "type": "Action",
+          "mention": "Title: Retrieve invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "Sub-module",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "Orders",
+          "type": "DataObject",
+          "mention": "Orders",
+          "confidence": "high"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "high"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Invoice smart button",
+          "type": "Feature",
+          "mention": "Invoice smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "Fully Invoiced",
+          "type": "Concept",
+          "mention": "Fully Invoiced",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoice Status",
+          "type": "Concept",
+          "mention": "Invoice Status",
+          "confidence": "medium"
+        },
+        {
+          "name": "Invoiced filter",
+          "type": "Feature",
+          "mention": "Invoiced filter",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Retrieve invoices",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "To retrieve the invoice of a POS order"
+        },
+        {
+          "source": "Orders",
+          "relation": "IS_PART_OF",
+          "target": "Point of Sale",
+          "evidence": "Go to Point of Sale --> Orders --> Orders"
+        },
+        {
+          "source": "Invoice smart button",
+          "relation": "BELONGS_TO",
+          "target": "order",
+          "evidence": "On the order form, click the Invoice smart button"
+        },
+        {
+          "source": "Fully Invoiced",
+          "relation": "RELATED_TO",
+          "target": "Invoice Status",
+          "evidence": "Invoiced orders have the Fully Invoiced Invoice Status"
+        },
+        {
+          "source": "Invoiced filter",
+          "relation": "HAS_FEATURE",
+          "target": "Orders",
+          "evidence": "You can filter the list of orders... select the Invoiced filter"
+        },
+        {
+          "source": "Invoiced filter",
+          "relation": "IS_PART_OF",
+          "target": "search bar",
+          "evidence": "click the search bar and select the Invoiced filter"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "qr-codes-to-generate-invoices",
+    "heading": "QR codes to generate invoices",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "QR codes to generate invoices",
+          "type": "Feature",
+          "mention": "QR codes to generate invoices",
+          "confidence": "high"
+        },
+        {
+          "name": "Point of Sale",
+          "type": "Module",
+          "mention": "Point of Sale",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Setting",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Use QR code on ticket",
+          "type": "Setting",
+          "mention": "enable Use QR code on ticket",
+          "confidence": "high"
+        },
+        {
+          "name": "Get my invoice",
+          "type": "Action",
+          "mention": "click Get my invoice",
+          "confidence": "high"
+        },
+        {
+          "name": "Customers",
+          "type": "Actor",
+          "mention": "Customers",
+          "confidence": "medium"
+        },
+        {
+          "name": "invoice",
+          "type": "DataObject",
+          "mention": "invoice",
+          "confidence": "medium"
+        },
+        {
+          "name": "receipt",
+          "type": "DataObject",
+          "mention": "receipt",
+          "confidence": "medium"
+        },
+        {
+          "name": "order",
+          "type": "DataObject",
+          "mention": "order",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fully invoiced",
+          "type": "Standard",
+          "mention": "Fully invoiced",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "QR codes to generate invoices",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: QR codes to generate invoices"
+        },
+        {
+          "source": "QR codes to generate invoices",
+          "relation": "REQUIRES",
+          "target": "Use QR code on ticket",
+          "evidence": "To use this feature, enable QR codes on receipts by going to Point of Sale --> Configuration --> Settings. Then, select the POS in the Point of Sale field, scroll down to the Bills & Receipts section, and enable Use QR code on ticket."
+        },
+        {
+          "source": "Use QR code on ticket",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "To use this feature, enable QR codes on receipts by going to Point of Sale --> Configuration --> Settings. Then, select the POS in the Point of Sale field, scroll down to the Bills & Receipts section, and enable Use QR code on ticket."
+        },
+        {
+          "source": "Settings",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "Point of Sale --> Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Point of Sale",
+          "evidence": "Point of Sale --> Configuration --> Settings"
+        },
+        {
+          "source": "Point of Sale",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: QR codes to generate invoices ... by going to Point of Sale"
+        },
+        {
+          "source": "Get my invoice",
+          "relation": "PERFORMED_BY",
+          "target": "Customers",
+          "evidence": "Customers can also request an invoice by scanning the QR code printed on their receipt. Upon scanning, they must fill in a form with their billing information and click Get my invoice."
+        },
+        {
+          "source": "Get my invoice",
+          "relation": "PRODUCES",
+          "target": "invoice",
+          "evidence": "The invoice is then generated and available for download and the order's status is updated to Fully invoiced."
+        },
+        {
+          "source": "invoice",
+          "relation": "RELATED_TO",
+          "target": "order",
+          "evidence": "the order's status is updated to Fully invoiced."
+        },
+        {
+          "source": "order",
+          "relation": "COMPLIES_WITH",
+          "target": "Fully invoiced",
+          "evidence": "the order's status is updated to Fully invoiced."
+        }
+      ]
+    }
+  }
+]
