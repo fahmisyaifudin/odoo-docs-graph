@@ -76,8 +76,9 @@ def create_nodes_and_relations(driver, json_data, database="neo4j"):
       - type: entity type
       - mention: original mention text
       - confidence: confidence level (high/medium/low)
-      - product: product name
+      - product: product name, example "Odoo"
       - section_id: section identifier
+      - module: module name, example "Point of Sales"
       - heading: section heading
     
     Relationships:
@@ -117,6 +118,7 @@ def create_nodes_and_relations(driver, json_data, database="neo4j"):
                     MERGE (n:`{safe_label}` {{name: $name}})
                     SET n.type = $type,
                         n.mention = $mention,
+                        n.module = $module,
                         n.confidence = $confidence,
                         n.product = $product,
                         n.section_id = $section_id,
@@ -130,6 +132,7 @@ def create_nodes_and_relations(driver, json_data, database="neo4j"):
                         mention=entity.get("mention", ""),
                         confidence=entity.get("confidence", ""),
                         product=product,
+                        module="Point of Sales",
                         section_id=section_id,
                         heading=heading
                     )

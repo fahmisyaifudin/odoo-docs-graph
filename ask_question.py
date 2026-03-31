@@ -5,10 +5,9 @@ from neo4j import GraphDatabase
 from openai import OpenAI
 from typing import List, Dict, Any
 from dotenv import load_dotenv
-
+from lib.prompt_to_cypher import prompt_to_cypher, is_safe_cypher
 
 load_dotenv()
-
 
 class QuestionAnswerer:
     def __init__(
@@ -38,6 +37,9 @@ class QuestionAnswerer:
         
         # LLM model for reasoning
         self.reasoning_model = "meta-llama/llama-3.1-8b-instruct"
+
+        # Cypher generation model
+        self.cypher_model = "deepseek/deepseek-v3.2"
 
     def close(self):
         self.driver.close()
@@ -233,109 +235,124 @@ class QuestionAnswerer:
         
         return "\n".join(context_parts)
 
-    def generate_llm_reasoning(
-        self, 
-        question: str, 
-        graph_context: str,
-        seed_results: List[Dict[str, Any]]
-    ) -> Dict[str, Any]:
+    def build_context_from_cypher_result(self, cypher_result: Dict[str, Any]) -> str:
         """
-        Use LLM to generate reasoning based on graph traversal results.
+        Build a readable text context from Cypher query execution results.
         
-        This function:
-        1. Builds a comprehensive prompt with context
-        2. Sends to LLM for reasoning
-        3. Returns structured answer with explanation
+        Args:
+            cypher_result: Result from execute_cypher_query containing:
+                - success: bool
+                - record_count: int
+                - records: list of dictionaries
+        
+        Returns:
+            Formatted string context for LLM consumption
         """
+        if not cypher_result.get("success", False):
+            error_msg = cypher_result.get("error", "Unknown error")
+            return f"Error executing Cypher query: {error_msg}"
         
-        # Build the system prompt
-        system_prompt = """You are an expert knowledge graph analyst. Your task is to answer user questions about ERP features based on the provided knowledge graph context.
-
-## Your Capabilities:
-1. Analyze the knowledge graph structure and relationships
-2. Identify relevant features, modules, and configurations
-3. Provide accurate, specific answers based on the graph data
-4. Explain your reasoning clearly
-
-## Response Format:
-You must respond in this JSON structure:
-{
-    "answer": "Your direct answer to the question",
-    "confidence": "high|medium|low",
-    "reasoning": "Step-by-step explanation of how you arrived at the answer",
-}
-
-## Important Rules:
-1. ONLY use information from the provided context
-2. If the context doesn't contain enough information, say so clearly
-3. Be specific about which nodes/features support your answer
-4. Reference the knowledge graph structure in your reasoning
-5. Do not make up information not present in the context
-"""
-
-        # Build the user prompt with context
-        user_prompt = f"""## User Question:
-{question}
-
-## Knowledge Graph Context:
-{graph_context}
-
-## Task:
-Based on the knowledge graph context provided above, answer the user's question.
-Provide your response in the required JSON format.
-"""
-
-        print("\n🤖 Sending to LLM for reasoning...")
+        records = cypher_result.get("records", [])
+        record_count = cypher_result.get("record_count", len(records))
         
-        try:
-            # Call the LLM
-            response = self.client.chat.completions.create(
-                model=self.reasoning_model,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                temperature=0.3,  # Lower for more focused answers
-                max_tokens=4000
-            )
+        if not records:
+            return "No results found from Cypher query."
+        
+        context_parts = []
+        context_parts.append("=" * 70)
+        context_parts.append("CYHER QUERY RESULTS")
+        context_parts.append("=" * 70)
+        context_parts.append(f"Total Records: {record_count}\n")
+        
+        # Show first 10 records in detail
+        display_limit = min(10, len(records))
+        context_parts.append(f"First {display_limit} Records:\n")
+        
+        for i, record in enumerate(records[:display_limit], 1):
+            context_parts.append(f"--- Record {i} ---")
             
-            # Parse the response
-            llm_response = response.choices[0].message.content
+            # Group fields by node alias if present
+            node_fields = {}
+            scalar_fields = {}
             
-            # Try to parse as JSON
-            try:
-                # Find JSON in the response (in case there's extra text)
-                json_start = llm_response.find('{')
-                json_end = llm_response.rfind('}') + 1
-                if json_start >= 0 and json_end > json_start:
-                    json_str = llm_response[json_start:json_end]
-                    parsed_response = json.loads(json_str)
+            for key, value in record.items():
+                if '.' in key:
+                    # Field from a node (e.g., "a.name")
+                    parts = key.split('.')
+                    node_alias = parts[0]
+                    prop_name = '.'.join(parts[1:])
+                    
+                    if node_alias not in node_fields:
+                        node_fields[node_alias] = {}
+                    node_fields[node_alias][prop_name] = value
                 else:
-                    parsed_response = json.loads(llm_response)
+                    # Scalar field or relationship type
+                    scalar_fields[key] = value
+            
+            # Output node fields first
+            for node_alias, properties in node_fields.items():
+                context_parts.append(f"  Node [{node_alias}]:")
+                for prop_name, prop_value in properties.items():
+                    # Truncate long values
+                    value_str = str(prop_value)
+                    if len(value_str) > 100:
+                        value_str = value_str[:100] + "..."
+                    context_parts.append(f"    {prop_name}: {value_str}")
+            
+            # Output scalar fields
+            for key, value in scalar_fields.items():
+                value_str = str(value)
+                if len(value_str) > 100:
+                    value_str = value_str[:100] + "..."
+                context_parts.append(f"  {key}: {value_str}")
+            
+            context_parts.append("")
+        
+        if len(records) > display_limit:
+            context_parts.append(f"... and {len(records) - display_limit} more records\n")
+        
+        # Add schema info for context
+        if records:
+            context_parts.append("=" * 70)
+            context_parts.append("RECORD SCHEMA")
+            context_parts.append("=" * 70)
+            first_record = records[0]
+            context_parts.append("Available fields in each record:")
+            for key in first_record.keys():
+                value = first_record[key]
+                value_type = type(value).__name__ if value is not None else "None"
+                context_parts.append(f"  - {key} ({value_type})")
+        
+        context_parts.append("\n" + "=" * 70)
+        
+        return "\n".join(context_parts)
+
+    def execute_cypher_query(self, query: str) -> Dict[str, Any]:
+        """
+        Execute a Cypher query on the graph database.
+        Returns a dictionary with 'records' key containing all query results.
+        """
+        try:
+            with self.driver.session(database=self.database) as session:
+                result = session.run(query)
+                # result.data() returns a list of dictionaries
+                records = result.data()
                 
-                print("✓ LLM reasoning complete")
                 return {
                     "success": True,
-                    "llm_response": parsed_response,
-                    "raw_response": llm_response
-                }
-                
-            except json.JSONDecodeError as e:
-                print(f"⚠️ Could not parse LLM response as JSON: {e}")
-                return {
-                    "success": False,
-                    "error": "JSON parse error",
-                    "raw_response": llm_response
+                    "record_count": len(records),
+                    "records": records
                 }
                 
         except Exception as e:
-            print(f"✗ LLM API error: {e}")
+            print(f"✗ Cypher query execution error: {e}")
             return {
                 "success": False,
-                "error": str(e)
+                "error": str(e),
+                "records": []
             }
 
-    def ask(self, question: str, top_k: int = 5, max_traversal_depth: int = 2) -> Dict[str, Any]:
+    def ask(self, question: str, top_k: int = 5, max_traversal_depth: int = 2, using_cypher: bool = False) -> Dict[str, Any]:
         """
         Complete workflow:
         1. Embed question
@@ -348,66 +365,90 @@ Provide your response in the required JSON format.
         print(f"\n{'='*70}")
         print(f"🔍 QUESTION: {question}")
         print(f"{'='*70}\n")
-        
+
+        if using_cypher is False:
         # Step 1: Generate embedding for the question
-        print("[1/5] Generating embedding for question...")
-        query_embedding = self.get_embedding(question)
-        print(f"✓ Generated {len(query_embedding)}-dim embedding\n")
+            print("[1/5] Generating embedding for question...")
+            query_embedding = self.get_embedding(question)
+            print(f"✓ Generated {len(query_embedding)}-dim embedding\n")
+            
+            # Step 2: Search for similar nodes (seed nodes)
+            print(f"[2/5] Searching for top {top_k} similar nodes...")
+            seed_results = self.search_similar_nodes(query_embedding, top_k)
+            print(f"✓ Found {len(seed_results)} seed nodes\n")
+            
+            if not seed_results:
+                return {
+                    "success": False,
+                    "error": "No similar nodes found in the database",
+                    "question": question
+                }
+            
+            # Step 3: Traverse graph from seed nodes
+            print(f"[3/5] Traversing graph from seed nodes (depth={max_traversal_depth})...")
+            seed_node_ids = [r["node_id"] for r in seed_results]
+            graph_data = self.traverse_graph_from_nodes(
+                seed_node_ids=seed_node_ids,
+                max_depth=max_traversal_depth,
+                max_nodes=50
+            )
+            total_nodes = len(graph_data.get("nodes", []))
+            total_rels = len(graph_data.get("relationships", []))
+            print(f"✓ Traversal complete: {total_nodes} nodes, {total_rels} relationships\n")
+            
+            # Step 4: Build context from graph
+            print("[4/5] Building context from graph data...")
+            graph_context = self.build_context_from_graph(graph_data)
+            
+            # Step 5: Generate LLM reasoning
+            print("[5/5] Generating LLM reasoning...")
+            reasoning_result = self.generate_llm_reasoning(
+                question=question,
+                graph_context=graph_context,
+                seed_results=seed_results
+            )
+            
+            if reasoning_result.get("success"):
+                print("✓ LLM reasoning complete\n")
+            else:
+                print(f"⚠️ LLM reasoning failed: {reasoning_result.get('error')}\n")
         
-        # Step 2: Search for similar nodes (seed nodes)
-        print(f"[2/5] Searching for top {top_k} similar nodes...")
-        seed_results = self.search_similar_nodes(query_embedding, top_k)
-        print(f"✓ Found {len(seed_results)} seed nodes\n")
-        
-        if not seed_results:
-            return {
-                "success": False,
-                "error": "No similar nodes found in the database",
-                "question": question
+            #Compile final result
+            final_result = {
+                "success": reasoning_result.get("success", False),
+                "question": question,
+                "llm_reasoning": reasoning_result.get("llm_response") if reasoning_result.get("success") else None,
+                "error": reasoning_result.get("error") if not reasoning_result.get("success") else None
             }
-        
-        # Step 3: Traverse graph from seed nodes
-        print(f"[3/5] Traversing graph from seed nodes (depth={max_traversal_depth})...")
-        seed_node_ids = [r["node_id"] for r in seed_results]
-        graph_data = self.traverse_graph_from_nodes(
-            seed_node_ids=seed_node_ids,
-            max_depth=max_traversal_depth,
-            max_nodes=50
-        )
-        total_nodes = len(graph_data.get("nodes", []))
-        total_rels = len(graph_data.get("relationships", []))
-        print(f"✓ Traversal complete: {total_nodes} nodes, {total_rels} relationships\n")
-        
-        # Step 4: Build context from graph
-        print("[4/5] Building context from graph data...")
-        graph_context = self.build_context_from_graph(graph_data)
-        
-        # Step 5: Generate LLM reasoning
-        print("[5/5] Generating LLM reasoning...")
-        reasoning_result = self.generate_llm_reasoning(
-            question=question,
-            graph_context=graph_context,
-            seed_results=seed_results
-        )
-        
-        if reasoning_result.get("success"):
-            print("✓ LLM reasoning complete\n")
+            
+            print(f"{'='*70}")
+            print("✅ PROCESS COMPLETE")
+            print(f"{'='*70}\n")
+            
+            return final_result
         else:
-            print(f"⚠️ LLM reasoning failed: {reasoning_result.get('error')}\n")
-        
-        #Compile final result
-        final_result = {
-            "success": reasoning_result.get("success", False),
-            "question": question,
-            "llm_reasoning": reasoning_result.get("llm_response") if reasoning_result.get("success") else None,
-            "error": reasoning_result.get("error") if not reasoning_result.get("success") else None
-        }
-        
-        print(f"{'='*70}")
-        print("✅ PROCESS COMPLETE")
-        print(f"{'='*70}\n")
-        
-        return final_result
+            print("[1/5] Converting question to Cypher query...")
+            cypher_query = self.question_to_cypher(question)
+            print(f"✓ Generated Cypher query\n{cypher_query}\n")
+            print("[2/5] Executing Cypher query...")
+            graph_data = self.execute_cypher_query(cypher_query)
+            print(f"✓ Cypher query execution complete\n{graph_data}\n")
+            print("[3/5] Building context from graph data...")
+            graph_context = self.build_context_from_cypher_result(graph_data)
+            print(f"✓ Context built from graph data\n{graph_context}\n")
+            print("[4/5] Generating LLM reasoning...")
+            reasoning_result = self.generate_llm_reasoning(
+                question=question,
+                graph_context=graph_context,
+                seed_results=[]
+            )
+            print(f"✓ LLM reasoning complete\n{reasoning_result}\n")
+            final_result = {
+                "success": reasoning_result.get("success", False),
+                "question": question,
+                "llm_reasoning": reasoning_result.get("llm_response") if reasoning_result.get("success") else None,
+                "error": reasoning_result.get("error") if not reasoning_result.get("success") else None
+            }
 
     def close(self):
         self.driver.close()
@@ -419,6 +460,41 @@ Provide your response in the required JSON format.
             input=text
         )
         return response.data[0].embedding
+
+    def get_node_label(self) -> str:
+        """Get node labels from Neo4j"""
+        query = """
+        CALL db.labels() YIELD label
+        RETURN label
+        """
+        with self.driver.session(database=self.database) as session:
+            result = session.run(query)
+            return "\n".join([f"- {record['label']}" for record in result])
+    
+    def get_relation_types(self) -> str:
+        """Get relation types from Neo4j"""
+        query = """
+        CALL db.relationshipTypes() YIELD relationshipType
+        RETURN relationshipType
+        """
+        with self.driver.session(database=self.database) as session:
+            result = session.run(query)
+            return "\n".join([f"- {record['relationshipType']}" for record in result])
+    
+    def question_to_cypher(self, question: str) -> str:
+        """Convert question to Cypher query"""
+        node_labels = self.get_node_label()
+        relation_types = self.get_relation_types()
+        prompt = prompt_to_cypher(question, node_labels, relation_types)
+        response = self.client.chat.completions.create(
+            model=self.cypher_model,
+            messages=[{"role": "user", "content": prompt}]
+        )
+        query = response.choices[0].message.content.strip()
+        if not is_safe_cypher(query):
+            raise ValueError(f"Unsafe query blocked:\n{query}")
+        return query
+
 
     def search_similar_nodes(
         self, 
@@ -752,13 +828,13 @@ def ask_question(question: str, top_k: int = 5) -> Dict[str, Any]:
     """Quick function to ask a question and get results"""
     answerer = QuestionAnswerer()
     try:
-        return answerer.ask(question, top_k)
+        return answerer.ask(question, top_k, 5, False)
     finally:
         answerer.close()
 
 
 if __name__ == "__main__":
     # Example usage
-    question = "Can Odoo Point of Sales can support cash drawer integration?"
+    question = "Can a POS session in Odoo only be opened by the user who created it?"
     result = ask_question(question, top_k=5)
     print(result)
