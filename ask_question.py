@@ -17,7 +17,7 @@ from lib.context_builder import (
     build_context_from_graph,
     build_context_from_cypher_result
 )
-from lib.llm_utils import generate_llm_reasoning
+from lib.llm_utils import generate_llm_reasoning, generate_direct_llm
 from lib.pgvector_utils import (
     search_similar_documents,
     build_context_from_pg_results
@@ -59,7 +59,7 @@ class QuestionAnswerer:
         
         # Model configurations
         self.embedding_model = "qwen/qwen3-embedding-8b"
-        self.reasoning_model = "meta-llama/llama-3.1-8b-instruct"
+        self.reasoning_model = "google/gemma-3-27b-it"
         self.cypher_model = "deepseek/deepseek-v3.2"
 
     def close(self):
@@ -154,9 +154,30 @@ class QuestionAnswerer:
         if method == "neo4j":
             return self._ask_with_graph_search(question, top_k, max_traversal_depth)
         elif method == "pgvector":
-            return self._ask_with_vector_search(question, top_k)
+            return self._ask_with_vector_search(question, 1)
+        elif method == "no-context":
+            return self._ask_with_direct_llm(question)
         else:
             raise ValueError(f"Invalid method: {method}")
+        
+    def _ask_with_direct_llm(self, question):
+        """
+        Answer using direct LLM reasoning.
+        """
+        print("[1/4] Generating LLM reasoning...")
+        reasoning_result = generate_direct_llm(
+            question=question,
+            client=self.client,
+            model=self.reasoning_model
+        )
+        print("✓ Reasoning complete\n")
+        
+        return {
+            "success": reasoning_result.get("success", False),
+            "question": question,
+            "llm_reasoning": reasoning_result.get("llm_response"),
+            "usage": reasoning_result.get("usage")
+        }
 
     def _ask_with_vector_search(self, question: str, top_k: int = 5) -> Dict[str, Any]:
         """
@@ -209,6 +230,7 @@ class QuestionAnswerer:
         return {
             "success": reasoning_result.get("success", False),
             "question": question,
+            "usage": reasoning_result.get("usage", {}),
             "llm_reasoning": reasoning_result.get("llm_response"),
             "similar_docs_count": len(similar_docs),
             "error": reasoning_result.get("error")
@@ -255,6 +277,7 @@ class QuestionAnswerer:
         return {
             "success": reasoning_result.get("success", False),
             "question": question,
+            "usage": reasoning_result.get("usage", {}),
             "llm_reasoning": reasoning_result.get("llm_response"),
             "error": reasoning_result.get("error")
         }
@@ -309,5 +332,5 @@ def ask_question(question: str, top_k: int = 5, method: str = "neo4j") -> Dict[s
 if __name__ == "__main__":
     # Example usage
     question = "Does Odoo POS require manual user intervention to sync offline sales?"
-    result = ask_question(question, top_k=5, method="pgvector")
+    result = ask_question(question, top_k=5, method="no-context")
     print(result)

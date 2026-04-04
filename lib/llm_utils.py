@@ -4,6 +4,103 @@ import json
 from typing import List, Dict, Any
 from openai import OpenAI
 
+def generate_direct_llm(
+    question: str,
+    client: OpenAI,
+    model: str = "anthropic/claude-3.5-sonnet"
+) -> Dict[str, Any]:
+    """
+    Use LLM to generate direct answer to a question about Odoo 17.
+    
+    This function:
+    1. Sends question to LLM with Odoo 17 context
+    2. Returns the LLM response in JSON format
+    """
+    
+    system_prompt = """You are an expert Odoo consultant specializing in Odoo version 17. Your task is to answer user questions about Odoo features based on your knowledge.
+
+## Your Capabilities:
+1. Answer questions about Odoo version 17 features
+2. Provide accurate, specific answers based on your knowledge of Odoo version 17
+3. Explain your reasoning clearly
+
+## Response Format:
+You must respond in this JSON structure:
+{
+    "answer": "Your direct answer to the question (yes/no)",
+    "confidence": "high|medium|low",
+}
+
+## Important Rules:
+1. Answer based on Odoo 17 (the latest stable version as of your knowledge)
+2. If you're uncertain, indicate low confidence and explain why
+3. Do not make up information - if you don't know, say so clearly
+"""
+
+    user_prompt = f"""## User Question:
+{question}
+
+## Task:
+Based on your knowledge of Odoo 17, answer the user's question.
+Provide your response in the required JSON format.
+"""
+
+    print("\n🤖 Sending question to LLM for direct answer...")
+    
+    try:
+        # Call the LLM
+        response = client.chat.completions.create(
+            model=model,
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt}
+            ],
+            temperature=0.5,
+            max_tokens=10000,
+        )
+        
+        # Parse the response
+        llm_response = response.choices[0].message.content
+        usage_obj = response.usage
+        usage = {
+            "prompt_tokens": getattr(usage_obj, 'prompt_tokens', 0),
+            "completion_tokens": getattr(usage_obj, 'completion_tokens', 0),
+            "total_tokens": getattr(usage_obj, 'total_tokens', 0)
+        }
+        
+        # Try to parse as JSON
+        try:
+            json_start = llm_response.find('{')
+            json_end = llm_response.rfind('}') + 1
+            if json_start >= 0 and json_end > json_start:
+                json_str = llm_response[json_start:json_end]
+                parsed_response = json.loads(json_str)
+            else:
+                parsed_response = json.loads(llm_response)
+            
+            print("✓ LLM reasoning complete")
+            return {
+                "success": True,
+                "llm_response": parsed_response,
+                "raw_response": llm_response,
+                "usage": usage
+            }
+            
+        except json.JSONDecodeError as e:
+            print(f"⚠️ Could not parse LLM response as JSON: {e}")
+            return {
+                "success": False,
+                "error": "JSON parse error",
+                "raw_response": llm_response,
+                "usage": usage
+            }
+            
+    except Exception as e:
+        print(f"✗ LLM API error: {e}")
+        return {
+            "success": False,
+            "error": str(e)
+        }
 
 def generate_llm_reasoning(
     question: str,
@@ -62,19 +159,6 @@ You must respond in this JSON structure:
 ## Knowledge Graph Context:
 {graph_context}
 
-## Top Similar Nodes (Initial Search Results):
-"""
-    
-    # Add seed results summary
-    for i, result in enumerate(seed_results[:5], 1):
-        props = result.get("properties", {})
-        score = result.get("score", 0)
-        user_prompt += f"\n{i}. {props.get('name', 'N/A')} (Score: {score:.4f})"
-        user_prompt += f"\n   Type: {props.get('type', 'N/A')}"
-        user_prompt += f"\n   Section: {props.get('heading', 'N/A')}"
-    
-    user_prompt += """
-
 ## Task:
 Based on the knowledge graph context provided above, answer the user's question.
 Provide your response in the required JSON format.
@@ -91,11 +175,19 @@ Provide your response in the required JSON format.
                 {"role": "user", "content": user_prompt}
             ],
             temperature=0.3,
-            max_tokens=4000
+            max_tokens=6000
         )
         
         # Parse the response
         llm_response = response.choices[0].message.content
+        
+        # Convert usage object to dict
+        usage_obj = response.usage
+        usage = {
+            "prompt_tokens": getattr(usage_obj, 'prompt_tokens', 0),
+            "completion_tokens": getattr(usage_obj, 'completion_tokens', 0),
+            "total_tokens": getattr(usage_obj, 'total_tokens', 0)
+        }
         
         # Try to parse as JSON
         try:
@@ -111,7 +203,8 @@ Provide your response in the required JSON format.
             return {
                 "success": True,
                 "llm_response": parsed_response,
-                "raw_response": llm_response
+                "raw_response": llm_response,
+                "usage": usage
             }
             
         except json.JSONDecodeError as e:
@@ -119,7 +212,8 @@ Provide your response in the required JSON format.
             return {
                 "success": False,
                 "error": "JSON parse error",
-                "raw_response": llm_response
+                "raw_response": llm_response,
+                "usage": usage
             }
             
     except Exception as e:

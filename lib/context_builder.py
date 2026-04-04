@@ -25,24 +25,42 @@ def build_context_from_graph(graph_data: Dict[str, Any]) -> str:
         nodes_by_type[node_type].append(node)
     
     # Add nodes to context
-    context_parts.append(f"\n📊 NODES DISCOVERED: {len(nodes)} total\n")
+    # context_parts.append(f"\n📊 NODES DISCOVERED: {len(nodes)} total\n")
     
-    for node_type, type_nodes in nodes_by_type.items():
-        context_parts.append(f"\n--- {node_type.upper()} ({len(type_nodes)}) ---")
-        for node in type_nodes[:5]:  # Limit to 5 per type
-            props = node.get("properties", {})
-            name = props.get("name", "N/A")
-            heading = props.get("heading", "N/A")
-            context_parts.append(f"  • {name}")
-            if heading != name:
-                context_parts.append(f"    Section: {heading}")
+    # for node_type, type_nodes in nodes_by_type.items():
+    #     context_parts.append(f"\n--- {node_type.upper()} ({len(type_nodes)}) ---")
+    #     for node in type_nodes:  # Limit to 5 per type
+    #         props = node.get("properties", {})
+    #         name = props.get("name", "N/A")
+    #         heading = props.get("heading", "N/A")
+    #         context_parts.append(f"  • {name}")
+    #         if heading != name:
+    #             context_parts.append(f"    Section: {heading}")
     
+     # Create node lookup for relationship formatting
+    node_lookup = {}
+    for node in nodes:
+        node_id = node.get("id", "")
+        props = node.get("properties", {})
+        node_lookup[node_id] = {
+            "type": props.get("type", "Unknown"),
+            "name": props.get("name", "N/A")
+        }
+
     # Add relationships to context
     if relationships:
         context_parts.append(f"\n\n🔗 RELATIONSHIPS DISCOVERED: {len(relationships)}\n")
-        for rel in relationships[:10]:  # Limit to 10 relationships
+        for rel in relationships:  # Limit to 10 relationships
             rel_type = rel.get("type", "RELATED_TO")
-            context_parts.append(f"  ({rel.get('source', '?')}) -[:{rel_type}]-> ({rel.get('target', '?')})")
+            source_id = rel.get("source", "?")
+            target_id = rel.get("target", "?")
+            source_info = node_lookup.get(source_id, {"type": "?", "name": source_id})
+            target_info = node_lookup.get(target_id, {"type": "?", "name": target_id})
+            source_str = f"{source_info['type']}:{source_info['name']}"
+            target_str = f"{target_info['type']}:{target_info['name']}"
+            rel_props = rel.get('properties', {})
+            evidence = rel_props.get('evidence', rel.get('evidence', '?'))
+            context_parts.append(f"Triplet: ({source_str}) -[:{rel_type}]->  ({target_str}), Evidence: {evidence}")
     
     context_parts.append("\n" + "=" * 60)
     
