@@ -15,13 +15,11 @@ from lib.neo4j_utils import (
 )
 from lib.context_builder import (
     build_context_from_graph,
-    build_context_from_cypher_result
-)
-from lib.llm_utils import generate_llm_reasoning, generate_direct_llm
-from lib.pgvector_utils import (
-    search_similar_documents,
+    build_context_from_cypher_result,
     build_context_from_pg_results
 )
+from lib.llm_utils import generate_llm_reasoning, generate_direct_llm
+from lib.pgvector_utils import search_similar_documents
 
 load_dotenv()
 
@@ -131,6 +129,7 @@ class QuestionAnswerer:
     def ask(
         self,
         question: str,
+        llm_reasoning_model: str = None,
         top_k: int = 5,
         max_traversal_depth: int = 2,
         method: str = "neo4j"
@@ -140,6 +139,7 @@ class QuestionAnswerer:
         
         Args:
             question: The user's question
+            llm_reasoning_model: The LLM model to use for reasoning (defaults to self.reasoning_model)
             top_k: Number of similar nodes to retrieve
             max_traversal_depth: Graph traversal depth
             method: Search approach to use ("neo4j" or "pgvector")
@@ -147,28 +147,34 @@ class QuestionAnswerer:
         Returns:
             Dictionary with answer, reasoning, and metadata
         """
+        # Use provided model or fall back to default
+        reasoning_model = llm_reasoning_model or self.reasoning_model
+        
         print(f"\n{'='*70}")
         print(f"🔍 QUESTION: {question}")
+        print(f"🤖 MODEL: {reasoning_model}")
         print(f"{'='*70}\n")
 
         if method == "neo4j":
-            return self._ask_with_graph_search(question, top_k, max_traversal_depth)
+            return self._ask_with_graph_search(question, top_k, max_traversal_depth, reasoning_model)
         elif method == "pgvector":
-            return self._ask_with_vector_search(question, 1)
+            return self._ask_with_vector_search(question, 3, reasoning_model)
         elif method == "no-context":
-            return self._ask_with_direct_llm(question)
+            return self._ask_with_direct_llm(question, reasoning_model)
         else:
             raise ValueError(f"Invalid method: {method}")
         
-    def _ask_with_direct_llm(self, question):
+    def _ask_with_direct_llm(self, question, reasoning_model=None):
         """
         Answer using direct LLM reasoning.
         """
+        model = reasoning_model or self.reasoning_model
+        
         print("[1/4] Generating LLM reasoning...")
         reasoning_result = generate_direct_llm(
             question=question,
             client=self.client,
-            model=self.reasoning_model
+            model=model
         )
         print("✓ Reasoning complete\n")
         
@@ -179,7 +185,7 @@ class QuestionAnswerer:
             "usage": reasoning_result.get("usage")
         }
 
-    def _ask_with_vector_search(self, question: str, top_k: int = 5) -> Dict[str, Any]:
+    def _ask_with_vector_search(self, question: str, top_k: int = 1, reasoning_model: str = None) -> Dict[str, Any]:
         """
         Answer using vector search on PostgreSQL pgvector.
         
@@ -189,6 +195,8 @@ class QuestionAnswerer:
         3. Build context from results
         4. Generate LLM reasoning
         """
+        model = reasoning_model or self.reasoning_model
+        
         # Step 1: Embed the question
         print("[1/4] Embedding the question...")
         query_embedding = self.get_embedding(question)
@@ -223,7 +231,7 @@ class QuestionAnswerer:
             graph_context=vector_context,
             seed_results=similar_docs,
             client=self.client,
-            model=self.reasoning_model
+            model=model
         )
         print("✓ Reasoning complete\n")
         
@@ -240,9 +248,12 @@ class QuestionAnswerer:
         self,
         question: str,
         top_k: int,
-        max_traversal_depth: int
+        max_traversal_depth: int,
+        reasoning_model: str = None
     ) -> Dict[str, Any]:
         """Answer using vector search and graph traversal."""
+        model = reasoning_model or self.reasoning_model
+        
         print("[1/5] Generating embedding for question...")
         query_embedding = self.get_embedding(question)
         print(f"✓ Generated {len(query_embedding)}-dim embedding\n")
@@ -270,7 +281,7 @@ class QuestionAnswerer:
         print("[5/5] Generating LLM reasoning...")
         reasoning_result = generate_llm_reasoning(
             question, graph_context, seed_results,
-            self.client, self.reasoning_model
+            self.client, model
         )
         print("✓ Reasoning complete\n")
         
@@ -314,7 +325,7 @@ class QuestionAnswerer:
         }
 
 
-def ask_question(question: str, top_k: int = 5, method: str = "neo4j") -> Dict[str, Any]:
+def ask_question(question: str, llm_reasoning_model: str, method: str = "neo4j") -> Dict[str, Any]:
     """Quick function to ask a question and get results."""
     answerer = QuestionAnswerer(
        neo4j_uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
@@ -325,12 +336,12 @@ def ask_question(question: str, top_k: int = 5, method: str = "neo4j") -> Dict[s
        pg_connection_string=os.getenv("PG_CONNECTION_STRING", "postgresql://postgres:postgres@localhost:5432/docs")
     )
     try:
-        return answerer.ask(question, top_k, method=method)
+        return answerer.ask(question, llm_reasoning_model, method=method)
     finally:
         answerer.close()
 
 if __name__ == "__main__":
     # Example usage
     question = "Does Odoo POS require manual user intervention to sync offline sales?"
-    result = ask_question(question, top_k=5, method="no-context")
+    result = ask_question(question, llm_reasoning_model="google/gemma-3-27b-it", method="pgvector")
     print(result)

@@ -1,6 +1,7 @@
 from lib.pgvector_utils import get_pg_connection
 from ask_question import ask_question
 import json
+import sys
 
 def save_answer_result(
     conn,
@@ -59,6 +60,15 @@ def save_answer_result(
 
 
 if __name__ == '__main__':
+    # Parse command-line arguments
+    if len(sys.argv) < 3:
+        print("Usage: python testing.py <llm_reasoning_model> <method>")
+        print("Example: python testing.py 'google/gemma-3-27b-it' 'neo4j'")
+        sys.exit(1)
+    
+    llm_reasoning_model = sys.argv[1]
+    method = sys.argv[2]
+    
     conn = get_pg_connection()
     
     try:
@@ -74,7 +84,9 @@ if __name__ == '__main__':
             cur.execute(query, (module,))
             results = cur.fetchall()
             
-            print(f"Found {len(results)} questions for module: {module}\n")
+            print(f"Found {len(results)} questions for module: {module}")
+            print(f"Using LLM Reasoning Model: {llm_reasoning_model}")
+            print(f"Using Method: {method}\n")
             
             # Process each question
             for row in results:
@@ -85,61 +97,60 @@ if __name__ == '__main__':
                 print(f"Expected Answer: {expected_answer}")
                 print("-" * 70)
                 
-                # Call ask_question with different methods
-                for method in ["neo4j"]:
-                    print(f"\n--- Using method: {method} ---")
+                # Call ask_question with the method from command-line args
+                print(f"\n--- Using method: {method} ---")
+                
+                try:
+                    result = ask_question(
+                        question=question,
+                        llm_reasoning_model=llm_reasoning_model,
+                        method=method
+                    )
+                    
+                    # Add metadata to result
+                    result["question"] = question
+                    result["expected_answer"] = expected_answer
+                    result["method"] = method
+                    
+                    # Save to database
+                    result_id = save_answer_result(
+                        conn=conn,
+                        question_id=question_id,
+                        llm_reasoning_model=llm_reasoning_model,
+                        method=method,
+                        embedding_model="qwen/qwen3-embedding-8b",
+                        result=result
+                    )
+                    
+                    print(f"✓ Result saved with ID: {result_id}")
+                    print(f"  Success: {result.get('success', False)}")
+                    
+                    if result.get('llm_reasoning'):
+                        answer = result['llm_reasoning'].get('answer', 'N/A')
+                        print(f"  LLM Answer: {answer[:100]}...")
+                    
+                except Exception as e:
+                    print(f"✗ Error with method {method}: {str(e)}")
+                    
+                    # Save error result
+                    error_result = {
+                        "success": False,
+                        "error": str(e),
+                        "question": question,
+                        "method": method
+                    }
                     
                     try:
-                        result = ask_question(
-                            question=question,
-                            top_k=5,
-                            method=method
-                        )
-                        
-                        # Add metadata to result
-                        result["question"] = question
-                        result["expected_answer"] = expected_answer
-                        result["method"] = method
-                        
-                        # Save to database
-                        result_id = save_answer_result(
+                        save_answer_result(
                             conn=conn,
                             question_id=question_id,
-                            llm_reasoning_model="google/gemma-3-27b-it",
+                            llm_reasoning_model=llm_reasoning_model,
                             method=method,
                             embedding_model="qwen/qwen3-embedding-8b",
-                            result=result
+                            result=error_result
                         )
-                        
-                        print(f"✓ Result saved with ID: {result_id}")
-                        print(f"  Success: {result.get('success', False)}")
-                        
-                        if result.get('llm_reasoning'):
-                            answer = result['llm_reasoning'].get('answer', 'N/A')
-                            print(f"  LLM Answer: {answer[:100]}...")
-                        
-                    except Exception as e:
-                        print(f"✗ Error with method {method}: {str(e)}")
-                        
-                        # Save error result
-                        error_result = {
-                            "success": False,
-                            "error": str(e),
-                            "question": question,
-                            "method": method
-                        }
-                        
-                        try:
-                            save_answer_result(
-                                conn=conn,
-                                question_id=question_id,
-                                llm_reasoning_model="google/gemma-3-27b-it",
-                                method=method,
-                                embedding_model="qwen/qwen3-embedding-8b",
-                                result=error_result
-                            )
-                        except:
-                            pass
+                    except:
+                        pass
                 
                 print("\n" + "=" * 70 + "\n")
                 

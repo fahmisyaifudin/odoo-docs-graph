@@ -61,49 +61,6 @@ def search_similar_documents(
         conn.close()
 
 
-def build_context_from_pg_results(results: List[Dict[str, Any]]) -> str:
-    """
-    Build a readable text context from PostgreSQL pgvector search results.
-    
-    Args:
-        results: List of document results from search_similar_documents()
-    
-    Returns:
-        Formatted string context for LLM consumption
-    """
-    if not results:
-        return "No results found from vector search."
-    
-    context_parts = []
-    context_parts.append("=" * 70)
-    context_parts.append("VECTOR SEARCH RESULTS (PostgreSQL pgvector)")
-    context_parts.append("=" * 70)
-    context_parts.append(f"Total Results: {len(results)}\n")
-    
-    for i, result in enumerate(results, 1):
-        content = result.get("content", "N/A")
-        similarity = result.get("similarity", 0)
-        heading = result.get("heading", "N/A")
-        module = result.get("module", "N/A")
-        
-        context_parts.append(f"--- Result {i} (Similarity: {similarity:.4f}) ---")        
-        # Add metadata if available
-        if module:
-            context_parts.append("Module:")
-            context_parts.append(f"{module}")
-
-        if heading:
-            context_parts.append("Heading:")
-            context_parts.append(f"{heading}")
-            
-        context_parts.append(f"Content: {content}")
-        context_parts.append("")
-    
-    context_parts.append("=" * 70)
-    
-    return "\n".join(context_parts)
-
-
 def store_document(
     content: str,
     embedding: List[float],
