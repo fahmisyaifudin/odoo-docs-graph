@@ -42,8 +42,6 @@ def build_context_from_pg_results(results: List[Dict[str, Any]]) -> str:
         context_parts.append("")
     
     context_parts.append("=" * 70)
-
-    print(context_parts)
     
     return "\n".join(context_parts)
 
