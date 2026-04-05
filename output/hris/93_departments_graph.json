@@ -1,0 +1,746 @@
+[
+  {
+    "section_id": "departments",
+    "heading": "Departments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "All employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Departments",
+          "type": "Module",
+          "mention": "Departments",
+          "confidence": "medium"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo. Title: Departments. All employees in the Employees app..."
+        },
+        {
+          "source": "employee",
+          "relation": "BELONGS_TO",
+          "target": "Departments",
+          "evidence": "All employees in the Employees app fall under specific departments"
+        },
+        {
+          "source": "employee",
+          "relation": "BELONGS_TO",
+          "target": "company",
+          "evidence": "All employees in the Employees app fall under specific departments within a company."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-new-departments",
+    "heading": "Create new departments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees app",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Departments",
+          "type": "Feature",
+          "mention": "Departments",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "department form",
+          "type": "DataObject",
+          "mention": "department form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Department Name",
+          "type": "Field",
+          "mention": "Department Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Manager",
+          "type": "Field",
+          "mention": "Manager",
+          "confidence": "high"
+        },
+        {
+          "name": "Parent Department",
+          "type": "Field",
+          "mention": "Parent Department",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Color",
+          "type": "Field",
+          "mention": "Color",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-cloud-upload icon",
+          "type": "Action",
+          "mention": "fa-cloud-upload icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Department Organization chart",
+          "type": "Report",
+          "mention": "Department Organization chart",
+          "confidence": "medium"
+        },
+        {
+          "name": "department card",
+          "type": "DataObject",
+          "mention": "department card",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "Departments",
+          "evidence": "navigate to Employees app --> Departments"
+        },
+        {
+          "source": "Departments",
+          "relation": "CONTAINS",
+          "target": "New button",
+          "evidence": "click the New button in the top-left corner"
+        },
+        {
+          "source": "department form",
+          "relation": "CONTAINS",
+          "target": "Department Name",
+          "evidence": "Fill out the following information on the department form: - Department Name"
+        },
+        {
+          "source": "department form",
+          "relation": "CONTAINS",
+          "target": "Manager",
+          "evidence": "- Manager: Select the department manager"
+        },
+        {
+          "source": "department form",
+          "relation": "CONTAINS",
+          "target": "Parent Department",
+          "evidence": "- Parent Department: If the new department is housed within another department"
+        },
+        {
+          "source": "department form",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "- Company: Select the company the department is part of"
+        },
+        {
+          "source": "department form",
+          "relation": "CONTAINS",
+          "target": "Color",
+          "evidence": "- Color: Select a color for the department"
+        },
+        {
+          "source": "fa-cloud-upload icon",
+          "relation": "PRODUCES",
+          "target": "department card",
+          "evidence": "click the fa-cloud-upload icon to manually save the changes. When saved..."
+        },
+        {
+          "source": "fa-cloud-upload icon",
+          "relation": "GENERATES",
+          "target": "Department Organization chart",
+          "evidence": "When saved, a DEPARTMENT ORGANIZATION chart appears"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "departments-dashboard",
+    "heading": "Departments dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Employees app",
+          "type": "Product",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Departments",
+          "type": "Module",
+          "mention": "Departments",
+          "confidence": "high"
+        },
+        {
+          "name": "Departments dashboard",
+          "type": "Module",
+          "mention": "Departments dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Feature",
+          "mention": "Kanban view",
+          "confidence": "medium"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "hierarchy view",
+          "type": "Feature",
+          "mention": "hierarchy view",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees app",
+          "relation": "CONTAINS",
+          "target": "Departments",
+          "evidence": "navigate to Employees app --> Departments"
+        },
+        {
+          "source": "Departments dashboard",
+          "relation": "BELONGS_TO",
+          "target": "Departments",
+          "evidence": "Departments dashboard"
+        },
+        {
+          "source": "Departments dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Kanban view",
+          "evidence": "The default view for the Departments dashboard is a Kanban view"
+        },
+        {
+          "source": "Departments dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "list view",
+          "evidence": "possible to view the departments in two other forms: a list view"
+        },
+        {
+          "source": "Departments dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "hierarchy view",
+          "evidence": "possible to view the departments in two other forms: a hierarchy view"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "kanban-view",
+    "heading": "Kanban view",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Kanban view",
+          "type": "Module",
+          "mention": "Title: Kanban view",
+          "confidence": "high"
+        },
+        {
+          "name": "Departments dashboard",
+          "type": "Sub-module",
+          "mention": "main Departments dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kanban card",
+          "type": "DataObject",
+          "mention": "Kanban card",
+          "confidence": "high"
+        },
+        {
+          "name": "Department",
+          "type": "DataObject",
+          "mention": "department",
+          "confidence": "high"
+        },
+        {
+          "name": "Name",
+          "type": "Field",
+          "mention": "Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Manager",
+          "type": "Field",
+          "mention": "Manager",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Field",
+          "mention": "Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals",
+          "type": "Field",
+          "mention": "Appraisals",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off Requests",
+          "type": "Field",
+          "mention": "Time Off Requests",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation Requests",
+          "type": "Field",
+          "mention": "Allocation Requests",
+          "confidence": "high"
+        },
+        {
+          "name": "New Applicants",
+          "type": "Field",
+          "mention": "New Applicants",
+          "confidence": "high"
+        },
+        {
+          "name": "Expenses",
+          "type": "Field",
+          "mention": "Expenses",
+          "confidence": "high"
+        },
+        {
+          "name": "Absence",
+          "type": "Field",
+          "mention": "Absence",
+          "confidence": "high"
+        },
+        {
+          "name": "Color bar",
+          "type": "Field",
+          "mention": "Color bar",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Kanban view",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Kanban view"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "IS_PART_OF",
+          "target": "Departments dashboard",
+          "evidence": "Each department has its own Kanban card on the main Departments dashboard"
+        },
+        {
+          "source": "Department",
+          "relation": "CONTAINS",
+          "target": "Kanban card",
+          "evidence": "Each department has its own Kanban card"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Name",
+          "evidence": "Each department card displays the following information... Name"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Manager",
+          "evidence": "Each department card displays the following information... Manager"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "Each department card displays the following information... Company"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Employees",
+          "evidence": "Each department card displays the following information... Employees"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Appraisals",
+          "evidence": "Each department card displays the following information... Appraisals"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Time Off Requests",
+          "evidence": "Each department card displays the following information... Time Off Requests"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Allocation Requests",
+          "evidence": "Each department card displays the following information... Allocation Requests"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "New Applicants",
+          "evidence": "Each department card displays the following information... New Applicants"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Expenses",
+          "evidence": "Each department card displays the following information... Expenses"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Absence",
+          "evidence": "Each department card displays the following information... Absence"
+        },
+        {
+          "source": "Kanban card",
+          "relation": "CONTAINS",
+          "target": "Color bar",
+          "evidence": "Each department card displays the following information... Color bar"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "list-view",
+    "heading": "List view",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "List view",
+          "type": "Feature",
+          "mention": "Title",
+          "confidence": "high"
+        },
+        {
+          "name": "Department",
+          "type": "DataObject",
+          "mention": "departments",
+          "confidence": "high"
+        },
+        {
+          "name": "Department Name",
+          "type": "Field",
+          "mention": "Department Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "medium"
+        },
+        {
+          "name": "Manager",
+          "type": "Field",
+          "mention": "Manager",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employees",
+          "type": "Field",
+          "mention": "Employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Parent Department",
+          "type": "Field",
+          "mention": "Parent Department",
+          "confidence": "medium"
+        },
+        {
+          "name": "Color",
+          "type": "Field",
+          "mention": "Color",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "List view",
+          "relation": "CONTAINS",
+          "target": "Department",
+          "evidence": "The departments appear in a list view"
+        },
+        {
+          "source": "Department",
+          "relation": "CONTAINS",
+          "target": "Department Name",
+          "evidence": "displays the Department Name"
+        },
+        {
+          "source": "Department",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "displays the Company"
+        },
+        {
+          "source": "Department",
+          "relation": "CONTAINS",
+          "target": "Manager",
+          "evidence": "displays the Manager"
+        },
+        {
+          "source": "Department",
+          "relation": "CONTAINS",
+          "target": "Employees",
+          "evidence": "displays the Employees"
+        },
+        {
+          "source": "Department",
+          "relation": "CONTAINS",
+          "target": "Parent Department",
+          "evidence": "displays the Parent Department"
+        },
+        {
+          "source": "Department",
+          "relation": "CONTAINS",
+          "target": "Color",
+          "evidence": "displays the Color"
+        },
+        {
+          "source": "List view",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "hierarchy-view",
+    "heading": "Hierarchy view",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Hierarchy view",
+          "type": "Feature",
+          "mention": "Hierarchy view",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-share-alt fa-rotate-90",
+          "type": "Action",
+          "mention": "click the fa-share-alt fa-rotate-90",
+          "confidence": "high"
+        },
+        {
+          "name": "Hierarchy",
+          "type": "Feature",
+          "mention": "Hierarchy",
+          "confidence": "medium"
+        },
+        {
+          "name": "department",
+          "type": "DataObject",
+          "mention": "departments",
+          "confidence": "high"
+        },
+        {
+          "name": "organizational chart",
+          "type": "Report",
+          "mention": "organizational chart format",
+          "confidence": "high"
+        },
+        {
+          "name": "Executive Management",
+          "type": "DataObject",
+          "mention": "Executive Management",
+          "confidence": "high"
+        },
+        {
+          "name": "Department Name",
+          "type": "Field",
+          "mention": "Department Name",
+          "confidence": "high"
+        },
+        {
+          "name": "Manager",
+          "type": "Field",
+          "mention": "Manager",
+          "confidence": "high"
+        },
+        {
+          "name": "profile image",
+          "type": "Field",
+          "mention": "their profile image",
+          "confidence": "high"
+        },
+        {
+          "name": "Number of Employees",
+          "type": "Field",
+          "mention": "Number of Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "DataObject",
+          "mention": "Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "child departments",
+          "type": "Field",
+          "mention": "child departments",
+          "confidence": "medium"
+        },
+        {
+          "name": "Unfold button",
+          "type": "Action",
+          "mention": "Unfold button",
+          "confidence": "high"
+        },
+        {
+          "name": "Fold button",
+          "type": "Action",
+          "mention": "Fold button",
+          "confidence": "high"
+        },
+        {
+          "name": "department form",
+          "type": "DataObject",
+          "mention": "department form",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Hierarchy view",
+          "relation": "CONTAINS",
+          "target": "organizational chart",
+          "evidence": "The departments appear in an organizational chart format"
+        },
+        {
+          "source": "department",
+          "relation": "HAS_FEATURE",
+          "target": "Hierarchy view",
+          "evidence": "To view the departments in a hierarchy view"
+        },
+        {
+          "source": "organizational chart",
+          "relation": "PRODUCES",
+          "target": "department",
+          "evidence": "The departments appear in an organizational chart format"
+        },
+        {
+          "source": "department",
+          "relation": "CONTAINS",
+          "target": "Department Name",
+          "evidence": "Each department card displays the Department Name"
+        },
+        {
+          "source": "department",
+          "relation": "CONTAINS",
+          "target": "Manager",
+          "evidence": "Each department card displays the Manager"
+        },
+        {
+          "source": "department",
+          "relation": "CONTAINS",
+          "target": "Number of Employees",
+          "evidence": "Each department card displays the Number of Employees"
+        },
+        {
+          "source": "department",
+          "relation": "CONTAINS",
+          "target": "child departments",
+          "evidence": "Each department card displays the number of any child departments"
+        },
+        {
+          "source": "Unfold button",
+          "relation": "TRIGGERED_BY",
+          "target": "fa-share-alt fa-rotate-90",
+          "evidence": "Click the Unfold button on a department card to expand it"
+        },
+        {
+          "source": "Fold button",
+          "relation": "TRIGGERED_BY",
+          "target": "Unfold button",
+          "evidence": "Once expanded, the Unfold button changes to a Fold button"
+        },
+        {
+          "source": "department form",
+          "relation": "IS_PART_OF",
+          "target": "department",
+          "evidence": "Click anywhere on a department card to open the department form"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,531 @@
+[
+  {
+    "section_id": "schedule-appraisals",
+    "heading": "Schedule appraisals",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals",
+          "type": "Module",
+          "mention": "Appraisals",
+          "confidence": "high"
+        },
+        {
+          "name": "performance review",
+          "type": "Feature",
+          "mention": "performance reviews",
+          "confidence": "high"
+        },
+        {
+          "name": "self-assessment",
+          "type": "Feature",
+          "mention": "self-assessment",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisal plan",
+          "type": "Feature",
+          "mention": "appraisal plan",
+          "confidence": "high"
+        },
+        {
+          "name": "manager",
+          "type": "Actor",
+          "mention": "managers",
+          "confidence": "medium"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "medium"
+        },
+        {
+          "name": "HR",
+          "type": "Actor",
+          "mention": "HR",
+          "confidence": "medium"
+        },
+        {
+          "name": "KPIs",
+          "type": "Concept",
+          "mention": "KPIs",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appraisals",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Odoo's **Appraisals** app"
+        },
+        {
+          "source": "Appraisals",
+          "relation": "HAS_FEATURE",
+          "target": "performance review",
+          "evidence": "helps managers run recurring performance reviews"
+        },
+        {
+          "source": "performance review",
+          "relation": "HAS_FEATURE",
+          "target": "self-assessment",
+          "evidence": "Each review can include a self-assessment"
+        },
+        {
+          "source": "performance review",
+          "relation": "CONFIGURED_BY",
+          "target": "company",
+          "evidence": "can follow any schedule the company sets"
+        },
+        {
+          "source": "appraisal plan",
+          "relation": "ENABLES",
+          "target": "performance review",
+          "evidence": "triggers evaluations at set intervals"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "automatic-scheduling",
+    "heading": "Automatic scheduling",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals app",
+          "type": "Module",
+          "mention": "Appraisals app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "medium"
+        },
+        {
+          "name": "Automatic scheduling",
+          "type": "Feature",
+          "mention": "Automatic scheduling",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals Plan settings",
+          "type": "Setting",
+          "mention": "Appraisals Plan settings",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Appraisals app",
+          "evidence": "enable automatic scheduling by going to Appraisals app"
+        },
+        {
+          "source": "Appraisals app",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Appraisals app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Automatic scheduling",
+          "evidence": "Product: Odoo\nTitle: Automatic scheduling"
+        },
+        {
+          "source": "Automatic scheduling",
+          "relation": "CONFIGURED_BY",
+          "target": "Appraisals Plan settings",
+          "evidence": "The Appraisals Plan settings determine the frequency"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "Appraisals Plan settings",
+          "evidence": "Configuration --> Settings.\nThe Appraisals Plan settings"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "appraisals-plans",
+    "heading": "Appraisals plans",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisals",
+          "type": "Module",
+          "mention": "appraisals",
+          "confidence": "medium"
+        },
+        {
+          "name": "Appraisals Plans",
+          "type": "Setting",
+          "mention": "Appraisals Plans",
+          "confidence": "high"
+        },
+        {
+          "name": "Next Appraisal Dates",
+          "type": "Field",
+          "mention": "Next Appraisal Dates",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee record",
+          "type": "DataObject",
+          "mention": "employee record",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appraisals Plans",
+          "relation": "CONFIGURED_BY",
+          "target": "appraisals",
+          "evidence": "To modify this schedule, change the number of months in the blank fields under the Appraisals Plans section."
+        },
+        {
+          "source": "Appraisals Plans",
+          "relation": "GOVERNED_BY",
+          "target": "employee record",
+          "evidence": "Changing the Appraisals Plans field updates **every** employee record whose Next Appraisal Dates is empty."
+        },
+        {
+          "source": "employee record",
+          "relation": "CONTAINS",
+          "target": "Next Appraisal Dates",
+          "evidence": "employee record whose Next Appraisal Dates is empty."
+        },
+        {
+          "source": "appraisals",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Appraisals plans"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "appraisals-automation",
+    "heading": "Appraisals automation",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals Automation",
+          "type": "Feature",
+          "mention": "Appraisals Automation",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals",
+          "type": "Workflow",
+          "mention": "Appraisals",
+          "confidence": "medium"
+        },
+        {
+          "name": "appraisal plan",
+          "type": "DataObject",
+          "mention": "appraisal plan",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "HAS_FEATURE",
+          "target": "Appraisals Automation",
+          "evidence": "Click the checkbox next to Appraisals Automation to have Odoo automatically schedule and confirm appraisals."
+        },
+        {
+          "source": "Appraisals Automation",
+          "relation": "ENABLES",
+          "target": "Appraisals",
+          "evidence": "Click the checkbox next to Appraisals Automation to have Odoo automatically schedule and confirm appraisals."
+        },
+        {
+          "source": "Appraisals",
+          "relation": "TRIGGERED_BY",
+          "target": "Appraisals Automation",
+          "evidence": "Click the checkbox next to Appraisals Automation to have Odoo automatically schedule and confirm appraisals."
+        },
+        {
+          "source": "Appraisals",
+          "relation": "SEE_ALSO",
+          "target": "appraisal plan",
+          "evidence": "Appraisals are scheduled according to the appraisal plan."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manually-schedule-an-appraisal",
+    "heading": "Manually schedule an appraisal",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals",
+          "type": "Module",
+          "mention": "Appraisals app",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisal",
+          "type": "DataObject",
+          "mention": "appraisal",
+          "confidence": "high"
+        },
+        {
+          "name": "managers",
+          "type": "Actor",
+          "mention": "Managers",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisers",
+          "type": "Actor",
+          "mention": "appraisers",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisals form",
+          "type": "DataObject",
+          "mention": "Appraisals form",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee to review field",
+          "type": "Field",
+          "mention": "Employee to review field",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisers field",
+          "type": "Field",
+          "mention": "Appraisers field",
+          "confidence": "high"
+        },
+        {
+          "name": "Job field",
+          "type": "Field",
+          "mention": "Job field",
+          "confidence": "high"
+        },
+        {
+          "name": "Department field",
+          "type": "Field",
+          "mention": "Department field",
+          "confidence": "high"
+        },
+        {
+          "name": "Appraisal Date",
+          "type": "Field",
+          "mention": "Appraisal Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Next Appraisal Date field",
+          "type": "Field",
+          "mention": "Next Appraisal Date field",
+          "confidence": "high"
+        },
+        {
+          "name": "appraisal plan",
+          "type": "DataObject",
+          "mention": "appraisal plan",
+          "confidence": "high"
+        },
+        {
+          "name": "Template",
+          "type": "Field",
+          "mention": "Template",
+          "confidence": "high"
+        },
+        {
+          "name": "Default template",
+          "type": "DataObject",
+          "mention": "Default template",
+          "confidence": "high"
+        },
+        {
+          "name": "Confirm button",
+          "type": "Action",
+          "mention": "Confirm button",
+          "confidence": "high"
+        },
+        {
+          "name": "Target Job field",
+          "type": "Field",
+          "mention": "Target Job",
+          "confidence": "high"
+        },
+        {
+          "name": "Final Rating field",
+          "type": "Field",
+          "mention": "Final Rating field",
+          "confidence": "high"
+        },
+        {
+          "name": "Skills tab",
+          "type": "Module",
+          "mention": "Skills tab",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Appraisals",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "open the Appraisals app"
+        },
+        {
+          "source": "appraisal",
+          "relation": "BELONGS_TO",
+          "target": "Appraisals",
+          "evidence": "in the Appraisals app"
+        },
+        {
+          "source": "managers",
+          "relation": "PERFORMED_BY",
+          "target": "New button",
+          "evidence": "Managers can schedule an appraisal"
+        },
+        {
+          "source": "New button",
+          "relation": "TRIGGERED_BY",
+          "target": "managers",
+          "evidence": "Managers can schedule an appraisal"
+        },
+        {
+          "source": "Appraisals form",
+          "relation": "CONTAINS",
+          "target": "Employee to review field",
+          "evidence": "a blank Appraisals form. First, select the employee being evaluated in the Employee to review field"
+        },
+        {
+          "source": "Appraisals form",
+          "relation": "CONTAINS",
+          "target": "Appraisers field",
+          "evidence": "their manager populates the Appraisers field"
+        },
+        {
+          "source": "Appraisals form",
+          "relation": "CONTAINS",
+          "target": "Job field",
+          "evidence": "The Job and Department fields are populated"
+        },
+        {
+          "source": "Appraisals form",
+          "relation": "CONTAINS",
+          "target": "Department field",
+          "evidence": "The Job and Department fields are populated"
+        },
+        {
+          "source": "Appraisals form",
+          "relation": "CONTAINS",
+          "target": "Appraisal Date",
+          "evidence": "The Appraisal Date is when the appraisal is scheduled"
+        },
+        {
+          "source": "Appraisals form",
+          "relation": "CONTAINS",
+          "target": "Template",
+          "evidence": "Last, select the desired Template"
+        },
+        {
+          "source": "appraisal",
+          "relation": "CONFIGURED_BY",
+          "target": "Template",
+          "evidence": "select the desired Template"
+        },
+        {
+          "source": "Confirm button",
+          "relation": "TRIGGERED_BY",
+          "target": "managers",
+          "evidence": "click the Confirm button"
+        },
+        {
+          "source": "Confirm button",
+          "relation": "ENABLES",
+          "target": "appraisal",
+          "evidence": "The appraisal is scheduled"
+        },
+        {
+          "source": "Default template",
+          "relation": "BELONGS_TO",
+          "target": "Appraisals",
+          "evidence": "created when the Appraisals app is installed"
+        }
+      ]
+    }
+  }
+]

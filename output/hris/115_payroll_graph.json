@@ -1,0 +1,986 @@
+[
+  {
+    "section_id": "payroll",
+    "heading": "Payroll",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "Time Off",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances",
+          "confidence": "high"
+        },
+        {
+          "name": "Planning",
+          "type": "Module",
+          "mention": "Planning",
+          "confidence": "high"
+        },
+        {
+          "name": "Timesheets",
+          "type": "Module",
+          "mention": "Timesheets",
+          "confidence": "high"
+        },
+        {
+          "name": "contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "salary structure",
+          "type": "DataObject",
+          "mention": "salary structure",
+          "confidence": "high"
+        },
+        {
+          "name": "working schedule",
+          "type": "Field",
+          "mention": "working schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "country-specific localization",
+          "type": "Module",
+          "mention": "country-specific localization",
+          "confidence": "medium"
+        },
+        {
+          "name": "salary attachments",
+          "type": "DataObject",
+          "mention": "salary attachments",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslip",
+          "confidence": "high"
+        },
+        {
+          "name": "pay runs",
+          "type": "Workflow",
+          "mention": "pay runs",
+          "confidence": "medium"
+        },
+        {
+          "name": "work entries",
+          "type": "DataObject",
+          "mention": "work entries",
+          "confidence": "high"
+        },
+        {
+          "name": "business",
+          "type": "Actor",
+          "mention": "business",
+          "confidence": "low"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo Title: Payroll"
+        },
+        {
+          "source": "Payroll",
+          "relation": "ENABLES",
+          "target": "contract",
+          "evidence": "When an employee is hired, they must sign a contract"
+        },
+        {
+          "source": "Payroll",
+          "relation": "ENABLES",
+          "target": "payslip",
+          "evidence": "create corresponding payslips"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SUPPORTS",
+          "target": "Employees",
+          "evidence": "used to calculate employees' worked time in conjunction with other Odoo apps, such as Employees"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SUPPORTS",
+          "target": "Time Off",
+          "evidence": "used to calculate employees' worked time in conjunction with other Odoo apps, such as Time Off"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SUPPORTS",
+          "target": "Attendances",
+          "evidence": "used to calculate employees' worked time in conjunction with other Odoo apps, such as Attendances"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SUPPORTS",
+          "target": "Planning",
+          "evidence": "used to calculate employees' worked time in conjunction with other Odoo apps, such as Planning"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "salary structure",
+          "evidence": "The contract outlines how the employee is compensated, including the salary structure"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "working schedule",
+          "evidence": "when they work (their working schedule)"
+        },
+        {
+          "source": "country-specific localization",
+          "relation": "CONFIGURED_BY",
+          "target": "country-specific localization",
+          "evidence": "install the correct country-specific localization, as this configures all local and national rules"
+        },
+        {
+          "source": "Payroll",
+          "relation": "ENABLES",
+          "target": "salary attachments",
+          "evidence": "any salary attachments must be configured before running payroll"
+        },
+        {
+          "source": "Payroll",
+          "relation": "GENERATES",
+          "target": "pay runs",
+          "evidence": "payslips can be created individually or in groups (pay runs)"
+        },
+        {
+          "source": "pay runs",
+          "relation": "GENERATES",
+          "target": "payslip",
+          "evidence": "payslips can be created individually or in groups (pay runs)"
+        },
+        {
+          "source": "Payroll",
+          "relation": "GENERATES",
+          "target": "work entries",
+          "evidence": "Odoo calculates when the employees worked based on their work entries"
+        },
+        {
+          "source": "work entries",
+          "relation": "CONFIGURED_BY",
+          "target": "contract",
+          "evidence": "Work entries are created according to their contracts"
+        },
+        {
+          "source": "work entries",
+          "relation": "SUPPORTS",
+          "target": "Attendances",
+          "evidence": "based on information from the Attendances, Planning, or Timesheets apps"
+        },
+        {
+          "source": "work entries",
+          "relation": "SUPPORTS",
+          "target": "Planning",
+          "evidence": "based on information from the Attendances, Planning, or Timesheets apps"
+        },
+        {
+          "source": "work entries",
+          "relation": "SUPPORTS",
+          "target": "Timesheets",
+          "evidence": "based on information from the Attendances, Planning, or Timesheets apps"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "settings",
+    "heading": "Settings",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "Module",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "payroll-accounting",
+          "type": "Setting",
+          "mention": "accounting",
+          "confidence": "medium"
+        },
+        {
+          "name": "payroll-localizations",
+          "type": "Setting",
+          "mention": "localizations",
+          "confidence": "medium"
+        },
+        {
+          "name": "payroll-time-off",
+          "type": "Setting",
+          "mention": "time off",
+          "confidence": "medium"
+        },
+        {
+          "name": "payroll-payroll-settings",
+          "type": "Setting",
+          "mention": "general payroll settings",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Configuration",
+          "evidence": "Navigate to Payroll app --> Configuration"
+        },
+        {
+          "source": "Configuration",
+          "relation": "CONTAINS",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "payroll-accounting",
+          "evidence": "accounting <payroll-accounting>"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "payroll-localizations",
+          "evidence": "localizations <payroll-localizations>"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "target": "payroll-time-off",
+          "evidence": "time off <payroll-time-off>"
+        },
+        {
+          "source": "Settings",
+          "relation": "CONTAINS",
+          "right": "payroll-payroll-settings",
+          "evidence": "general payroll settings <payroll-payroll-settings>"
+        },
+        {
+          "source": "Payroll",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Payroll app (in context of Odoo)"
+        },
+        {
+          "source": "payroll-accounting",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "The various settings for accounting <payroll-accounting>"
+        },
+        {
+          "source": "payroll-localizations",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "localizations <payroll-localizations>"
+        },
+        {
+          "source": "payroll-time-off",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "time off <payroll-time-off>"
+        },
+        {
+          "source": "payroll-payroll-settings",
+          "relation": "CONFIGURED_BY",
+          "target": "Settings",
+          "evidence": "general payroll settings <payroll-payroll-settings>"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "accounting",
+    "heading": "Accounting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting",
+          "type": "Module",
+          "mention": "Accounting",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting section of the configuration menu",
+          "type": "Sub-module",
+          "mention": "Accounting section of the configuration menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payroll Entries",
+          "type": "Feature",
+          "mention": "Payroll Entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll SEPA",
+          "type": "Feature",
+          "mention": "Payroll SEPA",
+          "confidence": "high"
+        },
+        {
+          "name": "Batch Account Move Lines",
+          "type": "Feature",
+          "mention": "Batch Account Move Lines",
+          "confidence": "high"
+        },
+        {
+          "name": "SEPA (Single Euro Payments Area) payments",
+          "type": "Integration",
+          "mention": "SEPA (Single Euro Payments Area) payments",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting app",
+          "type": "Module",
+          "mention": "Accounting app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Salaries box",
+          "type": "Feature",
+          "mention": "Salaries box",
+          "confidence": "medium"
+        },
+        {
+          "name": "Account move line",
+          "type": "DataObject",
+          "mention": "account move line",
+          "confidence": "high"
+        },
+        {
+          "name": "Accounting entries",
+          "type": "DataObject",
+          "mention": "accounting entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Individual payments",
+          "type": "DataObject",
+          "mention": "individual payments",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll Entries",
+          "relation": "CONFIGURED_BY",
+          "target": "Accounting section of the configuration menu",
+          "evidence": "Configure the following in the accounting section of the configuration menu: Payroll Entries"
+        },
+        {
+          "source": "Payroll Entries",
+          "relation": "ENABLES",
+          "target": "Post payroll slips in the Accounting app",
+          "evidence": "Enable this option to post payroll slips in the Accounting app"
+        },
+        {
+          "source": "Payroll Entries",
+          "relation": "GENERATES",
+          "target": "Salaries box",
+          "evidence": "in a Salaries box on the main dashboard"
+        },
+        {
+          "source": "Payroll SEPA",
+          "relation": "CONFIGURED_BY",
+          "target": "Accounting section of the configuration menu",
+          "evidence": "Configure the following in the accounting section of the configuration menu: Payroll SEPA"
+        },
+        {
+          "source": "Payroll SEPA",
+          "relation": "ENABLES",
+          "target": "SEPA (Single Euro Payments Area) payments",
+          "evidence": "Enable this option to create SEPA (Single Euro Payments Area) payments"
+        },
+        {
+          "source": "Batch Account Move Lines",
+          "relation": "CONFIGURED_BY",
+          "target": "Accounting section of the configuration menu",
+          "evidence": "Configure the following in the accounting section of the configuration menu: Batch Account Move Lines"
+        },
+        {
+          "source": "Batch Account Move Lines",
+          "relation": "GENERATES",
+          "target": "Account move line",
+          "evidence": "to have a single account move line created"
+        },
+        {
+          "source": "Batch Account Move Lines",
+          "relation": "PRODUCES",
+          "target": "Account move line",
+          "evidence": "created from all the accounting entries"
+        },
+        {
+          "source": "Account move line",
+          "relation": "IS_PART_OF",
+          "target": "Accounting entries",
+          "evidence": "from all the accounting entries"
+        },
+        {
+          "source": "Batch Account Move Lines",
+          "relation": "CONTAINS",
+          "target": "Accounting entries",
+          "evidence": "from all the accounting entries of the same period"
+        },
+        {
+          "source": "Batch Account Move Lines",
+          "relation": "DISABLES",
+          "target": "Individual payments",
+          "evidence": "disables the creation of individual payments"
+        },
+        {
+          "source": "Accounting",
+          "relation": "CONTAINS",
+          "target": "Accounting section of the configuration menu",
+          "evidence": "Configure the following in the accounting section of the configuration menu"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Accounting",
+          "evidence": "Product: Odoo Title: Accounting"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "localizations",
+    "heading": "Localizations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "Localizations",
+          "type": "Concept",
+          "mention": "Localizations",
+          "confidence": "high"
+        },
+        {
+          "name": "Tax",
+          "type": "Concept",
+          "mention": "taxes",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fee",
+          "type": "Concept",
+          "mention": "fees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Allowance",
+          "type": "Concept",
+          "mention": "allowances",
+          "confidence": "medium"
+        },
+        {
+          "name": "Company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "high"
+        },
+        {
+          "name": "Multi-company",
+          "type": "Feature",
+          "mention": "multi-company",
+          "confidence": "high"
+        },
+        {
+          "name": "Headquarters",
+          "type": "Actor",
+          "mention": "headquarters",
+          "confidence": "low"
+        },
+        {
+          "name": "Branch",
+          "type": "Actor",
+          "mention": "branch",
+          "confidence": "low"
+        },
+        {
+          "name": "Law",
+          "type": "Regulation",
+          "mention": "law",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Payroll",
+          "evidence": "The Localization section of the Payroll app Settings page"
+        },
+        {
+          "source": "Payroll",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "The Localization section of the Payroll app Settings page"
+        },
+        {
+          "source": "Localizations",
+          "relation": "GOVERNED_BY",
+          "target": "Law",
+          "evidence": "unless specifically required due to special circumstances. For example, a new law is passed"
+        },
+        {
+          "source": "Localizations",
+          "relation": "CONTAINS",
+          "target": "Tax",
+          "evidence": "which account for all taxes"
+        },
+        {
+          "source": "Localizations",
+          "relation": "CONTAINS",
+          "target": "Fee",
+          "evidence": "which account for all taxes, fees"
+        },
+        {
+          "source": "Localizations",
+          "relation": "CONTAINS",
+          "target": "Allowance",
+          "evidence": "which account for all taxes, fees, and allowances"
+        },
+        {
+          "source": "Multi-company",
+          "relation": "ENABLES",
+          "target": "Company",
+          "evidence": "This is generally done when there is a main company or office location"
+        },
+        {
+          "source": "Company",
+          "relation": "CONFIGURED_BY",
+          "target": "Localizations",
+          "evidence": "Each company can have a different localization setting"
+        },
+        {
+          "source": "Multi-company",
+          "relation": "SEE_ALSO",
+          "target": "../general/companies/multi_company",
+          "evidence": "refer to the companies documentation, or the multi-company documentation"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "time-off",
+    "heading": "Time off",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time off",
+          "type": "Module",
+          "mention": "Title: Time off",
+          "confidence": "high"
+        },
+        {
+          "name": "Deferred Time Off",
+          "type": "Feature",
+          "mention": "Deferred Time Off",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslips",
+          "confidence": "medium"
+        },
+        {
+          "name": "Responsible field",
+          "type": "Field",
+          "mention": "Responsible field",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "pay period",
+          "type": "Concept",
+          "mention": "pay period",
+          "confidence": "medium"
+        },
+        {
+          "name": "sick day",
+          "type": "Concept",
+          "mention": "sick day",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Time off",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Title: Time off"
+        },
+        {
+          "source": "Deferred Time Off",
+          "relation": "BELONGS_TO",
+          "target": "Time off",
+          "evidence": "Deferred Time Off feature described under Time off module"
+        },
+        {
+          "source": "Deferred Time Off",
+          "relation": "CONFIGURED_BY",
+          "target": "Responsible field",
+          "evidence": "Select the person responsible... using the drop-down menu in the Responsible field."
+        },
+        {
+          "source": "Deferred Time Off",
+          "relation": "ENABLES",
+          "target": "payslip",
+          "evidence": "If time off is taken *after* payslips are validated... to avoid cancelling then reprocessing payslips."
+        },
+        {
+          "source": "payslip",
+          "relation": "PRODUCES",
+          "target": "employee",
+          "evidence": "An employee is paid..."
+        },
+        {
+          "source": "employee",
+          "relation": "PERFORMED_BY",
+          "target": "sick day",
+          "evidence": "the employee took an unexpected sick day"
+        },
+        {
+          "source": "Deferred Time Off",
+          "relation": "APPLIES_TO",
+          "target": "pay period",
+          "evidence": "the time off must be applied to the following pay period"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "payroll",
+    "heading": "Payroll",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Title: Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll Localization",
+          "type": "Module",
+          "mention": "payroll localization",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Expiration Notice Period",
+          "type": "Field",
+          "mention": "Contract Expiration Notice Period",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslip PDF Display",
+          "type": "Setting",
+          "mention": "Payslip PDF Display",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Permit Expiration Notice Period",
+          "type": "Field",
+          "mention": "Work Permit Expiration Notice Period",
+          "confidence": "high"
+        },
+        {
+          "name": "YTD Reset Date",
+          "type": "Field",
+          "mention": "YTD Reset Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Contracts",
+          "type": "Module",
+          "mention": "payroll/contracts",
+          "confidence": "high"
+        },
+        {
+          "name": "Salaries",
+          "type": "Module",
+          "mention": "payroll/salaries",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entries",
+          "type": "Module",
+          "mention": "payroll/work_entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Working Schedules",
+          "type": "Module",
+          "mention": "payroll/working_schedules",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off To Report",
+          "type": "Module",
+          "mention": "payroll/time_off_to_report",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Attachments",
+          "type": "Module",
+          "mention": "payroll/salary_attachments",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslips",
+          "type": "Module",
+          "mention": "payroll/payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay Runs",
+          "type": "Module",
+          "mention": "payroll/pay_runs",
+          "confidence": "high"
+        },
+        {
+          "name": "Commissions",
+          "type": "Module",
+          "mention": "payroll/commissions",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll Analysis",
+          "type": "Module",
+          "mention": "payroll/payroll_analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Headcount",
+          "type": "Module",
+          "mention": "payroll/headcount",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entry Analysis",
+          "type": "Module",
+          "mention": "payroll/work_entry_analysis",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll Localizations",
+          "type": "Module",
+          "mention": "payroll/payroll_localizations",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Payroll"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Payroll Localization",
+          "evidence": "The payroll section allows for the installation of a payroll localization"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONFIGURED_BY",
+          "target": "Contract Expiration Notice Period",
+          "evidence": "Once a localization has been installed, configure the following fields: - Contract Expiration Notice Period"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONFIGURED_BY",
+          "target": "Payslip PDF Display",
+          "evidence": "Once a localization has been installed, configure the following fields: - Payslip PDF Display"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONFIGURED_BY",
+          "target": "Work Permit Expiration Notice Period",
+          "evidence": "Once a localization has been installed, configure the following fields: - Work Permit Expiration Notice Period"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONFIGURED_BY",
+          "target": "YTD Reset Date",
+          "evidence": "Once a localization has been installed, configure the following fields: - YTD Reset Date"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Contracts",
+          "evidence": ".. seealso:: - payroll/contracts"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Salaries",
+          "evidence": ".. seealso:: - payroll/salaries"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Work Entries",
+          "evidence": ".. seealso:: - payroll/work_entries"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Working Schedules",
+          "evidence": ".. seealso:: - payroll/working_schedules"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Time Off To Report",
+          "evidence": ".. seealso:: - payroll/time_off_to_report"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Salary Attachments",
+          "evidence": ".. seealso:: - payroll/salary_attachments"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Payslips",
+          "evidence": ".. seealso:: - payroll/payslips"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Pay Runs",
+          "evidence": ".. seealso:: - payroll/pay_runs"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Commissions",
+          "evidence": ".. seealso:: - payroll/commissions"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Payroll Analysis",
+          "evidence": ".. seealso:: - payroll/payroll_analysis"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Headcount",
+          "evidence": ".. seealso:: - payroll/headcount"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Work Entry Analysis",
+          "evidence": ".. seealso:: - payroll/work_entry_analysis"
+        },
+        {
+          "source": "Payroll",
+          "relation": "SEE_ALSO",
+          "target": "Payroll Localizations",
+          "evidence": ".. seealso:: - payroll/payroll_localizations"
+        }
+      ]
+    }
+  }
+]

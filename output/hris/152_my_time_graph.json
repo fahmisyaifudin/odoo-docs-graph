@@ -1,0 +1,658 @@
+[
+  {
+    "section_id": "my-time",
+    "heading": "My time",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "My Time",
+          "type": "Module",
+          "mention": "My Time",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Product",
+          "mention": "Time Off",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off dashboard",
+          "type": "Module",
+          "mention": "Time Off dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Time-off requests",
+          "type": "Feature",
+          "mention": "time-off requests",
+          "confidence": "high"
+        },
+        {
+          "name": "Time off balances",
+          "type": "Feature",
+          "mention": "time off balances",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocations",
+          "type": "Feature",
+          "mention": "allocations",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "My Time",
+          "relation": "CONTAINS",
+          "target": "Time Off dashboard",
+          "evidence": "The *My Time* menu of the **Time Off** app houses ... the main **Time Off** dashboard"
+        },
+        {
+          "source": "My Time",
+          "relation": "CONTAINS",
+          "target": "Time-off requests",
+          "evidence": "This includes ... time-off requests"
+        },
+        {
+          "source": "My Time",
+          "relation": "CONTAINS",
+          "target": "Allocations",
+          "evidence": "This includes ... allocations"
+        },
+        {
+          "source": "Time Off dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "Time off balances",
+          "evidence": "which displays an overview of the various time off balances"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "dashboard",
+    "heading": "Dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off",
+          "type": "Module",
+          "mention": "the **Time Off** app",
+          "confidence": "high"
+        },
+        {
+          "name": "Dashboard",
+          "type": "Sub-module",
+          "mention": "**Time Off** Dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "My Time",
+          "type": "Sub-module",
+          "mention": "My Time",
+          "confidence": "medium"
+        },
+        {
+          "name": "Year",
+          "type": "Field",
+          "mention": "Year button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Day",
+          "type": "Field",
+          "mention": "Day",
+          "confidence": "low"
+        },
+        {
+          "name": "Week",
+          "type": "Field",
+          "mention": "Week",
+          "confidence": "low"
+        },
+        {
+          "name": "Month",
+          "type": "Field",
+          "mention": "Month",
+          "confidence": "low"
+        },
+        {
+          "name": "fa-arrow-left",
+          "type": "Action",
+          "mention": "fa-arrow-left (left arrow)",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-arrow-right",
+          "type": "Action",
+          "mention": "fa-arrow-right (right arrow)",
+          "confidence": "medium"
+        },
+        {
+          "name": "Today",
+          "type": "Action",
+          "mention": "Today button",
+          "confidence": "medium"
+        },
+        {
+          "name": "time off type",
+          "type": "DataObject",
+          "mention": "time off type",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-question-circle-o",
+          "type": "Action",
+          "mention": "fa-question-circle-o (question mark) icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Balance at the (date)",
+          "type": "Field",
+          "mention": "Balance at the (date) field",
+          "confidence": "medium"
+        },
+        {
+          "name": "accrual plan",
+          "type": "Feature",
+          "mention": "accrual plan",
+          "confidence": "low"
+        },
+        {
+          "name": "Legend",
+          "type": "Sub-module",
+          "mention": "Legend",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "medium"
+        },
+        {
+          "name": "request_time_off",
+          "type": "Feature",
+          "mention": "New Time Off <request_time_off>",
+          "confidence": "low"
+        },
+        {
+          "name": "New Allocation Request",
+          "type": "Action",
+          "mention": "New Allocation Request button",
+          "confidence": "medium"
+        },
+        {
+          "name": "request-allocation",
+          "type": "Feature",
+          "mention": "New Allocation <time_off/request-allocation>",
+          "confidence": "low"
+        },
+        {
+          "name": "user",
+          "type": "Actor",
+          "mention": "user",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Time Off",
+          "evidence": "which is the first page that appears when the **Time Off** app is opened"
+        },
+        {
+          "source": "My Time",
+          "relation": "CONTAINS",
+          "target": "Dashboard",
+          "evidence": "by navigating to Time Off app --> My Time --> Dashboard"
+        },
+        {
+          "source": "Time Off",
+          "relation": "CONTAINS",
+          "target": "My Time",
+          "evidence": "by navigating to Time Off app --> My Time --> Dashboard"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "HAS_REPORT",
+          "target": "time off summary",
+          "evidence": "Above the calendar view is a summary of the user's time off balances"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "CONTAINS",
+          "target": "Legend",
+          "evidence": "On the right side of the calendar, the various time off types are displayed, each with their own corresponding color. The Legend explains how the various statuses for time off requests are presented"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "ENABLES",
+          "target": "New",
+          "evidence": "New time off requests can be made from the Dashboard. Click the New button"
+        },
+        {
+          "source": "Dashboard",
+          "relation": "ENABLES",
+          "target": "New Allocation Request",
+          "evidence": "New allocation requests can also be made from the Dashboard. Click the New Allocation Request button"
+        },
+        {
+          "source": "fa-question-circle-o",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "click the fa-question-circle-o (question mark) icon"
+        },
+        {
+          "source": "fa-question-circle-o",
+          "relation": "GENERATES",
+          "target": "popover window",
+          "evidence": "The complete details are presented in a popover window"
+        },
+        {
+          "source": "Balance at the (date)",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "Click on the date"
+        },
+        {
+          "source": "Balance at the (date)",
+          "relation": "GENERATES",
+          "target": "calendar selector popover",
+          "evidence": "a calendar selector popover appears"
+        },
+        {
+          "source": "Today",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "click the Today button"
+        },
+        {
+          "source": "Year",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "click on the Year button"
+        },
+        {
+          "source": "fa-arrow-left",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "click the fa-arrow-left (left arrow)"
+        },
+        {
+          "source": "fa-arrow-right",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "fa-arrow-right (right arrow)"
+        },
+        {
+          "source": "New",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "Click the New button"
+        },
+        {
+          "source": "New Allocation Request",
+          "relation": "TRIGGERED_BY",
+          "target": "user",
+          "evidence": "Click the New Allocation Request button"
+        },
+        {
+          "source": "Balance at the (date)",
+          "relation": "REQUIRES",
+          "target": "accrual plan",
+          "evidence": "The Balance at the (date) field **only** appears if the user is accruing time off through an accrual plan"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "my-time-off",
+    "heading": "My time off",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off app",
+          "type": "Module",
+          "mention": "Time Off app",
+          "confidence": "medium"
+        },
+        {
+          "name": "My Time",
+          "type": "Sub-module",
+          "mention": "My Time",
+          "confidence": "medium"
+        },
+        {
+          "name": "My Time Off",
+          "type": "Feature",
+          "mention": "My Time Off",
+          "confidence": "medium"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "low"
+        },
+        {
+          "name": "Time Off Type",
+          "type": "Field",
+          "mention": "Time Off Type",
+          "confidence": "medium"
+        },
+        {
+          "name": "Description",
+          "type": "Field",
+          "mention": "Description",
+          "confidence": "medium"
+        },
+        {
+          "name": "Start Date",
+          "type": "Field",
+          "mention": "Start Date",
+          "confidence": "medium"
+        },
+        {
+          "name": "End Date",
+          "type": "Field",
+          "mention": "End Date",
+          "confidence": "medium"
+        },
+        {
+          "name": "Duration",
+          "type": "Field",
+          "mention": "Duration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Status",
+          "type": "Field",
+          "mention": "Status",
+          "confidence": "medium"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "Click the New button",
+          "confidence": "medium"
+        },
+        {
+          "name": "request_time_off",
+          "type": "Action",
+          "mention": "request_time_off",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Time Off app",
+          "relation": "CONTAINS",
+          "target": "My Time",
+          "evidence": "navigate to Time Off app --> My Time"
+        },
+        {
+          "source": "My Time",
+          "relation": "CONTAINS",
+          "target": "My Time Off",
+          "evidence": "My Time --> My Time Off"
+        },
+        {
+          "source": "My Time Off",
+          "relation": "HAS_FEATURE",
+          "target": "list view",
+          "evidence": "all time off requests... appear in a list view"
+        },
+        {
+          "source": "list view",
+          "relation": "CONTAINS",
+          "target": "Time Off Type",
+          "evidence": "The list includes... Time Off Type"
+        },
+        {
+          "source": "list view",
+          "relation": "CONTAINS",
+          "target": "Description",
+          "evidence": "The list includes... Description"
+        },
+        {
+          "source": "list view",
+          "relation": "CONTAINS",
+          "target": "Start Date",
+          "evidence": "The list includes... Start Date"
+        },
+        {
+          "source": "list view",
+          "relation": "CONTAINS",
+          "target": "End Date",
+          "evidence": "The list includes... End Date"
+        },
+        {
+          "source": "list view",
+          "relation": "CONTAINS",
+          "target": "Duration",
+          "evidence": "The list includes... Duration"
+        },
+        {
+          "source": "list view",
+          "relation": "CONTAINS",
+          "target": "Status",
+          "evidence": "The list includes... Status"
+        },
+        {
+          "source": "My Time Off",
+          "relation": "ENABLES",
+          "target": "request_time_off",
+          "evidence": "A new time off request can be made from this view"
+        },
+        {
+          "source": "New button",
+          "relation": "TRIGGERED_BY",
+          "target": "request_time_off",
+          "evidence": "Click the New button to request_time_off"
+        },
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Time Off app",
+          "evidence": "Product: Odoo; navigate to Time Off app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "my-allocations",
+    "heading": "My allocations",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Time Off app",
+          "type": "Module",
+          "mention": "Time Off app",
+          "confidence": "high"
+        },
+        {
+          "name": "My Time",
+          "type": "Sub-module",
+          "mention": "My Time",
+          "confidence": "high"
+        },
+        {
+          "name": "My Allocations",
+          "type": "Feature",
+          "mention": "My allocations",
+          "confidence": "high"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Time Off Type",
+          "type": "Field",
+          "mention": "Time Off Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Amount",
+          "type": "Field",
+          "mention": "Amount",
+          "confidence": "high"
+        },
+        {
+          "name": "Allocation Type",
+          "type": "Field",
+          "mention": "Allocation Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Accrual Plan",
+          "type": "Field",
+          "mention": "Accrual Plan",
+          "confidence": "high"
+        },
+        {
+          "name": "Status",
+          "type": "Field",
+          "mention": "Status",
+          "confidence": "high"
+        },
+        {
+          "name": "approve requests",
+          "type": "Action",
+          "mention": "Approve requests",
+          "confidence": "high"
+        },
+        {
+          "name": "new allocation request",
+          "type": "Action",
+          "mention": "request an allocation",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Feature",
+          "mention": "New button",
+          "confidence": "high"
+        },
+        {
+          "name": "appropriate access rights",
+          "type": "Permission",
+          "mention": "appropriate access rights",
+          "confidence": "medium"
+        },
+        {
+          "name": "signed-in user",
+          "type": "Actor",
+          "mention": "signed-in user",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "My Allocations",
+          "relation": "BELONGS_TO",
+          "target": "My Time",
+          "evidence": "navigate to Time Off app --> My Time --> My Allocations"
+        },
+        {
+          "source": "My Time",
+          "relation": "BELONGS_TO",
+          "target": "Time Off app",
+          "evidence": "navigate to Time Off app --> My Time"
+        },
+        {
+          "source": "Time Off app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "My Allocations",
+          "relation": "HAS_FEATURE",
+          "target": "list view",
+          "evidence": "All allocations and requested allocations appear in a list view"
+        },
+        {
+          "source": "My Allocations",
+          "relation": "HAS_FEATURE",
+          "target": "Time Off Type",
+          "evidence": "information presented on the My Allocations page includes: Time Off Type"
+        },
+        {
+          "source": "My Allocations",
+          "relation": "HAS_FEATURE",
+          "target": "Amount",
+          "evidence": "information presented on the My Allocations page includes: Amount"
+        },
+        {
+          "source": "My Allocations",
+          "relation": "HAS_FEATURE",
+          "target": "Allocation Type",
+          "evidence": "information presented on the My Allocations page includes: Allocation Type"
+        },
+        {
+          "source": "My Allocations",
+          "relation": "HAS_FEATURE",
+          "target": "Accrual Plan",
+          "evidence": "information presented on the My Allocations page includes: Accrual Plan"
+        },
+        {
+          "source": "My Allocations",
+          "relation": "HAS_FEATURE",
+          "target": "Status",
+          "evidence": "information presented on the My Allocations page includes: Status"
+        },
+        {
+          "source": "My Allocations",
+          "relation": "ENABLES",
+          "target": "approve requests",
+          "evidence": "they may also see an option to Approve requests"
+        },
+        {
+          "source": "My Allocations",
+          "relation": "ENABLES",
+          "target": "new allocation request",
+          "evidence": "Click the New button to request an allocation"
+        },
+        {
+          "source": "approve requests",
+          "relation": "CONFIGURED_BY",
+          "target": "appropriate access rights",
+          "evidence": "If the signed-in user has the appropriate access rights, they may also see an option to Approve requests"
+        },
+        {
+          "source": "new allocation request",
+          "relation": "PERFORMED_BY",
+          "target": "signed-in user",
+          "evidence": "Click the New button to request an allocation"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,358 @@
+[
+  {
+    "section_id": "headcount-report",
+    "heading": "Headcount report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll",
+          "confidence": "medium"
+        },
+        {
+          "name": "Headcount report",
+          "type": "Report",
+          "mention": "Headcount report",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "HAS_REPORT",
+          "target": "Headcount report",
+          "evidence": "The Headcount report in the Payroll app"
+        },
+        {
+          "source": "Payroll",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Payroll app"
+        },
+        {
+          "source": "Headcount report",
+          "relation": "BELONGS_TO",
+          "target": "Payroll",
+          "evidence": "The Headcount report in the Payroll app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-headcount-report",
+    "heading": "Create a headcount report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Sub-module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Headcount",
+          "type": "Feature",
+          "mention": "Headcount",
+          "confidence": "high"
+        },
+        {
+          "name": "Create a headcount report",
+          "type": "Action",
+          "mention": "Create a headcount report",
+          "confidence": "high"
+        },
+        {
+          "name": "Headcount report",
+          "type": "Report",
+          "mention": "headcount report",
+          "confidence": "high"
+        },
+        {
+          "name": "Report name",
+          "type": "Field",
+          "mention": "Report name",
+          "confidence": "high"
+        },
+        {
+          "name": "Company",
+          "type": "Field",
+          "mention": "Company",
+          "confidence": "high"
+        },
+        {
+          "name": "From/To dates",
+          "type": "Field",
+          "mention": "From/To dates",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees smart button",
+          "type": "Feature",
+          "mention": "Employees smart button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reporting",
+          "relation": "BELONGS_TO",
+          "target": "Payroll app",
+          "evidence": "Payroll app --> Reporting"
+        },
+        {
+          "source": "Headcount",
+          "relation": "BELONGS_TO",
+          "target": "Reporting",
+          "evidence": "Reporting --> Headcount"
+        },
+        {
+          "source": "Create a headcount report",
+          "relation": "PRODUCES",
+          "target": "Headcount report",
+          "evidence": "Create a headcount report"
+        },
+        {
+          "source": "Headcount report",
+          "relation": "CONTAINS",
+          "target": "Report name",
+          "evidence": "Report name: ..."
+        },
+        {
+          "source": "Headcount report",
+          "relation": "CONTAINS",
+          "target": "Company",
+          "evidence": "Company: ..."
+        },
+        {
+          "source": "Headcount report",
+          "relation": "CONTAINS",
+          "target": "From/To dates",
+          "evidence": "From/To dates: ..."
+        },
+        {
+          "source": "Headcount report",
+          "relation": "HAS_FEATURE",
+          "target": "Employees smart button",
+          "evidence": "At the top of the form, a fa-people Employees smart button appears."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-all-headcount-reports",
+    "heading": "View all headcount reports",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "medium"
+        },
+        {
+          "name": "Headcount",
+          "type": "Sub-module",
+          "mention": "Headcount",
+          "confidence": "medium"
+        },
+        {
+          "name": "View all headcount reports",
+          "type": "Action",
+          "mention": "view all headcount reports",
+          "confidence": "high"
+        },
+        {
+          "name": "headcount reports",
+          "type": "Report",
+          "mention": "headcount reports",
+          "confidence": "high"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Reporting",
+          "relation": "IS_PART_OF",
+          "target": "Payroll app",
+          "evidence": "navigate to Payroll app --> Reporting"
+        },
+        {
+          "source": "Headcount",
+          "relation": "IS_PART_OF",
+          "target": "Reporting",
+          "evidence": "Reporting --> Headcount"
+        },
+        {
+          "source": "headcount reports",
+          "relation": "BELONGS_TO",
+          "target": "Headcount",
+          "evidence": "viewing all headcount reports in a list view. To view all headcount reports, navigate to ... Headcount"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo ... navigate to Payroll app"
+        },
+        {
+          "source": "View all headcount reports",
+          "relation": "CONFIGURED_BY",
+          "target": "list view",
+          "evidence": "viewing all headcount reports in a list view"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-employees-in-a-headcount",
+    "heading": "View employees in a headcount",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "headcount report",
+          "type": "Report",
+          "mention": "headcount report",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees smart button",
+          "type": "Action",
+          "mention": "fa-people Employees smart button",
+          "confidence": "medium"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Department",
+          "type": "DataObject",
+          "mention": "Department",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "DataObject",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "employee record",
+          "type": "DataObject",
+          "mention": "employee records",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Title",
+          "type": "Field",
+          "mention": "Job Title",
+          "confidence": "high"
+        },
+        {
+          "name": "Employer Cost",
+          "type": "Field",
+          "mention": "Employer Cost",
+          "confidence": "high"
+        },
+        {
+          "name": "Wage on Payroll",
+          "type": "Field",
+          "mention": "Wage on Payroll",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Employees smart button",
+          "relation": "TRIGGERED_BY",
+          "target": "headcount report",
+          "evidence": "click the fa-people Employees smart button at the top of a headcount report."
+        },
+        {
+          "source": "Employees smart button",
+          "relation": "GENERATES",
+          "target": "list view",
+          "evidence": "All employees from the headcount appear in a list view"
+        },
+        {
+          "source": "list view",
+          "relation": "CONTAINS",
+          "target": "Employee",
+          "evidence": "All employees from the headcount appear in a list view"
+        },
+        {
+          "source": "Employee",
+          "relation": "BELONGS_TO",
+          "target": "Department",
+          "evidence": "grouped by Department"
+        },
+        {
+          "source": "Employee",
+          "relation": "HAS_FEATURE",
+          "target": "Job Title",
+          "evidence": "- Job Title: their role"
+        },
+        {
+          "source": "Employee",
+          "relation": "HAS_FEATURE",
+          "target": "Employer Cost",
+          "evidence": "- Employer Cost: how much the company pays the employee each pay-period"
+        },
+        {
+          "source": "Employee",
+          "relation": "HAS_FEATURE",
+          "target": "Wage on Payroll",
+          "evidence": "- Wage on Payroll: the dollar amount on payroll reports"
+        },
+        {
+          "source": "headcount report",
+          "relation": "CONTAINS",
+          "target": "employee record",
+          "evidence": "view all employee records of a specific headcount report."
+        }
+      ]
+    }
+  }
+]

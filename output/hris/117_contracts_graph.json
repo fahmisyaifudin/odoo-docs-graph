@@ -1,0 +1,2075 @@
+[
+  {
+    "section_id": "contracts",
+    "heading": "Contracts",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contracts",
+          "type": "Module",
+          "mention": "Contracts",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Integration",
+          "mention": "Documents",
+          "confidence": "medium"
+        },
+        {
+          "name": "Sign",
+          "type": "Integration",
+          "mention": "Sign",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "employee",
+          "relation": "REQUIRES",
+          "target": "contract",
+          "evidence": "Every employee in Odoo is required to have a running contract"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "employee",
+          "evidence": "A contract outlines the terms of an employee's position"
+        },
+        {
+          "source": "contract",
+          "relation": "RELATED_TO",
+          "target": "Documents",
+          "evidence": "Contract documents (PDFs) are uploaded and organized using the Documents application"
+        },
+        {
+          "source": "contract",
+          "relation": "RELATED_TO",
+          "target": "Sign",
+          "evidence": "contract documents (PDFs) are signed using the Sign application"
+        },
+        {
+          "source": "employee",
+          "relation": "PERFORMED_BY",
+          "target": "contract",
+          "evidence": "Every employee in Odoo is required to have a running contract in order to be paid"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "contracts-dashboard",
+    "heading": "Contracts dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Module",
+          "mention": "Employees app",
+          "confidence": "high"
+        },
+        {
+          "name": "Contracts dashboard",
+          "type": "Feature",
+          "mention": "Contracts dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "Contracts",
+          "type": "Feature",
+          "mention": "Contracts",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee contract information",
+          "type": "DataObject",
+          "mention": "employee contract information",
+          "confidence": "high"
+        },
+        {
+          "name": "Status",
+          "type": "Field",
+          "mention": "Status",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Field",
+          "mention": "New",
+          "confidence": "medium"
+        },
+        {
+          "name": "Running",
+          "type": "Field",
+          "mention": "Running",
+          "confidence": "medium"
+        },
+        {
+          "name": "Expired",
+          "type": "Field",
+          "mention": "Expired",
+          "confidence": "medium"
+        },
+        {
+          "name": "Cancelled",
+          "type": "Field",
+          "mention": "Cancelled",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "HAS_FEATURE",
+          "target": "Contracts dashboard",
+          "evidence": "Both the **Payroll** and **Employees** apps display *identical employee contract information*."
+        },
+        {
+          "source": "Employees",
+          "relation": "HAS_FEATURE",
+          "target": "Contracts dashboard",
+          "evidence": "Both the **Payroll** and **Employees** apps display *identical employee contract information*."
+        },
+        {
+          "source": "Contracts dashboard",
+          "relation": "CONTAINS",
+          "target": "Employee contract information",
+          "evidence": "The Contracts dashboard displays all employee contracts in a default list view, grouped by Status."
+        },
+        {
+          "source": "Employee contract information",
+          "relation": "CONFIGURED_BY",
+          "target": "Status",
+          "evidence": "The Contracts dashboard displays all employee contracts in a default list view, grouped by Status."
+        },
+        {
+          "source": "Employee contract information",
+          "relation": "RELATED_TO",
+          "target": "New",
+          "evidence": "The available status groupings are New, Running, Expired, and Cancelled."
+        },
+        {
+          "source": "Employee contract information",
+          "relation": "RELATED_TO",
+          "target": "Running",
+          "evidence": "The available status groupings are New, Running, Expired, and Cancelled."
+        },
+        {
+          "source": "Employee contract information",
+          "relation": "RELATED_TO",
+          "target": "Expired",
+          "evidence": "The available status groupings are New, Running, Expired, and Cancelled."
+        },
+        {
+          "source": "Employee contract information",
+          "relation": "RELATED_TO",
+          "target": "Cancelled",
+          "evidence": "The available status groupings are New, Running, Expired, and Cancelled."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-contract",
+    "heading": "Create a contract",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contracts dashboard",
+          "type": "Module",
+          "mention": "Contracts dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "Create a contract",
+          "type": "Workflow",
+          "mention": "Create a contract",
+          "confidence": "high"
+        },
+        {
+          "name": "New button",
+          "type": "Action",
+          "mention": "New button",
+          "confidence": "medium"
+        },
+        {
+          "name": "blank contract form",
+          "type": "DataObject",
+          "mention": "blank contract form",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Contracts dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "..."
+        },
+        {
+          "source": "Create a contract",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "..."
+        },
+        {
+          "source": "Create a contract",
+          "relation": "TRIGGERED_BY",
+          "target": "New button",
+          "evidence": "click the New button on the Contracts dashboard"
+        },
+        {
+          "source": "Create a contract",
+          "relation": "PRODUCES",
+          "target": "blank contract form",
+          "evidence": "... a blank contract form appears"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "general-information-section",
+    "heading": "General information section",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "Contact Reference",
+          "type": "Field",
+          "mention": "Contact Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Field",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Start Date",
+          "type": "Field",
+          "mention": "Contract Start Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract End Date",
+          "type": "Field",
+          "mention": "Contract End Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Working Schedule",
+          "type": "Field",
+          "mention": "Working Schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "work entries",
+          "type": "DataObject",
+          "mention": "work entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "medium"
+        },
+        {
+          "name": "Working Schedules",
+          "type": "Feature",
+          "mention": "Working Schedules",
+          "confidence": "medium"
+        },
+        {
+          "name": "Work Entry Source",
+          "type": "Field",
+          "mention": "Work Entry Source",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances",
+          "confidence": "high"
+        },
+        {
+          "name": "Planning",
+          "type": "Module",
+          "mention": "Planning",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Structure Type",
+          "type": "Field",
+          "mention": "Salary Structure Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Concept",
+          "mention": "Employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "Worker",
+          "type": "Concept",
+          "mention": "Worker",
+          "confidence": "medium"
+        },
+        {
+          "name": "Department",
+          "type": "Field",
+          "mention": "Department",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Position",
+          "type": "Field",
+          "mention": "Job Position",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Type",
+          "type": "Field",
+          "mention": "Contract Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Wage on Payroll",
+          "type": "Field",
+          "mention": "Wage on Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "Working Schedule",
+          "type": "Concept",
+          "mention": "Working Schedule",
+          "confidence": "low"
+        },
+        {
+          "name": "Working Times",
+          "type": "Feature",
+          "mention": "Working Times",
+          "confidence": "medium"
+        },
+        {
+          "name": "HR Responsible",
+          "type": "Field",
+          "mention": "HR Responsible",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Configurator",
+          "type": "Module",
+          "mention": "Salary Configurator",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign app",
+          "type": "Module",
+          "mention": "Sign app",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Contact Reference",
+          "evidence": "Enter the following information... Contact Reference"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Employee",
+          "evidence": "Enter the following information... Employee"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Contract Start Date",
+          "evidence": "Enter the following information... Contract Start Date"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Contract End Date",
+          "evidence": "Enter the following information... Contract End Date"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Working Schedule",
+          "evidence": "Enter the following information... Working Schedule"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Work Entry Source",
+          "evidence": "Enter the following information... Work Entry Source"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Salary Structure Type",
+          "evidence": "Enter the following information... Salary Structure Type"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Department",
+          "evidence": "Enter the following information... Department"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Job Position",
+          "evidence": "Enter the following information... Job Position"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Contract Type",
+          "evidence": "Enter the following information... Contract Type"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "Wage on Payroll",
+          "evidence": "Enter the following information... Wage on Payroll"
+        },
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "HR Responsible",
+          "evidence": "Enter the following information... HR Responsible"
+        },
+        {
+          "source": "Working Schedule",
+          "relation": "GENERATES",
+          "target": "work entries",
+          "evidence": "The selected working schedule determines how work entries <work_entries> are generated"
+        },
+        {
+          "source": "Work Entry Source",
+          "relation": "ENABLES",
+          "target": "work entries",
+          "evidence": "Work entries <work_entries> are generated"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "Payroll app",
+          "evidence": "Payroll app --> Configuration"
+        },
+        {
+          "source": "Working Schedules",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Configuration --> Working Schedules"
+        },
+        {
+          "source": "Working Times",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Configuration --> Working Times"
+        },
+        {
+          "source": "Work Entry Source",
+          "relation": "ENABLES",
+          "target": "Attendances",
+          "evidence": "Work entries... generated based on the employee's check-in records in the Attendances app"
+        },
+        {
+          "source": "Work Entry Source",
+          "relation": "ENABLES",
+          "target": "Planning",
+          "evidence": "Work entries... generated based on the planned schedule for the employee from the Planning app"
+        },
+        {
+          "source": "Salary Configurator",
+          "relation": "REQUIRES",
+          "target": "Sign app",
+          "evidence": "The HR Responsible field only appears if the Salary Configurator... module and the Sign app are both installed"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "salary-information-tab",
+    "heading": "Salary information tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Salary Information tab",
+          "type": "Module",
+          "mention": "Salary Information tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Wage Type",
+          "type": "Field",
+          "mention": "Wage Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed Wage",
+          "type": "Standard",
+          "mention": "Fixed Wage",
+          "confidence": "high"
+        },
+        {
+          "name": "Hourly Wage",
+          "type": "Standard",
+          "mention": "Hourly Wage",
+          "confidence": "high"
+        },
+        {
+          "name": "Schedule Pay",
+          "type": "Field",
+          "mention": "Schedule Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "Annually",
+          "type": "Concept",
+          "mention": "Annually",
+          "confidence": "medium"
+        },
+        {
+          "name": "Semi-annually",
+          "type": "Concept",
+          "mention": "Semi-annually",
+          "confidence": "medium"
+        },
+        {
+          "name": "Quarterly",
+          "type": "Concept",
+          "mention": "Quarterly",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bi-monthly",
+          "type": "Concept",
+          "mention": "Bi-monthly",
+          "confidence": "medium"
+        },
+        {
+          "name": "Monthly",
+          "type": "Concept",
+          "mention": "Monthly",
+          "confidence": "medium"
+        },
+        {
+          "name": "Semi-monthly",
+          "type": "Concept",
+          "mention": "Semi-monthly",
+          "confidence": "medium"
+        },
+        {
+          "name": "Bi-weekly",
+          "type": "Concept",
+          "mention": "Bi-weekly",
+          "confidence": "medium"
+        },
+        {
+          "name": "Weekly",
+          "type": "Concept",
+          "mention": "Weekly",
+          "confidence": "medium"
+        },
+        {
+          "name": "Daily",
+          "type": "Concept",
+          "mention": "Daily",
+          "confidence": "medium"
+        },
+        {
+          "name": "Wage",
+          "type": "Field",
+          "mention": "Wage",
+          "confidence": "high"
+        },
+        {
+          "name": "Yearly Cost (Real)",
+          "type": "Field",
+          "mention": "Yearly Cost (Real)",
+          "confidence": "high"
+        },
+        {
+          "name": "Monthly Cost (Real)",
+          "type": "Field",
+          "mention": "Monthly Cost (Real)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Salary Information tab",
+          "relation": "CONTAINS",
+          "target": "Wage Type",
+          "evidence": "The Salary Information tab is where... Fill in the following fields in this tab: - Wage Type"
+        },
+        {
+          "source": "Salary Information tab",
+          "relation": "CONTAINS",
+          "target": "Schedule Pay",
+          "evidence": "Fill in the following fields in this tab: - Schedule Pay"
+        },
+        {
+          "source": "Salary Information tab",
+          "relation": "CONTAINS",
+          "target": "Wage",
+          "evidence": "Fill in the following fields in this tab: - Wage"
+        },
+        {
+          "source": "Salary Information tab",
+          "relation": "CONTAINS",
+          "target": "Yearly Cost (Real)",
+          "evidence": "Fill in the following fields in this tab: ... Yearly Cost (Real)"
+        },
+        {
+          "source": "Salary Information tab",
+          "relation": "CONTAINS",
+          "target": "Monthly Cost (Real)",
+          "evidence": "Fill in the following fields in this tab: ... Monthly Cost (Real)"
+        },
+        {
+          "source": "Wage Type",
+          "relation": "USES_METHOD",
+          "target": "Fixed Wage",
+          "evidence": "Using the drop-down menu, select what kind of pay the employee receives. The two default options are Fixed Wage or Hourly Wage."
+        },
+        {
+          "source": "Wage Type",
+          "relation": "USES_METHOD",
+          "target": "Hourly Wage",
+          "evidence": "Using the drop-down menu, select what kind of pay the employee receives. The two default options are Fixed Wage or Hourly Wage."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "USES_METHOD",
+          "target": "Annually",
+          "evidence": "Select how often the employee is paid. The default options are Annually..."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "USES_METHOD",
+          "target": "Semi-annually",
+          "evidence": "Select how often the employee is paid. The default options are Semi-annually..."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "USES_METHOD",
+          "target": "Quarterly",
+          "evidence": "Select how often the employee is paid. The default options are Quarterly..."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "USES_METHOD",
+          "target": "Bi-monthly",
+          "evidence": "Select how often the employee is paid. The default options are Bi-monthly..."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "USES_METHOD",
+          "target": "Monthly",
+          "evidence": "Select how often the employee is paid. The default options are Monthly..."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "USES_METHOD",
+          "target": "Semi-monthly",
+          "evidence": "Select how often the employee is paid. The default options are Semi-monthly..."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "USES_METHOD",
+          "target": "Bi-weekly",
+          "evidence": "Select how often the employee is paid. The default options are Bi-weekly..."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "USES_METHOD",
+          "target": "Weekly",
+          "evidence": "Select how often the employee is paid. The default options are Weekly..."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "USES_METHOD",
+          "target": "Daily",
+          "evidence": "Select how often the employee is paid. The default options are Daily..."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "ENABLES",
+          "target": "Wage",
+          "evidence": "The second field is updated when the Schedule Pay field changes."
+        },
+        {
+          "source": "Wage",
+          "relation": "GENERATES",
+          "target": "Yearly Cost (Real)",
+          "evidence": "This field automatically updates after the Schedule Pay and Wage fields are entered."
+        },
+        {
+          "source": "Wage",
+          "relation": "GENERATES",
+          "target": "Monthly Cost (Real)",
+          "evidence": "This field automatically updates after the Schedule Pay and Wage fields are entered."
+        },
+        {
+          "source": "Yearly Cost (Real)",
+          "relation": "GENERATES",
+          "target": "Wage",
+          "evidence": "However, if this is modified, the Wage field updates, accordingly."
+        },
+        {
+          "source": "Yearly Cost (Real)",
+          "relation": "GENERATES",
+          "target": "Monthly Cost (Real)",
+          "evidence": "This field cannot be modified, and is calculated based on the Yearly Cost (Real)."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "details-tab",
+    "heading": "Details tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Details tab",
+          "type": "Module",
+          "mention": "Title: Details tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Template",
+          "type": "Field",
+          "mention": "Contract Template",
+          "confidence": "high"
+        },
+        {
+          "name": "Originated Offer",
+          "type": "Field",
+          "mention": "Originated Offer",
+          "confidence": "high"
+        },
+        {
+          "name": "Part Time",
+          "type": "Field",
+          "mention": "Part Time",
+          "confidence": "high"
+        },
+        {
+          "name": "percentage",
+          "type": "Field",
+          "mention": "percentage field",
+          "confidence": "high"
+        },
+        {
+          "name": "Working Schedule",
+          "type": "Field",
+          "mention": "Working Schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "Standard Calendar",
+          "type": "Field",
+          "mention": "Standard Calendar",
+          "confidence": "high"
+        },
+        {
+          "name": "Part Time Work Entry Type",
+          "type": "Field",
+          "mention": "Part Time Work Entry Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Notes",
+          "type": "Field",
+          "mention": "Notes",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "contract-template",
+          "type": "Concept",
+          "mention": "contract-template",
+          "confidence": "high"
+        },
+        {
+          "name": "payroll_localizations",
+          "type": "Concept",
+          "mention": "payroll_localizations",
+          "confidence": "high"
+        },
+        {
+          "name": "payroll/gen-info",
+          "type": "Concept",
+          "mention": "payroll/gen-info",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Details tab",
+          "relation": "BELONGS_TO",
+          "target": "Contract",
+          "evidence": "The Details tab of the contract houses..."
+        },
+        {
+          "source": "Details tab",
+          "relation": "CONTAINS",
+          "target": "Contract Template",
+          "evidence": "Fill out the following fields in this tab: - Contract Template..."
+        },
+        {
+          "source": "Details tab",
+          "relation": "CONTAINS",
+          "target": "Originated Offer",
+          "evidence": "Fill out the following fields in this tab: - Originated Offer..."
+        },
+        {
+          "source": "Details tab",
+          "relation": "CONTAINS",
+          "target": "Part Time",
+          "evidence": "Fill out the following fields in this tab: - Part Time..."
+        },
+        {
+          "source": "Details tab",
+          "relation": "CONTAINS",
+          "target": "Notes",
+          "evidence": "Fill out the following fields in this tab: - Notes..."
+        },
+        {
+          "source": "Contract",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Contract Template",
+          "relation": "RELATED_TO",
+          "target": "contract-template",
+          "evidence": "select a contract template <payroll/contract-template>"
+        },
+        {
+          "source": "Part Time",
+          "relation": "TRIGGERED_BY",
+          "target": "Working Schedule",
+          "evidence": "automatically updates based on the selected Working Schedule"
+        },
+        {
+          "source": "Working Schedule",
+          "relation": "RELATED_TO",
+          "target": "payroll/gen-info",
+          "evidence": "the employee's Working Schedule is set... in the general information section <payroll/gen-info>"
+        },
+        {
+          "source": "Details tab",
+          "relation": "HAS_FEATURE",
+          "target": "accounting information",
+          "evidence": "accounting information"
+        },
+        {
+          "source": "accounting information",
+          "relation": "RELATED_TO",
+          "target": "payroll_localizations",
+          "evidence": "refer to the country-specific localization document <payroll_localizations>"
+        },
+        {
+          "source": "Payroll",
+          "relation": "GENERATES",
+          "target": "work entries",
+          "evidence": "processed in the **Payroll** app, the employee generates... work entries"
+        },
+        {
+          "source": "Part Time",
+          "relation": "ENABLES",
+          "target": "percentage",
+          "evidence": "Once enabled, a percentage field appears"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "signatories-tab",
+    "heading": "Signatories tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Signatories tab",
+          "type": "Module",
+          "mention": "Signatories tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Sign app",
+          "type": "Module",
+          "mention": "Sign app",
+          "confidence": "high"
+        },
+        {
+          "name": "hr_contract_salary",
+          "type": "Module",
+          "mention": "hr_contract_salary",
+          "confidence": "high"
+        },
+        {
+          "name": "hr_contract_salary_payroll",
+          "type": "Module",
+          "mention": "hr_contract_salary_payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "default contract template",
+          "type": "DataObject",
+          "mention": "default contract template",
+          "confidence": "medium"
+        },
+        {
+          "name": "contract template",
+          "type": "DataObject",
+          "mention": "contract template",
+          "confidence": "medium"
+        },
+        {
+          "name": "PDF template",
+          "type": "DataObject",
+          "mention": "PDF template",
+          "confidence": "medium"
+        },
+        {
+          "name": "signature fields",
+          "type": "Field",
+          "mention": "signature fields",
+          "confidence": "medium"
+        },
+        {
+          "name": "contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "medium"
+        },
+        {
+          "name": "drop-down menu",
+          "type": "Feature",
+          "mention": "drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "new contract",
+          "type": "Workflow",
+          "mention": "new contract",
+          "confidence": "low"
+        },
+        {
+          "name": "updated contract",
+          "type": "Workflow",
+          "mention": "updated contract",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Signatories tab",
+          "relation": "CONTAINS",
+          "target": "drop-down menu",
+          "evidence": "The Signatories tab is where the default contract templates are selected... Using the drop-down menu"
+        },
+        {
+          "source": "Signatories tab",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Signatories tab",
+          "relation": "GENERATES",
+          "target": "contract",
+          "evidence": "...when creating a new or updated contract"
+        },
+        {
+          "source": "Signatories tab",
+          "relation": "REQUIRES",
+          "target": "hr_contract_salary",
+          "evidence": "...if the Sign app is installed, along with the hr_contract_salary and hr_contract_salary_payroll modules"
+        },
+        {
+          "source": "Signatories tab",
+          "relation": "REQUIRES",
+          "target": "hr_contract_salary_payroll",
+          "evidence": "...if the Sign app is installed, along with the hr_contract_salary and hr_contract_salary_payroll modules"
+        },
+        {
+          "source": "Sign app",
+          "relation": "CONTAINS",
+          "target": "PDF template",
+          "evidence": "...contract templates are uploaded, modified, and stored in the Sign app"
+        },
+        {
+          "source": "Sign app",
+          "relation": "HAS_FEATURE",
+          "target": "upload contract template",
+          "evidence": "where contract templates are uploaded"
+        },
+        {
+          "source": "Sign app",
+          "relation": "HAS_FEATURE",
+          "target": "modify contract template",
+          "evidence": "where contract templates are modified"
+        },
+        {
+          "source": "Sign app",
+          "relation": "HAS_FEATURE",
+          "target": "store contract template",
+          "evidence": "where contract templates are stored"
+        },
+        {
+          "source": "PDF template",
+          "relation": "CONTAINS",
+          "target": "signature fields",
+          "evidence": "any mapped signature fields in the file appear in a list"
+        },
+        {
+          "source": "contract template",
+          "relation": "EQUIVALENT_TO",
+          "target": "PDF template",
+          "evidence": "Once a PDF template is selected..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "personal-documents-tab",
+    "heading": "Personal documents tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Personal Documents tab",
+          "type": "Module",
+          "mention": "Personal documents tab",
+          "confidence": "high"
+        },
+        {
+          "name": "contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Upload your file button",
+          "type": "Action",
+          "mention": "Click the Upload your file button",
+          "confidence": "high"
+        },
+        {
+          "name": "Image",
+          "type": "Field",
+          "mention": "Image line",
+          "confidence": "high"
+        },
+        {
+          "name": "image file",
+          "type": "DataObject",
+          "mention": "image file",
+          "confidence": "medium"
+        },
+        {
+          "name": "legal documents",
+          "type": "DataObject",
+          "mention": "legal documents",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Personal Documents tab",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Personal Documents tab",
+          "relation": "CONTAINS",
+          "target": "Image",
+          "evidence": "The file name appears on the Image line."
+        },
+        {
+          "source": "Image",
+          "relation": "CONFIGURED_BY",
+          "target": "image file",
+          "evidence": "only image files can be attached in this field"
+        },
+        {
+          "source": "Personal Documents tab",
+          "relation": "REQUIRES",
+          "target": "employee",
+          "evidence": "This tab only appears after an Employee is selected."
+        },
+        {
+          "source": "Upload your file button",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "Click the Upload your file button..."
+        },
+        {
+          "source": "Upload your file button",
+          "relation": "PRODUCES",
+          "target": "image file",
+          "evidence": "attach the file to the contract"
+        },
+        {
+          "source": "image file",
+          "relation": "BELONGS_TO",
+          "target": "contract",
+          "evidence": "attach the file to the contract"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "salary-attachments",
+    "heading": "Salary attachments",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Salary attachments",
+          "type": "Feature",
+          "mention": "Salary attachments",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Attachments smart button",
+          "type": "Feature",
+          "mention": "Salary Attachments smart button",
+          "confidence": "high"
+        },
+        {
+          "name": "contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "New",
+          "confidence": "medium"
+        },
+        {
+          "name": "salary attachments",
+          "type": "DataObject",
+          "mention": "salary attachments",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "contract",
+          "relation": "CONTAINS",
+          "target": "employee",
+          "evidence": "After an employee is selected for the contract"
+        },
+        {
+          "source": "Salary Attachments smart button",
+          "relation": "BELONGS_TO",
+          "target": "contract",
+          "evidence": "smart button appears at the top of the page"
+        },
+        {
+          "source": "Salary Attachments smart button",
+          "relation": "ENABLES",
+          "target": "salary attachments",
+          "evidence": "Create or update any necessary salary attachments for the contract"
+        },
+        {
+          "source": "Salary Attachments smart button",
+          "relation": "HAS_FEATURE",
+          "target": "New",
+          "evidence": "the smart button displays New"
+        },
+        {
+          "source": "Salary Attachments smart button",
+          "relation": "HAS_REPORT",
+          "target": "salary attachments",
+          "evidence": "the smart button displays the number of salary attachments currently running"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "send-a-contract",
+    "heading": "Send a contract",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate Offer",
+          "type": "Action",
+          "mention": "Generate Offer button",
+          "confidence": "high"
+        },
+        {
+          "name": "Offer for (Employee) form",
+          "type": "DataObject",
+          "mention": "Offer for (Employee) form",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "applicant",
+          "type": "Actor",
+          "mention": "applicant",
+          "confidence": "high"
+        },
+        {
+          "name": "Validity Days Count",
+          "type": "Field",
+          "mention": "Validity Days Count field",
+          "confidence": "high"
+        },
+        {
+          "name": "Send By Email",
+          "type": "Action",
+          "mention": "Send By Email",
+          "confidence": "high"
+        },
+        {
+          "name": "preconfigured default email template",
+          "type": "Feature",
+          "mention": "preconfigured default email template",
+          "confidence": "high"
+        },
+        {
+          "name": "employee signature field",
+          "type": "Feature",
+          "mention": "employee signature field",
+          "confidence": "high"
+        },
+        {
+          "name": "contract PDF",
+          "type": "DataObject",
+          "mention": "contract PDF",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Generate Offer",
+          "relation": "PRODUCES",
+          "target": "Offer for (Employee) form",
+          "evidence": "Click the Generate Offer button, and the Offer for (Employee) form loads."
+        },
+        {
+          "source": "Generate Offer",
+          "relation": "PERFORMED_BY",
+          "target": "employee",
+          "evidence": "After a contract has been created and configured, the next step is to send it to the employee or applicant. Click the Generate Offer button"
+        },
+        {
+          "source": "Generate Offer",
+          "relation": "PERFORMED_BY",
+          "target": "applicant",
+          "evidence": "After a contract has been created and configured, the next step is to send it to the employee or applicant."
+        },
+        {
+          "source": "Offer for (Employee) form",
+          "relation": "CONTAINS",
+          "target": "Validity Days Count",
+          "evidence": "The last field on the form is a Validity Days Count field."
+        },
+        {
+          "source": "Offer for (Employee) form",
+          "relation": "CONTAINS",
+          "target": "link the employee can use to sign the contract",
+          "evidence": "as well as a link the employee can use to sign the contract"
+        },
+        {
+          "source": "Validity Days Count",
+          "relation": "CONFIGURED_BY",
+          "target": "employee",
+          "evidence": "Enter the desired number of days in the field."
+        },
+        {
+          "source": "Send By Email",
+          "relation": "PRODUCES",
+          "target": "pop-up email window",
+          "evidence": "Click Send By Email and a pop-up email window loads"
+        },
+        {
+          "source": "Send By Email",
+          "relation": "USES_METHOD",
+          "target": "preconfigured default email template",
+          "evidence": "using a preconfigured default email template"
+        },
+        {
+          "source": "Generate Offer",
+          "relation": "REQUIRES",
+          "target": "employee signature field",
+          "evidence": "In order to send a contract using the Generate Offer button, there **must** be an employee signature field on the contract PDF being sent."
+        },
+        {
+          "source": "employee signature field",
+          "relation": "IS_PART_OF",
+          "target": "contract PDF",
+          "evidence": "employee signature field on the contract PDF"
+        },
+        {
+          "source": "Generate Offer",
+          "relation": "PRODUCES",
+          "target": "contract PDF",
+          "evidence": "send a contract using the Generate Offer button"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "contract-status",
+    "heading": "Contract status",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract",
+          "type": "DataObject",
+          "mention": "contract",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Concept",
+          "mention": "New",
+          "confidence": "medium"
+        },
+        {
+          "name": "Partially Signed",
+          "type": "Concept",
+          "mention": "Partially Signed",
+          "confidence": "medium"
+        },
+        {
+          "name": "Fully Signed",
+          "type": "Concept",
+          "mention": "Fully Signed",
+          "confidence": "medium"
+        },
+        {
+          "name": "Signature",
+          "type": "Action",
+          "mention": "signature",
+          "confidence": "medium"
+        },
+        {
+          "name": "HR",
+          "type": "Actor",
+          "mention": "HR",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruitment employee",
+          "type": "Actor",
+          "mention": "recruitment employees",
+          "confidence": "medium"
+        },
+        {
+          "name": "Alert",
+          "type": "Action",
+          "mention": "alerted",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Contract",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "New",
+          "relation": "BELONGS_TO",
+          "target": "Contract",
+          "evidence": "When creating and sending out a contract, the default status of the contract is New."
+        },
+        {
+          "source": "Partially Signed",
+          "relation": "BELONGS_TO",
+          "target": "Contract",
+          "evidence": "Once there is a minimum of one completed signature on the document, the status changes to Partially Signed."
+        },
+        {
+          "source": "Fully Signed",
+          "relation": "BELONGS_TO",
+          "target": "Contract",
+          "evidence": "After all required parties have signed the contract, the status changes to Fully Signed."
+        },
+        {
+          "source": "Signature",
+          "relation": "TRIGGERED_BY",
+          "target": "Contract",
+          "evidence": "the status changes automatically as the document is signed."
+        },
+        {
+          "source": "Alert",
+          "relation": "PERFORMED_BY",
+          "target": "HR",
+          "evidence": "Internal users, such as HR and recruitment employees, are alerted in the database when there is a signature requested of them."
+        },
+        {
+          "source": "Alert",
+          "relation": "PERFORMED_BY",
+          "target": "Recruitment employee",
+          "evidence": "Internal users, such as HR and recruitment employees, are alerted in the database when there is a signature requested of them."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "contract-templates",
+    "heading": "Contract templates",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Documents",
+          "type": "Module",
+          "mention": "Documents app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Recruitment",
+          "type": "Module",
+          "mention": "Recruitment application",
+          "confidence": "medium"
+        },
+        {
+          "name": "Salary Configurator",
+          "type": "Module",
+          "mention": "Salary Configurator",
+          "confidence": "medium"
+        },
+        {
+          "name": "hr_contract_salary",
+          "type": "Module",
+          "mention": "Salary Configurator (hr_contract_salary) module",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contract Template",
+          "type": "DataObject",
+          "mention": "Contract templates",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Templates page",
+          "type": "Feature",
+          "mention": "The Contract Templates page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Contract Reference",
+          "type": "Field",
+          "mention": "Contract Reference",
+          "confidence": "high"
+        },
+        {
+          "name": "Working Schedule",
+          "type": "Field",
+          "mention": "Working Schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entry Source",
+          "type": "Field",
+          "mention": "Work Entry Source",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Structure Type",
+          "type": "Field",
+          "mention": "Salary Structure Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Department",
+          "type": "Field",
+          "mention": "Department",
+          "confidence": "high"
+        },
+        {
+          "name": "Job Position",
+          "type": "Field",
+          "mention": "Job Position",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Type",
+          "type": "Field",
+          "mention": "Contract Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Wage on Payroll",
+          "type": "Field",
+          "mention": "Wage on Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "HR Responsible",
+          "type": "Field",
+          "mention": "HR Responsible",
+          "confidence": "high"
+        },
+        {
+          "name": "New",
+          "type": "Action",
+          "mention": "click the New button",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Contract Template",
+          "relation": "BELONGS_TO",
+          "target": "Payroll",
+          "evidence": "Contract templates are created through the **Payroll** app configuration menu"
+        },
+        {
+          "source": "Contract Template",
+          "relation": "RELATED_TO",
+          "target": "Documents",
+          "evidence": "...stored in the **Documents** app."
+        },
+        {
+          "source": "Contract Template",
+          "relation": "IS_PART_OF",
+          "target": "Payroll",
+          "evidence": "To view all contract templates, navigate to Payroll app --> Configuration --> Templates."
+        },
+        {
+          "source": "Contract Template",
+          "relation": "RELATED_TO",
+          "target": "Recruitment",
+          "evidence": "This should be clear and easily understood, as this name appears in the **Recruitment** application, as well."
+        },
+        {
+          "source": "Payroll",
+          "relation": "REQUIRES",
+          "target": "Salary Configurator",
+          "evidence": "To access contract templates, the **Salary Configurator** (`hr_contract_salary`) module **must** be installed."
+        },
+        {
+          "source": "Salary Configurator",
+          "relation": "EQUIVALENT_TO",
+          "target": "hr_contract_salary",
+          "evidence": "Salary Configurator (`hr_contract_salary`) module"
+        },
+        {
+          "source": "Contract Templates page",
+          "relation": "CONTAINS",
+          "target": "Contract Template",
+          "evidence": "The Contract Templates page lists all existing templates."
+        },
+        {
+          "source": "New",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "Click a template line to open and edit it. To create a new contract template, click the New button."
+        },
+        {
+          "source": "New",
+          "relation": "PRODUCES",
+          "target": "Contract Template",
+          "evidence": "To create a new contract template, click the New button. Then, enter the following information on the blank contract template form..."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "salary-information-tab",
+    "heading": "Salary information tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary information tab",
+          "type": "Module",
+          "mention": "Title: Salary information tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Wage Type",
+          "type": "Field",
+          "mention": "Wage Type",
+          "confidence": "high"
+        },
+        {
+          "name": "Fixed Wage",
+          "type": "Concept",
+          "mention": "Fixed Wage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Hourly Wage",
+          "type": "Concept",
+          "mention": "Hourly Wage",
+          "confidence": "medium"
+        },
+        {
+          "name": "Schedule Pay",
+          "type": "Field",
+          "mention": "Schedule Pay",
+          "confidence": "high"
+        },
+        {
+          "name": "Wage",
+          "type": "Field",
+          "mention": "Wage",
+          "confidence": "high"
+        },
+        {
+          "name": "Yearly Cost (Real)",
+          "type": "Field",
+          "mention": "Yearly Cost (Real)",
+          "confidence": "high"
+        },
+        {
+          "name": "Monthly Cost (Real)",
+          "type": "Field",
+          "mention": "Monthly Cost (Real)",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Salary information tab",
+          "relation": "CONTAINS",
+          "target": "Wage Type",
+          "evidence": "- Wage Type:..."
+        },
+        {
+          "source": "Salary information tab",
+          "relation": "CONTAINS",
+          "target": "Schedule Pay",
+          "evidence": "- Schedule Pay:..."
+        },
+        {
+          "source": "Salary information tab",
+          "relation": "CONTAINS",
+          "target": "Wage",
+          "evidence": "- Wage:..."
+        },
+        {
+          "source": "Salary information tab",
+          "relation": "CONTAINS",
+          "target": "Yearly Cost (Real)",
+          "evidence": "- Yearly Cost (Real):..."
+        },
+        {
+          "source": "Salary information tab",
+          "relation": "CONTAINS",
+          "target": "Monthly Cost (Real)",
+          "evidence": "- Monthly Cost (Real):..."
+        },
+        {
+          "source": "Wage Type",
+          "relation": "RELATED_TO",
+          "target": "Fixed Wage",
+          "evidence": "Select either Fixed Wage..."
+        },
+        {
+          "source": "Wage Type",
+          "relation": "RELATED_TO",
+          "target": "Hourly Wage",
+          "evidence": "...or Hourly Wage..."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "RELATED_TO",
+          "target": "Wage",
+          "evidence": "The time period presented in this field is based on what is selected for the Scheduled Pay field."
+        },
+        {
+          "source": "Yearly Cost (Real)",
+          "relation": "ENABLES",
+          "target": "Monthly Cost (Real)",
+          "evidence": "When this value is entered, the Monthly Cost (Real) is automatically updated."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "RELATED_TO",
+          "target": "Wage",
+          "evidence": "The Schedule Pay, Wage, and Yearly Cost (Real) fields are all linked."
+        },
+        {
+          "source": "Schedule Pay",
+          "relation": "RELATED_TO",
+          "target": "Yearly Cost (Real)",
+          "evidence": "The Schedule Pay, Wage, and Yearly Cost (Real) fields are all linked."
+        },
+        {
+          "source": "Wage",
+          "relation": "RELATED_TO",
+          "target": "Yearly Cost (Real)",
+          "evidence": "The Schedule Pay, Wage, and Yearly Cost (Real) fields are all linked."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "benefits-and-deductions",
+    "heading": "Benefits and deductions",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "payroll localization",
+          "type": "Setting",
+          "mention": "payroll localization",
+          "confidence": "high"
+        },
+        {
+          "name": "benefits",
+          "type": "Concept",
+          "mention": "Benefits",
+          "confidence": "medium"
+        },
+        {
+          "name": "deductions",
+          "type": "Concept",
+          "mention": "deductions",
+          "confidence": "medium"
+        },
+        {
+          "name": "retirement accounts",
+          "type": "Concept",
+          "mention": "retirement accounts",
+          "confidence": "medium"
+        },
+        {
+          "name": "health insurance benefits",
+          "type": "Concept",
+          "mention": "health insurance benefits",
+          "confidence": "medium"
+        },
+        {
+          "name": "commuter benefits",
+          "type": "Concept",
+          "mention": "commuter benefits",
+          "confidence": "medium"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "medium"
+        },
+        {
+          "name": "salary",
+          "type": "Concept",
+          "mention": "salary",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "payroll localization",
+          "relation": "GOVERNED_BY",
+          "target": "benefits",
+          "evidence": "Depending on the payroll localization for the company, the entries presented in this section either vary, or may not appear at all."
+        },
+        {
+          "source": "payroll localization",
+          "relation": "GOVERNED_BY",
+          "target": "deductions",
+          "evidence": "Depending on the payroll localization for the company, the entries presented in this section either vary, or may not appear at all."
+        },
+        {
+          "source": "benefits",
+          "relation": "RELATED_TO",
+          "target": "retirement accounts",
+          "evidence": "For example, some entries may pertain to retirement accounts, health insurance benefits, and commuter benefits."
+        },
+        {
+          "source": "benefits",
+          "relation": "RELATED_TO",
+          "target": "health insurance benefits",
+          "evidence": "For example, some entries may pertain to retirement accounts, health insurance benefits, and commuter benefits."
+        },
+        {
+          "source": "benefits",
+          "relation": "RELATED_TO",
+          "target": "commuter benefits",
+          "evidence": "For example, some entries may pertain to retirement accounts, health insurance benefits, and commuter benefits."
+        },
+        {
+          "source": "benefits",
+          "relation": "BELONGS_TO",
+          "target": "salary",
+          "evidence": "Enter the monetary amounts or percentages to specify how much of the employee's salary goes to the various benefits and deductions."
+        },
+        {
+          "source": "deductions",
+          "relation": "BELONGS_TO",
+          "target": "salary",
+          "evidence": "Enter the monetary amounts or percentages to specify how much of the employee's salary goes to the various benefits and deductions."
+        },
+        {
+          "source": "employee",
+          "relation": "RELATED_TO",
+          "target": "salary",
+          "evidence": "Enter the monetary amounts or percentages to specify how much of the employee's salary goes to the various benefits and deductions."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "signatories-tab",
+    "heading": "Signatories tab",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Signatories tab",
+          "type": "Module",
+          "mention": "Title: Signatories tab",
+          "confidence": "high"
+        },
+        {
+          "name": "Contract Update PDF Template",
+          "type": "Sub-module",
+          "mention": "- Contract Update PDF Template",
+          "confidence": "high"
+        },
+        {
+          "name": "New Contract PDF Template",
+          "type": "Sub-module",
+          "mention": "- New Contract PDF Template",
+          "confidence": "high"
+        },
+        {
+          "name": "sign",
+          "type": "Feature",
+          "mention": "../../productivity/sign",
+          "confidence": "high"
+        },
+        {
+          "name": "documents",
+          "type": "Feature",
+          "mention": "../../productivity/documents",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Signatories tab",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Title: Signatories tab"
+        },
+        {
+          "source": "Signatories tab",
+          "relation": "CONTAINS",
+          "target": "New Contract PDF Template",
+          "evidence": "This tab outlines which documents ... - New Contract PDF Template"
+        },
+        {
+          "source": "Signatories tab",
+          "relation": "CONTAINS",
+          "target": "Contract Update PDF Template",
+          "evidence": "This tab outlines which documents ... - Contract Update PDF Template"
+        },
+        {
+          "source": "New Contract PDF Template",
+          "relation": "RELATED_TO",
+          "target": "documents",
+          "evidence": ".. seealso:: - ../../productivity/documents"
+        },
+        {
+          "source": "Contract Update PDF Template",
+          "relation": "RELATED_TO",
+          "target": "documents",
+          "evidence": ".. seealso:: - ../../productivity/documents"
+        },
+        {
+          "source": "New Contract PDF Template",
+          "relation": "RELATED_TO",
+          "target": "sign",
+          "evidence": ".. seealso:: - ../../productivity/sign"
+        },
+        {
+          "source": "Contract Update PDF Template",
+          "relation": "RELATED_TO",
+          "target": "sign",
+          "evidence": ".. seealso:: - ../../productivity/sign"
+        }
+      ]
+    }
+  }
+]

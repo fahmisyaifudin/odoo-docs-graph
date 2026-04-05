@@ -1,0 +1,496 @@
+[
+  {
+    "section_id": "attendance-reporting",
+    "heading": "Attendance reporting",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances app",
+          "type": "Module",
+          "mention": "**Attendances** app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Attendance report",
+          "type": "Report",
+          "mention": "The **Attendances** app report",
+          "confidence": "medium"
+        },
+        {
+          "name": "Attendance issues",
+          "type": "Concept",
+          "mention": "attendance issues",
+          "confidence": "low"
+        },
+        {
+          "name": "Managers",
+          "type": "Actor",
+          "mention": "managers",
+          "confidence": "high"
+        },
+        {
+          "name": "Employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "Overtime",
+          "type": "Concept",
+          "mention": "working more overtime",
+          "confidence": "high"
+        },
+        {
+          "name": "Full shifts",
+          "type": "Concept",
+          "mention": "working their full shifts",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Attendances app",
+          "evidence": "Product: Odoo ... The **Attendances** app"
+        },
+        {
+          "source": "Attendances app",
+          "relation": "HAS_REPORT",
+          "target": "Attendance report",
+          "evidence": "The **Attendances** app report"
+        },
+        {
+          "source": "Attendance report",
+          "relation": "PRODUCES",
+          "target": "Attendance issues",
+          "evidence": "helps managers find attendance issues"
+        },
+        {
+          "source": "Attendance report",
+          "relation": "PERFORMED_BY",
+          "target": "Managers",
+          "evidence": "helps managers find attendance issues"
+        },
+        {
+          "source": "Attendance issues",
+          "relation": "RELATED_TO",
+          "target": "Employees",
+          "evidence": "attendance issues with employees"
+        },
+        {
+          "source": "Attendance report",
+          "relation": "GENERATES",
+          "target": "Overtime",
+          "evidence": "determining which employees are working more overtime"
+        },
+        {
+          "source": "Attendance report",
+          "relation": "GENERATES",
+          "target": "Full shifts",
+          "evidence": "and who is not working their full shifts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-report",
+    "heading": "View report",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Module",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "attendance report",
+          "type": "Report",
+          "mention": "attendance report",
+          "confidence": "high"
+        },
+        {
+          "name": "employee",
+          "type": "Actor",
+          "mention": "employee",
+          "confidence": "high"
+        },
+        {
+          "name": "working schedule",
+          "type": "DataObject",
+          "mention": "working schedule",
+          "confidence": "high"
+        },
+        {
+          "name": "employee form",
+          "type": "DataObject",
+          "mention": "employee form",
+          "confidence": "high"
+        },
+        {
+          "name": "Overview dashboard",
+          "type": "Module",
+          "mention": "Overview dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "attendance record",
+          "type": "DataObject",
+          "mention": "attendance records",
+          "confidence": "high"
+        },
+        {
+          "name": "Worked Hours",
+          "type": "Field",
+          "mention": "Worked Hours",
+          "confidence": "high"
+        },
+        {
+          "name": "Expected Hours",
+          "type": "Field",
+          "mention": "Expected Hours",
+          "confidence": "high"
+        },
+        {
+          "name": "Difference",
+          "type": "Field",
+          "mention": "Difference",
+          "confidence": "high"
+        },
+        {
+          "name": "Balance",
+          "type": "Field",
+          "mention": "Balance",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "attendance report",
+          "relation": "GENERATES",
+          "target": "Worked Hours",
+          "evidence": "default report displays attendance information"
+        },
+        {
+          "source": "attendance report",
+          "relation": "GENERATES",
+          "target": "Expected Hours",
+          "evidence": "default report displays attendance information"
+        },
+        {
+          "source": "attendance report",
+          "relation": "GENERATES",
+          "target": "Difference",
+          "evidence": "default report displays attendance information"
+        },
+        {
+          "source": "attendance report",
+          "relation": "GENERATES",
+          "target": "Balance",
+          "evidence": "default report displays attendance information"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "attendance report",
+          "evidence": "To view the attendance report, click Reporting"
+        },
+        {
+          "source": "Worked Hours",
+          "relation": "APPLIES_TO",
+          "target": "employee",
+          "evidence": "The total logged time the employee worked"
+        },
+        {
+          "source": "Expected Hours",
+          "relation": "CONFIGURED_BY",
+          "target": "working schedule",
+          "evidence": "calculated from their working schedule"
+        },
+        {
+          "source": "employee",
+          "relation": "IS_PART_OF",
+          "target": "attendance record",
+          "evidence": "columns are populated by the various attendance records"
+        },
+        {
+          "source": "attendance report",
+          "relation": "RELATED_TO",
+          "target": "Overview dashboard",
+          "evidence": "adjust the filters and groups in the same way as in the Overview dashboard"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-case:-monthly-overtime",
+    "heading": "Use case: monthly overtime",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances",
+          "confidence": "high"
+        },
+        {
+          "name": "Reporting",
+          "type": "Feature",
+          "mention": "Reporting",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendance report",
+          "type": "Report",
+          "mention": "attendance report",
+          "confidence": "medium"
+        },
+        {
+          "name": "overtime",
+          "type": "Concept",
+          "mention": "overtime",
+          "confidence": "high"
+        },
+        {
+          "name": "Difference",
+          "type": "Field",
+          "mention": "Difference",
+          "confidence": "high"
+        },
+        {
+          "name": "Balance",
+          "type": "Field",
+          "mention": "Balance",
+          "confidence": "high"
+        },
+        {
+          "name": "Expected Hours",
+          "type": "Field",
+          "mention": "Expected Hours",
+          "confidence": "high"
+        },
+        {
+          "name": "Worked Hours",
+          "type": "Field",
+          "mention": "Worked Hours",
+          "confidence": "high"
+        },
+        {
+          "name": "Michael Williams",
+          "type": "Actor",
+          "mention": "Michael Williams",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Attendances",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Attendances app is in Odoo"
+        },
+        {
+          "source": "Attendances",
+          "relation": "HAS_FEATURE",
+          "target": "Reporting",
+          "evidence": "Reporting in the top menu of the Attendances app"
+        },
+        {
+          "source": "Reporting",
+          "relation": "HAS_REPORT",
+          "target": "Attendance report",
+          "evidence": "attendance report is needed"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Difference",
+          "evidence": "Difference and Balance attendance data"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Balance",
+          "evidence": "Difference and Balance attendance data"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Expected Hours",
+          "evidence": "deselect Expected Hours"
+        },
+        {
+          "source": "Reporting",
+          "relation": "CONTAINS",
+          "target": "Worked Hours",
+          "evidence": "deselect Worked Hours"
+        },
+        {
+          "source": "Reporting",
+          "relation": "RELATED_TO",
+          "target": "overtime",
+          "evidence": "view a specific month's overtime"
+        },
+        {
+          "source": "Difference",
+          "relation": "RELATED_TO",
+          "target": "overtime",
+          "evidence": "Difference shows the month's total overtime logged"
+        },
+        {
+          "source": "Balance",
+          "relation": "RELATED_TO",
+          "target": "overtime",
+          "evidence": "Balance shows the portion still unapproved"
+        },
+        {
+          "source": "Attendance report",
+          "relation": "RELATED_TO",
+          "target": "overtime",
+          "evidence": "ensure no excessive overtime is logged"
+        },
+        {
+          "source": "Michael Williams",
+          "relation": "RELATED_TO",
+          "target": "overtime",
+          "evidence": "Michael Williams has the most overtime"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "use-case:-absenteeism",
+    "heading": "Use case: absenteeism",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances",
+          "type": "Module",
+          "mention": "Attendances app",
+          "confidence": "high"
+        },
+        {
+          "name": "Attendances Report",
+          "type": "Report",
+          "mention": "Attendances app report",
+          "confidence": "high"
+        },
+        {
+          "name": "Difference",
+          "type": "Field",
+          "mention": "Difference",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee",
+          "type": "Field",
+          "mention": "Employee",
+          "confidence": "high"
+        },
+        {
+          "name": "Abigail Peterson",
+          "type": "Actor",
+          "mention": "Abigail Peterson",
+          "confidence": "high"
+        },
+        {
+          "name": "Measures",
+          "type": "Setting",
+          "mention": "Measures",
+          "confidence": "low"
+        },
+        {
+          "name": "Total",
+          "type": "Setting",
+          "mention": "Total",
+          "confidence": "low"
+        },
+        {
+          "name": "Last 3 Months",
+          "type": "Setting",
+          "mention": "Last 3 Months filter",
+          "confidence": "low"
+        },
+        {
+          "name": "individual attendance records",
+          "type": "Report",
+          "mention": "detailed individual attendance records",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Attendances",
+          "relation": "HAS_REPORT",
+          "target": "Attendances Report",
+          "evidence": "open the Attendances app report"
+        },
+        {
+          "source": "Attendances Report",
+          "relation": "CONTAINS",
+          "target": "Difference",
+          "evidence": "ensure only Difference is selected"
+        },
+        {
+          "source": "Attendances Report",
+          "relation": "CONTAINS",
+          "target": "Employee",
+          "evidence": "select Employee"
+        },
+        {
+          "source": "Attendances Report",
+          "relation": "IS_PART_OF",
+          "target": "Attendances",
+          "evidence": "Attendances app report"
+        },
+        {
+          "source": "Attendances",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Attendances Report",
+          "relation": "GENERATES",
+          "target": "individual attendance records",
+          "evidence": "view the detailed individual attendance records"
+        },
+        {
+          "source": "Abigail Peterson",
+          "relation": "PERFORMED_BY",
+          "target": "Attendances Report",
+          "evidence": "Abigail Peterson worked the least"
+        }
+      ]
+    }
+  }
+]

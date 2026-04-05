@@ -1,0 +1,1140 @@
+[
+  {
+    "section_id": "pay-runs",
+    "heading": "Pay runs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay runs",
+          "type": "Module",
+          "mention": "*Pay runs*",
+          "confidence": "high"
+        },
+        {
+          "name": "payslips",
+          "type": "DataObject",
+          "mention": "payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "payroll department",
+          "type": "Actor",
+          "mention": "payroll department",
+          "confidence": "high"
+        },
+        {
+          "name": "employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "high"
+        },
+        {
+          "name": "salary structure",
+          "type": "Concept",
+          "mention": "salary structure",
+          "confidence": "medium"
+        },
+        {
+          "name": "pay period",
+          "type": "Concept",
+          "mention": "pay period",
+          "confidence": "medium"
+        },
+        {
+          "name": "department",
+          "type": "Concept",
+          "mention": "department",
+          "confidence": "medium"
+        },
+        {
+          "name": "job position",
+          "type": "Concept",
+          "mention": "job position",
+          "confidence": "medium"
+        },
+        {
+          "name": "new pay run",
+          "type": "Workflow",
+          "mention": "new pay run",
+          "confidence": "medium"
+        },
+        {
+          "name": "add payslips",
+          "type": "Workflow",
+          "mention": "add payslips",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pay runs",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "Product: Odoo, Title: Pay runs"
+        },
+        {
+          "source": "Pay runs",
+          "relation": "GENERATES",
+          "target": "payslips",
+          "evidence": "*Pay runs* are used to generate multiple payslips"
+        },
+        {
+          "source": "Pay runs",
+          "relation": "PERFORMED_BY",
+          "target": "payroll department",
+          "evidence": "Typically, a company's payroll department creates a new pay run"
+        },
+        {
+          "source": "Pay runs",
+          "relation": "RELATED_TO",
+          "target": "salary structure",
+          "evidence": "for each salary structure"
+        },
+        {
+          "source": "Pay runs",
+          "relation": "RELATED_TO",
+          "target": "pay period",
+          "evidence": "for every pay period"
+        },
+        {
+          "source": "Pay runs",
+          "relation": "RELATED_TO",
+          "target": "department",
+          "evidence": "organized by department"
+        },
+        {
+          "source": "Pay runs",
+          "relation": "RELATED_TO",
+          "target": "job position",
+          "evidence": "job position, etc."
+        },
+        {
+          "source": "new pay run",
+          "relation": "TRIGGERED_BY",
+          "target": "payroll department",
+          "evidence": "Typically, a company's payroll department creates a new pay run"
+        },
+        {
+          "source": "Pay runs",
+          "relation": "CONTAINS",
+          "target": "payslips",
+          "evidence": "payslips are added to the pay run"
+        },
+        {
+          "source": "add payslips",
+          "relation": "IS_PART_OF",
+          "target": "Pay runs",
+          "evidence": "payslips are added to the pay run <payroll/add-payslips>"
+        },
+        {
+          "source": "Pay runs",
+          "relation": "ENABLES",
+          "target": "employees",
+          "evidence": "employees are paid"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-pay-runs",
+    "heading": "View pay runs",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslips",
+          "type": "Sub-module",
+          "mention": "Payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay Runs",
+          "type": "DataObject",
+          "mention": "Pay Runs",
+          "confidence": "medium"
+        },
+        {
+          "name": "payslip pay runs",
+          "type": "DataObject",
+          "mention": "payslip pay runs",
+          "confidence": "medium"
+        },
+        {
+          "name": "oi-group Status",
+          "type": "Field",
+          "mention": "oi-group Status",
+          "confidence": "low"
+        },
+        {
+          "name": "Ready",
+          "type": "Concept",
+          "mention": "Ready",
+          "confidence": "low"
+        },
+        {
+          "name": "Done",
+          "type": "Concept",
+          "mention": "Done",
+          "confidence": "low"
+        },
+        {
+          "name": "Paid",
+          "type": "Concept",
+          "mention": "Paid",
+          "confidence": "low"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view",
+          "confidence": "high"
+        },
+        {
+          "name": "name",
+          "type": "Field",
+          "mention": "name",
+          "confidence": "medium"
+        },
+        {
+          "name": "dates it includes",
+          "type": "Field",
+          "mention": "dates it includes",
+          "confidence": "low"
+        },
+        {
+          "name": "number of payslips",
+          "type": "Field",
+          "mention": "number of payslips",
+          "confidence": "low"
+        },
+        {
+          "name": "total employer cost",
+          "type": "Field",
+          "mention": "total employer cost",
+          "confidence": "low"
+        },
+        {
+          "name": "gross amounts",
+          "type": "Field",
+          "mention": "gross",
+          "confidence": "low"
+        },
+        {
+          "name": "net amounts",
+          "type": "Field",
+          "mention": "net",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pay Runs",
+          "relation": "BELONGS_TO",
+          "target": "Payslips",
+          "evidence": "navigate to Payroll app --> Payslips --> Pay Runs"
+        },
+        {
+          "source": "Payslips",
+          "relation": "BELONGS_TO",
+          "target": "Payroll",
+          "evidence": "Payroll app --> Payslips"
+        },
+        {
+          "source": "Payroll",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "Product: Odoo. Title: View pay runs"
+        },
+        {
+          "source": "Pay Runs",
+          "relation": "CONFIGURED_BY",
+          "target": "oi-group Status",
+          "evidence": "grouped by oi-group Status"
+        },
+        {
+          "source": "oi-group Status",
+          "relation": "RELATED_TO",
+          "target": "Ready",
+          "evidence": "grouped by oi-group Status (either Ready,...)"
+        },
+        {
+          "source": "oi-group Status",
+          "relation": "RELATED_TO",
+          "target": "Done",
+          "evidence": "grouped by oi-group Status (either Ready, Done,...)"
+        },
+        {
+          "source": "oi-group Status",
+          "relation": "RELATED_TO",
+          "target": "Paid",
+          "evidence": "grouped by oi-group Status (either Ready, Done, or Paid)"
+        },
+        {
+          "source": "Pay Runs",
+          "relation": "HAS_FEATURE",
+          "target": "list view",
+          "evidence": "displayed in a list view"
+        },
+        {
+          "source": "Pay Runs",
+          "relation": "CONTAINS",
+          "target": "name",
+          "evidence": "Each pay run displays the name"
+        },
+        {
+          "source": "Pay Runs",
+          "relation": "CONTAINS",
+          "target": "dates it includes",
+          "evidence": "the dates it includes"
+        },
+        {
+          "source": "Pay Runs",
+          "relation": "CONTAINS",
+          "target": "number of payslips",
+          "evidence": "the number of payslips"
+        },
+        {
+          "source": "Pay Runs",
+          "relation": "CONTAINS",
+          "target": "total employer cost",
+          "evidence": "the total employer cost"
+        },
+        {
+          "source": "Pay Runs",
+          "relation": "CONTAINS",
+          "target": "gross amounts",
+          "evidence": "the gross amounts"
+        },
+        {
+          "source": "Pay Runs",
+          "relation": "CONTAINS",
+          "target": "net amounts",
+          "evidence": "the net amounts"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-a-new-pay-run",
+    "heading": "Create a new pay run",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay Run",
+          "type": "Workflow",
+          "mention": "pay run",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entry Pay Run Dashboard",
+          "type": "Module",
+          "mention": "Work Entry <payroll/work-entry-pay-run>",
+          "confidence": "medium"
+        },
+        {
+          "name": "Employee Payslips Pay Run Dashboard",
+          "type": "Module",
+          "mention": "Employee Payslips <payroll/payslips-pay-run>",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pay Runs Dashboard",
+          "type": "Module",
+          "mention": "Pay Runs <payroll/pay-runs-pay-run>",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Pay Run",
+          "relation": "BELONGS_TO",
+          "target": "Odoo",
+          "evidence": "New pay runs can be created from... dashboards."
+        },
+        {
+          "source": "Work Entry Pay Run Dashboard",
+          "relation": "CONTAINS",
+          "target": "Pay Run",
+          "evidence": "New pay runs can be created from the Work Entry... dashboard."
+        },
+        {
+          "source": "Employee Payslips Pay Run Dashboard",
+          "relation": "CONTAINS",
+          "target": "Pay Run",
+          "evidence": "New pay runs can be created from the Employee Payslips... dashboard."
+        },
+        {
+          "source": "Pay Runs Dashboard",
+          "relation": "CONTAINS",
+          "target": "Pay Run",
+          "evidence": "New pay runs can be created from the Pay Runs... dashboard."
+        },
+        {
+          "source": "Work Entry Pay Run Dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "...from the Work Entry... dashboard."
+        },
+        {
+          "source": "Employee Payslips Pay Run Dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "...from the Employee Payslips... dashboard."
+        },
+        {
+          "source": "Pay Runs Dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "...from the Pay Runs... dashboard."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "work-entry-dashboard",
+    "heading": "Work entry dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Work Entries",
+          "type": "Sub-module",
+          "mention": "Work Entries",
+          "confidence": "high"
+        },
+        {
+          "name": "Work entry dashboard",
+          "type": "Feature",
+          "mention": "Work entry dashboard",
+          "confidence": "high"
+        },
+        {
+          "name": "default Gantt view",
+          "type": "Feature",
+          "mention": "default Gantt view",
+          "confidence": "medium"
+        },
+        {
+          "name": "Generate Pay Run button",
+          "type": "Action",
+          "mention": "Generate Pay Run button",
+          "confidence": "high"
+        },
+        {
+          "name": "pay run",
+          "type": "DataObject",
+          "mention": "pay run",
+          "confidence": "high"
+        },
+        {
+          "name": "employees",
+          "type": "Actor",
+          "mention": "employees",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Work entry dashboard",
+          "relation": "IS_PART_OF",
+          "target": "Payroll app",
+          "evidence": "To create a pay run from the work entry dashboard, navigate to Payroll app"
+        },
+        {
+          "source": "Work Entries",
+          "relation": "IS_PART_OF",
+          "target": "Payroll app",
+          "evidence": "navigate to Payroll app --> Work Entries"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "CONTAINS",
+          "target": "Work Entries",
+          "evidence": "navigate to Payroll app --> Work Entries"
+        },
+        {
+          "source": "Generate Pay Run button",
+          "relation": "PERFORMED_BY",
+          "target": "employees",
+          "evidence": "click the Generate Pay Run button"
+        },
+        {
+          "source": "Generate Pay Run button",
+          "relation": "PRODUCES",
+          "target": "pay run",
+          "evidence": "click the Generate Pay Run button. The pay run is created"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "HAS_FEATURE",
+          "target": "Work entry dashboard",
+          "evidence": "To create a pay run from the work entry dashboard, navigate to Payroll app"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "employee-payslips-dashboard",
+    "heading": "Employee payslips dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll app",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payslips",
+          "type": "Sub-module",
+          "mention": "Payslips",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pay Run button",
+          "type": "Action",
+          "mention": "Click the Pay Run button",
+          "confidence": "high"
+        },
+        {
+          "name": "New Pay Run pop-up window",
+          "type": "Feature",
+          "mention": "New Pay Run pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Salary Structure",
+          "type": "DataObject",
+          "mention": "Salary Structure",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pay Schedule",
+          "type": "DataObject",
+          "mention": "Pay Schedule",
+          "confidence": "medium"
+        },
+        {
+          "name": "Period field",
+          "type": "Field",
+          "mention": "Period field",
+          "confidence": "high"
+        },
+        {
+          "name": "Select Employees window",
+          "type": "Feature",
+          "mention": "Select Employees window",
+          "confidence": "high"
+        },
+        {
+          "name": "Select",
+          "type": "Action",
+          "mention": "click Select",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Payroll app",
+          "evidence": "Product: Odoo, navigate to Payroll app"
+        },
+        {
+          "source": "Payroll app",
+          "relation": "CONTAINS",
+          "target": "Payslips",
+          "evidence": "Payroll app --> Payslips"
+        },
+        {
+          "source": "Payslips",
+          "relation": "CONTAINS",
+          "target": "Payslips",
+          "evidence": "Payslips --> Payslips"
+        },
+        {
+          "source": "Payslips",
+          "relation": "HAS_FEATURE",
+          "target": "Pay Run button",
+          "evidence": "Click the Pay Run button"
+        },
+        {
+          "source": "Pay Run button",
+          "relation": "ENABLES",
+          "target": "New Pay Run pop-up window",
+          "evidence": "Click the Pay Run button and a New Pay Run pop-up window loads"
+        },
+        {
+          "source": "New Pay Run pop-up window",
+          "relation": "CONFIGURED_BY",
+          "target": "Salary Structure",
+          "evidence": "Select the Salary Structure using the drop-down menu"
+        },
+        {
+          "source": "New Pay Run pop-up window",
+          "relation": "CONFIGURED_BY",
+          "target": "Pay Schedule",
+          "evidence": "Next, select the Pay Schedule"
+        },
+        {
+          "source": "New Pay Run pop-up window",
+          "relation": "CONFIGURED_BY",
+          "target": "Period field",
+          "evidence": "set the first day the pay run covers in the first blank Period field"
+        },
+        {
+          "source": "Pay Schedule",
+          "relation": "RELATED_TO",
+          "target": "Period field",
+          "evidence": "The second field is automatically populated based on the selection in the Pay Schedule field"
+        },
+        {
+          "source": "New Pay Run pop-up window",
+          "relation": "TRIGGERED_BY",
+          "target": "Pay Run button",
+          "evidence": "Click the Pay Run button and a New Pay Run pop-up window loads"
+        },
+        {
+          "source": "New Pay Run pop-up window",
+          "relation": "ENABLES",
+          "target": "Select Employees window",
+          "evidence": "click Continue, and the pop-up window changes to a Select Employees window"
+        },
+        {
+          "source": "Select Employees window",
+          "relation": "CONFIGURED_BY",
+          "target": "New Pay Run pop-up window",
+          "evidence": "All employees who match the parameters set in the New Pay Run pop-up window appear"
+        },
+        {
+          "source": "Select Employees window",
+          "relation": "HAS_FEATURE",
+          "target": "Select",
+          "evidence": "Once all desired employees are selected, click Select"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "pay-runs-dashboard",
+    "heading": "Pay runs dashboard",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay Runs",
+          "type": "Sub-module",
+          "mention": "Pay Runs",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslips",
+          "type": "Sub-module",
+          "mention": "Payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay runs dashboard",
+          "type": "Feature",
+          "mention": "Pay runs dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "create a pay run",
+          "type": "Action",
+          "mention": "create a pay run",
+          "confidence": "high"
+        },
+        {
+          "name": "New Pay Run",
+          "type": "Action",
+          "mention": "New Pay Run",
+          "confidence": "high"
+        },
+        {
+          "name": "New Pay Run pop-up window",
+          "type": "Feature",
+          "mention": "New Pay Run pop-up window",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Payroll",
+          "evidence": "Product: Odoo"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Payslips",
+          "evidence": "Payroll app --> Payslips"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Pay Runs",
+          "evidence": "Payslips --> Pay Runs"
+        },
+        {
+          "source": "Pay runs dashboard",
+          "relation": "HAS_FEATURE",
+          "target": "create a pay run",
+          "evidence": "To create a pay run from the pay runs dashboard"
+        },
+        {
+          "source": "create a pay run",
+          "relation": "TRIGGERED_BY",
+          "target": "New Pay Run",
+          "evidence": "Click the New button and a New Pay Run pop-up window loads"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "add-a-payslips-to-a-pay-run",
+    "heading": "Add a payslips to a pay run",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslips",
+          "type": "Sub-module",
+          "mention": "Payslips --> Payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay run",
+          "type": "DataObject",
+          "mention": "pay run",
+          "confidence": "high"
+        },
+        {
+          "name": "Employee Payslips",
+          "type": "DataObject",
+          "mention": "Employee Payslips form",
+          "confidence": "high"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslip",
+          "confidence": "high"
+        },
+        {
+          "name": "New Off-Cycle",
+          "type": "Action",
+          "mention": "New Off-Cycle button",
+          "confidence": "high"
+        },
+        {
+          "name": "Compute Sheet",
+          "type": "Action",
+          "mention": "Compute Sheet",
+          "confidence": "high"
+        },
+        {
+          "name": "Pay Run",
+          "type": "Field",
+          "mention": "Pay Run field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Payslips",
+          "evidence": "navigate to Payroll app --> Payslips"
+        },
+        {
+          "source": "Payslips",
+          "relation": "CONTAINS",
+          "target": "Employee Payslips",
+          "evidence": "a blank Employee Payslips form loads"
+        },
+        {
+          "source": "Employee Payslips",
+          "relation": "CONTAINS",
+          "target": "Pay Run",
+          "evidence": "ensure the Pay Run field is populated"
+        },
+        {
+          "source": "Compute Sheet",
+          "relation": "ENABLES",
+          "target": "payslip",
+          "evidence": "click Compute Sheet to calculate the payslip"
+        },
+        {
+          "source": "payslip",
+          "relation": "IS_PART_OF",
+          "target": "Pay run",
+          "evidence": "payslips are added as part of the pay run"
+        },
+        {
+          "source": "New Off-Cycle",
+          "relation": "PRODUCES",
+          "target": "Employee Payslips",
+          "evidence": "Click the New Off-Cycle button and a blank Employee Payslips form loads"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "process-a-pay-run",
+    "heading": "Process a pay run",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Payroll",
+          "type": "Module",
+          "mention": "Payroll app",
+          "confidence": "high"
+        },
+        {
+          "name": "Payslips",
+          "type": "Sub-module",
+          "mention": "Payslips",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pay Runs",
+          "type": "Sub-module",
+          "mention": "Pay Runs",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pay Run",
+          "type": "DataObject",
+          "mention": "pay run",
+          "confidence": "high"
+        },
+        {
+          "name": "Process a pay run",
+          "type": "Workflow",
+          "mention": "Process a pay run",
+          "confidence": "high"
+        },
+        {
+          "name": "Ready",
+          "type": "Field",
+          "mention": "status of Ready",
+          "confidence": "high"
+        },
+        {
+          "name": "Done",
+          "type": "Field",
+          "mention": "status changes to Done",
+          "confidence": "high"
+        },
+        {
+          "name": "Paid",
+          "type": "Field",
+          "mention": "status of Paid",
+          "confidence": "high"
+        },
+        {
+          "name": "Create Draft Entry",
+          "type": "Action",
+          "mention": "Click the Create Draft Entry button",
+          "confidence": "high"
+        },
+        {
+          "name": "Revert",
+          "type": "Action",
+          "mention": "click the Revert button",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Report",
+          "type": "Report",
+          "mention": "payment report",
+          "confidence": "high"
+        },
+        {
+          "name": "Payment Report button",
+          "type": "Action",
+          "mention": "Click the Payment Report button",
+          "confidence": "high"
+        },
+        {
+          "name": "Export Format",
+          "type": "Field",
+          "mention": "Export Format",
+          "confidence": "high"
+        },
+        {
+          "name": "CSV",
+          "type": "Standard",
+          "mention": "CSV",
+          "confidence": "medium"
+        },
+        {
+          "name": "Payment Date",
+          "type": "Field",
+          "mention": "Payment Date",
+          "confidence": "high"
+        },
+        {
+          "name": "Bank Journal",
+          "type": "Field",
+          "mention": "Bank Journal field",
+          "confidence": "high"
+        },
+        {
+          "name": "Generate",
+          "type": "Action",
+          "mention": "click the Generate button",
+          "confidence": "high"
+        },
+        {
+          "name": "Download button",
+          "type": "Action",
+          "mention": "fa-download Download (filetype) button",
+          "confidence": "medium"
+        },
+        {
+          "name": "Mark as paid",
+          "type": "Action",
+          "mention": "click the Mark as paid button",
+          "confidence": "high"
+        },
+        {
+          "name": "salary structure",
+          "type": "Concept",
+          "mention": "salary structure",
+          "confidence": "low"
+        },
+        {
+          "name": "pay schedule",
+          "type": "Concept",
+          "mention": "pay schedule",
+          "confidence": "low"
+        },
+        {
+          "name": "payslip",
+          "type": "DataObject",
+          "mention": "payslips",
+          "confidence": "high"
+        },
+        {
+          "name": "company",
+          "type": "Actor",
+          "mention": "company",
+          "confidence": "high"
+        },
+        {
+          "name": "payroll localization",
+          "type": "Module",
+          "mention": "payroll localization",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "Payroll",
+          "evidence": "Payroll app"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Payslips",
+          "evidence": "navigating to Payroll app --> Payslips"
+        },
+        {
+          "source": "Payroll",
+          "relation": "CONTAINS",
+          "target": "Pay Runs",
+          "evidence": "navigating to Payroll app --> Payslips --> Pay Runs"
+        },
+        {
+          "source": "Process a pay run",
+          "relation": "CONTAINS",
+          "target": "Create Draft Entry",
+          "evidence": "Click the Create Draft Entry button"
+        },
+        {
+          "source": "Process a pay run",
+          "relation": "CONTAINS",
+          "target": "Revert",
+          "evidence": "click the Revert button"
+        },
+        {
+          "source": "Process a pay run",
+          "relation": "CONTAINS",
+          "target": "Payment Report button",
+          "evidence": "Click the Payment Report button"
+        },
+        {
+          "source": "Process a pay run",
+          "relation": "CONTAINS",
+          "target": "Mark as paid",
+          "evidence": "click the Mark as paid button"
+        },
+        {
+          "source": "Pay Run",
+          "relation": "HAS_FEATURE",
+          "target": "Ready",
+          "evidence": "For a pay run to be processed, it must have a status of Ready"
+        },
+        {
+          "source": "Pay Run",
+          "relation": "HAS_FEATURE",
+          "target": "Done",
+          "evidence": "the pay run status changes to Done"
+        },
+        {
+          "source": "payslip",
+          "relation": "HAS_FEATURE",
+          "target": "Paid",
+          "evidence": "if any payslips in the pay run have a status of Paid"
+        },
+        {
+          "source": "Create Draft Entry",
+          "relation": "PRODUCES",
+          "target": "Pay Run",
+          "evidence": "create a draft of all the individual payslips in the pay run"
+        },
+        {
+          "source": "Payment Report button",
+          "relation": "ENABLES",
+          "target": "Payment Report",
+          "evidence": "Click the Payment Report button, and a pop-up window loads, where the payment report details are entered"
+        },
+        {
+          "source": "Payment Report",
+          "relation": "GENERATES",
+          "target": "Download button",
+          "evidence": "The Payment Report button changes to a fa-download Download (filetype) button"
+        },
+        {
+          "source": "Export Format",
+          "relation": "CONTAINS",
+          "target": "CSV",
+          "evidence": "The universal option is CSV"
+        },
+        {
+          "source": "Payment Report",
+          "relation": "REQUIRES",
+          "target": "Export Format",
+          "evidence": "select the Export Format for the payment report"
+        },
+        {
+          "source": "Payment Report",
+          "relation": "REQUIRES",
+          "target": "Payment Date",
+          "evidence": "select the Payment Date using the calendar selector"
+        },
+        {
+          "source": "Payment Report",
+          "relation": "REQUIRES",
+          "target": "Bank Journal",
+          "evidence": "Some payroll localizations cause a Bank Journal field to also appear"
+        },
+        {
+          "source": "Generate",
+          "relation": "ENABLES",
+          "target": "Download button",
+          "evidence": "click the Generate button. The Payment Report button changes to a fa-download Download (filetype) button"
+        },
+        {
+          "source": "Mark as paid",
+          "relation": "PRODUCES",
+          "target": "payslip",
+          "evidence": "mark the payslips as paid in the database"
+        },
+        {
+          "source": "payroll localization",
+          "relation": "APPLIES_TO",
+          "target": "Export Format",
+          "evidence": "all other available options depend on the installed payroll localization"
+        },
+        {
+          "source": "payroll localization",
+          "relation": "APPLIES_TO",
+          "target": "Bank Journal",
+          "evidence": "Some payroll localizations cause a Bank Journal field to also appear"
+        }
+      ]
+    }
+  }
+]
