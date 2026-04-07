@@ -34,7 +34,8 @@ class QuestionAnswerer:
         neo4j_password: str = None,
         openrouter_api_key: str = None,
         database: str = "pos",
-        pg_connection_string: str = None
+        pg_connection_string: str = None,
+        module: str = "Human Resource"
     ):
         # Neo4j connection
         self.driver = GraphDatabase.driver(
@@ -54,6 +55,8 @@ class QuestionAnswerer:
             base_url="https://openrouter.ai/api/v1",
             api_key=openrouter_api_key
         )
+
+        self.module = module
         
         # Model configurations
         self.embedding_model = "qwen/qwen3-embedding-8b"
@@ -74,13 +77,21 @@ class QuestionAnswerer:
 
     def search_similar_nodes(
         self,
+        module: str,
         query_embedding: List[float],
         top_k: int = 5
     ) -> List[Dict[str, Any]]:
-        """Search Neo4j for nodes with similar embeddings."""
+        """Search Neo4j for nodes with similar embeddings filtered by module.
+
+        Args:
+            module: Required module name to filter results (e.g., "Point of Sales")
+            query_embedding: The embedding vector to search for
+            top_k: Number of results to return
+        """
         query = """
         CALL db.index.vector.queryNodes('embedding_index', $top_k, $query_embedding)
         YIELD node, score
+        WHERE node.module = $module
         RETURN node {
             .product,
             .section_id,
@@ -88,7 +99,8 @@ class QuestionAnswerer:
             .confidence,
             .name,
             .type,
-            .mention
+            .mention,
+            .module
         } as properties,
         score,
         elementId(node) as node_id
@@ -97,11 +109,12 @@ class QuestionAnswerer:
         
         try:
             with self.driver.session(database=self.database) as session:
-                result = session.run(
-                    query,
-                    query_embedding=query_embedding,
-                    top_k=top_k
-                )
+                params = {
+                    "query_embedding": query_embedding,
+                    "top_k": top_k,
+                    "module": module
+                }
+                result = session.run(query, **params)
                 return [dict(record) for record in result]
         except Exception as e:
             print(f"Vector index error: {e}")
@@ -259,7 +272,7 @@ class QuestionAnswerer:
         print(f"✓ Generated {len(query_embedding)}-dim embedding\n")
         
         print(f"[2/5] Searching for top {top_k} similar nodes...")
-        seed_results = self.search_similar_nodes(query_embedding, top_k)
+        seed_results = self.search_similar_nodes(self.module, query_embedding, top_k)
         print(f"✓ Found {len(seed_results)} seed nodes\n")
         
         if not seed_results:
@@ -275,7 +288,7 @@ class QuestionAnswerer:
         print(f"✓ Found {len(graph_data.get('nodes', []))} nodes\n")
         
         print("[4/5] Building context from graph...")
-        graph_context = build_context_from_graph(graph_data)
+        graph_context = build_context_from_graph(graph_data, module=self.module)
         print("✓ Context built\n")
         
         print("[5/5] Generating LLM reasoning...")
@@ -333,6 +346,7 @@ def ask_question(question: str, llm_reasoning_model: str, method: str = "neo4j")
        neo4j_password=os.getenv("NEO4J_PASSWORD", "password"),
        openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
        database="pos",
+       module="Human Resource",
        pg_connection_string=os.getenv("PG_CONNECTION_STRING", "postgresql://postgres:postgres@localhost:5432/docs")
     )
     try:
@@ -342,6 +356,6 @@ def ask_question(question: str, llm_reasoning_model: str, method: str = "neo4j")
 
 if __name__ == "__main__":
     # Example usage
-    question = "Does Odoo POS require manual user intervention to sync offline sales?"
-    result = ask_question(question, llm_reasoning_model="google/gemma-3-27b-it", method="pgvector")
+    question = "Can employees check in and out using the Attendances app??"
+    result = ask_question(question, llm_reasoning_model="meta-llama/llama-3.1-8b-instruct", method="neo4j")
     print(result)

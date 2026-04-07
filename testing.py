@@ -73,13 +73,13 @@ if __name__ == '__main__':
     
     try:
         with conn.cursor() as cur:
-            module = "Point of Sales"
+            module = "Human Resource"
             
             # Fetch questions with their IDs
             query = """
             SELECT id, question, answer 
             FROM question
-            WHERE module = %s and deleted_at is null and answer = 1
+            WHERE module = %s and deleted_at is null
             """
             cur.execute(query, (module,))
             results = cur.fetchall()

@@ -119,7 +119,7 @@ def generate_llm_reasoning(
     """
     
     # Build the system prompt
-    system_prompt = """You are an expert Odoo consultant and knowledge graph analyst. Your task is to answer user questions about Odoo Point of Sales (POS) features based on the provided knowledge graph context.
+    system_prompt = """You are an expert Odoo consultant and knowledge graph analyst. Your task is to answer user questions about Odoo features based on the provided knowledge graph context.
 
 ## Your Capabilities:
 1. Analyze the knowledge graph structure and relationships

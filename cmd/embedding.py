@@ -31,10 +31,11 @@ class Neo4jEmbeddingProcessor:
     def get_all_nodes(self) -> List[Dict[str, Any]]:
         query = """
         MATCH (n)
+        WHERE n.module = $module
         RETURN n
         """
         with self.driver.session(database=self.database) as session:
-            result = session.run(query)
+            result = session.run(query, module=self.module)
             nodes = []
             for record in result:
                 node = record["n"]
@@ -121,7 +122,7 @@ def main():
         neo4j_user=neo4j_user,
         neo4j_password=neo4j_password,
         openrouter_api_key=openrouter_api_key,
-        module="Point of Sales",
+        module="Human Resource",
         database="pos"
     )
 

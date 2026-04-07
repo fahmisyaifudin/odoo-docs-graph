@@ -45,7 +45,7 @@ def build_context_from_pg_results(results: List[Dict[str, Any]]) -> str:
     
     return "\n".join(context_parts)
 
-def build_context_from_graph(graph_data: Dict[str, Any]) -> str:
+def build_context_from_graph(graph_data: Dict[str, Any], module: str) -> str:
     """
     Build a readable text context from graph traversal results
     for LLM consumption.
@@ -55,7 +55,7 @@ def build_context_from_graph(graph_data: Dict[str, Any]) -> str:
     
     context_parts = []
     context_parts.append("=" * 60)
-    context_parts.append("KNOWLEDGE GRAPH CONTEXT")
+    context_parts.append(f"KNOWLEDGE GRAPH CONTEXT (Module: {module})")
     context_parts.append("=" * 60)
     
     # Group nodes by type
@@ -104,7 +104,7 @@ def build_context_from_graph(graph_data: Dict[str, Any]) -> str:
             evidence = rel_props.get('evidence', rel.get('evidence', '?'))
             context_parts.append(
                 f"({source_str}) -[:{rel_type}]-> ({target_str})\n"
-                f"  Evidence: {evidence}"
+                # f"  Evidence: {evidence}"
             )
     
     context_parts.append("\n" + "=" * 60)
