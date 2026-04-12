@@ -132,7 +132,7 @@ def create_nodes_and_relations(driver, json_data, database="neo4j"):
                         mention=entity.get("mention", ""),
                         confidence=entity.get("confidence", ""),
                         product=product,
-                        module="Human Resource",
+                        module="Customer Relationship Management",
                         section_id=section_id,
                         heading=heading
                     )
@@ -183,7 +183,7 @@ def main():
     
     # Single JSON file to test (change this to test different files)
     OUTPUT_FILE = "output/0_questions_graph.json"
-    OUTPUT_DIR = "output/hris"
+    OUTPUT_DIR = "output/crm"
     
     try:
         # Connect to Neo4j

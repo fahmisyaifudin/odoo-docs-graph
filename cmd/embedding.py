@@ -122,7 +122,7 @@ def main():
         neo4j_user=neo4j_user,
         neo4j_password=neo4j_password,
         openrouter_api_key=openrouter_api_key,
-        module="Human Resource",
+        module="Customer Relationship Management",
         database="pos"
     )
 

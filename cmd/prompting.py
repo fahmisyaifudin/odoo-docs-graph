@@ -248,7 +248,7 @@ def main():
         results = process_rst_file(
             rst_content=rst_content,
             product_name="Odoo",
-            output_path=f"output/{index}_{Path(rst_file).stem}_graph.json"
+            output_path=f"output/crm/{index}_{Path(rst_file).stem}_graph.json"
         )
 
         # Quick summary print

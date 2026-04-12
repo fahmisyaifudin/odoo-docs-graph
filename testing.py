@@ -73,7 +73,7 @@ if __name__ == '__main__':
     
     try:
         with conn.cursor() as cur:
-            module = "Human Resource"
+            module = "Customer Relationship Management"
             
             # Fetch questions with their IDs
             query = """

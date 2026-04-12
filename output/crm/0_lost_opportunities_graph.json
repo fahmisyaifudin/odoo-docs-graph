@@ -1,0 +1,1221 @@
+[
+  {
+    "section_id": "lost-opportunities",
+    "heading": "Lost opportunities",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost opportunities",
+          "type": "Concept",
+          "mention": "lost opportunities",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunity",
+          "type": "DataObject",
+          "mention": "opportunity",
+          "confidence": "medium"
+        },
+        {
+          "name": "sale",
+          "type": "Concept",
+          "mention": "sale",
+          "confidence": "medium"
+        },
+        {
+          "name": "pipeline",
+          "type": "Concept",
+          "mention": "pipeline",
+          "confidence": "medium"
+        },
+        {
+          "name": "merging lost opportunities",
+          "type": "Action",
+          "mention": "Merging lost opportunities",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "merging lost opportunities",
+          "relation": "TRIGGERED_BY",
+          "target": "opportunity",
+          "evidence": "Merging lost opportunities <merge_similar> with active ones"
+        },
+        {
+          "source": "merging lost opportunities",
+          "relation": "APPLIES_TO",
+          "target": "pipeline",
+          "evidence": "will pull them back into the pipeline"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "mark-an-opportunity-as-lost",
+    "heading": "Mark an opportunity as lost",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM app",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "medium"
+        },
+        {
+          "name": "opportunity",
+          "type": "DataObject",
+          "mention": "opportunity",
+          "confidence": "high"
+        },
+        {
+          "name": "pipeline",
+          "type": "Workflow",
+          "mention": "pipeline",
+          "confidence": "medium"
+        },
+        {
+          "name": "Kanban card",
+          "type": "Feature",
+          "mention": "Kanban card",
+          "confidence": "high"
+        },
+        {
+          "name": "detail form",
+          "type": "Feature",
+          "mention": "detail form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lost",
+          "type": "Action",
+          "mention": "Lost",
+          "confidence": "high"
+        },
+        {
+          "name": "Mark Lost pop-up window",
+          "type": "Feature",
+          "mention": "Mark Lost pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost Reason drop-down menu",
+          "type": "Field",
+          "mention": "Lost Reason drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost Reason",
+          "type": "Field",
+          "mention": "Lost Reason field",
+          "confidence": "high"
+        },
+        {
+          "name": "Closing Note",
+          "type": "Field",
+          "mention": "Closing Note field",
+          "confidence": "high"
+        },
+        {
+          "name": "Mark as Lost",
+          "type": "Action",
+          "mention": "Mark as Lost",
+          "confidence": "high"
+        },
+        {
+          "name": "Probability",
+          "type": "Field",
+          "mention": "Probability field",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Mark as Lost",
+          "relation": "PRODUCES",
+          "target": "Lost banner",
+          "evidence": "After clicking Mark as Lost, a red Lost banner is added"
+        },
+        {
+          "source": "Lost",
+          "relation": "TRIGGERED_BY",
+          "target": "Mark Lost pop-up window",
+          "evidence": "click Lost... This opens the Mark Lost pop-up window"
+        },
+        {
+          "source": "opportunity",
+          "relation": "HAS_REPORT",
+          "target": "detail form",
+          "evidence": "reveals that opportunity's detail form"
+        },
+        {
+          "source": "CRM app",
+          "relation": "CONTAINS",
+          "target": "pipeline",
+          "evidence": "select an opportunity from the pipeline"
+        },
+        {
+          "source": "Mark Lost pop-up window",
+          "relation": "CONTAINS",
+          "target": "Lost Reason drop-down menu",
+          "evidence": "This opens the Mark Lost pop-up window. From the Lost Reason drop-down menu"
+        },
+        {
+          "source": "Mark Lost pop-up window",
+          "relation": "CONTAINS",
+          "target": "Closing Note field",
+          "evidence": "closing Note field, on the Mark Lost pop-up window"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "create-edit-lost-reasons",
+    "heading": "Create/edit lost reasons",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost Reasons",
+          "type": "Sub-module",
+          "mention": "Lost Reasons",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Description field",
+          "type": "Field",
+          "mention": "Description field",
+          "confidence": "high"
+        },
+        {
+          "name": "Create lost reason",
+          "type": "Action",
+          "mention": "create a new lost reason",
+          "confidence": "high"
+        },
+        {
+          "name": "Edit lost reason",
+          "type": "Action",
+          "mention": "edit an existing one",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Lost Reasons",
+          "relation": "IS_PART_OF",
+          "target": "Configuration",
+          "evidence": "navigate to CRM app --> Configuration --> Lost Reasons"
+        },
+        {
+          "source": "Configuration",
+          "relation": "IS_PART_OF",
+          "target": "CRM",
+          "evidence": "navigate to CRM app --> Configuration"
+        },
+        {
+          "source": "Create lost reason",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "To create a new lost reason, click New"
+        },
+        {
+          "source": "Edit lost reason",
+          "relation": "PERFORMED_BY",
+          "target": "user",
+          "evidence": "To edit an existing lost reason, click the reason to be edited"
+        },
+        {
+          "source": "Create lost reason",
+          "relation": "PRODUCES",
+          "target": "Lost Reasons",
+          "evidence": "create a new lost reason, ... type the new lost reason in the Description field"
+        },
+        {
+          "source": "Lost Reasons",
+          "relation": "CONTAINS",
+          "target": "Description field",
+          "evidence": "type the new lost reason in the Description field"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "view-lost-opportunities",
+    "heading": "View lost opportunities",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM app",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Module",
+          "mention": "Sales",
+          "confidence": "high"
+        },
+        {
+          "name": "My Pipeline",
+          "type": "Report",
+          "mention": "My Pipeline",
+          "confidence": "medium"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters",
+          "type": "Setting",
+          "mention": "Filters",
+          "confidence": "high"
+        },
+        {
+          "name": "Group By",
+          "type": "Setting",
+          "mention": "Group By",
+          "confidence": "medium"
+        },
+        {
+          "name": "Favorites",
+          "type": "Feature",
+          "mention": "Favorites",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lost",
+          "type": "Filter",
+          "mention": "Lost",
+          "confidence": "high"
+        },
+        {
+          "name": "Pipeline page",
+          "type": "Report",
+          "mention": "Pipeline page",
+          "confidence": "medium"
+        },
+        {
+          "name": "opportunity",
+          "type": "DataObject",
+          "mention": "opportunities",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost status",
+          "type": "Field",
+          "mention": "marked as `Lost`",
+          "confidence": "medium"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "CRM app",
+          "evidence": "go CRM app"
+        },
+        {
+          "source": "CRM app",
+          "relation": "CONTAINS",
+          "target": "Sales",
+          "evidence": "CRM app --> Sales"
+        },
+        {
+          "source": "Sales",
+          "relation": "HAS_REPORT",
+          "target": "My Pipeline",
+          "evidence": "Sales --> My Pipeline"
+        },
+        {
+          "source": "My Pipeline",
+          "relation": "RELATED_TO",
+          "target": "Pipeline page",
+          "evidence": "appear on the Pipeline page"
+        },
+        {
+          "source": "My Pipeline",
+          "relation": "HAS_FEATURE",
+          "target": "search bar",
+          "evidence": "search bar at the top of the page"
+        },
+        {
+          "source": "search bar",
+          "relation": "HAS_FEATURE",
+          "target": "Filters",
+          "evidence": "Filters drop-down menu... to the right of the search bar"
+        },
+        {
+          "source": "Lost",
+          "relation": "IS_PART_OF",
+          "target": "Filters",
+          "evidence": "Select the Lost option from the Filters section"
+        },
+        {
+          "source": "Lost",
+          "relation": "APPLIES_TO",
+          "target": "opportunity",
+          "evidence": "opportunities marked as `Lost`"
+        },
+        {
+          "source": "Lost status",
+          "relation": "EQUIVALENT_TO",
+          "target": "Lost",
+          "evidence": "opportunities marked as `Lost`"
+        },
+        {
+          "source": "Pipeline page",
+          "relation": "GENERATES",
+          "target": "opportunity",
+          "evidence": "only the opportunities... appear on the Pipeline page"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "sort-opportunities-by-lost-reason",
+    "heading": "Sort opportunities by lost reason",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Product: Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunities",
+          "type": "DataObject",
+          "mention": "opportunities",
+          "confidence": "high"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lost filter",
+          "type": "Filter",
+          "mention": "Lost filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Filters column",
+          "type": "Feature",
+          "mention": "Filters column",
+          "confidence": "medium"
+        },
+        {
+          "name": "Add Custom Filter",
+          "type": "Action",
+          "mention": "Add Custom Filter",
+          "confidence": "high"
+        },
+        {
+          "name": "Add Custom Filter pop-up window",
+          "type": "Feature",
+          "mention": "Add Custom Filter pop-up window",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost Reason",
+          "type": "Field",
+          "mention": "Lost Reason",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "opportunities",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "This is a section in ERP documentation for Odoo, describing how to sort opportunities."
+        },
+        {
+          "source": "Add Custom Filter",
+          "relation": "TRIGGERED_BY",
+          "target": "clicking the Add Custom Filter button under the Filters column",
+          "evidence": "click Add Custom Filter, which opens an Add Custom Filter pop-up window."
+        },
+        {
+          "source": "opportunities",
+          "relation": "HAS_FEATURE",
+          "target": "Lost filter",
+          "evidence": "under the Filters column, click Add Custom Filter, Lost filter is mentioned as a filter option."
+        },
+        {
+          "source": "Add Custom Filter pop-up window",
+          "relation": "CONTAINS",
+          "target": "Lost Reason",
+          "evidence": "On the Add Custom Filter pop-up window, click in the first field and type `Lost Reason`"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "restore-lost-opportunities",
+    "heading": "Restore lost opportunities",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Sales",
+          "type": "Sub-module",
+          "mention": "Sales",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pipeline dashboard",
+          "type": "Feature",
+          "mention": "Pipeline dashboard",
+          "confidence": "medium"
+        },
+        {
+          "name": "My Pipeline",
+          "type": "Feature",
+          "mention": "My Pipeline",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters",
+          "confidence": "medium"
+        },
+        {
+          "name": "Group By",
+          "type": "Feature",
+          "mention": "Group By",
+          "confidence": "medium"
+        },
+        {
+          "name": "Favorites",
+          "type": "Feature",
+          "mention": "Favorites",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lost",
+          "type": "Feature",
+          "mention": "Lost",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pipeline page",
+          "type": "Feature",
+          "mention": "Pipeline page",
+          "confidence": "medium"
+        },
+        {
+          "name": "Lost opportunity",
+          "type": "DataObject",
+          "mention": "lost opportunity",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunity",
+          "type": "DataObject",
+          "mention": "opportunity",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunity form",
+          "type": "Feature",
+          "mention": "opportunity form",
+          "confidence": "medium"
+        },
+        {
+          "name": "Restore lost opportunities",
+          "type": "Workflow",
+          "mention": "restore a lost opportunity",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "CRM",
+          "relation": "CONTAINS",
+          "target": "Sales",
+          "evidence": "CRM app --> Sales"
+        },
+        {
+          "source": "CRM",
+          "relation": "HAS_REPORT",
+          "target": "Pipeline dashboard",
+          "evidence": "open the CRM app to reveal the Pipeline dashboard"
+        },
+        {
+          "source": "Sales",
+          "relation": "HAS_REPORT",
+          "target": "My Pipeline",
+          "evidence": "CRM app --> Sales --> My Pipeline"
+        },
+        {
+          "source": "Pipeline page",
+          "relation": "CONTAINS",
+          "target": "Filters",
+          "evidence": "Under the Filters column"
+        },
+        {
+          "source": "Pipeline page",
+          "relation": "CONTAINS",
+          "target": "Group By",
+          "evidence": "Filters, Group By"
+        },
+        {
+          "source": "Pipeline page",
+          "relation": "CONTAINS",
+          "target": "Favorites",
+          "evidence": "Filters, Group By, and Favorites columns"
+        },
+        {
+          "source": "Pipeline page",
+          "relation": "CONTAINS",
+          "target": "Lost",
+          "evidence": "Filters column, select Lost"
+        },
+        {
+          "source": "Lost",
+          "relation": "APPLIES_TO",
+          "target": "Lost opportunity",
+          "evidence": "select Lost. Doing so reveals all the lost opportunities"
+        },
+        {
+          "source": "Restore lost opportunities",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Restore"
+        },
+        {
+          "source": "Restore lost opportunities",
+          "relation": "APPLIES_TO",
+          "target": "Lost opportunity",
+          "evidence": "restore a lost opportunity"
+        },
+        {
+          "source": "Lost opportunity",
+          "relation": "RELATED_TO",
+          "target": "opportunity form",
+          "evidence": "lost opportunity's detail form, click Restore"
+        },
+        {
+          "source": "opportunity",
+          "relation": "IS_PART_OF",
+          "target": "Lost opportunity",
+          "evidence": "lost opportunities"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "restore-multiple-opportunities-at-once",
+    "heading": "Restore multiple opportunities at once",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "dashboard mega menu",
+          "type": "Module",
+          "mention": "dashboard mega menu",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-caret-down icon",
+          "type": "Feature",
+          "mention": "fa-caret-down icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "default Lost option",
+          "type": "Setting",
+          "mention": "default Lost option",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters column",
+          "type": "Module",
+          "mention": "Filters column",
+          "confidence": "medium"
+        },
+        {
+          "name": "list view",
+          "type": "Feature",
+          "mention": "list view option",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-bars icon",
+          "type": "Feature",
+          "mention": "fa-bars icon",
+          "confidence": "medium"
+        },
+        {
+          "name": "Pipeline page",
+          "type": "Module",
+          "mention": "Pipeline page",
+          "confidence": "high"
+        },
+        {
+          "name": "checkbox",
+          "type": "Feature",
+          "mention": "checkbox",
+          "confidence": "medium"
+        },
+        {
+          "name": "fa-cog Actions drop-down menu",
+          "type": "Feature",
+          "mention": "fa-cog Actions drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Unarchive",
+          "type": "Action",
+          "mention": "Unarchive",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost filter",
+          "type": "Setting",
+          "mention": "Lost filter",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "dashboard mega menu",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "To restore multiple opportunities at once, open the dashboard mega menu..."
+        },
+        {
+          "source": "default Lost option",
+          "relation": "BELONGS_TO",
+          "target": "Filters column",
+          "evidence": "...select the default Lost option located under the left-side Filters column."
+        },
+        {
+          "source": "Pipeline page",
+          "relation": "HAS_FEATURE",
+          "target": "list view",
+          "evidence": "...list view option...places all the opportunities from the Pipeline page in a list view."
+        },
+        {
+          "source": "Unarchive",
+          "relation": "BELONGS_TO",
+          "target": "fa-cog Actions drop-down menu",
+          "evidence": "...select Unarchive from the fa-cog Actions drop-down menu."
+        },
+        {
+          "source": "Unarchive",
+          "relation": "TRIGGERED_BY",
+          "target": "Lost filter",
+          "evidence": "Doing so removes those selected opportunities from the Pipeline page because they no longer fit the Lost filter criteria."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "manage-lost-leads",
+    "heading": "Manage lost leads",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Leads",
+          "type": "DataObject",
+          "mention": "Leads",
+          "confidence": "high"
+        },
+        {
+          "name": "lost",
+          "type": "Feature",
+          "mention": "marked as lost",
+          "confidence": "high"
+        },
+        {
+          "name": "opportunities",
+          "type": "DataObject",
+          "mention": "opportunities",
+          "confidence": "high"
+        },
+        {
+          "name": "lost reasons",
+          "type": "DataObject",
+          "mention": "lost reasons",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM app",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Configuration",
+          "type": "Sub-module",
+          "mention": "Configuration",
+          "confidence": "high"
+        },
+        {
+          "name": "Settings",
+          "type": "DataObject",
+          "mention": "Settings",
+          "confidence": "high"
+        },
+        {
+          "name": "Leads checkbox",
+          "type": "Setting",
+          "mention": "Leads checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "Leads menu",
+          "type": "Feature",
+          "mention": "Leads menu",
+          "confidence": "high"
+        },
+        {
+          "name": "header menu bar",
+          "type": "Concept",
+          "mention": "header menu bar",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Leads",
+          "relation": "IS_PART_OF",
+          "target": "database",
+          "evidence": "Leads are enabled on a database"
+        },
+        {
+          "source": "Leads",
+          "relation": "SUPPORTS",
+          "target": "lost",
+          "evidence": "they can be marked as lost"
+        },
+        {
+          "source": "opportunities",
+          "relation": "SUPPORTS",
+          "target": "lost",
+          "evidence": "marked as lost in the same manner as opportunities"
+        },
+        {
+          "source": "Leads",
+          "relation": "USES_METHOD",
+          "target": "lost reasons",
+          "evidence": "Leads use the same lost reasons as opportunities"
+        },
+        {
+          "source": "opportunities",
+          "relation": "USES_METHOD",
+          "target": "lost reasons",
+          "evidence": "Leads use the same lost reasons as opportunities"
+        },
+        {
+          "source": "Leads",
+          "relation": "REQUIRES",
+          "target": "Leads checkbox",
+          "evidence": "To enable leads, check the Leads checkbox"
+        },
+        {
+          "source": "Leads checkbox",
+          "relation": "BELONGS_TO",
+          "target": "Settings",
+          "evidence": "Configuration --> Settings and check the Leads checkbox"
+        },
+        {
+          "source": "Settings",
+          "relation": "BELONGS_TO",
+          "target": "Configuration",
+          "evidence": "Configuration --> Settings"
+        },
+        {
+          "source": "Configuration",
+          "relation": "BELONGS_TO",
+          "target": "CRM app",
+          "evidence": "CRM app --> Configuration"
+        },
+        {
+          "source": "Leads menu",
+          "relation": "ENABLES",
+          "target": "Leads",
+          "evidence": "This adds a new Leads menu"
+        },
+        {
+          "source": "Leads menu",
+          "relation": "BELONGS_TO",
+          "target": "header menu bar",
+          "evidence": "adds a new Leads menu to the header menu bar"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "mark-a-lead-as-lost",
+    "heading": "Mark a lead as lost",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "Leads",
+          "type": "Module",
+          "mention": "Leads",
+          "confidence": "high"
+        },
+        {
+          "name": "Lead",
+          "type": "DataObject",
+          "mention": "lead",
+          "confidence": "high"
+        },
+        {
+          "name": "Mark Lost",
+          "type": "Action",
+          "mention": "click Lost",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost Reason",
+          "type": "Field",
+          "mention": "Lost Reason field",
+          "confidence": "high"
+        },
+        {
+          "name": "Closing Note",
+          "type": "Field",
+          "mention": "Closing Note field",
+          "confidence": "high"
+        },
+        {
+          "name": "Mark as Lost",
+          "type": "Action",
+          "mention": "Mark as Lost",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Leads",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "navigate to CRM app --> Leads"
+        },
+        {
+          "source": "Mark Lost",
+          "relation": "PERFORMED_BY",
+          "target": "Actor",
+          "evidence": "click Lost"
+        },
+        {
+          "source": "Lead",
+          "relation": "HAS_FEATURE",
+          "target": "Mark as Lost",
+          "evidence": "click Mark as Lost"
+        },
+        {
+          "source": "Lead",
+          "relation": "HAS_FEATURE",
+          "target": "Mark Lost",
+          "evidence": "click Lost"
+        },
+        {
+          "source": "Mark Lost",
+          "relation": "CONTAINS",
+          "target": "Lost Reason",
+          "evidence": "opens the Mark Lost pop-up window. From the Lost Reason drop-down menu"
+        },
+        {
+          "source": "Mark Lost",
+          "relation": "CONTAINS",
+          "target": "Closing Note",
+          "evidence": "Additional notes and comments can be added below the lost reason designated in the Closing Note field."
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "restore-lost-leads",
+    "heading": "Restore lost leads",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Leads",
+          "type": "DataObject",
+          "mention": "Leads",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost",
+          "type": "DataObject",
+          "mention": "Lost",
+          "confidence": "high"
+        },
+        {
+          "name": "lost lead",
+          "type": "DataObject",
+          "mention": "lost lead",
+          "confidence": "high"
+        },
+        {
+          "name": "Restore",
+          "type": "Action",
+          "mention": "Restore",
+          "confidence": "high"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "medium"
+        },
+        {
+          "name": "Filters column",
+          "type": "Feature",
+          "mention": "Filters column",
+          "confidence": "medium"
+        },
+        {
+          "name": "lead's detail form",
+          "type": "DataObject",
+          "mention": "lead's detail form",
+          "confidence": "high"
+        }
+      ],
+      "relations": [
+        {
+          "source": "CRM",
+          "relation": "IS_PART_OF",
+          "target": "Odoo",
+          "evidence": "CRM app"
+        },
+        {
+          "source": "Leads",
+          "relation": "BELONGS_TO",
+          "target": "CRM",
+          "evidence": "navigate to CRM app --> Leads"
+        },
+        {
+          "source": "Lost",
+          "relation": "BELONGS_TO",
+          "target": "Filters column",
+          "evidence": "Under the Filters column, select Lost."
+        },
+        {
+          "source": "Restore",
+          "relation": "PERFORMED_BY",
+          "target": "lost lead",
+          "evidence": "click on the desired lost lead to restore... click Restore"
+        }
+      ]
+    }
+  },
+  {
+    "section_id": "restore-multiple-leads-at-once",
+    "heading": "Restore multiple leads at once",
+    "product": "Odoo",
+    "graph": {
+      "entities": [
+        {
+          "name": "Odoo",
+          "type": "Product",
+          "mention": "Odoo",
+          "confidence": "high"
+        },
+        {
+          "name": "CRM app",
+          "type": "Module",
+          "mention": "CRM app",
+          "confidence": "high"
+        },
+        {
+          "name": "Leads",
+          "type": "DataObject",
+          "mention": "Leads",
+          "confidence": "high"
+        },
+        {
+          "name": "Filters",
+          "type": "Feature",
+          "mention": "Filters drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Lost",
+          "type": "Setting",
+          "mention": "Lost option",
+          "confidence": "medium"
+        },
+        {
+          "name": "checkbox",
+          "type": "Feature",
+          "mention": "checkbox",
+          "confidence": "high"
+        },
+        {
+          "name": "fa-cog (Actions) drop-down menu",
+          "type": "Feature",
+          "mention": "fa-cog (Actions) drop-down menu",
+          "confidence": "high"
+        },
+        {
+          "name": "Unarchive",
+          "type": "Action",
+          "mention": "Unarchive",
+          "confidence": "high"
+        },
+        {
+          "name": "search bar",
+          "type": "Feature",
+          "mention": "search bar",
+          "confidence": "high"
+        },
+        {
+          "name": "../performance/win_loss",
+          "type": "Concept",
+          "mention": "../performance/win_loss",
+          "confidence": "low"
+        }
+      ],
+      "relations": [
+        {
+          "source": "Odoo",
+          "relation": "CONTAINS",
+          "target": "CRM app",
+          "evidence": "navigate to CRM app"
+        },
+        {
+          "source": "CRM app",
+          "relation": "CONTAINS",
+          "target": "Leads",
+          "evidence": "navigate to CRM app --> Leads"
+        },
+        {
+          "source": "Leads",
+          "relation": "HAS_FEATURE",
+          "target": "Filters",
+          "evidence": "open the Filters drop-down menu"
+        },
+        {
+          "source": "Filters",
+          "relation": "CONTAINS",
+          "target": "Lost",
+          "evidence": "select the Lost option"
+        },
+        {
+          "source": "Leads",
+          "relation": "HAS_FEATURE",
+          "target": "checkbox",
+          "evidence": "Select the checkbox to the left of each lead"
+        },
+        {
+          "source": "Leads",
+          "relation": "HAS_FEATURE",
+          "target": "fa-cog (Actions) drop-down menu",
+          "evidence": "click the fa-cog (Actions) drop-down menu at the top of the Leads page"
+        },
+        {
+          "source": "fa-cog (Actions) drop-down menu",
+          "relation": "CONTAINS",
+          "target": "Unarchive",
+          "evidence": "From the fa-cog (Actions) drop-down menu, select Unarchive."
+        },
+        {
+          "source": "Leads",
+          "relation": "HAS_FEATURE",
+          "target": "search bar",
+          "evidence": "Delete the Lost filter from the search bar"
+        },
+        {
+          "source": "../performance/win_loss",
+          "relation": "SEE_ALSO",
+          "target": "Odoo",
+          "evidence": ".. seealso:: ../performance/win_loss"
+        }
+      ]
+    }
+  }
+]

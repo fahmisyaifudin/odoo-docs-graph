@@ -35,7 +35,7 @@ class QuestionAnswerer:
         openrouter_api_key: str = None,
         database: str = "pos",
         pg_connection_string: str = None,
-        module: str = "Human Resource"
+        module: str = "Customer Relationship Management"
     ):
         # Neo4j connection
         self.driver = GraphDatabase.driver(
@@ -346,7 +346,7 @@ def ask_question(question: str, llm_reasoning_model: str, method: str = "neo4j")
        neo4j_password=os.getenv("NEO4J_PASSWORD", "password"),
        openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
        database="pos",
-       module="Human Resource",
+       module="Customer Relationship Management",
        pg_connection_string=os.getenv("PG_CONNECTION_STRING", "postgresql://postgres:postgres@localhost:5432/docs")
     )
     try:
