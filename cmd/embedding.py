@@ -3,9 +3,24 @@ from neo4j import GraphDatabase
 from openai import OpenAI
 from typing import List, Dict, Any
 from dotenv import load_dotenv
+from mlx_embeddings.utils import load
 
 
 load_dotenv()
+
+class MLXEmbedding:
+    def __init__(self, model: str):
+        self.model = model
+
+    def document_embedding(self, document: str) -> list[float]:
+        model, tokenizer = load(self.model)
+
+        # Tokenize and generate embedding
+        input_ids = tokenizer.encode(document, return_tensors="mlx")
+        outputs = model(input_ids)
+        raw_embeds = outputs.last_hidden_state[:, 0, :] # CLS token
+        text_embeds = outputs.text_embeds # mean pooled and normalized embeddings
+        return text_embeds.tolist()[0]
 
 class Neo4jEmbeddingProcessor:
     def __init__(
@@ -31,7 +46,7 @@ class Neo4jEmbeddingProcessor:
     def get_all_nodes(self) -> List[Dict[str, Any]]:
         query = """
         MATCH (n)
-        WHERE n.module = $module
+        WHERE n.module = $module and n.embedding is null
         RETURN n
         """
         with self.driver.session(database=self.database) as session:
@@ -66,6 +81,8 @@ class Neo4jEmbeddingProcessor:
             input=text
         )
         return response.data[0].embedding
+        # embedding = MLXEmbedding(model="sentence-transformers/all-MiniLM-L12-v2")
+        # return embedding.document_embedding(text)
 
     def update_node_embedding(self, element_id: str, embedding: List[float]):
         query = """
@@ -122,7 +139,7 @@ def main():
         neo4j_user=neo4j_user,
         neo4j_password=neo4j_password,
         openrouter_api_key=openrouter_api_key,
-        module="Customer Relationship Management",
+        module="Human Resource",
         database="pos"
     )
 

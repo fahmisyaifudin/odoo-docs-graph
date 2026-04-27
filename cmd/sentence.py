@@ -4,7 +4,24 @@ import os
 from pathlib import Path
 from openai import OpenAI
 from dotenv import load_dotenv
-import psycopg
+import psycopg2
+from mlx_embeddings.utils import load
+
+
+class MLXEmbedding:
+    def __init__(self, model: str):
+        self.model = model
+
+    def document_embedding(self, document: str) -> list[float]:
+        model, tokenizer = load(self.model)
+
+        # Tokenize and generate embedding
+        input_ids = tokenizer.encode(document, return_tensors="mlx")
+        outputs = model(input_ids)
+        raw_embeds = outputs.last_hidden_state[:, 0, :] # CLS token
+        text_embeds = outputs.text_embeds # mean pooled and normalized embeddings
+        return text_embeds.tolist()[0]
+
 
 def parse_rst_sections(raw_rst: str) -> list[dict]:
     """
@@ -73,9 +90,9 @@ def build_chunk_text(
     content:    str
 ) -> str:
     return (
-        f"Product: {product}\n"
-        f"Module: {module}\n"
-        f"Topic: {heading}\n\n"
+        # f"Product: {product}\n"
+        # f"Module: {module}\n"
+        # f"Topic: {heading}\n\n"
         f"{content}"
     )
 
@@ -105,17 +122,19 @@ def build_module_from_path(rst_path: Path) -> str:
     return " > ".join(normalized_parts)
 
 def embed(client, text: str) -> list[float]:
-    embedding = client.embeddings.create(
-        model="qwen/qwen3-embedding-8b",
-        input=text,
-        encoding_format="float"
-    )
-    return embedding.data[0].embedding
+    # embedding = client.embeddings.create(
+    #     model="qwen/qwen3-embedding-4b",
+    #     input=text,
+    #     encoding_format="float"
+    # )
+    # return embedding.data[0].embedding
+    embedding = MLXEmbedding(model="sentence-transformers/all-MiniLM-L12-v2")
+    return embedding.document_embedding(text)
 
 def insert_chunk(conn, record: dict):
     with conn.cursor() as cur:
         cur.execute("""
-            INSERT INTO qwen_embedding_8b
+            INSERT INTO minilm_l12_v2
                 (product, module, heading, content, embedding)
             VALUES
                 (%(product)s, %(module)s, %(heading)s, %(content)s, %(embedding)s)
@@ -129,7 +148,7 @@ def main():
         api_key=os.getenv("OPENROUTER_API_KEY"),
     )
 
-    conn = psycopg.connect(
+    conn = psycopg2.connect(
         host="localhost",
         dbname="docs",
         user="postgres",

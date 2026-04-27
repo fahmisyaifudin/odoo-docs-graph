@@ -18,7 +18,7 @@ def build_context_from_pg_results(results: List[Dict[str, Any]]) -> str:
     
     context_parts = []
     context_parts.append("=" * 70)
-    context_parts.append("VECTOR SEARCH RESULTS (PostgreSQL pgvector)")
+    context_parts.append("h (PostgreSQL pgvector)")
     context_parts.append("=" * 70)
     context_parts.append(f"Total Results: {len(results)}\n")
     
@@ -103,8 +103,8 @@ def build_context_from_graph(graph_data: Dict[str, Any], module: str) -> str:
             rel_props = rel.get('properties', {})
             evidence = rel_props.get('evidence', rel.get('evidence', '?'))
             context_parts.append(
-                f"({source_str}) -[:{rel_type}]-> ({target_str})\n"
-                # f"  Evidence: {evidence}"
+                f"RELATION: ({source_str}) -[:{rel_type}]-> ({target_str})\n"
+                f"EVIDENCE: {evidence}"
             )
     
     context_parts.append("\n" + "=" * 60)

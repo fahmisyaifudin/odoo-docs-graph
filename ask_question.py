@@ -20,8 +20,23 @@ from lib.context_builder import (
 )
 from lib.llm_utils import generate_llm_reasoning, generate_direct_llm
 from lib.pgvector_utils import search_similar_documents
+from mlx_embeddings.utils import load
 
 load_dotenv()
+
+class MLXEmbedding:
+    def __init__(self, model: str):
+        self.model = model
+
+    def document_embedding(self, document: str) -> list[float]:
+        model, tokenizer = load(self.model)
+
+        # Tokenize and generate embedding
+        input_ids = tokenizer.encode(document, return_tensors="mlx")
+        outputs = model(input_ids)
+        raw_embeds = outputs.last_hidden_state[:, 0, :] # CLS token
+        text_embeds = outputs.text_embeds # mean pooled and normalized embeddings
+        return text_embeds.tolist()[0]
 
 
 class QuestionAnswerer:
@@ -35,7 +50,7 @@ class QuestionAnswerer:
         openrouter_api_key: str = None,
         database: str = "pos",
         pg_connection_string: str = None,
-        module: str = "Customer Relationship Management"
+        module: str = "Point of Sales"
     ):
         # Neo4j connection
         self.driver = GraphDatabase.driver(
@@ -59,8 +74,8 @@ class QuestionAnswerer:
         self.module = module
         
         # Model configurations
-        self.embedding_model = "qwen/qwen3-embedding-8b"
-        self.reasoning_model = "google/gemma-3-27b-it"
+        self.embedding_model = "sentence-transformers/all-MiniLM-L12-v2"
+        self.reasoning_model = "meta-llama/llama-3.1-8b-instruct"
         self.cypher_model = "deepseek/deepseek-v3.2"
 
     def close(self):
@@ -69,11 +84,13 @@ class QuestionAnswerer:
 
     def get_embedding(self, text: str) -> List[float]:
         """Generate embedding using the configured model."""
-        response = self.client.embeddings.create(
-            model=self.embedding_model,
-            input=text
-        )
-        return response.data[0].embedding
+        # response = self.client.embeddings.create(
+        #     model=self.embedding_model,
+        #     input=text
+        # )
+        # return response.data[0].embedding
+        embedding = MLXEmbedding(model="sentence-transformers/all-MiniLM-L12-v2")
+        return embedding.document_embedding(text)
 
     def search_similar_nodes(
         self,
@@ -221,7 +238,7 @@ class QuestionAnswerer:
             query_embedding=query_embedding,
             top_k=top_k,
             connection_string=self.pg_connection_string,
-            table_name="qwen_embedding_8b"
+            table_name="minilm_l12_v2"
         )
         print(f"✓ Found {len(similar_docs)} similar documents\n")
         
@@ -346,7 +363,7 @@ def ask_question(question: str, llm_reasoning_model: str, method: str = "neo4j")
        neo4j_password=os.getenv("NEO4J_PASSWORD", "password"),
        openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
        database="pos",
-       module="Customer Relationship Management",
+       module="Point of Sales",
        pg_connection_string=os.getenv("PG_CONNECTION_STRING", "postgresql://postgres:postgres@localhost:5432/docs")
     )
     try:

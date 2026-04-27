@@ -73,13 +73,13 @@ if __name__ == '__main__':
     
     try:
         with conn.cursor() as cur:
-            module = "Customer Relationship Management"
+            module = "Point of Sales"
             
             # Fetch questions with their IDs
             query = """
             SELECT id, question, answer 
             FROM question
-            WHERE module = %s and deleted_at is null
+            WHERE module = %s and type = 'multihop'
             """
             cur.execute(query, (module,))
             results = cur.fetchall()
@@ -118,7 +118,7 @@ if __name__ == '__main__':
                         question_id=question_id,
                         llm_reasoning_model=llm_reasoning_model,
                         method=method,
-                        embedding_model="qwen/qwen3-embedding-8b",
+                        embedding_model="qwen/qwen3-embedding-0.6b",
                         result=result
                     )
                     
@@ -146,7 +146,7 @@ if __name__ == '__main__':
                             question_id=question_id,
                             llm_reasoning_model=llm_reasoning_model,
                             method=method,
-                            embedding_model="qwen/qwen3-embedding-8b",
+                            embedding_model="qwen/qwen3-embedding-0.6b",
                             result=error_result
                         )
                     except:
