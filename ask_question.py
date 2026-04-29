@@ -18,7 +18,7 @@ from lib.context_builder import (
     build_context_from_cypher_result,
     build_context_from_pg_results
 )
-from lib.llm_utils import generate_llm_reasoning, generate_direct_llm
+from lib.llm_utils import generate_llm_reasoning, generate_direct_llm, generate_llm_document_reasoning
 from lib.pgvector_utils import search_similar_documents
 from mlx_embeddings.utils import load
 
@@ -188,7 +188,7 @@ class QuestionAnswerer:
         if method == "neo4j":
             return self._ask_with_graph_search(question, top_k, max_traversal_depth, reasoning_model)
         elif method == "pgvector":
-            return self._ask_with_vector_search(question, 3, reasoning_model)
+            return self._ask_with_vector_search(question, top_k, reasoning_model)
         elif method == "no-context":
             return self._ask_with_direct_llm(question, reasoning_model)
         else:
@@ -256,7 +256,7 @@ class QuestionAnswerer:
         
         # Step 4: Generate LLM reasoning
         print("[4/4] Generating LLM reasoning...")
-        reasoning_result = generate_llm_reasoning(
+        reasoning_result = generate_llm_document_reasoning(
             question=question,
             graph_context=vector_context,
             seed_results=similar_docs,
