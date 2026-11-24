@@ -1,26 +1,20 @@
 import os
+import sys
+from pathlib import Path
 from neo4j import GraphDatabase
 from openai import OpenAI
 from typing import List, Dict, Any
 from dotenv import load_dotenv
-from mlx_embeddings.utils import load
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+# from lib.mlx_embedding import MLXEmbedding, DEFAULT_MLX_MODEL
 
 
 load_dotenv()
 
-class MLXEmbedding:
-    def __init__(self, model: str):
-        self.model = model
-
-    def document_embedding(self, document: str) -> list[float]:
-        model, tokenizer = load(self.model)
-
-        # Tokenize and generate embedding
-        input_ids = tokenizer.encode(document, return_tensors="mlx")
-        outputs = model(input_ids)
-        raw_embeds = outputs.last_hidden_state[:, 0, :] # CLS token
-        text_embeds = outputs.text_embeds # mean pooled and normalized embeddings
-        return text_embeds.tolist()[0]
+VECTOR_INDEX_NAME = "entity_embedding"
+EMBEDDING_DIM = 4096  # qwen/qwen3-embedding-8b
+OPENROUTER_EMBEDDING_MODEL = "qwen/qwen3-embedding-8b"
 
 class Neo4jEmbeddingProcessor:
     def __init__(
@@ -28,17 +22,19 @@ class Neo4jEmbeddingProcessor:
         neo4j_uri: str,
         neo4j_user: str,
         neo4j_password: str,
-        openrouter_api_key: str,
-        module: str,
-        database: str = "pos"
+        database: str = "qwen06b",
+        # mlx_model: str = DEFAULT_MLX_MODEL,
+        openrouter_api_key: str = None,
+        openrouter_model: str = OPENROUTER_EMBEDDING_MODEL,
     ):
         self.driver = GraphDatabase.driver(neo4j_uri, auth=(neo4j_user, neo4j_password))
         self.database = database
+        # self.embedder = MLXEmbedding(model=mlx_model)
+        self.embedding_model = openrouter_model
         self.client = OpenAI(
             base_url="https://openrouter.ai/api/v1",
-            api_key=openrouter_api_key,
+            api_key=openrouter_api_key or os.getenv("OPENROUTER_API_KEY"),
         )
-        self.module = module
 
     def close(self):
         self.driver.close()
@@ -46,11 +42,11 @@ class Neo4jEmbeddingProcessor:
     def get_all_nodes(self) -> List[Dict[str, Any]]:
         query = """
         MATCH (n)
-        WHERE n.module = $module and n.embedding is null
+        WHERE n.embedding is null
         RETURN n
         """
         with self.driver.session(database=self.database) as session:
-            result = session.run(query, module=self.module)
+            result = session.run(query)
             nodes = []
             for record in result:
                 node = record["n"]
@@ -61,28 +57,24 @@ class Neo4jEmbeddingProcessor:
                 })
             return nodes
 
-    def format_embedding_text(self, module: str, properties: Dict[str, Any]) -> str:
-        product = properties.get("product", "")
-        node_type = properties.get("type", "")
+    def format_embedding_text(self, properties: Dict[str, Any]) -> str:
         heading = properties.get("heading", "")
         name = properties.get("name", "")
+        product = properties.get("product", "")
 
         formatted_text = f"Product: {product}\n"
-        formatted_text += f"Module: {module}\n"
-        formatted_text += f"Type: {node_type}\n"
         formatted_text += f"Section: {heading}\n"
-        formatted_text += f"Name: {name}"
+        formatted_text += f"Name: {name}\n"
 
         return formatted_text
 
     def get_embedding(self, text: str) -> List[float]:
+        # return self.embedder.document_embedding(text)
         response = self.client.embeddings.create(
-            model="qwen/qwen3-embedding-8b",
-            input=text
+            model=self.embedding_model,
+            input=text,
         )
         return response.data[0].embedding
-        # embedding = MLXEmbedding(model="sentence-transformers/all-MiniLM-L12-v2")
-        # return embedding.document_embedding(text)
 
     def update_node_embedding(self, element_id: str, embedding: List[float]):
         query = """
@@ -92,6 +84,20 @@ class Neo4jEmbeddingProcessor:
         """
         with self.driver.session(database=self.database) as session:
             session.run(query, element_id=element_id, embedding=embedding)
+
+    def ensure_vector_index(self):
+        # Vector indexes are single-label, so every node also carries :Entity.
+        with self.driver.session(database=self.database) as session:
+            session.run("MATCH (n) WHERE NOT n:Entity SET n:Entity")
+            session.run(f"""
+            CREATE VECTOR INDEX {VECTOR_INDEX_NAME} IF NOT EXISTS
+            FOR (n:Entity) ON n.embedding
+            OPTIONS {{indexConfig: {{
+                `vector.dimensions`: {EMBEDDING_DIM},
+                `vector.similarity_function`: 'cosine'
+            }}}}
+            """)
+        print(f"✓ Vector index '{VECTOR_INDEX_NAME}' ready on :Entity(embedding)")
 
     def process_all_nodes(self):
         print("Fetching all nodes from Neo4j...")
@@ -105,7 +111,7 @@ class Neo4jEmbeddingProcessor:
 
                 print(f"\nProcessing node {i}/{len(nodes)}: {properties.get('name', 'Unknown')}")
 
-                formatted_text = self.format_embedding_text(self.module, properties)
+                formatted_text = self.format_embedding_text(properties)
                 print(f"Text for embedding:\n{formatted_text}")
 
                 print("Generating embedding...")
@@ -128,23 +134,18 @@ class Neo4jEmbeddingProcessor:
 def main():
     neo4j_uri = os.getenv("NEO4J_URI", "bolt://localhost:7687")
     neo4j_user = os.getenv("NEO4J_USER", "neo4j")
-    neo4j_password = os.getenv("NEO4J_PASSWORD", "password")
-    openrouter_api_key = os.getenv("OPENROUTER_API_KEY")
-
-    if not openrouter_api_key:
-        raise ValueError("OPENROUTER_API_KEY environment variable is required")
+    neo4j_password = os.getenv("NEO4J_PASSWORD", "1234qwer")
 
     processor = Neo4jEmbeddingProcessor(
         neo4j_uri=neo4j_uri,
         neo4j_user=neo4j_user,
         neo4j_password=neo4j_password,
-        openrouter_api_key=openrouter_api_key,
-        module="Human Resource",
-        database="pos"
+        database="qwen8b",
     )
 
     try:
         processor.process_all_nodes()
+        processor.ensure_vector_index()
     finally:
         processor.close()
 

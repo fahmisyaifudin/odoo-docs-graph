@@ -41,7 +41,7 @@ def traverse_graph_from_nodes(
     WITH 
         [node in nodes(path) | {
             id: elementId(node),
-            properties: properties(node)
+            properties: apoc.map.removeKey(properties(node), 'embedding')
         }] as path_nodes,
         [rel in relationships(path) | {
             source: elementId(startNode(rel)),
@@ -95,7 +95,7 @@ def _get_seed_nodes_only(
     WHERE elementId(n) IN $seed_node_ids
     RETURN {
         id: elementId(n),
-        properties: properties(n)
+        properties: apoc.map.removeKey(properties(n), 'embedding')
     } as node
     """
     

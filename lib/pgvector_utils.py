@@ -41,7 +41,8 @@ def search_similar_documents(
             # Use pgvector's <=> operator for cosine distance (1 - similarity)
             # Lower distance = higher similarity
             query = f"""
-                SELECT 
+                SELECT
+                    product,
                     heading,
                     module,
                     content,

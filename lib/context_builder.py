@@ -1,6 +1,49 @@
 """Context builder functions for formatting graph data and query results."""
 
+import json
 from typing import List, Dict, Any
+
+NODE_PROPERTY_ORDER = ["name", "product", "heading", "mention", "section_id"]
+
+
+def _cypher_label(value: str) -> str:
+    label = ''.join(c if c.isalnum() else '_' for c in (value or "Unknown"))
+    return f"`{label}`" if label[:1].isdigit() else label
+
+
+def _cypher_props(props: Dict[str, Any], keys: List[str]) -> str:
+    pairs = [f"{k}:{json.dumps(props[k], ensure_ascii=False)}" for k in keys if props.get(k) not in (None, "")]
+    return "{" + ", ".join(pairs) + "}"
+
+
+def format_graph_as_cypher(graph_data: Dict[str, Any]) -> str:
+    """Render traversal results as Cypher node patterns and path patterns."""
+    nodes = graph_data.get("nodes", [])
+    relationships = graph_data.get("relationships", [])
+
+    node_lookup = {}
+    node_lines = []
+    for node in nodes:
+        props = {k: v for k, v in node.get("properties", {}).items() if k != "embedding"}
+        label = _cypher_label(props.get("type"))
+        keys = [k for k in NODE_PROPERTY_ORDER if k in props]
+        keys += sorted(k for k in props if k not in NODE_PROPERTY_ORDER and k != "type")
+        node_lookup[node.get("id")] = f"(:{label} {_cypher_props(props, ['name'])})"
+        node_lines.append(f"(:{label} {_cypher_props(props, keys)})")
+
+    path_lines = []
+    for rel in relationships:
+        source = node_lookup.get(rel.get("source"), "()")
+        target = node_lookup.get(rel.get("target"), "()")
+        rel_type = _cypher_label(rel.get("type", "RELATED_TO"))
+        rel_props = _cypher_props(rel.get("properties", {}), ["evidence"])
+        rel_props = "" if rel_props == "{}" else f" {rel_props}"
+        path_lines.append(f"{source}-[:{rel_type}{rel_props}]->{target}")
+
+    parts = [f"NODES ({len(node_lines)})", *node_lines, "", f"PATHS ({len(path_lines)})", *path_lines]
+    if not path_lines:
+        parts.append("(no relationships found)")
+    return "\n".join(parts)
 
 
 def build_context_from_pg_results(results: List[Dict[str, Any]]) -> str:
@@ -18,18 +61,23 @@ def build_context_from_pg_results(results: List[Dict[str, Any]]) -> str:
     
     context_parts = []
     context_parts.append("=" * 70)
-    context_parts.append("h (PostgreSQL pgvector)")
+    context_parts.append("POSTGRESQL PGVECTOR CONTEXT")
     context_parts.append("=" * 70)
     context_parts.append(f"Total Results: {len(results)}\n")
-    
+
     for i, result in enumerate(results, 1):
         content = result.get("content", "N/A")
         similarity = result.get("similarity", 0)
         heading = result.get("heading", "N/A")
         module = result.get("module", "N/A")
-        
-        context_parts.append(f"--- Result {i} (Similarity: {similarity:.4f}) ---")        
+        product = result.get("product", "N/A")
+
+        context_parts.append(f"--- Result {i} (Similarity: {similarity:.4f}) ---")
         # Add metadata if available
+        if product:
+            context_parts.append("Product:")
+            context_parts.append(f"{product}")
+
         if module:
             context_parts.append("Module:")
             context_parts.append(f"{module}")
@@ -103,7 +151,7 @@ def build_context_from_graph(graph_data: Dict[str, Any], module: str) -> str:
             rel_props = rel.get('properties', {})
             evidence = rel_props.get('evidence', rel.get('evidence', '?'))
             context_parts.append(
-                f"RELATION: ({source_str}) -[:{rel_type}]-> ({target_str})\n"
+                f"RELATION: ({source_str}) -|{rel_type}|-> ({target_str})\n"
                 f"EVIDENCE: {evidence}"
             )
     

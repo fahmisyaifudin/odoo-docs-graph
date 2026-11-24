@@ -78,7 +78,6 @@ def create_nodes_and_relations(driver, json_data, database="neo4j"):
       - confidence: confidence level (high/medium/low)
       - product: product name, example "Odoo"
       - section_id: section identifier
-      - module: module name, example "Point of Sales"
       - heading: section heading
     
     Relationships:
@@ -94,9 +93,9 @@ def create_nodes_and_relations(driver, json_data, database="neo4j"):
         json_data: List of section data dictionaries
     """
     with driver.session(database=database) as session:
-        # Clear existing data (optional - remove if you want to keep existing data)
-        # session.run("MATCH (n) DETACH DELETE n")
-        
+        # Clear existing data
+        session.run("MATCH (n) DETACH DELETE n")
+
         for section in json_data:
             # Extract section metadata
             section_id = section.get("section_id", "")
@@ -116,23 +115,20 @@ def create_nodes_and_relations(driver, json_data, database="neo4j"):
                     # Build node creation query with dynamic label
                     create_node_query = f"""
                     MERGE (n:`{safe_label}` {{name: $name}})
-                    SET n.type = $type,
+                    SET n:Entity,
+                        n.type = $type,
                         n.mention = $mention,
-                        n.module = $module,
-                        n.confidence = $confidence,
                         n.product = $product,
                         n.section_id = $section_id,
                         n.heading = $heading
                     """
-                    
+
                     session.run(
                         create_node_query,
                         name=entity_name,
                         type=entity_type,
                         mention=entity.get("mention", ""),
-                        confidence=entity.get("confidence", ""),
                         product=product,
-                        module="Customer Relationship Management",
                         section_id=section_id,
                         heading=heading
                     )
@@ -178,32 +174,30 @@ def main():
     # Neo4j connection parameters
     NEO4J_URI = "bolt://localhost:7687"
     NEO4J_USERNAME = "neo4j"
-    NEO4J_PASSWORD = "password"  # Change this to your actual password
-    NEO4J_DATABASE = "pos"
-    
-    # Single JSON file to test (change this to test different files)
-    OUTPUT_FILE = "output/0_questions_graph.json"
-    OUTPUT_DIR = "output/crm"
-    
+    NEO4J_PASSWORD = "1234qwer"  # Change this to your actual password
+    NEO4J_DATABASE = "refine-qwen06b"
+
+    OUTPUT_DIR = "output/requirement/graph"
+
     try:
         # Connect to Neo4j
         print(f"Connecting to Neo4j at {NEO4J_URI}...")
         driver = connect_to_neo4j(NEO4J_URI, NEO4J_USERNAME, NEO4J_PASSWORD, NEO4J_DATABASE)
-        
-        # Read single JSON file
-        print(f"\nReading JSON file: '{OUTPUT_FILE}'...")
+
+        # Read only the refined graph JSON files in directory
+        print(f"\nReading refined JSON files from: '{OUTPUT_DIR}'...")
         json_data = []
         for filename in os.listdir(OUTPUT_DIR):
-            if filename.endswith(".json"):
+            if filename.endswith("_graph_refine.json"):
                 file_data = read_json_file(os.path.join(OUTPUT_DIR, filename))
                 json_data.extend(file_data)
-        
+
         if not json_data:
             print("No data found to insert.")
             return
-        
+
         print(f"Found {len(json_data)} sections to process.")
-        
+
         # Create nodes and relationships
         print(f"\nInserting data into Neo4j...")
         create_nodes_and_relations(driver, json_data, NEO4J_DATABASE)

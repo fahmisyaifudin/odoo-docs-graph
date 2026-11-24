@@ -1,5 +1,8 @@
 """Main module for question answering with Neo4j and LLM."""
 
+import argparse
+import atexit
+import json
 import os
 from neo4j import GraphDatabase
 from openai import OpenAI
@@ -18,25 +21,59 @@ from lib.context_builder import (
     build_context_from_cypher_result,
     build_context_from_pg_results
 )
-from lib.llm_utils import generate_llm_reasoning, generate_direct_llm, generate_llm_document_reasoning
+from lib.llm_utils import generate_llm_reasoning, generate_direct_llm
 from lib.pgvector_utils import search_similar_documents
-from mlx_embeddings.utils import load
+from lib.graph_traversal import traverse_graph_from_nodes
+from lib.context_builder import format_graph_as_cypher
+from lib.graph_agent import build_graph_tools, run_agent, DOCUMENT_SYSTEM_PROMPT
+from lib.mlx_embedding import MLXEmbedding
 
 load_dotenv()
 
-class MLXEmbedding:
-    def __init__(self, model: str):
-        self.model = model
+VECTOR_INDEX_NAME = "entity_embedding"
 
-    def document_embedding(self, document: str) -> list[float]:
-        model, tokenizer = load(self.model)
-
-        # Tokenize and generate embedding
-        input_ids = tokenizer.encode(document, return_tensors="mlx")
-        outputs = model(input_ids)
-        raw_embeds = outputs.last_hidden_state[:, 0, :] # CLS token
-        text_embeds = outputs.text_embeds # mean pooled and normalized embeddings
-        return text_embeds.tolist()[0]
+# Maps the `embedding_model` key used in `answer_result.embedding_model` /
+# `NEO4J_DATABASE` (per the Neo4j multi-database setup) to the embedding
+# backend + model that actually produced each Neo4j graph and pgvector table.
+# qwen06b and minilml12 are embedded locally via MLX; the rest via OpenRouter.
+# bge-m3 predates per-model Neo4j databases, so it lives in the default "neo4j" db.
+EMBEDDING_MODEL_REGISTRY: Dict[str, Dict[str, Any]] = {
+    "qwen06b": {
+        "neo4j_database": "qwen06b",
+        "backend": "mlx",
+        "model": "mlx-community/Qwen3-Embedding-0.6B-4bit-DWQ",
+        "pg_table": "qwen_embedding_0_6b",
+        "dim": 1024,
+    },
+    "minilml12": {
+        "neo4j_database": "minilml12",
+        "backend": "mlx",
+        "model": "sentence-transformers/all-MiniLM-L12-v2",
+        "pg_table": "minilm_l12_v2",
+        "dim": 384,
+    },
+    "qwen4b": {
+        "neo4j_database": "qwen4b",
+        "backend": "openrouter",
+        "model": "qwen/qwen3-embedding-4b",
+        "pg_table": "qwen_embedding_4b",
+        "dim": 2560,
+    },
+    "qwen8b": {
+        "neo4j_database": "qwen8b",
+        "backend": "openrouter",
+        "model": "qwen/qwen3-embedding-8b",
+        "pg_table": "qwen_embedding_8b",
+        "dim": 4096,
+    },
+    "bge-m3": {
+        "neo4j_database": "neo4j",
+        "backend": "openrouter",
+        "model": "baai/bge-m3",
+        "pg_table": "bge_m3",
+        "dim": 1024,
+    },
+}
 
 
 class QuestionAnswerer:
@@ -48,10 +85,16 @@ class QuestionAnswerer:
         neo4j_user: str = None,
         neo4j_password: str = None,
         openrouter_api_key: str = None,
-        database: str = "pos",
-        pg_connection_string: str = None,
-        module: str = "Point of Sales"
+        embedding_model: str = "qwen06b",
+        pg_connection_string: str = None
     ):
+        if embedding_model not in EMBEDDING_MODEL_REGISTRY:
+            raise ValueError(
+                f"Unknown embedding_model {embedding_model!r}; choose one of "
+                f"{sorted(EMBEDDING_MODEL_REGISTRY)}"
+            )
+        config = EMBEDDING_MODEL_REGISTRY[embedding_model]
+
         # Neo4j connection
         self.driver = GraphDatabase.driver(
             neo4j_uri,
@@ -60,76 +103,94 @@ class QuestionAnswerer:
                 neo4j_password
             )
         )
-        self.database = database
-        
+        self.database = config["neo4j_database"]
+
         # PostgreSQL connection string for pgvector
         self.pg_connection_string = pg_connection_string
-        
+
         # OpenAI client for OpenRouter
+        self.openrouter_api_key = openrouter_api_key
         self.client = OpenAI(
             base_url="https://openrouter.ai/api/v1",
             api_key=openrouter_api_key
         )
 
-        self.module = module
-        
-        # Model configurations
-        self.embedding_model = "sentence-transformers/all-MiniLM-L12-v2"
+        # Model configurations, all derived from `embedding_model` so the
+        # Neo4j database, pgvector table and embedding call line up with
+        # whichever model actually produced that data (see EMBEDDING_MODEL_REGISTRY).
+        self.embedding_model = embedding_model
+        self.embedding_backend = config["backend"]  # "mlx" or "openrouter"
+        self.graph_embedding_model = config["model"]  # MLX repo id or OpenRouter model id
+        self.pg_table = config["pg_table"]
         self.reasoning_model = "meta-llama/llama-3.1-8b-instruct"
         self.cypher_model = "deepseek/deepseek-v3.2"
+        self._graph_embedder = None
 
     def close(self):
         """Close the Neo4j connection."""
         self.driver.close()
 
+    def _embed(self, text: str) -> List[float]:
+        """Embed with whichever backend produced this embedding_model's Neo4j/pgvector data."""
+        if self.embedding_backend == "mlx":
+            if self._graph_embedder is None:
+                self._graph_embedder = MLXEmbedding(self.graph_embedding_model)
+            return self._graph_embedder.document_embedding(text)
+
+        response = self.client.embeddings.create(
+            model=self.graph_embedding_model,
+            input=text
+        )
+        return response.data[0].embedding
+
     def get_embedding(self, text: str) -> List[float]:
-        """Generate embedding using the configured model."""
-        # response = self.client.embeddings.create(
-        #     model=self.embedding_model,
-        #     input=text
-        # )
-        # return response.data[0].embedding
-        embedding = MLXEmbedding(model="sentence-transformers/all-MiniLM-L12-v2")
-        return embedding.document_embedding(text)
+        """Generate embedding using the configured embedding_model."""
+        return self._embed(text)
+
+    def get_query_embedding(self, text: str) -> List[float]:
+        """Embed with the same model used for this embedding_model's Neo4j node and pgvector embeddings."""
+        return self._embed(text)
 
     def search_similar_nodes(
         self,
-        module: str,
         query_embedding: List[float],
-        top_k: int = 5
+        top_k: int = 5,
+        product: str = None
     ) -> List[Dict[str, Any]]:
-        """Search Neo4j for nodes with similar embeddings filtered by module.
-
-        Args:
-            module: Required module name to filter results (e.g., "Point of Sales")
-            query_embedding: The embedding vector to search for
-            top_k: Number of results to return
-        """
-        query = """
-        CALL db.index.vector.queryNodes('embedding_index', $top_k, $query_embedding)
-        YIELD node, score
-        WHERE node.module = $module
+        """Search Neo4j for nodes with similar embeddings, optionally within one product."""
+        if product:
+            # The ANN index can't pre-filter, so scan the product's nodes exactly.
+            search = """
+            MATCH (node:Entity {product: $product})
+            WHERE node.embedding IS NOT NULL
+            WITH node, vector.similarity.cosine(node.embedding, $query_embedding) AS score
+            """
+        else:
+            search = f"""
+            CALL db.index.vector.queryNodes('{VECTOR_INDEX_NAME}', $top_k, $query_embedding)
+            YIELD node, score
+            """
+        query = search + """
         RETURN node {
             .product,
             .section_id,
             .heading,
-            .confidence,
             .name,
             .type,
-            .mention,
-            .module
+            .mention
         } as properties,
         score,
         elementId(node) as node_id
         ORDER BY score DESC
+        LIMIT $top_k
         """
-        
+
         try:
             with self.driver.session(database=self.database) as session:
                 params = {
                     "query_embedding": query_embedding,
                     "top_k": top_k,
-                    "module": module
+                    "product": product
                 }
                 result = session.run(query, **params)
                 return [dict(record) for record in result]
@@ -172,7 +233,7 @@ class QuestionAnswerer:
             llm_reasoning_model: The LLM model to use for reasoning (defaults to self.reasoning_model)
             top_k: Number of similar nodes to retrieve
             max_traversal_depth: Graph traversal depth
-            method: Search approach to use ("neo4j" or "pgvector")
+            method: Search approach to use ("neo4j", "agent", "pgvector" or "no-context")
         
         Returns:
             Dictionary with answer, reasoning, and metadata
@@ -187,6 +248,8 @@ class QuestionAnswerer:
 
         if method == "neo4j":
             return self._ask_with_graph_search(question, top_k, max_traversal_depth, reasoning_model)
+        elif method == "agent":
+            return self._ask_with_graph_agent(question, max_traversal_depth, reasoning_model)
         elif method == "pgvector":
             return self._ask_with_vector_search(question, top_k, reasoning_model)
         elif method == "no-context":
@@ -216,62 +279,47 @@ class QuestionAnswerer:
         }
 
     def _ask_with_vector_search(self, question: str, top_k: int = 1, reasoning_model: str = None) -> Dict[str, Any]:
-        """
-        Answer using vector search on PostgreSQL pgvector.
-        
-        Steps:
-        1. Embed the question
-        2. Search top_k similar documents in pgvector
-        3. Build context from results
-        4. Generate LLM reasoning
-        """
+        """Answer with a LangChain agent given the top_k pgvector chunks as context."""
         model = reasoning_model or self.reasoning_model
-        
-        # Step 1: Embed the question
-        print("[1/4] Embedding the question...")
-        query_embedding = self.get_embedding(question)
+
+        print("[1/3] Embedding the question...")
+        query_embedding = self.get_query_embedding(question)
         print(f"✓ Generated {len(query_embedding)}-dim embedding\n")
-        
-        # Step 2: Search top_k similar documents in pgvector
-        print(f"[2/4] Searching top {top_k} similar documents in pgvector...")
+
+        print(f"[2/3] Searching top {top_k} similar documents in pgvector...")
         similar_docs = search_similar_documents(
             query_embedding=query_embedding,
             top_k=top_k,
             connection_string=self.pg_connection_string,
-            table_name="minilm_l12_v2"
+            table_name=self.pg_table
         )
         print(f"✓ Found {len(similar_docs)} similar documents\n")
-        
+
         if not similar_docs:
             return {
                 "success": False,
                 "error": "No similar documents found in pgvector",
                 "question": question
             }
-        
-        # Step 3: Build context from pgvector results
-        print("[3/4] Building context from pgvector results...")
-        vector_context = build_context_from_pg_results(similar_docs)
-        print("✓ Context built from pgvector results\n")
-        
-        # Step 4: Generate LLM reasoning
-        print("[4/4] Generating LLM reasoning...")
-        reasoning_result = generate_llm_document_reasoning(
-            question=question,
-            graph_context=vector_context,
-            seed_results=similar_docs,
-            client=self.client,
-            model=model
+
+        print("[3/3] Running document agent...")
+        agent_result = run_agent(
+            question,
+            build_context_from_pg_results(similar_docs),
+            model,
+            self.openrouter_api_key,
+            system_prompt=DOCUMENT_SYSTEM_PROMPT,
+            context_label=f"Top {len(similar_docs)} document chunks (from pgvector semantic search)",
         )
-        print("✓ Reasoning complete\n")
-        
+        print("✓ Agent complete\n" if agent_result["success"] else f"✗ {agent_result['error']}\n")
+
         return {
-            "success": reasoning_result.get("success", False),
+            "success": agent_result["success"],
             "question": question,
-            "usage": reasoning_result.get("usage", {}),
-            "llm_reasoning": reasoning_result.get("llm_response"),
+            "usage": agent_result.get("usage", {}),
+            "llm_reasoning": agent_result.get("llm_response"),
             "similar_docs_count": len(similar_docs),
-            "error": reasoning_result.get("error")
+            "error": agent_result.get("error")
         }
 
     def _ask_with_graph_search(
@@ -281,46 +329,77 @@ class QuestionAnswerer:
         max_traversal_depth: int,
         reasoning_model: str = None
     ) -> Dict[str, Any]:
-        """Answer using vector search and graph traversal."""
+        """Answer with a LangChain agent seeded by vector search + graph traversal."""
         model = reasoning_model or self.reasoning_model
-        
-        print("[1/5] Generating embedding for question...")
-        query_embedding = self.get_embedding(question)
+
+        print("[1/4] Generating embedding for question...")
+        query_embedding = self.get_query_embedding(question)
         print(f"✓ Generated {len(query_embedding)}-dim embedding\n")
-        
-        print(f"[2/5] Searching for top {top_k} similar nodes...")
-        seed_results = self.search_similar_nodes(self.module, query_embedding, top_k)
+
+        print(f"[2/4] Searching for top {top_k} similar nodes...")
+        seed_results = self.search_similar_nodes(query_embedding, top_k)
         print(f"✓ Found {len(seed_results)} seed nodes\n")
-        
+
         if not seed_results:
-            return {"success": False, "error": "No similar nodes found"}
-        
-        print(f"[3/5] Traversing graph (depth={max_traversal_depth})...")
-        from lib.graph_traversal import traverse_graph_from_nodes
-        seed_node_ids = [r["node_id"] for r in seed_results]
+            return {"success": False, "question": question, "error": "No similar nodes found"}
+
+        print(f"[3/4] Traversing graph (depth={max_traversal_depth})...")
         graph_data = traverse_graph_from_nodes(
-            self.driver, self.database, seed_node_ids,
+            self.driver, self.database, [r["node_id"] for r in seed_results],
             max_depth=max_traversal_depth
         )
-        print(f"✓ Found {len(graph_data.get('nodes', []))} nodes\n")
-        
-        print("[4/5] Building context from graph...")
-        graph_context = build_context_from_graph(graph_data, module=self.module)
-        print("✓ Context built\n")
-        
-        print("[5/5] Generating LLM reasoning...")
-        reasoning_result = generate_llm_reasoning(
-            question, graph_context, seed_results,
-            self.client, model
+        graph_context = format_graph_as_cypher(graph_data)
+        print(f"✓ {len(graph_data.get('nodes', []))} nodes, "
+              f"{len(graph_data.get('relationships', []))} relationships\n")
+
+        print("[4/4] Running graph agent...")
+        tools = build_graph_tools(self, max_traversal_depth=max_traversal_depth)
+        agent_result = run_agent(
+            question, graph_context, model, self.openrouter_api_key, tools=tools
         )
-        print("✓ Reasoning complete\n")
-        
+        for call in agent_result.get("tool_calls", []):
+            print(f"  ↳ tool: {call['name']}({call['args']})")
+        print("✓ Agent complete\n" if agent_result["success"] else f"✗ {agent_result['error']}\n")
+
         return {
-            "success": reasoning_result.get("success", False),
+            "success": agent_result["success"],
             "question": question,
-            "usage": reasoning_result.get("usage", {}),
-            "llm_reasoning": reasoning_result.get("llm_response"),
-            "error": reasoning_result.get("error")
+            "usage": agent_result.get("usage", {}),
+            "llm_reasoning": agent_result.get("llm_response"),
+            "tool_calls": agent_result.get("tool_calls", []),
+            "error": agent_result.get("error")
+        }
+
+    def _ask_with_graph_agent(
+        self,
+        question: str,
+        max_traversal_depth: int,
+        reasoning_model: str = None
+    ) -> Dict[str, Any]:
+        """Answer with a LangChain agent that explores the graph only through its tools."""
+        model = reasoning_model or self.reasoning_model
+
+        print("[1/1] Running graph agent (no seed context)...")
+        tools = build_graph_tools(self, max_traversal_depth=max_traversal_depth)
+        agent_result = run_agent(
+            question,
+            "No initial context provided. Use your tools to search and explore the graph.",
+            model,
+            self.openrouter_api_key,
+            context_label="Initial graph context",
+            tools=tools
+        )
+        for call in agent_result.get("tool_calls", []):
+            print(f"  ↳ tool: {call['name']}({call['args']})")
+        print("✓ Agent complete\n" if agent_result["success"] else f"✗ {agent_result['error']}\n")
+
+        return {
+            "success": agent_result["success"],
+            "question": question,
+            "usage": agent_result.get("usage", {}),
+            "llm_reasoning": agent_result.get("llm_response"),
+            "tool_calls": agent_result.get("tool_calls", []),
+            "error": agent_result.get("error")
         }
 
     def _ask_with_cypher(self, question: str) -> Dict[str, Any]:
@@ -355,24 +434,63 @@ class QuestionAnswerer:
         }
 
 
-def ask_question(question: str, llm_reasoning_model: str, method: str = "neo4j") -> Dict[str, Any]:
-    """Quick function to ask a question and get results."""
-    answerer = QuestionAnswerer(
-       neo4j_uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
-       neo4j_user=os.getenv("NEO4J_USER", "neo4j"),
-       neo4j_password=os.getenv("NEO4J_PASSWORD", "password"),
-       openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
-       database="pos",
-       module="Point of Sales",
-       pg_connection_string=os.getenv("PG_CONNECTION_STRING", "postgresql://postgres:postgres@localhost:5432/docs")
+_answerers: Dict[str, QuestionAnswerer] = {}
+
+
+def get_answerer(embedding_model: str = None) -> QuestionAnswerer:
+    """Shared answerer per embedding_model, so each one's Neo4j driver / MLX model
+    is created once per process. Different embedding models get independent
+    instances since they point at different Neo4j databases and pgvector tables.
+    """
+    embedding_model = embedding_model or os.getenv("EMBEDDING_MODEL", "qwen06b")
+    if embedding_model not in _answerers:
+        answerer = QuestionAnswerer(
+            neo4j_uri=os.getenv("NEO4J_URI", "bolt://localhost:7687"),
+            neo4j_user=os.getenv("NEO4J_USER", "neo4j"),
+            neo4j_password=os.getenv("NEO4J_PASSWORD", "password"),
+            openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
+            embedding_model=embedding_model,
+            pg_connection_string=os.getenv("PG_CONNECTION_STRING", "postgresql://postgres:postgres@localhost:5432/docs")
+        )
+        atexit.register(answerer.close)
+        _answerers[embedding_model] = answerer
+    return _answerers[embedding_model]
+
+
+def ask_question(
+    question: str,
+    llm_reasoning_model: str,
+    method: str = "neo4j",
+    top_k: int = 5,
+    max_traversal_depth: int = 2,
+    embedding_model: str = None
+) -> Dict[str, Any]:
+    """Answer one question with the given method: neo4j, agent, pgvector or no-context.
+
+    embedding_model selects which Neo4j database / pgvector table to query
+    (see EMBEDDING_MODEL_REGISTRY); defaults to EMBEDDING_MODEL env var or "qwen06b".
+    """
+    return get_answerer(embedding_model).ask(
+        question,
+        llm_reasoning_model,
+        top_k=top_k,
+        max_traversal_depth=max_traversal_depth,
+        method=method
     )
-    try:
-        return answerer.ask(question, llm_reasoning_model, method=method)
-    finally:
-        answerer.close()
+
 
 if __name__ == "__main__":
-    # Example usage
-    question = "Can employees check in and out using the Attendances app??"
-    result = ask_question(question, llm_reasoning_model="meta-llama/llama-3.1-8b-instruct", method="neo4j")
-    print(result)
+    parser = argparse.ArgumentParser(description="Ask a question against the knowledge base.")
+    parser.add_argument("question", nargs="?", default="Who can register a case in CCTNS?")
+    parser.add_argument("--model", default="xiaomi/mimo-v2.6-flash", help="OpenRouter reasoning model")
+    parser.add_argument("--method", default="neo4j", choices=["neo4j", "agent", "pgvector", "no-context"])
+    parser.add_argument("--embedding-model", default="qwen06b", choices=sorted(EMBEDDING_MODEL_REGISTRY),
+                        help="Which embedding model's Neo4j database / pgvector table to query")
+    parser.add_argument("--top-k", type=int, default=5)
+    parser.add_argument("--depth", type=int, default=1, help="Graph traversal depth (neo4j only)")
+    args = parser.parse_args()
+
+    result = ask_question(
+        args.question, args.model, args.method, args.top_k, args.depth, args.embedding_model
+    )
+    print(json.dumps(result, indent=2, ensure_ascii=False))
